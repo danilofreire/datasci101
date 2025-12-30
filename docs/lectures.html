@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.25">
+<meta name="generator" content="quarto-1.8.26">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Lectures – DATASCI 385</title>
+<title>Lectures – DATASCI 185</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -36,9 +36,9 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-707d8167ce6003fca903bfe2be84ab7f.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-b758ccaa5987ceb1b75504551e579abf.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap-250a0ad726c327aed60c1b8aba93cc6c.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
@@ -244,10 +244,8 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="./index.html" class="navbar-brand navbar-brand-logo">
-    </a>
     <a class="navbar-brand" href="./index.html">
-    <span class="navbar-title">DATASCI 385</span>
+    <span class="navbar-title">DATASCI 185</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -269,17 +267,13 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Assignments</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./guides.html"> 
-<span class="menu-text">Guides</span></a>
-  </li>  
-  <li class="nav-item">
     <a class="nav-link" href="./LICENSE.html"> 
 <span class="menu-text"> </span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools tools-wide">
-    <a href="https://github.com/danilofreire/datasci385" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-github"></i></a>
+    <a href="https://github.com/danilofreire/datasci185" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-github"></i></a>
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
   <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
   <div class="quarto-reader-toggle-btn">
@@ -299,37 +293,55 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#lecture-01-introduction-to-experimental-design-august-27-2025" id="toc-lecture-01-introduction-to-experimental-design-august-27-2025" class="nav-link active" data-scroll-target="#lecture-01-introduction-to-experimental-design-august-27-2025">Lecture 01: Introduction to Experimental Design (August 27, 2025)</a></li>
-  <li><a href="#lecture-02-theories-and-experiments-september-3-2025" id="toc-lecture-02-theories-and-experiments-september-3-2025" class="nav-link" data-scroll-target="#lecture-02-theories-and-experiments-september-3-2025">Lecture 02: Theories and Experiments (September 3, 2025)</a></li>
-  <li><a href="#lecture-03-causal-inference-and-potential-outcomes-september-8-2025" id="toc-lecture-03-causal-inference-and-potential-outcomes-september-8-2025" class="nav-link" data-scroll-target="#lecture-03-causal-inference-and-potential-outcomes-september-8-2025">Lecture 03: Causal Inference and Potential Outcomes (September 8, 2025)</a></li>
-  <li><a href="#lecture-04-selection-bias-and-randomisation-september-10-2025" id="toc-lecture-04-selection-bias-and-randomisation-september-10-2025" class="nav-link" data-scroll-target="#lecture-04-selection-bias-and-randomisation-september-10-2025">Lecture 04: Selection Bias and Randomisation (September 10, 2025)</a></li>
-  <li><a href="#lecture-05-statistical-inference-for-randomised-experiments-september-15-2025" id="toc-lecture-05-statistical-inference-for-randomised-experiments-september-15-2025" class="nav-link" data-scroll-target="#lecture-05-statistical-inference-for-randomised-experiments-september-15-2025">Lecture 05: Statistical Inference for Randomised Experiments (September 15, 2025)</a>
+  <li><a href="#module-0-orientation" id="toc-module-0-orientation" class="nav-link active" data-scroll-target="#module-0-orientation">Module 0 — Orientation</a>
   <ul class="collapse">
-  <li><a href="#lecture-06-texts-for-discussion-september-17-2025" id="toc-lecture-06-texts-for-discussion-september-17-2025" class="nav-link" data-scroll-target="#lecture-06-texts-for-discussion-september-17-2025">Lecture 06: Texts for discussion (September 17, 2025)</a></li>
+  <li><a href="#lecture-1-course-introduction-what-ai-means-today" id="toc-lecture-1-course-introduction-what-ai-means-today" class="nav-link" data-scroll-target="#lecture-1-course-introduction-what-ai-means-today">Lecture 1 — Course introduction; what AI means today</a></li>
+  <li><a href="#lecture-2-a-brief-history-of-ai-and-the-recent-shift" id="toc-lecture-2-a-brief-history-of-ai-and-the-recent-shift" class="nav-link" data-scroll-target="#lecture-2-a-brief-history-of-ai-and-the-recent-shift">Lecture 2 — A brief history of AI and the recent shift</a></li>
   </ul></li>
-  <li><a href="#lecture-07-blocking-clustering-and-covariate-adjustment-september-22-2025" id="toc-lecture-07-blocking-clustering-and-covariate-adjustment-september-22-2025" class="nav-link" data-scroll-target="#lecture-07-blocking-clustering-and-covariate-adjustment-september-22-2025">Lecture 07: Blocking, Clustering, and Covariate Adjustment (September 22, 2025)</a></li>
-  <li><a href="#lecture-08-blocking-and-clustering-cont.-statistical-power-and-sample-calculations-september-24-2025" id="toc-lecture-08-blocking-and-clustering-cont.-statistical-power-and-sample-calculations-september-24-2025" class="nav-link" data-scroll-target="#lecture-08-blocking-and-clustering-cont.-statistical-power-and-sample-calculations-september-24-2025">Lecture 08: Blocking and Clustering (Cont.), Statistical Power, and Sample Calculations (September 24, 2025)</a></li>
-  <li><a href="#lecture-09-non-compliance-i-september-29-2025" id="toc-lecture-09-non-compliance-i-september-29-2025" class="nav-link" data-scroll-target="#lecture-09-non-compliance-i-september-29-2025">Lecture 09: Non-Compliance I (September 29, 2025)</a></li>
-  <li><a href="#lecture-10-non-compliance-ii-october-1-2025" id="toc-lecture-10-non-compliance-ii-october-1-2025" class="nav-link" data-scroll-target="#lecture-10-non-compliance-ii-october-1-2025">Lecture 10: Non-Compliance II (October 1, 2025)</a></li>
-  <li><a href="#lecture-11-attrition-and-missing-outcomes-october-6-2025" id="toc-lecture-11-attrition-and-missing-outcomes-october-6-2025" class="nav-link" data-scroll-target="#lecture-11-attrition-and-missing-outcomes-october-6-2025">Lecture 11: Attrition and Missing Outcomes (October 6, 2025)</a></li>
-  <li><a href="#lecture-12-ethical-considerations-in-experimental-research-october-8-2025" id="toc-lecture-12-ethical-considerations-in-experimental-research-october-8-2025" class="nav-link" data-scroll-target="#lecture-12-ethical-considerations-in-experimental-research-october-8-2025">Lecture 12: Ethical Considerations in Experimental Research (October 8, 2025)</a></li>
-  <li><a href="#lecture-13-introduction-to-quarto-and-declaredesign-october-15-2025" id="toc-lecture-13-introduction-to-quarto-and-declaredesign-october-15-2025" class="nav-link" data-scroll-target="#lecture-13-introduction-to-quarto-and-declaredesign-october-15-2025">Lecture 13: Introduction to Quarto and DeclareDesign (October 15, 2025)</a></li>
-  <li><a href="#lecture-14-writing-pre-analysis-plans-october-20-2025" id="toc-lecture-14-writing-pre-analysis-plans-october-20-2025" class="nav-link" data-scroll-target="#lecture-14-writing-pre-analysis-plans-october-20-2025">Lecture 14: Writing Pre-Analysis Plans (October 20, 2025)</a></li>
-  <li><a href="#lecture-15-when-experiments-are-not-possible-october-22-2025" id="toc-lecture-15-when-experiments-are-not-possible-october-22-2025" class="nav-link" data-scroll-target="#lecture-15-when-experiments-are-not-possible-october-22-2025">Lecture 15: When Experiments are Not Possible (October 22, 2025)</a></li>
-  <li><a href="#lecture-16-interference-in-experiments-october-27-2025" id="toc-lecture-16-interference-in-experiments-october-27-2025" class="nav-link" data-scroll-target="#lecture-16-interference-in-experiments-october-27-2025">Lecture 16: Interference in Experiments (October 27, 2025)</a></li>
-  <li><a href="#lecture-17-texts-for-discussion-october-29-2025" id="toc-lecture-17-texts-for-discussion-october-29-2025" class="nav-link" data-scroll-target="#lecture-17-texts-for-discussion-october-29-2025">Lecture 17: Texts for Discussion (October 29, 2025)</a></li>
-  <li><a href="#lecture-18-heterogeneous-treatment-effects-november-3-2025" id="toc-lecture-18-heterogeneous-treatment-effects-november-3-2025" class="nav-link" data-scroll-target="#lecture-18-heterogeneous-treatment-effects-november-3-2025">Lecture 18: Heterogeneous Treatment Effects (November 3, 2025)</a></li>
-  <li><a href="#lecture-19-texts-for-discussion-november-5-2025" id="toc-lecture-19-texts-for-discussion-november-5-2025" class="nav-link" data-scroll-target="#lecture-19-texts-for-discussion-november-5-2025">Lecture 19: Texts for Discussion (November 5, 2025)</a></li>
-  <li><a href="#lecture-20-mediation-analysis-november-10-2025" id="toc-lecture-20-mediation-analysis-november-10-2025" class="nav-link" data-scroll-target="#lecture-20-mediation-analysis-november-10-2025">Lecture 20: Mediation Analysis (November 10, 2025)</a></li>
-  <li><a href="#lecture-21-survey-experiments-november-12-2025" id="toc-lecture-21-survey-experiments-november-12-2025" class="nav-link" data-scroll-target="#lecture-21-survey-experiments-november-12-2025">Lecture 21: Survey Experiments (November 12, 2025)</a></li>
-  <li><a href="#lecture-22-survey-methods-for-sensitive-topics-november-17-2025" id="toc-lecture-22-survey-methods-for-sensitive-topics-november-17-2025" class="nav-link" data-scroll-target="#lecture-22-survey-methods-for-sensitive-topics-november-17-2025">Lecture 22: Survey Methods for Sensitive Topics (November 17, 2025)</a></li>
-  <li><a href="#lecture-23-texts-for-discussion-related-to-survey-experiments-november-19-2025" id="toc-lecture-23-texts-for-discussion-related-to-survey-experiments-november-19-2025" class="nav-link" data-scroll-target="#lecture-23-texts-for-discussion-related-to-survey-experiments-november-19-2025">Lecture 23: Texts for Discussion (Related to Survey Experiments) (November 19, 2025)</a></li>
-  <li><a href="#lecture-24-meta-analysis-and-integration-of-research-findings-november-24-2025" id="toc-lecture-24-meta-analysis-and-integration-of-research-findings-november-24-2025" class="nav-link" data-scroll-target="#lecture-24-meta-analysis-and-integration-of-research-findings-november-24-2025">Lecture 24: Meta-Analysis and Integration of Research Findings (November 24, 2025)</a></li>
-  <li><a href="#lecture-25-course-revision-december-1-2025" id="toc-lecture-25-course-revision-december-1-2025" class="nav-link" data-scroll-target="#lecture-25-course-revision-december-1-2025">Lecture 25: Course Revision (December 1, 2025)</a></li>
-  <li><a href="#lecture-26-presentations-december-3-2025" id="toc-lecture-26-presentations-december-3-2025" class="nav-link" data-scroll-target="#lecture-26-presentations-december-3-2025">Lecture 26: Presentations (December 3, 2025)</a></li>
-  <li><a href="#lecture-27-presentations-december-8-2025" id="toc-lecture-27-presentations-december-8-2025" class="nav-link" data-scroll-target="#lecture-27-presentations-december-8-2025">Lecture 27: Presentations (December 8, 2025)</a></li>
+  <li><a href="#module-1-how-ai-systems-are-designed" id="toc-module-1-how-ai-systems-are-designed" class="nav-link" data-scroll-target="#module-1-how-ai-systems-are-designed">Module 1 — How AI systems are designed</a>
+  <ul class="collapse">
+  <li><a href="#lecture-3-dataset-design-labels-and-tasks" id="toc-lecture-3-dataset-design-labels-and-tasks" class="nav-link" data-scroll-target="#lecture-3-dataset-design-labels-and-tasks">Lecture 3 — Dataset design, labels, and tasks</a></li>
+  <li><a href="#lecture-4-supervised-unsupervised-and-hybrid-approaches-to-learning" id="toc-lecture-4-supervised-unsupervised-and-hybrid-approaches-to-learning" class="nav-link" data-scroll-target="#lecture-4-supervised-unsupervised-and-hybrid-approaches-to-learning">Lecture 4 — Supervised, unsupervised, and hybrid approaches to learning</a></li>
+  <li><a href="#lecture-5-metrics-validation-and-overfitting" id="toc-lecture-5-metrics-validation-and-overfitting" class="nav-link" data-scroll-target="#lecture-5-metrics-validation-and-overfitting">Lecture 5 — Metrics, validation and overfitting</a></li>
+  <li><a href="#lecture-6-quiz-1" id="toc-lecture-6-quiz-1" class="nav-link" data-scroll-target="#lecture-6-quiz-1">Lecture 6 — Quiz 1</a></li>
+  </ul></li>
+  <li><a href="#module-2-language-and-perception" id="toc-module-2-language-and-perception" class="nav-link" data-scroll-target="#module-2-language-and-perception">Module 2 — Language and perception</a>
+  <ul class="collapse">
+  <li><a href="#lecture-7-how-machines-handle-language-tokens-embeddings-and-context" id="toc-lecture-7-how-machines-handle-language-tokens-embeddings-and-context" class="nav-link" data-scroll-target="#lecture-7-how-machines-handle-language-tokens-embeddings-and-context">Lecture 7 — How machines handle language: tokens, embeddings and context</a></li>
+  <li><a href="#lecture-8-how-machines-analyse-images-and-audio" id="toc-lecture-8-how-machines-analyse-images-and-audio" class="nav-link" data-scroll-target="#lecture-8-how-machines-analyse-images-and-audio">Lecture 8 — How machines analyse images and audio</a></li>
+  <li><a href="#lecture-9-behavioural-testing-examples-and-demonstrations" id="toc-lecture-9-behavioural-testing-examples-and-demonstrations" class="nav-link" data-scroll-target="#lecture-9-behavioural-testing-examples-and-demonstrations">Lecture 9 — Behavioural testing: examples and demonstrations</a></li>
+  <li><a href="#lecture-10-quiz-2" id="toc-lecture-10-quiz-2" class="nav-link" data-scroll-target="#lecture-10-quiz-2">Lecture 10 — Quiz 2</a></li>
+  </ul></li>
+  <li><a href="#module-3-retrieval-generation-and-pipelines" id="toc-module-3-retrieval-generation-and-pipelines" class="nav-link" data-scroll-target="#module-3-retrieval-generation-and-pipelines">Module 3 — Retrieval, generation and pipelines</a>
+  <ul class="collapse">
+  <li><a href="#lecture-11-retrieval-augmented-workflows-and-semantic-search" id="toc-lecture-11-retrieval-augmented-workflows-and-semantic-search" class="nav-link" data-scroll-target="#lecture-11-retrieval-augmented-workflows-and-semantic-search">Lecture 11 — Retrieval-augmented workflows and semantic search</a></li>
+  <li><a href="#lecture-12-creativity-and-hallucination" id="toc-lecture-12-creativity-and-hallucination" class="nav-link" data-scroll-target="#lecture-12-creativity-and-hallucination">Lecture 12 — Creativity and hallucination</a></li>
+  <li><a href="#lecture-13-building-reliable-pipelines-monitoring-and-testing" id="toc-lecture-13-building-reliable-pipelines-monitoring-and-testing" class="nav-link" data-scroll-target="#lecture-13-building-reliable-pipelines-monitoring-and-testing">Lecture 13 — Building reliable pipelines: monitoring and testing</a></li>
+  <li><a href="#lecture-14-quiz-3" id="toc-lecture-14-quiz-3" class="nav-link" data-scroll-target="#lecture-14-quiz-3">Lecture 14 — Quiz 3</a></li>
+  </ul></li>
+  <li><a href="#module-4-data-ethics-and-bias" id="toc-module-4-data-ethics-and-bias" class="nav-link" data-scroll-target="#module-4-data-ethics-and-bias">Module 4 — Data ethics and bias</a>
+  <ul class="collapse">
+  <li><a href="#lecture-15-types-of-bias-and-how-they-arise" id="toc-lecture-15-types-of-bias-and-how-they-arise" class="nav-link" data-scroll-target="#lecture-15-types-of-bias-and-how-they-arise">Lecture 15 — Types of bias and how they arise</a></li>
+  <li><a href="#lecture-16-documentation-and-dataset-governance" id="toc-lecture-16-documentation-and-dataset-governance" class="nav-link" data-scroll-target="#lecture-16-documentation-and-dataset-governance">Lecture 16 — Documentation and dataset governance</a></li>
+  <li><a href="#lecture-17-case-studies-biased-outcomes-in-health-hiring-and-policing" id="toc-lecture-17-case-studies-biased-outcomes-in-health-hiring-and-policing" class="nav-link" data-scroll-target="#lecture-17-case-studies-biased-outcomes-in-health-hiring-and-policing">Lecture 17 — Case studies: biased outcomes in health, hiring and policing</a></li>
+  <li><a href="#lecture-18-quiz-4" id="toc-lecture-18-quiz-4" class="nav-link" data-scroll-target="#lecture-18-quiz-4">Lecture 18 — Quiz 4</a></li>
+  </ul></li>
+  <li><a href="#module-5-policy-governance-and-social-impact" id="toc-module-5-policy-governance-and-social-impact" class="nav-link" data-scroll-target="#module-5-policy-governance-and-social-impact">Module 5 — Policy, governance and social impact</a>
+  <ul class="collapse">
+  <li><a href="#lecture-19-ai-regulation-and-standards-around-the-world" id="toc-lecture-19-ai-regulation-and-standards-around-the-world" class="nav-link" data-scroll-target="#lecture-19-ai-regulation-and-standards-around-the-world">Lecture 19 — AI regulation and standards around the world</a></li>
+  <li><a href="#lecture-20-privacy-and-data-protection" id="toc-lecture-20-privacy-and-data-protection" class="nav-link" data-scroll-target="#lecture-20-privacy-and-data-protection">Lecture 20 — Privacy and data protection</a></li>
+  <li><a href="#lecture-21-labour-markets-and-economic-effects" id="toc-lecture-21-labour-markets-and-economic-effects" class="nav-link" data-scroll-target="#lecture-21-labour-markets-and-economic-effects">Lecture 21 — Labour markets and economic effects</a></li>
+  <li><a href="#lecture-22-quiz-5" id="toc-lecture-22-quiz-5" class="nav-link" data-scroll-target="#lecture-22-quiz-5">Lecture 22 — Quiz 5</a></li>
+  </ul></li>
+  <li><a href="#module-6-applications-limits-and-projects" id="toc-module-6-applications-limits-and-projects" class="nav-link" data-scroll-target="#module-6-applications-limits-and-projects">Module 6 — Applications, limits and projects</a>
+  <ul class="collapse">
+  <li><a href="#lecture-23-ai-in-health-education-and-public-services" id="toc-lecture-23-ai-in-health-education-and-public-services" class="nav-link" data-scroll-target="#lecture-23-ai-in-health-education-and-public-services">Lecture 23 — AI in health, education and public services</a></li>
+  <li><a href="#lecture-24-misinformation-deepfakes-and-trust-online" id="toc-lecture-24-misinformation-deepfakes-and-trust-online" class="nav-link" data-scroll-target="#lecture-24-misinformation-deepfakes-and-trust-online">Lecture 24 — Misinformation, deepfakes and trust online</a></li>
+  <li><a href="#lecture-25-course-revision" id="toc-lecture-25-course-revision" class="nav-link" data-scroll-target="#lecture-25-course-revision">Lecture 25 — Course revision</a></li>
+  <li><a href="#lecture-26-project-work" id="toc-lecture-26-project-work" class="nav-link" data-scroll-target="#lecture-26-project-work">Lecture 26 — Project work</a></li>
+  </ul></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/danilofreire/datasci385/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li><li><a href="https://github.com/danilofreire/datasci385/blob/gh-pages/lectures.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/danilofreire/datasci185/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li><li><a href="https://github.com/danilofreire/datasci185/blob/gh-pages/lectures.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -355,389 +367,282 @@ ul.task-list li input[type="checkbox"] {
 
 
 <p>Please find below the schedule of our lectures. Each lecture includes a brief description, required readings, and suggested readings for further exploration. The lecture slides and additional resources will be posted on the course website and GitHub repository. Please remember that the schedule may change during the course. If you have any questions or need further assistance, please let me know!</p>
-<section id="lecture-01-introduction-to-experimental-design-august-27-2025" class="level2">
-<h2 class="anchored" data-anchor-id="lecture-01-introduction-to-experimental-design-august-27-2025">Lecture 01: Introduction to Experimental Design (August 27, 2025)</h2>
-<p>Required readings:</p>
+<section id="module-0-orientation" class="level2">
+<h2 class="anchored" data-anchor-id="module-0-orientation">Module 0 — Orientation</h2>
+<section id="lecture-1-course-introduction-what-ai-means-today" class="level3">
+<h3 class="anchored" data-anchor-id="lecture-1-course-introduction-what-ai-means-today">Lecture 1 — Course introduction; what AI means today</h3>
+<p>Syllabus, assessment, expectations. A factual tour of AI in products and media and the questions we will address.</p>
+<p>Readings:</p>
 <ul>
-<li>Syllabus and course website: <a href="http://danilofreire.github.io/datasci385" class="uri">http://danilofreire.github.io/datasci385</a>.</li>
-<li>GitHub repository: <a href="https://github.com/danilofreire/datasci385" class="uri">https://github.com/danilofreire/datasci385</a>.</li>
-<li>Lecture slides: <a href="https://raw.githack.com/danilofreire/datasci385/main/lectures/lecture-01/01-introduction.html">Welcome to QTM 385: Introduction / Why Experiments?</a></li>
-<li>FEDAI: Chapter 01: Introduction.</li>
-</ul>
-<p>Suggested readings:</p>
-<ul>
-<li>Humphreys, M. (2021). <a href="https://macartan.github.io/i/notes/rct_faqs.html">I saw your RCT and I have some worries! FAQs</a>. An informal collection of questions and answers about RCTs.</li>
-<li>Mize, T. D., &amp; Manago, B. (2022). <a href="https://doi.org/10.1016/j.ssresearch.2022.102799">The Past, Present, and Future of Experimental Methods in the Social Sciences</a>. Social Science Research, 108, 1-24.</li>
-<li>Jackson, M., &amp; Cox, D. R. (2013). <a href="https://doi.org/10.1146/annurev-soc-071811-145443">The Principles of Experimental Design and Their Application in Sociology</a>. Annual Review of Sociology, 39(1), 27-49.</li>
-<li>Hernán, M. A. (2018). <a href="https://ajph.aphapublications.org/doi/full/10.2105/AJPH.2018.304337">The C-Word: Scientific Euphemisms Do Not Improve Causal Inference from Observational Data</a>. American Journal of Public Health, 108(5), 616-619.</li>
-<li>Bothwell, L. E., Greene, J. A., Podolsky, S. H., &amp; Jones, D. S. (2016). <a href="https://www.nejm.org/doi/full/10.1056/nejmms1604593">Assessing the Gold Standard — Lessons from the History of RCTs</a>. New England Journal of Medicine, 374(22), 2175-2181</li>
-<li>de Kadt, D. &amp; Grzysmala-Busse, A. (2025). <a href="https://github.com/ddekadt/good_description/tree/main">Good Description</a>. Working paper..</li>
-<li>Deaton, A., &amp; Cartwright, N. (2018). <a href="https://www.sciencedirect.com/science/article/pii/S0277953617307359">Understanding and Misunderstanding Randomized Controlled Trials</a>. Social Science &amp; Medicine 210, 2-21.</li>
+<li>Stanford University’s Human-Centered Artificial Intelligence (2025). <a href="https://hai.stanford.edu/ai-index/2025-ai-index-report">AI Index Annual Report</a>. An excellent report on the state of AI, with many useful charts and references.</li>
+<li>Our World in Data (2025). <a href="https://ourworldindata.org/artificial-intelligence">Artificial intelligence</a>. A concise overview of AI trends and applications, with links to further resources.</li>
+<li>Menlo Ventures (2025). <a href="https://menlovc.com/perspective/2025-the-state-of-consumer-ai/">2025: the state of consumer AI</a>. How AI is being used in consumer products, with examples and market data.</li>
+<li>Morgan Stanley (2025). <a href="https://www.morganstanley.com/insights/articles/ai-trends-reasoning-frontier-models-2025-tmt">AI’s next leap: 5 trends shaping innovation and ROI</a>. A short text on the current state of AI applications in industry.</li>
+<li>McKinsey &amp; Company (2025). <a href="https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai">The state of AI: how organizations are rewiring to capture value</a>. A business-focused overview of AI adoption and impact.</li>
 </ul>
 </section>
-<section id="lecture-02-theories-and-experiments-september-3-2025" class="level2">
-<h2 class="anchored" data-anchor-id="lecture-02-theories-and-experiments-september-3-2025">Lecture 02: Theories and Experiments (September 3, 2025)</h2>
-<p>Required readings:</p>
+<section id="lecture-2-a-brief-history-of-ai-and-the-recent-shift" class="level3">
+<h3 class="anchored" data-anchor-id="lecture-2-a-brief-history-of-ai-and-the-recent-shift">Lecture 2 — A brief history of AI and the recent shift</h3>
+<p>From symbolic approaches to data-driven learning; the transformer architecture explained in plain language.</p>
+<p>Readings:</p>
 <ul>
-<li>Lecture slides: <a href="https://raw.githack.com/danilofreire/datasci385/main/lectures/lecture-02/02-design.html">The Research Design Process: Testing Theories with Experiments</a>.</li>
-<li>Card, D., DellaVigna, S., &amp; Malmendier, U. (2011). <a href="https://pubs.aeaweb.org/doi/pdf/10.1257%2Fjep.25.3.39">The Role of Theory in Field Experiments</a>. Journal of Economic Perspectives, 25(3), 39-62.</li>
-<li>Blair, G., Cooper, J., Coppock, A., &amp; Humphreys, M. (2019). <a href="https://doi.org/10.1017/S0003055419000194">Declaring and Diagnosing Research Designs</a>. American Political Science Review, 113(3), 838-859.</li>
-<li><a href="https://github.com/danilofreire/datasci385/blob/main/assignments/01-assignment">Problem Set 01 assigned</a>.</li>
-</ul>
-<p>Suggested readings:</p>
-<ul>
-<li>Brutger, R., Kertzer, J. D., Renshon, J., Tingley, D., &amp; Weiss, C. M. (2023). <a href="https://onlinelibrary.wiley.com/doi/abs/10.1111/ajps.12710">Abstraction and Detail in Experimental Design</a>. American Journal of Political Science, 67(4), 979-995.</li>
-<li>Peterson, J. C., Bourgin, D. D., Agrawal, M., Reichman, D., &amp; Griffiths, T. L. (2021). <a href="https://www.science.org/doi/full/10.1126/science.abe2629">Using Large-Scale Experiments and Machine Learning to Discover Theories of Human Decision-Making</a>. Science, 372(6547), 1209-1214.</li>
-<li>Smith, V. L. (2010). <a href="https://www.sciencedirect.com/science/article/abs/pii/S016726810900033X">Theory and Experiment: What Are the Questions?</a>. Journal of Economic Behavior &amp; Organization, 73(1), 3-15.</li>
-<li>van Rooij, I., &amp; Baggio, G. (2021). <a href="https://journals.sagepub.com/doi/full/10.1177/1745691620970604">Theory Before the Test: How to Build High-Verisimilitude Explanatory Theories in Psychological Science</a>. Perspectives on Psychological Science, 16(4), 682-697.</li>
-</ul>
-</section>
-<section id="lecture-03-causal-inference-and-potential-outcomes-september-8-2025" class="level2">
-<h2 class="anchored" data-anchor-id="lecture-03-causal-inference-and-potential-outcomes-september-8-2025">Lecture 03: Causal Inference and Potential Outcomes (September 8, 2025)</h2>
-<p>Required readings:</p>
-<ul>
-<li>Lecture slides: <a href="https://raw.githack.com/danilofreire/datasci385/main/lectures/lecture-03/03-potential-outcomes.html">Potential Outcomes Framework</a>.</li>
-<li>FEDAI: Chapter 02: Causal Inference and Experimentation.</li>
-<li>Rubin, D. B. (2005). <a href="https://www.tandfonline.com/doi/abs/10.1198/016214504000001880">Causal Inference using Potential Outcomes: Design, Modeling, Decisions</a>. Journal of the American Statistical Association, 100(469), 322-331.</li>
-<li><a href="https://play.kahoot.it/v2/?quizId=c6a69c01-0bb4-4e2a-aca1-60e0f11fdb5b&amp;hostId=05eb977d-4f8a-440e-9e45-95212b29d103">Kahoot Quiz</a></li>
-</ul>
-</section>
-<section id="lecture-04-selection-bias-and-randomisation-september-10-2025" class="level2">
-<h2 class="anchored" data-anchor-id="lecture-04-selection-bias-and-randomisation-september-10-2025">Lecture 04: Selection Bias and Randomisation (September 10, 2025)</h2>
-<p>Required readings:</p>
-<ul>
-<li>Lecture slides: <a href="https://raw.githack.com/danilofreire/datasci385/main/lectures/lecture-04/04-selection-bias.html">Potential Outcomes Continued and Regression Analysis</a>.</li>
-<li>Angrist, J. D., &amp; Pischke, J. S. (2014). <a href="https://assets.press.princeton.edu/chapters/s10363.pdf">Mastering ’Metrics: The Path from Cause to Effect</a>. Princeton University Press. Chapter 01: Randomized Trials. The appendix is also worth reading.</li>
-<li><a href="https://play.kahoot.it/v2/?quizId=8fba8529-e672-4116-8a74-23f78df26cb1&amp;hostId=05eb977d-4f8a-440e-9e45-95212b29d103">Kahoot Quiz</a></li>
-<li>Problem Set 01 due.</li>
-<li><a href="https://github.com/danilofreire/datasci385/blob/main/assignments/02-assignment">Problem Set 02 assigned</a>.</li>
-</ul>
-<p>Suggested readings:</p>
-<ul>
-<li>Imbens, G. W., &amp; Rubin, D. B. (2015). <a href="https://www.cambridge.org/core/books/causal-inference-for-statistics-social-and-biomedical-sciences/71126BE90C58F1A431FE9B2DD07938AB">Causal Inference for Statistics, Social, and Biomedical Sciences: An Introduction</a>. Cambridge University Press. Part I - Introduction.</li>
-<li>Hernán, M. A., Hernández-Díaz, S., &amp; Robins, J. M. (2004). <a href="https://pubmed.ncbi.nlm.nih.gov/15308962/">A Structural Approach to Selection Bias</a>. Epidemiology, 15(5), 615-625.</li>
-<li>Hernán M.A.&nbsp;&amp; Robins J.M. (2020). <a href="https://miguelhernan.org/whatifbook">Causal Inference: What If</a>. Boca Raton: Chapman &amp; Hall/CRC. Chapters 6-10. Maths-heavy but very insightful.</li>
-<li>Morgan, S. L., &amp; Winship, C. (2015). <a href="https://www.cambridge.org/core/books/counterfactuals-and-causal-inference/5CC81E6DF63C5E5A8B88F79D45E1D1B7">Counterfactuals and Causal Inference: Methods and Principles for Social Research</a>. Cambridge University Press. Chapter 02: Counterfactuals and Potential Outcomes Model.</li>
-</ul>
-</section>
-<section id="lecture-05-statistical-inference-for-randomised-experiments-september-15-2025" class="level2">
-<h2 class="anchored" data-anchor-id="lecture-05-statistical-inference-for-randomised-experiments-september-15-2025">Lecture 05: Statistical Inference for Randomised Experiments (September 15, 2025)</h2>
-<ul>
-<li>Lecture slides: <a href="https://raw.githack.com/danilofreire/datasci385/main/lectures/lecture-05/05-hypothesis-testing.html">Sampling Distributions, Statistical Inference, and Hypothesis Testing</a>.</li>
-<li>FEDAI: Chapter 03: Sampling Distributions, Statistical Inference, and Hypothesis Testing (up to section 3.5).</li>
-<li>EGAP Methods Guides: <a href="https://egap.org/resource/10-things-to-know-about-hypothesis-testing/">Hypothesis Testing</a>, <a href="https://egap.org/resource/10-things-to-know-about-randomization-inference/">Randomisation Inference</a>, and <a href="https://egap.org/resource/10-things-to-know-about-cluster-randomization/">Cluster Randomisation</a>. These short guides provide a good overview of the topics we will cover in class, as well as example code in <code>R</code>.</li>
-<li><a href="https://play.kahoot.it/v2/?quizId=2ff88efc-8164-446d-a088-bcd4d4fe5313&amp;hostId=05eb977d-4f8a-440e-9e45-95212b29d103">Kahoot Quiz</a>.</li>
-</ul>
-<p>Suggested readings:</p>
-<ul>
-<li>Imbens, G. W., &amp; Rubin, D. B. (2015). <a href="https://www.cambridge.org/core/books/causal-inference-for-statistics-social-and-biomedical-sciences/71126BE90C58F1A431FE9B2DD07938AB">Causal Inference for Statistics, Social, and Biomedical Sciences: An Introduction</a>. Cambridge University Press. Part II - Randomised Experiments.</li>
-<li>Athey, S., &amp; Imbens, G. W. (2017). <a href="https://arxiv.org/pdf/1607.00698">The Econometrics of Randomized Experiments</a>. In Handbook of economic field experiments (Vol. 1, pp.&nbsp;73-140). North-Holland. Read section 4, although the entire chapter is worth reading.</li>
-<li>Berry, C. R., &amp; Fowler, A. (2021). <a href="https://www.science.org/doi/full/10.1126/sciadv.abe3404">Leadership or Luck? Randomization Inference for Leader Effects in Politics, Business, and Sports</a>. Science Advances, 7(4), eabe3404.</li>
-<li>Caughey, D., Dafoe, A., Li, X., &amp; Miratrix, L. (2023). <a href="https://academic.oup.com/jrsssb/article-abstract/85/5/1471/7246293?login=false">Randomisation Inference Beyond the Sharp Null: Bounded Null Hypotheses and Quantiles of Individual Treatment Effects</a>. Journal of the Royal Statistical Society Series B: Statistical Methodology, 85(5), 1471-1491.</li>
-<li>Ritzwoller, D. M., Romano, J. P., &amp; Shaikh, A. M. (2025). <a href="https://arxiv.org/abs/2406.09521">Randomization Inference: Theory and Applications</a>. arXiv preprint arXiv:2406.09521. <em>Very technical</em>, recommended for maths or statistics enthusiasts.</li>
-</ul>
-<section id="lecture-06-texts-for-discussion-september-17-2025" class="level3">
-<h3 class="anchored" data-anchor-id="lecture-06-texts-for-discussion-september-17-2025">Lecture 06: Texts for discussion (September 17, 2025)</h3>
-<ul>
-<li>Lecture slides: <a href="https://raw.githack.com/danilofreire/datasci385/main/lectures/lecture-06/06-discussion.html">Texts for Discussion</a>.</li>
-<li>Kalla, J. &amp; D. Broockman. 2016. <a href="https://onlinelibrary.wiley.com/doi/full/10.1111/ajps.12180">Campaign Contributions Facilitate Access to Congressional Officials: A Randomized Field Experiment</a>. American Journal of Political Science, 60(3): 545–558</li>
-<li>Bertrand, M., &amp; Mullainathan, S. (2004). <a href="https://www.aeaweb.org/articles?id=10.1257%2F0002828042002561&amp;ref=exo-insight">Are Emily and Greg More Employable than Lakisha and Jamal? A Field Experiment on Labor Market Discrimination</a>. American Economic Review, 94(4), 991-1013.</li>
-<li>Chattopadhyay, R., &amp; Duflo, E. (2004). <a href="https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1468-0262.2004.00539.x">Women as Policy Makers: Evidence from a Randomized Policy Experiment in India</a>. Econometrica, 72(5), 1409-1443. (<em>if time allows</em>)</li>
-<li>Problem Set 02 due.</li>
-<li><a href="https://github.com/danilofreire/datasci385/tree/main/assignments/03-assignment">Problem Set 03 assigned</a>.</li>
+<li>Dick, S. (2019). <a href="https://doi.org/10.1162/99608f92.92fe150c">Artificial intelligence.</a> <em>Harvard Data Science Review</em>, <em>1</em>(1). A brief history of AI research and applications. Written for a general audience.</li>
+<li>Grzybowski, A., Pawlikowska–Łagód, K., &amp; Lambert, W. C. (2024). <a href="https://doi.org/10.1016/j.clindermatol.2023.12.016">A history of artificial intelligence.</a> <em>Clinics in Dermatology</em>, <em>42</em>(3), 221-229. A “pre-history” overview, focusing on early ideas and milestones.</li>
+<li>Cao, Y., Liu, L., Li, M., Huang, Y., &amp; Li, S. (2023). <a href="https://arxiv.org/abs/2303.04226">A comprehensive survey of AI-generated content (AIGC): A history of generative AI from GAN to ChatGPT.</a> <em>arXiv preprint</em>. A somewhat technical but comprehensive overview of generative AI methods.</li>
+<li>Halevy, A., Norvig, P., &amp; Pereira, F. (2009). <a href="https://static.googleusercontent.com/media/research.google.com/en//pubs/archive/35179.pdf">The unreasonable effectiveness of data.</a> <em>IEEE Intelligent Systems</em>, <em>24</em>(2), 8-12. A classic paper arguing that large datasets are often more important than sophisticated algorithms.</li>
+<li>Pradhan, M. (2023). <a href="https://medium.com/healthcare-ai-sig/a-non-technical-introduction-to-transformers-6ca36b8246d">A non-technical introduction to Transformers.</a> A clear explanation of the transformer architecture that underpins many modern AI systems.</li>
+<li>Doshi, K. (2025). <a href="https://towardsdatascience.com/transformers-explained-visually-part-1-overview-of-functionality-95a6dd460452/">Transformers explained visually, part 1: overview of functionality.</a> Another explanation of transformers, with diagrams.</li>
+<li>Horstman, M. (2024). <a href="https://michielh.medium.com/transformers-unleashed-the-neural-architecture-powering-modern-ai-and-language-models-57626643fd49">Transformers for dummies: a peek inside AI models.</a> <em>Yet another</em> explanation of transformers. This one is a little more technical.</li>
+<li>Georgia Tech’s Polo Club of Data Science (2025). <a href="https://poloclub.github.io/transformer-explainer/">Transformer explainer.</a> An interactive visualisation of how transformers work.</li>
 </ul>
 </section>
 </section>
-<section id="lecture-07-blocking-clustering-and-covariate-adjustment-september-22-2025" class="level2">
-<h2 class="anchored" data-anchor-id="lecture-07-blocking-clustering-and-covariate-adjustment-september-22-2025">Lecture 07: Blocking, Clustering, and Covariate Adjustment (September 22, 2025)</h2>
+<section id="module-1-how-ai-systems-are-designed" class="level2">
+<h2 class="anchored" data-anchor-id="module-1-how-ai-systems-are-designed">Module 1 — How AI systems are designed</h2>
+<section id="lecture-3-dataset-design-labels-and-tasks" class="level3">
+<h3 class="anchored" data-anchor-id="lecture-3-dataset-design-labels-and-tasks">Lecture 3 — Dataset design, labels, and tasks</h3>
+<p>What data are, how tasks are framed, and common pitfalls in dataset design.</p>
+<p>Readings:</p>
 <ul>
-<li>Lecture slides: <a href="https://raw.githack.com/danilofreire/datasci385/main/lectures/lecture-07/07-blocking.html">Blocking and Clustering</a>.</li>
-<li>FEDAI: Section 3.6: Sampling Distributions for Experiments That Use Block or Cluster Random Assignment.</li>
-<li>FEDAI: Chapter 04: Using Covariates in Experimental Design and Analysis.</li>
+<li>Athalye, A., Northcutt, C., &amp; Mueller, J. (2024). <a href="https://dcai.csail.mit.edu/2024/dataset-creation-curation/">Dataset creation and curation</a> in <em>Data-Centric AI</em>. A chapter from a forthcoming book on data-centric AI, covering the main ideas in dataset design.</li>
+<li>Sapien Labs. (2024). <a href="https://www.sapien.io/blog/labeling-data-for-machine-learning-best-practices-and-quality-control">Labeling data for machine learning: best practices and quality control.</a> A practical guide to data labeling, with tips and common pitfalls.</li>
+<li>Liang, W., Tadesse, G. A., Ho, D., Fei-Fei, L., Zaharia, M., Zhang, C., &amp; Zou, J. (2022). <a href="https://www.nature.com/articles/s42256-022-00516-1">Advances, challenges and opportunities in creating data for trustworthy AI.</a> <em>Nature Machine Intelligence</em>, 4(8), 669-677. A good discussion on the challenges of creating high-quality datasets.</li>
+<li>Orr, W., &amp; Crawford, K. (2024). <a href="https://journals.sagepub.com/doi/abs/10.1177/14614448241251797">The social construction of datasets: on the practices, processes, and challenges of dataset creation for machine learning.</a> <em>New Media &amp; Society</em>, 26(9), 4955-4972. A sociological perspective on dataset creation, with interviews with practitioners.</li>
+<li>Nazer, L. H., Zatarah, R., Waldrip, S., Ke, J. X. C., Moukheiber, M., Khanna, A. K., … &amp; Mathur, P. (2023). <a href="https://journals.plos.org/digitalhealth/article?id=10.1371/journal.pdig.0000278">Bias in artificial intelligence algorithms and recommendations for mitigation.</a> <em>PLOS Digital Health</em>, 2(6), e0000278. A review of different types of bias that can arise in datasets and what to do about them. Focused on healthcare but broadly applicable.</li>
 </ul>
 </section>
-<section id="lecture-08-blocking-and-clustering-cont.-statistical-power-and-sample-calculations-september-24-2025" class="level2">
-<h2 class="anchored" data-anchor-id="lecture-08-blocking-and-clustering-cont.-statistical-power-and-sample-calculations-september-24-2025">Lecture 08: Blocking and Clustering (Cont.), Statistical Power, and Sample Calculations (September 24, 2025)</h2>
+<section id="lecture-4-supervised-unsupervised-and-hybrid-approaches-to-learning" class="level3">
+<h3 class="anchored" data-anchor-id="lecture-4-supervised-unsupervised-and-hybrid-approaches-to-learning">Lecture 4 — Supervised, unsupervised, and hybrid approaches to learning</h3>
+<p>What learning means and why generalisation is difficult.</p>
+<p>Readings:</p>
 <ul>
-<li>Lecture slides: <a href="https://raw.githack.com/danilofreire/datasci385/main/lectures/lecture-08/08-power.html">Blocking and Clustering (Cont.), Statistical Power, and Sample Calculations</a>.</li>
-<li>FEDAI Appendix 3.1 on Power</li>
-<li><a href="https://egap.org/resource/10-things-to-know-about-statistical-power/">EGAP Methods Guide on Power Calculations</a>.</li>
-<li>Problem Set 03 due.</li>
-<li><a href="https://github.com/danilofreire/datasci385/tree/main/assignments/04-assignment">Problem Set 04 assigned</a>.</li>
-</ul>
-<p>Suggested readings:</p>
-<ul>
-<li>Blair, G., Coppock, A., &amp; Humphreys, M. (2023). <a href="https://book.declaredesign.org/library/experimental-causal.html#block-randomized-experiments">Research Design in the Social Sciences</a>. Princeton University Press. Sections 18.2 and 18.3.</li>
-<li>Rainey, C. (2025). <a href="https://doi.org/10.31219/osf.io/5am9q_v2">Power Rules: Practical Advice for Computing Power (and Automating with Pilot Data)</a>. OSF Preprints. Note: This is a useful guide for power calculations without the need for complex maths. Not peer-reviewed yet.</li>
-<li>Zhang, X. &amp; Hartmann, P. (2023). <a href="https://www.frontiersin.org/journals/medicine/articles/10.3389/fmed.2023.1215927">How to Calculate Sample Size in Animal and Human Studies</a>. Frontiers in Medicine, 10.</li>
-<li>Bowers, J. <a href="https://egap.org/resource/10-things-to-know-about-cluster-randomization/">10 Things to Know About Cluster Randomization</a>.</li>
-<li>Kaltenbach, H-M. (2021). <a href="https://n.ethz.ch/~kahans/doe2021/">Statistical Design and Analysis of Biological Experiments</a>. Chapter 7: Improving Precision and Power: Blocked Designs.</li>
-<li>Imai, K., King, G., &amp; Nall, C. (2009). <a href="https://projecteuclid.org/journalArticle/Download?urlId=10.1214%2F08-STS274">The Essential Role of Pair Matching in Cluster-Randomized Experiments, with Application to the Mexican Universal Health Insurance Evaluation</a>. Statistical Science, 29-53.</li>
-<li>R Psychology. (2023). <a href="https://rpsychologist.com/d3/nhst/">Understanding Statistical Power and Significance Testing</a>. A comprehensive guide to power analysis in <code>R</code>.</li>
-<li>EGAP: <a href="https://egap.shinyapps.io/power-app/">Power Calculator</a>. An interactive tool to calculate power for your experiments.</li>
-<li>Pek, J., Hoisington-Shaw, K. J., &amp; Wegener, D. T. (2024). <a href="https://psycnet.apa.org/doi/10.1037/met0000577">Uses of Uncertain Statistical Power: Designing Future Studies, Not Evaluating Completed Studies</a>. Psychological Methods.</li>
-<li>Li, X., &amp; Ding, P. (2020). <a href="https://doi.org/10.1111/rssb.12353">Rerandomization and Regression Adjustment</a>. Journal of the Royal Statistical Society Series B: Statistical Methodology, 82(1), 241-268.</li>
+<li>Amazon Web Services (2025). <a href="https://aws.amazon.com/compare/the-difference-between-machine-learning-supervised-and-unsupervised/">What is the difference between supervised and unsupervised learning?</a> A practical overview of supervised and unsupervised learning, with examples.</li>
+<li>Lee, F. (2025). <a href="https://www.ibm.com/think/topics/bias-variance-tradeoff">What is bias-variance tradeoff?</a> An explanation of a key concept in machine learning. It has some formulas but the main ideas are easy to grasp.</li>
+<li>Goodfellow, I., Bengio, Y., &amp; Courville, A. (2016). <a href="https://www.deeplearningbook.org/contents/ml.html">Chapter 5: Machine learning basics</a> in <em>Deep Learning</em>. A technical but clear introduction to the main ideas behind machine learning.</li>
+<li>Elsevier (2025). <a href="https://www.sciencedirect.com/topics/computer-science/supervised-learning">Science direct: supervised learning.</a> A short introduction to supervised learning, with links to further readings.</li>
+<li>Elsevier (2025). <a href="https://www.sciencedirect.com/topics/computer-science/unsupervised-learning">Science direct: unsupervised learning.</a> Same as above, but for unsupervised learning.</li>
 </ul>
 </section>
-<section id="lecture-09-non-compliance-i-september-29-2025" class="level2">
-<h2 class="anchored" data-anchor-id="lecture-09-non-compliance-i-september-29-2025">Lecture 09: Non-Compliance I (September 29, 2025)</h2>
+<section id="lecture-5-metrics-validation-and-overfitting" class="level3">
+<h3 class="anchored" data-anchor-id="lecture-5-metrics-validation-and-overfitting">Lecture 5 — Metrics, validation and overfitting</h3>
+<p>Confusion matrices, precision and recall, cross-validation and the limits of single-number metrics.</p>
+<p>Readings:</p>
 <ul>
-<li>Lecture slides: <a href="https://raw.githack.com/danilofreire/datasci385/main/lectures/lecture-09/09-non-compliance1.html">Non-Compliance I</a>.</li>
-<li>FEDAI: Chapter 05: One-Sided Non-Compliance.</li>
-<li><a href="https://play.kahoot.it/v2/?quizId=a6f1c5fa-f06d-41d1-ab82-f5db73b6d18f&amp;hostId=05eb977d-4f8a-440e-9e45-95212b29d103">Kahoot Quiz</a></li>
+<li>Akinkugbe, A. (2025). <a href="https://pub.towardsai.net/the-essential-guide-to-model-evaluation-metrics-for-classification-560efee6f445">The essential guide to model evaluation metrics for classification.</a> A practical guide to common evaluation metrics, with examples and case studies.</li>
+<li>Thomas, R. L., &amp; Uminsky, D. (2022). <a href="https://www.cell.com/patterns/fulltext/S2666-3899(22)00056-3">Reliance on metrics is a fundamental challenge for AI.</a> <em>Patterns</em>, 3(5).100440. A discussion of the limitations of metrics and how they can be gamed or misinterpreted.</li>
+<li>Montesinos López, O. A., Montesinos López, A., &amp; Crossa, J. (2022). <a href="https://link.springer.com/chapter/10.1007/978-3-030-89010-0_4">Overfitting, model tuning, and evaluation of prediction performance.</a> In <em>Multivariate statistical machine learning methods for genomic prediction</em> (pp.&nbsp;109-139). Cham: Springer International Publishing. Good chapter, worth reading even if you don’t understand all the maths.</li>
+<li>Coursera (2025). <a href="https://www.coursera.org/articles/precision-vs-recall-machine-learning">Precision vs.&nbsp;recall in machine learning: what’s the difference?</a>. A short article about those two commonly confused metrics.</li>
+<li>Palumbo, G., Carneiro, D., &amp; Alves, V. (2024). <a href="https://link.springer.com/article/10.1007/s41060-024-00541-w">Objective metrics for ethical AI: a systematic literature review.</a> <em>International Journal of Data Science and Analytics</em>, 1-21. New ideas about how to evaluate AI systems beyond accuracy.</li>
 </ul>
 </section>
-<section id="lecture-10-non-compliance-ii-october-1-2025" class="level2">
-<h2 class="anchored" data-anchor-id="lecture-10-non-compliance-ii-october-1-2025">Lecture 10: Non-Compliance II (October 1, 2025)</h2>
+<section id="lecture-6-quiz-1" class="level3">
+<h3 class="anchored" data-anchor-id="lecture-6-quiz-1">Lecture 6 — Quiz 1</h3>
+</section>
+</section>
+<section id="module-2-language-and-perception" class="level2">
+<h2 class="anchored" data-anchor-id="module-2-language-and-perception">Module 2 — Language and perception</h2>
+<section id="lecture-7-how-machines-handle-language-tokens-embeddings-and-context" class="level3">
+<h3 class="anchored" data-anchor-id="lecture-7-how-machines-handle-language-tokens-embeddings-and-context">Lecture 7 — How machines handle language: tokens, embeddings and context</h3>
+<p>An intuitive view of tokenisation, vector representations and contextual meaning.</p>
+<p>Readings:</p>
 <ul>
-<li>Lecture slides: <a href="https://raw.githack.com/danilofreire/datasci385/main/lectures/lecture-10/10-non-compliance2.html">Non-Compliance II</a>.</li>
-<li>FEDAI: Chapter 06: Two-Sided Non-Compliance.</li>
-<li><a href="https://play.kahoot.it/v2/?quizId=93cf500f-015b-4dd6-9c11-b3142b06f905&amp;hostId=05eb977d-4f8a-440e-9e45-95212b29d103">KaHoot Quiz</a></li>
-<li>Problem Set 04 due.</li>
-<li><a href="https://github.com/danilofreire/datasci385/tree/main/assignments/05-assignment">Problem Set 05 assigned</a>.</li>
-<li>Two paragraphs (maximum) summarising an experiment that you wish to develop in this course. At a minimum, your summary should include a research question, why the question is important, and a rough outline of how you plan to answer the question. Please send me an email by Wednesday with this information.</li>
-</ul>
-<p>Suggested readings:</p>
-<ul>
-<li>Angrist, J. D., &amp; Pischke, J. S. (2009). <a href="https://link.springer.com/article/10.1057/be.2009.37">Mostly Harmless Econometrics: An Empiricist’s Companion</a>. Princeton University Press. Chapter 4: Instrumental Variables Estimation.</li>
-<li>Baryakova, T.H., Pogostin, B.H., Langer, R. et al.&nbsp;<a href="https://www.nature.com/articles/s41573-023-00670-0">Overcoming Barriers to Patient Adherence: The Case for Developing Innovative Drug Delivery Systems</a>. Nature Reviews Drug Discovery 22, 387–409 (2023).</li>
-<li>Kane, J. V. (2025). <a href="https://doi.org/10.1017/XPS.2024.1">More than Meets the ITT: A Guide for Anticipating and Investigating Nonsignificant Results in Survey Experiments</a>. Journal of Experimental Political Science, 12(1), 110–125.</li>
-<li>Hartman, E., &amp; Huang, M. (2024). <a href="https://doi.org/10.1017/psrm.2023.38">Improving Precision through Design and Analysis in Experiments with Noncompliance</a>. Political Science Research and Methods, 12(3), 557-572.</li>
-<li>Gerber, A. S., Green, D. P., Kaplan, E. H., &amp; Kern, H. L. (2010). <a href="https://www.cambridge.org/core/journals/political-analysis/article/abs/baseline-placebo-and-treatment-efficient-estimation-for-threegroup-experiments/F9B246F9645C925BE49E98DFFE600A65">Baseline, Placebo, and Treatment: Efficient Estimation for Three-Group Experiments</a>. Political Analysis, 18(3), 297-315.</li>
+<li>Neptune.ai (2025). <a href="https://neptune.ai/blog/word-embeddings-guide">The ultimate guide to word embeddings.</a> The title is a bit grandiose, but this is a clear and practical introduction to word embeddings. Includes Python code snippets.</li>
+<li>Neptune.ai (2025). <a href="https://neptune.ai/blog/tokenization-in-nlp">Tokenization in NLP: types, challenges, examples, tools.</a> Another article by the same group, this time on tokenisation. Also includes code snippets.</li>
+<li>StackOverflow (2023). <a href="https://stackoverflow.blog/2023/11/09/an-intuitive-introduction-to-text-embeddings/">An intuitive introduction to text embeddings.</a> A practical introduction to embeddings, with simple examples.</li>
+<li>DeepLearning.ai (2023). <a href="https://www.deeplearning.ai/resources/natural-language-processing/">A complete guide to natural language processing.</a> Despite another grandiose title, this is a good overview of NLP concepts and techniques.</li>
+<li>Gastaldi, J. L., Terilla, J., Malagutti, L., DuSell, B., Vieira, T., &amp; Cotterell, R. (2024). <a href="https://arxiv.org/abs/2407.11606">The foundations of tokenization: statistical and computational concerns.</a> <em>arXiv preprint</em> arXiv:2407.11606. Very technical, for those interested in the mathematical details of tokenisation.</li>
 </ul>
 </section>
-<section id="lecture-11-attrition-and-missing-outcomes-october-6-2025" class="level2">
-<h2 class="anchored" data-anchor-id="lecture-11-attrition-and-missing-outcomes-october-6-2025">Lecture 11: Attrition and Missing Outcomes (October 6, 2025)</h2>
+<section id="lecture-8-how-machines-analyse-images-and-audio" class="level3">
+<h3 class="anchored" data-anchor-id="lecture-8-how-machines-analyse-images-and-audio">Lecture 8 — How machines analyse images and audio</h3>
+<p>Abstraction, convolution and the role of large datasets.</p>
+<p>Readings:</p>
 <ul>
-<li>Lecture slides: <a href="https://raw.githack.com/danilofreire/datasci385/main/lectures/lecture-11/11-attrition.html">Attrition</a>.</li>
-<li>FEDAI: Chapter 07: Attrition.</li>
-<li>Lo, A., Renshon, J., &amp; Bassan-Nygate, L. (2024). <a href="https://www.cambridge.org/core/journals/journal-of-experimental-political-science/article/practical-guide-to-dealing-with-attrition-in-political-science-experiments/0E2B475CE9B082EE5AF8680E6BB1E985">A Practical Guide to Dealing with Attrition in Political Science Experiments</a>. Journal of Experimental Political Science, 11(2), 147-161.</li>
-<li><a href="https://play.kahoot.it/v2/?quizId=64c27dc8-89cb-4d27-8062-11054deb7849&amp;hostId=05eb977d-4f8a-440e-9e45-95212b29d103">Kahoot quiz</a></li>
-</ul>
-<p>Suggested readings:</p>
-<ul>
-<li>Zhou, H., &amp; Fishbach, A. (2016). <a href="https://psycnet.apa.org/record/2016-29224-001">The Pitfall of Experimenting on the Web: How Unattended Selective Attrition Leads to Surprising (Yet False) Research Conclusions</a>. Journal of Personality and Social Psychology, 111(4), 493.</li>
-<li>Coppock, A., Gerber, A. S., Green, D. P., &amp; Kern, H. L. (2017). <a href="https://www.cambridge.org/core/journals/political-analysis/article/abs/combining-double-sampling-and-bounds-to-address-nonignorable-missing-outcomes-in-randomized-experiments/76D6DB70466C906123D9842528C9A861">Combining Double Sampling and Bounds to Address Nonignorable Missing Outcomes in Randomized Experiments</a>. Political Analysis, 25(2), 188-206.</li>
-<li>Ghanem, D., Hirshleifer, S., &amp; Ortiz-Becerra, K. (2019). <a href="http://dx.doi.org/10.26085/C38C76">Testing Attrition Bias in Field Experiments</a>. UC Berkeley: Center for Effective Global Action.</li>
-<li>Pallmann, P., Bedding, A.W., Choodari-Oskooei, B. et al.&nbsp;(2018). <a href="https://bmcmedicine.biomedcentral.com/articles/10.1186/s12916-018-1017-7">Adaptive Designs in Clinical Trials: Why Use Them, and How to Run and Report Them</a>. BMC Med 16(29).</li>
+<li>O’Shea, K., &amp; Nash, R. (2015). <a href="https://arxiv.org/abs/1511.08458">An introduction to convolutional neural networks.</a> <em>arXiv preprint</em> arXiv:1511.08458. A clear and concise tutorial.</li>
+<li>DataCamp (2025). <a href="https://www.datacamp.com/blog/what-is-computer-vision">What is computer vision? A beginner guide to image analysis.</a> Simple and illustrated introduction to computer vision concepts.</li>
+<li>AltexSoft (2025). <a href="https://www.altexsoft.com/blog/sound-music-voice-generation/">How AI sound, music, and voice generation works.</a> Another practical introduction. A nice reading!</li>
+<li>Singal, A. (2023). <a href="https://huggingface.co/blog/Andyrasika/voice-with-vision">Hearing is believing: revolutionizing AI with audio classification via computer vision.</a> How machines classify audio using image-based techniques. Includes Python code for practitioners.</li>
+<li>Goodfellow, I., Bengio, Y., &amp; Courville, A. (2016). <a href="https://www.deeplearningbook.org/">Deep learning.</a> MIT Press. Chapters 9 and 10 provide a solid foundation in convolutional networks. A bit technical, quite dense, but this is one of the best books on deep learning.</li>
 </ul>
 </section>
-<section id="lecture-12-ethical-considerations-in-experimental-research-october-8-2025" class="level2">
-<h2 class="anchored" data-anchor-id="lecture-12-ethical-considerations-in-experimental-research-october-8-2025">Lecture 12: Ethical Considerations in Experimental Research (October 8, 2025)</h2>
+<section id="lecture-9-behavioural-testing-examples-and-demonstrations" class="level3">
+<h3 class="anchored" data-anchor-id="lecture-9-behavioural-testing-examples-and-demonstrations">Lecture 9 — Behavioural testing: examples and demonstrations</h3>
+<p>Live demos: prompt responses, image classifiers, and stress-tests.</p>
+<p>No required readings for this lecture. We will do live demonstrations in class.</p>
+</section>
+<section id="lecture-10-quiz-2" class="level3">
+<h3 class="anchored" data-anchor-id="lecture-10-quiz-2">Lecture 10 — Quiz 2</h3>
+<p>Covers Lectures 7–9.</p>
+</section>
+</section>
+<section id="module-3-retrieval-generation-and-pipelines" class="level2">
+<h2 class="anchored" data-anchor-id="module-3-retrieval-generation-and-pipelines">Module 3 — Retrieval, generation and pipelines</h2>
+<section id="lecture-11-retrieval-augmented-workflows-and-semantic-search" class="level3">
+<h3 class="anchored" data-anchor-id="lecture-11-retrieval-augmented-workflows-and-semantic-search">Lecture 11 — Retrieval-augmented workflows and semantic search</h3>
+<p>Augmenting generation with retrieval; vector search and chunking explained for practitioners.</p>
+<p>Readings:</p>
 <ul>
-<li>Lecture slides: <a href="https://raw.githack.com/danilofreire/datasci385/main/lectures/lecture-12/12-ethics.html">Ethical Considerations in Experimental Research</a>.</li>
-<li>Humphreys, M. (2015). <a href="https://doi.org/10.1515/jgd-2014-0016">Reflections on the Ethics of Social Experimentation</a>. Journal of Globalization and Development, 6(1), 87-112.</li>
-<li>Cronin-Furman, K., &amp; Lake, M. (2018). <a href="https://doi.org/10.1017/S1049096518000379">Ethics Abroad: Fieldwork in Fragile and Violent Contexts</a>. PS: Political Science &amp; Politics, 51(3), 607-614.</li>
-<li>Poverty Action Lab (2022). <a href="https://www.povertyactionlab.org/resource/ethical-conduct-randomized-evaluations">Ethical Conduct of Randomized Evaluations</a>. J-PAL.</li>
-<li>Problem Set 05 due.</li>
-<li><a href="https://github.com/danilofreire/datasci385/tree/main/assignments/06-assignment">Problem Set 06 assigned</a></li>
-</ul>
-<p>Suggested readings:</p>
-<ul>
-<li>Asiedu, E., Dean, E., Karlan, D., &amp; Osei, R. (2021). <a href="https://doi.org/10.1073/pnas.2117261118">Ethics and Society Review: Ethics Reflection as a Precondition to Research Funding</a>. Proceedings of the National Academy of Sciences, 118(52), e2117261118.</li>
-<li>ASAB Ethical Committee/ABS Animal Care Committee. (2024). <a href="https://www.sciencedirect.com/science/article/pii/S0003347223003172">Guidelines for the Ethical Treatment of Nonhuman Animals in Behavioural Research and Teaching</a>. Animal Behaviour, 207, I-XI.</li>
+<li>Amazon Web Services (2025). <a href="https://aws.amazon.com/what-is/retrieval-augmented-generation/">What is retrieval-augmented generation (RAG)?</a> Beginners’ guide to RAG by people who know what they’re talking about.</li>
+<li>Erikson, J. (2024). <a href="https://aws.amazon.com/what-is/retrieval-augmented-generation/">What is vector search? The ultimate guide.</a> Yes, the grandiose titles are a trend. The article is pretty good, though.</li>
+<li>Mastering LLM (2024). <a href="https://masteringllm.medium.com/11-chunking-strategies-for-rag-simplified-visualized-df0dbec8e373">11 chunking strategies for RAG — simplified &amp; visualized</a> Very nice explanation of chunking strategies, with diagrams.</li>
+<li>Slack (2025). <a href="https://slack.com/blog/productivity/semantic-search-explained-how-it-works-and-why-it-matters">Semantic search explained: how it works, and why it matters.</a> Good explainer from a top tech company.</li>
+<li>Wang, X., Wang, Z., Gao, X., Zhang, F., Wu, Y., Xu, Z., … &amp; Huang, X. (2024). <a href="https://arxiv.org/abs/2407.01219">Searching for best practices in retrieval-augmented generation.</a> <em>arXiv preprint</em> arXiv:2407.01219. Technical in nature, for those interested in the research behind RAG.</li>
 </ul>
 </section>
-<section id="lecture-13-introduction-to-quarto-and-declaredesign-october-15-2025" class="level2">
-<h2 class="anchored" data-anchor-id="lecture-13-introduction-to-quarto-and-declaredesign-october-15-2025">Lecture 13: Introduction to Quarto and DeclareDesign (October 15, 2025)</h2>
+<section id="lecture-12-creativity-and-hallucination" class="level3">
+<h3 class="anchored" data-anchor-id="lecture-12-creativity-and-hallucination">Lecture 12 — Creativity and hallucination</h3>
+<p>Why models invent facts and how to spot and reduce hallucination.</p>
+<p>Readings:</p>
 <ul>
-<li>Lecture slides: <a href="https://raw.githack.com/danilofreire/datasci385/main/lectures/lecture-13/13-quarto.html">Introduction to Quarto and DeclareDesign</a>.</li>
-<li>Quarto official website: <a href="https://quarto.org/" class="uri">https://quarto.org/</a>.</li>
-<li>DeclareDesign official website: <a href="https://declaredesign.org/" class="uri">https://declaredesign.org/</a>.</li>
-<li>Problem Set 06 due.</li>
-</ul>
-<p>Suggested readings:</p>
-<ul>
-<li><a href="https://quarto.org/">Quarto official website</a>.</li>
-<li>Awesome Quarto: <a href="https://github.com/mcanouil/awesome-quarto" class="uri">https://github.com/mcanouil/awesome-quarto</a>. Note: this repository contains dozens of tutorials, examples, and resources.</li>
-<li>Çetinkaya-Rundel, M. &amp; Lowndes, J. S. (2022) <a href="https://www.youtube.com/watch?v=p7Hxu4coDl8">Keynote talk: Hello Quarto: Share • Collaborate • Teach • Reimagine</a>. <a href="https://mine.quarto.pub/hello-quarto/#/hello-quarto-title">Slides</a> and <a href="https://github.com/mine-cetinkaya-rundel/hello-quarto">source code</a>. This is one of the nicest Quarto presentations I have seen.</li>
-<li><a href="https://www.youtube.com/watch?v=_f3latmOhew&amp;t=2s">Getting Started with Quarto (YouTube)</a>. Note: Posit (formerly RStudio) has a series of tutorials on Quarto on their YouTube channel. You can find their playlist <a href="https://www.youtube.com/playlist?list=PL9HYL-VRX0oQI8fVioFxMTBrViFnRX_Df">here</a>.</li>
-<li>Blair, G., Coppock, A., &amp; Humphreys, M. (2023). <a href="https://macartan.github.io/dd_bootcamp/dd.html#/title-slide">Introduction to Design Declaration with DeclareDesign</a>. A series of presentation slides on DeclareDesign by the authors of the book. Strongly recommended.</li>
-<li><a href="https://declaredesign.org/">DeclareDesign official website</a>.</li>
-<li>Nosek, B.A., Alter, G., Banks, G.C., Borsboom, D., Bowman, S.D., Breckler, S.J., Buck, S., Chambers, C.D., Chin, G., Christensen, G. and Contestabile, M., 2015. <a href="https://www.science.org/doi/10.1126/science.aab2374">Promoting an Open Research Culture</a>. Science, 348(6242), pp.1422-1425.</li>
-<li><a href="https://youtu.be/8Y0p_ar59tQ/">A Gentle Introduction to DeclareDesign (YouTube)</a>. Video tutorial by the authors of the book.</li>
+<li>Jiang, X., Tian, Y., Hua, F., Xu, C., Wang, Y., &amp; Guo, J. (2024). <a href="https://arxiv.org/abs/2402.06647">A survey on large language model hallucination via a creativity perspective.</a> <em>arXiv preprint</em> arXiv:2402.06647. Very nice article showing how hallucinations can be used creatively.</li>
+<li>Tonmoy, S. M. T. I., Zaman, S. M., Jain, V., Rani, A., Rawte, V., Chadha, A., &amp; Das, A. (2024). <a href="https://arxiv.org/abs/2401.01313">A comprehensive survey of hallucination mitigation techniques in large language models.</a> <em>arXiv preprint</em> arXiv:2401.01313, 6. The article is quite detailed and lists a series of techniques to reduce hallucinations. No need to know them all, just to know they exist and how they work in principle.</li>
+<li>Wikipedia (2025). <a href="https://en.wikipedia.org/wiki/Hallucination_(artificial_intelligence)">Hallucination (artificial intelligence).</a> Wikipedia actually has some good articles on AI topics. This one is a well-written overview of hallucinations.</li>
+<li>Chakraborty, T., &amp; Masud, S. (2024). <a href="https://cacm.acm.org/opinion/the-promethean-dilemma-of-ai-at-the-intersection-of-hallucination-and-creativity/">The promethean dilemma of AI at the intersection of hallucination and creativity.</a> <em>Communications of the ACM</em>, 67(10), 26-28. Full of interesting ideas and perspectives.</li>
+<li>OpenAI (2024). <a href="https://help.openai.com/en/articles/8313428-does-chatgpt-tell-the-truth">Does ChatGPT tell the truth?</a> I’m sure you know who these people are. Practical advice.</li>
+<li>Kalai, A. T., Nachum, O., Vempala, S. S., &amp; Zhang, E. (2025). <a href="https://arxiv.org/abs/2509.04664">Why language models hallucinate.</a> <em>arXiv preprint</em> arXiv:2509.04664. Written by members of OpenAI. Not for the faint of heart by any means, but if you’re feeling adventurous…</li>
 </ul>
 </section>
-<section id="lecture-14-writing-pre-analysis-plans-october-20-2025" class="level2">
-<h2 class="anchored" data-anchor-id="lecture-14-writing-pre-analysis-plans-october-20-2025">Lecture 14: Writing Pre-Analysis Plans (October 20, 2025)</h2>
+<section id="lecture-13-building-reliable-pipelines-monitoring-and-testing" class="level3">
+<h3 class="anchored" data-anchor-id="lecture-13-building-reliable-pipelines-monitoring-and-testing">Lecture 13 — Building reliable pipelines: monitoring and testing</h3>
+<p>Overview of simple strategies for AI evaluation; what operational teams track.</p>
+<p>Readings:</p>
 <ul>
-<li>Lecture slides: <a href="https://raw.githack.com/danilofreire/datasci385/main/lectures/lecture-14/14-pap.html">How to Write a Pre-Analysis Plan</a>.</li>
-<li>EGAP: <a href="https://egap.org/resource/10-things-to-know-about-pre-analysis-plans/">Pre-Analysis Plans</a>.</li>
-<li>Olken, B. A. (2015). <a href="https://www.aeaweb.org/articles?id=10.1257/jep.29.3.61">Promises and perils of pre-analysis plans</a>. Journal of Economic Perspectives, 29(3), 61-80.</li>
-<li><a href="https://play.kahoot.it/v2/?quizId=da50f0e5-b3a6-450e-ad99-95ed2be461d3&amp;hostId=05eb977d-4f8a-440e-9e45-95212b29d103">Kahoot Quiz</a></li>
-</ul>
-<p>Suggested readings:</p>
-<ul>
-<li>Ofosu, G. K., &amp; Posner, D. N. (2023). <a href="https://doi.org/10.1017/S1537592721000931">Pre-Analysis Plans: An Early Stocktaking</a>. Perspectives on Politics, 21(1), 174-190.</li>
-<li>Rubenson, D. (2021). <a href="https://doi.org/10.1017/pls.2021.23">Tie My Hands Loosely: Pre-Analysis Plans in Political Science</a>. Politics and the Life Sciences, 40(2), 142-151.</li>
-<li>Coffman, L. C., &amp; Niederle, M. (2015). <a href="https://www.aeaweb.org/articles?id=10.1257/jep.29.3.81">Pre-Analysis Plans Have Limited Upside, Especially where Replications Are Feasible</a>. Journal of Economic Perspectives, 29(3), 81-98.</li>
-<li>Even-Tov, Omri and Valentine, K. (2025). <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5379056">The Research Paper Playbook: A PhD Student’s Guide to Writing and Presenting</a>.</li>
+<li>Google (2025). <a href="https://developers.google.com/machine-learning/crash-course/production-ml-systems/monitoring">Production ML systems: monitoring pipelines.</a> If there’s one company that knows how to run ML systems at scale, it’s Google. This is a practical guide to monitoring ML pipelines. If you are unfamiliar with some terms, don’t worry too much; the main ideas are easy to grasp. Use AI to help you if needed!</li>
+<li>Allen, J. (2024). <a href="https://www.prefect.io/blog/data-pipeline-monitoring-best-practices">Data pipeline monitoring: best practices for full observability.</a> Informal and full of practical tips. Some technical terms too, but nothing too difficult.</li>
+<li>Steidl, M., Felderer, M., &amp; Ramler, R. (2023). <a href="https://arxiv.org/abs/2301.09001">The pipeline for the continuous development of artificial intelligence models–current state of research and practice.</a> <em>arXiv e-prints</em>, arXiv-2301. <em>Super long</em> article (sorry!), but it covers everything we discuss in class and more. Just read what you need.</li>
 </ul>
 </section>
-<section id="lecture-15-when-experiments-are-not-possible-october-22-2025" class="level2">
-<h2 class="anchored" data-anchor-id="lecture-15-when-experiments-are-not-possible-october-22-2025">Lecture 15: When Experiments are Not Possible (October 22, 2025)</h2>
+<section id="lecture-14-quiz-3" class="level3">
+<h3 class="anchored" data-anchor-id="lecture-14-quiz-3">Lecture 14 — Quiz 3</h3>
+<p>Covers Lectures 11–13.</p>
+</section>
+</section>
+<section id="module-4-data-ethics-and-bias" class="level2">
+<h2 class="anchored" data-anchor-id="module-4-data-ethics-and-bias">Module 4 — Data ethics and bias</h2>
+<section id="lecture-15-types-of-bias-and-how-they-arise" class="level3">
+<h3 class="anchored" data-anchor-id="lecture-15-types-of-bias-and-how-they-arise">Lecture 15 — Types of bias and how they arise</h3>
+<p>Selection bias, label bias and measurement error.</p>
+<p>Readings:</p>
 <ul>
-<li>Lecture slides: <a href="https://raw.githack.com/danilofreire/datasci385/main/lectures/lecture-15/15-quasi.html">Natural and Quasi-Experiments</a>.</li>
-<li><a href="https://play.kahoot.it/v2/?quizId=438409d4-2db5-4641-b210-1f9aede6db5b&amp;hostId=05eb977d-4f8a-440e-9e45-95212b29d103">Kahoot Quiz</a>.</li>
-<li>Dunning, T. (2012). <a href="https://www.cambridge.org/core/books/natural-experiments-in-the-social-sciences/96A64CBDC2A2952DC1C68AF77DE675AF">Natural Experiments in the Social Sciences: A Design-Based Approach</a>. Cambridge University Press. Chapter 01: Introduction.</li>
-<li><a href="https://github.com/danilofreire/datasci385/tree/main/assignments/07-assignment">Problem Set 07 assigned</a>.</li>
-</ul>
-<p>Suggested readings:</p>
-<ul>
-<li>Diener, E., Northcott, R., Zyphur, M. J., &amp; West, S. G. (2022). <a href="https://journals.sagepub.com/doi/full/10.1177/17456916211037670">Beyond Experiments</a>. Perspectives on Psychological Science, 17(4), 1101-1119.</li>
-<li>Dunning, T. (2016). <a href="https://www.annualreviews.org/content/journals/10.1146/annurev-polisci-072516-014127">Transparency, Replication, and Cumulative Learning: What Experiments Alone Cannot Achieve</a>. Annual Review of Political Science, 19(1), 541-563.</li>
-<li>Petticrew, M., Cummins, S., Ferrell, C., Findlay, A., Higgins, C., Hoy, C., … &amp; Sparks, L. (2005). <a href="https://www.sciencedirect.com/science/article/abs/pii/S0033350605000296">Natural Experiments: An Underused Tool for Public Health?</a>. Public Health, 119(9), 751-757.</li>
-<li>Grosz, M. P., Ayaita, A., Arslan, R. C., Buecker, S., Ebert, T., Hünermund, P., … &amp; Rohrer, J. M. (2024). <a href="https://journals.sagepub.com/doi/full/10.1177/25152459231218610">Natural Experiments: Missed Opportunities for Causal Inference in Psychology</a>. Advances in Methods and Practices in Psychological Science, 7(1), 25152459231218610.</li>
+<li>Barocas, S., Hardt, M., &amp; Narayanan, A. (2019). <a href="https://fairmlbook.org/">Fairness and machine learning</a>. Chapter 2: When is automated decision making legitimate? A very good book on fairness in machine learning. This chapter covers the main types of bias that can arise in datasets.</li>
+<li>Mehrabi, N., Morstatter, F., Saxena, N., Lettich, A., &amp; Galstyan, A. (2021). <a href="https://arxiv.org/abs/1908.09635">A survey on bias and fairness in machine learning.</a> <em>ACM Computing Surveys (CSUR)</em>, <em>54</em>(6), 1-35. A comprehensive survey of bias and fairness in machine learning. Quite technical, but the introduction and conclusion are accessible.</li>
+<li>Suresh, H., &amp; Guttag, J. V. (2019). <a href="https://dl.acm.org/doi/10.1145/3287560.3287598">A framework for understanding unintended consequences of machine learning.</a> In <em>Conference on Fairness, Accountability, and Transparency</em> (pp.&nbsp;1-10). A good framework for thinking about biases.</li>
+<li>Bender, E. M., Gebru, T., McMillan-Major, A., &amp; Shmitchell, S. (2021). <a href="https://dl.acm.org/doi/10.1145/3442188.3445922">On the dangers of stochastic parrots: Can language models be too big?</a> In <em>Proceedings of the 2021 ACM Conference on Fairness, Accountability, and Transparency</em> (pp.&nbsp;610-623). A critical look at large language models and the risks they pose.</li>
+<li>Silberg, J., &amp; Manyika, J. (2019). <a href="https://www.mckinsey.com/~/media/McKinsey/Featured%20Insights/Artificial%20Intelligence/Tackling%20bias%20in%20artificial%20intelligence%20and%20in%20humans/MGI-Tackling-bias-in-AI-June-2019.pdf">Notes from the AI frontier: tackling bias in AI (and in humans).</a> McKinsey Global Institute, 1(6), 1-31. An easy-to-read report on bias in AI, with practical recommendations for business and policy.</li>
 </ul>
 </section>
-<section id="lecture-16-interference-in-experiments-october-27-2025" class="level2">
-<h2 class="anchored" data-anchor-id="lecture-16-interference-in-experiments-october-27-2025">Lecture 16: Interference in Experiments (October 27, 2025)</h2>
+<section id="lecture-16-documentation-and-dataset-governance" class="level3">
+<h3 class="anchored" data-anchor-id="lecture-16-documentation-and-dataset-governance">Lecture 16 — Documentation and dataset governance</h3>
+<p>Datasheets, model cards and provenance.</p>
+<p>Readings:</p>
 <ul>
-<li>Lecture slides: <a href="https://raw.githack.com/danilofreire/datasci385/main/lectures/lecture-16/16-interference.html">Interference in Experiments</a>.</li>
-<li>FEDAI: Chapter 08: Interference between Experimental Units.</li>
-<li>EGAP: <a href="https://egap.org/resource/10-things-to-know-about-spillovers/">Spillovers</a>.</li>
-<li><a href="https://play.kahoot.it/v2/?quizId=aa1d54d4-1501-4fee-9f91-a21c1bbf962f&amp;hostId=05eb977d-4f8a-440e-9e45-95212b29d103">Kahoot Quiz</a>.</li>
-</ul>
-<p>Suggested readings:</p>
-<ul>
-<li>Aronow, P. M., Eckles, D., Samii, C., &amp; Zonszein, S. (2020). <a href="https://arxiv.org/abs/2001.05444">Spillover Effects in Experimental Data</a>. arXiv preprint arXiv:2001.05444. <em>Quite technical too</em>.</li>
-<li>Baird, S., Bohren, J. A., McIntosh, C., &amp; Ozler, B. (2014). <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2505070">Designing Experiments to Measure Spillover Effects</a>.</li>
-<li>Benjamin-Chung, J., Arnold, B. F., Berger, D., Luby, S. P., Miguel, E., Colford Jr, J. M., &amp; Hubbard, A. E. (2018). <a href="https://academic.oup.com/ije/article-abstract/47/1/332/4583505">Spillover Effects in Epidemiology: Parameters, Study Designs and Methodological Considerations</a>. International Journal of Epidemiology, 47(1), 332-347.</li>
-<li>Imbens, G. (2024). <a href="https://www.youtube.com/watch?v=i5kyzT_CpwQ">Interference and Spillovers in Randomized Experiments</a> (Video). A short lecture on recent advances and new designs to deal with interference in experiments. A little technical.</li>
+<li>Gebru, T., Morgenstern, J., Vecchione, B., Vaughan, J. W., Wallach, H., Daumé III, H., &amp; Crawford, K. (2018). <a href="https://arxiv.org/abs/1803.09010">Datasheets for datasets.</a> <em>arXiv preprint</em> arXiv:1803.09010. The original paper proposing datasheets for datasets.</li>
+<li>Mitchell, M., Wu, S., Zaldivar, A., Barnes, P., Vasserman, L., Hutchinson, B., … &amp; Gebru, T. (2019). <a href="https://arxiv.org/abs/1810.03993">Model cards for model reporting.</a> <em>Proceedings of the Conference on Fairness, Accountability, and Transparency</em> (pp.&nbsp;220-229). The original paper proposing model cards.</li>
+<li>Bender, E. M., &amp; Friedman, B. (2018). <a href="https://www.aclweb.org/anthology/Q18-1041/">Data statements for natural language processing: Toward mitigating system bias and enabling better science.</a> In <em>Proceedings of the 2018 Conference on Empirical Methods in Natural Language Processing</em> (pp.&nbsp;1-14). A proposal for data statements to accompany NLP datasets.</li>
+<li>IBM (2025). <a href="https://www.ibm.com/think/topics/data-lineage">What is data lineage?</a> A short guide to data lineage, with use cases.</li>
+<li>IBM (2025). <a href="https://www.ibm.com/topics/data-provenance">What is data provenance?</a> Another practical guide, this time on data provenance.</li>
 </ul>
 </section>
-<section id="lecture-17-texts-for-discussion-october-29-2025" class="level2">
-<h2 class="anchored" data-anchor-id="lecture-17-texts-for-discussion-october-29-2025">Lecture 17: Texts for Discussion (October 29, 2025)</h2>
+<section id="lecture-17-case-studies-biased-outcomes-in-health-hiring-and-policing" class="level3">
+<h3 class="anchored" data-anchor-id="lecture-17-case-studies-biased-outcomes-in-health-hiring-and-policing">Lecture 17 — Case studies: biased outcomes in health, hiring and policing</h3>
+<p>Examples that illustrate impact and possible mitigations.</p>
+<p>Readings:</p>
 <ul>
-<li>Lecture slides: <a href="https://raw.githack.com/danilofreire/datasci385/main/lectures/lecture-17/17-discussion.html">Texts for Discussion</a>.</li>
-<li><a href="https://play.kahoot.it/v2/?quizId=008403a1-cea0-48f8-b9fb-3c0b60214da9&amp;hostId=05eb977d-4f8a-440e-9e45-95212b29d103">Kahoot Quiz</a>.</li>
-<li>Centola, D. (2010). <a href="https://www.science.org/doi/abs/10.1126/science.1185231">The spread of behavior in an online social network experiment</a>. Science, 329(5996), 1194-1197.</li>
-<li>Paluck, B. L., Shepherd, H., and Aronow, P. 2016. <a href="https://www.pnas.org/doi/abs/10.1073/pnas.1514483113">Changing climates of conflict: A social network experiment in 56 schools.</a> Proceedings of the National Academy of Sciences, 113(3): 566-571</li>
-<li>Gerber, A. S., &amp; Green, D. P. (2000). <a href="https://doi.org/10.2307/2585837">The effects of canvassing, telephone calls, and direct mail on voter turnout: A field experiment</a>. American Political Science Review, 94(3), 653-663.</li>
-<li>Problem Set 07 due.</li>
-<li><a href="https://github.com/danilofreire/datasci385/tree/main/assignments/08-assignment">Problem Set 08 assigned</a>.</li>
+<li>Rudin, C. (2019). <a href="https://www.nature.com/articles/s42256-019-0048-x">Stop explaining black box machine learning models for high stakes decisions and use interpretable models instead.</a> <em>Nature machine intelligence</em>, 1(5), 206-215. A strong argument for using interpretable models in important aspects of life.</li>
+<li>Obermeyer, Z., Powers, B., Vogeli, C., &amp; Mullainathan, S. (2019). <a href="https://science.sciencemag.org/content/366/6464/447">Dissecting racial bias in an algorithm used to manage the health of populations.</a> <em>Science</em>, <em>366</em>(6464), 447-453. A landmark study showing how a widely used health algorithm exhibited racial bias.</li>
+<li>Buolamwini, J., &amp; Gebru, T. (2018). <a href="http://proceedings.mlr.press/v81/buolamwini18a.html">Gender shades: Intersectional accuracy disparities in commercial gender classification.</a> <em>Proceedings of Machine Learning Research</em>, <em>81</em>, 1-15. A study revealing bias in facial recognition systems.</li>
+<li>Angwin, J., Larson, J., Mattu, S., &amp; Kirchner, L. (2016). <a href="https://www.propublica.org/article/machine-bias-risk-assessments-in-criminal-sentencing">Machine bias: There’s software used across the country to predict future criminals. And it’s biased against blacks.</a> <em>ProPublica</em>. A widely cited investigation into bias in criminal risk assessment tools.</li>
+<li>Wilson, K., &amp; Caliskan, A. (2024, October). <a href="https://ojs.aaai.org/index.php/AIES/article/view/31748">Gender, race, and intersectional bias in resume screening via language model retrieval.</a> In <em>Proceedings of the AAAI/ACM Conference on AI, Ethics, and Society</em> (Vol. 7, pp.&nbsp;1578-1590). A recent paper on how AI may be biased in hiring.</li>
+<li>AI Now Institute (2025). <a href="https://ainowinstitute.org/publications/research/ai-now-2025-landscape-report">Artificial Power: 2025 Landscape Report.</a> A strongly critical report on the power dynamics in the AI ecosystem. Worth reading even if you disagree with the arguments.</li>
 </ul>
 </section>
-<section id="lecture-18-heterogeneous-treatment-effects-november-3-2025" class="level2">
-<h2 class="anchored" data-anchor-id="lecture-18-heterogeneous-treatment-effects-november-3-2025">Lecture 18: Heterogeneous Treatment Effects (November 3, 2025)</h2>
+<section id="lecture-18-quiz-4" class="level3">
+<h3 class="anchored" data-anchor-id="lecture-18-quiz-4">Lecture 18 — Quiz 4</h3>
+<p>Covers Lectures 15–17.</p>
+</section>
+</section>
+<section id="module-5-policy-governance-and-social-impact" class="level2">
+<h2 class="anchored" data-anchor-id="module-5-policy-governance-and-social-impact">Module 5 — Policy, governance and social impact</h2>
+<section id="lecture-19-ai-regulation-and-standards-around-the-world" class="level3">
+<h3 class="anchored" data-anchor-id="lecture-19-ai-regulation-and-standards-around-the-world">Lecture 19 — AI regulation and standards around the world</h3>
+<p>American AI Initiative, OECD principles, EU AI Act summary and how rules influence design.</p>
+<p>Readings:</p>
 <ul>
-<li>Lecture slides: <a href="https://raw.githack.com/danilofreire/datasci385/main/lectures/lecture-18/18-hte.html">Heterogeneous Treatment Effects</a>.</li>
-<li>FEDAI: Chapter 09: Heterogeneous Treatment Effects.</li>
-</ul>
-<p>Suggested readings:</p>
-<ul>
-<li>Holzmeister, F., Johannesson, M., Böhm, R., Dreber, A., Huber, J., &amp; Kirchler, M. (2024). <a href="https://doi.org/10.1073/pnas.2403490121">Heterogeneity in Effect Size Estimates</a>. Proceedings of the National Academy of Sciences, 121(32), e2403490121.</li>
-<li>Ding, P., Feller, A., &amp; Miratrix, L. (2016). <a href="https://academic.oup.com/jrsssb/article/78/3/655/7040906?login=false">Randomization Inference for Treatment Effect Variation.</a> Journal of the Royal Statistical Society Series B: Statistical Methodology, 78(3), 655-671.</li>
-<li>Wager, S., &amp; Athey, S. (2018). <a href="https://www.tandfonline.com/doi/abs/10.1080/01621459.2017.1319839">Estimation and Inference of Heterogeneous Treatment Effects using Random Forests.</a> Journal of the American Statistical Association, 113(523), 1228-1242.</li>
-<li>Susan Athey and Stefan Wager: <a href="https://www.youtube.com/watch?v=YBbnCDRCcAI">Estimating Heterogeneous Treatment Effects in R</a>. A one-hour video on how to use the <code>grf</code> package in R to estimate heterogeneous treatment effects.</li>
-<li><a href="https://grf-labs.github.io/grf/">Generalised Random Forests</a> (R package).</li>
-<li>Coppock, A. (2015). <a href="https://egap.org/resource/10-things-to-know-about-multiple-comparisons/">10 Things to Know about Multiple Comparisons</a>. EGAP Methods Guide.</li>
-<li>Frandsen, B. (2025). <a href="https://github.com/Mixtape-Sessions/Heterogeneous-Effects/tree/main">Machine Learning and Heterogeneous Treatment Effects</a>. Slides and coding labs from a workshop on this topic. Available on GitHub.</li>
+<li>The White House. (2025). <a href="https://www.whitehouse.gov/wp-content/uploads/2025/07/Americas-AI-Action-Plan.pdf">Winning the race: America’s AI action plan</a>. What the US government wants to do about AI.</li>
+<li>OECD. (2019). <a href="https://oecd.ai/en/ai-principles">OECD AI principles</a>. The original text of the OECD AI principles. Just skim the main points.</li>
+<li>OECD. (2024). <a href="https://legalinstruments.oecd.org/en/instruments/OECD-LEGAL-0449">Recommendation of the council on artificial intelligence</a>. Again, just skim the main points.</li>
+<li>European Parliament. (2023). <a href="https://www.europarl.europa.eu/topics/en/article/20230601STO93804/eu-ai-act-first-regulation-on-artificial-intelligence">EU AI act</a>. The original text.</li>
+<li>Cole, M. D. (2024). <a href="https://web.archive.org/web/20240330165240id_/https://aire.lexxion.eu/data/article/19406/pdf/aire_2024_01-017.pdf">AI regulation and governance on a global scale: An overview of international, regional and national instruments.</a> <em>Journal of AI Law and Regulation</em>, <em>1</em>(1), 126-142. How different countries are approaching AI regulation.</li>
+<li>Chun, J., de Witt, C. S., &amp; Elkins, K. (2024). <a href="https://arxiv.org/pdf/2410.21279">Comparative global AI regulation: Policy perspectives from the EU, China, and the US.</a> <em>arXiv preprint</em>. Focused on the big three players in AI regulation.</li>
+<li>Feldstein, S. (2024). <a href="https://www.tandfonline.com/doi/pdf/10.1080/13510347.2023.2196068">Evaluating Europe’s push to enact AI regulations: How will this influence global norms?</a> <em>Democratization</em>, <em>31</em>(5), 1049-1066. Will the EU’s approach to AI regulation become a global standard?</li>
 </ul>
 </section>
-<section id="lecture-19-texts-for-discussion-november-5-2025" class="level2">
-<h2 class="anchored" data-anchor-id="lecture-19-texts-for-discussion-november-5-2025">Lecture 19: Texts for Discussion (November 5, 2025)</h2>
+<section id="lecture-20-privacy-and-data-protection" class="level3">
+<h3 class="anchored" data-anchor-id="lecture-20-privacy-and-data-protection">Lecture 20 — Privacy and data protection</h3>
+<p>Practical implications of GDPR-style rules for datasets and deployed systems.</p>
+<p>Readings:</p>
 <ul>
-<li>Lecture slides: <a href="https://raw.githack.com/danilofreire/datasci385/main/lectures/lecture-19/19-discussion.html">Texts for Discussion</a>.</li>
-<li>Munshi, K. (2003). <a href="https://academic.oup.com/qje/article-abstract/118/2/549/1899587?login=false">Networks in the modern economy: Mexican migrants in the US labor market.</a> The Quarterly Journal of Economics, 118(2), 549-599.</li>
-<li>Miguel, E., &amp; Kremer, M. (2004). <a href="https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1468-0262.2004.00481.x">Worms: identifying impacts on education and health in the presence of treatment externalities.</a> Econometrica, 72(1), 159-217.</li>
-<li><a href="https://play.kahoot.it/v2/?quizId=e02f1d98-9af7-449f-8a32-dddb6cc94575&amp;hostId=05eb977d-4f8a-440e-9e45-95212b29d103">Kahoot Quiz</a>.</li>
-<li>Pre-Analysis Plan due.</li>
-<li>Problem Set 08 due.</li>
-<li><a href="https://github.com/danilofreire/datasci385/tree/main/assignments/09-assignment">Problem Set 09 assigned.</a>.</li>
+<li>European Union. (2016). <a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32016R0679">General Data Protection Regulation (GDPR).</a> The original text of the GDPR. Don’t worry about reading the whole thing; just skim the main points.</li>
+<li>Hoofnagle, C. J., Van Der Sloot, B., &amp; Borgesius, F. Z. (2019). <a href="https://www.tandfonline.com/doi/full/10.1080/13600834.2019.1573501">The European Union general data protection regulation: what it is and what it means.</a> <em>Information &amp; Communications Technology Law</em>, <em>28</em>(1), 65-98. Much easier to read than the original GDPR text. Read this one instead if you want a summary.</li>
+<li>Wachter, S., Mittelstadt, B., &amp; Floridi, L. (2017). <a href="https://doi.org/10.1093/idpl/ipx005">Why a right to explanation of automated decision-making does not exist in the general data protection regulation.</a> <em>International data privacy law</em>, 7(2), 76-99. A critical look at the “right to explanation” in GDPR.</li>
+<li>Ryngaert, C., &amp; Taylor, M. (2020). <a href="https://www.cambridge.org/core/journals/american-journal-of-international-law/article/gdpr-as-global-data-protection-regulation/CB416FF11457C21B02C0D1DA7BE8E688">The GDPR as Global Data Protection Regulation?</a> <em>AJIL Unbound</em>, <em>114</em>, 5-9. A discussion of the GDPR’s (possible) influence beyond the EU.</li>
+<li>Taddeo, M., &amp; Floridi, L. (2018). <a href="https://www.science.org/doi/abs/10.1126/science.aat5991">How AI can be a force for good.</a> <em>Science</em>, <em>361</em>(6404), 751-752. A positive perspective on how AI can be used ethically and responsibly.</li>
 </ul>
 </section>
-<section id="lecture-20-mediation-analysis-november-10-2025" class="level2">
-<h2 class="anchored" data-anchor-id="lecture-20-mediation-analysis-november-10-2025">Lecture 20: Mediation Analysis (November 10, 2025)</h2>
+<section id="lecture-21-labour-markets-and-economic-effects" class="level3">
+<h3 class="anchored" data-anchor-id="lecture-21-labour-markets-and-economic-effects">Lecture 21 — Labour markets and economic effects</h3>
+<p>How automation affects jobs; augmentation strategies and policy responses.</p>
+<p>Readings:</p>
 <ul>
-<li>Lecture slides: <a href="https://raw.githack.com/danilofreire/datasci385/main/lectures/lecture-20/20-mediation.html">Mediation Analysis</a>.</li>
-<li>FEDAI: Chapter 10: Mediation.</li>
-<li><a href="https://play.kahoot.it/v2/?quizId=e02f1d98-9af7-449f-8a32-dddb6cc94575&amp;hostId=05eb977d-4f8a-440e-9e45-95212b29d103">KaHoot Quiz</a></li>
-</ul>
-<p>Suggested readings:</p>
-<ul>
-<li>Bullock, J. G., &amp; Green, D. P. (2021). <a href="https://doi.org/10.1177/25152459211047227">The Failings of Conventional Mediation Analysis and a Design-Based Alternative</a>. Advances in Methods and Practices in Psychological Science, 4(4), 25152459211047227.</li>
-<li>VanderWeele, T. J. (2016). <a href="https://www.annualreviews.org/content/journals/10.1146/annurev-publhealth-032315-021402">Mediation Analysis: A Practitioner’s Guide.</a> Annual Review of Public Health, 37(1), 17-32.</li>
-<li>Acharya, A., Blackwell, M., &amp; Sen, M. (2018). <a href="https://doi.org/10.1017/pan.2018.19">Analyzing Causal Mechanisms in Survey Experiments</a>. Political Analysis, 26(4), 357–378.</li>
-<li>MacKinnon, D. P., Fairchild, A. J., &amp; Fritz, M. S. (2007). <a href="https://www.annualreviews.org/content/journals/10.1146/annurev.psych.58.110405.085542">Mediation Analysis.</a> Annual Review of Psychology, 58(1), 593-614.</li>
-<li>Righetti, N. (2023). <a href="https://nicolarighetti.github.io/mediation-moderation-and-conditional-process-analysis-with-r/">Mediation, Moderation, and Conditional Process Analysis with R</a>. A comprehensive online book with R code examples.</li>
+<li>Korinek, A., &amp; Suh, D. (2024). <a href="https://www.nber.org/system/files/working_papers/w32255/w32255.pdf">Scenarios for the Transition to AGI (No.&nbsp;w32255).</a> National Bureau of Economic Research. How output and wages behave under different scenarios for technological progress.</li>
+<li>Acemoglu, D., &amp; Restrepo, P. (2019). <a href="https://www.aeaweb.org/articles?id=10.1257/jep.33.2.3">Automation and new tasks: How technology displaces and reinstates labor.</a> <em>Journal of Economic Perspectives</em>, <em>33</em>(2), 3-30. A comprehensive review of how automation affects jobs.</li>
+<li>Restrepo, P. (2025). <a href="https://www.nber.org/books-and-chapters/economics-transformative-ai/we-wont-be-missed-work-and-growth-era-agi">We won’t be missed: work and growth in the era of AGI.</a> NBER Chapters. Some scholars suggest we will live in an age of abundance, others that we will all be unemployed. What if the truth is somewhere in between?</li>
+<li>Bessen, J. E. (2019). <a href="https://www.nber.org/papers/w24235">AI and jobs: The role of demand.</a> <em>NBER Working Paper</em> No.&nbsp;24235. A nuanced look at how AI affects labour markets, focusing on demand-side effects.</li>
+<li>World Economic Forum. (2025). <a href="https://www.weforum.org/reports/the-future-of-jobs-report-2025">The future of jobs report 2025.</a> A comprehensive report on how jobs are expected to change in the last years.</li>
+<li>Manyika, J., Chui, M., Miremadi, M., Bughin, J., George, K., Willmott, P., &amp; Dewhurst, M. (2017). <a href="https://www.mckinsey.com/~/media/mckinsey/featured%20insights/digital%20disruption/harnessing%20automation%20for%20a%20future%20that%20works/mgi-a-future-that-works-full-report-updated.pdf">A future that works: Automation, employment, and productivity.</a> McKinsey Global Institute. A widely cited report on automation and jobs.</li>
 </ul>
 </section>
-<section id="lecture-21-survey-experiments-november-12-2025" class="level2">
-<h2 class="anchored" data-anchor-id="lecture-21-survey-experiments-november-12-2025">Lecture 21: Survey Experiments (November 12, 2025)</h2>
+<section id="lecture-22-quiz-5" class="level3">
+<h3 class="anchored" data-anchor-id="lecture-22-quiz-5">Lecture 22 — Quiz 5</h3>
+<p>Covers Lectures 19–21.</p>
+</section>
+</section>
+<section id="module-6-applications-limits-and-projects" class="level2">
+<h2 class="anchored" data-anchor-id="module-6-applications-limits-and-projects">Module 6 — Applications, limits and projects</h2>
+<section id="lecture-23-ai-in-health-education-and-public-services" class="level3">
+<h3 class="anchored" data-anchor-id="lecture-23-ai-in-health-education-and-public-services">Lecture 23 — AI in health, education and public services</h3>
+<p>Risks and benefits for public-sector applications.</p>
+<p>Readings:</p>
 <ul>
-<li>Lecture slides: <a href="https://raw.githack.com/danilofreire/datasci385/main/lectures/lecture-21/21-survey.html">Survey Experiments</a>.</li>
-<li>EGAP: <a href="https://egap.org/resource/10-things-to-know-about-survey-experiments/">Survey Experiments</a>.</li>
-<li>Stantcheva, S. (2023). <a href="https://www.annualreviews.org/content/journals/10.1146/annurev-economics-091622-010157">How to run surveys: A guide to creating your own identifying variation and revealing the invisible</a>. Annual Review of Economics, 15(1), 205-234.</li>
-<li>Problem Set 09 due.</li>
-<li><a href="https://github.com/danilofreire/datasci385/tree/main/assignments/10-assignment">Problem Set 10 assigned.</a></li>
-</ul>
-<p>Suggested readings:</p>
-<ul>
-<li>Sniderman, P. M. (2018). <a href="https://www.annualreviews.org/content/journals/10.1146/annurev-polisci-042716-115726">Some Advances in the Design of Survey Experiments.</a> Annual Review of Political Science, 21(1), 259-275.</li>
-<li>Schneider, D., &amp; Harknett, K. (2022). <a href="https://journals.sagepub.com/doi/full/10.1177/0049124119882477">What’s to Like? Facebook as a Tool for Survey Data Collection.</a> Sociological Methods &amp; Research, 51(1), 108-140.</li>
-<li>Clifford, S., Sheagley, G., &amp; Piston, S. (2021). <a href="https://doi.org/10.1017/S0003055421000241">Increasing Precision Without Altering Treatment Effects: Repeated Measures Designs in Survey Experiments</a>. American Political Science Review, 115(3), 1048-1065.</li>
-<li>Kane, J. V. (2024). <a href="https://www.cambridge.org/core/journals/journal-of-experimental-political-science/article/more-than-meets-the-itt-a-guide-for-anticipating-and-investigating-nonsignificant-results-in-survey-experiments/C01250EB50598D6328B6065F1DF86BA7">More Than Meets the ITT: A Guide for Anticipating and Investigating Nonsignificant Results in Survey Experiments.</a> Journal of Experimental Political Science, 1-16.</li>
+<li>Davenport, T., &amp; Kalakota, R. (2019). <a href="https://www.sciencedirect.com/science/article/pii/S2514664524010592">The potential for artificial intelligence in healthcare.</a> <em>Future healthcare journal</em>, 6(2), 94-98.</li>
+<li>Aung, Y. Y., Wong, D. C., &amp; Ting, D. S. (2021). <a href="https://academic.oup.com/bmb/advance-article-pdf/doi/10.1093/bmb/ldab016/40343944/ldab016.pdf">The promise of artificial intelligence: a review of the opportunities and challenges of artificial intelligence in healthcare.</a> <em>British medical bulletin</em>, 139(1), 4-15. This article complements the previous one.</li>
+<li>Zhai, X., Chu, X., Chai, C. S., Jong, M. S. Y., Istenic, A., Spector, M., … &amp; Li, Y. (2021). <a href="https://onlinelibrary.wiley.com/doi/abs/10.1155/2021/8812542">A review of artificial intelligence (AI) in education from 2010 to 2020.</a> <em>Complexity</em>, 2021(1), 8812542. A comprehensive review on that topic.</li>
+<li>Alasadi, E. A., &amp; Baiz, C. R. (2023). <a href="https://doi.org/10.1021/acs.jchemed.3c00323">Generative AI in Education and Research: Opportunities, concerns, and solutions.</a> <em>Journal of Chemical Education</em>, <em>100</em> (8), 2965-2971.</li>
+<li>Osborne, S. P., Cucciniello, M., Nasi, G., &amp; Zhu, E. (2022). <a href="https://link.springer.com/article/10.1007/s43508-022-00058-7">Digital transformation, artificial intelligence and effective public services: challenges and opportunities.</a> <em>Global Public Policy and Governance</em>, <em>2</em>(4), 377-380. This is the introduction of a special issue on AI in public services. The whole issue is worth reading.</li>
 </ul>
 </section>
-<section id="lecture-22-survey-methods-for-sensitive-topics-november-17-2025" class="level2">
-<h2 class="anchored" data-anchor-id="lecture-22-survey-methods-for-sensitive-topics-november-17-2025">Lecture 22: Survey Methods for Sensitive Topics (November 17, 2025)</h2>
+<section id="lecture-24-misinformation-deepfakes-and-trust-online" class="level3">
+<h3 class="anchored" data-anchor-id="lecture-24-misinformation-deepfakes-and-trust-online">Lecture 24 — Misinformation, deepfakes and trust online</h3>
+<p>Technical features and societal responses to synthetic media.</p>
+<p>Readings:</p>
 <ul>
-<li>Lecture slides: <a href="https://raw.githack.com/danilofreire/datasci385/main/lectures/lecture-22/22-survey2.html">Survey Methods for Sensitive Topics</a>.</li>
-<li>Bursztyn, L., Haaland, I. K., Röver, N., &amp; Roth, C. (2025). <a href="https://www.nber.org/papers/w33920">The Social Desirability Atlas</a>. NBER Working Paper No.&nbsp;33920.</li>
-</ul>
-<p>Suggested readings:</p>
-<ul>
-<li>Blair, G., Imai, K., &amp; Zhou, Y. Y. (2015). <a href="https://www.tandfonline.com/doi/abs/10.1080/01621459.2015.1050028">Design and Analysis of the Randomized Response Technique.</a> Journal of the American Statistical Association, 110(511), 1304-1319.</li>
-<li>Blair, G., &amp; Imai, K. (2012). <a href="https://www.cambridge.org/core/journals/political-analysis/article/statistical-analysis-of-list-experiments/6AEE6C9D3AB6DA410D602CB035D5959A">Statistical Analysis of List Experiments.</a> Political Analysis, 20(1), 47-77.</li>
-<li>Riambau, G., &amp; Ostwald, K. (2021). <a href="https://doi.org/10.1017/psrm.2020.18">Placebo Statements in List Experiments: Evidence from a Face-to-Face Survey in Singapore</a>. Political Science Research and Methods, 9(1), 172-179.</li>
-<li>Gosciak, J., Molitor, D., &amp; Lundberg, I. (2025). <a href="https://osf.io/preprints/socarxiv/69y2j_v1">Adaptive Randomization in Conjoint Survey Experiments</a>. Retrieved from <a href="https://osf.io/preprints/socarxiv/69y2j_v1" class="uri">https://osf.io/preprints/socarxiv/69y2j_v1</a>.</li>
+<li>Helmus, T. C. (2022). <a href="https://www.rand.org/pubs/perspectives/PEA1043-1.html">Artificial intelligence, deepfakes, and disinformation: A primer.</a> <em>RAND Corporation</em>. Very accessible introduction to the topic.</li>
+<li>Mustak, M., Salminen, J., Mäntymäki, M., Rahman, A., &amp; Dwivedi, Y. K. (2023). <a href="https://doi.org/10.1016/j.jbusres.2022.113368">Deepfakes: Deceptions, mitigations, and opportunities.</a> <em>Journal of Business Research</em>, 154, 113368. Focused on business applications.</li>
+<li>Chesney, R., &amp; Citron, D. K. (2019). <a href="https://www.foreignaffairs.com/articles/world/2018-12-11/deepfakes-and-new-disinformation-war">Deepfakes and the new disinformation war: The coming age of post-truth geopolitics.</a> <em>Foreign Affairs</em>. A legal perspective on deepfakes and misinformation.</li>
+<li>Vaccari, C., &amp; Chadwick, A. (2020). <a href="https://journals.sagepub.com/doi/full/10.1177/2056305120903408">Deepfakes and disinformation: Exploring the impact of synthetic political video on deception, uncertainty, and trust in news.</a> <em>Social Media + Society</em>, <em>6</em>(1), 2056305120903408. An empirical study that finds that deepfakes may contribute toward generalised indeterminacy and cynicism.</li>
+<li>Kietzmann, J., Lee, L. W., McCarthy, I. P., &amp; Kietzmann, T. C. (2020). <a href="https://doi.org/10.1016/j.bushor.2019.11.006">Deepfakes: Trick or treat?</a> <em>Business Horizons</em>, <em>63</em>(2), 135-146. The authors provide a framework to manage deepfake risks.</li>
 </ul>
 </section>
-<section id="lecture-23-texts-for-discussion-related-to-survey-experiments-november-19-2025" class="level2">
-<h2 class="anchored" data-anchor-id="lecture-23-texts-for-discussion-related-to-survey-experiments-november-19-2025">Lecture 23: Texts for Discussion (Related to Survey Experiments) (November 19, 2025)</h2>
-<ul>
-<li>Lecture slides: <a href="https://raw.githack.com/danilofreire/datasci385/main/lectures/lecture-23/23-discussion.html">Texts for Discussion</a>.</li>
-<li>Druckman, J. N., Gilli, M., Klar, S., &amp; Robison, J. (2015). <a href="https://onlinelibrary.wiley.com/doi/abs/10.1111/ssqu.12135">Measuring drug and alcohol use among college student‐athletes.</a> Social Science Quarterly, 96(2), 369-380.</li>
-<li>Blair, G., Imai, K., &amp; Lyall, J. (2014). <a href="https://onlinelibrary.wiley.com/doi/abs/10.1111/ajps.12086">Comparing and Combining List and Endorsement Experiments: Evidence from Afghanistan.</a> American Journal of Political Science, Vol. 58, No.&nbsp;4 (October), pp.&nbsp;1043-1063.</li>
-<li>Rosenfeld, B, Imai, K., &amp; Shapiro, J. (2016). <a href="https://onlinelibrary.wiley.com/doi/abs/10.1111/ajps.12205">An Empirical Validation Study of Popular Survey Methodologies for Sensitive Questions.</a> American Journal of Political Science, 60(3), 783-802.</li>
-<li>Freire, D., &amp; Skarbek, D. (2023). <a href="https://journals.sagepub.com/doi/full/10.1177/20531680221150389">Vigilantism and Institutions: Understanding Attitudes Toward Lynching in Brazil.</a> Research &amp; Politics, 10(1), 1-8.</li>
-<li>Problem Set 10 due.</li>
-</ul>
+<section id="lecture-25-course-revision" class="level3">
+<h3 class="anchored" data-anchor-id="lecture-25-course-revision">Lecture 25 — Course revision</h3>
+<p>Short course revision and Q&amp;A.</p>
 </section>
-<section id="lecture-24-meta-analysis-and-integration-of-research-findings-november-24-2025" class="level2">
-<h2 class="anchored" data-anchor-id="lecture-24-meta-analysis-and-integration-of-research-findings-november-24-2025">Lecture 24: Meta-Analysis and Integration of Research Findings (November 24, 2025)</h2>
-<ul>
-<li>Lecture slides: <a href="https://raw.githack.com/danilofreire/datasci385/main/lectures/lecture-24/24-meta-analysis.html">Meta-Analysis and Integration of Research Findings.</a></li>
-<li>FEDAI: Chapter 11: Integration of Research Findings.</li>
-</ul>
-<p>Suggested readings:</p>
-<ul>
-<li>Borenstein, M., Hedges, L. V., Higgins, J. P., &amp; Rothstein, H. R. (2011). <a href="https://www.wiley.com/en-us/Introduction+to+Meta+Analysis%2C+2nd+Edition-p-9780470057247">Introduction to Meta-analysis.</a> John Wiley &amp; Sons. A whole book dedicated to the topic. A bit technical but very good.</li>
-<li>Harrer, M., Cuijpers, P., Furukawa, T., &amp; Ebert, D. (2021). <a href="https://doi.org/10.1201/9781003107347">Doing Meta-Analysis with R: A Hands-On Guide.</a> Chapman and Hall/CRC.</li>
-<li>Hansen, C., Steinmetz, H., &amp; Block, J. (2022). <a href="https://link.springer.com/article/10.1007/s11301-021-00247-4">How to Conduct a Meta-Analysis in Eight Steps: A Practical Guide.</a> Management Review Quarterly, 1-19.</li>
-<li>Page, M. J., McKenzie, J. E., Bossuyt, P. M., Boutron, I., Hoffmann, T. C., Mulrow, C. D., … &amp; Moher, D. (2021). <a href="https://www.bmj.com/content/372/bmj.n71.short">The PRISMA 2020 Statement: An Updated Guideline for Reporting Systematic Reviews</a>. BMJ, 372.</li>
-</ul>
-</section>
-<section id="lecture-25-course-revision-december-1-2025" class="level2">
-<h2 class="anchored" data-anchor-id="lecture-25-course-revision-december-1-2025">Lecture 25: Course Revision (December 1, 2025)</h2>
-<ul>
-<li>Lecture slides: <a href="https://raw.githack.com/danilofreire/datasci385/main/lectures/lecture-25/25-revision.html">Course Revision</a>.</li>
-</ul>
-</section>
-<section id="lecture-26-presentations-december-3-2025" class="level2">
-<h2 class="anchored" data-anchor-id="lecture-26-presentations-december-3-2025">Lecture 26: Presentations (December 3, 2025)</h2>
-<ul>
-<li>Presentations of final projects.</li>
-</ul>
-</section>
-<section id="lecture-27-presentations-december-8-2025" class="level2">
-<h2 class="anchored" data-anchor-id="lecture-27-presentations-december-8-2025">Lecture 27: Presentations (December 8, 2025)</h2>
-<ul>
-<li>Presentations of final projects.</li>
-</ul>
+<section id="lecture-26-project-work" class="level3">
+<h3 class="anchored" data-anchor-id="lecture-26-project-work">Lecture 26 — Project work</h3>
+<p>In-class time for project work and consultations.</p>
 
 
+</section>
 </section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
@@ -1162,11 +1067,11 @@ ul.task-list li input[type="checkbox"] {
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/danilofreire/datasci385/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li><li><a href="https://github.com/danilofreire/datasci385/blob/gh-pages/lectures.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/danilofreire/datasci185/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li><li><a href="https://github.com/danilofreire/datasci185/blob/gh-pages/lectures.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/danilofreire/datasci385">
+    <a class="nav-link" href="https://github.com/danilofreire/datasci185">
       <i class="bi bi-github" role="img">
 </i> 
     </a>
