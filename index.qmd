@@ -1,51 +1,64 @@
 ---
-title: "DATASCI 385 - Experimental Methods"
+title: "DATASCI 185 - Introduction to AI Applications"
 ---
 
-Welcome to [DATASCI 385](https://github.com/danilofreire/datasci385)! Experimental methods are gaining popularity in social and biological sciences, providing a more reliable approach to evidence-based research. This course introduces the essentials of experimental design, focusing on testing causal hypotheses. You will learn about causal inference, blocking, covariate adjustment, non-compliance, attrition, heterogeneous treatment effects, reproducible presentation, and research ethics. Through lectures and hands-on sessions, you will design and implement experiments, critically evaluate existing research, and improve your writing and presentation skills by creating your own experimental research project.
+Welcome to [DATASCI 185](https://github.com/danilofreire/datasci185)! This course provides a comprehensive introduction to the fundamental concepts, tools, and techniques used in artificial intelligence. The course is practical: students will learn how modern systems are designed and how to ask the right questions about data, reliability and harms. It combines short demonstrations (no programming experience required), case studies, and project work. It is suitable for undergraduate students from any faculty who want a grounded understanding of what AI can and cannot do.
 
-We will meet every Monday and Wednesday from 17:30 to 18:45 in the [Psychology Building 220](http://emap.fmd.emory.edu/website/campus/index.htm#?queryzoom=Yes&Query=(bldg='2045')). It is important to read the assigned readings before class, and make sure to check this website for updates and additional resources. If you have any questions, please feel free to contact me or the course TA. I am here to help you succeed in this course and beyond.
+We will meet every Monday and Wednesday from 4pm to 4:50pm in the [Psychology Building, Room 290](https://maps.app.goo.gl/orrT4jaoxjYiojkL7). It is important to read the assigned readings before class, and make sure to check this website for updates and additional resources. If you have any questions, please feel free to contact me or the course TAs. I am here to help you succeed in this course and beyond.
+
+## Course Content
+
+The course covers six main modules:
+
+1. **Orientation** - Introduction to AI and course overview
+2. **How AI systems are designed** - Dataset design, learning paradigms
+3. **Language and perception** - Natural language processing and computer vision
+4. **Retrieval, generation and pipelines** - Modern AI systems and workflows
+5. **Data ethics and bias** - Ethical considerations and bias mitigation
+6. **Policy, governance and social impact** - Regulation, privacy, and societal effects
 
 ## Contact Information
 
 - **Name**: [Danilo Freire](https://danilofreire.github.io/)
 - **Email**: [`danilo.freire@emory.edu`](mailto:danilo.freire@emory.edu)
+- **Teaching Assistants**:
+  - Tom Suo: <tom.suo@emory.edu> (in class)
+  - Sissi Li: <sissi.li@emory.edu> (in class)
+  - Philip Wang: <xipu.wang@emory.edu> (grading)
+  - Anita Osuri: <anita.osuri@emory.edu> (grading)
 - **Office Hours**: By appointment at your convenience, please email me to schedule a meeting
 
 ## Learning Outcomes
 
 By the end of this course, students will be able to:
 
-1. Design rigorous experimental studies, including appropriate randomisation procedures and sample size calculations.
-2. Develop comprehensive pre-analysis plans (PAPs) for experimental research, demonstrating an understanding of best practices in pre-registration.
-3. Apply statistical techniques to analyse experimental data.
-4. Use Quarto to create reproducible research documents and presentations.
-5. Critically evaluate experimental designs and results, identifying potential issues and limitations.
-6. Adapt analysis strategies to address unexpected challenges in experimental data.
-7. Understand and apply ethical considerations in experimental design and analysis.
-8. Develop problem-solving skills through regular problem sets covering various aspects of experimental design and analysis.
+1. Explain the main ideas behind contemporary AI systems in plain language.
+2. Identify common failure modes of AI systems and the data issues that cause them.
+3. Read and assess claims about AI in news articles, product pages and policy documents.
+4. Design a small, realistic plan for an AI application, including data needs, evaluation, and a basic harm-mitigation strategy.
+5. Reflect critically on ethical, legal and social questions raised by AI deployment.
 
 ## Website Structure
 
-This website contains the [course syllabus](https://danilofreire.github.io/datasci385/syllabus.html), [lecture materials](https://danilofreire.github.io/datasci385/lectures.html), [guides](https://danilofreire.github.io/datasci385/guides.html), and [assignments](https://danilofreire.github.io/datasci385/assignments.html) for the course. The course repository at <https://github.com/danilofreire/datasci385> is similarly structured. Feel free to explore the materials and use them as needed.
+This website contains the [course syllabus](https://danilofreire.github.io/datasci185/syllabus.html), [lecture materials](https://danilofreire.github.io/datasci185/lectures.html), and [assignments](https://danilofreire.github.io/datasci185/assignments.html) for the course. The course repository at <https://github.com/danilofreire/datasci185> is similarly structured. Feel free to explore the materials and use them as needed.
 
 ## Getting Help
 
 If you encounter any issues with the course materials or have questions about the content, please:
 
-1. Check the [course syllabus](https://danilofreire.github.io/datasci385/syllabus.html) and this README for relevant information
-2. Review the [lecture materials](https://danilofreire.github.io/datasci385/lectures.html) and [guides](https://danilofreire.github.io/datasci385/guides.html) in the repository
-3. Consult with your classmates or post in the [course discussion forum](https://github.com/danilofreire/datasci385/discussions)
-4. Attend office hours or schedule an appointment with the instructor
+1. Check the [course syllabus](https://danilofreire.github.io/datasci185/syllabus.html) and this README for relevant information
+2. Review the [lecture materials](https://danilofreire.github.io/datasci185/lectures.html) in the repository
+3. Contact the TAs or instructor via email
+4. [Open an issue](https://github.com/danilofreire/datasci185/issues) on GitHub
 
 ## Contributing to the Repository
 
-While this repository is primarily maintained by the course instructor, everyone is welcome to contribute. Please feel free to suggest improvements or report issues by [opening a GitHub issue](https://github.com/danilofreire/qtm350/issues), [submitting a pull request](https://github.com/danilofreire/qtm350/pulls), [creating a discussion post](https://github.com/danilofreire/qtm350/discussions), or [contacting the instructor directly](mailto:danilo.freire@emory.edu).
+While this repository is primarily maintained by the course instructor, everyone is welcome to contribute. Please feel free to suggest improvements or report issues by [opening a GitHub issue](https://github.com/danilofreire/datasci185/issues), [submitting a pull request](https://github.com/danilofreire/datasci185/pulls), [creating a discussion post](https://github.com/danilofreire/datasci185/discussions), or [contacting the instructor directly](mailto:danilo.freire@emory.edu).
 
 ## License
 
-This repository is licensed under the [MIT License](https://github.com/danilofreire/qtm350/blob/main/LICENSE.md). You are free to use, modify, and distribute the materials as needed, with appropriate attribution to the original source.
+This repository is licensed under the [MIT License](https://github.com/danilofreire/datasci185/blob/main/LICENSE.md). You are free to use, modify, and distribute the materials as needed, with appropriate attribution to the original source.
 
 -----
 
-We look forward to an engaging and productive semester! Happy coding! 
+We look forward to an engaging and productive semester! Happy coding!

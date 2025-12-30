@@ -3,18 +3,18 @@ project:
   output-dir: docs
 
 website:
-  title: "DATASCI 385"
+  title: "DATASCI 185"
   page-navigation: true
   back-to-top-navigation: true
   reader-mode: true
-  repo-url: https://github.com/danilofreire/datasci385
+  repo-url: https://github.com/danilofreire/datasci185
   repo-actions: [issue, source]
   repo-branch: gh-pages
   navbar:
     pinned: true
     tools:
       - icon: github
-        href: https://github.com/danilofreire/datasci385
+        href: https://github.com/danilofreire/datasci185
     left:
       - href: syllabus.qmd
         text: Syllabus
@@ -22,15 +22,13 @@ website:
         text: Lectures
       - href: assignments.qmd
         text: Assignments
-      - href: guides.qmd
-        text: Guides
       - href: LICENSE.html
         text: " "
   page-footer: 
     left: "The content of this site is licensed under the [MIT License](LICENSE.qmd)." 
     right: 
       - icon: github
-        href: https://github.com/danilofreire/datasci385
+        href: https://github.com/danilofreire/datasci185
 
 format:
   html:
@@ -38,4 +36,3 @@ format:
       light: lumen
       dark: solar
     toc: true
-
