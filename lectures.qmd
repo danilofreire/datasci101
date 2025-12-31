@@ -6,9 +6,10 @@ Please find below the schedule of our lectures. Each lecture includes a brief de
 
 ## Module 0 — Orientation
 
-### Lecture 1 — Course introduction; what AI means today
+### January 14, 2026:
 
-Syllabus, assessment, expectations. A factual tour of AI in products and media and the questions we will address.
+- Syllabus and course repository: <https://github.com/danilofreire/datasci185>.
+- Lecture 01: [Course introduction](https://raw.githack.com/danilofreire/datasci185/gh-pages/lectures/lecture-01/01-introduction.html).
 
 Readings:
 
@@ -18,10 +19,11 @@ Readings:
 - Morgan Stanley (2025). [AI's next leap: 5 trends shaping innovation and ROI](https://www.morganstanley.com/insights/articles/ai-trends-reasoning-frontier-models-2025-tmt). A short text on the current state of AI applications in industry.
 - McKinsey & Company (2025). [The state of AI: how organizations are rewiring to capture value](https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai). A business-focused overview of AI adoption and impact.
 
+### January 19, 2026: Martin Luther King Day (No Classes)
 
-### Lecture 2 — A brief history of AI and the recent shift
+### January 21, 2026:
 
-From symbolic approaches to data-driven learning; the transformer architecture explained in plain language.
+- Lecture 02: [A brief history of AI and the recent shift](https://raw.githack.com/danilofreire/datasci185/gh-pages/lectures/lecture-02/02-history.html).
 
 Readings:
 
@@ -36,9 +38,9 @@ Readings:
 
 ## Module 1 — How AI systems are designed
 
-### Lecture 3 — Dataset design, labels, and tasks
+### January 26, 2026:
 
-What data are, how tasks are framed, and common pitfalls in dataset design.
+- Lecture 03: [Dataset design, labels, and tasks](https://raw.githack.com/danilofreire/datasci185/gh-pages/lectures/lecture-03/03-datasets.html).
 
 Readings:
 
@@ -48,9 +50,9 @@ Readings:
 - Orr, W., & Crawford, K. (2024). [The social construction of datasets: on the practices, processes, and challenges of dataset creation for machine learning.](https://journals.sagepub.com/doi/abs/10.1177/14614448241251797) *New Media & Society*, 26(9), 4955-4972. A sociological perspective on dataset creation, with interviews with practitioners.
 - Nazer, L. H., Zatarah, R., Waldrip, S., Ke, J. X. C., Moukheiber, M., Khanna, A. K., ... & Mathur, P. (2023). [Bias in artificial intelligence algorithms and recommendations for mitigation.](https://journals.plos.org/digitalhealth/article?id=10.1371/journal.pdig.0000278) *PLOS Digital Health*, 2(6), e0000278. A review of different types of bias that can arise in datasets and what to do about them. Focused on healthcare but broadly applicable.
 
-### Lecture 4 — Supervised, unsupervised, and hybrid approaches to learning
+### January 28, 2026:
 
-What learning means and why generalisation is difficult.
+- Lecture 04: [Supervised, unsupervised, and hybrid approaches to learning](https://raw.githack.com/danilofreire/datasci185/gh-pages/lectures/lecture-04/04-learning.html).
 
 Readings:
 
@@ -60,9 +62,9 @@ Readings:
 - Elsevier (2025). [Science direct: supervised learning.](https://www.sciencedirect.com/topics/computer-science/supervised-learning) A short introduction to supervised learning, with links to further readings.
 - Elsevier (2025). [Science direct: unsupervised learning.](https://www.sciencedirect.com/topics/computer-science/unsupervised-learning) Same as above, but for unsupervised learning.
 
-### Lecture 5 — Metrics, validation and overfitting
+### February 02, 2026:
 
-Confusion matrices, precision and recall, cross-validation and the limits of single-number metrics.
+- Lecture 05: [Metrics, validation and overfitting](https://raw.githack.com/danilofreire/datasci185/gh-pages/lectures/lecture-05/05-metrics.html).
 
 Readings:
 
@@ -72,13 +74,15 @@ Readings:
 - Coursera (2025). [Precision vs. recall in machine learning: what's the difference?](https://www.coursera.org/articles/precision-vs-recall-machine-learning). A short article about those two commonly confused metrics.
 - Palumbo, G., Carneiro, D., & Alves, V. (2024). [Objective metrics for ethical AI: a systematic literature review.](https://link.springer.com/article/10.1007/s41060-024-00541-w) *International Journal of Data Science and Analytics*, 1-21. New ideas about how to evaluate AI systems beyond accuracy.
 
-### Lecture 6 — Quiz 1
+### February 04, 2026:
+
+- Lecture 06: [Quiz 1](https://github.com/danilofreire/datasci185-quiz01/)
 
 ## Module 2 — Language and perception
 
-### Lecture 7 — How machines handle language: tokens, embeddings and context
+### February 09, 2026:
 
-An intuitive view of tokenisation, vector representations and contextual meaning.
+- Lecture 07: [How machines handle language: tokens, embeddings and context](https://raw.githack.com/danilofreire/datasci185/gh-pages/lectures/lecture-07/07-language.html).
 
 Readings:
 
@@ -88,9 +92,9 @@ Readings:
 - DeepLearning.ai (2023). [A complete guide to natural language processing.](https://www.deeplearning.ai/resources/natural-language-processing/) Despite another grandiose title, this is a good overview of NLP concepts and techniques.
 - Gastaldi, J. L., Terilla, J., Malagutti, L., DuSell, B., Vieira, T., & Cotterell, R. (2024). [The foundations of tokenization: statistical and computational concerns.](https://arxiv.org/abs/2407.11606) *arXiv preprint* arXiv:2407.11606. Very technical, for those interested in the mathematical details of tokenisation.
 
-### Lecture 8 — How machines analyse images and audio
+### February 11, 2026:
 
-Abstraction, convolution and the role of large datasets.
+- Lecture 08: [How machines analyse images and audio](https://raw.githack.com/danilofreire/datasci185/gh-pages/lectures/lecture-08/08-vision-audio.html).
 
 Readings:
 
@@ -100,21 +104,21 @@ Readings:
 - Singal, A. (2023). [Hearing is believing: revolutionizing AI with audio classification via computer vision.](https://huggingface.co/blog/Andyrasika/voice-with-vision) How machines classify audio using image-based techniques. Includes Python code for practitioners.
 - Goodfellow, I., Bengio, Y., & Courville, A. (2016). [Deep learning.](https://www.deeplearningbook.org/) MIT Press. Chapters 9 and 10 provide a solid foundation in convolutional networks. A bit technical, quite dense, but this is one of the best books on deep learning.
 
-### Lecture 9 — Behavioural testing: examples and demonstrations
+### February 16, 2026:
 
-Live demos: prompt responses, image classifiers, and stress-tests.
+- Lecture 09: [Behavioural testing: examples and demonstrations](https://raw.githack.com/danilofreire/datasci185/gh-pages/lectures/lecture-09/09-testing.html).
 
 No required readings for this lecture. We will do live demonstrations in class.
 
-### Lecture 10 — Quiz 2
+### February 18, 2026:
 
-Covers Lectures 7–9.
+- Lecture 10: [Quiz 2](https://github.com/danilofreire/datasci185-quiz02/)
 
 ## Module 3 — Retrieval, generation and pipelines
 
-### Lecture 11 — Retrieval-augmented workflows and semantic search
+### February 23, 2026:
 
-Augmenting generation with retrieval; vector search and chunking explained for practitioners.
+- Lecture 11: [Retrieval-augmented workflows and semantic search](https://raw.githack.com/danilofreire/datasci185/gh-pages/lectures/lecture-11/11-rag.html).
 
 Readings:
 
@@ -124,9 +128,9 @@ Readings:
 - Slack (2025). [Semantic search explained: how it works, and why it matters.](https://slack.com/blog/productivity/semantic-search-explained-how-it-works-and-why-it-matters) Good explainer from a top tech company.
 - Wang, X., Wang, Z., Gao, X., Zhang, F., Wu, Y., Xu, Z., ... & Huang, X. (2024). [Searching for best practices in retrieval-augmented generation.](https://arxiv.org/abs/2407.01219) *arXiv preprint* arXiv:2407.01219. Technical in nature, for those interested in the research behind RAG.
 
-### Lecture 12 — Creativity and hallucination
+### February 25, 2026:
 
-Why models invent facts and how to spot and reduce hallucination.
+- Lecture 12: [Creativity and hallucination](https://raw.githack.com/danilofreire/datasci185/gh-pages/lectures/lecture-12/12-hallucination.html).
 
 Readings:
 
@@ -137,9 +141,9 @@ Readings:
 - OpenAI (2024). [Does ChatGPT tell the truth?](https://help.openai.com/en/articles/8313428-does-chatgpt-tell-the-truth) I'm sure you know who these people are. Practical advice.
 - Kalai, A. T., Nachum, O., Vempala, S. S., & Zhang, E. (2025). [Why language models hallucinate.](https://arxiv.org/abs/2509.04664) *arXiv preprint* arXiv:2509.04664. Written by members of OpenAI. Not for the faint of heart by any means, but if you're feeling adventurous...
 
-### Lecture 13 — Building reliable pipelines: monitoring and testing
+### March 02, 2026:
 
-Overview of simple strategies for AI evaluation; what operational teams track.
+- Lecture 13: [Building reliable pipelines: monitoring and testing](https://raw.githack.com/danilofreire/datasci185/gh-pages/lectures/lecture-13/13-pipelines.html).
 
 Readings:
 
@@ -147,15 +151,15 @@ Readings:
 - Allen, J. (2024). [Data pipeline monitoring: best practices for full observability.](https://www.prefect.io/blog/data-pipeline-monitoring-best-practices) Informal and full of practical tips. Some technical terms too, but nothing too difficult.
 - Steidl, M., Felderer, M., & Ramler, R. (2023). [The pipeline for the continuous development of artificial intelligence models--current state of research and practice.](https://arxiv.org/abs/2301.09001) *arXiv e-prints*, arXiv-2301. _Super long_ article (sorry!), but it covers everything we discuss in class and more. Just read what you need.
 
-### Lecture 14 — Quiz 3
+### March 04, 2026:
 
-Covers Lectures 11–13.
+- Lecture 14: [Quiz 3](https://github.com/danilofreire/datasci185-quiz03/)
 
 ## Module 4 — Data ethics and bias
 
-### Lecture 15 — Types of bias and how they arise
+### March 09, 2026:
 
-Selection bias, label bias and measurement error.
+- Lecture 15: [Types of bias and how they arise](https://raw.githack.com/danilofreire/datasci185/gh-pages/lectures/lecture-15/15-bias.html).
 
 Readings:
 
@@ -165,9 +169,11 @@ Readings:
 - Bender, E. M., Gebru, T., McMillan-Major, A., & Shmitchell, S. (2021). [On the dangers of stochastic parrots: Can language models be too big?](https://dl.acm.org/doi/10.1145/3442188.3445922) In *Proceedings of the 2021 ACM Conference on Fairness, Accountability, and Transparency* (pp. 610-623). A critical look at large language models and the risks they pose.
 - Silberg, J., & Manyika, J. (2019). [Notes from the AI frontier: tackling bias in AI (and in humans).](https://www.mckinsey.com/~/media/McKinsey/Featured%20Insights/Artificial%20Intelligence/Tackling%20bias%20in%20artificial%20intelligence%20and%20in%20humans/MGI-Tackling-bias-in-AI-June-2019.pdf) McKinsey Global Institute, 1(6), 1-31. An easy-to-read report on bias in AI, with practical recommendations for business and policy.
 
-### Lecture 16 — Documentation and dataset governance
+### March 11, 2026: Spring Break (No Classes)
 
-Datasheets, model cards and provenance.
+### March 16, 2026:
+
+- Lecture 16: [Documentation and dataset governance](https://raw.githack.com/danilofreire/datasci185/gh-pages/lectures/lecture-16/16-documentation.html).
 
 Readings:
 
@@ -177,9 +183,9 @@ Readings:
 - IBM (2025). [What is data lineage?](https://www.ibm.com/think/topics/data-lineage) A short guide to data lineage, with use cases.
 - IBM (2025). [What is data provenance?](https://www.ibm.com/topics/data-provenance) Another practical guide, this time on data provenance.
 
-### Lecture 17 — Case studies: biased outcomes in health, hiring and policing
+### March 18, 2026:
 
-Examples that illustrate impact and possible mitigations.
+- Lecture 17: [Case studies: biased outcomes in health, hiring and policing](https://raw.githack.com/danilofreire/datasci185/gh-pages/lectures/lecture-17/17-case-studies.html).
 
 Readings:
 
@@ -190,15 +196,15 @@ Readings:
 - Wilson, K., & Caliskan, A. (2024, October). [Gender, race, and intersectional bias in resume screening via language model retrieval.](https://ojs.aaai.org/index.php/AIES/article/view/31748) In *Proceedings of the AAAI/ACM Conference on AI, Ethics, and Society* (Vol. 7, pp. 1578-1590). A recent paper on how AI may be biased in hiring.
 - AI Now Institute (2025). [Artificial Power: 2025 Landscape Report.](https://ainowinstitute.org/publications/research/ai-now-2025-landscape-report) A strongly critical report on the power dynamics in the AI ecosystem. Worth reading even if you disagree with the arguments.
 
-### Lecture 18 — Quiz 4
+### March 23, 2026:
 
-Covers Lectures 15–17.
+- Lecture 18: [Quiz 4](https://github.com/danilofreire/datasci185-quiz04/)
 
 ## Module 5 — Policy, governance and social impact
 
-### Lecture 19 — AI regulation and standards around the world
+### March 25, 2026:
 
-American AI Initiative, OECD principles, EU AI Act summary and how rules influence design.
+- Lecture 19: [AI regulation and standards around the world](https://raw.githack.com/danilofreire/datasci185/gh-pages/lectures/lecture-19/19-regulation.html).
 
 Readings:
 
@@ -210,9 +216,9 @@ Readings:
 - Chun, J., de Witt, C. S., & Elkins, K. (2024). [Comparative global AI regulation: Policy perspectives from the EU, China, and the US.](https://arxiv.org/pdf/2410.21279) *arXiv preprint*. Focused on the big three players in AI regulation.
 - Feldstein, S. (2024). [Evaluating Europe's push to enact AI regulations: How will this influence global norms?](https://www.tandfonline.com/doi/pdf/10.1080/13510347.2023.2196068) *Democratization*, *31*(5), 1049-1066. Will the EU's approach to AI regulation become a global standard?
 
-### Lecture 20 — Privacy and data protection
+### March 30, 2026:
 
-Practical implications of GDPR-style rules for datasets and deployed systems.
+- Lecture 20: [Privacy and data protection](https://raw.githack.com/danilofreire/datasci185/gh-pages/lectures/lecture-20/20-privacy.html).
 
 Readings:
 
@@ -222,9 +228,9 @@ Readings:
 - Ryngaert, C., & Taylor, M. (2020). [The GDPR as Global Data Protection Regulation?](https://www.cambridge.org/core/journals/american-journal-of-international-law/article/gdpr-as-global-data-protection-regulation/CB416FF11457C21B02C0D1DA7BE8E688) *AJIL Unbound*, *114*, 5-9. A discussion of the GDPR's (possible) influence beyond the EU.
 - Taddeo, M., & Floridi, L. (2018). [How AI can be a force for good.](https://www.science.org/doi/abs/10.1126/science.aat5991) *Science*, *361*(6404), 751-752. A positive perspective on how AI can be used ethically and responsibly.
 
-### Lecture 21 — Labour markets and economic effects
+### April 01, 2026:
 
-How automation affects jobs; augmentation strategies and policy responses.
+- Lecture 21: [Labour markets and economic effects](https://raw.githack.com/danilofreire/datasci185/gh-pages/lectures/lecture-21/21-labour.html).
 
 Readings:
 
@@ -235,15 +241,15 @@ Readings:
 - World Economic Forum. (2025). [The future of jobs report 2025.](https://www.weforum.org/reports/the-future-of-jobs-report-2025) A comprehensive report on how jobs are expected to change in the last years.
 - Manyika, J., Chui, M., Miremadi, M., Bughin, J., George, K., Willmott, P., & Dewhurst, M. (2017). [A future that works: Automation, employment, and productivity.](https://www.mckinsey.com/~/media/mckinsey/featured%20insights/digital%20disruption/harnessing%20automation%20for%20a%20future%20that%20works/mgi-a-future-that-works-full-report-updated.pdf) McKinsey Global Institute. A widely cited report on automation and jobs.
 
-### Lecture 22 — Quiz 5
+### April 06, 2026:
 
-Covers Lectures 19–21.
+- Lecture 22: [Quiz 5](https://github.com/danilofreire/datasci185-quiz05/)
 
 ## Module 6 — Applications, limits and projects
 
-### Lecture 23 — AI in health, education and public services
+### April 08, 2026:
 
-Risks and benefits for public-sector applications.
+- Lecture 23: [AI in health, education and public services](https://raw.githack.com/danilofreire/datasci185/gh-pages/lectures/lecture-23/23-applications.html).
 
 Readings:
 
@@ -253,9 +259,9 @@ Readings:
 - Alasadi, E. A., & Baiz, C. R. (2023). [Generative AI in Education and Research: Opportunities, concerns, and solutions.](https://doi.org/10.1021/acs.jchemed.3c00323) *Journal of Chemical Education*, *100* (8), 2965-2971.
 - Osborne, S. P., Cucciniello, M., Nasi, G., & Zhu, E. (2022). [Digital transformation, artificial intelligence and effective public services: challenges and opportunities.](https://link.springer.com/article/10.1007/s43508-022-00058-7) *Global Public Policy and Governance*, *2*(4), 377-380. This is the introduction of a special issue on AI in public services. The whole issue is worth reading.
 
-### Lecture 24 — Misinformation, deepfakes and trust online
+### April 13, 2026:
 
-Technical features and societal responses to synthetic media.
+- Lecture 24: [Misinformation, deepfakes and trust online](https://raw.githack.com/danilofreire/datasci185/gh-pages/lectures/lecture-24/24-misinformation.html).
 
 Readings:
 
@@ -265,10 +271,14 @@ Readings:
 - Vaccari, C., & Chadwick, A. (2020). [Deepfakes and disinformation: Exploring the impact of synthetic political video on deception, uncertainty, and trust in news.](https://journals.sagepub.com/doi/full/10.1177/2056305120903408) *Social Media + Society*, *6*(1), 2056305120903408. An empirical study that finds that deepfakes may contribute toward generalised indeterminacy and cynicism.
 - Kietzmann, J., Lee, L. W., McCarthy, I. P., & Kietzmann, T. C. (2020). [Deepfakes: Trick or treat?](https://doi.org/10.1016/j.bushor.2019.11.006) *Business Horizons*, *63*(2), 135-146. The authors provide a framework to manage deepfake risks.
 
-### Lecture 25 — Course revision
+### April 15, 2026:
 
-Short course revision and Q&A.
+- Lecture 25: [Course revision](https://raw.githack.com/danilofreire/datasci185/gh-pages/lectures/lecture-25/25-revision.html).
 
-### Lecture 26 — Project work
+### April 20, 2026:
 
-In-class time for project work and consultations.
+- Lecture 26: [Project work](https://raw.githack.com/danilofreire/datasci185/gh-pages/lectures/lecture-26/26-project.html).
+
+### April 22, 2026:
+
+- [Final Project due (20%).](https://github.com/danilofreire/datasci185/tree/main/project)
