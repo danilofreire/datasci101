@@ -2,33 +2,43 @@
 title: Assignments
 ---
 
-Here you will find information about the assignments for QTM 385. There are ten of them, each worth 5% of your final grade. The assignments are designed to help you practice the concepts covered in class and to develop your data science skills.
+Here you will find information about the assignments for DATASCI 185. There are ten problem sets, each worth 5% of your final grade (50% total). There are also five in-class quizzes worth 6% each (30% total), and a final group project worth 20% of your final grade.
 
-Assignment submissions are typically due on Wednesdays at 11:59pm in the week following their publication. You may submit via Canvas (preferred) or email (<danilo.freire@emory.edu>).
+Problem set submissions are due by 11:59pm on the date specified. You may submit via Canvas (preferred) or email (<danilo.freire@emory.edu>).
 
-I encourage you to complete assignments in Quarto or Jupyter Notebooks and submit them in html or PDF format (just because they are easier to read on Canvas). You can also submit them as a Word document, provided that code and results are included in the same document. The assignment folders contain the questions in many formats, including `.qmd`, `.ipynb`, and `.docx`, so you can use them as templates.
+You can complete assignments in Jupyter Notebooks (`.ipynb`), Word documents, or PDFs. I encourage you to use Jupyter Notebooks as they allow you to combine code, results, and explanations in a single document.
 
-You will find the questions in the `assignments` folder on [the course repository](https://github.com/danilofreire/qtm385/tree/main/assignments). You can also access them through the links below.
+You will find the questions in the `assignments` folder on [the course repository](https://github.com/danilofreire/datasci185/tree/main/assignments). You can also access them through the links below.
 
-## Assignment Timeline
+## Problem Set Timeline
 
-| Assignment | Topic | Due Date | Link |
-|------------|-------|----------|------|
-| 1          | Theory | 10 September | [Assignment 01](https://github.com/danilofreire/qtm385/blob/main/assignments/01-assignment) |
-| 2          | Potential Outcomes | 17 September | [Assignment 02](https://github.com/danilofreire/qtm385/blob/main/assignments/02-assignment) |
-| 3          | Sampling Distributions | 24 September | [Assignment 03](https://github.com/danilofreire/qtm385/blob/main/assignments/03-assignment) |
-| 4          | RI, Blocking, Clustering, and Power | 1 October | [Assignment 04](https://github.com/danilofreire/qtm385/blob/main/assignments/04-assignment) |
-| 5          | Non-Compliance | 8 October | [Assignment 05](https://github.com/danilofreire/qtm385/blob/main/assignments/05-assignment) |
-| 6          | Attrition | 15 October | [Assignment 06](https://github.com/danilofreire/qtm385/blob/main/assignments/06-assignment) |
-| 7          | Quarto, DeclareDesign, and Natural Experiments | 22 October | [Assignment 07](https://github.com/danilofreire/qtm385/blob/main/assignments/07-assignment) |
-| 8          | Interference and Spillovers | 29 October | [Assignment 08](https://github.com/danilofreire/qtm385/blob/main/assignments/08-assignment) |
-| 9          | Heterogeneous Effects | 12 November | [Assignment 09](https://github.com/danilofreire/qtm385/blob/main/assignments/09-assignment) |
-| 10         | Sensitive Topics | 19 November | [Assignment 10](https://github.com/danilofreire/qtm385/blob/main/assignments/10-assignment) |
+| Problem Set | Topic | Due Date | Link |
+|-------------|-------|----------|------|
+| 1 | Orientation and AI Overview | January 21, 2026 | [Assignment 01](https://github.com/danilofreire/datasci185/tree/main/assignments/01-assignment) |
+| 2 | History of AI and Transformers | January 28, 2026 | [Assignment 02](https://github.com/danilofreire/datasci185/tree/main/assignments/02-assignment) |
+| 3 | Dataset Design and Labels | February 4, 2026 | [Assignment 03](https://github.com/danilofreire/datasci185/tree/main/assignments/03-assignment) |
+| 4 | Learning Paradigms and Metrics | February 11, 2026 | [Assignment 04](https://github.com/danilofreire/datasci185/tree/main/assignments/04-assignment) |
+| 5 | Language and Vision | February 18, 2026 | [Assignment 05](https://github.com/danilofreire/datasci185/tree/main/assignments/05-assignment) |
+| 6 | RAG and Hallucination | February 25, 2026 | [Assignment 06](https://github.com/danilofreire/datasci185/tree/main/assignments/06-assignment) |
+| 7 | Pipelines and Monitoring | March 4, 2026 | [Assignment 07](https://github.com/danilofreire/datasci185/tree/main/assignments/07-assignment) |
+| 8 | Bias and Documentation | March 18, 2026 | [Assignment 08](https://github.com/danilofreire/datasci185/tree/main/assignments/08-assignment) |
+| 9 | Regulation and Privacy | March 25, 2026 | [Assignment 09](https://github.com/danilofreire/datasci185/tree/main/assignments/09-assignment) |
+| 10 | Labour Markets and Applications | April 1, 2026 | [Assignment 10](https://github.com/danilofreire/datasci185/tree/main/assignments/10-assignment) |
 
-## Pre-Analysis Plan
+## Quiz Timeline
 
-The pre-analysis plan (PAP) is a document that outlines the research design, hypotheses, and analysis plan before the data are collected. It is a very important step in the research process, as it helps to prevent data mining and p-hacking. The PAP will be worth 20% of your final grade. Further instructions will be provided in the coming weeks.
+| Quiz | Topics Covered | Date | Link |
+|------|----------------|------|------|
+| Quiz 1 | Lectures 1-5 | February 4, 2026 | [Quiz 01](https://github.com/danilofreire/datasci185-quiz01) |
+| Quiz 2 | Lectures 7-9 | February 18, 2026 | [Quiz 02](https://github.com/danilofreire/datasci185-quiz02) |
+| Quiz 3 | Lectures 11-13 | March 4, 2026 | [Quiz 03](https://github.com/danilofreire/datasci185-quiz03) |
+| Quiz 4 | Lectures 15-17 | March 23, 2026 | [Quiz 04](https://github.com/danilofreire/datasci185-quiz04) |
+| Quiz 5 | Lectures 19-21 | April 6, 2026 | [Quiz 05](https://github.com/danilofreire/datasci185-quiz05) |
 
 ## Final Project
 
-The final project will be a group effort. Detailed instructions will be discussed in class. The project will be worth 30% of your final grade.
+The final project is a group effort worth 20% of your final grade. Groups of 3–4 students will produce a report and a short demo video. The project involves conceptual elements and a harms assessment. More details will be provided in class.
+
+Detailed instructions for the final project are available at: <https://github.com/danilofreire/datasci185/tree/main/project>
+
+The final project is due on **April 22, 2026**.
