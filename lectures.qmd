@@ -9,7 +9,7 @@ Please find below the schedule of our lectures. Each lecture includes a brief de
 ### January 14, 2026:
 
 - Syllabus and course repository: <https://github.com/danilofreire/datasci185>.
-- Lecture 01: [Course introduction](https://raw.githack.com/danilofreire/datasci185/gh-pages/lectures/lecture-01/01-introduction.html).
+- Lecture 01: [Course introduction](https://raw.githack.com/danilofreire/datasci185/main/lectures/lecture-01/01-introduction.html).
 
 Readings:
 
@@ -23,7 +23,7 @@ Readings:
 
 ### January 21, 2026:
 
-- Lecture 02: [A brief history of AI and the recent shift](https://raw.githack.com/danilofreire/datasci185/gh-pages/lectures/lecture-02/02-history.html).
+- Lecture 02: [A brief history of AI and the recent shift](https://raw.githack.com/danilofreire/datasci185/main/lectures/lecture-02/02-history.html).
 
 Readings:
 
@@ -40,7 +40,7 @@ Readings:
 
 ### January 26, 2026:
 
-- Lecture 03: [Dataset design, labels, and tasks](https://raw.githack.com/danilofreire/datasci185/gh-pages/lectures/lecture-03/03-datasets.html).
+- Lecture 03: [Dataset design, labels, and tasks](https://raw.githack.com/danilofreire/datasci185/main/lectures/lecture-03/03-datasets.html).
 
 Readings:
 
@@ -52,7 +52,7 @@ Readings:
 
 ### January 28, 2026:
 
-- Lecture 04: [Supervised, unsupervised, and hybrid approaches to learning](https://raw.githack.com/danilofreire/datasci185/gh-pages/lectures/lecture-04/04-learning.html).
+- Lecture 04: [Supervised, unsupervised, and hybrid approaches to learning](https://raw.githack.com/danilofreire/datasci185/main/lectures/lecture-04/04-learning.html).
 
 Readings:
 
@@ -64,7 +64,7 @@ Readings:
 
 ### February 02, 2026:
 
-- Lecture 05: [Metrics, validation and overfitting](https://raw.githack.com/danilofreire/datasci185/gh-pages/lectures/lecture-05/05-metrics.html).
+- Lecture 05: [Metrics, validation and overfitting](https://raw.githack.com/danilofreire/datasci185/main/lectures/lecture-05/05-metrics.html).
 
 Readings:
 
@@ -82,7 +82,7 @@ Readings:
 
 ### February 09, 2026:
 
-- Lecture 07: [How machines handle language: tokens, embeddings and context](https://raw.githack.com/danilofreire/datasci185/gh-pages/lectures/lecture-07/07-language.html).
+- Lecture 07: [How machines handle language: tokens, embeddings and context](https://raw.githack.com/danilofreire/datasci185/main/lectures/lecture-07/07-language.html).
 
 Readings:
 
@@ -94,7 +94,7 @@ Readings:
 
 ### February 11, 2026:
 
-- Lecture 08: [How machines analyse images and audio](https://raw.githack.com/danilofreire/datasci185/gh-pages/lectures/lecture-08/08-vision-audio.html).
+- Lecture 08: [How machines analyse images and audio](https://raw.githack.com/danilofreire/datasci185/main/lectures/lecture-08/08-vision-audio.html).
 
 Readings:
 
@@ -106,7 +106,7 @@ Readings:
 
 ### February 16, 2026:
 
-- Lecture 09: [Behavioural testing: examples and demonstrations](https://raw.githack.com/danilofreire/datasci185/gh-pages/lectures/lecture-09/09-testing.html).
+- Lecture 09: [Behavioural testing: examples and demonstrations](https://raw.githack.com/danilofreire/datasci185/main/lectures/lecture-09/09-testing.html).
 
 No required readings for this lecture. We will do live demonstrations in class.
 
@@ -118,7 +118,7 @@ No required readings for this lecture. We will do live demonstrations in class.
 
 ### February 23, 2026:
 
-- Lecture 11: [Retrieval-augmented workflows and semantic search](https://raw.githack.com/danilofreire/datasci185/gh-pages/lectures/lecture-11/11-rag.html).
+- Lecture 11: [Retrieval-augmented workflows and semantic search](https://raw.githack.com/danilofreire/datasci185/main/lectures/lecture-11/11-rag.html).
 
 Readings:
 
@@ -130,7 +130,7 @@ Readings:
 
 ### February 25, 2026:
 
-- Lecture 12: [Creativity and hallucination](https://raw.githack.com/danilofreire/datasci185/gh-pages/lectures/lecture-12/12-hallucination.html).
+- Lecture 12: [Creativity and hallucination](https://raw.githack.com/danilofreire/datasci185/main/lectures/lecture-12/12-hallucination.html).
 
 Readings:
 
@@ -143,7 +143,7 @@ Readings:
 
 ### March 02, 2026:
 
-- Lecture 13: [Building reliable pipelines: monitoring and testing](https://raw.githack.com/danilofreire/datasci185/gh-pages/lectures/lecture-13/13-pipelines.html).
+- Lecture 13: [Building reliable pipelines: monitoring and testing](https://raw.githack.com/danilofreire/datasci185/main/lectures/lecture-13/13-pipelines.html).
 
 Readings:
 
@@ -159,7 +159,7 @@ Readings:
 
 ### March 09, 2026:
 
-- Lecture 15: [Types of bias and how they arise](https://raw.githack.com/danilofreire/datasci185/gh-pages/lectures/lecture-15/15-bias.html).
+- Lecture 15: [Types of bias and how they arise](https://raw.githack.com/danilofreire/datasci185/main/lectures/lecture-15/15-bias.html).
 
 Readings:
 
@@ -173,7 +173,7 @@ Readings:
 
 ### March 16, 2026:
 
-- Lecture 16: [Documentation and dataset governance](https://raw.githack.com/danilofreire/datasci185/gh-pages/lectures/lecture-16/16-documentation.html).
+- Lecture 16: [Documentation and dataset governance](https://raw.githack.com/danilofreire/datasci185/main/lectures/lecture-16/16-documentation.html).
 
 Readings:
 
@@ -185,7 +185,7 @@ Readings:
 
 ### March 18, 2026:
 
-- Lecture 17: [Case studies: biased outcomes in health, hiring and policing](https://raw.githack.com/danilofreire/datasci185/gh-pages/lectures/lecture-17/17-case-studies.html).
+- Lecture 17: [Case studies: biased outcomes in health, hiring and policing](https://raw.githack.com/danilofreire/datasci185/main/lectures/lecture-17/17-case-studies.html).
 
 Readings:
 
@@ -204,7 +204,7 @@ Readings:
 
 ### March 25, 2026:
 
-- Lecture 19: [AI regulation and standards around the world](https://raw.githack.com/danilofreire/datasci185/gh-pages/lectures/lecture-19/19-regulation.html).
+- Lecture 19: [AI regulation and standards around the world](https://raw.githack.com/danilofreire/datasci185/main/lectures/lecture-19/19-regulation.html).
 
 Readings:
 
@@ -218,7 +218,7 @@ Readings:
 
 ### March 30, 2026:
 
-- Lecture 20: [Privacy and data protection](https://raw.githack.com/danilofreire/datasci185/gh-pages/lectures/lecture-20/20-privacy.html).
+- Lecture 20: [Privacy and data protection](https://raw.githack.com/danilofreire/datasci185/main/lectures/lecture-20/20-privacy.html).
 
 Readings:
 
@@ -230,7 +230,7 @@ Readings:
 
 ### April 01, 2026:
 
-- Lecture 21: [Labour markets and economic effects](https://raw.githack.com/danilofreire/datasci185/gh-pages/lectures/lecture-21/21-labour.html).
+- Lecture 21: [Labour markets and economic effects](https://raw.githack.com/danilofreire/datasci185/main/lectures/lecture-21/21-labour.html).
 
 Readings:
 
@@ -249,7 +249,7 @@ Readings:
 
 ### April 08, 2026:
 
-- Lecture 23: [AI in health, education and public services](https://raw.githack.com/danilofreire/datasci185/gh-pages/lectures/lecture-23/23-applications.html).
+- Lecture 23: [AI in health, education and public services](https://raw.githack.com/danilofreire/datasci185/main/lectures/lecture-23/23-applications.html).
 
 Readings:
 
@@ -261,7 +261,7 @@ Readings:
 
 ### April 13, 2026:
 
-- Lecture 24: [Misinformation, deepfakes and trust online](https://raw.githack.com/danilofreire/datasci185/gh-pages/lectures/lecture-24/24-misinformation.html).
+- Lecture 24: [Misinformation, deepfakes and trust online](https://raw.githack.com/danilofreire/datasci185/main/lectures/lecture-24/24-misinformation.html).
 
 Readings:
 
@@ -273,11 +273,11 @@ Readings:
 
 ### April 15, 2026:
 
-- Lecture 25: [Course revision](https://raw.githack.com/danilofreire/datasci185/gh-pages/lectures/lecture-25/25-revision.html).
+- Lecture 25: [Course revision](https://raw.githack.com/danilofreire/datasci185/main/lectures/lecture-25/25-revision.html).
 
 ### April 20, 2026:
 
-- Lecture 26: [Project work](https://raw.githack.com/danilofreire/datasci185/gh-pages/lectures/lecture-26/26-project.html).
+- Lecture 26: [Project work](https://raw.githack.com/danilofreire/datasci185/main/lectures/lecture-26/26-project.html).
 
 ### April 22, 2026:
 
