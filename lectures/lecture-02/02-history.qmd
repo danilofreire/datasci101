@@ -59,7 +59,7 @@ if (!require("fontawesome", character.only = TRUE)) {
 - Course website: <https://danilofreire.github.io/datasci185>
 - Course GitHub repo: <https://github.com/danilofreire/datasci185>
 - Syllabus, schedule, and assignments will be posted on both sites
-- We will use Canvas for announcements and grades
+- We will use Canvas for announcements, submissions, and grades
 - Instructor: Danilo Freire (<danilo.freire@emory.edu>)
 - In-class TAs: Tom Suo (<tom.suo@emory.edu>) and Sissi Li (<sissi.li@emory.edu>)
 - Grading TAs: Philip Wang (<xipu.wang@emory.edu>) and Anita Osuri (<anita.osuri@emory.edu>)
@@ -658,7 +658,7 @@ Source: [Transformer Explainer](https://poloclub.github.io/transformer-explainer
 - Three key innovations:
   1. [Instruction tuning](https://www.ibm.com/think/topics/instruction-tuning): Trained to follow instructions
   2. [RLHF (Reinforcement Learning from Human Feedback)](https://en.wikipedia.org/wiki/Reinforcement_learning_from_human_feedback): Humans rate responses; model learns what's helpful
-  3. [Safety training](https://en.wikipedia.org/wiki/AI_safety)x: Reduce harmful outputs
+  3. [Safety training](https://en.wikipedia.org/wiki/AI_safety): Reduce harmful outputs
 - Result: A model that's [actually useful]{.alert} for conversation
 - [100 million users in 2 months]{.alert}—fastest-growing consumer app ever
 :::
