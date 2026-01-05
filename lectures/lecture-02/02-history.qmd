@@ -115,7 +115,7 @@ Source: [University of Queensland's Brain Institute](https://qbi.uq.edu.au/brain
 
 :::{.column width=45%}
 :::{style="text-align: center;"}
-![](figures/talos.jpg){width="80%"}
+[![Talos](figures/talos.jpg){width="80%"}](#){data-modal-type="image" data-modal-url="figures/talos.jpg"}
 
 Source: [Wikipedia - Talos](https://en.wikipedia.org/wiki/Talos)
 :::
@@ -313,7 +313,7 @@ Maybe this time is different? 🤷🏻‍♂️
 - The New York Times (1958) predicted it would ["walk, talk, see, write, reproduce itself"](https://www.nytimes.com/1958/07/08/archives/new-navy-device-learns-by-doing-psychologist-shows-embryo-of.html)
 - Instead of programming rules, let the machine [learn from examples]{.alert}
 - However, single-layer perceptrons [couldn't solve certain simple problems]{.alert}, so interest waned
-- Multi-layer networks *could* solve these problems, but [training them was hard]{.alert}
+- [Multi-layer networks](https://en.wikipedia.org/wiki/Artificial_neural_network) *could* solve these problems, but [training them was hard]{.alert}
 - It took [nearly 20 years for neural networks to make their comeback]{.alert}
 :::
 
@@ -645,7 +645,7 @@ Source: [Transformer Explainer](https://poloclub.github.io/transformer-explainer
 
 - [Bigger models + more data = emergent abilities]{.alert}
 - Capabilities appear at scale that weren't explicitly trained
-- This is the "[scaling hypothesis]{.alert}"
+- This is the "[scaling hypothesis]{.alert}" (although some people, like [Ilya Sutskever](https://en.wikipedia.org/wiki/Ilya_Sutskever), argue that [scaling has reached its limits](https://www.youtube.com/watch?v=aR20FWCCjAs))
 :::
 
 ## What makes ChatGPT different?
@@ -748,7 +748,7 @@ Source: [Tarun Sharma](https://www.linkedin.com/pulse/multimodal-generative-ai-t
 
 ## Readings for today
 
-:::{style="margin-top: 30px; font-size: 22px;"}
+:::{style="margin-top: 30px; font-size: 26px;"}
 
 - Dick, S. (2019). [Artificial intelligence.](https://doi.org/10.1162/99608f92.92fe150c) *Harvard Data Science Review*, *1*(1). A brief history of AI research and applications.
 
