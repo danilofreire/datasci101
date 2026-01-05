@@ -195,6 +195,15 @@ Source: [Andrej Karpathy](https://vimeo.com/274274744)
 :::
 
 ## Real-world impact of data quality
+### The hidden costs of bad data
+
+:::{style="margin-top: 30px; font-size: 24px; text-align: center;"}
+[![](figures/bad-quality.png){width="70%"}](#){data-modal-type="image" data-modal-url="figures/bad-quality.png"}
+
+Source: [Harvard Business Review](https://hbr.org/2016/09/bad-data-costs-the-u-s-3-trillion-per-year)
+:::
+
+## Real-world impact of data quality
 ### When bad data causes harm
 
 :::{style="margin-top: 30px; font-size: 28px;"}
@@ -211,7 +220,7 @@ Source: [Andrej Karpathy](https://vimeo.com/274274744)
 :::
 :::
 
-# Types of Machine Learning Tasks 🎯 {background-color="#2d4563"}
+# Types of machine learning tasks 🎯 {background-color="#2d4563"}
 
 ## Classification tasks
 ### Predicting categories
@@ -354,7 +363,7 @@ Source: [The Independent](https://www.independent.co.uk/news/science/duck-and-ra
 :::
 :::
 
-# Sourcing and Collecting Data 📥 {background-color="#2d4563"}
+# Sourcing and collecting data 📥 {background-color="#2d4563"}
 
 ## Where do the data come from?
 ### Common data sources
@@ -401,7 +410,7 @@ Source: [Our World in Data](https://ourworldindata.org/grapher/ai-performance-kn
 :::
 :::
 
-# Selection Bias ⚠️ {background-color="#2d4563"}
+# Selection bias ⚠️ {background-color="#2d4563"}
 
 ## What is selection bias?
 ### When your data doesn't represent reality
@@ -473,7 +482,7 @@ Source: [WisdomPlexus](https://wisdomplexus.com/blogs/ai-bias-in-action-real-wor
 :::
 :::
 
-# Labeling Data 🏷️ {background-color="#2d4563"}
+# Labeling data 🏷️ {background-color="#2d4563"}
 
 ## Why labeling is hard
 ### The human bottleneck
@@ -554,6 +563,20 @@ Source: [LeewayHertz](https://www.leewayhertz.com/data-annotation/)
 **Should this be REMOVED or ALLOWED?** 
 :::
 :::
+:::
+:::
+
+## MNIST dataset
+
+:::{style="margin-top: 30px; font-size: 24px;"}
+- How would you label these images?
+
+:::{style="text-align: center;"}
+[![](figures/mnist01.png){width="50%"}](#){data-modal-type="image" data-modal-url="figures/mnist01.png"}
+
+[![](figures/mnist02.png){width="50%"}](#){data-modal-type="image" data-modal-url="figures/mnist02.png"}
+
+Source: <https://labelerrors.com/>
 :::
 :::
 
@@ -718,7 +741,7 @@ $$\kappa = \frac{0.85 - 0.60}{1 - 0.60} = \frac{0.25}{0.40} = 0.625$$
 ## Quality control
 ### The gold standard approach
 
-:::{style="margin-top: 30px; font-size: 24px;"}
+:::{style="margin-top: 30px; font-size: 26px;"}
 :::{.columns}
 :::{.column width=55%}
 - [Quality control (QC) examples]{.alert}: Examples where you already know the correct answer
@@ -744,31 +767,36 @@ Source: [SuperAnnotate](https://www.superannotate.com/blog/guide-to-data-labelin
 ## Building a robust annotation pipeline
 ### End-to-end workflow
 
-:::{style="margin-top: 30px; font-size: 24px;"}
-
-:::{style="text-align: center;"}
+:::{style="margin-top: 20px; font-size: 24px;"}
+:::{.columns}
+:::{.column width=50%}
 ```{mermaid}
-flowchart LR
-    A[Data Selection] --> B[Guideline Design]
-    B --> C[Annotator Training]
-    C --> D[Pilot Labeling]
+%%{init: {'theme': 'base', 'themeVariables': {'fontSize': '17px'}}}%%
+flowchart TB
+    A[📊 Data Selection] --> B[📝 Guideline Design]
+    B --> C[👥 Annotator Training]
+    C --> D[🧪 Pilot Labeling]
     D --> E{Quality OK?}
     E -->|No| B
-    E -->|Yes| F[Full Labeling]
-    F --> G[QC Checks]
-    G --> H[Aggregation]
-    H --> I[Final Dataset]
-    style E fill:#f9f,stroke:#333
+    E -->|Yes| F[🏭 Full Labeling]
+    F --> G[✅ QC Checks]
+    G --> H[📈 Aggregation]
+    H --> I[🎯 Final Dataset]
+    style E fill:#f9f,stroke:#333,stroke-width:2px
+    style I fill:#90EE90,stroke:#333,stroke-width:2px
 ```
 :::
 
-Key stages:
+:::{.column width=50%}
+**Key stages:**
 
 1. **Select data** stratified by important subgroups
 2. **Design guidelines** with clear definitions and examples
 3. **Train annotators** and calibrate their judgments
 4. **Pilot** on a small sample, iterate on guidelines
 5. **Scale up** with ongoing quality control
+:::
+:::
 :::
 
 # Summary ✅ {background-color="#2d4563"}
