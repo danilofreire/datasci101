@@ -167,7 +167,7 @@ Readings:
 
 ### January 28, 2026:
 
-- Lecture 04: [Supervised, unsupervised, and hybrid approaches to learning](https://raw.githack.com/danilofreire/datasci185/main/lectures/lecture-04/04-learning.html).
+- Lecture 04: [Supervised, unsupervised, and reinforcement learning](https://raw.githack.com/danilofreire/datasci185/main/lectures/lecture-04/04-learning.html).
 
 Readings:
 
@@ -176,6 +176,7 @@ Readings:
 - Goodfellow, I., Bengio, Y., & Courville, A. (2016). [Chapter 5: Machine learning basics](https://www.deeplearningbook.org/contents/ml.html) in *Deep Learning*. A technical but clear introduction to the main ideas behind machine learning.
 - Elsevier (2025). [Science direct: supervised learning.](https://www.sciencedirect.com/topics/computer-science/supervised-learning) A short introduction to supervised learning, with links to further readings.
 - Elsevier (2025). [Science direct: unsupervised learning.](https://www.sciencedirect.com/topics/computer-science/unsupervised-learning) Same as above, but for unsupervised learning.
+- Wikipedia (2026). [Reinforcement learning](https://en.wikipedia.org/wiki/Reinforcement_learning). A short, yet clear introduction to reinforcement learning.
 
 ### February 02, 2026:
 
