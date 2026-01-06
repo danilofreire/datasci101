@@ -450,12 +450,13 @@ Source: [Wikipedia](https://en.wikipedia.org/wiki/Survivorship_bias)
 | **Response bias** | Who responds differs from who doesn't | Online surveys miss offline populations |
 | **Long-tail bias** | Rare events underrepresented | Self-driving cars: unusual scenarios |
 
+- Try it out: Generate an image of "a CEO" and "a nurse" using two different LLMs, such as [Qwen](https://qwen.ai/) and [Gemini](https://gemini.ai/). What do you notice?
 :::
 
 ## Dealing with selection bias
 ### Mitigation strategies
 
-:::{style="margin-top: 30px; font-size: 24px;"}
+:::{style="margin-top: 30px; font-size: 20px;"}
 :::{.columns}
 :::{.column width=55%}
 **Before collection:**
@@ -463,6 +464,8 @@ Source: [Wikipedia](https://en.wikipedia.org/wiki/Survivorship_bias)
 - [Enumerate potential biases]{.alert} before collecting data
 - Design collection to cover important subgroups
 - Over-sample rare but important cases
+- Use [data augmentation]{.alert} to increase dataset size
+  - Try it out! Use an image generator to create variations of the same object (different angles, lighting
 
 **After collection:**
 
@@ -482,9 +485,9 @@ Source: [WisdomPlexus](https://wisdomplexus.com/blogs/ai-bias-in-action-real-wor
 :::
 :::
 
-# Labeling data 🏷️ {background-color="#2d4563"}
+# Labelling data 🏷️ {background-color="#2d4563"}
 
-## Why labeling is hard
+## Why labelling is hard
 ### The human bottleneck
 
 :::{style="margin-top: 30px; font-size: 23px;"}
@@ -495,17 +498,17 @@ Source: [WisdomPlexus](https://wisdomplexus.com/blogs/ai-bias-in-action-real-wor
 - Common issues:
   - **Inconsistency**: Different people label differently
   - **Ambiguity**: Some examples are genuinely unclear
-  - **Mislabeling**: Human errors happen
+  - **Mislabelling**: Human errors happen
   - **Fatigue**: Quality drops over time
   - **Expertise**: Some tasks need domain experts
-- Labeling is [expensive and time-consuming]{.alert}
+- Labelling is [expensive and time-consuming]{.alert}
   - See [Alex Wang's Scale AI](https://scale.com/)
 - Quality control is super important!
 :::
 
 :::{.column width=45%}
 :::{style="text-align: center;"}
-[![Labeling is harder than it looks!](figures/labeling-challenge.jpg){width="90%"}](#){data-modal-type="image" data-modal-url="figures/labeling-challenge.jpg"}
+[![Labelling is harder than it looks!](figures/labeling-challenge.jpg){width="90%"}](#){data-modal-type="image" data-modal-url="figures/labeling-challenge.jpg"}
 
 Source: [Galliot](https://galliot.us/blog/data-labeling-approaches-challenges-tools/)
 :::
@@ -530,7 +533,7 @@ Source: [LeewayHertz](https://www.leewayhertz.com/data-annotation/)
 :::
 
 ## Be the annotator! 🏷️
-### Try labeling these examples yourself
+### Try labelling these examples yourself
 
 :::{style="margin-top: 30px; font-size: 20px;"}
 :::{.columns}
@@ -644,7 +647,7 @@ Source: [MIT's DataCentric AI course](https://dcai.csail.mit.edu/2023/dataset-cr
 :::
 
 ## Inter-annotator agreement (IAA)
-### Measuring labeling quality
+### Measuring labelling quality
 
 :::{style="margin-top: 30px; font-size: 24px;"}
 :::{.columns}
@@ -745,7 +748,7 @@ $$\kappa = \frac{0.85 - 0.60}{1 - 0.60} = \frac{0.25}{0.40} = 0.625$$
 :::{.columns}
 :::{.column width=55%}
 - [Quality control (QC) examples]{.alert}: Examples where you already know the correct answer
-- Slip QC examples into the labeling queue
+- Slip QC examples into the labelling queue
 - Use them to:
   - Monitor annotator accuracy over time
   - Identify annotators who need retraining
@@ -775,10 +778,10 @@ Source: [SuperAnnotate](https://www.superannotate.com/blog/guide-to-data-labelin
 flowchart TB
     A[📊 Data Selection] --> B[📝 Guideline Design]
     B --> C[👥 Annotator Training]
-    C --> D[🧪 Pilot Labeling]
+    C --> D[🧪 Pilot Labelling]
     D --> E{Quality OK?}
     E -->|No| B
-    E -->|Yes| F[🏭 Full Labeling]
+    E -->|Yes| F[🏭 Full Labelling]
     F --> G[✅ QC Checks]
     G --> H[📈 Aggregation]
     H --> I[🎯 Final Dataset]
@@ -811,7 +814,7 @@ flowchart TB
 
 - `r fa('exclamation-circle')` [Selection bias]{.alert} is a major source of error. Enumerate biases before collecting
 
-- `r fa('tags')` [Labeling is hard]{.alert}, so clear guidelines and quality control are very important
+- `r fa('tags')` [Labelling is hard]{.alert}, so clear guidelines and quality control are very important
 
 - `r fa('users')` [Multiple annotators]{.alert} improve reliability, but aggregate intelligently
 
