@@ -198,6 +198,27 @@ Source: [Wikipedia - Turing Test](https://en.wikipedia.org/wiki/Turing_test)
 :::
 :::
 
+## Live Turing test!
+
+:::{style="margin-top: 30px; font-size: 22px;"}
+:::{.incremental}
+- Guess if the following sentences were written by a human or a machine:
+
+<br>
+
+- "The universe (which others call the Library) is composed of an indefinite, perhaps an infinite number of hexagonal galleries, with enormous ventilation shafts in the middle, encircled by very low railings."
+  - Human! [Jorge Luis Borges (Argentine writer)](https://en.wikipedia.org/wiki/Jorge_Luis_Borges)
+- "This is a multifaceted issue that requires us to examine several different perspectives."
+  - Machine!
+- "The function of science fiction is not always to predict the future but sometimes to prevent it."
+  - Human! Attributed to [Frank Herbert (author of Dune)](https://en.wikipedia.org/wiki/Frank_Herbert)
+- "The epistemological ramifications of this ontological framework necessitate a paradigmatic shift in our heuristic methodologies."
+  - Machine!
+
+- And yes, [ChatGPT did pass the Turing test](https://arxiv.org/abs/2405.08007v1)
+:::
+:::
+
 # The birth of AI (1950s–1970s) 🎂 {background-color="#2d4563"}
 
 ## The Dartmouth Conference (1956)
@@ -239,6 +260,7 @@ Source: [IEEE Spectrum](https://spectrum.ieee.org/dartmouth-ai-workshop)
 - [Intelligence = manipulating symbols according to rules]{.alert}
 - Program the [formal rules]{.alert} behind intelligent behaviour into machines
 - Early successes: [ELIZA](https://en.wikipedia.org/wiki/ELIZA) (therapist, [video here](https://www.youtube.com/watch?v=RMK9AphfLco)), [SHRDLU](https://en.wikipedia.org/wiki/SHRDLU) (block world, [video here](https://www.youtube.com/watch?v=bo4RvYJYOzI))
+  - Try ELIZA here: <https://anthay.github.io/eliza.html> (by the [ELIZA Archaeology Project](https://sites.google.com/view/elizaarchaeology/try-eliza))
 - [Bold but overconfident predictions]{.alert}: Minsky and Simon expected human-level AI within a generation
 :::
 
@@ -744,23 +766,6 @@ Source: [Tarun Sharma](https://www.linkedin.com/pulse/multimodal-generative-ai-t
 :::
 :::
 :::
-:::
-
-## Readings for today
-
-:::{style="margin-top: 30px; font-size: 26px;"}
-
-- Dick, S. (2019). [Artificial intelligence.](https://doi.org/10.1162/99608f92.92fe150c) *Harvard Data Science Review*, *1*(1). A brief history of AI research and applications.
-
-- Grzybowski, A., et al. (2024). [A history of artificial intelligence.](https://doi.org/10.1016/j.clindermatol.2023.12.016) *Clinics in Dermatology*, *42*(3), 221-229. A "pre-history" overview.
-
-- Cao, Y., et al. (2023). [A comprehensive survey of AI-generated content (AIGC).](https://arxiv.org/abs/2303.04226) *arXiv preprint*. Overview of generative AI methods.
-
-- Halevy, A., Norvig, P., & Pereira, F. (2009). [The unreasonable effectiveness of data.](https://static.googleusercontent.com/media/research.google.com/en//pubs/archive/35179.pdf) *IEEE Intelligent Systems*, *24*(2), 8-12.
-
-- Pradhan, M. (2023). [A non-technical introduction to Transformers.](https://medium.com/healthcare-ai-sig/a-non-technical-introduction-to-transformers-6ca36b8246d)
-
-- Georgia Tech. (2025). [Transformer explainer.](https://poloclub.github.io/transformer-explainer/) Interactive visualisation.
 :::
 
 # ... and that's all for today! 🎉 {background-color="#2d4563"}
