@@ -171,9 +171,12 @@ Readings:
 
 Readings:
 
+- Jiang, T., Gradus, J. L., & Rosellini, A. J. (2020). [Supervised machine learning: a brief primer.](https://pmc.ncbi.nlm.nih.gov/articles/PMC7431677/) *Behavior Therapy*, *51*(5), 675-687. A non-technical introduction to supervised machine learning, with a focus on clinical applications.
+- Chang, A., Tang, T. M., Zikry, T. M., & Allen, G. I. (2025). [Unsupervised machine learning for scientific discovery: workflow and best practices.](https://arxiv.org/abs/2506.04553) *arXiv preprint arXiv:2506.04553*. Discusses how to leverage unsupervised techniques for discovery and provides a framework for analysis.
+- Matsuo, Y., LeCun, Y., Sahani, M., Precup, D., Silver, D., Sugiyama, M., ... & Morimoto, J. (2022). [Deep learning, reinforcement learning, and world models.](https://www.sciencedirect.com/science/article/pii/S0893608022001150) *Neural Networks*, *152*, 267-275. A high-level overview of how deep learning and reinforcement learning can be combined with world models to build more capable and autonomous AI agents.
+- Goodfellow, I., Bengio, Y., & Courville, A. (2016). [Chapter 5: Machine learning basics](https://www.deeplearningbook.org/contents/ml.html) in *Deep Learning*. A technical but clear introduction to the main ideas behind machine learning.
 - Amazon Web Services (2025). [What is the difference between supervised and unsupervised learning?](https://aws.amazon.com/compare/the-difference-between-machine-learning-supervised-and-unsupervised/) A practical overview of supervised and unsupervised learning, with examples.
 - Lee, F. (2025). [What is bias-variance tradeoff?](https://www.ibm.com/think/topics/bias-variance-tradeoff) An explanation of a key concept in machine learning. It has some formulas but the main ideas are easy to grasp.
-- Goodfellow, I., Bengio, Y., & Courville, A. (2016). [Chapter 5: Machine learning basics](https://www.deeplearningbook.org/contents/ml.html) in *Deep Learning*. A technical but clear introduction to the main ideas behind machine learning.
 - Elsevier (2025). [Science direct: supervised learning.](https://www.sciencedirect.com/topics/computer-science/supervised-learning) A short introduction to supervised learning, with links to further readings.
 - Elsevier (2025). [Science direct: unsupervised learning.](https://www.sciencedirect.com/topics/computer-science/unsupervised-learning) Same as above, but for unsupervised learning.
 - Wikipedia (2026). [Reinforcement learning](https://en.wikipedia.org/wiki/Reinforcement_learning). A short, yet clear introduction to reinforcement learning.
