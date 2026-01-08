@@ -1,0 +1,772 @@
+---
+title: "DATASCI 185: Introduction to AI Applications"
+subtitle: "Lecture 04: Supervised, Unsupervised, and Reinforcement Learning"
+author:
+  - name: Danilo Freire
+    orcid: 0000-0002-4712-6810
+    email: danilo.freire@emory.edu
+    affiliations: "Department of Data and Decision Sciences <br> Emory University"
+format:
+  clean-revealjs:
+    self-contained: true
+    footer: "[Lecture 04](https://raw.githack.com/danilofreire/datasci185/main/lectures/lecture-04/04-learning.html)"
+    transition: slide
+    transition-speed: default
+    scrollable: true
+revealjs-plugins:
+  - multimodal
+engine: knitr
+editor:
+  render-on-save: true
+---
+
+```{r setup, include=FALSE}
+# figures formatting setup
+options(htmltools.dir.version = FALSE)
+library(knitr)
+opts_chunk$set(
+  prompt = T,
+  fig.align="center", #fig.width=6, fig.height=4.5, 
+  # out.width="748px", #out.length="520.75px",
+  dpi=300, #fig.path='Figs/',
+  cache=T, #echo=F, warning=F, message=F
+  engine.opts = list(bash = "-l")
+  )
+
+## Next hook based on this SO answer: https://stackoverflow.com/a/39025054
+knit_hooks$set(
+  prompt = function(before, options, envir) {
+    options(
+      prompt = if (options$engine %in% c('sh','bash', 'zsh')) '$ ' else 'R> ',
+      continue = if (options$engine %in% c('sh','bash', 'zsh')) '$ ' else '+ '
+      )
+})
+
+# Set CRAN mirror
+options(repos = c(CRAN = "https://cran.rstudio.com/"))
+
+if (!require("fontawesome", character.only = TRUE)) {
+  install.packages("fontawesome", dependencies = TRUE)
+  library(fontawesome, character.only = TRUE)
+}
+```
+
+# Welcome back! 🤓 {background-color="#2d4563"}
+
+## Recap of last class
+
+:::{style="margin-top: 20px; font-size: 24px;"}
+:::{.columns}
+:::{.column width=50%}
+- We discussed the [foundation of AI systems: (good) data!]{.alert}
+- [Garbage in, garbage out!]{.alert}
+- Different ML tasks require different types of labels (classification, regression, etc.)
+- [Selection bias]{.alert} is dangerous and hard to fix after the fact
+- Labelling is harder than it looks, and [clear guidelines and multiple annotators]{.alert} improve quality
+- [Inter-annotator agreement]{.alert} (Cohen's Kappa) measures labelling reliability
+- Today: How do machines actually [learn from data]{.alert}? 🤔
+:::
+
+:::{.column width=50%}
+:::{style="text-align: center; margin-top: -30px;"}
+[![You can't out-train bad data](figures/hard-pill.jpeg){width="60%"}](#){data-modal-type="image" data-modal-url="figures/hard-pill.jpeg"}
+
+Source: [Programmer Humor](https://programmerhumor.io/ai-memes/you-cant-out-train-bad-data-by7a)
+:::
+:::
+:::
+:::
+
+## Lecture overview
+### Today's agenda
+
+:::{style="margin-top: 20px; font-size: 24px;"}
+
+:::{.columns}
+:::{.column width=50%}
+- The three paradigms of machine learning
+- [Supervised learning]{.alert}: Learning from labelled examples
+  - Linear regression, decision trees, neural networks
+- The bias-variance trade-off
+- [Unsupervised learning]{.alert}: Finding hidden structure
+  - Clustering and dimensionality reduction
+- [Reinforcement learning]{.alert}: Learning from interaction
+  - Agents, rewards, and policies
+:::
+
+:::{.column width=50%}
+:::{style="text-align: center; margin-top: -10px;"}
+[![The three paradigms of ML](figures/ml-ds-algos.jpg){width="100%"}](#){data-modal-type="image" data-modal-url="figures/ml-ds-algos.jpg"}
+
+Source: [Data Science Dojo](https://datasciencedojo.com/blog/machine-learning-101/)
+:::
+:::
+:::
+:::
+
+# The three learning paradigms 🎓 {background-color="#2d4563"}
+
+## How do machines learn?
+### Three fundamentally different approaches
+
+:::{style="margin-top: 30px; font-size: 24px;"}
+:::{.columns}
+:::{.column width=55%}
+- Machine learning algorithms learn patterns from data
+- But [what kind of data]{.alert} and [what kind of feedback]{.alert}?
+- Three main paradigms:
+  1. [Supervised learning](https://en.wikipedia.org/wiki/Supervised_learning): Learn from labelled examples (what we saw in previous lecture)
+  2. [Unsupervised learning](https://en.wikipedia.org/wiki/Unsupervised_learning): Find structure in unlabelled data
+  3. [Reinforcement learning](https://en.wikipedia.org/wiki/Reinforcement_learning): Learn from rewards and punishments
+- The paradigm you choose depends on [what data you have]{.alert} and [what you want to achieve]{.alert}
+:::
+
+:::{.column width=45%}
+:::{style="text-align: center;"}
+[![Learning paradigms overview and examples](figures/learning-types.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/learning-types.png"}
+
+Source: [Medium](https://luigi-bungaro.medium.com/what-is-machine-learning-short-and-complete-guide-9e474a89396a)
+:::
+:::
+:::
+:::
+
+# Supervised learning 📚 {background-color="#2d4563"}
+
+## What is supervised learning?
+### Learning from examples with answers
+
+:::{style="margin-top: 30px; font-size: 24px;"}
+:::{.columns}
+:::{.column width=55%}
+- [Supervised learning]{.alert}: The model learns from labelled examples
+- Training data: Input-output pairs $(x_i, y_i)$
+- Goal: Learn a function $f$ such that $f(x) \approx y$
+- Like learning with a [teacher]{.alert} who provides correct answers
+- The "supervision" comes from [known labels]{.alert}
+- Most common paradigm in real-world applications
+- Examples:
+  - Email → Spam/Not spam
+  - Image → Cat/Dog/Bird
+  - Patient data → Disease risk
+:::
+
+:::{.column width=45%}
+:::{style="text-align: center;"}
+[![A hard classification problem 😂](figures/muffins.jpeg){width="75%"}](#){data-modal-type="image" data-modal-url="figures/muffins.jpeg"}
+
+Source: [Memedroid (!)](https://pt.memedroid.com/memes/detail/4155054/Confusing-machine-learning?refGallery=random&page=109&goComments=1)
+:::
+:::
+:::
+:::
+
+## The supervised learning workflow
+### From data to predictions
+
+:::{style="margin-top: 30px; font-size: 22px;"}
+:::{.columns}
+:::{.column width=50%}
+```{mermaid}
+%%{init: {'theme': 'base', 'themeVariables': {'fontSize': '15px'}}}%%
+flowchart TB
+    A[📊 Collect Labelled Data] --> B[🔀 Split: Train/Test]
+    B --> C[🎯 Choose Algorithm]
+    C --> D[🏋️ Train Model]
+    D --> E[📈 Evaluate on Test Set]
+    E --> F{Good enough?}
+    F -->|No| G[🔧 Tune/Change Model]
+    G --> D
+    F -->|Yes| H[🚀 Deploy]
+    style F fill:#f9f,stroke:#333,stroke-width:2px
+    style H fill:#90EE90,stroke:#333,stroke-width:2px
+```
+:::
+
+:::{.column width=50%}
+**Key steps:**
+
+1. **Collect data** with known labels
+2. **Split** into training and test sets (never peek at test!)
+3. **Choose** an appropriate algorithm
+4. **Train** the model on training data
+5. **Evaluate** on held-out test data
+6. **Iterate** until performance is acceptable
+
+[The test set simulates real-world deployment]{.alert}
+:::
+:::
+:::
+
+## Classification vs regression
+### The two main supervised tasks
+
+:::{style="margin-top: 30px; font-size: 24px;"}
+
+:::{.columns}
+:::{.column width=50%}
+**Classification** 🏷️
+
+- Predict a [discrete category]{.alert}
+- Binary: Yes/No, Spam/Ham
+- Multi-class: Cat/Dog/Bird/Fish
+- Output: Class label (or probabilities)
+- Examples:
+  - Fraud detection
+  - Disease diagnosis
+  - Sentiment analysis
+:::
+
+:::{.column width=50%}
+**Regression** 📈
+
+- Predict a [continuous value]{.alert}
+- Output: A number on a continuous scale
+- Examples:
+  - House price prediction
+  - Stock price forecasting
+  - Temperature prediction
+  - Age estimation from photo
+:::
+:::
+
+:::{.fragment}
+:::{style="margin-top: 20px; text-align: center;"}
+> The same algorithm family often handles both tasks with minor modifications!
+:::
+:::
+:::
+
+## Linear models
+### The simplest supervised learners
+
+:::{style="margin-top: 30px; font-size: 22px;"}
+:::{.columns}
+:::{.column width=55%}
+- [Linear regression]{.alert}: Predict y as a weighted sum of features
+
+$$\hat{y} = w_0 + w_1 x_1 + w_2 x_2 + \ldots + w_n x_n$$
+
+- Learn weights $w$ that minimise prediction error
+- [Logistic regression]{.alert}: Classification via sigmoid function
+
+$$P(y=1|x) = \frac{1}{1 + e^{-(w_0 + w_1 x_1 + \ldots)}}$$
+
+- Simple, interpretable, fast to train
+- Works well when relationships are approximately linear
+- Often a [strong baseline]{.alert} before trying complex models
+:::
+
+:::{.column width=45%}
+:::{style="text-align: center;"}
+[![Linear regression fits a line](figures/linear-regression.gif){width="100%"}](#){data-modal-type="image" data-modal-url="figures/linear-regression.gif"}
+
+Source: [Medium](https://medium.com/swlh/from-animation-to-intuition-linear-regression-and-logistic-regression-f641a31e1caf)
+:::
+:::
+:::
+:::
+
+## Decision trees
+### Learning rules from data
+
+:::{style="margin-top: 30px; font-size: 24px;"}
+:::{.columns}
+:::{.column width=55%}
+- [Decision trees]{.alert}: Learn a hierarchy of yes/no questions
+- Each node splits data based on a feature
+- Leaves contain predictions
+- Easy to interpret: "If income > £50k AND age > 30, then approve loan"
+- Can capture [non-linear relationships]{.alert}
+- Prone to [overfitting]{.alert} (memorising training data)
+- Solution: [Random forests](https://en.wikipedia.org/wiki/Random_forest)—combine many trees
+  - Each tree sees different data/features
+  - Average their predictions for robustness
+:::
+
+:::{.column width=45%}
+:::{style="text-align: center;"}
+[![Decision tree structure](figures/decision-tree.gif){width="100%"}](#){data-modal-type="image" data-modal-url="figures/decision-tree.gif"}
+
+Source: [Medium](https://medium.com/towards-data-engineering/100-days-of-machine-learning-on-databricks-day-63-decision-trees-5d4df25b194f)
+:::
+:::
+:::
+:::
+
+## Neural networks for supervised learning
+### Learning complex patterns
+
+:::{style="margin-top: 30px; font-size: 24px;"}
+:::{.columns}
+:::{.column width=55%}
+- [Neural networks]{.alert}: Layers of interconnected nodes
+- Each layer transforms the input
+- Can learn [arbitrarily complex]{.alert} functions
+- Deep networks (many layers) = [deep learning]{.alert}
+- Require [more data]{.alert} than simpler models
+- Less interpretable ("black box")
+- State-of-the-art for:
+  - Image classification (CNNs)
+  - Speech recognition
+  - Natural language processing
+- Remember from Lecture 02: [backpropagation]{.alert} enables training!
+:::
+
+:::{.column width=45%}
+:::{style="text-align: center;"}
+[![Neural network architecture](figures/neural-network.gif){width="100%"}](#){data-modal-type="image" data-modal-url="figures/neural-network.gif"}
+
+Source: [3Blue1Brown](https://www.3blue1brown.com/topics/neural-networks)
+:::
+:::
+:::
+:::
+
+## The bias-variance trade-off
+### The fundamental tension in ML
+
+:::{style="margin-top: 30px; font-size: 22px;"}
+:::{.columns}
+:::{.column width=55%}
+- Every model makes errors. Two sources:
+  - [Bias]{.alert}: Error from oversimplified assumptions
+    - Underfitting: Model too simple
+    - Misses real patterns in the data
+  - [Variance]{.alert}: Error from sensitivity to training data
+    - Overfitting: Model too complex
+    - Memorises noise, fails on new data
+
+$$\text{Total Error} = \text{Bias}^2 + \text{Variance} + \text{Noise}$$
+
+- [Trade-off]{.alert}: Reducing one often increases the other
+- Goal: Find the [sweet spot]{.alert} where total error is minimised
+:::
+
+:::{.column width=45%}
+:::{style="text-align: center; margin-top: -50px;"}
+[![Bias-variance trade-off](figures/bias-variance.gif){width="80%"}](#){data-modal-type="image" data-modal-url="figures/bias-variance.gif"}
+
+Source: [Vizuara](https://www.vizuaranewsletter.com/p/e91)
+:::
+:::
+:::
+:::
+
+## Cross-validation
+### Robust model evaluation
+
+:::{style="margin-top: 30px; font-size: 24px;"}
+:::{.columns}
+:::{.column width=55%}
+- Problem: Single train/test split can be [misleading]{.alert}
+  - Why? It doesn't account for enough [random variation]{.alert}
+- [Cross-validation]{.alert}: Multiple train/test splits
+- **K-fold CV**: Split data into K parts
+  - Train on K-1 folds, test on 1 fold
+  - Repeat K times, rotate the test fold
+  - Average the results
+- Benefits:
+  - [Every data point]{.alert} is tested once
+  - More reliable performance estimate
+  - Helps detect overfitting
+- Common choice: K = 5 or K = 10
+:::
+
+:::{.column width=45%}
+:::{style="text-align: center;"}
+[![5-fold cross-validation](figures/cross-validation.gif){width="100%"}](#){data-modal-type="image" data-modal-url="figures/cross-validation.gif"}
+
+Source: [Vizuara](https://www.vizuaranewsletter.com/p/f6a)
+:::
+:::
+:::
+:::
+
+# Unsupervised learning 🔍 {background-color="#2d4563"}
+
+## What is unsupervised learning?
+### Finding structure without labels
+
+:::{style="margin-top: 30px; font-size: 22px;"}
+:::{.columns}
+:::{.column width=55%}
+- [Unsupervised learning]{.alert}: Learn from data without labels
+- No "correct answers" provided
+- Goal: Discover [hidden patterns or structure]{.alert}
+- Like learning [without a teacher]{.alert}—explore and discover
+- Why use it?
+  - [Labels are expensive]{.alert} (experts needed)
+  - Sometimes labels [don't exist]{.alert} ("How many customer types?")
+  - [Exploration]{.alert}: Understand data before modelling
+  - [Pre-training]{.alert}: Learn representations, then fine-tune
+- Key questions:
+  - Are there natural groups in the data?
+  - Can we represent data more compactly?
+:::
+
+:::{.column width=45%}
+:::{style="text-align: center;"}
+[![Unsupervised learning finds structure](figures/unsupervised-learning.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/unsupervised-learning.png"}
+
+Source: [University of Cambridge](https://docs.science.ai.cam.ac.uk/ai-core-concepts/unsupervised-learning/)
+:::
+:::
+:::
+:::
+
+## Clustering
+### Grouping similar data points
+
+:::{style="margin-top: 30px; font-size: 22px;"}
+:::{.columns}
+:::{.column width=55%}
+- [Clustering](https://en.wikipedia.org/wiki/Cluster_analysis): Partition data into groups (clusters)
+- Points in same cluster are [similar]{.alert}, different clusters are [dissimilar]{.alert}
+- [K-means](https://en.wikipedia.org/wiki/K-means_clustering): Most popular algorithm
+  1. Choose K cluster centres randomly
+  2. Assign each point to nearest centre
+  3. Move centres to mean of assigned points
+  4. Repeat until convergence
+- [Hierarchical clustering](https://en.wikipedia.org/wiki/Hierarchical_clustering): Builds dendrograms without pre-specifying K
+:::
+
+:::{.column width=45%}
+:::{style="text-align: center; margin-top: -50px;"}
+**Real-world uses:**
+
+| Domain | Application |
+|--------|-------------|
+| Marketing | Customer segmentation |
+| Biology | Cell types, disease subtypes |
+| Finance | Fraud detection |
+| Healthcare | Patient risk groups |
+
+[![K-means clustering](figures/kmeans2.gif){width="90%"}](#){data-modal-type="image" data-modal-url="figures/kmeans2.gif"}
+
+Source: [Machine Learning CoBan](https://machinelearningcoban.com/2017/01/01/kmeans/)
+:::
+:::
+:::
+:::
+
+## Dimensionality reduction
+### Compressing information
+
+:::{style="margin-top: 30px; font-size: 24px;"}
+:::{.columns}
+:::{.column width=55%}
+- [Curse of dimensionality]{.alert}: High-dimensional data is hard to work with
+  - Distances become meaningless
+  - Need exponentially more data
+  - Visualisation impossible
+- [Dimensionality reduction]{.alert}: Find lower-dimensional representation
+- Preserve important structure, discard noise
+- Two main approaches:
+  - **Linear**: PCA (Principal Component Analysis)
+  - **Non-linear**: t-SNE, UMAP
+- Applications: Visualisation, preprocessing, compression
+:::
+
+:::{.column width=45%}
+:::{style="text-align: center;"}
+[![Reducing dimensions while preserving structure](figures/dimensionality-reduction.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/dimensionality-reduction.png"}
+
+Source: [Medium](https://muhammadtaha01.medium.com/dimensionality-reduction-in-machine-learning-46d45747eaee)
+:::
+:::
+:::
+:::
+
+## Dimensionality reduction techniques
+### PCA, t-SNE, and UMAP
+
+:::{style="margin-top: 30px; font-size: 22px;"}
+:::{.columns}
+:::{.column width=55%}
+**Linear: [PCA]{.alert}** (Principal Component Analysis)
+
+- Find directions of [maximum variance]{.alert}
+- Keep top K components to reduce dimensions
+- Fast, well-understood, preserves global structure
+- Limitation: Only captures linear relationships
+
+**Non-linear: [t-SNE]{.alert} and [UMAP]{.alert}**
+
+- Preserve [local structure]{.alert}: Nearby points stay nearby
+- Excellent for [visualisation]{.alert}
+- Reveal clusters that PCA misses
+- Caution: Cluster sizes and distances can be misleading
+:::
+
+:::{.column width=45%}
+:::{style="text-align: center;"}
+[![Principal Component Analysis](figures/pca.gif){width="100%"}](#){data-modal-type="image" data-modal-url="figures/pca.gif"}
+
+Source: [Vizuara](https://www.vizuaranewsletter.com/p/understanding-principal-component)
+:::
+:::
+:::
+:::
+
+## Anomaly detection
+### Finding the unusual
+
+:::{style="margin-top: 30px; font-size: 22px;"}
+:::{.columns}
+:::{.column width=55%}
+- [Anomaly detection](https://en.wikipedia.org/wiki/Anomaly_detection): Identify rare, unusual observations
+- [Learn what "normal" looks like]{.alert}
+- [Flag deviations from normal]{.alert}
+- Approaches:
+  - **Statistical**: Points far from the mean
+  - **Distance-based**: Points far from neighbours
+  - **Density-based**: Points in low-density regions
+  - **Reconstruction**: High error when trying to reconstruct
+- Applications:
+  - Fraud detection
+  - Network intrusion detection
+  - Manufacturing defect detection
+:::
+
+:::{.column width=45%}
+:::{style="text-align: center;"}
+[![Anomalies are outliers](figures/anomaly-detection.gif){width="100%"}](#){data-modal-type="image" data-modal-url="figures/anomaly-detection.gif"}
+
+Source: [DataScientest](https://datascientest.com/en/isolation-forest-how-do-you-detect-anomalies-in-a-dataset)
+:::
+:::
+:::
+:::
+
+# Reinforcement learning 🎮 {background-color="#2d4563"}
+
+## What is reinforcement learning?
+### Learning from interaction
+
+:::{style="margin-top: 30px; font-size: 24px;"}
+:::{.columns}
+:::{.column width=55%}
+- [Reinforcement learning (RL)]{.alert}: Learn by trial and error
+- An [agent]{.alert} interacts with an [environment]{.alert}
+- Takes [actions]{.alert}, receives [rewards]{.alert} (or punishments)
+- Goal: Learn a [policy]{.alert} that maximises cumulative reward
+- No labelled examples—learn from [experience]{.alert}
+- Like training a dog (or kids!): [Reward good behaviour!]{.alert}
+- [Different from supervised]{.alert}: No "correct" action given
+- [Different from unsupervised]{.alert}: There IS a goal (maximise reward)
+:::
+
+:::{.column width=45%}
+:::{style="text-align: center; margin-top: -20px;"}
+[![The RL loop](figures/rl-loop.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/rl-loop.png"}
+
+Source: [Wikipedia](https://en.wikipedia.org/wiki/Reinforcement_learning)
+:::
+:::
+:::
+:::
+
+## Key concepts in RL
+### The vocabulary you need
+
+:::{style="margin-top: 30px; font-size: 30px;"}
+
+| Concept | Definition | Example (Chess) |
+|---------|------------|-----------------|
+| **Agent** | The learner/decision-maker | The chess-playing AI |
+| **Environment** | What the agent interacts with | The chess board and opponent |
+| **State** | Current situation | Board position |
+| **Action** | What the agent can do | Move a piece |
+| **Reward** | Feedback signal | +1 win, -1 lose, 0 otherwise |
+| **Policy** | Strategy: state → action | "In this position, move queen" |
+| **Value** | Expected future reward from a state | How good is this position? |
+
+:::
+
+## The exploration-exploitation trade-off
+### A fundamental dilemma
+
+:::{style="margin-top: 30px; font-size: 22px;"}
+:::{.columns}
+:::{.column width=55%}
+- [Exploration]{.alert}: Try new actions to discover better strategies
+- [Exploitation]{.alert}: Use known good actions to maximise reward
+- The dilemma:
+  - Too much exploration: Waste time on bad actions
+  - Too much exploitation: Miss better strategies
+- Example: Restaurant choice
+  - Exploit: Go to your favourite restaurant
+  - Explore: Try a new restaurant (might be better!)
+- RL algorithms must [balance both]{.alert}
+- Common approach: [ε-greedy](https://en.wikipedia.org/wiki/Epsilon-greedy) (explore with probability ε, also called [multi-armed bandit](https://en.wikipedia.org/wiki/Multi-armed_bandit))
+:::
+
+:::{.column width=45%}
+:::{style="text-align: center;"}
+[![Exploration vs exploitation](figures/exploration-exploitation.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/exploration-exploitation.png"}
+
+Source: [Lilian Weng](https://lilianweng.github.io/lil-log/2018/01/23/the-multi-armed-bandit-problem-and-its-solutions.html)
+:::
+:::
+:::
+:::
+
+## Q-learning
+### Learning action values
+
+:::{style="margin-top: 30px; font-size: 19px;"}
+:::{.columns}
+:::{.column width=55%}
+- [Q-learning](https://en.wikipedia.org/wiki/Q-learning): Learn the value of each action in each state
+- $Q(s, a)$ = expected future reward from taking action $a$ in state $s$
+- Update rule (Bellman equation):
+
+$$Q(s, a) \leftarrow Q(s, a) + \alpha \left[ r + \gamma \max_{a'} Q(s', a') - Q(s, a) \right]$$
+
+- $\alpha$: Learning rate (how fast to update)
+- $\gamma$: Discount factor (how much to value future rewards)
+- $r$: Immediate reward received
+- $s'$: Next state after taking action $a$
+- Policy: Choose action with highest Q-value
+- [Works for discrete state/action spaces]{.alert}
+- [Cool example]{.alert}: (Poor) Albert learns to walk: <https://youtu.be/L_4BPjLBF4E?&t=137>
+- [Super cool example]{.alert}: [DeepMind's AlphaGo](https://deepmind.google/research/alphago/): <https://youtu.be/WXuK6gekU1Y>
+:::
+
+:::{.column width=45%}
+:::{style="text-align: center;"}
+[![](figures/q-learning01.gif){width="70%"}](#){data-modal-type="image" data-modal-url="figures/q-learning01.gif"}
+[![](figures/q-learning02.gif){width="70%"}](#){data-modal-type="image" data-modal-url="figures/q-learning02.gif"}
+
+Source: [Medium](https://medium.com/data-science/getting-started-with-reinforcement-q-learning-77499b1766b6)
+:::
+:::
+:::
+:::
+
+## RLHF: RL for language models
+### From AlphaGo to ChatGPT
+
+:::{style="margin-top: 30px; font-size: 22px;"}
+:::{.columns}
+:::{.column width=55%}
+- [RLHF]{.alert}: Reinforcement Learning from Human Feedback
+- Key to ChatGPT's success!
+- Process:
+  1. Train base LLM on text (supervised)
+  2. Collect human preferences on model outputs
+  3. Train a [reward model]{.alert} on preferences
+  4. Use RL (PPO) to optimise LLM for reward
+- Why it works:
+  - Hard to specify "good response" in a formula
+  - Humans can [compare]{.alert} responses more easily
+  - RL optimises for what humans actually want
+- More here: <https://openai.com/index/learning-from-human-preferences/>
+:::
+
+:::{.column width=45%}
+:::{style="text-align: center;"}
+[![RLHF pipeline](figures/rlhf.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/rlhf.png"}
+
+Source: [Simform](https://www.simform.com/blog/reinforcement-learning-from-human-feedback/)
+:::
+:::
+:::
+:::
+
+## RLHF
+
+:::{style="margin-top: 30px; font-size: 22px; text-align: center;"}
+[![RLHF from Anthropic](figures/anthropic-rlhf.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/anthropic-rlhf.png"}
+
+Source: [Anthropic's hh-rlhf dataset (check it out, it's really cool!)](https://huggingface.co/datasets/Anthropic/hh-rlhf?row=2)
+:::
+
+## Jailbreaking RLHF
+### If you can make it, you can jailbreak it 😂
+
+:::{style="margin-top: 30px; font-size: 22px;"}
+:::{.columns}
+:::{.column width=60%}
+- When it comes to LLMs, you can make it do (almost) anything with the right prompt
+- This is more art than science (as most things in AI are), but it can be fun!
+- Please note that [I'm not encouraging you to jailbreak anything]{.alert}, as you may get permanently banned from using LLMs or worse
+- One of the best people in this field is/was [Pliny the Liberator](https://pliny.gg/), who jailbroke pretty much all LLMs he could get his hands on 😂
+- If you're interested in jailbreaking, check out this repository: <https://github.com/elder-plinius/L1B3RT4S>
+- Here's [Claude Sonnet](https://claude.ai) teaching how to produce drugs: <https://x.com/elder_plinius/status/1972885831955484830>
+:::
+
+:::{.column width=40%}
+:::{style="text-align: center; margin-top: -20px;"}
+[![](figures/pliny.jpg){width="90%"}](#){data-modal-type="image" data-modal-url="figures/pliny.jpg"}
+
+Source: [Pliny the Liberator](https://pliny.gg/)
+:::
+:::
+:::
+:::
+
+## AI safety
+### It's not just about making it do what we want
+:::{style="margin-top: 30px; font-size: 27px;"}
+:::{.columns}
+:::{.column width=55%}
+- [Alignment problem]{.alert}: Ensuring models do what we *mean*, not just what we *say*
+- [Specification gaming]{.alert}: Models finding perverse ways to maximise rewards (e.g., [reward hacking]{.alert})
+- [Scalable oversight]{.alert}: How to supervise models that are more capable than their human evaluators
+- [Red teaming]{.alert}: Proactively finding vulnerabilities and [jailbreaks]{.alert}
+- [Safety is not an afterthought]{.alert}: It must be built into the learning process from the start
+:::
+
+:::{.column width=45%}
+:::{style="text-align: center; margin-top: -10px;"}
+[![AI alignment](figures/ai-safety.png){width="90%"}](#){data-modal-type="image" data-modal-url="figures/ai-safety.png"}
+
+Source: NanoBanana
+:::
+:::
+:::
+:::
+
+# Comparing the three paradigms 📊 {background-color="#2d4563"}
+
+## Side-by-side comparison
+### Choosing the right approach
+
+:::{style="margin-top: 30px; font-size: 30px;"}
+
+| | [Supervised]{.alert} | [Unsupervised]{.alert} | [Reinforcement]{.alert} |
+|---|----------------|------------------|-------------------|
+| **Data** | Labelled (X, y) | Unlabelled (X) | States, actions, rewards |
+| **Goal** | Predict y from X | Find structure | Maximise reward |
+| **Feedback** | Correct answers | None | Reward signal |
+| **Analogy** | Learning with a teacher | Exploring alone | Learning by trial and error |
+| **Evaluation** | Compare to known labels | Internal metrics | Cumulative reward |
+| **Examples** | Spam detection, diagnosis | Customer segments | Game playing, robotics |
+| **Difficulty** | Medium (if labels exist) | Hard to evaluate | Hard to train |
+
+:::
+
+# Summary 📚 {background-color="#2d4563"}
+
+## Main takeaways
+
+:::{style="margin-top: 30px; font-size: 30px;"}
+
+- `r fa('graduation-cap')` [Three paradigms]{.alert}: Supervised (labels), unsupervised (no labels), reinforcement (rewards)
+
+- `r fa('book')` [Supervised learning]{.alert} is most common: Learn from labelled examples to predict
+
+- `r fa('balance-scale')` The [bias-variance trade-off]{.alert} is something to always keep in mind: Simple models underfit, complex models overfit
+
+- `r fa('search')` [Unsupervised learning]{.alert} discovers hidden structure: Clustering, dimensionality reduction
+
+- `r fa('gamepad')` [Reinforcement learning]{.alert} learns from interaction: Exploration vs exploitation
+
+- `r fa('robot')` [RLHF]{.alert} powers modern LLMs like ChatGPT: RL to align with human preferences
+:::
+
+# ... and that's all for today! 🎉 {background-color="#2d4563"}
+
+# See you all soon! 😊 {background-color="#2d4563"}
