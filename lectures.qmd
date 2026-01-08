@@ -24,6 +24,7 @@ Readings:
 ### January 21, 2026:
 
 - Lecture 02: [A brief history of AI and the recent shift](https://raw.githack.com/danilofreire/datasci185/main/lectures/lecture-02/02-history.html).
+- [**Assignment 01**](https://github.com/danilofreire/datasci185/blob/main/assignments/01-assignment.ipynb).
 
 Readings:
 
@@ -32,8 +33,6 @@ Readings:
 - Cao, Y., Liu, L., Li, M., Huang, Y., & Li, S. (2023). [A comprehensive survey of AI-generated content (AIGC): A history of generative AI from GAN to ChatGPT.](https://arxiv.org/abs/2303.04226) *arXiv preprint*. A somewhat technical but comprehensive overview of generative AI methods.
 - Halevy, A., Norvig, P., & Pereira, F. (2009). [The unreasonable effectiveness of data.](https://static.googleusercontent.com/media/research.google.com/en//pubs/archive/35179.pdf) *IEEE Intelligent Systems*, *24*(2), 8-12. A classic paper arguing that large datasets are often more important than sophisticated algorithms.
 - Pradhan, M. (2023). [A non-technical introduction to Transformers.](https://medium.com/healthcare-ai-sig/a-non-technical-introduction-to-transformers-6ca36b8246d) A clear explanation of the transformer architecture that underpins many modern AI systems.
-- Doshi, K. (2025). [Transformers explained visually, part 1: overview of functionality.](https://towardsdatascience.com/transformers-explained-visually-part-1-overview-of-functionality-95a6dd460452/) Another explanation of transformers, with diagrams.
-- Horstman, M. (2024). [Transformers for dummies: a peek inside AI models.](https://michielh.medium.com/transformers-unleashed-the-neural-architecture-powering-modern-ai-and-language-models-57626643fd49) _Yet another_ explanation of transformers. This one is a little more technical.
 - Georgia Tech's Polo Club of Data Science (2025). [Transformer explainer.](https://poloclub.github.io/transformer-explainer/) An interactive visualisation of how transformers work.
 
 ## Module 1 — How AI systems are designed
@@ -47,24 +46,18 @@ Readings:
 - Athalye, A., Northcutt, C., & Mueller, J. (2024). [Dataset creation and curation](https://dcai.csail.mit.edu/2024/dataset-creation-curation/) in *Data-Centric AI*. A chapter from a forthcoming book on data-centric AI, covering the main ideas in dataset design.
 - Sapien Labs. (2024). [Labeling data for machine learning: best practices and quality control.](https://www.sapien.io/blog/labeling-data-for-machine-learning-best-practices-and-quality-control) A practical guide to data labeling, with tips and common pitfalls.
 - Liang, W., Tadesse, G. A., Ho, D., Fei-Fei, L., Zaharia, M., Zhang, C., & Zou, J. (2022). [Advances, challenges and opportunities in creating data for trustworthy AI.](https://www.nature.com/articles/s42256-022-00516-1) *Nature Machine Intelligence*, 4(8), 669-677. A good discussion on the challenges of creating high-quality datasets.
-- Orr, W., & Crawford, K. (2024). [The social construction of datasets: on the practices, processes, and challenges of dataset creation for machine learning.](https://journals.sagepub.com/doi/abs/10.1177/14614448241251797) *New Media & Society*, 26(9), 4955-4972. A sociological perspective on dataset creation, with interviews with practitioners.
-- Nazer, L. H., Zatarah, R., Waldrip, S., Ke, J. X. C., Moukheiber, M., Khanna, A. K., ... & Mathur, P. (2023). [Bias in artificial intelligence algorithms and recommendations for mitigation.](https://journals.plos.org/digitalhealth/article?id=10.1371/journal.pdig.0000278) *PLOS Digital Health*, 2(6), e0000278. A review of different types of bias that can arise in datasets and what to do about them. Focused on healthcare but broadly applicable.
 
 ### January 28, 2026:
 
 - Lecture 04: [Supervised, unsupervised, and reinforcement learning](https://raw.githack.com/danilofreire/datasci185/main/lectures/lecture-04/04-learning.html).
+- **Assignment 01 due (5%).**
+- [**Assignment 02**](https://github.com/danilofreire/datasci185/blob/main/assignments/02-assignment.ipynb).
 
 Readings:
 
-- Jiang, T., Gradus, J. L., & Rosellini, A. J. (2020). [Supervised machine learning: a brief primer.](https://pmc.ncbi.nlm.nih.gov/articles/PMC7431677/) *Behavior Therapy*, *51*(5), 675-687. A non-technical introduction to supervised machine learning, with a focus on clinical applications.
-- Chang, A., Tang, T. M., Zikry, T. M., & Allen, G. I. (2025). [Unsupervised machine learning for scientific discovery: workflow and best practices.](https://arxiv.org/abs/2506.04553) *arXiv preprint arXiv:2506.04553*. Discusses how to leverage unsupervised techniques for discovery and provides a framework for analysis.
-- Matsuo, Y., LeCun, Y., Sahani, M., Precup, D., Silver, D., Sugiyama, M., ... & Morimoto, J. (2022). [Deep learning, reinforcement learning, and world models.](https://www.sciencedirect.com/science/article/pii/S0893608022001150) *Neural Networks*, *152*, 267-275. A high-level overview of how deep learning and reinforcement learning can be combined with world models to build more capable and autonomous AI agents.
+- Jiang, T., Gradus, J. L., & Rosellini, A. J. (2020). [Supervised machine learning: a brief primer.](https://pmc.ncbi.nlm.nih.gov/articles/PMC7431677/) *Behavior Therapy*, *51*(5), 675-687. A non-technical introduction to supervised machine learning.
+- Amazon Web Services (2025). [What is the difference between supervised and unsupervised learning?](https://aws.amazon.com/compare/the-difference-between-machine-learning-supervised-and-unsupervised/) A practical overview with examples.
 - Goodfellow, I., Bengio, Y., & Courville, A. (2016). [Chapter 5: Machine learning basics](https://www.deeplearningbook.org/contents/ml.html) in *Deep Learning*. A technical but clear introduction to the main ideas behind machine learning.
-- Amazon Web Services (2025). [What is the difference between supervised and unsupervised learning?](https://aws.amazon.com/compare/the-difference-between-machine-learning-supervised-and-unsupervised/) A practical overview of supervised and unsupervised learning, with examples.
-- Lee, F. (2025). [What is bias-variance tradeoff?](https://www.ibm.com/think/topics/bias-variance-tradeoff) An explanation of a key concept in machine learning. It has some formulas but the main ideas are easy to grasp.
-- Elsevier (2025). [Science direct: supervised learning.](https://www.sciencedirect.com/topics/computer-science/supervised-learning) A short introduction to supervised learning, with links to further readings.
-- Elsevier (2025). [Science direct: unsupervised learning.](https://www.sciencedirect.com/topics/computer-science/unsupervised-learning) Same as above, but for unsupervised learning.
-- Wikipedia (2026). [Reinforcement learning](https://en.wikipedia.org/wiki/Reinforcement_learning). A short, yet clear introduction to reinforcement learning.
 
 ### February 02, 2026:
 
@@ -72,15 +65,15 @@ Readings:
 
 Readings:
 
-- Akinkugbe, A. (2025). [The essential guide to model evaluation metrics for classification.](https://pub.towardsai.net/the-essential-guide-to-model-evaluation-metrics-for-classification-560efee6f445) A practical guide to common evaluation metrics, with examples and case studies.
-- Thomas, R. L., & Uminsky, D. (2022). [Reliance on metrics is a fundamental challenge for AI.](https://www.cell.com/patterns/fulltext/S2666-3899(22)00056-3) *Patterns*, 3(5).100440. A discussion of the limitations of metrics and how they can be gamed or misinterpreted.
-- Montesinos López, O. A., Montesinos López, A., & Crossa, J. (2022). [Overfitting, model tuning, and evaluation of prediction performance.](https://link.springer.com/chapter/10.1007/978-3-030-89010-0_4) In *Multivariate statistical machine learning methods for genomic prediction* (pp. 109-139). Cham: Springer International Publishing. Good chapter, worth reading even if you don't understand all the maths.
+- Akinkugbe, A. (2025). [The essential guide to model evaluation metrics for classification.](https://pub.towardsai.net/the-essential-guide-to-model-evaluation-metrics-for-classification-560efee6f445) A practical guide to common evaluation metrics.
+- Thomas, R. L., & Uminsky, D. (2022). [Reliance on metrics is a fundamental challenge for AI.](https://www.cell.com/patterns/fulltext/S2666-3899(22)00056-3) *Patterns*, 3(5).100440. A discussion of the limitations of metrics.
 - Coursera (2025). [Precision vs. recall in machine learning: what's the difference?](https://www.coursera.org/articles/precision-vs-recall-machine-learning). A short article about those two commonly confused metrics.
-- Palumbo, G., Carneiro, D., & Alves, V. (2024). [Objective metrics for ethical AI: a systematic literature review.](https://link.springer.com/article/10.1007/s41060-024-00541-w) *International Journal of Data Science and Analytics*, 1-21. New ideas about how to evaluate AI systems beyond accuracy.
 
 ### February 04, 2026:
 
-- Lecture 06: [Quiz 1](https://github.com/danilofreire/datasci185-quiz01/)
+- Lecture 06: [Quiz 1](https://github.com/danilofreire/datasci185-quiz01/).
+- **Assignment 02 due (5%).**
+- [**Assignment 03**](https://github.com/danilofreire/datasci185/blob/main/assignments/03-assignment.ipynb).
 
 ## Module 2 — Language and perception
 
@@ -90,23 +83,21 @@ Readings:
 
 Readings:
 
-- Neptune.ai (2025). [The ultimate guide to word embeddings.](https://neptune.ai/blog/word-embeddings-guide) The title is a bit grandiose, but this is a clear and practical introduction to word embeddings. Includes Python code snippets.
-- Neptune.ai (2025). [Tokenization in NLP: types, challenges, examples, tools.](https://neptune.ai/blog/tokenization-in-nlp) Another article by the same group, this time on tokenisation. Also includes code snippets.
-- StackOverflow (2023). [An intuitive introduction to text embeddings.](https://stackoverflow.blog/2023/11/09/an-intuitive-introduction-to-text-embeddings/) A practical introduction to embeddings, with simple examples.
-- DeepLearning.ai (2023). [A complete guide to natural language processing.](https://www.deeplearning.ai/resources/natural-language-processing/) Despite another grandiose title, this is a good overview of NLP concepts and techniques.
-- Gastaldi, J. L., Terilla, J., Malagutti, L., DuSell, B., Vieira, T., & Cotterell, R. (2024). [The foundations of tokenization: statistical and computational concerns.](https://arxiv.org/abs/2407.11606) *arXiv preprint* arXiv:2407.11606. Very technical, for those interested in the mathematical details of tokenisation.
+- Neptune.ai (2025). [The ultimate guide to word embeddings.](https://neptune.ai/blog/word-embeddings-guide) A clear and practical introduction to word embeddings.
+- Neptune.ai (2025). [Tokenization in NLP: types, challenges, examples, tools.](https://neptune.ai/blog/tokenization-in-nlp) Another article by the same group on tokenisation.
+- StackOverflow (2023). [An intuitive introduction to text embeddings.](https://stackoverflow.blog/2023/11/09/an-intuitive-introduction-to-text-embeddings/) A practical introduction to embeddings.
 
 ### February 11, 2026:
 
 - Lecture 08: [How machines analyse images and audio](https://raw.githack.com/danilofreire/datasci185/main/lectures/lecture-08/08-vision-audio.html).
+- **Assignment 03 due (5%).**
+- [**Assignment 04**](https://github.com/danilofreire/datasci185/blob/main/assignments/04-assignment.ipynb).
 
 Readings:
 
-- O'Shea, K., & Nash, R. (2015). [An introduction to convolutional neural networks.](https://arxiv.org/abs/1511.08458) *arXiv preprint* arXiv:1511.08458. A clear and concise tutorial.
-- DataCamp (2025). [What is computer vision? A beginner guide to image analysis.](https://www.datacamp.com/blog/what-is-computer-vision) Simple and illustrated introduction to computer vision concepts.
-- AltexSoft (2025). [How AI sound, music, and voice generation works.](https://www.altexsoft.com/blog/sound-music-voice-generation/) Another practical introduction. A nice reading!
-- Singal, A. (2023). [Hearing is believing: revolutionizing AI with audio classification via computer vision.](https://huggingface.co/blog/Andyrasika/voice-with-vision) How machines classify audio using image-based techniques. Includes Python code for practitioners.
-- Goodfellow, I., Bengio, Y., & Courville, A. (2016). [Deep learning.](https://www.deeplearningbook.org/) MIT Press. Chapters 9 and 10 provide a solid foundation in convolutional networks. A bit technical, quite dense, but this is one of the best books on deep learning.
+- O'Shea, K., & Nash, R. (2015). [An introduction to convolutional neural networks.](https://arxiv.org/abs/1511.08458) *arXiv preprint*. A clear and concise tutorial.
+- DataCamp (2025). [What is computer vision? A beginner guide to image analysis.](https://www.datacamp.com/blog/what-is-computer-vision) Simple and illustrated introduction.
+- AltexSoft (2025). [How AI sound, music, and voice generation works.](https://www.altexsoft.com/blog/sound-music-voice-generation/) Another practical introduction.
 
 ### February 16, 2026:
 
@@ -116,7 +107,9 @@ No required readings for this lecture. We will do live demonstrations in class.
 
 ### February 18, 2026:
 
-- Lecture 10: [Quiz 2](https://github.com/danilofreire/datasci185-quiz02/)
+- Lecture 10: [Quiz 2](https://github.com/danilofreire/datasci185-quiz02/).
+- **Assignment 04 due (5%).**
+- [**Assignment 05**](https://github.com/danilofreire/datasci185/blob/main/assignments/05-assignment.ipynb).
 
 ## Module 3 — Retrieval, generation and pipelines
 
@@ -126,24 +119,21 @@ No required readings for this lecture. We will do live demonstrations in class.
 
 Readings:
 
-- Amazon Web Services (2025). [What is retrieval-augmented generation (RAG)?](https://aws.amazon.com/what-is/retrieval-augmented-generation/) Beginners' guide to RAG by people who know what they're talking about.
-- Erikson, J. (2024). [What is vector search? The ultimate guide.](https://aws.amazon.com/what-is/retrieval-augmented-generation/) Yes, the grandiose titles are a trend. The article is pretty good, though.
-- Mastering LLM (2024). [11 chunking strategies for RAG — simplified & visualized](https://masteringllm.medium.com/11-chunking-strategies-for-rag-simplified-visualized-df0dbec8e373) Very nice explanation of chunking strategies, with diagrams.
-- Slack (2025). [Semantic search explained: how it works, and why it matters.](https://slack.com/blog/productivity/semantic-search-explained-how-it-works-and-why-it-matters) Good explainer from a top tech company.
-- Wang, X., Wang, Z., Gao, X., Zhang, F., Wu, Y., Xu, Z., ... & Huang, X. (2024). [Searching for best practices in retrieval-augmented generation.](https://arxiv.org/abs/2407.01219) *arXiv preprint* arXiv:2407.01219. Technical in nature, for those interested in the research behind RAG.
+- Amazon Web Services (2025). [What is retrieval-augmented generation (RAG)?](https://aws.amazon.com/what-is/retrieval-augmented-generation/) Beginners' guide to RAG.
+- Mastering LLM (2024). [11 chunking strategies for RAG — simplified & visualized](https://masteringllm.medium.com/11-chunking-strategies-for-rag-simplified-visualized-df0dbec8e373) Nice explanation of chunking strategies.
+- Slack (2025). [Semantic search explained: how it works, and why it matters.](https://slack.com/blog/productivity/semantic-search-explained-how-it-works-and-why-it-matters) Good explainer.
 
 ### February 25, 2026:
 
 - Lecture 12: [Creativity and hallucination](https://raw.githack.com/danilofreire/datasci185/main/lectures/lecture-12/12-hallucination.html).
+- **Assignment 05 due (5%).**
+- [**Assignment 06**](https://github.com/danilofreire/datasci185/blob/main/assignments/06-assignment.ipynb).
 
 Readings:
 
-- Jiang, X., Tian, Y., Hua, F., Xu, C., Wang, Y., & Guo, J. (2024). [A survey on large language model hallucination via a creativity perspective.](https://arxiv.org/abs/2402.06647) *arXiv preprint* arXiv:2402.06647. Very nice article showing how hallucinations can be used creatively.
-- Tonmoy, S. M. T. I., Zaman, S. M., Jain, V., Rani, A., Rawte, V., Chadha, A., & Das, A. (2024). [A comprehensive survey of hallucination mitigation techniques in large language models.](https://arxiv.org/abs/2401.01313) *arXiv preprint* arXiv:2401.01313, 6. The article is quite detailed and lists a series of techniques to reduce hallucinations. No need to know them all, just to know they exist and how they work in principle.
-- Wikipedia (2025). [Hallucination (artificial intelligence).](https://en.wikipedia.org/wiki/Hallucination_(artificial_intelligence)) Wikipedia actually has some good articles on AI topics. This one is a well-written overview of hallucinations.
-- Chakraborty, T., & Masud, S. (2024). [The promethean dilemma of AI at the intersection of hallucination and creativity.](https://cacm.acm.org/opinion/the-promethean-dilemma-of-ai-at-the-intersection-of-hallucination-and-creativity/) *Communications of the ACM*, 67(10), 26-28. Full of interesting ideas and perspectives.
-- OpenAI (2024). [Does ChatGPT tell the truth?](https://help.openai.com/en/articles/8313428-does-chatgpt-tell-the-truth) I'm sure you know who these people are. Practical advice.
-- Kalai, A. T., Nachum, O., Vempala, S. S., & Zhang, E. (2025). [Why language models hallucinate.](https://arxiv.org/abs/2509.04664) *arXiv preprint* arXiv:2509.04664. Written by members of OpenAI. Not for the faint of heart by any means, but if you're feeling adventurous...
+- Jiang, X., Tian, Y., Hua, F., Xu, C., Wang, Y., & Guo, J. (2024). [A survey on large language model hallucination via a creativity perspective.](https://arxiv.org/abs/2402.06647) *arXiv preprint*.
+- Wikipedia (2025). [Hallucination (artificial intelligence).](https://en.wikipedia.org/wiki/Hallucination_(artificial_intelligence)) A well-written overview.
+- OpenAI (2024). [Does ChatGPT tell the truth?](https://help.openai.com/en/articles/8313428-does-chatgpt-tell-the-truth) Practical advice.
 
 ### March 02, 2026:
 
@@ -151,138 +141,125 @@ Readings:
 
 Readings:
 
-- Google (2025). [Production ML systems: monitoring pipelines.](https://developers.google.com/machine-learning/crash-course/production-ml-systems/monitoring) If there's one company that knows how to run ML systems at scale, it's Google. This is a practical guide to monitoring ML pipelines. If you are unfamiliar with some terms, don't worry too much; the main ideas are easy to grasp. Use AI to help you if needed!
-- Allen, J. (2024). [Data pipeline monitoring: best practices for full observability.](https://www.prefect.io/blog/data-pipeline-monitoring-best-practices) Informal and full of practical tips. Some technical terms too, but nothing too difficult.
-- Steidl, M., Felderer, M., & Ramler, R. (2023). [The pipeline for the continuous development of artificial intelligence models--current state of research and practice.](https://arxiv.org/abs/2301.09001) *arXiv e-prints*, arXiv-2301. _Super long_ article (sorry!), but it covers everything we discuss in class and more. Just read what you need.
+- Google (2025). [Production ML systems: monitoring pipelines.](https://developers.google.com/machine-learning/crash-course/production-ml-systems/monitoring) Practical guide to monitoring ML pipelines.
+- Allen, J. (2024). [Data pipeline monitoring: best practices for full observability.](https://www.prefect.io/blog/data-pipeline-monitoring-best-practices) Practical tips.
 
 ### March 04, 2026:
 
-- Lecture 14: [Quiz 3](https://github.com/danilofreire/datasci185-quiz03/)
+- Lecture 14: [Quiz 3](https://github.com/danilofreire/datasci185-quiz03/).
+- **Assignment 06 due (5%).**
+- [**Assignment 07**](https://github.com/danilofreire/datasci185/blob/main/assignments/07-assignment.ipynb).
+
+### March 9 and 11, 2026: Spring Break (No Classes)
 
 ## Module 4 — Data ethics and bias
 
-### March 09, 2026:
+### March 16, 2026:
 
 - Lecture 15: [Types of bias and how they arise](https://raw.githack.com/danilofreire/datasci185/main/lectures/lecture-15/15-bias.html).
 
 Readings:
 
-- Barocas, S., Hardt, M., & Narayanan, A. (2019). [Fairness and machine learning](https://fairmlbook.org/). Chapter 2: When is automated decision making legitimate? A very good book on fairness in machine learning. This chapter covers the main types of bias that can arise in datasets.
-- Mehrabi, N., Morstatter, F., Saxena, N., Lettich, A., & Galstyan, A. (2021). [A survey on bias and fairness in machine learning.](https://arxiv.org/abs/1908.09635) *ACM Computing Surveys (CSUR)*, *54*(6), 1-35. A comprehensive survey of bias and fairness in machine learning. Quite technical, but the introduction and conclusion are accessible.
-- Suresh, H., & Guttag, J. V. (2019). [A framework for understanding unintended consequences of machine learning.](https://dl.acm.org/doi/10.1145/3287560.3287598) In *Conference on Fairness, Accountability, and Transparency* (pp. 1-10). A good framework for thinking about biases.
-- Bender, E. M., Gebru, T., McMillan-Major, A., & Shmitchell, S. (2021). [On the dangers of stochastic parrots: Can language models be too big?](https://dl.acm.org/doi/10.1145/3442188.3445922) In *Proceedings of the 2021 ACM Conference on Fairness, Accountability, and Transparency* (pp. 610-623). A critical look at large language models and the risks they pose.
-- Silberg, J., & Manyika, J. (2019). [Notes from the AI frontier: tackling bias in AI (and in humans).](https://www.mckinsey.com/~/media/McKinsey/Featured%20Insights/Artificial%20Intelligence/Tackling%20bias%20in%20artificial%20intelligence%20and%20in%20humans/MGI-Tackling-bias-in-AI-June-2019.pdf) McKinsey Global Institute, 1(6), 1-31. An easy-to-read report on bias in AI, with practical recommendations for business and policy.
+- Barocas, S., Hardt, M., & Narayanan, A. (2019). [Fairness and machine learning](https://fairmlbook.org/). Chapter 2: When is automated decision making legitimate?
+- Mehrabi, N., Morstatter, F., Saxena, N., Lettich, A., & Galstyan, A. (2021). [A survey on bias and fairness in machine learning.](https://arxiv.org/abs/1908.09635) *ACM Computing Surveys*, *54*(6), 1-35.
+- Silberg, J., & Manyika, J. (2019). [Notes from the AI frontier: tackling bias in AI (and in humans).](https://www.mckinsey.com/~/media/McKinsey/Featured%20Insights/Artificial%20Intelligence/Tackling%20bias%20in%20artificial%20intelligence%20and%20in%20humans/MGI-Tackling-bias-in-AI-June-2019.pdf) McKinsey Global Institute.
 
-### March 11, 2026: Spring Break (No Classes)
-
-### March 16, 2026:
+### March 18, 2026:
 
 - Lecture 16: [Documentation and dataset governance](https://raw.githack.com/danilofreire/datasci185/main/lectures/lecture-16/16-documentation.html).
+- **Assignment 07 due (5%).**
+- [Instructions for the Final Project](https://github.com/danilofreire/datasci185/tree/main/project).
 
 Readings:
 
-- Gebru, T., Morgenstern, J., Vecchione, B., Vaughan, J. W., Wallach, H., Daumé III, H., & Crawford, K. (2018). [Datasheets for datasets.](https://arxiv.org/abs/1803.09010) *arXiv preprint* arXiv:1803.09010. The original paper proposing datasheets for datasets.
-- Mitchell, M., Wu, S., Zaldivar, A., Barnes, P., Vasserman, L., Hutchinson, B., ... & Gebru, T. (2019). [Model cards for model reporting.](https://arxiv.org/abs/1810.03993) *Proceedings of the Conference on Fairness, Accountability, and Transparency* (pp. 220-229). The original paper proposing model cards.
-- Bender, E. M., & Friedman, B. (2018). [Data statements for natural language processing: Toward mitigating system bias and enabling better science.](https://www.aclweb.org/anthology/Q18-1041/) In *Proceedings of the 2018 Conference on Empirical Methods in Natural Language Processing* (pp. 1-14). A proposal for data statements to accompany NLP datasets.
-- IBM (2025). [What is data lineage?](https://www.ibm.com/think/topics/data-lineage) A short guide to data lineage, with use cases.
-- IBM (2025). [What is data provenance?](https://www.ibm.com/topics/data-provenance) Another practical guide, this time on data provenance.
+- Gebru, T., et al. (2018). [Datasheets for datasets.](https://arxiv.org/abs/1803.09010) *arXiv preprint*. The original paper proposing datasheets for datasets.
+- Mitchell, M., et al. (2019). [Model cards for model reporting.](https://arxiv.org/abs/1810.03993) *Proceedings of FAccT*. The original paper proposing model cards.
+- IBM (2025). [What is data lineage?](https://www.ibm.com/think/topics/data-lineage) A short guide to data lineage.
 
-### March 18, 2026:
+### March 23, 2026:
 
 - Lecture 17: [Case studies: biased outcomes in health, hiring and policing](https://raw.githack.com/danilofreire/datasci185/main/lectures/lecture-17/17-case-studies.html).
 
 Readings:
 
-- Rudin, C. (2019). [Stop explaining black box machine learning models for high stakes decisions and use interpretable models instead.](https://www.nature.com/articles/s42256-019-0048-x) *Nature machine intelligence*, 1(5), 206-215. A strong argument for using interpretable models in important aspects of life.
-- Obermeyer, Z., Powers, B., Vogeli, C., & Mullainathan, S. (2019). [Dissecting racial bias in an algorithm used to manage the health of populations.](https://science.sciencemag.org/content/366/6464/447) *Science*, *366*(6464), 447-453. A landmark study showing how a widely used health algorithm exhibited racial bias.
-- Buolamwini, J., & Gebru, T. (2018). [Gender shades: Intersectional accuracy disparities in commercial gender classification.](http://proceedings.mlr.press/v81/buolamwini18a.html) *Proceedings of Machine Learning Research*, *81*, 1-15. A study revealing bias in facial recognition systems.
-- Angwin, J., Larson, J., Mattu, S., & Kirchner, L. (2016). [Machine bias: There's software used across the country to predict future criminals. And it's biased against blacks.](https://www.propublica.org/article/machine-bias-risk-assessments-in-criminal-sentencing) *ProPublica*. A widely cited investigation into bias in criminal risk assessment tools.
-- Wilson, K., & Caliskan, A. (2024, October). [Gender, race, and intersectional bias in resume screening via language model retrieval.](https://ojs.aaai.org/index.php/AIES/article/view/31748) In *Proceedings of the AAAI/ACM Conference on AI, Ethics, and Society* (Vol. 7, pp. 1578-1590). A recent paper on how AI may be biased in hiring.
-- AI Now Institute (2025). [Artificial Power: 2025 Landscape Report.](https://ainowinstitute.org/publications/research/ai-now-2025-landscape-report) A strongly critical report on the power dynamics in the AI ecosystem. Worth reading even if you disagree with the arguments.
+- Obermeyer, Z., Powers, B., Vogeli, C., & Mullainathan, S. (2019). [Dissecting racial bias in an algorithm used to manage the health of populations.](https://science.sciencemag.org/content/366/6464/447) *Science*, *366*(6464), 447-453.
+- Buolamwini, J., & Gebru, T. (2018). [Gender shades: Intersectional accuracy disparities in commercial gender classification.](http://proceedings.mlr.press/v81/buolamwini18a.html) *Proceedings of Machine Learning Research*, *81*, 1-15.
+- Angwin, J., Larson, J., Mattu, S., & Kirchner, L. (2016). [Machine bias.](https://www.propublica.org/article/machine-bias-risk-assessments-in-criminal-sentencing) *ProPublica*.
 
-### March 23, 2026:
+### March 25, 2026:
 
-- Lecture 18: [Quiz 4](https://github.com/danilofreire/datasci185-quiz04/)
+- Lecture 18: [Quiz 4](https://github.com/danilofreire/datasci185-quiz04/).
+- [**Assignment 08**](https://github.com/danilofreire/datasci185/blob/main/assignments/08-assignment.ipynb).
 
 ## Module 5 — Policy, governance and social impact
 
-### March 25, 2026:
+### March 30, 2026:
 
 - Lecture 19: [AI regulation and standards around the world](https://raw.githack.com/danilofreire/datasci185/main/lectures/lecture-19/19-regulation.html).
 
 Readings:
 
 - The White House. (2025). [Winning the race: America's AI action plan](https://www.whitehouse.gov/wp-content/uploads/2025/07/Americas-AI-Action-Plan.pdf). What the US government wants to do about AI.
-- OECD. (2019). [OECD AI principles](https://oecd.ai/en/ai-principles). The original text of the OECD AI principles. Just skim the main points.
-- OECD. (2024). [Recommendation of the council on artificial intelligence](https://legalinstruments.oecd.org/en/instruments/OECD-LEGAL-0449). Again, just skim the main points.
 - European Parliament. (2023). [EU AI act](https://www.europarl.europa.eu/topics/en/article/20230601STO93804/eu-ai-act-first-regulation-on-artificial-intelligence). The original text.
-- Cole, M. D. (2024). [AI regulation and governance on a global scale: An overview of international, regional and national instruments.](https://web.archive.org/web/20240330165240id_/https://aire.lexxion.eu/data/article/19406/pdf/aire_2024_01-017.pdf) *Journal of AI Law and Regulation*, *1*(1), 126-142. How different countries are approaching AI regulation.
-- Chun, J., de Witt, C. S., & Elkins, K. (2024). [Comparative global AI regulation: Policy perspectives from the EU, China, and the US.](https://arxiv.org/pdf/2410.21279) *arXiv preprint*. Focused on the big three players in AI regulation.
-- Feldstein, S. (2024). [Evaluating Europe's push to enact AI regulations: How will this influence global norms?](https://www.tandfonline.com/doi/pdf/10.1080/13510347.2023.2196068) *Democratization*, *31*(5), 1049-1066. Will the EU's approach to AI regulation become a global standard?
+- Cole, M. D. (2024). [AI regulation and governance on a global scale.](https://web.archive.org/web/20240330165240id_/https://aire.lexxion.eu/data/article/19406/pdf/aire_2024_01-017.pdf) *Journal of AI Law and Regulation*, *1*(1), 126-142.
 
-### March 30, 2026:
+### April 01, 2026:
 
 - Lecture 20: [Privacy and data protection](https://raw.githack.com/danilofreire/datasci185/main/lectures/lecture-20/20-privacy.html).
+- **Assignment 08 due (5%).**
+- [**Assignment 09**](https://github.com/danilofreire/datasci185/blob/main/assignments/09-assignment.ipynb).
 
 Readings:
 
-- European Union. (2016). [General Data Protection Regulation (GDPR).](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32016R0679) The original text of the GDPR. Don't worry about reading the whole thing; just skim the main points.
-- Hoofnagle, C. J., Van Der Sloot, B., & Borgesius, F. Z. (2019). [The European Union general data protection regulation: what it is and what it means.](https://www.tandfonline.com/doi/full/10.1080/13600834.2019.1573501) *Information & Communications Technology Law*, *28*(1), 65-98. Much easier to read than the original GDPR text. Read this one instead if you want a summary.
-- Wachter, S., Mittelstadt, B., & Floridi, L. (2017). [Why a right to explanation of automated decision-making does not exist in the general data protection regulation.](https://doi.org/10.1093/idpl/ipx005) *International data privacy law*, 7(2), 76-99. A critical look at the "right to explanation" in GDPR.
-- Ryngaert, C., & Taylor, M. (2020). [The GDPR as Global Data Protection Regulation?](https://www.cambridge.org/core/journals/american-journal-of-international-law/article/gdpr-as-global-data-protection-regulation/CB416FF11457C21B02C0D1DA7BE8E688) *AJIL Unbound*, *114*, 5-9. A discussion of the GDPR's (possible) influence beyond the EU.
-- Taddeo, M., & Floridi, L. (2018). [How AI can be a force for good.](https://www.science.org/doi/abs/10.1126/science.aat5991) *Science*, *361*(6404), 751-752. A positive perspective on how AI can be used ethically and responsibly.
+- Hoofnagle, C. J., Van Der Sloot, B., & Borgesius, F. Z. (2019). [The European Union general data protection regulation: what it is and what it means.](https://www.tandfonline.com/doi/full/10.1080/13600834.2019.1573501) *Information & Communications Technology Law*, *28*(1), 65-98.
+- Taddeo, M., & Floridi, L. (2018). [How AI can be a force for good.](https://www.science.org/doi/abs/10.1126/science.aat5991) *Science*, *361*(6404), 751-752.
 
-### April 01, 2026:
+### April 06, 2026:
 
 - Lecture 21: [Labour markets and economic effects](https://raw.githack.com/danilofreire/datasci185/main/lectures/lecture-21/21-labour.html).
 
 Readings:
 
-- Korinek, A., & Suh, D. (2024). [Scenarios for the Transition to AGI (No. w32255).](https://www.nber.org/system/files/working_papers/w32255/w32255.pdf) National Bureau of Economic Research. How output and wages behave under different scenarios for technological progress.
-- Acemoglu, D., & Restrepo, P. (2019). [Automation and new tasks: How technology displaces and reinstates labor.](https://www.aeaweb.org/articles?id=10.1257/jep.33.2.3) *Journal of Economic Perspectives*, *33*(2), 3-30. A comprehensive review of how automation affects jobs.
-- Restrepo, P. (2025). [We won't be missed: work and growth in the era of AGI.](https://www.nber.org/books-and-chapters/economics-transformative-ai/we-wont-be-missed-work-and-growth-era-agi) NBER Chapters. Some scholars suggest we will live in an age of abundance, others that we will all be unemployed. What if the truth is somewhere in between?
-- Bessen, J. E. (2019). [AI and jobs: The role of demand.](https://www.nber.org/papers/w24235) *NBER Working Paper* No. 24235. A nuanced look at how AI affects labour markets, focusing on demand-side effects.
-- World Economic Forum. (2025). [The future of jobs report 2025.](https://www.weforum.org/reports/the-future-of-jobs-report-2025) A comprehensive report on how jobs are expected to change in the last years.
-- Manyika, J., Chui, M., Miremadi, M., Bughin, J., George, K., Willmott, P., & Dewhurst, M. (2017). [A future that works: Automation, employment, and productivity.](https://www.mckinsey.com/~/media/mckinsey/featured%20insights/digital%20disruption/harnessing%20automation%20for%20a%20future%20that%20works/mgi-a-future-that-works-full-report-updated.pdf) McKinsey Global Institute. A widely cited report on automation and jobs.
+- Acemoglu, D., & Restrepo, P. (2019). [Automation and new tasks: How technology displaces and reinstates labor.](https://www.aeaweb.org/articles?id=10.1257/jep.33.2.3) *Journal of Economic Perspectives*, *33*(2), 3-30.
+- World Economic Forum. (2025). [The future of jobs report 2025.](https://www.weforum.org/reports/the-future-of-jobs-report-2025) A comprehensive report on how jobs are expected to change.
 
-### April 06, 2026:
+### April 08, 2026:
 
-- Lecture 22: [Quiz 5](https://github.com/danilofreire/datasci185-quiz05/)
+- Lecture 22: [Quiz 5](https://github.com/danilofreire/datasci185-quiz05/).
+- **Assignment 09 due (5%).**
+- [**Assignment 10**](https://github.com/danilofreire/datasci185/blob/main/assignments/10-assignment.ipynb).
 
 ## Module 6 — Applications, limits and projects
 
-### April 08, 2026:
+### April 13, 2026:
 
 - Lecture 23: [AI in health, education and public services](https://raw.githack.com/danilofreire/datasci185/main/lectures/lecture-23/23-applications.html).
 
 Readings:
 
 - Davenport, T., & Kalakota, R. (2019). [The potential for artificial intelligence in healthcare.](https://www.sciencedirect.com/science/article/pii/S2514664524010592) *Future healthcare journal*, 6(2), 94-98.
-- Aung, Y. Y., Wong, D. C., & Ting, D. S. (2021). [The promise of artificial intelligence: a review of the opportunities and challenges of artificial intelligence in healthcare.](https://academic.oup.com/bmb/advance-article-pdf/doi/10.1093/bmb/ldab016/40343944/ldab016.pdf) *British medical bulletin*, 139(1), 4-15. This article complements the previous one.
-- Zhai, X., Chu, X., Chai, C. S., Jong, M. S. Y., Istenic, A., Spector, M., ... & Li, Y. (2021). [A review of artificial intelligence (AI) in education from 2010 to 2020.](https://onlinelibrary.wiley.com/doi/abs/10.1155/2021/8812542) *Complexity*, 2021(1), 8812542. A comprehensive review on that topic.
-- Alasadi, E. A., & Baiz, C. R. (2023). [Generative AI in Education and Research: Opportunities, concerns, and solutions.](https://doi.org/10.1021/acs.jchemed.3c00323) *Journal of Chemical Education*, *100* (8), 2965-2971.
-- Osborne, S. P., Cucciniello, M., Nasi, G., & Zhu, E. (2022). [Digital transformation, artificial intelligence and effective public services: challenges and opportunities.](https://link.springer.com/article/10.1007/s43508-022-00058-7) *Global Public Policy and Governance*, *2*(4), 377-380. This is the introduction of a special issue on AI in public services. The whole issue is worth reading.
-
-### April 13, 2026:
-
-- Lecture 24: [Misinformation, deepfakes and trust online](https://raw.githack.com/danilofreire/datasci185/main/lectures/lecture-24/24-misinformation.html).
-
-Readings:
-
-- Helmus, T. C. (2022). [Artificial intelligence, deepfakes, and disinformation: A primer.](https://www.rand.org/pubs/perspectives/PEA1043-1.html) *RAND Corporation*. Very accessible introduction to the topic.
-- Mustak, M., Salminen, J., Mäntymäki, M., Rahman, A., & Dwivedi, Y. K. (2023). [Deepfakes: Deceptions, mitigations, and opportunities.](https://doi.org/10.1016/j.jbusres.2022.113368) *Journal of Business Research*, 154, 113368. Focused on business applications.
-- Chesney, R., & Citron, D. K. (2019). [Deepfakes and the new disinformation war: The coming age of post-truth geopolitics.](https://www.foreignaffairs.com/articles/world/2018-12-11/deepfakes-and-new-disinformation-war) *Foreign Affairs*. A legal perspective on deepfakes and misinformation.
-- Vaccari, C., & Chadwick, A. (2020). [Deepfakes and disinformation: Exploring the impact of synthetic political video on deception, uncertainty, and trust in news.](https://journals.sagepub.com/doi/full/10.1177/2056305120903408) *Social Media + Society*, *6*(1), 2056305120903408. An empirical study that finds that deepfakes may contribute toward generalised indeterminacy and cynicism.
-- Kietzmann, J., Lee, L. W., McCarthy, I. P., & Kietzmann, T. C. (2020). [Deepfakes: Trick or treat?](https://doi.org/10.1016/j.bushor.2019.11.006) *Business Horizons*, *63*(2), 135-146. The authors provide a framework to manage deepfake risks.
+- Zhai, X., et al. (2021). [A review of artificial intelligence (AI) in education from 2010 to 2020.](https://onlinelibrary.wiley.com/doi/abs/10.1155/2021/8812542) *Complexity*, 2021(1), 8812542.
 
 ### April 15, 2026:
 
-- Lecture 25: [Course revision](https://raw.githack.com/danilofreire/datasci185/main/lectures/lecture-25/25-revision.html).
+- Lecture 24: [Misinformation, deepfakes and trust online](https://raw.githack.com/danilofreire/datasci185/main/lectures/lecture-24/24-misinformation.html).
+- **Assignment 10 due (5%).**
+
+Readings:
+
+- Helmus, T. C. (2022). [Artificial intelligence, deepfakes, and disinformation: A primer.](https://www.rand.org/pubs/perspectives/PEA1043-1.html) *RAND Corporation*.
+- Chesney, R., & Citron, D. K. (2019). [Deepfakes and the new disinformation war.](https://www.foreignaffairs.com/articles/world/2018-12-11/deepfakes-and-new-disinformation-war) *Foreign Affairs*.
 
 ### April 20, 2026:
 
-- Lecture 26: [Project work](https://raw.githack.com/danilofreire/datasci185/main/lectures/lecture-26/26-project.html).
+- Lecture 25: [Course revision](https://raw.githack.com/danilofreire/datasci185/main/lectures/lecture-25/25-revision.html).
 
 ### April 22, 2026:
 
+- Lecture 26: Project work and Q&A session.
+
+### April 27, 2026:
+
+- No lectures.
+- Q&A session and final project work time.
 - [Final Project due (20%).](https://github.com/danilofreire/datasci185/tree/main/project)
