@@ -453,6 +453,24 @@ Source: [Wikipedia](https://en.wikipedia.org/wiki/Survivorship_bias)
 - Try it out: Generate an image of "a CEO" and "a nurse" using two different LLMs, such as [Qwen](https://qwen.ai/) and [Gemini](https://gemini.ai/). What do you notice?
 :::
 
+## Prompt: Create an image of a CEO and a nurse
+
+:::{style="margin-top: 30px; font-size: 22px; text-align: center;"}
+:::{.columns}
+:::{.column width=50%}
+[![Qwen](figures/qwen.png){width="90%"}](#){data-modal-type="image" data-modal-url="figures/qwen.png"}
+
+Source: [Qwen](https://qwen.ai/) via [nanoGPT](https://nano-gpt.com)
+:::
+
+:::{.column width=50%}
+[![Gemini](figures/gemini.png){width="90%"}](#){data-modal-type="image" data-modal-url="figures/gemini.png"}
+
+Source: [Gemini's NanoBanana](https://gemini.google.com)
+:::
+:::
+:::
+
 ## Dealing with selection bias
 ### Mitigation strategies
 
