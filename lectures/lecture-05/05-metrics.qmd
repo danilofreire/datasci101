@@ -1,0 +1,906 @@
+---
+title: "DATASCI 185: Introduction to AI Applications"
+subtitle: "Lecture 05: Metrics, Validation and Overfitting"
+author:
+  - name: Danilo Freire
+    orcid: 0000-0002-4712-6810
+    email: danilo.freire@emory.edu
+    affiliations: "Department of Data and Decision Sciences <br> Emory University"
+format:
+  clean-revealjs:
+    self-contained: true
+    footer: "[Lecture 05](https://raw.githack.com/danilofreire/datasci185/main/lectures/lecture-05/05-metrics-llm2.html)"
+    transition: slide
+    transition-speed: default
+    scrollable: true
+revealjs-plugins:
+  - multimodal
+engine: knitr
+editor:
+  render-on-save: true
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+library(knitr)
+opts_chunk$set(
+  prompt = T,
+  fig.align="center",
+  dpi=300,
+  cache=T,
+  engine.opts = list(bash = "-l")
+  )
+
+knit_hooks$set(
+  prompt = function(before, options, envir) {
+    options(
+      prompt = if (options$engine %in% c('sh','bash', 'zsh')) '$ ' else 'R> ',
+      continue = if (options$engine %in% c('sh','bash', 'zsh')) '$ ' else '+ '
+      )
+})
+
+options(repos = c(CRAN = "https://cran.rstudio.com/"))
+
+if (!require("fontawesome", character.only = TRUE)) {
+  install.packages("fontawesome", dependencies = TRUE)
+  library(fontawesome, character.only = TRUE)
+}
+```
+
+# Welcome back! 🤓 {background-color="#2d4563"}
+
+## Recap of last class
+
+:::{style="margin-top: 20px; font-size: 24px;"}
+:::{.columns}
+:::{.column width=50%}
+- We explored three major [paradigms of machine learning]{.alert}
+- [Supervised learning]{.alert}: Learn from labelled examples (classification, regression)
+- [Unsupervised learning]{.alert}: Find patterns without labels (clustering, dimensionality reduction)
+- [Reinforcement learning]{.alert}: Learn from rewards (agents and environments)
+- We discussed how [different problems require different approaches]{.alert}
+- Today: [How do we know if our models are actually any good?]{.alert} 🤔
+:::
+
+:::{.column width=50%}
+:::{style="text-align: center; margin-top: -30px;"}
+[![](figures/machine-learning.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/machine-learning.png"}
+
+Source: [Codefinity](https://codefinity.com/courses/v2/a65bbc96-309e-4df9-a790-a1eb8c815a1c/d7c3c2cd-8cd0-4572-90df-64edaeefe42e/98249160-c222-423b-b5d3-f0f7257f92cb)
+:::
+:::
+:::
+:::
+
+## Lecture overview
+### Today's agenda
+
+:::{style="margin-top: 20px; font-size: 26px;"}
+
+:::{.columns}
+:::{.column width=50%}
+- Why accuracy isn't enough
+- The confusion matrix
+- Precision, recall, and F1 score
+- ROC curves and AUC
+- Regression metrics
+- Train/test splits and cross-validation
+- Overfitting and how to prevent it
+- Text and language metrics
+- Hallucinations (preview!)
+- Benchmarks and their limits
+- Ethics beyond accuracy
+:::
+
+:::{.column width=50%}
+:::{style="text-align: center; margin-top: -30px;"}
+[![Model evaluation is both an art and a science](figures/ai-evaluation-summary.webp){width="95%"}](#){data-modal-type="image" data-modal-url="figures/ai-evaluation-summary.webp"}
+
+Source: [Miquido - AI Glossary](https://www.miquido.com/ai-glossary/ai-model-evaluation/)
+:::
+:::
+:::
+:::
+
+## Tweet of the day
+
+:::{style="text-align: center; margin-top: 30px;"}
+[![](figures/tweet-of-the-day.jpeg){width="55%"}](#){data-modal-type="image" data-modal-url="figures/tweet-of-the-day.jpeg"}
+:::
+
+# Why metrics matter 📊 {background-color="#2d4563"}
+
+## Think about this 🤔
+
+:::{style="margin-top: 40px; font-size: 26px;"}
+**Scenario**: You're building a model to predict whether patients have a rare disease that affects [1 in 1,000 people]{.alert}.
+
+Your colleague shows you a model and proudly announces: ["It achieves 99.9% accuracy!"]{.alert}
+
+:::{.fragment}
+**Question for you**: Is this model any good?
+
+Take 30 seconds to think about it...
+:::
+
+:::{.fragment}
+**The uncomfortable truth**: That "99.9% accurate" model [catches zero actual cases]{.alert}. Every sick patient is missed!
+:::
+:::
+
+## The accuracy paradox
+
+:::{style="margin-top: 30px; font-size: 24px;"}
+:::{.columns}
+:::{.column width=55%}
+- This is called the [accuracy paradox](https://en.wikipedia.org/wiki/Accuracy_paradox)
+- [Accuracy](https://en.wikipedia.org/wiki/Accuracy_and_precision) measures [overall correctness]{.alert}, but doesn't tell us:
+  - How many sick patients we actually found
+  - How many healthy patients we falsely alarmed
+  - Whether errors are concentrated in one group
+- The problem is especially severe with [class imbalance](https://en.wikipedia.org/wiki/Class_imbalance)
+- Real examples of imbalanced data:
+  - Fraud: [0.2% of transactions]{.alert}
+  - Security threats: [< 0.01%]{.alert} of events
+  - Manufacturing defects: Often [< 1%]{.alert}
+:::
+
+:::{.column width=45%}
+:::{style="text-align: center;"}
+**The "99.9% Accurate" Model Matrix**
+
+:::{style="background: rgba(255, 255, 255, 0.05); border-radius: 12px; padding: 20px; box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15); border: 1px solid rgba(255, 255, 255, 0.1); margin-top: 15px;"}
+<table style="width: 100%; border-collapse: separate; border-spacing: 0; font-size: 18px;">
+  <thead>
+    <tr>
+      <th style="border-bottom: 2px solid #2d4563; padding: 10px;"></th>
+      <th style="border-bottom: 2px solid #2d4563; padding: 10px; color: #2d4563;">Predicted: <span style="color: #e63946;">Sick</span></th>
+      <th style="border-bottom: 2px solid #2d4563; padding: 10px; color: #2d4563;">Predicted: <span style="color: #457b9d;">Healthy</span></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="padding: 15px; font-weight: bold; color: #1d3557; border-right: 2px solid #2d4563;">Actual: <span style="color: #e63946;">Sick</span></td>
+      <td style="padding: 15px; text-align: center; background: rgba(230, 57, 70, 0.1); font-weight: bold; color: #e63946;">0 <br><small>(TP)</small></td>
+      <td style="padding: 15px; text-align: center; border-bottom: 1px solid #eee;">1 <br><small>(FN)</small></td>
+    </tr>
+    <tr>
+      <td style="padding: 15px; font-weight: bold; color: #1d3557; border-right: 2px solid #2d4563;">Actual: <span style="color: #457b9d;">Healthy</span></td>
+      <td style="padding: 15px; text-align: center; border-top: 1px solid #eee;">0 <br><small>(FP)</small></td>
+      <td style="padding: 15px; text-align: center; background: rgba(168, 218, 220, 0.2); font-weight: bold; color: #457b9d;">999 <br><small>(TN)</small></td>
+    </tr>
+  </tbody>
+</table>
+
+:::{style="margin-top: 20px; font-size: 20px; border-top: 1px dashed #ccc; padding-top: 15px;"}
+**Accuracy**: $\frac{0 + 999}{1,000} = 99.9\%$
+
+[**Result**: Catches **0%** of actual cases!]{.alert} 🚨
+:::
+:::
+:::
+:::
+:::
+:::
+
+## What are we really measuring?
+### Key questions before choosing metrics
+
+:::{style="margin-top: 30px; font-size: 24px;"}
+:::{.columns}
+:::{.column width=55%}
+- Every metric captures [one aspect]{.alert} of model performance
+- There's no single "best" metric—it depends on [your specific context]{.alert}
+- Key questions to ask yourself:
+  - What's the cost of a [false positive]{.alert}? (Saying "yes" when it's "no")
+  - What's the cost of a [false negative]{.alert}? (Saying "no" when it's "yes")
+  - Are the classes [balanced]{.alert} or imbalanced?
+  - What [action]{.alert} will be taken based on the prediction?
+- The choice of metric is a [design decision with real-world consequences]{.alert}
+:::
+
+:::{.column width=45%}
+:::{style="text-align: center;"}
+[![Different metrics for different goals](figures/metrics-tradeoffs.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/metrics-tradeoffs.png"}
+
+Source: [Medium](https://aws.plainenglish.io/model-performance-optimization-understanding-machine-learning-evaluation-metrics-30f199ac6a23)
+:::
+:::
+:::
+:::
+
+# Classification metrics 🎯 {background-color="#2d4563"}
+
+## The confusion matrix
+### The foundation of classification evaluation
+
+:::{style="margin-top: 30px; font-size: 24px;"}
+:::{.columns}
+:::{.column width=55%}
+- A table showing [all possible prediction outcomes](https://en.wikipedia.org/wiki/Confusion_matrix)
+- Four key quantities:
+  - **True Positives (TP)**: Correctly predicted positive
+  - **True Negatives (TN)**: Correctly predicted negative
+  - **False Positives (FP)**: Predicted positive, but actually negative (Type I error)
+  - **False Negatives (FN)**: Predicted negative, but actually positive (Type II error)
+- [All classification metrics come from these four numbers!]{.alert}
+
+:::{style="text-align: center;"}
+| | Predicted + | Predicted − |
+|---|:---:|:---:|
+| **Actual +** | TP ✅ | FN ❌ |
+| **Actual −** | FP ❌ | TN ✅ |
+:::
+:::
+
+:::{.column width=45%}
+:::{style="text-align: center; margin-top: -30px;"}
+[![Confusion matrix visualisation](figures/confusion-matrix.gif){width="70%"}](#){data-modal-type="image" data-modal-url="figures/confusion-matrix.gif"}
+:::
+:::
+:::
+:::
+
+## Precision
+### How trustworthy are positive predictions?
+
+:::{style="margin-top: 30px; font-size: 24px;"}
+:::{.columns}
+:::{.column width=55%}
+- [Precision](https://en.wikipedia.org/wiki/Precision_and_recall) = TP / (TP + FP)
+- In words: [When the model says "yes", how often is it right?](https://en.wikipedia.org/wiki/Precision_and_recall)
+- High [precision](https://en.wikipedia.org/wiki/Precision_and_recall) = [few false alarms]{.alert}
+- Important when [false positives are costly]{.alert}:
+  - **Spam detection**: Don't want important emails in spam!
+  - **Product recommendations**: Don't annoy users with bad suggestions
+  - **Fraud prevention**: Don't block legitimate transactions
+  - **Child protection**: Don't falsely accuse innocent people
+- Trade-off: Being too cautious might mean [missing real positives]{.alert}
+:::
+
+:::{.column width=45%}
+:::{style="text-align: center;"}
+[![Precision focuses on predicted positives](figures/precision.gif){width="100%"}](#){data-modal-type="image" data-modal-url="figures/precision.gif"}
+
+Source: [Medium](https://medium.com/data-science/precision-and-recall-made-simple-afb5e098970f)
+:::
+:::
+:::
+:::
+
+## Recall (Sensitivity)
+### How many positives did we catch?
+
+:::{style="margin-top: 30px; font-size: 24px;"}
+:::{.columns}
+:::{.column width=55%}
+- [Recall](https://en.wikipedia.org/wiki/Precision_and_recall) = TP / (TP + FN)
+- Also called [sensitivity](https://en.wikipedia.org/wiki/Precision_and_recall) or [true positive rate](https://en.wikipedia.org/wiki/Precision_and_recall)
+- In words: [Of all actual positives, how many did we find?]{.alert}
+- High [recall](https://en.wikipedia.org/wiki/Precision_and_recall) = [we don't miss many positives]{.alert}
+- Important when [false negatives are costly]{.alert}:
+  - **Disease screening**: Don't miss sick patients!
+  - **Security threats**: Don't miss genuine attacks
+  - **Safety systems**: Don't miss dangerous situations
+  - **Airport security**: Better safe than sorry
+- Trade-off: Catching everything might mean [many false alarms]{.alert}
+:::
+
+:::{.column width=45%}
+:::{style="text-align: center;"}
+[![Recall focuses on actual positives](figures/recall.gif){width="100%"}](#){data-modal-type="image" data-modal-url="figures/recall.gif"}
+
+Source: [Medium](https://medium.com/data-science/precision-and-recall-made-simple-afb5e098970f)
+:::
+:::
+:::
+:::
+
+## The precision-recall trade-off
+### You can't have it all
+
+:::{style="margin-top: 30px; font-size: 24px;"}
+:::{.columns}
+:::{.column width=55%}
+- Most classifiers output a [probability score]{.alert}
+- We choose a [threshold]{.alert} to decide "positive" vs "negative"
+- Moving the threshold [trades off precision and recall]{.alert}:
+  - **High threshold** (strict): Only confident positives → High precision, low recall
+  - **Low threshold** (lenient): Accept weak positives → High recall, low precision
+- This creates a [precision-recall curve]{.alert}
+- The [optimal threshold depends on your application!]{.alert}
+- No free lunch: Improving one usually hurts the other
+:::
+
+:::{.column width=45%}
+:::{style="text-align: center;"}
+[![The precision-recall trade-off](figures/precision-recall-tradeoff.gif){width="100%"}](#){data-modal-type="image" data-modal-url="figures/precision-recall-tradeoff.gif"}
+
+Source: [Analytics Vidhya](https://www.analyticsvidhya.com/blog/2020/10/how-to-choose-evaluation-metrics-for-classification-model/)
+:::
+:::
+:::
+:::
+
+## ROC curves and AUC
+### Evaluating across all thresholds
+
+:::{style="margin-top: 30px; font-size: 22px;"}
+:::{.columns}
+:::{.column width=55%}
+- [ROC Curve](https://en.wikipedia.org/wiki/Receiver_operating_characteristic) (Receiver Operating Characteristic):
+  - Plots [True Positive Rate]{.alert} vs [False Positive Rate]{.alert}
+  - Shows performance across [all possible thresholds]{.alert}
+- [AUC](https://en.wikipedia.org/wiki/Receiver_operating_characteristic) (Area Under Curve):
+  - AUC = 0.5 → Random guessing (diagonal line)
+  - AUC = 1.0 → Perfect classifier
+  - AUC = 0.8+ → Generally considered "good"
+- Interpretation: [The probability that a random positive ranks higher than a random negative]{.alert}
+- Useful for [comparing models]{.alert} regardless of threshold choice
+- Less sensitive to class imbalance than accuracy
+:::
+
+:::{.column width=45%}
+:::{style="text-align: center;"}
+[![ROC curve and AUC](figures/roc.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/roc.png"}
+
+Source: [Wikipedia](https://en.wikipedia.org/wiki/Receiver_operating_characteristic)
+:::
+:::
+:::
+:::
+
+## Regression metrics
+### When the target is continuous
+
+:::{style="margin-top: 30px; font-size: 24px;"}
+- For regression (predicting numbers), we need different metrics:
+
+| Metric | Formula | Intuition |
+|--------|---------|-----------|
+| **MAE** | Mean of \|actual - predicted\| | Average error size (in original units) |
+| **MSE** | Mean of (actual - predicted)² | Average squared error (penalises big errors) |
+| **RMSE** | √MSE | Same as MSE, but in original units |
+| **R²** | 1 - (SS_res / SS_tot) | Proportion of variance explained |
+
+:::{.fragment}
+**Key intuitions:**
+
+- **MAE**: "On average, predictions are off by X units"
+- **RMSE**: "Typical error size, but big errors count more"
+- **R²**: "The model explains X% of the variation in the data" (R² = 0.8 means 80%)
+:::
+:::
+
+# Validation & overfitting ⚠️ {background-color="#2d4563"}
+
+## What is overfitting?
+### The enemy of generalisation
+
+:::{style="margin-top: 30px; font-size: 24px;"}
+:::{.columns}
+:::{.column width=55%}
+- [Overfitting](https://en.wikipedia.org/wiki/Overfitting): Model performs well on training data but poorly on new data
+- The model has [memorised]{.alert} the training set, including its noise and quirks
+- It hasn't learned the [underlying patterns]{.alert}
+- Signs of overfitting:
+  - [Excellent training performance]{.alert}
+  - [Poor test performance]{.alert}
+  - Gap grows with model complexity
+- Think of it like [memorising exam answers]{.alert} vs understanding the material
+- The student who memorises fails when questions are rephrased
+:::
+
+:::{.column width=45%}
+:::{style="text-align: center;"}
+[![Overfitting visualised 😂](figures/overfitting-meme.jpg){width="100%"}](#){data-modal-type="image" data-modal-url="figures/overfitting-meme.jpg"}
+
+Source: [X.com](https://x.com/MaartenvSmeden/status/1522230905468862464)
+:::
+:::
+:::
+:::
+
+## Underfitting vs overfitting
+### Finding the sweet spot
+
+:::{style="margin-top: 30px; font-size: 22px;"}
+:::{style="text-align: center;"}
+[![](figures/overfit-underfit.png){width="65%"}](#){data-modal-type="image" data-modal-url="figures/overfit-underfit.png"}
+:::
+
+:::{.columns}
+:::{.column width=33%}
+**Underfitting** 📉
+
+- Model [too simple]{.alert}
+- High bias, low variance
+- Poor on training AND test
+- Hasn't captured the pattern
+- Solution: More complex model
+:::
+
+:::{.column width=33%}
+**Good fit** ✅
+
+- [Right complexity]{.alert}
+- Balanced bias and variance
+- Good on both sets
+- Captures the true pattern
+- This is what we want!
+:::
+
+:::{.column width=33%}
+**Overfitting** 📈
+
+- Model [too complex]{.alert}
+- Low bias, high variance
+- Great on training, poor on test
+- Memorised noise
+- Solution: Regularisation
+:::
+:::
+:::
+
+## Train, validation, and test splits
+### The three-way split
+
+:::{style="margin-top: 30px; font-size: 24px;"}
+:::{.columns}
+:::{.column width=55%}
+- **Training set** (~60-70%): Fit the model
+- **Validation set** (~15-20%): Tune hyperparameters, compare models
+- **Test set** (~15-20%): [Final evaluation (touch only once!)]{.alert}
+- [Never look at test data during model development!]{.alert}
+- If you tune on test data, you're [cheating]{.alert}
+- The test set must remain [truly unseen]{.alert} until the very end
+- Think of it as the [final exam]{.alert}—you shouldn't see the questions while studying
+- A common mistake: Using the test set to select models, then reporting "test accuracy"
+:::
+
+:::{.column width=45%}
+:::{style="text-align: center;"}
+[![Train/validation/test split](figures/train-val-test.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/train-val-test.png"}
+
+Source: [Medium](https://medium.com/@rahulchavan4894/understanding-train-test-and-validation-dataset-split-in-simple-quick-terms-5a8630fe58c8)
+:::
+:::
+:::
+:::
+
+## Cross-validation
+### Making the most of limited data
+
+:::{style="margin-top: 30px; font-size: 22px;"}
+:::{.columns}
+:::{.column width=55%}
+- With small datasets, a single split may be [unreliable]{.alert}
+- [K-fold cross-validation](https://en.wikipedia.org/wiki/Cross-validation_(statistics)):
+  1. Split data into K equal parts (folds)
+  2. Train on K-1 folds, validate on the remaining 1 fold
+  3. Repeat K times, rotating which fold is used for validation
+  4. Average the K results
+- Common choices: K = 5 or K = 10
+- Every data point is used for both training and validation
+- Gives a more [robust estimate]{.alert} of model performance
+- More computationally expensive (train K times)
+- [Stratified K-fold](https://en.wikipedia.org/wiki/Cross-validation_(statistics)): Preserves class proportions in each fold
+:::
+
+:::{.column width=45%}
+:::{style="text-align: center;"}
+[![10-fold cross-validation](figures/cv.gif){width="100%"}](#){data-modal-type="image" data-modal-url="figures/cv.gif"}
+
+Source: [Calvin University](https://cs.calvin.edu/courses/data/202/ka37/slides/w11/w11d1-cv-review.html#1)
+:::
+:::
+:::
+:::
+
+# Evaluating text & language 📝 {background-color="#2d4563"}
+
+## From classification to language generation
+### New challenges!
+
+:::{style="margin-top: 30px; font-size: 23px;"}
+:::{.columns}
+:::{.column width=55%}
+- Classification: [One correct label per input]{.alert}
+  - Cat or dog? → "Cat" or "Dog"
+- Language generation: [Many valid outputs]{.alert}
+  - "The cat sat on the mat" ≈ "A feline rested upon the rug"
+  - Both are correct! How do we score them?
+- Traditional metrics struggle with this [one-to-many]{.alert} problem
+- We need new ways to measure:
+  - [Fluency]{.alert}: Is the text grammatical and natural?
+  - [Relevance]{.alert}: Does it address the question?
+  - [Factuality]{.alert}: Is it actually true?
+- This is one of the [hardest problems]{.alert} in AI evaluation
+:::
+
+:::{.column width=45%}
+:::{style="text-align: center;"}
+[![Using LLMs to evaluate LLMs? 😂](figures/llm-evaluation-meme.jpg){width="100%"}](#){data-modal-type="image" data-modal-url="figures/llm-evaluation-meme.jpg"}
+
+Source: [TinyML SubStack](https://tinyml.substack.com/p/death-by-rag-evals)
+:::
+:::
+:::
+:::
+
+## Perplexity
+### How surprised is the model?
+
+:::{style="margin-top: 30px; font-size: 22px;"}
+:::{.columns}
+:::{.column width=55%}
+- [Perplexity](https://en.wikipedia.org/wiki/Perplexity) measures how well a language model predicts a text
+- Formally: The exponential of the average negative log-likelihood
+- Intuition: [How many equally likely words could come next?]{.alert}
+  - Perplexity of 10 → Model is as uncertain as choosing from 10 random words
+  - Perplexity of 100 → Much more uncertain
+- Lower perplexity = model is [more confident]{.alert} about its predictions
+- Used to:
+  - Compare different language models
+  - Track training progress
+  - Evaluate fluency
+:::
+
+:::{.column width=45%}
+:::{style="text-align: center;"}
+**Example:**
+
+"The capital of France is ___"
+
+- "Paris" → Low perplexity ✅
+- "elephant" → High perplexity ❌
+
+<br>
+
+**The big limitation:**
+
+"The earth is ___"
+
+- "flat" → Could have [low perplexity]{.alert}!
+
+Perplexity measures [fluency, not truthfulness]{.alert}. A confident lie still has low perplexity.
+:::
+:::
+:::
+:::
+
+## BLEU score
+### Measuring translation quality
+
+:::{style="margin-top: 30px; font-size: 22px;"}
+:::{.columns}
+:::{.column width=55%}
+- [BLEU (Bilingual Evaluation Understudy)](https://en.wikipedia.org/wiki/BLEU)
+- Developed at IBM in 2002 for machine translation
+- Counts [n-gram matches]{.alert} between output and reference translations
+- n-grams: sequences of n words
+  - 1-gram: "the", "cat", "sat"
+  - 2-gram: "the cat", "cat sat"
+- Focuses on [precision]{.alert}: What fraction of generated words match the reference?
+- Includes a [brevity penalty]{.alert} for short outputs
+- Score from 0 to 1 (or 0 to 100)
+- BLEU > 30: Understandable; BLEU > 60: Excellent
+:::
+
+:::{.column width=45%}
+:::{style="text-align: center;"}
+**Example:**
+
+Reference: "The cat sat on the mat"
+
+Output A: "The cat sat on the mat"
+→ BLEU = 1.0 ✅
+
+Output B: "A cat was sitting on a mat"
+→ BLEU ≈ 0.25 (low despite good meaning!)
+
+Output C: "The mat sat on the cat"
+→ BLEU ≈ 0.8 (high despite wrong meaning!)
+
+<br>
+
+[Word overlap ≠ Semantic correctness]{.alert}
+:::
+:::
+:::
+:::
+
+## ROUGE score
+### Measuring summary quality
+
+:::{style="margin-top: 30px; font-size: 20px;"}
+:::{.columns}
+:::{.column width=55%}
+- [ROUGE (Recall-Oriented Understudy for Gisting Evaluation)](https://en.wikipedia.org/wiki/ROUGE_(metric))
+- Designed for [text summarisation]{.alert}
+- Focuses on [recall]{.alert}: What fraction of reference words appear in the output?
+- Several variants:
+  - **ROUGE-1**: Unigram overlap
+  - **ROUGE-2**: Bigram overlap
+  - **ROUGE-L**: Longest common subsequence
+- Strengths:
+  - Simple and fast to compute
+  - Correlates reasonably with human judgment
+  - Widely used as a baseline
+:::
+
+:::{.column width=45%}
+**Limitations of BLEU & ROUGE:**
+
+- Don't understand [meaning]{.alert}
+- Penalise valid [paraphrases]{.alert}
+- Can't detect [factual errors]{.alert}
+- Favour [copying]{.alert} over abstraction
+
+**Example:**
+
+Reference: "The president announced new policies"
+
+Good summary: "New governmental measures were revealed"
+→ Low ROUGE (few matching words)
+
+Bad summary: "The president the president the"
+→ Higher ROUGE (more matches!)
+
+[We need better evaluation methods for modern AI]{.alert}
+:::
+:::
+:::
+:::
+
+# Hallucinations 🎭 {background-color="#2d4563"}
+
+## What are hallucinations?
+### When AI confidently makes things up
+
+:::{style="margin-top: 30px; font-size: 22px;"}
+:::{.columns}
+:::{.column width=55%}
+- [Hallucination](https://en.wikipedia.org/wiki/Hallucination_(artificial_intelligence)): AI output that is fluent but factually incorrect or fabricated
+- The model generates plausible-sounding content that [isn't grounded in reality]{.alert}
+- Common forms:
+  - **Fabricated citations**: Inventing papers that don't exist
+  - **Made-up statistics**: "73% of scientists agree..."
+  - **False biographical details**: Wrong dates, events, achievements
+  - **Confident nonsense**: Eloquent explanations of things that are simply wrong
+- [This is one of the biggest challenges]{.alert} in deploying language models
+- Why? Because they're trained to predict [likely text]{.alert}, not [true text]{.alert}
+:::
+
+:::{.column width=45%}
+:::{style="text-align: center;"}
+[Please remember that:]{.alert}
+
+Models optimise for:
+
+`P(next word | context)`
+
+Not for:
+
+`P(statement is true)`
+
+[![AI hallucination](figures/banana-hallucination.gif){width="80%"}](#){data-modal-type="image" data-modal-url="figures/banana-hallucination.gif"}
+
+Source: [Nielsen Norman Group](https://www.nngroup.com/articles/ai-hallucinations/)
+:::
+:::
+:::
+:::
+
+## Real-world consequences
+### Why hallucinations matter
+
+:::{style="margin-top: 30px; font-size: 18px;"}
+:::{.columns}
+:::{.column width=55%}
+**Notable incidents (all real!):**
+
+- ⚖️ **Legal** (2023): [Two lawyers submitted a brief citing [six non-existent cases]{.alert} generated by ChatGPT. They were sanctioned by the court.](https://www.theguardian.com/technology/2023/jun/23/two-us-lawyers-fined-submitting-fake-court-citations-chatgpt)
+- 🏥 **Medical**: [AI chatbots have provided [dangerous health advice]{.alert} citing fabricated studies](https://www.mountsinai.org/about/newsroom/2025/ai-chatbots-can-run-with-medical-misinformation-study-finds-highlighting-the-need-for-stronger-safeguards)
+- 📰 **News**: [AI-generated fake news stories have [moved stock prices]{.alert}](https://www.nytimes.com/2023/05/23/business/ai-picture-stock-market.html)
+- 📚 **Academic**: [Students have submitted essays with [entirely invented references]{.alert}](https://teche.mq.edu.au/2023/02/why-does-chatgpt-generate-fake-references/)
+- 🔬 **Science**: [Researchers have found fake citations in published papers](https://www.nature.com/articles/s41598-023-41032-5)
+
+**The stakes are rising:**
+
+- More people trusting AI outputs without verification
+- Harder for non-experts to spot fabrications
+- Legal and reputational risks for organisations
+:::
+
+:::{.column width=45%}
+:::{style="text-align: center;"}
+
+**Discussion question:**
+
+How would you verify if an AI's answer is correct?
+
+- Check primary sources?
+- Ask another AI?
+- Trust your intuition?
+- Rely on reputation of the AI company?
+
+<br>
+
+[Critical thinking is more important than trust!]{.alert}
+
+<br>
+
+🎬 Watch: [IBM Explains AI Hallucinations](https://www.youtube.com/watch?v=cfqtFvWOfg0) (5 min)
+:::
+:::
+:::
+:::
+
+## Detecting and mitigating hallucinations
+### Approaches and tools
+
+:::{style="margin-top: 30px; font-size: 20px;"}
+:::{.columns}
+:::{.column width=55%}
+**Detection methods:**
+
+- **Manual verification**: Human fact-checkers (gold standard but expensive)
+- **LLM-as-a-Judge**: Use one model to evaluate another
+- **Consistency checks**: Ask the same question multiple ways
+- **Cross-referencing**: Check against knowledge bases
+- **Retrieval-based verification**: Look up claims in trusted sources
+
+**Mitigation strategies:**
+
+- [Retrieval-Augmented Generation (RAG)]{.alert}: Ground answers in retrieved documents
+- Chain-of-thought prompting with citations
+- Fine-tuning on high-quality, verified data
+- Teaching models to say "I don't know"
+:::
+
+:::{.column width=45%}
+**RAG: A quick preview**
+
+Instead of relying on "memory", [look things up]{.alert}:
+
+1. User asks a question
+2. System retrieves relevant documents
+3. Model generates answer based on retrieved context
+4. Answer includes citations to sources
+
+[We'll cover RAG in detail in a future lecture!]{.alert}
+
+:::{style="text-align: center;"}
+[![RAG Pipeline](figures/rag-pipeline.png){width="60%"}](#){data-modal-type="image" data-modal-url="figures/rag-pipeline.png"}
+:::
+:::
+:::
+:::
+
+# Benchmarks & leaderboards 🏆 {background-color="#2d4563"}
+
+## What are AI benchmarks?
+### Standardised tests for AI systems
+
+:::{style="margin-top: 30px; font-size: 22px;"}
+:::{.columns}
+:::{.column width=55%}
+- [Benchmarks]{.alert}: Standardised datasets and tasks to compare AI models
+- Like academic exams, but for AI systems
+- Famous examples:
+  - [MMLU](https://huggingface.co/spaces/TIGER-Lab/MMLU-Pro): 57 subjects of academic knowledge (maths, history, law...)
+  - [HellaSwag](https://rowanzellers.com/hellaswag/): Commonsense reasoning
+  - [TruthfulQA](https://github.com/sylinrl/TruthfulQA): Resistance to common misconceptions
+  - [HumanEval](https://humaneval.org/): Code generation ability
+  - [FrontierMath](https://epoch.ai/frontiermath): Mathematical problem-solving
+- Enable [objective comparison]{.alert} across different models
+- Drive progress by setting clear, measurable targets
+- Help track capability improvements over time
+:::
+
+:::{.column width=45%}
+:::{style="text-align: center;"}
+[![AI benchmarks](figures/ai-benchmarks.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/ai-benchmarks.png"}
+
+Source: [Epoch AI](https://epoch.ai/gradient-updates/the-real-reason-ai-benchmarks-havent-reflected-economic-impacts)
+:::
+:::
+:::
+:::
+
+## The dark side of benchmarks
+### When metrics become targets ("benchmaxxing")
+
+:::{style="margin-top: 30px; font-size: 22px;"}
+:::{.columns}
+:::{.column width=55%}
+[Goodhart's Law](https://en.wikipedia.org/wiki/Goodhart%27s_law): "When a measure becomes a target, it ceases to be a good measure"
+
+**Common problems:**
+
+- **Benchmark contamination**: Test data accidentally (or intentionally) appears in training data—the model memorises rather than generalises
+- **Teaching to the test**: Teams optimise for benchmark quirks rather than genuine capability
+- **Metric saturation**: Models achieve "human-level" on benchmarks but still fail in real-world scenarios
+- **Narrow focus**: Only measuring what's easy to measure
+:::
+
+:::{.column width=45%}
+**What benchmarks often miss:**
+
+- Real-world robustness and edge cases
+- Safety and alignment
+- Creative problem-solving
+- Long-horizon reasoning
+
+:::{style="text-align: center;"}
+[![Goodhart's Law in action](figures/benchmaxxing.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/benchmaxxing.png"}
+
+Source: [X.com](https://x.com/andrewlamb1111/status/1952386263450841233)
+:::
+:::
+:::
+:::
+
+# Ethics beyond accuracy 🤔 {background-color="#2d4563"}
+
+## Fairness: When overall accuracy hides problems
+### The disaggregation imperative
+
+:::{style="margin-top: 30px; font-size: 22px;"}
+:::{.columns}
+:::{.column width=55%}
+- Overall accuracy can hide [serious failures for specific groups]{.alert}
+- **Real example** [(Buolamwini & Gebru, 2018)](https://proceedings.mlr.press/v81/buolamwini18a/buolamwini18a.pdf):
+  - Commercial face recognition error rates:
+  - Light-skinned men: [0.8% error]{.alert}
+  - Dark-skinned women: [34.7% error]{.alert}
+  - 43× worse performance for one group!
+- This is called [data slicing]{.alert} or [subgroup analysis]{.alert}
+- The model "works" overall, but [fails for specific populations]{.alert}
+- Even removing sensitive features doesn't help—they [correlate with other features]{.alert}
+- [Always evaluate models per subgroup, not just overall]{.alert}
+:::
+
+:::{.column width=45%}
+:::{style="text-align: center;"}
+[![Subgroup performance disparities](figures/rekognition.webp){width="100%"}](#){data-modal-type="image" data-modal-url="figures/rekognition.webp"}
+
+Source: [Medium](https://medium.com/@Joy.Buolamwini/ibm-leads-more-should-follow-racial-justice-requires-algorithmic-justice-and-funding-da47e07e5b58)
+:::
+:::
+:::
+:::
+
+# Summary ✅ {background-color="#2d4563"}
+
+## Main takeaways
+
+:::{style="margin-top: 20px; font-size: 22px;"}
+:::{.columns}
+:::{.column width=55%}
+**Traditional ML Metrics**:
+
+- [Accuracy is not enough]{.alert}: Especially dangerous with class imbalance
+- [Precision/Recall trade-off]{.alert}: Choose based on the cost of false positives vs. false negatives
+- Use [cross-validation]{.alert} and keep a truly unseen test set
+
+**LLM & Modern AI Evaluation**:
+
+- [BLEU/ROUGE measure overlap, not meaning or truth]{.alert}
+- [Hallucinations]{.alert}: Confident lies are a fundamental limitation of current models
+- Beware of [Goodhart's Law and "teaching to the test"]{.alert}
+- [Subgroup Analysis]{.alert}: Always look beyond averages to identify bias and errors
+:::
+
+:::{.column width=45%}
+:::{style="text-align: center; margin-top: -20px;"}
+[![Oh well 😄](figures/evaluation-bear-meme.png){width="80%"}](#){data-modal-type="image" data-modal-url="figures/evaluation-bear-meme.png"}
+
+Source: [Zurich University of Applied Sciences](https://blog.zhaw.ch/artificial-intelligence/2023/04/05/evaluation-of-text-generation-systems-a-theoretical-series/)
+:::
+:::
+:::
+:::
+
+# ... and that's all for today! 🎉 {background-color="#2d4563"}
