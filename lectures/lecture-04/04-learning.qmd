@@ -104,6 +104,12 @@ Source: [Data Science Dojo](https://datasciencedojo.com/blog/machine-learning-10
 :::
 :::
 
+## Tweet of the day
+
+:::{style="margin-top: 20px; font-size: 24px; text-align: center;"}
+[![Tweet of the day](figures/tweet-of-the-day.jpeg){width="100%"}](#){data-modal-type="image" data-modal-url="figures/tweet-of-the-day.jpeg"}
+:::
+
 # The three learning paradigms 🎓 {background-color="#2d4563"}
 
 ## How do machines learn?
