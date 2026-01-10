@@ -92,6 +92,12 @@ Source: [Medium](https://blog.dataengineerthings.org/the-ai-revolution-is-nothin
 :::
 :::
 
+## Tweet of the day
+
+:::{style="margin-top: 30px; font-size: 26px; text-align: center;"}
+[![](figures/tweet-of-the-day.jpg){width="70%"}](#){data-modal-type="image" data-modal-url="figures/tweet-of-the-day.jpg"}
+:::
+
 ## What matters more?
 ### Take a moment to think...
 
