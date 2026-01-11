@@ -29,11 +29,11 @@ You will find the questions in the `assignments` folder on [the course repositor
 
 | Quiz | Topics Covered | Date | Link |
 |------|----------------|------|------|
-| Quiz 1 | Lectures 1-5 | February 4, 2026 | [Quiz 01](https://github.com/danilofreire/datasci185-quiz01) |
-| Quiz 2 | Lectures 7-9 | February 18, 2026 | [Quiz 02](https://github.com/danilofreire/datasci185-quiz02) |
-| Quiz 3 | Lectures 11-13 | March 4, 2026 | [Quiz 03](https://github.com/danilofreire/datasci185-quiz03) |
-| Quiz 4 | Lectures 15-17 | March 25, 2026 | [Quiz 04](https://github.com/danilofreire/datasci185-quiz04) |
-| Quiz 5 | Lectures 19-21 | April 8, 2026 | [Quiz 05](https://github.com/danilofreire/datasci185-quiz05) |
+| Quiz 1 | Lectures 1-7 | February 11, 2026 | [Quiz 01](https://github.com/danilofreire/datasci185-quiz01) |
+| Quiz 2 | Lectures 8-11 | February 25, 2026 | [Quiz 02](https://github.com/danilofreire/datasci185-quiz02) |
+| Quiz 3 | Lectures 12-17 | March 25, 2026 | [Quiz 03](https://github.com/danilofreire/datasci185-quiz03) |
+| Quiz 4 | Lectures 18-21 | April 8, 2026 | [Quiz 04](https://github.com/danilofreire/datasci185-quiz04) |
+| Quiz 5 | Lectures 22-24 | April 22, 2026 | [Quiz 05](https://github.com/danilofreire/datasci185-quiz05) |
 
 ## Final Project
 

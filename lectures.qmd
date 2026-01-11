@@ -40,6 +40,7 @@ Readings:
 ### January 26, 2026:
 
 - Lecture 03: [Dataset design, labels, and tasks](https://raw.githack.com/danilofreire/datasci185/main/lectures/lecture-03/03-datasets.html).
+- [Kahoot Quiz](https://play.kahoot.it/v2/?quizId=8526c23e-eace-415a-a8c4-d15ba11766c0&hostId=05eb977d-4f8a-440e-9e45-95212b29d103)
 
 Readings:
 
@@ -50,6 +51,7 @@ Readings:
 ### January 28, 2026:
 
 - Lecture 04: [Supervised, unsupervised, and reinforcement learning](https://raw.githack.com/danilofreire/datasci185/main/lectures/lecture-04/04-learning.html).
+- [Kahoot Quiz](https://play.kahoot.it/v2/?quizId=43271e4a-cbfe-4f52-9c13-ec7ef00964a9&hostId=05eb977d-4f8a-440e-9e45-95212b29d103)
 - **Assignment 01 due (5%).**
 - [**Assignment 02**](https://github.com/danilofreire/datasci185/blob/main/assignments/02-assignment.ipynb).
 
@@ -62,6 +64,7 @@ Readings:
 ### February 02, 2026:
 
 - Lecture 05: [Metrics, validation and overfitting](https://raw.githack.com/danilofreire/datasci185/main/lectures/lecture-05/05-metrics.html).
+- [Kahoot Quiz](https://play.kahoot.it/v2/?quizId=09b3c6d7-f743-43aa-aff7-d16267aa404e&hostId=05eb977d-4f8a-440e-9e45-95212b29d103)
 
 Readings:
 
@@ -71,33 +74,34 @@ Readings:
 
 ### February 04, 2026:
 
-- Lecture 06: [Quiz 1](https://github.com/danilofreire/datasci185-quiz01/).
+- Lecture 06: [How machines handle language: tokens, embeddings and context](https://raw.githack.com/danilofreire/datasci185/main/lectures/lecture-06/06-language.html).
+- [Kahoot Quiz](https://play.kahoot.it/v2/?quizId=11219f35-dabb-45ac-85ad-b8638a6a2769&hostId=05eb977d-4f8a-440e-9e45-95212b29d103)
 - **Assignment 02 due (5%).**
 - [**Assignment 03**](https://github.com/danilofreire/datasci185/blob/main/assignments/03-assignment.ipynb).
-
-## Module 2 — Language and perception
-
-### February 09, 2026:
-
-- Lecture 07: [How machines handle language: tokens, embeddings and context](https://raw.githack.com/danilofreire/datasci185/main/lectures/lecture-07/07-language.html).
 
 Readings:
 
 - Neptune.ai (2025). [The ultimate guide to word embeddings.](https://neptune.ai/blog/word-embeddings-guide) A clear and practical introduction to word embeddings.
 - Neptune.ai (2025). [Tokenization in NLP: types, challenges, examples, tools.](https://neptune.ai/blog/tokenization-in-nlp) Another article by the same group on tokenisation.
-- StackOverflow (2023). [An intuitive introduction to text embeddings.](https://stackoverflow.blog/2023/11/09/an-intuitive-introduction-to-text-embeddings/) A practical introduction to embeddings.
+- StackOverflow (2023). [An intuitive introduction to text embeddings.](https://stackoverflow.blog/2023/11/09/an-intuitive-introduction-to-text-embeddings/) Another practical introduction to embeddings.
 
-### February 11, 2026:
+## Module 2 — Language and perception
 
-- Lecture 08: [How machines analyse images and audio](https://raw.githack.com/danilofreire/datasci185/main/lectures/lecture-08/08-vision-audio.html).
-- **Assignment 03 due (5%).**
-- [**Assignment 04**](https://github.com/danilofreire/datasci185/blob/main/assignments/04-assignment.ipynb).
+### February 09, 2026:
+
+- Lecture 07: [How machines analyse images and audio](https://raw.githack.com/danilofreire/datasci185/main/lectures/lecture-07/07-vision-audio.html).
 
 Readings:
 
 - O'Shea, K., & Nash, R. (2015). [An introduction to convolutional neural networks.](https://arxiv.org/abs/1511.08458) *arXiv preprint*. A clear and concise tutorial.
 - DataCamp (2025). [What is computer vision? A beginner guide to image analysis.](https://www.datacamp.com/blog/what-is-computer-vision) Simple and illustrated introduction.
 - AltexSoft (2025). [How AI sound, music, and voice generation works.](https://www.altexsoft.com/blog/sound-music-voice-generation/) Another practical introduction.
+
+### February 11, 2026:
+
+- Lecture 08: [Quiz 01](https://github.com/danilofreire/datasci185-quiz01/).
+- **Assignment 03 due (5%).**
+- [**Assignment 04**](https://github.com/danilofreire/datasci185/blob/main/assignments/04-assignment.ipynb).
 
 ### February 16, 2026:
 
@@ -107,15 +111,9 @@ No required readings for this lecture. We will do live demonstrations in class.
 
 ### February 18, 2026:
 
-- Lecture 10: [Quiz 2](https://github.com/danilofreire/datasci185-quiz02/).
+- Lecture 10: [Retrieval-augmented workflows and semantic search](https://raw.githack.com/danilofreire/datasci185/main/lectures/lecture-10/10-rag.html).
 - **Assignment 04 due (5%).**
 - [**Assignment 05**](https://github.com/danilofreire/datasci185/blob/main/assignments/05-assignment.ipynb).
-
-## Module 3 — Retrieval, generation and pipelines
-
-### February 23, 2026:
-
-- Lecture 11: [Retrieval-augmented workflows and semantic search](https://raw.githack.com/danilofreire/datasci185/main/lectures/lecture-11/11-rag.html).
 
 Readings:
 
@@ -123,17 +121,23 @@ Readings:
 - Mastering LLM (2024). [11 chunking strategies for RAG — simplified & visualized](https://masteringllm.medium.com/11-chunking-strategies-for-rag-simplified-visualized-df0dbec8e373) Nice explanation of chunking strategies.
 - Slack (2025). [Semantic search explained: how it works, and why it matters.](https://slack.com/blog/productivity/semantic-search-explained-how-it-works-and-why-it-matters) Good explainer.
 
-### February 25, 2026:
+## Module 3 — Retrieval, generation and pipelines
 
-- Lecture 12: [Creativity and hallucination](https://raw.githack.com/danilofreire/datasci185/main/lectures/lecture-12/12-hallucination.html).
-- **Assignment 05 due (5%).**
-- [**Assignment 06**](https://github.com/danilofreire/datasci185/blob/main/assignments/06-assignment.ipynb).
+### February 23, 2026:
+
+- Lecture 11: [Creativity and hallucination](https://raw.githack.com/danilofreire/datasci185/main/lectures/lecture-11/11-hallucination.html).
 
 Readings:
 
 - Jiang, X., Tian, Y., Hua, F., Xu, C., Wang, Y., & Guo, J. (2024). [A survey on large language model hallucination via a creativity perspective.](https://arxiv.org/abs/2402.06647) *arXiv preprint*.
 - Wikipedia (2025). [Hallucination (artificial intelligence).](https://en.wikipedia.org/wiki/Hallucination_(artificial_intelligence)) A well-written overview.
 - OpenAI (2024). [Does ChatGPT tell the truth?](https://help.openai.com/en/articles/8313428-does-chatgpt-tell-the-truth) Practical advice.
+
+### February 25, 2026:
+
+- Lecture 12: [Quiz 02](https://github.com/danilofreire/datasci185-quiz02/).
+- **Assignment 05 due (5%).**
+- [**Assignment 06**](https://github.com/danilofreire/datasci185/blob/main/assignments/06-assignment.ipynb).
 
 ### March 02, 2026:
 
@@ -146,17 +150,9 @@ Readings:
 
 ### March 04, 2026:
 
-- Lecture 14: [Quiz 3](https://github.com/danilofreire/datasci185-quiz03/).
+- Lecture 14: [Types of bias and how they arise](https://raw.githack.com/danilofreire/datasci185/main/lectures/lecture-14/14-bias.html).
 - **Assignment 06 due (5%).**
 - [**Assignment 07**](https://github.com/danilofreire/datasci185/blob/main/assignments/07-assignment.ipynb).
-
-### March 9 and 11, 2026: Spring Break (No Classes)
-
-## Module 4 — Data ethics and bias
-
-### March 16, 2026:
-
-- Lecture 15: [Types of bias and how they arise](https://raw.githack.com/danilofreire/datasci185/main/lectures/lecture-15/15-bias.html).
 
 Readings:
 
@@ -164,11 +160,13 @@ Readings:
 - Mehrabi, N., Morstatter, F., Saxena, N., Lettich, A., & Galstyan, A. (2021). [A survey on bias and fairness in machine learning.](https://arxiv.org/abs/1908.09635) *ACM Computing Surveys*, *54*(6), 1-35.
 - Silberg, J., & Manyika, J. (2019). [Notes from the AI frontier: tackling bias in AI (and in humans).](https://www.mckinsey.com/~/media/McKinsey/Featured%20Insights/Artificial%20Intelligence/Tackling%20bias%20in%20artificial%20intelligence%20and%20in%20humans/MGI-Tackling-bias-in-AI-June-2019.pdf) McKinsey Global Institute.
 
-### March 18, 2026:
+### March 9 and 11, 2026: Spring Break (No Classes)
 
-- Lecture 16: [Documentation and dataset governance](https://raw.githack.com/danilofreire/datasci185/main/lectures/lecture-16/16-documentation.html).
-- **Assignment 07 due (5%).**
-- [Instructions for the Final Project](https://github.com/danilofreire/datasci185/tree/main/project).
+## Module 4 — Data ethics and bias
+
+### March 16, 2026:
+
+- Lecture 15: [Documentation and dataset governance](https://raw.githack.com/danilofreire/datasci185/main/lectures/lecture-15/15-documentation.html). 
 
 Readings:
 
@@ -176,9 +174,12 @@ Readings:
 - Mitchell, M., et al. (2019). [Model cards for model reporting.](https://arxiv.org/abs/1810.03993) *Proceedings of FAccT*. The original paper proposing model cards.
 - IBM (2025). [What is data lineage?](https://www.ibm.com/think/topics/data-lineage) A short guide to data lineage.
 
-### March 23, 2026:
+### March 18, 2026:
 
-- Lecture 17: [Case studies: biased outcomes in health, hiring and policing](https://raw.githack.com/danilofreire/datasci185/main/lectures/lecture-17/17-case-studies.html).
+- Lecture 16: [Case studies: biased outcomes in health, hiring and policing](https://raw.githack.com/danilofreire/datasci185/main/lectures/lecture-16/16-case-studies.html).
+- **Assignment 07 due (5%).**
+- No assignment this week.
+- [Instructions for the Final Project](https://github.com/danilofreire/datasci185/tree/main/project).
 
 Readings:
 
@@ -186,16 +187,11 @@ Readings:
 - Buolamwini, J., & Gebru, T. (2018). [Gender shades: Intersectional accuracy disparities in commercial gender classification.](http://proceedings.mlr.press/v81/buolamwini18a.html) *Proceedings of Machine Learning Research*, *81*, 1-15.
 - Angwin, J., Larson, J., Mattu, S., & Kirchner, L. (2016). [Machine bias.](https://www.propublica.org/article/machine-bias-risk-assessments-in-criminal-sentencing) *ProPublica*.
 
-### March 25, 2026:
-
-- Lecture 18: [Quiz 4](https://github.com/danilofreire/datasci185-quiz04/).
-- [**Assignment 08**](https://github.com/danilofreire/datasci185/blob/main/assignments/08-assignment.ipynb).
-
 ## Module 5 — Policy, governance and social impact
 
-### March 30, 2026:
+### March 23, 2026:
 
-- Lecture 19: [AI regulation and standards around the world](https://raw.githack.com/danilofreire/datasci185/main/lectures/lecture-19/19-regulation.html).
+- Lecture 17: [AI regulation and standards around the world](https://raw.githack.com/danilofreire/datasci185/main/lectures/lecture-17/17-regulation.html).
 
 Readings:
 
@@ -203,29 +199,43 @@ Readings:
 - European Parliament. (2023). [EU AI act](https://www.europarl.europa.eu/topics/en/article/20230601STO93804/eu-ai-act-first-regulation-on-artificial-intelligence). The original text.
 - Cole, M. D. (2024). [AI regulation and governance on a global scale.](https://web.archive.org/web/20240330165240id_/https://aire.lexxion.eu/data/article/19406/pdf/aire_2024_01-017.pdf) *Journal of AI Law and Regulation*, *1*(1), 126-142.
 
-### April 01, 2026:
+### March 25, 2026:
 
-- Lecture 20: [Privacy and data protection](https://raw.githack.com/danilofreire/datasci185/main/lectures/lecture-20/20-privacy.html).
-- **Assignment 08 due (5%).**
-- [**Assignment 09**](https://github.com/danilofreire/datasci185/blob/main/assignments/09-assignment.ipynb).
+- Lecture 18: [Quiz 03](https://github.com/danilofreire/datasci185-quiz03/).
+- [**Assignment 08**](https://github.com/danilofreire/datasci185/blob/main/assignments/08-assignment.ipynb).
+
+### March 30, 2026:
+
+- Lecture 19: [Privacy and data protection](https://raw.githack.com/danilofreire/datasci185/main/lectures/lecture-19/19-privacy.html).
 
 Readings:
 
 - Hoofnagle, C. J., Van Der Sloot, B., & Borgesius, F. Z. (2019). [The European Union general data protection regulation: what it is and what it means.](https://www.tandfonline.com/doi/full/10.1080/13600834.2019.1573501) *Information & Communications Technology Law*, *28*(1), 65-98.
 - Taddeo, M., & Floridi, L. (2018). [How AI can be a force for good.](https://www.science.org/doi/abs/10.1126/science.aat5991) *Science*, *361*(6404), 751-752.
 
-### April 06, 2026:
+### April 01, 2026:
 
-- Lecture 21: [Labour markets and economic effects](https://raw.githack.com/danilofreire/datasci185/main/lectures/lecture-21/21-labour.html).
+- Lecture 20: [Labour markets and economic effects](https://raw.githack.com/danilofreire/datasci185/main/lectures/lecture-20/20-labour.html).
+- **Assignment 08 due (5%).**
+- [**Assignment 09**](https://github.com/danilofreire/datasci185/blob/main/assignments/09-assignment.ipynb).
 
 Readings:
 
 - Acemoglu, D., & Restrepo, P. (2019). [Automation and new tasks: How technology displaces and reinstates labor.](https://www.aeaweb.org/articles?id=10.1257/jep.33.2.3) *Journal of Economic Perspectives*, *33*(2), 3-30.
 - World Economic Forum. (2025). [The future of jobs report 2025.](https://www.weforum.org/reports/the-future-of-jobs-report-2025) A comprehensive report on how jobs are expected to change.
 
+### April 06, 2026:
+
+- Lecture 21: [AI in health, education and public services](https://raw.githack.com/danilofreire/datasci185/main/lectures/lecture-21/21-applications.html).
+
+Readings:
+
+- Davenport, T., & Kalakota, R. (2019). [The potential for artificial intelligence in healthcare.](https://www.sciencedirect.com/science/article/pii/S2514664524010592) *Future healthcare journal*, 6(2), 94-98.
+- Zhai, X., et al. (2021). [A review of artificial intelligence (AI) in education from 2010 to 2020.](https://onlinelibrary.wiley.com/doi/abs/10.1155/2021/8812542) *Complexity*, 2021(1), 8812542.
+
 ### April 08, 2026:
 
-- Lecture 22: [Quiz 5](https://github.com/danilofreire/datasci185-quiz05/).
+- Lecture 22: [Quiz 04](https://github.com/danilofreire/datasci185-quiz04/).
 - **Assignment 09 due (5%).**
 - [**Assignment 10**](https://github.com/danilofreire/datasci185/blob/main/assignments/10-assignment.ipynb).
 
@@ -233,22 +243,24 @@ Readings:
 
 ### April 13, 2026:
 
-- Lecture 23: [AI in health, education and public services](https://raw.githack.com/danilofreire/datasci185/main/lectures/lecture-23/23-applications.html).
-
-Readings:
-
-- Davenport, T., & Kalakota, R. (2019). [The potential for artificial intelligence in healthcare.](https://www.sciencedirect.com/science/article/pii/S2514664524010592) *Future healthcare journal*, 6(2), 94-98.
-- Zhai, X., et al. (2021). [A review of artificial intelligence (AI) in education from 2010 to 2020.](https://onlinelibrary.wiley.com/doi/abs/10.1155/2021/8812542) *Complexity*, 2021(1), 8812542.
-
-### April 15, 2026:
-
-- Lecture 24: [Misinformation, deepfakes and trust online](https://raw.githack.com/danilofreire/datasci185/main/lectures/lecture-24/24-misinformation.html).
-- **Assignment 10 due (5%).**
+- Lecture 23: [Misinformation, deepfakes and trust online](https://raw.githack.com/danilofreire/datasci185/main/lectures/lecture-23/23-misinformation.html).
 
 Readings:
 
 - Helmus, T. C. (2022). [Artificial intelligence, deepfakes, and disinformation: A primer.](https://www.rand.org/pubs/perspectives/PEA1043-1.html) *RAND Corporation*.
 - Chesney, R., & Citron, D. K. (2019). [Deepfakes and the new disinformation war.](https://www.foreignaffairs.com/articles/world/2018-12-11/deepfakes-and-new-disinformation-war) *Foreign Affairs*.
+
+### April 15, 2026:
+
+- Lecture 24: [Long-term safety, the alignment problem and the future of AI](https://raw.githack.com/danilofreire/datasci185/main/lectures/lecture-24/24-alignment.html).
+- **Assignment 10 due (5%).**
+
+Readings:
+
+- Amodei, D., et al. (2016). [Concrete problems in AI safety.](https://arxiv.org/abs/1606.06565) *arXiv preprint*. A highly influential paper on the practical challenges of AI safety.
+- Ji, J., Qiu, T., Chen, B., Zhang, B., Lou, H., Wang, K., ... & Gao, W. (2023). [Ai alignment: A comprehensive survey.](https://arxiv.org/abs/2310.19852) *arXiv preprint*. A survey of the field of AI alignment.
+- Zhi-Xuan, T., Carroll, M., Franklin, M., & Ashton, H. (2025). [Beyond Preferences in AI Alignment: T. Zhi-Xuan et al. Philosophical Studies, 182(7), 1813-1863.](https://link.springer.com/article/10.1007/s11098-024-02249-w) A philosophical take on the limits of rational choice in AI alignment. A little more abstract, but very interesting.
+- Russell, S. (2017). [3 principles for creating safer AI.](https://www.ted.com/talks/stuart_russell_3_principles_for_creating_safer_ai) *TED Talk*.
 
 ### April 20, 2026:
 
@@ -256,10 +268,10 @@ Readings:
 
 ### April 22, 2026:
 
-- Lecture 26: Project work and Q&A session.
+- Lecture 26: [Quiz 05](https://github.com/danilofreire/datasci185-quiz05/).
 
 ### April 27, 2026:
 
-- No lectures.
+- No lecture.
 - Q&A session and final project work time.
 - [Final Project due (20%).](https://github.com/danilofreire/datasci185/tree/main/project)
