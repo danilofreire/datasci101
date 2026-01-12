@@ -9,7 +9,7 @@ author:
 format:
   clean-revealjs:
     self-contained: true
-    footer: "[Lecture 05](https://raw.githack.com/danilofreire/datasci185/main/lectures/lecture-05/05-metrics-llm2.html)"
+    footer: "[Lecture 05](https://raw.githack.com/danilofreire/datasci185/main/lectures/lecture-05/05-metrics-llms.html)"
     transition: slide
     transition-speed: default
     scrollable: true
@@ -51,7 +51,7 @@ if (!require("fontawesome", character.only = TRUE)) {
 
 ## Recap of last class
 
-:::{style="margin-top: 20px; font-size: 24px;"}
+:::{style="margin-top: 20px; font-size: 27px;"}
 :::{.columns}
 :::{.column width=50%}
 - We explored three major [paradigms of machine learning]{.alert}
@@ -79,21 +79,23 @@ Source: [Codefinity](https://codefinity.com/courses/v2/a65bbc96-309e-4df9-a790-a
 
 :::{.columns}
 :::{.column width=50%}
+**Part 1: Traditional ML Metrics**
+
 - Why accuracy isn't enough
-- The confusion matrix
-- Precision, recall, and F1 score
-- ROC curves and AUC
-- Regression metrics
-- Train/test splits and cross-validation
-- Overfitting and how to prevent it
-- Text and language metrics
-- Hallucinations (preview!)
-- Benchmarks and their limits
-- Ethics beyond accuracy
+- Confusion matrix, precision, recall
+- ROC curves and regression metrics
+- Overfitting and cross-validation
+
+**Part 2: LLM Evaluation**
+
+- Why LLMs are harder to evaluate
+- LLM-as-a-Judge and G-Eval
+- Hallucinations, RAG, and red teaming
+- Benchmarks vs real-world performance
 :::
 
 :::{.column width=50%}
-:::{style="text-align: center; margin-top: -30px;"}
+:::{style="text-align: center;"}
 [![Model evaluation is both an art and a science](figures/ai-evaluation-summary.webp){width="95%"}](#){data-modal-type="image" data-modal-url="figures/ai-evaluation-summary.webp"}
 
 Source: [Miquido - AI Glossary](https://www.miquido.com/ai-glossary/ai-model-evaluation/)
@@ -214,7 +216,7 @@ Source: [Medium](https://aws.plainenglish.io/model-performance-optimization-unde
 ## The confusion matrix
 ### The foundation of classification evaluation
 
-:::{style="margin-top: 30px; font-size: 24px;"}
+:::{style="margin-top: 30px; font-size: 23px;"}
 :::{.columns}
 :::{.column width=55%}
 - A table showing [all possible prediction outcomes](https://en.wikipedia.org/wiki/Confusion_matrix)
@@ -241,57 +243,35 @@ Source: [Medium](https://aws.plainenglish.io/model-performance-optimization-unde
 :::
 :::
 
-## Precision
-### How trustworthy are positive predictions?
+## Precision and recall
+### The two sides of classification performance
 
-:::{style="margin-top: 30px; font-size: 24px;"}
+:::{style="margin-top: 30px; font-size: 20px; text-align: center;"}
 :::{.columns}
-:::{.column width=55%}
-- [Precision](https://en.wikipedia.org/wiki/Precision_and_recall) = TP / (TP + FP)
-- In words: [When the model says "yes", how often is it right?](https://en.wikipedia.org/wiki/Precision_and_recall)
-- High [precision](https://en.wikipedia.org/wiki/Precision_and_recall) = [few false alarms]{.alert}
-- Important when [false positives are costly]{.alert}:
-  - **Spam detection**: Don't want important emails in spam!
-  - **Product recommendations**: Don't annoy users with bad suggestions
-  - **Fraud prevention**: Don't block legitimate transactions
-  - **Child protection**: Don't falsely accuse innocent people
-- Trade-off: Being too cautious might mean [missing real positives]{.alert}
-:::
+:::{.column width=50%}
+**[Precision](https://en.wikipedia.org/wiki/Precision_and_recall)** = TP / (TP + FP)
 
-:::{.column width=45%}
+- When the model says "yes", [how often is it right?]{.alert}
+- High precision = [few false alarms]{.alert}
+- Important when **false positives are costly**:
+  - Spam detection, fraud prevention
+  - Don't block legitimate transactions!
+
 :::{style="text-align: center;"}
-[![Precision focuses on predicted positives](figures/precision.gif){width="100%"}](#){data-modal-type="image" data-modal-url="figures/precision.gif"}
-
-Source: [Medium](https://medium.com/data-science/precision-and-recall-made-simple-afb5e098970f)
-:::
-:::
+[![Precision focuses on predicted positives](figures/precision.gif){width="60%"}](#){data-modal-type="image" data-modal-url="figures/precision.gif"}
 :::
 :::
 
-## Recall (Sensitivity)
-### How many positives did we catch?
+:::{.column width=50%}
+**[Recall](https://en.wikipedia.org/wiki/Precision_and_recall)** = TP / (TP + FN)
 
-:::{style="margin-top: 30px; font-size: 24px;"}
-:::{.columns}
-:::{.column width=55%}
-- [Recall](https://en.wikipedia.org/wiki/Precision_and_recall) = TP / (TP + FN)
-- Also called [sensitivity](https://en.wikipedia.org/wiki/Precision_and_recall) or [true positive rate](https://en.wikipedia.org/wiki/Precision_and_recall)
-- In words: [Of all actual positives, how many did we find?]{.alert}
-- High [recall](https://en.wikipedia.org/wiki/Precision_and_recall) = [we don't miss many positives]{.alert}
-- Important when [false negatives are costly]{.alert}:
-  - **Disease screening**: Don't miss sick patients!
-  - **Security threats**: Don't miss genuine attacks
-  - **Safety systems**: Don't miss dangerous situations
-  - **Airport security**: Better safe than sorry
-- Trade-off: Catching everything might mean [many false alarms]{.alert}
-:::
+- Of all actual positives, [how many did we find?]{.alert}
+- High recall = [we don't miss many positives]{.alert}
+- Important when **false negatives are costly**:
+  - Disease screening, security threats
+  - Don't miss sick patients!
 
-:::{.column width=45%}
-:::{style="text-align: center;"}
-[![Recall focuses on actual positives](figures/recall.gif){width="100%"}](#){data-modal-type="image" data-modal-url="figures/recall.gif"}
-
-Source: [Medium](https://medium.com/data-science/precision-and-recall-made-simple-afb5e098970f)
-:::
+[![Recall focuses on actual positives](figures/recall.gif){width="60%"}](#){data-modal-type="image" data-modal-url="figures/recall.gif"}
 :::
 :::
 :::
@@ -442,80 +422,58 @@ Source: [X.com](https://x.com/MaartenvSmeden/status/1522230905468862464)
 :::
 :::
 
-## Train, validation, and test splits
-### The three-way split
+## Data splits and cross-validation
+### How to evaluate fairly
 
-:::{style="margin-top: 30px; font-size: 24px;"}
+:::{style="margin-top: 30px; font-size: 19px;"}
 :::{.columns}
 :::{.column width=55%}
+**The three-way split:**
+
 - **Training set** (~60-70%): Fit the model
-- **Validation set** (~15-20%): Tune hyperparameters, compare models
-- **Test set** (~15-20%): [Final evaluation (touch only once!)]{.alert}
-- [Never look at test data during model development!]{.alert}
-- If you tune on test data, you're [cheating]{.alert}
-- The test set must remain [truly unseen]{.alert} until the very end
-- Think of it as the [final exam]{.alert}—you shouldn't see the questions while studying
-- A common mistake: Using the test set to select models, then reporting "test accuracy"
+- **Validation set** (~15-20%): Tune hyperparameters
+- **Test set** (~15-20%): [Final evaluation only!]{.alert}
+- [Never peek at test data during development]{.alert}—that's cheating!
+
+**K-fold cross-validation:**
+
+- Split data into K parts (folds)
+- Train on K-1 folds, validate on the remaining fold
+- Repeat K times, average the results
+- Every data point gets tested once
+- More [robust]{.alert} than a single split, especially for small datasets
 :::
 
 :::{.column width=45%}
 :::{style="text-align: center;"}
-[![Train/validation/test split](figures/train-val-test.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/train-val-test.png"}
+[![Train/validation/test split](figures/train-val-test.png){width="85%"}](#){data-modal-type="image" data-modal-url="figures/train-val-test.png"}
 
-Source: [Medium](https://medium.com/@rahulchavan4894/understanding-train-test-and-validation-dataset-split-in-simple-quick-terms-5a8630fe58c8)
+[![K-fold cross-validation](figures/cv.gif){width="85%"}](#){data-modal-type="image" data-modal-url="figures/cv.gif"}
 :::
 :::
 :::
 :::
 
-## Cross-validation
-### Making the most of limited data
+# Evaluating LLMs 🤖 {background-color="#2d4563"}
+
+## Why is LLM evaluation so hard?
+### A fundamentally different problem
 
 :::{style="margin-top: 30px; font-size: 22px;"}
 :::{.columns}
 :::{.column width=55%}
-- With small datasets, a single split may be [unreliable]{.alert}
-- [K-fold cross-validation](https://en.wikipedia.org/wiki/Cross-validation_(statistics)):
-  1. Split data into K equal parts (folds)
-  2. Train on K-1 folds, validate on the remaining 1 fold
-  3. Repeat K times, rotating which fold is used for validation
-  4. Average the K results
-- Common choices: K = 5 or K = 10
-- Every data point is used for both training and validation
-- Gives a more [robust estimate]{.alert} of model performance
-- More computationally expensive (train K times)
-- [Stratified K-fold](https://en.wikipedia.org/wiki/Cross-validation_(statistics)): Preserves class proportions in each fold
-:::
-
-:::{.column width=45%}
-:::{style="text-align: center;"}
-[![10-fold cross-validation](figures/cv.gif){width="100%"}](#){data-modal-type="image" data-modal-url="figures/cv.gif"}
-
-Source: [Calvin University](https://cs.calvin.edu/courses/data/202/ka37/slides/w11/w11d1-cv-review.html#1)
-:::
-:::
-:::
-:::
-
-# Evaluating text & language 📝 {background-color="#2d4563"}
-
-## From classification to language generation
-### New challenges!
-
-:::{style="margin-top: 30px; font-size: 23px;"}
-:::{.columns}
-:::{.column width=55%}
-- Classification: [One correct label per input]{.alert}
-  - Cat or dog? → "Cat" or "Dog"
-- Language generation: [Many valid outputs]{.alert}
+- Traditional ML: [One correct answer]{.alert} per input
+  - 😺: Cat or dog? → "Cat" ✅
+- Language generation: [Many valid outputs]{.alert}!
   - "The cat sat on the mat" ≈ "A feline rested upon the rug"
   - Both are correct! How do we score them?
-- Traditional metrics struggle with this [one-to-many]{.alert} problem
-- We need new ways to measure:
-  - [Fluency]{.alert}: Is the text grammatical and natural?
+- We need to evaluate multiple dimensions at once:
+  - [Fluency]{.alert}: Is it grammatical and natural?
   - [Relevance]{.alert}: Does it address the question?
   - [Factuality]{.alert}: Is it actually true?
-- This is one of the [hardest problems]{.alert} in AI evaluation
+  - [Helpfulness]{.alert}: Is it useful to the user?
+- Old text metrics ([BLEU](https://en.wikipedia.org/wiki/BLEU), [ROUGE](https://en.wikipedia.org/wiki/ROUGE_(metric))) just count word overlaps
+- [They can't tell if text is meaningful or even correct!]{.alert}
 :::
 
 :::{.column width=45%}
@@ -528,126 +486,139 @@ Source: [TinyML SubStack](https://tinyml.substack.com/p/death-by-rag-evals)
 :::
 :::
 
-## Perplexity
-### How surprised is the model?
+## Perplexity explained
+### Measuring how "surprised" the model is
 
-:::{style="margin-top: 30px; font-size: 22px;"}
+:::{style="margin-top: 30px; font-size: 20px;"}
 :::{.columns}
 :::{.column width=55%}
-- [Perplexity](https://en.wikipedia.org/wiki/Perplexity) measures how well a language model predicts a text
-- Formally: The exponential of the average negative log-likelihood
-- Intuition: [How many equally likely words could come next?]{.alert}
-  - Perplexity of 10 → Model is as uncertain as choosing from 10 random words
-  - Perplexity of 100 → Much more uncertain
-- Lower perplexity = model is [more confident]{.alert} about its predictions
-- Used to:
-  - Compare different language models
-  - Track training progress
-  - Evaluate fluency
+- [Perplexity](https://en.wikipedia.org/wiki/Perplexity) measures how well an LLM predicts a sequence of text
+- Imagine the model guessing the next word
+  - If it's very confident about the right answer → [Low perplexity]{.alert}
+  - If it's confused among many options → [High perplexity]{.alert}
+- Think of it as: [How many equally likely words could come next?]{.alert}
+  - Perplexity of 10 → Model choosing from ~10 words
+  - Perplexity of 100 → Model choosing from ~100 words
+- **Lower is better**: A model that understands language well makes confident, correct predictions
+- **Critical limitation**: Perplexity measures [fluency, not truth]{.alert}
+- 🎬 Watch: [What is Perplexity for LLMs?](https://www.youtube.com/watch?v=fKw_khue_ck) (5 min)
 :::
 
 :::{.column width=45%}
 :::{style="text-align: center;"}
-**Example:**
+**Examples:**
 
 "The capital of France is ___"
 
-- "Paris" → Low perplexity ✅
+- "Paris" → [Low perplexity ✅]{.alert}
 - "elephant" → High perplexity ❌
 
 <br>
 
-**The big limitation:**
+:::{style="background: rgba(230, 57, 70, 0.1); padding: 15px; border-radius: 10px;"}
+**The big catch:**
 
 "The earth is ___"
 
 - "flat" → Could have [low perplexity]{.alert}!
 
-Perplexity measures [fluency, not truthfulness]{.alert}. A confident lie still has low perplexity.
+[Perplexity measures how well language flows, not whether statements are true.]{.alert}
+:::
 :::
 :::
 :::
 :::
 
-## BLEU score
-### Measuring translation quality
+## LLM-as-a-Judge
+### Using AI to evaluate AI
 
-:::{style="margin-top: 30px; font-size: 22px;"}
+:::{style="margin-top: 30px; font-size: 21px;"}
+:::{.columns}
+:::{.column width=50%}
+- Use a [powerful LLM]{.alert} to grade responses from other models
+- Give the judge a [rubric]{.alert} (evaluation criteria) and examples
+- The judge scores responses on dimensions like:
+  - Helpfulness, accuracy, relevance, safety
+- **Why it works**:
+  - [Evaluating]{.alert} is often easier than [generating]{.alert}
+  - Scales infinitely (no human bottleneck)
+  - Can evaluate subjective qualities
+- **The catch**:
+  - The judge is only as good as [its own capabilities]{.alert}
+  - Potential biases: May favour its own style
+  - Need a strong judge (often GPT-4 or Claude)
+:::
+
+:::{.column width=50%}
+:::{style="text-align: center; font-size: 20px;"}
+```
+┌─────────────────────┐
+│   User Question     │
+└──────────┬──────────┘
+           ▼
+┌─────────────────────┐
+│   Model Response    │
+└──────────┬──────────┘
+           ▼
+┌─────────────────────┐
+│  Reference Answer   │
+│  (if available)     │
+└──────────┬──────────┘
+           ▼
+┌─────────────────────┐
+│      LLM Judge      │
+│   + Rubric/Criteria │
+└──────────┬──────────┘
+           ▼
+┌─────────────────────┐
+│   Score (1-5)       │
+│   + Explanation     │
+└─────────────────────┘
+```
+:::
+:::
+:::
+:::
+
+## G-Eval: A practical framework
+### Chain-of-thought evaluation
+
+:::{style="margin-top: 30px; font-size: 21px;"}
 :::{.columns}
 :::{.column width=55%}
-- [BLEU (Bilingual Evaluation Understudy)](https://en.wikipedia.org/wiki/BLEU)
-- Developed at IBM in 2002 for machine translation
-- Counts [n-gram matches]{.alert} between output and reference translations
-- n-grams: sequences of n words
-  - 1-gram: "the", "cat", "sat"
-  - 2-gram: "the cat", "cat sat"
-- Focuses on [precision]{.alert}: What fraction of generated words match the reference?
-- Includes a [brevity penalty]{.alert} for short outputs
-- Score from 0 to 1 (or 0 to 100)
-- BLEU > 30: Understandable; BLEU > 60: Excellent
+- [G-Eval](https://arxiv.org/pdf/2303.16634.pdf) is a popular method for custom LLM evaluation
+- **How it works**:
+  1. Define your [evaluation criteria]{.alert} (e.g., coherence, relevance)
+  2. The LLM generates [evaluation steps]{.alert} using chain-of-thought
+  3. Apply these steps to score the output (typically 1-5)
+- **Example criteria**: "Coherence: The collective quality of all sentences in the actual output"
+- **Why it's powerful**:
+  - Creates [task-specific metrics]{.alert} on the fly
+  - The LLM "thinks through" how to evaluate
+  - Better alignment with human judgement than simpler metrics
+- [Great for custom use cases]{.alert} like summarisation quality, brand voice, helpfulness
 :::
 
 :::{.column width=45%}
 :::{style="text-align: center;"}
-**Example:**
+**G-Eval in action:**
 
-Reference: "The cat sat on the mat"
+:::{style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; text-align: left; font-size: 18px;"}
+**Step 1**: Define criterion
 
-Output A: "The cat sat on the mat"
-→ BLEU = 1.0 ✅
+*"Rate coherence from 1-5"*
 
-Output B: "A cat was sitting on a mat"
-→ BLEU ≈ 0.25 (low despite good meaning!)
+**Step 2**: LLM generates steps
 
-Output C: "The mat sat on the cat"
-→ BLEU ≈ 0.8 (high despite wrong meaning!)
+*"1. Check logical flow between sentences*
+*2. Verify topic consistency*
+*3. Look for contradictions..."*
 
-<br>
+**Step 3**: Apply and score
 
-[Word overlap ≠ Semantic correctness]{.alert}
+*Score: 4/5*
+*"Good flow but minor transition issue in paragraph 2"*
 :::
-:::
-:::
-:::
-
-## ROUGE score
-### Measuring summary quality
-
-:::{style="margin-top: 30px; font-size: 20px;"}
-:::{.columns}
-:::{.column width=55%}
-- [ROUGE (Recall-Oriented Understudy for Gisting Evaluation)](https://en.wikipedia.org/wiki/ROUGE_(metric))
-- Designed for [text summarisation]{.alert}
-- Focuses on [recall]{.alert}: What fraction of reference words appear in the output?
-- Several variants:
-  - **ROUGE-1**: Unigram overlap
-  - **ROUGE-2**: Bigram overlap
-  - **ROUGE-L**: Longest common subsequence
-- Strengths:
-  - Simple and fast to compute
-  - Correlates reasonably with human judgment
-  - Widely used as a baseline
-:::
-
-:::{.column width=45%}
-**Limitations of BLEU & ROUGE:**
-
-- Don't understand [meaning]{.alert}
-- Penalise valid [paraphrases]{.alert}
-- Can't detect [factual errors]{.alert}
-- Favour [copying]{.alert} over abstraction
-
-**Example:**
-
-Reference: "The president announced new policies"
-
-Good summary: "New governmental measures were revealed"
-→ Low ROUGE (few matching words)
-
-Bad summary: "The president the president the"
-→ Higher ROUGE (more matches!)
-
-[We need better evaluation methods for modern AI]{.alert}
 :::
 :::
 :::
@@ -706,8 +677,6 @@ Source: [Nielsen Norman Group](https://www.nngroup.com/articles/ai-hallucination
 - 📚 **Academic**: [Students have submitted essays with [entirely invented references]{.alert}](https://teche.mq.edu.au/2023/02/why-does-chatgpt-generate-fake-references/)
 - 🔬 **Science**: [Researchers have found fake citations in published papers](https://www.nature.com/articles/s41598-023-41032-5)
 
-**The stakes are rising:**
-
 - More people trusting AI outputs without verification
 - Harder for non-experts to spot fabrications
 - Legal and reputational risks for organisations
@@ -737,42 +706,96 @@ How would you verify if an AI's answer is correct?
 :::
 :::
 
-## Detecting and mitigating hallucinations
-### Approaches and tools
+## RAG: Retrieval-Augmented Generation
+### Grounding answers in real documents
 
 :::{style="margin-top: 30px; font-size: 20px;"}
 :::{.columns}
 :::{.column width=55%}
-**Detection methods:**
-
-- **Manual verification**: Human fact-checkers (gold standard but expensive)
-- **LLM-as-a-Judge**: Use one model to evaluate another
-- **Consistency checks**: Ask the same question multiple ways
-- **Cross-referencing**: Check against knowledge bases
-- **Retrieval-based verification**: Look up claims in trusted sources
-
-**Mitigation strategies:**
-
-- [Retrieval-Augmented Generation (RAG)]{.alert}: Ground answers in retrieved documents
-- Chain-of-thought prompting with citations
-- Fine-tuning on high-quality, verified data
-- Teaching models to say "I don't know"
+- [RAG]{.alert}: Instead of relying on "memory", the model [looks things up]{.alert}
+- **How it works**:
+  1. User asks a question
+  2. System [retrieves]{.alert} relevant documents from a knowledge base
+  3. LLM generates answer using [retrieved context]{.alert}
+  4. Answer includes citations to sources
+- **RAG reduces hallucinations**:
+  - Model must base answers on [actual documents]{.alert}
+  - Easier to audit and update knowledge
+- **Evaluation metrics for RAG**:
+  - **Faithfulness**: Does it stick to what docs say?
+  - **Answer relevancy**: Does it address the question?
+  - **Contextual relevancy**: Were the right docs retrieved?
 :::
 
 :::{.column width=45%}
-**RAG: A quick preview**
+:::{style="text-align: center; font-size: 17px;"}
+```
+┌─────────────────────┐
+│   User Question     │
+│   "What is X?"      │
+└──────────┬──────────┘
+           ▼
+┌─────────────────────┐
+│     Retriever       │
+│   Search knowledge  │
+│   base for X        │
+└──────────┬──────────┘
+           ▼
+┌─────────────────────┐
+│   Retrieved Docs    │
+│   [Doc 1] [Doc 2]   │
+└──────────┬──────────┘
+           ▼
+┌─────────────────────┐
+│   Generator         │
+│   Question + Docs   │
+└──────────┬──────────┘
+           ▼
+┌─────────────────────┐
+│   Grounded Answer   │
+│   with citations    │
+└─────────────────────┘
+```
+:::
+:::
+:::
+:::
 
-Instead of relying on "memory", [look things up]{.alert}:
+## Red teaming: Adversarial evaluation
+### Finding weaknesses before they find you
 
-1. User asks a question
-2. System retrieves relevant documents
-3. Model generates answer based on retrieved context
-4. Answer includes citations to sources
+:::{style="margin-top: 30px; font-size: 20px;"}
+:::{.columns}
+:::{.column width=55%}
+- [Red teaming]{.alert}: Deliberately trying to make the AI fail or behave badly
+- Like hiring hackers to test your security!
+- **What red teamers look for**:
+  - Harmful or unsafe outputs
+  - Jailbreaks (bypassing safety guardrails)
+  - Bias and offensive content
+  - Factual errors and hallucinations
+- **Manual red teaming**: Humans craft tricky prompts
+  - Gold standard but expensive and slow
+- [AI-Assisted Red Teaming (AART)]{.alert}: Use AI to generate adversarial test cases automatically
+  - Scales up testing dramatically
+  - Covers diverse cultural and geographic contexts
+  - [Paper: AART (2023)](https://arxiv.org/abs/2311.08592)
+:::
 
-[We'll cover RAG in detail in a future lecture!]{.alert}
-
+:::{.column width=45%}
 :::{style="text-align: center;"}
-[![RAG Pipeline](figures/rag-pipeline.png){width="60%"}](#){data-modal-type="image" data-modal-url="figures/rag-pipeline.png"}
+:::{style="background: rgba(230, 57, 70, 0.1); padding: 15px; border-radius: 10px; text-align: left; font-size: 18px;"}
+🔴 **Without red teaming**:
+Vulnerabilities discovered by users in production
+→ Reputational damage, harm, legal liability
+
+🟢 **With red teaming**:
+Vulnerabilities found before deployment
+→ Fixes applied proactively
+→ Safer, more robust models
+:::
+
+[![Examples of red teaming](figures/red-teaming.png){width="100%"}](figures/red-teaming.png){data-modal-type="image" data-modal-url="figures/red-teaming.png"}
 :::
 :::
 :::
@@ -780,23 +803,26 @@ Instead of relying on "memory", [look things up]{.alert}:
 
 # Benchmarks & leaderboards 🏆 {background-color="#2d4563"}
 
-## What are AI benchmarks?
-### Standardised tests for AI systems
+## Benchmarks and leaderboards
+### Comparing AI models at scale
 
 :::{style="margin-top: 30px; font-size: 22px;"}
 :::{.columns}
 :::{.column width=55%}
-- [Benchmarks]{.alert}: Standardised datasets and tasks to compare AI models
-- Like academic exams, but for AI systems
+**[Benchmarks]{.alert}**: Standardised tests for AI
+
 - Famous examples:
-  - [MMLU](https://huggingface.co/spaces/TIGER-Lab/MMLU-Pro): 57 subjects of academic knowledge (maths, history, law...)
-  - [HellaSwag](https://rowanzellers.com/hellaswag/): Commonsense reasoning
-  - [TruthfulQA](https://github.com/sylinrl/TruthfulQA): Resistance to common misconceptions
-  - [HumanEval](https://humaneval.org/): Code generation ability
-  - [FrontierMath](https://epoch.ai/frontiermath): Mathematical problem-solving
-- Enable [objective comparison]{.alert} across different models
-- Drive progress by setting clear, measurable targets
-- Help track capability improvements over time
+  - [MMLU](https://huggingface.co/spaces/TIGER-Lab/MMLU-Pro): 57 subjects of academic knowledge
+  - [TruthfulQA](https://github.com/sylinrl/TruthfulQA): Resistance to misconceptions
+  - [HumanEval](https://humaneval.org/): Code generation
+- Enable [objective comparison]{.alert} across models
+
+**[Leaderboards]{.alert}**: Human preference rankings
+
+- [LM Arena](https://lmarena.ai/): Users compare anonymous model outputs
+- Votes aggregated using [Elo ratings]{.alert} (like chess!)
+- Captures [real preferences]{.alert}, not just benchmark scores
+- Downside: Subjective, expensive, doesn't measure correctness
 :::
 
 :::{.column width=45%}
@@ -804,10 +830,13 @@ Instead of relying on "memory", [look things up]{.alert}:
 [![AI benchmarks](figures/ai-benchmarks.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/ai-benchmarks.png"}
 
 Source: [Epoch AI](https://epoch.ai/gradient-updates/the-real-reason-ai-benchmarks-havent-reflected-economic-impacts)
+
+[Try it yourself at [lmarena.ai](https://lmarena.ai/)!]{.alert}
 :::
 :::
 :::
 :::
+
 
 ## The dark side of benchmarks
 ### When metrics become targets ("benchmaxxing")
@@ -815,11 +844,11 @@ Source: [Epoch AI](https://epoch.ai/gradient-updates/the-real-reason-ai-benchmar
 :::{style="margin-top: 30px; font-size: 22px;"}
 :::{.columns}
 :::{.column width=55%}
-[Goodhart's Law](https://en.wikipedia.org/wiki/Goodhart%27s_law): "When a measure becomes a target, it ceases to be a good measure"
+[Goodhart's Law](https://en.wikipedia.org/wiki/Goodhart%27s_law): ["When a measure becomes a target, it ceases to be a good measure"]{.alert}
 
 **Common problems:**
 
-- **Benchmark contamination**: Test data accidentally (or intentionally) appears in training data—the model memorises rather than generalises
+- **Benchmark contamination**: Test data accidentally (or intentionally) appears in training data
 - **Teaching to the test**: Teams optimise for benchmark quirks rather than genuine capability
 - **Metric saturation**: Models achieve "human-level" on benchmarks but still fail in real-world scenarios
 - **Narrow focus**: Only measuring what's easy to measure
@@ -876,21 +905,23 @@ Source: [Medium](https://medium.com/@Joy.Buolamwini/ibm-leads-more-should-follow
 
 ## Main takeaways
 
-:::{style="margin-top: 20px; font-size: 22px;"}
+:::{style="margin-top: 20px; font-size: 20px;"}
 :::{.columns}
 :::{.column width=55%}
 **Traditional ML Metrics**:
 
 - [Accuracy is not enough]{.alert}: Especially dangerous with class imbalance
-- [Precision/Recall trade-off]{.alert}: Choose based on the cost of false positives vs. false negatives
+- [Precision/Recall trade-off]{.alert}: Choose based on false positive vs. false negative costs
 - Use [cross-validation]{.alert} and keep a truly unseen test set
 
-**LLM & Modern AI Evaluation**:
+**LLM Evaluation**:
 
-- [BLEU/ROUGE measure overlap, not meaning or truth]{.alert}
-- [Hallucinations]{.alert}: Confident lies are a fundamental limitation of current models
-- Beware of [Goodhart's Law and "teaching to the test"]{.alert}
-- [Subgroup Analysis]{.alert}: Always look beyond averages to identify bias and errors
+- [Perplexity ≠ truth]{.alert}: Fluent text can still be wrong
+- [LLM-as-a-Judge and G-Eval]{.alert}: Scalable evaluation with rubrics
+- [RAG]{.alert}: Ground answers in documents to reduce hallucinations
+- [Red teaming]{.alert}: Proactively find vulnerabilities before users do
+- [Benchmarks have limits]{.alert}: Goodhart's Law and "benchmaxxing"
+- [Subgroup analysis]{.alert}: Always look beyond averages
 :::
 
 :::{.column width=45%}
