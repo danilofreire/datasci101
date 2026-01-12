@@ -34,6 +34,7 @@ Readings:
 - Halevy, A., Norvig, P., & Pereira, F. (2009). [The unreasonable effectiveness of data.](https://static.googleusercontent.com/media/research.google.com/en//pubs/archive/35179.pdf) *IEEE Intelligent Systems*, *24*(2), 8-12. A classic paper arguing that large datasets are often more important than sophisticated algorithms.
 - Pradhan, M. (2023). [A non-technical introduction to Transformers.](https://medium.com/healthcare-ai-sig/a-non-technical-introduction-to-transformers-6ca36b8246d) A clear explanation of the transformer architecture that underpins many modern AI systems.
 - Georgia Tech's Polo Club of Data Science (2025). [Transformer explainer.](https://poloclub.github.io/transformer-explainer/) An interactive visualisation of how transformers work.
+- Vaswani, A., Shazeer, N., Parmar, N., Uszkoreit, J., Jones, L., Gomez, A. N., ... & Polosukhin, I. (2017). [Attention is all you need.](https://proceedings.neurips.cc/paper_files/paper/2017/file/3f5ee243547dee91fbd053c1c4a845aa-Paper.pdf)  *Advances in Neural Information Processing Systems*, 30. In case you want to read the original paper. Not for the faint of heart. 
 
 ## Module 1 — How AI systems are designed
 
@@ -45,6 +46,7 @@ Readings:
 Readings:
 
 - Athalye, A., Northcutt, C., & Mueller, J. (2024). [Dataset creation and curation](https://dcai.csail.mit.edu/2024/dataset-creation-curation/) in *Data-Centric AI*. A chapter from a forthcoming book on data-centric AI, covering the main ideas in dataset design.
+- Rich, A. S., & Gureckis, T. M. (2019). [Lessons for artificial intelligence from the study of natural stupidity.](https://www.nature.com/articles/s42256-019-0038-z) *Nature Machine Intelligence*, 1(4), 174-180. A title this good is hard to find. The article discusses different sources of bias in AI systems.
 - Sapien Labs. (2024). [Labeling data for machine learning: best practices and quality control.](https://www.sapien.io/blog/labeling-data-for-machine-learning-best-practices-and-quality-control) A practical guide to data labeling, with tips and common pitfalls.
 - Liang, W., Tadesse, G. A., Ho, D., Fei-Fei, L., Zaharia, M., Zhang, C., & Zou, J. (2022). [Advances, challenges and opportunities in creating data for trustworthy AI.](https://www.nature.com/articles/s42256-022-00516-1) *Nature Machine Intelligence*, 4(8), 669-677. A good discussion on the challenges of creating high-quality datasets.
 
@@ -60,6 +62,8 @@ Readings:
 - Jiang, T., Gradus, J. L., & Rosellini, A. J. (2020). [Supervised machine learning: a brief primer.](https://pmc.ncbi.nlm.nih.gov/articles/PMC7431677/) *Behavior Therapy*, *51*(5), 675-687. A non-technical introduction to supervised machine learning.
 - Amazon Web Services (2025). [What is the difference between supervised and unsupervised learning?](https://aws.amazon.com/compare/the-difference-between-machine-learning-supervised-and-unsupervised/) A practical overview with examples.
 - Goodfellow, I., Bengio, Y., & Courville, A. (2016). [Chapter 5: Machine learning basics](https://www.deeplearningbook.org/contents/ml.html) in *Deep Learning*. A technical but clear introduction to the main ideas behind machine learning.
+- James, G., Witten, D., Hastie, T., & Tibshirani, R. (2021). [An introduction to statistical learning.](https://www.statlearning.com/) A widely used book covering supervised and unsupervised learning methods. Included here for reference, as you'll surely use it in your future career.
+- Ghasemi, M., & Ebrahimi, D. (2024). [Introduction to reinforcement learning.](https://arxiv.org/abs/2408.07712) *arXiv preprint*. Short introduction to the topic. If you would like to read something more advanced, please refer to [Sutton & Barto (2015)](https://web.stanford.edu/class/psych209/Readings/SuttonBartoIPRLBook2ndEd.pdf).
 
 ### February 02, 2026:
 
@@ -68,9 +72,14 @@ Readings:
 
 Readings:
 
-- Akinkugbe, A. (2025). [The essential guide to model evaluation metrics for classification.](https://pub.towardsai.net/the-essential-guide-to-model-evaluation-metrics-for-classification-560efee6f445) A practical guide to common evaluation metrics.
 - Thomas, R. L., & Uminsky, D. (2022). [Reliance on metrics is a fundamental challenge for AI.](https://www.cell.com/patterns/fulltext/S2666-3899(22)00056-3) *Patterns*, 3(5).100440. A discussion of the limitations of metrics.
+- Akinkugbe, A. (2025). [The essential guide to model evaluation metrics for classification.](https://pub.towardsai.net/the-essential-guide-to-model-evaluation-metrics-for-classification-560efee6f445) A practical guide to common evaluation metrics.
+- Confident AI (2025). [LLM evaluation metrics: The ultimate LLM evaluation guide.](https://www.confident-ai.com/blog/llm-evaluation-metrics-everything-you-need-for-llm-evaluation) A simple guide on new ways to measure the quality of LLM outputs.
+- Rashka, S. (2025) [Understanding the 4 main approaches to LLM evaluation.](https://magazine.sebastianraschka.com/p/llm-evaluation-4-approaches) Good blog post about the different ways to evaluate LLMs.
 - Coursera (2025). [Precision vs. recall in machine learning: what's the difference?](https://www.coursera.org/articles/precision-vs-recall-machine-learning). A short article about those two commonly confused metrics.
+- Radharapu, B., Robinson, K., Aroyo, L., & Lahoti, P. (2023). [Aart: Ai-assisted red-teaming with diverse data generation for new LLM-powered applications.](https://arxiv.org/abs/2311.08592) *arXiv* preprint*. How to use adversarial attacks to improve LLM safety.
+
+## Module 2 — Language and perception
 
 ### February 04, 2026:
 
@@ -84,8 +93,6 @@ Readings:
 - Neptune.ai (2025). [The ultimate guide to word embeddings.](https://neptune.ai/blog/word-embeddings-guide) A clear and practical introduction to word embeddings.
 - Neptune.ai (2025). [Tokenization in NLP: types, challenges, examples, tools.](https://neptune.ai/blog/tokenization-in-nlp) Another article by the same group on tokenisation.
 - StackOverflow (2023). [An intuitive introduction to text embeddings.](https://stackoverflow.blog/2023/11/09/an-intuitive-introduction-to-text-embeddings/) Another practical introduction to embeddings.
-
-## Module 2 — Language and perception
 
 ### February 09, 2026:
 
@@ -107,7 +114,9 @@ Readings:
 
 - Lecture 09: [Behavioural testing: examples and demonstrations](https://raw.githack.com/danilofreire/datasci185/main/lectures/lecture-09/09-testing.html).
 
-No required readings for this lecture. We will do live demonstrations in class.
+No required readings for this lecture. We will do live demonstrations in class and discuss the results.
+
+## Module 3 — Retrieval, generation and pipelines
 
 ### February 18, 2026:
 
@@ -120,8 +129,6 @@ Readings:
 - Amazon Web Services (2025). [What is retrieval-augmented generation (RAG)?](https://aws.amazon.com/what-is/retrieval-augmented-generation/) Beginners' guide to RAG.
 - Mastering LLM (2024). [11 chunking strategies for RAG — simplified & visualized](https://masteringllm.medium.com/11-chunking-strategies-for-rag-simplified-visualized-df0dbec8e373) Nice explanation of chunking strategies.
 - Slack (2025). [Semantic search explained: how it works, and why it matters.](https://slack.com/blog/productivity/semantic-search-explained-how-it-works-and-why-it-matters) Good explainer.
-
-## Module 3 — Retrieval, generation and pipelines
 
 ### February 23, 2026:
 
@@ -148,6 +155,8 @@ Readings:
 - Google (2025). [Production ML systems: monitoring pipelines.](https://developers.google.com/machine-learning/crash-course/production-ml-systems/monitoring) Practical guide to monitoring ML pipelines.
 - Allen, J. (2024). [Data pipeline monitoring: best practices for full observability.](https://www.prefect.io/blog/data-pipeline-monitoring-best-practices) Practical tips.
 
+## Module 4 — Data ethics and bias
+
 ### March 04, 2026:
 
 - Lecture 14: [Types of bias and how they arise](https://raw.githack.com/danilofreire/datasci185/main/lectures/lecture-14/14-bias.html).
@@ -161,8 +170,6 @@ Readings:
 - Silberg, J., & Manyika, J. (2019). [Notes from the AI frontier: tackling bias in AI (and in humans).](https://www.mckinsey.com/~/media/McKinsey/Featured%20Insights/Artificial%20Intelligence/Tackling%20bias%20in%20artificial%20intelligence%20and%20in%20humans/MGI-Tackling-bias-in-AI-June-2019.pdf) McKinsey Global Institute.
 
 ### March 9 and 11, 2026: Spring Break (No Classes)
-
-## Module 4 — Data ethics and bias
 
 ### March 16, 2026:
 
@@ -224,6 +231,8 @@ Readings:
 - Acemoglu, D., & Restrepo, P. (2019). [Automation and new tasks: How technology displaces and reinstates labor.](https://www.aeaweb.org/articles?id=10.1257/jep.33.2.3) *Journal of Economic Perspectives*, *33*(2), 3-30.
 - World Economic Forum. (2025). [The future of jobs report 2025.](https://www.weforum.org/reports/the-future-of-jobs-report-2025) A comprehensive report on how jobs are expected to change.
 
+## Module 6 — Applications, limits and projects
+
 ### April 06, 2026:
 
 - Lecture 21: [AI in health, education and public services](https://raw.githack.com/danilofreire/datasci185/main/lectures/lecture-21/21-applications.html).
@@ -238,8 +247,6 @@ Readings:
 - Lecture 22: [Quiz 04](https://github.com/danilofreire/datasci185-quiz04/).
 - **Assignment 09 due (5%).**
 - [**Assignment 10**](https://github.com/danilofreire/datasci185/blob/main/assignments/10-assignment.ipynb).
-
-## Module 6 — Applications, limits and projects
 
 ### April 13, 2026:
 
