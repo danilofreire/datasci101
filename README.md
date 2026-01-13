@@ -7,7 +7,7 @@ This repository contains the source materials for [DATASCI 185: Introduction to 
 ## Course Information
 
 - **Course**: DATASCI 185 - Introduction to AI Applications
-- **Semester**: Fall 2026
+- **Semester**: Spring 2026
 - **Format**: Undergraduate-level course
 - **Schedule**: Mondays and Wednesdays, 4pm to 4:50pm
 - **Location**: [Psychology Building, Room 290](https://maps.app.goo.gl/orrT4jaoxjYiojkL7)
@@ -58,12 +58,13 @@ This is the **main branch** which contains the following files and folders:
 ## Website
 
 The course website is hosted on the **gh-pages branch** and includes:
+
 - Course information and syllabus
 - Lecture schedule
 - Assignment details
 - Additional resources
 
-To view the website, switch to the `gh-pages` branch or visit the GitHub Pages site.
+To view the website, switch to the `gh-pages` branch or visit the GitHub Pages site at <https://danilofreire.github.io/datasci185>.
 
 ## Contributing
 

@@ -60,32 +60,32 @@ Readings are short papers, essays and tutorials rather than a single textbook. L
 
 ### Books
 
-- [Artificial Intelligence: A Guide for Thinking Humans](https://melaniemitchell.me/aibook/) by Melanie Mitchell (2020). A clear, non-technical overview of AI concepts and history.
-- [The Master Algorithm](https://www.basicbooks.com/titles/pedro-domingos/the-master-algorithm/9780465065707/) by Pedro Domingos (2015). A readable introduction to machine learning concepts and applications.
-- [The Coming Wave: AI, Power, and Our Future](https://www.penguinrandomhouse.com/books/713377/the-coming-wave-by-vinod-khosla-and-brock-manville/) by Mustafa Suleyman and Michael Bhaskar (2025). An award-winning book on the transformative potential of AI and its societal implications.
-- [The Alignment Problem: Machine Learning and Human Values](https://www.penguinrandomhouse.com/books/622487/the-alignment-problem-by-brian-christian/) by Brian Christian (2020). An exploration of what can go wrong when AI systems are deployed in the real world.
-- [AI & I: An Intellectual History of Artificial Intelligence](https://mitpress.mit.edu/9780262548731/ai-and-i/) by Eugene Charniak (2024). A new book by a leading AI researcher, covering the history of the field from the 1950s to the present day.
-- [Weapons of Math Destruction: How Big Data Increases Inequality and Threatens Democracy](https://weaponsofmathdestructionbook.com/) by Cathy O'Neil (2016). A book on the dangers of unregulated mathematical models.
+- [Artificial intelligence: a guide for thinking humans](https://melaniemitchell.me/aibook/) by Melanie Mitchell (2020). A clear, non-technical overview of AI concepts and history.
+- [The master algorithm](https://www.basicbooks.com/titles/pedro-domingos/the-master-algorithm/9780465065707/) by Pedro Domingos (2015). A readable introduction to machine learning concepts and applications.
+- [The coming wave: AI, power, and our future](https://www.penguinrandomhouse.com/books/713377/the-coming-wave-by-vinod-khosla-and-brock-manville/) by Mustafa Suleyman and Michael Bhaskar (2025). An award-winning book on the transformative potential of AI and its societal implications.
+- [The alignment problem: machine learning and human values](https://www.penguinrandomhouse.com/books/622487/the-alignment-problem-by-brian-christian/) by Brian Christian (2020). An exploration of what can go wrong when AI systems are deployed in the real world.
+- [AI & I: An intellectual history of artificial intelligence](https://mitpress.mit.edu/9780262548731/ai-and-i/) by Eugene Charniak (2024). A new book by a leading AI researcher, covering the history of the field from the 1950s to the present day.
+- [Weapons of math destruction: how big data increases inequality and threatens democracy](https://weaponsofmathdestructionbook.com/) by Cathy O'Neil (2016). A book on the dangers of unregulated mathematical models.
 - [Atlas of AI: Power, Politics, and the Planetary Costs of Artificial Intelligence](https://www.penguinrandomhouse.com/books/667487/atlas-of-ai-by-kate-crawford/) by Kate Crawford (2021). A critical look at the social and environmental impacts of AI technologies.
 
 ### Online courses
 
-- [AI For Everyone](https://www.coursera.org/learn/ai-for-everyone) by Andrew Ng (Coursera). A non-technical introduction to AI concepts and applications. Free to audit, with a paid certificate option.
+- [AI for everyone](https://www.coursera.org/learn/ai-for-everyone) by Andrew Ng (Coursera). A non-technical introduction to AI concepts and applications. Free to audit, with a paid certificate option.
 - [Elements of AI](https://www.elementsofai.com/) by the University of Helsinki. A free, friendly introduction to AI and some of its methods.
-- [AI Essentials](https://grow.google/ai-essentials/) by Google (Coursera). This programme is designed for people who want to gain practical AI skills for the workplace with no experience required.
-- [Google Prompting Essentials](https://grow.google/prompting-essentials/) by Google (Coursera). A short course on how to effectively use and design prompts for large language models.
-- [Radical Ideas in AI Ethics](https://www.edx.org/learn/computer-science/pragmatic-ai-labs-radical-ideas-ai-ethics) by Pragmatic AI Labs (edX). A course that discusses AI through the lens of human rights and digital autonomy.
+- [AI essentials](https://grow.google/ai-essentials/) by Google (Coursera). This programme is designed for people who want to gain practical AI skills for the workplace with no experience required.
+- [Google prompting essentials](https://grow.google/prompting-essentials/) by Google (Coursera). A short course on how to effectively use and design prompts for large language models.
+- [Radical ideas in AI ethics](https://www.edx.org/learn/computer-science/pragmatic-ai-labs-radical-ideas-ai-ethics) by Pragmatic AI Labs (edX). A course that discusses AI through the lens of human rights and digital autonomy.
 
 ### Other resources
 
-- [In Machines We Trust](https://www.technologyreview.com/supertopic/in-machines-we-trust/). A podcast series by MIT Technology Review about the promises and perils of AI. Very accessible and engaging.
-- [AI for the Rest of Us](https://aifortherestofus.com/). 25-30 minute episodes focused on explaining AI concepts to non-technical listeners.
-- [The Gradient](https://thegradient.pub/). A publication that features accessible articles on AI research.
+- [In machines we trust](https://www.technologyreview.com/supertopic/in-machines-we-trust/). A podcast series by MIT Technology Review about the promises and perils of AI. Very accessible and engaging.
+- [AI for the rest of us](https://aifortherestofus.com/). 25-30 minute episodes focused on explaining AI concepts to non-technical listeners.
+- [The gradient](https://thegradient.pub/). A publication that features accessible articles on AI research.
 - [AI Now Institute](https://ainowinstitute.org/). Research institute focused on the social implications of AI.
 - [AI for Good Lab](https://www.microsoft.com/en-us/research/group/ai-for-good-research-lab/). A Microsoft research group that highlights how AI can change society for the better.
-- [The AI Incident Database](https://incidentdatabase.ai/). A collection of real-world cases where AI systems have caused harm or failed.
-- [Teachable Machine](https://teachablemachine.withgoogle.com/). A web-based tool by Google that allows users to create simple machine learning models without coding.
-- [The Algorithm](https://www.technologyreview.com/the-algorithm/). A newsletter by MIT Technology Review that covers the latest developments in AI.
+- [The AI incident database](https://incidentdatabase.ai/). A collection of real-world cases where AI systems have caused harm or failed.
+- [Teachable machine](https://teachablemachine.withgoogle.com/). A web-based tool by Google that allows users to create simple machine learning models without coding.
+- [The algorithm](https://www.technologyreview.com/the-algorithm/). A newsletter by MIT Technology Review that covers the latest developments in AI.
 
 # Assessments
 
@@ -189,10 +189,11 @@ Readings:
 
 - Thomas, R. L., & Uminsky, D. (2022). [Reliance on metrics is a fundamental challenge for AI.](https://www.cell.com/patterns/fulltext/S2666-3899(22)00056-3) *Patterns*, 3(5).100440. A discussion of the limitations of metrics.
 - Akinkugbe, A. (2025). [The essential guide to model evaluation metrics for classification.](https://pub.towardsai.net/the-essential-guide-to-model-evaluation-metrics-for-classification-560efee6f445) A practical guide to common evaluation metrics.
-- Confident AI (2025). [LLM evaluation metrics: The ultimate LLM evaluation guide.](https://www.confident-ai.com/blog/llm-evaluation-metrics-everything-you-need-for-llm-evaluation) A simple guide on new ways to measure the quality of LLM outputs.
+- Confident AI (2025). [LLM evaluation metrics: the ultimate LLM evaluation guide.](https://www.confident-ai.com/blog/llm-evaluation-metrics-everything-you-need-for-llm-evaluation) A simple guide on new ways to measure the quality of LLM outputs.
 - Rashka, S. (2025) [Understanding the 4 main approaches to LLM evaluation.](https://magazine.sebastianraschka.com/p/llm-evaluation-4-approaches) Good blog post about the different ways to evaluate LLMs.
-- Coursera (2025). [Precision vs. recall in machine learning: what's the difference?](https://www.coursera.org/articles/precision-vs-recall-machine-learning). A short article about those two commonly confused metrics.
-- Radharapu, B., Robinson, K., Aroyo, L., & Lahoti, P. (2023). [Aart: Ai-assisted red-teaming with diverse data generation for new LLM-powered applications.](https://arxiv.org/abs/2311.08592) *arXiv* preprint*. How to use adversarial attacks to improve LLM safety.
+- Coursera (2025). [Precision vs. recall in machine learning: What's the difference?](https://www.coursera.org/articles/precision-vs-recall-machine-learning). A short article about those two commonly confused metrics.
+- Inie, N., Stray, J., & Derczynski, L. (2023). [Summon a demon and bind it: a grounded theory of LLM red teaming in the wild.](https://arxiv.org/abs/2311.06237) *arXiv preprint*. A good overview of red teaming.
+- Radharapu, B., Robinson, K., Aroyo, L., & Lahoti, P. (2023). [Aart: AI-assisted red-teaming with diverse data generation for new LLM-powered applications.](https://arxiv.org/abs/2311.08592) *arXiv* preprint*. A method to improve LLM safety with simple adversarial attacks.
 
 ## Module 2 — Language and perception
 
@@ -306,7 +307,7 @@ Readings:
 Readings:
 
 - Obermeyer, Z., Powers, B., Vogeli, C., & Mullainathan, S. (2019). [Dissecting racial bias in an algorithm used to manage the health of populations.](https://science.sciencemag.org/content/366/6464/447) *Science*, *366*(6464), 447-453.
-- Buolamwini, J., & Gebru, T. (2018). [Gender shades: Intersectional accuracy disparities in commercial gender classification.](http://proceedings.mlr.press/v81/buolamwini18a.html) *Proceedings of Machine Learning Research*, *81*, 1-15.
+- Buolamwini, J., & Gebru, T. (2018). [Gender shades: intersectional accuracy disparities in commercial gender classification.](http://proceedings.mlr.press/v81/buolamwini18a.html) *Proceedings of Machine Learning Research*, *81*, 1-15.
 - Angwin, J., Larson, J., Mattu, S., & Kirchner, L. (2016). [Machine bias.](https://www.propublica.org/article/machine-bias-risk-assessments-in-criminal-sentencing) *ProPublica*.
 
 ## Module 5 — Policy, governance and social impact
@@ -343,7 +344,7 @@ Readings:
 
 Readings:
 
-- Acemoglu, D., & Restrepo, P. (2019). [Automation and new tasks: How technology displaces and reinstates labor.](https://www.aeaweb.org/articles?id=10.1257/jep.33.2.3) *Journal of Economic Perspectives*, *33*(2), 3-30.
+- Acemoglu, D., & Restrepo, P. (2019). [Automation and new tasks: how technology displaces and reinstates labor.](https://www.aeaweb.org/articles?id=10.1257/jep.33.2.3) *Journal of Economic Perspectives*, *33*(2), 3-30.
 - World Economic Forum. (2025). [The future of jobs report 2025.](https://www.weforum.org/reports/the-future-of-jobs-report-2025) A comprehensive report on how jobs are expected to change.
 
 ## Module 6 — Applications, limits and projects
@@ -369,7 +370,7 @@ Readings:
 
 Readings:
 
-- Helmus, T. C. (2022). [Artificial intelligence, deepfakes, and disinformation: A primer.](https://www.rand.org/pubs/perspectives/PEA1043-1.html) *RAND Corporation*.
+- Helmus, T. C. (2022). [Artificial intelligence, deepfakes, and disinformation: a primer.](https://www.rand.org/pubs/perspectives/PEA1043-1.html) *RAND Corporation*.
 - Chesney, R., & Citron, D. K. (2019). [Deepfakes and the new disinformation war.](https://www.foreignaffairs.com/articles/world/2018-12-11/deepfakes-and-new-disinformation-war) *Foreign Affairs*.
 
 ### April 15, 2026:
@@ -380,8 +381,8 @@ Readings:
 Readings:
 
 - Amodei, D., et al. (2016). [Concrete problems in AI safety.](https://arxiv.org/abs/1606.06565) *arXiv preprint*. A highly influential paper on the practical challenges of AI safety.
-- Ji, J., Qiu, T., Chen, B., Zhang, B., Lou, H., Wang, K., ... & Gao, W. (2023). [Ai alignment: A comprehensive survey.](https://arxiv.org/abs/2310.19852) *arXiv preprint*. A survey of the field of AI alignment.
-- Zhi-Xuan, T., Carroll, M., Franklin, M., & Ashton, H. (2025). [Beyond Preferences in AI Alignment: T. Zhi-Xuan et al. Philosophical Studies, 182(7), 1813-1863.](https://link.springer.com/article/10.1007/s11098-024-02249-w) A philosophical take on the limits of rational choice in AI alignment. A little more abstract, but very interesting.
+- Ji, J., Qiu, T., Chen, B., Zhang, B., Lou, H., Wang, K., ... & Gao, W. (2023). [Ai alignment: a comprehensive survey.](https://arxiv.org/abs/2310.19852) *arXiv preprint*. A survey of the field of AI alignment.
+- Zhi-Xuan, T., Carroll, M., Franklin, M., & Ashton, H. (2025). [Beyond Preferences in AI Alignment](https://link.springer.com/article/10.1007/s11098-024-02249-w). *Philosophical Studies*, 182(7), 1813-1863. A philosophical take on the limits of rational choice in AI alignment. A little more abstract, but very interesting.
 - Russell, S. (2017). [3 principles for creating safer AI.](https://www.ted.com/talks/stuart_russell_3_principles_for_creating_safer_ai) *TED Talk*.
 
 ### April 20, 2026:
