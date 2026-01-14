@@ -58,7 +58,3 @@ While this repository is primarily maintained by the course instructor, everyone
 ## License
 
 This repository is licensed under the [MIT License](https://github.com/danilofreire/datasci185/blob/main/LICENSE.md). You are free to use, modify, and distribute the materials as needed, with appropriate attribution to the original source.
-
------
-
-We look forward to an engaging and productive semester! Happy coding!
