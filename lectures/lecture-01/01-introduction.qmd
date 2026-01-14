@@ -141,7 +141,7 @@ Please remember to check the course repository regularly for updates and announc
 
 - Please introduce yourself! 👋
 
-- Tell us your name, your major, what AI application you find most interesting, and what would you like to learn in this course? 
+- Tell us your name, your major, and what would you like to learn in this course? 
 :::
 
 ## My teaching philosophy
