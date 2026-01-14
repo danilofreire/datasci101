@@ -164,6 +164,7 @@ Readings:
 - Rich, A. S., & Gureckis, T. M. (2019). [Lessons for artificial intelligence from the study of natural stupidity.](https://www.nature.com/articles/s42256-019-0038-z) *Nature Machine Intelligence*, 1(4), 174-180. A title this good is hard to find. The article discusses different sources of bias in AI systems.
 - Sapien Labs. (2024). [Labeling data for machine learning: best practices and quality control.](https://www.sapien.io/blog/labeling-data-for-machine-learning-best-practices-and-quality-control) A practical guide to data labeling, with tips and common pitfalls.
 - Liang, W., Tadesse, G. A., Ho, D., Fei-Fei, L., Zaharia, M., Zhang, C., & Zou, J. (2022). [Advances, challenges and opportunities in creating data for trustworthy AI.](https://www.nature.com/articles/s42256-022-00516-1) *Nature Machine Intelligence*, 4(8), 669-677. A good discussion on the challenges of creating high-quality datasets.
+- Chai, C., & Li, G. (2020). [Human-in-the-loop Techniques in Machine Learning.](http://sites.computer.org/debull/A20sept/p37.pdf) *IEEE Data Eng. Bull.*, 43(3), 37-52. A little more technical, but quite comprehensive.
 
 ### January 28, 2026:
 
@@ -176,7 +177,7 @@ Readings:
 
 - Jiang, T., Gradus, J. L., & Rosellini, A. J. (2020). [Supervised machine learning: a brief primer.](https://pmc.ncbi.nlm.nih.gov/articles/PMC7431677/) *Behavior Therapy*, *51*(5), 675-687. A non-technical introduction to supervised machine learning.
 - Amazon Web Services (2025). [What is the difference between supervised and unsupervised learning?](https://aws.amazon.com/compare/the-difference-between-machine-learning-supervised-and-unsupervised/) A practical overview with examples.
-- Goodfellow, I., Bengio, Y., & Courville, A. (2016). [Chapter 5: Machine learning basics](https://www.deeplearningbook.org/contents/ml.html) in *Deep Learning*. A technical but clear introduction to the main ideas behind machine learning.
+- Goodfellow, I., Bengio, Y., & Courville, A. (2016). [Chapter 5: Machine learning basics](https://www.deeplearningbook.org/contents/ml.html) in *Deep Learning*. A technical but clear introduction to the main ideas behind machine learning, by some of the founders of deep learning.
 - James, G., Witten, D., Hastie, T., & Tibshirani, R. (2021). [An introduction to statistical learning.](https://www.statlearning.com/) A widely used book covering supervised and unsupervised learning methods. Included here for reference, as you'll surely use it in your future career.
 - Ghasemi, M., & Ebrahimi, D. (2024). [Introduction to reinforcement learning.](https://arxiv.org/abs/2408.07712) *arXiv preprint*. Short introduction to the topic. If you would like to read something more advanced, please refer to [Sutton & Barto (2015)](https://web.stanford.edu/class/psych209/Readings/SuttonBartoIPRLBook2ndEd.pdf).
 
@@ -206,9 +207,12 @@ Readings:
 
 Readings:
 
+- HuggingFace (2025). [Tokenizer summary](https://huggingface.co/docs/transformers/tokenizer_summary) A really good overview of tokenisation, with examples and videos.
 - Neptune.ai (2025). [The ultimate guide to word embeddings.](https://neptune.ai/blog/word-embeddings-guide) A clear and practical introduction to word embeddings.
 - Neptune.ai (2025). [Tokenization in NLP: types, challenges, examples, tools.](https://neptune.ai/blog/tokenization-in-nlp) Another article by the same group on tokenisation.
-- StackOverflow (2023). [An intuitive introduction to text embeddings.](https://stackoverflow.blog/2023/11/09/an-intuitive-introduction-to-text-embeddings/) Another practical introduction to embeddings.
+- StackOverflow (2023). [An intuitive introduction to text embeddings.](https://stackoverflow.blog/2023/11/09/an-intuitive-introduction-to-text-embeddings/) A practical introduction to embeddings.
+- Metzger, S. (2022). [A beginner’s guide to tokens, vectors, and embeddings in NLP.](https://medium.com/@saschametzger/what-are-tokens-vectors-and-embeddings-how-do-you-create-them-e2a3e698e037). Easy to read and with interesting examples.
+- Boykis, V. (2022). [What are embeddings?](https://vickiboykis.com/what_are_embeddings/). A whole book dedicated to embeddings. For those who are interested in a more in-depth treatment. There's also a [GitHub repository](https://github.com/veekaybee/what_are_embeddings) with code examples.
 
 ### February 09, 2026:
 

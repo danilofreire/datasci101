@@ -683,8 +683,8 @@ Source: [MIT's DataCentric AI course](https://dcai.csail.mit.edu/2023/dataset-cr
 **Common metrics:**
 
 - **Percent agreement**: Simple but misleading
-- **Cohen's Kappa**: Accounts for chance agreement (2 annotators)
-- **Fleiss' Kappa**: Multiple annotators
+- [Cohen's Kappa](https://en.wikipedia.org/wiki/Cohen%27s_kappa): Accounts for chance agreement (2 annotators)
+- [Fleiss' Kappa](https://en.wikipedia.org/wiki/Fleiss%27s_kappa) or [Krippendorff's alpha](https://en.wikipedia.org/wiki/Krippendorff%27s_alpha): Multiple annotators
 
 $$\kappa = \frac{p_o - p_e}{1 - p_e}$$
 
