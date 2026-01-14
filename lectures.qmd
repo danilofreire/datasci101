@@ -49,6 +49,7 @@ Readings:
 - Rich, A. S., & Gureckis, T. M. (2019). [Lessons for artificial intelligence from the study of natural stupidity.](https://www.nature.com/articles/s42256-019-0038-z) *Nature Machine Intelligence*, 1(4), 174-180. A title this good is hard to find. The article discusses different sources of bias in AI systems.
 - Sapien Labs. (2024). [Labeling data for machine learning: best practices and quality control.](https://www.sapien.io/blog/labeling-data-for-machine-learning-best-practices-and-quality-control) A practical guide to data labeling, with tips and common pitfalls.
 - Liang, W., Tadesse, G. A., Ho, D., Fei-Fei, L., Zaharia, M., Zhang, C., & Zou, J. (2022). [Advances, challenges and opportunities in creating data for trustworthy AI.](https://www.nature.com/articles/s42256-022-00516-1) *Nature Machine Intelligence*, 4(8), 669-677. A good discussion on the challenges of creating high-quality datasets.
+- Chai, C., & Li, G. (2020). [Human-in-the-loop Techniques in Machine Learning.](http://sites.computer.org/debull/A20sept/p37.pdf) *IEEE Data Eng. Bull.*, 43(3), 37-52. A little more technical, but quite comprehensive.
 
 ### January 28, 2026:
 
@@ -61,7 +62,7 @@ Readings:
 
 - Jiang, T., Gradus, J. L., & Rosellini, A. J. (2020). [Supervised machine learning: a brief primer.](https://pmc.ncbi.nlm.nih.gov/articles/PMC7431677/) *Behavior Therapy*, *51*(5), 675-687. A non-technical introduction to supervised machine learning.
 - Amazon Web Services (2025). [What is the difference between supervised and unsupervised learning?](https://aws.amazon.com/compare/the-difference-between-machine-learning-supervised-and-unsupervised/) A practical overview with examples.
-- Goodfellow, I., Bengio, Y., & Courville, A. (2016). [Chapter 5: Machine learning basics](https://www.deeplearningbook.org/contents/ml.html) in *Deep Learning*. A technical but clear introduction to the main ideas behind machine learning.
+- Goodfellow, I., Bengio, Y., & Courville, A. (2016). [Chapter 5: Machine learning basics](https://www.deeplearningbook.org/contents/ml.html) in *Deep Learning*. A technical but clear introduction to the main ideas behind machine learning, by some of the founders of deep learning.
 - James, G., Witten, D., Hastie, T., & Tibshirani, R. (2021). [An introduction to statistical learning.](https://www.statlearning.com/) A widely used book covering supervised and unsupervised learning methods. Included here for reference, as you'll surely use it in your future career.
 - Ghasemi, M., & Ebrahimi, D. (2024). [Introduction to reinforcement learning.](https://arxiv.org/abs/2408.07712) *arXiv preprint*. Short introduction to the topic. If you would like to read something more advanced, please refer to [Sutton & Barto (2015)](https://web.stanford.edu/class/psych209/Readings/SuttonBartoIPRLBook2ndEd.pdf).
 
@@ -74,10 +75,11 @@ Readings:
 
 - Thomas, R. L., & Uminsky, D. (2022). [Reliance on metrics is a fundamental challenge for AI.](https://www.cell.com/patterns/fulltext/S2666-3899(22)00056-3) *Patterns*, 3(5).100440. A discussion of the limitations of metrics.
 - Akinkugbe, A. (2025). [The essential guide to model evaluation metrics for classification.](https://pub.towardsai.net/the-essential-guide-to-model-evaluation-metrics-for-classification-560efee6f445) A practical guide to common evaluation metrics.
-- Confident AI (2025). [LLM evaluation metrics: The ultimate LLM evaluation guide.](https://www.confident-ai.com/blog/llm-evaluation-metrics-everything-you-need-for-llm-evaluation) A simple guide on new ways to measure the quality of LLM outputs.
+- Confident AI (2025). [LLM evaluation metrics: the ultimate LLM evaluation guide.](https://www.confident-ai.com/blog/llm-evaluation-metrics-everything-you-need-for-llm-evaluation) A simple guide on new ways to measure the quality of LLM outputs.
 - Rashka, S. (2025) [Understanding the 4 main approaches to LLM evaluation.](https://magazine.sebastianraschka.com/p/llm-evaluation-4-approaches) Good blog post about the different ways to evaluate LLMs.
-- Coursera (2025). [Precision vs. recall in machine learning: what's the difference?](https://www.coursera.org/articles/precision-vs-recall-machine-learning). A short article about those two commonly confused metrics.
-- Radharapu, B., Robinson, K., Aroyo, L., & Lahoti, P. (2023). [Aart: Ai-assisted red-teaming with diverse data generation for new LLM-powered applications.](https://arxiv.org/abs/2311.08592) *arXiv* preprint*. How to use adversarial attacks to improve LLM safety.
+- Coursera (2025). [Precision vs. recall in machine learning: What's the difference?](https://www.coursera.org/articles/precision-vs-recall-machine-learning). A short article about those two commonly confused metrics.
+- Inie, N., Stray, J., & Derczynski, L. (2023). [Summon a demon and bind it: a grounded theory of LLM red teaming in the wild.](https://arxiv.org/abs/2311.06237) *arXiv preprint*. A good overview of red teaming.
+- Radharapu, B., Robinson, K., Aroyo, L., & Lahoti, P. (2023). [Aart: AI-assisted red-teaming with diverse data generation for new LLM-powered applications.](https://arxiv.org/abs/2311.08592) *arXiv* preprint*. A method to improve LLM safety with simple adversarial attacks.
 
 ## Module 2 — Language and perception
 
@@ -90,9 +92,12 @@ Readings:
 
 Readings:
 
+- HuggingFace (2025). [Tokenizer summary](https://huggingface.co/docs/transformers/tokenizer_summary) A really good overview of tokenisation, with examples and videos.
 - Neptune.ai (2025). [The ultimate guide to word embeddings.](https://neptune.ai/blog/word-embeddings-guide) A clear and practical introduction to word embeddings.
 - Neptune.ai (2025). [Tokenization in NLP: types, challenges, examples, tools.](https://neptune.ai/blog/tokenization-in-nlp) Another article by the same group on tokenisation.
-- StackOverflow (2023). [An intuitive introduction to text embeddings.](https://stackoverflow.blog/2023/11/09/an-intuitive-introduction-to-text-embeddings/) Another practical introduction to embeddings.
+- StackOverflow (2023). [An intuitive introduction to text embeddings.](https://stackoverflow.blog/2023/11/09/an-intuitive-introduction-to-text-embeddings/) A practical introduction to embeddings.
+- Metzger, S. (2022). [A beginner’s guide to tokens, vectors, and embeddings in NLP.](https://medium.com/@saschametzger/what-are-tokens-vectors-and-embeddings-how-do-you-create-them-e2a3e698e037). Easy to read and with interesting examples.
+- Boykis, V. (2022). [What are embeddings?](https://vickiboykis.com/what_are_embeddings/). A whole book dedicated to embeddings. For those who are interested in a more in-depth treatment. There's also a [GitHub repository](https://github.com/veekaybee/what_are_embeddings) with code examples.
 
 ### February 09, 2026:
 
@@ -191,7 +196,7 @@ Readings:
 Readings:
 
 - Obermeyer, Z., Powers, B., Vogeli, C., & Mullainathan, S. (2019). [Dissecting racial bias in an algorithm used to manage the health of populations.](https://science.sciencemag.org/content/366/6464/447) *Science*, *366*(6464), 447-453.
-- Buolamwini, J., & Gebru, T. (2018). [Gender shades: Intersectional accuracy disparities in commercial gender classification.](http://proceedings.mlr.press/v81/buolamwini18a.html) *Proceedings of Machine Learning Research*, *81*, 1-15.
+- Buolamwini, J., & Gebru, T. (2018). [Gender shades: intersectional accuracy disparities in commercial gender classification.](http://proceedings.mlr.press/v81/buolamwini18a.html) *Proceedings of Machine Learning Research*, *81*, 1-15.
 - Angwin, J., Larson, J., Mattu, S., & Kirchner, L. (2016). [Machine bias.](https://www.propublica.org/article/machine-bias-risk-assessments-in-criminal-sentencing) *ProPublica*.
 
 ## Module 5 — Policy, governance and social impact
@@ -228,7 +233,7 @@ Readings:
 
 Readings:
 
-- Acemoglu, D., & Restrepo, P. (2019). [Automation and new tasks: How technology displaces and reinstates labor.](https://www.aeaweb.org/articles?id=10.1257/jep.33.2.3) *Journal of Economic Perspectives*, *33*(2), 3-30.
+- Acemoglu, D., & Restrepo, P. (2019). [Automation and new tasks: how technology displaces and reinstates labor.](https://www.aeaweb.org/articles?id=10.1257/jep.33.2.3) *Journal of Economic Perspectives*, *33*(2), 3-30.
 - World Economic Forum. (2025). [The future of jobs report 2025.](https://www.weforum.org/reports/the-future-of-jobs-report-2025) A comprehensive report on how jobs are expected to change.
 
 ## Module 6 — Applications, limits and projects
@@ -254,7 +259,7 @@ Readings:
 
 Readings:
 
-- Helmus, T. C. (2022). [Artificial intelligence, deepfakes, and disinformation: A primer.](https://www.rand.org/pubs/perspectives/PEA1043-1.html) *RAND Corporation*.
+- Helmus, T. C. (2022). [Artificial intelligence, deepfakes, and disinformation: a primer.](https://www.rand.org/pubs/perspectives/PEA1043-1.html) *RAND Corporation*.
 - Chesney, R., & Citron, D. K. (2019). [Deepfakes and the new disinformation war.](https://www.foreignaffairs.com/articles/world/2018-12-11/deepfakes-and-new-disinformation-war) *Foreign Affairs*.
 
 ### April 15, 2026:
@@ -265,8 +270,8 @@ Readings:
 Readings:
 
 - Amodei, D., et al. (2016). [Concrete problems in AI safety.](https://arxiv.org/abs/1606.06565) *arXiv preprint*. A highly influential paper on the practical challenges of AI safety.
-- Ji, J., Qiu, T., Chen, B., Zhang, B., Lou, H., Wang, K., ... & Gao, W. (2023). [Ai alignment: A comprehensive survey.](https://arxiv.org/abs/2310.19852) *arXiv preprint*. A survey of the field of AI alignment.
-- Zhi-Xuan, T., Carroll, M., Franklin, M., & Ashton, H. (2025). [Beyond Preferences in AI Alignment: T. Zhi-Xuan et al. Philosophical Studies, 182(7), 1813-1863.](https://link.springer.com/article/10.1007/s11098-024-02249-w) A philosophical take on the limits of rational choice in AI alignment. A little more abstract, but very interesting.
+- Ji, J., Qiu, T., Chen, B., Zhang, B., Lou, H., Wang, K., ... & Gao, W. (2023). [Ai alignment: a comprehensive survey.](https://arxiv.org/abs/2310.19852) *arXiv preprint*. A survey of the field of AI alignment.
+- Zhi-Xuan, T., Carroll, M., Franklin, M., & Ashton, H. (2025). [Beyond Preferences in AI Alignment](https://link.springer.com/article/10.1007/s11098-024-02249-w). *Philosophical Studies*, 182(7), 1813-1863. A philosophical take on the limits of rational choice in AI alignment. A little more abstract, but very interesting.
 - Russell, S. (2017). [3 principles for creating safer AI.](https://www.ted.com/talks/stuart_russell_3_principles_for_creating_safer_ai) *TED Talk*.
 
 ### April 20, 2026:

@@ -2,70 +2,71 @@
 title: "Syllabus"
 ---
 
-Welcome to [DATASCI 185](https://github.com/danilofreire/datasci185)! This course offers a non-technical introduction to artificial intelligence and its effects on institutions, work and everyday life. The course is practical: students will learn how modern systems are designed and how to ask the right questions about data, reliability and harms. The course combines short demonstrations (no programming experience required), case studies, and project work. It is suitable for undergraduate students from any faculty who want a grounded understanding of what AI can and cannot do.
+Welcome to [DATASCI 185!](https://github.com/danilofreire/datasci185) This course offers a non-technical introduction to artificial intelligence and its effects on institutions, work and everyday life. The course is practical: students will learn how modern systems are designed and how to ask the right questions about data, reliability and harms. The course combines short demonstrations (no programming experience required), case studies, and project work. It is suitable for undergraduate students from any faculty who want a grounded understanding of what AI can and cannot do.
 
-# Course Information
+# Learning objectives
 
-We will meet on Mondays and Wednesdays from 4pm to 4:50pm in the [Psychology Building, Room 290](https://maps.app.goo.gl/orrT4jaoxjYiojkL7). The course will be a mix of lectures, discussions, and hands-on activities. Therefore, it is important that you read the assigned readings before class. Students are encouraged to participate and are most welcome to express their views openly and freely. I would suggest you to bring some notes to the class so that we can discuss together the topics you find most interesting.
+By the end of the course, students will be able to:
 
-All information about the course will be available at <https://danilofreire.github.io/datasci185>. The syllabus will be updated periodically according to the progress of the class. Please remember to visit the website regularly.
+- Explain the main ideas behind contemporary AI systems in plain language.
+- Identify common failure modes of AI systems and the data issues that cause them.
+- Read and assess claims about AI in news articles, product pages and policy documents.
+- Design a small, realistic plan for an AI application, including data needs, evaluation, and a basic harm-mitigation strategy.
+- Reflect critically on ethical, legal and social questions raised by AI deployment.
 
-# Learning Objectives
+# Course logistics
 
-By the end of this course, students will be able to:
+- **Lectures:** Mondays and Wednesdays, 4-4:50pm.
+- **Location:** [Psychology Building, Room 290](https://maps.app.goo.gl/orrT4jaoxjYiojkL7).
+- **Instructor:** Danilo Freire ([danilo.freire@emory.edu](mailto:danilo.freire@emory.edu)). Office hours by appointment; please email me to arrange a time.
+- **Materials:** Lecture notes, tutorials, and assignment templates are on [the course GitHub repository](https://github.com/danilofreire/datasci185). Students must check the repository often for updates.
 
-1. Explain the main ideas behind contemporary AI systems in plain language.
-2. Identify common failure modes of AI systems and the data issues that cause them.
-3. Read and assess claims about AI in news articles, product pages and policy documents.
-4. Design a small, realistic plan for an AI application, including data needs, evaluation, and a basic harm-mitigation strategy.
-5. Reflect critically on ethical, legal and social questions raised by AI deployment.
-
-# Prerequisites and Software
+# Prerequisites and software
 
 No formal prerequisites. Familiarity with spreadsheets, basic statistics or introductory programming is useful but not required. We will discuss some simple Python code snippets in class, but no programming experience is needed.
 
-# Readings and Resources
+# Readings and resources
 
 Readings are short papers, essays and tutorials rather than a single textbook. Links and PDFs will be provided on the course website. Please note that the syllabus may be updated during the semester. For those interested in digging deeper into some of the topics we cover, here are some recommended books and resources:
 
-## Books
+### Books
 
-- [Artificial Intelligence: A Guide for Thinking Humans](https://melaniemitchell.me/aibook/) by Melanie Mitchell (2020). A clear, non-technical overview of AI concepts and history.
-- [The Master Algorithm](https://www.basicbooks.com/titles/pedro-domingos/the-master-algorithm/9780465065707/) by Pedro Domingos (2015). A readable introduction to machine learning concepts and applications.
-- [The Coming Wave: AI, Power, and Our Future](https://www.penguinrandomhouse.com/books/713377/the-coming-wave-by-vinod-khosla-and-brock-manville/) by Mustafa Suleyman and Michael Bhaskar (2025). An award-winning book on the transformative potential of AI and its societal implications.
-- [The Alignment Problem: Machine Learning and Human Values](https://www.penguinrandomhouse.com/books/622487/the-alignment-problem-by-brian-christian/) by Brian Christian (2020). An exploration of what can go wrong when AI systems are deployed in the real world.
-- [AI & I: An Intellectual History of Artificial Intelligence](https://mitpress.mit.edu/9780262548731/ai-and-i/) by Eugene Charniak (2024). A new book by a leading AI researcher, covering the history of the field from the 1950s to the present day.
-- [Weapons of Math Destruction: How Big Data Increases Inequality and Threatens Democracy](https://weaponsofmathdestructionbook.com/) by Cathy O'Neil (2016). A book on the dangers of unregulated mathematical models.
+- [Artificial intelligence: a guide for thinking humans](https://melaniemitchell.me/aibook/) by Melanie Mitchell (2020). A clear, non-technical overview of AI concepts and history.
+- [The master algorithm](https://www.basicbooks.com/titles/pedro-domingos/the-master-algorithm/9780465065707/) by Pedro Domingos (2015). A readable introduction to machine learning concepts and applications.
+- [The coming wave: AI, power, and our future](https://www.penguinrandomhouse.com/books/713377/the-coming-wave-by-vinod-khosla-and-brock-manville/) by Mustafa Suleyman and Michael Bhaskar (2025). An award-winning book on the transformative potential of AI and its societal implications.
+- [The alignment problem: machine learning and human values](https://www.penguinrandomhouse.com/books/622487/the-alignment-problem-by-brian-christian/) by Brian Christian (2020). An exploration of what can go wrong when AI systems are deployed in the real world.
+- [AI & I: An intellectual history of artificial intelligence](https://mitpress.mit.edu/9780262548731/ai-and-i/) by Eugene Charniak (2024). A new book by a leading AI researcher, covering the history of the field from the 1950s to the present day.
+- [Weapons of math destruction: how big data increases inequality and threatens democracy](https://weaponsofmathdestructionbook.com/) by Cathy O'Neil (2016). A book on the dangers of unregulated mathematical models.
 - [Atlas of AI: Power, Politics, and the Planetary Costs of Artificial Intelligence](https://www.penguinrandomhouse.com/books/667487/atlas-of-ai-by-kate-crawford/) by Kate Crawford (2021). A critical look at the social and environmental impacts of AI technologies.
 
-## Online Courses
+### Online courses
 
-- [AI For Everyone](https://www.coursera.org/learn/ai-for-everyone) by Andrew Ng (Coursera). A non-technical introduction to AI concepts and applications. Free to audit, with a paid certificate option.
+- [AI for everyone](https://www.coursera.org/learn/ai-for-everyone) by Andrew Ng (Coursera). A non-technical introduction to AI concepts and applications. Free to audit, with a paid certificate option.
 - [Elements of AI](https://www.elementsofai.com/) by the University of Helsinki. A free, friendly introduction to AI and some of its methods.
-- [AI Essentials](https://grow.google/ai-essentials/) by Google (Coursera). This programme is designed for people who want to gain practical AI skills for the workplace with no experience required.
-- [Google Prompting Essentials](https://grow.google/prompting-essentials/) by Google (Coursera). A short course on how to effectively use and design prompts for large language models.
-- [Radical Ideas in AI Ethics](https://www.edx.org/learn/computer-science/pragmatic-ai-labs-radical-ideas-ai-ethics) by Pragmatic AI Labs (edX). A course that discusses AI through the lens of human rights and digital autonomy.
+- [AI essentials](https://grow.google/ai-essentials/) by Google (Coursera). This programme is designed for people who want to gain practical AI skills for the workplace with no experience required.
+- [Google prompting essentials](https://grow.google/prompting-essentials/) by Google (Coursera). A short course on how to effectively use and design prompts for large language models.
+- [Radical ideas in AI ethics](https://www.edx.org/learn/computer-science/pragmatic-ai-labs-radical-ideas-ai-ethics) by Pragmatic AI Labs (edX). A course that discusses AI through the lens of human rights and digital autonomy.
 
-## Other Resources
+### Other resources
 
-- [In Machines We Trust](https://www.technologyreview.com/supertopic/in-machines-we-trust/). A podcast series by MIT Technology Review about the promises and perils of AI. Very accessible and engaging.
-- [AI for the Rest of Us](https://aifortherestofus.com/). 25-30 minute episodes focused on explaining AI concepts to non-technical listeners.
-- [The Gradient](https://thegradient.pub/). A publication that features accessible articles on AI research.
+- [In machines we trust](https://www.technologyreview.com/supertopic/in-machines-we-trust/). A podcast series by MIT Technology Review about the promises and perils of AI. Very accessible and engaging.
+- [AI for the rest of us](https://aifortherestofus.com/). 25-30 minute episodes focused on explaining AI concepts to non-technical listeners.
+- [The gradient](https://thegradient.pub/). A publication that features accessible articles on AI research.
 - [AI Now Institute](https://ainowinstitute.org/). Research institute focused on the social implications of AI.
 - [AI for Good Lab](https://www.microsoft.com/en-us/research/group/ai-for-good-research-lab/). A Microsoft research group that highlights how AI can change society for the better.
-- [The AI Incident Database](https://incidentdatabase.ai/). A collection of real-world cases where AI systems have caused harm or failed.
-- [Teachable Machine](https://teachablemachine.withgoogle.com/). A web-based tool by Google that allows users to create simple machine learning models without coding.
-- [The Algorithm](https://www.technologyreview.com/the-algorithm/). A newsletter by MIT Technology Review that covers the latest developments in AI.
+- [The AI incident database](https://incidentdatabase.ai/). A collection of real-world cases where AI systems have caused harm or failed.
+- [Teachable machine](https://teachablemachine.withgoogle.com/). A web-based tool by Google that allows users to create simple machine learning models without coding.
+- [The algorithm](https://www.technologyreview.com/the-algorithm/). A newsletter by MIT Technology Review that covers the latest developments in AI.
 
 # Assessments
 
-- **Problem sets (10) — 50%**. Short conceptual and practical tasks. Submit Jupyter notebooks (`.ipynb`), Word documents, or PDFs. Late submissions incur a 10% penalty per day unless authorised in advance. Collaboration for discussion is allowed but answers must be written independently; list collaborators on submission.
+- **Problem sets (10) — 50%**. Short conceptual and practical tasks. Submit Jupyter notebooks (`.ipynb`), Word documents, or PDFs. Late submissions incur a 10% penalty per day unless authorised in advance. Collaboration for discussion is allowed but answers must be written independently; list collaborators on submission.  
 
-- **In-class quizzes (5) — 30%**. Each quiz occupies a full lecture. Quizzes are open-book/open-notes and individual assessments. Discussion during quizzes is not permitted.
+- **In-class quizzes (5) — 30%**. Each quiz occupies a full lecture. Quizzes are open-book/open-notes and individual assessments. Discussion during quizzes is not permitted.  
 
 - **Final group project — 20%**. Groups of 3–4 produce a report and a short demo video. The project involves conceptual elements and a harms assessment. More details will be provided in class.
 
-# Grading Scale
+# Grading scale
 
 | Grade | A  | A- | B+ | B  | B- | C  | D  | F  |
 |-------|----|----|----|----|----|----|----|----|
@@ -73,7 +74,7 @@ Readings are short papers, essays and tutorials rather than a single textbook. L
 
 Final grades are rounded to the nearest point.
 
-# Academic Integrity and AI Use
+# Academic integrity and AI use
 
 Generative AI tools (for example ChatGPT, Claude, GitHub Copilot) may be used as aids for brainstorming or drafting, but all AI use must be declared on submissions. Students must take responsibility for correctness and must attribute any direct text or code produced by AI. The Emory Honour Code applies.
 
