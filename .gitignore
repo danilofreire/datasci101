@@ -638,7 +638,7 @@ $RECYCLE.BIN/
 **/*.quarto_ipynb
 
 # Agent lecture instructions (private)
-lectures/agent-lectures.md
+lectures/agents.md
 
 # VSCode
 .vscode/
