@@ -47,9 +47,9 @@ Readings:
 
 - Athalye, A., Northcutt, C., & Mueller, J. (2024). [Dataset creation and curation](https://dcai.csail.mit.edu/2024/dataset-creation-curation/) in *Data-Centric AI*. A chapter from a forthcoming book on data-centric AI, covering the main ideas in dataset design.
 - Rich, A. S., & Gureckis, T. M. (2019). [Lessons for artificial intelligence from the study of natural stupidity.](https://www.nature.com/articles/s42256-019-0038-z) *Nature Machine Intelligence*, 1(4), 174-180. A title this good is hard to find. The article discusses different sources of bias in AI systems.
-- Sapien Labs. (2024). [Labeling data for machine learning: best practices and quality control.](https://www.sapien.io/blog/labeling-data-for-machine-learning-best-practices-and-quality-control) A practical guide to data labeling, with tips and common pitfalls.
+- Sapien Labs. (2024). [Labeling data for machine learning: best practices and quality control.](https://www.sapien.io/blog/labeling-data-for-machine-learning-best-practices-and-quality-control) A practical guide to data labelling, with tips and common pitfalls.
 - Liang, W., Tadesse, G. A., Ho, D., Fei-Fei, L., Zaharia, M., Zhang, C., & Zou, J. (2022). [Advances, challenges and opportunities in creating data for trustworthy AI.](https://www.nature.com/articles/s42256-022-00516-1) *Nature Machine Intelligence*, 4(8), 669-677. A good discussion on the challenges of creating high-quality datasets.
-- Chai, C., & Li, G. (2020). [Human-in-the-loop Techniques in Machine Learning.](http://sites.computer.org/debull/A20sept/p37.pdf) *IEEE Data Eng. Bull.*, 43(3), 37-52. A little more technical, but quite comprehensive.
+- Chai, C., & Li, G. (2020). [Human-in-the-loop techniques in machine learning.](http://sites.computer.org/debull/A20sept/p37.pdf) *IEEE Data Eng. Bull.*, 43(3), 37-52. A little more technical, but quite comprehensive.
 
 ### January 28, 2026:
 
@@ -101,13 +101,16 @@ Readings:
 
 ### February 09, 2026:
 
-- Lecture 07: [How machines analyse images and audio](https://raw.githack.com/danilofreire/datasci185/main/lectures/lecture-07/07-vision-audio.html).
+- Lecture 07: [How machines see and hear](https://raw.githack.com/danilofreire/datasci185/main/lectures/lecture-07/07-multimodal.html).
 
 Readings:
 
 - O'Shea, K., & Nash, R. (2015). [An introduction to convolutional neural networks.](https://arxiv.org/abs/1511.08458) *arXiv preprint*. A clear and concise tutorial.
-- DataCamp (2025). [What is computer vision? A beginner guide to image analysis.](https://www.datacamp.com/blog/what-is-computer-vision) Simple and illustrated introduction.
-- AltexSoft (2025). [How AI sound, music, and voice generation works.](https://www.altexsoft.com/blog/sound-music-voice-generation/) Another practical introduction.
+- Gupta, A. (2025). [How computers see the world: a beginner's guide to CNNs](https://pub.towardsai.net/how-computers-see-the-world-a-beginners-guide-to-cnns-c847ab855104) An illustrated introduction to convolutional neural networks. Feel free to skip the coding section if you are not interested.
+- AltexSoft (2025). [How AI sound, music, and voice generation works.](https://www.altexsoft.com/blog/sound-music-voice-generation/) Another practical introduction. It goes a little beyond what we cover in class.
+- Raschka, S. (2024). [Understanding Multimodal LLMs](https://magazine.sebastianraschka.com/p/understanding-multimodal-llms). More technical but clear.
+- Wu, J., Gan, W., Chen, Z., Wan, S., & Yu, P. S. (2023). [Multimodal Large Language Models: A Survey.](https://arxiv.org/abs/2311.13165) *arXiv preprint*. 
+- Radford, A., Kim, J. W., Xu, T., Brockman, G., McLeavey, C., & Sutskever, I. (2023, July). [Robust speech recognition via large-scale weak supervision.](https://cdn.openai.com/papers/whisper.pdf) In *International conference on machine learning* (pp. 28492-28518). PMLR. The original paper for [Whisper](https://openai.com/research/whisper).
 
 ### February 11, 2026:
 
@@ -117,33 +120,40 @@ Readings:
 
 ### February 16, 2026:
 
-- Lecture 09: [Behavioural testing: examples and demonstrations](https://raw.githack.com/danilofreire/datasci185/main/lectures/lecture-09/09-testing.html).
+- Lecture 09: [Prompt engineering, meta-prompting, and AI agents](https://raw.githack.com/danilofreire/datasci185/main/lectures/lecture-09/09-prompting.html).
 
-No required readings for this lecture. We will do live demonstrations in class and discuss the results.
+Readings:
+
+- Anthropic (2025). [Prompt engineering overview](https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/overview). Official guide from Claude's creators.
+- OpenAI (2025). [Prompt engineering](https://platform.openai.com/docs/guides/prompt-engineering). OpenAI's best practices.
+- Google (2025). [Gemini for Workspace Prompting Guide](https://services.google.com/fh/files/misc/gemini-for-google-workspace-prompting-guide-101.pdf). The persona-task-context-format (PTCF) framework.
+- Wei, J., et al. (2022). [Chain-of-Thought prompting elicits reasoning in large language models](https://arxiv.org/abs/2201.11903). The original CoT paper.
+- [Prompting Guide](https://www.promptingguide.ai/). Community-maintained reference with examples.
+- Google (2025). [Prompting essentials](https://grow.google/prompting-essentials/). Free course on Coursera.
 
 ## Module 3 — Retrieval, generation and pipelines
 
 ### February 18, 2026:
 
-- Lecture 10: [Retrieval-augmented workflows and semantic search](https://raw.githack.com/danilofreire/datasci185/main/lectures/lecture-10/10-rag.html).
+- Lecture 10: [Creativity and hallucination](https://raw.githack.com/danilofreire/datasci185/main/lectures/lecture-10/10-hallucination.html).
 - **Assignment 04 due (5%).**
 - [**Assignment 05**](https://github.com/danilofreire/datasci185/blob/main/assignments/05-assignment.ipynb).
-
-Readings:
-
-- Amazon Web Services (2025). [What is retrieval-augmented generation (RAG)?](https://aws.amazon.com/what-is/retrieval-augmented-generation/) Beginners' guide to RAG.
-- Mastering LLM (2024). [11 chunking strategies for RAG — simplified & visualized](https://masteringllm.medium.com/11-chunking-strategies-for-rag-simplified-visualized-df0dbec8e373) Nice explanation of chunking strategies.
-- Slack (2025). [Semantic search explained: how it works, and why it matters.](https://slack.com/blog/productivity/semantic-search-explained-how-it-works-and-why-it-matters) Good explainer.
-
-### February 23, 2026:
-
-- Lecture 11: [Creativity and hallucination](https://raw.githack.com/danilofreire/datasci185/main/lectures/lecture-11/11-hallucination.html).
 
 Readings:
 
 - Jiang, X., Tian, Y., Hua, F., Xu, C., Wang, Y., & Guo, J. (2024). [A survey on large language model hallucination via a creativity perspective.](https://arxiv.org/abs/2402.06647) *arXiv preprint*.
 - Wikipedia (2025). [Hallucination (artificial intelligence).](https://en.wikipedia.org/wiki/Hallucination_(artificial_intelligence)) A well-written overview.
 - OpenAI (2024). [Does ChatGPT tell the truth?](https://help.openai.com/en/articles/8313428-does-chatgpt-tell-the-truth) Practical advice.
+
+### February 23, 2026:
+
+- Lecture 11: [Retrieval-augmented workflows and semantic search](https://raw.githack.com/danilofreire/datasci185/main/lectures/lecture-11/11-rag.html).
+
+Readings:
+
+- Amazon Web Services (2025). [What is retrieval-augmented generation (RAG)?](https://aws.amazon.com/what-is/retrieval-augmented-generation/) Beginners' guide to RAG.
+- Mastering LLM (2024). [11 chunking strategies for RAG — simplified & visualized](https://masteringllm.medium.com/11-chunking-strategies-for-rag-simplified-visualized-df0dbec8e373) Nice explanation of chunking strategies.
+- Slack (2025). [Semantic search explained: how it works, and why it matters.](https://slack.com/blog/productivity/semantic-search-explained-how-it-works-and-why-it-matters) Good explainer.
 
 ### February 25, 2026:
 
@@ -164,27 +174,27 @@ Readings:
 
 ### March 04, 2026:
 
-- Lecture 14: [Types of bias and how they arise](https://raw.githack.com/danilofreire/datasci185/main/lectures/lecture-14/14-bias.html).
+- Lecture 14: [Documentation and dataset governance](https://raw.githack.com/danilofreire/datasci185/main/lectures/lecture-14/14-documentation.html).
 - **Assignment 06 due (5%).**
 - [**Assignment 07**](https://github.com/danilofreire/datasci185/blob/main/assignments/07-assignment.ipynb).
-
-Readings:
-
-- Barocas, S., Hardt, M., & Narayanan, A. (2019). [Fairness and machine learning](https://fairmlbook.org/). Chapter 2: When is automated decision making legitimate?
-- Mehrabi, N., Morstatter, F., Saxena, N., Lettich, A., & Galstyan, A. (2021). [A survey on bias and fairness in machine learning.](https://arxiv.org/abs/1908.09635) *ACM Computing Surveys*, *54*(6), 1-35.
-- Silberg, J., & Manyika, J. (2019). [Notes from the AI frontier: tackling bias in AI (and in humans).](https://www.mckinsey.com/~/media/McKinsey/Featured%20Insights/Artificial%20Intelligence/Tackling%20bias%20in%20artificial%20intelligence%20and%20in%20humans/MGI-Tackling-bias-in-AI-June-2019.pdf) McKinsey Global Institute.
-
-### March 9 and 11, 2026: Spring Break (No Classes)
-
-### March 16, 2026:
-
-- Lecture 15: [Documentation and dataset governance](https://raw.githack.com/danilofreire/datasci185/main/lectures/lecture-15/15-documentation.html). 
 
 Readings:
 
 - Gebru, T., et al. (2018). [Datasheets for datasets.](https://arxiv.org/abs/1803.09010) *arXiv preprint*. The original paper proposing datasheets for datasets.
 - Mitchell, M., et al. (2019). [Model cards for model reporting.](https://arxiv.org/abs/1810.03993) *Proceedings of FAccT*. The original paper proposing model cards.
 - IBM (2025). [What is data lineage?](https://www.ibm.com/think/topics/data-lineage) A short guide to data lineage.
+
+### March 9 and 11, 2026: Spring Break (No Classes)
+
+### March 16, 2026:
+
+- Lecture 15: [Types of bias and how they arise](https://raw.githack.com/danilofreire/datasci185/main/lectures/lecture-15/15-bias.html). 
+
+Readings:
+
+- Barocas, S., Hardt, M., & Narayanan, A. (2019). [Fairness and machine learning](https://fairmlbook.org/). Chapter 2: When is automated decision making legitimate?
+- Mehrabi, N., Morstatter, F., Saxena, N., Lettich, A., & Galstyan, A. (2021). [A survey on bias and fairness in machine learning.](https://arxiv.org/abs/1908.09635) *ACM Computing Surveys*, *54*(6), 1-35.
+- Silberg, J., & Manyika, J. (2019). [Notes from the AI frontier: tackling bias in AI (and in humans).](https://www.mckinsey.com/~/media/McKinsey/Featured%20Insights/Artificial%20Intelligence/Tackling%20bias%20in%20artificial%20intelligence%20and%20in%20humans/MGI-Tackling-bias-in-AI-June-2019.pdf) McKinsey Global Institute.
 
 ### March 18, 2026:
 
@@ -235,16 +245,22 @@ Readings:
 
 - Acemoglu, D., & Restrepo, P. (2019). [Automation and new tasks: how technology displaces and reinstates labor.](https://www.aeaweb.org/articles?id=10.1257/jep.33.2.3) *Journal of Economic Perspectives*, *33*(2), 3-30.
 - World Economic Forum. (2025). [The future of jobs report 2025.](https://www.weforum.org/reports/the-future-of-jobs-report-2025) A comprehensive report on how jobs are expected to change.
-
+- Anthropic (2026). [Anthropic economic index.](https://www.anthropic.com/research/economic-index-primitives) How people use Claude and what are its possible impacts on the economy.
+- OpenAI (2025). [How people are using ChatGPT.](https://openai.com/index/how-people-are-using-chatgpt/) Same thing, but for ChatGPT. Spoiler: most people are not using it for work. The full article is available [here](https://www.nber.org/papers/w34255).
+ 
 ## Module 6 — Applications, limits and projects
 
 ### April 06, 2026:
 
-- Lecture 21: [AI in health, education and public services](https://raw.githack.com/danilofreire/datasci185/main/lectures/lecture-21/21-applications.html).
+- Lecture 21: [AI in healthcare and education](https://raw.githack.com/danilofreire/datasci185/main/lectures/lecture-21/21-applications.html).
 
 Readings:
 
-- Davenport, T., & Kalakota, R. (2019). [The potential for artificial intelligence in healthcare.](https://www.sciencedirect.com/science/article/pii/S2514664524010592) *Future healthcare journal*, 6(2), 94-98.
+- Opel, N., & Breakspear, M. (2026). [Transforming mental health research and care through artificial intelligence](https://www.science.org/doi/10.1126/science.adz9193) *Science*, *391*(6782), 249-258. The authors review ways in which AI may reduce care inequities when deployed responsibly. They discuss how AI can be useful across several stages of care, from prevention to treatment and rehabilitation.
+- Agentic Health AI. (2025). [Awesome AI agents for healthcare](https://github.com/AgenticHealthAI/awesome-ai-agents-for-healthcare). A curated list of research papers, projects, and resources related to the application of AI agents for healthcare, including medical image analysis, EHR manipulation, counseling, drug discovery, patient dialogue, and healthcare administration.
+- Habicht, J., Dina, L. M., McFadyen, J., Stylianou, M., Harper, R., Hauser, T. U., & Rollwage, M. (2025). [Generative AI–enabled therapy support tool for improved clinical outcomes and patient engagement in group therapy: real-world observational study](https://www.jmir.org/2025/1/e60435). *Journal of Medical Internet Research*, *27*, e60435. An experiment on the use of AI in group therapy. It has a positive result.
+- Moore, J., Grabb, D., Agnew, W., Klyman, K., Chancellor, S., Ong, D. C., & Haber, N. (2025). [Expressing stigma and inappropriate responses prevents LLMs from safely replacing mental health providers](https://arxiv.org/abs/2504.18412). *arXiv preprint arXiv:2504.18412*. The authors question the idea that LLMs should replace mental health providers.
+- OpenAI. (2025). [Strengthening ChatGPT’s responses in sensitive conversations](https://openai.com/index/strengthening-chatgpt-responses-in-sensitive-conversations/). OpenAI's approach to making ChatGPT more helpful in sensitive conversations.
 - Zhai, X., et al. (2021). [A review of artificial intelligence (AI) in education from 2010 to 2020.](https://onlinelibrary.wiley.com/doi/abs/10.1155/2021/8812542) *Complexity*, 2021(1), 8812542.
 
 ### April 08, 2026:
@@ -270,8 +286,9 @@ Readings:
 Readings:
 
 - Amodei, D., et al. (2016). [Concrete problems in AI safety.](https://arxiv.org/abs/1606.06565) *arXiv preprint*. A highly influential paper on the practical challenges of AI safety.
-- Ji, J., Qiu, T., Chen, B., Zhang, B., Lou, H., Wang, K., ... & Gao, W. (2023). [Ai alignment: a comprehensive survey.](https://arxiv.org/abs/2310.19852) *arXiv preprint*. A survey of the field of AI alignment.
-- Zhi-Xuan, T., Carroll, M., Franklin, M., & Ashton, H. (2025). [Beyond Preferences in AI Alignment](https://link.springer.com/article/10.1007/s11098-024-02249-w). *Philosophical Studies*, 182(7), 1813-1863. A philosophical take on the limits of rational choice in AI alignment. A little more abstract, but very interesting.
+- Ji, J., Qiu, T., Chen, B., Zhang, B., Lou, H., Wang, K., ... & Gao, W. (2023). [AI alignment: a comprehensive survey.](https://arxiv.org/abs/2310.19852) *arXiv preprint*. A survey of the field of AI alignment.
+- Zhi-Xuan, T., Carroll, M., Franklin, M., & Ashton, H. (2025). [Beyond preferences in AI alignment](https://link.springer.com/article/10.1007/s11098-024-02249-w). *Philosophical Studies*, 182(7), 1813-1863. A philosophical take on the limits of rational choice in AI alignment. A little more abstract, but very interesting.
+- Anthropic. (2025). [Constitutional classifiers: defending against universal jailbreaks](https://www.anthropic.com/news/constitutional-classifiers). A jailbreak defense system using input/output classifiers trained on synthetic data. It reduced jailbreak success rates by a lot... but some people still found ways around it. If you would like to read the whole academic paper, [check it out here](https://arxiv.org/abs/2501.18837).
 - Russell, S. (2017). [3 principles for creating safer AI.](https://www.ted.com/talks/stuart_russell_3_principles_for_creating_safer_ai) *TED Talk*.
 
 ### April 20, 2026:
