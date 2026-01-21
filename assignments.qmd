@@ -39,16 +39,16 @@ You can also download the entire repository:
 
 | Assignment | Due Date | Link |
 |-------------|----------|------|
-| 1 | January 28, 2026 | [Assignment 01](https://github.com/danilofreire/datasci185/tree/main/assignments/01-assignment) |
-| 2 | February 4, 2026 | [Assignment 02](https://github.com/danilofreire/datasci185/tree/main/assignments/02-assignment) |
-| 3 | February 11, 2026 | [Assignment 03](https://github.com/danilofreire/datasci185/tree/main/assignments/03-assignment) |
-| 4 | February 18, 2026 | [Assignment 04](https://github.com/danilofreire/datasci185/tree/main/assignments/04-assignment) |
-| 5 | February 25, 2026 | [Assignment 05](https://github.com/danilofreire/datasci185/tree/main/assignments/05-assignment) |
-| 6 | March 4, 2026 | [Assignment 06](https://github.com/danilofreire/datasci185/tree/main/assignments/06-assignment) |
-| 7 | March 18, 2026 | [Assignment 07](https://github.com/danilofreire/datasci185/tree/main/assignments/07-assignment) |
-| 8 | April 1, 2026 | [Assignment 08](https://github.com/danilofreire/datasci185/tree/main/assignments/08-assignment) |
-| 9 | April 8, 2026 | [Assignment 09](https://github.com/danilofreire/datasci185/tree/main/assignments/09-assignment) |
-| 10 | April 15, 2026 | [Assignment 10](https://github.com/danilofreire/datasci185/tree/main/assignments/10-assignment) |
+| 1 | January 28, 2026 | [Assignment 01](https://github.com/danilofreire/datasci185/tree/main/assignments) |
+| 2 | February 4, 2026 | [Assignment 02](https://github.com/danilofreire/datasci185/tree/main/assignments) |
+| 3 | February 11, 2026 | [Assignment 03](https://github.com/danilofreire/datasci185/tree/main/assignments) |
+| 4 | February 18, 2026 | [Assignment 04](https://github.com/danilofreire/datasci185/tree/main/assignments) |
+| 5 | February 25, 2026 | [Assignment 05](https://github.com/danilofreire/datasci185/tree/main/assignments) |
+| 6 | March 4, 2026 | [Assignment 06](https://github.com/danilofreire/datasci185/tree/main/assignments) |
+| 7 | March 18, 2026 | [Assignment 07](https://github.com/danilofreire/datasci185/tree/main/assignments) |
+| 8 | April 1, 2026 | [Assignment 08](https://github.com/danilofreire/datasci185/tree/main/assignments) |
+| 9 | April 8, 2026 | [Assignment 09](https://github.com/danilofreire/datasci185/tree/main/assignments) |
+| 10 | April 15, 2026 | [Assignment 10](https://github.com/danilofreire/datasci185/tree/main/assignments) |
 
 ## Quiz Timeline
 
