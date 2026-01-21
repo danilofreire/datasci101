@@ -24,7 +24,7 @@ Readings:
 ### January 21, 2026:
 
 - Lecture 02: [A brief history of AI and the recent shift](https://raw.githack.com/danilofreire/datasci185/main/lectures/lecture-02/02-history.html).
-- [**Assignment 01**](https://github.com/danilofreire/datasci185/blob/main/assignments/01-assignment.ipynb).
+- [**Assignment 01**](https://github.com/danilofreire/datasci185/blob/main/assignments).
 
 Readings:
 
@@ -56,7 +56,7 @@ Readings:
 - Lecture 04: [Supervised, unsupervised, and reinforcement learning](https://raw.githack.com/danilofreire/datasci185/main/lectures/lecture-04/04-learning.html).
 - [Kahoot Quiz](https://play.kahoot.it/v2/?quizId=43271e4a-cbfe-4f52-9c13-ec7ef00964a9&hostId=05eb977d-4f8a-440e-9e45-95212b29d103)
 - **Assignment 01 due (5%).**
-- [**Assignment 02**](https://github.com/danilofreire/datasci185/blob/main/assignments/02-assignment.ipynb).
+- [**Assignment 02**](https://github.com/danilofreire/datasci185/blob/main/assignments).
 
 Readings:
 
@@ -88,7 +88,7 @@ Readings:
 - Lecture 06: [How machines handle language: tokens, embeddings and context](https://raw.githack.com/danilofreire/datasci185/main/lectures/lecture-06/06-language.html).
 - [Kahoot Quiz](https://play.kahoot.it/v2/?quizId=11219f35-dabb-45ac-85ad-b8638a6a2769&hostId=05eb977d-4f8a-440e-9e45-95212b29d103)
 - **Assignment 02 due (5%).**
-- [**Assignment 03**](https://github.com/danilofreire/datasci185/blob/main/assignments/03-assignment.ipynb).
+- [**Assignment 03**](https://github.com/danilofreire/datasci185/blob/main/assignments).
 
 Readings:
 
@@ -116,7 +116,7 @@ Readings:
 
 - Lecture 08: [Quiz 01](https://github.com/danilofreire/datasci185-quiz01/).
 - **Assignment 03 due (5%).**
-- [**Assignment 04**](https://github.com/danilofreire/datasci185/blob/main/assignments/04-assignment.ipynb).
+- [**Assignment 04**](https://github.com/danilofreire/datasci185/blob/main/assignments).
 
 ### February 16, 2026:
 
@@ -139,7 +139,7 @@ Readings:
 
 - Lecture 10: [Creativity and hallucination](https://raw.githack.com/danilofreire/datasci185/main/lectures/lecture-10/10-hallucination.html).
 - **Assignment 04 due (5%).**
-- [**Assignment 05**](https://github.com/danilofreire/datasci185/blob/main/assignments/05-assignment.ipynb).
+- [**Assignment 05**](https://github.com/danilofreire/datasci185/blob/main/assignments).
 
 Readings:
 
@@ -161,7 +161,7 @@ Readings:
 
 - Lecture 12: [Quiz 02](https://github.com/danilofreire/datasci185-quiz02/).
 - **Assignment 05 due (5%).**
-- [**Assignment 06**](https://github.com/danilofreire/datasci185/blob/main/assignments/06-assignment.ipynb).
+- [**Assignment 06**](https://github.com/danilofreire/datasci185/blob/main/assignments).
 
 ### March 02, 2026:
 
@@ -178,7 +178,7 @@ Readings:
 
 - Lecture 14: [Documentation and dataset governance](https://raw.githack.com/danilofreire/datasci185/main/lectures/lecture-14/14-documentation.html).
 - **Assignment 06 due (5%).**
-- [**Assignment 07**](https://github.com/danilofreire/datasci185/blob/main/assignments/07-assignment.ipynb).
+- [**Assignment 07**](https://github.com/danilofreire/datasci185/blob/main/assignments).
 
 Readings:
 
@@ -226,7 +226,7 @@ Readings:
 ### March 25, 2026:
 
 - Lecture 18: [Quiz 03](https://github.com/danilofreire/datasci185-quiz03/).
-- [**Assignment 08**](https://github.com/danilofreire/datasci185/blob/main/assignments/08-assignment.ipynb).
+- [**Assignment 08**](https://github.com/danilofreire/datasci185/blob/main/assignments).
 
 ### March 30, 2026:
 
@@ -241,7 +241,7 @@ Readings:
 
 - Lecture 20: [Labour markets and economic effects](https://raw.githack.com/danilofreire/datasci185/main/lectures/lecture-20/20-labour.html).
 - **Assignment 08 due (5%).**
-- [**Assignment 09**](https://github.com/danilofreire/datasci185/blob/main/assignments/09-assignment.ipynb).
+- [**Assignment 09**](https://github.com/danilofreire/datasci185/blob/main/assignments).
 
 Readings:
 
@@ -271,7 +271,7 @@ Readings:
 
 - Lecture 22: [Quiz 04](https://github.com/danilofreire/datasci185-quiz04/).
 - **Assignment 09 due (5%).**
-- [**Assignment 10**](https://github.com/danilofreire/datasci185/blob/main/assignments/10-assignment.ipynb).
+- [**Assignment 10**](https://github.com/danilofreire/datasci185/blob/main/assignments).
 
 ### April 13, 2026:
 

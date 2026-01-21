@@ -228,6 +228,13 @@
     "href": "assignments.html#assignment-timeline",
     "title": "Assignments",
     "section": "Assignment Timeline",
-    "text": "Assignment Timeline\n\n\n\nAssignment\nTopic\nDue Date\nLink\n\n\n\n\n1\nOrientation and AI Overview\nJanuary 28, 2026\nAssignment 01\n\n\n2\nHistory of AI and Transformers\nFebruary 4, 2026\nAssignment 02\n\n\n3\nDataset Design and Labels\nFebruary 11, 2026\nAssignment 03\n\n\n4\nLearning Paradigms and Metrics\nFebruary 18, 2026\nAssignment 04\n\n\n5\nLanguage and Vision\nFebruary 25, 2026\nAssignment 05\n\n\n6\nRAG and Hallucination\nMarch 4, 2026\nAssignment 06\n\n\n7\nPipelines and Monitoring\nMarch 18, 2026\nAssignment 07\n\n\n8\nBias and Documentation\nApril 1, 2026\nAssignment 08\n\n\n9\nRegulation and Privacy\nApril 8, 2026\nAssignment 09\n\n\n10\nLabour Markets and Applications\nApril 15, 2026\nAssignment 10"
+    "text": "Assignment Timeline\n\n\n\nAssignment\nDue Date\nLink\n\n\n\n\n1\nJanuary 28, 2026\nAssignment 01\n\n\n2\nFebruary 4, 2026\nAssignment 02\n\n\n3\nFebruary 11, 2026\nAssignment 03\n\n\n4\nFebruary 18, 2026\nAssignment 04\n\n\n5\nFebruary 25, 2026\nAssignment 05\n\n\n6\nMarch 4, 2026\nAssignment 06\n\n\n7\nMarch 18, 2026\nAssignment 07\n\n\n8\nApril 1, 2026\nAssignment 08\n\n\n9\nApril 8, 2026\nAssignment 09\n\n\n10\nApril 15, 2026\nAssignment 10"
+  },
+  {
+    "objectID": "assignments.html#submission-guidelines",
+    "href": "assignments.html#submission-guidelines",
+    "title": "Assignments",
+    "section": "Submission Guidelines",
+    "text": "Submission Guidelines\n\nSubmit via Canvas by the deadline indicated on the syllabus\nSubmit as a PDF (preferred), as a Word document (.docx) or as a Jupyter Notebook (.ipynb)\nAI use is encouraged: You may use ChatGPT, Claude, Gemini, or other LLMs to help explore questions\nAll responses must be written in your own words and demonstrate understanding\nFor each assignment, briefly mention which AI tool you used (if any)\nScreenshots of your AI interactions are encouraged where relevant\nEach answer should be at least 150-200 words (be concise but thorough)"
   }
 ]
