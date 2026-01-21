@@ -18,7 +18,7 @@ This assignment covers material from **Lectures 01-03**: Introduction to AI, His
 - However, you must **write your answers in your own words** and demonstrate genuine understanding
 - For each answer, please **disclose which AI tool you used** (if any) and briefly describe how it helped you
 - Your answers should be thoughtful and show critical thinking, not just copy-pasted LLM outputs
-- **Each answer should be at least 150-200 words** (no upper limit, but be concise and focused)
+- **Each answer should be at least 100 words** (no upper limit, but be concise and focused)
 - **Screenshots are encouraged** for your interactions with AI tools—include them in your responses when relevant
 - However, **reflection questions must be written in text**, not just screenshots
 - Submit this assignment as a **PDF** (preferred) or Word document via Canvas
@@ -47,31 +47,7 @@ Then **compare** these three explanations. What key elements appear in all three
 
 ---
 
-### Question 2: AI Hype Detective
-
-Find a **recent news article** (from the past 6 months) that makes claims about AI. Paste the link and a key quote.
-
-Then ask an LLM: *"Is this claim accurate? What's the reality behind this headline?"*
-
-Write an **analysis** comparing:
-
-1. What the headline/article claims
-2. What the LLM says about the reality
-3. Your own assessment of whether the article is hype or grounded
-
----
-
-*Your answer:*
-
-\
-
-\
-
-\
-
----
-
-### Question 3: Hallucination Hunt
+### Question 2: Hallucination Hunt
 
 Ask ChatGPT or another LLM: *"Who won the Nobel Prize in Literature in 2030?"*
 
@@ -95,34 +71,7 @@ Try **3 different prompts** that might cause the AI to hallucinate (e.g., asking
 
 ---
 
-### Question 4: True or False Investigation
-
-In Lecture 01, we saw several "True or False" statements about AI. Pick **two** of these statements and do deeper research:
-
-1. "AI understands language like humans do" (False)
-2. "AI will replace all jobs" (Probably not)
-3. "AI hallucinations are easy to spot" (False)
-4. "AI systems can explain why they made a particular decision" (often False)
-
-For each statement:
-
-- Ask an LLM to explain **why** the answer is what it is
-- Find **one real-world example** that illustrates this point
-- Write a brief explanation in your own words
-
----
-
-*Your answer:*
-
-\
-
-\
-
-\
-
----
-
-### Question 5: ELIZA Experiment
+### Question 3: ELIZA Experiment
 
 Visit the ELIZA chatbot (one of the first AI systems from 1966): <https://anthay.github.io/eliza.html>
 
@@ -147,31 +96,7 @@ Have a conversation with ELIZA for at least 5 exchanges. Then have a similar con
 
 ---
 
-### Question 6: AI Winters Reflection
-
-The lecture described two "AI Winters" (1974-1980 and 1987-1993) when funding collapsed because AI failed to meet expectations.
-
-Ask an LLM: *"Are we in an AI bubble today? Could there be another AI winter?"*
-
-Then research and write your own **opinion** on whether:
-
-1. Current AI hype might lead to disappointment
-2. This time is genuinely different
-3. What signs would indicate another winter is coming
-
----
-
-*Your answer:*
-
-\
-
-\
-
-\
-
----
-
-### Question 7: Transformer Explainer Activity
+### Question 4: Transformer Explainer Activity
 
 Visit Georgia Tech's **Transformer Explainer**: <https://poloclub.github.io/transformer-explainer/>
 
@@ -195,7 +120,7 @@ Experiment with the tool and answer:
 
 ---
 
-### Question 8: Garbage In, Garbage Out Demonstration
+### Question 5: Garbage In, Garbage Out Demonstration
 
 Try to "confuse" an LLM with deliberately misleading information:
 
@@ -206,70 +131,6 @@ Try to "confuse" an LLM with deliberately misleading information:
 3. Provide it with a biased prompt and see if the response reflects that bias
 
 Document what happens in each case. How does this illustrate the "garbage in, garbage out" principle?
-
----
-
-*Your answer:*
-
-\
-
-\
-
-\
-
----
-
-### Question 9: Be the Annotator!
-
-In Lecture 03, we saw how hard labelling can be. Now try it yourself!
-
-**Scenario:** You're building a content moderation system. Label each of these as "REMOVE" or "ALLOW":
-
-1. "I hate Mondays so much I could scream!"
-2. "This politician is a complete idiot who doesn't understand economics."
-3. "People who don't vaccinate their kids are terrible parents."
-4. "I wish my ex would just disappear."
-5. "That movie was so bad it should be illegal."
-
-After labelling, ask a classmate (or an LLM pretending to be a classmate) to label the same content.
-
-**Compare your labels:**
-
-1. Where did you disagree?
-2. What made these cases difficult?
-3. What does this tell you about the challenges of training AI content moderators?
-
----
-
-*Your answer:*
-
-\
-
-\
-
-\
-
----
-
-### Question 10: Symbolic AI vs Neural Networks Debate
-
-Lecture 02 described two approaches to AI:
-
-- **Symbolic AI** (1950s-1980s): Hand-coded rules and logic
-- **Neural Networks** (1980s-present): Learning patterns from data
-
-Ask an LLM to roleplay a debate:
-
-*"Pretend you're a symbolic AI researcher from 1985. Argue why symbolic AI is better than neural networks."*
-
-Then ask:
-
-*"Now pretend you're a deep learning researcher from 2020. Argue why neural networks are better than symbolic AI."*
-
-After reading both arguments, write your own assessment:
-
-- What are the strengths and weaknesses of each approach?
-- Are there tasks where one approach is still better?
 
 ---
 
