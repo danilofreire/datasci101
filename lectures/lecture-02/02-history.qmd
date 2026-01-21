@@ -88,7 +88,7 @@ if (!require("fontawesome", character.only = TRUE)) {
 
 :::{.column width=50%}
 :::{style="text-align: center; margin-top: -30px; font-size: 22px;"}
-[![Click to enlarge](figures/ai-timeline.jpg){width="85%"}](#){data-modal-type="image" data-modal-url="figures/ai-timeline.jpg"}
+[![Click to enlarge (all images can be enlarged by clicking on them)](figures/ai-timeline.jpg){width="85%"}](#){data-modal-type="image" data-modal-url="figures/ai-timeline.jpg"}
 
 Source: [University of Queensland's Brain Institute](https://qbi.uq.edu.au/brain/intelligent-machines/history-artificial-intelligence)
 :::
@@ -129,7 +129,7 @@ Source: [Wikipedia - Talos](https://en.wikipedia.org/wiki/Talos)
 :::{style="margin-top: 30px; font-size: 22px;"}
 :::{.columns}
 :::{.column width=50%}
-- [Can intelligence be reduced to rules and symboles, or does it emerge from interconnected units?]{.alert}
+- [Can intelligence be reduced to rules and symbols, or does it emerge from interconnected units?]{.alert}
 - **1642**: [Blaise Pascal](https://en.wikipedia.org/wiki/Blaise_Pascal) builds the [Pascaline](https://en.wikipedia.org/wiki/Pascaline), a mechanical calculator for addition and subtraction
 - **1673**: [Gottfried Leibniz](https://en.wikipedia.org/wiki/Gottfried_Wilhelm_Leibniz) creates a [machine that can multiply and divide](https://en.wikipedia.org/wiki/Leibniz_calculator)
 - **1837**: [Charles Babbage](https://en.wikipedia.org/wiki/Charles_Babbage) designs the [Analytical Engine](https://en.wikipedia.org/wiki/Analytical_Engine), a programmable, general-purpose computer (never completed)
@@ -159,7 +159,7 @@ Source: [Wikipedia - Analytical Engine](https://en.wikipedia.org/wiki/Analytical
   - Ballistics trajectories
   - Census data
 - Often women, who were paid less than male mathematicians
-- This [division of mental labour]{.alert} showed that complex calculations could be broken into simple, mechanical steps
+- This [division of mental labour]{.alert} (Adam Smith!) showed that complex calculations could be broken into simple, mechanical steps
 - Historian Lorraine Daston: [Calculation shifted from "genius" to "merely mechanical"](https://hdsr.mitpress.mit.edu/pub/0aytgrau/release/3)
 :::
 
@@ -179,9 +179,9 @@ Source: [NASA](https://www.nasa.gov/centers-and-facilities/jpl/when-computers-we
 :::{style="margin-top: 30px; font-size: 22px;"}
 :::{.columns}
 :::{.column width=55%}
-- **1936**: [Alan Turing](https://en.wikipedia.org/wiki/Alan_Turing) publishes "[On Computable Numbers](https://www.cs.virginia.edu/~robins/Turing_Paper_1936.pdf)"
+- **1936**: [Alan Turing](https://en.wikipedia.org/wiki/Alan_Turing) publishes "[On Computable Numbers, with an Application to the Entscheidungsproblem](https://www.cs.virginia.edu/~robins/Turing_Paper_1936.pdf)" (decision problem)
 - Introduces the concept of a [universal machine]{.alert} that can compute anything computable
-- **1950**: Publishes "[Computing Machinery and Intelligence](https://phil415.pbworks.com/f/TuringComputing.pdf)"
+- **1950**: Publishes "[Computing Machinery and Intelligence](https://phil415.pbworks.com/f/TuringComputing.pdf)" in [Mind](https://en.wikipedia.org/wiki/Mind_(journal)) (philosophy journal)
   - Proposes the famous [Turing Test](https://en.wikipedia.org/wiki/Turing_test): Can a machine fool a human into thinking it's human?
   - Asks: ["Can machines think?"]{.alert} and reframes it as a practical question (["Can machines do what we (as thinking entities) can do?"]{.alert})
 - Turing's ideas laid the [theoretical foundation]{.alert} for both computing and AI
@@ -324,9 +324,9 @@ Maybe this time is different? 🤷🏻‍♂️
 ## Early neural networks
 ### Inspired by the brain
 
-:::{style="margin-top: 30px; font-size: 20px;"}
+:::{style="margin-top: 30px; font-size: 19px;"}
 :::{.columns}
-:::{.column width=55%}
+:::{.column width=50%}
 - **1943**: [McCulloch](https://en.wikipedia.org/wiki/Warren_McCulloch) and [Pitts](https://en.wikipedia.org/wiki/Walter_Pitts) propose [artificial neurons](https://en.wikipedia.org/wiki/A_Logical_Calculus_of_the_Ideas_Immanent_in_Nervous_Activity)
   - Simple binary units that mimic biological neurons
 - **1958**: [Frank Rosenblatt](https://en.wikipedia.org/wiki/Frank_Rosenblatt) invents the [Perceptron](https://en.wikipedia.org/wiki/Perceptron)
@@ -339,9 +339,14 @@ Maybe this time is different? 🤷🏻‍♂️
 - It took [nearly 20 years for neural networks to make their comeback]{.alert}
 :::
 
-:::{.column width=45%}
+:::{.column width=50%}
+- **How does an artificial neuron work?**
+- Each [input]{.alert} ($x_i$) (e.g., pixel brightness) is multiplied by a [weight]{.alert} ($w_i$) to increase or decrease the importance of that signal, then summed with a [bias]{.alert} ($b$) (a threshold that determines when the neuron "fires"): $z = \sum x_i \cdot w_i + b$
+- The result passes through an [activation function]{.alert} (non-linear transformation) to produce the output: $y = f(z)$
+- Without the activation function, the network would be just a linear model!
+
 :::{style="text-align: center;"}
-[![Perceptron diagram](figures/perceptron.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/perceptron.png"}
+[![Perceptron diagram](figures/perceptron.png){width="80%"}](#){data-modal-type="image" data-modal-url="figures/perceptron.png"}
 
 Source: [AI Mind](https://pub.aimind.so/perceptron-101-the-building-blocks-of-a-neural-network-496f6b9b3826)
 :::
@@ -357,6 +362,7 @@ Source: [AI Mind](https://pub.aimind.so/perceptron-101-the-building-blocks-of-a-
 :::{.column width=55%}
 - **1986**: [Rumelhart](https://en.wikipedia.org/wiki/David_Rumelhart), [Hinton](https://en.wikipedia.org/wiki/Geoffrey_Hinton), and [Williams](https://en.wikipedia.org/wiki/Ronald_J._Williams) popularise [backpropagation](https://en.wikipedia.org/wiki/Backpropagation)
 - You can [train multi-layer networks]{.alert} by propagating errors backwards through the layers
+- It finds functions that are [highly non-linear]{.alert} with very [precise adjustments to many weights]{.alert}
 - Finally, neural networks could learn complex patterns!
 - Renewed interest in [connectionism]{.alert}
 - But challenges remained:
@@ -415,8 +421,8 @@ Source: [Google Research](https://static.googleusercontent.com/media/research.go
 - Annual competition: Classify images into 1,000 categories
 - **2012**: [AlexNet](https://spectrum.ieee.org/alexnet-source-code) ([Krizhevsky, Sutskever, Hinton](https://proceedings.neurips.cc/paper_files/paper/2012/file/c399862d3b9d6b76c8436e924a68c45b-Paper.pdf)) wins by a [huge margin]{.alert}
   - Error rate: 15.3% (next best: 26.2%)
-  - Used [deep convolutional neural networks]{.alert}
-  - Trained on GPUs
+  - Used [deep neural networks]{.alert}
+  - Trained on Graphics Processing Units (GPUs), which are better than Central Processing Units for parallel processing
 - This was a great moment for deep learning!
 - Within years, deep learning dominated computer vision
 - Proved that [neural networks + big data + GPUs = breakthrough]{.alert}
@@ -545,12 +551,11 @@ Source: [Google Cloud](https://cloud.google.com/blog/topics/developers-practitio
 - The [core mechanism]{.alert} that makes transformers powerful
 - For each word, ask: "[Which other words are relevant to understanding me?]{.alert}"
 - Creates three vectors for each token:
-  - **Query (Q)**: "What am I looking for?"
-  - **Key (K)**: "What do I contain?"
-  - **Value (V)**: "What information can I provide?"
+  - **Query (Q)**: "What am I looking for?" (does "it" refer to "animal" or "street"?)
+  - **Key (K)**: "What do I contain?" (check the characteristics of "it" as a token)
+  - **Value (V)**: "What information can I provide?" (provide the information: "ah, it's animal!")
 - Attention score = how well Query matches Key
-- Output = weighted sum of Values
-- Analogy: Like a [search engine]{.alert} where each word searches for relevant context
+- Like a [search engine]{.alert} where each word searches for relevant context
 :::
 
 :::{.column width=45%}
@@ -583,7 +588,7 @@ Source: [Thomas Wiecki](https://twiecki.io/blog/2024/01/04/)
 - When processing "sat", the model might attend strongly to:
   - "cat" (who is sitting?)
   - "mat" (where are they sitting?)
-- [Multi-head attention]{.alert}: Multiple attention patterns in parallel
+- [Multi-head attention]{.alert}: Multiple attention patterns in parallel (division of labour again!)
   - One head might focus on subject-verb relationships
   - Another on adjective-noun relationships
   - GPT-2 uses [12 attention heads]{.alert}
@@ -595,12 +600,13 @@ Source: [Thomas Wiecki](https://twiecki.io/blog/2024/01/04/)
 ## Step 4: Feed-forward and stacking
 ### Building deeper understanding
 
-:::{style="margin-top: 30px; font-size: 24px;"}
+:::{style="margin-top: 30px; font-size: 22px;"}
 :::{.columns}
 :::{.column width=55%}
-- After attention, each token passes through a [feed-forward network]{.alert} (Multi-Layer Perceptron, MLP)
+- After attention, each token passes through a [feed-forward network]{.alert} (FFN, Multi-Layer Perceptron, MLP)
+- Attention is about "looking around" to find connections between words
+- FFN is about "thinking" about what those connections actually mean for each individual word
 - This refines and transforms the representation
-- One attention + one MLP = one "[Transformer Block]{.alert}"
 - Models stack [many blocks]{.alert}:
   - GPT-2 (small): 12 blocks
   - GPT-3: 96 blocks
@@ -612,7 +618,7 @@ Source: [Thomas Wiecki](https://twiecki.io/blog/2024/01/04/)
 
 :::{.column width=45%}
 :::{style="text-align: center;"}
-[![One transformer block](figures/transformer-blocks.png){width="30%"}](#){data-modal-type="image" data-modal-url="figures/transformer-blocks.png"}
+[![One transformer block](figures/transformer-blocks-02.png){width="45%"}](#){data-modal-type="image" data-modal-url="figures/transformer-blocks-02.png"}
 
 Source: [Mohamed Traore](https://www.researchgate.net/figure/Overall-Structure-of-Transformer-Encoder-Block_fig3_365101390)
 :::
