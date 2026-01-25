@@ -95,7 +95,7 @@ Source: [Medium](https://blog.dataengineerthings.org/the-ai-revolution-is-nothin
 ## Tweet of the day
 
 :::{style="margin-top: 30px; font-size: 26px; text-align: center;"}
-[![](figures/tweet-of-the-day.jpg){width="50%"}](#){data-modal-type="image" data-modal-url="figures/tweet-of-the-day.jpg"}
+[![](figures/tweet-of-the-day.jpg){width="70%"}](#){data-modal-type="image" data-modal-url="figures/tweet-of-the-day.jpg"}
 :::
 
 ## What matters more?
@@ -151,7 +151,7 @@ Source: [Medium](https://urwamuaz.medium.com/neural-networks-fail-on-data-with-s
 ## Garbage in, garbage out
 ### The fundamental principle
 
-:::{style="margin-top: 30px; font-size: 22px;"}
+:::{style="margin-top: 30px; font-size: 26px;"}
 :::{.columns}
 :::{.column width=55%}
 - AI models are only as good as [the data they're trained on]{.alert}
@@ -160,9 +160,7 @@ Source: [Medium](https://urwamuaz.medium.com/neural-networks-fail-on-data-with-s
   - Missing important information (e.g., age, income, etc.)
   - Conflicting labels or formats (e.g., "yes" vs "1")
   - Biases, not representative of reality (e.g., gender, race, etc.)
-- [The quality of your models is directly tied to the quality of your data]{.alert}
-- **Data-centric AI**: Andrew Ng's insight (2021): focus on [improving the data]{.alert}, not just the model
-  - Check: <https://datacentricai.org/>
+- [The quality of your models is directly tied to the quality of your data]{.alert} (that's true for humans too!)
 :::
 
 :::{.column width=45%}
@@ -173,6 +171,42 @@ Source: [xkcd](https://xkcd.com/1838/)
 :::
 :::
 :::
+:::
+
+## The data-centric AI movement
+### A paradigm shift
+
+:::{style="margin-top: 30px; font-size: 24px;"}
+:::{.columns}
+:::{.column width=60%}
+- Traditional ML: Fix the data, [improve the model]{.alert}
+- Data-centric AI: Fix the model, [improve the data]{.alert}
+  - Check the website: <https://datacentricai.org/>
+- Andrew Ng's insight (2021):
+
+> "Instead of focusing on the code, companies should focus on [developing the processes]{.alert} to get and maintain good data."
+
+- For many real-world problems, [improving data quality beats improving algorithms]{.alert}
+- This is especially true when you have limited data
+:::
+
+:::{.column width=40%}
+:::{style="text-align: center;"}
+[![Model-centric vs. Data-centric AI](figures/data-centric.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/data-centric.png"}
+
+Source: [Andrej Karpathy](https://vimeo.com/274274744)
+:::
+:::
+:::
+:::
+
+## Real-world impact of data quality
+### The hidden costs of bad data
+
+:::{style="margin-top: 30px; font-size: 24px; text-align: center;"}
+[![](figures/bad-quality.png){width="70%"}](#){data-modal-type="image" data-modal-url="figures/bad-quality.png"}
+
+Source: [Harvard Business Review](https://hbr.org/2016/09/bad-data-costs-the-u-s-3-trillion-per-year)
 :::
 
 ## Real-world impact of data quality
@@ -194,33 +228,57 @@ Source: [xkcd](https://xkcd.com/1838/)
 
 # Types of machine learning tasks 🎯 {background-color="#2d4563"}
 
-## Classification and regression tasks
-### The two main types of ML tasks
+## Classification tasks
+### Predicting categories
 
-:::{style="margin-top: 30px; font-size: 22px;"}
+:::{style="margin-top: 30px; font-size: 24px;"}
 :::{.columns}
-:::{.column width=50%}
-**Classification: Predicting categories**
-
+:::{.column width=55%}
 - **Goal**: Assign inputs to discrete categories
-- Examples: Email → Spam/Not Spam; Image → Cat/Dog/Bird; Text → Positive/Negative/Neutral
+- Examples:
+  - Email → Spam or Not Spam
+  - Image → Cat, Dog, Bird, etc.
+  - Medical scan → Cancerous or Benign
+  - Text → Positive, Negative, Neutral sentiment
 - **Binary classification**: Two classes
 - **Multi-class**: Many classes (one per input)
 - **Multi-label**: Multiple labels per input
 - Key challenge: [How do you define the classes?]{.alert}
-
-[![Classification](figures/classification.png){width="80%"}](#){data-modal-type="image" data-modal-url="figures/classification.png"}
 :::
 
-:::{.column width=50%}
-**Regression: Predicting continuous values**
+:::{.column width=45%}
+:::{style="text-align: center;"}
+[![Classification: Assigning categories](figures/classification.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/classification.png"}
 
+Source: [Maël Fabien](https://maelfabien.github.io/machinelearning/NLP_5/)
+:::
+:::
+:::
+:::
+
+## Regression tasks
+### Predicting continuous values
+
+:::{style="margin-top: 30px; font-size: 26px;"}
+:::{.columns}
+:::{.column width=55%}
 - **Goal**: Predict a continuous numerical value
-- Examples: Features → House price; Patient data → Hospital stay length; Weather data → Temperature
+- Examples:
+  - Features → House price
+  - Patient data → Length of hospital stay
+  - Weather data → Temperature tomorrow
+  - User behaviour → Ad click probability
+- Key question: [What should the model predict?]{.alert}
 - The choice of target variable is [a design decision]{.alert}
 - Different targets can lead to very different models
+:::
 
-[![Regression](figures/regression.png){width="80%"}](#){data-modal-type="image" data-modal-url="figures/regression.png"}
+:::{.column width=45%}
+:::{style="text-align: center;"}
+[![Regression: Predicting numbers](figures/regression.png){width="90%"}](#){data-modal-type="image" data-modal-url="figures/regression.png"}
+
+Source: [Our World in Data](https://ourworldindata.org/data-insights/people-in-richer-countries-tend-to-say-they-are-more-satisfied-with-their-lives)
+:::
 :::
 :::
 :::
@@ -246,12 +304,12 @@ Each task requires [different types of labels]{.alert} in your dataset!
 ## Defining your classes
 ### Classification pitfalls
 
-:::{style="margin-top: 30px; font-size: 22px;"}
+:::{style="margin-top: 30px; font-size: 24px;"}
 :::{.columns}
 :::{.column width=55%}
 - Classes should be:
-  - **Mutually exclusive**: No overlap between categories
-  - **Collectively exhaustive**: Cover all possible cases
+  - **Mutually exclusive**: No overlap
+  - **Collectively exhaustive**: Cover all cases
   - **Consistently definable**: Clear boundaries
 - Common problems:
   - [Ambiguous categories]{.alert}: What counts as "spam"?
@@ -274,28 +332,38 @@ Source: [The Independent](https://www.independent.co.uk/news/science/duck-and-ra
 ## The proxy problem
 ### When labels don't measure what you care about
 
-:::{style="margin-top: 30px; font-size: 21px;"}
+:::{style="margin-top: 30px; font-size: 24px;"}
+
 :::{.columns}
-:::{.column width=55%}
+:::{.column width=50%}
+:::{.incremental}
 - Often we can't directly measure what we want to predict
 - We use [proxy variables]{.alert} instead...but proxies can be misleading!
+
 - **Example 01: Predicting "health needs"**
-  - What we want: How sick is this patient?
-  - Available data: Healthcare spending
-  - [Spending ≠ health needs]{.alert}: Black patients had less spent on them due to systemic barriers
-  - Algorithm learned: "Black patients need less care" → [Wrong!]{.alert}
-- **Example 02: Predicting expertise on social media**
-  - What we want: Who is an expert in a field?
-  - Available data: Number of followers
-  - [Followers ≠ Expertise]{.alert}: Popularity can be gamed or unrelated to domain knowledge
+
+- What we want: How sick is this patient?
+- Available data: Healthcare spending
+- [What do you think of this proxy?]{.alert}
+- [Spending ≠ health needs]{.alert}
+- Black patients had less spent on them due to systemic barriers
+- Algorithm learned: "Black patients need less care" → [Wrong!]{.alert}
+
 - Always ask: [Does this label actually measure what I care about?]{.alert}
 :::
+:::
 
-:::{.column width=45%}
-:::{style="text-align: center;"}
-[![Model-centric vs. Data-centric AI](figures/data-centric.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/data-centric.png"}
+:::{.column width=50%}
+:::{.incremental}
+- **Example 02: Predicting expertise on social media**
 
-Source: [Andrej Karpathy](https://vimeo.com/274274744)
+- What we want: Who is an expert in a field?
+- Available data: Number of followers
+- [What do you think of this proxy?]{.alert}
+- [Followers ≠ Expertise]{.alert}
+- Popularity can be gamed or unrelated to domain knowledge
+- Algorithm learned: "High engagement = High expertise" → [Wrong!]{.alert}
+
 :::
 :::
 :::
@@ -306,7 +374,7 @@ Source: [Andrej Karpathy](https://vimeo.com/274274744)
 ## Where do the data come from?
 ### Common data sources
 
-:::{style="margin-top: 30px; font-size: 24px;"}
+:::{style="margin-top: 30px; font-size: 26px;"}
 
 | Source | Examples | Considerations |
 |--------|----------|----------------|
@@ -322,18 +390,20 @@ Source: [Andrej Karpathy](https://vimeo.com/274274744)
 ## How much data do you need?
 ### The million-dollar question
 
-:::{style="margin-top: 30px; font-size: 22px;"}
+:::{style="margin-top: 30px; font-size: 24px;"}
 :::{.columns}
 :::{.column width=55%}
 - There's no universal answer... it depends on:
-  - Task complexity: harder tasks need more data
-  - Number of classes/features: more categories = more examples needed
-  - Model architecture: deep learning is data-hungry
-  - Required accuracy: higher stakes = more data
-- **Rule of thumb**: Start small, then scale up
-- **Scaling laws**: Performance improves predictably with more data
-  - You can [estimate]{.alert} how much data you'll need by training on subsets and extrapolating
-- For most real-world problems, [more high-quality data beats more sophisticated algorithms]{.alert}
+  - Task complexity
+  - Number of classes/features
+  - Model architecture
+  - Required accuracy
+- **Rule of thumb**: Start small, then scale
+- **Scaling laws**: Performance improves predictably with more data:
+
+$$\log(\text{error}) = -a \cdot \log(n) + b$$
+
+- You can [estimate]{.alert} how much data you'll need by training on subsets and extrapolating
 :::
 
 :::{.column width=45%}
@@ -394,13 +464,13 @@ Source: [Wikipedia](https://en.wikipedia.org/wiki/Survivorship_bias)
 :::{style="margin-top: 30px; font-size: 22px; text-align: center;"}
 :::{.columns}
 :::{.column width=50%}
-[![Qwen](figures/qwen.png){width="70%"}](#){data-modal-type="image" data-modal-url="figures/qwen.png"}
+[![Qwen](figures/qwen.png){width="90%"}](#){data-modal-type="image" data-modal-url="figures/qwen.png"}
 
 Source: [Qwen](https://qwen.ai/) via [nanoGPT](https://nano-gpt.com)
 :::
 
 :::{.column width=50%}
-[![Gemini](figures/gemini.png){width="65%"}](#){data-modal-type="image" data-modal-url="figures/gemini.png"}
+[![Gemini](figures/gemini.png){width="90%"}](#){data-modal-type="image" data-modal-url="figures/gemini.png"}
 
 Source: [Gemini's NanoBanana](https://gemini.google.com)
 :::
@@ -447,7 +517,7 @@ Source: [WisdomPlexus](https://wisdomplexus.com/blogs/ai-bias-in-action-real-wor
 :::{style="margin-top: 30px; font-size: 23px;"}
 :::{.columns}
 :::{.column width=55%}
-- Most ML requires [labelled data]{.alert}
+- Most ML requires [labeled data]{.alert}
 - Labels come from humans → humans make mistakes
 - Common issues:
   - **Inconsistency**: Different people label differently
@@ -529,9 +599,9 @@ Source: [LeewayHertz](https://www.leewayhertz.com/data-annotation/)
 - How would you label these images?
 
 :::{style="text-align: center;"}
-[![](figures/mnist01.png){width="40%"}](#){data-modal-type="image" data-modal-url="figures/mnist01.png"}
+[![](figures/mnist01.png){width="50%"}](#){data-modal-type="image" data-modal-url="figures/mnist01.png"}
 
-[![](figures/mnist02.png){width="40%"}](#){data-modal-type="image" data-modal-url="figures/mnist02.png"}
+[![](figures/mnist02.png){width="50%"}](#){data-modal-type="image" data-modal-url="figures/mnist02.png"}
 
 Source: <https://labelerrors.com/>
 :::
@@ -568,65 +638,147 @@ Source: [Google's Healthcare Text Annotation Guidelines](https://github.com/goog
 :::
 :::
 
-## Multiple annotators and agreement
+## Why use multiple annotators?
 ### Reducing individual errors
 
-:::{style="margin-top: 30px; font-size: 20px;"}
+:::{style="margin-top: 30px; font-size: 22px;"}
 :::{.columns}
-:::{.column width=50%}
-**Why use multiple annotators:**
-
+:::{.column width=55%}
 - Individual annotators make mistakes
 - [Multiple annotators → more reliable labels]{.alert}
-- Benefits: Catch errors, identify ambiguous cases, assess label quality, reduce biases
-- Trade-off: [More expensive]{.alert}
-
-**Aggregation strategies:**
-
-- **Majority vote**: Most common label wins (limitations: ties, equal weighting)
+- Benefits:
+  - Catch errors through disagreement
+  - Identify genuinely ambiguous cases
+  - Assess label quality/confidence
+  - Reduce individual biases
+- Trade-off: [More expensive]{.alert} (each example labeled multiple times)
+- **Majority vote**: Most common label wins
+- Limitations: 
+  - How to break ties?
+  - All annotators weighted equally (bad and good)
+  - Doesn't capture uncertainty
 - **Weighted voting**: Trust reliable annotators more
-- **Adjudication**: Expert makes final call
-- **Keep all labels**: Train on disagreement (for uncertainty research)
 :::
 
-:::{.column width=50%}
-**Measuring agreement (IAA):**
+:::{.column width=45%}
+:::{style="text-align: center;"}
+[![Multiple perspectives improve quality](figures/multiple-annotators.png){width="90%"}](#){data-modal-type="image" data-modal-url="figures/multiple-annotators.png"}
 
-- [Inter-annotator agreement]{.alert}: Do annotators agree?
+Source: [MIT's DataCentric AI course](https://dcai.csail.mit.edu/2023/dataset-creation-curation/)
+:::
+:::
+:::
+:::
+
+## Inter-annotator agreement (IAA)
+### Measuring labelling quality
+
+:::{style="margin-top: 30px; font-size: 24px;"}
+:::{.columns}
+:::{.column width=55%}
+- [Inter-annotator agreement]{.alert}: Do annotators agree with each other?
 - High agreement → Labels are reliable
 - Low agreement → Problem with guidelines or task
-- Common metric: [Cohen's Kappa](https://en.wikipedia.org/wiki/Cohen%27s_kappa)
 
-:::{style="text-align: center;"}
+**Common metrics:**
+
+- **Percent agreement**: Simple but misleading
+- [Cohen's Kappa](https://en.wikipedia.org/wiki/Cohen%27s_kappa): Accounts for chance agreement (2 annotators)
+- [Fleiss' Kappa](https://en.wikipedia.org/wiki/Fleiss%27s_kappa) or [Krippendorff's alpha](https://en.wikipedia.org/wiki/Krippendorff%27s_alpha): Multiple annotators
+
 $$\kappa = \frac{p_o - p_e}{1 - p_e}$$
+
+- $p_o$ = observed agreement
+- $p_e$ = expected agreement by chance
+:::
+
+:::{.column width=45%}
+:::{style="text-align: center;"}
 
 | Kappa | Interpretation |
 |-------|----------------|
-| < 0.20 | Slight |
+| < 0 | Poor |
+| 0.0–0.20 | Slight |
 | 0.21–0.40 | Fair |
 | 0.41–0.60 | Moderate |
 | 0.61–0.80 | Substantial |
 | 0.81–1.00 | Almost perfect |
+
 :::
 :::
+:::
+:::
+
+## Example: Computing Cohen's Kappa
+### A worked example
+
+:::{style="margin-top: 30px; font-size: 21px;"}
+:::{.columns}
+:::{.column width=50%}
+**Two annotators label 100 emails as Spam/Not Spam:**
+
+| | Bob: Spam | Bob: Not Spam | **Total** |
+|---|---|---|---|
+| **Alice: Spam** | 20 | 5 | 25 |
+| **Alice: Not Spam** | 10 | 65 | 75 |
+| **Total** | 30 | 70 | **100** |
+
+**Step 1: Observed agreement ($p_o$)**
+
+- Agreed on 20 + 65 = 85 emails
+- $p_o = 85/100 = 0.85$
+:::
+
+:::{.column width=50%}
+**Step 2: Expected agreement by chance ($p_e$)**
+
+- Alice: 25/100 = 0.25 Spam, 75/100 = 0.75 Not Spam
+- Bob: 30/100 = 0.30 Spam, 70/100 = 0.70 Not Spam
+- P(both say Spam) = $0.25 \times 0.30 = 0.075$
+- P(both say Not Spam) = $0.75 \times 0.70 = 0.525$
+- $p_e = 0.075 + 0.525 = 0.60$
+
+**Step 3: Calculate Kappa ($\kappa$)**
+
+$$\kappa = \frac{0.85 - 0.60}{1 - 0.60} = \frac{0.25}{0.40} = 0.625$$
+
+[Substantial agreement]{.alert} (0.61–0.80). Annotators agreed much more than expected by chance alone
+:::
+:::
+:::
+
+## Resolving disagreements
+### Strategies when annotators conflict
+
+:::{style="margin-top: 30px; font-size: 30px;"}
+
+| Strategy | How it works | When to use |
+|----------|--------------|-------------|
+| **Majority voting** | Most common label wins | Quick and cheap |
+| **Adjudication** | Expert makes final call | High-stakes decisions |
+| **Discussion** | Annotators resolve together | Building consensus |
+| **Weighted voting** | Trust reliable annotators more | Historical performance data |
+| **Keep all labels** | Train model on disagreement | Research on uncertainty |
+
+:::{.fragment}
+> The best strategy depends on your [resources, timeline, and risk tolerance]{.alert}.
 :::
 :::
 
 ## Quality control
 ### The gold standard approach
 
-:::{style="margin-top: 30px; font-size: 24px;"}
+:::{style="margin-top: 30px; font-size: 26px;"}
 :::{.columns}
 :::{.column width=55%}
 - [Quality control (QC) examples]{.alert}: Examples where you already know the correct answer
-- Slip QC examples into the labelling queue without telling annotators
+- Slip QC examples into the labelling queue
 - Use them to:
   - Monitor annotator accuracy over time
   - Identify annotators who need retraining
   - Catch low-quality work early
 - Important: [Don't let annotators know]{.alert} which examples are QC
 - Flag annotators who fail too many QC checks
-- Combine with [regular audits]{.alert} of random samples
 :::
 
 :::{.column width=45%}
@@ -670,8 +822,6 @@ flowchart TB
 3. **Train annotators** and calibrate their judgments
 4. **Pilot** on a small sample, iterate on guidelines
 5. **Scale up** with ongoing quality control
-6. **Aggregate labels** using appropriate strategies
-7. **Document** everything for reproducibility
 :::
 :::
 :::
@@ -695,4 +845,4 @@ flowchart TB
 - `r fa('file-medical-alt')` [Document everything]{.alert}, so your future self will thank you
 :::
 
-# ... and that's all for today! 🎉 {background-color="#2d4563"}
+# ... and that's all for today! 🎉 <br> <br> See you soon! 😊 {background-color="#2d4563"}

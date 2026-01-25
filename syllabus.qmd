@@ -363,6 +363,7 @@ Readings:
 
 - Acemoglu, D., & Restrepo, P. (2019). [Automation and new tasks: how technology displaces and reinstates labor.](https://www.aeaweb.org/articles?id=10.1257/jep.33.2.3) *Journal of Economic Perspectives*, *33*(2), 3-30.
 - World Economic Forum. (2025). [The future of jobs report 2025.](https://www.weforum.org/reports/the-future-of-jobs-report-2025) A comprehensive report on how jobs are expected to change.
+- Financial Times. (2026). [The great graduate job drought](https://www.ft.com/content/c89496b1-bc8d-425e-b86b-ec89402410e4). Also available [here](https://archive.ph/qDFWp). An overview of the job market for recent graduates. You may want to read this one. Spoiler: it's not good.
 - Jones, C. (2026). [AI and our economic future](https://web.stanford.edu/~chadj/AIandEconomicFuture.pdf). A working paper that reviews the literature on the economic effects of AI. Written for a broad audience, to be published in the *Journal of Economic Perspectives*. 
 - Anthropic (2026). [Anthropic economic index.](https://www.anthropic.com/research/economic-index-primitives) How people use Claude and what are its possible impacts on the economy.
 - OpenAI (2025). [How people are using ChatGPT.](https://openai.com/index/how-people-are-using-chatgpt/) Same thing, but for ChatGPT. Spoiler: most people are not using it for work. The full article is available [here](https://www.nber.org/papers/w34255).
