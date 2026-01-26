@@ -167,43 +167,6 @@ Source: [Memedroid (!)](https://pt.memedroid.com/memes/detail/4155054/Confusing-
 :::
 :::
 
-## The supervised learning workflow
-### From data to predictions
-
-:::{style="margin-top: 30px; font-size: 22px;"}
-:::{.columns}
-:::{.column width=50%}
-```{mermaid}
-%%{init: {'theme': 'base', 'themeVariables': {'fontSize': '15px'}}}%%
-flowchart TB
-    A[📊 Collect Labelled Data] --> B[🔀 Split: Train/Test]
-    B --> C[🎯 Choose Algorithm]
-    C --> D[🏋️ Train Model]
-    D --> E[📈 Evaluate on Test Set]
-    E --> F{Good enough?}
-    F -->|No| G[🔧 Tune/Change Model]
-    G --> D
-    F -->|Yes| H[🚀 Deploy]
-    style F fill:#f9f,stroke:#333,stroke-width:2px
-    style H fill:#90EE90,stroke:#333,stroke-width:2px
-```
-:::
-
-:::{.column width=50%}
-**Key steps:**
-
-1. **Collect data** with known labels
-2. **Split** into training and test sets (never peek at test!)
-3. **Choose** an appropriate algorithm
-4. **Train** the model on training data
-5. **Evaluate** on held-out test data
-6. **Iterate** until performance is acceptable
-
-[The test set simulates real-world deployment]{.alert}
-:::
-:::
-:::
-
 ## Classification vs regression
 ### The two main supervised tasks
 
@@ -515,36 +478,6 @@ Source: [Vizuara](https://www.vizuaranewsletter.com/p/understanding-principal-co
 :::
 :::
 
-## Anomaly detection
-### Finding the unusual
-
-:::{style="margin-top: 30px; font-size: 22px;"}
-:::{.columns}
-:::{.column width=55%}
-- [Anomaly detection](https://en.wikipedia.org/wiki/Anomaly_detection): Identify rare, unusual observations
-- [Learn what "normal" looks like]{.alert}
-- [Flag deviations from normal]{.alert}
-- Approaches:
-  - **Statistical**: Points far from the mean
-  - **Distance-based**: Points far from neighbours
-  - **Density-based**: Points in low-density regions
-  - **Reconstruction**: High error when trying to reconstruct
-- Applications:
-  - Fraud detection
-  - Network intrusion detection
-  - Manufacturing defect detection
-:::
-
-:::{.column width=45%}
-:::{style="text-align: center;"}
-[![Anomalies are outliers](figures/anomaly-detection.gif){width="100%"}](#){data-modal-type="image" data-modal-url="figures/anomaly-detection.gif"}
-
-Source: [DataScientest](https://datascientest.com/en/isolation-forest-how-do-you-detect-anomalies-in-a-dataset)
-:::
-:::
-:::
-:::
-
 # Reinforcement learning 🎮 {background-color="#2d4563"}
 
 ## What is reinforcement learning?
@@ -631,8 +564,8 @@ Source: [Lilian Weng](https://lilianweng.github.io/lil-log/2018/01/23/the-multi-
 $$Q(s, a) \leftarrow Q(s, a) + \alpha \left[ r + \gamma \max_{a'} Q(s', a') - Q(s, a) \right]$$
 
 - $\alpha$: Learning rate (how fast to update)
-- $\gamma$: Discount factor (how much to value future rewards)
 - $r$: Immediate reward received
+- $\gamma$: Discount factor (how much to value future rewards)
 - $s'$: Next state after taking action $a$
 - Policy: Choose action with highest Q-value
 - [Works for discrete state/action spaces]{.alert}
@@ -690,7 +623,7 @@ Source: [Anthropic's hh-rlhf dataset (check it out, it's really cool!)](https://
 :::
 
 ## Jailbreaking RLHF
-### If you can make it, you can jailbreak it 😂
+### If you can make it, you can jailbreak it!
 
 :::{style="margin-top: 30px; font-size: 22px;"}
 :::{.columns}
@@ -774,5 +707,3 @@ Source: NanoBanana
 :::
 
 # ... and that's all for today! 🎉 {background-color="#2d4563"}
-
-# See you all soon! 😊 {background-color="#2d4563"}

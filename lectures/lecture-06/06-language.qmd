@@ -66,8 +66,6 @@ if (!require("fontawesome", character.only = TRUE)) {
 
 :::{.column width=50%}
 :::{style="text-align: center; margin-top: -30px;"}
-<!-- Suggested image: A meme about model evaluation or accuracy paradox -->
-<!-- Source: Search for "machine learning accuracy meme" or use figures/accuracy-meme.png -->
 [![](figures/metrics-meme.webp){width="90%"}](#){data-modal-type="image" data-modal-url="figures/metrics-meme.webp"}
 
 Source: [r/ProgrammerHumor](https://www.reddit.com/r/ProgrammerHumor/comments/seq5zz/nooooo/)
@@ -94,36 +92,29 @@ Source: [r/ProgrammerHumor](https://www.reddit.com/r/ProgrammerHumor/comments/se
 - Tokenisation methods and quirks
 - Token limits and API costs
 
+:::
+
+:::{.column width=50%}
 **Part 3: Embeddings**
 
 - Words as vectors in space
 - Semantic similarity and the king-queen example
-:::
 
-:::{.column width=50%}
 **Part 4: Parameters**
 
 - What are the billions of parameters?
 - Embeddings, weights, and biases
 - Temperature and creativity dials
-
-:::{style="text-align: center; margin-top: 20px;"}
-<!-- Suggested image: LLM processing pipeline diagram or word embeddings visualisation -->
-[![](figures/llm-pipeline.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/llm-pipeline.png"}
-
-Source: [Medium](https://medium.com/)
-:::
 :::
 :::
 :::
 
-## Tweet of the day (sorry for the curse word! 😅)
-### Every AI engineer's journey starts somewhere... 
+## Meme of the day
 
 :::{style="text-align: center; margin-top: 30px;"}
-<!-- Suggested image: A funny tweet about tokens, embeddings, or LLMs -->
-<!-- Search Twitter/X for funny AI/NLP tweets -->
-[![](figures/tweet-of-the-day.png){width="45%"}](#){data-modal-type="image" data-modal-url="figures/tweet-of-the-day.png"}
+[![](figures/tweet-of-the-day.webp){width="35%"}](#){data-modal-type="image" data-modal-url="figures/tweet-of-the-day.webp"}
+
+Source: [Reddit r/Singularity](https://www.reddit.com/r/singularity/comments/1jjw81o/comment/mk0pvf2/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button)
 :::
 
 # How LLMs "See" Text 👁️ {background-color="#2d4563"}
@@ -134,8 +125,8 @@ Source: [Medium](https://medium.com/)
 :::{style="margin-top: 30px; font-size: 22px;"}
 :::{.columns}
 :::{.column width=55%}
-- Here's something you may not know: [Computers only understand numbers]{.alert}
-- When you type "Hello, how are you?", the [LLM doesn't see letters!]{.alert} 😮
+- Here's something you probably know by now: [Computers only understand numbers]{.alert}
+- When you type "Hello, how are you?", the [LLM doesn't see letters!]{.alert}
 - It sees something like: `[15496, 11, 703, 527, 499, 30]`
 - This creates a [translation problem]{.alert}:
   - How do we convert text into numbers?
@@ -335,12 +326,11 @@ Source: [OpenAI Platform](https://platform.openai.com/tokenizer)
 ## Token limits and context windows
 ### Why your prompt has a maximum length
 
-:::{style="margin-top: 30px; font-size: 21px;"}
+:::{style="margin-top: 30px; font-size: 20px;"}
 :::{.columns}
 :::{.column width=55%}
 - Every LLM has a [context window]{.alert}: Maximum tokens it can process
 - This limit includes [both your prompt AND the response!]{.alert}
-- Both [input tokens]{.alert} (your prompt) and [output tokens]{.alert} (response) cost money
 - Output tokens typically cost [2-4x more]{.alert} than input tokens!
 
 :::{style="text-align: center;"}
@@ -348,50 +338,23 @@ Source: [OpenAI Platform](https://platform.openai.com/tokenizer)
 |-------|---------------|
 | GPT-3.5 | 4,096 or 16,384 tokens |
 | GPT-4 | 8,192 or 128,000 tokens |
-| Claude 3 | 200,000 tokens |
 | Gemini Pro | 1,000,000+ tokens |
 :::
 
 - If your prompt uses 3,500 tokens and the limit is 4,096...
 - You only have [596 tokens left]{.alert} for the response!
 - Exceeding limits → [Error]{.alert} or truncated output
-:::
-
-:::{.column width=45%}
-:::{style="text-align: center;"}
-<!-- Suggested image: Context window visualisation -->
-[![](figures/context-window.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/context-window.png"}
-
-Source: [Anthropic](https://platform.claude.com/docs/en/build-with-claude/context-windows)
-:::
-:::
-:::
-:::
-
-## The emoji and multilingual problem
-### When tokenisation gets weird
-
-:::{style="margin-top: 30px; font-size: 21px;"}
-:::{.columns}
-:::{.column width=55%}
-**Tokenisation quirks to know about:**
-
-- [Emojis]{.alert} are encoded as multiple tokens
-  - "🎉" → 2+ tokens (it's bytes, not characters!)
-  - "👨‍👩‍👧‍👦" (family) → 7+ tokens!
-- [Non-English languages]{.alert} use more tokens
+- Curiosity: [Non-English languages use more tokens]{.alert}
   - Chinese, Japanese, Korean: ~2-3x more tokens per concept
   - This means higher costs and shorter effective context
-- [Code]{.alert} tokenises differently than prose
-  - Indentation and special characters add up
-- [Numbers]{.alert} are split in unexpected ways
-  - "1000000" might be multiple tokens
-
-[The model's "native language" is its training data distribution!]{.alert}
 :::
 
 :::{.column width=45%}
 :::{style="text-align: center;"}
+[![](figures/context-window.png){width="90%"}](#){data-modal-type="image" data-modal-url="figures/context-window.png"}
+
+Source: [Anthropic](https://platform.claude.com/docs/en/build-with-claude/context-windows)
+
 **Same meaning, different tokens:**
 
 | Language | Text | Tokens |
@@ -400,11 +363,6 @@ Source: [Anthropic](https://platform.claude.com/docs/en/build-with-claude/contex
 | Chinese | "你好" | 4 |
 | Arabic | "مرحبا" | 6 |
 | Japanese | "こんにちは" | 6 |
-
-<!-- Suggested image: Multilingual tokenisation comparison -->
-[![](figures/multilingual-tokens.jpg){width="60%"}](#){data-modal-type="image" data-modal-url="figures/multilingual-tokens.jpg"}
-
-Source: [Kallini et al (2025)](https://arxiv.org/abs/2509.18750)
 :::
 :::
 :::
@@ -428,6 +386,7 @@ Source: [Kallini et al (2025)](https://arxiv.org/abs/2509.18750)
   - "cat" and "aeroplane" will be far apart
 - The model [learns]{.alert} these representations during training
 - This is where the "understanding" happens!
+- Remember $\vec{\text{king}} - \vec{\text{man}} + \vec{\text{woman}} \approx \vec{\text{queen}}$
 :::
 
 :::{.column width=45%}
@@ -438,90 +397,6 @@ Source: [Kallini et al (2025)](https://arxiv.org/abs/2509.18750)
 Source: [TensorFlow Projector](https://projector.tensorflow.org/)
 
 [Similar words cluster together in the embedding space]{.alert}
-:::
-:::
-:::
-:::
-
-## Why embeddings matter
-### Capturing meaning, not just characters
-
-:::{style="margin-top: 30px; font-size: 22px;"}
-:::{.columns}
-:::{.column width=55%}
-**Without embeddings:**
-
-- "cat" and "kitten" would be completely unrelated
-- The model couldn't know synonyms or relationships
-- Context would be impossible to understand
-
-**With embeddings:**
-
-- Words with [similar meanings]{.alert} are nearby in the space
-- Words with [similar grammatical roles]{.alert} cluster together
-- [Context changes meaning]{.alert}: "bank" (river) vs "bank" (money)
-- Relationships are preserved:
-  - Verbs cluster with verbs
-  - Nouns cluster with nouns
-  - Animals form a region, vehicles form another
-:::
-
-:::{.column width=45%}
-:::{style="text-align: center;"}
-:::{style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; font-size: 20px;"}
-**What embeddings capture:**
-
-- 📝 [Semantic]{.alert}: Meaning and concepts
-- 📖 [Syntactic]{.alert}: Grammar and structure
-- 🔗 [Relational]{.alert}: How words connect
-- 🌍 [Contextual]{.alert}: Different senses
-:::
-
-<!-- Suggested image: Word clustering visualisation -->
-[![Inaugural Address word clusters](figures/word-clusters.gif){width="100%"}](#){data-modal-type="image" data-modal-url="figures/word-clusters.gif"}
-
-Source: [Wikipedia](https://commons.wikimedia.org/wiki/File:Inaugural_Address_word_clouds.gif)
-:::
-:::
-:::
-:::
-
-## The famous king-queen example
-### Vector arithmetic with meaning
-
-:::{style="margin-top: 30px; font-size: 22px;"}
-:::{.columns}
-:::{.column width=55%}
-- The most famous embedding discovery:
-- **king − man + woman ≈ queen** 👑
-- What does this mean?
-  - Take the vector for "king"
-  - Subtract the vector for "man" from it
-  - Add the vector for "woman"
-  - The result is closest to "queen"! 🤯
-- The model has learned that:
-  - "king" and "queen" differ by gender
-  - "man" and "woman" differ by gender
-  - These relationships are [encoded in the vectors]{.alert}
-- Other examples that work:
-  - Paris − France + Italy ≈ Rome
-  - bigger − big + small ≈ smaller
-:::
-
-:::{.column width=45%}
-:::{style="text-align: center; font-size: 20px;"}
-<!-- Suggested image: King-queen vector arithmetic diagram -->
-[![](figures/king-queen-vectors.png){width="50%"}](#){data-modal-type="image" data-modal-url="figures/king-queen-vectors.png"}
-
-Source: [Wikipedia](https://en.wikipedia.org/wiki/Word2vec)
-
-:::{style="background: rgba(230, 57, 70, 0.1); padding: 15px; border-radius: 10px; font-size: 18px; margin-top: 20px;"}
-**The maths:**
-
-$\vec{\text{king}} - \vec{\text{man}} + \vec{\text{woman}} \approx \vec{\text{queen}}$
-
-Semantic relationships encoded as [vector operations]{.alert}!
-:::
 :::
 :::
 :::
@@ -583,41 +458,6 @@ Source: [Chris McCormick](https://mccormickml.com/2016/04/19/word2vec-tutorial-t
 [![](figures/queen-woman-girl-embeddings.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/queen-woman-girl-embeddings.png"}
 
 Source: [Jay Alammar](https://jalammar.github.io/illustrated-word2vec/)
-:::
-:::
-:::
-:::
-
-## Modern embeddings
-### From words to sentences to documents
-
-:::{style="margin-top: 30px; font-size: 21px;"}
-:::{.columns}
-:::{.column width=55%}
-**Evolution of embeddings:**
-
-- [Word2Vec](https://en.wikipedia.org/wiki/Word2vec) (2013): One vector per word, [fixed]{.alert}
-  - "bank" always has the same embedding
-- [ELMo](https://en.wikipedia.org/wiki/ELMo) (2018): [Context-dependent]{.alert} word embeddings
-  - "river bank" vs "bank account" → different vectors!
-- [BERT](https://en.wikipedia.org/wiki/BERT_(language_model)) (2019): Deep [contextual]{.alert} embeddings
-  - Considers the whole sentence
-- [GPT/Transformer](https://en.wikipedia.org/wiki/Generative_pre-trained_transformer) embeddings: Even richer context
-  - Every layer adds more understanding
-
-**Modern sentence embeddings:**
-
-- Entire sentences → single vector
-- Used for search, similarity, clustering
-- Models: text-embedding-ada-002, Sentence-BERT
-:::
-
-:::{.column width=45%}
-:::{style="text-align: center;"}
-<!-- Suggested image: Evolution of embeddings timeline -->
-[![](figures/embedding-evolution.webp){width="100%"}](#){data-modal-type="image" data-modal-url="figures/embedding-evolution.webp"}
-
-Source: [Geeks for Geeks](https://www.geeksforgeeks.org/nlp/word-embeddings-in-nlp/)
 :::
 :::
 :::
@@ -798,7 +638,7 @@ Source: [Medium](https://medium.com/ai-insights-cobet/no-more-floating-points-th
 - The model learns by [predicting the next word]{.alert}
 - Every error teaches it something
 - Patterns emerge from massive repetition
-- Training GPT-3 cost [~£3.5 million]{.alert} in compute!
+- Training GPT-3 cost [~$3.5 million]{.alert} in compute!
 :::
 
 :::{.column width=45%}
@@ -1007,38 +847,4 @@ Source: [Microsoft Education](https://www.microsoft.com/en-us/education/blog/202
 - `r fa('link')` [Attention]{.alert} mechanisms help models understand context and word relationships
 :::
 
-## Further reading
-
-:::{style="margin-top: 30px; font-size: 24px;"}
-:::{.columns}
-:::{.column width=50%}
-**Required:**
-
-- [The Ultimate Guide to Word Embeddings](https://neptune.ai/blog/word-embeddings-guide) - Neptune.ai
-- [Tokenization in NLP](https://neptune.ai/blog/tokenization-in-nlp) - Neptune.ai
-- [An Intuitive Introduction to Text Embeddings](https://stackoverflow.blog/2023/11/09/an-intuitive-introduction-to-text-embeddings/) - StackOverflow
-
-**Recommended:**
-
-- [What Even Is a Parameter?](https://www.technologyreview.com/2026/01/07/1130795/what-even-is-a-parameter/) - MIT Tech Review
-- [Beginner's Guide to Embeddings](https://www.prompthub.us/blog/a-beginners-guide-on-embeddings-and-their-impact-on-prompts) - PromptHub
-:::
-
-:::{.column width=50%}
-**Interactive tools:**
-
-- [OpenAI Tokenizer](https://platform.openai.com/tokenizer) - See tokenisation in action
-- [TensorFlow Projector](https://projector.tensorflow.org/) - Explore embedding space
-
-**Videos:**
-
-- [Word2Vec Explained](https://www.youtube.com/watch?v=viZrOnJclY0) (10 min)
-- [The Illustrated Transformer](https://jalammar.github.io/illustrated-transformer/) - Jay Alammar
-- [3Blue1Brown Neural Networks](https://www.youtube.com/playlist?list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi) (Series)
-:::
-:::
-:::
-
 # ... and that's all for today! 🎉 {background-color="#2d4563"}
-
-# See you all soon! 😊 {background-color="#2d4563"}

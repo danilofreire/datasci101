@@ -576,7 +576,7 @@ Source: [Sam Galope (2024)](https://www.samgalope.dev/2024/07/25/convert-wav-fil
 
 [huggingface.co/spaces/openai/whisper](https://huggingface.co/spaces/openai/whisper)
 
-**Experiments to try:**
+**Experiments to try at home:**
 
 1. Record yourself speaking normally
 2. Try speaking with an accent
@@ -726,40 +726,6 @@ Source: [Sebastian Raschka](https://magazine.sebastianraschka.com/p/understandin
 
 # What this means for society ⚠️ {background-color="#2d4563"}
 
-## If you can't trust your eyes and ears...
-
-:::{style="margin-top: 30px; font-size: 22px;"}
-:::{.columns}
-:::{.column width=55%}
-**We're entering a world where:**
-
-- Any voice can be cloned in seconds
-- Any face can be put on any video
-- Photos can be generated from imagination
-- It's getting [impossible to tell what's real]{.alert}
-
-**Examples that have already happened:**
-
-- [Fake video of Zelenskyy surrendering (during Ukraine invasion)](https://www.npr.org/2022/03/16/1087062648/deepfake-video-zelenskyy-experts-war-manipulation-ukraine-russia)
-- [CEO voice clones used to authorise wire transfers](https://www.americanbar.org/groups/senior_lawyers/resources/voice-of-experience/2025-september/ai-cloned-voice-scam/)
-- [Fake "leaked" Taylor Swift photos going viral](https://www.nytimes.com/2024/02/05/business/media/taylor-swift-ai-fake-images.html)
-- [Political ads using AI-generated opponents](https://www.nytimes.com/2026/01/16/us/politics/ai-ad-texas-senate-paxton-cornyn.html)
-
-[What happens when seeing is no longer believing?]{.alert}
-:::
-
-:::{.column width=45%}
-:::{style="text-align: center;"}
-[![Deepfake examples and concerns](figures/deepfake-cruise.webp){width="100%"}](#){data-modal-type="image" data-modal-url="figures/deepfake-cruise.webp"}
-
-:::{style="font-size: 18px; margin-top: 10px;"}
-AI can now create realistic fake videos, voices, and images
-:::
-:::
-:::
-:::
-:::
-
 ## Class discussion: Where do we draw the line? 🤔
 
 :::{style="margin-top: 30px; font-size: 24px;"}
@@ -836,38 +802,4 @@ Should AI-generated content require...
 - `r fa('exclamation-triangle')` **Critical thinking**: Deepfakes, bias, and privacy are [real concerns]{.alert} we must address
 :::
 
-## Further reading
-
-:::{style="margin-top: 30px; font-size: 22px;"}
-:::{.columns}
-:::{.column width=50%}
-**Accessible introductions:**
-
-- Gupta, A. (2025). [How computers see the world: a beginner's guide to CNNs](https://pub.towardsai.net/how-computers-see-the-world-a-beginners-guide-to-cnns-c847ab855104) Great illustrated intro.
-- AltexSoft (2025). [How AI Sound Generation Works](https://www.altexsoft.com/blog/sound-music-voice-generation/) Clear overview.
-- 3Blue1Brown (2017). [But what is a Neural Network?](https://www.youtube.com/watch?v=aircAruvnKk) Beautiful visual explanation (19 min).
-
-**Interactive tools to explore:**
-
-- [Teachable Machine](https://teachablemachine.withgoogle.com/)
-- [Whisper Demo](https://huggingface.co/spaces/openai/whisper)
-- [ElevenLabs](https://elevenlabs.io/) (try voice cloning ethically!)
-:::
-
-:::{.column width=50%}
-**To go deeper:**
-
-- Raschka, S. (2024). [Understanding Multimodal LLMs](https://magazine.sebastianraschka.com/p/understanding-multimodal-llms). More technical but clear.
-- MIT Technology Review (2023). [Generative AI is changing everything](https://www.technologyreview.com/2023/04/27/1072102/the-future-of-generative-ai-is-niche-not-generalized/). Broader context.
-
-**On ethics and bias:**
-
-- Buolamwini, J. [Gender Shades](http://gendershades.org/). The landmark study on facial recognition bias.
-- The Guardian (2019). [The rise of the deepfake and the threat to democracy](https://www.theguardian.com/technology/ng-interactive/2019/jun/22/the-rise-of-the-deepfake-and-the-threat-to-democracy)
-:::
-:::
-:::
-
 # ... and that's all for today! 🎉 {background-color="#2d4563"}
-
-# See you all soon! 😊 {background-color="#2d4563"}

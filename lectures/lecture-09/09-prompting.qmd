@@ -85,22 +85,22 @@ Source: [r/ProgrammerHumor](https://www.reddit.com/r/ProgrammerHumor/comments/1d
 - The PTCF framework (Persona-Task-Context-Format)
 - Temperature and sampling parameters (recap from Lecture 06)
 
-**Part 2: Fundamental Techniques**
-
-- Zero-shot, one-shot, and few-shot prompting
-- When examples help and when they hurt
-
-**Part 3: Chain-of-Thought Reasoning**
-
-- The research behind "think step by step"
-- "Thinking" models (o1, DeepSeek-R1)
-:::
-
-:::{.column width=50%}
-**Part 4: System Prompts and Personas**
+**Part 2: System Prompts and Personas**
 
 - The hidden instructions behind every chatbot
 - Skills and agent files for storing prompts
+
+**Part 3: Fundamental Techniques**
+
+- Zero-shot, one-shot, and few-shot prompting
+- When examples help and when they hurt
+:::
+
+:::{.column width=50%}
+**Part 4: Chain-of-Thought Reasoning**
+
+- The research behind "think step by step"
+- "Thinking" models (o1, DeepSeek-R1)
 
 **Part 5: AI Agents**
 
@@ -173,7 +173,7 @@ Remember from [Lecture 06](https://raw.githack.com/danilofreire/datasci185/main/
 - It draws on patterns from [trillions of tokens]{.alert} of training data
 - Vague prompts activate broad, generic patterns
 - Specific prompts activate [narrow, relevant patterns]{.alert}
-- The model has no goals, desires, or understanding. It produces statistically likely continuations.
+- The model has no goals, desires, or understanding. It produces statistically likely continuations
 
 [Prompt engineering is about activating the right patterns]{.alert}.
 :::
@@ -279,7 +279,7 @@ Source: Lecture 06 / [Medium](https://medium.com/@nigelgebodh/why-does-my-llm-ha
 
 > "Tell me about machine learning in healthcare"
 
-**What's wrong with it? (Use PTCF to diagnose)**
+**What's wrong with it? (Use Persona-Task-Context-Format to diagnose)**
 
 :::{.fragment}
 - ❌ **Persona**: None specified. Is this for a doctor? A patient? A policy maker?
@@ -308,6 +308,178 @@ Source: Lecture 06 / [Medium](https://medium.com/@nigelgebodh/why-does-my-llm-ha
 > **Format**: "For each application: (1) What it does, (2) Current accuracy vs human doctors, (3) Implementation challenges. Keep each to 2-3 sentences."
 
 [Different personas + use cases would produce entirely different rewrites!]{.alert}
+:::
+:::
+:::
+:::
+
+# System prompts and personas 🎭 {background-color="#2d4563"}
+
+## What are system prompts?
+
+:::{style="margin-top: 30px; font-size: 18px;"}
+:::{.columns}
+:::{.column width=55%}
+When you use ChatGPT or Claude, there's [hidden text you never see]{.alert} that shapes every response. This is the **system prompt**.
+
+**The hierarchy of prompts:**
+
+1. **System prompt**: Set by the developer/company. Establishes core behaviour, personality, and constraints.
+2. **User prompt**: What you type. The specific request.
+3. **Assistant response**: What the model generates.
+
+**What system prompts typically include:**
+
+- Identity ("You are Claude, an AI assistant...")
+- Capabilities ("You can help with writing, coding, analysis...")
+- Constraints ("Never provide medical diagnoses...")
+- Personality ("Be helpful, harmless, and honest...")
+- Output conventions ("Use markdown formatting...")
+
+[Every commercial AI product has a carefully designed system prompt]{.alert}.
+:::
+
+:::{.column width=45%}
+:::{style="text-align: center;"}
+[![](figures/system-prompts.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/system-prompts.png"}
+
+Check out other system prompts here: <https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools>
+
+:::{style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; font-size: 16px; margin-top: 15px;"}
+**API structure:**
+
+```python
+messages = [
+  {"role": "system", 
+   "content": "You are a helpful financial analyst..."},
+  {"role": "user", 
+   "content": "Analyse Tesla's Q4..."},
+  {"role": "assistant", 
+   "content": "..."} # model generates
+]
+```
+:::
+:::
+:::
+:::
+:::
+
+## Real system prompts in the wild
+
+:::{style="margin-top: 30px; font-size: 18px;"}
+:::{.columns}
+:::{.column width=50%}
+**Claude's system prompt** (partial, via Anthropic's documentation):
+
+> "The assistant is Claude, created by Anthropic. The current date is [date]. Claude's knowledge base was last updated in April 2024 and it answers user questions about events prior to and after April 2024 the way a highly informed individual from April 2024 would if they were talking to someone from [date]. [...] Claude cannot open URLs, links, or videos. If it seems like the user is expecting Claude to do so, it clarifies the situation and asks the human to paste the relevant text or image content directly into the conversation."
+
+**Key observations:**
+
+- Explicit about [identity and knowledge cutoff]{.alert}
+- States [capabilities and limitations]{.alert}
+- Guides behaviour for ambiguous situations
+:::
+
+:::{.column width=50%}
+**Common system prompt patterns:**
+
+:::{style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; font-size: 16px;"}
+**Role definition:**
+"You are an experienced [role] who specialises in [domain]..."
+
+**Output constraints:**
+"Always respond in JSON format. Never include explanations outside the JSON block..."
+
+**Safety guardrails:**
+"If asked to [dangerous thing], politely decline and explain why..."
+
+**Personality:**
+"Be concise but thorough. Use British English. Avoid corporate jargon..."
+
+**Knowledge grounding:**
+"Base your answers only on the provided documents. If information is not in the documents, say so..."
+:::
+
+:::{style="font-size: 16px; margin-top: 15px;"}
+Source: [Anthropic Documentation](https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering)
+
+More here: <https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools>
+:::
+:::
+:::
+:::
+
+## Activity: Persona showdown 🎭
+
+:::{style="margin-top: 30px; font-size: 18px;"}
+:::{.columns}
+:::{.column width=50%}
+**The same question, three personas:**
+
+> "Should I invest in cryptocurrency?"
+
+**Test these system prompts:**
+
+1. **No persona** (default behaviour)
+
+2. **Conservative analyst**:
+
+> "You are a risk-averse financial analyst with 30 years experience who prioritises capital preservation."
+
+3. **Tech enthusiast**:
+
+> "You are a blockchain researcher and early Bitcoin adopter who believes in decentralised finance."
+
+⏱️ 3 minutes to test all three!
+:::
+
+:::{.column width=50%}
+**What to observe:**
+
+- How does the recommendation differ?
+- Which persona [acknowledges its own bias]{.alert}?
+- Which response is most useful?
+
+:::{style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; font-size: 18px; margin-top: 15px;"}
+**Meta-lesson**: Personas change [what information is emphasised]{.alert}, what risks are mentioned, and what assumptions are made.
+
+[Always ask: what persona is this response from?]{.alert}
+:::
+:::
+:::
+:::
+
+## Meta-prompting and storing prompts
+
+:::{style="margin-top: 30px; font-size: 20px;"}
+:::{.columns}
+:::{.column width=55%}
+**Meta-prompting** is asking the AI to help you craft better prompts. It uses the AI's knowledge of its own patterns.
+
+**Examples:**
+
+> "I want to analyse quarterly earnings reports. What questions should I ask you to get the most useful analysis? What information should I provide?"
+
+> "Here's my prompt for summarising research papers. What's unclear or ambiguous about it? How would you rewrite it?"
+
+> "I'm building a prompt for customer sentiment classification. What edge cases should my examples cover?"
+:::
+
+:::{.column width=45%}
+**Why this works:**
+
+The model has seen [millions of prompts and their outcomes]{.alert} in training data. It has implicit knowledge of what makes prompts succeed or fail.
+
+[Let the AI teach you how to prompt it]{.alert}.
+
+:::{style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; font-size: 18px;"}
+**Useful meta-prompting questions:**
+
+- "What information would help you answer this better?"
+- "What assumptions are you making about this task?"
+- "What could go wrong with your response?"
+- "How would you rate your confidence in this answer, and why?"
+- "What would I need to ask differently to get [X] instead?"
 :::
 :::
 :::
@@ -680,178 +852,6 @@ Thinking models show their work differently ([Kimi K2 Thinking](https://huggingf
 :::
 :::
 
-# System prompts and personas 🎭 {background-color="#2d4563"}
-
-## What are system prompts?
-
-:::{style="margin-top: 30px; font-size: 18px;"}
-:::{.columns}
-:::{.column width=55%}
-When you use ChatGPT or Claude, there's [hidden text you never see]{.alert} that shapes every response. This is the **system prompt**.
-
-**The hierarchy of prompts:**
-
-1. **System prompt**: Set by the developer/company. Establishes core behaviour, personality, and constraints.
-2. **User prompt**: What you type. The specific request.
-3. **Assistant response**: What the model generates.
-
-**What system prompts typically include:**
-
-- Identity ("You are Claude, an AI assistant...")
-- Capabilities ("You can help with writing, coding, analysis...")
-- Constraints ("Never provide medical diagnoses...")
-- Personality ("Be helpful, harmless, and honest...")
-- Output conventions ("Use markdown formatting...")
-
-[Every commercial AI product has a carefully designed system prompt]{.alert}.
-:::
-
-:::{.column width=45%}
-:::{style="text-align: center;"}
-[![](figures/system-prompts.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/system-prompts.png"}
-
-Check out other system prompts here: <https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools>
-
-:::{style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; font-size: 16px; margin-top: 15px;"}
-**API structure:**
-
-```python
-messages = [
-  {"role": "system", 
-   "content": "You are a helpful financial analyst..."},
-  {"role": "user", 
-   "content": "Analyse Tesla's Q4..."},
-  {"role": "assistant", 
-   "content": "..."} # model generates
-]
-```
-:::
-:::
-:::
-:::
-:::
-
-## Real system prompts in the wild
-
-:::{style="margin-top: 30px; font-size: 18px;"}
-:::{.columns}
-:::{.column width=50%}
-**Claude's system prompt** (partial, via Anthropic's documentation):
-
-> "The assistant is Claude, created by Anthropic. The current date is [date]. Claude's knowledge base was last updated in April 2024 and it answers user questions about events prior to and after April 2024 the way a highly informed individual from April 2024 would if they were talking to someone from [date]. [...] Claude cannot open URLs, links, or videos. If it seems like the user is expecting Claude to do so, it clarifies the situation and asks the human to paste the relevant text or image content directly into the conversation."
-
-**Key observations:**
-
-- Explicit about [identity and knowledge cutoff]{.alert}
-- States [capabilities and limitations]{.alert}
-- Guides behaviour for ambiguous situations
-:::
-
-:::{.column width=50%}
-**Common system prompt patterns:**
-
-:::{style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; font-size: 16px;"}
-**Role definition:**
-"You are an experienced [role] who specialises in [domain]..."
-
-**Output constraints:**
-"Always respond in JSON format. Never include explanations outside the JSON block..."
-
-**Safety guardrails:**
-"If asked to [dangerous thing], politely decline and explain why..."
-
-**Personality:**
-"Be concise but thorough. Use British English. Avoid corporate jargon..."
-
-**Knowledge grounding:**
-"Base your answers only on the provided documents. If information is not in the documents, say so..."
-:::
-
-:::{style="font-size: 16px; margin-top: 15px;"}
-Source: [Anthropic Documentation](https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering)
-
-More here: <https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools>
-:::
-:::
-:::
-:::
-
-## Activity: Persona showdown 🎭
-
-:::{style="margin-top: 30px; font-size: 18px;"}
-:::{.columns}
-:::{.column width=50%}
-**The same question, three personas:**
-
-> "Should I invest in cryptocurrency?"
-
-**Test these system prompts:**
-
-1. **No persona** (default behaviour)
-
-2. **Conservative analyst**:
-
-> "You are a risk-averse financial analyst with 30 years experience who prioritises capital preservation."
-
-3. **Tech enthusiast**:
-
-> "You are a blockchain researcher and early Bitcoin adopter who believes in decentralised finance."
-
-⏱️ 3 minutes to test all three!
-:::
-
-:::{.column width=50%}
-**What to observe:**
-
-- How does the recommendation differ?
-- Which persona [acknowledges its own bias]{.alert}?
-- Which response is most useful?
-
-:::{style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; font-size: 18px; margin-top: 15px;"}
-**Meta-lesson**: Personas change [what information is emphasised]{.alert}, what risks are mentioned, and what assumptions are made.
-
-[Always ask: what persona is this response from?]{.alert}
-:::
-:::
-:::
-:::
-
-## Meta-prompting and storing prompts
-
-:::{style="margin-top: 30px; font-size: 20px;"}
-:::{.columns}
-:::{.column width=55%}
-**Meta-prompting** is asking the AI to help you craft better prompts. It uses the AI's knowledge of its own patterns.
-
-**Examples:**
-
-> "I want to analyse quarterly earnings reports. What questions should I ask you to get the most useful analysis? What information should I provide?"
-
-> "Here's my prompt for summarising research papers. What's unclear or ambiguous about it? How would you rewrite it?"
-
-> "I'm building a prompt for customer sentiment classification. What edge cases should my examples cover?"
-:::
-
-:::{.column width=45%}
-**Why this works:**
-
-The model has seen [millions of prompts and their outcomes]{.alert} in training data. It has implicit knowledge of what makes prompts succeed or fail.
-
-[Let the AI teach you how to prompt it]{.alert}.
-
-:::{style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; font-size: 18px;"}
-**Useful meta-prompting questions:**
-
-- "What information would help you answer this better?"
-- "What assumptions are you making about this task?"
-- "What could go wrong with your response?"
-- "How would you rate your confidence in this answer, and why?"
-- "What would I need to ask differently to get [X] instead?"
-:::
-:::
-:::
-:::
-
 # AI agents and tool use 🤖 {background-color="#2d4563"}
 
 ## From chatbots to agents: The ReAct pattern
@@ -1019,7 +1019,7 @@ Build a mental [reliability map]{.alert}—learn where your model works well and
 
 ## Your prompt engineering toolkit
 
-:::{style="margin-top: 30px; font-size: 22px;"}
+:::{style="margin-top: 30px; font-size: 25px;"}
 :::{.columns}
 :::{.column width=50%}
 **Technique reference:**
@@ -1044,48 +1044,8 @@ Build a mental [reliability map]{.alert}—learn where your model works well and
 5. [Verify critical outputs]{.alert}—models fail unexpectedly
 6. Iterate based on [actual failures]{.alert}
 
-:::{style="text-align: center; margin-top: 30px;"}
-[![](figures/toolkit.png){width="80%"}](#){data-modal-type="image" data-modal-url="figures/toolkit.png"}
-:::
-:::
-:::
-:::
-
-## Further reading
-
-:::{style="margin-top: 30px; font-size: 20px;"}
-:::{.columns}
-:::{.column width=50%}
-**Research papers:**
-
-- Wei, J., et al. (2022). [Chain-of-Thought prompting elicits reasoning in large language models](https://arxiv.org/abs/2201.11903). The original CoT paper.
-- Kojima, T., et al. (2022). [Large language models are zero-shot reasoners](https://arxiv.org/abs/2205.11916). "Let's think step by step."
-- Yao, S., et al. (2022). [ReAct: Synergizing reasoning and acting](https://arxiv.org/abs/2210.03629). The agent framework.
-
-**Official guides:**
-
-- Anthropic (2025). [Prompt engineering overview](https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering). Claude's best practices.
-- OpenAI (2025). [Prompt engineering](https://platform.openai.com/docs/guides/prompt-engineering). GPT best practices.
-- Google (2025). [Gemini Prompting Guide](https://services.google.com/fh/files/misc/gemini-for-google-workspace-prompting-guide-101.pdf). The PTCF framework.
-:::
-
-:::{.column width=50%}
-**Learning resources:**
-
-- [Prompting Guide](https://www.promptingguide.ai/). Community-maintained reference.
-- Google (2025). [Prompting essentials](https://grow.google/prompting-essentials/). Free Coursera course.
-- Berryman, J., & Ziegler, A. (2024). [Prompt Engineering for LLMs](https://www.oreilly.com/library/view/prompt-engineering-for/9781098156145/). O'Reilly book.
-
-**Tools to practice:**
-
-- [ChatGPT](https://chat.openai.com/)
-- [Claude](https://claude.ai/)
-- [Gemini](https://gemini.google.com/)
-- [Perplexity](https://perplexity.ai/) (research with citations)
 :::
 :::
 :::
 
 # ...and that's all for today! 🎉 {background-color="#2d4563"}
-
-# See you next time! 👋 {background-color="#2d4563"}

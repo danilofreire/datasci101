@@ -243,58 +243,30 @@ Source: [Medium](https://aws.plainenglish.io/model-performance-optimization-unde
 :::
 :::
 
-## Precision and recall
+## Precision, recall, and the trade-off
 ### The two sides of classification performance
 
-:::{style="margin-top: 30px; font-size: 20px; text-align: center;"}
+:::{style="margin-top: 20px; font-size: 22px;"}
 :::{.columns}
 :::{.column width=50%}
 **[Precision](https://en.wikipedia.org/wiki/Precision_and_recall)** = TP / (TP + FP)
 
 - When the model says "yes", [how often is it right?]{.alert}
 - High precision = [few false alarms]{.alert}
-- Important when **false positives are costly**:
-  - Spam detection, fraud prevention
-  - Don't block legitimate transactions!
+- Important when **false positives are costly** (spam, fraud)
 
-:::{style="text-align: center;"}
-[![Precision focuses on predicted positives](figures/precision.gif){width="60%"}](#){data-modal-type="image" data-modal-url="figures/precision.gif"}
-:::
-:::
-
-:::{.column width=50%}
 **[Recall](https://en.wikipedia.org/wiki/Precision_and_recall)** = TP / (TP + FN)
 
 - Of all actual positives, [how many did we find?]{.alert}
 - High recall = [we don't miss many positives]{.alert}
-- Important when **false negatives are costly**:
-  - Disease screening, security threats
-  - Don't miss sick patients!
+- Important when **false negatives are costly** (disease, security)
 
-[![Recall focuses on actual positives](figures/recall.gif){width="60%"}](#){data-modal-type="image" data-modal-url="figures/recall.gif"}
-:::
-:::
+**The trade-off**: Most classifiers output a [probability score]{.alert}. Moving the threshold trades off precision and recall—[you can't maximise both!]{.alert}
 :::
 
-## The precision-recall trade-off
-### You can't have it all
-
-:::{style="margin-top: 30px; font-size: 24px;"}
-:::{.columns}
-:::{.column width=55%}
-- Most classifiers output a [probability score]{.alert}
-- We choose a [threshold]{.alert} to decide "positive" vs "negative"
-- Moving the threshold [trades off precision and recall]{.alert}:
-  - **High threshold** (strict): Only confident positives → High precision, low recall
-  - **Low threshold** (lenient): Accept weak positives → High recall, low precision
-- This creates a [precision-recall curve]{.alert}
-- The [optimal threshold depends on your application!]{.alert}
-- No free lunch: Improving one usually hurts the other
-:::
-
-:::{.column width=45%}
+:::{.column width=50%}
 :::{style="text-align: center;"}
-[![The precision-recall trade-off](figures/precision-recall-tradeoff.gif){width="100%"}](#){data-modal-type="image" data-modal-url="figures/precision-recall-tradeoff.gif"}
+[![The precision-recall trade-off](figures/precision-recall-tradeoff.gif){width="90%"}](#){data-modal-type="image" data-modal-url="figures/precision-recall-tradeoff.gif"}
 
 Source: [Analytics Vidhya](https://www.analyticsvidhya.com/blog/2020/10/how-to-choose-evaluation-metrics-for-classification-model/)
 :::
@@ -344,11 +316,11 @@ Source: [Wikipedia](https://en.wikipedia.org/wiki/Receiver_operating_characteris
 | **R²** | 1 - (SS_res / SS_tot) | Proportion of variance explained |
 
 :::{.fragment}
-**Key intuitions:**
+[Easy examples:]{.alert}
 
-- **MAE**: "On average, predictions are off by X units"
-- **RMSE**: "Typical error size, but big errors count more"
-- **R²**: "The model explains X% of the variation in the data" (R² = 0.8 means 80%)
+- **MAE** (Mean Absolute Error): Predict 10 pizzas, 12 arrive → off by 2. Predict 10, get 8 → off by 2. [MAE = 2 pizzas]{.alert}
+- **RMSE** (Root Mean Squared Error): Off by 2 one day, off by 10 another. RMSE [punishes that 10 way more]{.alert} than the 2
+- **R²**: R² = 0.8 means your model [explains 80%]{.alert} of why scores differ; [20% remains unexplained]{.alert}
 :::
 :::
 
@@ -425,7 +397,7 @@ Source: [X.com](https://x.com/MaartenvSmeden/status/1522230905468862464)
 ## Data splits and cross-validation
 ### How to evaluate fairly
 
-:::{style="margin-top: 30px; font-size: 19px;"}
+:::{style="margin-top: 30px; font-size: 21px;"}
 :::{.columns}
 :::{.column width=55%}
 **The three-way split:**
@@ -666,7 +638,7 @@ Source: [Nielsen Norman Group](https://www.nngroup.com/articles/ai-hallucination
 ## Real-world consequences
 ### Why hallucinations matter
 
-:::{style="margin-top: 30px; font-size: 18px;"}
+:::{style="margin-top: 30px; font-size: 20px;"}
 :::{.columns}
 :::{.column width=55%}
 **Notable incidents (all real!):**
@@ -803,69 +775,34 @@ Vulnerabilities found before deployment
 
 # Benchmarks & leaderboards 🏆 {background-color="#2d4563"}
 
-## Benchmarks and leaderboards
-### Comparing AI models at scale
+## Benchmarks, leaderboards, and their limits
+### Comparing AI models...and when metrics fail
 
-:::{style="margin-top: 30px; font-size: 22px;"}
+:::{style="margin-top: 20px; font-size: 21px;"}
 :::{.columns}
 :::{.column width=55%}
-**[Benchmarks]{.alert}**: Standardised tests for AI
+**[Benchmarks]{.alert}**: Standardised tests ([MMLU](https://huggingface.co/spaces/TIGER-Lab/MMLU-Pro), [TruthfulQA](https://github.com/sylinrl/TruthfulQA), [HumanEval](https://humaneval.org/))
 
-- Famous examples:
-  - [MMLU](https://huggingface.co/spaces/TIGER-Lab/MMLU-Pro): 57 subjects of academic knowledge
-  - [TruthfulQA](https://github.com/sylinrl/TruthfulQA): Resistance to misconceptions
-  - [HumanEval](https://humaneval.org/): Code generation
-- Enable [objective comparison]{.alert} across models
+**[Leaderboards]{.alert}**: Human preference rankings ([LM Arena](https://lmarena.ai/) uses Elo ratings)
 
-**[Leaderboards]{.alert}**: Human preference rankings
-
-- [LM Arena](https://lmarena.ai/): Users compare anonymous model outputs
-- Votes aggregated using [Elo ratings]{.alert} (like chess!)
-- Captures [real preferences]{.alert}, not just benchmark scores
-- Downside: Subjective, expensive, doesn't measure correctness
-:::
-
-:::{.column width=45%}
-:::{style="text-align: center;"}
-[![AI benchmarks](figures/ai-benchmarks.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/ai-benchmarks.png"}
-
-Source: [Epoch AI](https://epoch.ai/gradient-updates/the-real-reason-ai-benchmarks-havent-reflected-economic-impacts)
-
-[Try it yourself at [lmarena.ai](https://lmarena.ai/)!]{.alert}
-:::
-:::
-:::
-:::
-
-
-## The dark side of benchmarks
-### When metrics become targets ("benchmaxxing")
-
-:::{style="margin-top: 30px; font-size: 22px;"}
-:::{.columns}
-:::{.column width=55%}
 [Goodhart's Law](https://en.wikipedia.org/wiki/Goodhart%27s_law): ["When a measure becomes a target, it ceases to be a good measure"]{.alert}
 
 **Common problems:**
 
-- **Benchmark contamination**: Test data accidentally (or intentionally) appears in training data
-- **Teaching to the test**: Teams optimise for benchmark quirks rather than genuine capability
-- **Metric saturation**: Models achieve "human-level" on benchmarks but still fail in real-world scenarios
-- **Narrow focus**: Only measuring what's easy to measure
+- **Benchmark contamination**: Test data leaks into training
+- **Teaching to the test**: Optimising for quirks, not capability
+- **Metric saturation**: "Human-level" on benchmarks, fails in real-world
+
+**What benchmarks miss:** Robustness, safety, creativity, long-horizon reasoning
 :::
 
 :::{.column width=45%}
-**What benchmarks often miss:**
-
-- Real-world robustness and edge cases
-- Safety and alignment
-- Creative problem-solving
-- Long-horizon reasoning
-
 :::{style="text-align: center;"}
-[![Goodhart's Law in action](figures/benchmaxxing.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/benchmaxxing.png"}
+[![Goodhart's Law in action](figures/benchmaxxing.png){width="85%"}](#){data-modal-type="image" data-modal-url="figures/benchmaxxing.png"}
 
 Source: [X.com](https://x.com/andrewlamb1111/status/1952386263450841233)
+
+[Try it yourself at [lmarena.ai](https://lmarena.ai/)!]{.alert}
 :::
 :::
 :::
