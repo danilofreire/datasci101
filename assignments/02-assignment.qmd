@@ -1,0 +1,183 @@
+---
+title: "Assignment 02: Machine Learning Concepts and LLM Internals"
+subtitle: "DATASCI 185: Introduction to AI Applications"
+author: "Emory University"
+format:
+  docx:
+    toc: false
+    number-sections: false
+---
+
+## Instructions
+
+This assignment covers material from **Lectures 04-07**: Supervised/Unsupervised/Reinforcement Learning, Metrics and Validation, Tokenisation and Embeddings, and Multimodal AI.
+
+**Guidelines:**
+
+- You are **encouraged** to use ChatGPT, Claude, Gemini, or other LLMs to help you explore these questions
+- However, you must **write your answers in your own words** and demonstrate genuine understanding
+- Please **disclose which AI tool you used** (if any)
+- Your answers should be thoughtful and show critical thinking, not just copy-pasted LLM outputs
+- **Each answer should be between 50 and 100 words** (it can be a little less or more, no problem)
+- **Screenshots are encouraged** for your interactions with AI tools, feel free to include them in your responses when relevant
+- However, **reflection questions must be written in text**, not just screenshots
+- Submit this assignment as a **PDF** (preferred) or Word document via Canvas
+
+---
+
+### Question 1: Learning Paradigm Sorter
+
+Ask ChatGPT, Claude, Gemini, or another LLM: *"Give me 5 real-world examples of AI applications."*
+
+For each example the LLM provides, identify which learning paradigm it uses:
+
+1. **Supervised learning** (learns from labelled examples)
+2. **Unsupervised learning** (finds patterns without labels)
+3. **Reinforcement learning** (learns from rewards and trial-and-error)
+
+Explain your reasoning for each classification. If you're uncertain about any example, explain why it's ambiguous.
+
+---
+
+*Your answer:*
+
+\
+
+\
+
+\
+
+---
+
+### Question 2: Confusion Matrix Builder
+
+Ask an LLM to generate a confusion matrix for a spam filter with the following results:
+
+- Correctly identifies **90 spam emails** (True Positives)
+- Misses **10 spam emails** that go to the inbox (False Negatives)
+- Correctly identifies **900 legitimate emails** (True Negatives)
+- Wrongly marks **5 legitimate emails** as spam (False Positives)
+
+Based on this confusion matrix:
+
+1. Calculate the **precision** of this spam filter (you can ask the LLM to explain what the concepts are if you are not familiar with them)
+2. Calculate the **recall** of this spam filter
+3. Which metric would you prioritise for a spam filter, and why? Consider the costs of each type of error.
+
+---
+
+*Your answer:*
+
+\
+
+\
+
+\
+
+---
+
+### Question 3: Temperature Experiment
+
+The **temperature** parameter controls how random or deterministic an LLM's responses are. In this question, you'll experiment with temperature settings.
+
+**Option A: Use Google AI Studio** (recommended for this experiment)
+
+1. Go to [aistudio.google.com](https://aistudio.google.com/)
+2. Sign in with your Google account
+3. Find the temperature slider in the settings panel
+4. Ask the same creative question (e.g., *"Write a short poem about machine learning"*) at:
+   - Low temperature (0.1 or 0.2)
+   - High temperature (0.9 or 1.0)
+5. Ask the same question multiple times at each temperature setting
+
+**Option B: Use ChatGPT**
+
+1. Go to [chat.openai.com](https://chat.openai.com/)
+2. Try prompting ChatGPT to be "very factual and deterministic" vs. "very creative and varied"
+3. Ask the same question multiple times in each mode
+
+**Your task:**
+
+- Document the responses you receive at different temperature settings (or different prompting styles)
+- Do you notice any differences in creativity, variation, or consistency?
+- If you don't notice much difference, speculate on why that might be (consider: default settings, model guardrails, the type of question asked)
+
+---
+
+*Your answer:*
+
+\
+
+\
+
+\
+
+---
+
+### Question 4: Multimodal Unified Embedding
+
+Ask an LLM: *"How can ChatGPT understand both text and images when they seem so different?"*
+
+Based on the LLM's response and what you learned in Lecture 07 about multimodal AI:
+
+1. Explain the key insight that **"everything becomes embeddings"** in your own words
+2. What is an embedding, and why does converting different types of data (text, images, audio) into embeddings allow a single model to process them all?
+3. Give an example of how this unified approach enables something that wouldn't be possible otherwise
+
+---
+
+*Your answer:*
+
+\
+
+\
+
+\
+
+---
+
+### Question 5: AI Ethics Panel
+
+Imagine you're on a panel debating the following question: *"Should AI-generated images and voices require mandatory watermarks or disclosure labels?"*
+
+**Part 1:** Ask an LLM for arguments **both FOR and AGAINST** this policy. Document the main points it provides.
+
+**Part 2:** Write your own position on this issue. Your position should include:
+
+- Your stance (for, against, or somewhere in between)
+- At least **one original argument** that the LLM did not provide
+- Consideration of some group that might be affected by this policy (creators, consumers, artists, journalists, etc.)
+
+---
+
+*Your answer:*
+
+\
+
+\
+
+\
+
+---
+
+### Bonus Question: Tokenisation Cost Analysis
+
+Visit [OpenAI's Tokenizer](https://platform.openai.com/tokenizer) and explore how different texts are tokenised.
+
+1. Tokenise your full name. How many tokens is it?
+2. Tokenise "artificial intelligence" vs. "AI". What's the difference?
+3. Tokenise "Hello" (English) vs. "你好" (Chinese for "Hello"). What do you notice?
+4. If GPT-4 costs $0.03 per 1,000 input tokens, estimate the cost of a 500-word essay prompt.
+
+Based on your experiments, why might non-English speakers face higher costs when using LLMs? Is this fair?
+
+---
+
+*Your answer:*
+
+\
+
+\
+
+\
+
