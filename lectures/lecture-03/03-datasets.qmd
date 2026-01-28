@@ -85,7 +85,7 @@ Source: [Clay.Global](https://clay.global/blog/ai-guide/timeline-of-ai)
 :::{.column width=50%}
 - Today we'll explore the foundation of all AI systems: [the data they're trained on]{.alert}
 - Why data quality matters
-- Types of ML tasks
+- Types of AI tasks
 - Sourcing and collecting data
 - Selection bias and its dangers
 - Best practices for labelling data
@@ -206,7 +206,7 @@ Source: [xkcd](https://xkcd.com/1838/)
 # Types of machine learning tasks 🎯 {background-color="#2d4563"}
 
 ## Classification and regression tasks
-### The two main types of ML tasks
+### The two main types of AI tasks
 
 :::{style="margin-top: 30px; font-size: 22px;"}
 :::{.columns}
@@ -236,7 +236,7 @@ Source: [xkcd](https://xkcd.com/1838/)
 :::
 :::
 
-## Other common ML tasks
+## Other common AI tasks
 ### Beyond classification and regression
 
 :::{style="margin-top: 30px; font-size: 26px;"}

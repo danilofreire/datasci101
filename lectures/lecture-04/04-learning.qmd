@@ -60,7 +60,7 @@ if (!require("fontawesome", character.only = TRUE)) {
 :::{.column width=50%}
 - We discussed the [foundation of AI systems: (good) data!]{.alert}
 - [Garbage in, garbage out!]{.alert}
-- Different ML tasks require different types of labels (classification, regression, etc.)
+- Different AI/ML tasks require different types of labels (classification, regression, etc.)
 - [Selection bias]{.alert} is dangerous and hard to fix after the fact
 - Labelling is harder than it looks, and [clear guidelines and multiple annotators]{.alert} improve quality
 - [Inter-annotator agreement]{.alert} (Cohen's Kappa) measures labelling reliability
@@ -104,10 +104,10 @@ Source: [Data Science Dojo](https://datasciencedojo.com/blog/machine-learning-10
 :::
 :::
 
-## Tweet of the day
+## Tweet of the day 😄
 
 :::{style="margin-top: 20px; font-size: 24px; text-align: center;"}
-[![Tweet of the day](figures/tweet-of-the-day.jpeg){width="100%"}](#){data-modal-type="image" data-modal-url="figures/tweet-of-the-day.jpeg"}
+[![](figures/tweet-of-the-day.jpeg){width="100%"}](#){data-modal-type="image" data-modal-url="figures/tweet-of-the-day.jpeg"}
 :::
 
 # The three learning paradigms 🎓 {background-color="#2d4563"}
@@ -118,7 +118,7 @@ Source: [Data Science Dojo](https://datasciencedojo.com/blog/machine-learning-10
 :::{style="margin-top: 30px; font-size: 24px;"}
 :::{.columns}
 :::{.column width=55%}
-- Machine learning algorithms learn patterns from data
+- AI algorithms learn patterns from data
 - But [what kind of data]{.alert} and [what kind of feedback]{.alert}?
 - Three main paradigms:
   1. [Supervised learning](https://en.wikipedia.org/wiki/Supervised_learning): Learn from labelled examples (what we saw in previous lecture)
@@ -150,7 +150,7 @@ Source: [Medium](https://luigi-bungaro.medium.com/what-is-machine-learning-short
 - Goal: Learn a function $f$ such that $f(x) \approx y$
 - Like learning with a [teacher]{.alert} who provides correct answers
 - The "supervision" comes from [known labels]{.alert}
-- Most common paradigm in real-world applications
+- [Most common paradigm]{.alert} in real-world applications
 - Examples:
   - Email → Spam/Not spam
   - Image → Cat/Dog/Bird
@@ -170,7 +170,8 @@ Source: [Memedroid (!)](https://pt.memedroid.com/memes/detail/4155054/Confusing-
 ## Classification vs regression
 ### The two main supervised tasks
 
-:::{style="margin-top: 30px; font-size: 24px;"}
+:::{style="margin-top: 30px; font-size: 23px;"}
+You may remember them from last class: 
 
 :::{.columns}
 :::{.column width=50%}
@@ -217,7 +218,7 @@ Source: [Memedroid (!)](https://pt.memedroid.com/memes/detail/4155054/Confusing-
 $$\hat{y} = w_0 + w_1 x_1 + w_2 x_2 + \ldots + w_n x_n$$
 
 - Learn weights $w$ that minimise prediction error
-- [Logistic regression]{.alert}: Classification via sigmoid function
+- [Logistic regression]{.alert}: Classification via [sigmoid function](https://en.wikipedia.org/wiki/Sigmoid_function)
 
 $$P(y=1|x) = \frac{1}{1 + e^{-(w_0 + w_1 x_1 + \ldots)}}$$
 
@@ -227,10 +228,14 @@ $$P(y=1|x) = \frac{1}{1 + e^{-(w_0 + w_1 x_1 + \ldots)}}$$
 :::
 
 :::{.column width=45%}
-:::{style="text-align: center;"}
-[![Linear regression fits a line](figures/linear-regression.gif){width="100%"}](#){data-modal-type="image" data-modal-url="figures/linear-regression.gif"}
+:::{style="text-align: center; margin-top: -70px;"}
+[![Linear regression fits a line](figures/linear-regression.gif){width="70%"}](#){data-modal-type="image" data-modal-url="figures/linear-regression.gif"}
 
 Source: [Medium](https://medium.com/swlh/from-animation-to-intuition-linear-regression-and-logistic-regression-f641a31e1caf)
+
+[![A logistic function converts a line into a curve](figures/logistic-function.png){width="60%"}](#){data-modal-type="image" data-modal-url="figures/logistic-function.png"}
+
+Source: [Wikipedia](https://en.wikipedia.org/wiki/Logistic_function)
 :::
 :::
 :::
@@ -239,7 +244,7 @@ Source: [Medium](https://medium.com/swlh/from-animation-to-intuition-linear-regr
 ## Decision trees
 ### Learning rules from data
 
-:::{style="margin-top: 30px; font-size: 24px;"}
+:::{style="margin-top: 30px; font-size: 25px;"}
 :::{.columns}
 :::{.column width=55%}
 - [Decision trees]{.alert}: Learn a hierarchy of yes/no questions
@@ -248,7 +253,7 @@ Source: [Medium](https://medium.com/swlh/from-animation-to-intuition-linear-regr
 - Easy to interpret: "If income > £50k AND age > 30, then approve loan"
 - Can capture [non-linear relationships]{.alert}
 - Prone to [overfitting]{.alert} (memorising training data)
-- Solution: [Random forests](https://en.wikipedia.org/wiki/Random_forest)—combine many trees
+- Solution: [Random forests](https://en.wikipedia.org/wiki/Random_forest), which combine many trees
   - Each tree sees different data/features
   - Average their predictions for robustness
 :::
@@ -298,13 +303,13 @@ Source: [3Blue1Brown](https://www.3blue1brown.com/topics/neural-networks)
 :::{style="margin-top: 30px; font-size: 22px;"}
 :::{.columns}
 :::{.column width=55%}
-- Every model makes errors. Two sources:
-  - [Bias]{.alert}: Error from oversimplified assumptions
-    - Underfitting: Model too simple
-    - Misses real patterns in the data
-  - [Variance]{.alert}: Error from sensitivity to training data
-    - Overfitting: Model too complex
-    - Memorises noise, fails on new data
+- [Every model makes errors!]{.alert} Two sources:
+- [Bias]{.alert}: Error from oversimplified assumptions
+  - Underfitting: Model too simple
+  - Misses real patterns in the data
+- [Variance]{.alert}: Error from sensitivity to training data
+  - Overfitting: Model too complex
+  - Memorises noise, fails on new data
 
 $$\text{Total Error} = \text{Bias}^2 + \text{Variance} + \text{Noise}$$
 
@@ -363,13 +368,13 @@ Source: [Vizuara](https://www.vizuaranewsletter.com/p/f6a)
 - [Unsupervised learning]{.alert}: Learn from data without labels
 - No "correct answers" provided
 - Goal: Discover [hidden patterns or structure]{.alert}
-- Like learning [without a teacher]{.alert}—explore and discover
+- Like learning [without a teacher]{.alert}, explore and discover
 - Why use it?
   - [Labels are expensive]{.alert} (experts needed)
   - Sometimes labels [don't exist]{.alert} ("How many customer types?")
   - [Exploration]{.alert}: Understand data before modelling
   - [Pre-training]{.alert}: Learn representations, then fine-tune
-- Key questions:
+- Some questions to ask before using these models:
   - Are there natural groups in the data?
   - Can we represent data more compactly?
 :::
@@ -422,7 +427,7 @@ Source: [Machine Learning CoBan](https://machinelearningcoban.com/2017/01/01/kme
 ## Dimensionality reduction
 ### Compressing information
 
-:::{style="margin-top: 30px; font-size: 24px;"}
+:::{style="margin-top: 30px; font-size: 22px;"}
 :::{.columns}
 :::{.column width=55%}
 - [Curse of dimensionality]{.alert}: High-dimensional data is hard to work with
@@ -435,6 +440,7 @@ Source: [Machine Learning CoBan](https://machinelearningcoban.com/2017/01/01/kme
   - **Linear**: PCA (Principal Component Analysis)
   - **Non-linear**: t-SNE, UMAP
 - Applications: Visualisation, preprocessing, compression
+- [Super cool example]{.alert} (we will see it in [lecture 06!](https://raw.githack.com/danilofreire/datasci185/main/lectures/lecture-06/06-language.html)): <https://projector.tensorflow.org/>
 :::
 
 :::{.column width=45%}
@@ -490,7 +496,7 @@ Source: [Vizuara](https://www.vizuaranewsletter.com/p/understanding-principal-co
 - An [agent]{.alert} interacts with an [environment]{.alert}
 - Takes [actions]{.alert}, receives [rewards]{.alert} (or punishments)
 - Goal: Learn a [policy]{.alert} that maximises cumulative reward
-- No labelled examples—learn from [experience]{.alert}
+- No labelled examples, machines learn from [experience]{.alert}
 - Like training a dog (or kids!): [Reward good behaviour!]{.alert}
 - [Different from supervised]{.alert}: No "correct" action given
 - [Different from unsupervised]{.alert}: There IS a goal (maximise reward)
@@ -521,6 +527,9 @@ Source: [Wikipedia](https://en.wikipedia.org/wiki/Reinforcement_learning)
 | **Policy** | Strategy: state → action | "In this position, move queen" |
 | **Value** | Expected future reward from a state | How good is this position? |
 
+:::{style="font-size: 20px;"}
+> Fun fact: [Magnus Carlsen](https://en.wikipedia.org/wiki/Magnus_Carlsen) once said he ["can't beat his phone in chess"](https://www.firstpost.com/sports/chess/magnus-carlsen-on-playing-against-chess-computer-engine-difficulty-joe-rogan-podcast-13867015.html). RL really works! 😅
+:::
 :::
 
 ## The exploration-exploitation trade-off
@@ -557,18 +566,18 @@ Source: [Lilian Weng](https://lilianweng.github.io/lil-log/2018/01/23/the-multi-
 :::{style="margin-top: 30px; font-size: 19px;"}
 :::{.columns}
 :::{.column width=55%}
-- [Q-learning](https://en.wikipedia.org/wiki/Q-learning): Learn the value of each action in each state
-- $Q(s, a)$ = expected future reward from taking action $a$ in state $s$
-- Update rule (Bellman equation):
+- [Q-learning](https://en.wikipedia.org/wiki/Q-learning): Learn which actions are best in each situation
+- Think of it as keeping a **score card**: 
+  - $Q(s, a)$ = "How good is action $a$ in state $s$?"
+- The agent learns by doing:
+  1. Try an action, see what reward you get → *"Go right... hit a wall, ouch!"*
+  2. Update your score → *"Going right here is bad"*
+  3. Repeat thousands of times → *"Eventually: always go left here!"*
 
-$$Q(s, a) \leftarrow Q(s, a) + \alpha \left[ r + \gamma \max_{a'} Q(s', a') - Q(s, a) \right]$$
+**The update rule:**
+$$\text{New Score} = \text{Old Score} + \text{Small Correction}$$
 
-- $\alpha$: Learning rate (how fast to update)
-- $r$: Immediate reward received
-- $\gamma$: Discount factor (how much to value future rewards)
-- $s'$: Next state after taking action $a$
-- Policy: Choose action with highest Q-value
-- [Works for discrete state/action spaces]{.alert}
+- [Policy]{.alert}: Always pick the action with the highest score
 - [Cool example]{.alert}: (Poor) Albert learns to walk: <https://youtu.be/L_4BPjLBF4E?&t=137>
 - [Super cool example]{.alert}: [DeepMind's AlphaGo](https://deepmind.google/research/alphago/): <https://youtu.be/WXuK6gekU1Y>
 :::
@@ -591,12 +600,12 @@ Source: [Medium](https://medium.com/data-science/getting-started-with-reinforcem
 :::{.columns}
 :::{.column width=55%}
 - [RLHF]{.alert}: Reinforcement Learning from Human Feedback
-- Key to ChatGPT's success!
+- [Key to ChatGPT's success!]{.alert}
 - Process:
   1. Train base LLM on text (supervised)
   2. Collect human preferences on model outputs
   3. Train a [reward model]{.alert} on preferences
-  4. Use RL (PPO) to optimise LLM for reward
+  4. Use RL to optimise LLM for reward
 - Why it works:
   - Hard to specify "good response" in a formula
   - Humans can [compare]{.alert} responses more easily
@@ -648,6 +657,7 @@ Source: [Pliny the Liberator](https://pliny.gg/)
 
 ## AI safety
 ### It's not just about making it do what we want
+
 :::{style="margin-top: 30px; font-size: 27px;"}
 :::{.columns}
 :::{.column width=55%}
