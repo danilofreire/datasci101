@@ -102,6 +102,7 @@ Readings:
 ### February 09, 2026:
 
 - Lecture 07: [How machines see and hear](https://raw.githack.com/danilofreire/datasci185/main/lectures/lecture-07/07-multimodal.html).
+- [Kahoot Quiz](https://play.kahoot.it/v2/?quizId=d539fc1e-248f-4ef9-86de-ba9926c28883&hostId=05eb977d-4f8a-440e-9e45-95212b29d103)
 
 Readings:
 
@@ -121,6 +122,7 @@ Readings:
 ### February 16, 2026:
 
 - Lecture 09: [Prompting techniques](https://raw.githack.com/danilofreire/datasci185/main/lectures/lecture-09/09-prompting.html).
+- [Kahoot Quiz](https://play.kahoot.it/v2/?quizId=52c1d6cc-c11f-44a0-84b3-e3273ed07c71&hostId=05eb977d-4f8a-440e-9e45-95212b29d103)
 
 Readings:
 
@@ -138,6 +140,7 @@ Readings:
 ### February 18, 2026:
 
 - Lecture 10: [Creativity and hallucination](https://raw.githack.com/danilofreire/datasci185/main/lectures/lecture-10/10-hallucination.html).
+- [Kahoot Quiz](https://play.kahoot.it/v2/?quizId=2eb129f2-3030-4ebd-9f5d-6afd251d0c53&hostId=05eb977d-4f8a-440e-9e45-95212b29d103)
 - **Assignment 04 due (5%).**
 - [**Assignment 05**](https://github.com/danilofreire/datasci185/blob/main/assignments).
 
@@ -152,6 +155,7 @@ Readings:
 ### February 23, 2026:
 
 - Lecture 11: [Retrieval-augmented workflows and semantic search](https://raw.githack.com/danilofreire/datasci185/main/lectures/lecture-11/11-rag.html).
+- [Kahoot Quiz](https://play.kahoot.it/v2/?quizId=60414733-4795-4b9e-815f-3ad615072fab&hostId=05eb977d-4f8a-440e-9e45-95212b29d103)
 
 Readings:
 
