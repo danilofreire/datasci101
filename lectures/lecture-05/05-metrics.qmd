@@ -110,6 +110,26 @@ Source: [Miquido - AI Glossary](https://www.miquido.com/ai-glossary/ai-model-eva
 [![](figures/tweet-of-the-day.jpeg){width="55%"}](#){data-modal-type="image" data-modal-url="figures/tweet-of-the-day.jpeg"}
 :::
 
+## Emory's stance on AI use
+
+:::{style="margin-top: 30px; font-size: 21px;"}
+:::{.columns}
+:::{.column width=50%}
+:::{style="text-align: center;"}
+[![](figures/emory-ai-01.png){width="95%"}](#){data-modal-type="image" data-modal-url="figures/emory-ai-stance.webp"}
+
+Source: [Emory Magazine (2026)](https://news.emory.edu/features/2025/12/emag_knowledge_innovation_02-12-2025/index.html)
+:::
+:::
+
+:::{.column width=50%}
+:::{style="text-align: center;"}
+[![](figures/emory-ai-02.png){width="95%"}](#){data-modal-type="image" data-modal-url="figures/emory-ai-stance.webp"}
+:::
+:::
+:::
+:::
+
 # Why metrics matter 📊 {background-color="#2d4563"}
 
 ## Think about this 🤔
