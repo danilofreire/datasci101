@@ -104,6 +104,14 @@ Source: [Miquido - AI Glossary](https://www.miquido.com/ai-glossary/ai-model-eva
 :::
 :::
 
+## Upcoming event
+
+:::{style="text-align: center; margin-top: 30px;"}
+[![](figures/google.png){width="35%"}](#){data-modal-type="image" data-modal-url="figures/google.png"}
+
+[RSVP here](https://forms.office.com/Pages/ResponsePage.aspx?id=nPsE4KSwT0K80DImBtXfOGf5iP0NIbROsdVBvVq1metUNTVaSUJYMkI4QkowR1NBWUtEV1k4NFMzVSQlQCN0PWcu)
+:::
+
 ## Tweet of the day
 
 :::{style="text-align: center; margin-top: 30px;"}
