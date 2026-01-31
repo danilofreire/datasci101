@@ -1,0 +1,964 @@
+---
+title: "DATASCI 185: Introduction to AI Applications"
+subtitle: "Lecture 11: RAG, Semantic Search, and Grounding AI"
+author:
+  - name: Danilo Freire
+    orcid: 0000-0002-4712-6810
+    email: danilo.freire@emory.edu
+    affiliations: "Department of Data and Decision Sciences <br> Emory University"
+format:
+  clean-revealjs:
+    self-contained: true
+    footer: "[Lecture 11](https://raw.githack.com/danilofreire/datasci185/main/lectures/lecture-11/11-rag.html)"
+    transition: slide
+    transition-speed: default
+    scrollable: true
+revealjs-plugins:
+  - multimodal
+engine: knitr
+editor:
+  render-on-save: true
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+library(knitr)
+opts_chunk$set(
+  prompt = T,
+  fig.align="center",
+  dpi=300,
+  cache=T,
+  engine.opts = list(bash = "-l")
+  )
+
+knit_hooks$set(
+  prompt = function(before, options, envir) {
+    options(
+      prompt = if (options$engine %in% c('sh','bash', 'zsh')) '$ ' else 'R> ',
+      continue = if (options$engine %in% c('sh','bash', 'zsh')) '$ ' else '+ '
+      )
+})
+
+options(repos = c(CRAN = "https://cran.rstudio.com/"))
+
+if (!require("fontawesome", character.only = TRUE)) {
+  install.packages("fontawesome", dependencies = TRUE)
+  library(fontawesome, character.only = TRUE)
+}
+```
+
+# Welcome back! 📚 {background-color="#2d4563"}
+
+## Recap of last class
+
+:::{style="margin-top: 50px; font-size: 28px;"}
+:::{.columns}
+:::{.column width=50%}
+- Last time, we explored [hallucinations]{.alert}
+- **Why they happen**: no fact-checking mechanism, sycophancy
+- **Types**: factual errors, fake citations, logical contradictions
+- Higher risk for: recent events, legal/medical, obscure topics
+- Prompting helps, but [doesn't fully solve]{.alert} the problem
+- **Today**: What if AI could access [your own documents]{.alert}? 📄
+:::
+
+:::{.column width=50%}
+:::{style="text-align: center; margin-top: -10px;"}
+[![In a RAG system, an LLM uses retrieved context to provide a response to the input question](figures/rag-concept.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/rag-concept.png"}
+
+Source: [Google Research](https://research.google/blog/deeper-insights-into-retrieval-augmented-generation-the-role-of-sufficient-context/)
+:::
+:::
+:::
+:::
+
+## Lecture overview
+### Today's agenda
+
+:::{style="margin-top: 20px; font-size: 26px;"}
+
+:::{.columns}
+:::{.column width=50%}
+**Part 1: The Problem**
+
+- Quick recap: hallucinations (from Lecture 10)
+- The knowledge cutoff issue
+- How RAG solves both problems
+
+**Part 2: Semantic Search**
+
+- Finding by meaning, not just keywords
+- Quick embeddings recap
+- Why this is a game-changer
+:::
+
+:::{.column width=50%}
+**Part 3: The RAG Pipeline**
+
+- How documents become searchable
+- Chunking, embedding, retrieving
+- From question to grounded answer
+
+**Part 4: No-Code Tools**
+
+- NotebookLM, Perplexity
+- Build your own RAG system—today! 🛠️
+:::
+:::
+:::
+
+## Meme of the day 😄
+
+:::{style="text-align: center; margin-top: 24px;"}
+[![](figures/meme-of-the-day.jpg){width="60%"}](#){data-modal-type="image" data-modal-url="figures/meme-of-the-day.jpg"}
+
+Source: [Bhavishya Pandit](https://bhavishyapandit9.substack.com/p/multimodal-retrieval-augmented-generation)
+:::
+
+## Quick recap: Hallucinations 🤥
+
+:::{style="margin-top: 30px; font-size: 23px;"}
+:::{.columns}
+:::{.column width=55%}
+- LLMs are just [pattern-matching machines]{.alert}. They:
+  - Generate text that fits statistical expectations
+  - [Have no internal verification system]{.alert} for truth
+
+- They'd rather [make something up than admit ignorance]{.alert}
+- Information from [credible sources gets mixed with unreliable ones]{.alert} during training
+- Fabricated answers sound [just as convincing]{.alert} as accurate ones
+
+:::{style="margin-top: 20px; background: rgba(230, 57, 70, 0.1); padding: 15px; border-radius: 10px;"}
+**The key question for today:**
+
+What if we could give the LLM [access to real, verified information]{.alert} when answering?
+:::
+:::
+
+:::{.column width=45%}
+:::{style="text-align: center;"}
+[![](figures/hallucination-example.webp){width="100%"}](#){data-modal-type="image" data-modal-url="figures/hallucination-example.webp"}
+
+:::{style="font-size: 18px; margin-top: 15px;"}
+RAG is designed to address exactly this problem!
+:::
+
+Source: [Iguazio](https://www.iguazio.com/glossary/llm-hallucination/)
+:::
+:::
+:::
+:::
+
+## The solution: Give AI access to real information!
+
+:::{style="margin-top: 30px; font-size: 24px;"}
+:::{.columns}
+:::{.column width=55%}
+**RAG = [R]{.alert}etrieval-[A]{.alert}ugmented [G]{.alert}eneration**
+
+**The core idea:**
+
+1. When you ask a question...
+2. First [search your documents]{.alert} for relevant information
+3. Then give that information to the LLM
+4. The LLM generates an answer [using your data]{.alert}
+
+**Why this works:**
+
+- LLM gets [real, up-to-date information]{.alert}
+- Answers are [grounded]{.alert} in your documents
+- Can [cite sources]{.alert}—you can verify!
+- No need to retrain the model
+
+[It's like giving the AI an open-book exam!]{.alert} 📖
+:::
+
+:::{.column width=45%}
+:::{style="text-align: center;"}
+[![RAG concept diagram](figures/rag-simple-diagram.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/rag-simple-diagram.png"}
+
+Source: [AWS](https://aws.amazon.com/what-is/retrieval-augmented-generation/)
+:::
+:::
+:::
+:::
+
+# Semantic Search 🔍 {background-color="#2d4563"}
+
+## Traditional search vs. semantic search
+
+:::{style="margin-top: 30px; font-size: 20px;"}
+:::{.columns}
+:::{.column width=55%}
+| Feature | Keyword Search | Semantic Search |
+|---------|---------------|----------------|
+| **Matching** | Exact words only | Meaning-based |
+| **"cheap flights"** | ✅ "cheap flights" | ✅ "budget airfare" too! |
+| **Synonyms** | ❌ Misses them | ✅ Understands them |
+| **Typos** | ❌ Breaks results | ✅ Often still works |
+| **Context** | ❌ Ignores it | ✅ Considers it |
+| **Technology** | String matching | [Embeddings]{.alert} |
+
+**Example query**: "How do I fix a broken pipe?"
+
+- Keyword search: Only finds documents with "broken pipe"
+- Semantic search: Also finds "plumbing repair", "leaky faucet solutions"
+:::
+
+:::{.column width=45%}
+**Why does this matter for RAG?**
+
+- Users ask questions in [natural language]{.alert}
+- Your documents may use [different terminology]{.alert}
+- Semantic search bridges this gap!
+
+:::{style="text-align: center; margin-top: 15px;"}
+[![](figures/semantic-vs-keyword.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/semantic-vs-keyword.png"}
+:::
+:::
+:::
+:::
+
+## How semantic search works: Embeddings
+
+:::{style="margin-top: 30px; font-size: 20px;"}
+:::{.columns}
+:::{.column width=55%}
+**Remember from Lecture 06?**
+
+Text gets converted to [vectors]{.alert} (lists of numbers):
+
+| Text | Vector (simplified) |
+|------|--------------------|
+| "king" | [0.82, 0.15, -0.43, ...] |
+| "queen" | [0.79, 0.18, -0.41, ...] |
+| "apple" | [-0.12, 0.67, 0.23, ...] |
+
+**Key properties:**
+
+- Similar meanings → [similar vectors]{.alert}
+- "king" and "queen" are close in vector space
+- "king" and "apple" are far apart
+- Modern embedding models produce [768 to 3,072 dimensions]{.alert}
+
+| Model | Dimensions | Use Case |
+|-------|------------|----------|
+| OpenAI ada-002 | 1,536 | General purpose |
+| Google Gecko | 768 | Lightweight |
+| Cohere Embed v3 | 1,024 | Multilingual |
+:::
+
+:::{.column width=45%}
+:::{style="text-align: center;"}
+[![Sentence embeddings visualised](figures/sentence-embeddings.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/sentence-embeddings.png"}
+
+:::{style="font-size: 18px; margin-top: 15px;"}
+Similar sentences cluster together in embedding space
+:::
+:::
+:::
+:::
+:::
+
+## Measuring similarity: Cosine similarity
+
+:::{style="margin-top: 30px; font-size: 20px;"}
+:::{.columns}
+:::{.column width=55%}
+**How do we measure if two vectors are similar?**
+
+[Cosine similarity]{.alert} measures the angle between vectors:
+
+$$\text{similarity}(A, B) = \frac{A \cdot B}{\|A\| \times \|B\|}$$
+
+**Interpretation:**
+
+| Score | Meaning | Example |
+|-------|---------|----------|
+| 0.9–1.0 | Very similar | "car" vs "automobile" |
+| 0.7–0.9 | Related | "car" vs "truck" |
+| 0.4–0.7 | Loosely related | "car" vs "road" |
+| 0.0–0.4 | Unrelated | "car" vs "banana" |
+
+**In RAG systems:**
+
+- Query embedding compared to all chunk embeddings
+- Return chunks with [highest similarity scores]{.alert}
+- Typical threshold: retrieve if score > 0.7
+:::
+
+:::{.column width=45%}
+:::{style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; font-size: 18px;"}
+**Mini-example (2D for simplicity):**
+
+```text
+"I love dogs"  → [0.8, 0.6]
+"I adore puppies" → [0.75, 0.65]
+"The weather is nice" → [-0.3, 0.9]
+```
+
+Cosine similarity:
+
+- "dogs" vs "puppies": **0.98** ✅
+- "dogs" vs "weather": **0.12** ❌
+
+The search finds "puppies" when you ask about "dogs"!
+:::
+
+:::{style="margin-top: 15px; font-size: 18px;"}
+**Why cosine over Euclidean distance?**
+
+Cosine measures [direction]{.alert} (meaning), not magnitude. Two sentences about dogs are similar even if one is longer!
+:::
+:::
+:::
+:::
+
+## Activity: Semantic search in action! 🔬
+
+:::{style="margin-top: 30px; font-size: 22px;"}
+:::{.columns}
+:::{.column width=50%}
+**Compare keyword vs. semantic search:**
+
+**Step 1: Traditional search**
+
+- Go to [google.com](https://google.com)
+- Search: "ways to reduce monthly expenses"
+- Note: Does it find "budgeting tips" or "save money"?
+
+**Step 2: ChatGPT (semantic understanding)**
+
+- Go to [chat.openai.com](https://chat.openai.com)
+- Ask: "What are some ways to reduce monthly expenses?"
+- Then ask: "What about cutting spending?" (same meaning!)
+- Notice how it understands both as the same question
+:::
+
+:::{.column width=50%}
+**What to observe:**
+
+- Google requires [exact keywords]{.alert} to match
+- ChatGPT understands [synonyms]{.alert} naturally
+- This is the power of [semantic understanding]{.alert}!
+
+:::{style="margin-top: 20px; background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px;"}
+**Key insight:**
+
+RAG combines the best of both:
+
+- Semantic search to [find relevant documents]{.alert}
+- LLM to [generate natural answers]{.alert}
+:::
+
+⏱️ 3 minutes to compare!
+:::
+:::
+:::
+
+# The RAG Pipeline 🔄 {background-color="#2d4563"}
+
+## How RAG works: The big picture
+
+:::{style="margin-top: 30px; font-size: 20px;"}
+:::{style="text-align: center;"}
+```text
+┌─────────────────────────────────────────────────────────────────────────┐
+│                           THE RAG PIPELINE                               │
+├──────────────────────────────┬──────────────────────────────────────────┤
+│       PREPARATION            │              QUERY TIME                   │
+├──────────────────────────────┼──────────────────────────────────────────┤
+│                              │                                          │
+│  📄 Documents                │  ❓ User Question                        │
+│       ↓                      │       ↓                                  │
+│  ✂️ Chunk into pieces        │  🔢 Convert to embedding                 │
+│       ↓                      │       ↓                                  │
+│  🔢 Convert to embeddings    │  🔍 Find similar chunks                  │
+│       ↓                      │       ↓                                  │
+│  💾 Store in vector database │  📄 Retrieve relevant chunks             │
+│                              │       ↓                                  │
+│                              │  🤖 Send chunks + question to LLM        │
+│                              │       ↓                                  │
+│                              │  💬 Generate grounded answer             │
+│                              │                                          │
+└──────────────────────────────┴──────────────────────────────────────────┘
+```
+:::
+
+:::{style="font-size: 22px; margin-top: 20px;"}
+**Left side (once)**: Prepare your documents for searching
+
+**Right side (every query)**: Find relevant info, then generate answer
+
+[Think of it like a librarian (retrieval) who finds the right books, paired with a scholar (generation) who reads them and answers your question!]{.alert} 📚
+:::
+:::
+
+## Step 1: Ingest your documents
+
+:::{style="margin-top: 30px; font-size: 22px;"}
+:::{.columns}
+:::{.column width=55%}
+**What can you ingest?**
+
+| Format | Examples | Challenges |
+|--------|----------|------------|
+| **PDF** | Papers, reports | Tables, columns, headers |
+| **Word/Docs** | Reports, notes | Formatting, styles |
+| **Web pages** | Articles, docs | Navigation, ads |
+| **Code** | .py, .js files | Comments vs. code |
+| **Transcripts** | Meeting notes | Speaker identification |
+
+**The challenge:**
+
+- Documents are [unstructured]{.alert}
+- Need to extract clean text
+- Preserve meaningful structure
+
+**Good news:** Tools like NotebookLM and ChatGPT handle extraction automatically!
+:::
+
+:::{.column width=45%}
+:::{style="text-align: center;"}
+[![Document ingestion](figures/document-ingestion.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/document-ingestion.png"}
+
+:::{style="font-size: 18px; margin-top: 15px;"}
+Many document types → unified text
+:::
+:::
+:::
+:::
+:::
+
+## Step 2: Chunk the text
+
+:::{style="margin-top: 30px; font-size: 19px;"}
+:::{.columns}
+:::{.column width=55%}
+**Why chunk?**
+
+- LLMs have [context window limits]{.alert} (4K–128K tokens)
+- Can't fit a whole book in one prompt!
+- Need to find the [most relevant parts]{.alert}
+
+**Chunking parameters:**
+
+| Parameter | Typical Values | Trade-off |
+|-----------|---------------|----------|
+| **Chunk size** | 256–1,024 tokens | Small = precise, Large = more context |
+| **Overlap** | 10–20% | Prevents losing info at boundaries |
+| **Strategy** | Sentence, paragraph, semantic | Depends on document structure |
+
+:::{style="margin-top: 10px; background: rgba(45, 69, 99, 0.1); padding: 10px; border-radius: 10px;"}
+**Rule of thumb:** Start with [512 tokens, 20% overlap]{.alert}. Adjust based on your documents and retrieval quality.
+:::
+:::
+
+:::{.column width=45%}
+**Chunk size trade-offs:**
+
+| Size | Pros | Cons |
+|------|------|------|
+| **Small (256)** | Precise retrieval | Loses context |
+| **Medium (512)** | Balanced | Good default |
+| **Large (1024)** | Rich context | May dilute relevance |
+
+:::{style="text-align: center; margin-top: 15px;"}
+[![Chunking visualisation](figures/chunking-diagram.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/chunking-diagram.png"}
+
+Source: [Mastering LLM](https://masteringllm.medium.com/)
+:::
+:::
+:::
+:::
+
+## Step 3: Embed, store & retrieve
+
+:::{style="margin-top: 30px; font-size: 18px;"}
+:::{.columns}
+:::{.column width=50%}
+**Convert chunks to vectors & store:**
+
+- Each chunk → embedding model → vector
+- Same embedding model used for queries later!
+
+| Database | Type | Speed (1M vectors) |
+|----------|------|-------------------|
+| [Pinecone](https://pinecone.io/) | Cloud | ~50ms queries |
+| [Chroma](https://www.trychroma.com/) | Local/Cloud | ~100ms queries |
+| [FAISS](https://github.com/facebookresearch/faiss) | Local | ~10ms queries |
+
+**Why vector databases?**
+
+- Traditional databases: [exact match]{.alert}
+- Vector databases: [similarity search]{.alert}
+
+[Don't worry—no-code tools handle this for you!]{.alert}
+:::
+
+:::{.column width=50%}
+**Retrieval (when you ask a question):**
+
+1. Question → embedding → query vector
+2. Vector DB finds [similar chunks]{.alert}
+3. Returns top-k most similar (k=3–10)
+
+:::{style="background: rgba(45, 69, 99, 0.1); padding: 10px; border-radius: 10px; font-size: 16px;"}
+**Example**: "What is our refund policy?"
+
+| Rank | Chunk | Score |
+|------|-------|-------|
+| 1 | "Returns and refunds: Customers may return..." | 0.92 |
+| 2 | "Our guarantee covers full refunds..." | 0.87 |
+| 3 | "Payment methods accepted..." | 0.54 ❌ |
+:::
+
+:::{style="margin-top: 10px; font-size: 16px;"}
+**Parameters**: top-k (3–10), threshold (0.5–0.8), reranking
+:::
+:::
+:::
+:::
+
+## Step 4: Generate with context
+
+:::{style="margin-top: 30px; font-size: 20px;"}
+:::{.columns}
+:::{.column width=55%}
+**The final step:**
+
+The LLM receives a prompt like this:
+
+:::{style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; font-size: 16px;"}
+**System**: Answer the user's question using ONLY the context provided. If the answer isn't in the context, say "I don't have that information."
+
+**Context**:
+
+[Chunk 1]: "Returns and refunds: Customers may return items within 30 days..."
+
+[Chunk 2]: "Our guarantee covers full refunds for defective products..."
+
+**User question**: "What is your refund policy?"
+:::
+
+**The LLM now:**
+
+- Has [specific, relevant information]{.alert} to work with
+- Is instructed to [cite sources]{.alert}
+- Is told to say "I don't know" if context doesn't contain the answer
+- Generates a [grounded response]{.alert}
+:::
+
+:::{.column width=45%}
+:::{style="text-align: center;"}
+[![Context injection](figures/context-injection.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/context-injection.png"}
+
+:::{style="font-size: 18px; margin-top: 10px;"}
+Retrieved chunks become the LLM's "reference material"
+:::
+:::
+
+:::{style="margin-top: 15px; background: rgba(230, 57, 70, 0.1); padding: 12px; border-radius: 10px;"}
+[This is why RAG reduces hallucinations]{.alert}—the LLM has verified information to work with, not just its training data!
+:::
+:::
+:::
+:::
+
+# RAG vs. Alternatives 🔄 {background-color="#2d4563"}
+
+## RAG vs. fine-tuning vs. prompting
+
+:::{style="margin-top: 30px; font-size: 18px;"}
+:::{.columns}
+:::{.column width=100%}
+**Three ways to customise LLM behaviour:**
+
+| Aspect | Prompt Engineering | RAG | Fine-tuning |
+|--------|-------------------|-----|-------------|
+| **What it does** | Careful instructions | Add external knowledge | Retrain model weights |
+| **Cost** | Free / $ | $$ | $$$ |
+| **Setup time** | Minutes | Hours | Days–Weeks |
+| **Data freshness** | Training cutoff | [Real-time]{.alert} | Training cutoff |
+| **Accuracy (domain)** | Low–Medium | [High]{.alert} | High |
+| **Hallucination risk** | High | [Low]{.alert} | Medium |
+| **Cites sources** | ❌ | [✅]{.alert} | ❌ |
+| **Best for** | Simple tasks | Knowledge-intensive QA | Style/behaviour change |
+
+:::{style="margin-top: 15px;"}
+**When to use each:**
+
+- [Prompting]{.alert}: Quick experiments, general tasks, no private data
+- [RAG]{.alert}: Customer support, research, legal/medical QA, any task needing current or private information
+- [Fine-tuning]{.alert}: Specific writing style, consistent persona, specialised domain language
+:::
+:::
+:::
+:::
+
+## Research findings: Does RAG actually help?
+
+:::{style="margin-top: 30px; font-size: 19px;"}
+:::{.columns}
+:::{.column width=55%}
+**Yes! The evidence is strong:**
+
+| Study | Finding |
+|-------|--------|
+| [Lewis et al. (2020)](https://arxiv.org/abs/2005.11401) | Original RAG paper: outperformed fine-tuned models on knowledge-intensive tasks |
+| [Shuster et al. (2021)](https://arxiv.org/abs/2104.07567) | RAG reduced hallucinations by [~30–50%]{.alert} in dialogue systems |
+| [Gao et al. (2024)](https://arxiv.org/abs/2312.10997) | Comprehensive survey: RAG approach dominant in production systems |
+| [Liu et al. (2023)](https://arxiv.org/abs/2307.03172) | "Lost in the middle": LLMs use beginning and end of context better than middle |
+
+**Hallucination rates comparison:**
+
+| Setting | Hallucination Rate |
+|---------|-------------------|
+| Base LLM (no RAG) | 15–40% |
+| LLM + RAG | [5–15%]{.alert} |
+| LLM + RAG + verification | 2–8% |
+
+*Rates vary by domain and implementation quality*
+:::
+
+:::{.column width=45%}
+:::{style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px;"}
+**The "Lost in the Middle" problem:**
+
+[Liu et al. (2023)](https://arxiv.org/abs/2307.03172) found that LLMs pay most attention to:
+
+1. [Beginning]{.alert} of context (primacy)
+2. [End]{.alert} of context (recency)
+3. [Middle]{.alert} is often ignored!
+
+**Implication for RAG:**
+
+Put the most relevant chunks [first or last]{.alert}, not in the middle!
+:::
+
+:::{style="margin-top: 15px; text-align: center; font-size: 18px;"}
+[![Lost in the middle effect](figures/lost-in-middle.png){width="90%"}](#){data-modal-type="image" data-modal-url="figures/lost-in-middle.png"}
+
+Source: [Liu et al. (2023)](https://arxiv.org/abs/2307.03172)
+:::
+:::
+:::
+:::
+
+# RAG Failure Modes ⚠️ {background-color="#2d4563"}
+
+## When RAG goes wrong
+
+:::{style="margin-top: 30px; font-size: 19px;"}
+:::{.columns}
+:::{.column width=55%}
+**RAG isn't perfect. Common failure modes:**
+
+| Failure Type | What Happens | Frequency |
+|--------------|--------------|----------|
+| **Retrieval failure** | Wrong chunks retrieved | 15–25% of queries |
+| **Lost in the middle** | Relevant info in middle ignored | Common with many chunks |
+| **Context overflow** | Too much text, truncated | Depends on doc size |
+| **Outdated docs** | Stale information retrieved | Depends on maintenance |
+| **Extraction errors** | PDF tables/images parsed incorrectly | 10–30% of complex docs |
+
+**Retrieval failures happen when:**
+
+- Query uses different terms than documents
+- Question is ambiguous
+- Multiple topics compete for relevance
+- Embedding model doesn't capture domain-specific meaning
+:::
+
+:::{.column width=45%}
+:::{style="background: rgba(230, 57, 70, 0.1); padding: 15px; border-radius: 10px;"}
+**Example: Retrieval failure**
+
+**Your document says:**
+> "The quarterly earnings call is scheduled for March 15th"
+
+**You ask:**
+> "When is the investor meeting?"
+
+**Problem:** "investor meeting" ≠ "earnings call" in embedding space
+
+**Result:** Wrong chunks retrieved, wrong answer!
+:::
+
+:::{style="margin-top: 15px; background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px;"}
+**Mitigation strategies:**
+
+- Use terms from your documents
+- Add synonyms to your documents
+- Use hybrid search (keyword + semantic)
+- Increase top-k (retrieve more chunks)
+:::
+:::
+:::
+:::
+
+## Best practices for reliable RAG
+
+:::{style="margin-top: 30px; font-size: 20px;"}
+:::{.columns}
+:::{.column width=50%}
+**For document preparation:**
+
+1. **Clean your documents**
+   - Remove headers, footers, page numbers
+   - Fix OCR errors in scanned PDFs
+
+2. **Use descriptive headings**
+   - Helps chunking and retrieval
+   - "Q4 2024 Revenue" > "Section 3.2"
+
+3. **Keep documents updated**
+   - Stale docs = stale answers
+   - Version control your knowledge base
+
+4. **Test with real queries**
+   - What questions will users actually ask?
+   - Do retrieved chunks contain the answer?
+:::
+
+:::{.column width=50%}
+**For querying:**
+
+1. **Be specific**
+   - ✅ "What was Q4 2024 revenue?"
+   - ❌ "Tell me about the company"
+
+2. **Use document terminology**
+   - If doc says "associates", ask about "associates" not "employees"
+
+3. **Check the citations!**
+   - Does the answer match what the source says?
+   - This is your [verification step]{.alert}
+
+4. **Ask follow-up questions**
+   - "What source did you use for that?"
+   - "Can you quote the relevant passage?"
+
+:::{style="margin-top: 15px; background: rgba(45, 69, 99, 0.1); padding: 12px; border-radius: 10px;"}
+**Golden rule:** [Trust, but verify]{.alert} 🔍
+:::
+:::
+:::
+:::
+
+# No-Code RAG Tools 🛠️ {background-color="#2d4563"}
+
+## Tools you can use today!
+
+:::{style="margin-top: 30px; font-size: 20px;"}
+:::{style="text-align: center;"}
+| Tool | Free? | Best For | Key Feature |
+|------|-------|----------|-------------|
+| [NotebookLM](https://notebooklm.google.com/) | ✅ Yes | Research, study notes | Multi-source synthesis |
+| [ChatGPT + Files](https://chat.openai.com/) | ✅ Free tier | General documents | Easy upload & chat |
+| [Claude + Files](https://claude.ai/) | ✅ Free tier | Long documents | 200K token context |
+| [Google AI Studio](https://aistudio.google.com/) | ✅ Free tier | Experimentation | Gemini models |
+:::
+
+:::{style="margin-top: 20px; font-size: 22px;"}
+**All of these implement RAG internally!**
+
+- You upload documents → (Retrieval source)
+- System finds relevant parts → (Augmented)
+- LLM generates answers → (Generation)
+
+[No coding required—just upload and ask!]{.alert}
+:::
+:::
+
+## NotebookLM: Your AI research assistant
+
+:::{style="margin-top: 30px; font-size: 20px;"}
+:::{.columns}
+:::{.column width=55%}
+**What is NotebookLM?**
+
+- Free tool from Google
+- Upload up to [50 sources]{.alert} (PDFs, docs, websites, YouTube)
+- Creates a personal knowledge base
+- AI answers questions from [YOUR sources only]{.alert}
+
+**Features:**
+
+| Feature | What It Does |
+|---------|-------------|
+| **Source grounding** | Only answers from your docs |
+| **Citations** | Points to exact source passages |
+| **Audio Overview** | Generates podcast-style summary |
+| **Study guides** | Creates questions & summaries |
+| **Cross-referencing** | Finds connections between sources |
+
+**Best for:** Research projects, exam prep, literature reviews, understanding complex reports
+:::
+
+:::{.column width=45%}
+:::{style="text-align: center;"}
+[![NotebookLM interface](figures/notebooklm-screenshot.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/notebooklm-screenshot.png"}
+
+:::{style="font-size: 18px; margin-top: 10px;"}
+[notebooklm.google.com](https://notebooklm.google.com/)
+:::
+:::
+:::
+:::
+:::
+
+## Activity: ChatGPT file upload RAG 📎
+
+:::{style="margin-top: 30px; font-size: 20px;"}
+:::{.columns}
+:::{.column width=50%}
+**Compare: With vs. without your documents**
+
+**Step 1: Without documents**
+
+1. Open [chat.openai.com](https://chat.openai.com/)
+2. Start a [new chat]{.alert}
+3. Ask: "What are the assignment deadlines for DATASCI 185?"
+4. Note: ChatGPT doesn't know! (It's not in training data)
+
+**Step 2: With your document**
+
+1. Start another [new chat]{.alert}
+2. Click the 📎 (attach) button
+3. Upload the course syllabus PDF
+4. Ask the same question: "What are the assignment deadlines?"
+5. Compare the answers!
+:::
+
+:::{.column width=50%}
+**What to observe:**
+
+| Without Doc | With Doc |
+|-------------|----------|
+| "I don't have access to..." | Specific dates from syllabus |
+| May hallucinate generic answer | [Grounded]{.alert} in your document |
+| No citations | Can quote the source |
+
+:::{style="margin-top: 15px; background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px;"}
+**This is RAG in action!**
+
+ChatGPT [retrieves]{.alert} relevant parts of your uploaded file and uses them to [generate]{.alert} an accurate answer.
+
+You just built a RAG system! 🎉
+:::
+
+⏱️ 5 minutes to compare!
+:::
+:::
+:::
+
+## Homework: Try NotebookLM! 📝
+
+:::{style="margin-top: 30px; font-size: 22px;"}
+:::{.columns}
+:::{.column width=50%}
+**At home, explore NotebookLM:**
+
+1. Go to [notebooklm.google.com](https://notebooklm.google.com/)
+2. Click "New Notebook"
+3. Add a source:
+   - Upload a PDF (lecture slides, paper, syllabus)
+   - OR paste a website URL
+   - OR paste your notes
+4. Ask questions and observe how it cites sources!
+
+**Questions to try:**
+
+- "Summarise the main points"
+- "What does it say about [specific topic]?"
+- "Create 5 quiz questions"
+:::
+
+:::{.column width=50%}
+**What to observe:**
+
+- Does it cite specific parts of your document?
+- Click the citation—does it match?
+- What happens if you ask something [NOT in the document]{.alert}?
+
+:::{style="margin-top: 15px; background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px;"}
+**Try this test:**
+
+Ask: "What is the capital of France?"
+
+(Unless your document mentions Paris, it should say it doesn't have that information!)
+
+This demonstrates [grounding]{.alert}—the AI sticks to your sources.
+:::
+:::
+:::
+:::
+
+# Real-World Applications 🌍 {background-color="#2d4563"}
+
+## RAG is everywhere!
+
+:::{style="margin-top: 30px; font-size: 19px;"}
+:::{.columns}
+:::{.column width=100%}
+| Industry | Application | How RAG Helps | Example Company |
+|----------|-------------|---------------|----------------|
+| 🏢 **Customer Support** | AI chatbots | Answer questions from product docs | Intercom, Zendesk |
+| ⚖️ **Legal** | Research assistants | Search case law by meaning | Harvey AI, Casetext |
+| 🏥 **Healthcare** | Clinical support | Find relevant patient records, guidelines | Epic, Nuance |
+| 📚 **Education** | Personal tutors | Answer questions from course materials | Khan Academy, Duolingo |
+| 💼 **Finance** | Analyst tools | Search earnings reports, SEC filings | Bloomberg, Kensho |
+| 🔬 **Research** | Literature review | Find related papers, summarise findings | Elicit, Semantic Scholar |
+| 💻 **Developer Tools** | Documentation QA | Answer questions from codebases | GitHub Copilot, Cursor |
+
+:::{style="margin-top: 15px; font-size: 20px;"}
+**Common thread**: All need [accurate, source-backed answers]{.alert} from specific documents—exactly what RAG provides!
+
+**Market size**: Enterprise RAG solutions expected to reach [$40B+ by 2028]{.alert} (estimates vary)
+:::
+:::
+:::
+:::
+
+# Summary 📚 {background-color="#2d4563"}
+
+## Key takeaways
+
+:::{style="margin-top: 30px; font-size: 22px;"}
+:::{.columns}
+:::{.column width=55%}
+- `r fa('exclamation-circle')` **The problem**: LLMs hallucinate and lack access to private/current information
+
+- `r fa('search')` **Semantic search**: Find by meaning using embeddings and [cosine similarity]{.alert}
+
+- `r fa('sync')` **The RAG pipeline**: Chunk → Embed → Store → Retrieve → Generate
+
+- `r fa('chart-line')` **Research shows**: RAG reduces hallucinations by [30–50%]{.alert}
+
+- `r fa('exclamation-triangle')` **Watch out for**: Retrieval failures, lost-in-the-middle, outdated docs
+
+- `r fa('tools')` **No-code tools**: NotebookLM, ChatGPT with files—try them today!
+
+- `r fa('check-circle')` **Always verify**: RAG reduces errors but doesn't eliminate them!
+:::
+
+:::{.column width=45%}
+**Quick reference:**
+
+| Concept | Key Numbers |
+|---------|-------------|
+| Cosine similarity | 0.9+ = very similar |
+| Chunk size | 256–1024 tokens |
+| Overlap | 10–20% |
+| Top-k retrieval | 3–10 chunks |
+| Hallucination reduction | 30–50% |
+
+:::{style="margin-top: 15px; font-size: 20px;"}
+**Remember:** Upload your docs, ask specific questions, and [always check citations]{.alert}!
+:::
+:::
+:::
+:::
+
+# ...and that's all for today! 🎉 {background-color="#2d4563"}
