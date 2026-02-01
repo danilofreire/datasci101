@@ -177,6 +177,12 @@ Readings:
 
 - Google (2025). [Production ML systems: monitoring pipelines.](https://developers.google.com/machine-learning/crash-course/production-ml-systems/monitoring) Practical guide to monitoring ML pipelines.
 - Allen, J. (2024). [Data pipeline monitoring: best practices for full observability.](https://www.prefect.io/blog/data-pipeline-monitoring-best-practices) Practical tips.
+- Spot Intelligence (2024). [Data drift in machine learning.](https://spotintelligence.com/2024/04/08/data-drift-in-machine-learning/) An accessible overview of how data drift affects ML systems over time.
+- Howard, J. (2024). [Context degradation syndrome: when large language models lose the plot.](https://jameshoward.us/2024/11/26/context-degradation-syndrome-when-large-language-models-lose-the-plot) A discussion on why model performance degrades over time.
+- Nawani, M. (2025). [From correctness to confidence: understanding LLM testing.](https://medium.com/@monikanawani25/from-correctness-to-confidence-understanding-llm-testing-0ad555bc797e) Explains the challenges of testing non-deterministic AI systems.
+- ApX Machine Learning (2025). [Input validation and sanitization for LLMs.](https://apxml.com/courses/intro-llm-red-teaming/chapter-5-defenses-mitigation-strategies-llms/input-validation-sanitization-llms) Practical guide to defending AI systems against prompt injection attacks.
+- ApX Machine Learning (2025). [Output filtering and content moderation.](https://apxml.com/courses/intro-llm-red-teaming/chapter-5-defenses-mitigation-strategies-llms/output-filtering-content-moderation) Best practices for validating AI outputs before sending to users.
+- AI Incident Database. [AI Incident Database.](https://incidentdatabase.ai/) A collection of real-world AI failures and incidents for case study research.
 
 ## Module 4 — Data ethics and bias
 
