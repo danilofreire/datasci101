@@ -220,8 +220,8 @@ Take 30 seconds to think about it...
 :::{.columns}
 :::{.column width=55%}
 - Every metric captures [one aspect]{.alert} of model performance
-- There's no single "best" metric—it depends on [your specific context]{.alert}
-- Key questions to ask yourself:
+- There's no single "best" metric, it all depends on [your specific context]{.alert}
+- Questions to ask yourself:
   - What's the cost of a [false positive]{.alert}? (Saying "yes" when it's "no")
   - What's the cost of a [false negative]{.alert}? (Saying "no" when it's "yes")
   - Are the classes [balanced]{.alert} or imbalanced?
@@ -254,13 +254,6 @@ Source: [Medium](https://aws.plainenglish.io/model-performance-optimization-unde
   - **False Positives (FP)**: Predicted positive, but actually negative (Type I error)
   - **False Negatives (FN)**: Predicted negative, but actually positive (Type II error)
 - [All classification metrics come from these four numbers!]{.alert}
-
-:::{style="text-align: center;"}
-| | Predicted + | Predicted − |
-|---|:---:|:---:|
-| **Actual +** | TP ✅ | FN ❌ |
-| **Actual −** | FP ❌ | TN ✅ |
-:::
 :::
 
 :::{.column width=45%}
@@ -274,7 +267,7 @@ Source: [Medium](https://aws.plainenglish.io/model-performance-optimization-unde
 ## Precision, recall, and the trade-off
 ### The two sides of classification performance
 
-:::{style="margin-top: 20px; font-size: 22px;"}
+:::{style="margin-top: 20px; font-size: 21px;"}
 :::{.columns}
 :::{.column width=50%}
 **[Precision](https://en.wikipedia.org/wiki/Precision_and_recall)** = TP / (TP + FP)
@@ -289,7 +282,7 @@ Source: [Medium](https://aws.plainenglish.io/model-performance-optimization-unde
 - High recall = [we don't miss many positives]{.alert}
 - Important when **false negatives are costly** (disease, security)
 
-**The trade-off**: Most classifiers output a [probability score]{.alert}. Moving the threshold trades off precision and recall—[you can't maximise both!]{.alert}
+Most classifiers output a [probability score]{.alert}. Moving the threshold trades off precision and recall...[you can't maximise both!]{.alert}
 :::
 
 :::{.column width=50%}
@@ -367,7 +360,7 @@ Source: [Wikipedia](https://en.wikipedia.org/wiki/Receiver_operating_characteris
   - [Excellent training performance]{.alert}
   - [Poor test performance]{.alert}
   - Gap grows with model complexity
-- Think of it like [memorising exam answers]{.alert} vs understanding the material
+- Think of it like [memorising exam answers vs understanding the material]{.alert}
 - The student who memorises fails when questions are rephrased
 :::
 
@@ -546,7 +539,7 @@ Source: [TinyML SubStack](https://tinyml.substack.com/p/death-by-rag-evals)
 - **The catch**:
   - The judge is only as good as [its own capabilities]{.alert}
   - Potential biases: May favour its own style
-  - Need a strong judge (often GPT-4 or Claude)
+  - Need a strong judge (often GPT-5 or Claude)
 :::
 
 :::{.column width=50%}
@@ -592,11 +585,10 @@ Source: [TinyML SubStack](https://tinyml.substack.com/p/death-by-rag-evals)
   2. The LLM generates [evaluation steps]{.alert} using chain-of-thought
   3. Apply these steps to score the output (typically 1-5)
 - **Example criteria**: "Coherence: The collective quality of all sentences in the actual output"
-- **Why it's powerful**:
+- **Why it's useful**:
   - Creates [task-specific metrics]{.alert} on the fly
   - The LLM "thinks through" how to evaluate
   - Better alignment with human judgement than simpler metrics
-- [Great for custom use cases]{.alert} like summarisation quality, brand voice, helpfulness
 :::
 
 :::{.column width=45%}
@@ -675,7 +667,6 @@ Source: [Nielsen Norman Group](https://www.nngroup.com/articles/ai-hallucination
 - 🏥 **Medical**: [AI chatbots have provided [dangerous health advice]{.alert} citing fabricated studies](https://www.mountsinai.org/about/newsroom/2025/ai-chatbots-can-run-with-medical-misinformation-study-finds-highlighting-the-need-for-stronger-safeguards)
 - 📰 **News**: [AI-generated fake news stories have [moved stock prices]{.alert}](https://www.nytimes.com/2023/05/23/business/ai-picture-stock-market.html)
 - 📚 **Academic**: [Students have submitted essays with [entirely invented references]{.alert}](https://teche.mq.edu.au/2023/02/why-does-chatgpt-generate-fake-references/)
-- 🔬 **Science**: [Researchers have found fake citations in published papers](https://www.nature.com/articles/s41598-023-41032-5)
 
 - More people trusting AI outputs without verification
 - Harder for non-experts to spot fabrications
@@ -890,7 +881,7 @@ Source: [Medium](https://medium.com/@Joy.Buolamwini/ibm-leads-more-should-follow
 :::
 
 :::{.column width=45%}
-:::{style="text-align: center; margin-top: -20px;"}
+:::{style="text-align: center; margin-top: 20px;"}
 [![Oh well 😄](figures/evaluation-bear-meme.png){width="80%"}](#){data-modal-type="image" data-modal-url="figures/evaluation-bear-meme.png"}
 
 Source: [Zurich University of Applied Sciences](https://blog.zhaw.ch/artificial-intelligence/2023/04/05/evaluation-of-text-generation-systems-a-theoretical-series/)
