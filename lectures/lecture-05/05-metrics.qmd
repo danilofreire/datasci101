@@ -295,34 +295,6 @@ Source: [Analytics Vidhya](https://www.analyticsvidhya.com/blog/2020/10/how-to-c
 :::
 :::
 
-## ROC curves and AUC
-### Evaluating across all thresholds
-
-:::{style="margin-top: 30px; font-size: 22px;"}
-:::{.columns}
-:::{.column width=55%}
-- [ROC Curve](https://en.wikipedia.org/wiki/Receiver_operating_characteristic) (Receiver Operating Characteristic):
-  - Plots [True Positive Rate]{.alert} vs [False Positive Rate]{.alert}
-  - Shows performance across [all possible thresholds]{.alert}
-- [AUC](https://en.wikipedia.org/wiki/Receiver_operating_characteristic) (Area Under Curve):
-  - AUC = 0.5 → Random guessing (diagonal line)
-  - AUC = 1.0 → Perfect classifier
-  - AUC = 0.8+ → Generally considered "good"
-- Interpretation: [The probability that a random positive ranks higher than a random negative]{.alert}
-- Useful for [comparing models]{.alert} regardless of threshold choice
-- Less sensitive to class imbalance than accuracy
-:::
-
-:::{.column width=45%}
-:::{style="text-align: center;"}
-[![ROC curve and AUC](figures/roc.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/roc.png"}
-
-Source: [Wikipedia](https://en.wikipedia.org/wiki/Receiver_operating_characteristic)
-:::
-:::
-:::
-:::
-
 ## Regression metrics
 ### When the target is continuous
 
