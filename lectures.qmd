@@ -196,7 +196,12 @@ Readings:
 
 - Gebru, T., et al. (2018). [Datasheets for datasets.](https://arxiv.org/abs/1803.09010) *arXiv preprint*. The original paper proposing datasheets for datasets.
 - Mitchell, M., et al. (2019). [Model cards for model reporting.](https://arxiv.org/abs/1810.03993) *Proceedings of FAccT*. The original paper proposing model cards.
-- IBM (2025). [What is data lineage?](https://www.ibm.com/think/topics/data-lineage) A short guide to data lineage.
+- IBM (2025). [What is data lineage?](https://www.ibm.com/think/topics/data-lineage) A short guide.
+- GO-FAIR (2025). [FAIR principles.](https://www.go-fair.org/fair-principles/) The gold standard for making research data Findable, Accessible, Interoperable, and Reusable.
+- OpenAI (2021). [CLIP model card.](https://github.com/openai/clip/blob/main/model-card.md) A practical example of model documentation, including disaggregated performance evaluation.
+- Lanier, J. (2019). [Data dignity and the inversion of AI.](https://cdss.berkeley.edu/video/data-dignity-and-inversion-ai-jaron-lanier) A philosophical perspective on data rights and the idea that your data is your labour.
+- Hutchinson, B., et al. (2021). [Towards accountability for machine learning datasets: Practices from software engineering and infrastructure.](https://arxiv.org/abs/2010.13561) *FAccT*. Bridges software engineering practices to dataset accountability.
+- Crawford, K., & Paglen, T. (2019). [Excavating AI: The politics of images in machine learning training sets.](https://excavating.ai/) A compelling visual essay on ImageNet's problems and the politics of training data.
 
 ### March 9 and 11, 2026: Spring Break (No Classes)
 
