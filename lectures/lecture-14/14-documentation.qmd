@@ -51,7 +51,7 @@ if (!require("fontawesome", character.only = TRUE)) {
 
 ## Recap of last class
 
-:::{style="margin-top: 20px; font-size: 26px;"}
+:::{style="margin-top: 20px; font-size: 24px;"}
 :::{.columns}
 :::{.column width=50%}
 - Last time we explored [pipelines and monitoring]{.alert}
@@ -61,6 +61,7 @@ if (!require("fontawesome", character.only = TRUE)) {
 - **Today**: We enter [Module 4—Data Ethics and Bias]{.alert}
 - [Documentation]{.alert} as the first line of defence
 - If you don't know where your data came from, [you can't fix bias]{.alert}
+- Meta AI research scientist [Moustapha Cissé](https://venturebeat.com/technology/datasheets-could-be-the-solution-to-biased-ai): "_You are what you eat, and right now we feed our models junk food_."
 :::
 
 :::{.column width=50%}
