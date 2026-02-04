@@ -55,7 +55,7 @@ if (!require("fontawesome", character.only = TRUE)) {
 :::{.columns}
 :::{.column width=50%}
 - We explored [model evaluation]{.alert} across two domains
-- **Traditional ML metrics**: Accuracy, precision, recall, ROC/AUC
+- **Traditional ML metrics**: Accuracy, precision, recall
 - The [accuracy paradox]{.alert}: 99.9% accuracy can be useless!
 - **Overfitting**: When models memorise instead of learn
 - **Cross-validation**: More robust evaluation
@@ -77,7 +77,7 @@ Source: [r/ProgrammerHumor](https://www.reddit.com/r/ProgrammerHumor/comments/se
 ## Lecture overview
 ### Today's agenda
 
-:::{style="margin-top: 20px; font-size: 23px;"}
+:::{style="margin-top: 20px; font-size: 26px;"}
 
 :::{.columns}
 :::{.column width=50%}
@@ -98,7 +98,7 @@ Source: [r/ProgrammerHumor](https://www.reddit.com/r/ProgrammerHumor/comments/se
 **Part 3: Embeddings**
 
 - Words as vectors in space
-- Semantic similarity and the king-queen example
+- Semantic similarity and the king-queen example in detail
 
 **Part 4: Parameters**
 
@@ -758,7 +758,7 @@ Source: [Medium](https://medium.com/@nigelgebodh/why-does-my-llm-have-a-temperat
 :::
 :::
 
-## The attention mechanism
+## The attention mechanism (recap)
 ### How LLMs understand context
 
 :::{style="margin-top: 30px; font-size: 21px;"}
