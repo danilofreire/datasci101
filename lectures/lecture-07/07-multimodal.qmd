@@ -730,24 +730,9 @@ Source: [Sebastian Raschka](https://magazine.sebastianraschka.com/p/understandin
 
 :::{style="margin-top: 30px; font-size: 24px;"}
 
-**In small groups, discuss ONE of these questions:**
+**In small groups, discuss this question:**
 
-:::{.columns}
-:::{.column width=50%}
-**Question 1: Facial recognition**
-
-Should facial recognition be allowed...
-
-- By police to identify suspects?
-- By schools to track attendance?
-- By shops to identify shoplifters?
-- By your phone to unlock it?
-
-[Where is the line?]{.alert}
-:::
-
-:::{.column width=50%}
-**Question 2: Voice/image generation**
+**Voice/image generation**
 
 Should AI-generated content require...
 
@@ -757,17 +742,15 @@ Should AI-generated content require...
 - None of the above—free speech?
 
 [How would you enforce it?]{.alert}
-:::
-:::
 
 :::{style="margin-top: 20px; text-align: center;"}
-**Take 3 minutes, then we'll share perspectives!**
+**Take 2 minutes, then we'll share perspectives!**
 :::
 :::
 
 ## The bright side: Amazing applications
 
-:::{style="margin-top: 30px; font-size: 22px;"}
+:::{style="margin-top: 30px; font-size: 28px;"}
 
 | Application | How it helps | Impact |
 |-------------|--------------|--------|
