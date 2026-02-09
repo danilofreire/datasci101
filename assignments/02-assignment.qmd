@@ -18,8 +18,7 @@ This assignment covers material from **Lectures 04-07**: Supervised/Unsupervised
 - However, you must **write your answers in your own words** and demonstrate genuine understanding
 - Please **disclose which AI tool you used** (if any)
 - Your answers should be thoughtful and show critical thinking, not just copy-pasted LLM outputs
-- **Each answer should be between 50 and 100 words** (it can be a little less or more, no problem)
-- **Screenshots are encouraged** for your interactions with AI tools, feel free to include them in your responses when relevant
+- **Please include screenshots** of your interactions with AI tools
 - However, **reflection questions must be written in text**, not just screenshots
 - Submit this assignment as a **PDF** (preferred) or Word document via Canvas
 
