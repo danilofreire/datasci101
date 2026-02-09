@@ -90,14 +90,12 @@ Source: [DeepSet AI](https://www.deepset.ai/blog/the-beginners-guide-to-text-emb
 
 - Turning invisible sound waves into pictures
 - How Siri and Alexa understand speech
-- Activity: Test speech recognition in different languages
 :::
 
 :::{.column width=50%}
 **Part 3: The Big Picture**
 
-- The amazing insight: Everything becomes the same kind of numbers!
-- Try multimodal AI (ChatGPT, Claude, Gemini)
+- The main insight: Everything becomes the same kind of numbers!
 
 **Part 4: What This Means for Society**
 
