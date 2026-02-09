@@ -637,11 +637,14 @@ $RECYCLE.BIN/
 
 **/*.quarto_ipynb
 
-# Agent lecture instructions (private)
+# Agent instructions 
 lectures/agents.md
 agents.md
+lecture-agents.md
 SKILLS.md
 skills.md
+formatting.md
+assignments-agents.md
 assignments.md
 
 # VSCode
