@@ -639,6 +639,10 @@ $RECYCLE.BIN/
 
 # Agent lecture instructions (private)
 lectures/agents.md
+agents.md
+SKILLS.md
+skills.md
+assignments.md
 
 # VSCode
 .vscode/
