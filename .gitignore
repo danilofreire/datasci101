@@ -632,7 +632,30 @@ $RECYCLE.BIN/
 
 # End of https://www.toptal.com/developers/gitignore/api/latex,linux,macos,python,r,vim,windows
 
-
+# Quarto
 /.quarto/
 
 **/*.quarto_ipynb
+
+# Agent instructions 
+lectures/agents.md
+agents.md
+lecture-agents.md
+lectures-agents.md
+SKILLS.md
+skills.md
+formatting.md
+assignments-agents.md
+assignments.md
+
+# VSCode
+.vscode/
+
+# RooCode
+.roo/
+
+# Kilocode
+.kilocode/
+
+# Quizzes (private - do not share with students)
+quiz/
