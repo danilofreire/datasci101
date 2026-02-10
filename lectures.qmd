@@ -211,9 +211,13 @@ Readings:
 
 Readings:
 
-- Barocas, S., Hardt, M., & Narayanan, A. (2019). [Fairness and machine learning](https://fairmlbook.org/). Chapter 2: When is automated decision making legitimate?
+- Barocas, S., Hardt, M., & Narayanan, A. (2019). [Fairness and machine learning.](https://fairmlbook.org/) Chapter 2: When is automated decision making legitimate?
 - Mehrabi, N., Morstatter, F., Saxena, N., Lettich, A., & Galstyan, A. (2021). [A survey on bias and fairness in machine learning.](https://arxiv.org/abs/1908.09635) *ACM Computing Surveys*, *54*(6), 1-35.
 - Silberg, J., & Manyika, J. (2019). [Notes from the AI frontier: tackling bias in AI (and in humans).](https://www.mckinsey.com/~/media/McKinsey/Featured%20Insights/Artificial%20Intelligence/Tackling%20bias%20in%20artificial%20intelligence%20and%20in%20humans/MGI-Tackling-bias-in-AI-June-2019.pdf) McKinsey Global Institute.
+- Hellman, D. (2025). [Algorithmic fairness.](https://plato.stanford.edu/archives/fall2025/entries/algorithmic-fairness/) *The Stanford Encyclopedia of Philosophy* (Fall 2025 Edition).
+- Kantayya, S. (2020). [Coded Bias.](https://www.codedbiasfilm.com/) Documentary film. May or may not be available on Netflix depending on your location.
+- Liu Roc, A. (2023). [Understanding the impossibility of fairness.](https://medium.com/@alex.liu.roc/understanding-the-impossibility-of-fairness-199bba6c9072) *Medium*. A good, accessible overview of the impossibility results in fairness.
+- The Wall Street Journal (2026). [Meet the one woman Anthropic Trusts to teach AI morals](https://www.wsj.com/tech/ai/anthropic-amanda-askell-philosopher-ai-3c031883). A profile of Amanda Askell, Anthropic's main philosopher. [Also available here](https://archive.is/f9EBk).
 
 ### March 18, 2026:
 
