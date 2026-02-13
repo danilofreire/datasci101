@@ -221,16 +221,19 @@ Readings:
 
 ### March 18, 2026:
 
-- Lecture 16: [Case studies: biased outcomes in health, hiring and policing](https://raw.githack.com/danilofreire/datasci185/main/lectures/lecture-16/16-case-studies.html).
+- Lecture 16: [AI in Finance and Healthcare - Opportunities and Biases](https://raw.githack.com/danilofreire/datasci185/main/lectures/lecture-16/16-case-studies.html).
 - **Assignment 07 due (5%).**
 - No assignment this week.
 - [Instructions for the Final Project](https://github.com/danilofreire/datasci185/tree/main/project).
 
 Readings:
 
-- Obermeyer, Z., Powers, B., Vogeli, C., & Mullainathan, S. (2019). [Dissecting racial bias in an algorithm used to manage the health of populations.](https://science.sciencemag.org/content/366/6464/447) *Science*, *366*(6464), 447-453.
-- Buolamwini, J., & Gebru, T. (2018). [Gender shades: intersectional accuracy disparities in commercial gender classification.](http://proceedings.mlr.press/v81/buolamwini18a.html) *Proceedings of Machine Learning Research*, *81*, 1-15.
-- Angwin, J., Larson, J., Mattu, S., & Kirchner, L. (2016). [Machine bias.](https://www.propublica.org/article/machine-bias-risk-assessments-in-criminal-sentencing) *ProPublica*.
+- Obermeyer, Z., Powers, B., Vogeli, C., & Mullainathan, S. (2019). [Dissecting racial bias in an algorithm used to manage the health of populations.](https://science.sciencemag.org/content/366/6464/447) *Science*, *366*(6464), 447-453. An important paper on the topic. We will discuss it in class.
+- Li, Y. et al. (2023). [Large language models in finance: a survey](https://arxiv.org/abs/2311.10723). *ICAIF-23*. A comprehensive overview. Easy to read.
+- Opel, N., & Breakspear, M. (2026). [Transforming mental health research and care through artificial intelligence](https://www.science.org/doi/10.1126/science.adz9193) *Science*, *391*(6782), 249-258. The authors review ways in which AI may reduce care inequities when deployed responsibly. They discuss how AI can be useful across several stages of care, from prevention to treatment and rehabilitation.
+- Agentic Health AI. (2025). [Awesome AI agents for healthcare](https://github.com/AgenticHealthAI/awesome-ai-agents-for-healthcare). A curated list of research papers, projects, and resources related to the application of AI agents for healthcare, including medical image analysis, EHR manipulation, counseling, drug discovery, patient dialogue, and healthcare administration.
+- George Zouq (2026). [Awesome AI in Finance](https://github.com/georgezouq/awesome-ai-in-finance). Same thing for finance.
+- AI4Finance Foundation (2026). [AI4Finance](https://ai4finance.org/). A series of open-source frameworks to build AI models for finance. Requires coding skills.
 
 ## Module 5 — Policy, governance and social impact
 
