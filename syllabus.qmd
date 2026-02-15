@@ -134,6 +134,7 @@ Readings:
 - Menlo Ventures (2025). [2025: the state of consumer AI](https://menlovc.com/perspective/2025-the-state-of-consumer-ai/). How AI is being used in consumer products, with examples and market data.
 - Morgan Stanley (2025). [AI's next leap: 5 trends shaping innovation and ROI](https://www.morganstanley.com/insights/articles/ai-trends-reasoning-frontier-models-2025-tmt). A short text on the current state of AI applications in industry.
 - McKinsey & Company (2025). [The state of AI: how organizations are rewiring to capture value](https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai). A business-focused overview of AI adoption and impact.
+- The New Yorker (2026). [What is Claude? Anthropic doesn't know, either](https://www.newyorker.com/magazine/2026/02/16/what-is-claude-anthropic-doesnt-know-either). A fascinating article about the challenges of building and understanding large language models. [Also available here](https://archive.ph/i6vbW).
 
 ### January 19, 2026: Martin Luther King Day (No Classes)
 
