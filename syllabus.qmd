@@ -232,7 +232,7 @@ Readings:
 
 ### February 11, 2026:
 
-- Lecture 08: [Quiz 01](https://github.com/danilofreire/datasci185-quiz01/).
+- Lecture 08: **Quiz 01**.
 - **Assignment 03 due (5%).**
 - [**Assignment 04**](https://github.com/danilofreire/datasci185/blob/main/assignments).
 
@@ -282,7 +282,7 @@ Readings:
 
 ### February 25, 2026:
 
-- Lecture 12: [Quiz 02](https://github.com/danilofreire/datasci185-quiz02/).
+- Lecture 12: **Quiz 02**.
 - **Assignment 05 due (5%).**
 - [**Assignment 06**](https://github.com/danilofreire/datasci185/blob/main/assignments).
 
@@ -348,7 +348,7 @@ Readings:
 - Li, Y. et al. (2023). [Large language models in finance: a survey](https://arxiv.org/abs/2311.10723). *ICAIF-23*. A comprehensive overview. Easy to read.
 - Opel, N., & Breakspear, M. (2026). [Transforming mental health research and care through artificial intelligence](https://www.science.org/doi/10.1126/science.adz9193) *Science*, *391*(6782), 249-258. The authors review ways in which AI may reduce care inequities when deployed responsibly. They discuss how AI can be useful across several stages of care, from prevention to treatment and rehabilitation.
 - Agentic Health AI. (2025). [Awesome AI agents for healthcare](https://github.com/AgenticHealthAI/awesome-ai-agents-for-healthcare). A curated list of research papers, projects, and resources related to the application of AI agents for healthcare, including medical image analysis, EHR manipulation, counseling, drug discovery, patient dialogue, and healthcare administration.
-- George Zouq (2026). [Awesome AI in Finance](https://github.com/georgezouq/awesome-ai-in-finance). Same thing for finance.
+- Zouq, G. (2026). [Awesome AI in Finance](https://github.com/georgezouq/awesome-ai-in-finance). Same thing for finance.
 - AI4Finance Foundation (2026). [AI4Finance](https://ai4finance.org/). A series of open-source frameworks to build AI models for finance. Requires coding skills.
 
 ## Module 5 — Policy, governance and social impact
@@ -359,13 +359,16 @@ Readings:
 
 Readings:
 
-- The White House. (2025). [Winning the race: America's AI action plan](https://www.whitehouse.gov/wp-content/uploads/2025/07/Americas-AI-Action-Plan.pdf). What the US government wants to do about AI.
-- European Parliament. (2023). [EU AI act](https://www.europarl.europa.eu/topics/en/article/20230601STO93804/eu-ai-act-first-regulation-on-artificial-intelligence). The original text.
-- Cole, M. D. (2024). [AI regulation and governance on a global scale.](https://web.archive.org/web/20240330165240id_/https://aire.lexxion.eu/data/article/19406/pdf/aire_2024_01-017.pdf) *Journal of AI Law and Regulation*, *1*(1), 126-142.
+- The White House (2025). [Winning the race: America's AI action plan](https://www.whitehouse.gov/wp-content/uploads/2025/07/Americas-AI-Action-Plan.pdf). What the US government wants to do about AI.
+- European Parliament (2023). [EU AI act](https://www.europarl.europa.eu/topics/en/article/20230601STO93804/eu-ai-act-first-regulation-on-artificial-intelligence). The original text.
+- GOV.UK (2023). [A pro-innovation approach to AI regulation.](https://www.gov.uk/government/publications/ai-regulation-a-pro-innovation-approach/white-paper). The UK's approach to AI regulation.
+- Cole, M. D. (2024). [AI regulation and governance on a global scale.](https://web.archive.org/web/20240330165240id_/https://aire.lexxion.eu/data/article/19406/pdf/aire_2024_01-017.pdf) *Journal of AI Law and Regulation*, *1*(1), 126-142. A short report on national and international efforts to regulate AI.
+- Wikipedia (2026). [Regulation of artificial intelligence](https://en.wikipedia.org/wiki/Regulation_of_artificial_intelligence). It's hard to be updated on this topic, so this Wikipedia page is a good resource to keep track of the latest developments.
+- G'Sell, F. (2025). [Regulating under uncertainty: governance options for generative AI.](https://cyber.fsi.stanford.edu/content/regulating-under-uncertainty-governance-options-generative-ai) A report on the challenges of regulating AI and possible approaches to do it effectively.
 
 ### March 25, 2026:
 
-- Lecture 18: [Quiz 03](https://github.com/danilofreire/datasci185-quiz03/).
+- Lecture 18: **Quiz 03**.
 - [**Assignment 08**](https://github.com/danilofreire/datasci185/blob/main/assignments).
 
 ### March 30, 2026:
@@ -374,8 +377,13 @@ Readings:
 
 Readings:
 
-- Hoofnagle, C. J., Van Der Sloot, B., & Borgesius, F. Z. (2019). [The European Union general data protection regulation: what it is and what it means.](https://www.tandfonline.com/doi/full/10.1080/13600834.2019.1573501) *Information & Communications Technology Law*, *28*(1), 65-98.
-- Taddeo, M., & Floridi, L. (2018). [How AI can be a force for good.](https://www.science.org/doi/abs/10.1126/science.aat5991) *Science*, *361*(6404), 751-752.
+- Taddeo, M., & Floridi, L. (2018). [How AI can be a force for good.](https://www.science.org/doi/abs/10.1126/science.aat5991) *Science*, *361*(6404), 751-752. A philosophical discussion on the ethical implications of AI, including privacy concerns.
+- Hoofnagle, C. J., Van Der Sloot, B., & Borgesius, F. Z. (2019). [The European Union general data protection regulation: what it is and what it means.](https://www.tandfonline.com/doi/full/10.1080/13600834.2019.1573501) *Information & Communications Technology Law*, *28*(1), 65-98. A comprehensive overview of the GDPR, the most influential data protection law in the world.
+- European Data Protection Board (2025). [AI privacy risks & mitigations Large Language Models (LLMs).](https://www.edpb.europa.eu/our-work-tools/our-documents/support-pool-experts-projects/ai-privacy-risks-mitigations-large_en) This report provides use cases examples on the application of the risk management framework in real-world scenarios.
+- OECD (2026). [OECD due diligence guidance for responsible AI](https://www.oecd.org/en/publications/oecd-due-diligence-guidance-for-responsible-ai_41671712-en.html). Practical guidance for organisations to implement good AI practices.
+- King, J. & Meinhardt, C. (2024). [Rethinking privacy in the AI era: policy provocations for a data-centric world.](https://hai.stanford.edu/policy/white-paper-rethinking-privacy-ai-era-policy-provocations-data-centric-world) The authors analyse how existing and future privacy and data protection regulation will impact the development and deployment of AI systems.
+- OpenAI (2025). [OpenAI privacy portal.](https://privacy.openai.com/policies/en/) OpenAI's privacy policy and practices. 
+- Future of Privacy Forum (2025). [https://fpf.org/](https://fpf.org/). An NGO that advances principled and pragmatic data protection, AI and digital governance practices. Many resources on their website.
 
 ### April 01, 2026:
 
@@ -411,7 +419,7 @@ Readings:
 
 ### April 08, 2026:
 
-- Lecture 22: [Quiz 04](https://github.com/danilofreire/datasci185-quiz04/).
+- Lecture 22: **Quiz 04**.
 - **Assignment 09 due (5%).**
 - [**Assignment 10**](https://github.com/danilofreire/datasci185/blob/main/assignments).
 
@@ -443,7 +451,7 @@ Readings:
 
 ### April 22, 2026:
 
-- Lecture 26: [Quiz 05](https://github.com/danilofreire/datasci185-quiz05/).
+- Lecture 26: **Quiz 05**.
 
 ### April 27, 2026:
 
