@@ -170,8 +170,7 @@ Remember from [Lecture 06](https://raw.githack.com/danilofreire/datasci185/main/
 **This has implications:**
 
 - The model is [continuing your text]{.alert}, not "answering questions"
-- It draws on patterns from [trillions of tokens]{.alert} of training data
-- Vague prompts activate broad, generic patterns
+- [Vague prompts activate broad, generic patterns]{.alert}
 - Specific prompts activate [narrow, relevant patterns]{.alert}
 - The model has no goals, desires, or understanding. It produces statistically likely continuations
 
@@ -211,7 +210,7 @@ The framework works because it [mirrors how training data is structured]{.alert}
 :::
 
 :::{.column width=45%}
-:::{style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; font-size: 18px;"}
+:::{style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; font-size: 18px; margin-top: 30px;"}
 **PTCF example prompt:**
 
 **Persona**: "You are an experienced equity research analyst at a major investment bank."
@@ -289,7 +288,7 @@ Source: Lecture 06 / [Medium](https://medium.com/@nigelgebodh/why-does-my-llm-ha
 :::
 
 :::{.fragment}
-**Your task**: Rewrite this using PTCF for a specific use case.
+Let's rewrite this using PTCF for a specific use case!
 :::
 :::
 
@@ -625,7 +624,7 @@ Output as JSON with this exact structure:
 :::
 
 :::{.column width=45%}
-:::{style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; font-size: 18px;"}
+:::{style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; font-size: 18px; margin-top: 30px;"}
 **Real prompt for earnings extraction:**
 
 ```text
@@ -668,7 +667,7 @@ Structured outputs let you build [reliable pipelines]{.alert}
 :::{.column width=55%}
 In January 2022, [Wei et al.](https://arxiv.org/abs/2201.11903) published a paper that transformed how we use LLMs:
 
-**The key finding**: Asking models to show their reasoning [dramatically improves accuracy]{.alert} on complex tasks.
+Asking models to show their reasoning [dramatically improves accuracy]{.alert} on complex tasks!
 
 **The experiment:**
 
@@ -704,9 +703,9 @@ Source: [Wei et al. (2022)](https://arxiv.org/abs/2201.11903). Chain-of-Thought 
 :::{style="margin-top: 30px; font-size: 20px;"}
 :::{.columns}
 :::{.column width=50%}
-[Kojima et al. (2022)](https://arxiv.org/abs/2205.11916) discovered something remarkable:
+[Kojima et al. (2022)](https://arxiv.org/abs/2205.11916) also discovered something remarkable:
 
-You don't need examples. Just adding **"Let's think step by step"** triggers reasoning behaviour.
+[You don't need examples!]{.alert} Just adding **"Let's think step by step"** triggers reasoning behaviour
 
 **Without CoT:**
 
@@ -787,7 +786,7 @@ Models like [OpenAI's o1](https://openai.com/o1/) and [DeepSeek-R1](https://gith
 **Implications for prompting:**
 
 - CoT prompts become [less necessary]{.alert} (model already reasons)
-- But PTCF still matters: persona, task, context, format
+- But [PTCF still matters]{.alert}: persona, task, context, format
 - You may need to [simplify prompts]{.alert} to avoid over-specifying
 - Complex reasoning instructions can actually [interfere]{.alert} with the model's native reasoning
 :::
@@ -880,7 +879,7 @@ Agents are powerful but [make mistakes that compound]{.alert}:
 - How do you audit what an agent did?
 - [Agents can be manipulated via prompt injection]{.alert}
 
-Research firm [Gartner predicts](https://www.gartner.com/en/topics/ai-agents): By 2028, 15% of day-to-day work decisions will be made autonomously by AI agents—up from almost zero today.
+Research firm [Gartner predicts](https://www.gartner.com/en/topics/ai-agents): By 2028, 15% of day-to-day work decisions will be made autonomously by AI agents
 :::
  
 :::{.column width=45%}
@@ -944,7 +943,7 @@ Even [perfect prompts will sometimes fail unexpectedly]{.alert}.
 
 **The practical response:**
 
-Build a mental [reliability map]{.alert}—learn where your model works well and where it stumbles. This knowledge comes from experience, not documentation.
+Build a mental [reliability map]{.alert}: learn where your model works well and where it stumbles. [This knowledge comes from experience]{.alert}
 
 :::{style="background: rgba(230, 57, 70, 0.1); padding: 15px; border-radius: 10px; font-size: 17px; margin-top: 15px;"}
 [Always verify critical outputs]{.alert}. Treat LLM outputs as drafts to review, not final answers.

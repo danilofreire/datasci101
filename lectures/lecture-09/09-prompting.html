@@ -1404,8 +1404,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <p><strong>This has implications:</strong></p>
 <ul>
 <li>The model is <span class="alert">continuing your text</span>, not “answering questions”</li>
-<li>It draws on patterns from <span class="alert">trillions of tokens</span> of training data</li>
-<li>Vague prompts activate broad, generic patterns</li>
+<li><span class="alert">Vague prompts activate broad, generic patterns</span></li>
 <li>Specific prompts activate <span class="alert">narrow, relevant patterns</span></li>
 <li>The model has no goals, desires, or understanding. It produces statistically likely continuations</li>
 </ul>
@@ -1465,7 +1464,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <p><strong>Order matters</strong>: Persona → Task → Context → Format</p>
 <p>The framework works because it <span class="alert">mirrors how training data is structured</span>: documents have authors (persona), purposes (task), backgrounds (context), and conventions (format).</p>
 </div><div class="column" style="width:45%;">
-<div style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; font-size: 18px;">
+<div style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; font-size: 18px; margin-top: 30px;">
 <p><strong>PTCF example prompt:</strong></p>
 <p><strong>Persona</strong>: “You are an experienced equity research analyst at a major investment bank.”</p>
 <p><strong>Task</strong>: “Analyse the following earnings report and identify the three most significant findings.”</p>
@@ -1557,7 +1556,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </ul>
 </div>
 <div class="fragment">
-<p><strong>Your task</strong>: Rewrite this using PTCF for a specific use case.</p>
+<p>Let’s rewrite this using PTCF for a specific use case!</p>
 </div>
 </div><div class="column" style="width:50%;">
 <div class="fragment">
@@ -1873,7 +1872,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <span id="cb7-6"><a href></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p><span class="alert">Specifying the exact keys/values prevents invented fields</span>.</p>
 </div><div class="column" style="width:45%;">
-<div style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; font-size: 18px;">
+<div style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; font-size: 18px; margin-top: 30px;">
 <p><strong>Real prompt for earnings extraction:</strong></p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb8-1"><a href></a>Extract information from this </span>
 <span id="cb8-2"><a href></a>earnings report.</span>
@@ -1913,7 +1912,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <div class="columns">
 <div class="column" style="width:55%;">
 <p>In January 2022, <a href="https://arxiv.org/abs/2201.11903">Wei et al.</a> published a paper that transformed how we use LLMs:</p>
-<p><strong>The key finding</strong>: Asking models to show their reasoning <span class="alert">dramatically improves accuracy</span> on complex tasks.</p>
+<p>Asking models to show their reasoning <span class="alert">dramatically improves accuracy</span> on complex tasks!</p>
 <p><strong>The experiment:</strong></p>
 <table class="caption-top">
 <thead>
@@ -1960,8 +1959,8 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <div style="margin-top: 30px; font-size: 20px;">
 <div class="columns">
 <div class="column" style="width:50%;">
-<p><a href="https://arxiv.org/abs/2205.11916">Kojima et al. (2022)</a> discovered something remarkable:</p>
-<p>You don’t need examples. Just adding <strong>“Let’s think step by step”</strong> triggers reasoning behaviour.</p>
+<p><a href="https://arxiv.org/abs/2205.11916">Kojima et al. (2022)</a> also discovered something remarkable:</p>
+<p><span class="alert">You don’t need examples!</span> Just adding <strong>“Let’s think step by step”</strong> triggers reasoning behaviour</p>
 <p><strong>Without CoT:</strong></p>
 <blockquote>
 <p>Q: If a store sells 3 apples for $2, how much do 12 apples cost?</p>
@@ -2024,7 +2023,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <p><strong>Implications for prompting:</strong></p>
 <ul>
 <li>CoT prompts become <span class="alert">less necessary</span> (model already reasons)</li>
-<li>But PTCF still matters: persona, task, context, format</li>
+<li>But <span class="alert">PTCF still matters</span>: persona, task, context, format</li>
 <li>You may need to <span class="alert">simplify prompts</span> to avoid over-specifying</li>
 <li>Complex reasoning instructions can actually <span class="alert">interfere</span> with the model’s native reasoning</li>
 </ul>
@@ -2119,7 +2118,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <li>How do you audit what an agent did?</li>
 <li><span class="alert">Agents can be manipulated via prompt injection</span></li>
 </ul>
-<p>Research firm <a href="https://www.gartner.com/en/topics/ai-agents">Gartner predicts</a>: By 2028, 15% of day-to-day work decisions will be made autonomously by AI agents—up from almost zero today.</p>
+<p>Research firm <a href="https://www.gartner.com/en/topics/ai-agents">Gartner predicts</a>: By 2028, 15% of day-to-day work decisions will be made autonomously by AI agents</p>
 </div><div class="column" style="width:45%;">
 <p><strong>Common effects of prompt injection attacks:</strong></p>
 <ul>
@@ -2174,7 +2173,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <li>This is inherent to how these models work</li>
 </ul>
 <p><strong>The practical response:</strong></p>
-<p>Build a mental <span class="alert">reliability map</span>—learn where your model works well and where it stumbles. This knowledge comes from experience, not documentation.</p>
+<p>Build a mental <span class="alert">reliability map</span>: learn where your model works well and where it stumbles. <span class="alert">This knowledge comes from experience</span></p>
 <div style="background: rgba(230, 57, 70, 0.1); padding: 15px; border-radius: 10px; font-size: 17px; margin-top: 15px;">
 <p><span class="alert">Always verify critical outputs</span>. Treat LLM outputs as drafts to review, not final answers.</p>
 </div>
