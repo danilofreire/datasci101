@@ -429,8 +429,12 @@ Readings:
 
 Readings:
 
-- Helmus, T. C. (2022). [Artificial intelligence, deepfakes, and disinformation: a primer.](https://www.rand.org/pubs/perspectives/PEA1043-1.html) *RAND Corporation*.
-- Chesney, R., & Citron, D. K. (2019). [Deepfakes and the new disinformation war.](https://www.foreignaffairs.com/articles/world/2018-12-11/deepfakes-and-new-disinformation-war) *Foreign Affairs*.
+- Helmus, T. C. (2022). [Artificial intelligence, deepfakes, and disinformation: a primer.](https://www.rand.org/pubs/perspectives/PEA1043-1.html) *RAND Corporation*. A major revision of the literature.
+- Vosoughi, S., Roy, D., & Aral, S. (2018). [The spread of true and false news online](https://www.science.org/doi/abs/10.1126/science.aap9559). *Science*, *359*(6380), 1146-1151. A seminal paper on the topic of misinformation. It shows that false news spreads faster and farther than true news, and that bots are not the main driver of this phenomenon.
+- Lazer, D. M., Baum, M. A., Benkler, Y., Berinsky, A. J., Greenhill, K. M., Menczer, F., ... & Zittrain, J. L. (2018). [The science of fake news](https://www.science.org/doi/abs/10.1126/science.aao2998). *Science*, 359(6380), 1094-1096. A call to action for researchers to study misinformation and develop solutions.
+- Allcott, H., & Gentzkow, M. (2017). [Social media and fake news in the 2016 election](https://www.aeaweb.org/articles?id=10.1257%2Fjep.31.2.211&ref=aurelius-ghost.ykaqi5.easypanel.host). *Journal of economic perspectives*, 31(2), 211-236. A widely-cited paper that analyses the economics of fake news.
+- Mirsky, Y., & Lee, W. (2020). [The creation and detection of deepfakes: a survey](https://arxiv.org/abs/2004.11138). *arXiv* preprint arXiv:2004.11138. A technical survey on deepfakes. Quite technical, though. If you are interested in the topic but don't have a technical background, you can skip this one and read the next one instead.
+- Chesney, R., & Citron, D. K. (2019). [Deepfakes and the new disinformation war.](https://www.foreignaffairs.com/articles/world/2018-12-11/deepfakes-and-new-disinformation-war) *Foreign Affairs*. A short article about the risks of deepfakes and how to address them.
 
 ### April 15, 2026:
 
