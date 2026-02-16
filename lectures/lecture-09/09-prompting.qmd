@@ -290,8 +290,6 @@ Source: Lecture 06 / [Medium](https://medium.com/@nigelgebodh/why-does-my-llm-ha
 
 :::{.fragment}
 **Your task**: Rewrite this using PTCF for a specific use case.
-
-⏱️ 2-3 minutes, then share with your neighbour!
 :::
 :::
 
@@ -712,9 +710,9 @@ You don't need examples. Just adding **"Let's think step by step"** triggers rea
 
 **Without CoT:**
 
-> Q: If a store sells 3 apples for £2, how much do 12 apples cost?
+> Q: If a store sells 3 apples for $2, how much do 12 apples cost?
 >
-> A: £6
+> A: $6
 
 (Wrong. The model rushed to an answer.)
 :::
@@ -722,9 +720,9 @@ You don't need examples. Just adding **"Let's think step by step"** triggers rea
 :::{.column width=50%}
 **With zero-shot CoT:**
 
-> Q: If a store sells 3 apples for £2, how much do 12 apples cost? Let's think step by step.
+> Q: If a store sells 3 apples for $2, how much do 12 apples cost? Let's think step by step.
 >
-> A: First, I need to find the price per apple. 3 apples cost £2, so 1 apple costs £2/3 = £0.67. For 12 apples: 12 × £0.67 = £8. The answer is £8.
+> A: First, I need to find the price per apple. 3 apples cost $2, so 1 apple costs $2/3 = $0.67. For 12 apples: 12 × $0.67 = $8. The answer is $8.
 
 **The phrase activates a "reasoning mode"** learned from training data where step-by-step explanations precede correct answers.
 
@@ -736,48 +734,6 @@ You don't need examples. Just adding **"Let's think step by step"** triggers rea
 
 [Any phrase that signals "don't jump to conclusions" can work]{.alert}.
 :::
-:::
-:::
-:::
-
-## Activity: The classic reasoning trap 🪤
-
-:::{style="margin-top: 30px; font-size: 23px;"}
-:::{.columns}
-:::{.column width=50%}
-**Try this problem both ways:**
-
-> A bat and ball cost $1.10 together. The bat costs $1 more than the ball. How much does the ball cost?
-
-**Test 1**: Ask ChatGPT/Claude/Gemini without CoT.
-
-**Test 2**: Add "Think through this step by step before answering."
-
-:::{.fragment}
-**The common wrong answer**: $0.10
-
-**Why it's wrong**: If ball = $0.10, then bat = $1.10, and total = $1.20 ≠ $1.10
-
-**Correct answer**: Ball = $0.05, Bat = $1.05, Total = $1.10 ✓
-:::
-:::
-
-:::{.column width=50%}
-:::{.fragment}
-**What to observe:**
-
-- Does the model get it right without CoT?
-- With CoT, can you follow the reasoning?
-- Does it ever [show correct steps but get the wrong final answer]{.alert}?
-
-:::{style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; font-size: 18px; margin-top: 15px;"}
-**Famous result**: This problem (from Kahneman's research on human cognition) tricks most humans too. Over 50% of Princeton students got it wrong!
-
-CoT prompting helps LLMs avoid the same intuitive error that catches humans.
-:::
-:::
-
-⏱️ 2-3 minutes to test!
 :::
 :::
 :::
@@ -824,21 +780,21 @@ Models like [OpenAI's o1](https://openai.com/o1/) and [DeepSeek-R1](https://gith
 **How they differ from standard LLMs:**
 
 - They're trained to generate [internal reasoning traces]{.alert} before answering
-- The reasoning happens automatically—no "let's think step by step" needed
+- The reasoning happens automatically, no "let's think step by step" needed
 - They spend more compute time (and tokens) on harder problems
 - Reasoning is often hidden from the user (you see only the final answer)
 
 **Implications for prompting:**
 
 - CoT prompts become [less necessary]{.alert} (model already reasons)
-- But PTCF still matters—persona, task, context, format
+- But PTCF still matters: persona, task, context, format
 - You may need to [simplify prompts]{.alert} to avoid over-specifying
 - Complex reasoning instructions can actually [interfere]{.alert} with the model's native reasoning
 :::
 
 :::{.column width=45%}
 :::{style="text-align: center;"}
-[![](figures/kimi-reasoning.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/o1-reasoning.png"}
+[![](figures/kimi-reasoning.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/kimi-reasoning.png"}
 
 :::{style="font-size: 16px; margin-top: 10px;"}
 Thinking models show their work differently ([Kimi K2 Thinking](https://huggingface.co/moonshotai/Kimi-K2-Thinking))
@@ -1015,37 +971,6 @@ Build a mental [reliability map]{.alert}—learn where your model works well and
 
 - `r fa('exclamation-triangle')` **Jagged intelligence**: LLMs fail unpredictably. Always verify critical outputs.
 
-:::
-
-## Your prompt engineering toolkit
-
-:::{style="margin-top: 30px; font-size: 25px;"}
-:::{.columns}
-:::{.column width=50%}
-**Technique reference:**
-
-| Technique | Use When... |
-|-----------|-------------|
-| [PTCF]{.alert} | Any prompt (structure) |
-| [Few-shot]{.alert} | Subtle patterns, edge cases |
-| [Chain-of-Thought]{.alert} | Multi-step reasoning |
-| [Self-consistency]{.alert} | High-stakes decisions |
-| [Meta-prompting]{.alert} | Improving failing prompts |
-| [System prompts]{.alert} | Building applications |
-:::
-
-:::{.column width=50%}
-**Key principles:**
-
-1. Be [explicit]{.alert} about edge cases
-2. Show [representative examples]{.alert}, not easy ones
-3. Specify [exact output format]{.alert}
-4. Use CoT for complex reasoning, skip it for simple tasks
-5. [Verify critical outputs]{.alert}—models fail unexpectedly
-6. Iterate based on [actual failures]{.alert}
-
-:::
-:::
 :::
 
 # ...and that's all for today! 🎉 {background-color="#2d4563"}
