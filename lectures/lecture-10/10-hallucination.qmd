@@ -113,8 +113,8 @@ Source: [Nielsen Norman Group](https://www.nngroup.com/articles/ai-hallucination
 
 ## Meme of the day 😄
 
-:::{style="text-align: center; margin-top: 30px;"}
-[![](figures/meme-of-the-day.jpg){width="55%"}](#){data-modal-type="image" data-modal-url="figures/meme-of-the-day.jpg"}
+:::{style="text-align: center; margin-top: 30px; font-size: 20px;"}
+[![](figures/meme-of-the-day.jpg){width="50%"}](#){data-modal-type="image" data-modal-url="figures/meme-of-the-day.jpg"}
 
 Source: [X.com](https://x.com/wirespeed_/status/1962508239817589147)
 :::
@@ -149,7 +149,7 @@ There's often [no signal]{.alert} that the AI is hallucinating. It sounds just a
 [![Hallucination example](figures/europe.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/europe.png"}
 
 :::{style="font-size: 18px; margin-top: 15px;"}
-The AI sounds confident—but is completely wrong
+The AI sounds confident, but is completely wrong
 :::
 :::
 :::
@@ -184,10 +184,6 @@ The AI sounds confident—but is completely wrong
 [![Why hallucinations happen](figures/next-token.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/next-token.png"}
 
 Source: [Medium](https://guyernest.medium.com/learn-the-intuition-behind-llm-hallucination-88ee26759ed7)
-
-:::{style="font-size: 18px; margin-top: 15px;"}
-LLMs predict what word comes next, not what's true
-:::
 :::
 :::
 :::
@@ -257,7 +253,7 @@ The model might:
 2. Know 1987 election patterns in Europe ✓
 3. [Invent specific parties, candidates, results]{.alert} ✗
 
-It sounds plausible because it's *statistically consistent* with European elections—but it's fabricated!
+It sounds plausible because it's *statistically consistent* with European elections...but it's all fabricated!
 :::
 
 :::{style="margin-top: 15px; font-size: 18px;"}
@@ -317,8 +313,6 @@ Source: [Chakraborty et al (2025)](https://www.nature.com/articles/s41598-025-15
 
 :::{style="margin-top: 15px;"}
 **What do you think is the most dangerous type?**
-
-Maybe [citation hallucinations]{.alert}, because they create false evidence that's hard to check quickly? What do you think?
 :::
 :::
 
@@ -332,48 +326,6 @@ Source: [The Cloud Girl Blog](https://www.thecloudgirl.dev/blog/rag-eliminating-
 Each type presents different risks
 :::
 :::
-:::
-:::
-:::
-
-## Activity: Catch the hallucination! 🔍
-
-:::{style="margin-top: 30px; font-size: 24px;"}
-:::{.columns}
-:::{.column width=50%}
-**Try to make ChatGPT or Claude hallucinate:**
-
-1. Ask about very recent events (this week)
-2. Ask for specific citations with page numbers
-3. Ask about obscure historical details
-4. Ask it to explain your professor's research 😉
-
-**Questions to try:**
-
-- "What was the stock price of Apple yesterday?"
-- "Cite three peer-reviewed papers about underwater basket weaving"
-- "What happened at the Battle of Flibbertigibbet in 1647?"
-:::
-
-:::{.column width=50%}
-**What to observe:**
-
-- Does the AI admit uncertainty?
-- Does it invent plausible-sounding facts?
-- How confident does it sound?
-
-:::{style="margin-top: 20px; background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px;"}
-**Discussion:**
-
-How might hallucinations be dangerous in:
-
-- Medical advice?
-- Legal research?
-- Financial decisions?
-- Academic work?
-:::
-
-⏱️ 3 minutes to experiment!
 :::
 :::
 :::
@@ -395,8 +347,8 @@ How might hallucinations be dangerous in:
 
 **The wake-up call:**
 
->  “is varghese a real case,” Schwartz asked the chatbot.
-> “Yes,” ChatGPT doubled down, it “is a real case.” 
+> "Is Varghese a real case?" Schwartz asked the chatbot.
+> "Yes," ChatGPT doubled down, "it is a real case."
 :::
 
 :::{.column width=45%}
@@ -474,7 +426,7 @@ Source: [The New York Times (2025)](https://www.nytimes.com/2025/11/16/briefing/
 :::
 
 :::{.column width=45%}
-:::{style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px;"}
+:::{style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; margin-top: 30px;"}
 **How to avoid this:**
 
 1. Never trust AI citations
@@ -539,9 +491,9 @@ Where do you stand?
 :::{style="margin-top: 30px; font-size: 20px;"}
 :::{.columns}
 :::{.column width=55%}
-**Here's the uncomfortable truth:**
+**However...**
 
-The same mechanism that causes hallucinations also enables [creativity]{.alert}.
+The same mechanism that causes hallucinations also enables [creativity]{.alert}!
 
 **Consider:**
 
@@ -583,7 +535,7 @@ Different tasks require different balances
 :::{style="margin-top: 30px; font-size: 19px;"}
 :::{.columns}
 :::{.column width=55%}
-**Controversial take: Hallucinations aren't always bad!**
+**Controversial take: [Hallucinations can be great, too!]{.alert}**
 
 **Consider these use cases:**
 
@@ -603,7 +555,7 @@ Different tasks require different balances
    - Imagining things that don't exist
    - Creating impossible visuals
 
-**The problem isn't hallucination, it's [hallucination at the wrong time]{.alert}**
+**The problem isn't hallucination _per se_, it's [hallucination at the wrong time]{.alert}**
 :::
 
 :::{.column width=45%}
@@ -631,7 +583,7 @@ More here: [The Case for AI Hallucination](https://uxdesign.cc/the-case-for-ai-h
 :::{.column width=50%}
 **Does AI know when it's wrong?**
 
-Ask <https://chat.z.ai/> these questions and request a [confidence rating (1-10)]{.alert} for each answer. [Z.ai](https://chat.z.ai/) was chosen because you can turn off web access
+Let's ask <https://chat.z.ai/> these questions and request a [confidence rating (1-10)]{.alert} for each answer. [Z.ai](https://chat.z.ai/) was chosen because you can turn off web access
 
 1. "What day of the week was January 14, 1642?" Confidence?"
   - Tuesday (I checked on Google Calendar!)
@@ -648,7 +600,7 @@ Ask <https://chat.z.ai/> these questions and request a [confidence rating (1-10)
 5. "Who is the current mayor of Reykjavik, Iceland? Confidence?"
   - Heiða Björg Hilmisdóttir
 
-**Then verify each answer!**
+**Then let's verify each answer!**
 :::
 
 :::{.column width=50%}
@@ -671,8 +623,6 @@ Ask <https://chat.z.ai/> these questions and request a [confidence rating (1-10)
 - Did the AI ever give high confidence but wrong answers?
 - [Can you trust AI's self-assessment?]{.alert}
 :::
-
-⏱️ 3 minutes to test!
 :::
 :::
 :::
@@ -696,11 +646,11 @@ Ask <https://chat.z.ai/> these questions and request a [confidence rating (1-10)
 
 **Verification strategies:**
 
-1. **Google the claim** — does it appear elsewhere?
-2. **Check citations** — do they exist?
-3. **Ask for sources** — then verify them!
-4. **Cross-reference** — use multiple sources
-5. **Trust your expertise** — if something seems off, it might be
+1. **Google the claim**: does it appear elsewhere?
+2. **Check citations**: do they exist?
+3. **Ask for sources**: then verify them!
+4. **Cross-reference**: use multiple sources
+5. **Trust your expertise**: if something seems off, it might be
 :::
 
 :::{.column width=45%}
@@ -721,7 +671,7 @@ Learn to recognise warning signs
 
 ## Prompting techniques that help
 
-:::{style="margin-top: 30px; font-size: 20px;"}
+:::{style="margin-top: 30px; font-size: 24px;"}
 :::{.columns}
 :::{.column width=55%}
 **You can reduce hallucinations through prompting:**
@@ -771,7 +721,7 @@ Question: [your question]
 
 ## Using PTCF to reduce hallucinations
 
-:::{style="margin-top: 30px; font-size: 19px;"}
+:::{style="margin-top: 30px; font-size: 22px;"}
 :::{.columns}
 :::{.column width=55%}
 Remember the [**PTCF framework**](https://raw.githack.com/danilofreire/datasci185/main/lectures/lecture-09/09-prompting.html) from last class?
@@ -786,7 +736,7 @@ Remember the [**PTCF framework**](https://raw.githack.com/danilofreire/datasci18
 **Why PTCF helps:**
 
 - **Persona** activates [cautious, precise patterns]{.alert} from training
-- **Task** constrains scope—no room for invention
+- **Task** constrains scope, no room for invention
 - **Context** grounds responses in [real information]{.alert}
 - **Format** forces explicit uncertainty signals
 :::
@@ -942,7 +892,7 @@ LLMs are "frozen in time" at their training date
 
 - AI has [real information]{.alert} to work with
 - Answers are [grounded]{.alert} in documents
-- Can [cite sources]{.alert}—you can verify!
+- Can [cite sources]{.alert}, so you can verify!
 - Reduces need to "make stuff up"
 
 **Next class, we'll explore RAG in depth!**
@@ -957,7 +907,7 @@ Source: [Towards AI](https://pub.towardsai.net/what-is-rag-a-clear-and-simple-ex
 :::
 
 :::{style="margin-top: 15px; background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px;"}
-[Teaser]{.alert}: Tools like NotebookLM, ChatPDF, and Perplexity all use RAG—you'll try them next week!
+[Teaser]{.alert}: Tools like NotebookLM, ChatPDF, and Perplexity all use RAG!
 :::
 :::
 :::
@@ -985,7 +935,7 @@ Source: [Towards AI](https://pub.towardsai.net/what-is-rag-a-clear-and-simple-ex
 
 ## Your anti-hallucination toolkit
 
-:::{style="margin-top: 30px; font-size: 22px;"}
+:::{style="margin-top: 30px; font-size: 25px;"}
 :::{.columns}
 :::{.column width=50%}
 **Always do:**
