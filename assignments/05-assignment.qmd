@@ -135,7 +135,7 @@ AI systems are trained to be "helpful, harmless, and honest", but these goals ca
 
 ---
 
-### Bonus Question: The Sycophancy Trap in Society
+### Question 05: The Sycophancy Trap in Society
 
 LLMs are trained to agree with users, even when the user is wrong (this is called **sycophancy**, discussed in Lecture 10). Imagine millions of people using AI assistants that confirm their existing beliefs instead of challenging them.
 
