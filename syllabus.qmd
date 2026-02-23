@@ -405,17 +405,13 @@ Readings:
 
 ### April 06, 2026:
 
-- Lecture 21: [AI in healthcare and education](https://raw.githack.com/danilofreire/datasci185/main/lectures/lecture-21/21-applications.html).
+- Lecture 21: [AI and wellbeing: the attention economy, the environment, and mental health](https://raw.githack.com/danilofreire/datasci185/main/lectures/lecture-21/21-wellbeing.html).
 
 Readings:
 
-- Opel, N., & Breakspear, M. (2026). [Transforming mental health research and care through artificial intelligence](https://www.science.org/doi/10.1126/science.adz9193) *Science*, *391*(6782), 249-258. The authors review ways in which AI may reduce care inequities when deployed responsibly. They discuss how AI can be useful across several stages of care, from prevention to treatment and rehabilitation.
-- Bedi, S., Cui, H., Fuentes, M., Unell, A., Wornow, M., Banda, J. M., ... & Shah, N. H. (2026). [Holistic evaluation of large language models for medical tasks with MedHELM](https://www.nature.com/articles/s41591-025-04151-2). *Nature Medicine*, s41591-025-04151-2.
-- Agentic Health AI. (2025). [Awesome AI agents for healthcare](https://github.com/AgenticHealthAI/awesome-ai-agents-for-healthcare). A curated list of research papers, projects, and resources related to the application of AI agents for healthcare, including medical image analysis, EHR manipulation, counseling, drug discovery, patient dialogue, and healthcare administration.
 - Habicht, J., Dina, L. M., McFadyen, J., Stylianou, M., Harper, R., Hauser, T. U., & Rollwage, M. (2025). [Generative AI–enabled therapy support tool for improved clinical outcomes and patient engagement in group therapy: real-world observational study](https://www.jmir.org/2025/1/e60435). *Journal of Medical Internet Research*, *27*, e60435. An experiment on the use of AI in group therapy. It has a positive result.
 - Moore, J., Grabb, D., Agnew, W., Klyman, K., Chancellor, S., Ong, D. C., & Haber, N. (2025). [Expressing stigma and inappropriate responses prevents LLMs from safely replacing mental health providers](https://arxiv.org/abs/2504.18412). *arXiv preprint arXiv:2504.18412*. The authors question the idea that LLMs should replace mental health providers.
 - OpenAI. (2025). [Strengthening ChatGPT’s responses in sensitive conversations](https://openai.com/index/strengthening-chatgpt-responses-in-sensitive-conversations/). OpenAI's approach to making ChatGPT more helpful in sensitive conversations.
-- Zhai, X., et al. (2021). [A review of artificial intelligence (AI) in education from 2010 to 2020.](https://onlinelibrary.wiley.com/doi/abs/10.1155/2021/8812542) *Complexity*, 2021(1), 8812542.
 
 ### April 08, 2026:
 
@@ -438,7 +434,7 @@ Readings:
 
 ### April 15, 2026:
 
-- Lecture 24: [Long-term safety, the alignment problem and the future of AI](https://raw.githack.com/danilofreire/datasci185/main/lectures/lecture-24/24-alignment.html).
+- Lecture 24: [Long-term safety, the alignment problem and the future of AI](https://raw.githack.com/danilofreire/datasci185/main/lectures/lecture-24/24-safety.html).
 - **Assignment 10 due (5%).**
 
 Readings:
@@ -450,6 +446,7 @@ Readings:
 - Christian, B. (2024). [The alignment problem: machine learning and human values](https://brianchristian.org/the-alignment-problem/). *Penguin Random House*. A great book on the challenges of aligning AI systems with human values.
 - Russell, S. (2017). [3 principles for creating safer AI.](https://www.ted.com/talks/stuart_russell_3_principles_for_creating_safer_ai) *TED Talk*.
 - [Center for AI Safety](https://safe.ai/). A non-profit organisation working on this topic. They have a lot of resources on their website.
+- [AI Alignment Forum](https://www.alignmentforum.org/). A community website for discussing AI alignment. Many of the most important papers in the field are posted here.
 
 ### April 20, 2026:
 

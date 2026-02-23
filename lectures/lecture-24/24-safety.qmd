@@ -55,7 +55,6 @@ if (!require("fontawesome", character.only = TRUE)) {
 :::{.columns}
 :::{.column width=50%}
 - Last class: [misinformation, deepfakes, and trust online]{.alert}
-- Misinformation, disinformation, malinformation, synthetic media
 - Scale, speed, accessibility of synthetic content
 - Political manipulation, non-consensual intimate imagery, fraud
 - System 1 vs System 2, confirmation bias, bandwagon effect
