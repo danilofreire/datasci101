@@ -210,10 +210,10 @@ Source: [Center for AI Safety](https://aistatement.com/#open-letter)
 
 **Why these matter:**
 
-- Not speculative sci-fi concerns
-- [Real issues in deployed systems]{.alert}
+- Not speculative, but [already happening in deployed systems]{.alert}
 - Scale with capability
 - Unsolved even for current AI
+- Let's analyse these issues in more detail... 🤓
 :::
 
 :::{.column width=45%}
@@ -231,24 +231,21 @@ Source: [Brian Christian](https://brianchristian.org/the-alignment-problem/)
 :::{style="margin-top: 30px; font-size: 21px;"}
 :::{.columns}
 :::{.column width=55%}
-**The problem:**
-
-- Learning requires trying new things
+- [Learning requires trying new things]{.alert}
 - Some actions are [irreversible]{.alert}
 - "Explore safely" is hard to specify
-- What counts as too risky?
 
 **Examples:**
 
-- Robot learning to walk: Don't break yourself
-- Medical AI: Don't kill patients while learning
-- Financial AI: Don't bankrupt the company
+- Robot learning to walk: Don't break yourself 
 - Self-driving: Don't explore by crashing
+- Financial AI: Don't bankrupt the company
+- Medical AI: Don't kill patients while learning
 
 **Current approaches:**
 
-- [Simulation]{.alert}: Learn in safe environments first
-- Conservative policies: Stay close to known-good
+- [Simulation]{.alert}: Learn in low-risk environments first
+- Conservative policies: Keep actions within a safe region
 - Human oversight: Ask before novel actions
 - Reward shaping: Penalise dangerous states
 :::
@@ -256,10 +253,12 @@ Source: [Brian Christian](https://brianchristian.org/the-alignment-problem/)
 :::{.column width=45%}
 :::{style="text-align: center;"}
 <!-- Suggested image: Safe exploration diagram -->
-[![](figures/safe-exploration.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/safe-exploration.png"}
+[![](figures/safe-exploration.png){width="70%"}](#){data-modal-type="image" data-modal-url="figures/safe-exploration.png"}
+
+Source: [The Wall Street Journal](https://www.wsj.com/tech/ai/anthropic-claude-ai-vending-machine-agent-b7e84e34)
 
 :::{style="background: rgba(230, 57, 70, 0.1); padding: 15px; border-radius: 10px; font-size: 18px; margin-top: 15px;"}
-**The challenge**: How do you [specify "safe"]{.alert} without already knowing everything about the domain?
+How do you [specify "safe"]{.alert} without already knowing everything about the domain?
 :::
 :::
 :::
@@ -271,36 +270,30 @@ Source: [Brian Christian](https://brianchristian.org/the-alignment-problem/)
 :::{style="margin-top: 30px; font-size: 21px;"}
 :::{.columns}
 :::{.column width=55%}
-**The problem:**
-
-- AI optimises for specified objective
-- Ignores everything else
+- [AI optimises for specified objective]{.alert}
+- It [ignores everything else]{.alert}
 - [Unintended consequences]{.alert} not in objective
 - "You didn't say not to..."
 
 **Classic example (thought experiment):**
 
-- Robot tasked with fetching coffee
+- [Robot tasked with fetching coffee]{.alert}
 - Knocks over obstacles in path
 - Harms humans in the way
 - Technically: Coffee fetched ✓
 
 **Real-world version:**
 
-- Content algorithm maximises engagement
+- [Content algorithm maximises engagement]{.alert}
 - Side effect: Polarisation, addiction
 - Not in objective function
 - [Nobody specified "don't harm society"]{.alert}
 :::
 
 :::{.column width=45%}
-**Research approaches:**
-
-- Impact measures: Penalise large changes
-- Auxiliary objectives: Don't break things
-- [Human feedback]{.alert}: Learn what we care about
-- Conservative action: Prefer reversible choices
-
+:::{style="text-align: center;"}
+[![Political polarisation is real, but sometimes not designed](figures/social-media-democracy.png){width="60%"}](#){data-modal-type="image" data-modal-url="figures/social-media-democracy.png"}
+:::
 :::{style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; font-size: 18px; margin-top: 15px;"}
 The world is [too complex to specify everything]{.alert} we care about. AI must somehow learn to preserve what matters.
 :::
@@ -312,12 +305,10 @@ The world is [too complex to specify everything]{.alert} we care about. AI must 
 
 ## What is alignment?
 
-:::{style="margin-top: 30px; font-size: 21px;"}
+:::{style="margin-top: 30px; font-size: 20px;"}
 :::{.columns}
 :::{.column width=55%}
-**Definition:**
-
-- AI systems that [do what we want]{.alert}
+- Alignment: AI systems that [do what we want]{.alert}
 - Pursue goals we actually intend
 - Not just stated objectives
 - Behave safely even when we can't supervise
@@ -329,7 +320,7 @@ The world is [too complex to specify everything]{.alert} we care about. AI must 
 - Not pursuing random objectives
 - Not technically satisfying letter while violating spirit
 
-**The core difficulty:**
+**Why it's hard:**
 
 - [Hard to specify]{.alert} what we want
 - Humans disagree about values
@@ -339,12 +330,9 @@ The world is [too complex to specify everything]{.alert} we care about. AI must 
 
 :::{.column width=45%}
 :::{style="text-align: center;"}
-<!-- Suggested image: Alignment concept diagram -->
-[![](figures/alignment-concept.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/alignment-concept.png"}
+[![Claude can fake alignment even without being asked! 😧](figures/alignment-faking.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/alignment-faking.png"}
 
-:::{style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; font-size: 18px; margin-top: 15px;"}
-**Simple version**: How do we build AI that [understands what we mean]{.alert}, not just what we say?
-:::
+Source: [Anthropic](https://www.anthropic.com/research/alignment-faking)
 :::
 :::
 :::
@@ -362,23 +350,21 @@ The world is [too complex to specify everything]{.alert} we care about. AI must 
 - Values are context-dependent
 - Humans can't articulate their own values perfectly
 
-**Goodhart's Law:**
+**Goodhart's Law:** (remember this!)
 
 - "When a measure becomes a target..."
 - "...it ceases to be a good measure"
 - [Optimise metric ≠ achieve goal]{.alert}
-- The harder you optimise, the worse the gap
 
 **Examples:**
 
-- Test scores → teaching to test
 - Click rates → clickbait
 - Engagement → addiction
 - GDP → environmental destruction
 :::
 
 :::{.column width=45%}
-**The king Midas problem:**
+**The King Midas problem:** [(Russell, 2014)](https://www.edge.org/conversation/the-myth-of-ai#26015)
 
 - Gets exactly what he asked for
 - [Not what he wanted]{.alert}
@@ -386,8 +372,7 @@ The world is [too complex to specify everything]{.alert} we care about. AI must 
 - Common AI failure mode
 
 :::{style="text-align: center;"}
-<!-- Suggested image: Goodhart's Law illustration -->
-[![](figures/goodhart.png){width="90%"}](#){data-modal-type="image" data-modal-url="figures/goodhart.png"}
+[![](figures/russell.png){width="50%"}](#){data-modal-type="image" data-modal-url="figures/russell.png"}
 :::
 :::
 :::
@@ -395,32 +380,31 @@ The world is [too complex to specify everything]{.alert} we care about. AI must 
 
 ## Current alignment approaches
 
-:::{style="margin-top: 30px; font-size: 21px;"}
+:::{style="margin-top: 30px; font-size: 20px;"}
 :::{.columns}
 :::{.column width=55%}
-**RLHF (Reinforcement Learning from Human Feedback):**
+**RLHF (Reinforcement Learning from Human Feedback):** [(OpenAI, 2019)](https://arxiv.org/abs/1909.08593)
 
 - Humans rank AI outputs
 - Train reward model on rankings
 - Optimise AI to satisfy reward model
 - [Current industry standard]{.alert}
 
-**Constitutional AI:**
+**Constitutional AI:** [(Anthropic, 2022)](https://www.anthropic.com/research/constitutional-ai-harmlessness-from-ai-feedback)
 
 - AI critiques its own outputs
-- Uses set of principles ("constitution")
+- [Uses set of principles ("constitution")]{.alert}
 - Iteratively improves
 - Reduces need for human labelling
-
-**Debate and recursive reward modelling:**
-
-- AI systems argue with each other
-- Humans judge who's more persuasive
-- Scales human oversight
-- [Research stage]{.alert}
 :::
 
 :::{.column width=45%}
+**Debate and recursive reward modelling:**  [(Leike et al., 2024)](https://arxiv.org/abs/1811.07871)
+
+- AI systems argue with each other
+- Humans judge who's more persuasive
+- Scales human oversight: [easier to evaluate than produce knowledge]{.alert}
+
 **Limitations of current approaches:**
 
 - RLHF: Can learn to [game evaluators]{.alert}
@@ -435,60 +419,17 @@ These methods [work well enough for current systems]{.alert}. Whether they scale
 :::
 :::
 
-## Constitutional AI and classifiers
-
-:::{style="margin-top: 30px; font-size: 21px;"}
-:::{.columns}
-:::{.column width=55%}
-**Anthropic's approach (2025):**
-
-- "Constitutional Classifiers" paper
-- Train AI to follow explicit principles
-- Examples: "Be helpful, harmless, honest"
-- AI generates, evaluates, improves
-
-**How it works:**
-
-1. Define constitution (principles)
-2. AI generates responses
-3. AI [critiques own responses]{.alert} against principles
-4. AI revises based on critique
-5. Train on improved responses
-
-**Advantages:**
-
-- [Scalable]{.alert}: AI does heavy lifting
-- Transparent: Principles are explicit
-- Modifiable: Change principles, change behaviour
-- Less human labelling needed
-:::
-
-:::{.column width=45%}
-:::{style="text-align: center;"}
-<!-- Suggested image: Constitutional AI diagram -->
-[![](figures/constitutional-ai.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/constitutional-ai.png"}
-
-Source: [Anthropic (2025)](https://assets.anthropic.com/m/2fcf7d74d5f011f1/original/Anthropic-Constitutional-Classifiers.pdf)
-
-:::{style="font-size: 18px; margin-top: 15px;"}
-Constitutional AI is one of several approaches. [No consensus]{.alert} on which approach is best.
-:::
-:::
-:::
-:::
-:::
-
 ## The alignment survey
 
-:::{style="margin-top: 30px; font-size: 21px;"}
+:::{style="margin-top: 30px; font-size: 19px;"}
 :::{.columns}
 :::{.column width=55%}
-**Ngo et al. overview (2024):**
+[**Ngo et al. overview (2022):**](https://arxiv.org/abs/2209.00626)
 
 - Survey of alignment problem and techniques
 - Published in foundational AI research
 
-**Key insights:**
+**However...**
 
 - [No solved problem]{.alert}: Active research area
 - Multiple approaches needed
@@ -505,6 +446,13 @@ Constitutional AI is one of several approaches. [No consensus]{.alert} on which 
 :::
 
 :::{.column width=45%}
+:::{style="margin-top: 30px; font-size: 17px; text-align: center;"}
+[![](figures/ngo-et-al.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/ngo-et-al.png"}
+
+Source: [Ngo et al. (2022)](https://arxiv.org/abs/2209.00626)
+:::
+
+:::{style="font-size: 19px;"}
 **Research directions:**
 
 | Area | Focus |
@@ -514,9 +462,6 @@ Constitutional AI is one of several approaches. [No consensus]{.alert} on which 
 | Scalable oversight | Supervising superhuman AI |
 | Value learning | Inferring human values |
 | Corrigibility | Making AI correctable |
-
-:::{style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; font-size: 18px; margin-top: 15px;"}
-The field is young. [Major open problems]{.alert} remain. Progress is real but incomplete.
 :::
 :::
 :::
@@ -572,12 +517,10 @@ Alignment is [not just technical]{.alert}. It's deeply political. Technical solu
 **Current trends:**
 
 - Models getting [larger and more capable]{.alert}
-- Costs decreasing
-- Applications expanding
 - More general-purpose systems
 - Multimodal capabilities
 
-**Key uncertainties:**
+**Uncertainties:**
 
 - Will scaling continue to work?
 - When do we hit [diminishing returns]{.alert}?
@@ -594,8 +537,9 @@ Alignment is [not just technical]{.alert}. It's deeply political. Technical solu
 
 :::{.column width=45%}
 :::{style="text-align: center;"}
-<!-- Suggested image: AI progress trajectory -->
-[![](figures/ai-trajectory.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/ai-trajectory.png"}
+[![](figures/ai-trajectory.avif){width="100%"}](#){data-modal-type="image" data-modal-url="figures/ai-trajectory.avif"}
+
+Source: [Our World in Data](https://ourworldindata.org/brief-history-of-ai)
 
 :::{style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; font-size: 18px; margin-top: 15px;"}
 **Honest answer**: Nobody knows. [Uncertainty is high]{.alert}. Be sceptical of confident predictions.
@@ -607,42 +551,43 @@ Alignment is [not just technical]{.alert}. It's deeply political. Technical solu
 
 ## Scenarios to consider
 
-:::{style="margin-top: 30px; font-size: 20px;"}
+:::{style="margin-top: 30px; font-size: 19px;"}
 :::{.columns}
 :::{.column width=55%}
 **Scenario 1: Gradual improvement**
 
-- AI gets better slowly
+- [AI gets better slowly]{.alert}
 - Humans adapt
 - Society adjusts incrementally
 - [Most likely?]{.alert}
 
 **Scenario 2: Capability jumps**
 
-- Sudden breakthroughs
+- [Sudden breakthroughs]{.alert}
 - Unexpected capabilities
 - Rapid deployment
 - Less time to adapt
 
 **Scenario 3: Plateau**
 
-- Current approaches hit limits
+- [Current approaches hit limits]{.alert}
 - Progress slows dramatically
 - Different paradigms needed
 - [Also possible]{.alert}
-
-**Scenario 4: Transformative AI**
-
-- Systems vastly more capable than humans
-- Fundamental changes to economy, society
-- Either very good or very bad
-- Uncertain timeline
 :::
 
 :::{.column width=45%}
+**Scenario 4: Transformative AI**
+
+- [Systems vastly more capable than humans]{.alert}
+- Fundamental changes to economy, society
+- Either very good or very bad
+- Uncertain timeline
+
 :::{style="text-align: center;"}
-<!-- Suggested image: Scenario comparison -->
-[![](figures/scenarios.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/scenarios.png"}
+[![](figures/scenarios.jpg){width="100%"}](#){data-modal-type="image" data-modal-url="figures/scenarios.jpg"}
+
+Source: [American Enterprise Institute](https://www.aei.org/articles/would-agi-be-no-big-deal/)
 
 :::
 :::
@@ -651,7 +596,7 @@ Alignment is [not just technical]{.alert}. It's deeply political. Technical solu
 
 ## Stuart Russell's perspective
 
-:::{style="margin-top: 30px; font-size: 21px;"}
+:::{style="margin-top: 30px; font-size: 18px;"}
 :::{.columns}
 :::{.column width=55%}
 **Russell's argument (TED talk):**
@@ -668,9 +613,7 @@ Alignment is [not just technical]{.alert}. It's deeply political. Technical solu
 3. Should allow itself to be switched off
 4. Objectives learned, not programmed
 
-**Key quote:**
-
-"You cannot fetch the coffee if you are dead"
+> "You cannot fetch the coffee if you are dead"
 
 - AI should value human control
 - Not because told to
@@ -679,7 +622,6 @@ Alignment is [not just technical]{.alert}. It's deeply political. Technical solu
 
 :::{.column width=45%}
 :::{style="text-align: center;"}
-<!-- Suggested image: Stuart Russell or his book -->
 [![](figures/stuart-russell.png){width="80%"}](#){data-modal-type="image" data-modal-url="figures/stuart-russell.png"}
 
 Source: [TED](https://www.ted.com/talks/stuart_russell_3_principles_for_creating_safer_ai)
@@ -694,7 +636,7 @@ Russell is a leading AI researcher who takes long-term safety [very seriously]{.
 
 ## Existential risk: the debate
 
-:::{style="margin-top: 30px; font-size: 21px;"}
+:::{style="margin-top: 30px; font-size: 20px;"}
 :::{.columns}
 :::{.column width=55%}
 **Those who worry:**
@@ -711,24 +653,19 @@ Russell is a leading AI researcher who takes long-term safety [very seriously]{.
 - "Sci-fi thinking" not grounded
 - We control the off switch
 - Capabilities overstated
-- Resources better spent elsewhere
 
 **The actual state of debate:**
 
 - [Serious researchers on both sides]{.alert}
-- Uncertainty is genuine
-- Not cranks vs experts
-- Legitimate disagreement
+- Uncertainty and disagreement are genuine
 :::
 
 :::{.column width=45%}
 :::{style="text-align: center;"}
-<!-- Suggested image: Risk debate illustration -->
-[![](figures/risk-debate.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/risk-debate.png"}
+[![](figures/hinton-risk.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/hinton-risk.png"}
 
-:::{style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; font-size: 18px; margin-top: 15px;"}
-You don't have to pick a side. Acknowledging [genuine uncertainty]{.alert} is intellectually honest.
-:::
+Source: [MIT Technology Review's YouTube channel](https://www.youtube.com/watch?v=sitHS6UDMJc)
+
 :::
 :::
 :::
@@ -738,7 +675,7 @@ You don't have to pick a side. Acknowledging [genuine uncertainty]{.alert} is in
 
 ## Research directions
 
-:::{style="margin-top: 30px; font-size: 21px;"}
+:::{style="margin-top: 30px; font-size: 19px;"}
 :::{.columns}
 :::{.column width=55%}
 **Technical safety research:**
@@ -753,9 +690,7 @@ You don't have to pick a side. Acknowledging [genuine uncertainty]{.alert} is in
 
 **Growing field:**
 
-- Anthropic, OpenAI, DeepMind safety teams
-- Academic labs (MIRI, CHAI, etc.)
-- Funding increasing
+- Anthropic, OpenAI, DeepMind safety teams, academic labs
 - Still [small relative to capabilities]{.alert}
 
 **Career opportunity:**
@@ -767,52 +702,12 @@ You don't have to pick a side. Acknowledging [genuine uncertainty]{.alert} is in
 
 :::{.column width=45%}
 :::{style="text-align: center;"}
-<!-- Suggested image: Safety research landscape -->
-[![](figures/safety-research.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/safety-research.png"}
+[![](figures/safety-research.png){width="80%"}](#){data-modal-type="image" data-modal-url="figures/safety-research.png"}
 
-:::{style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; font-size: 18px; margin-top: 15px;"}
+Source: [The Wall Street Journal (2026)](https://www.wsj.com/tech/ai/anthropic-amanda-askell-philosopher-ai-3c031883)
+
+:::{style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; font-size: 17px; margin-top: 15px;"}
 **If this interests you**: Look into [80,000 Hours](https://80000hours.org/), AI safety bootcamps, and safety-focused labs.
-:::
-:::
-:::
-:::
-:::
-
-## Governance approaches
-
-:::{style="margin-top: 30px; font-size: 21px;"}
-:::{.columns}
-:::{.column width=55%}
-**What's happening:**
-
-- EU AI Act (regulation)
-- US executive orders
-- International coordination (AI Safety Summits)
-- Industry self-governance
-- Technical standards development
-
-**Key governance questions:**
-
-1. [Who regulates?]{.alert} (National, international, industry)
-2. What's regulated? (Capabilities, applications, both)
-3. How do you enforce? (Audits, disclosure, liability)
-4. How do you adapt? (Law vs technology speed)
-
-**Challenges:**
-
-- Racing dynamics between countries
-- [Innovation vs safety]{.alert} tension
-- Technical expertise gaps in government
-- Capture risk by industry
-:::
-
-:::{.column width=45%}
-:::{style="text-align: center;"}
-<!-- Suggested image: AI governance landscape -->
-[![](figures/ai-governance.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/ai-governance.png"}
-
-:::{style="font-size: 18px; margin-top: 15px;"}
-Governance is [still forming]{.alert}. This decade's choices will shape the trajectory.
 :::
 :::
 :::
@@ -824,36 +719,31 @@ Governance is [still forming]{.alert}. This decade's choices will shape the traj
 :::{style="margin-top: 30px; font-size: 21px;"}
 :::{.columns}
 :::{.column width=55%}
-**As informed citizens:**
+We've already discussed what governments are (not) doing about AI. What [can you do?]{.alert}
 
 - [Understand]{.alert} the technology and debates
 - Evaluate claims critically
 - Support good governance
-- Vote based on AI policy positions
+- [Vote based on AI policy positions]{.alert}
 
 **As professionals:**
 
 - If you work with AI: [Consider impacts]{.alert}
 - Ask safety questions in your organisation
 - Advocate for responsible development
-- Refuse work you find unethical
+- Question work you find unethical
 
 **As people:**
 
-- Think about what you want from AI
 - Engage with policy discussions
-- [Don't be passive]{.alert}
-- Shape the tools that will shape you
+- [Don't be passive!]{.alert}
 :::
 
 :::{.column width=45%}
 :::{style="text-align: center;"}
-<!-- Suggested image: Individual agency illustration -->
-[![](figures/your-role.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/your-role.png"}
+[![](figures/your-role.png){width="90%"}](#){data-modal-type="image" data-modal-url="figures/your-role.png"}
 
-:::{style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; font-size: 18px; margin-top: 15px;"}
-You're taking this course. You'll understand more than most. [That creates responsibility]{.alert}.
-:::
+Source: [MIT Sloan Review (2024)](https://sloanreview.mit.edu/article/how-ai-skews-our-sense-of-responsibility/)
 :::
 :::
 :::
@@ -868,40 +758,33 @@ You're taking this course. You'll understand more than most. [That creates respo
 
 - Don't dismiss all concerns as sci-fi
 - Don't accept all concerns uncritically
-- [Evidence over vibes]{.alert}
-- Uncertainty is honest
+- [Evidence over vibes!]{.alert}
 
 **What reasonable concern looks like:**
 
 - Take problems seriously
-- Invest in solutions
-- Avoid catastrophising
+- But don't catastrophise
 - Stay grounded in current reality
 - Plan for multiple futures
 
 **What reasonable optimism looks like:**
 
 - Acknowledge real progress
-- Recognise genuine benefits
 - Believe problems are [solvable]{.alert}
 - Trust in human adaptability
-- Work toward good outcomes
 :::
 
 :::{.column width=45%}
 :::{style="text-align: center;"}
-<!-- Suggested image: Balance/middle path illustration -->
-[![](figures/balance.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/balance.png"}
+[![](figures/balance.webp){width="100%"}](#){data-modal-type="image" data-modal-url="figures/balance.webp"}
 
-:::{style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; font-size: 18px; margin-top: 15px;"}
-The future isn't written. It depends on [what we do now]{.alert}. That should motivate, not paralyse.
-:::
+Source: [r/OptimistsUnite](https://www.reddit.com/r/OptimistsUnite/comments/1ew53z5/where_do_you_stand_on_ai_good_or_bad_im_very/)
 :::
 :::
 :::
 :::
 
-# Summary and takeaways 📝 {background-color="#2d4563"}
+# Summary 📝 {background-color="#2d4563"}
 
 ## Main takeaways
 

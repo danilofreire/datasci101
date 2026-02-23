@@ -447,7 +447,9 @@ Readings:
 - Ji, J., Qiu, T., Chen, B., Zhang, B., Lou, H., Wang, K., ... & Gao, W. (2023). [AI alignment: a comprehensive survey.](https://arxiv.org/abs/2310.19852) *arXiv preprint*. A survey of the field of AI alignment.
 - Zhi-Xuan, T., Carroll, M., Franklin, M., & Ashton, H. (2025). [Beyond preferences in AI alignment](https://link.springer.com/article/10.1007/s11098-024-02249-w). *Philosophical Studies*, 182(7), 1813-1863. A philosophical take on the limits of rational choice in AI alignment. A little more abstract, but very interesting.
 - Anthropic. (2025). [Constitutional classifiers: defending against universal jailbreaks](https://www.anthropic.com/news/constitutional-classifiers). A jailbreak defense system using input/output classifiers trained on synthetic data. It reduced jailbreak success rates by a lot... but some people still found ways around it. If you would like to read the whole academic paper, [check it out here](https://arxiv.org/abs/2501.18837).
+- Christian, B. (2024). [The alignment problem: machine learning and human values](https://brianchristian.org/the-alignment-problem/). *Penguin Random House*. A great book on the challenges of aligning AI systems with human values.
 - Russell, S. (2017). [3 principles for creating safer AI.](https://www.ted.com/talks/stuart_russell_3_principles_for_creating_safer_ai) *TED Talk*.
+- [Center for AI Safety](https://safe.ai/). A non-profit organisation working on this topic. They have a lot of resources on their website.
 
 ### April 20, 2026:
 
