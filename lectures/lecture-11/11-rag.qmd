@@ -266,12 +266,17 @@ Similar sentences cluster together in embedding space
 
 ## Measuring similarity: Cosine similarity
 
-:::{style="margin-top: 30px; font-size: 20px;"}
+:::{style="margin-top: 30px; font-size: 17px;"}
 :::{.columns}
 :::{.column width=55%}
 **How do we measure if two vectors are similar?**
 
-[Cosine similarity]{.alert} measures the angle between vectors:
+- [Cosine similarity]{.alert} measures the angle between vectors
+- The numerator is the dot product (multiply their corresponding components and add them all up; how much they point in the same direction)
+- The denominator normalises by their lengths (magnitude)
+  - If vector $A = [0.8, 0.6]$, then $\|A\| = \sqrt{0.8^2 + 0.6^2} = 1$ 
+- If vectors are identical, cosine similarity = 1; if orthogonal, = 0; if opposite, = -1
+- The values range from 0 to 1 because word counts cannot be negative
 
 $$\text{similarity}(A, B) = \frac{A \cdot B}{\|A\| \times \|B\|}$$
 
@@ -283,15 +288,15 @@ $$\text{similarity}(A, B) = \frac{A \cdot B}{\|A\| \times \|B\|}$$
 | 0.7–0.9 | Related | "car" vs "truck" |
 | 0.4–0.7 | Loosely related | "car" vs "road" |
 | 0.0–0.4 | Unrelated | "car" vs "banana" |
+:::
 
+:::{.column width=45%}
 **In RAG systems:**
 
 - Query embedding compared to all chunk embeddings
 - Return chunks with [highest similarity scores]{.alert}
 - Typical threshold: retrieve if score > 0.7
-:::
 
-:::{.column width=45%}
 :::{style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; font-size: 18px;"}
 **Mini-example (2D for simplicity):**
 
@@ -307,12 +312,6 @@ Cosine similarity:
 - "dogs" vs "weather": **0.12** ❌
 
 The search finds "puppies" when you ask about "dogs"!
-:::
-
-:::{style="margin-top: 15px; font-size: 18px;"}
-**Why cosine over Euclidean distance?**
-
-Cosine measures [direction]{.alert} (meaning), not magnitude. Two sentences about dogs are similar even if one is longer!
 :::
 :::
 :::
@@ -361,7 +360,7 @@ Cosine measures [direction]{.alert} (meaning), not magnitude. Two sentences abou
 :::
 
 :::{.column width=45%}
-:::{style="text-align: center;"}
+:::{style="text-align: center; margin-top: 40px;"}
 [![Document ingestion](figures/document-ingestion.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/document-ingestion.png"}
 
 :::{style="font-size: 18px; margin-top: 15px;"}
@@ -436,7 +435,7 @@ Source: [Mastering LLM](https://masteringllm.medium.com/11-chunking-strategies-f
 - Traditional databases: [exact match]{.alert}
 - Vector databases: [similarity search]{.alert}
 
-[Don't worry—no-code tools handle this for you!]{.alert}
+[Don't worry: no-code tools handle this for you!]{.alert}
 :::
 
 :::{.column width=50%}
@@ -444,9 +443,9 @@ Source: [Mastering LLM](https://masteringllm.medium.com/11-chunking-strategies-f
 
 1. Question → embedding → query vector
 2. Vector DB finds [similar chunks]{.alert}
-3. Returns top-k most similar (k=3–10)
+3. Returns top-k most similar (k = 3–10)
 
-:::{style="background: rgba(45, 69, 99, 0.1); padding: 10px; border-radius: 10px; font-size: 16px;"}
+:::{style="background: rgba(45, 69, 99, 0.1); padding: 10px; border-radius: 10px; font-size: 19px;"}
 **Example**: "What is our refund policy?"
 
 | Rank | Chunk | Score |
@@ -457,7 +456,7 @@ Source: [Mastering LLM](https://masteringllm.medium.com/11-chunking-strategies-f
 :::
 
 :::{style="margin-top: 10px; font-size: 16px;"}
-**Parameters**: top-k (3–10), threshold (0.5–0.8), reranking
+**Parameters**: top-k (3–10), threshold (0.7–1.0)
 :::
 :::
 :::
@@ -475,11 +474,7 @@ The LLM receives a prompt like this:
 :::{style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; font-size: 16px;"}
 **System**: Answer the user's question using ONLY the context provided. If the answer isn't in the context, say "I don't have that information."
 
-**Context**:
-
-[Chunk 1]: "Returns and refunds: Customers may return items within 30 days..."
-
-[Chunk 2]: "Our guarantee covers full refunds for defective products..."
+**Context**: [Chunk 1]: "Returns and refunds: Customers may return items within 30 days...". [Chunk 2]: "Our guarantee covers full refunds for defective products..."
 
 **User question**: "What is your refund policy?"
 :::
@@ -567,7 +562,7 @@ Retrieved chunks become the LLM's "reference material"
 :::
 
 :::{.column width=45%}
-:::{style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; font-size: 16px;"}
+:::{style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; font-size: 16px; margin-top: 40px;"}
 **The "Lost in the Middle" problem:**
 
 [Liu et al. (2023)](https://arxiv.org/abs/2307.03172) found that LLMs pay most attention to:
@@ -742,7 +737,7 @@ Source: [Liu et al. (2023)](https://arxiv.org/abs/2307.03172)
 :::
 
 :::{.column width=45%}
-:::{style="text-align: center;"}
+:::{style="text-align: center; margin-top: 40px;"}
 [![NotebookLM interface](figures/notebooklm-screenshot.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/notebooklm-screenshot.png"}
 
 :::{style="font-size: 18px; margin-top: 10px;"}
@@ -758,7 +753,7 @@ Source: [Liu et al. (2023)](https://arxiv.org/abs/2307.03172)
 :::{style="margin-top: 30px; font-size: 20px;"}
 :::{.columns}
 :::{.column width=50%}
-**Compare: With vs. without your documents. Let's do it together!**
+**Compare: With vs. without your documents. Let's do it together (or at home if Emory's connection doesn't allow us to! 😂)**
 
 **Step 1: Without documents**
 
