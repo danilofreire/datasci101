@@ -10,7 +10,7 @@ format:
 
 ## Instructions
 
-This assignment covers material from **Lecture 13**: Building Reliable Pipelines, Monitoring, and Testing, and **Lecture 14**: Documentation and Dataset Governance.
+This assignment covers material from **Lecture 13**: Building Reliable Pipelines, Monitoring, and Testing, and **Lecture 14**: Documentation and Dataset Governance (only the bonus question).
 
 **Guidelines:**
 
@@ -132,7 +132,33 @@ In February 2024, users asked Google's Gemini to generate images of "1943 German
 
 ---
 
-### Question 5: Write a Mini-Datasheet
+### Question 5: Consent and the Data Supply Chain
+
+Here is a scenario:
+
+You posted photos of yourself on Instagram in 2020. In 2024, you discover those photos were scraped into a training dataset for a facial recognition system now used by police departments. You never gave permission. You didn't even know it happened.
+
+This sort of thing has happened in real life. Clearview AI scraped over 30 billion faces from social media without asking anyone (BBC, 2023). LAION-5B, a dataset of 5.8 billion images used to train AI image generators, was found to contain child abuse material, and the only metadata it stored was a URL and a caption (CNN, 2023).
+
+**Your task:**
+
+1. Should companies be required to get your consent before using your publicly posted photos to train AI? Write 3-4 sentences taking a clear position. Consider: is posting something publicly the same as consenting to any use of it?
+
+2. There is a concept called **data dignity** — the idea that your data is your labour, and companies should pay for it (proposed by Jaron Lanier). In 2-3 sentences, explain whether you find this idea practical or unrealistic. Would it actually change how AI companies operate?
+
+---
+
+*Your answer:*
+
+\
+
+\
+
+\
+
+---
+
+### Bonus Question: Write a Mini-Datasheet
 
 Lecture 14 introduced **datasheets for datasets**, documentation that describes where a dataset came from, what's in it, and how it should (and shouldn't) be used. The framework comes from Gebru et al. (2018) and has 7 sections.
 
@@ -153,34 +179,6 @@ Fill out each of the 7 datasheet sections below. You'll need to think carefully 
 7. **Maintenance**: Who is responsible for updates? Is there a way to report issues?
 
 After filling out the datasheet, identify **2 ethical concerns** with this dataset that the datasheet helps reveal.
-
----
-
-*Your answer:*
-
-\
-
-\
-
-\
-
----
-
-### Bonus Question: Consent and the Data Supply Chain
-
-Here is a scenario:
-
-You posted photos of yourself on Instagram in 2020. In 2024, you discover those photos were scraped into a training dataset for a facial recognition system now used by police departments. You never gave permission. You didn't even know it happened.
-
-This sort of thing has happened in real life. Clearview AI scraped over 30 billion faces from social media without asking anyone (BBC, 2023). LAION-5B, a dataset of 5.8 billion images used to train AI image generators, was found to contain child abuse material, and the only metadata it stored was a URL and a caption (CNN, 2023).
-
-**Your task:**
-
-1. Did any law protect you in this scenario? Lecture 14 mentioned three regulations: the **EU AI Act** (mandates documentation for high-risk AI), the **California CCPA** (gives the right to know and delete your data), and the **GDPR** (right to be forgotten). In 2-3 sentences, explain whether any of these would apply, and what rights you'd have.
-
-2. Should companies be required to get your consent before using your publicly posted photos to train AI? Write 3-4 sentences taking a clear position. Consider: is posting something publicly the same as consenting to any use of it?
-
-3. Lecture 14 introduced the concept of **data dignity** — the idea that your data is your labour, and companies should pay for it (proposed by Jaron Lanier). In 2-3 sentences, explain whether you find this idea practical or unrealistic. Would it actually change how AI companies operate?
 
 ---
 
