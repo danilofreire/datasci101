@@ -118,6 +118,30 @@ Source: [Astera Software](https://www.astera.com/type/blog/rag-pipeline/)
 [![](figures/turing-test.webp){width="55%"}](#){data-modal-type="image" data-modal-url="figures/turing-test.webp"}
 :::
 
+## DataFest 2026
+
+:::{style="margin-top: 30px; font-size: 22px;"}
+:::{.columns}
+:::{.column width=50%}
+[![](figures/datafest.png){width="80%"}](#){data-modal-type="image" data-modal-url="figures/datafest.png"}
+:::
+
+:::{.column width=50%}
+:::{style="margin-top: 30px;"}
+**DataFest 2026 is coming!**
+
+- It's a 48-hour data science competition, where you'll work in teams to solve a real-world problem using data
+- Open to all Emory undergraduates, regardless of major or minor
+- AI use is allowed and encouraged!
+- [Deadline to sign up: March 9, 2026]{.alert}
+- [Participant registration form](https://forms.office.com/Pages/ResponsePage.aspx?id=nPsE4KSwT0K80DImBtXfOLogA1skjlRHi7tno6axvlpUMUVTMU1KMVZZV1NXSTRCMTgwTjZaRzhMRC4u)
+- [Mentor sign-up form](https://forms.office.com/Pages/ResponsePage.aspx?id=nPsE4KSwT0K80DImBtXfOLogA1skjlRHi7tno6axvlpUMEpOVzJIRkJYSlBZMkRDQlcwSE0zTDJPMS4u)
+- [Volunteer registration form](https://forms.office.com/Pages/ResponsePage.aspx?id=nPsE4KSwT0K80DImBtXfOLogA1skjlRHi7tno6axvlpUME9XUFZUSlczNFg3MEs5UDhWVTM3UUNTSy4u)
+:::
+:::
+:::
+:::
+
 # What is a Pipeline? 🏭 {background-color="#2d4563"}
 
 ## From prompt to response
