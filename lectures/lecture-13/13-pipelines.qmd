@@ -59,7 +59,7 @@ if (!require("fontawesome", character.only = TRUE)) {
 - Ground AI in [your own documents]{.alert}
 - Chunk → Embed → Retrieve → Generate
 - RAG reduces hallucinations by [30–50%]{.alert}
-- But RAG isn't perfect—[retrieval errors]{.alert} still occur
+- But RAG isn't perfect: [retrieval errors]{.alert} still occur
 - **Today**: What happens [behind the scenes]{.alert} when you use AI? 
 - You've all experienced AI going down, being slow, or giving weird answers
 - [Why does this happen?]{.alert} And what can you do about it?
@@ -67,7 +67,6 @@ if (!require("fontawesome", character.only = TRUE)) {
 
 :::{.column width=50%}
 :::{style="text-align: center; margin-top: -30px;"}
-<!-- Suggested image: collage of different AI interfaces - ChatGPT, Claude, Gemini, Midjourney -->
 [![](figures/pipeline-concept.jpg){width="100%"}](#){data-modal-type="image" data-modal-url="figures/pipeline-concept.jpg"}
 
 Source: [Astera Software](https://www.astera.com/type/blog/rag-pipeline/)
@@ -113,13 +112,10 @@ Source: [Astera Software](https://www.astera.com/type/blog/rag-pipeline/)
 :::
 
 ## Meme of the day 😄
+### That's actually a very good point!
 
 :::{style="text-align: center; margin-top: 30px;"}
-[![](figures/meme-of-the-day.png){width="55%"}](#){data-modal-type="image" data-modal-url="figures/meme-of-the-day.png"}
-
-:::{style="font-size: 20px; margin-top: 15px;"}
-Note: CI/CD = Continuous Integration / Continuous Deployment 😉
-:::
+[![](figures/turing-test.webp){width="55%"}](#){data-modal-type="image" data-modal-url="figures/turing-test.webp"}
 :::
 
 # What is a Pipeline? 🏭 {background-color="#2d4563"}
@@ -131,14 +127,14 @@ Note: CI/CD = Continuous Integration / Continuous Deployment 😉
 :::{.column width=55%}
 **When you ask an LLM a question, here's what happens:**
 
-1. **Your prompt** goes from your browser to servers
-2. **Load balancers** route it to an available GPU (cloud infrastructure)
-3. **Preprocessing** cleans and formats your text (with LLMs, this is usually minimal)
-4. **Tokenisation** converts text to numbers (you know how to do that!)
-5. **The model** processes tokens (billions of operations!)
-6. **Postprocessing** formats the output
-7. **Safety filters** check for harmful content (e.g., hate speech, etc.)
-8. **Response** travels back to your screen 
+1. [Your prompt]{.alert} goes from your browser to servers
+2. [Load balancers]{.alert} route it to an available GPU (cloud infrastructure)
+3. [Preprocessing]{.alert} cleans and formats your text (with LLMs, this is usually minimal)
+4. [Tokenisation]{.alert} converts text to numbers (you know how to do that!)
+5. [The model]{.alert} processes tokens (billions of operations!)
+6. [Postprocessing]{.alert} formats the output
+7. [Safety filters]{.alert} check for harmful content (e.g., hate speech, etc.)
+8. [Response]{.alert} travels back to your screen 
 
 [Each step can fail independently!]{.alert}
 
@@ -166,10 +162,10 @@ A simple question = many complex steps behind the scenes
 
 | Failure type | What it looks like | Root cause |
 |-------------|--------------------|------------|
-| **Pipeline failure** | Slow, down, or inconsistent responses | Infrastructure, scaling, broken steps |
 | **Hallucination** | Confident but false content | Model limitations, missing grounding |
 | **Policy failure** | Unsafe or inappropriate output | Weak guardrails or bad updates |
-| **Data drift** | Outdated or weird answers | World changes faster than training |
+| [Data drift]{.alert} | Outdated or weird answers | World changes faster than training |
+| [Pipeline failure]{.alert} | Slow, down, or inconsistent responses | Infrastructure, scaling, broken steps |
 
 You can spot *what type* of failure happened, then choose the right response
 :::
@@ -211,7 +207,7 @@ You can spot *what type* of failure happened, then choose the right response
 
 :::{.column width=45%}
 :::{style="margin-top: 20px; text-align: center; margin-top: -10px;"}
-[![](figures/chevy.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/ai-failures-02.webp"}
+[![](figures/chevy.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/chevy.png"}
 
 Source: <https://x.com/ChrisJBakke/status/1736533308849443121>. The whole thread is hilarious 😂
 :::
@@ -309,9 +305,9 @@ Source: [BBC News](https://www.bbc.com/news/technology-68412620)
 
 | Type | Description | Example |
 |------|-------------|---------|
+| **Label drift** | What's "correct" changes | Policy updates |
 | **Concept drift** | Meaning of things changes | New slang, trends |
 | **Data drift** | Input distribution changes | New demographics |
-| **Label drift** | What's "correct" changes | Policy updates |
 :::
 
 :::{.column width=45%}
@@ -419,7 +415,7 @@ Performance declines gradually, even without drift!
 
 ## Why does model degradation happen?
 
-:::{style="margin-top: 30px; font-size: 21px;"}
+:::{style="margin-top: 30px; font-size: 22px;"}
 :::{.columns}
 :::{.column width=55%}
 Model performance $P(t)$ decays over time, even with stable data:
@@ -529,7 +525,7 @@ Many components = many potential failure points
 
 :::{.column width=45%}
 :::{style="text-align: center; margin-top: 30px;"}
-[![Monitoring dashboard](figures/monitoring-dashboard.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/monitoring-dashboard.png"}
+[![Monitoring dashboard](figures/llm-1.gif){width="100%"}](#){data-modal-type="image" data-modal-url="figures/llm-1.gif"}
 
 Source: [Oracle](https://blogs.oracle.com/observability/enhance-your-gen-ai-user-experience-with-llm-observability)
 
@@ -821,12 +817,15 @@ Ask multiple times. Ask different AIs. If answers diverge on something critical,
 
 :::{.column width=45%}
 :::{style="text-align: center;"}
-[![](figures/temperature.gif){width="90%"}](#){data-modal-type="image" data-modal-url="figures/temperature.gif"}
+[![](figures/ab-testing.png){width="70%"}](#){data-modal-type="image" data-modal-url="figures/ab-testing.png"}
 
-Source: [Medium](https://medium.com/@nigelgebodh/why-does-my-llm-have-a-temperature-f2e314a52086)
+[![](figures/gemini-personal-intelligence.png){width="70%"}](#){data-modal-type="image" data-modal-url="figures/gemini-personal-intelligence.png"}
+
+Sources: [r/Bard](https://www.reddit.com/r/Bard/comments/1leiobd/google_is_also_doing_ab_testing_in_the_gemini_app/#lightbox) and [Google Blog](https://blog.google/innovation-and-ai/products/gemini-app/personal-intelligence/)
+
 
 :::{style="font-size: 18px; margin-top: 15px;"}
-Temperature controls the randomness of outputs
+A/B testing means different users get different model versions or parameters
 :::
 :::
 :::
@@ -961,7 +960,7 @@ Three different AI assistants give you three completely different answers about 
 
 **On AI failures:**
 
-- [AI Incident Database](https://incidentdatabase.ai/) — Real failures documented
+- [AI Incident Database](https://incidentdatabase.ai/). Real failures documented!
 :::
 :::
 :::
