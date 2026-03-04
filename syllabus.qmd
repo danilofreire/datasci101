@@ -308,6 +308,7 @@ Readings:
 - Lecture 14: [Documentation and dataset governance](https://raw.githack.com/danilofreire/datasci185/main/lectures/lecture-14/14-documentation.html).
 - **Assignment 06 due (5%).**
 - [**Assignment 07**](https://github.com/danilofreire/datasci185/blob/main/assignments).
+- [Kahoot Quiz](https://play.kahoot.it/v2/?quizId=75760dab-c0e2-43d5-9504-b94b74d93201&hostId=05eb977d-4f8a-440e-9e45-95212b29d103)
 
 Readings:
 

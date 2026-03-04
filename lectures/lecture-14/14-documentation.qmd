@@ -110,12 +110,29 @@ Source: [Labellerr](https://www.labellerr.com/blog/top-platforms-to-manage-the-a
 :::
 :::
 
-## Fun fact of the day!
+## Fun fact of the day! 😁
 
 :::{style="margin-top: 20px; font-size: 24px; text-align: center;"}
-[![Fun fact of the day!](figures/fun-fact.png){width="60%"}](#){data-modal-type="image" data-modal-url="figures/fun-fact.png"}
+[![](figures/fun-fact.png){width="60%"}](#){data-modal-type="image" data-modal-url="figures/fun-fact.png"}
 
 Source: [Reddit](https://www.reddit.com/r/dataisbeautiful/comments/1qu5ccf/the_chatgpt_effect_ai_domain_registrations_grew/)
+:::
+
+## Revolting fact of the day! 😠
+
+:::{style="margin-top: 20px; font-size: 24px; text-align: center;"}
+:::{.columns}
+:::{.column width=50%}
+[![Very nice, Zuck!](figures/meta.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/meta.png"}
+
+:::
+
+:::{.column width=50%}
+[![](figures/meta-2.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/meta-2.png"}
+
+Source: [Mashable](https://mashable.com/article/meta-ai-ray-ban-glasses-intimate-videos-workers)
+:::
+:::
 :::
 
 # Why Documentation Matters 📝 {background-color="#2d4563"}
@@ -132,7 +149,7 @@ Source: [Reddit](https://www.reddit.com/r/dataisbeautiful/comments/1qu5ccf/the_c
 - [Nobody knew]{.alert} where the images came from!
 - Later discovered:
   - Scraped from Flickr without consent
-  - Racist and sexist labels
+  - Racist and sexist labels ([MTurk](https://www.mturk.com/) workers)
   - Non-consensual photos of minors
   - Content from revenge porn sites
 
@@ -194,13 +211,13 @@ If you can't document it, you [can't deploy it]{.alert} (legally).
 :::
 :::
 
-## The two pillars: Datasheets and Model Cards
+## The three pillars: Datasheets, Model Cards, and System Cards
 
 :::{style="margin-top: 30px; font-size: 21px;"}
 :::{style="text-align: center;"}
 [![](figures/ai-model-cards.jpg){width="60%"}](#){data-modal-type="image" data-modal-url="figures/ai-model-cards.jpg"}
 
-Source: [Laura Papworth](https://laurelpapworth.com/datasheets-model-cards/)
+Source: [Laurel Papworth](https://laurelpapworth.com/datasheets-model-cards/)
 :::
 
 :::{style="margin-top: 20px;"}
@@ -229,18 +246,12 @@ These are now [industry standards]{.alert} adopted by [Google](https://deepmind.
 
 **Core sections:**
 
-1. **Motivation**: Why was this created?
-2. **Composition**: What's in it?
-3. **Collection**: How was it gathered?
-4. **Preprocessing**: What was done to it?
-5. **Uses**: What should (and shouldn't) it be used for?
-6. **Distribution**: How is it shared?
-7. **Maintenance**: Who keeps it updated?
+[Motivation, Composition, Collection, Preprocessing, Uses, Distribution, Maintenance]{.alert}
 :::
 
 :::{.column width=45%}
 :::{style="text-align: center;"}
-[![Datasheets paper](figures/datasheet.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/datasheets-paper.png"}
+[![Datasheets paper](figures/datasheet.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/datasheet.png"}
 
 :::{style="font-size: 18px; margin-top: 15px;"}
 Source: [Jonathan Rystrøm (2024) - Dataset Card: Multicultural WVS Alignment](https://huggingface.co/datasets/ryzzlestrizzle/multicultural-wvs-alignment)
@@ -255,20 +266,20 @@ Source: [Jonathan Rystrøm (2024) - Dataset Card: Multicultural WVS Alignment](h
 :::{style="margin-top: 30px; font-size: 18px;"}
 :::{.columns}
 :::{.column width=50%}
-**Motivation:**
+[Motivation:]{.alert}
 
 - Why was the dataset created?
 - Who created it and who funded it?
 - What task was it designed for?
 
-**Composition:**
+[Composition:]{.alert}
 
 - What types of data are included?
 - How many instances are there?
 - Is there any sensitive information?
 - Are there known errors or noise?
 
-**Collection:**
+[Collection:]{.alert}
 
 - How was data collected (scraped, survey, sensors)?
 - Was consent obtained?
@@ -277,22 +288,25 @@ Source: [Jonathan Rystrøm (2024) - Dataset Card: Multicultural WVS Alignment](h
 :::
 
 :::{.column width=50%}
-**Preprocessing:**
+[Preprocessing:]{.alert}
 
 - Was data cleaned or filtered?
 - Were any instances removed?
 - How was data labelled?
 
-**Uses:**
+[Uses:]{.alert}
 
 - What tasks has it been used for?
 - What should it [NOT]{.alert} be used for?
 - Are there known impact areas?
 
-**Distribution & Maintenance:**
+[Distribution:]{.alert}
 
 - How is the dataset shared?
 - Is it versioned?
+
+[Maintenance:]{.alert}
+
 - Who is responsible for updates?
 - Is there a way to report issues?
 :::
@@ -343,7 +357,7 @@ Source: [BRIDGE Center](https://bridge2ai.github.io/data-sheets-schema/html_outp
 :::
 :::
 
-## Activity: Read a real datasheet! 📖
+## Activity: Let's read a real datasheet! 📖
 
 :::{style="margin-top: 30px; font-size: 21px;"}
 :::{.columns}
@@ -436,7 +450,7 @@ A hammer is a great tool. But:
 :::{style="font-size: 20px;"}
 | Model | Intended Use | NOT For |
 |-------|--------------|---------|
-| GPT-4 | Conversation, assistance | Medical diagnosis |
+| Gemini 3 | Conversation, assistance | Medical diagnosis |
 | Face detection | Placing cameras | Law enforcement ID |
 | Sentiment analysis | Product feedback | Hiring decisions |
 :::
@@ -448,7 +462,7 @@ People [will]{.alert} use models inappropriately and harm others.
 
 :::{.column width=45%}
 :::{style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px;"}
-**Real example: [GPT-4 Model Card](https://cdn.openai.com/papers/gpt-4-system-card.pdf)** (edited and summarised)
+**Real example: [Gemini 3 Model Card](https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-3-Pro-Model-Card.pdf)** (edited and summarised)
 
 **Intended use:**
 
@@ -603,61 +617,6 @@ Source: [Common Crawl](https://commoncrawl.org/)
 :::
 :::
 
-## Inside a modern dataset card: LAION-5B
-
-:::{style="margin-top: 30px; font-size: 18px;"}
-:::{.columns}
-:::{.column width=55%}
-**[LAION (Large-scale AI Open Network)](https://laion.ai/):**
-
-[LAION](https://laion.ai/) creates open datasets for AI research. Their dataset cards include:
-
-:::{style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; font-size: 17px;"}
-**Metadata for each image:**
-
-- `url`: Where the image was found
-- `caption`: Alt-text from HTML
-- `similarity`: CLIP score (0-1) measuring how well text matches image
-- `nsfw`: NSFW probability score (safety filter)
-- `width`, `height`: Image dimensions
-- `license`: Metadata license (not image license!)
-:::
-
-**What this tells us:**
-
-The dataset knows [very little]{.alert} about the images themselves. It's just URLs and alt-text scraped from the web.
-:::
-
-:::{.column width=45%}
-**Sample LAION entry:**
-
-```json
-{
-  "url": "https://example.com/orange-cat.jpg",
-  "caption": "An orange cat plays with a red ball",
-  "similarity": 0.82,
-  "nsfw": 0.01,
-  "width": 800,
-  "height": 600
-}
-```
-
-:::{style="margin-top: 15px;"}
-This is all the documentation that exists for each of the 5.8 billion images. No information about:
-
-- Who took the photo
-- Who is in the photo
-- Whether consent was given
-- Copyright status
-:::
-
-:::{style="margin-top: 15px; background: rgba(230, 57, 70, 0.1); padding: 15px; border-radius: 10px;"}
-In 2023, researchers found [child abuse material]{.alert} in LAION-5B. The dataset was temporarily taken offline. Source: [CNN (2023)](https://www.cnn.com/2023/12/21/tech/child-sexual-abuse-material-ai-training-data)
-:::
-:::
-:::
-:::
-
 ## Data provenance: Where did this come from?
 
 :::{style="margin-top: 30px; font-size: 22px;"}
@@ -704,7 +663,7 @@ Source: [Geeks for Geeks](https://www.geeksforgeeks.org/data-analysis/what-is-da
 :::{.column width=55%}
 **What this code does:**
 
-This is a simplified example of how you might track where your data comes from. In practice, tools like [DVC](https://dvc.org/) or [MLflow](https://mlflow.org/) do this automatically.
+This is a simplified example of how you might track where your data comes from. In practice, tools like [DVC](https://dvc.org/) do this automatically
 
 **Key concepts:**
 
@@ -719,6 +678,7 @@ If your model starts behaving badly, you can trace back and ask: "Did the data c
 :::
 
 :::{.column width=45%}
+:::{style="margin-top: 30px;"}
 ```python
 # Simple data provenance tracking
 # This is metadata, not actual data
@@ -739,15 +699,11 @@ provenance = {
         "2023 reviews missing"
     ]
 }
-
-# Save alongside your data
-import json
-with open("provenance.json", "w") as f:
-    json.dump(provenance, f)
 ```
 
-:::{style="margin-top: 10px; font-size: 16px;"}
+:::{style="margin-top: 10px; font-size: 16px; text-align: center;"}
 This creates a "paper trail" for your dataset.
+:::
 :::
 :::
 :::
@@ -807,50 +763,6 @@ The NIH, EU, and major funders now require FAIR data practices. AI datasets that
 :::
 :::
 
-## FAIR in practice: What it looks like
-
-:::{style="margin-top: 30px; font-size: 20px;"}
-:::{.columns}
-:::{.column width=50%}
-**A FAIR dataset includes:**
-
-:::{style="font-size: 26px;"}
-| Principle | Implementation |
-|-----------|----------------|
-| **Findable** | DOI: `10.5281/zenodo.123456` |
-| **Findable** | Rich metadata in standard format |
-| **Accessible** | Available via HTTPS download |
-| **Accessible** | No login required for public data |
-| **Interoperable** | CSV/JSON with documented schema |
-| **Interoperable** | Uses standard vocabularies |
-| **Reusable** | CC-BY 4.0 license |
-| **Reusable** | Full provenance documented |
-:::
-:::
-
-:::{.column width=50%}
-**Contrast with typical AI datasets:**
-
-:::{style="font-size: 26px;"}
-| Principle | Typical AI Dataset |
-|-----------|-------------------|
-| **Findable** | ❌ No persistent ID |
-| **Findable** | ⚠️ Minimal metadata |
-| **Accessible** | ⚠️ May disappear |
-| **Accessible** | ❌ Often just URLs |
-| **Interoperable** | ⚠️ Custom formats |
-| **Interoperable** | ❌ No standard vocab |
-| **Reusable** | ❌ License unclear |
-| **Reusable** | ❌ No provenance |
-:::
-
-:::{style="margin-top: 15px; background: rgba(230, 57, 70, 0.1); padding: 15px; border-radius: 10px;"}
-**The gap**: Most AI training datasets fail basic FAIR principles. This is a [problem]{.alert}.
-:::
-:::
-:::
-:::
-
 # Data Governance in Practice 🏛️ {background-color="#2d4563"}
 
 ## Consent and the data supply chain
@@ -893,7 +805,7 @@ Most large AI models are trained on data [without explicit consent]{.alert}:
 
 ## Data rights movements: The future
 
-:::{style="margin-top: 30px; font-size: 22px;"}
+:::{style="margin-top: 30px; font-size: 21px;"}
 :::{.columns}
 :::{.column width=55%}
 **New movements emerging:**
@@ -904,19 +816,13 @@ Most large AI models are trained on data [without explicit consent]{.alert}:
 - Companies should pay for data (like paying workers)
 - [Jaron Lanier](https://cdss.berkeley.edu/video/data-dignity-and-inversion-ai-jaron-lanier), [Radical Markets movement](https://www.amazon.com/Radical-Markets-Uprooting-Capitalism-Democracy/dp/0691177503)
 
-**2. Data cooperatives:**
-
-- Individuals pool data for collective bargaining
-- Negotiate with companies as a group
-- Like unions, but for data!
-
-**3. Opt-out rights:**
+**2. Opt-out rights:**
 
 - GDPR: Right to be forgotten
 - CCPA: Right to know and delete
 - AI training opt-out (some systems support this now)
 
-**4. Data trusts:**
+**3. Data trusts:**
 
 - Independent organisations manage data on your behalf
 - Negotiate terms and protect privacy
@@ -924,7 +830,7 @@ Most large AI models are trained on data [without explicit consent]{.alert}:
 
 :::{.column width=45%}
 :::{style="text-align: center; margin-top: 20px;"}
-[![Data rights](figures/lanier.jpg){width="100%"}](#){data-modal-type="image" data-modal-url="figures/data-rights.png"}
+[![Data rights](figures/lanier.jpg){width="100%"}](#){data-modal-type="image" data-modal-url="figures/lanier.png"}
 
 :::{style="font-size: 18px; margin-top: 10px;"}
 Growing recognition that data ownership matters
@@ -952,8 +858,6 @@ You wrote a poem and posted it online in 2018. An AI company scraped it, and now
 1. Did the company do anything wrong?
 2. Should you be compensated?
 3. Should you be able to opt out [retroactively]{.alert}?
-4. What if the AI generates poems that compete with yours?
-5. Does it matter if you can't tell the difference?
 :::
 
 :::{.column width=50%}
@@ -972,8 +876,6 @@ You wrote a poem and posted it online in 2018. An AI company scraped it, and now
 :::{style="margin-top: 20px; background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px;"}
 **Your turn**: Where do you stand?
 :::
-
-⏱️ 3 minutes to debate!
 :::
 :::
 :::
