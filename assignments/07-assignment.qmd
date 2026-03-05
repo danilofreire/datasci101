@@ -1,0 +1,262 @@
+---
+title: "Assignment 07: Documentation, Bias, and Fairness"
+subtitle: "DATASCI 185: Introduction to AI Applications"
+author: "Emory University"
+format:
+  docx:
+    toc: false
+    number-sections: false
+---
+
+## Instructions
+
+This assignment covers material from **Lecture 14**: Documentation and Dataset Governance, and **Lecture 15**: Types of Bias and How They Arise.
+
+**Guidelines:**
+
+- You are also welcome to use other LLMs (ChatGPT, Claude, Gemini) for exploring the reflection questions, but the main tasks should be done on z.ai
+- You must **write your answers in your own words** and demonstrate genuine understanding
+- Please **disclose which AI tool you used** (if any)
+- Your answers should be thoughtful and show critical thinking, not just copy-pasted LLM outputs
+- **Please include screenshots** of your interactions with AI tools
+- However, **reflection questions must be written in text**, not just screenshots
+- Submit this assignment as a **PDF** (preferred) or Word document via Canvas
+
+---
+
+### Question 1: The Model Card Bluff
+
+Lecture 14 introduced **model cards**: standardised documentation that describes what a model does, how it was evaluated, and where it fails. A good model card helps users decide whether a model is safe to deploy. A bad one hides problems behind vague language.
+
+Below is a model card for **MediScreen**, an AI system that reads chest X-rays and flags potential pneumonia cases for radiologists to review. The model card was written by the vendor's marketing team, not the engineering team. It contains **4 errors**: facts that are misleading, vague, or missing.
+
+> **Model Card: MediScreen v2.1**
+>
+> **Model description:** MediScreen uses deep learning to detect pneumonia in chest X-rays with state-of-the-art accuracy.
+>
+> **Training data:** Trained on a large dataset of chest X-rays from US hospitals.
+>
+> **Performance:** 96% accuracy on our test set. The model performs well across all patient groups.
+>
+> **Intended use:** Healthcare providers worldwide.
+>
+> **Limitations:** Like all AI systems, MediScreen should be used alongside clinical judgement.
+
+**Your task:**
+
+1. Identify the **4 errors or problems** in this model card. For each one, explain in 1–2 sentences what is wrong and why it matters.
+
+2. Pick the **2 most dangerous** problems, that is, the ones most likely to cause real harm if a hospital relies on this model card. Explain why those two are worse than the others.
+
+3. Rewrite the **Training data** and **Performance** sections so they meet the standards described in Lecture 14. You'll need to invent plausible details (e.g., dataset size, demographic breakdown, disaggregated metrics). The point is just to show what should be there.
+
+---
+
+*Your answer:*
+
+\
+
+\
+
+\
+
+---
+
+### Question 2: The Proxy Variable Hunt
+
+Lecture 15 explained **measurement bias**: when a measurable proxy is used as a stand-in for something you actually care about, but the proxy doesn't work equally for everyone. The classic example is using ZIP codes in loan decisions. They correlate with race because of historical housing discrimination, so a "race-neutral" variable ends up encoding race.
+
+Here is a fictional dataset used by a bank to predict whether someone will repay a loan. The dataset has 10 variables:
+
+| # | Variable | Description |
+|---|----------|-------------|
+| 1 | `age` | Applicant's age in years |
+| 2 | `income` | Annual income in USD |
+| 3 | `zip_code` | 5-digit ZIP code of home address |
+| 4 | `credit_score` | FICO score (300–850) |
+| 5 | `years_at_job` | How long they've held their current job |
+| 6 | `num_dependents` | Number of people the applicant supports |
+| 7 | `university_name` | Name of university attended (or "none") |
+| 8 | `first_name` | Applicant's first name |
+| 9 | `commute_distance` | Distance from home to workplace in miles |
+| 10 | `savings_balance` | Current savings account balance in USD |
+
+**Your task:**
+
+1. Identify **3 variables** (not including `age`, which is itself a protected characteristic) that could act as proxies for protected characteristics such as race, gender, religion, or national origin. For each one, explain:
+   - What protected characteristic it could encode
+   - *How* it encodes it (what's the mechanism?)
+   - Whether the proxy is obvious or subtle
+
+2. For each of the 3 proxy variables you identified, decide: **keep it, remove it, or transform it?** Justify your choice. Consider that removing a variable might reduce the model's accuracy, and keeping it might perpetuate discrimination.
+
+3. Here's the hard part. The bank's data science team says: *"We removed race and gender from the dataset, so our model can't discriminate."* In 3–4 sentences, explain why this claim is wrong.
+
+---
+
+*Your answer:*
+
+\
+
+\
+
+\
+
+---
+
+### Question 3: The Impossibility Theorem: Pick Your Poison
+
+Lecture 15 introduced the **impossibility theorem**: if two groups have different base rates (e.g., different loan repayment rates), you cannot satisfy all fairness criteria at the same time. You have to choose, and every choice harms someone.
+
+Here is the scenario. A city government uses an algorithm to decide which arrested individuals can be released on bail before trial. The algorithm predicts the probability that each person will show up for their court date.
+
+**The data shows:**
+
+- **Group A**: 80% show up for their court date
+- **Group B**: 60% show up for their court date (due to factors like lack of transport, inflexible jobs, and childcare, not criminal intent)
+
+The algorithm assigns a risk score from 0 to 100. The city must set a threshold: anyone above the threshold is released on bail.
+
+**Three possible approaches:**
+
+| Approach | Rule | Consequence |
+|----------|------|-------------|
+| **Same threshold** | Everyone with score > 50 is released | More Group B detained (because their scores are lower on average) |
+| **Equal release rates** | Adjust thresholds so 60% of each group is released | More Group A members who would have skipped court are released; public safety concern |
+| **Equal false detention rates** | Ensure the same percentage of people who *would have* shown up are wrongly detained in both groups | Different release rates; Group B gets a lower threshold, which some call "preferential treatment" |
+
+**Your task:**
+
+1. For **each approach**, identify who is harmed and how. Be specific: don't just say "it's unfair." Describe a person who suffers under each rule.
+
+2. Choose the approach you think is least bad. Write at least 3-4 sentences defending your choice. You must address at least one objection someone could raise against your choice.
+
+3. The reasons Group B has a lower show-up rate (transport, jobs, childcare) are not about criminal intent. Does this change which approach you'd pick? Should the algorithm account for *why* someone is risky, or just *whether* they are? Explain in 3–4 sentences.
+
+---
+
+*Your answer:*
+
+\
+
+\
+
+\
+
+---
+
+### Question 4: Breaking a Feedback Loop
+
+Lecture 15 described **feedback loops**: when an algorithm's predictions influence the data it will be trained on in the future. The predictive policing example showed how this works: the algorithm sends police to certain neighbourhoods, more arrests happen there, and the new arrest data "confirms" the algorithm's prediction, even if crime rates are actually similar across areas.
+
+Here is a different scenario:
+
+> **TrustMod** is a social media platform that uses an AI content moderation system. The system flags posts that it predicts to be "harmful." Flagged posts are reviewed by human moderators, and confirmed violations are added back into the training data for the next version of the model.
+>
+> Over the past year, TrustMod's moderation team has noticed a pattern: the system flags posts written in African American Vernacular English (AAVE) at roughly **twice the rate** of posts written in Standard American English, even when the content is similar. The flagged AAVE posts are often not actually harmful. They just use slang, cultural references, or informal grammar that the model interprets as aggressive.
+
+**Your task:**
+
+1. Describe the feedback loop in **5 steps**. Start with the initial bias (AAVE flagged more often) and trace through to the point where the bias has worsened. Number each step.
+
+2. At which step in your feedback loop could an intervention break the cycle? Propose **two different interventions**: one technical (e.g., changing the model or data) and one organisational (e.g., changing the process or people). For each, explain how it would help and what could go wrong with it.
+
+3. A TrustMod engineer says: *"The model isn't biased. It's just flagging what the training data tells it to flag."* In 3–4 sentences, explain why this defence doesn't hold up. Use the concept of feedback loops in your answer.
+
+---
+
+*Your answer:*
+
+\
+
+\
+
+\
+
+---
+
+### Question 5: The "We Didn't Know" Defence
+
+This question ties together both lectures: documentation from Lecture 14 and bias from Lecture 15.
+
+Here is the scenario:
+
+> **QuickLend** is a fintech startup that offers instant personal loans through a mobile app. They purchased a pre-trained credit-scoring model from a third-party vendor. The vendor's marketing materials said the model was "state-of-the-art" and "tested on millions of records."
+>
+> After 18 months in operation, an investigative journalist discovers that QuickLend's system approves loans for white applicants at nearly **double the rate** of Black applicants with similar income and employment histories. The journalist also finds that the training data came from a dataset of loan decisions made between 2005 and 2015 by a bank that was later fined $80 million for racial discrimination in lending.
+>
+> QuickLend's CEO responds: *"We had no idea. We bought the model in good faith. The vendor never told us about the training data."*
+
+**Your task:**
+
+1. Identify which **type(s) of bias** from Lecture 15's taxonomy are present in this scenario. Name at least two and explain how each one operates here.
+
+2. Using Lecture 14's documentation framework, identify **3 specific pieces of documentation** that would have revealed the problem before QuickLend deployed the model. For each one, state: (a) what type of document it is (datasheet, model card, or system card), (b) which section of that document, and (c) what information it would have contained.
+
+3. Now evaluate the CEO's defence. Is "we didn't know" an acceptable excuse, legally, ethically, or both? Consider these angles:
+   - The EU AI Act requires documentation for high-risk AI systems (Lecture 14). Would QuickLend's lending system qualify as high-risk?
+   - Who bears more responsibility: QuickLend for not asking, or the vendor for not disclosing?
+   - Write 150–200 words taking a clear position.
+
+---
+
+*Your answer:*
+
+\
+
+\
+
+\
+
+---
+
+### Bonus Question: The Simpson's Paradox Trap
+
+Lecture 15 discussed **aggregation bias**, which occurs when treating diverse groups as one hides important differences. A related statistical phenomenon is **Simpson's paradox**: a trend that appears in aggregated data can reverse when you look at subgroups.
+
+Here is a real-sounding (but fictional) scenario:
+
+> A hospital is testing two treatments for kidney stones: **Treatment A** (a new, less invasive procedure) and **Treatment B** (traditional surgery). They collect data on 700 patients.
+
+**Overall results:**
+
+| Treatment | Patients Treated | Patients Recovered | Recovery Rate |
+|-----------|------------------|--------------------|---------------|
+| A | 350 | 273 | 78% |
+| B | 350 | 289 | 83% |
+
+Treatment B looks better. But let's break it down by stone size:
+
+**Small stones:**
+
+| Treatment | Patients | Recovered | Recovery Rate |
+|-----------|----------|-----------|---------------|
+| A | 87 | 81 | 93% |
+| B | 270 | 234 | 87% |
+
+**Large stones:**
+
+| Treatment | Patients | Recovered | Recovery Rate |
+|-----------|----------|-----------|---------------|
+| A | 263 | 192 | 73% |
+| B | 80 | 55 | 69% |
+
+**Your task:**
+
+1. Confirm the paradox: Treatment B wins overall (83% vs 78%), but Treatment A wins for *both* small stones (93% vs 87%) and large stones (73% vs 69%). In 2–3 sentences, explain how this is possible. (Hint: look at how patients were distributed across groups.)
+
+2. A hospital administrator looks only at the overall table and announces: *"Treatment B is better. We're switching all patients to Treatment B."* Explain why this decision is wrong and what harm it could cause. Be specific.
+
+3. Connect this to **Lecture 15**: which type of bias from the taxonomy does Simpson's paradox illustrate? Why does Lecture 15 argue that **disaggregated evaluation** (breaking results down by group) is necessary, not optional?
+
+4. Propose a rule the hospital could adopt to prevent this kind of mistake in future decisions. Your rule should be concrete and actionable, not just "be careful with data."
+
+---
+
+*Your answer:*
+
+\
+
+\
+
+\

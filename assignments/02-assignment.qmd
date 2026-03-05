@@ -10,7 +10,7 @@ format:
 
 ## Instructions
 
-This assignment covers material from **Lectures 04-07**: Supervised/Unsupervised/Reinforcement Learning, Metrics and Validation, Tokenisation and Embeddings, and Multimodal AI.
+This assignment covers material from **Lectures 04-06**: Supervised/Unsupervised/Reinforcement Learning, Metrics and Validation, and Tokenisation and Embeddings.
 
 **Guidelines:**
 
@@ -113,15 +113,21 @@ The **temperature** parameter controls how random or deterministic an LLM's resp
 
 ---
 
-### Question 4: Multimodal Unified Embedding
+### Question 4: The Data Labelling Challenge
 
-Ask an LLM: *"How can ChatGPT understand both text and images when they seem so different?"*
+Labelling data is one of the main bottlenecks in AI. It is time-consuming and expensive, and the quality of labels is a key factor in training effective models.
 
-Based on the LLM's response and what you learned in Lecture 07 about multimodal AI:
+**Your task:**
 
-1. Explain the key insight that **"everything becomes embeddings"** in your own words
-2. What is an embedding, and why does converting different types of data (text, images, audio) into embeddings allow a single model to process them all?
-3. Give an example of how this unified approach enables something that wouldn't be possible otherwise
+1. Ask an LLM: *"What are three alternatives to manually labelling data?"*
+2. Copy the response.
+3. Ask: *"What is Amazon Mechanical Turk, and why is it controversial for data labelling?"*
+4. Copy the response.
+
+**Analysis:**
+
+- In your own words, explain why the quality of labels matters as much as the quantity
+- What could go wrong if you train an AI system on poorly labelled data?
 
 ---
 

@@ -10,6 +10,10 @@ format:
 
 ## Instructions
 
+This assignment covers material from **Lectures 05-07**: Metrics and Validation, Tokenisation and Embeddings, and Multimodal AI.
+
+**Guidelines:**
+
 - You are **encouraged** to use ChatGPT, Claude, Gemini, or other LLMs to help you explore these questions
 - However, you must **write your answers in your own words** and demonstrate genuine understanding
 - Please **disclose which AI tool you used** (if any)
@@ -61,20 +65,14 @@ A model has a **32,000 token** context window. You want to analyse a legal docum
 
 ---
 
-### Question 3: Few-Shot Classification
+### Question 3: The Cost of Being Wrong
 
-Create a sentiment classifier by giving examples:
+Not all errors are equal. In some settings, a **false positive** is worse; in others, a **false negative** is worse.
 
-```
-"Best meal ever!" → Positive
-"Terrible service" → Negative
-"It was okay" → Neutral
-"The food was cold but the dessert was amazing" → ???
-```
+**Your task:**
 
-1. What did the LLM predict for the last one?
-2. Create your OWN tricky review and test it
-3. When is few-shot prompting useful?
+1. Think about one real-world AI application where false negatives is more dangerous than false positives, and one where false positives is more dangerous. Explain why for each.
+2. In your own words, why is it impossible to maximise both precision and recall at the same time?
 
 ---
 
@@ -88,15 +86,19 @@ Create a sentiment classifier by giving examples:
 
 ---
 
-### Question 4: Debugging Bad Prompts
+### Question 4: Overfitting vs Underfitting Detective
 
-This prompt gives poor results:
+Ask an LLM to generate a simple analogy for overfitting and underfitting.
 
-> "Analyse the data and give me insights. Be thorough but concise."
+**Your task:**
 
-1. What are TWO problems with this prompt?
-2. Rewrite it following PTCF principles (Persona, Task, Context, Format)
-3. What specific information is missing that makes the original prompt fail?
+1. Ask an LLM: *"Explain overfitting and underfitting in machine learning using a school exam analogy. Give me a specific example for each."*
+2. Now ask it: *"A model gets 99% on training data but only 55% on new data. Is this overfitting or underfitting? What could be done to fix it?"*
+
+**Analysis:**
+
+- In your own words, explain why a model that memorises its training data is not actually useful
+- When would you use **cross-validation** instead of a simple train/test split?
 
 ---
 
@@ -110,26 +112,21 @@ This prompt gives poor results:
 
 ---
 
-### Question 5: Meta-Prompting
+### Question 5: LLM-as-a-Judge Experiment
 
-This question uses the OpenAI Scaling Laws paper we discussed in class: <https://arxiv.org/abs/2001.08361>
+Use one LLM to evaluate the output of another (or the same LLM with different prompts).
 
-**Part A — Without meta-prompting:**
+**Your task:**
 
-1. Read the abstract of the paper (available at the link above)
-2. Ask an LLM: *"Summarise this paper: [upload the paper PDF]"*
-3. Copy the summary you receive
+1. Ask an LLM: *"Summarise the concept of climate change in 3 sentences."*
+2. Copy the summary
+3. Now give the same LLM (or a different one) this prompt: *"You are an expert evaluator. Rate the following summary on a scale of 1-5 for: (a) accuracy, (b) completeness, (c) clarity. Provide a one-sentence justification for each score."* Then paste the summary from step 2
+4. Copy the evaluation
 
-**Part B — With meta-prompting:**
+**Analysis:**
 
-1. Ask an LLM: *"I want to write a prompt that summarises research paper effectively. What information should I include in my prompt?"*
-2. Use that advice to write an improved summarisation prompt
-3. Use your improved prompt on the SAME paper
-4. Copy the new summary
-
-**Part C — Analysis:**
-
-Compare the two summaries. What is different? Which is more useful and why?
+- Do you agree with the LLM judge's ratings? Would you change any score?
+- What is one risk of using an LLM to judge other LLMs?
 
 ---
 

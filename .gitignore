@@ -637,13 +637,17 @@ $RECYCLE.BIN/
 
 **/*.quarto_ipynb
 
-# Agent instructions 
+# Claude and AI agent configuration files
+CLAUDE.md
+.claude/
 lectures/agents.md
 agents.md
+AGENTS.md
 lecture-agents.md
 lectures-agents.md
 SKILLS.md
 skills.md
+humaniser-skill.md
 formatting.md
 assignments-agents.md
 assignments.md
