@@ -1,0 +1,191 @@
+---
+title: "Assignment 08: AI in Healthcare, Finance, and Global Regulation"
+subtitle: "DATASCI 185: Introduction to AI Applications"
+author: "Emory University"
+format:
+  docx:
+    toc: false
+    number-sections: false
+---
+
+## Instructions
+
+This assignment covers material from **Lecture 16**: AI in Finance and Healthcare — Opportunities and Biases, and **Lecture 17**: AI Regulation and Standards Around the World.
+
+**Guidelines:**
+
+- You are **encouraged** to use ChatGPT, Claude, Gemini, or other LLMs to help you explore these questions
+- However, you must **write your answers in your own words** and demonstrate genuine understanding
+- Please **disclose which AI tool you used** (if any)
+- Your answers should be thoughtful and show critical thinking, not just copy-pasted LLM outputs
+- **Please include screenshots** of your interactions with AI tools
+- However, **reflection questions must be written in text**, not just screenshots
+- Submit this assignment as a **PDF** (preferred) or Word document via Canvas
+
+---
+
+### Question 1: Clinical Notes Describe Patients Differently by Race
+
+Research has found that doctors write about patients differently depending on the patient's race and gender. Studies by Sun et al. (2022) and Beach et al. (2021) showed that clinical notes are more likely to use words like "non-compliant," "refuses," or "aggressive" for Black patients, and words like "pleasant," "cooperative," or "well-appearing" for white patients, even when the patients' actual behaviour and conditions were similar.
+
+Lecture 16 discussed how LLMs are now used to read and summarise clinical notes in systems like Epic's MyChart. These models learn from thousands of real clinical notes.
+
+**Your task:**
+
+1. Suppose an LLM is trained on 100,000 clinical notes containing these language patterns. The model is then used to summarise patient records for doctors. Give **2 specific examples** of how the biased language patterns in the training data could affect the model's summaries. For each example, describe: what the model might write, and how a doctor reading the summary could be misled.
+
+2. In Assignment 07, we discussed proxy variables in structured data (like ZIP codes encoding race in a spreadsheet). Clinical notes are **unstructured text**, that is, the bias is embedded in word choice, tone, and framing, not in a column you can remove. In 3–4 sentences, explain why this makes bias in clinical notes harder to detect and harder to fix than bias in structured data.
+
+3. Propose **one technical intervention** and **one organisational intervention** a hospital could adopt to reduce this problem. For each intervention:
+   - Describe specifically what it would do
+   - Explain how it would help
+   - Identify one limitation or way it could fail
+
+---
+
+*Your answer:*
+
+\
+
+\
+
+\
+
+---
+
+### Question 2: Can LLMs Move Markets?
+
+Lecture 16 described how LLMs can be used for **sentiment-based trading**: reading financial news, classifying it as positive or negative, and generating buy/sell signals. The lecture introduced the **Financial PhraseBank** dataset (sentences labelled by finance professionals as positive, negative, or neutral) and showed that finance-specific models like BloombergGPT outperform general-purpose LLMs at this task.
+
+This creates a new kind of market risk. If many hedge funds use similar LLMs trained on the same data, reading the same news, they could all reach the same conclusion at the same time.
+
+**Your task:**
+
+1. In 3–4 sentences, explain how a sentiment trading pipeline works, from data collection through to analysis and trading output.
+
+2. Suppose 20 hedge funds all deploy similar LLM-based sentiment tools. A major tech company releases an ambiguous earnings report. Identify **2 specific risks** that arise when many firms use similar models to interpret the same information at the same time. For each risk, explain the mechanism (what happens step by step) and who is harmed.
+
+3. A regulator proposes: *"Any firm using AI-generated signals for trading must disclose the model architecture and training data to the securities commission."* In 3–4 sentences, evaluate this proposal. Would disclosure actually reduce the risks you identified in part 2? What would firms argue against it?
+
+---
+
+*Your answer:*
+
+\
+
+\
+
+\
+
+---
+
+### Question 3: Domain-Specific vs General-Purpose LLMs in Finance
+
+Lecture 16 introduced several finance-specific LLMs:
+
+- **BloombergGPT**: Trained on 363 billion tokens of financial data plus 345 billion tokens of general text. Outperforms general models on financial sentiment analysis and classification.
+- **FinGPT**: Open-source, fine-tunes LLaMA using LoRA. Costs under $300 per training run.
+- **GPT-4** (general-purpose): Wins on numerical reasoning tasks because its pre-training included more mathematical content.
+
+The lecture also noted a key finding: **for stock prediction, no model is reliable**, that is, traditional models like ARIMA and LSTM are still more practical.
+
+**Your task:**
+
+1. A small fintech startup wants to build a customer-facing financial chatbot that answers questions about investment products and explains fees. They have two options: use GPT-4 via API (lower setup cost, higher per-query cost) or fine-tune FinGPT on their own product documentation (higher setup cost, lower per-query cost). List **3 factors** the startup should consider when choosing between these options. For each factor, explain which option it favours and why.
+
+2. BloombergGPT was trained on a massive amount of financial text. But more specialised training data can actually make a model **worse** at certain tasks. In 3–4 sentences, explain why. Think about what a model might lose when it becomes highly specialised. (Hint: consider tasks that require general knowledge, common-sense reasoning, or handling questions outside finance.)
+
+3. The lecture stated that "for stock prediction, no model is reliable." In 3–4 sentences, explain why stock prediction is fundamentally harder than sentiment classification, even when you use the same model and the same data. Consider: what makes a prediction task "hard" versus what makes a classification task (positive/negative/neutral) more tractable?
+
+---
+
+*Your answer:*
+
+\
+
+\
+
+\
+
+---
+
+### Question 4: The EU AI Act Risk Pyramid Has a Grey Zone
+
+The EU AI Act classifies AI systems into four tiers: **Prohibited** (banned outright), **High Risk** (strict requirements), **Limited Risk** (transparency obligations), and **Minimal Risk** (no requirements). In Lecture 17, the examples were clear-cut: a spam filter is minimal risk, a hiring algorithm is high risk, and government social scoring is prohibited.
+
+But many real systems don't fit neatly into one category.
+
+**Here is the scenario:** A university deploys an AI system that reads students' essays and flags those it suspects were written by AI. Flagged essays go to a professor, who reviews them before deciding on any academic integrity action. The student is not told their essay was flagged unless the professor decides to pursue the case.
+
+**Your task:**
+
+1. **Argue that this system is high risk.** Consider: the system affects educational access and academic standing. A false positive (flagging a human-written essay as AI-generated) could lead to disciplinary proceedings. Write 3–4 sentences making the strongest case for high-risk classification.
+
+2. **Now argue that it is limited risk.** Consider: the system is a detection tool, not a decision-maker. A human professor reviews every flagged case before any action is taken. Write 3–4 sentences making the strongest case for limited-risk classification.
+
+3. Which classification do you find more convincing? In your answer (4–5 sentences), address **both** of these questions:
+   - Does the presence of a human reviewer actually make the system less risky, or does it just shift responsibility?
+   - What matters more for classification: the technology itself, or the consequences of how it is used?
+
+---
+
+*Your answer:*
+
+\
+
+\
+
+\
+
+---
+
+### Question 5: Biden vs Trump on AI Governance
+
+Lecture 17 described two competing approaches to AI governance in the United States:
+
+- **Biden's Executive Order (October 2023)**: Required developers of powerful AI to share safety test results with the government. Established standards for red-teaming. Created guidelines for watermarking AI-generated content. Focused on safety, accountability, and government oversight.
+- **Trump's America's AI Action Plan (July 2025)**: Prioritised American AI dominance over global competitors. Reduced regulatory barriers to development. Emphasised competition with China. Favoured voluntary industry commitments over government mandates.
+
+**Your task:**
+
+1. For **each approach**, identify **2 specific groups** that benefit and **2 specific groups** that are potentially harmed. Be precise — don't just write "companies" or "the public." Name the type of company, the type of worker, or the type of consumer you mean.
+
+2. Biden's EO required developers to share safety test results with the government. Trump's plan made compliance largely voluntary. Answer both parts:
+   - Under which approach is a **harmful AI system** more likely to reach the market without being caught? Explain why in 2–3 sentences.
+   - Under which approach is a **beneficial AI system** more likely to be delayed or never built? Explain why in 2–3 sentences.
+
+3. A critic of Biden's approach says: *"Regulation kills innovation."* A critic of Trump's approach says: *"Self-regulation is no regulation."* In 3–4 sentences, evaluate whether **either** critique is fair. You must engage with both — don't dismiss one to defend the other.
+
+---
+
+*Your answer:*
+
+\
+
+\
+
+\
+
+---
+
+### Bonus Question: The "Innovation-First" Gamble
+
+Lecture 17 explained that the US and UK both adopt "innovation-first" approaches to AI regulation, while the EU takes a more precautionary, risk-based approach. The lecture quoted: *"'Move fast and break things' is less appealing when the things being broken are people's lives."*
+
+**Your task:**
+
+1. Describe **1 specific scenario** (drawing from Lectures 16 and 17) where an innovation-first approach leads to **better outcomes** for society than the EU's precautionary approach. Be concrete: name the technology, the domain, and who benefits.
+
+2. Describe **1 specific scenario** where an innovation-first approach leads to **worse outcomes**. Again, be concrete.
+
+3. Pick **one domain** from Lectures 16 and 17 (healthcare, finance, hiring, law enforcement, or education) where "move fast and break things" is most dangerous. In 4–5 sentences, propose a specific policy that tries to encourage innovation in that domain while still protecting people from harm. Don't just say "balance innovation and safety" — describe what the policy would require in practice.
+
+---
+
+*Your answer:*
+
+\
+
+\
+
+\
