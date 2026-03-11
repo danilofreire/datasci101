@@ -165,16 +165,19 @@ Imagine you're on a panel debating the following question: *"Should AI-generated
 
 ---
 
-### Bonus Question: Tokenisation Cost Analysis
+### Bonus Question: Can Machines Think?
 
-Visit [OpenAI's Tokenizer](https://platform.openai.com/tokenizer) and explore how different texts are tokenised.
+In 1950, Alan Turing published "Computing Machinery and Intelligence," where he proposed replacing the question "Can machines think?" with a practical test: can a machine fool a human into believing it is human? Turing argued that if a machine behaves indistinguishably from a thinking being, we have no good reason to deny it thinks.
 
-1. Tokenise your full name. How many tokens is it?
-2. Tokenise "artificial intelligence" vs. "AI". What's the difference?
-3. Tokenise "Hello" (English) vs. "你好" (Chinese for "Hello"). What do you notice?
-4. If GPT-4 costs $0.03 per 1,000 input tokens, estimate the cost of a 500-word essay prompt.
+But not everyone agrees. Some philosophers argue there is a difference between *simulating* intelligence and *having* intelligence. A calculator can multiply faster than any human, but we don't say it "understands" multiplication. A chatbot can write a poem, but does it "understand" poetry?
 
-Based on your experiments, why might non-English speakers face higher costs when using LLMs? Is this fair?
+**Your task:**
+
+1. Have a short conversation (at least 5 exchanges) with ChatGPT, Claude, or another LLM about a topic you care about. Pay attention to whether the responses feel like genuine understanding or sophisticated pattern matching.
+
+2. Take a position: is there a meaningful difference between simulating intelligence and having intelligence? Or is the distinction meaningless, since we can only ever judge intelligence by outward behaviour? Defend your view.
+
+3. Consider this thought experiment: if a future AI passes every test of intelligence we can design, responds emotionally, asks its own questions, and claims to be conscious, would you believe it? Why or why not?
 
 ---
 

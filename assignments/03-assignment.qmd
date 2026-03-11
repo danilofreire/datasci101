@@ -24,14 +24,17 @@ This assignment covers material from **Lectures 05-07**: Metrics and Validation,
 
 ---
 
-### Question 1: Token Cost Disparity
+### Question 1: Why the "Best" AI Might Not Be Best for You
 
-Go to [platform.openai.com/tokenizer](https://platform.openai.com/tokenizer)
+Lecture 05 introduces Goodhart's Law: "When a measure becomes a target, it ceases to be a good measure." AI companies rank their models on benchmarks, standardised tests that measure reasoning, coding, and knowledge. But a model that tops the leaderboard might still give you a confusing explanation or miss the point of your question entirely.
 
-1. Tokenise *"Hello, how are you?"* (English) and write down the token count
-2. Tokenise *"你好，你好吗？"* (Chinese, same meaning) and write down the token count
-3. If GPT-4o costs $2.50 per million tokens, and a user sends 1,000 messages averaging 50 tokens each: calculate the cost for an English speaker vs. a Chinese speaker
-4. Is this fair? Explain your position
+**Your task:**
+
+1. Think of one example from your own experience (school, sports, social media, anything) where chasing a metric made things worse instead of better. Describe what happened in 2-3 sentences.
+
+2. Ask an LLM: *"What is benchmark contamination in AI, and why does it make leaderboard rankings unreliable?"* Summarise the answer in 2-3 sentences.
+
+3. If you were choosing an LLM for your own coursework, what would you test it on instead of looking at benchmark scores? Describe one specific task you'd try, and what a good vs bad response would look like.
 
 ---
 
