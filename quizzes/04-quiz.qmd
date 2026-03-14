@@ -1,0 +1,102 @@
+---
+title: "Quiz 04"
+subtitle: "DATASCI 185: Introduction to AI Applications"
+author: "Emory University"
+format:
+  pdf:
+    template: ../syllabus-template.latex
+    toc: false
+    number-sections: false
+fontsize: 12pt
+render-on-save: true
+---
+
+## Instructions
+
+This quiz covers material from **Lectures 19--21**. Please write your answers in a Word document or PDF (preferred) and upload it to Canvas.
+
+**Guidelines:**
+
+- You are **encouraged** to use ChatGPT, Claude, Gemini, or other LLMs to help you think through these questions
+- However, you must **write your answers in your own words** and demonstrate genuine understanding of the concepts
+- Please **disclose which AI tool you used** (if any)
+- Your answers should be thoughtful and show critical thinking, not just copy-pasted LLM outputs
+- If applicable, please **attach screenshots** of your interactions with AI tools
+- Submit your file via **Canvas** as a PDF (preferred) or Word document
+
+---
+
+### Question 1: Differential privacy and the noise trade-off
+
+Apple uses differential privacy for emoji suggestions, Google uses it for Chrome usage statistics, and the US Census Bureau used it for the 2020 census.
+
+**Your task:**
+
+1. Explain the core idea of differential privacy in 2--3 sentences. What is added to the data or results? What statistical property is preserved? What is lost?
+2. The privacy loss in differential privacy is controlled by a parameter called **epsilon** ($\varepsilon$). Explain what a small $\varepsilon$ means versus a large $\varepsilon$, and describe the trade-off that researchers and companies face when choosing this value.
+3. A tech company announces: "We protect your privacy using differential privacy." An independent audit later reveals they set $\varepsilon$ = 50, which provides almost no privacy protection. In 3--4 sentences, explain why this announcement is misleading, and why it is difficult for ordinary users to evaluate such claims.
+
+---
+
+### Question 2: Article 22 and the automation loophole
+
+GDPR Article 22 gives individuals the right not to be subject to purely automated decisions that significantly affect them. A bank uses an AI system to reject loan applications. A human employee reviews every AI decision, but in practice the employee processes 200 applications per hour and rubber-stamps every recommendation without reading the file.
+
+**Your task:**
+
+1. Does this arrangement satisfy the requirement for human involvement under Article 22? Why or why not? Write 3--4 sentences.
+2. Describe what **meaningful human involvement** would look like in this loan-decision scenario. Be specific: what should the human reviewer actually do, and how would you know the involvement is real rather than performative?
+3. A bank executive argues: "We have a human in the loop. If they choose to agree with the AI every time, that's their professional judgment." In 3--4 sentences, evaluate this argument. Is there a difference between a human exercising judgment and a human acting as a rubber stamp, and how would a regulator tell the two apart?
+
+---
+
+### Question 3: The skill compression effect and the expert paradox
+
+The BCG study (2023) found that management consultants improved their performance by 40% with AI on tasks within the AI's capability range. However, the gains were not evenly distributed: novice workers improved far more than experts. In some cases, experts actually performed *worse* with AI than without it.
+
+**Your task:**
+
+1. Explain what "skill compression" means: why does AI help novices more than experts? Write 3--4 sentences.
+2. The finding that experts sometimes do *worse* with AI seems counterintuitive. Propose an explanation: what might experts do differently when given AI assistance that leads to lower performance? (Hint: think about over-reliance and calibration.)
+3. If AI compresses the gap between novice and expert performance, predict one consequence for how companies might change their hiring or team structure. Explain your reasoning in 3--4 sentences.
+
+---
+
+### Question 4: The graduate job drought and the talent pipeline
+
+Entry-level job postings have dropped significantly in tech, finance, and consulting (2024--2026). The Financial Times reported graduate hiring at its lowest level in a decade. The lecture explained the logic: "Junior employees do tasks AI now handles. Training juniors is expensive. AI doesn't need healthcare or holiday."
+
+**Your task:**
+
+1. Explain the economic reasoning: why are entry-level positions, specifically, the most exposed to AI automation? What types of tasks do junior employees typically perform, and why are those tasks particularly automatable? Write 3--4 sentences.
+2. If companies stop hiring and training junior employees today, identify a problem this creates for the companies *themselves* in 10--20 years. Where will the next generation of senior employees come from? Write 3--4 sentences.
+3. A university career adviser tells students: "Just learn to use AI tools and you'll be fine." In 3--4 sentences, evaluate this advice. Is AI fluency sufficient, or does it miss something? What else, according to the lecture, might students need?
+
+---
+
+### Question 5: The hybrid care model and triage risk
+
+The lecture proposed a three-tier model for AI in mental health care:
+
+- **Mild symptoms**: AI triage + self-help tools
+- **Moderate symptoms**: AI support + case management referral
+- **Severe symptoms**: Human professional care, AI for admin support only
+
+**Your task:**
+
+1. Identify the central weakness of this model: who or what decides which tier a patient belongs in? Write 3--4 sentences explaining why this decision is both the most important and the most dangerous step in the process.
+2. Describe a concrete scenario in which the AI assigns a patient with suicidal ideation to the "mild" tier. What could happen as a result, and why is this type of error different from, say, a misclassified product review?
+3. Propose **one safeguard** that would reduce (but not eliminate) the risk of dangerous misclassification. Explain what it would check, when it would trigger, and what its limitations would be.
+
+---
+
+### Bonus question: The horse analogy
+
+The pessimist's argument from Lecture 20: "The horse population never recovered from the automobile. What if humans are the horses?"
+
+\vspace{1em}
+**Your task:**
+
+1. In what ways is this analogy *apt*? Identify one similarity between horses displaced by automobiles and workers potentially displaced by AI.
+2. In what ways is this analogy *misleading*? Identify one important difference between horses and humans that weakens the comparison.
+3. Take a brief position (3--4 sentences): should we take the horse analogy seriously as a warning, or is it a flawed comparison that distracts from more useful ways of thinking about AI and labour?

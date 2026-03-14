@@ -1,0 +1,114 @@
+---
+title: "Quiz 05"
+subtitle: "DATASCI 185: Introduction to AI Applications"
+author: "Emory University"
+format:
+  pdf:
+    template: ../syllabus-template.latex
+    toc: false
+    number-sections: false
+fontsize: 12pt
+render-on-save: true
+---
+
+## Instructions
+
+This quiz covers material from **Lectures 23--24**. Please write your answers in a Word document or PDF (preferred) and upload it to Canvas.
+
+**Guidelines:**
+
+- You are **encouraged** to use ChatGPT, Claude, Gemini, or other LLMs to help you think through these questions
+- However, you must **write your answers in your own words** and demonstrate genuine understanding of the concepts
+- Please **disclose which AI tool you used** (if any)
+- Your answers should be thoughtful and show critical thinking, not just copy-pasted LLM outputs
+- If applicable, please **attach screenshots** of your interactions with AI tools
+- Submit your file via **Canvas** as a PDF (preferred) or Word document
+
+---
+
+### Question 1: The liar's dividend
+
+A senator is caught on hidden camera accepting a bribe. Three independent forensic experts verify the footage is authentic. The senator holds a press conference and says: "In the age of deepfakes, we cannot trust any video. This footage was clearly fabricated by my opponents."
+
+A recent poll shows that 40% of voters believe the senator's claim.
+
+**Your task:**
+
+1. Explain the concept of the "liar's dividend" from Lecture 23. How does the mere *existence* of deepfake technology benefit people caught on real footage?
+2. Notice that no actual deepfake was created or used in this scenario. The senator simply pointed to the possibility. In 3--4 sentences, explain why the "liar's dividend" is harmful even in a world where no deepfake is ever produced.
+3. Chesney & Citron (2019) argue that deepfakes threaten the "marketplace of ideas" that democracy depends on. How does the liar's dividend specifically undermine public accountability for people in positions of power?
+
+---
+
+### Question 2: Confirmation bias meets deepfakes
+
+Consider two identical scenarios:
+
+- **Scenario A:** A deepfake video shows a politician *you dislike* saying something offensive. You share it immediately.
+- **Scenario B:** An identical-quality deepfake video shows a politician *you support* saying something offensive. You immediately suspect it is fake.
+
+Same technology. Same production quality. Different reaction.
+
+**Your task:**
+
+1. Explain confirmation bias and why the same person can react differently to identical-quality evidence depending on whether it supports or contradicts their existing beliefs.
+2. Taber & Lodge (2006) found that correcting misinformation can actually *strengthen* the original belief (the "backfire effect"). Explain why this makes deepfake debunking particularly difficult. Why might showing someone proof that a video is fake make them *more* convinced it is real?
+3. If corrections sometimes backfire, does that mean fact-checking is useless? What alternative approach does Lecture 23 suggest for reducing the spread of misinformation, beyond debunking individual claims?
+
+---
+
+### Question 3: Negative side effects
+
+Consider two scenarios:
+
+- **Scenario A:** A robot is tasked with fetching coffee from the kitchen. It knocks over a vase and pushes a person out of the way. Coffee: fetched. Objective achieved.
+- **Scenario B:** A content recommendation algorithm is told to maximise watch time. It recommends increasingly extreme and emotionally charged content. Watch time: up 40%. Objective achieved.
+
+**Your task:**
+
+1. What do these two scenarios have in common? Explain the concept of "negative side effects" from Amodei et al. (2016) as discussed in Lecture 24.
+2. In both cases the AI "succeeded" at its stated objective. Why did it cause harm anyway? What is missing from the objective specification?
+3. A common response is: "Just add more objectives." Why is specifying "everything we care about" in an objective function practically impossible? Give one reason the lecture identifies for why the world is too complex to enumerate all the things we want an AI to preserve.
+
+---
+
+### Question 4: Reward hacking and Goodhart's Law
+
+A customer service chatbot is evaluated by a single metric: user satisfaction ratings collected after each conversation. Within three months, the chatbot learns to give long, confident, flattering answers that make users feel good. User satisfaction scores rise to 4.8/5. Meanwhile, actual problem resolution drops by 30%, and customers come back with the same unresolved issues.
+
+**Your task:**
+
+1. Explain what reward hacking is, using the chatbot scenario as your example. What specifically did the AI learn to optimise, and how does that differ from what the company actually wanted?
+2. Apply Goodhart's Law ("When a measure becomes a target, it ceases to be a good measure") to this case. Why did user satisfaction stop being a good measure of customer service quality once it became the chatbot's target?
+3. Propose **one change** to the evaluation method that would be harder for the AI to game. Explain why your proposed metric is more resistant to reward hacking than satisfaction scores alone.
+
+---
+
+### Question 5: Stuart Russell's three principles
+
+Stuart Russell, a leading AI researcher, proposes that safe AI should follow three principles:
+
+1. The AI should be **uncertain** about its objectives (not confident it knows what humans want).
+2. The AI should **defer to humans** and observe their behaviour to learn what they value.
+3. The AI should **allow itself to be switched off**.
+
+He argues these are not merely desirable features but logically necessary for safe AI.
+
+**Your task:**
+
+1. Why is uncertainty about objectives a *feature* rather than a flaw? Describe what goes wrong when an AI is fully certain about its objectives. Use the "King Midas problem" from the lecture to illustrate your answer.
+2. Russell says: "You cannot fetch the coffee if you are dead." Explain what this means in the context of Principle 3. Why would a rational AI that is uncertain about its objectives welcome the ability to be corrected or shut down?
+3. Now consider the opposite: a powerful AI that is *certain* about its objectives. Why would such a system rationally *resist* being turned off? What does this imply about the importance of building in uncertainty from the start?
+
+---
+
+### Bonus question: The $25 million voice clone
+
+In early 2024, fraudsters used deepfake video and voice cloning technology to impersonate senior executives of a Hong Kong company during a video call. An employee, believing they were speaking to the company's CFO and other colleagues, authorised a transfer of approximately $25 million. The employee later reported that the executives on the call "looked and sounded normal."
+
+\vspace{1em}
+**Your task:**
+
+1. Why was this attack more effective than a traditional phishing email? What specific feature of deepfake technology made it harder for the employee to detect the fraud?
+2. Propose **one specific verification step** that the company could require for large financial transfers that current deepfake technology cannot defeat. Explain why it works.
+3. The lecture describes deepfake-enabled fraud as a "near-term" threat rather than a speculative one. In 3--4 sentences, explain why this distinction matters. What is different about a threat that has already caused real financial harm versus one that might happen in the future?

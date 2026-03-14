@@ -222,7 +222,7 @@ Readings:
 
 ### March 18, 2026:
 
-- Lecture 16: [AI in Finance and Healthcare - Opportunities and Biases](https://raw.githack.com/danilofreire/datasci185/main/lectures/lecture-16/16-case-studies.html).
+- Lecture 16: [AI in Finance and Healthcare](https://raw.githack.com/danilofreire/datasci185/main/lectures/lecture-16/16-case-studies.html).
 - **Assignment 07 due (5%).**
 - No assignment this week.
 - [Instructions for the Final Project](https://github.com/danilofreire/datasci185/tree/main/project).
@@ -285,7 +285,8 @@ Readings:
 - Strain, Michael R. (2024). [The case for AI optimism.](https://nationalaffairs.com/publications/detail/the-case-for-ai-optimism). Maybe things as not as bad as they seem?
 - Anthropic (2026). [Anthropic economic index.](https://www.anthropic.com/research/economic-index-primitives) How people use Claude and what are its possible impacts on the economy.
 - OpenAI (2025). [How people are using ChatGPT.](https://openai.com/index/how-people-are-using-chatgpt/) Same thing, but for ChatGPT. Spoiler: most people are not using it for work. The full article is available [here](https://www.nber.org/papers/w34255).
- 
+- Oks, D. (2026). [Why the ATM didn't kill bank teller jobs (but the iPhone did).](https://davidoks.blog/p/why-the-atm-didnt-kill-bank-teller) A short essay arguing that task-automating technologies rarely eliminate jobs, while paradigm-shifting ones can. The author applies this distinction to AI.
+
 ## Module 6 — Applications, limits and projects
 
 ### April 06, 2026:

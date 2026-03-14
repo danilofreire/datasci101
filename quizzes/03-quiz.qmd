@@ -1,0 +1,140 @@
+---
+title: "Quiz 03"
+subtitle: "DATASCI 185: Introduction to AI Applications"
+author: "Emory University"
+format:
+  pdf:
+    template: ../syllabus-template.latex
+    toc: false
+    number-sections: false
+fontsize: 12pt
+render-on-save: true
+---
+
+## Instructions
+
+This quiz covers material from **Lectures 13--17**. Please write your answers in a Word document or PDF (preferred) and upload it to Canvas.
+
+**Guidelines:**
+
+- You are **encouraged** to use ChatGPT, Claude, Gemini, or other LLMs to help you think through these questions
+- However, you must **write your answers in your own words** and demonstrate genuine understanding of the concepts
+- Please **disclose which AI tool you used** (if any)
+- Your answers should be thoughtful and show critical thinking, not just copy-pasted LLM outputs
+- If applicable, please **attach screenshots** of your interactions with AI tools
+- Submit your file via **Canvas** as a PDF (preferred) or Word document
+
+---
+
+### Question 1: Silent failures vs loud failures
+
+Consider two scenarios:
+
+- **Scenario A**: You ask Claude a question and get an error message: "Something went wrong. Please try again later."
+- **Scenario B**: You ask an AI customer service chatbot about a refund policy. It responds confidently with a detailed policy that sounds official, complete with deadlines and conditions. The policy does not exist. The chatbot invented it.
+
+**Your task:**
+
+1. In Scenario A, the system failed *loudly*: it told you something went wrong. In Scenario B, the system failed *silently*: it gave you a wrong answer with no warning. Explain why silent failures are more dangerous than loud failures. Use a concrete example of harm that could result from Scenario B.
+2. Lecture 13 described monitoring metrics that companies track for AI systems (latency, error rate, hallucination rate, user satisfaction, etc.). Which of these metrics would catch Scenario A? Which would catch Scenario B? Explain why Scenario B is harder to monitor.
+3. Propose one **output validation mechanism** (a check placed between the model's response and the user) that could turn Scenario B's silent failure into a loud one. Describe what it would check and what would happen when a response fails the check.
+
+---
+
+### Question 2: What a datasheet would have revealed
+
+Here is a scenario:
+
+> **QuickHire** is a startup that buys a pre-trained hiring model from a third-party vendor. The vendor says the model is "state-of-the-art" and "tested on millions of records." QuickHire deploys it immediately.
+>
+> After a year, a journalist discovers the model approves white applicants at nearly double the rate of Black applicants with similar qualifications. Further investigation reveals that the training data came from 50,000 hiring decisions made between 2008 and 2018 by a recruitment firm that was later fined for racial discrimination.
+
+**Your task:**
+
+1. A **datasheet for datasets** (proposed by Gebru et al., 2018) has seven sections: Motivation, Composition, Collection, Preprocessing, Uses, Distribution, and Maintenance. Identify **two** sections that would have revealed specific problems with this dataset. For each, name the section and explain what information it would have contained that should have raised a red flag.
+2. QuickHire's CEO says: "We had no idea. The vendor never told us about the training data." Under the EU AI Act (Lecture 17), hiring AI is classified as **high-risk**. In 3--4 sentences, explain why "we didn't know" is not a legally acceptable defence. What documentation would the Act have required before deployment?
+3. Explain the difference between a **datasheet** and a **model card**. If the vendor had provided both, which document would have flagged the biased training data, and which would have flagged the model's differential performance across racial groups?
+
+---
+
+### Question 3: The benchmark that lied
+
+A company builds a facial recognition system. They report that it achieves **99.2% accuracy** on a widely used industry benchmark. The company markets this number to police departments across the country.
+
+Here is the composition of the benchmark dataset:
+
+| Group | Percentage of benchmark |
+|-------|------------------------|
+| White faces | 78% |
+| East Asian faces | 12% |
+| South Asian faces | 7% |
+| Black faces | 3% |
+
+An independent audit later finds the following accuracy rates when tested on a balanced dataset:
+
+| Group | Accuracy |
+|-------|----------|
+| White faces | 99.7% |
+| East Asian faces | 96.1% |
+| South Asian faces | 91.3% |
+| Black faces | 82.4% |
+
+**Your task:**
+
+1. This is an example of **evaluation bias** from Lecture 15. Explain what evaluation bias is and why the 99.2% overall figure hid the 82.4% accuracy for Black faces. (Hint: think about how much each group contributes to the overall number.)
+2. The company's marketing materials say "99.2% accuracy." A police chief reads this and deploys the system. Who is at greater risk of being misidentified: a white resident or a Black resident? Explain in 2--3 sentences why this disparity matters in a law enforcement context.
+3. Lecture 14 introduced **disaggregated evaluation**: reporting performance separately for different groups. Redesign the benchmark: describe what the new benchmark dataset should look like and what the company should be required to report. Be specific about both composition and reporting format.
+
+---
+
+### Question 4: RAG with a biased knowledge base
+
+A hospital deploys a RAG (Retrieval-Augmented Generation) system to help clinicians answer medical questions. The system retrieves information from a knowledge base of clinical practice guidelines and generates answers grounded in those documents.
+
+Here is the problem: the guidelines in the knowledge base were developed primarily using clinical trial data from white male patients. A clinician asks the system about heart attack symptoms. The system retrieves guidelines that emphasise chest pain (the most common symptom in men) but does not mention fatigue, nausea, or jaw pain (symptoms more commonly reported by women).
+
+The system's answer includes citations to the retrieved guidelines.
+
+**Your task:**
+
+1. In Lecture 11, you learned that RAG reduces hallucination by grounding answers in real documents. Explain why RAG does **not** solve the bias problem if the knowledge base itself contains biased information. What type of bias from Lecture 15 is present in this knowledge base?
+2. The system's answer includes citations, which makes it look authoritative. Explain why this is actually *more* dangerous than an answer without citations. (Hint: think about how citations affect a clinician's likelihood of double-checking the answer.)
+3. Propose **one change** to the knowledge base and **one change** to the system's interface that could reduce the risk of harm. For each, explain what it would do and what limitation it would still have.
+
+---
+
+### Question 5: Why foundation models need special rules
+
+The EU AI Act classifies most AI applications using a **risk pyramid** with four tiers:
+
+| Tier | Description | Example |
+|------|-------------|---------|
+| **Prohibited** | Banned outright | Government social scoring |
+| **High risk** | Strict requirements (conformity assessments, documentation, human oversight) | Hiring AI, credit scoring, medical devices |
+| **Limited risk** | Transparency obligations (must disclose AI) | Customer service chatbots |
+| **Minimal risk** | No requirements | Spam filters, video game AI |
+
+But the Act also has a **separate set of rules** for General-Purpose AI (GPAI) models like GPT-4, Gemini, and Claude. These rules exist alongside the risk pyramid, not inside it.
+
+**Your task:**
+
+1. Explain why a general-purpose model like GPT-4 does not fit neatly into the risk pyramid above. (Hint: the same model can be used for minimal-risk tasks and high-risk tasks. Who decides the risk level?)
+2. The EU AI Act requires **all GPAI providers** to do certain things. Name **two** of these requirements from Lecture 17.
+3. Models classified as posing **"systemic risk"** (the most powerful models) face additional obligations on top of the basic GPAI rules. Name **two** of these additional requirements and explain why they apply only to the most powerful models, not to all AI systems.
+
+---
+
+### Bonus question: The mirror problem and amplification
+
+Word embeddings trained on millions of human-written texts learned the following association:
+
+> "Man" is to "Doctor" as "Woman" is to "Nurse."
+
+This is called the **mirror problem** from Lecture 15: AI trained on human data reflects human biases back at us.
+
+\vspace{1em}
+**Your task:**
+
+1. Explain the mirror problem in your own words. Why does training on "accurate" human data produce biased AI? (Hint: accurate data about a biased world is still biased.)
+2. AI does not just *reflect* bias; it can *amplify* it. Explain how scale changes things. If a single biased human interviewer rejects 10 candidates a year, and a biased AI screening tool rejects 10,000 candidates a day, why is the AI's bias a bigger problem even if the per-decision error rate is the same?
+3. Some argue: "The bias comes from human data, not from the AI, so AI companies are not responsible for fixing it." In 100--150 words, evaluate this argument. Do you agree or disagree? Consider who has the power to intervene and who bears the harm.

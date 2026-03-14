@@ -1,0 +1,178 @@
+---
+title: "DATASCI 185 - Introduction to AI Applications"
+lang: en-GB
+author:
+  - Final Project Instructions
+fontfamily: libertine
+monofont: inconsolata
+monofontoptions: scaled=.95
+fontsize: 12pt
+spacing: double
+geometry:
+  - top=2cm
+  - bottom=2cm
+  - left=2cm
+  - right=2cm
+urlcolor: darkblue
+linkcolor: Mahogany
+citecolor: Mahogany
+highlight-style: arrow
+pdf-engine: pdflatex
+jupyter: python3
+format:
+  pdf:
+    template: ../syllabus-template.latex
+    toc: false
+    toc-depth: 3
+    number-sections: true
+editor:
+  render-on-save: true
+---
+
+# Overview
+
+In this project, you will work in groups of 4-5 to explore how AI is being used in a real-world domain and propose your own AI application. You will start by testing 2-3 existing AI tools in your chosen domain to see what they do well and where they fall short. Then, drawing on what you found, you will design a new AI application for a specific problem, with a plan for how it would work and what could go wrong.
+
+No programming is required. The project is about thinking clearly about AI systems: what they do, how they fail, and how to build them responsibly.
+
+# Choosing a domain
+
+Pick one domain from the list below. Each domain includes a few example use cases to get you started, but you are free to focus on any specific problem within your chosen domain.
+
+1. **Healthcare**: symptom checking, mental health chatbots, medical image interpretation
+2. **Education**: AI tutoring systems, automated grading, personalised learning platforms
+3. **Criminal justice**: predictive policing, risk assessment tools, facial recognition in law enforcement
+4. **Hiring and employment**: CV screening, interview analysis, workforce planning tools
+5. **Creative industries**: AI-generated art, music, or writing; content moderation systems
+6. **Finance**: credit scoring, fraud detection, robo-advisors
+7. **Environment and climate**: weather forecasting, energy optimisation, biodiversity monitoring
+8. **Misinformation and media**: deepfake detection, fact-checking tools, content recommendation algorithms
+
+Domain selection is first-come-first-served via a sign-up sheet on Canvas. Multiple groups can work in the same domain, but each group must address a different use case. If a domain becomes too crowded, I may ask latecomers to pick another one.
+
+# Timeline
+
+| Date | What happens |
+|------|-------------|
+| **March 18** (Lecture 16) | Project instructions released |
+| **March 23** | Deadline to form your group |
+| **March 25** | Students without a group are assigned randomly |
+| **April 1** | Optional proposal due on Canvas |
+| **April 1-8** | Feedback on proposals |
+| **April 27** | Final report and infographic due at 11:59 PM on Canvas |
+
+# Group formation
+
+You have until **March 23** to form a group of 4-5 students. If you have not joined a group by then, I will assign you to one randomly on March 25. If your group was formed by random assignment, I particularly encourage you to submit the optional proposal so you can get early feedback and start coordinating.
+
+# Deliverables
+
+## Project proposal (optional, strongly recommended)
+
+**Due: April 1 on Canvas. Not graded.**
+
+Submit a one-page document with three paragraphs:
+
+1. **Domain and use case.** Which domain did you choose? What specific problem are you addressing, and why does it matter?
+2. **Existing tools.** Which 2-3 AI tools do you plan to test? Why did you pick these?
+3. **Proposed application.** Give a brief sketch of the AI application you intend to design. What would it do? Who would use it?
+
+I will read each proposal and give you written feedback so you can adjust course before investing time in the full report.
+
+## Final submission (graded)
+
+**Due: April 27 at 11:59 PM on Canvas.**
+
+You will submit two items: a report and an infographic.
+
+### Report
+
+Write a report of approximately 5 pages (excluding any appendices). Submit it as a PDF or Word document. The report should have five sections:
+
+**1. Introduction.** Describe the problem you are addressing and explain why AI is relevant to it. A reader unfamiliar with your domain should be able to follow along.
+
+**2. Landscape review.** Test 2-3 existing AI tools that are relevant to your domain. For each tool, describe what it does, show how you tested it (include screenshots or sample prompts and outputs), and discuss what it does well and where it falls short. Be specific: "The chatbot gave an incorrect answer when asked about X" is more useful than "The chatbot sometimes makes mistakes."
+
+**3. Proposed application.** Based on what you learned from testing existing tools, design your own AI application. Describe:
+
+- What the application would do
+- Who would use it and in what context
+- What data it would need
+- How it would work at a high level (you do not need to write code; a simple diagram or description of the workflow is enough)
+
+**4. Harms assessment.** Identify at least three things that could go wrong with your proposed application. Think about bias, privacy, reliability, and misuse. For each risk, explain how you would reduce or prevent it. Draw on what you have learned in class about AI ethics and safety.
+
+**5. Conclusion.** Summarise your main findings and reflect on what you learned from the project. What surprised you? What would you do differently with more time?
+
+### Infographic
+
+Create a one-page visual summary of your project. It should cover three things: the problem, your proposed solution, and the main risks. You can use any tool you like (Canva, PowerPoint, Google Slides, etc.). Submit it as a PDF.
+
+The infographic should make sense on its own to someone who has not read your report.
+
+## Optional: "Build it" appendix (bonus)
+
+If your group wants to go further, you can build a simple working prototype using no-code tools. For example:
+
+- Create a custom GPT or Claude Project with instructions tailored to your use case
+- Build a basic chatbot with a no-code platform (Poe, Coze, or similar)
+- Set up a simple retrieval-augmented generation (RAG) workflow using a visual tool
+- Design a prompt chain that solves a multi-step task in your domain
+
+Document what you built with screenshots and a brief explanation of how it works. This appendix does not count toward the 5-page limit.
+
+**Bonus points:** up to 1 extra point. A working prototype with clear documentation earns 1 point; a partial attempt or one with minimal documentation earns 0.5.
+
+# Grading rubric
+
+The project is graded on a scale of 0-10, plus up to 1 bonus point.
+
+\singlespacing
+
+\renewcommand{\arraystretch}{1.2}
+\footnotesize
+
+\begin{tabular}{|>{\raggedright\arraybackslash}p{9cm}|>{\centering\arraybackslash}p{2.5cm}|>{\centering\arraybackslash}p{2cm}|}
+\hline
+\textbf{Component} & \textbf{What I look for} & \textbf{Points} \\
+\hline
+\textbf{Introduction} & Clear problem statement; explains why AI matters here & 1 \\
+\hline
+\textbf{Landscape review} & Thorough testing of 2-3 tools; specific observations with evidence (screenshots, examples); fair comparison & 2 \\
+\hline
+\textbf{Proposed application} & Realistic and well thought-out design; clear description of users, data needs, and workflow; original thinking & 3 \\
+\hline
+\textbf{Harms assessment} & Identifies genuine risks (not generic ones); proposes concrete, realistic mitigations & 2 \\
+\hline
+\textbf{Infographic} & Visually clear; accurate; communicates the key points to a general audience & 1 \\
+\hline
+\textbf{Writing quality} & Well-organised; clear prose; proper citations; the conclusion ties the report together & 1 \\
+\hline
+\textbf{Total} & & \textbf{10} \\
+\hline
+\textbf{Bonus: technical stretch} & Working prototype with clear documentation (1 pt) or partial attempt (0.5 pt) & \textbf{+1} \\
+\hline
+\end{tabular}
+
+\doublespacing
+
+# Tips
+
+- **Be specific.** "This tool is biased" is too vague. "When we tested the hiring tool with identical CVs but different names, it scored the CV with a typically white-sounding name 15\% higher" is much better.
+- **Use what you learned in class.** The lectures on bias, documentation, hallucination, and harms assessment are all directly relevant to this project.
+- **Divide the work early.** With 4-5 people and 5-6 weeks, you have plenty of time if you start early. You do not have plenty of time if everyone waits until the last week.
+- **The proposal is optional but worth doing.** It takes an hour to write and saves you from going down the wrong path.
+- **The infographic is not an afterthought.** A good infographic shows that you truly understand your project. Design it with care.
+
+# AI use policy
+
+You may use AI tools (ChatGPT, Claude, Gemini, etc.) to help with brainstorming, drafting, or editing. However:
+
+- You must declare all AI use in your submission
+- You are responsible for the accuracy of everything in your report
+- Copy-pasting AI outputs without editing or verification is not acceptable
+- The Emory Honour Code applies
+
+# Questions?
+
+If anything is unclear, please email me at [danilo.freire@emory.edu](mailto:danilo.freire@emory.edu) or ask during office hours.
