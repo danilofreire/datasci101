@@ -120,11 +120,11 @@ Source: [Caniphis](https://caniphish.com/blog/ai-memes)
 :::{style="margin-top: 30px; font-size: 19px;"}
 :::{.columns}
 :::{.column width=55%}
-AI changes the privacy equation in several ways:
+AI makes privacy harder in ways that older laws did not anticipate:
 
 **Scale of collection:**
 
-- Traditional surveillance was limited; AI-enabled collection is [cheap, pervasive, and continuous]{.alert}
+- Traditional surveillance was limited by staffing; AI-enabled collection runs [around the clock at almost no cost]{.alert}
 - Every interaction becomes a data point, creating "data exhaust" from ordinary activities
 
 **Inference capabilities:**
@@ -541,7 +541,7 @@ Source: [Wikipedia](https://en.wikipedia.org/wiki/Federated_learning)
 :::{style="margin-top: 30px; font-size: 21px;"}
 :::{.columns}
 :::{.column width=55%}
-[Synthetic data]{.alert} is artificially generated data that preserves the statistical properties of real data without containing actual personal information.
+What if you could train a model on data that looks real but isn't? That is the idea behind [synthetic data]{.alert}.
 
 **How it works:**
 
@@ -612,7 +612,7 @@ Source: [GOV.UK](https://dataingovernment.blog.gov.uk/2020/08/20/synthetic-data-
 - Health app: Helps you exercise OR enables insurance discrimination
 - Location data: Optimises traffic OR tracks movements
 - Facial recognition: Finds missing children OR enables authoritarian control
-- [Context and governance determine outcomes]{.alert}
+- Whether the same tool helps or harms depends on [who controls it and what rules apply]{.alert}
 :::
 
 :::{.column width=45%}
@@ -622,7 +622,7 @@ Source: [GOV.UK](https://dataingovernment.blog.gov.uk/2020/08/20/synthetic-data-
 Source: [ACLU](https://www.aclu.org/news/privacy-technology/machine-surveillance-is-being-super-charged-by-large-ai-models)
 
 :::{style="font-size: 18px; margin-top: 15px;"}
-"The technology is neutral" is a dodge. Technology [embeds values]{.alert} in its design and deployment. The question is whose values.
+"The technology is neutral" is a dodge. Facial recognition that works better on lighter skin was not designed to be racist, but [the design choices had that effect]{.alert}.
 :::
 :::
 :::
@@ -654,7 +654,7 @@ Source: [ACLU](https://www.aclu.org/news/privacy-technology/machine-surveillance
 - Choose services that respect privacy and vote for privacy-protecting candidates
 
 :::{style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; font-size: 18px; margin-top: 15px;"}
-Individual action is necessary but not sufficient. [Systemic problems require systemic solutions]{.alert}. That means policy, not just personal choices.
+Using Signal instead of WhatsApp helps, but it won't change how insurers use your health data. That takes [legislation]{.alert}.
 :::
 :::
 :::
@@ -802,10 +802,10 @@ There's no right answer. The point is to [identify your own values]{.alert} and 
 - [Collection is the core problem]{.alert}
 - Privacy is collective, not just individual
 - Technical fixes don't address power imbalances
-- Context and governance determine outcomes
+- Rules and oversight determine whether data helps or harms
 
 :::{style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; margin-top: 15px; font-size: 18px;"}
-"Privacy is not about having something to hide. It's about having the [power to choose]{.alert} what to reveal."
+The Target pregnancy case and the Clearview AI scraping both came down to the same thing: someone used your data in a way [you never agreed to]{.alert}.
 :::
 :::
 :::

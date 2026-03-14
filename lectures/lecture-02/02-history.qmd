@@ -337,10 +337,10 @@ Maybe this time is different? 🤷🏻‍♂️
 - However, single-layer perceptrons [couldn't solve certain simple problems]{.alert}, so interest waned
 - [Multi-layer networks](https://en.wikipedia.org/wiki/Artificial_neural_network) *could* solve these problems, but [training them was hard]{.alert}
 - It took [nearly 20 years for neural networks to make their comeback]{.alert}
+- [But how does an artificial neuron work?]{.alert}
 :::
 
 :::{.column width=50%}
-- **How does an artificial neuron work?**
 - Each [input]{.alert} ($x_i$) (e.g., pixel brightness) is multiplied by a [weight]{.alert} ($w_i$) to increase or decrease the importance of that signal, then summed with a [bias]{.alert} ($b$) (a threshold that determines when the neuron "fires"): $z = \sum x_i \cdot w_i + b$
 - The result passes through an [activation function]{.alert} (non-linear transformation) to produce the output: $y = f(z)$
 - Without the activation function, the network would be just a linear model!
@@ -396,9 +396,8 @@ Source: [Medium](https://medium.com/@lmpo/backpropagation-the-backbone-of-neural
 
 > "Now go out and gather some data, and see what it can do."
 
-- This insight transformed the field
-- [Data became the new oil]{.alert}, together with [computing power and better algorithms]{.alert}
-- Any one of them alone wasn't enough!
+- [Data, computing power, and better algorithms]{.alert} came together at the same time
+- Any one alone wasn't enough, but all three together changed the field
 :::
 
 :::{.column width=45%}
@@ -737,17 +736,15 @@ Source: [Tarun Sharma](https://www.linkedin.com/pulse/multimodal-generative-ai-t
 
 **What changed:**
 
-- From [human-designed rules]{.alert} to [learned patterns]{.alert}
-- From [narrow tasks]{.alert} to [general capabilities]{.alert}
-- From [mimicking human reasoning]{.alert} to [optimising for prediction]{.alert}
-- From [scarce data]{.alert} to [abundant data]{.alert}
+- We stopped writing rules by hand and started [letting machines learn from data]{.alert}
+- AI went from doing one narrow thing to doing [many things with a single architecture]{.alert}
+- The bottleneck shifted from clever algorithms to [data and computing power]{.alert}
 
 **What stayed the same:**
 
-- The [dream]{.alert} of intelligent machines
-- The [question]{.alert}: Can machines truly understand the world?
-- The [challenges]{.alert}: Brittleness, bias, lack of common sense
-- The [hype cycles]{.alert}: Overpromise, underdeliver (are we in one now?)
+- We still ask the same question Turing asked in 1950: [can machines think?]{.alert}
+- AI systems are still brittle, biased, and lacking common sense
+- We still go through hype cycles. Are we in one now? 🤷🏻‍♂️
 :::
 
 ## Interactive resource

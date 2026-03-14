@@ -170,7 +170,7 @@ This entire process is called a [pipeline](https://en.wikipedia.org/wiki/Pipelin
 [![The AI pipeline](figures/llm-pipeline.jpg){width="100%"}](#){data-modal-type="image" data-modal-url="figures/llm-pipeline.jpg"}
 
 :::{style="font-size: 18px; margin-top: 15px;"}
-A simple question = many complex steps behind the scenes
+Even "What's the weather?" touches load balancers, GPUs, and safety filters before you see an answer
 :::
 :::
 :::
@@ -341,7 +341,7 @@ Source: [BBC News](https://www.bbc.com/news/technology-68412620)
 Source: [Spot Intelligence](https://spotintelligence.com/2024/04/08/data-drift-in-machine-learning/)
 
 :::{style="font-size: 18px; margin-top: 15px;"}
-The world keeps changing, your model stays frozen!
+Slang, prices, and user habits shift constantly, but a trained model only knows what it learned
 :::
 :::
 :::
@@ -357,17 +357,17 @@ Models assume $P_{\text{train}}(X, Y) = P_{\text{prod}}(X, Y)$
 
 But in reality, this joint distribution shifts over time:
 
-1. **Data drift** — $P(X)$ changes
+1. **Data drift**: $P(X)$ changes
    - Input distribution differs from training
    - Example: New user demographics, device types
    - Model sees inputs it never learned from
 
-2. **Label drift** — $P(Y)$ changes
+2. **Label drift**: $P(Y)$ changes
    - Class frequencies change over time
    - Example: Fraud rate increases during holidays
    - Model's decision boundaries become suboptimal
 
-3. **Concept drift** — $P(Y|X)$ changes
+3. **Concept drift**: $P(Y|X)$ changes
    - Same input → different correct output
    - Example: "Sick" now means "great" in slang
    - [The most dangerous type]{.alert}: model is confident but wrong
@@ -391,8 +391,9 @@ But in reality, this joint distribution shifts over time:
 Machine learning assumes [i.i.d. data]{.alert} (independent and identically distributed). But real-world data is:
 
 - **Temporally correlated** (today depends on yesterday)
-- **Non-stationary** (distributions shift)
+- **Non-stationary** (distributions shift over months and years)
 - **Adversarial** (users game the system)
+- **Context-dependent** (meaning changes with culture and location)
 :::
 :::
 :::
@@ -430,7 +431,7 @@ Changes happen so gradually you don't notice until it's too late!
 Source: [James Howard](https://jameshoward.us/2024/11/26/context-degradation-syndrome-when-large-language-models-lose-the-plot)
 
 :::{style="font-size: 18px; margin-top: 15px;"}
-Performance declines gradually, even without drift!
+A model that was 95% accurate at launch can drop to 80% within months if left alone
 :::
 :::
 :::
@@ -516,7 +517,7 @@ Not the mean!
 Source: [MongoDB](https://www.mongodb.com/resources/basics/artificial-intelligence/ai-stack)
 
 :::{style="margin-top: 15px; background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px;"}
-Many components = many potential failure points
+If any one layer goes down, you get errors, slowness, or silence
 :::
 :::
 :::
@@ -554,7 +555,7 @@ Many components = many potential failure points
 Source: [Oracle](https://blogs.oracle.com/observability/enhance-your-gen-ai-user-experience-with-llm-observability)
 
 :::{style="font-size: 18px; margin-top: 15px;"}
-A dashboard shows real-time health of an AI system
+Teams watch dashboards like this to catch problems before users notice
 :::
 :::
 :::
@@ -849,7 +850,7 @@ Sources: [r/Bard](https://www.reddit.com/r/Bard/comments/1leiobd/google_is_also_
 
 
 :::{style="font-size: 18px; margin-top: 15px;"}
-A/B testing means different users get different model versions or parameters
+You and your friend might be running different model versions right now without knowing it
 :::
 :::
 :::

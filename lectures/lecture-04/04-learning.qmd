@@ -113,7 +113,7 @@ Source: [Data Science Dojo](https://datasciencedojo.com/blog/machine-learning-10
 # The three learning paradigms 🎓 {background-color="#2d4563"}
 
 ## How do machines learn?
-### Three fundamentally different approaches
+### Three different approaches
 
 :::{style="margin-top: 30px; font-size: 24px;"}
 :::{.columns}
@@ -255,7 +255,7 @@ Source: [Wikipedia](https://en.wikipedia.org/wiki/Logistic_function)
 - Prone to [overfitting]{.alert} (memorising training data)
 - Solution: [Random forests](https://en.wikipedia.org/wiki/Random_forest), which combine many trees
   - Each tree sees different data/features
-  - Average their predictions for robustness
+  - Average their predictions for better accuracy
 :::
 
 :::{.column width=45%}
@@ -298,7 +298,7 @@ Source: [3Blue1Brown](https://www.3blue1brown.com/topics/neural-networks)
 :::
 
 ## The bias-variance trade-off
-### The fundamental tension in ML
+### Too simple or too complex?
 
 :::{style="margin-top: 30px; font-size: 22px;"}
 :::{.columns}
@@ -328,7 +328,7 @@ Source: [Vizuara](https://www.vizuaranewsletter.com/p/e91)
 :::
 
 ## Cross-validation
-### Robust model evaluation
+### Testing your model properly
 
 :::{style="margin-top: 30px; font-size: 24px;"}
 :::{.columns}
@@ -533,7 +533,7 @@ Source: [Wikipedia](https://en.wikipedia.org/wiki/Reinforcement_learning)
 :::
 
 ## The exploration-exploitation trade-off
-### A fundamental dilemma
+### Should you try something new or stick with what works?
 
 :::{style="margin-top: 30px; font-size: 22px;"}
 :::{.columns}
@@ -656,16 +656,16 @@ Source: [Pliny the Liberator](https://pliny.gg/)
 :::
 
 ## AI safety
-### It's not just about making it do what we want
+### Making sure AI does what we actually mean
 
 :::{style="margin-top: 30px; font-size: 27px;"}
 :::{.columns}
 :::{.column width=55%}
-- [Alignment problem]{.alert}: Ensuring models do what we *mean*, not just what we *say*
+- [Alignment problem]{.alert}: Ensuring models do what we *mean*, not what we literally *say*
 - [Specification gaming]{.alert}: Models finding perverse ways to maximise rewards (e.g., [reward hacking]{.alert})
 - [Scalable oversight]{.alert}: How to supervise models that are more capable than their human evaluators
 - [Red teaming]{.alert}: Proactively finding vulnerabilities and [jailbreaks]{.alert}
-- [Safety is not an afterthought]{.alert}: It must be built into the learning process from the start
+- [Safety needs to be part of training]{.alert}, not something you bolt on later
 :::
 
 :::{.column width=45%}
@@ -707,7 +707,7 @@ Source: NanoBanana
 
 - `r fa('book')` [Supervised learning]{.alert} is most common: Learn from labelled examples to predict
 
-- `r fa('balance-scale')` The [bias-variance trade-off]{.alert} is something to always keep in mind: Simple models underfit, complex models overfit
+- `r fa('balance-scale')` The [bias-variance trade-off]{.alert}: Simple models underfit, complex models overfit
 
 - `r fa('search')` [Unsupervised learning]{.alert} discovers hidden structure: Clustering, dimensionality reduction
 

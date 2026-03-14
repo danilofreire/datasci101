@@ -393,7 +393,7 @@ Source: [Boston Consulting Group (2023)](https://www.bcg.com/publications/2023/h
 Source: [Financial Times (2026)](https://www.ft.com/content/c89496b1-bc8d-425e-b86b-ec89402410e4)
 
 :::{style="background: rgba(230, 57, 70, 0.1); padding: 15px; border-radius: 10px; font-size: 18px; margin-top: 15px;"}
-This is [the first wave]{.alert} of labour market impact. Entry-level positions are often the most exposed to automation.
+This matters for you personally: if companies replace junior roles with AI, [where do you get your first job?]{.alert}
 :::
 :::
 :::
@@ -583,7 +583,7 @@ Think about a job you might want after graduation.
 - Did this make you more or less worried?
 
 :::{style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; font-size: 18px; margin-top: 15px;"}
-The goal isn't prediction (which is impossible) but [analytical thinking]{.alert} about how AI intersects with specific work.
+You don't need to predict the future. You need to [think clearly about what AI can and cannot do]{.alert} in a specific role.
 :::
 :::
 :::
@@ -695,9 +695,9 @@ The irony: [The "soft skills"]{.alert} often dismissed as less rigorous may be t
 :::{style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; font-size: 20px;"}
 **Uncomfortable truth:**
 
-The job market that existed when you started university [may not be the same when you graduate]{.alert}. That's unsettling. It's also an opportunity for those who adapt.
+The job market that existed when you started university [may not be the same when you graduate]{.alert}. That is unsettling, and there is no point pretending otherwise.
 
-The people who thrive will be those who can [work with AI]{.alert}.
+But the people who learn to [work with AI]{.alert} will have an edge over those who ignore it.
 :::
 
 :::{style="text-align: center; margin-top: 15px;"}
@@ -788,10 +788,10 @@ There's no right answer. But thinking through [how you'd advise someone else]{.a
 - Think [tasks not jobs]{.alert}
 - [Transition pain]{.alert} matters even if outcome is good
 - Policy choices will shape outcomes
-- [Individual adaptation]{.alert} is necessary but not sufficient
+- Learning AI tools helps, but [policy choices]{.alert} will matter more
 
 :::{style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; margin-top: 15px; font-size: 18px;"}
-"The best way to predict the future is to [help create it]{.alert}." – Peter Drucker
+Nobody predicted "social media manager" in 1990 or "prompt engineer" in 2020. The jobs of 2036 probably don't have names yet.
 :::
 :::
 :::

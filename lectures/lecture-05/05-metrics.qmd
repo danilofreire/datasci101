@@ -96,7 +96,7 @@ Source: [Codefinity](https://codefinity.com/courses/v2/a65bbc96-309e-4df9-a790-a
 
 :::{.column width=50%}
 :::{style="text-align: center;"}
-[![Model evaluation is both an art and a science](figures/ai-evaluation-summary.webp){width="95%"}](#){data-modal-type="image" data-modal-url="figures/ai-evaluation-summary.webp"}
+[![Choosing the right evaluation method](figures/ai-evaluation-summary.webp){width="95%"}](#){data-modal-type="image" data-modal-url="figures/ai-evaluation-summary.webp"}
 
 Source: [Miquido - AI Glossary](https://www.miquido.com/ai-glossary/ai-model-evaluation/)
 :::
@@ -104,38 +104,10 @@ Source: [Miquido - AI Glossary](https://www.miquido.com/ai-glossary/ai-model-eva
 :::
 :::
 
-## Upcoming event
-
-:::{style="text-align: center; margin-top: 30px;"}
-[![](figures/google.png){width="35%"}](#){data-modal-type="image" data-modal-url="figures/google.png"}
-
-[RSVP here](https://forms.office.com/Pages/ResponsePage.aspx?id=nPsE4KSwT0K80DImBtXfOGf5iP0NIbROsdVBvVq1metUNTVaSUJYMkI4QkowR1NBWUtEV1k4NFMzVSQlQCN0PWcu)
-:::
-
 ## Tweet of the day
 
 :::{style="text-align: center; margin-top: 30px;"}
 [![](figures/tweet-of-the-day.jpeg){width="55%"}](#){data-modal-type="image" data-modal-url="figures/tweet-of-the-day.jpeg"}
-:::
-
-## Emory's stance on AI use
-
-:::{style="margin-top: 30px; font-size: 21px;"}
-:::{.columns}
-:::{.column width=50%}
-:::{style="text-align: center;"}
-[![](figures/emory-ai-01.png){width="95%"}](#){data-modal-type="image" data-modal-url="figures/emory-ai-stance.webp"}
-
-Source: [Emory Magazine (2026)](https://news.emory.edu/features/2025/12/emag_knowledge_innovation_02-12-2025/index.html)
-:::
-:::
-
-:::{.column width=50%}
-:::{style="text-align: center;"}
-[![](figures/emory-ai-02.png){width="95%"}](#){data-modal-type="image" data-modal-url="figures/emory-ai-stance.webp"}
-:::
-:::
-:::
 :::
 
 # Why metrics matter 📊 {background-color="#2d4563"}
@@ -226,7 +198,7 @@ Take 30 seconds to think about it...
   - What's the cost of a [false negative]{.alert}? (Saying "no" when it's "yes")
   - Are the classes [balanced]{.alert} or imbalanced?
   - What [action]{.alert} will be taken based on the prediction?
-- The choice of metric is a [design decision with real-world consequences]{.alert}
+- Picking the wrong metric can mean [missing every sick patient or flagging every healthy one]{.alert}
 :::
 
 :::{.column width=45%}
@@ -398,7 +370,7 @@ Source: [X.com](https://x.com/MaartenvSmeden/status/1522230905468862464)
 - **Training set** (~60-70%): Fit the model
 - **Validation set** (~15-20%): Tune hyperparameters
 - **Test set** (~15-20%): [Final evaluation only!]{.alert}
-- [Never peek at test data during development]{.alert}—that's cheating!
+- [Never peek at test data during development]{.alert} (that's cheating!)
 
 **K-fold cross-validation:**
 
@@ -406,7 +378,7 @@ Source: [X.com](https://x.com/MaartenvSmeden/status/1522230905468862464)
 - Train on K-1 folds, validate on the remaining fold
 - Repeat K times, average the results
 - Every data point gets tested once
-- More [robust]{.alert} than a single split, especially for small datasets
+- More [reliable]{.alert} than a single split, especially for small datasets
 :::
 
 :::{.column width=45%}
@@ -659,7 +631,7 @@ How would you verify if an AI's answer is correct?
 
 <br>
 
-[Critical thinking is more important than trust!]{.alert}
+[Always check the sources yourself!]{.alert}
 
 <br>
 
@@ -755,7 +727,7 @@ Vulnerabilities discovered by users in production
 🟢 **With red teaming**:
 Vulnerabilities found before deployment
 → Fixes applied proactively
-→ Safer, more robust models
+→ Safer, more reliable models
 :::
 
 [![Examples of red teaming](figures/red-teaming.png){width="100%"}](figures/red-teaming.png){data-modal-type="image" data-modal-url="figures/red-teaming.png"}

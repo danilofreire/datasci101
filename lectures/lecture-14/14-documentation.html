@@ -1303,7 +1303,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <li>AI systems are complex chains that can fail at any step</li>
 <li>Monitoring helps catch problems before users do</li>
 <li>Testing for properties, not exact outputs</li>
-<li><strong>Today</strong>: We enter <span class="alert">Module 4—Data Ethics and Bias</span></li>
+<li><strong>Today</strong>: We enter <span class="alert">Module 4, Data Ethics and Bias</span></li>
 <li><span class="alert">Documentation</span> as the first line of defence</li>
 <li>If you don’t know where your data came from, <span class="alert">you can’t fix bias</span></li>
 <li>Meta AI research scientist <a href="https://venturebeat.com/technology/datasheets-could-be-the-solution-to-biased-ai">Moustapha Cissé</a>: “<em>You are what you eat, and right now we feed our models junk food</em>.”</li>
@@ -1718,9 +1718,6 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <p>“Assistance with illegal activities”</p>
 <p>“Chemical synthesis”</p>
 <p>“Mental health crisis intervention”</p>
-<div style="margin-top: 10px;">
-<p><span class="alert">Clear boundaries protect users and developers alike</span></p>
-</div>
 </div>
 </div></div>
 </div>
@@ -1776,9 +1773,6 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <p>“We tested the risk of certain kinds of denigration with CLIP by classifying images of people from Fairface into crime-related and non-human animal categories.”</p>
 </blockquote>
 </div>
-<div style="margin-top: 15px; background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px;">
-<p><span class="alert">Industry trend</span>: Leading companies now report disaggregated metrics in model cards.</p>
-</div>
 </div></div>
 </div>
 </section>
@@ -1788,7 +1782,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <div class="columns">
 <div class="column" style="width:55%;">
 <p><strong>A newer concept: System Cards</strong></p>
-<p>As AI systems become more complex, a single “model card” isn’t enough. <strong>System cards</strong> document the <span class="alert">entire AI system</span>, not just one model.</p>
+<p>Modern AI products often chain several models together. A model card only covers one of them, so <strong>system cards</strong> document the <span class="alert">entire system</span>.</p>
 <p><strong>What’s included in a system card:</strong></p>
 <ul>
 <li>Multiple models working together</li>
@@ -1858,7 +1852,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <div class="columns">
 <div class="column" style="width:55%;">
 <p><strong>The data behind modern AI:</strong></p>
-<p>Large language models and image generators are trained on <span class="alert">massive datasets</span> scraped from the web. Understanding how these datasets are created is important to understanding their biases.</p>
+<p>Large language models and image generators are trained on <span class="alert">massive datasets</span> scraped from the web. If you want to understand where bias comes from, start with how the data was collected.</p>
 <p><strong><a href="https://commoncrawl.org/">Common Crawl</a>: The foundation</strong></p>
 <ul>
 <li>Non-profit that crawls the web monthly</li>
@@ -2020,8 +2014,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </div>
 </div>
 <div style="margin-top: 15px; background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px;">
-<p><strong>Why FAIR matters for AI:</strong></p>
-<p>The NIH, EU, and major funders now require FAIR data practices. AI datasets that follow FAIR principles are more trustworthy.</p>
+<p>The NIH, EU, and most major funders now <span class="alert">require</span> FAIR data practices for grant-funded research.</p>
 </div>
 </div></div>
 </div>
@@ -2098,7 +2091,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </figure>
 </div>
 <div style="font-size: 18px; margin-top: 10px;">
-<p>Growing recognition that data ownership matters</p>
+<p>Jaron Lanier, author of <em>Who Owns the Future?</em></p>
 </div>
 </div>
 <div style="margin-top: 15px; background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px;">
@@ -2172,7 +2165,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </div>
 </div>
 <div style="margin-top: 15px; background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px;">
-<p><span class="alert">Trend</span>: Major platforms now <span class="alert">require</span> documentation to publish datasets/models!</p>
+<p>Hugging Face <span class="alert">will not list</span> a model or dataset without a card. Google Dataset Search ignores undocumented datasets entirely.</p>
 </div>
 </div></div>
 </div>
@@ -2192,7 +2185,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <li><p><svg aria-hidden="true" role="img" viewbox="0 0 576 512" style="height:1em;width:1.12em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M0 80C0 53.5 21.5 32 48 32h96c26.5 0 48 21.5 48 48V96H384V80c0-26.5 21.5-48 48-48h96c26.5 0 48 21.5 48 48v96c0 26.5-21.5 48-48 48H432c-26.5 0-48-21.5-48-48V160H192v16c0 1.7-.1 3.4-.3 5L272 288h96c26.5 0 48 21.5 48 48v96c0 26.5-21.5 48-48 48H272c-26.5 0-48-21.5-48-48V336c0-1.7 .1-3.4 .3-5L144 224H48c-26.5 0-48-21.5-48-48V80z" /></svg> <strong>Data lineage</strong>: Track where data came from and how it changed</p></li>
 <li><p><svg aria-hidden="true" role="img" viewbox="0 0 448 512" style="height:1em;width:0.88em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M448 80v48c0 44.2-100.3 80-224 80S0 172.2 0 128V80C0 35.8 100.3 0 224 0S448 35.8 448 80zM393.2 214.7c20.8-7.4 39.9-16.9 54.8-28.6V288c0 44.2-100.3 80-224 80S0 332.2 0 288V186.1c14.9 11.8 34 21.2 54.8 28.6C99.7 230.7 159.5 240 224 240s124.3-9.3 169.2-25.3zM0 346.1c14.9 11.8 34 21.2 54.8 28.6C99.7 390.7 159.5 400 224 400s124.3-9.3 169.2-25.3c20.8-7.4 39.9-16.9 54.8-28.6V432c0 44.2-100.3 80-224 80S0 476.2 0 432V346.1z" /></svg> <strong>FAIR principles</strong>: Findable, Accessible, Interoperable, Reusable data</p></li>
 <li><p><svg aria-hidden="true" role="img" viewbox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M96 128a128 128 0 1 1 256 0A128 128 0 1 1 96 128zM0 482.3C0 383.8 79.8 304 178.3 304h91.4C368.2 304 448 383.8 448 482.3c0 16.4-13.3 29.7-29.7 29.7H29.7C13.3 512 0 498.7 0 482.3zM625 177L497 305c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L591 143c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z" /></svg> <strong>Consent matters</strong>: Much AI training data lacks proper consent</p></li>
-<li><p><svg aria-hidden="true" role="img" viewbox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M184 48H328c4.4 0 8 3.6 8 8V96H176V56c0-4.4 3.6-8 8-8zm-56 8V96H64C28.7 96 0 124.7 0 160v96H192 320 512V160c0-35.3-28.7-64-64-64H384V56c0-30.9-25.1-56-56-56H184c-30.9 0-56 25.1-56 56zM512 288H320v32c0 17.7-14.3 32-32 32H224c-17.7 0-32-14.3-32-32V288H0V416c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V288z" /></svg> <strong>Career opportunity</strong>: Documentation skills are increasingly valuable</p></li>
+<li><p><svg aria-hidden="true" role="img" viewbox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M184 48H328c4.4 0 8 3.6 8 8V96H176V56c0-4.4 3.6-8 8-8zm-56 8V96H64C28.7 96 0 124.7 0 160v96H192 320 512V160c0-35.3-28.7-64-64-64H384V56c0-30.9-25.1-56-56-56H184c-30.9 0-56 25.1-56 56zM512 288H320v32c0 17.7-14.3 32-32 32H224c-17.7 0-32-14.3-32-32V288H0V416c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V288z" /></svg> <strong>Career opportunity</strong>: Employers are hiring for documentation and data governance roles</p></li>
 </ul>
 </div>
 </section></section>

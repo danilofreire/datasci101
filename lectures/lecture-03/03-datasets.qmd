@@ -106,7 +106,7 @@ Source: [Medium](https://blog.dataengineerthings.org/the-ai-revolution-is-nothin
 ## Tweet of the day
 
 :::{style="margin-top: 30px; font-size: 26px; text-align: center;"}
-[![](figures/tweet-of-the-day.jpg){width="50%"}](#){data-modal-type="image" data-modal-url="figures/tweet-of-the-day.jpg"}
+[![](figures/tweet-of-the-day.jpg){width="40%"}](#){data-modal-type="image" data-modal-url="figures/tweet-of-the-day.jpg"}
 :::
 
 ## What matters more?
@@ -160,7 +160,7 @@ Source: [Medium](https://urwamuaz.medium.com/neural-networks-fail-on-data-with-s
 # Why data quality matters 📊 {background-color="#2d4563"}
 
 ## Garbage in, garbage out
-### The fundamental principle
+### Why your model can't outrun bad data
 
 :::{style="margin-top: 30px; font-size: 22px;"}
 :::{.columns}
@@ -171,7 +171,6 @@ Source: [Medium](https://urwamuaz.medium.com/neural-networks-fail-on-data-with-s
   - Missing important information (e.g., age, income, etc.)
   - Conflicting labels or formats (e.g., "yes" vs "1")
   - Biases, not representative of reality (e.g., gender, race, etc.)
-- [The quality of your models is directly tied to the quality of your data]{.alert}
 - **Data-centric AI**: Andrew Ng's insight (2021): focus on [improving the data]{.alert}, not just the model
   - Check: <https://datacentricai.org/>
 :::
@@ -199,7 +198,7 @@ Source: [xkcd](https://xkcd.com/1838/)
 | Hiring AI | Trained on historical (male-dominated) hiring decisions | [Penalised female candidates]{.alert} |
 
 :::{.fragment}
-> These weren't algorithm failures—they were [data failures]{.alert}.
+> These weren't algorithm failures; they were [data failures]{.alert}.
 :::
 :::
 
@@ -218,9 +217,11 @@ Source: [xkcd](https://xkcd.com/1838/)
 - **Binary classification**: Two classes
 - **Multi-class**: Many classes (one per input)
 - **Multi-label**: Multiple labels per input
-- Key challenge: [How do you define the classes?]{.alert}
+- [How do you define the classes?]{.alert}
 
+:::{style="text-align: center;"}
 [![Classification](figures/classification.png){width="80%"}](#){data-modal-type="image" data-modal-url="figures/classification.png"}
+:::
 :::
 
 :::{.column width=50%}
@@ -231,7 +232,9 @@ Source: [xkcd](https://xkcd.com/1838/)
 - The choice of target variable is [a design decision]{.alert}
 - Different targets can lead to very different models
 
+:::{style="text-align: center;"}
 [![Regression](figures/regression.png){width="80%"}](#){data-modal-type="image" data-modal-url="figures/regression.png"}
+:::
 :::
 :::
 :::
@@ -452,7 +455,7 @@ Source: [WisdomPlexus](https://wisdomplexus.com/blogs/ai-bias-in-action-real-wor
 # Labelling data 🏷️ {background-color="#2d4563"}
 
 ## Why labelling is hard
-### The human bottleneck
+### Humans are slow, expensive, and inconsistent
 
 :::{style="margin-top: 30px; font-size: 23px;"}
 :::{.columns}
@@ -496,43 +499,6 @@ Source: [Galliot](https://galliot.us/blog/data-labeling-approaches-challenges-to
 Source: [LeewayHertz](https://www.leewayhertz.com/data-annotation/)
 :::
 
-## Be the annotator! 🏷️
-### Try labelling these examples yourself
-
-:::{style="margin-top: 30px; font-size: 20px;"}
-:::{.columns}
-:::{.column width="50%"}
-**Instructions**: For each example, decide on the label. Discuss with your neighbours!
-
-:::{.fragment}
-### Example 1: Email Spam Detection
-
-> "Congratulations! You've been selected to receive a $50 Amazon gift card for completing our customer satisfaction survey. Click here: [surveyrewards-amazon.com]()"
-
-**Is this SPAM or NOT SPAM?** 
-:::
-:::
-
-:::{.column width="50%"}
-:::{.fragment}
-### Example 2: Sentiment Analysis  
-
-> "The hotel room was clean and the location was perfect. However, the staff were incredibly rude and the WiFi didn't work at all. I probably won't stay here again."
-
-**Is this POSITIVE, NEGATIVE, or NEUTRAL?** 
-:::
-
-:::{.fragment}
-### Example 3: Content Moderation
-
-> "This politician is an absolute moron who doesn't understand basic economics."
-
-**Should this be REMOVED or ALLOWED?** 
-:::
-:::
-:::
-:::
-
 ## MNIST dataset
 
 :::{style="margin-top: 30px; font-size: 24px;"}
@@ -548,7 +514,7 @@ Source: <https://labelerrors.com/>
 :::
 
 ## Writing good annotation guidelines
-### The foundation of quality labels
+### What annotators actually need from you
 
 :::{style="margin-top: 30px; font-size: 24px;"}
 :::{.columns}
@@ -565,7 +531,7 @@ Best practices:
 
 - [Test guidelines]{.alert} with a small group first
 - [Iterate]{.alert} based on confusion and disagreements
-- Keep guidelines [living documents]{.alert}—update as needed
+- Keep guidelines as [living documents]{.alert} and update them as needed
 :::
 
 :::{.column width=45%}
@@ -624,7 +590,7 @@ $$\kappa = \frac{\text{obs. agreement} - \text{exp. agreement}}{1 - \text{exp. a
 :::
 
 ## Quality control
-### The gold standard approach
+### Catching mistakes before they reach your model
 
 :::{style="margin-top: 30px; font-size: 24px;"}
 :::{.columns}
@@ -650,8 +616,8 @@ Source: [SuperAnnotate](https://www.superannotate.com/blog/guide-to-data-labelin
 :::
 :::
 
-## Building a robust annotation pipeline
-### End-to-end workflow
+## Building an annotation pipeline
+### From guidelines to final dataset
 
 :::{style="margin-top: 20px; font-size: 24px;"}
 :::{.columns}

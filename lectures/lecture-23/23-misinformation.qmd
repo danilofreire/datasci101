@@ -152,7 +152,7 @@ Source: [X.com](https://x.com/jasminericegirl/status/1750582061814157764)
 Source: [CUNY Library](https://library.csi.cuny.edu/misinformation)
 
 :::{style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; font-size: 18px; margin-top: 15px;"}
-Not all false information is equal. Understanding the [type and intent]{.alert} helps us respond appropriately.
+The response to a grandmother sharing a wrong health tip is very different from the response to a state-sponsored disinformation campaign. [Intent matters]{.alert}.
 :::
 :::
 :::
@@ -271,7 +271,7 @@ Platform incentives often [work against truth]{.alert}. This isn't a bug; it's a
 [![](figures/encoder-decoder.webp){width="100%"}](#){data-modal-type="image" data-modal-url="figures/encoder-decoder.webp"}
 
 :::{style="font-size: 18px; margin-top: 15px;"}
-The same techniques that create art and entertainment also create convincing deceptions. To know more, read the [comprehensive survey by Tolosana et al. (2020)](https://arxiv.org/abs/2004.11138).
+For a technical deep dive, see the [survey by Tolosana et al. (2020)](https://arxiv.org/abs/2004.11138).
 :::
 :::
 :::
@@ -312,7 +312,7 @@ The same techniques that create art and entertainment also create convincing dec
 Source: [NPR](https://www.npr.org/2022/03/16/1087062648/deepfake-video-zelenskyy-experts-war-manipulation-ukraine-russia)
 
 :::{style="font-size: 18px; margin-top: 15px;"}
-The [harms are real]{.alert}.
+96% of deepfakes are non-consensual intimate images. [Women bear most of the cost]{.alert}.
 :::
 :::
 :::
@@ -352,7 +352,7 @@ The [harms are real]{.alert}.
 Source: [RAND Corporation](https://www.rand.org/pubs/perspectives/PEA1043-1.html)
 
 :::{style="background: rgba(230, 57, 70, 0.1); padding: 15px; border-radius: 10px; font-size: 18px; margin-top: 15px;"}
-"The challenge isn't just detecting deepfakes. It's maintaining the [social trust]{.alert} that allows evidence to have meaning."
+Even if every deepfake were labelled tomorrow, the damage is done: people now [doubt real video too]{.alert}. That is the liar's dividend.
 :::
 :::
 :::
@@ -562,7 +562,7 @@ Confirmation bias is not about intelligence. Educated people are sometimes [bett
 :::{.column width=45%}
 :::{style="text-align: center;"}
 <!-- Suggested image: Social proof / bandwagon illustration -->
-[![](figures/bandwagon-effect.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/bandwagon-effect.png"}
+[![](figures/bandwagon-effect.jpg){width="100%"}](#){data-modal-type="image" data-modal-url="figures/bandwagon-effect.jpg"}
 
 :::{style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; font-size: 18px; margin-top: 15px;"}
 Asch's experiments used lines on a card. Today, the same psychology plays out with [deepfake videos shared millions of times]{.alert}.
@@ -753,7 +753,7 @@ Source: [Vice - YouTube](https://youtu.be/cHGbWn6iwHw)
 Source: [Columbia Journal of Law and Arts](https://journals.library.columbia.edu/index.php/lawandarts/announcement/view/844)
 
 :::{style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; font-size: 18px; margin-top: 15px;"}
-Law moves slower than technology. By the time legislation passes, the [technology has moved on]{.alert}.
+The EU AI Act took three years to pass. In that time, we went from DALL-E 2 to [video generators that fool most viewers]{.alert}.
 :::
 :::
 :::
@@ -860,7 +860,7 @@ Source: [The Seattle Times](https://www.seattletimes.com/business/one-tech-tip-h
 - Provenance: promising, years away
 - Legal: slow, jurisdictional
 - Literacy: helps, doesn't scale
-- [Comprehensive approach]{.alert} required
+- No single fix works; [layering defences]{.alert} is the best we have
 :::
 :::
 :::

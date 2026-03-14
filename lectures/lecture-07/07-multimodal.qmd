@@ -586,7 +586,7 @@ Source: [Sam Galope (2024)](https://www.samgalope.dev/2024/07/25/convert-wav-fil
 
 - What does it get right? Wrong?
 - Does it understand your accent?
-- What about punctuation—who decides where sentences end?
+- What about punctuation? Who decides where sentences end?
 :::
 
 :::{.column width=45%}
@@ -632,7 +632,7 @@ Source: [Sam Galope (2024)](https://www.samgalope.dev/2024/07/25/convert-wav-fil
 [![Suno AI music generation](figures/suno-ai.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/suno-ai.png"}
 
 :::{style="font-size: 18px; margin-top: 10px;"}
-[suno.ai](https://suno.ai/) — Try generating your own song!
+[suno.ai](https://suno.ai/). Try generating your own song!
 :::
 
 :::{style="margin-top: 20px; background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; font-size: 20px;"}
@@ -657,7 +657,7 @@ Source: [Sam Galope (2024)](https://www.samgalope.dev/2024/07/25/convert-wav-fil
   - Image patch → 4096-dimensional vector
   - Audio segment → 4096-dimensional vector
 - Once in embedding space, the [LLM doesn't know the original modality]{.alert}!
-- This enables [true multimodal understanding]{.alert}
+- This is why [multimodal models]{.alert} can work with text, images, and audio at the same time
 :::
 
 :::{.column width=45%}
@@ -665,7 +665,7 @@ Source: [Sam Galope (2024)](https://www.samgalope.dev/2024/07/25/convert-wav-fil
 [![All modalities converge to embeddings](figures/modality-embeddings.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/modality-embeddings.png"}
 
 :::{style="font-size: 18px; margin-top: 10px;"}
-Text, images, and audio all become the same kind of numbers—then AI can understand them together!
+Text, images, and audio all become the same kind of numbers, so AI can understand them together!
 :::
 :::
 :::
@@ -683,9 +683,9 @@ Text, images, and audio all become the same kind of numbers—then AI can unders
 :::
 
 :::{style="margin-top: 20px;"}
-1. **Modality Encoder**: Vision Transformer (images) or Whisper (audio) — [pre-trained specialists]{.alert}
-2. **Projection Layer**: Aligns encoder outputs to LLM's embedding space — [often surprisingly simple!]{.alert}
-3. **LLM Backbone**: The "brain" (GPT, Gemini, Claude) — processes everything as tokens
+1. **Modality Encoder**: Vision Transformer (images) or Whisper (audio). These are [pre-trained specialists]{.alert}
+2. **Projection Layer**: Aligns encoder outputs to the LLM's embedding space. This part is [often surprisingly simple!]{.alert}
+3. **LLM Backbone**: The "brain" (GPT, Gemini, Claude), which processes everything as tokens
 :::
 :::
 :::
@@ -737,30 +737,12 @@ Should AI-generated content require...
 - Watermarks that can't be removed?
 - Disclosure that it's AI-made?
 - Consent from people being depicted?
-- None of the above—free speech?
+- None of the above (free speech)?
 
 [How would you enforce it?]{.alert}
 
 :::{style="margin-top: 20px; text-align: center;"}
 **Take 2 minutes, then we'll share perspectives!**
-:::
-:::
-
-## The bright side: Amazing applications
-
-:::{style="margin-top: 30px; font-size: 28px;"}
-
-| Application | How it helps | Impact |
-|-------------|--------------|--------|
-| 🏥 **Medical imaging** | Detects cancer earlier than human doctors | Saves lives |
-| ♿ **Accessibility** | Describes images for blind users, transcribes for deaf users | Independence |
-| 🌍 **Language** | Whisper transcribes 99 languages | Breaks barriers |
-| 🎬 **Entertainment** | Dubbing films into any language with original actor's voice | Global storytelling |
-| 📚 **Education** | AI tutors that can show and explain | Personalised learning |
-| 🔬 **Science** | Analysing microscope images, satellite data | Accelerates discovery |
-
-:::{style="margin-top: 20px; text-align: center; background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px;"}
-[The technology isn't good or bad—it's how we use it]{.alert}
 :::
 :::
 
@@ -774,7 +756,7 @@ Should AI-generated content require...
 
 - `r fa('music')` **Sound = pictures of vibrations**: We turn audio into spectrograms and use image AI!
 
-- `r fa('brain')` **The big insight**: Text, images, and audio all become [embeddings]{.alert}—the same kind of numbers
+- `r fa('brain')` **The big insight**: Text, images, and audio all become [embeddings]{.alert}, the same kind of numbers
 
 - `r fa('link')` **Multimodal AI**: ChatGPT, Claude, and Gemini can see images because [everything speaks the same mathematical "language"]{.alert}
 

@@ -51,14 +51,14 @@ if (!require("fontawesome", character.only = TRUE)) {
 
 ## Recap of last class
 
-:::{style="margin-top: 20px; font-size: 26px;"}
+:::{style="margin-top: 20px; font-size: 25px;"}
 :::{.columns}
 :::{.column width=50%}
 - We explored [model evaluation]{.alert} across two domains
 - **Traditional ML metrics**: Accuracy, precision, recall
 - The [accuracy paradox]{.alert}: 99.9% accuracy can be useless!
 - **Overfitting**: When models memorise instead of learn
-- **Cross-validation**: More robust evaluation
+- **Cross-validation**: More reliable evaluation
 - **LLM evaluation**: Perplexity, LLM-as-a-Judge, G-Eval
 - **Hallucinations** and **RAG** for grounding answers
 - Today: [How do LLMs actually understand language?]{.alert} 🤔
@@ -178,7 +178,7 @@ Source: <https://www.anthropic.com/research/AI-assistance-coding-skills>
 6. **Output**: Generate next token probabilities
 7. **Decoding**: Convert back to text
 
-[Every word you type goes through this transformation!]{.alert}
+[Your prompt goes through all of these steps before the model produces a single word]{.alert}
 :::
 
 :::{.column width=45%}
@@ -207,8 +207,6 @@ Understanding the pipeline helps you:
 
 :::{style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; margin-top: 20px;"}
 **Fun fact**: The word "everything" is 1 token, but "ChatGPT" is 3 tokens in OpenAI's (old) tokeniser! 🤯
-
-Tokenisation isn't always intuitive!
 :::
 :::
 
@@ -419,7 +417,7 @@ Source: [TensorFlow Projector](https://projector.tensorflow.org/)
 :::
 
 ## Word2Vec: A brief history
-### The breakthrough that started it all
+### Where modern embeddings began
 
 :::{style="margin-top: 30px; font-size: 22px;"}
 :::{.columns}
@@ -531,7 +529,7 @@ Source: [Pinecone](https://www.pinecone.io/learn/bertopic/)
 # Parameters: The LLM's Brain 🧠 {background-color="#2d4563"}
 
 ## What is a parameter?
-### The numbers that make AI tick
+### What are these numbers, exactly?
 
 :::{style="margin-top: 30px; font-size: 22px;"}
 :::{.columns}
@@ -612,7 +610,7 @@ Source: [Medium](https://catherinebreslin.medium.com/what-is-a-parameter-3d4b773
 - Help detect subtle patterns that might otherwise be missed
 - Like a baseline adjustment
 
-[TL;DR: Weights and biases together determine how the model processes information]{.alert}
+[In short: embeddings store word meanings, weights connect the dots, and biases fine-tune the thresholds]{.alert}
 :::
 
 :::{.column width=45%}
@@ -848,7 +846,7 @@ Source: [Microsoft Education](https://www.microsoft.com/en-us/education/blog/202
 
 :::{style="margin-top: 30px; font-size: 28px;"}
 
-- `r fa('language')` LLMs don't read text—they process [tokens]{.alert}, numerical representations of text chunks
+- `r fa('language')` LLMs don't read text; they process [tokens]{.alert}, numerical representations of text chunks
 
 - `r fa('puzzle-piece')` [Tokenisation]{.alert} breaks text into pieces; ~100 tokens ≈ 75 words; affects cost and limits
 

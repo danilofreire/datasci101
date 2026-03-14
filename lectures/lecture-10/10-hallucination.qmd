@@ -139,9 +139,9 @@ Source: [X.com](https://x.com/wirespeed_/status/1962508239817589147)
 - ❌ May invent citations, facts, or events
 - ❌ AI doesn't "know" it's lying
 
-**The unsettling part:**
+**The tricky part:**
 
-There's often [no signal]{.alert} that the AI is hallucinating. It sounds just as confident as when it's correct!
+There's often [no signal]{.alert} that the AI is hallucinating. It sounds just as confident as when it's correct.
 :::
 
 :::{.column width=45%}
@@ -323,7 +323,7 @@ Source: [Chakraborty et al (2025)](https://www.nature.com/articles/s41598-025-15
 Source: [The Cloud Girl Blog](https://www.thecloudgirl.dev/blog/rag-eliminating-hallucinations-in-llms)
 
 :::{style="font-size: 18px; margin-top: 15px;"}
-Each type presents different risks
+Citation hallucinations are the hardest to catch because they look so specific
 :::
 :::
 :::
@@ -510,7 +510,6 @@ but accurate           but risky
 
 "I don't know"         New ideas!
 Refuses often          Sometimes wrong
-Very literal           Imaginative
 ```
 
 **Different tasks need different points on this spectrum!**
@@ -523,7 +522,7 @@ Very literal           Imaginative
 Source: [Kevin Kelly (2024)](https://kk.org/thetechnium/the-tradeoffs-in-ai/)
 
 :::{style="font-size: 18px; margin-top: 15px;"}
-Different tasks require different balances
+You'd want a creative AI for brainstorming, but a cautious one for tax advice
 :::
 :::
 :::
@@ -570,7 +569,7 @@ More here: [The Case for AI Hallucination](https://uxdesign.cc/the-case-for-ai-h
 :::
 
 :::{style="margin-top: 15px; background: rgba(230, 57, 70, 0.1); padding: 15px; border-radius: 10px;"}
-[Match the task to the tool.]{.alert} Use high-creativity settings for creative work, high-accuracy approaches for factual work (obviously!)
+[Bottom line]{.alert}: Before you worry about hallucinations, ask yourself whether you actually need the AI to be factual right now.
 :::
 :::
 :::
@@ -658,12 +657,12 @@ Let's ask <https://chat.z.ai/> these questions and request a [confidence rating 
 [![Specific claim, impressive detail, completely wrong! The answer is the Hubble telescope](figures/spotting-hallucinations.avif){width="100%"}](#){data-modal-type="image" data-modal-url="figures/spotting-hallucinations.avif"}
 
 :::{style="font-size: 18px; margin-top: 15px;"}
-Learn to recognise warning signs
+Impressive-sounding detail is often the first sign something is made up
 :::
 :::
 
 :::{style="margin-top: 15px; background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px;"}
-[Golden rule]{.alert}: The more specific and confident the AI sounds, the more you should verify!
+[Golden rule]{.alert}: If the AI gives you a precise percentage or a page number, that's exactly when you should double-check.
 :::
 :::
 :::
@@ -687,7 +686,7 @@ Learn to recognise warning signs
 :::{style="margin-top: 15px;"}
 **Does this eliminate hallucinations?**
 
-[No!]{.alert} But it can reduce them significantly. The key is [stacking multiple techniques]{.alert} together.
+[No!]{.alert} But it can reduce them. Combining several of these techniques in one prompt works better than any single trick.
 :::
 :::
 
@@ -795,7 +794,7 @@ QUESTION: [your question]
 - You need prompts for high-stakes tasks
 
 :::{style="margin-top: 15px; background: rgba(230, 57, 70, 0.1); padding: 15px; border-radius: 10px;"}
-[Key insight]{.alert}: The AI can help you build prompts that make it *less likely* to hallucinate!
+[Key insight]{.alert}: You're basically asking the model "how should I talk to you so you don't make things up?"
 :::
 :::
 
@@ -807,8 +806,8 @@ QUESTION: [your question]
 I'm building a prompt to ask 
 you about historical events.
 
-I'm worried about hallucinations
-—you might invent dates, names, 
+I'm worried about hallucinations.
+You might invent dates, names,
 or events that didn't happen.
 
 Help me write a prompt that:
@@ -823,7 +822,7 @@ chance you'll make things up?
 :::
 
 :::{style="margin-top: 15px; font-size: 18px;"}
-**Try it!** Ask ChatGPT or Claude to critique and improve your prompts. You'll often get [surprisingly useful suggestions]{.alert}.
+**Try it!** Ask ChatGPT or Claude to critique and improve your prompts. The suggestions are often [better than what you'd write on your own]{.alert}.
 :::
 :::
 :::
@@ -863,7 +862,7 @@ chance you'll make things up?
 [![Knowledge cutoff](figures/knowledge-cutoff.webp){width="50%"}](#){data-modal-type="image" data-modal-url="figures/knowledge-cutoff.webp"}
 
 :::{style="font-size: 18px; margin-top: 15px;"}
-LLMs are "frozen in time" at their training date
+Anything after the cutoff date is a blind spot, and the model won't tell you that
 :::
 :::
 
@@ -967,38 +966,7 @@ Source: [Towards AI](https://pub.towardsai.net/what-is-rag-a-clear-and-simple-ex
 "Show your reasoning step by step"
 ```
 
-... or just embrace randomness for creative tasks! 😄
-:::
-:::
-:::
-
-## Further reading
-
-:::{style="margin-top: 30px; font-size: 22px;"}
-:::{.columns}
-:::{.column width=50%}
-**Academic:**
-
-- Jiang, X., et al. (2024). [A survey on LLM hallucination via a creativity perspective](https://arxiv.org/abs/2402.06647). Comprehensive overview.
-- Ji, Z., et al. (2023). [Survey of Hallucination in Natural Language Generation](https://arxiv.org/abs/2202.03629). Technical deep dive.
-
-**Accessible:**
-
-- Wikipedia. [Hallucination (AI)](https://en.wikipedia.org/wiki/Hallucination_(artificial_intelligence)). Well-written overview.
-- OpenAI (2024). [Does ChatGPT tell the truth?](https://help.openai.com/en/articles/8313428-does-chatgpt-tell-the-truth). From the source.
-:::
-
-:::{.column width=50%}
-**Cases and news:**
-
-- [Lawyer sanctioned for fake ChatGPT cases](https://www.nytimes.com/2023/06/08/nyregion/lawyer-chatgpt-sanctions.html). NYT coverage.
-- [AI hallucination rate doubled in 2025](https://www.forbes.com/). Forbes report.
-
-**Tools to explore:**
-
-- [Perplexity.ai](https://perplexity.ai) — Search with citations
-- [NotebookLM](https://notebooklm.google.com) — Grounded in your docs
-- [ChatPDF](https://chatpdf.com) — Chat with PDFs
+For creative tasks, you can skip most of these. Let the model run wild 😄
 :::
 :::
 :::

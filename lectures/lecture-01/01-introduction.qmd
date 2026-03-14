@@ -67,7 +67,7 @@ if (!require("fontawesome", character.only = TRUE)) {
 
 :::{.column width=50%}
 :::{style="text-align: center; margin-top: -50px;"}
-![](figures/cute-robot.png){width="70%"}
+![](figures/cute-robot.png){width="65%"}
 :::
 :::
 :::
@@ -318,7 +318,7 @@ Source: [McKinsey & Company (2024)](https://www.mckinsey.com/featured-insights/m
     - Finance (e.g., fraud detection, algorithmic trading)
     - Transportation (e.g., autonomous vehicles, route optimisation)
     - Education (e.g., personalised learning, 24/7 tutoring)
-- If the predictions are correct, [AI will be one of, if not the most, important technological advancements of our time]{.alert}
+- Whether AI lives up to the hype or not, [it is already changing how many of these industries work]{.alert}
 :::
 
 :::{.column width=50%}
@@ -501,7 +501,7 @@ Source: [Artificial Intelligence Index Report (2025)](https://hai.stanford.edu/a
   - From symbolic approaches to data-driven learning
   - The transformer architecture explained in plain language
   - How we got from early AI to ChatGPT
-- [Main takeaway:]{.alert} Understanding how AI evolved helps us understand where it's going
+- [Main takeaway:]{.alert} You can't make sense of ChatGPT without knowing the 70 years of ideas that led to it
 - [Preparation:]{.alert} Read the assigned articles on AI history and transformers
 :::
 
@@ -517,4 +517,4 @@ Suggested video: [The Thinking Game](https://www.youtube.com/watch?v=d95J8yzvjbQ
 
 # ... and that's all for today! 🎉 {background-color="#2d4563"}
 
-# Thank you very much for your attention! 🙏🏻 <br><br> Have a great day! 😊 {background-color="#2d4563"}
+# Have a great day! 😊 {background-color="#2d4563"}

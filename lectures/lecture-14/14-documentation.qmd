@@ -58,7 +58,7 @@ if (!require("fontawesome", character.only = TRUE)) {
 - AI systems are complex chains that can fail at any step
 - Monitoring helps catch problems before users do
 - Testing for properties, not exact outputs
-- **Today**: We enter [Module 4—Data Ethics and Bias]{.alert}
+- **Today**: We enter [Module 4, Data Ethics and Bias]{.alert}
 - [Documentation]{.alert} as the first line of defence
 - If you don't know where your data came from, [you can't fix bias]{.alert}
 - Meta AI research scientist [Moustapha Cissé](https://venturebeat.com/technology/datasheets-could-be-the-solution-to-biased-ai): "_You are what you eat, and right now we feed our models junk food_."
@@ -476,9 +476,6 @@ People [will]{.alert} use models inappropriately and harm others.
 
 "Mental health crisis intervention"
 
-:::{style="margin-top: 10px;"}
-[Clear boundaries protect users and developers alike]{.alert}
-:::
 :::
 :::
 :::
@@ -524,9 +521,6 @@ OpenAI found [significant disparities]{.alert} when classifying people into crim
 > "We tested the risk of certain kinds of denigration with CLIP by classifying images of people from Fairface into crime-related and non-human animal categories."
 :::
 
-:::{style="margin-top: 15px; background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px;"}
-[Industry trend]{.alert}: Leading companies now report disaggregated metrics in model cards.
-:::
 :::
 :::
 :::
@@ -538,7 +532,7 @@ OpenAI found [significant disparities]{.alert} when classifying people into crim
 :::{.column width=55%}
 **A newer concept: System Cards**
 
-As AI systems become more complex, a single "model card" isn't enough. **System cards** document the [entire AI system]{.alert}, not just one model.
+Modern AI products often chain several models together. A model card only covers one of them, so **system cards** document the [entire system]{.alert}.
 
 **What's included in a system card:**
 
@@ -587,7 +581,7 @@ As AI systems become more complex, a single "model card" isn't enough. **System 
 :::{.column width=55%}
 **The data behind modern AI:**
 
-Large language models and image generators are trained on [massive datasets]{.alert} scraped from the web. Understanding how these datasets are created is important to understanding their biases.
+Large language models and image generators are trained on [massive datasets]{.alert} scraped from the web. If you want to understand where bias comes from, start with how the data was collected.
 
 **[Common Crawl](https://commoncrawl.org/): The foundation**
 
@@ -755,9 +749,7 @@ Source: [GO-FAIR](https://www.go-fair.org/fair-principles/)
 :::
 
 :::{style="margin-top: 15px; background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px;"}
-**Why FAIR matters for AI:**
-
-The NIH, EU, and major funders now require FAIR data practices. AI datasets that follow FAIR principles are more trustworthy.
+The NIH, EU, and most major funders now [require]{.alert} FAIR data practices for grant-funded research.
 :::
 :::
 :::
@@ -833,7 +825,7 @@ Most large AI models are trained on data [without explicit consent]{.alert}:
 [![Data rights](figures/lanier.jpg){width="100%"}](#){data-modal-type="image" data-modal-url="figures/lanier.png"}
 
 :::{style="font-size: 18px; margin-top: 10px;"}
-Growing recognition that data ownership matters
+Jaron Lanier, author of *Who Owns the Future?*
 :::
 :::
 
@@ -913,7 +905,7 @@ You wrote a poem and posted it online in 2018. An AI company scraped it, and now
 :::
 
 :::{style="margin-top: 15px; background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px;"}
-[Trend]{.alert}: Major platforms now [require]{.alert} documentation to publish datasets/models!
+Hugging Face [will not list]{.alert} a model or dataset without a card. Google Dataset Search ignores undocumented datasets entirely.
 :::
 :::
 :::
@@ -937,7 +929,7 @@ You wrote a poem and posted it online in 2018. An AI company scraped it, and now
 
 - `r fa('user-check')` **Consent matters**: Much AI training data lacks proper consent
 
-- `r fa('briefcase')` **Career opportunity**: Documentation skills are increasingly valuable
+- `r fa('briefcase')` **Career opportunity**: Employers are hiring for documentation and data governance roles
 
 :::
 

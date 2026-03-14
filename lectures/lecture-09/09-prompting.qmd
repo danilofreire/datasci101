@@ -174,7 +174,7 @@ Remember from [Lecture 06](https://raw.githack.com/danilofreire/datasci185/main/
 - Specific prompts activate [narrow, relevant patterns]{.alert}
 - The model has no goals, desires, or understanding. It produces statistically likely continuations
 
-[Prompt engineering is about activating the right patterns]{.alert}.
+[A specific prompt narrows the model's options, so you get what you actually need]{.alert}.
 :::
 
 :::{.column width=45%}
@@ -183,7 +183,7 @@ Remember from [Lecture 06](https://raw.githack.com/danilofreire/datasci185/main/
 
 [![](figures/llm-prediction.webp){width="90%"}](#){data-modal-type="image" data-modal-url="figures/llm-prediction.webp"}
 
-Your prompt sets the statistical context for what comes next
+A vague prompt leaves too many likely continuations; a specific one narrows the field
 :::
 :::
 :::
@@ -248,7 +248,6 @@ Also from [Lecture 06](https://raw.githack.com/danilofreire/datasci185/main/lect
 - **Factual extraction**: Temperature 0.0-0.2 (deterministic)
 - **Creative writing**: Temperature 0.7-1.0 (varied)
 - **Classification**: Temperature 0.0 (consistent labels)
-- **Brainstorming**: Temperature 0.8+ (diverse ideas)
 - ChatGPT or Gemini [don't have a temperature slider]{.alert}. But you can use [Google AI Studio](https://ai.google/studio) or [OpenAI's playground](https://platform.openai.com/playground) to control temperature
 - You can also [simulate]{.alert} temperature by using instructions like ["be extremely precise and factual" (low temperature)]{.alert} or ["be wildly creative and unpredictable" (high temperature)]{.alert} in a prompt
 :::
@@ -333,7 +332,7 @@ When you use ChatGPT or Claude, there's [hidden text you never see]{.alert} that
 - Personality ("Be helpful, harmless, and honest...")
 - Output conventions ("Use markdown formatting...")
 
-[Every commercial AI product has a carefully designed system prompt]{.alert}.
+[ChatGPT, Claude, Gemini, Copilot: they all ship with system prompts you never see]{.alert}.
 :::
 
 :::{.column width=45%}
@@ -406,52 +405,12 @@ More here: <https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools>
 :::
 :::
 
-## Activity: Persona showdown 🎭
-
-:::{style="margin-top: 30px; font-size: 18px;"}
-:::{.columns}
-:::{.column width=50%}
-**The same question, three personas:**
-
-> "Should I invest in cryptocurrency?"
-
-**Test these system prompts:**
-
-1. **No persona** (default behaviour)
-
-2. **Conservative analyst**:
-
-> "You are a risk-averse financial analyst with 30 years experience who prioritises capital preservation."
-
-3. **Tech enthusiast**:
-
-> "You are a blockchain researcher and early Bitcoin adopter who believes in decentralised finance."
-
-⏱️ 3 minutes to test all three!
-:::
-
-:::{.column width=50%}
-**What to observe:**
-
-- How does the recommendation differ?
-- Which persona [acknowledges its own bias]{.alert}?
-- Which response is most useful?
-
-:::{style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; font-size: 18px; margin-top: 15px;"}
-**Meta-lesson**: Personas change [what information is emphasised]{.alert}, what risks are mentioned, and what assumptions are made.
-
-[Always ask: what persona is this response from?]{.alert}
-:::
-:::
-:::
-:::
-
 ## Meta-prompting and storing prompts
 
 :::{style="margin-top: 30px; font-size: 20px;"}
 :::{.columns}
 :::{.column width=55%}
-**Meta-prompting** is asking the AI to help you craft better prompts. It uses the AI's knowledge of its own patterns.
+**Meta-prompting** is asking the AI to help you craft better prompts. The model has seen enough prompt-response pairs in training that it can spot gaps in yours.
 
 **Examples:**
 
@@ -465,9 +424,9 @@ More here: <https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools>
 :::{.column width=45%}
 **Why this works:**
 
-The model has seen [millions of prompts and their outcomes]{.alert} in training data. It has implicit knowledge of what makes prompts succeed or fail.
+Think of it this way: the model has processed [millions of instruction-response pairs]{.alert} during training, so it can often tell you what information is missing from your prompt.
 
-[Let the AI teach you how to prompt it]{.alert}.
+[Ask the AI what it needs from you]{.alert}.
 
 :::{style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; font-size: 18px;"}
 **Useful meta-prompting questions:**
@@ -652,7 +611,7 @@ REPORT:
 :::
 
 :::{style="font-size: 18px; margin-top: 15px; text-align: center;"}
-Structured outputs let you build [reliable pipelines]{.alert}
+With a fixed schema, you can feed LLM output straight into your code
 :::
 :::
 :::
@@ -660,14 +619,14 @@ Structured outputs let you build [reliable pipelines]{.alert}
 
 # Chain-of-Thought reasoning 🧠 {background-color="#2d4563"}
 
-## The discovery that changed prompting
+## How "think step by step" started
 
 :::{style="margin-top: 30px; font-size: 20px;"}
 :::{.columns}
 :::{.column width=55%}
 In January 2022, [Wei et al.](https://arxiv.org/abs/2201.11903) published a paper that transformed how we use LLMs:
 
-Asking models to show their reasoning [dramatically improves accuracy]{.alert} on complex tasks!
+Asking models to show their reasoning [improves accuracy by a wide margin]{.alert} on complex tasks.
 
 **The experiment:**
 
@@ -836,7 +795,7 @@ Observation: $176.30
 Final Answer: $176.30
 ```
 
-**Why this matters to us**: The "Thought" steps let the model [plan and adapt]{.alert}.
+**Why this matters**: Without the "Thought" steps, the model would try to answer in one shot and likely get the date or the price wrong.
 :::
 
 :::{.column width=45%}
@@ -943,7 +902,7 @@ Even [perfect prompts will sometimes fail unexpectedly]{.alert}.
 
 **The practical response:**
 
-Build a mental [reliability map]{.alert}: learn where your model works well and where it stumbles. [This knowledge comes from experience]{.alert}
+Build a mental [reliability map]{.alert}: learn where your model works well and where it stumbles. [You build this by testing lots of prompts and tracking what goes wrong]{.alert}
 
 :::{style="background: rgba(230, 57, 70, 0.1); padding: 15px; border-radius: 10px; font-size: 17px; margin-top: 15px;"}
 [Always verify critical outputs]{.alert}. Treat LLM outputs as drafts to review, not final answers.
@@ -958,7 +917,7 @@ Build a mental [reliability map]{.alert}: learn where your model works well and 
 
 :::{style="margin-top: 30px; font-size: 26px;"}
 
-- `r fa('flask')` **Prompt engineering is empirical**: Test, measure, iterate. What works for one task may fail for another.
+- `r fa('flask')` **Prompt engineering is empirical**: There is no universal "best prompt". You have to test on your own data and adjust.
 
 - `r fa('list-check')` **The PTCF framework**: Persona → Task → Context → Format gives structure to every prompt.
 

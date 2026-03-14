@@ -89,7 +89,7 @@ Source: [Google Research](https://research.google/blog/deeper-insights-into-retr
 
 - Finding by meaning, not just keywords
 - Quick embeddings recap
-- Why this is a game-changer
+- Why this matters for RAG
 :::
 
 :::{.column width=50%}
@@ -140,7 +140,7 @@ What if we could give the LLM [access to real, verified information]{.alert} whe
 [![](figures/hallucination-example.webp){width="100%"}](#){data-modal-type="image" data-modal-url="figures/hallucination-example.webp"}
 
 :::{style="font-size: 18px; margin-top: 15px;"}
-RAG is designed to address exactly this problem!
+What if the LLM could look things up before answering?
 :::
 
 Source: [Iguazio](https://www.iguazio.com/glossary/llm-hallucination/)
@@ -331,7 +331,7 @@ The search finds "puppies" when you ask about "dogs"!
 
 **Right side (every query)**: Find relevant info, then generate answer
 
-[Think of it like a librarian (retrieval) who finds the right books, paired with a scholar (generation) who reads them and answers your question!]{.alert} 📚
+[The preparation work pays off because you only do it once; after that, every query is fast]{.alert} 📚
 :::
 :::
 
@@ -497,7 +497,7 @@ Retrieved chunks become the LLM's "reference material"
 :::
 
 :::{style="margin-top: 15px; background: rgba(230, 57, 70, 0.1); padding: 12px; border-radius: 10px;"}
-[This is why RAG reduces hallucinations!]{.alert} The LLM has verified information to work with, not just its training data!
+[This is why RAG reduces hallucinations]{.alert}: the LLM answers from your documents instead of guessing from its training data
 :::
 :::
 :::
@@ -809,7 +809,7 @@ You just built a RAG system! 🎉
 | 💻 **Developer Tools** | Documentation QA | Answer questions from codebases | GitHub Copilot, Cursor |
 
 :::{style="margin-top: 15px; font-size: 20px;"}
-**Common thread**: All need [accurate, source-backed answers]{.alert} from specific documents...exactly what RAG provides
+In each case, the user needs answers grounded in [specific documents]{.alert}, and the system needs to cite where the answer came from
 
 **Market size**: Enterprise RAG solutions expected to reach [$40B+ by 2028]{.alert} (estimates vary)
 

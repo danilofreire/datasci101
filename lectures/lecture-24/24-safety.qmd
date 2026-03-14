@@ -177,8 +177,8 @@ Source: [Saetra & Donaher (2023)](https://link.springer.com/article/10.1007/s436
 :::{style="margin-top: 30px;"}
 :::
 - We're still [early enough]{.alert} to shape development
-- Safety research is growing
-- Industry increasingly engaged, governments are starting to catch up
+- Safety research is growing, but still a fraction of what goes into capabilities
+- Major labs (Anthropic, DeepMind, OpenAI) now have dedicated safety teams
 :::
 
 :::{.column width=45%}
@@ -294,7 +294,7 @@ How do you [specify "safe"]{.alert} without already knowing everything about the
 [![Political polarisation is real, but sometimes not designed](figures/social-media-democracy.png){width="60%"}](#){data-modal-type="image" data-modal-url="figures/social-media-democracy.png"}
 :::
 :::{style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; font-size: 18px; margin-top: 15px;"}
-The world is [too complex to specify everything]{.alert} we care about. AI must somehow learn to preserve what matters.
+Nobody told the engagement algorithm "don't polarise society." [If you don't put it in the objective, the system won't care about it]{.alert}.
 :::
 :::
 :::
@@ -499,7 +499,7 @@ If we align AI to human values...
 - **[Pluralist]{.alert}**: Multiple systems for different contexts
 
 :::{style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; font-size: 18px; margin-top: 15px;"}
-Alignment is [not just technical]{.alert}. It's deeply political. Technical solutions can't avoid value choices.
+"Whose values?" is a political question. No amount of engineering can avoid it. That is what makes alignment [so difficult]{.alert}.
 :::
 :::
 :::
@@ -626,7 +626,7 @@ Source: [American Enterprise Institute](https://www.aei.org/articles/would-agi-b
 Source: [TED](https://www.ted.com/talks/stuart_russell_3_principles_for_creating_safer_ai)
 
 :::{style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; font-size: 18px; margin-top: 15px;"}
-Russell is a leading AI researcher who takes long-term safety [very seriously]{.alert}. Worth hearing him out.
+Russell literally wrote the most-used [AI textbook]{.alert} (*AI: A Modern Approach*). When he says we have a problem, it is worth paying attention.
 :::
 :::
 :::
@@ -820,7 +820,7 @@ Source: [r/OptimistsUnite](https://www.reddit.com/r/OptimistsUnite/comments/1ew5
 - [Neither panic nor complacency]{.alert}
 
 :::{style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; margin-top: 15px; font-size: 18px;"}
-The future of AI is [not determined]{.alert}. Our choices matter. Understanding the landscape is step one.
+The future of AI is [not determined]{.alert}. The choices we make now, about alignment, oversight, and governance, will shape what that future looks like.
 :::
 :::
 :::

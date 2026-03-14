@@ -1,6 +1,6 @@
 ---
 title: "DATASCI 185: Introduction to AI Applications"
-subtitle: "Lecture 16: AI in Finance and Healthcare - Opportunities and Biases"
+subtitle: "Lecture 16: AI in Finance and Healthcare"
 author:
   - name: Danilo Freire
     orcid: 0000-0002-4712-6810
@@ -123,12 +123,12 @@ Source: [Medium](https://medium.com/@codingandcoffee/ai-luddites-and-the-future-
 :::{.column width=55%}
 ML has been used in medicine for years, mostly for tasks with [labelled data and a clear outcome]{.alert}:
 
-- **Medical imaging**: CNNs detect tumours in X-rays, mammograms, retinal scans. Some match or beat radiologists
-- **Risk scoring**: ML models predict readmission, sepsis, mortality. Hospitals use these to allocate resources
-- **Drug discovery**: ML screens millions of molecules against protein targets, saving years in early development
-- **ECG analysis**: Deep learning flags arrhythmias from wearables in real time
+- [Medical imaging]{.alert}: CNNs detect tumours in X-rays, mammograms, retinal scans. Some match or beat radiologists
+- [Risk scoring]{.alert}: ML models predict readmission, sepsis, mortality. Hospitals use these to allocate resources
+- [Drug discovery]{.alert}: ML screens millions of molecules against protein targets, saving years in early development
+- [Electrocardiogram analysis]{.alert}: Deep learning flags arrhythmias from wearables in real time
 
-All [well-defined tasks]{.alert}: structured input in, classification or number out.
+The common thread: give the model [structured input]{.alert}, get a classification or a number out.
 :::
 
 :::{.column width=45%}
@@ -136,7 +136,7 @@ All [well-defined tasks]{.alert}: structured input in, classification or number 
 [![](figures/healthcare-ml.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/healthcare-ml.png"}
 
 :::{style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; font-size: 18px; margin-top: 15px;"}
-Traditional ML in healthcare works best for [classification or regression]{.alert} on structured data.
+If you can put the input in a spreadsheet and the output is a number or a category, traditional ML is probably the right tool.
 :::
 :::
 :::
@@ -150,13 +150,13 @@ Traditional ML in healthcare works best for [classification or regression]{.aler
 :::{.column width=55%}
 LLMs handle tasks that involve [reading, writing, and reasoning about text]{.alert}:
 
-- **Clinical note summarisation**: Pull out key medications, diagnoses, and follow-up instructions in seconds
-- **Patient-facing chatbots**: Explain diagnoses in plain language, answer follow-up questions, triage symptoms
-- **Literature synthesis**: Summarise findings across dozens of papers on a condition
-- **Clinical trial matching**: Match unstructured patient records against trial eligibility criteria (previously done by hand)
+- [Clinical note summarisation]{.alert}: Pull out key medications, diagnoses, and follow-up instructions in seconds
+- [Patient-facing chatbots]{.alert}: Explain diagnoses in plain language, answer follow-up questions, triage symptoms
+- [Literature synthesis]{.alert}: Summarise findings across dozens of papers on a condition
+- [Clinical trial matching]{.alert}: Match unstructured patient records against trial eligibility criteria (previously done by hand)
 - [My suggestion]{.alert}: [DeepMind's MedGemma](https://deepmind.google/models/gemma/medgemma/), a free and open-source LLM for medical tasks. Optimised for medical text and image comprehension
 
-All require [understanding language]{.alert}, not crunching numbers.
+The key difference from traditional ML: these tasks need [language comprehension]{.alert}, not number-crunching.
 :::
 
 :::{.column width=45%}
@@ -176,7 +176,7 @@ Source: [Google Health AI](https://health.google/health-research/medical-ai/)
 :::{style="margin-top: 30px; font-size: 22px;"}
 :::{.columns}
 :::{.column width=55%}
-Over 150 US health systems use [AI-drafted messages]{.alert} via Epic's MyChart (GPT-4):
+Over 150 US health systems use [AI-drafted messages]{.alert} via [Epic's MyChart (GPT-4)](https://www.epic.com/software/ai/):
 
 - Patient sends a question about medication side effects
 - System reads the patient's record and drafts a response
@@ -204,18 +204,18 @@ Source: [Google Research](https://sites.research.google/gr/med-palm/)
 :::{.column width=55%}
 LLMs are already used to [talk to patients]{.alert}:
 
-- **Multilingual support**: Translate discharge instructions into a patient's language without a dedicated translator
-- **After-visit summaries**: Plain-language version of what happened and what to do next
-- **Symptom triage**: Chatbots recommend whether to see a doctor, go to A&E, or stay home
+- [Multilingual support]{.alert}: Translate discharge instructions into a patient's language without a dedicated translator
+- [After-visit summaries]{.alert}: Plain-language version of what happened and what to do next
+- [Symptom triage]{.alert}: Chatbots recommend whether to see a doctor, go to A&E, or stay home
 
-**John Muir Health**: clinicians using AI-assisted charting saved [34 min/day]{.alert} on documentation. Physician turnover dropped 44%.
+**John Muir Health**: clinicians using AI-assisted charting saved [34 min/day]{.alert} on documentation. Physician turnover dropped 44%. [More here](https://www.epicshare.org/share-and-learn/john-muir-upmc-ai-charting)
 
 Liability remains unresolved. If an AI chatbot gives bad advice and a patient is harmed, who is responsible?
 :::
 
 :::{.column width=45%}
-:::{style="text-align: center;"}
-[![The technology is deployed. The governance frameworks are still catching up.](figures/patient-chatbot.webp){width="100%"}](#){data-modal-type="image" data-modal-url="figures/patient-chatbot.webp"}
+:::{style="text-align: center; margin-top: 30px;"}
+[![Millions of patients already interact with AI chatbots, but liability rules have not caught up.](figures/patient-chatbot.webp){width="100%"}](#){data-modal-type="image" data-modal-url="figures/patient-chatbot.webp"}
 
 Source: [NewsMedical.net](https://www.news-medical.net/health/The-Pros-and-Cons-of-Healthcare-Chatbots.aspx)
 :::
@@ -262,14 +262,14 @@ Source: [The New York Times](https://www.nytimes.com/2025/11/16/briefing/meet-dr
 :::{style="margin-top: 30px; font-size: 22px;"}
 :::{.columns}
 :::{.column width=55%}
-Finance was one of the [earliest adopters]{.alert} of ML. Tasks are well-defined and data is plentiful:
+Finance adopted ML early, and for good reason: there is a lot of structured data and the [payoffs are measurable]{.alert}.
 
 - **Price forecasting**: Neural networks on time-series data. Results are mixed; markets are noisy
 - **Credit scoring**: Logistic regression estimate default probability. Backbone of consumer lending
 - **Fraud detection**: Deep learning flags suspicious transactions in real time. Outperforms rule-based systems (McKinsey, 2023)
 - **Algorithmic trading**: RL agents learn strategies by trial and error in simulated markets
 
-All involve [numerical data, clear targets, and plenty of training examples]{.alert}.
+These tasks share a common trait: the inputs are numbers, the outputs are numbers, and you can tell quickly whether the model is working.
 :::
 
 :::{.column width=45%}
@@ -277,7 +277,7 @@ All involve [numerical data, clear targets, and plenty of training examples]{.al
 [![Jim Simons, an extremely successful quant trader. He started in 1988!](figures/simons.jpg){width="100%"}](#){data-modal-type="image" data-modal-url="figures/simons.jpg"}
 
 :::{style="font-size: 18px; margin-top: 15px;"}
-Financial ML relies on [structured, numerical data]{.alert}: price histories, transaction records, credit files.
+Jim Simons started using ML for trading in 1988. The data was there; the question was always whether the models were good enough.
 :::
 :::
 :::
@@ -324,7 +324,7 @@ Source: [CFA Institute](https://rpc.cfainstitute.org/research/the-automation-ahe
 | **Cost** | Lower inference cost | Higher — large models are expensive to run |
 
 :::{style="margin-top: 20px;"}
-**Rule of thumb from [Li et al. (2023)](https://arxiv.org/abs/2311.10723)**: if your task has a [clear definition]{.alert} (e.g. regression, classification), plenty of labelled data, and does not need common-sense reasoning, a traditional model is probably cheaper and just as good. LLMs pay off when you are dealing with [unstructured text, ambiguity, or multi-step reasoning]{.alert}.
+**Rule of thumb** ([Li et al., 2023](https://arxiv.org/abs/2311.10723)): if your task is [well-defined]{.alert} (regression, classification) and you have plenty of labelled data, a traditional model is cheaper and just as good. LLMs pay off when the input is [unstructured text]{.alert} or when the task requires reasoning across multiple steps.
 :::
 :::
 :::
@@ -353,7 +353,7 @@ Several LLMs have been fine-tuned for finance:
 [![](figures/finance-llms.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/finance-llms.png"}
 
 :::{style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; font-size: 18px; margin-top: 15px;"}
-Domain-specific LLMs trade general ability for better [financial language understanding]{.alert}. More about [BloombergGPT here](https://arxiv.org/abs/2303.17564)
+The trade-off: these models understand financial jargon better, but lose ground on general reasoning. [BloombergGPT paper](https://arxiv.org/abs/2303.17564)
 :::
 :::
 :::
@@ -411,7 +411,7 @@ LLMs can [orchestrate multi-step workflows]{.alert} ([Li et al., 2023](https://a
 4. Run the code and interpret results
 5. Present a recommendation
 
-The LLM acts as [planner and coordinator]{.alert}, calling databases, APIs, and code interpreters. JPMorgan already uses AI agents for investment advice.
+The LLM is the glue: it decides what to do next, calls the right tool, and passes results along. JPMorgan already uses AI agents for investment advice.
 :::
 
 :::{.column width=45%}
@@ -443,7 +443,7 @@ The LLM does not "know" finance the way a quant does. It [orchestrates tools]{.a
 - Analysts query internal research repositories
 - Knowledge bases stay current as regulations change
 
-RAG is one of the most practical near-term LLM applications in both fields because it addresses the hallucination problem directly.
+RAG is popular in both fields for one reason: it lets the model cite actual documents instead of making things up.
 :::
 
 :::{.column width=45%}
@@ -485,7 +485,7 @@ RAG reduces hallucination but does not eliminate risk. Both domains face [domain
 - A clinician might skip verification if the answer comes with citations. A compliance officer might not read the full regulation
 
 :::{style="background: rgba(230, 57, 70, 0.1); padding: 15px; border-radius: 10px; font-size: 18px; margin-top: 10px;"}
-RAG is better than pure LLM generation, but "grounded" does not mean "correct." The knowledge base itself can be biased, incomplete, or stale.
+RAG is better than pure LLM generation, but "grounded" does not mean "correct." If the knowledge base has gaps, the answers will too.
 :::
 :::
 :::
@@ -736,9 +736,6 @@ A health insurer uses an LLM to read clinical notes and [estimate costs for prem
 - "Expensive" patients pay more → [reduced access]{.alert}
 - Would you be comfortable if this system made decisions about [you or someone you care about]{.alert}?
 
-:::{style="background: rgba(230, 57, 70, 0.1); padding: 15px; border-radius: 10px; font-size: 18px; margin-top: 10px;"}
-This scenario combines LLM text comprehension, healthcare data, financial incentives, and bias.
-:::
 :::
 :::
 :::
@@ -771,7 +768,7 @@ This scenario combines LLM text comprehension, healthcare data, financial incent
 - [Disaggregated analysis]{.alert} is the only way to see the problem
 
 :::{style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; margin-top: 15px; font-size: 18px;"}
-AI in healthcare and finance is not good or bad by default. What matters is [how it is built, who it serves, and who audits it]{.alert}.
+The same algorithm can save lives or deny care, depending on what it optimises for. The Optum case showed that a single proxy choice (costs vs. health outcomes) changed everything.
 :::
 :::
 :::

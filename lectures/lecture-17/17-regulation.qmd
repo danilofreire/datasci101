@@ -177,7 +177,7 @@ Source: [r/agi](https://www.reddit.com/r/agi/comments/1klizks/how_do_you_feel_ab
 - Consumer protection already exists
 
 :::{style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; margin-top: 15px; font-size: 18px;"}
-The debate isn't whether to regulate, but [how much, what, and when]{.alert}.
+Most people agree AI needs some rules. The real argument is [where to draw the line]{.alert} and who gets to draw it.
 :::
 :::
 
@@ -636,7 +636,7 @@ China has been [surprisingly active]{.alert} on AI regulation:
 Source: [Corporate Compliance Insights](https://www.corporatecomplianceinsights.com/regulating-artificial-intelligence-china-west/)
 
 :::{style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; font-size: 18px; margin-top: 15px;"}
-China's approach: Regulate [commercial AI carefully]{.alert}, but [state use is largely unrestricted]{.alert}. Different values, different rules.
+China's approach: regulate [commercial AI carefully]{.alert}, but [state use is largely unrestricted]{.alert}.
 :::
 :::
 :::
@@ -701,7 +701,7 @@ No global consensus on AI governance. The "Brussels Effect" (EU rules becoming g
 | **Extraterritorial** | Yes | Limited | Yes | No |
 
 :::{style="margin-top: 20px;"}
-The EU is the only major jurisdiction with a [comprehensive, binding law]{.alert}. Others rely on existing frameworks, guidance, or sector-specific rules.
+The EU is the only jurisdiction that has passed a [comprehensive, binding law]{.alert}. If your company sells AI in both the EU and the US, you will need two separate compliance strategies.
 :::
 :::
 :::
@@ -742,7 +742,7 @@ The EU is the only major jurisdiction with a [comprehensive, binding law]{.alert
 :::{style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; font-size: 20px; margin-top: 60px;"}
 **Compliance as competitive advantage:**
 
-Companies that build ethical AI now will be [better positioned]{.alert} when regulations arrive. "Responsible AI" isn't just ethics; it's risk management.
+Companies that document their training data and build in oversight now will have less to fix when regulations arrive. Compliance is cheaper when you plan for it from the start.
 :::
 :::
 :::
@@ -765,12 +765,11 @@ Companies that build ethical AI now will be [better positioned]{.alert} when reg
 - Can regulation keep pace with technology?
 - What about [AI systems that don't fit categories]{.alert}?
 
-**Certainties:**
+**What we do know:**
 
-- AI governance is here to stay
-- Companies need compliance strategies
-- International coordination will increase
-- Affected communities will demand accountability
+- Every major economy is working on AI rules
+- Companies that sell globally will face multiple regimes
+- The EU's rules will likely shape what other countries do, just as GDPR did for data protection
 :::
 
 :::{.column width=45%}
@@ -829,7 +828,7 @@ Source: [LinkedIn](https://www.linkedin.com/posts/senkorasic_stealing-this-meme-
 - Stay informed as rules evolve
 
 :::{style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; margin-top: 15px; font-size: 18px;"}
-AI regulation is a [moving target]{.alert}. What we discussed today will evolve. The principles (transparency, accountability, human oversight) are more stable than specific rules.
+The specific rules will keep changing, but the core question stays the same: how do you hold someone accountable for a decision made by a machine? Every framework we covered today is trying to answer that.
 :::
 :::
 :::

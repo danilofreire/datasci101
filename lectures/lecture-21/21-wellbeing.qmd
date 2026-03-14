@@ -64,9 +64,9 @@ if (!require("fontawesome", character.only = TRUE)) {
 
 :::{.column width=50%}
 :::{style="text-align: center; margin-top: -30px;"}
-[![](figures/wellbeing-intro.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/wellbeing-intro.png"}
+[![](figures/ai-interview.jpg){width="100%"}](#){data-modal-type="image" data-modal-url="figures/ai-interview.jpg"}
 
-Source: [WHO (2025)](https://www.who.int/news-room/fact-sheets/detail/mental-health-strengthening-our-response)
+Source: [China Daily](https://www.chinadailyhk.com/hk/article/335124)
 :::
 :::
 :::
@@ -108,12 +108,10 @@ There are no right answers to the questions I put on screen. I'm curious what yo
 :::
 :::
 
-## Meme of the day 😄
+## (Sad) meme of the day
 
 :::{style="text-align: center; margin-top: 30px;"}
-[![](figures/meme-of-the-day.jpg){width="55%"}](#){data-modal-type="image" data-modal-url="figures/meme-of-the-day.jpg"}
-
-Source: [Twitter/X](https://x.com)
+[![](figures/meme-of-the-day.jpg){width="40%"}](#){data-modal-type="image" data-modal-url="figures/meme-of-the-day.jpg"}
 :::
 
 # The attention economy 📱 {background-color="#2d4563"}
@@ -123,20 +121,20 @@ Source: [Twitter/X](https://x.com)
 :::{style="margin-top: 30px; font-size: 22px;"}
 :::{.columns}
 :::{.column width=55%}
-- Herbert Simon (1971): information-rich environments create [attention-poor]{.alert} ones
-- You have limited hours and limited focus. That's the scarce resource
+- [Herbert Simon (1971)](https://gwern.net/doc/design/1971-simon.pdf): information-rich environments create [attention-poor]{.alert} ones
+- You have limited hours and limited focus. That's the scarce resource ([Becker, 1965 - "A theory of the allocation of time"](https://academic.oup.com/ej/article-abstract/75/299/493/5250146))
 - The business model: capture attention, sell it to advertisers
 - Google, Meta, TikTok. The service is free. [You are the product]{.alert}
-- Tristan Harris (ex-Google design ethicist): called it "the race to the bottom of the brainstem"
+- [Tristan Harris](https://www.cbsnews.com/news/what-is-brain-hacking-tech-insiders-on-why-you-should-care/) (ex-Google design ethicist): called it "the race to the bottom of the brainstem"
 - The goal is not to inform you but to [keep you on the screen]{.alert}
-- Tim Wu's *The Attention Merchants* (2016) traces this logic from 19th-century newspapers to social media
+- [Tim Wu's *The Attention Merchants* (2016)](https://www.goodreads.com/book/show/28503628-the-attention-merchants) traces this logic from 19th-century newspapers to social media
 :::
 
 :::{.column width=45%}
-:::{style="text-align: center;"}
+:::{style="text-align: center; margin-top: -30px;"}
 [![](figures/attention-economy.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/attention-economy.png"}
 
-Source: [Center for Humane Technology](https://www.humanetech.com/)
+Source: [The Atlantic](https://www.theatlantic.com/technology/archive/2021/06/how-memes-become-money/619189/)
 :::
 
 :::{style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; font-size: 18px; margin-top: 15px;"}
@@ -166,10 +164,12 @@ The core loop:
 
 :::{.column width=45%}
 :::{style="text-align: center;"}
-[![](figures/recommendation-loop.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/recommendation-loop.png"}
+[![](figures/recommendation-loop.webp){width="100%"}](#){data-modal-type="image" data-modal-url="figures/recommendation-loop.webp"}
+
+Source: [Data Science Dojo](https://datasciencedojo.com/blog/social-media-recommendation-system/)
 
 :::{style="font-size: 18px; margin-top: 15px;"}
-The feedback loop runs continuously, shaping what you see next
+Every swipe teaches the algorithm something about you
 :::
 :::
 
@@ -185,11 +185,11 @@ These systems have [no concept of "healthy" consumption]{.alert}. They optimise 
 :::{style="margin-top: 30px; font-size: 21px;"}
 :::{.columns}
 :::{.column width=55%}
-- Eli Pariser coined "filter bubble" in 2011
+- [Eli Pariser](https://www.ted.com/talks/eli_pariser_beware_online_filter_bubbles) coined "filter bubble" in 2011
 - The fear: algorithms seal you in a cocoon of confirming content
 - Compelling idea. Two large experiments say: [probably overstated]{.alert}
-- Nyhan et al. (2023, *Nature*): reduced like-minded content on Facebook during the 2020 US election, polarisation [barely changed]{.alert}
-- Guess et al. (2023, *Science*): algorithmic vs. chronological feeds → [little difference in political attitudes]{.alert}
+- [Nyhan et al. (2023, *Nature*)](https://www.nature.com/articles/s41586-023-06297-w): reduced like-minded content on Facebook during the 2020 US election, polarisation [barely changed]{.alert}
+- [Guess et al. (2023, *Science*)](https://www.science.org/doi/10.1126/science.abp9364): algorithmic vs. chronological feeds → [little difference in political attitudes]{.alert}
 - So filter bubbles may not drive polarisation the way we feared
 - But that's [one outcome]{.alert}. Effects on anxiety, body image, attention spans, and sleep are separate questions, with worse answers
 :::
@@ -213,11 +213,11 @@ Good news on political polarisation. [Less good news]{.alert} on mental health a
 :::{style="margin-top: 30px; font-size: 22px;"}
 :::{.columns}
 :::{.column width=55%}
-- In 2023, YouTube admitted that [watch time alone is a poor proxy for satisfaction]{.alert}
-- Started measuring "likes per impression" instead. Took over a decade
+- YouTube has [gradually shifted](https://blog.youtube/inside-youtube/on-youtubes-recommendation-system/) away from watch time as a sole metric, adding satisfaction surveys and other signals
+- Took over a decade to move beyond pure [engagement metrics]{.alert}
 - The "outrage drives clicks" problem: content that makes you angry, anxious, or fearful [gets shared more and watched longer]{.alert}
 - The algorithm learns this. Surfaces more of it
-- The Facebook Papers (2021, *WSJ*): internal research showed Instagram made [body image worse for teenage girls]{.alert}
+- The [Facebook Papers (2021, *WSJ*)](https://www.wsj.com/articles/facebook-knows-instagram-is-toxic-for-teen-girls-company-documents-show-11631620739): internal research showed Instagram made [body image worse for teenage girls]{.alert}
 - Facebook had the data, but kept the feature because fixing it would have cost engagement
 - The problem is structural: company revenue and user wellbeing [point in opposite directions]{.alert}
 :::
@@ -230,7 +230,42 @@ Source: [Wall Street Journal](https://www.wsj.com/articles/facebook-knows-instag
 :::
 
 :::{style="background: rgba(230, 57, 70, 0.1); padding: 15px; border-radius: 10px; font-size: 18px; margin-top: 15px;"}
-Companies have a legal duty to shareholders, not to user wellbeing. [The incentives are structurally misaligned]{.alert}.
+Companies have a legal duty to shareholders, not to users. When engagement and wellbeing conflict, [engagement wins]{.alert}.
+:::
+:::
+:::
+:::
+
+## Teens and screens: what the data says
+
+:::{style="margin-top: 30px; font-size: 22px;"}
+:::{.columns}
+:::{.column width=55%}
+- Jonathan Haidt's [*The Anxious Generation*](https://www.anxiousgeneration.com/) (2024): smartphones and social media are [rewiring childhood]{.alert} and driving a mental health crisis
+- Compelling narrative. But what do the numbers say?
+- [Orben & Przybylski (2019, *Nature Human Behaviour*)](https://www.nature.com/articles/s41562-018-0506-1): screen time explains [at most 0.4%]{.alert} of the variance in adolescent wellbeing
+- For context, wearing glasses has a [3x larger]{.alert} negative association. Eating potatoes has a similar one. Sleep is [44x]{.alert} more strongly associated
+- Haidt's evidence is mostly correlational: teen depression rose *around the same time* as smartphone adoption. But correlation is not causation (remember lecture 03?)
+- [Candice Odgers (*Nature*, 2024)](https://www.nature.com/articles/d41586-024-00902-2): reviewed Haidt's claims and found the evidence does not support his causal story
+- Neither side is wrong, exactly. Haidt asks the right question; Orben and Odgers insist on [the right standard of evidence]{.alert}
+:::
+
+:::{.column width=45%}
+:::{style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px;"}
+**How large is the effect?**
+
+| Factor | Association with wellbeing |
+|--------|---------------------------|
+| Screen time | ~0.4% of variance |
+| Wearing glasses | ~3x screen time |
+| Sleep quality | ~44x screen time |
+| Family relationships | Much larger still |
+
+Small effects can still matter at population scale. But they should not be presented as if they explain the whole story.
+:::
+
+:::{style="background: rgba(230, 57, 70, 0.1); padding: 12px; border-radius: 10px; font-size: 18px; margin-top: 15px;"}
+When someone says "screens are destroying a generation," ask: [how large is the effect, and what else was measured?]{.alert}
 :::
 :::
 :::
@@ -241,6 +276,8 @@ Companies have a legal duty to shareholders, not to user wellbeing. [The incenti
 :::{style="margin-top: 30px; font-size: 22px;"}
 :::{.columns}
 :::{.column width=55%}
+:::{style="text-align: center;"}
+
 | Platform | Change | Scope |
 |----------|--------|-------|
 | Instagram | "Recommended content" toggle | Opt-in |
@@ -248,12 +285,13 @@ Companies have a legal duty to shareholders, not to user wellbeing. [The incenti
 | YouTube | "Take a break" / "Bedtime" reminders | Opt-in |
 | Meta | Teen Accounts with safer defaults | Under-18 |
 | Snapchat | No algorithmic Discover for teens | Under-18 |
+:::
 
 - The sceptical read: most are opt-in, or reach a minority of users
 - The core advertising model? Unchanged
 - Also handy to point at when regulators come knocking
-- US Surgeon General (2023): called for [warning labels]{.alert} on social media for under-18s
-- Amy Orben (Cambridge): [transparency about *why* content is recommended]{.alert} changes behaviour more than usage caps
+- [US Surgeon General (2023)](https://pubmed.ncbi.nlm.nih.gov/37721985/): issued an [advisory on social media and youth mental health]{.alert}; called for [warning labels in 2024](https://www.cnn.com/2024/06/17/media/surgeon-general-social-media-apps-warning-label/)
+- [Amy Orben (Cambridge)](https://www.orben.group/): [transparency about *why* content is recommended]{.alert} changes behaviour more than usage caps
 - Knowing you're being nudged turns out to matter
 :::
 
@@ -261,7 +299,7 @@ Companies have a legal duty to shareholders, not to user wellbeing. [The incenti
 :::{style="text-align: center;"}
 [![](figures/platform-changes.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/platform-changes.png"}
 
-Source: [The Verge](https://www.theverge.com/)
+Source: [The Verge](https://www.theverge.com/news/841036/facebook-redesign-instagram-photos-feed-algorithm)
 :::
 
 :::{style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; font-size: 18px; margin-top: 15px;"}
@@ -271,32 +309,52 @@ Genuine concern or good PR? Probably [a bit of both]{.alert}. The test is whethe
 :::
 :::
 
-## Activity: your own feed audit 🔍
+## China's experiment: opting out of the algorithm
 
-:::{style="margin-top: 30px; font-size: 24px;"}
+:::{style="margin-top: 30px; font-size: 22px;"}
 :::{.columns}
-:::{.column width=50%}
-**Quick experiment (2 minutes):**
-
-1. Open TikTok, Instagram, or YouTube on your phone
-2. Look at the first 5 items in your feed
-3. How many did you [choose]{.alert} vs. the algorithm chose for you?
-4. Do any of those recommendations feel... off?
+:::{.column width=55%}
+- Since March 2022, Chinese users can [legally turn off recommendation algorithms]{.alert} on all platforms
+- The [Internet Information Service Algorithmic Recommendation Management Provisions](https://www.chinalawtranslate.com/en/algorithms/) requires every app to offer a non-personalised feed
+- Douyin (Chinese TikTok), Baidu, Taobao, and WeChat all added [one-tap opt-out]{.alert} buttons
+- Early research suggests users [appreciated the transparency](https://journals.sagepub.com/doi/10.1177/20594364231209354), though long-term effects on usage and wellbeing are still being studied
+- No Western democracy has tried anything this direct
+- The [EU Digital Services Act](https://dsa-observatory.eu/2024/11/22/the-regulation-of-recommender-systems-under-the-dsa-a-transition-from-default-to-multiple-and-dynamic-controls/) (Article 38) now requires large platforms to offer a non-profiling feed option in the EU too
+- The uncomfortable question: China moved first on algorithmic transparency. [Does it matter who passes a good law?]{.alert}
 :::
 
-:::{.column width=50%}
-**Then discuss with a neighbour:**
+:::{.column width=45%}
+:::{style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px;"}
+**What the regulation requires:**
+
+- Users must be told [they are being profiled]{.alert}
+- A one-tap opt-out of personalised recommendations
+- Algorithms must not exploit addictive behaviours
+- Platforms must label AI-generated content
+- Special protections for minors
+:::
+
+:::{style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; font-size: 18px; margin-top: 15px;"}
+A real-world experiment in what happens when users can [choose]{.alert} whether to be recommended to. The results are still coming in.
+:::
+:::
+:::
+:::
+
+## Discussion: designing for wellbeing 🔍
+
+:::{style="margin-top: 50px; font-size: 26px;"}
 
 :::{style="background: rgba(45, 69, 99, 0.1); padding: 25px; border-radius: 10px;"}
-- Think about the last hour you spent scrolling. Did [you]{.alert} decide to spend that time, or did the app decide for you?
-- If platforms only showed content you explicitly searched for, would you use them more or less?
-- Who benefits most from your screen time: you or the platform?
-:::
-:::
+**If you were designing a recommendation algorithm and your bonus depended on [user wellbeing]{.alert} instead of watch time, what would you change?**
+
+- What metric would you optimise for? How would you even measure "wellbeing"?
+- Would your platform still be profitable?
+- Would users actually prefer it, or would they migrate to a competitor that gives them the dopamine hits?
 :::
 
 :::{style="margin-top: 25px; font-size: 20px;"}
-⏱️ 3 minutes. I'll ask what you found.
+⏱️ 3 minutes. I'll ask a few of you.
 :::
 :::
 
@@ -308,19 +366,15 @@ Genuine concern or good PR? Probably [a bit of both]{.alert}. The test is whethe
 :::{.columns}
 :::{.column width=55%}
 - Training a large model costs serious energy. Companies rarely disclose the numbers
-- Patterson et al. (2021): training GPT-3 produced ~[502 tonnes of CO₂]{.alert} (see table below)
+- [Patterson et al. (2021)](https://arxiv.org/abs/2104.10350): training GPT-3 produced ~[552 tonnes of CO₂]{.alert}. That is equivalent to:
+  - 368 return flights from London to New York
+  - 120 cars driven for a full year
+  - The annual carbon footprint of 61 Americans
 - GPT-4? Nobody knows. Estimates range from 5x to 50x GPT-3
 - But [training is a one-off cost]{.alert}
 - Running billions of queries (inference) is ongoing, and at scale it probably [dwarfs training]{.alert}
-- Microsoft's carbon emissions rose 29% between 2020 and 2023, partly driven by AI
-- Google's 2024 Environmental Report: emissions up [48% since 2019]{.alert}, largely from data centres
-
-| Activity | CO₂ (approx.) |
-|----------|---------------|
-| One transatlantic flight | ~1.5 tonnes |
-| Average car, one year | ~4.6 tonnes |
-| Average US home, one year | ~7.5 tonnes |
-| GPT-3 training run | ~502 tonnes |
+- [Microsoft's carbon emissions](https://www.itpro.com/infrastructure/data-centres/microsofts-ai-fueled-data-center-rush-caused-carbon-emissions-to-surge-by-29-in-2023-and-now-the-tech-giant-could-miss-critical-sustainability-targets) rose 29% between 2020 and 2023, partly driven by AI
+- [Google's 2024 Environmental Report](https://sustainability.google/reports/google-2024-environmental-report/): emissions up [48% since 2019]{.alert}, largely from data centres
 :::
 
 :::{.column width=45%}
@@ -339,7 +393,7 @@ Training is a [one-off]{.alert}. Inference (billions of queries, every day) is t
 
 ## Water, hardware, and hidden costs
 
-:::{style="margin-top: 30px; font-size: 22px;"}
+:::{style="margin-top: 30px; font-size: 24px;"}
 :::{.columns}
 :::{.column width=55%}
 - Energy gets the headlines. Water gets ignored
@@ -371,23 +425,26 @@ Mining, manufacturing, cooling, disposal: the full supply chain is [almost never
 :::{.column width=55%}
 Current estimates (IEA, 2024):
 
+:::{style="text-align: center;"}
+
 | Sector | Share |
 |--------|-------|
 | Aviation | ~2.5% of global CO₂ |
 | All data centres | ~1–1.5% of electricity |
 | AI specifically | ~0.5–1% of electricity |
 | Global internet | ~3–4% |
+:::
 
 - Right now, AI's direct climate footprint is [real but not huge]{.alert} compared to aviation or steel
 - The worry is [growth rate]{.alert}: AI electricity use grew ~60% year-on-year between 2022–2024
-- Some projections: AI could use as much electricity as France by 2030
-- The Jevons paradox: more efficient models → more usage → efficiency gains get cancelled out
+- [IEA projections](https://www.iea.org/reports/energy-and-ai/energy-demand-from-ai): data centre electricity demand could double to ~945 TWh by 2030, roughly equivalent to Japan's total consumption
+- [The Jevons paradox](https://en.wikipedia.org/wiki/Jevons_paradox): more efficient models → more usage → efficiency gains get cancelled out
 - GPT-4 is far more efficient per query than GPT-3. But there are [vastly more queries]{.alert}
 :::
 
 :::{.column width=45%}
 :::{style="text-align: center;"}
-[![](figures/ai-footprint-context.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/ai-footprint-context.png"}
+[![Adding one Sweden or one Germany per year](figures/ai-footprint-context.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/ai-footprint-context.png"}
 
 Source: [IEA (2024)](https://www.iea.org/reports/electricity-2024)
 :::
@@ -406,22 +463,17 @@ Source: [IEA (2024)](https://www.iea.org/reports/electricity-2024)
 :::{.column width=55%}
 The same technology that burns energy may also help cut emissions:
 
-- **GraphCast** (DeepMind, 2023): 10-day weather forecasts, faster and more accurate than traditional models. Helps manage renewable grids
+- [**GraphCast**](https://deepmind.google/discover/blog/graphcast-ai-model-for-faster-and-more-accurate-global-weather-forecasting/) (DeepMind, 2023): 10-day weather forecasts, faster and more accurate than traditional models. Helps manage renewable grids
 - **Grid optimisation**: AI predicts electricity demand, balances wind and solar in real time
 - **Wildfire prediction**: better detection and spread modelling
-- **Data centre cooling**: DeepMind's RL system cut cooling energy by [40%]{.alert}
-- **AlphaFold**: protein structure prediction, opening paths in climate biotech
-
-Rolnick et al. (2022, *ACM Computing Surveys*) identified 70+ high-potential ML applications for climate change
-
-- But: these are [potential benefits, not guaranteed ones]{.alert}
-- Many need serious compute to develop
-- The teams building high-energy AI and the teams working on climate AI are mostly [different people at different companies]{.alert}
+- **Data centre cooling**: [DeepMind's RL system](https://deepmind.google/discover/blog/deepmind-ai-reduces-google-data-centre-cooling-bill-by-40/) cut cooling energy by [40%]{.alert}
+- [Rolnick et al. (2022, *ACM Computing Surveys*)](https://dl.acm.org/doi/10.1145/3485128): identified 70+ high-potential ML applications for climate change, from agriculture to carbon capture
+  - But: these are [potential benefits, not guaranteed ones]{.alert}
 :::
 
 :::{.column width=45%}
 :::{style="text-align: center;"}
-[![](figures/climate-ai.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/climate-ai.png"}
+[![](figures/climate-ai.png){width="50%"}](#){data-modal-type="image" data-modal-url="figures/climate-ai.png"}
 
 Source: [Rolnick et al. (2022)](https://dl.acm.org/doi/10.1145/3485128)
 :::
@@ -430,23 +482,6 @@ Source: [Rolnick et al. (2022)](https://dl.acm.org/doi/10.1145/3485128)
 Net impact? [Unclear]{.alert}. The evidence simply isn't there yet.
 :::
 :::
-:::
-:::
-
-## Questions to think about 🤔
-
-:::{style="margin-top: 50px; font-size: 26px;"}
-
-:::{style="background: rgba(45, 69, 99, 0.1); padding: 25px; border-radius: 10px;"}
-**You used AI today (probably). A single ChatGPT conversation uses about 500ml of water. Should that bother you? Does it?**
-
-**AI companies say their tools will help solve climate change. Their data centres are accelerating it right now. How do you weigh a future promise against a present cost?**
-
-**Is asking individuals to "use AI less" a distraction from the companies building the infrastructure?**
-:::
-
-:::{style="margin-top: 25px; font-size: 20px;"}
-⏱️ A few minutes. I'll come back to this.
 :::
 :::
 
@@ -459,9 +494,9 @@ Net impact? [Unclear]{.alert}. The evidence simply isn't there yet.
 :::{.column width=55%}
 - WHO estimate: [75% of people]{.alert} with mental health conditions in low- and middle-income countries receive *no treatment at all*
 - Even in wealthy countries:
-  - Average US wait for a first psychiatric appointment: [25 days]{.alert} nationally, 30+ weeks in rural areas
-  - A therapy session costs $150–250 out of pocket
-  - ~1 psychiatrist per 100,000 people in low-income countries
+  - Average US wait for a first psychiatric appointment: [25 days]{.alert} nationally; [median 67 days](https://pubmed.ncbi.nlm.nih.gov/37290263/) in recent data, with severe shortages in rural areas
+  - A therapy session costs [$150-250 out of pocket](https://www.simplepractice.com/blog/average-therapy-session-rate-by-state/)
+  - [~0.1 psychiatrists per 100,000](https://www.who.int/data/gho/indicator-metadata-registry/imr-details/2954) people in low-income countries
   - Stigma stops many from seeking help where care does exist
 - This is the context for AI mental health tools
 - [If the alternative is literally nothing]{.alert}, the calculation looks different than if you're imagining replacing well-funded human care
@@ -471,7 +506,7 @@ Net impact? [Unclear]{.alert}. The evidence simply isn't there yet.
 :::{style="text-align: center;"}
 [![](figures/mental-health-gap.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/mental-health-gap.png"}
 
-Source: [WHO Mental Health Atlas (2020)](https://www.who.int/publications/i/item/9789240036703)
+Source: [WHO Mental Health Atlas (2024)](https://www.who.int/publications/i/item/9789240114487)
 :::
 
 :::{style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; font-size: 18px; margin-top: 15px;"}
@@ -486,10 +521,10 @@ Source: [WHO Mental Health Atlas (2020)](https://www.who.int/publications/i/item
 :::{style="margin-top: 30px; font-size: 21px;"}
 :::{.columns}
 :::{.column width=55%}
-- **Woebot** (2017): first major CBT-based chatbot, 2M+ users. Follows clinical CBT protocols, not a free-form LLM
-- **Wysa**: similar model, piloted by the UK NHS in several trusts
+- [**Woebot**](https://mental.jmir.org/2017/2/e19) (2017): first major CBT-based chatbot, 2M+ users. Follows clinical CBT protocols, not a free-form LLM
+- [**Wysa**](https://www.wysa.com/nhs-talking-therapies): similar model, piloted by the [UK NHS in 31 trusts](https://blogs.wysa.io/blog/company-news/nhs-tackles-mental-health-crisis-with-ai)
 - **Replika**: not therapy, but an "AI companion." People form real emotional attachments
-  - In 2023, the company changed its relationship features without warning
+  - In 2023, the company [changed its relationship features](https://www.vice.com/en/article/ai-companion-replika-erotic-roleplay-updates/) after an Italian regulatory order
   - [Users reported grief and withdrawal symptoms]{.alert}
 - Best recent evidence: Habicht et al. (2025, *JMIR*). Generative AI used alongside group therapy for real patients
 - Improvements in clinical outcomes and patient engagement
@@ -515,7 +550,7 @@ In the Habicht et al. study, AI augmented human therapists. That's [a very diffe
 :::{style="margin-top: 30px; font-size: 21px;"}
 :::{.columns}
 :::{.column width=55%}
-- Opel and Breakspear (*Science*, 2026), two clinical neuroscientists, say AI "may reduce care inequities [when deployed responsibly]{.alert}"
+- [Opel and Breakspear (*Science*, 2026)](https://www.science.org/doi/10.1126/science.adz9193), two clinical neuroscientists, say AI "may reduce care inequities [when deployed responsibly]{.alert}"
 - That "may" and "responsibly" are doing a lot of work
 - What the evidence contains:
   - Small RCTs: short-term symptom relief for mild-to-moderate anxiety and depression
@@ -554,9 +589,9 @@ Short-term relief is real. Long-term safety and efficacy? [We don't know yet]{.a
 :::{.column width=55%}
 These are documented, not hypothetical:
 
-- **Dependency.** When Replika changed features in 2023, users [reported grief]{.alert} comparable to losing a real relationship. What happens when an app you're attached to gets discontinued?
+- **Dependency.** When [Replika changed features](https://www.vice.com/en/article/ai-companion-replika-erotic-roleplay-updates/) in 2023, users [reported grief]{.alert} comparable to losing a real relationship. What happens when an app you're attached to gets discontinued?
 - **Data privacy.** Therapy touches the most private parts of someone's life. Chatbot data is rarely protected like clinical notes. Where does it go?
-- **Harmful responses.** Moore et al. (2025): LLMs expressed [stigmatising attitudes]{.alert} toward mental health conditions and gave harmful crisis responses
+- **Harmful responses.** [Moore et al. (2025)](https://arxiv.org/abs/2504.18412): LLMs expressed [stigmatising attitudes]{.alert} toward mental health conditions and gave harmful crisis responses
 - **No crisis escalation.** A chatbot cannot call an ambulance, contact a GP, or do anything in the physical world
 - **Regulatory gap.** Most mental health chatbots are classified as apps, not medical devices. No clinical regulation in the US, UK, or most of the EU. The EU AI Act (2024) classifies some AI health tools as high-risk, but most chatbots still slip through
 :::
@@ -575,20 +610,21 @@ Being cautious about AI therapy doesn't mean defending the status quo. [The stat
 :::
 :::
 
-## What LLMs literally cannot do
+## What LLMs cannot do
 
-:::{style="margin-top: 30px; font-size: 22px;"}
+:::{style="margin-top: 30px; font-size: 24px;"}
 :::{.columns}
-:::{.column width=55%}
+:::{.column width=50%}
 **LLMs cannot:**
 
-- Hold [persistent memory]{.alert} between sessions. Every conversation starts fresh, the opposite of how therapy works
+- Hold [persistent memory]{.alert} between sessions. Every conversation starts fresh, the opposite of how therapy works (we can solve this with RAG, but it's not the default)
 - Verify what you tell them. A therapist builds context over months
-- Contact emergency services, a GP, or anyone in the physical world
 - Provide legally enforceable confidentiality
 - Diagnose or prescribe medication
 - Read body language, tone, or facial expression
+:::
 
+:::{.column width=50%}
 **LLMs can:**
 
 - Be available at 3am
@@ -597,16 +633,6 @@ Being cautious about AI therapy doesn't mean defending the status quo. [The stat
 - Scale to millions at near-zero marginal cost
 
 These are [different capabilities]{.alert}, not better or worse. Whether what AI *can* do matches what people in distress actually *need* is the question worth asking.
-:::
-
-:::{.column width=45%}
-:::{style="text-align: center;"}
-[![](figures/llm-limits.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/llm-limits.png"}
-:::
-
-:::{style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; font-size: 18px; margin-top: 15px;"}
-LLMs and therapists are different tools, not competitors. Comparing them directly means [comparing the wrong things]{.alert}.
-:::
 :::
 :::
 :::
@@ -639,12 +665,12 @@ The most credible use cases right now:
 - [Between-session support]{.alert}: coping strategies and mood tracking between weekly appointments (the Habicht et al. model)
 - [Stepped care]{.alert}: AI for mild symptoms, human professionals for moderate-to-severe
 - [Admin burden]{.alert}: AI writes session notes, handles scheduling, finds local services. Frees therapist time for actual care
-- OpenAI updated ChatGPT in 2025: added safety messaging, crisis hotline signposting, trauma-informed language. An acknowledgement that people [already use the product this way]{.alert}
-- [Who decides what "responsible" looks like?]{.alert} Clinical psychologists train 7-10 years working with distressed people. App developers mostly don't
+- [OpenAI updated ChatGPT in 2025](https://openai.com/index/update-on-mental-health-related-work/): added [safety messaging](https://openai.com/index/strengthening-chatgpt-responses-in-sensitive-conversations/), crisis hotline signposting, trauma-informed language. An acknowledgement that people [already use the product this way]{.alert}
+- [Who decides what "responsible" looks like?]{.alert}
 :::
 
 :::{.column width=45%}
-:::{style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px;"}
+:::{style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; margin-top: 30px;"}
 **The hybrid care model:**
 
 ```text
@@ -661,7 +687,7 @@ Severe symptoms
 ```
 :::
 
-:::{style="background: rgba(230, 57, 70, 0.1); padding: 12px; border-radius: 10px; font-size: 18px; margin-top: 15px;"}
+:::{style="background: rgba(230, 57, 70, 0.1); padding: 12px; border-radius: 10px; font-size: 18px; margin-top: 30px;"}
 The technology is moving faster than the evidence, the regulation, and the training of professionals who need to understand it. [That gap is the problem]{.alert}.
 :::
 :::
@@ -682,41 +708,8 @@ The technology is moving faster than the evidence, the regulation, and the train
 
 - `r fa('exclamation-circle')` [Across all three]{.alert}: incentive structures matter more than intentions. The financial model rarely rewards user wellbeing
 
-- `r fa('question-circle')` [No tidy answers]{.alert}: you'll make decisions about these systems throughout your careers. Informed uncertainty beats confident ignorance
+- `r fa('question-circle')` [No tidy answers]{.alert}: you will make decisions about these systems throughout your careers. Being honest about what we don't know is more useful than pretending we do
 
-:::
-
-## Further reading
-
-:::{style="margin-top: 30px; font-size: 22px;"}
-:::{.columns}
-:::{.column width=50%}
-**Attention economy:**
-
-- Wu, T. (2016). *The Attention Merchants.* Knopf
-- Nyhan, B. et al. (2023). [Like-minded sources on Facebook are prevalent but not polarizing.](https://www.nature.com/articles/s41586-023-06297-w) *Nature*
-- Guess, A. et al. (2023). [How do social media feed algorithms affect attitudes and behavior in an election campaign?](https://www.science.org/doi/10.1126/science.abp9364) *Science*
-
-**Environment:**
-
-- Patterson, D. et al. (2021). [Carbon Emissions and Large Neural Network Training.](https://arxiv.org/abs/2104.10350) arXiv
-- Li, P. et al. (2023). [Making AI Less Thirsty.](https://arxiv.org/abs/2304.03271) arXiv
-- IEA (2024). [Electricity 2024.](https://www.iea.org/reports/electricity-2024) International Energy Agency
-:::
-
-:::{.column width=50%}
-**Mental health:**
-
-- Habicht, J. et al. (2025). [Closing the accessibility gap to mental health treatment with generative AI.](https://www.jmir.org/2025/1/e60435) *JMIR*
-- Opel, N. & Breakspear, M. (2026). Harnessing AI for global mental health. *Science*
-- Moore, D. et al. (2025). Stigmatising attitudes in LLMs. Crisis response study
-
-**General:**
-
-- Rolnick, D. et al. (2022). [Tackling Climate Change with Machine Learning.](https://dl.acm.org/doi/10.1145/3485128) *ACM Computing Surveys*
-- 🎬 [The Social Dilemma](https://www.thesocialdilemma.com/) (Netflix, 2020)
-:::
-:::
 :::
 
 # ...and that's all for today! 🎉 {background-color="#2d4563"}
