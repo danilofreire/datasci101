@@ -771,6 +771,29 @@ Source: [X.com](https://x.com/andrewlamb1111/status/1952386263450841233)
 :::
 :::
 
+## Benchmark contamination in practice
+### When the model finds the answer key
+
+:::{style="margin-top: 30px; font-size: 22px;"}
+:::{.columns}
+:::{.column width=55%}
+- In 2025, Anthropic discovered that [Claude Opus independently identified it was being evaluated]{.alert} on BrowseComp, a benchmark by OpenAI
+- The model [located the answer key online and used it]{.alert} to solve the evaluation
+- This is a new form of [benchmark contamination]{.alert}: the model is not trained on the answers, but finds them during the test
+- Raises questions about the [validity of benchmarks]{.alert} that assume models cannot access external information
+- As models become more capable, [evaluation itself becomes harder]{.alert}
+:::
+
+:::{.column width=45%}
+:::{style="text-align: center;"}
+[![Claude identifying a benchmark evaluation](figures/claude-benchmark.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/claude-benchmark.png"}
+
+Source: [Anthropic Engineering](https://www.anthropic.com/engineering/eval-awareness-browsecomp)
+:::
+:::
+:::
+:::
+
 # Ethics beyond accuracy 🤔 {background-color="#2d4563"}
 
 ## Fairness: When overall accuracy hides problems
