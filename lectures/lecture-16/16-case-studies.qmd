@@ -118,7 +118,7 @@ Source: [Medium](https://medium.com/@codingandcoffee/ai-luddites-and-the-future-
 
 ## Group project
 
-:::{style="margin-top: 30px; font-size: 22px;"}
+:::{style="margin-top: 30px; font-size: 20px;"}
 :::{.columns}
 :::{.column width=55%}
 You will work in groups of [4-5 students]{.alert} to explore how AI tools perform in a real-world domain
@@ -133,14 +133,16 @@ Choose one of seven domains:
 - [Scientific research]{.alert} (literature review, hypothesis generation)
 - [Customer service]{.alert} (support bots, complaint handling)
 
-[No programming required]{.alert} — the focus is on evaluation and design
+[No programming required]{.alert}: the focus is on evaluation and design
+
+[More information here]{.alert}: <https://github.com/danilofreire/datasci185/blob/main/project/project-instructions.pdf>
 :::
 
 :::{.column width=45%}
-:::{style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; font-size: 18px;"}
+:::{style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; font-size: 18px; margin-top: 30px;"}
 **What you actually do**
 
-You [test existing AI tools]{.alert} in your chosen domain — try them, break them, probe their limits — and then [design a new application]{.alert} that addresses a gap or problem you find
+You [test existing AI tools]{.alert} in your chosen domain (try them, break them, probe their limits!) and then [design a new application]{.alert} that addresses a gap or problem you find
 
 The goal is to think critically: what works, what fails, and what would you build differently?
 :::
@@ -150,31 +152,31 @@ The goal is to think critically: what works, what fails, and what would you buil
 
 ## Deliverables and timeline
 
-:::{style="margin-top: 20px; font-size: 22px;"}
+:::{style="margin-top: 20px; font-size: 25px;"}
 :::{.columns}
 :::{.column width=55%}
 **Three deliverables:**
 
-1. [Optional proposal]{.alert} (April 1) — one page, not graded. Lets you get early feedback on your domain and plan
+1. [Optional proposal]{.alert} (April 1): one page, not graded. Lets you get early feedback on your domain and plan
 
-2. [Final report]{.alert} (April 27) — roughly 5 pages. Covers your domain overview, tool evaluation, and proposed application
+2. [Final report]{.alert} (April 27): roughly 5 pages. Covers your domain overview, tool evaluation, and proposed application
 
-3. [Infographic]{.alert} (April 27) — one-page PDF summarising your findings for a general audience
+3. [Infographic]{.alert} (April 27): one-page PDF summarising your findings for a general audience
 
-You may also include a bonus appendix with technical details, code, or extended analysis (not required)
+You may also include a [bonus appendix]{.alert} with technical details, prompts, code, or extended analysis ([not required but recommended]{.alert})
 :::
 
 :::{.column width=45%}
 **Key dates:**
 
-- [March 23]{.alert} — group list due. If you don't have a group, you'll be assigned to one randomly
-- [April 1]{.alert} — optional proposal due
-- [April 27]{.alert} — report and infographic due
+- [March 23]{.alert}: group list due. If you don't have a group, you'll be assigned to one randomly by March 25
+- [April 1]{.alert}: optional proposal due
+- [April 27]{.alert}: report and infographic due
 
 :::{style="background: rgba(230, 57, 70, 0.1); padding: 15px; border-radius: 10px; font-size: 18px; margin-top: 15px;"}
-**Form your group soon**
+**Form your group soon!** 🤓
 
-Groups should be confirmed by [March 23]{.alert}. Talk to your classmates this week. If you need help finding a group, contact us!
+Groups should be confirmed by [March 23]{.alert}. Talk to your classmates this week. If you need help finding a group, contact us! 😉
 :::
 :::
 :::

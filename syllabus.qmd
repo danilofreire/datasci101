@@ -94,7 +94,7 @@ Readings are short papers, essays and tutorials rather than a single textbook. L
 
 - **In-class quizzes (5) — 30%**. Each quiz occupies a full lecture. Quizzes are open-book/open-notes and individual assessments. Discussion during quizzes is not permitted.  
 
-- **Final group project — 20%**. Groups of 4–5 produce a report and a one-page infographic. The project asks you to test existing AI tools in a chosen domain, propose your own AI application, and assess potential harms. Detailed instructions are available in the course GitHub repository under `/project`.
+- **Final group project — 20%**. Groups of 4–5 choose one of seven domains (healthcare, education, finance, law, creative industries, scientific research, or customer service), test existing AI tools in that domain, and design a new AI application. Deliverables: an optional one-page proposal (not graded), a final report of about 5 pages, and a one-page infographic. No programming is required. [Detailed instructions (PDF)](https://github.com/danilofreire/datasci185/blob/main/project/project-instructions.pdf).
 
 # Grading scale
 
@@ -341,7 +341,7 @@ Readings:
 - Lecture 16: [AI in Finance and Healthcare](https://raw.githack.com/danilofreire/datasci185/main/lectures/lecture-16/16-case-studies.html).
 - **Assignment 07 due (5%).**
 - No assignment this week.
-- [Instructions for the Final Project](https://github.com/danilofreire/datasci185/tree/main/project).
+- [Instructions for the final project (PDF)](https://github.com/danilofreire/datasci185/blob/main/project/project-instructions.pdf). Groups must be finalised by March 23. Optional proposal due April 1; final report and infographic due April 27.
 
 Readings:
 
@@ -357,6 +357,7 @@ Readings:
 ### March 23, 2026:
 
 - Lecture 17: [AI regulation and standards around the world](https://raw.githack.com/danilofreire/datasci185/main/lectures/lecture-17/17-regulation.html).
+- **Group list due.**
 
 Readings:
 
@@ -390,6 +391,7 @@ Readings:
 
 - Lecture 20: [Labour markets and economic effects](https://raw.githack.com/danilofreire/datasci185/main/lectures/lecture-20/20-labour.html).
 - **Assignment 08 due (5%).**
+- **Optional project proposal due.**
 - [**Assignment 09**](https://github.com/danilofreire/datasci185/blob/main/assignments).
 
 Readings:
@@ -469,4 +471,4 @@ Readings:
 
 - No lecture.
 - Q&A session and final project work time.
-- [Final Project due (20%).](https://github.com/danilofreire/datasci185/tree/main/project)
+- [Final project due (20%).](https://github.com/danilofreire/datasci185/blob/main/project/project-instructions.pdf)
