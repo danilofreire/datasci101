@@ -64,7 +64,7 @@ Readings are short papers, essays and tutorials rather than a single textbook. L
 
 - **In-class quizzes (5) — 30%**. Each quiz occupies a full lecture. Quizzes are open-book/open-notes and individual assessments. Discussion during quizzes is not permitted.  
 
-- **Final group project — 20%**. Groups of 3–4 produce a report and a short demo video. The project involves conceptual elements and a harms assessment. More details will be provided in class.
+- **Final group project — 20%**. Groups of 4–5 choose one of seven domains (healthcare, education, finance, law, creative industries, scientific research, or customer service), test existing AI tools in that domain, and design a new AI application. Deliverables: an optional one-page proposal (not graded), a final report of about 5 pages, and a one-page infographic. No programming is required. [Detailed instructions (PDF)](https://github.com/danilofreire/datasci185/blob/main/project/project-instructions.pdf).
 
 # Grading scale
 
