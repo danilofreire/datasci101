@@ -60,7 +60,7 @@ if (!require("fontawesome", character.only = TRUE)) {
 - [Representation bias]{.alert}: some groups underrepresented
 - [Measurement bias]{.alert}: proxies that correlate with protected attributes
 - Fairness has [multiple definitions]{.alert} that can conflict
-- Today: how AI is used in healthcare and finance, and where bias shows up
+- Today: [how AI is used in healthcare and finance, and where bias shows up]{.alert}
 :::
 
 :::{.column width=50%}
@@ -114,6 +114,72 @@ Source: [NIST](https://www.nist.gov/publications/towards-standard-identifying-an
 Source: [Medium](https://medium.com/@codingandcoffee/ai-luddites-and-the-future-of-finance-b06621999f7e)
 :::
 
+# Group project 📋 {background-color="#2d4563"}
+
+## Group project
+
+:::{style="margin-top: 30px; font-size: 22px;"}
+:::{.columns}
+:::{.column width=55%}
+You will work in groups of [4-5 students]{.alert} to explore how AI tools perform in a real-world domain
+
+Choose one of seven domains:
+
+- [Healthcare]{.alert} (diagnosis, treatment, patient care)
+- [Education]{.alert} (tutoring, assessment, feedback)
+- [Finance]{.alert} (investing, fraud, credit)
+- [Law]{.alert} (legal research, contracts, compliance)
+- [Creative industries]{.alert} (writing, art, music)
+- [Scientific research]{.alert} (literature review, hypothesis generation)
+- [Customer service]{.alert} (support bots, complaint handling)
+
+[No programming required]{.alert} — the focus is on evaluation and design
+:::
+
+:::{.column width=45%}
+:::{style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; font-size: 18px;"}
+**What you actually do**
+
+You [test existing AI tools]{.alert} in your chosen domain — try them, break them, probe their limits — and then [design a new application]{.alert} that addresses a gap or problem you find
+
+The goal is to think critically: what works, what fails, and what would you build differently?
+:::
+:::
+:::
+:::
+
+## Deliverables and timeline
+
+:::{style="margin-top: 20px; font-size: 22px;"}
+:::{.columns}
+:::{.column width=55%}
+**Three deliverables:**
+
+1. [Optional proposal]{.alert} (April 1) — one page, not graded. Lets you get early feedback on your domain and plan
+
+2. [Final report]{.alert} (April 27) — roughly 5 pages. Covers your domain overview, tool evaluation, and proposed application
+
+3. [Infographic]{.alert} (April 27) — one-page PDF summarising your findings for a general audience
+
+You may also include a bonus appendix with technical details, code, or extended analysis (not required)
+:::
+
+:::{.column width=45%}
+**Key dates:**
+
+- [March 23]{.alert} — group list due. If you don't have a group, you'll be assigned to one randomly
+- [April 1]{.alert} — optional proposal due
+- [April 27]{.alert} — report and infographic due
+
+:::{style="background: rgba(230, 57, 70, 0.1); padding: 15px; border-radius: 10px; font-size: 18px; margin-top: 15px;"}
+**Form your group soon**
+
+Groups should be confirmed by [March 23]{.alert}. Talk to your classmates this week. If you need help finding a group, contact us!
+:::
+:::
+:::
+:::
+
 # AI in healthcare 🏥 {background-color="#2d4563"}
 
 ## Traditional ML in healthcare
@@ -121,14 +187,14 @@ Source: [Medium](https://medium.com/@codingandcoffee/ai-luddites-and-the-future-
 :::{style="margin-top: 30px; font-size: 22px;"}
 :::{.columns}
 :::{.column width=55%}
-ML has been used in medicine for years, mostly for tasks with [labelled data and a clear outcome]{.alert}:
+ML has been used in medicine for years, mostly for tasks with [labelled data and a clear outcome]{.alert} (supervised learning):
 
 - [Medical imaging]{.alert}: CNNs detect tumours in X-rays, mammograms, retinal scans. Some match or beat radiologists
 - [Risk scoring]{.alert}: ML models predict readmission, sepsis, mortality. Hospitals use these to allocate resources
 - [Drug discovery]{.alert}: ML screens millions of molecules against protein targets, saving years in early development
 - [Electrocardiogram analysis]{.alert}: Deep learning flags arrhythmias from wearables in real time
 
-The common thread: give the model [structured input]{.alert}, get a classification or a number out.
+Give the model [structured input]{.alert}, get a classification or a number out
 :::
 
 :::{.column width=45%}
@@ -136,7 +202,7 @@ The common thread: give the model [structured input]{.alert}, get a classificati
 [![](figures/healthcare-ml.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/healthcare-ml.png"}
 
 :::{style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; font-size: 18px; margin-top: 15px;"}
-If you can put the input in a spreadsheet and the output is a number or a category, traditional ML is probably the right tool.
+If you can put the input in a spreadsheet and the output is a number or a category, traditional ML is probably the right tool
 :::
 :::
 :::
@@ -156,7 +222,7 @@ LLMs handle tasks that involve [reading, writing, and reasoning about text]{.ale
 - [Clinical trial matching]{.alert}: Match unstructured patient records against trial eligibility criteria (previously done by hand)
 - [My suggestion]{.alert}: [DeepMind's MedGemma](https://deepmind.google/models/gemma/medgemma/), a free and open-source LLM for medical tasks. Optimised for medical text and image comprehension
 
-The key difference from traditional ML: these tasks need [language comprehension]{.alert}, not number-crunching.
+The key difference from traditional ML: these tasks need [language comprehension]{.alert}, not number-crunching
 :::
 
 :::{.column width=45%}
@@ -182,9 +248,9 @@ Over 150 US health systems use [AI-drafted messages]{.alert} via [Epic's MyChart
 - System reads the patient's record and drafts a response
 - Clinician reviews and sends. Saves ~[30 seconds per message]{.alert}
 
-Google's [Med-PaLM 2]{.alert} scored 86.5% on US Medical Licensing Exam questions. Physicians [preferred its open-ended answers]{.alert} over those from other doctors.
+Google's [Med-PaLM 2]{.alert} scored 86.5% on US Medical Licensing Exam questions. Physicians [preferred its open-ended answers]{.alert} over those from other doctors
 
-But [passing exams ≠ treating patients.]{.alert} The model cannot examine the patient, read body language, or pick up on context outside the chart.
+But [passing exams ≠ treating patients.]{.alert} The model cannot examine the patient, read body language, or pick up on context outside the charts
 :::
 
 :::{.column width=45%}
@@ -232,8 +298,6 @@ Source: [NewsMedical.net](https://www.news-medical.net/health/The-Pros-and-Cons-
 
 > You visit your GP. Instead of a doctor, an AI chatbot takes your symptoms, checks your medical history, and recommends a diagnosis and treatment plan. A doctor reviews the AI's recommendation for 30 seconds before signing off.
 
-**Discuss with your neighbour (2 minutes):**
-
 1. Would you be comfortable with this?
 2. Does it matter if the AI is [more accurate]{.alert} on average than the doctor alone?
 3. What if you could see the AI's reasoning?
@@ -264,12 +328,12 @@ Source: [The New York Times](https://www.nytimes.com/2025/11/16/briefing/meet-dr
 :::{.column width=55%}
 Finance adopted ML early, and for good reason: there is a lot of structured data and the [payoffs are measurable]{.alert}.
 
-- **Price forecasting**: Neural networks on time-series data. Results are mixed; markets are noisy
-- **Credit scoring**: Logistic regression estimate default probability. Backbone of consumer lending
-- **Fraud detection**: Deep learning flags suspicious transactions in real time. Outperforms rule-based systems (McKinsey, 2023)
-- **Algorithmic trading**: RL agents learn strategies by trial and error in simulated markets
+- [Price forecasting]{.alert}: Neural networks on time-series data. Results are mixed; markets are noisy
+- [Credit scoring]{.alert}: Logistic regression estimate default probability. Backbone of consumer lending
+- [Fraud detection]{.alert}: Deep learning flags suspicious transactions in real time. Outperforms rule-based systems (McKinsey, 2023)
+- [Algorithmic trading]{.alert}: RL agents learn strategies by trial and error in simulated markets
 
-These tasks share a common trait: the inputs are numbers, the outputs are numbers, and you can tell quickly whether the model is working.
+These tasks share a common trait: the inputs are numbers, the outputs are numbers, and you can tell quickly whether the model is working
 :::
 
 :::{.column width=45%}
@@ -277,7 +341,7 @@ These tasks share a common trait: the inputs are numbers, the outputs are number
 [![Jim Simons, an extremely successful quant trader. He started in 1988!](figures/simons.jpg){width="100%"}](#){data-modal-type="image" data-modal-url="figures/simons.jpg"}
 
 :::{style="font-size: 18px; margin-top: 15px;"}
-Jim Simons started using ML for trading in 1988. The data was there; the question was always whether the models were good enough.
+Jim Simons started using ML for trading in 1988. The data was there; the question was always whether the models were good enough
 :::
 :::
 :::
@@ -291,10 +355,10 @@ Jim Simons started using ML for trading in 1988. The data was there; the questio
 :::{.column width=55%}
 LLMs handle tasks that require [reading and interpreting text]{.alert}. Much of the information that moves markets is in natural language:
 
-- **Sentiment analysis**: Classify financial news and earnings calls as positive, negative, or neutral
-- **Document summarisation**: Condense 10-K filings and earnings reports into short summaries
-- **Numerical reasoning**: Models like [FinQA]{.alert} read financial tables and do multi-step calculations
-- **Advisory chatbots**: Answer portfolio questions, explain products, guide users through tax season
+- [Sentiment analysis]{.alert}: Classify financial news and earnings calls as positive, negative, or neutral
+- [Document summarisation]{.alert}: Condense 10-K filings and earnings reports into short summaries
+- [Numerical reasoning]{.alert}: Models like [FinQA]{.alert} read financial tables and do multi-step calculations
+- [Advisory chatbots]{.alert}: Answer portfolio questions, explain products, guide users through tax season
 
 See the [Chartered Financial Analyst Institute practical guide (2024)](https://rpc.cfainstitute.org/research/the-automation-ahead-content-series/practical-guide-for-llms-in-the-financial-industry) for more detail.
 :::
@@ -316,15 +380,15 @@ Source: [CFA Institute](https://rpc.cfainstitute.org/research/the-automation-ahe
 :::{.column width=100%}
 | Aspect | Traditional ML/DL | LLMs |
 |--------|-------------------|------|
-| **Best data type** | Numerical, time-series, tabular | Unstructured text, documents |
-| **Typical tasks** | Classification, regression, anomaly detection | Summarisation, Q&A, sentiment, generation |
-| **Training data** | Needs [labelled examples]{.alert} for each task | Can work zero-shot or few-shot |
-| **Multi-task** | Separate model per task | [One model, different prompts]{.alert} |
-| **Numerical precision** | Strong | Weaker — struggles with exact calculations |
-| **Cost** | Lower inference cost | Higher — large models are expensive to run |
+| [Best data type]{.alert} | Numerical, time-series, tabular | Unstructured text, documents |
+| [Typical tasks]{.alert} | Classification, regression, anomaly detection | Summarisation, Q&A, sentiment, generation |
+| [Training data]{.alert} | Needs [labelled examples]{.alert} for each task | Can work zero-shot or few-shot |
+| [Multi-task]{.alert} | Separate model per task | [One model, different prompts]{.alert} |
+| [Numerical precision]{.alert} | Strong | Weaker — struggles with exact calculations |
+| [Cost]{.alert} | Lower inference cost | Higher — large models are expensive to run |
 
 :::{style="margin-top: 20px;"}
-**Rule of thumb** ([Li et al., 2023](https://arxiv.org/abs/2311.10723)): if your task is [well-defined]{.alert} (regression, classification) and you have plenty of labelled data, a traditional model is cheaper and just as good. LLMs pay off when the input is [unstructured text]{.alert} or when the task requires reasoning across multiple steps.
+**Rule of thumb** ([Li et al., 2023](https://arxiv.org/abs/2311.10723)): if your task is [well-defined]{.alert} (regression, classification) and you have plenty of labelled data, a traditional model is cheaper and just as good. LLMs pay off when the input is [unstructured text]{.alert} or when the task requires reasoning across multiple steps
 :::
 :::
 :::
@@ -385,7 +449,6 @@ A [trading pipeline]{.alert}:
 
 :::{.column width=45%}
 :::{style="text-align: center; margin-top: 30px;"}
-<!-- Suggested image: Sentiment analysis pipeline or financial headline example -->
 [![](figures/sentiment-pipeline.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/sentiment-pipeline.png"}
 
 Source: [Chen et al (2025)](https://www.researchgate.net/figure/LLM-as-financial-sentiment-predictor_fig1_391601991)
@@ -411,7 +474,7 @@ LLMs can [orchestrate multi-step workflows]{.alert} ([Li et al., 2023](https://a
 4. Run the code and interpret results
 5. Present a recommendation
 
-The LLM is the glue: it decides what to do next, calls the right tool, and passes results along. JPMorgan already uses AI agents for investment advice.
+The LLM is the glue: it decides what to do next, calls the right tool, and passes results along. JPMorgan (and many others) already uses AI agents for investment advice
 :::
 
 :::{.column width=45%}
@@ -419,7 +482,7 @@ The LLM is the glue: it decides what to do next, calls the right tool, and passe
 [![Source: Deloitte](figures/tool-augmented-llm.png){width="70%"}](#){data-modal-type="image" data-modal-url="figures/tool-augmented-llm.png"}
 
 :::{style="background: rgba(230, 57, 70, 0.1); padding: 15px; border-radius: 10px; font-size: 18px; margin-top: 15px;"}
-The LLM does not "know" finance the way a quant does. It [orchestrates tools]{.alert} that do the computation.
+The LLM does not "know" finance the way a quant does. It [orchestrates tools]{.alert} that do the computation
 :::
 :::
 :::
@@ -453,7 +516,7 @@ RAG is popular in both fields for one reason: it lets the model cite actual docu
 Source: [StackAI](https://www.stack-ai.com/blog/rag-use-cases)
 
 :::{style="font-size: 18px; margin-top: 15px;"}
-RAG grounds LLM answers in [actual documents]{.alert}. The model cites sources, not memory.
+RAG grounds LLM answers in [actual documents]{.alert}. The model cites sources, not memory
 :::
 :::
 :::
@@ -485,7 +548,7 @@ RAG reduces hallucination but does not eliminate risk. Both domains face [domain
 - A clinician might skip verification if the answer comes with citations. A compliance officer might not read the full regulation
 
 :::{style="background: rgba(230, 57, 70, 0.1); padding: 15px; border-radius: 10px; font-size: 18px; margin-top: 10px;"}
-RAG is better than pure LLM generation, but "grounded" does not mean "correct." If the knowledge base has gaps, the answers will too.
+RAG is better than pure LLM generation, but "grounded" does not mean "correct." If the knowledge base has gaps, the answers will too
 :::
 :::
 :::
@@ -526,52 +589,24 @@ RAG is better than pure LLM generation, but "grounded" does not mean "correct." 
 
 # When bias creeps in 🤔 {background-color="#2d4563"}
 
-## Bias can enter anywhere
-
-:::{style="margin-top: 30px; font-size: 22px;"}
-:::{.columns}
-:::{.column width=55%}
-Every application we discussed is vulnerable to [the same biases from last lecture]{.alert}:
-
-- [Historical bias]{.alert}: training data reflects past discrimination
-- [Representation bias]{.alert}: some groups underrepresented
-- [Measurement bias]{.alert}: proxies that work differently across groups
-- [Feedback loops]{.alert}: predictions reinforce themselves over time
-
-The next slides cover real cases in [healthcare and finance]{.alert}.
-:::
-
-:::{.column width=45%}
-:::{style="text-align: center;"}
-[![](figures/bias-lifecycle.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/bias-lifecycle.png"}
-
-:::{style="background: rgba(230, 57, 70, 0.1); padding: 15px; border-radius: 10px; font-size: 18px; margin-top: 15px;"}
-Bias enters through [the data and design choices]{.alert}, not through intent.
-:::
-:::
-:::
-:::
-:::
-
 ## Healthcare bias: the Optum case
 
 :::{style="margin-top: 30px; font-size: 22px;"}
 :::{.columns}
 :::{.column width=55%}
-[Obermeyer et al. (2019)](https://www.science.org/doi/10.1126/science.aax2342), published in *Science*, exposed a widely-used Optum algorithm.
+[Obermeyer et al. (2019)](https://www.science.org/doi/10.1126/science.aax2342), published in *Science*, exposed a widely-used Optum algorithm
 
-**What it did**: Identified patients needing extra care. Getting flagged = getting help.
+**What it did**: Identified patients needing extra care. Getting flagged = getting help
 
-**The problem**: Used [healthcare costs]{.alert} as a proxy for needs. But Black patients spend less even when equally sick (access barriers, insurance gaps, income inequality).
+**The problem**: Used [healthcare costs]{.alert} as a proxy for needs. But Black patients spend less even when equally sick (access barriers, insurance gaps, income inequality)
 
-**Result**: At the same risk score, Black patients had [26.3% more chronic conditions]{.alert}. Unbiased referral would have raised the Black patient share from 17.7% to 46.5%.
+**Result**: At the same risk score, Black patients had [26.3% more chronic conditions]{.alert}. Unbiased referral would have raised the Black patient share from 17.7% to 46.5%
 
-Race was not an input. But costs [carried racial information]{.alert} because healthcare access itself was unequal.
+Race was not an input. But costs [carried racial information]{.alert} because healthcare access itself was unequal
 :::
 
 :::{.column width=45%}
 :::{style="text-align: center;"}
-<!-- Suggested image: Cost vs illness severity by race -->
 [![](figures/obermeyer.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/obermeyer.png"}
 
 Source: [Obermeyer et al. (2019)](https://www.science.org/doi/10.1126/science.aax2342)
@@ -598,13 +633,12 @@ Source: [Obermeyer et al. (2019)](https://www.science.org/doi/10.1126/science.aa
 - Cost seemed reasonable, until someone disaggregated by race
 
 :::{style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; margin-top: 15px; font-size: 18px;"}
-What you optimise for matters. Costs ≠ needs when access to care is unequal.
+What you optimise for matters. Costs ≠ needs when access to care is unequal
 :::
 :::
 
 :::{.column width=45%}
 :::{style="text-align: center;"}
-<!-- Suggested image: Before/after comparison or improvement illustration -->
 [![](figures/algorithm-fix.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/algorithm-fix.png"}
 
 Source: [NBC News](https://www.nbcnews.com/news/nbcblk/racial-bias-found-widely-used-health-care-algorithm-n1076436)
@@ -618,7 +652,7 @@ Source: [NBC News](https://www.nbcnews.com/news/nbcblk/racial-bias-found-widely-
 :::{style="margin-top: 30px; font-size: 22px;"}
 :::{.columns}
 :::{.column width=55%}
-Credit scoring decides who gets loans and at what rate. [High-stakes ML]{.alert}.
+Credit scoring decides who gets loans and at what rate. [High-stakes ML]{.alert}
 
 **Proxy problems:**
 
@@ -626,7 +660,7 @@ Credit scoring decides who gets loans and at what rate. [High-stakes ML]{.alert}
 - Purchase patterns correlate with gender
 - Career breaks penalise women disproportionately
 
-**Apple Card (2019):** [David Heinemeier Hansson's credit limit was [20× his wife's]{.alert} despite shared finances](https://www.library.hbs.edu/working-knowledge/gender-bias-complaints-against-apple-card-signal-a-dark-side-to-fintech). NY regulators investigated Goldman Sachs. Found [no intentional discrimination]{.alert}, but the inability to explain the outcomes damaged trust.
+**Apple Card (2019):** [David Heinemeier Hansson's credit limit was [20× his wife's]{.alert} despite shared finances](https://www.library.hbs.edu/working-knowledge/gender-bias-complaints-against-apple-card-signal-a-dark-side-to-fintech). NY regulators investigated Goldman Sachs. Found [no intentional discrimination]{.alert}, but the inability to explain the outcomes damaged trust
 :::
 
 :::{.column width=45%}
@@ -636,7 +670,7 @@ Credit scoring decides who gets loans and at what rate. [High-stakes ML]{.alert}
 Source: [Department of Financial Services, New York State](https://www.dfs.ny.gov/system/files/documents/2021/03/rpt_202103_apple_card_investigation.pdf)
 
 :::{style="background: rgba(230, 57, 70, 0.1); padding: 15px; border-radius: 10px; font-size: 18px; margin-top: 15px;"}
-No illegality found, but the [inability to explain]{.alert} the algorithm undermined public trust.
+No illegality found, but the [inability to explain]{.alert} the algorithm undermined public trust
 :::
 :::
 :::
@@ -671,7 +705,7 @@ LLMs in finance carry their own bias risks:
 [![](figures/emerging-markets.jpg){width="100%"}](#){data-modal-type="image" data-modal-url="figures/emerging-markets.jpg"}
 
 :::{style="font-size: 18px; margin-top: 15px;"}
-Bias in financial LLMs is about [whose information is well-represented]{.alert} and whose is not.
+Bias in financial LLMs is about [whose information is well-represented]{.alert} and whose is not
 :::
 :::
 :::
@@ -706,7 +740,7 @@ Source: [UBIS Global](https://ubisglobal.com/blog/addressing-bias-in-ai-advancin
 :::
 :::
 
-## Group discussion
+## Discussion
 
 :::{style="margin-top: 30px; font-size: 22px;"}
 :::{.columns}
@@ -719,7 +753,7 @@ A health insurer uses an LLM to read clinical notes and [estimate costs for prem
 - Estimates future costs → sets premiums
 - No human reviews individual estimates
 
-**In your group (5 minutes):**
+**Questions:**
 
 1. What [bias]{.alert} could enter?
 2. What [proxy problems]{.alert} do you see?
@@ -770,33 +804,6 @@ A health insurer uses an LLM to read clinical notes and [estimate costs for prem
 :::{style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; margin-top: 15px; font-size: 18px;"}
 The same algorithm can save lives or deny care, depending on what it optimises for. The Optum case showed that a single proxy choice (costs vs. health outcomes) changed everything.
 :::
-:::
-:::
-:::
-
-## Further reading
-
-:::{style="margin-top: 30px; font-size: 20px;"}
-:::{.columns}
-:::{.column width=50%}
-**Required readings:**
-
-- Obermeyer, Z. et al. (2019). [Dissecting racial bias in an algorithm used to manage the health of populations](https://www.science.org/doi/10.1126/science.aax2342). *Science*.
-- CFA Institute (2024). [Practical guide for LLMs in the financial industry](https://rpc.cfainstitute.org/research/the-automation-ahead-content-series/practical-guide-for-llms-in-the-financial-industry). *RPC Research*.
-:::
-
-:::{.column width=50%}
-**Recommended:**
-
-- Li, Y. et al. (2023). [Large language models in finance: a survey](https://arxiv.org/abs/2311.10723). *ICAIF-23*.
-- Singhal, K. et al. (2023). [Towards expert-level medical question answering with large language models](https://arxiv.org/abs/2305.09617). *Nature*.
-- O'Neil, C. (2016). *Weapons of math destruction*. Crown.
-- George Zouq (2026). [Awesome AI in Finance](https://github.com/georgezouq/awesome-ai-in-finance).
-- AI4Finance Foundation (2026). [AI4Finance](https://ai4finance.org/).
-
-**Watch:**
-
-- [Coded Bias](https://www.codedbias.com/) (2020). Netflix documentary on AI discrimination (90 min)
 :::
 :::
 :::
