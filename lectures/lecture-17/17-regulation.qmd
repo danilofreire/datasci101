@@ -51,15 +51,16 @@ if (!require("fontawesome", character.only = TRUE)) {
 
 ## Recap of last class
 
-:::{style="margin-top: 20px; font-size: 24px;"}
+:::{style="margin-top: 20px; font-size: 21px;"}
 :::{.columns}
 :::{.column width=50%}
-- We explored [AI applications in healthcare and finance]{.alert}
+- We explored [AI in healthcare and finance]{.alert}, comparing traditional ML with LLMs in each field
 - **Healthcare**: ML for imaging and risk scoring; LLMs for clinical notes, patient communication, and RAG-based Q&A
-- **Finance**: ML for credit scoring and fraud detection; LLMs for sentiment analysis and agentic workflows
+- **Finance**: ML for credit scoring, fraud, and trading; LLMs for sentiment analysis, finance-specific models (BloombergGPT, FinGPT), and [agentic workflows]{.alert}
 - **Optum case**: healthcare costs as a proxy for needs penalised Black patients
-- **Apple Card**: unexplainable credit limits eroded public trust
+- **Apple Card**: unexplainable credit limits
 - RAG reduces hallucination but inherits [knowledge base biases]{.alert}
+- We also spoke about the [group project]{.alert}: test AI tools in a real-world domain and design a new application
 - Today: how are governments responding to these challenges?
 :::
 
@@ -147,7 +148,7 @@ Source: [r/agi](https://www.reddit.com/r/agi/comments/1klizks/how_do_you_feel_ab
 [![](figures/market-failure.jpg){width="100%"}](#){data-modal-type="image" data-modal-url="figures/market-failure.jpg"}
 
 :::{style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; font-size: 18px; margin-top: 15px;"}
-"Move fast and break things" maybe works for social media features. It's [less appealing when the things being broken]{.alert} are people's lives.
+"Move fast and break things" maybe works for social media features. It's [less appealing when the things being broken]{.alert} are people's careers (or even lifes)!
 :::
 :::
 :::
@@ -205,7 +206,7 @@ Source: [X.com](https://x.com/pascal_bornet/status/1892786338015171026)
 | **Self-regulation** | Industry develops own standards | Many current AI ethics guidelines |
 
 :::{style="margin-top: 20px;"}
-**No single approach dominates**
+[No single approach dominates]{.alert}
 
 - EU leans precautionary/risk-based
 - US leans sectoral/innovation-first (but changing)
@@ -220,7 +221,7 @@ Source: [X.com](https://x.com/pascal_bornet/status/1892786338015171026)
 
 ## The world's first comprehensive AI law
 
-:::{style="margin-top: 30px; font-size: 19px;"}
+:::{style="margin-top: 30px; font-size: 18px;"}
 :::{.columns}
 :::{.column width=55%}
 **Timeline:**
@@ -236,7 +237,7 @@ Source: [X.com](https://x.com/pascal_bornet/status/1892786338015171026)
 - Applies to AI systems [placed on the EU market]{.alert}
 - Covers providers, deployers, importers, distributors
 - [Extraterritorial reach]{.alert}: If you sell to the EU, you must comply
-- Affects companies worldwide
+- Since the EU market is huge, [most companies will comply globally to avoid fragmentation]{.alert}
 
 **Approach:**
 
@@ -349,7 +350,7 @@ If your AI system is classified as high-risk, you must:
 :::{style="margin-top: 30px; font-size: 21px;"}
 :::{.columns}
 :::{.column width=55%}
-The Act includes special rules for [foundation models]{.alert} like GPT-4 and Gemini.
+The Act includes special rules for [foundation models]{.alert} like GPT-5, Claude, and Gemini
 
 **All GPAI providers must:**
 
@@ -371,6 +372,36 @@ The Act includes special rules for [foundation models]{.alert} like GPT-4 and Ge
 [![](figures/foundation-models.png){width="70%"}](#){data-modal-type="image" data-modal-url="figures/foundation-models.png"}
 
 Source: [European Commission](https://digital-strategy.ec.europa.eu/en/policies/contents-code-gpai)
+:::
+:::
+:::
+:::
+
+## Open-source models: a partial exemption
+
+:::{style="margin-top: 30px; font-size: 20px;"}
+:::{.columns}
+:::{.column width=55%}
+The Act gives a [partial exemption]{.alert} to open-source AI models:
+
+- If you release model weights under a free licence, you are generally [exempt from most GPAI transparency requirements]{.alert}
+- But if the model is classified as posing [systemic risk]{.alert} (trained with more than 10^25^ FLOPs), the stricter tier still applies
+- [Why the exception?]{.alert} Open-source models allow [independent scrutiny]{.alert}, which partly substitutes for regulatory oversight
+- Supports European open-source ecosystem and research
+
+**Criticism:**
+
+- Creates a potential [loophole]{.alert}: open models can still cause harm once deployed by third parties
+- The deployer bears responsibility, but small deployers may lack resources to comply
+:::
+
+:::{.column width=45%}
+:::{style="text-align: center; margin-top: 30px;"}
+[![](figures/mistral.webp){width="80%"}](#){data-modal-type="image" data-modal-url="figures/mistral.webp"}
+
+:::{style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; font-size: 18px; margin-top: 15px;"}
+**Example:** [Mistral](https://mistral.ai/) is a French open-source AI company. Its larger models (like Mistral Large) are trained above the systemic risk threshold, so they still face the stricter GPAI rules. Its smaller models, released under open licences, would be largely exempt.
+:::
 :::
 :::
 :::
@@ -416,36 +447,66 @@ For a company like Google (2024 revenue ~$350B), a 7% fine would be [~$24.5 bill
 :::
 :::
 
-## where would these fit? 🤔
+## Where would these fit? 🤔
 
-:::{style="margin-top: 30px; font-size: 22px;"}
+:::{style="margin-top: 30px; font-size: 19px;"}
+**Quick reference for the four risk levels:**
+
+- [Prohibited]{.alert}: uses that threaten fundamental rights
+- [High risk]{.alert}: affects safety or fundamental rights in specific domains
+- [Limited risk]{.alert}: interacts with people directly, so users must be told they are dealing with AI
+- [Minimal risk]{.alert}: low-stakes uses with no specific requirements
+
 :::{.columns}
 :::{.column width=50%}
-**Let's classify these AI applications under the EU AI Act:**
-
+:::{.fragment}
 1. ChatGPT used for customer service
+:::
+:::{.fragment}
+   - [Limited risk]{.alert} – must disclose it's AI
+:::
+:::{.fragment}
 2. An AI system that scores job applicants
+:::
+:::{.fragment}
+   - [High risk]{.alert} – employment decisions
+:::
+:::{.fragment}
 3. Spotify's music recommendation algorithm
+:::
+:::{.fragment}
+   - [Minimal risk]{.alert} – entertainment
+:::
+:::{.fragment}
 4. Facial recognition at airport security
-5. An AI that predicts which students will drop out
-6. Deepfake detection software
-7. China-style social credit scoring in the EU
+:::
+:::{.fragment}
+   - [High risk]{.alert} – biometric + border control
+:::
 :::
 
 :::{.column width=50%}
 :::{.fragment}
-**Answers:**
-
-1. [Limited risk]{.alert} – must disclose it's AI
-2. [High risk]{.alert} – employment decisions
-3. [Minimal risk]{.alert} – entertainment
-4. [High risk]{.alert} – biometric + border control
-5. [High risk]{.alert} – educational access
-6. [Minimal risk]{.alert} – helps detect manipulation
-7. [Prohibited]{.alert} – social scoring by government
-
+5. An AI that predicts which students will drop out
+:::
+:::{.fragment}
+   - [High risk]{.alert} – educational access
+:::
+:::{.fragment}
+6. Deepfake detection software
+:::
+:::{.fragment}
+   - [Minimal risk]{.alert} – helps detect manipulation
+:::
+:::{.fragment}
+7. China-style social credit scoring in the EU
+:::
+:::{.fragment}
+   - [Prohibited]{.alert} – social scoring by government
+:::
+:::{.fragment}
 :::{style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; margin-top: 15px; font-size: 18px;"}
-The classification often depends on [context and use]{.alert}, not just the technology itself.
+The classification often depends on [context and use]{.alert}, not just the technology itself
 :::
 :::
 :::
@@ -456,23 +517,23 @@ The classification often depends on [context and use]{.alert}, not just the tech
 
 ## No comprehensive federal AI law (yet)
 
-:::{style="margin-top: 30px; font-size: 19px;"}
+:::{style="margin-top: 30px; font-size: 17px;"}
 :::{.columns}
 :::{.column width=55%}
 The US has taken a [different path]{.alert} from the EU:
 
 **Sectoral approach:**
 
-- Healthcare AI: FDA regulates medical devices
-- Financial AI: SEC, CFPB oversee lending/trading
-- Employment AI: EEOC applies discrimination law
-- No single AI authority
+- Healthcare AI: [Food and Drug Administration (FDA)](https://www.fda.gov/medical-devices/software-medical-device-samd/artificial-intelligence-software-medical-device) regulates medical devices
+- Financial AI: [Securities and Exchange Commission (SEC)](https://www.sec.gov/ai) oversees lending/trading
+- Employment AI: [Equal Employment Opportunity Commission (EEOC)](https://www.eeoc.gov/newsroom/eeoc-launches-initiative-artificial-intelligence-and-algorithmic-fairness) applies discrimination law
+- [No single AI authority]{.alert}
 
 **Recent developments:**
 
-- **October 2023**: Biden's [Executive Order on AI]{.alert}
-- **July 2025**: Trump's [America's AI Action Plan]{.alert}
-- State-level initiatives (Colorado, California, Illinois)
+- **October 2023**: Biden's [Executive Order on AI](https://bidenwhitehouse.archives.gov/briefing-room/presidential-actions/2023/02/16/executive-order-on-further-advancing-racial-equity-and-support-for-underserved-communities-through-the-federal-government/)
+- **July 2025**: Trump's [America's AI Action Plan](https://www.whitehouse.gov/wp-content/uploads/2025/07/Americas-AI-Action-Plan.pdf)
+- State-level initiatives ([Colorado](https://leg.colorado.gov/bills/sb24-205), [California](https://leginfo.legislature.ca.gov/), [Illinois](https://www.ilga.gov/legislation/ilcs/ilcs3.asp?ActID=4015&ChapterID=68))
 
 **Philosophy:**
 
@@ -496,7 +557,7 @@ Source: [Law.com](https://www.law.com/legaltechnews/2023/11/01/white-houses-ai-e
 :::{style="margin-top: 30px; font-size: 20px;"}
 :::{.columns}
 :::{.column width=55%}
-**Key requirements:**
+**Requirements:**
 
 - Developers of powerful AI must [share safety test results]{.alert} with government
 - Standards for [red-teaming]{.alert} AI systems
@@ -533,13 +594,14 @@ Source: [Congress.gov (2023)](https://www.congress.gov/crs-product/R47843)
 :::{.column width=55%}
 The Trump administration's approach differs from Biden's:
 
-**Key priorities:**
+**Priorities:**
 
 - [American AI dominance]{.alert} over global competitors
 - Reduce regulatory barriers to development
 - Focus on [national security applications]{.alert}
 - Energy infrastructure for AI data centres
 - Streamlined permitting for AI facilities
+- [Suggested framework](https://www.whitehouse.gov/wp-content/uploads/2026/03/03.20.26-National-Policy-Framework-for-Artificial-Intelligence-Legislative-Recommendations.pdf) for Congress to consider (March 2026)
 
 **Changes from Biden era:**
 
@@ -573,7 +635,7 @@ Source: [Voice of America](https://www.voanews.com/a/trump-signals-aggressive-st
 :::{.column width=55%}
 With limited federal action, states are filling gaps:
 
-**Colorado AI Act (2024):**
+**[Colorado AI Act (2024)](https://leg.colorado.gov/bills/sb24-205):**
 
 - First comprehensive state AI law
 - Requires [impact assessments]{.alert} for high-risk systems
@@ -584,13 +646,13 @@ With limited federal action, states are filling gaps:
 - Multiple bills on deepfakes, employment AI
 - Often sets [national trends]{.alert}
 
-**Illinois:**
+**[Illinois](https://www.ilga.gov/legislation/ilcs/ilcs3.asp?ActID=4015&ChapterID=68):**
 
 - AI Video Interview Act: Must disclose AI in hiring
 
-**New York City:**
+**[New York City](https://www.nyc.gov/site/dca/about/automated-employment-decision-tools.page):**
 
-- First US jurisdiction to require bias audits for hiring AI
+- First US jurisdiction to require [bias audits for hiring AI](https://rules.cityofnewyork.us/rule/automated-employment-decision-tools-updated/)
 :::
 
 :::{.column width=45%}
@@ -609,17 +671,20 @@ Companies operating nationally face a [patchwork]{.alert} of state requirements.
 
 ## China's AI governance
 
-:::{style="margin-top: 30px; font-size: 21px;"}
+:::{style="margin-top: 30px; font-size: 17px;"}
 :::{.columns}
 :::{.column width=55%}
-China has been [surprisingly active]{.alert} on AI regulation:
+China has been [very active]{.alert} on AI regulation:
 
-**Key features:**
+**Features:**
 
 - [Content control]{.alert}: AI must uphold "socialist values"
 - [Registration requirements]{.alert} for public-facing AI
-- Restrictions on what AI can generate
-- Security assessments for new services
+- Three targeted regulations form the core "trio":
+  - [Algorithm Recommendation Provisions (2022)](https://digichina.stanford.edu/work/translation-internet-information-service-algorithmic-recommendation-management-provisions-effective-march-1-2022/): transparency and control over recommendation systems
+  - [Deep Synthesis Provisions (2023)](https://www.chinalawtranslate.com/en/deep-synthesis/): labelling requirements for synthetic content
+  - [Generative AI Measures (2023)](https://www.chinalawtranslate.com/en/generative-ai-interim/): first binding rules for generative AI worldwide
+- [Amended Cybersecurity Law (2026)](https://iclg.com/practice-areas/cybersecurity-laws-and-regulations/01-generative-ai-and-cyber-risk-in-china) brings AI into national law for the first time
 
 **Contradictions:**
 
@@ -636,7 +701,7 @@ China has been [surprisingly active]{.alert} on AI regulation:
 Source: [Corporate Compliance Insights](https://www.corporatecomplianceinsights.com/regulating-artificial-intelligence-china-west/)
 
 :::{style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; font-size: 18px; margin-top: 15px;"}
-China's approach: regulate [commercial AI carefully]{.alert}, but [state use is largely unrestricted]{.alert}.
+China's approach: regulate [commercial AI carefully]{.alert}, but [state use is largely unrestricted]{.alert}
 :::
 :::
 :::
@@ -650,22 +715,19 @@ China's approach: regulate [commercial AI carefully]{.alert}, but [state use is 
 :::{.column width=55%}
 **United Kingdom:**
 
-- "Pro-innovation" approach
-- Sector regulators apply existing frameworks
+- ["Pro-innovation" approach](https://www.gov.uk/government/publications/ai-regulation-a-pro-innovation-approach): sector regulators apply existing frameworks
 - No comprehensive AI law (yet)
-- AI Safety Institute for frontier models
+- [AI Safety Institute](https://www.aisi.gov.uk/) for frontier model evaluation
 
 **Canada:**
 
-- AIDA (Artificial Intelligence and Data Act) proposed
-- High-risk system requirements
-- Stalled in parliament
+- [AIDA (Artificial Intelligence and Data Act)](https://ised-isde.canada.ca/site/innovation-better-canada/en/artificial-intelligence-and-data-act) was proposed but [died in parliament](https://www.mcinnescooper.com/publications/the-demise-of-the-artificial-intelligence-and-data-act-aida-5-key-lessons/) in January 2025
+- Now pursuing AI governance through privacy legislation instead
 
 **Brazil:**
 
-- Comprehensive AI bill in development
-- Influenced by EU approach
-- Rights-based framework
+- [Comprehensive AI bill (PL 2338/2023)](https://artificialintelligenceact.com/brazil-ai-act/) approved by Senate, now in the Chamber of Deputies
+- Influenced by EU approach; rights-based framework
 :::
 
 :::{.column width=45%}
@@ -673,11 +735,11 @@ China's approach: regulate [commercial AI carefully]{.alert}, but [state use is 
 
 | Initiative | Focus |
 |------------|-------|
-| OECD AI Principles | Soft law, voluntary |
-| G7 Hiroshima Process | International norms |
-| UN AI Advisory Body | Global governance |
-| Council of Europe AI Convention | Human rights focus |
-| ISO/IEC standards | Technical standards |
+| [OECD AI Principles](https://oecd.ai/en/ai-principles) | Soft law, voluntary |
+| [G7 Hiroshima Process](https://www.soumu.go.jp/hiroshimaaiprocess/en/index.html) | International norms |
+| [UN AI Advisory Body](https://www.un.org/ai-advisory-body) | Global governance |
+| [Council of Europe AI Convention](https://www.coe.int/en/web/artificial-intelligence/the-framework-convention-on-artificial-intelligence) | Human rights focus |
+| [ISO/IEC 42001](https://www.iso.org/standard/42001) | Technical standards |
 
 :::{style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; font-size: 18px; margin-top: 15px;"}
 No global consensus on AI governance. The "Brussels Effect" (EU rules becoming global standards) may apply, as with GDPR.
@@ -828,7 +890,7 @@ Source: [LinkedIn](https://www.linkedin.com/posts/senkorasic_stealing-this-meme-
 - Stay informed as rules evolve
 
 :::{style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; margin-top: 15px; font-size: 18px;"}
-The specific rules will keep changing, but the core question stays the same: how do you hold someone accountable for a decision made by a machine? Every framework we covered today is trying to answer that.
+How do you hold someone accountable for a decision made by a machine? Every framework we covered today is trying to answer that!
 :::
 :::
 :::
