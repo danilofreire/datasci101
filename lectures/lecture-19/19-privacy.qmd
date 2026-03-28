@@ -113,6 +113,14 @@ if (!require("fontawesome", character.only = TRUE)) {
 Source: [Caniphis](https://caniphish.com/blog/ai-memes)
 :::
 
+## Good news of the day 📰
+
+:::{style="text-align: center; margin-top: 30px;"}
+[![](figures/ai-polarisation.png){width="65%"}](#){data-modal-type="image" data-modal-url="figures/ai-polarisation.png"}
+
+Source: [Financial Times](https://www.ft.com/content/3880176e-d3ac-4311-9052-fdfeaed56a0e)
+:::
+
 # Privacy in the AI age 🔍 {background-color="#2d4563"}
 
 ## Why AI makes privacy harder
