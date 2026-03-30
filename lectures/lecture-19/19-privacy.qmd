@@ -101,7 +101,8 @@ if (!require("fontawesome", character.only = TRUE)) {
 
 **Part 4: Challenges and tensions**
 
-- AI as a force for good vs surveillance
+- Case study: Clearview AI
+- Discussion: where's your line on privacy?
 - What can you do?
 :::
 :::
