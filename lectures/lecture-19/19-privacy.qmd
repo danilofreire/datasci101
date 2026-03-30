@@ -97,7 +97,7 @@ if (!require("fontawesome", character.only = TRUE)) {
 
 - Differential privacy
 - Federated learning
-- Privacy-preserving machine learning
+- Privacy-preserving machine learning (synthetic data)
 
 **Part 4: Challenges and tensions**
 
