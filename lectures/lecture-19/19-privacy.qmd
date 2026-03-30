@@ -65,6 +65,8 @@ if (!require("fontawesome", character.only = TRUE)) {
 :::{.column width=50%}
 :::{style="text-align: center; margin-top: 30px;"}
 [![Oh, well 😅](figures/privacy-illustration.jpg){width="100%"}](#){data-modal-type="image" data-modal-url="figures/privacy-illustration.jpg"}
+
+- [Note:]{.alert} A filming crew will be in the room next lecture to record a video about this class! If you prefer not to be filmed, please let me know 😉
 :::
 :::
 :::
