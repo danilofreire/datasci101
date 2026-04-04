@@ -411,7 +411,7 @@ Readings:
 
 ### April 06, 2026:
 
-- Lecture 21: [AI and wellbeing: the attention economy, the environment, and mental health](https://raw.githack.com/danilofreire/datasci185/main/lectures/lecture-21/21-wellbeing.html).
+- Lecture 21: [AI and wellbeing: the attention economy, mental health, and the environment](https://raw.githack.com/danilofreire/datasci185/main/lectures/lecture-21/21-wellbeing.html).
 
 Readings:
 
