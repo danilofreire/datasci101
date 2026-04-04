@@ -51,14 +51,14 @@ if (!require("fontawesome", character.only = TRUE)) {
 
 ## Recap of last class
 
-:::{style="margin-top: 20px; font-size: 22px;"}
+:::{style="margin-top: 20px; font-size: 24px;"}
 :::{.columns}
 :::{.column width=50%}
 - Last time, we looked at [AI and the labour market]{.alert}
 - AI is different from earlier waves: it targets [cognitive tasks]{.alert}, not just physical ones
-- The graduate job market is rough right now (2025-26), and AI is part of the reason
 - Automation displaces [tasks, not whole jobs]{.alert} (the Acemoglu & Restrepo framework)
 - AI raises worker productivity but may [compress wages]{.alert} for some and widen inequality
+- The graduate job market is rough right now, and AI is part of the reason
 - Today: a different angle. [What does AI do to people]{.alert}, not jobs?
 - Three themes: the [attention economy]{.alert}, [mental health]{.alert}, and the [environment]{.alert}
 :::
