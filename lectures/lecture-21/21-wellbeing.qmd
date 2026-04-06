@@ -182,7 +182,7 @@ These systems have [no concept of "healthy" consumption]{.alert}. They optimise 
 
 ## Filter bubbles: real or exaggerated? 🫧
 
-:::{style="margin-top: 30px; font-size: 21px;"}
+:::{style="margin-top: 30px; font-size: 23px;"}
 :::{.columns}
 :::{.column width=55%}
 - [Eli Pariser](https://www.ted.com/talks/eli_pariser_beware_online_filter_bubbles) coined "filter bubble" in 2011
@@ -210,7 +210,7 @@ Good news on political polarisation. [Less good news]{.alert} on mental health a
 
 ## Engagement vs wellbeing
 
-:::{style="margin-top: 30px; font-size: 22px;"}
+:::{style="margin-top: 30px; font-size: 23px;"}
 :::{.columns}
 :::{.column width=55%}
 - YouTube has [gradually shifted](https://blog.youtube/inside-youtube/on-youtubes-recommendation-system/) away from watch time as a sole metric, adding satisfaction surveys and other signals
@@ -245,12 +245,12 @@ Companies have a legal duty to shareholders, not to users. When engagement and w
 - However, [Orben & Przybylski (2019, *Nature Human Behaviour*)](https://www.nature.com/articles/s41562-018-0506-1) say that screen time explains [at most 0.4%]{.alert} of the variance in adolescent wellbeing
 - This doesn't mean individual experiences aren't real. It means the [population-level]{.alert} effect is small
 - Haidt's evidence is mostly correlational: [teen depression rose *around the same time* as smartphone adoption]{.alert}
-- [Candice Odgers (*Nature*, 2024)](https://www.nature.com/articles/d41586-024-00902-2): reviewed Haidt's claims and found the evidence does not support his causal story
+- [Candice Odgers (2024, *Nature*)](https://www.nature.com/articles/d41586-024-00902-2): reviewed Haidt's claims and found the evidence does not support his causal story
 - Many studies ([Godard and Holtzman, 2024](https://academic.oup.com/jcmc/article/29/1/zmad055/7595758?login=false&guestAccessKey=), [Nagata et al, 2025](https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2834349), [Shannon et al, 2021](https://mental.jmir.org/2022/4/e33450/)) also find that the association between screen time and wellbeing is [small and inconsistent]{.alert}
 :::
 
 :::{.column width=45%}
-:::{style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px;"}
+:::{style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; margin-top: 15px;"}
 **How large is the effect?**
 
 | Factor | Association with wellbeing |
@@ -409,7 +409,7 @@ In the Habicht et al. study, AI augmented human therapists. That's [a very diffe
 
 ## What the research shows
 
-:::{style="margin-top: 30px; font-size: 21px;"}
+:::{style="margin-top: 30px; font-size: 23px;"}
 :::{.columns}
 :::{.column width=55%}
 - [Opel and Breakspear (*Science*, 2026)](https://www.science.org/doi/10.1126/science.adz9193), two clinical neuroscientists, say AI "may reduce care inequities [when deployed responsibly]{.alert}"
@@ -423,7 +423,7 @@ In the Habicht et al. study, AI augmented human therapists. That's [a very diffe
 :::
 
 :::{.column width=45%}
-:::{style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px;"}
+:::{style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; margin-top: 15px;"}
 **Evidence by level:**
 
 | Level | Status |
@@ -507,8 +507,6 @@ These are [different capabilities]{.alert}, perhaps complementary, but not perfe
 **It's 3am, you can't sleep, you feel anxious. Would you talk to a chatbot? What would it need to do for you to actually trust it?**
 
 **If AI therapy lets a government say "we've addressed mental health" without funding real services, is that a net positive or negative?**
-
-**Would you feel comfortable knowing your most private thoughts are stored on a company's server, likely without clinical-grade protections?**
 :::
 :::
 
@@ -637,7 +635,7 @@ Current estimates (IEA, 2024):
 :::
 
 :::{.column width=45%}
-:::{style="text-align: center;"}
+:::{style="text-align: center; margin-top: 30px;"}
 [![Adding one Sweden or one Germany per year](figures/ai-footprint-context.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/ai-footprint-context.png"}
 
 Source: [IEA (2024)](https://www.iea.org/reports/electricity-2024)
@@ -696,7 +694,7 @@ Net impact? [Unclear]{.alert}. The evidence simply isn't there yet.
 
 ## Main takeaways
 
-:::{style="margin-top: 30px; font-size: 28px;"}
+:::{style="margin-top: 30px; font-size: 30px;"}
 
 - `r fa('mobile-alt')` [Attention economy]{.alert}: recommendation systems optimise engagement, not wellbeing. Filter bubble fears are overstated; mental health effects are not
 
