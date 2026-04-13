@@ -397,8 +397,6 @@ Source: [Chesney & Citron (2019)](https://www.foreignaffairs.com/articles/world/
 ## Discussion: what would convince you? 🤔
 
 :::{style="margin-top: 30px; font-size: 26px;"}
-:::{.columns}
-:::{.column width=50%}
 **Scenario:**
 
 A video emerges of a political candidate you support saying something terrible. The candidate claims it's a deepfake.
@@ -407,20 +405,6 @@ A video emerges of a political candidate you support saying something terrible. 
 2. What evidence would convince you either way?
 3. Does your political alignment affect your judgment?
 4. What if experts disagree?
-:::
-
-:::{.column width=50%}
-:::{.fragment}
-**The issues:**
-
-- [Motivated reasoning]{.alert} affects everyone
-- We're more sceptical of evidence against our beliefs
-- Expert consensus helps, but experts can be wrong
-- Verification takes time; damage is immediate
-- There may be [no satisfying answer]{.alert}
-:::
-:::
-:::
 :::
 
 # Why we fall for it 🧠 {background-color="#2d4563"}
