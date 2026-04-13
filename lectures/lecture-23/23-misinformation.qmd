@@ -54,11 +54,11 @@ if (!require("fontawesome", character.only = TRUE)) {
 :::{style="margin-top: 20px; font-size: 24px;"}
 :::{.columns}
 :::{.column width=50%}
-- Last time: [AI and wellbeing]{.alert}, across attention, mental health, and the environment
-- Recommendation algorithms optimise [engagement, not wellbeing]{.alert}. Filter bubble fears look overstated; effects on anxiety, sleep, and body image don't
-- AI mental health tools show [short-term promise]{.alert} but thin long-term evidence. Best use case: [augmentation, not replacement]{.alert}
-- Training is a one-off cost; [inference at scale]{.alert} is what grows with adoption. Water and hardware rarely make the headlines
-- Across all three: [incentive structures beat intentions]{.alert}. Financial models rarely reward user wellbeing
+- Last time: [AI and wellbeing]{.alert} (attention, mental health, environment)
+- Algorithms optimise [engagement, not wellbeing]{.alert}. Filter bubbles look overstated; anxiety, sleep, and body-image effects don't
+- AI mental-health tools: [short-term promise]{.alert}, thin long-term evidence. [Augmentation, not replacement]{.alert}
+- Training is a one-off cost; [inference at scale]{.alert} is what keeps growing
+- Common thread: [incentive structures beat intentions]{.alert}
 - Today: [what happens when AI is used to deceive?]{.alert}
 :::
 
@@ -140,7 +140,8 @@ Source: [X.com](https://x.com/kimmonismus/status/2041592321192718642)
 | [Misinformation]{.alert} | False information spread without intent to deceive |
 | [Disinformation]{.alert} | False information spread deliberately to deceive |
 | [Malinformation]{.alert} | True information shared to cause harm |
-| [Synthetic media]{.alert} | Content created or manipulated by AI |
+
+A related but broader concept: [synthetic media]{.alert} (content created or manipulated by AI) can carry any of the three types above, or none at all.
 
 **Why the distinction matters:**
 
@@ -462,12 +463,14 @@ Source: [Soroka et al. (2019)](https://www.pnas.org/doi/abs/10.1073/pnas.1908369
 :::{.column width=55%}
 **[Kahneman's (2011)](https://en.wikipedia.org/wiki/Thinking,_Fast_and_Slow) dual-process theory:**
 
+:::{style="text-align: center;"}
 | | System 1 | System 2 |
 |--|----------|----------|
 | Speed | Fast, automatic | Slow, deliberate |
 | Effort | Effortless | Requires concentration |
 | Mode | Intuitive, emotional | Analytical, logical |
 | Default? | [Yes]{.alert} | Only when triggered |
+:::
 
 **Social media is a System 1 environment:**
 
@@ -512,7 +515,6 @@ Source: [Soroka et al. (2019)](https://www.pnas.org/doi/abs/10.1073/pnas.1908369
 
 :::{.column width=45%}
 :::{style="text-align: center;"}
-<!-- Suggested image: Confirmation bias illustration -->
 [![](figures/confirmation-bias.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/confirmation-bias.png"}
 
 :::{style="font-size: 18px; margin-top: 15px;"}
@@ -605,12 +607,14 @@ We share what confirms our views *and* makes us look informed. The truth can wai
 :::{.column width=55%}
 **Detection approaches:**
 
+:::{style="text-align: center;"}
 | Method | How it works |
 |--------|--------------|
 | Artefact detection | Unnatural blinking, lighting |
 | Biological signals | Pulse, micro-expressions |
 | Source forensics | Compression artefacts, metadata |
 | [AI vs AI]{.alert} | Train detectors on known fakes |
+:::
 
 **Why it's hard:**
 
