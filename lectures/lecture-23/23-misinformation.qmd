@@ -708,27 +708,13 @@ Source: [Columbia Journal of Law and Arts](https://journals.library.columbia.edu
 
 ## Media literacy
 
-:::{style="margin-top: 30px; font-size: 23px;"}
-:::{.columns}
-:::{.column width=55%}
+:::{style="margin-top: 30px; font-size: 28px;"}
 **What the evidence says works:**
 
 - [Pennycook & Rand (2021)](https://www.nature.com/articles/s41586-021-03344-2): a small [accuracy nudge]{.alert} before sharing improves the quality of news people pass along
 - [Roozenbeek et al. (2022)](https://www.science.org/doi/10.1126/sciadv.abo6254): short [inoculation]{.alert} videos teaching manipulation tactics. Tested on YouTube with 22,632 users, with measurable effects
 - [Guess et al. (2020)](https://www.pnas.org/doi/10.1073/pnas.1920498117): media literacy tips improved discernment of false news by [26.5% in the US]{.alert} and 17.5% in India
 - Effects are real but often [short-lived](https://onlinelibrary.wiley.com/doi/10.1111/jasp.13049) (Capewell et al., 2024). No single intervention scales to billions on its own
-:::
-
-:::{.column width=45%}
-**Practical tips:**
-
-1. Reverse image search: [Google Images](https://images.google.com), [TinEye](https://tineye.com)
-2. Check who published it first: [InVID verification toolkit](https://www.invid-project.eu/tools-and-services/invid-verification-plugin/)
-3. Look for [red flags]{.alert}: unusual lighting, blurring, off-sync audio
-4. Ask who benefits from you believing it
-5. [Wait]{.alert} before sharing. Breaking news is often wrong
-:::
-:::
 :::
 
 # Summary 📝 {background-color="#2d4563"}
