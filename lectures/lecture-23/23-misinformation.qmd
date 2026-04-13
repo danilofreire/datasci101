@@ -141,7 +141,7 @@ Source: [X.com](https://x.com/kimmonismus/status/2041592321192718642)
 | [Disinformation]{.alert} | False information spread deliberately to deceive |
 | [Malinformation]{.alert} | True information shared to cause harm |
 
-A related but broader concept: [synthetic media]{.alert} (content created or manipulated by AI) can carry any of the three types above, or none at all.
+A related but broader concept: [synthetic media]{.alert} (content created or manipulated by AI)
 
 **Why the distinction matters:**
 
@@ -153,7 +153,6 @@ A related but broader concept: [synthetic media]{.alert} (content created or man
 
 - Misinformation is ancient
 - Technology changes [scale and speed]{.alert}
-- The human vulnerabilities remain
 :::
 
 :::{.column width=45%}
