@@ -51,20 +51,20 @@ if (!require("fontawesome", character.only = TRUE)) {
 
 ## Recap of last class
 
-:::{style="margin-top: 20px; font-size: 24px;"}
+:::{style="margin-top: 20px; font-size: 23px;"}
 :::{.columns}
 :::{.column width=50%}
-- Last class: [misinformation, deepfakes, and trust online]{.alert}
-- Scale, speed, accessibility of synthetic content
-- Political manipulation, non-consensual intimate imagery, fraud
-- System 1 vs System 2, confirmation bias, bandwagon effect
-- Detection (AI vs AI), provenance, platform policies, media literacy
-- Today: [Looking further ahead at long-term safety and alignment]{.alert}
+- Last class: [misinformation, deepfakes, and trust]{.alert}
+- Three types of false content: mis-, dis-, and malinformation, each with different intent
+- AI lowers the [cost and skill]{.alert} needed to produce convincing fakes (text, image, audio, video)
+- Real-world harms: political manipulation, non-consensual imagery, financial fraud
+- Cognitive biases (System 1 vs 2, confirmation bias, bandwagon effect) explain [why we fall for it]{.alert}
+- Responses: technical detection, content provenance (C2PA), platform policies, media literacy
+- Today: [long-term safety and the alignment problem]{.alert}
 :::
 
 :::{.column width=50%}
 :::{style="text-align: center; margin-top: -30px;"}
-<!-- Suggested image: Future AI concept -->
 [![](figures/cruise.gif){width="100%"}](#){data-modal-type="image" data-modal-url="figures/cruise.gif"}
 
 Source: [Chris Ume](https://x.com/vfxchrisume)
@@ -112,7 +112,7 @@ Source: [Chris Ume](https://x.com/vfxchrisume)
 ## Meme of the day!
 
 :::{style="text-align: center; margin-top: 30px; font-size: 20px;"}
-[![](figures/alignment-meme.jpg){width="43%"}](#){data-modal-type="image" data-modal-url="figures/alignment-meme.jpg"}
+[![](figures/alignment-meme.jpg){width="37%"}](#){data-modal-type="image" data-modal-url="figures/alignment-meme.jpg"}
 
 Source: [Cheezburger](https://cheezburger.com/20659973/20-memes-if-youre-feeling-extra-anxious-about-ai-technology-taking-over)
 :::
@@ -167,12 +167,14 @@ Source: [Saetra & Donaher (2023)](https://link.springer.com/article/10.1007/s436
 
 **Historical analogies:**
 
+:::{style="text-align: center;"}
 | Technology | Safety lag |
 |------------|------------|
 | Nuclear | Developed first, safety after |
 | Internet | Security an afterthought |
 | Social media | Harms discovered in deployment |
 | Biotech | Ongoing debate |
+:::
 
 :::{style="margin-top: 30px;"}
 :::
@@ -194,11 +196,12 @@ Source: [Center for AI Safety](https://aistatement.com/#open-letter)
 
 ## Concrete problems in AI safety
 
-:::{style="margin-top: 30px; font-size: 20px;"}
+:::{style="margin-top: 30px; font-size: 22px;"}
 :::{.columns}
 :::{.column width=55%}
 [Amodei et al. (2016) identified five big challenges:](https://arxiv.org/abs/1606.06565)
 
+:::{style="text-align: center;"}
 | Problem | Description |
 |---------|-------------|
 | [Safe exploration]{.alert} | How to learn without dangerous actions |
@@ -206,6 +209,7 @@ Source: [Center for AI Safety](https://aistatement.com/#open-letter)
 | [Avoiding reward hacking]{.alert} | Don't game the objective |
 | [Scalable oversight]{.alert} | How to supervise complex systems |
 | [Robustness to distributional shift]{.alert} | Handle novel situations safely |
+:::
 
 **Why these matter:**
 
@@ -337,7 +341,7 @@ Source: [Anthropic](https://www.anthropic.com/research/alignment-faking)
 :::
 :::
 
-## Why alignment is hard
+## Alignment is hard!
 
 :::{style="margin-top: 30px; font-size: 21px;"}
 :::{.columns}
@@ -349,7 +353,7 @@ Source: [Anthropic](https://www.anthropic.com/research/alignment-faking)
 - Values are context-dependent
 - Humans can't articulate their own values perfectly
 
-**Goodhart's Law:** (remember this!)
+**[Goodhart's Law](https://en.wikipedia.org/wiki/Goodhart%27s_law):** (remember this!)
 
 - "When a measure becomes a target..."
 - "...it ceases to be a good measure"
@@ -395,6 +399,7 @@ Source: [Anthropic](https://www.anthropic.com/research/alignment-faking)
 - [Uses set of principles ("constitution")]{.alert}
 - Iteratively improves
 - Reduces need for human labelling
+- [Amanda Askell's work](https://askell.io/) on AI ethics and philosophy
 :::
 
 :::{.column width=45%}
@@ -450,18 +455,6 @@ These methods [work well enough for current systems]{.alert}. Whether they scale
 
 Source: [Ngo et al. (2022)](https://arxiv.org/abs/2209.00626)
 :::
-
-:::{style="font-size: 19px;"}
-**Research directions:**
-
-| Area | Focus |
-|------|-------|
-| [Interpretability]{.alert} | Understanding what AI "thinks" |
-| Robustness | Maintaining alignment under pressure |
-| Scalable oversight | Supervising superhuman AI |
-| Value learning | Inferring human values |
-| Corrigibility | Making AI correctable |
-:::
 :::
 :::
 :::
@@ -480,7 +473,7 @@ If we align AI to human values...
 - Majority? Consensus? Universal?
 - Present generation? Future?
 
-**Discuss (2 minutes):**
+**Let's discuss:**
 
 1. Should AI reflect your values or "universal" values?
 2. What happens when values conflict?
@@ -674,11 +667,12 @@ Source: [MIT Technology Review's YouTube channel](https://www.youtube.com/watch?
 
 ## Research directions
 
-:::{style="margin-top: 30px; font-size: 19px;"}
+:::{style="margin-top: 30px; font-size: 21px;"}
 :::{.columns}
 :::{.column width=55%}
 **Technical safety research:**
 
+:::{style="text-align: center;"}
 | Area | Goal |
 |------|------|
 | [Interpretability]{.alert} | Understand AI internals |
@@ -686,6 +680,7 @@ Source: [MIT Technology Review's YouTube channel](https://www.youtube.com/watch?
 | Alignment | Ensure AI pursues intended goals |
 | Oversight | Scale human supervision |
 | Honesty | AI that doesn't deceive |
+:::
 
 **Growing field:**
 
@@ -696,7 +691,7 @@ Source: [MIT Technology Review's YouTube channel](https://www.youtube.com/watch?
 
 - High-impact work
 - Talent shortage
-- Many paths in (technical, governance, policy)
+- Many paths in technical and non-technical roles
 :::
 
 :::{.column width=45%}
@@ -713,29 +708,24 @@ Source: [The Wall Street Journal (2026)](https://www.wsj.com/tech/ai/anthropic-a
 :::
 :::
 
-## Your role
+## Where you fit in
 
 :::{style="margin-top: 30px; font-size: 21px;"}
 :::{.columns}
 :::{.column width=55%}
-We've already discussed what governments are (not) doing about AI. What [can you do?]{.alert}
+People who understand the technology are often [absent from policy debates]{.alert}. That is a problem!
 
-- [Understand]{.alert} the technology and debates
-- Evaluate claims critically
-- Support good governance
-- [Vote based on AI policy positions]{.alert}
+**As citizens:**
 
-**As professionals:**
+- Scrutinise AI regulation proposals: what problem does this solve, and [does it actually address it]{.alert}?
+- Vote, comment on public consultations, write to representatives
+- Most AI coverage confuses hype with capability; [you can do better]{.alert} 😉
 
-- If you work with AI: [Consider impacts]{.alert}
-- Ask safety questions in your organisation
-- Advocate for responsible development
-- Question work you find unethical
+**If you work with AI or data:**
 
-**As people:**
-
-- Engage with policy discussions
-- [Don't be passive!]{.alert}
+- Ask what happens when your system [fails or is misused]{.alert}
+- Know what data you train on and who it affects
+- Talk to people [outside your field]{.alert} about how they experience AI
 :::
 
 :::{.column width=45%}
@@ -748,29 +738,27 @@ Source: [MIT Sloan Review (2024)](https://sloanreview.mit.edu/article/how-ai-ske
 :::
 :::
 
-## Finding balance
+## Thinking about AI risk clearly
 
-:::{style="margin-top: 30px; font-size: 21px;"}
+:::{style="margin-top: 30px; font-size: 20px;"}
 :::{.columns}
 :::{.column width=55%}
-**Neither panic nor complacency:**
+**Common mistakes:**
 
-- Don't dismiss all concerns as sci-fi
-- Don't accept all concerns uncritically
-- [Evidence over vibes!]{.alert}
+- [Dismissing concerns]{.alert} because current AI seems harmless (ignores rapid capability gains)
+- [Catastrophising]{.alert} based on scenarios with no evidence
+- Conflating "possible" with "probable"
 
-**What reasonable concern looks like:**
+**A more useful framework:**
 
-- Take problems seriously
-- But don't catastrophise
-- Stay grounded in current reality
-- Plan for multiple futures
+- Separate [near-term harms]{.alert} from speculative long-term risks
+- Ask: what evidence would change my mind?
+- Experts [genuinely disagree]{.alert}, and that is okay! Certainty is the red flag
 
-**What reasonable optimism looks like:**
+**What history suggests:**
 
-- Acknowledge real progress
-- Believe problems are [solvable]{.alert}
-- Trust in human adaptability
+- Technology risks are real but rarely follow worst-case predictions
+- The biggest harms tend to come from [problems we did not anticipate]{.alert}, not the ones we worried about most
 :::
 
 :::{.column width=45%}
