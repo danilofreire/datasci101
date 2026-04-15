@@ -117,6 +117,14 @@ Source: [Chris Ume](https://x.com/vfxchrisume)
 Source: [Cheezburger](https://cheezburger.com/20659973/20-memes-if-youre-feeling-extra-anxious-about-ai-technology-taking-over)
 :::
 
+## Funny news of the day! 🫧
+
+:::{style="text-align: center; margin-top: 30px; font-size: 20px;"}
+[![](figures/allbirds.png){width="95%"}](#){data-modal-type="image" data-modal-url="figures/allbirds.png"}
+
+Source: [CNBC](https://www.cnbc.com/2026/04/15/allbirds-bird-stock-shoes-ai.html)
+:::
+
 # AI safety 🛡️ {background-color="#2d4563"}
 
 ## Near-term vs long-term concerns
