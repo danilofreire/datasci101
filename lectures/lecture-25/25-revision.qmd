@@ -130,7 +130,7 @@ The transformer architecture (2017)
 :::{style="text-align: center;"}
 [![](figures/data-centric.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/data-centric.png"}
 
-Andrew Ng's data-centric AI (2021)
+Data-centric vs model-centric AI (Karpathy, 2018)
 :::
 :::
 :::
@@ -138,7 +138,7 @@ Andrew Ng's data-centric AI (2021)
 
 ## Learning paradigms and RLHF (Lecture 4)
 
-:::{style="margin-top: 30px; font-size: 22px;"}
+:::{style="margin-top: 30px; font-size: 23px;"}
 :::{.columns}
 :::{.column width=55%}
 :::{style="text-align: center; margin-top: 30px; margin-bottom: 20px;"}
@@ -152,21 +152,13 @@ Andrew Ng's data-centric AI (2021)
 - [Bias-variance trade-off]{.alert}: too simple (underfitting) vs too complex (memorises noise). The goal is the sweet spot in between
 - [RLHF]{.alert}: humans rank outputs, a reward model learns from those rankings, and RL optimises the LLM. This is how ChatGPT became useful
 - Risk: [reward hacking]{.alert}, where the model games the objective instead of doing what you want
-
-:::{style="margin-top: 10px; background: rgba(45, 69, 99, 0.1); padding: 12px; border-radius: 10px; font-size: 17px;"}
-`r fa('link')` Reward hacking = Goodhart's Law (L5) applied to training. RLHF returns in Lecture 24 as a key approach to alignment.
-:::
 :::
 
 :::{.column width=45%}
-:::{style="text-align: center;"}
-[![](figures/anthropic-rlhf.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/anthropic-rlhf.png"}
+:::{style="margin-top: 15px; text-align: center;"}
+[![](figures/bias-variance.gif){width="85%"}](#){data-modal-type="image" data-modal-url="figures/bias-variance.gif"}
 
-RLHF: the method behind ChatGPT
-
-:::{style="margin-top: 15px;"}
-[![](figures/bias-variance.gif){width="90%"}](#){data-modal-type="image" data-modal-url="figures/bias-variance.gif"}
-:::
+The bias-variance trade-off
 :::
 :::
 :::
@@ -206,7 +198,7 @@ The confusion matrix: TP, TN, FP, FN
 :::{.columns}
 :::{.column width=55%}
 - [Tokens]{.alert}: the basic unit of LLM processing (~100 tokens ≈ 75 English words). Modern LLMs use [BPE]{.alert} (Byte Pair Encoding)
-- Non-English languages need more tokens per concept, so they cost more and fill the context window faster
+- Non-English languages (usually) need more tokens per concept, so they may cost more and fill the context window faster
 - [Embeddings]{.alert}: each token becomes a high-dimensional vector. Similar meanings end up close together in vector space
 - [Context windows]{.alert}: maximum token limit for prompt + response. Go over it and the model starts forgetting
 - [Parameters]{.alert} (learned by the model) vs [hyperparameters]{.alert} (set by you): [temperature]{.alert} controls randomness (low = safe, high = creative)
@@ -218,7 +210,7 @@ The confusion matrix: TP, TN, FP, FN
 
 :::{.column width=45%}
 :::{style="text-align: center;"}
-[![](figures/king-man-woman-embedding.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/king-man-woman-embedding.png"}
+[![](figures/king-queen-vectors.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/king-queen-vectors.png"}
 
 king - man + woman ≈ queen
 :::
@@ -288,7 +280,7 @@ Chain-of-thought prompting
 :::{.column width=55%}
 - LLMs optimise for [P(next word | context)]{.alert}, not P(statement is true). They have no internal fact-checker
 - [Sycophancy]{.alert}: LLMs tell you what you want to hear. GPT-4o changed correct answers up to 55% of the time after pushback
-- Types of hallucination: factual errors, fabrication, [citation hallucination]{.alert} (worst kind), logical contradictions
+- Types of hallucination: factual errors, fabrication, [citation hallucination]{.alert} (worst kind?), logical contradictions
 - The [creativity-accuracy trade-off]{.alert}: high temperature = creative but risky. The same mechanism that produces hallucinations also produces creative writing
 - Red flags: very specific numbers, precise citations, zero hedging, answers that feel too perfect
 
@@ -299,7 +291,7 @@ Chain-of-thought prompting
 
 :::{.column width=45%}
 :::{style="text-align: center;"}
-[![](figures/creativity-accuracy.jpg){width="100%"}](#){data-modal-type="image" data-modal-url="figures/creativity-accuracy.jpg"}
+[![](figures/creativity-accuracy.jpg){width="80%"}](#){data-modal-type="image" data-modal-url="figures/creativity-accuracy.jpg"}
 
 Same mechanism, different outcomes
 :::
@@ -446,22 +438,24 @@ Obermeyer et al. (2019): changing the target variable fixed the bias
 
 ## AI regulation around the world (Lecture 17)
 
-:::{style="margin-top: 30px; font-size: 22px;"}
+:::{style="margin-top: 30px; font-size: 21px;"}
 :::{.columns}
 :::{.column width=55%}
 - Why regulate? [Information asymmetry]{.alert} (users cannot evaluate AI), [externalities]{.alert} (deepfakes harm non-users), [collective action problems]{.alert} (race to the bottom on safety)
 - [EU AI Act]{.alert} (August 2024): four risk tiers
 
+:::{style="text-align: center;"}
 | Tier | Examples |
 |------|---------|
 | [Prohibited]{.alert} | Social scoring, real-time biometric ID |
 | [High-risk]{.alert} | Employment, credit, law enforcement |
 | Limited | Chatbots (must disclose they are AI) |
 | Minimal | Spam filters, game AI |
+:::
 
 - US: sectoral approach, [no comprehensive federal law]{.alert}
 - China: regulates commercial AI, [exempts state use]{.alert}
-- [Brussels Effect]{.alert}: EU rules may become the global default, as happened with GDPR
+- [Brussels Effect]{.alert}: EU rules may become the global default, as happened with the General Data Protection Regulation (GDPR)
 
 :::{style="margin-top: 10px; background: rgba(45, 69, 99, 0.1); padding: 12px; border-radius: 10px; font-size: 17px;"}
 `r fa('link')` "High-risk" = the systems from Lectures 15-16. The Act requires documentation from Lecture 14. Brussels Effect connects to GDPR (L19).
@@ -607,32 +601,32 @@ The misinformation spectrum
 
 ## Ideas that run through the whole course
 
-:::{style="margin-top: 30px; font-size: 21px;"}
+:::{style="margin-top: 30px; font-size: 20px;"}
 :::{.columns}
 :::{.column width=50%}
-**1. Next-token prediction is the foundation**
+1. [Next-token prediction is the basis of everything]{.alert}
 
 LLMs predict the next word, not the truth. This explains hallucinations, creativity, and sycophancy (Lectures 1, 2, 6, 10)
 
-**2. The proxy problem is everywhere**
+2. [The proxy problem is pervasive]{.alert}
 
 Labels, metrics, objectives, and engagement are all proxies. Optimising a proxy corrupts it (Lectures 3, 5, 15, 16, 21)
 
-**3. Embeddings are the universal language**
+3. [Embeddings are the universal language]{.alert}
 
 Text, images, and audio all become vectors. RAG, semantic search, CLIP, and multimodal AI all rely on this (Lectures 6, 7, 11)
 :::
 
 :::{.column width=50%}
-**4. Bias enters at every stage**
+4. [Bias can enter at every stage]{.alert}
 
 Data, labels, training, evaluation, deployment. Feedback loops make it self-reinforcing. The impossibility theorem means fairness requires a values choice (Lectures 3, 14, 15, 16)
 
-**5. Documentation is accountability**
+5. [Documentation is accountability]{.alert}
 
 Datasheets, model cards, system cards. Disaggregated evaluation reveals hidden gaps (Lectures 14, 15, 16)
 
-**6. Regulation is catching up**
+6. [Regulation is catching up]{.alert}
 
 EU AI Act, GDPR, the Brussels Effect. Market failures justify intervention (Lectures 17, 19)
 
@@ -650,17 +644,17 @@ If you understand these six threads, you understand the course!
 :::{style="margin-top: 30px; font-size: 28px;"}
 :::{.columns}
 :::{.column width=55%}
-`r fa('microchip')` **How AI works:** next-token prediction, transformers, embeddings, three learning paradigms, metrics and their limits
+`r fa('microchip')` [How AI works]{.alert}: next-token prediction, transformers, embeddings, three learning paradigms, metrics and their limits
 
-`r fa('magnifying-glass')` **How AI handles information:** tokens, prompting (PTCF, CoT), hallucinations, RAG, pipelines and drift
+`r fa('magnifying-glass')` [How AI handles information]{.alert}: tokens, prompting (PTCF, CoT), hallucinations, RAG, pipelines and drift
 
-`r fa('scale-balanced')` **Ethics and bias:** bias at every stage, the impossibility theorem, the Optum case, documentation as accountability
+`r fa('scale-balanced')` [Ethics and bias]{.alert}: bias at every stage, the impossibility theorem, the Optum case, documentation as accountability
 :::
 
 :::{.column width=45%}
-`r fa('landmark')` **Policy and society:** EU AI Act, GDPR, the privacy paradox, labour markets, the attention economy, environmental costs
+`r fa('landmark')` [Policy and society]{.alert}: EU AI Act, GDPR, the privacy paradox, labour markets, the attention economy, environmental costs
 
-`r fa('shield-halved')` **Safety and the future:** concrete safety problems, the alignment problem, multiple plausible futures
+`r fa('shield-halved')` [Safety and the future]{.alert}: concrete safety problems, the alignment problem, multiple plausible futures
 
 :::{style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; margin-top: 15px; font-size: 18px;"}
 You now have the vocabulary to [read AI claims critically]{.alert} and ask the right questions about data, bias, and harms. Good luck on the quiz! 🍀
