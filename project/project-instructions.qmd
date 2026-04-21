@@ -47,7 +47,7 @@ Pick one domain from the list below. Each domain includes a few example use case
 6. **Environment and climate**: weather forecasting, energy optimisation, biodiversity monitoring
 7. **Misinformation and media**: deepfake detection, fact-checking tools, content recommendation algorithms
 
-Domain selection is first-come-first-served via a sign-up sheet on Canvas. Multiple groups can work in the same domain, but each group must address a different use case. If a domain becomes too crowded, I may ask latecomers to pick another one.
+Domain selection is first-come-first-served. Multiple groups can work in the same domain, but each group must address a different use case. If a domain becomes too crowded, I may ask latecomers to pick another one. Please feel free to email me if you have questions about which domain or use case to choose.
 
 # Timeline
 
