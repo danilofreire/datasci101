@@ -35,7 +35,8 @@ Readings:
 - Halevy, A., Norvig, P., & Pereira, F. (2009). [The unreasonable effectiveness of data.](https://static.googleusercontent.com/media/research.google.com/en//pubs/archive/35179.pdf) *IEEE Intelligent Systems*, *24*(2), 8-12. A classic paper arguing that large datasets are often more important than sophisticated algorithms.
 - Pradhan, M. (2023). [A non-technical introduction to Transformers.](https://medium.com/healthcare-ai-sig/a-non-technical-introduction-to-transformers-6ca36b8246d) A clear explanation of the transformer architecture that underpins many modern AI systems.
 - Georgia Tech's Polo Club of Data Science (2025). [Transformer explainer.](https://poloclub.github.io/transformer-explainer/) An interactive visualisation of how transformers work.
-- Vaswani, A., Shazeer, N., Parmar, N., Uszkoreit, J., Jones, L., Gomez, A. N., ... & Polosukhin, I. (2017). [Attention is all you need.](https://proceedings.neurips.cc/paper_files/paper/2017/file/3f5ee243547dee91fbd053c1c4a845aa-Paper.pdf)  *Advances in Neural Information Processing Systems*, 30. In case you want to read the original paper. Not for the faint of heart. 
+- Vaswani, A., Shazeer, N., Parmar, N., Uszkoreit, J., Jones, L., Gomez, A. N., ... & Polosukhin, I. (2017). [Attention is all you need.](https://proceedings.neurips.cc/paper_files/paper/2017/file/3f5ee243547dee91fbd053c1c4a845aa-Paper.pdf)  *Advances in Neural Information Processing Systems*, 30. In case you want to read the original paper. Not for the faint of heart.
+- Whang, O. (2026). [Inside the AI black box: the quest for interpretability.](https://www.nytimes.com/2026/04/15/magazine/ai-black-box-interpretability-research.html) *The New York Times Magazine*. A non-technical primer on interpretability research and how scientists are trying to understand what happens inside modern AI models.
 
 ## Module 1 — How AI systems are designed
 
