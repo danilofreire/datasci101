@@ -507,9 +507,9 @@ Source: [Artificial Intelligence Index Report (2025)](https://hai.stanford.edu/a
 
 :::{.column width=50%}
 :::{style="text-align: center; margin-top: -30px;"}
-[![](figures/thinking-game.jpg){width="60%"}](https://www.youtube.com/watch?v=d95J8yzvjbQ)
+[![](figures/ai-doc.jpg){width="60%"}](https://www.youtube.com/watch?v=yvq-jYira9I)
 
-Suggested video: [The Thinking Game](https://www.youtube.com/watch?v=d95J8yzvjbQ)
+Suggested video: [The AI Doc](https://www.youtube.com/watch?v=yvq-jYira9I)
 :::
 :::
 :::
