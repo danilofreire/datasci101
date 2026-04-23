@@ -49,6 +49,7 @@ Readings are short papers, essays and tutorials rather than a single textbook. L
 
 ### Other resources
 
+- [The AI doc: or how I became an apocaloptimist](https://www.youtube.com/watch?v=yvq-jYira9I) by Daniel Roher and Charlie Tyrell (2026). A light-hearted documentary featuring many of the field's most prominent voices, with views ranging from very optimistic to very pessimistic about AI. Worth watching.
 - [In machines we trust](https://www.technologyreview.com/supertopic/in-machines-we-trust/). A podcast series by MIT Technology Review about the promises and perils of AI. Very accessible and engaging.
 - [AI for the rest of us](https://aifortherestofus.com/). 25-30 minute episodes focused on explaining AI concepts to non-technical listeners.
 - [The gradient](https://thegradient.pub/). A publication that features accessible articles on AI research.
