@@ -1,8 +1,8 @@
 ---
-title: "DATASCI 185 - Introduction to AI Applications"
+title: "DATASCI 101 - Introduction to AI Applications"
 ---
 
-Welcome to [DATASCI 185](https://github.com/danilofreire/datasci185)! This course provides a comprehensive introduction to the fundamental concepts, tools, and techniques used in artificial intelligence. The course is practical: students will learn how modern systems are designed and how to ask the right questions about data, reliability and harms. It combines short demonstrations (no programming experience required), case studies, and project work. It is suitable for undergraduate students from any faculty who want a grounded understanding of what AI can and cannot do.
+Welcome to [DATASCI 101](https://github.com/danilofreire/datasci101)! This course provides a comprehensive introduction to the fundamental concepts, tools, and techniques used in artificial intelligence. The course is practical: students will learn how modern systems are designed and how to ask the right questions about data, reliability and harms. It combines short demonstrations (no programming experience required), case studies, and project work. It is suitable for undergraduate students from any faculty who want a grounded understanding of what AI can and cannot do.
 
 We will meet every Monday and Wednesday from 4pm to 4:50pm in the [Psychology Building, Room 290](https://maps.app.goo.gl/orrT4jaoxjYiojkL7). It is important to read the assigned readings before class, and make sure to check this website for updates and additional resources. If you have any questions, please feel free to contact me or the course TAs. I am here to help you succeed in this course and beyond.
 
@@ -40,21 +40,21 @@ By the end of this course, students will be able to:
 
 ## Website Structure
 
-This website contains the [course syllabus](https://danilofreire.github.io/datasci185/syllabus.html), [lecture materials](https://danilofreire.github.io/datasci185/lectures.html), and [assignments](https://danilofreire.github.io/datasci185/assignments.html) for the course. The course repository at <https://github.com/danilofreire/datasci185> is similarly structured. Feel free to explore the materials and use them as needed.
+This website contains the [course syllabus](https://danilofreire.github.io/datasci101/syllabus.html), [lecture materials](https://danilofreire.github.io/datasci101/lectures.html), and [assignments](https://danilofreire.github.io/datasci101/assignments.html) for the course. The course repository at <https://github.com/danilofreire/datasci101> is similarly structured. Feel free to explore the materials and use them as needed.
 
 ## Getting Help
 
 If you encounter any issues with the course materials or have questions about the content, please:
 
-1. Check the [course syllabus](https://danilofreire.github.io/datasci185/syllabus.html) and this README for relevant information
-2. Review the [lecture materials](https://danilofreire.github.io/datasci185/lectures.html) in the repository
+1. Check the [course syllabus](https://danilofreire.github.io/datasci101/syllabus.html) and this README for relevant information
+2. Review the [lecture materials](https://danilofreire.github.io/datasci101/lectures.html) in the repository
 3. Contact the TAs or instructor via email
-4. [Open an issue](https://github.com/danilofreire/datasci185/issues) on GitHub
+4. [Open an issue](https://github.com/danilofreire/datasci101/issues) on GitHub
 
 ## Contributing to the Repository
 
-While this repository is primarily maintained by the course instructor, everyone is welcome to contribute. Please feel free to suggest improvements or report issues by [opening a GitHub issue](https://github.com/danilofreire/datasci185/issues), [submitting a pull request](https://github.com/danilofreire/datasci185/pulls), [creating a discussion post](https://github.com/danilofreire/datasci185/discussions), or [contacting the instructor directly](mailto:danilo.freire@emory.edu).
+While this repository is primarily maintained by the course instructor, everyone is welcome to contribute. Please feel free to suggest improvements or report issues by [opening a GitHub issue](https://github.com/danilofreire/datasci101/issues), [submitting a pull request](https://github.com/danilofreire/datasci101/pulls), [creating a discussion post](https://github.com/danilofreire/datasci101/discussions), or [contacting the instructor directly](mailto:danilo.freire@emory.edu).
 
 ## License
 
-This repository is licensed under the [MIT License](https://github.com/danilofreire/datasci185/blob/main/LICENSE.md). You are free to use, modify, and distribute the materials as needed, with appropriate attribution to the original source.
+This repository is licensed under the [MIT License](https://github.com/danilofreire/datasci101/blob/main/LICENSE.md). You are free to use, modify, and distribute the materials as needed, with appropriate attribution to the original source.

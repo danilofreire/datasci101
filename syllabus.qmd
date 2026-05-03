@@ -2,7 +2,7 @@
 title: "Syllabus"
 ---
 
-Welcome to [DATASCI 185!](https://github.com/danilofreire/datasci185) This course offers a non-technical introduction to artificial intelligence and its effects on institutions, work and everyday life. The course is practical: students will learn how modern systems are designed and how to ask the right questions about data, reliability and harms. The course combines short demonstrations (no programming experience required), case studies, and project work. It is suitable for undergraduate students from any faculty who want a grounded understanding of what AI can and cannot do.
+Welcome to [DATASCI 101!](https://github.com/danilofreire/datasci101) This course offers a non-technical introduction to artificial intelligence and its effects on institutions, work and everyday life. The course is practical: students will learn how modern systems are designed and how to ask the right questions about data, reliability and harms. The course combines short demonstrations (no programming experience required), case studies, and project work. It is suitable for undergraduate students from any faculty who want a grounded understanding of what AI can and cannot do.
 
 # Learning objectives
 
@@ -19,7 +19,7 @@ By the end of the course, students will be able to:
 - **Lectures:** Mondays and Wednesdays, 4-4:50pm.
 - **Location:** [Psychology Building, Room 290](https://maps.app.goo.gl/orrT4jaoxjYiojkL7).
 - **Instructor:** Danilo Freire ([danilo.freire@emory.edu](mailto:danilo.freire@emory.edu)). Office hours by appointment; please email me to arrange a time.
-- **Materials:** Lecture notes, tutorials, and assignment templates are on [the course GitHub repository](https://github.com/danilofreire/datasci185). Students must check the repository often for updates.
+- **Materials:** Lecture notes, tutorials, and assignment templates are on [the course GitHub repository](https://github.com/danilofreire/datasci101). Students must check the repository often for updates.
 
 # Prerequisites and software
 
@@ -65,7 +65,7 @@ Readings are short papers, essays and tutorials rather than a single textbook. L
 
 - **In-class quizzes (5) — 30%**. Each quiz occupies a full lecture. Quizzes are open-book/open-notes and individual assessments. Discussion during quizzes is not permitted.  
 
-- **Final group project — 20%**. Groups of 4–5 choose one of seven domains (healthcare, education, finance, law, creative industries, scientific research, or customer service), test existing AI tools in that domain, and design a new AI application. Deliverables: an optional one-page proposal (not graded), a final report of about 5 pages, and a one-page infographic. No programming is required. [Detailed instructions (PDF)](https://github.com/danilofreire/datasci185/blob/main/project/project-instructions.pdf).
+- **Final group project — 20%**. Groups of 4–5 choose one of seven domains (healthcare, education, finance, law, creative industries, scientific research, or customer service), test existing AI tools in that domain, and design a new AI application. Deliverables: an optional one-page proposal (not graded), a final report of about 5 pages, and a one-page infographic. No programming is required. [Detailed instructions (PDF)](https://github.com/danilofreire/datasci101/blob/main/project/project-instructions.pdf).
 
 # Grading scale
 

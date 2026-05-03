@@ -2,17 +2,17 @@
 title: Assignments
 ---
 
-Here you will find information about the assignments for [DATASCI 185](https://danilofreire.github.io/datasci185/). There are ten problem sets, each worth 5% of your final grade (50% total). There are also five in-class quizzes worth 6% each (30% total), and a final group project worth 20% of your final grade.
+Here you will find information about the assignments for [DATASCI 101](https://danilofreire.github.io/datasci101/). There are ten problem sets, each worth 5% of your final grade (50% total). There are also five in-class quizzes worth 6% each (30% total), and a final group project worth 20% of your final grade.
 
 Problem set submissions are due by 11:59pm on the date specified. You may submit via Canvas (preferred) or email (<danilo.freire@emory.edu>).
 
 You can complete assignments in Jupyter Notebooks (`.ipynb`), Word documents, or PDFs. I encourage you to use Jupyter Notebooks as they allow you to combine code, results, and explanations in a single document.
 
-You will find the questions in the `assignments` folder on [the course repository](https://github.com/danilofreire/datasci185/tree/main/assignments). You can also access them through the links below.
+You will find the questions in the `assignments` folder on [the course repository](https://github.com/danilofreire/datasci101/tree/main/assignments). You can also access them through the links below.
 
 ### Download Instructions
 
-1. Go to the `assignments` folder on GitHub: <https://github.com/danilofreire/datasci185/tree/main/assignments>
+1. Go to the `assignments` folder on GitHub: <https://github.com/danilofreire/datasci101/tree/main/assignments>
 1. Navigate to the file you want to download (e.g., `01-assignment.ipynb`)
 2. Click on the file name to open it
 3. Look for the **"Download raw file"** button (download icon ⬇️) in the top-right corner of the file preview
@@ -20,7 +20,7 @@ You will find the questions in the `assignments` folder on [the course repositor
 
 You can also download the entire repository:
 
-1. Go to the main page of the course repository: <https://github.com/danilofreire/datasci185>
+1. Go to the main page of the course repository: <https://github.com/danilofreire/datasci101>
 2. Click the green **"Code"** button
 3. Select **"Download ZIP"**
 4. Extract the ZIP file and find the assignments in the `assignments/` folder
@@ -39,31 +39,31 @@ You can also download the entire repository:
 
 | Assignment | Due Date | Link |
 |-------------|----------|------|
-| 1 | January 28, 2026 | [Assignment 01](https://github.com/danilofreire/datasci185/tree/main/assignments) |
-| 2 | February 4, 2026 | [Assignment 02](https://github.com/danilofreire/datasci185/tree/main/assignments) |
-| 3 | February 11, 2026 | [Assignment 03](https://github.com/danilofreire/datasci185/tree/main/assignments) |
-| 4 | February 18, 2026 | [Assignment 04](https://github.com/danilofreire/datasci185/tree/main/assignments) |
-| 5 | February 25, 2026 | [Assignment 05](https://github.com/danilofreire/datasci185/tree/main/assignments) |
-| 6 | March 4, 2026 | [Assignment 06](https://github.com/danilofreire/datasci185/tree/main/assignments) |
-| 7 | March 18, 2026 | [Assignment 07](https://github.com/danilofreire/datasci185/tree/main/assignments) |
-| 8 | April 1, 2026 | [Assignment 08](https://github.com/danilofreire/datasci185/tree/main/assignments) |
-| 9 | April 8, 2026 | [Assignment 09](https://github.com/danilofreire/datasci185/tree/main/assignments) |
-| 10 | April 15, 2026 | [Assignment 10](https://github.com/danilofreire/datasci185/tree/main/assignments) |
+| 1 | January 28, 2026 | [Assignment 01](https://github.com/danilofreire/datasci101/tree/main/assignments) |
+| 2 | February 4, 2026 | [Assignment 02](https://github.com/danilofreire/datasci101/tree/main/assignments) |
+| 3 | February 11, 2026 | [Assignment 03](https://github.com/danilofreire/datasci101/tree/main/assignments) |
+| 4 | February 18, 2026 | [Assignment 04](https://github.com/danilofreire/datasci101/tree/main/assignments) |
+| 5 | February 25, 2026 | [Assignment 05](https://github.com/danilofreire/datasci101/tree/main/assignments) |
+| 6 | March 4, 2026 | [Assignment 06](https://github.com/danilofreire/datasci101/tree/main/assignments) |
+| 7 | March 18, 2026 | [Assignment 07](https://github.com/danilofreire/datasci101/tree/main/assignments) |
+| 8 | April 1, 2026 | [Assignment 08](https://github.com/danilofreire/datasci101/tree/main/assignments) |
+| 9 | April 8, 2026 | [Assignment 09](https://github.com/danilofreire/datasci101/tree/main/assignments) |
+| 10 | April 15, 2026 | [Assignment 10](https://github.com/danilofreire/datasci101/tree/main/assignments) |
 
 ## Quiz Timeline
 
 | Quiz | Topics Covered | Date | Link |
 |------|----------------|------|------|
-| Quiz 1 | Lectures 1-7 | February 11, 2026 | [Quiz 01](https://github.com/danilofreire/datasci185-quiz01) |
-| Quiz 2 | Lectures 8-11 | February 25, 2026 | [Quiz 02](https://github.com/danilofreire/datasci185-quiz02) |
-| Quiz 3 | Lectures 12-17 | March 25, 2026 | [Quiz 03](https://github.com/danilofreire/datasci185-quiz03) |
-| Quiz 4 | Lectures 18-21 | April 8, 2026 | [Quiz 04](https://github.com/danilofreire/datasci185-quiz04) |
-| Quiz 5 | Lectures 22-24 | April 22, 2026 | [Quiz 05](https://github.com/danilofreire/datasci185-quiz05) |
+| Quiz 1 | Lectures 1-7 | February 11, 2026 | [Quiz 01](https://github.com/danilofreire/datasci101-quiz01) |
+| Quiz 2 | Lectures 8-11 | February 25, 2026 | [Quiz 02](https://github.com/danilofreire/datasci101-quiz02) |
+| Quiz 3 | Lectures 12-17 | March 25, 2026 | [Quiz 03](https://github.com/danilofreire/datasci101-quiz03) |
+| Quiz 4 | Lectures 18-21 | April 8, 2026 | [Quiz 04](https://github.com/danilofreire/datasci101-quiz04) |
+| Quiz 5 | Lectures 22-24 | April 22, 2026 | [Quiz 05](https://github.com/danilofreire/datasci101-quiz05) |
 
 ## Final Project
 
 The final project is a group effort worth 20% of your final grade. Groups of 3–4 students will produce a report and a short demo video. The project involves conceptual elements and a harms assessment. More details will be provided in class.
 
-Detailed instructions for the final project are available at: <https://github.com/danilofreire/datasci185/tree/main/project>
+Detailed instructions for the final project are available at: <https://github.com/danilofreire/datasci101/tree/main/project>
 
 The final project is due on **April 27, 2026**.

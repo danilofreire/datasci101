@@ -3,18 +3,18 @@ project:
   output-dir: docs
 
 website:
-  title: "DATASCI 185"
+  title: "DATASCI 101"
   page-navigation: true
   back-to-top-navigation: true
   reader-mode: true
-  repo-url: https://github.com/danilofreire/datasci185
+  repo-url: https://github.com/danilofreire/datasci101
   repo-actions: [issue, source]
   repo-branch: gh-pages
   navbar:
     pinned: true
     tools:
       - icon: github
-        href: https://github.com/danilofreire/datasci185
+        href: https://github.com/danilofreire/datasci101
     left:
       - href: syllabus.qmd
         text: Syllabus
@@ -28,7 +28,7 @@ website:
     left: "The content of this site is licensed under the [MIT License](LICENSE.qmd)." 
     right: 
       - icon: github
-        href: https://github.com/danilofreire/datasci185
+        href: https://github.com/danilofreire/datasci101
 
 format:
   html:
