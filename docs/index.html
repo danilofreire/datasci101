@@ -2,13 +2,16 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.26">
+<meta name="generator" content="quarto-1.9.37">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>DATASCI 185 - Introduction to AI Applications – DATASCI 185</title>
+<title>DATASCI 101 - Introduction to AI Applications – DATASCI 101</title>
 <style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -31,19 +34,18 @@ ul.task-list li input[type="checkbox"] {
 <meta name="quarto:offset" content="./">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-b758ccaa5987ceb1b75504551e579abf.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-d0ae9245876894da5ac7e18953ecc5cc.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-250a0ad726c327aed60c1b8aba93cc6c.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-5100b8561cd7f6cd8c35657ed6fe7ee7.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-250a0ad726c327aed60c1b8aba93cc6c.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-0f9aa9b9e44320098794e46e8ae1c927.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-4d72738a521f03bda770c6fbcc444206.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-0f9aa9b9e44320098794e46e8ae1c927.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -245,7 +247,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="./index.html">
-    <span class="navbar-title">DATASCI 185</span>
+    <span class="navbar-title">DATASCI 101</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -273,7 +275,7 @@ ul.task-list li input[type="checkbox"] {
 </ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools tools-wide">
-    <a href="https://github.com/danilofreire/datasci185" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-github"></i></a>
+    <a href="https://github.com/danilofreire/datasci101" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-github"></i></a>
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
   <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
   <div class="quarto-reader-toggle-btn">
@@ -301,7 +303,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#contributing-to-the-repository" id="toc-contributing-to-the-repository" class="nav-link" data-scroll-target="#contributing-to-the-repository">Contributing to the Repository</a></li>
   <li><a href="#license" id="toc-license" class="nav-link" data-scroll-target="#license">License</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/danilofreire/datasci185/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li><li><a href="https://github.com/danilofreire/datasci185/blob/gh-pages/index.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/danilofreire/datasci101/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li><li><a href="https://github.com/danilofreire/datasci101/blob/gh-pages/index.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -309,7 +311,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">DATASCI 185 - Introduction to AI Applications</h1>
+<h1 class="title">DATASCI 101 - Introduction to AI Applications</h1>
 </div>
 
 
@@ -326,7 +328,7 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Welcome to <a href="https://github.com/danilofreire/datasci185">DATASCI 185</a>! This course provides a comprehensive introduction to the fundamental concepts, tools, and techniques used in artificial intelligence. The course is practical: students will learn how modern systems are designed and how to ask the right questions about data, reliability and harms. It combines short demonstrations (no programming experience required), case studies, and project work. It is suitable for undergraduate students from any faculty who want a grounded understanding of what AI can and cannot do.</p>
+<p>Welcome to <a href="https://github.com/danilofreire/datasci101">DATASCI 101</a>! This course provides a comprehensive introduction to the fundamental concepts, tools, and techniques used in artificial intelligence. The course is practical: students will learn how modern systems are designed and how to ask the right questions about data, reliability and harms. It combines short demonstrations (no programming experience required), case studies, and project work. It is suitable for undergraduate students from any faculty who want a grounded understanding of what AI can and cannot do.</p>
 <p>We will meet every Monday and Wednesday from 4pm to 4:50pm in the <a href="https://maps.app.goo.gl/orrT4jaoxjYiojkL7">Psychology Building, Room 290</a>. It is important to read the assigned readings before class, and make sure to check this website for updates and additional resources. If you have any questions, please feel free to contact me or the course TAs. I am here to help you succeed in this course and beyond.</p>
 <section id="course-content" class="level2">
 <h2 class="anchored" data-anchor-id="course-content">Course Content</h2>
@@ -368,25 +370,25 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="website-structure" class="level2">
 <h2 class="anchored" data-anchor-id="website-structure">Website Structure</h2>
-<p>This website contains the <a href="https://danilofreire.github.io/datasci185/syllabus.html">course syllabus</a>, <a href="https://danilofreire.github.io/datasci185/lectures.html">lecture materials</a>, and <a href="https://danilofreire.github.io/datasci185/assignments.html">assignments</a> for the course. The course repository at <a href="https://github.com/danilofreire/datasci185" class="uri">https://github.com/danilofreire/datasci185</a> is similarly structured. Feel free to explore the materials and use them as needed.</p>
+<p>This website contains the <a href="https://danilofreire.github.io/datasci101/syllabus.html">course syllabus</a>, <a href="https://danilofreire.github.io/datasci101/lectures.html">lecture materials</a>, and <a href="https://danilofreire.github.io/datasci101/assignments.html">assignments</a> for the course. The course repository at <a href="https://github.com/danilofreire/datasci101" class="uri">https://github.com/danilofreire/datasci101</a> is similarly structured. Feel free to explore the materials and use them as needed.</p>
 </section>
 <section id="getting-help" class="level2">
 <h2 class="anchored" data-anchor-id="getting-help">Getting Help</h2>
 <p>If you encounter any issues with the course materials or have questions about the content, please:</p>
 <ol type="1">
-<li>Check the <a href="https://danilofreire.github.io/datasci185/syllabus.html">course syllabus</a> and this README for relevant information</li>
-<li>Review the <a href="https://danilofreire.github.io/datasci185/lectures.html">lecture materials</a> in the repository</li>
+<li>Check the <a href="https://danilofreire.github.io/datasci101/syllabus.html">course syllabus</a> and this README for relevant information</li>
+<li>Review the <a href="https://danilofreire.github.io/datasci101/lectures.html">lecture materials</a> in the repository</li>
 <li>Contact the TAs or instructor via email</li>
-<li><a href="https://github.com/danilofreire/datasci185/issues">Open an issue</a> on GitHub</li>
+<li><a href="https://github.com/danilofreire/datasci101/issues">Open an issue</a> on GitHub</li>
 </ol>
 </section>
 <section id="contributing-to-the-repository" class="level2">
 <h2 class="anchored" data-anchor-id="contributing-to-the-repository">Contributing to the Repository</h2>
-<p>While this repository is primarily maintained by the course instructor, everyone is welcome to contribute. Please feel free to suggest improvements or report issues by <a href="https://github.com/danilofreire/datasci185/issues">opening a GitHub issue</a>, <a href="https://github.com/danilofreire/datasci185/pulls">submitting a pull request</a>, <a href="https://github.com/danilofreire/datasci185/discussions">creating a discussion post</a>, or <a href="mailto:danilo.freire@emory.edu">contacting the instructor directly</a>.</p>
+<p>While this repository is primarily maintained by the course instructor, everyone is welcome to contribute. Please feel free to suggest improvements or report issues by <a href="https://github.com/danilofreire/datasci101/issues">opening a GitHub issue</a>, <a href="https://github.com/danilofreire/datasci101/pulls">submitting a pull request</a>, <a href="https://github.com/danilofreire/datasci101/discussions">creating a discussion post</a>, or <a href="mailto:danilo.freire@emory.edu">contacting the instructor directly</a>.</p>
 </section>
 <section id="license" class="level2">
 <h2 class="anchored" data-anchor-id="license">License</h2>
-<p>This repository is licensed under the <a href="https://github.com/danilofreire/datasci185/blob/main/LICENSE.md">MIT License</a>. You are free to use, modify, and distribute the materials as needed, with appropriate attribution to the original source.</p>
+<p>This repository is licensed under the <a href="https://github.com/danilofreire/datasci101/blob/main/LICENSE.md">MIT License</a>. You are free to use, modify, and distribute the materials as needed, with appropriate attribution to the original source.</p>
 
 
 </section>
@@ -813,11 +815,11 @@ ul.task-list li input[type="checkbox"] {
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/danilofreire/datasci185/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li><li><a href="https://github.com/danilofreire/datasci185/blob/gh-pages/index.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/danilofreire/datasci101/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li><li><a href="https://github.com/danilofreire/datasci101/blob/gh-pages/index.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/danilofreire/datasci185">
+    <a class="nav-link" href="https://github.com/danilofreire/datasci101">
       <i class="bi bi-github" role="img">
 </i> 
     </a>
