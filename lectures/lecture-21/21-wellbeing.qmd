@@ -1,5 +1,5 @@
 ---
-title: "DATASCI 185: Introduction to AI Applications"
+title: "DATASCI 101: Introduction to AI Applications"
 subtitle: "Lecture 21: AI and Wellbeing: The Attention Economy, Mental Health, and the Environment"
 author:
   - name: Danilo Freire
@@ -9,7 +9,7 @@ author:
 format:
   clean-revealjs:
     self-contained: true
-    footer: "[Lecture 21](https://raw.githack.com/danilofreire/datasci185/main/lectures/lecture-21/21-wellbeing.html)"
+    footer: "[Lecture 21](https://raw.githack.com/danilofreire/datasci101/main/lectures/lecture-21/21-wellbeing.html)"
     transition: slide
     transition-speed: default
     scrollable: true
@@ -152,7 +152,7 @@ Does the [incentive structure produce good outcomes]{.alert} regardless of inten
 The loop:
 
 1. You watch, like, or share something
-2. System creates an embedding of "you": a vector of your behaviour (remember [lecture 06?](https://danilofreire.github.io/datasci185/lectures.html#module-2-language-and-perception))
+2. System creates an embedding of "you": a vector of your behaviour (remember [lecture 06?](https://danilofreire.github.io/datasci101/lectures.html#module-2-language-and-perception))
 3. Compares your vector to [what similar users watched next]{.alert}
 4. Recommends something similar to what they watched
 5. You watch → loop repeats, embedding updates

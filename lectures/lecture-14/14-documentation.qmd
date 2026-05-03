@@ -1,5 +1,5 @@
 ---
-title: "DATASCI 185: Introduction to AI Applications"
+title: "DATASCI 101: Introduction to AI Applications"
 subtitle: "Lecture 14: Documentation and Dataset Governance"
 author:
   - name: Danilo Freire
@@ -9,7 +9,7 @@ author:
 format:
   clean-revealjs:
     self-contained: true
-    footer: "[Lecture 14](https://raw.githack.com/danilofreire/datasci185/main/lectures/lecture-14/14-documentation-v2.html)"
+    footer: "[Lecture 14](https://raw.githack.com/danilofreire/datasci101/main/lectures/lecture-14/14-documentation-v2.html)"
     transition: slide
     transition-speed: default
     scrollable: true

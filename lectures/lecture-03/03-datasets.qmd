@@ -1,5 +1,5 @@
 ---
-title: "DATASCI 185: Introduction to AI Applications"
+title: "DATASCI 101: Introduction to AI Applications"
 subtitle: "Lecture 03: Dataset Design, Labels, and Tasks"
 author:
   - name: Danilo Freire
@@ -9,7 +9,7 @@ author:
 format:
   clean-revealjs:
     self-contained: true
-    footer: "[Lecture 03](https://raw.githack.com/danilofreire/datasci185/main/lectures/lecture-03/03-datasets.html)"
+    footer: "[Lecture 03](https://raw.githack.com/danilofreire/datasci101/main/lectures/lecture-03/03-datasets.html)"
     transition: slide
     transition-speed: default
     scrollable: true

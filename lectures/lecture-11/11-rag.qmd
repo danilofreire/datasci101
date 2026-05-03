@@ -1,5 +1,5 @@
 ---
-title: "DATASCI 185: Introduction to AI Applications"
+title: "DATASCI 101: Introduction to AI Applications"
 subtitle: "Lecture 11: RAG, Semantic Search, and Grounding AI"
 author:
   - name: Danilo Freire
@@ -9,7 +9,7 @@ author:
 format:
   clean-revealjs:
     self-contained: true
-    footer: "[Lecture 11](https://raw.githack.com/danilofreire/datasci185/main/lectures/lecture-11/11-rag.html)"
+    footer: "[Lecture 11](https://raw.githack.com/danilofreire/datasci101/main/lectures/lecture-11/11-rag.html)"
     transition: slide
     transition-speed: default
     scrollable: true
@@ -759,7 +759,7 @@ Source: [Liu et al. (2023)](https://arxiv.org/abs/2307.03172)
 
 1. Open [chat.z.ai](https://chat.z.ai/)
 2. Start a [new chat]{.alert}
-3. Ask: "What are the assignment deadlines for DATASCI 185 at Emory University?"
+3. Ask: "What are the assignment deadlines for DATASCI 101 at Emory University?"
 4. Note: Z.ai doesn't know! (It's not in training data)
 
 **Step 2: With your document**

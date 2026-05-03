@@ -1,6 +1,6 @@
 ---
 title: "Assignment 05: Hallucinations, Creativity, and AI Alignment"
-subtitle: "DATASCI 185: Introduction to AI Applications"
+subtitle: "DATASCI 101: Introduction to AI Applications"
 author: "Emory University"
 format:
   docx:

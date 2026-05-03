@@ -1,5 +1,5 @@
 ---
-title: "DATASCI 185: Introduction to AI Applications"
+title: "DATASCI 101: Introduction to AI Applications"
 subtitle: "Lecture 16: AI in Finance and Healthcare"
 author:
   - name: Danilo Freire
@@ -9,7 +9,7 @@ author:
 format:
   clean-revealjs:
     self-contained: true
-    footer: "[Lecture 16](https://raw.githack.com/danilofreire/datasci185/main/lectures/lecture-16/16-case-studies.html)"
+    footer: "[Lecture 16](https://raw.githack.com/danilofreire/datasci101/main/lectures/lecture-16/16-case-studies.html)"
     transition: slide
     transition-speed: default
     scrollable: true
@@ -135,7 +135,7 @@ Choose one of seven domains:
 
 [No programming required]{.alert}: the focus is on evaluation and design
 
-[More information here]{.alert}: <https://github.com/danilofreire/datasci185/blob/main/project/project-instructions.pdf>
+[More information here]{.alert}: <https://github.com/danilofreire/datasci101/blob/main/project/project-instructions.pdf>
 :::
 
 :::{.column width=45%}

@@ -1,5 +1,5 @@
 ---
-title: "DATASCI 185: Introduction to AI Applications"
+title: "DATASCI 101: Introduction to AI Applications"
 subtitle: "Lecture 24: Long-term Safety, Alignment, and Future of AI"
 author:
   - name: Danilo Freire
@@ -9,7 +9,7 @@ author:
 format:
   clean-revealjs:
     self-contained: true
-    footer: "[Lecture 24](https://raw.githack.com/danilofreire/datasci185/main/lectures/lecture-24/24-safety.html)"
+    footer: "[Lecture 24](https://raw.githack.com/danilofreire/datasci101/main/lectures/lecture-24/24-safety.html)"
     transition: slide
     transition-speed: default
     scrollable: true

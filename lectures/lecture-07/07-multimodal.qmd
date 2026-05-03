@@ -1,5 +1,5 @@
 ---
-title: "DATASCI 185: Introduction to AI Applications"
+title: "DATASCI 101: Introduction to AI Applications"
 subtitle: "Lecture 07: How Machines See and Hear"
 author:
   - name: Danilo Freire
@@ -9,7 +9,7 @@ author:
 format:
   clean-revealjs:
     self-contained: true
-    footer: "[Lecture 07](https://raw.githack.com/danilofreire/datasci185/main/lectures/lecture-07/07-multimodal.html)"
+    footer: "[Lecture 07](https://raw.githack.com/danilofreire/datasci101/main/lectures/lecture-07/07-multimodal.html)"
     transition: slide
     transition-speed: default
     scrollable: true

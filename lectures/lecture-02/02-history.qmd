@@ -1,5 +1,5 @@
 ---
-title: "DATASCI 185: Introduction to AI Applications"
+title: "DATASCI 101: Introduction to AI Applications"
 subtitle: "Lecture 02: A Brief History of AI and the Recent Shift"
 author:
   - name: Danilo Freire
@@ -9,7 +9,7 @@ author:
 format:
   clean-revealjs:
     self-contained: true
-    footer: "[Lecture 02](https://raw.githack.com/danilofreire/datasci185/main/lectures/lecture-02/02-history.html)"
+    footer: "[Lecture 02](https://raw.githack.com/danilofreire/datasci101/main/lectures/lecture-02/02-history.html)"
     transition: slide
     transition-speed: default
     scrollable: true
@@ -56,8 +56,8 @@ if (!require("fontawesome", character.only = TRUE)) {
 ## Short recap of last class
 
 :::{style="margin-top: 20px; font-size: 28px;"}
-- Course website: <https://danilofreire.github.io/datasci185>
-- Course GitHub repo: <https://github.com/danilofreire/datasci185>
+- Course website: <https://danilofreire.github.io/datasci101>
+- Course GitHub repo: <https://github.com/danilofreire/datasci101>
 - Syllabus, schedule, and assignments will be posted on both sites
 - We will use Canvas for announcements, submissions, and grades
 - Instructor: Danilo Freire (<danilo.freire@emory.edu>)

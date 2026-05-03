@@ -1,5 +1,5 @@
 ---
-title: "DATASCI 185: Introduction to AI Applications"
+title: "DATASCI 101: Introduction to AI Applications"
 subtitle: "Lecture 06: Language, Tokenisation, and Embeddings"
 author:
   - name: Danilo Freire
@@ -9,7 +9,7 @@ author:
 format:
   clean-revealjs:
     self-contained: true
-    footer: "[Lecture 06](https://raw.githack.com/danilofreire/datasci185/main/lectures/lecture-06/06-language.html)"
+    footer: "[Lecture 06](https://raw.githack.com/danilofreire/datasci101/main/lectures/lecture-06/06-language.html)"
     transition: slide
     transition-speed: default
     scrollable: true

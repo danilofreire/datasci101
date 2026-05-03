@@ -9,7 +9,7 @@ author:
 format:
   clean-revealjs:
     self-contained: true
-    footer: "[Lecture 01](https://raw.githack.com/danilofreire/datasci185/main/lectures/lecture-01/01-introduction.html)"
+    footer: "[Lecture 01](https://raw.githack.com/danilofreire/datasci101/main/lectures/lecture-01/01-introduction.html)"
     transition: slide
     transition-speed: default
     scrollable: true
@@ -49,7 +49,7 @@ if (!require("fontawesome", character.only = TRUE)) {
 }
 ```
 
-# Welcome to DATASCI 185! 🎉 {background-color="#2d4563"}
+# Welcome to DATASCI 101! 🎉 {background-color="#2d4563"}
 
 ## Lecture overview
 ### Today's agenda
@@ -77,11 +77,11 @@ if (!require("fontawesome", character.only = TRUE)) {
 ### Important links
 
 ::: {style="font-size: 26px;"}
-`r fa('github')` Course repository: <https://github.com/danilofreire/datasci185>
+`r fa('github')` Course repository: <https://github.com/danilofreire/datasci101>
 
-`r fa('globe')` Course website: <https://danilofreire.github.io/datasci185>
+`r fa('globe')` Course website: <https://danilofreire.github.io/datasci101>
 
-All course materials, including lectures, code, assignments, and project guidelines, are available on our [GitHub repository](https://github.com/danilofreire/datasci185) and [course website](https://danilofreire.github.io/datasci185)
+All course materials, including lectures, code, assignments, and project guidelines, are available on our [GitHub repository](https://github.com/danilofreire/datasci101) and [course website](https://danilofreire.github.io/datasci101)
 
 We will use Canvas for course administration, including submitting assignments, accessing grades, and receiving announcements
 
@@ -243,7 +243,7 @@ By the end of this course, you will be able to:
 :::{style="margin-top: 40px; font-size: 32px;"}
 - We're starting a new AI track in the Data Science curriculum! 🚀
 
-- This is the first offering of DATASCI 185 — help us make it great! 🙌
+- This is the first offering of DATASCI 101 — help us make it great! 🙌
 
 - Why is this course different from others?
   - `r fa('user-graduate')` [Non-technical approach:]{.alert} No heavy maths or programming required
@@ -256,13 +256,13 @@ By the end of this course, you will be able to:
 ### Course information
 
 :::{style="margin-top: 40px; font-size: 28px;"}
-- [Syllabus:]{.alert} Available on our [course repository](https://github.com/danilofreire/datasci185/blob/main/syllabus.pdf) and [website](https://danilofreire.github.io/datasci185/syllabus.html). The course is designed to be self-contained. The syllabus includes links to the slides we will use in class, along with recommended readings, and problem sets. I will upload slides throughout the term as we progress
+- [Syllabus:]{.alert} Available on our [course repository](https://github.com/danilofreire/datasci101/blob/main/syllabus.pdf) and [website](https://danilofreire.github.io/datasci101/syllabus.html). The course is designed to be self-contained. The syllabus includes links to the slides we will use in class, along with recommended readings, and problem sets. I will upload slides throughout the term as we progress
 - [Schedule:]{.alert} Lectures are on Mondays and Wednesdays from 4:00 to 4:50 pm
 - [Office Hours:]{.alert} We're always happy to help. Please [reach out to the TAs or me]{.alert} via email to schedule a time
 
 - [Materials (recap):]{.alert} All course materials will be available on:
-    - Course repository: <https://github.com/danilofreire/datasci185>
-    - Course website: <https://danilofreire.github.io/datasci185>
+    - Course repository: <https://github.com/danilofreire/datasci101>
+    - Course website: <https://danilofreire.github.io/datasci101>
     - Canvas
 :::
 

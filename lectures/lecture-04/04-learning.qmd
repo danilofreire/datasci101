@@ -1,5 +1,5 @@
 ---
-title: "DATASCI 185: Introduction to AI Applications"
+title: "DATASCI 101: Introduction to AI Applications"
 subtitle: "Lecture 04: Supervised, Unsupervised, and Reinforcement Learning"
 author:
   - name: Danilo Freire
@@ -9,7 +9,7 @@ author:
 format:
   clean-revealjs:
     self-contained: true
-    footer: "[Lecture 04](https://raw.githack.com/danilofreire/datasci185/main/lectures/lecture-04/04-learning.html)"
+    footer: "[Lecture 04](https://raw.githack.com/danilofreire/datasci101/main/lectures/lecture-04/04-learning.html)"
     transition: slide
     transition-speed: default
     scrollable: true
@@ -440,7 +440,7 @@ Source: [Machine Learning CoBan](https://machinelearningcoban.com/2017/01/01/kme
   - **Linear**: PCA (Principal Component Analysis)
   - **Non-linear**: t-SNE, UMAP
 - Applications: Visualisation, preprocessing, compression
-- [Super cool example]{.alert} (we will see it in [lecture 06!](https://raw.githack.com/danilofreire/datasci185/main/lectures/lecture-06/06-language.html)): <https://projector.tensorflow.org/>
+- [Super cool example]{.alert} (we will see it in [lecture 06!](https://raw.githack.com/danilofreire/datasci101/main/lectures/lecture-06/06-language.html)): <https://projector.tensorflow.org/>
 :::
 
 :::{.column width=45%}

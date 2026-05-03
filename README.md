@@ -1,12 +1,12 @@
-# DATASCI 185: Introduction to AI Applications
+# DATASCI 101: Introduction to AI Applications
 
 ## Course Overview
 
-This repository contains the source materials for [DATASCI 185: Introduction to AI Applications](https://danilofreire.github.io/datasci185). The course provides a comprehensive introduction to the fundamental concepts, tools, and techniques used in data science.
+This repository contains the source materials for [DATASCI 101: Introduction to AI Applications](https://danilofreire.github.io/datasci101). The course provides a comprehensive introduction to the fundamental concepts, tools, and techniques used in data science.
 
 ## Course Information
 
-- **Course**: DATASCI 185 - Introduction to AI Applications
+- **Course**: DATASCI 101 - Introduction to AI Applications
 - **Semester**: Spring 2026
 - **Format**: Undergraduate-level course
 - **Schedule**: Mondays and Wednesdays, 4pm to 4:50pm
@@ -38,10 +38,10 @@ All course materials, including lecture notes, assignments, and supplementary re
 
 If you have questions about the course materials:
 
-1. Check the [course website](https://danilofreire.github.io/datasci185)
+1. Check the [course website](https://danilofreire.github.io/datasci101)
 2. Review the syllabus and lecture materials
 3. Contact the TAs or instructor via email
-4. [Open an issue](https://github.com/danilofreire/datasci185/issues) on GitHub
+4. [Open an issue](https://github.com/danilofreire/datasci101/issues) on GitHub
 
 ## Repository Structure
 
@@ -60,13 +60,13 @@ This is the **main branch** which contains the following files and folders:
 The quickest way to download the course materials is a **shallow clone**, which fetches only the current files without the full history of past changes. This keeps the download small and works well on slow connections:
 
 ```bash
-git clone --depth 1 https://github.com/danilofreire/datasci185.git
+git clone --depth 1 https://github.com/danilofreire/datasci101.git
 ```
 
 If you would like the complete history (for example, to see how the materials evolved over the semester), omit the flag:
 
 ```bash
-git clone https://github.com/danilofreire/datasci185.git
+git clone https://github.com/danilofreire/datasci101.git
 ```
 
 The full clone takes longer and uses more disk space, but it is not required for the course.
@@ -76,7 +76,7 @@ The full clone takes longer and uses more disk space, but it is not required for
 When new lectures or fixes are added, pull the latest changes from inside the repository folder:
 
 ```bash
-cd datasci185
+cd datasci101
 git pull
 ```
 
@@ -91,19 +91,19 @@ The course website is hosted on the **gh-pages branch** and includes:
 - Assignment details
 - Additional resources
 
-To view the website, switch to the `gh-pages` branch or visit the GitHub Pages site at <https://danilofreire.github.io/datasci185>.
+To view the website, switch to the `gh-pages` branch or visit the GitHub Pages site at <https://danilofreire.github.io/datasci101>.
 
 ## Contributing
 
 While this repository is primarily maintained by the course instructor, contributions are welcome. Please feel free to:
 
-- [Open an issue](https://github.com/danilofreire/datasci185/issues) to report problems
-- [Create a pull request](https://github.com/danilofreire/datasci185/pulls) with improvements
-- [Start a discussion](https://github.com/danilofreire/datasci185/discussions) about course topics
+- [Open an issue](https://github.com/danilofreire/datasci101/issues) to report problems
+- [Create a pull request](https://github.com/danilofreire/datasci101/pulls) with improvements
+- [Start a discussion](https://github.com/danilofreire/datasci101/discussions) about course topics
 
 ## License
 
-This course material is shared under [the MIT License](https://github.com/danilofreire/datasci185/blob/main/LICENSE.md). You are free to use, modify, and distribute the materials with appropriate attribution.
+This course material is shared under [the MIT License](https://github.com/danilofreire/datasci101/blob/main/LICENSE.md). You are free to use, modify, and distribute the materials with appropriate attribution.
 
 ## Contact
 

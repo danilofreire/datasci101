@@ -1,5 +1,5 @@
 ---
-title: "DATASCI 185: Introduction to AI Applications"
+title: "DATASCI 101: Introduction to AI Applications"
 subtitle: "Lecture 09: Prompting Techniques"
 author:
   - name: Danilo Freire
@@ -9,7 +9,7 @@ author:
 format:
   clean-revealjs:
     self-contained: true
-    footer: "[Lecture 09](https://raw.githack.com/danilofreire/datasci185/main/lectures/lecture-09/09-prompting.html)"
+    footer: "[Lecture 09](https://raw.githack.com/danilofreire/datasci101/main/lectures/lecture-09/09-prompting.html)"
     transition: slide
     transition-speed: default
     scrollable: true
@@ -158,7 +158,7 @@ You want to analyse the sentiment of financial news. Which prompt will give clea
 :::{style="margin-top: 30px; font-size: 19px;"}
 :::{.columns}
 :::{.column width=55%}
-Remember from [Lecture 06](https://raw.githack.com/danilofreire/datasci185/main/lectures/lecture-06/06-language.html): LLMs predict the [next token]{.alert} based on probability distributions learned during training.
+Remember from [Lecture 06](https://raw.githack.com/danilofreire/datasci101/main/lectures/lecture-06/06-language.html): LLMs predict the [next token]{.alert} based on probability distributions learned during training.
 
 **What happens when you prompt an LLM:**
 
@@ -235,7 +235,7 @@ Source: [Google Gemini Prompting Guide](https://services.google.com/fh/files/mis
 :::{style="margin-top: 30px; font-size: 18px;"}
 :::{.columns}
 :::{.column width=55%}
-Also from [Lecture 06](https://raw.githack.com/danilofreire/datasci185/main/lectures/lecture-06/06-language.html): **hyperparameters** are settings [you control]{.alert} that affect model behaviour:
+Also from [Lecture 06](https://raw.githack.com/danilofreire/datasci101/main/lectures/lecture-06/06-language.html): **hyperparameters** are settings [you control]{.alert} that affect model behaviour:
 
 | Parameter | What It Does | Typical Values |
 |-----------|--------------|----------------|

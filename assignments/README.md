@@ -1,6 +1,6 @@
 # Assignments
 
-This folder contains the problem sets for [DATASCI 185: Introduction to AI Applications](https://danilofreire.github.io/datasci185/)
+This folder contains the problem sets for [DATASCI 101: Introduction to AI Applications](https://danilofreire.github.io/datasci101/)
 
 ## How to Download the Assignment Files
 
@@ -21,7 +21,7 @@ Each assignment is available in **three formats**, just use whichever you prefer
 
 You can also **download the entire repository**:
 
-1. Go to the main page of the course repository: <https://github.com/danilofreire/datasci185>
+1. Go to the main page of the course repository: <https://github.com/danilofreire/datasci101>
 2. Click the green **"Code"** button
 3. Select **"Download ZIP"**
 4. Extract the ZIP file and find the assignments in the `assignments/` folder

@@ -1,6 +1,6 @@
 ---
 title: "Assignment 09: Privacy and Data Protection"
-subtitle: "DATASCI 185: Introduction to AI Applications"
+subtitle: "DATASCI 101: Introduction to AI Applications"
 author: "Emory University"
 format:
   docx:

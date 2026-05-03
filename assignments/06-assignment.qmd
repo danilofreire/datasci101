@@ -1,6 +1,6 @@
 ---
 title: "Assignment 06: AI Pipelines, Monitoring, and Documentation"
-subtitle: "DATASCI 185: Introduction to AI Applications"
+subtitle: "DATASCI 101: Introduction to AI Applications"
 author: "Emory University"
 format:
   docx:
