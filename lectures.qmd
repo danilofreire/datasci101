@@ -6,7 +6,7 @@ Please find below the schedule of our lectures. Each lecture includes a brief de
 
 ## Module 0 — Orientation
 
-### January 14, 2026:
+### August 27, 2026:
 
 - Syllabus and course repository: <https://github.com/danilofreire/datasci101>.
 - Lecture 01: [Course introduction](https://raw.githack.com/danilofreire/datasci101/main/lectures/lecture-01/01-introduction.html).
@@ -20,12 +20,9 @@ Readings:
 - McKinsey & Company (2025). [The state of AI: how organizations are rewiring to capture value](https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai). A business-focused overview of AI adoption and impact.
 - The New Yorker (2026). [What is Claude? Anthropic doesn't know, either](https://www.newyorker.com/magazine/2026/02/16/what-is-claude-anthropic-doesnt-know-either). A fascinating article about the challenges of building and understanding large language models. [Also available here](https://archive.ph/i6vbW).
 
-### January 19, 2026: Martin Luther King Day (No Classes)
-
-### January 21, 2026:
+### September 1, 2026:
 
 - Lecture 02: [A brief history of AI and the recent shift](https://raw.githack.com/danilofreire/datasci101/main/lectures/lecture-02/02-history.html).
-- [**Assignment 01**](https://github.com/danilofreire/datasci101/blob/main/assignments).
 
 Readings:
 
@@ -40,10 +37,11 @@ Readings:
 
 ## Module 1 — How AI systems are designed
 
-### January 26, 2026:
+### September 3, 2026:
 
 - Lecture 03: [Dataset design, labels, and tasks](https://raw.githack.com/danilofreire/datasci101/main/lectures/lecture-03/03-datasets.html).
 - [Kahoot Quiz](https://play.kahoot.it/v2/?quizId=8526c23e-eace-415a-a8c4-d15ba11766c0&hostId=05eb977d-4f8a-440e-9e45-95212b29d103)
+- [**Assignment 01**](https://github.com/danilofreire/datasci101/blob/main/assignments).
 
 Readings:
 
@@ -53,12 +51,10 @@ Readings:
 - Liang, W., Tadesse, G. A., Ho, D., Fei-Fei, L., Zaharia, M., Zhang, C., & Zou, J. (2022). [Advances, challenges and opportunities in creating data for trustworthy AI.](https://www.nature.com/articles/s42256-022-00516-1) *Nature Machine Intelligence*, 4(8), 669-677. A good discussion on the challenges of creating high-quality datasets.
 - Chai, C., & Li, G. (2020). [Human-in-the-loop techniques in machine learning.](http://sites.computer.org/debull/A20sept/p37.pdf) *IEEE Data Eng. Bull.*, 43(3), 37-52. A little more technical, but quite comprehensive.
 
-### January 28, 2026:
+### September 8, 2026:
 
 - Lecture 04: [Supervised, unsupervised, and reinforcement learning](https://raw.githack.com/danilofreire/datasci101/main/lectures/lecture-04/04-learning.html).
 - [Kahoot Quiz](https://play.kahoot.it/v2/?quizId=43271e4a-cbfe-4f52-9c13-ec7ef00964a9&hostId=05eb977d-4f8a-440e-9e45-95212b29d103)
-- **Assignment 01 due (5%).**
-- [**Assignment 02**](https://github.com/danilofreire/datasci101/blob/main/assignments).
 
 Readings:
 
@@ -68,10 +64,12 @@ Readings:
 - James, G., Witten, D., Hastie, T., & Tibshirani, R. (2021). [An introduction to statistical learning.](https://www.statlearning.com/) A widely used book covering supervised and unsupervised learning methods. Included here for reference, as you'll surely use it in your future career.
 - Ghasemi, M., & Ebrahimi, D. (2024). [Introduction to reinforcement learning.](https://arxiv.org/abs/2408.07712) *arXiv preprint*. Short introduction to the topic. If you would like to read something more advanced, please refer to [Sutton & Barto (2015)](https://web.stanford.edu/class/psych209/Readings/SuttonBartoIPRLBook2ndEd.pdf).
 
-### February 02, 2026:
+### September 10, 2026:
 
 - Lecture 05: [Metrics, validation and overfitting](https://raw.githack.com/danilofreire/datasci101/main/lectures/lecture-05/05-metrics.html).
 - [Kahoot Quiz](https://play.kahoot.it/v2/?quizId=09b3c6d7-f743-43aa-aff7-d16267aa404e&hostId=05eb977d-4f8a-440e-9e45-95212b29d103)
+- **Assignment 01 due (5%).**
+- [**Assignment 02**](https://github.com/danilofreire/datasci101/blob/main/assignments).
 
 Readings:
 
@@ -85,12 +83,10 @@ Readings:
 
 ## Module 2 — Language and perception
 
-### February 04, 2026:
+### September 15, 2026:
 
 - Lecture 06: [How machines handle language: tokens, embeddings and context](https://raw.githack.com/danilofreire/datasci101/main/lectures/lecture-06/06-language.html).
 - [Kahoot Quiz](https://play.kahoot.it/v2/?quizId=11219f35-dabb-45ac-85ad-b8638a6a2769&hostId=05eb977d-4f8a-440e-9e45-95212b29d103)
-- **Assignment 02 due (5%).**
-- [**Assignment 03**](https://github.com/danilofreire/datasci101/blob/main/assignments).
 
 Readings:
 
@@ -101,10 +97,12 @@ Readings:
 - Metzger, S. (2022). [A beginner’s guide to tokens, vectors, and embeddings in NLP.](https://medium.com/@saschametzger/what-are-tokens-vectors-and-embeddings-how-do-you-create-them-e2a3e698e037). Easy to read and with interesting examples.
 - Boykis, V. (2022). [What are embeddings?](https://vickiboykis.com/what_are_embeddings/). A whole book dedicated to embeddings. For those who are interested in a more in-depth treatment. There's also a [GitHub repository](https://github.com/veekaybee/what_are_embeddings) with code examples.
 
-### February 09, 2026:
+### September 17, 2026:
 
 - Lecture 07: [How machines see and hear](https://raw.githack.com/danilofreire/datasci101/main/lectures/lecture-07/07-multimodal.html).
 - [Kahoot Quiz](https://play.kahoot.it/v2/?quizId=d539fc1e-248f-4ef9-86de-ba9926c28883&hostId=05eb977d-4f8a-440e-9e45-95212b29d103)
+- **Assignment 02 due (5%).**
+- [**Assignment 03**](https://github.com/danilofreire/datasci101/blob/main/assignments).
 
 Readings:
 
@@ -115,13 +113,17 @@ Readings:
 - Wu, J., Gan, W., Chen, Z., Wan, S., & Yu, P. S. (2023). [Multimodal Large Language Models: A Survey.](https://arxiv.org/abs/2311.13165) *arXiv preprint*. 
 - Radford, A., Kim, J. W., Xu, T., Brockman, G., McLeavey, C., & Sutskever, I. (2023, July). [Robust speech recognition via large-scale weak supervision.](https://cdn.openai.com/papers/whisper.pdf) In *International conference on machine learning* (pp. 28492-28518). PMLR. The original paper for [Whisper](https://openai.com/research/whisper).
 
-### February 11, 2026:
+### September 22, 2026:
 
-- Lecture 08: **Quiz 01**.
+- Review session for Quiz 01.
+
+### September 24, 2026:
+
+- Lecture 08: **Quiz 01**. This quiz covers Lectures 01-07.
 - **Assignment 03 due (5%).**
 - [**Assignment 04**](https://github.com/danilofreire/datasci101/blob/main/assignments).
 
-### February 16, 2026:
+### September 29, 2026:
 
 - Lecture 09: [Prompting techniques](https://raw.githack.com/danilofreire/datasci101/main/lectures/lecture-09/09-prompting.html).
 - [Kahoot Quiz](https://play.kahoot.it/v2/?quizId=52c1d6cc-c11f-44a0-84b3-e3273ed07c71&hostId=05eb977d-4f8a-440e-9e45-95212b29d103)
@@ -139,7 +141,7 @@ Readings:
 
 ## Module 3 — Retrieval, generation and pipelines
 
-### February 18, 2026:
+### October 1, 2026:
 
 - Lecture 10: [Creativity and hallucination](https://raw.githack.com/danilofreire/datasci101/main/lectures/lecture-10/10-hallucination.html).
 - [Kahoot Quiz](https://play.kahoot.it/v2/?quizId=2eb129f2-3030-4ebd-9f5d-6afd251d0c53&hostId=05eb977d-4f8a-440e-9e45-95212b29d103)
@@ -155,7 +157,7 @@ Readings:
 - OpenAI (2024). [Does ChatGPT tell the truth?](https://help.openai.com/en/articles/8313428-does-chatgpt-tell-the-truth) Practical advice.
 - Luo, Q., King, G., Puett, M., & Smith, M. D. (2026). [Inducing sustained creativity and diversity in large language models.](https://gking.harvard.edu/sites/g/files/omnuum7116/files/2026-03/Inducing%20sustained%20creativity%20and%20diversity%20in%20LLMs.pdf) *Working paper, Harvard University*. Proposes a novel decoding scheme that unlocks diverse and creative LLM outputs beyond standard modal decoding.
 
-### February 23, 2026:
+### October 6, 2026:
 
 - Lecture 11: [Retrieval-augmented workflows and semantic search](https://raw.githack.com/danilofreire/datasci101/main/lectures/lecture-11/11-rag.html).
 - [Kahoot Quiz](https://play.kahoot.it/v2/?quizId=60414733-4795-4b9e-815f-3ad615072fab&hostId=05eb977d-4f8a-440e-9e45-95212b29d103)
@@ -166,13 +168,15 @@ Readings:
 - Mastering LLM (2024). [11 chunking strategies for RAG — simplified & visualized](https://masteringllm.medium.com/11-chunking-strategies-for-rag-simplified-visualized-df0dbec8e373) Nice explanation of chunking strategies.
 - Slack (2025). [Semantic search explained: how it works, and why it matters.](https://slack.com/blog/productivity/semantic-search-explained-how-it-works-and-why-it-matters) Good explainer.
 
-### February 25, 2026:
+### October 8, 2026:
 
-- Lecture 12: **Quiz 02**.
+- Lecture 12: **Quiz 02**. This quiz covers Lectures 09-11.
 - **Assignment 05 due (5%).**
 - [**Assignment 06**](https://github.com/danilofreire/datasci101/blob/main/assignments).
 
-### March 02, 2026:
+### October 13, 2026: Fall Break (No Classes)
+
+### October 15, 2026:
 
 - Lecture 13: [Building reliable pipelines: monitoring and testing](https://raw.githack.com/danilofreire/datasci101/main/lectures/lecture-13/13-pipelines.html).
 
@@ -189,11 +193,9 @@ Readings:
 
 ## Module 4 — Data ethics and bias
 
-### March 04, 2026:
+### October 20, 2026:
 
 - Lecture 14: [Documentation and dataset governance](https://raw.githack.com/danilofreire/datasci101/main/lectures/lecture-14/14-documentation.html).
-- **Assignment 06 due (5%).**
-- [**Assignment 07**](https://github.com/danilofreire/datasci101/blob/main/assignments).
 - [Kahoot Quiz](https://play.kahoot.it/v2/?quizId=75760dab-c0e2-43d5-9504-b94b74d93201&hostId=05eb977d-4f8a-440e-9e45-95212b29d103)
 
 Readings:
@@ -207,11 +209,11 @@ Readings:
 - Hutchinson, B., et al. (2021). [Towards accountability for machine learning datasets: Practices from software engineering and infrastructure.](https://arxiv.org/abs/2010.13561) *FAccT*. Bridges software engineering practices to dataset accountability.
 - Crawford, K., & Paglen, T. (2019). [Excavating AI: The politics of images in machine learning training sets.](https://excavating.ai/) A compelling visual essay on ImageNet's problems and the politics of training data.
 
-### March 9 and 11, 2026: Spring Break (No Classes)
+### October 22, 2026:
 
-### March 16, 2026:
-
-- Lecture 15: [Types of bias and how they arise](https://raw.githack.com/danilofreire/datasci101/main/lectures/lecture-15/15-bias.html). 
+- Lecture 15: [Types of bias and how they arise](https://raw.githack.com/danilofreire/datasci101/main/lectures/lecture-15/15-bias.html).
+- **Assignment 06 due (5%).**
+- [**Assignment 07**](https://github.com/danilofreire/datasci101/blob/main/assignments).
 
 Readings:
 
@@ -222,12 +224,11 @@ Readings:
 - Kantayya, S. (2020). [Coded Bias.](https://www.codedbiasfilm.com/) Documentary film. May or may not be available on Netflix depending on your location.
 - Liu Roc, A. (2023). [Understanding the impossibility of fairness.](https://medium.com/@alex.liu.roc/understanding-the-impossibility-of-fairness-199bba6c9072) *Medium*. A good, accessible overview of the impossibility results in fairness.
 
-### March 18, 2026:
+### October 27, 2026:
 
 - Lecture 16: [AI in Finance and Healthcare](https://raw.githack.com/danilofreire/datasci101/main/lectures/lecture-16/16-case-studies.html).
-- **Assignment 07 due (5%).**
 - No assignment this week.
-- [Instructions for the final project (PDF)](https://github.com/danilofreire/datasci101/blob/main/project/project-instructions.pdf). Groups must be finalised by March 23. Optional proposal due April 1; final report and infographic due April 27.
+- [Instructions for the final project (PDF)](https://github.com/danilofreire/datasci101/blob/main/project/project-instructions.pdf). Groups must be finalised by November 3. Optional proposal due November 12; final report and infographic due December 8.
 
 Readings:
 
@@ -240,10 +241,11 @@ Readings:
 
 ## Module 5 — Policy, governance and social impact
 
-### March 23, 2026:
+### October 29, 2026:
 
 - Lecture 17: [AI regulation and standards around the world](https://raw.githack.com/danilofreire/datasci101/main/lectures/lecture-17/17-regulation.html).
-- **Group list due.**
+- **Assignment 07 due (5%).**
+- [**Assignment 08**](https://github.com/danilofreire/datasci101/blob/main/assignments).
 
 Readings:
 
@@ -254,14 +256,10 @@ Readings:
 - Wikipedia (2026). [Regulation of artificial intelligence](https://en.wikipedia.org/wiki/Regulation_of_artificial_intelligence). It's hard to be updated on this topic, so this Wikipedia page is a good resource to keep track of the latest developments.
 - G'Sell, F. (2025). [Regulating under uncertainty: governance options for generative AI.](https://cyber.fsi.stanford.edu/content/regulating-under-uncertainty-governance-options-generative-ai) A report on the challenges of regulating AI and possible approaches to do it effectively.
 
-### March 25, 2026:
-
-- Lecture 18: **Quiz 03**.
-- [**Assignment 08**](https://github.com/danilofreire/datasci101/blob/main/assignments).
-
-### March 30, 2026:
+### November 3, 2026:
 
 - Lecture 19: [Privacy and data protection](https://raw.githack.com/danilofreire/datasci101/main/lectures/lecture-19/19-privacy.html).
+- **Group list due.**
 
 Readings:
 
@@ -273,12 +271,15 @@ Readings:
 - OpenAI (2025). [OpenAI privacy portal.](https://privacy.openai.com/policies/en/) OpenAI's privacy policy and practices. 
 - Future of Privacy Forum (2025). [https://fpf.org/](https://fpf.org/). An NGO that advances principled and pragmatic data protection, AI and digital governance practices. Many resources on their website.
 
-### April 01, 2026:
+### November 5, 2026:
+
+- Lecture 18: **Quiz 03**. This quiz covers Lectures 13-17.
+- **Assignment 08 due (5%).**
+- [**Assignment 09**](https://github.com/danilofreire/datasci101/blob/main/assignments).
+
+### November 10, 2026:
 
 - Lecture 20: [Labour markets and economic effects](https://raw.githack.com/danilofreire/datasci101/main/lectures/lecture-20/20-labour.html).
-- **Assignment 08 due (5%).**
-- **Optional project proposal due.**
-- [**Assignment 09**](https://github.com/danilofreire/datasci101/blob/main/assignments).
 
 Readings:
 
@@ -294,9 +295,12 @@ Readings:
 
 ## Module 6 — Applications, limits and projects
 
-### April 06, 2026:
+### November 12, 2026:
 
 - Lecture 21: [AI and wellbeing: the attention economy, mental health, and the environment](https://raw.githack.com/danilofreire/datasci101/main/lectures/lecture-21/21-wellbeing.html).
+- **Assignment 09 due (5%).**
+- [**Assignment 10**](https://github.com/danilofreire/datasci101/blob/main/assignments).
+- **Optional project proposal due.**
 
 Readings:
 
@@ -310,13 +314,7 @@ Readings:
 - Arguedas, A. R., Robertson, C. T., Fletcher, R., & Nielsen, R. K. (2022). [Echo chambers, filter bubbles, and polarisation: a literature review.](https://reutersinstitute.politics.ox.ac.uk/echo-chambers-filter-bubbles-and-polarisation-literature-review) Reuters Institute, University of Oxford. A comprehensive synthesis of the evidence, finding the picture is more mixed than popular coverage suggests.
 - MIT Technology Review (2025). [We did the math on AI’s energy footprint. Here’s the story you haven’t heard.](https://www.technologyreview.com/2025/05/20/1116327/ai-energy-usage-climate-footprint-big-tech/) A data-driven investigation into the opacity of Big Tech’s energy reporting.
 
-### April 08, 2026:
-
-- Lecture 22: **Quiz 04**.
-- **Assignment 09 due (5%).**
-- [**Assignment 10**](https://github.com/danilofreire/datasci101/blob/main/assignments).
-
-### April 13, 2026:
+### November 17, 2026:
 
 - Lecture 23: [Misinformation, deepfakes and trust online](https://raw.githack.com/danilofreire/datasci101/main/lectures/lecture-23/23-misinformation.html).
 
@@ -329,10 +327,14 @@ Readings:
 - Mirsky, Y., & Lee, W. (2020). [The creation and detection of deepfakes: a survey](https://arxiv.org/abs/2004.11138). *arXiv* preprint arXiv:2004.11138. A technical survey on deepfakes. Quite technical, though. If you are interested in the topic but don't have a technical background, you can skip this one and read the next one instead.
 - Chesney, R., & Citron, D. K. (2019). [Deepfakes and the new disinformation war.](https://www.foreignaffairs.com/articles/world/2018-12-11/deepfakes-and-new-disinformation-war) *Foreign Affairs*. A short article about the risks of deepfakes and how to address them.
 
-### April 15, 2026:
+### November 19, 2026:
+
+- Lecture 22: **Quiz 04**. This quiz covers Lectures 19-21.
+- **Assignment 10 due (5%).**
+
+### November 24, 2026:
 
 - Lecture 24: [Long-term safety, the alignment problem and the future of AI](https://raw.githack.com/danilofreire/datasci101/main/lectures/lecture-24/24-safety.html).
-- **Assignment 10 due (5%).**
 
 Readings:
 
@@ -345,15 +347,17 @@ Readings:
 - [Center for AI Safety](https://safe.ai/). A non-profit organisation working on this topic. They have a lot of resources on their website.
 - [AI Alignment Forum](https://www.alignmentforum.org/). A community website for discussing AI alignment. Many of the most important papers in the field are posted here.
 
-### April 20, 2026:
+### November 26, 2026: Thanksgiving Recess (No Classes)
+
+### December 1, 2026:
 
 - Lecture 25: [Course revision](https://raw.githack.com/danilofreire/datasci101/main/lectures/lecture-25/25-revision.html).
 
-### April 22, 2026:
+### December 3, 2026:
 
-- Lecture 26: **Quiz 05**.
+- Lecture 26: **Quiz 05**. This quiz covers Lectures 23-24.
 
-### April 27, 2026:
+### December 8, 2026:
 
 - No lecture.
 - Q&A session and final project work time.

@@ -39,26 +39,26 @@ You can also download the entire repository:
 
 | Assignment | Due Date | Link |
 |-------------|----------|------|
-| 1 | January 28, 2026 | [Assignment 01](https://github.com/danilofreire/datasci101/tree/main/assignments) |
-| 2 | February 4, 2026 | [Assignment 02](https://github.com/danilofreire/datasci101/tree/main/assignments) |
-| 3 | February 11, 2026 | [Assignment 03](https://github.com/danilofreire/datasci101/tree/main/assignments) |
-| 4 | February 18, 2026 | [Assignment 04](https://github.com/danilofreire/datasci101/tree/main/assignments) |
-| 5 | February 25, 2026 | [Assignment 05](https://github.com/danilofreire/datasci101/tree/main/assignments) |
-| 6 | March 4, 2026 | [Assignment 06](https://github.com/danilofreire/datasci101/tree/main/assignments) |
-| 7 | March 18, 2026 | [Assignment 07](https://github.com/danilofreire/datasci101/tree/main/assignments) |
-| 8 | April 1, 2026 | [Assignment 08](https://github.com/danilofreire/datasci101/tree/main/assignments) |
-| 9 | April 8, 2026 | [Assignment 09](https://github.com/danilofreire/datasci101/tree/main/assignments) |
-| 10 | April 15, 2026 | [Assignment 10](https://github.com/danilofreire/datasci101/tree/main/assignments) |
+| 1 | September 10, 2026 | [Assignment 01](https://github.com/danilofreire/datasci101/tree/main/assignments) |
+| 2 | September 17, 2026 | [Assignment 02](https://github.com/danilofreire/datasci101/tree/main/assignments) |
+| 3 | September 24, 2026 | [Assignment 03](https://github.com/danilofreire/datasci101/tree/main/assignments) |
+| 4 | October 1, 2026 | [Assignment 04](https://github.com/danilofreire/datasci101/tree/main/assignments) |
+| 5 | October 8, 2026 | [Assignment 05](https://github.com/danilofreire/datasci101/tree/main/assignments) |
+| 6 | October 22, 2026 | [Assignment 06](https://github.com/danilofreire/datasci101/tree/main/assignments) |
+| 7 | October 29, 2026 | [Assignment 07](https://github.com/danilofreire/datasci101/tree/main/assignments) |
+| 8 | November 5, 2026 | [Assignment 08](https://github.com/danilofreire/datasci101/tree/main/assignments) |
+| 9 | November 12, 2026 | [Assignment 09](https://github.com/danilofreire/datasci101/tree/main/assignments) |
+| 10 | November 19, 2026 | [Assignment 10](https://github.com/danilofreire/datasci101/tree/main/assignments) |
 
 ## Quiz Timeline
 
 | Quiz | Topics Covered | Date | Link |
 |------|----------------|------|------|
-| Quiz 1 | Lectures 1-7 | February 11, 2026 | [Quiz 01](https://github.com/danilofreire/datasci101-quiz01) |
-| Quiz 2 | Lectures 8-11 | February 25, 2026 | [Quiz 02](https://github.com/danilofreire/datasci101-quiz02) |
-| Quiz 3 | Lectures 12-17 | March 25, 2026 | [Quiz 03](https://github.com/danilofreire/datasci101-quiz03) |
-| Quiz 4 | Lectures 18-21 | April 8, 2026 | [Quiz 04](https://github.com/danilofreire/datasci101-quiz04) |
-| Quiz 5 | Lectures 22-24 | April 22, 2026 | [Quiz 05](https://github.com/danilofreire/datasci101-quiz05) |
+| Quiz 1 | Lectures 1-7 | September 24, 2026 | [Quiz 01](https://github.com/danilofreire/datasci101-quiz01) |
+| Quiz 2 | Lectures 9-11 | October 8, 2026 | [Quiz 02](https://github.com/danilofreire/datasci101-quiz02) |
+| Quiz 3 | Lectures 13-17 | November 5, 2026 | [Quiz 03](https://github.com/danilofreire/datasci101-quiz03) |
+| Quiz 4 | Lectures 19-21 | November 19, 2026 | [Quiz 04](https://github.com/danilofreire/datasci101-quiz04) |
+| Quiz 5 | Lectures 23-24 | December 3, 2026 | [Quiz 05](https://github.com/danilofreire/datasci101-quiz05) |
 
 ## Final Project
 
@@ -66,4 +66,4 @@ The final project is a group effort worth 20% of your final grade. Groups of 3â€
 
 Detailed instructions for the final project are available at: <https://github.com/danilofreire/datasci101/tree/main/project>
 
-The final project is due on **April 27, 2026**.
+The final project is due on **December 8, 2026**.

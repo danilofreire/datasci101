@@ -16,8 +16,8 @@ By the end of the course, students will be able to:
 
 # Course logistics
 
-- **Lectures:** Mondays and Wednesdays, 4-4:50pm.
-- **Location:** [Psychology Building, Room 290](https://maps.app.goo.gl/orrT4jaoxjYiojkL7).
+- **Lectures:** Tuesdays and Thursdays, 2:30-3:20pm.
+- **Location:** [White Hall, Room 206](https://maps.app.goo.gl/gynyTUkKqJ7meGjm8).
 - **Instructor:** Danilo Freire ([danilo.freire@emory.edu](mailto:danilo.freire@emory.edu)). Office hours by appointment; please email me to arrange a time.
 - **Materials:** Lecture notes, tutorials, and assignment templates are on [the course GitHub repository](https://github.com/danilofreire/datasci101). Students must check the repository often for updates.
 
