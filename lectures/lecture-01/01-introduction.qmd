@@ -243,7 +243,7 @@ By the end of this course, you will be able to:
 :::{style="margin-top: 40px; font-size: 32px;"}
 - We're starting a new AI track in the Data Science curriculum! 🚀
 
-- This is the first offering of DATASCI 101 — help us make it great! 🙌
+- This is the second offering of DATASCI 101 — help us make it great! 🙂
 
 - Why is this course different from others?
   - `r fa('user-graduate')` [Non-technical approach:]{.alert} No heavy maths or programming required
@@ -257,7 +257,7 @@ By the end of this course, you will be able to:
 
 :::{style="margin-top: 40px; font-size: 28px;"}
 - [Syllabus:]{.alert} Available on our [course repository](https://github.com/danilofreire/datasci101/blob/main/syllabus.pdf) and [website](https://danilofreire.github.io/datasci101/syllabus.html). The course is designed to be self-contained. The syllabus includes links to the slides we will use in class, along with recommended readings, and problem sets. I will upload slides throughout the term as we progress
-- [Schedule:]{.alert} Lectures are on Mondays and Wednesdays from 4:00 to 4:50 pm
+- [Schedule:]{.alert} Lectures are on Tuesdays and Thursdays from 2:30 to 3:20 pm in [White Hall 206](https://maps.app.goo.gl/gynyTUkKqJ7meGjm8)
 - [Office Hours:]{.alert} We're always happy to help. Please [reach out to the TAs or me]{.alert} via email to schedule a time
 
 - [Materials (recap):]{.alert} All course materials will be available on:
@@ -271,7 +271,7 @@ By the end of this course, you will be able to:
 
 :::{style="margin-top: 40px; font-size: 30px;"}
 
-- [Problem sets:]{.alert} Ten of them, due on Wednesdays at 11:59 pm (50%)
+- [Problem sets:]{.alert} Ten of them, due on Thursdays at 11:59 pm (50%)
 - [In-class quizzes:]{.alert} Five of them (30%)
 - [Final project:]{.alert} Due on the last day of class (20%)
 - [Late policy:]{.alert} 10% off per day late

@@ -7,10 +7,10 @@ This repository contains the source materials for [DATASCI 101: Introduction to 
 ## Course Information
 
 - **Course**: DATASCI 101 - Introduction to AI Applications
-- **Semester**: Spring 2026
+- **Semester**: Fall 2026
 - **Format**: Undergraduate-level course
-- **Schedule**: Mondays and Wednesdays, 4pm to 4:50pm
-- **Location**: [Psychology Building, Room 290](https://maps.app.goo.gl/orrT4jaoxjYiojkL7)
+- **Schedule**: Tuesdays and Thursdays, 2:30pm to 3:20pm
+- **Location**: [White Hall, Room 206](https://maps.app.goo.gl/gynyTUkKqJ7meGjm8)
 - **Instructor**: [Danilo Freire](https://danilofreire.github.io)
 - **Email**: <danilo.freire@emory.edu>
 - **Teaching Assistants**:
