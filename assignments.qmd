@@ -55,10 +55,10 @@ You can also download the entire repository:
 | Quiz | Topics Covered | Date | Link |
 |------|----------------|------|------|
 | Quiz 1 | Lectures 1-7 | September 24, 2026 | [Quiz 01](https://github.com/danilofreire/datasci101-quiz01) |
-| Quiz 2 | Lectures 9-11 | October 8, 2026 | [Quiz 02](https://github.com/danilofreire/datasci101-quiz02) |
-| Quiz 3 | Lectures 13-17 | November 5, 2026 | [Quiz 03](https://github.com/danilofreire/datasci101-quiz03) |
-| Quiz 4 | Lectures 19-21 | November 19, 2026 | [Quiz 04](https://github.com/danilofreire/datasci101-quiz04) |
-| Quiz 5 | Lectures 23-24 | December 3, 2026 | [Quiz 05](https://github.com/danilofreire/datasci101-quiz05) |
+| Quiz 2 | Lectures 10-12 | October 8, 2026 | [Quiz 02](https://github.com/danilofreire/datasci101-quiz02) |
+| Quiz 3 | Lectures 14-18 | November 5, 2026 | [Quiz 03](https://github.com/danilofreire/datasci101-quiz03) |
+| Quiz 4 | Lectures 19, 21, and 22 | November 19, 2026 | [Quiz 04](https://github.com/danilofreire/datasci101-quiz04) |
+| Quiz 5 | Lectures 23 and 25 | December 3, 2026 | [Quiz 05](https://github.com/danilofreire/datasci101-quiz05) |
 
 ## Final Project
 
