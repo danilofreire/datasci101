@@ -1,6 +1,9 @@
 project:
   type: website
   output-dir: docs
+  render:
+    - "*.qmd"
+    - "!semester-transition-guide.md"
 
 website:
   title: "DATASCI 101"
