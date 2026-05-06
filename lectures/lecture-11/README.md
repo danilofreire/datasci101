@@ -1,45 +1,36 @@
-# Lecture 10: RAG, Semantic Search, and Grounding AI
+# Lecture 10: Creativity and Hallucination
 
-This lecture explains Retrieval-Augmented Generation (RAG) in accessible terms for non-technical undergraduates. Students learn why LLMs hallucinate, how semantic search works, and try no-code RAG tools hands-on.
+This lecture explores one of the most important problems in AI: when LLMs confidently state false information. Students learn why hallucinations happen, how they relate to creativity, and how to detect and mitigate them.
 
 ## Main Ideas
 
-### 1. The Problem RAG Solves
+### 1. What Are Hallucinations?
 
-* **Knowledge cutoff**: LLMs only know what was in their training data—nothing recent or private.
-* **Hallucinations**: AI confidently states false information because it predicts plausible text, not verified facts.
-* **The solution**: Give AI access to your documents at query time.
+* **Definition**: When AI generates plausible but factually incorrect content with high confidence
+* **Types**: Factual, fabrication, citation, logical, temporal, entity hallucinations
+* **Why they happen**: LLMs predict plausibility, not truth—they have no fact-checking mechanism
 
-### 2. Semantic Search
+### 2. Creativity vs. Accuracy
 
-* **Keyword search**: Finds exact word matches only.
-* **Semantic search**: Finds documents by meaning using embeddings.
-* **Why it matters**: "cheap flights" can find "budget airfare"—same meaning, different words.
+* **The tradeoff**: The same mechanism that enables creativity also causes hallucinations
+* **Temperature**: Controls randomness (low = precise, high = creative)
+* **When hallucinations are useful**: Creative writing, brainstorming, role-playing
 
-### 3. The RAG Pipeline
+### 3. Real-World Failures
 
-* **Chunk**: Break documents into smaller pieces.
-* **Embed**: Convert chunks to vectors.
-* **Store**: Save in a vector database.
-* **Retrieve**: Find chunks similar to the user's question.
-* **Generate**: LLM answers using retrieved context.
+* **Legal**: Lawyer submitted fake ChatGPT citations (Mata v. Avianca)
+* **Medical**: Wrong drug dosages and fabricated interactions
+* **Academic**: Invented citations and fake papers
 
-### 4. No-Code RAG Tools
+### 4. Detection and Prevention
 
-* **NotebookLM**: Google's free AI research assistant.
-* **ChatPDF**: Chat with any PDF.
-* **Perplexity**: Web search with citations.
-
-### 5. When RAG Fails
-
-* **Wrong chunks retrieved**: Question uses different words than document.
-* **Outdated documents**: RAG is only as good as your data.
-* **Always verify**: Check citations and original sources.
+* **Red flags**: Very specific numbers, precise citations, confident tone
+* **Prompting techniques**: Ask for uncertainty, request sources, use chain-of-thought
+* **Preview**: RAG as a solution (next lecture)
 
 ## Resources
 
-* [Lecture Slides (HTML)](10-rag.html)
-* [Lecture Source (QMD)](10-rag.qmd)
-* [NotebookLM](https://notebooklm.google.com/)
-* [ChatPDF](https://www.chatpdf.com/)
-* [Perplexity](https://perplexity.ai/)
+* [Lecture Slides (HTML)](10-hallucination.html)
+* [Lecture Source (QMD)](10-hallucination.qmd)
+* [Survey on LLM Hallucination](https://arxiv.org/abs/2402.06647)
+* [Wikipedia: AI Hallucination](https://en.wikipedia.org/wiki/Hallucination_(artificial_intelligence))

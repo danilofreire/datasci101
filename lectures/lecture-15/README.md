@@ -1,40 +1,37 @@
-# Lecture 14: Types of Bias and How They Arise
+# Lecture 14: Documentation and Dataset Governance
 
-This lecture provides a deep, critical exploration of AI bias for undergraduate students. Through case studies, debates, and the impossibility theorem, students grapple with difficult questions about fairness, accountability, and whether AI can ever be truly "fair."
+This lecture introduces documentation as the first line of defence against AI bias. Students learn to read and create datasheets for datasets and model cards, and explore how large-scale AI training data is collected and governed.
 
-## Main Ideas
+## Main ideas
 
-### 1. What is Bias?
+### 1. Why documentation matters
 
-* **Multiple meanings**: Statistical, cognitive, cultural, algorithmic, historical
-* **The mirror problem**: AI learns from human data, so it reflects human biases
-* **Amplification**: AI can scale and entrench existing discrimination
+* **The "nutrition label" analogy**: just as food labels tell you what you are eating, datasheets tell you what your model is trained on.
+* **Without documentation**: you cannot identify bias, reproduce results, or hold anyone accountable.
+* **Documentation as accountability**: it forces developers to think about their data before training.
 
-### 2. Types of Bias
+### 2. Datasheets for datasets
 
-* **Historical bias**: Past discrimination encoded in training data (Amazon hiring)
-* **Representation bias**: Underrepresented groups have higher error rates (facial recognition)
-* **Measurement bias**: Proxies that don't work equally (healthcare costs for need)
-* **Aggregation bias**: One-size-fits-all models fail diverse populations
+* **Gebru et al. (2018)**: a standardised template covering motivation, composition, collection process, intended uses, and maintenance.
+* **Key questions**: who collected the data, why, from whom, and with what consent?
+* **Activity**: students create a mini-datasheet for a familiar dataset.
 
-### 3. Case Studies
+### 3. Model cards
 
-* **Hiring**: LLMs favour white male-associated names; Amazon penalised women
-* **Facial recognition**: 43x error rate difference between light-skinned men and dark-skinned women
-* **Criminal justice (COMPAS)**: Black defendants twice as likely to be falsely flagged high-risk
-* **Healthcare**: Algorithms miss sick Black patients, AI fails on darker skin tones
+* **Mitchell et al. (2019)**: document intended use, metrics, ethical considerations, and what the model is *not* for.
+* **System cards**: document the whole AI system, not just one model (red teaming, oversight, component interactions).
+* **Disaggregated evaluation**: report metrics by subgroup to reveal hidden performance gaps.
 
-### 4. The Hard Questions
+### 4. LLM training data governance
 
-* **Impossibility theorem**: You cannot satisfy all fairness criteria simultaneously
-* **Fairness tradeoffs**: Accuracy vs. fairness, individual vs. group, short-term vs. long-term
-* **Is AI bias fixable?** Optimists vs. sceptics debate
+* **Large-scale datasets**: LAION, Common Crawl, and questions about data provenance.
+* **FAIR principles**: Findable, Accessible, Interoperable, Reusable.
+* **The consent problem**: most AI training data is collected without explicit consent.
 
 ## Resources
 
-* [Lecture Slides (HTML)](14-bias.html)
-* [Lecture Source (QMD)](14-bias.qmd)
-* [Fairness and Machine Learning Book](https://fairmlbook.org/) (free)
-* [Gender Shades Project](http://gendershades.org/)
-* [ProPublica COMPAS Analysis](https://www.propublica.org/article/machine-bias-risk-assessments-in-criminal-sentencing)
-* [AI Incident Database](https://incidentdatabase.ai/)
+* [Lecture Slides (HTML)](14-documentation.html)
+* [Lecture Source (QMD)](14-documentation.qmd)
+* [Datasheets for Datasets (Gebru et al., 2021)](https://arxiv.org/abs/1803.09010)
+* [Model Cards for Model Reporting (Mitchell et al., 2019)](https://arxiv.org/abs/1810.03993)
+* [FAIR Principles](https://www.go-fair.org/fair-principles/)

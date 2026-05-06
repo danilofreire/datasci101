@@ -1,39 +1,38 @@
-# Lecture 17: AI Regulation and Standards Around the World
+# Lecture 16: Case Studies — Biased Outcomes in Health, Hiring, and Policing
 
-This lecture surveys the emerging global landscape of AI governance, comparing approaches across major jurisdictions and examining what these regulatory frameworks mean for practitioners and citizens.
+This lecture examines three high-profile cases where algorithmic systems produced discriminatory outcomes. We move from theory to practice, looking at real systems that affected real people and asking what went wrong and what we can learn.
 
 ## Main ideas
 
-### 1. Why regulate AI?
+### 1. Healthcare: the Optum algorithm
 
-* **Market failures**: Information asymmetry (users can't evaluate AI systems), externalities (harms fall on people who didn't choose to use the system), and collective action problems (race to the bottom).
-* **Rights and dignity**: Some AI uses may violate fundamental rights regardless of economic efficiency.
-* **Counter-arguments**: Innovation concerns, technical challenges of defining AI, and whether existing laws suffice.
+* **The proxy problem**: The algorithm used healthcare costs to predict healthcare needs, but costs reflect access to care, not need for care.
+* **Hidden disparity**: At the same risk score, Black patients were considerably sicker than white patients.
+* **The fix**: Switching from predicting costs to predicting health outcomes reduced racial bias by around 80%.
 
-### 2. The EU AI Act
+### 2. Facial recognition: Gender Shades
 
-* **Risk-based approach**: Four tiers from prohibited (social scoring) to minimal risk (spam filters).
-* **High-risk requirements**: Conformity assessments, risk management, data governance, human oversight, logging.
-* **General-Purpose AI rules**: Special obligations for foundation models, stricter for "systemic risk" models.
-* **Enforcement**: Fines up to €35 million or 7% global turnover.
+* **Representation bias**: Commercial systems from IBM, Microsoft, and Face++ had error rates up to 34x higher for darker-skinned women compared to lighter-skinned men.
+* **Training data skew**: Standard face datasets were predominantly male and lighter-skinned, so models learned to recognise what they saw most often.
+* **Real-world harm**: Documented wrongful arrests in the US based on facial recognition errors have all involved Black individuals.
 
-### 3. The US approach
+### 3. Criminal justice: COMPAS
 
-* **Sectoral regulation**: Different agencies (FDA, SEC, EEOC) regulate AI in their domains.
-* **Executive action**: Biden's 2023 EO on AI safety, Trump's 2025 AI Action Plan with different priorities.
-* **State initiatives**: Colorado, California, Illinois, and NYC filling federal gaps with local laws.
-* **Philosophy**: Innovation-first compared to EU's precautionary approach.
+* **Fairness impossibility**: When base rates differ between groups, you cannot simultaneously achieve equal calibration and equal error rates.
+* **Feedback loops**: Higher predicted risk leads to more incarceration, which destabilises communities and increases actual crime.
+* **No neutral choice**: Choosing calibration over equal error rates is a value judgment, not a technical decision.
 
-### 4. Global landscape
+### 4. Common patterns
 
-* **China**: Multiple regulations focused on content control and registration, but state use largely unrestricted.
-* **Other jurisdictions**: UK's pro-innovation guidance, Canada's stalled AIDA, Japan's light-touch approach.
-* **International coordination**: OECD AI Principles, G7 Hiroshima Process, UN Advisory Body, but no global consensus.
+* **Proxy problems**: Using one thing (costs, arrests) to predict another (health needs, danger) encodes hidden assumptions.
+* **Historical bias**: Systems trained on biased historical data reproduce and amplify that bias.
+* **Invisible disparities**: Overall accuracy can hide group-specific failures; disaggregated analysis is essential.
 
 ## Resources
 
-* [Lecture slides (HTML)](17-regulation.html)
-* [Lecture source (QMD)](17-regulation.qmd)
-* [EU AI Act text](https://www.europarl.europa.eu/topics/en/article/20230601STO93804/eu-ai-act-first-regulation-on-artificial-intelligence)
-* [OECD AI Policy Observatory](https://oecd.ai/)
-* [Stanford HAI AI Policy](https://hai.stanford.edu/policy)
+* [Lecture slides (HTML)](16-case-studies.html)
+* [Lecture source (QMD)](16-case-studies.qmd)
+* [Obermeyer et al. (2019) – Dissecting racial bias in healthcare algorithms](https://www.science.org/doi/10.1126/science.aax2342)
+* [Gender Shades Project](http://gendershades.org/)
+* [ProPublica – Machine Bias](https://www.propublica.org/article/machine-bias-risk-assessments-in-criminal-sentencing)
+* [Coded Bias documentary](https://www.codedbias.com/)

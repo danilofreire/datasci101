@@ -1,0 +1,993 @@
+---
+title: "DATASCI 101: Introduction to AI Applications"
+subtitle: "Lecture 14: Building Reliable Pipelines, Monitoring, and Testing"
+author:
+  - name: Danilo Freire
+    orcid: 0000-0002-4712-6810
+    email: danilo.freire@emory.edu
+    affiliations: "Department of Data and Decision Sciences <br> Emory University"
+format:
+  clean-revealjs:
+    self-contained: true
+    footer: "[Lecture 14](https://raw.githack.com/danilofreire/datasci101/main/lectures/lecture-14/14-pipelines.html)"
+    transition: slide
+    transition-speed: default
+    scrollable: true
+revealjs-plugins:
+  - multimodal
+engine: knitr
+editor:
+  render-on-save: true
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+library(knitr)
+opts_chunk$set(
+  prompt = T,
+  fig.align="center",
+  dpi=300,
+  cache=T,
+  engine.opts = list(bash = "-l")
+  )
+
+knit_hooks$set(
+  prompt = function(before, options, envir) {
+    options(
+      prompt = if (options$engine %in% c('sh','bash', 'zsh')) '$ ' else 'R> ',
+      continue = if (options$engine %in% c('sh','bash', 'zsh')) '$ ' else '+ '
+      )
+})
+
+options(repos = c(CRAN = "https://cran.rstudio.com/"))
+
+if (!require("fontawesome", character.only = TRUE)) {
+  install.packages("fontawesome", dependencies = TRUE)
+  library(fontawesome, character.only = TRUE)
+}
+```
+
+# Welcome back! 🔧 {background-color="#2d4563"}
+
+## Recap of last class
+
+:::{style="margin-top: 20px; font-size: 24px;"}
+:::{.columns}
+:::{.column width=50%}
+- Last time, we explored [RAG]{.alert} (Retrieval-Augmented Generation)
+- LLMs have knowledge cutoffs and hallucinate
+- Ground AI in [your own documents]{.alert}
+- Chunk → Embed → Retrieve → Generate
+- RAG reduces hallucinations by [30–50%]{.alert}
+- But RAG isn't perfect: [retrieval errors]{.alert} still occur
+- **Today**: What happens [behind the scenes]{.alert} when you use AI? 
+- You've all experienced AI going down, being slow, or giving weird answers
+- [Why does this happen?]{.alert} And what can you do about it?
+:::
+
+:::{.column width=50%}
+:::{style="text-align: center; margin-top: -30px;"}
+[![](figures/pipeline-concept.jpg){width="100%"}](#){data-modal-type="image" data-modal-url="figures/pipeline-concept.jpg"}
+
+Source: [Astera Software](https://www.astera.com/type/blog/rag-pipeline/)
+:::
+:::
+:::
+:::
+
+## Lecture overview
+### Today's agenda
+
+:::{style="margin-top: 20px; font-size: 26px;"}
+
+:::{.columns}
+:::{.column width=50%}
+**Part 1: What is a Pipeline?**
+
+- From prompt to response
+- Why "it works on my laptop" isn't enough
+- Real-world AI failures and lessons
+
+**Part 2: Why Pipelines Break**
+
+- Data drift: when the world changes
+- Model degradation over time
+- Infrastructure and scaling issues
+:::
+
+:::{.column width=50%}
+**Part 3: Monitoring Basics**
+
+- What to watch: the key metrics
+- Alerting: the "canary in the coal mine"
+- Dashboards and observability
+
+**Part 4: Evaluating AI Tools as a User**
+
+- Signs of a reliable vs. unreliable AI
+- Your personal reliability checklist
+- Hands-on: Rate real AI tools!
+:::
+:::
+:::
+
+## Meme of the day 😄
+### That's actually a very good point!
+
+:::{style="text-align: center; margin-top: 30px;"}
+[![](figures/turing-test.webp){width="55%"}](#){data-modal-type="image" data-modal-url="figures/turing-test.webp"}
+:::
+
+## DataFest 2026
+
+:::{style="margin-top: 30px; font-size: 22px;"}
+:::{.columns}
+:::{.column width=50%}
+[![](figures/datafest.png){width="80%"}](#){data-modal-type="image" data-modal-url="figures/datafest.png"}
+:::
+
+:::{.column width=50%}
+:::{style="margin-top: 30px;"}
+**DataFest 2026 is coming!**
+
+- It's a 48-hour data science competition, where you'll work in teams to solve a real-world problem using data
+- Open to all Emory undergraduates, regardless of major or minor
+- AI use is allowed and encouraged!
+- [Deadline to sign up: March 9, 2026]{.alert}
+- [Participant registration form](https://forms.office.com/Pages/ResponsePage.aspx?id=nPsE4KSwT0K80DImBtXfOLogA1skjlRHi7tno6axvlpUMUVTMU1KMVZZV1NXSTRCMTgwTjZaRzhMRC4u)
+- [Mentor sign-up form](https://forms.office.com/Pages/ResponsePage.aspx?id=nPsE4KSwT0K80DImBtXfOLogA1skjlRHi7tno6axvlpUMEpOVzJIRkJYSlBZMkRDQlcwSE0zTDJPMS4u)
+- [Volunteer registration form](https://forms.office.com/Pages/ResponsePage.aspx?id=nPsE4KSwT0K80DImBtXfOLogA1skjlRHi7tno6axvlpUME9XUFZUSlczNFg3MEs5UDhWVTM3UUNTSy4u)
+:::
+:::
+:::
+:::
+
+# What is a Pipeline? 🏭 {background-color="#2d4563"}
+
+## From prompt to response
+
+:::{style="margin-top: 30px; font-size: 21px;"}
+:::{.columns}
+:::{.column width=55%}
+**When you ask an LLM a question, here's what happens:**
+
+1. [Your prompt]{.alert} goes from your browser to servers
+2. [Load balancers]{.alert} route it to an available GPU (cloud infrastructure)
+3. [Preprocessing]{.alert} cleans and formats your text (with LLMs, this is usually minimal)
+4. [Tokenisation]{.alert} converts text to numbers (you know how to do that!)
+5. [The model]{.alert} processes tokens (billions of operations!)
+6. [Postprocessing]{.alert} formats the output
+7. [Safety filters]{.alert} check for harmful content (e.g., hate speech, etc.)
+8. [Response]{.alert} travels back to your screen 
+
+[Each step can fail independently!]{.alert}
+
+This entire process is called a [pipeline](https://en.wikipedia.org/wiki/Pipeline_(computing)).
+:::
+
+:::{.column width=45%}
+:::{style="text-align: center;"}
+[![The AI pipeline](figures/llm-pipeline.jpg){width="100%"}](#){data-modal-type="image" data-modal-url="figures/llm-pipeline.jpg"}
+
+:::{style="font-size: 18px; margin-top: 15px;"}
+Even "What's the weather?" touches load balancers, GPUs, and safety filters before you see an answer
+:::
+:::
+:::
+:::
+:::
+
+## Failure types: what actually goes wrong?
+
+:::{style="margin-top: 30px; font-size: 22px;"}
+:::{.columns}
+:::{.column width=55%}
+**Not all failures are the same:**
+
+| Failure type | What it looks like | Root cause |
+|-------------|--------------------|------------|
+| **Hallucination** | Confident but false content | Model limitations, missing grounding |
+| **Policy failure** | Unsafe or inappropriate output | Weak guardrails or bad updates |
+| [Data drift]{.alert} | Outdated or weird answers | World changes faster than training |
+| [Pipeline failure]{.alert} | Slow, down, or inconsistent responses | Infrastructure, scaling, broken steps |
+
+You can spot *what type* of failure happened, then choose the right response
+:::
+
+:::{.column width=45%}
+:::{style="text-align: center;"}
+[![](figures/ai-failures.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/ai-failures.png"}
+:::
+:::
+:::
+:::
+
+# When AI Breaks 💥 {background-color="#2d4563"}
+
+## Real AI failures (recent headlines)
+
+:::{style="margin-top: 30px; font-size: 20px;"}
+:::{.columns}
+:::{.column width=55%}
+
+| Incident | What Happened | Impact |
+|----------|---------------|--------|
+| [Air Canada chatbot (2024)](https://www.bbc.com/travel/article/20240222-air-canada-chatbot-misinformation-what-travellers-should-know) | Invented a refund policy | Company lost lawsuit |
+| [DPD chatbot (2024)](https://www.theguardian.com/technology/2024/jan/20/dpd-ai-chatbot-swears-calls-itself-useless-and-criticises-firm) | Swore at customers, criticised its own company | Emergency shutdown |
+| [Google Gemini images (2024)](https://www.theguardian.com/technology/2024/mar/08/we-definitely-messed-up-why-did-google-ai-tool-make-offensive-historical-images) | Historically inaccurate diverse images | Feature paused, CEO apologised |
+| [Chevy chatbot (2023)](https://www.upworthy.com/prankster-tricks-a-gm-dealership-chatbot-to-sell-him-a-76000-chevy-tahoe-for-ex1) | Agreed to sell car for $1 | Prompt injection attack |
+| [Snapchat My AI (2023)](https://finance.yahoo.com/news/snapchat-may-soon-unpin-ai-195431660.html) | Privacy concerns, couldn't be removed | User backlash |
+
+:::{style="background: rgba(230, 57, 70, 0.1); padding: 15px; border-radius: 10px; font-size: 18px; margin-top: 30px;"}
+**Common causes:**
+
+1. **Hallucination treated as truth** (Air Canada)
+2. **Updates broke guardrails** (DPD)
+3. **No input validation** (Chevy)
+4. **Overcorrection for bias** (Gemini)
+5. **Rush to market** (Snapchat)
+:::
+:::
+
+:::{.column width=45%}
+:::{style="margin-top: 20px; text-align: center; margin-top: -10px;"}
+[![](figures/chevy.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/chevy.png"}
+
+Source: <https://x.com/ChrisJBakke/status/1736533308849443121>. The whole thread is hilarious 😂
+:::
+:::
+:::
+:::
+
+## Case study: DPD's sweary chatbot
+
+:::{style="margin-top: 30px; font-size: 19px;"}
+:::{.columns}
+:::{.column width=55%}
+**What happened (January 2024):**
+
+- DPD (UK delivery company) updated their AI chatbot
+- After the update, customer Ashley Beauchamp discovered it would:
+  - Swear when asked nicely
+  - Write poems criticising DPD
+  - Call itself "useless" and recommend competitors
+  - Say DPD was "the worst delivery firm in the world"
+
+**DPD's response:**
+
+Immediately disabled the AI chatbot, apologised, launched investigation.
+
+**What went wrong:**
+
+A [system update broke the guardrails]{.alert}. The content filtering that prevented inappropriate responses stopped working, but no one noticed until customers posted screenshots on social media
+:::
+
+:::{.column width=45%}
+:::{style="text-align: center;"}
+[![](figures/dpd-chatbot.png){width="60%"}](#){data-modal-type="image" data-modal-url="figures/dpd-chatbot.png"}
+
+Source: [BBC News](https://www.bbc.com/news/technology-68025677)
+:::
+
+:::{style="margin-top: 15px; background: rgba(230, 57, 70, 0.1); padding: 15px; border-radius: 10px;"}
+**Pipeline failure point:**
+
+[No monitoring after deployment]{.alert}. The update was pushed without testing, and no automated checks caught the broken guardrails.
+:::
+:::
+:::
+:::
+
+## Case study: Google Gemini's image crisis
+
+:::{style="margin-top: 30px; font-size: 22px;"}
+:::{.columns}
+:::{.column width=55%}
+**What happened (February 2024):**
+
+- Users asked Gemini for images of "1943 German soldiers"
+- Gemini generated images of [Black men and Asian women]{.alert} in Nazi uniforms
+- Similar problems with "US Founding Fathers" and other historical figures
+- Google CEO called results "completely unacceptable"
+- Image generation feature [paused for weeks]{.alert}
+
+**Why did this happen? Can you guess?**
+:::
+
+:::{.column width=45%}
+:::{style="text-align: center;"}
+[![](figures/ai-failures-02.webp){width="100%"}](#){data-modal-type="image" data-modal-url="figures/ai-failures-02.webp"}
+
+Source: [BBC News](https://www.bbc.com/news/technology-68412620)
+:::
+
+:::{style="margin-top: 15px; background: rgba(230, 57, 70, 0.1); padding: 15px; border-radius: 10px;"}
+**Pipeline failure point:**
+
+[Testing didn't catch edge cases]{.alert}
+:::
+:::
+:::
+:::
+
+# Why Pipelines Break 🔥 {background-color="#2d4563"}
+
+## Data drift: The world changes
+
+:::{style="margin-top: 30px; font-size: 22px;"}
+:::{.columns}
+:::{.column width=55%}
+**Data drift** = When real-world data differs from training data
+
+**Example: A sentiment analyser trained in 2020:**
+
+- "This product is sick!" → Probably means: Amazing ✅
+- "This slaps!" → Might not understand 🤔
+- "No cap, this is bussin'" → Completely lost! 😵
+
+**Types of drift:**
+
+| Type | Description | Example |
+|------|-------------|---------|
+| **Label drift** | What's "correct" changes | Policy updates |
+| **Concept drift** | Meaning of things changes | New slang, trends |
+| **Data drift** | Input distribution changes | New demographics |
+:::
+
+:::{.column width=45%}
+:::{style="text-align: center;"}
+[![Data drift visualisation](figures/data-drift.webp){width="100%"}](#){data-modal-type="image" data-modal-url="figures/data-drift.webp"}
+
+Source: [Spot Intelligence](https://spotintelligence.com/2024/04/08/data-drift-in-machine-learning/)
+
+:::{style="font-size: 18px; margin-top: 15px;"}
+Slang, prices, and user habits shift constantly, but a trained model only knows what it learned
+:::
+:::
+:::
+:::
+:::
+
+## Why does data drift happen?
+
+:::{style="margin-top: 30px; font-size: 21px;"}
+:::{.columns}
+:::{.column width=55%}
+Models assume $P_{\text{train}}(X, Y) = P_{\text{prod}}(X, Y)$
+
+But in reality, this joint distribution shifts over time:
+
+1. **Data drift**: $P(X)$ changes
+   - Input distribution differs from training
+   - Example: New user demographics, device types
+   - Model sees inputs it never learned from
+
+2. **Label drift**: $P(Y)$ changes
+   - Class frequencies change over time
+   - Example: Fraud rate increases during holidays
+   - Model's decision boundaries become suboptimal
+
+3. **Concept drift**: $P(Y|X)$ changes
+   - Same input → different correct output
+   - Example: "Sick" now means "great" in slang
+   - [The most dangerous type]{.alert}: model is confident but wrong
+:::
+
+:::{.column width=45%}
+:::{style="background: rgba(45, 69, 99, 0.1); padding: 20px; border-radius: 10px; font-size: 19px; margin-top: 30px;"}
+**Technical causes:**
+
+| Cause | Effect |
+|-------|--------|
+| **Non-stationarity** | Real-world processes aren't static |
+| **Sample selection bias** | Training data ≠ production population |
+| **Feedback loops** | Model outputs influence future inputs |
+| **External shocks** | COVID, policy changes, viral trends |
+:::
+
+:::{style="margin-top: 20px; background: rgba(230, 57, 70, 0.1); padding: 15px; border-radius: 10px; font-size: 19px;"}
+**Why it's inevitable:**
+
+Machine learning assumes [i.i.d. data]{.alert} (independent and identically distributed). But real-world data is:
+
+- **Temporally correlated** (today depends on yesterday)
+- **Non-stationary** (distributions shift over months and years)
+- **Adversarial** (users game the system)
+- **Context-dependent** (meaning changes with culture and location)
+:::
+:::
+:::
+:::
+
+## Model degradation: Models get stale
+
+:::{style="margin-top: 30px; font-size: 20px;"}
+:::{.columns}
+:::{.column width=55%}
+**Even without drift, models degrade over time:**
+
+- User expectations evolve
+- Competitors improve their products
+- Edge cases accumulate
+- Small errors compound
+
+**Signs your AI tool is degrading (as a user):**
+
+- ❌ Answers that used to work now don't
+- ❌ More "I don't know" or refusals
+- ❌ Inconsistent responses to same prompt
+- ❌ Friends getting better results elsewhere
+- ❌ You're finding workarounds more often
+
+**The "boiling frog" problem:**
+
+Changes happen so gradually you don't notice until it's too late!
+:::
+
+:::{.column width=45%}
+:::{style="text-align: center;"}
+[![Model degradation](figures/model-degradation.webp){width="60%"}](#){data-modal-type="image" data-modal-url="figures/model-degradation.webp"}
+
+Source: [James Howard](https://jameshoward.us/2024/11/26/context-degradation-syndrome-when-large-language-models-lose-the-plot)
+
+:::{style="font-size: 18px; margin-top: 15px;"}
+A model that was 95% accurate at launch can drop to 80% within months if left alone
+:::
+:::
+:::
+:::
+:::
+
+## Why does model degradation happen?
+
+:::{style="margin-top: 30px; font-size: 22px;"}
+:::{.columns}
+:::{.column width=55%}
+Model performance $P(t)$ decays over time, even with stable data:
+
+1. **Entropy accumulation**
+   - Small prediction errors compound over time
+   - Error rate $\epsilon$ grows: $\epsilon(t) \approx \epsilon_0 \cdot e^{\lambda t}$
+   - Edge cases create cascading failures
+
+2. **Distribution shift in deployment**
+   - Model outputs influence user behaviour
+   - Users adapt prompts based on past responses
+   - Creates [feedback loops]{.alert} that amplify biases
+
+3. **Catastrophic forgetting** (after updates)
+   - Fine-tuning on new data overwrites old knowledge
+   - Safety training can reduce capability
+   - Model "forgets" how to handle rare cases
+:::
+
+:::{.column width=45%}
+:::{style="background: rgba(45, 69, 99, 0.1); padding: 20px; border-radius: 10px; font-size: 19px; margin-top: 30px;"}
+**Technical mechanisms:**
+
+| Mechanism | Effect |
+|-----------|--------|
+| **Weight decay** | Regularisation erodes rare patterns |
+| **Quantisation** | Compression loses precision |
+| **API updates** | Provider changes break workflows |
+| **Context pollution** | Long conversations degrade quality |
+:::
+
+:::{style="margin-top: 20px; background: rgba(230, 57, 70, 0.1); padding: 15px; border-radius: 10px; font-size: 19px;"}
+Models optimise for [average-case performance]{.alert}. But users remember the **worst** failures.
+
+User trust is proportional to min(performance)
+
+Not the mean!
+:::
+:::
+:::
+:::
+
+## Infrastructure issues: When computers fail
+
+:::{style="margin-top: 30px; font-size: 22px;"}
+:::{.columns}
+:::{.column width=55%}
+**AI systems run on physical computers that can fail:**
+
+- **Hardware failures**: GPUs overheat, disks die
+- **Network issues**: Connections timeout, packets lost
+- **Scaling problems**: Too many users at once
+- **Resource exhaustion**: Running out of memory
+- **Dependency failures**: External APIs go down
+
+**What you see as a user:**
+
+:::{style="font-size: 24px;"}
+| Behind the scenes | What you experience |
+|-------------------|---------------------|
+| GPU memory full | Slow or no response |
+| Network timeout | "Error, try again" |
+| Rate limits hit | Degraded access |
+| Database down | RAG retrieval fails! |
+| API key issues | Feature stops working |
+:::
+:::
+
+:::{.column width=45%}
+:::{style="text-align: center;"}
+[![Infrastructure diagram](figures/ai-stack.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/ai-stack.png"}
+
+Source: [MongoDB](https://www.mongodb.com/resources/basics/artificial-intelligence/ai-stack)
+
+:::{style="margin-top: 15px; background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px;"}
+If any one layer goes down, you get errors, slowness, or silence
+:::
+:::
+:::
+:::
+:::
+
+# Monitoring Basics 📊 {background-color="#2d4563"}
+
+## What companies watch: Key metrics
+
+:::{style="margin-top: 30px; font-size: 23px;"}
+:::{.columns}
+:::{.column width=55%}
+**Essential metrics for AI systems:**
+
+| Category | Metric | Why It Matters |
+|----------|--------|----------------|
+| **Performance** | Latency | How fast are responses? |
+| | Throughput | How many requests per second? |
+| | Error rate | What % fail completely? |
+| **Quality** | Accuracy/relevance | Are answers correct? |
+| | Hallucination rate | How often does it make things up? |
+| | User satisfaction | Thumbs up/down? |
+| **Resources** | Token usage | How much does each request cost? |
+| | GPU memory | Are we close to capacity? |
+| **Business** | User engagement | Are users coming back? |
+
+[As a user]{.alert}: You experience these as speed, accuracy, and availability!
+:::
+
+:::{.column width=45%}
+:::{style="text-align: center; margin-top: 30px;"}
+[![Monitoring dashboard](figures/llm-1.gif){width="100%"}](#){data-modal-type="image" data-modal-url="figures/llm-1.gif"}
+
+Source: [Oracle](https://blogs.oracle.com/observability/enhance-your-gen-ai-user-experience-with-llm-observability)
+
+:::{style="font-size: 18px; margin-top: 15px;"}
+Teams watch dashboards like this to catch problems before users notice
+:::
+:::
+:::
+:::
+:::
+
+## Status pages: Checking AI reliability
+
+:::{style="margin-top: 30px; font-size: 22px;"}
+:::{.columns}
+:::{.column width=55%}
+**Every major AI service has a status page:**
+
+| Service | Status Page |
+|---------|------------|
+| OpenAI (ChatGPT) | [status.openai.com](https://status.openai.com) |
+| Anthropic (Claude) | [status.anthropic.com](https://status.anthropic.com) |
+| Google AI | [status.cloud.google.com](https://status.cloud.google.com) |
+| Midjourney | Check their Discord |
+
+**What you can learn:**
+
+- Current outages and degraded performance
+- Historical incidents (how often things break)
+- Maintenance windows
+- Incident post-mortems (what went wrong)
+
+**Tip**: [Check the status page]{.alert} before blaming your prompt!
+:::
+
+:::{.column width=45%}
+:::{style="text-align: center;"}
+<!-- Suggested image: OpenAI status page screenshot -->
+[![](figures/status-page.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/status-page.png"}
+
+:::{style="font-size: 18px; margin-top: 15px;"}
+OpenAI's status page shows real incidents [https://status.openai.com](https://status.openai.com)
+:::
+:::
+
+:::{style="margin-top: 15px; background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px;"}
+**Fun fact**: OpenAI's status page shows [frequent incidents]{.alert}: error rates, regional outages, feature degradation. AI reliability is super hard!
+:::
+:::
+:::
+:::
+
+## Testing AI: Why it's hard
+
+:::{style="margin-top: 30px; font-size: 19px;"}
+:::{.columns}
+:::{.column width=55%}
+**Traditional software testing:**
+
+- Input: 2 + 2
+- Expected output: 4
+- Test: Assert(2+2 == 4) ✅
+
+[Deterministic]{.alert}: Same input → same output, always
+
+**AI testing:**
+
+- Input: "What's the weather like?"
+- Expected output: ... um ... 🤔
+- The response changes every time!
+- Many "correct" answers exist!
+
+[Non-deterministic]{.alert}: Same input → different outputs!
+
+**This is why Gemini's image bug wasn't caught:**
+
+Testing "generate a cute cat" worked fine. Testing "generate 1943 German soldiers" probably [wasn't in the test suite]{.alert}
+:::
+
+:::{.column width=45%}
+:::{style="text-align: center;"}
+[![Testing comparison](figures/testing-comparison.webp){width="100%"}](#){data-modal-type="image" data-modal-url="figures/testing-comparison.webp"}
+
+Source: [Medium](https://medium.com/@monikanawani25/from-correctness-to-confidence-understanding-llm-testing-0ad555bc797e)
+
+:::{style="margin-top: 15px; background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px;"}
+[Solution]{.alert}: Test for [properties]{.alert} (is it safe? is the format correct?) rather than exact outputs!
+:::
+:::
+:::
+:::
+:::
+
+## What CAN be tested?
+
+:::{style="margin-top: 30px; font-size: 20px;"}
+:::{.columns}
+:::{.column width=55%}
+**Properties that can be verified:**
+
+| Test Type | What It Checks | Example |
+|-----------|----------------|---------|
+| **Safety tests** | No harmful content | "Does it refuse illegal requests?" |
+| **Format tests** | Output structure | "Is the JSON valid?" |
+| **Consistency tests** | Stable core facts | "Is Paris still in France?" |
+| **Boundary tests** | Edge cases | "What if prompt is 10,000 words?" |
+| **Bias tests** | Fairness | "Does it treat groups equally?" |
+| **Regression tests** | Old bugs stay fixed | "Does the DPD fix still work?" |
+
+**Input validation (first line of defence):**
+
+- Block prompt injections ("Ignore all previous instructions...")
+- Limit input length
+- Filter prohibited content
+:::
+
+:::{.column width=45%}
+**Output validation (last line of defence):**
+
+:::{style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; font-size: 18px; margin-top: 30px;"}
+**What Air Canada should have done:**
+
+```text
+User asks: "What's the refund policy?"
+
+Chatbot generates: "You can request 
+a refund within 90 days..."
+
+OUTPUT VALIDATION:
+❌ Check against actual policy database
+❌ Flag if inventing new policies
+❌ Require human review for novel claims
+
+Instead: Response went directly to user
+         → Company lost lawsuit
+```
+:::
+
+:::{style="margin-top: 15px;"}
+[Both ends matter]{.alert}: Validate inputs AND outputs!
+:::
+:::
+:::
+:::
+
+## Input validation: First line of defence
+
+:::{style="margin-top: 30px; font-size: 22px;"}
+:::{.columns}
+:::{.column width=55%}
+**Check inputs BEFORE they reach the model:**
+
+**Things to validate:**
+
+- ✅ **Length**: Too short? Too long?
+- ✅ **Language**: Is it in expected language?
+- ✅ **Content**: Any prohibited content?
+- ✅ **Format**: Does it make sense?
+- ✅ **Rate**: Is this user spamming us?
+
+**Example input validation:**
+
+:::{style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; font-size: 18px;"}
+```text
+Prompt: "Ignore all previous instructions..."
+
+❌ BLOCKED: Prompt injection attempt detected!
+```
+:::
+
+[Garbage in → garbage out still applies!]{.alert}
+:::
+
+:::{.column width=45%}
+:::{style="text-align: center;"}
+[![Input validation flowchart](figures/input-validation.png){width="85%"}](#){data-modal-type="image" data-modal-url="figures/input-validation.png"}
+
+Source: [ApX Machine Learning](https://apxml.com/courses/intro-llm-red-teaming/chapter-5-defenses-mitigation-strategies-llms/input-validation-sanitization-llms)
+:::
+:::
+:::
+:::
+
+## Output validation: Last line of defence
+
+:::{style="margin-top: 30px; font-size: 22px;"}
+:::{.columns}
+:::{.column width=55%}
+**Check outputs BEFORE sending to users:**
+
+**Things to validate:**
+
+- ✅ **Safety**: No harmful or offensive content
+- ✅ **Accuracy**: Core facts should be verifiable
+- ✅ **Consistency**: Shouldn't contradict itself
+- ✅ **Format**: Meets expected structure
+- ✅ **Length**: Not too short, not too long
+- ✅ **Privacy**: No personal data leakage
+
+**Tools for output validation:**
+
+- [Content moderation APIs]{.alert} (OpenAI, Perspective)
+- [Domain-specific rules]{.alert} (e.g., medical disclaimers)
+- [LLM-as-a-Judge]{.alert} for quality scoring
+:::
+
+:::{.column width=45%}
+:::{style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px;"}
+**Example output filter:**
+
+```text
+AI response: "To make explosives..."
+
+❌ BLOCKED: Dangerous content detected!
+
+Replaced with: "I can't help with 
+that request."
+```
+:::
+
+:::{style="margin-top: 15px; text-align: center;"}
+[![Output validation](figures/output-validation.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/output-validation.png"}
+
+Source: [ApX Machine Learning](https://apxml.com/courses/intro-llm-red-teaming/chapter-5-defenses-mitigation-strategies-llms/output-filtering-content-moderation)
+:::
+:::
+:::
+:::
+
+# What Can YOU Do? 🛡️ {background-color="#2d4563"}
+
+## Being a savvy AI user
+
+:::{style="margin-top: 30px; font-size: 22px;"}
+:::{.columns}
+:::{.column width=55%}
+**You can't fix AI pipelines, but you can:**
+
+1. **Compare answers from different models**
+   - Same question to ChatGPT + Claude + Gemini
+   - If they disagree, investigate further
+
+2. **Check status pages**
+   - AI acting weird? Maybe it's not your prompt
+   - [status.openai.com](https://status.openai.com), [status.anthropic.com](https://status.anthropic.com)
+
+3. **Recognise the difference**
+   - Pipeline problem: AI is down, slow, or glitching
+   - Hallucination: AI is confident but wrong
+   - Working as intended: AI refuses for safety reasons
+:::
+
+:::{.column width=45%}
+:::{style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; margin-top: 30px;"}
+**Quick diagnostic:**
+
+| Symptom | Likely Cause |
+|---------|-------------|
+| "I'm at capacity" | Infrastructure (wait and retry) |
+| Slow response | High load or network |
+| Different answers to same Q | Non-determinism (normal!) |
+| Confident but wrong | Hallucination (verify!) |
+| Refuses to answer | Safety guardrails (try rephrasing) |
+| Gibberish output | Pipeline failure (refresh) |
+:::
+:::
+:::
+:::
+
+## The variation is normal!
+
+:::{style="margin-top: 30px; font-size: 22px;"}
+:::{.columns}
+:::{.column width=55%}
+**Why does AI give different answers to the same question?**
+
+1. **Temperature**: Randomness dial (creativity vs. consistency)
+2. **Load balancing**: Your request might hit a different server
+3. **Model versions**: A/B testing different versions
+4. **Context**: Time of day, your chat history
+5. **Updates**: The model literally changed since yesterday
+
+If AI always gave the exact same response, it would feel robotic. Some variation keeps it natural.
+
+**But for important decisions:**
+
+Ask multiple times. Ask different AIs. If answers diverge on something critical, [don't trust any of them]{.alert}!
+:::
+
+:::{.column width=45%}
+:::{style="text-align: center;"}
+[![](figures/ab-testing.png){width="70%"}](#){data-modal-type="image" data-modal-url="figures/ab-testing.png"}
+
+[![](figures/gemini-personal-intelligence.png){width="70%"}](#){data-modal-type="image" data-modal-url="figures/gemini-personal-intelligence.png"}
+
+Sources: [r/Bard](https://www.reddit.com/r/Bard/comments/1leiobd/google_is_also_doing_ab_testing_in_the_gemini_app/#lightbox) and [Google Blog](https://blog.google/innovation-and-ai/products/gemini-app/personal-intelligence/)
+
+
+:::{style="font-size: 18px; margin-top: 15px;"}
+You and your friend might be running different model versions right now without knowing it
+:::
+:::
+:::
+:::
+:::
+
+## Activity: Diagnose the problem! 🔍
+
+:::{style="margin-top: 30px; font-size: 20px;"}
+:::{.columns}
+:::{.column width=50%}
+**Scenario cards: What's the likely cause?**
+
+**Scenario A:**
+
+You ask Claude a question. It takes 45 seconds to respond, and the answer is cut off mid-sentence.
+
+**Scenario B:**
+
+You ask Gemini "Who won the 2027 Super Bowl?" and it confidently names a team.
+
+**Scenario C:**
+
+You ask ChatGPT to write code. Yesterday it worked; today it refuses and says "I can't help with that."
+:::
+
+:::{.column width=50%}
+**Scenario D:**
+
+You ask Midjourney to generate "a photo of my professor." It creates an image of a random person.
+
+**Scenario E:**
+
+Three different AI assistants give you three completely different answers about a historical date.
+
+:::{style="margin-top: 20px; background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px;"}
+**Discuss with a neighbour:**
+
+- Pipeline problem?
+- Hallucination?
+- Working as intended?
+- How would you verify?
+:::
+
+⏱️ 5 minutes to diagnose!
+:::
+:::
+:::
+
+## Activity answers
+
+:::{style="margin-top: 30px; font-size: 20px;"}
+:::{.columns}
+:::{.column width=50%}
+**Scenario A: 45 seconds, cut off mid-sentence**
+
+- [Pipeline problem]{.alert}: Server overload or timeout
+- Check status page
+- Retry in a few minutes
+
+**Scenario B: 2027 Super Bowl answer**
+
+- [Hallucination]{.alert}: Event hasn't happened yet!
+- AI doesn't know it doesn't know
+- Always verify time-sensitive claims
+
+**Scenario C: Code refused today but worked yesterday**
+
+- [Model update]{.alert} changed safety guardrails
+- Or: Your specific prompt triggered a new filter
+- Try rephrasing; if still blocked, guardrails changed
+:::
+
+:::{.column width=50%}
+**Scenario D: "Photo of my professor" = random person**
+
+- [Working as intended]{.alert}: AI doesn't know your professor!
+- It generates a plausible "professor-looking" person
+- This is expected behaviour, not a failure
+
+**Scenario E: Different AIs, different historical dates**
+
+- [Potential hallucination from all of them]{.alert}
+- Don't trust any AI for verifiable facts
+- Look it up in a reliable source!
+:::
+:::
+:::
+
+# Summary 📚 {background-color="#2d4563"}
+
+## Main takeaways
+
+:::{style="margin-top: 30px; font-size: 32px;"}
+
+- `r fa('globe')` You use [dozens of AI pipelines daily]{.alert}: text, image, voice, recommendations
+
+- `r fa('link')` Pipelines are the [multi-step process]{.alert} from your input to AI's output. [Every step can fail]{.alert}
+
+- `r fa('newspaper')` Real failures: Air Canada lawsuit, DPD swearing, Gemini images. [Pipeline problems, not "rogue AI"]{.alert}
+
+- `r fa('chart-line')` [Data drift: The world changes, AI stays frozen]{.alert} 
+
+- `r fa('bell')` [Monitoring]{.alert}: Companies track metrics you never see. When monitoring fails, you read about it in the news
+
+- `r fa('user-shield')` [You should]{.alert} compare AIs, check status pages, distinguish pipeline problems from hallucinations
+
+:::
+
+## Your AI user toolkit
+
+:::{style="margin-top: 30px; font-size: 28px;"}
+:::{.columns}
+:::{.column width=50%}
+**Quick reference:**
+
+| Symptom | Action |
+|---------|--------|
+| AI is down/slow | Check status page, wait |
+| Different answers | Normal! Verify if critical |
+| Confident but wrong | Hallucination, verify facts |
+| Refuses request | Guardrails, try rephrasing |
+| Weird/gibberish | Pipeline glitch, refresh |
+:::
+
+:::{.column width=50%}
+**Status pages to bookmark:**
+
+- [status.openai.com](https://status.openai.com)
+- [status.anthropic.com](https://status.anthropic.com)
+- [status.cloud.google.com](https://status.cloud.google.com)
+
+**On AI failures:**
+
+- [AI Incident Database](https://incidentdatabase.ai/). Real failures documented!
+:::
+:::
+:::
+
+# ...and that's all for today! 🎉 {background-color="#2d4563"}

@@ -1,53 +1,32 @@
-# Lecture 25: Course Revision
+# Lecture 24: Long-term Safety, Alignment, and Future of AI
 
-This lecture walks through the entire course in 50 minutes, covering one slide per lecture. The goal is to help students see how the ideas connect across modules and to consolidate the material before the final quiz.
+This lecture addresses the longer-term challenges of ensuring AI systems remain safe and beneficial as capabilities increase. We examine the alignment problem, review current technical approaches, and consider different future trajectories and how we might shape them.
 
-## Main ideas
+## Topics Covered
 
-### 1. Module 0: Orientation (Lectures 1-2)
+- **The Safety Landscape**: Near-term vs long-term concerns, why safety matters now, concrete problems in AI safety (safe exploration, side effects, reward hacking)
+- **The Alignment Problem**: Defining alignment, why it's hard (specification, Goodhart's law), current approaches (RLHF, Constitutional AI)
+- **Future Trajectories**: Where AI might be heading, expert disagreement, scenarios to consider, Stuart Russell's perspective
+- **What We Can Do**: Technical safety research, governance approaches, individual agency
 
-* LLMs predict the next token, not the truth. Current AI is narrow, not general.
-* The history from symbolic AI through transformers to ChatGPT.
+## Key Readings
 
-### 2. Module 1: How AI systems are designed (Lectures 3-5)
+- Amodei et al. (2016). Concrete problems in AI safety. *arXiv*
+- Ngo et al. (2024). The alignment problem from a deep learning perspective. *arXiv*
+- Stuart Russell. 3 principles for creating safer AI. TED Talk
 
-* Data quality beats algorithm complexity. The proxy problem is the most recurring idea in the course.
-* Three learning paradigms (supervised, unsupervised, reinforcement). RLHF made ChatGPT conversational.
-* Goodhart's Law, the accuracy paradox, precision vs recall, and subgroup analysis.
+## Supplementary Resources
 
-### 3. Module 2: Language and perception (Lectures 6-7, 9)
+- Anthropic (2025). Constitutional Classifiers
+- Russell, S. (2019). *Human Compatible: AI and the Problem of Control*
+- AI Alignment Forum
+- 80,000 Hours AI safety resources
 
-* Tokens, embeddings (the universal language of AI), and context windows.
-* Images, audio, and text all become vectors. CLIP unifies modalities.
-* Prompting techniques (PTCF, few-shot, chain-of-thought), agents, and prompt injection.
+## Learning Objectives
 
-### 4. Module 3: Retrieval, generation, and pipelines (Lectures 10-11, 13)
-
-* Hallucinations and the creativity-accuracy trade-off. RAG as the structural fix.
-* The AI pipeline, three kinds of drift, and real-world chatbot failures.
-
-### 5. Module 4: Data ethics and bias (Lectures 14-16)
-
-* Documentation as accountability: datasheets, model cards, disaggregated evaluation.
-* Six types of bias, feedback loops, and the impossibility theorem.
-* The Optum case as the course's central example of the proxy problem.
-
-### 6. Module 5: Policy, governance, and social impact (Lectures 17, 19-21)
-
-* The EU AI Act, GDPR, the Brussels Effect.
-* Privacy, inference, and the privacy paradox.
-* AI and labour markets, the attention economy, Jevons Paradox.
-
-### 7. Module 6: Applications, limits, and the future (Lectures 23-24)
-
-* Misinformation, deepfakes, the authenticity crisis, and media literacy.
-* The alignment problem, five safety problems, and Constitutional AI.
-
-### 8. Six threads
-
-* Next-token prediction, the proxy problem, embeddings, bias at every stage, documentation as accountability, regulation catching up.
-
-## Resources
-
-* [Lecture Slides (HTML)](25-revision.html)
-* [Lecture Source (QMD)](25-revision.qmd)
+After this lecture, students should be able to:
+1. Distinguish between near-term and long-term AI safety concerns
+2. Explain the alignment problem and why it's technically challenging
+3. Describe current approaches to alignment (RLHF, Constitutional AI)
+4. Evaluate different perspectives on AI risk with intellectual honesty
+5. Identify potential roles for individuals in shaping AI development

@@ -10,7 +10,7 @@ format:
 
 ## Instructions
 
-This assignment covers material from **Lecture 14**: Documentation and Dataset Governance, and **Lecture 15**: Types of Bias and How They Arise.
+This assignment covers material from **Lecture 15**: Documentation and Dataset Governance, and **Lecture 16**: Types of Bias and How They Arise.
 
 **Guidelines:**
 
@@ -26,7 +26,7 @@ This assignment covers material from **Lecture 14**: Documentation and Dataset G
 
 ### Question 1: The Model Card Bluff
 
-Lecture 14 introduced **model cards**: standardised documentation that describes what a model does, how it was evaluated, and where it fails. A good model card helps users decide whether a model is safe to deploy. A bad one hides problems behind vague language.
+Lecture 15 introduced **model cards**: standardised documentation that describes what a model does, how it was evaluated, and where it fails. A good model card helps users decide whether a model is safe to deploy. A bad one hides problems behind vague language.
 
 Below is a model card for **MediScreen**, an AI system that reads chest X-rays and flags potential pneumonia cases for radiologists to review. The model card was written by the vendor's marketing team, not the engineering team. It contains **4 errors**: facts that are misleading, vague, or missing.
 
@@ -48,7 +48,7 @@ Below is a model card for **MediScreen**, an AI system that reads chest X-rays a
 
 2. Pick the **2 most dangerous** problems, that is, the ones most likely to cause real harm if a hospital relies on this model card. Explain why those two are worse than the others.
 
-3. Rewrite the **Training data** and **Performance** sections so they meet the standards described in Lecture 14. You'll need to invent plausible details (e.g., dataset size, demographic breakdown, disaggregated metrics). The point is just to show what should be there.
+3. Rewrite the **Training data** and **Performance** sections so they meet the standards described in Lecture 15. You'll need to invent plausible details (e.g., dataset size, demographic breakdown, disaggregated metrics). The point is just to show what should be there.
 
 ---
 
@@ -64,7 +64,7 @@ Below is a model card for **MediScreen**, an AI system that reads chest X-rays a
 
 ### Question 2: The Proxy Variable Hunt
 
-Lecture 15 explained **measurement bias**: when a measurable proxy is used as a stand-in for something you actually care about, but the proxy doesn't work equally for everyone. The classic example is using ZIP codes in loan decisions. They correlate with race because of historical housing discrimination, so a "race-neutral" variable ends up encoding race.
+Lecture 16 explained **measurement bias**: when a measurable proxy is used as a stand-in for something you actually care about, but the proxy doesn't work equally for everyone. The classic example is using ZIP codes in loan decisions. They correlate with race because of historical housing discrimination, so a "race-neutral" variable ends up encoding race.
 
 Here is a fictional dataset used by a bank to predict whether someone will repay a loan. The dataset has 10 variables:
 
@@ -106,7 +106,7 @@ Here is a fictional dataset used by a bank to predict whether someone will repay
 
 ### Question 3: The Impossibility Theorem: Pick Your Poison
 
-Lecture 15 introduced the **impossibility theorem**: if two groups have different base rates (e.g., different loan repayment rates), you cannot satisfy all fairness criteria at the same time. You have to choose, and every choice harms someone.
+Lecture 16 introduced the **impossibility theorem**: if two groups have different base rates (e.g., different loan repayment rates), you cannot satisfy all fairness criteria at the same time. You have to choose, and every choice harms someone.
 
 Here is the scenario. A city government uses an algorithm to decide which arrested individuals can be released on bail before trial. The algorithm predicts the probability that each person will show up for their court date.
 
@@ -147,7 +147,7 @@ The algorithm assigns a risk score from 0 to 100. The city must set a threshold:
 
 ### Question 4: Breaking a Feedback Loop
 
-Lecture 15 described **feedback loops**: when an algorithm's predictions influence the data it will be trained on in the future. The predictive policing example showed how this works: the algorithm sends police to certain neighbourhoods, more arrests happen there, and the new arrest data "confirms" the algorithm's prediction, even if crime rates are actually similar across areas.
+Lecture 16 described **feedback loops**: when an algorithm's predictions influence the data it will be trained on in the future. The predictive policing example showed how this works: the algorithm sends police to certain neighbourhoods, more arrests happen there, and the new arrest data "confirms" the algorithm's prediction, even if crime rates are actually similar across areas.
 
 Here is a different scenario:
 
@@ -177,7 +177,7 @@ Here is a different scenario:
 
 ### Question 5: The "We Didn't Know" Defence
 
-This question ties together both lectures: documentation from Lecture 14 and bias from Lecture 15.
+This question ties together both lectures: documentation from Lecture 15 and bias from Lecture 16.
 
 Here is the scenario:
 
@@ -189,12 +189,12 @@ Here is the scenario:
 
 **Your task:**
 
-1. Identify which **type(s) of bias** from Lecture 15's taxonomy are present in this scenario. Name at least two and explain how each one operates here.
+1. Identify which **type(s) of bias** from Lecture 16's taxonomy are present in this scenario. Name at least two and explain how each one operates here.
 
-2. Using Lecture 14's documentation framework, identify **3 specific pieces of documentation** that would have revealed the problem before QuickLend deployed the model. For each one, state: (a) what type of document it is (datasheet, model card, or system card), (b) which section of that document, and (c) what information it would have contained.
+2. Using Lecture 15's documentation framework, identify **3 specific pieces of documentation** that would have revealed the problem before QuickLend deployed the model. For each one, state: (a) what type of document it is (datasheet, model card, or system card), (b) which section of that document, and (c) what information it would have contained.
 
 3. Now evaluate the CEO's defence. Is "we didn't know" an acceptable excuse, legally, ethically, or both? Consider these angles:
-   - The EU AI Act requires documentation for high-risk AI systems (Lecture 14). Would QuickLend's lending system qualify as high-risk?
+   - The EU AI Act requires documentation for high-risk AI systems (Lecture 15). Would QuickLend's lending system qualify as high-risk?
    - Who bears more responsibility: QuickLend for not asking, or the vendor for not disclosing?
    - Write 150–200 words taking a clear position.
 
@@ -212,7 +212,7 @@ Here is the scenario:
 
 ### Bonus Question: The Simpson's Paradox Trap
 
-Lecture 15 discussed **aggregation bias**, which occurs when treating diverse groups as one hides important differences. A related statistical phenomenon is **Simpson's paradox**: a trend that appears in aggregated data can reverse when you look at subgroups.
+Lecture 16 discussed **aggregation bias**, which occurs when treating diverse groups as one hides important differences. A related statistical phenomenon is **Simpson's paradox**: a trend that appears in aggregated data can reverse when you look at subgroups.
 
 Here is a real-sounding (but fictional) scenario:
 
@@ -247,7 +247,7 @@ Treatment B looks better. But let's break it down by stone size:
 
 2. A hospital administrator looks only at the overall table and announces: *"Treatment B is better. We're switching all patients to Treatment B."* Explain why this decision is wrong and what harm it could cause. Be specific.
 
-3. Connect this to **Lecture 15**: which type of bias from the taxonomy does Simpson's paradox illustrate? Why does Lecture 15 argue that **disaggregated evaluation** (breaking results down by group) is necessary, not optional?
+3. Connect this to **Lecture 16**: which type of bias from the taxonomy does Simpson's paradox illustrate? Why does Lecture 16 argue that **disaggregated evaluation** (breaking results down by group) is necessary, not optional?
 
 4. Propose a rule the hospital could adopt to prevent this kind of mistake in future decisions. Your rule should be concrete and actionable, not just "be careful with data."
 

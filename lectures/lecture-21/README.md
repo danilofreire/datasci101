@@ -1,30 +1,37 @@
-# Lecture 21: AI in Healthcare and Education
+# Lecture 20: Labour Markets and Economic Effects
 
-This lecture explores AI applications in two of the most consequential domains: healthcare and education. We examine both the promise and the reality of current systems, discussing what works, what doesn't, and why deployment is often harder than development.
+This lecture examines what AI means for jobs and the economy, combining historical perspective with current evidence and economic analysis to help students think about their own career paths.
 
-## Topics Covered
+## Main ideas
 
-- **AI in Healthcare**: Medical imaging (diabetic retinopathy, radiology), drug discovery, mental health applications, and the deployment gap between lab results and clinical practice
-- **AI in Education**: Intelligent tutoring systems, LLMs as tutors, personalised learning, and the disruption to traditional assessment
-- **Common Themes**: Promise vs reality, human-AI collaboration models, equity and access considerations
-- **Responsible Deployment**: What thoughtful integration looks like in both domains
+### 1. The automation question
 
-## Key Readings
+* **Historical pattern**: Every wave of automation sparked fears of mass unemployment that didn't materialise at the aggregate level.
+* **Why this might be different**: AI targets cognitive tasks directly, unlike previous automation that left human thinking as a safe haven.
+* **Task-based framework**: Think about tasks being automated, not jobs being replaced. Most jobs contain many tasks with varying AI exposure.
 
-- Opel, N. & Breakspear, M. (2026). Transforming mental health research and care through AI. *Science*
-- Bedi, S. et al. (2026). Holistic evaluation of LLMs for medical tasks with MedHELM. *Nature Medicine*
-- Zhai, X. et al. (2021). A review of AI in education from 2010 to 2020. *Complexity*
+### 2. Current evidence
 
-## Supplementary Resources
+* **Usage patterns**: Most AI use is learning and personal projects, not work-related. Adoption is slower than headlines suggest.
+* **Productivity effects**: Early studies show gains, particularly for novice workers, but these are task-specific and short-term.
+* **Job market signals**: Graduate hiring is down significantly, especially in tech and professional services. Companies cite AI as a factor.
 
-- Habicht, J. et al. (2025). Generative AI-enabled therapy support tool. *JMIR*
-- Moore, J. et al. (2025). Expressing stigma prevents LLMs from safely replacing mental health providers. *arXiv*
-- OpenAI (2025). Strengthening ChatGPT's responses in sensitive conversations
+### 3. Economic scenarios
 
-## Learning Objectives
+* **Optimistic view**: Augmentation creates more productive workers; new tasks and jobs emerge; historical pattern continues.
+* **Pessimistic view**: Displacement outpaces job creation; middle-skill jobs hollowed out; gains go to capital not labour.
+* **Expert consensus**: Wide uncertainty; transition will be rough; inequality likely to increase; policy matters enormously.
 
-After this lecture, students should be able to:
-1. Evaluate claims about healthcare AI systems critically
-2. Understand the difference between lab performance and real-world deployment
-3. Assess the educational implications of AI tutoring tools
-4. Identify common challenges across healthcare and education AI applications
+### 4. Career implications
+
+* **Valuable skills**: Human-centric skills (relationships, persuasion), metacognitive skills (knowing when to use AI), domain expertise and judgment.
+* **Adaptation strategy**: Be AI-literate, develop complementary skills, stay adaptable, focus on learning how to learn.
+* **The graduate market**: Competition intense, traditional paths narrowing, demonstrated AI competence and applied projects increasingly important.
+
+## Resources
+
+* [Lecture slides (HTML)](20-labour.html)
+* [Lecture source (QMD)](20-labour.qmd)
+* [Acemoglu & Restrepo (2019) – Automation and new tasks](https://www.aeaweb.org/articles?id=10.1257/jep.33.2.3)
+* [WEF Future of Jobs Report 2025](https://www.weforum.org/reports/the-future-of-jobs-report-2025)
+* [OpenAI – How people are using ChatGPT](https://openai.com/index/how-people-are-using-chatgpt/)

@@ -1,37 +1,40 @@
-# Lecture 14: Documentation and Dataset Governance
+# Lecture 13: When AI Fails You (And How to Spot It)
 
-This lecture introduces documentation as the first line of defence against AI bias. Students learn to read and create datasheets for datasets and model cards, and explore how large-scale AI training data is collected and governed.
+This lecture helps non-technical undergraduates develop AI literacy by understanding how and why AI systems fail from a user's perspective. Students learn to recognise warning signs, verify AI-generated information, and make informed decisions about when to trust vs. verify AI outputs.
 
-## Main ideas
+## Main Ideas
 
-### 1. Why documentation matters
+### 1. When AI Fails You
 
-* **The "nutrition label" analogy**: just as food labels tell you what you are eating, datasheets tell you what your model is trained on.
-* **Without documentation**: you cannot identify bias, reproduce results, or hold anyone accountable.
-* **Documentation as accountability**: it forces developers to think about their data before training.
+* **Real student experiences**: ChatGPT at capacity during exam week, confident but wrong information, inconsistent answers.
+* **The confidence problem**: AI sounds equally sure whether it's right or making things up.
+* **Activity**: Share your worst AI fail with classmates.
 
-### 2. Datasheets for datasets
+### 2. Why This Happens
 
-* **Gebru et al. (2018)**: a standardised template covering motivation, composition, collection process, intended uses, and maintenance.
-* **Key questions**: who collected the data, why, from whom, and with what consent?
-* **Activity**: students create a mini-datasheet for a familiar dataset.
+* **Data drift**: Gen Z slang example—"bussin'", "no cap"—AI trained on older data doesn't know current language.
+* **Knowledge cutoff**: Training data stops at a specific date (e.g., April 2023), so recent events are unknown.
+* **Capacity issues**: Everyone using AI during exam week causes outages and slowdowns.
+* **Temperature/randomness**: Built-in variability means same question → different answers.
 
-### 3. Model cards
+### 3. Spotting Bad Outputs
 
-* **Mitchell et al. (2019)**: document intended use, metrics, ethical considerations, and what the model is *not* for.
-* **System cards**: document the whole AI system, not just one model (red teaming, oversight, component interactions).
-* **Disaggregated evaluation**: report metrics by subgroup to reveal hidden performance gaps.
+* **Red flags**: Overly specific numbers (73.4%), perfect citations, recent "facts", no uncertainty.
+* **Cross-checking strategies**: Google test, verify citations directly, try multiple AI tools.
+* **Tool demos**: GPTZero (detect AI text), Perplexity (search with citations), NotebookLM (grounded in your documents).
+* **Activity**: Fact-check an AI-generated claim together.
 
-### 4. LLM training data governance
+### 4. Better Strategies
 
-* **Large-scale datasets**: LAION, Common Crawl, and questions about data provenance.
-* **FAIR principles**: Findable, Accessible, Interoperable, Reusable.
-* **The consent problem**: most AI training data is collected without explicit consent.
+* **When to trust vs. verify**: Match verification effort to stakes (casual vs. coursework vs. important decisions).
+* **Comparing tools**: ChatGPT (general), Perplexity (current events), NotebookLM (your materials).
+* **Prompting techniques**: Request uncertainty markers, ask for confidence levels, demand sources.
+* **Academic integrity**: The grey zone, fake citations are especially harmful, focus on learning not completion.
 
 ## Resources
 
-* [Lecture Slides (HTML)](14-documentation.html)
-* [Lecture Source (QMD)](14-documentation.qmd)
-* [Datasheets for Datasets (Gebru et al., 2021)](https://arxiv.org/abs/1803.09010)
-* [Model Cards for Model Reporting (Mitchell et al., 2019)](https://arxiv.org/abs/1810.03993)
-* [FAIR Principles](https://www.go-fair.org/fair-principles/)
+* [Lecture Slides (HTML)](13-ai-failures.html)
+* [Lecture Source (QMD)](13-ai-failures.qmd)
+* [Perplexity.ai](https://perplexity.ai) — Search with citations
+* [NotebookLM](https://notebooklm.google.com) — AI grounded in your documents
+* [GPTZero](https://gptzero.me) — Detect AI-generated text

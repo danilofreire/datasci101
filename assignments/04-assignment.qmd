@@ -10,7 +10,7 @@ format:
 
 ## Instructions
 
-This assignment covers material from **Lecture 09**: Prompting Techniques.
+This assignment covers material from **Lecture 10**: Prompting Techniques.
 
 **Guidelines:**
 

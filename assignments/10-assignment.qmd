@@ -10,7 +10,7 @@ format:
 
 ## Instructions
 
-This assignment covers material from **Lecture 20**: Labour Markets and Economic Effects, and **Lecture 21**: AI and Wellbeing: The Attention Economy, the Environment, and Mental Health.
+This assignment covers material from **Lecture 21**: Labour Markets and Economic Effects, and **Lecture 22**: AI and Wellbeing: The Attention Economy, the Environment, and Mental Health.
 
 **Guidelines:**
 
@@ -26,7 +26,7 @@ This assignment covers material from **Lecture 20**: Labour Markets and Economic
 
 ### Question 1: The Skill Compression Effect
 
-Several studies discussed in Lecture 20 found that AI tools boost productivity, but the gains are uneven. The BCG consulting study (2023) found a 40% performance improvement on applicable tasks. Brynjolfsson et al. (2025) found a 14% productivity increase in customer service, with the biggest gains going to **novice workers**. GitHub's Copilot study found 55% faster task completion for programmers. Across these studies, a pattern emerges: AI **compresses the skill distribution**, helping beginners more than experts. In some cases, experts actually perform *worse* with AI assistance.
+Several studies discussed in Lecture 21 found that AI tools boost productivity, but the gains are uneven. The BCG consulting study (2023) found a 40% performance improvement on applicable tasks. Brynjolfsson et al. (2025) found a 14% productivity increase in customer service, with the biggest gains going to **novice workers**. GitHub's Copilot study found 55% faster task completion for programmers. Across these studies, a pattern emerges: AI **compresses the skill distribution**, helping beginners more than experts. In some cases, experts actually perform *worse* with AI assistance.
 
 **Your task:**
 
@@ -74,7 +74,7 @@ Daron Acemoglu, an MIT economist who won the 2024 Nobel Prize, argues that curre
 
 ### Question 3: The Treatment Gap and "Better Than Nothing"
 
-Lecture 21 presented a stark statistic: **75% of people** with mental health conditions in low- and middle-income countries receive no treatment at all. Even in the US, the average wait for a first psychiatric appointment is 25 days nationally, and over 30 weeks in some rural areas. A single therapy session costs $150–250 out of pocket. AI therapy tools like Woebot, Wysa, and general-purpose chatbots like ChatGPT exist in this context — not as replacements for well-funded human care, but as something people turn to when human care is unavailable, unaffordable, or months away.
+Lecture 22 presented a stark statistic: **75% of people** with mental health conditions in low- and middle-income countries receive no treatment at all. Even in the US, the average wait for a first psychiatric appointment is 25 days nationally, and over 30 weeks in some rural areas. A single therapy session costs $150–250 out of pocket. AI therapy tools like Woebot, Wysa, and general-purpose chatbots like ChatGPT exist in this context — not as replacements for well-funded human care, but as something people turn to when human care is unavailable, unaffordable, or months away.
 
 **Your task:**
 
@@ -98,7 +98,7 @@ Lecture 21 presented a stark statistic: **75% of people** with mental health con
 
 ### Question 4: Design a Responsible Mental Health Chatbot
 
-You have been hired by Emory's student counselling centre to design an AI mental health tool for university students. Lecture 21 presented evidence on what AI therapy tools can and cannot do: they can be available at 3am, deliver structured coping strategies, and scale cheaply, but they cannot hold persistent memory between sessions, verify what users tell them, contact emergency services, diagnose conditions, or read body language. The lecture also discussed risks: dependency (the Replika case), harmful responses from LLMs (Moore et al., 2025), data privacy concerns, and the regulatory gap (most chatbots are classified as apps, not medical devices).
+You have been hired by Emory's student counselling centre to design an AI mental health tool for university students. Lecture 22 presented evidence on what AI therapy tools can and cannot do: they can be available at 3am, deliver structured coping strategies, and scale cheaply, but they cannot hold persistent memory between sessions, verify what users tell them, contact emergency services, diagnose conditions, or read body language. The lecture also discussed risks: dependency (the Replika case), harmful responses from LLMs (Moore et al., 2025), data privacy concerns, and the regulatory gap (most chatbots are classified as apps, not medical devices).
 
 **Your task:**
 
@@ -122,7 +122,7 @@ You have been hired by Emory's student counselling centre to design an AI mental
 
 ### Question 5: Incentive Misalignment Everywhere
 
-Lecture 21 stated: "Company revenue and user wellbeing point in opposite directions." Recommendation algorithms maximise engagement (watch time, clicks, shares), not satisfaction or mental health. The Facebook Papers revealed Instagram worsened body image for teenage girls, but keeping the feature was better for engagement. Meanwhile, Lecture 20 showed that companies choose to replace workers with AI even when augmentation might produce better outcomes, because replacement cuts costs faster on quarterly reports.
+Lecture 22 stated: "Company revenue and user wellbeing point in opposite directions." Recommendation algorithms maximise engagement (watch time, clicks, shares), not satisfaction or mental health. The Facebook Papers revealed Instagram worsened body image for teenage girls, but keeping the feature was better for engagement. Meanwhile, Lecture 21 showed that companies choose to replace workers with AI even when augmentation might produce better outcomes, because replacement cuts costs faster on quarterly reports.
 
 **Your task:**
 
@@ -146,7 +146,7 @@ Lecture 21 stated: "Company revenue and user wellbeing point in opposite directi
 
 ### Bonus Question: Soft Skills Are Hard Skills
 
-Lecture 20 noted an irony: the "soft skills" often dismissed as less rigorous — relationship-building, emotional intelligence, cultural judgment — may be the **hardest to automate**. AI handles information processing, pattern recognition, and content generation well. It struggles with tasks requiring genuine empathy, navigating ambiguous social situations, and making judgment calls in novel contexts. The lecture argued that as AI makes technical execution easier, the value of these human-centric skills may actually increase.
+Lecture 21 noted an irony: the "soft skills" often dismissed as less rigorous — relationship-building, emotional intelligence, cultural judgment — may be the **hardest to automate**. AI handles information processing, pattern recognition, and content generation well. It struggles with tasks requiring genuine empathy, navigating ambiguous social situations, and making judgment calls in novel contexts. The lecture argued that as AI makes technical execution easier, the value of these human-centric skills may actually increase.
 
 **Your task:**
 

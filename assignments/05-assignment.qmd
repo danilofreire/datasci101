@@ -10,7 +10,7 @@ format:
 
 ## Instructions
 
-This assignment covers material from **Lecture 10**: Creativity and Hallucination and **Lecture 11**: RAG, Semantic Search, and Grounding AI.
+This assignment covers material from **Lecture 11**: Creativity and Hallucination and **Lecture 12**: RAG, Semantic Search, and Grounding AI.
 
 **Guidelines:**
 
@@ -26,7 +26,7 @@ This assignment covers material from **Lecture 10**: Creativity and Hallucinatio
 
 ### Question 1: Training Data and the Interpolation Problem
 
-Lecture 10 explained that for rare topics, LLMs "fill in gaps" using patterns from similar-but-different topics. This is called **interpolation** and it's where confident nonsense comes from.
+Lecture 11 explained that for rare topics, LLMs "fill in gaps" using patterns from similar-but-different topics. This is called **interpolation** and it's where confident nonsense comes from.
 
 For this assignment, we'll use [chat.z.ai](https://chat.z.ai/) because you can turn off both internet search and deep thinking. This is important: if the model can search the web, it won't hallucinate as much, and we want to see hallucinations in action.
 
@@ -59,7 +59,7 @@ For this assignment, we'll use [chat.z.ai](https://chat.z.ai/) because you can t
 
 ### Question 2: Real-World Failures Discussion
 
-Lecture 10 presented three categories of real-world hallucination failures: **legal** (fake case citations), **medical** (wrong drug dosages — Hadi et al. 2024 found 51% incorrect medical advice), and **academic** (fabricated sources and papers).
+Lecture 11 presented three categories of real-world hallucination failures: **legal** (fake case citations), **medical** (wrong drug dosages — Hadi et al. 2024 found 51% incorrect medical advice), and **academic** (fabricated sources and papers).
 
 **Your task:**
 
@@ -87,7 +87,7 @@ Lecture 10 presented three categories of real-world hallucination failures: **le
 
 ### Question 3: Hallucination Domain Risk Assessment
 
-Lecture 10 showed that hallucination rates vary dramatically by domain. Common knowledge is low risk; obscure history and legal/medical content are high risk.
+Lecture 11 showed that hallucination rates vary dramatically by domain. Common knowledge is low risk; obscure history and legal/medical content are high risk.
 
 **Your task:**
 
@@ -103,7 +103,7 @@ Lecture 10 showed that hallucination rates vary dramatically by domain. Common k
 
 - Which response sounded the *most* confident, regardless of whether it was actually correct?
 - Did the model use hedging language ("may", "likely", "I believe") more for some domains than others, or did it sound equally certain across all three?
-- Lecture 10 stated that GPT-4 hallucinated on ~29% of common references but ~58% on legal questions (Dahl et al. 2024). Based on your test, why do you think specialised domains have higher hallucination rates?
+- Lecture 11 stated that GPT-4 hallucinated on ~29% of common references but ~58% on legal questions (Dahl et al. 2024). Based on your test, why do you think specialised domains have higher hallucination rates?
 
 ---
 
@@ -137,7 +137,7 @@ AI systems are trained to be "helpful, harmless, and honest", but these goals ca
 
 ### Question 5: The Sycophancy Trap in Society
 
-LLMs are trained to agree with users, even when the user is wrong (this is called **sycophancy**, discussed in Lecture 10). Imagine millions of people using AI assistants that confirm their existing beliefs instead of challenging them.
+LLMs are trained to agree with users, even when the user is wrong (this is called **sycophancy**, discussed in Lecture 11). Imagine millions of people using AI assistants that confirm their existing beliefs instead of challenging them.
 
 Write 100–200 words on this question:
 

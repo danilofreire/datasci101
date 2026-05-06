@@ -100,7 +100,7 @@ But the lecture also warned about limitations: synthetic data may not capture ra
 
 ### Question 4: Facial Recognition in Public Spaces
 
-The EU AI Act (Lecture 17) banned real-time biometric identification in public spaces, with exceptions for serious crimes. China deploys facial recognition extensively in public, including for surveillance. The US has no federal ban; the rules depend on state and city laws, and many jurisdictions have no restrictions at all.
+The EU AI Act (Lecture 18) banned real-time biometric identification in public spaces, with exceptions for serious crimes. China deploys facial recognition extensively in public, including for surveillance. The US has no federal ban; the rules depend on state and city laws, and many jurisdictions have no restrictions at all.
 
 Lecture 19 discussed Clearview AI, which scraped billions of photos from social media to build a facial recognition database and sold access to law enforcement and private buyers.
 

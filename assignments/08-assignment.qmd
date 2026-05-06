@@ -10,7 +10,7 @@ format:
 
 ## Instructions
 
-This assignment covers material from **Lecture 16**: AI in Finance and Healthcare — Opportunities and Biases, and **Lecture 17**: AI Regulation and Standards Around the World.
+This assignment covers material from **Lecture 17**: AI in Finance and Healthcare — Opportunities and Biases, and **Lecture 18**: AI Regulation and Standards Around the World.
 
 **Guidelines:**
 
@@ -28,7 +28,7 @@ This assignment covers material from **Lecture 16**: AI in Finance and Healthcar
 
 Research has found that doctors write about patients differently depending on the patient's race and gender. Studies by Sun et al. (2022) and Beach et al. (2021) showed that clinical notes are more likely to use words like "non-compliant," "refuses," or "aggressive" for Black patients, and words like "pleasant," "cooperative," or "well-appearing" for white patients, even when the patients' actual behaviour and conditions were similar.
 
-Lecture 16 discussed how LLMs are now used to read and summarise clinical notes in systems like Epic's MyChart. These models learn from thousands of real clinical notes.
+Lecture 17 discussed how LLMs are now used to read and summarise clinical notes in systems like Epic's MyChart. These models learn from thousands of real clinical notes.
 
 **Your task:**
 
@@ -55,7 +55,7 @@ Lecture 16 discussed how LLMs are now used to read and summarise clinical notes 
 
 ### Question 2: Can LLMs Move Markets?
 
-Lecture 16 described how LLMs can be used for **sentiment-based trading**: reading financial news, classifying it as positive or negative, and generating buy/sell signals. The lecture introduced the **Financial PhraseBank** dataset (sentences labelled by finance professionals as positive, negative, or neutral) and showed that finance-specific models like BloombergGPT outperform general-purpose LLMs at this task.
+Lecture 17 described how LLMs can be used for **sentiment-based trading**: reading financial news, classifying it as positive or negative, and generating buy/sell signals. The lecture introduced the **Financial PhraseBank** dataset (sentences labelled by finance professionals as positive, negative, or neutral) and showed that finance-specific models like BloombergGPT outperform general-purpose LLMs at this task.
 
 This creates a new kind of market risk. If many hedge funds use similar LLMs trained on the same data, reading the same news, they could all reach the same conclusion at the same time.
 
@@ -81,7 +81,7 @@ This creates a new kind of market risk. If many hedge funds use similar LLMs tra
 
 ### Question 3: Domain-Specific vs General-Purpose LLMs in Finance
 
-Lecture 16 introduced several finance-specific LLMs:
+Lecture 17 introduced several finance-specific LLMs:
 
 - **BloombergGPT**: Trained on 363 billion tokens of financial data plus 345 billion tokens of general text. Outperforms general models on financial sentiment analysis and classification.
 - **FinGPT**: Open-source, fine-tunes LLaMA using LoRA. Costs under $300 per training run.
@@ -111,7 +111,7 @@ The lecture also noted a key finding: **for stock prediction, no model is reliab
 
 ### Question 4: The EU AI Act Risk Pyramid Has a Grey Zone
 
-The EU AI Act classifies AI systems into four tiers: **Prohibited** (banned outright), **High Risk** (strict requirements), **Limited Risk** (transparency obligations), and **Minimal Risk** (no requirements). In Lecture 17, the examples were clear-cut: a spam filter is minimal risk, a hiring algorithm is high risk, and government social scoring is prohibited.
+The EU AI Act classifies AI systems into four tiers: **Prohibited** (banned outright), **High Risk** (strict requirements), **Limited Risk** (transparency obligations), and **Minimal Risk** (no requirements). In Lecture 18, the examples were clear-cut: a spam filter is minimal risk, a hiring algorithm is high risk, and government social scoring is prohibited.
 
 But many real systems don't fit neatly into one category.
 
@@ -141,7 +141,7 @@ But many real systems don't fit neatly into one category.
 
 ### Question 5: Biden vs Trump on AI Governance
 
-Lecture 17 described two competing approaches to AI governance in the United States:
+Lecture 18 described two competing approaches to AI governance in the United States:
 
 - **Biden's Executive Order (October 2023)**: Required developers of powerful AI to share safety test results with the government. Established standards for red-teaming. Created guidelines for watermarking AI-generated content. Focused on safety, accountability, and government oversight.
 - **Trump's America's AI Action Plan (July 2025)**: Prioritised American AI dominance over global competitors. Reduced regulatory barriers to development. Emphasised competition with China. Favoured voluntary industry commitments over government mandates.
@@ -170,7 +170,7 @@ Lecture 17 described two competing approaches to AI governance in the United Sta
 
 ### Bonus Question: The "Innovation-First" Gamble
 
-Lecture 17 explained that the US and UK both adopt "innovation-first" approaches to AI regulation, while the EU takes a more precautionary, risk-based approach. The lecture quoted: *"'Move fast and break things' is less appealing when the things being broken are people's lives."*
+Lecture 18 explained that the US and UK both adopt "innovation-first" approaches to AI regulation, while the EU takes a more precautionary, risk-based approach. The lecture quoted: *"'Move fast and break things' is less appealing when the things being broken are people's lives."*
 
 **Your task:**
 

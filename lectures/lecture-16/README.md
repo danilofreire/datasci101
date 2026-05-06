@@ -1,38 +1,40 @@
-# Lecture 16: Case Studies — Biased Outcomes in Health, Hiring, and Policing
+# Lecture 14: Types of Bias and How They Arise
 
-This lecture examines three high-profile cases where algorithmic systems produced discriminatory outcomes. We move from theory to practice, looking at real systems that affected real people and asking what went wrong and what we can learn.
+This lecture provides a deep, critical exploration of AI bias for undergraduate students. Through case studies, debates, and the impossibility theorem, students grapple with difficult questions about fairness, accountability, and whether AI can ever be truly "fair."
 
-## Main ideas
+## Main Ideas
 
-### 1. Healthcare: the Optum algorithm
+### 1. What is Bias?
 
-* **The proxy problem**: The algorithm used healthcare costs to predict healthcare needs, but costs reflect access to care, not need for care.
-* **Hidden disparity**: At the same risk score, Black patients were considerably sicker than white patients.
-* **The fix**: Switching from predicting costs to predicting health outcomes reduced racial bias by around 80%.
+* **Multiple meanings**: Statistical, cognitive, cultural, algorithmic, historical
+* **The mirror problem**: AI learns from human data, so it reflects human biases
+* **Amplification**: AI can scale and entrench existing discrimination
 
-### 2. Facial recognition: Gender Shades
+### 2. Types of Bias
 
-* **Representation bias**: Commercial systems from IBM, Microsoft, and Face++ had error rates up to 34x higher for darker-skinned women compared to lighter-skinned men.
-* **Training data skew**: Standard face datasets were predominantly male and lighter-skinned, so models learned to recognise what they saw most often.
-* **Real-world harm**: Documented wrongful arrests in the US based on facial recognition errors have all involved Black individuals.
+* **Historical bias**: Past discrimination encoded in training data (Amazon hiring)
+* **Representation bias**: Underrepresented groups have higher error rates (facial recognition)
+* **Measurement bias**: Proxies that don't work equally (healthcare costs for need)
+* **Aggregation bias**: One-size-fits-all models fail diverse populations
 
-### 3. Criminal justice: COMPAS
+### 3. Case Studies
 
-* **Fairness impossibility**: When base rates differ between groups, you cannot simultaneously achieve equal calibration and equal error rates.
-* **Feedback loops**: Higher predicted risk leads to more incarceration, which destabilises communities and increases actual crime.
-* **No neutral choice**: Choosing calibration over equal error rates is a value judgment, not a technical decision.
+* **Hiring**: LLMs favour white male-associated names; Amazon penalised women
+* **Facial recognition**: 43x error rate difference between light-skinned men and dark-skinned women
+* **Criminal justice (COMPAS)**: Black defendants twice as likely to be falsely flagged high-risk
+* **Healthcare**: Algorithms miss sick Black patients, AI fails on darker skin tones
 
-### 4. Common patterns
+### 4. The Hard Questions
 
-* **Proxy problems**: Using one thing (costs, arrests) to predict another (health needs, danger) encodes hidden assumptions.
-* **Historical bias**: Systems trained on biased historical data reproduce and amplify that bias.
-* **Invisible disparities**: Overall accuracy can hide group-specific failures; disaggregated analysis is essential.
+* **Impossibility theorem**: You cannot satisfy all fairness criteria simultaneously
+* **Fairness tradeoffs**: Accuracy vs. fairness, individual vs. group, short-term vs. long-term
+* **Is AI bias fixable?** Optimists vs. sceptics debate
 
 ## Resources
 
-* [Lecture slides (HTML)](16-case-studies.html)
-* [Lecture source (QMD)](16-case-studies.qmd)
-* [Obermeyer et al. (2019) – Dissecting racial bias in healthcare algorithms](https://www.science.org/doi/10.1126/science.aax2342)
+* [Lecture Slides (HTML)](14-bias.html)
+* [Lecture Source (QMD)](14-bias.qmd)
+* [Fairness and Machine Learning Book](https://fairmlbook.org/) (free)
 * [Gender Shades Project](http://gendershades.org/)
-* [ProPublica – Machine Bias](https://www.propublica.org/article/machine-bias-risk-assessments-in-criminal-sentencing)
-* [Coded Bias documentary](https://www.codedbias.com/)
+* [ProPublica COMPAS Analysis](https://www.propublica.org/article/machine-bias-risk-assessments-in-criminal-sentencing)
+* [AI Incident Database](https://incidentdatabase.ai/)
