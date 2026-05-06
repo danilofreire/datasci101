@@ -50,6 +50,7 @@ This is the **main branch** which contains the following files and folders:
 - `lectures/` - Lecture slides and additional files
 - `assignments/` - Assignment files
 - `project/` - Files related to the final project
+- `grades/` - Reusable Python script for computing final grades from a Canvas CSV export, applying the syllabus weights and rubric. Student data is excluded from version control via a folder-level `.gitignore`.
 - `syllabus.qmd` - Complete course syllabus in Quarto format
 - `syllabus-template.latex` - LaTeX template for syllabus compilation
 - `syllabus.pdf` - Compiled syllabus document
