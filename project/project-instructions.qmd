@@ -154,6 +154,7 @@ The project is graded on a scale of 0-10, plus up to 1 bonus point.
 \end{tabular}
 
 \doublespacing
+\normalsize
 
 # Tips
 
