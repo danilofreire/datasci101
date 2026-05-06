@@ -6,7 +6,7 @@ website:
   title: "DATASCI 101"
   page-navigation: true
   back-to-top-navigation: true
-  reader-mode: true
+  reader-mode: false
   repo-url: https://github.com/danilofreire/datasci101
   repo-actions: [issue, source]
   repo-branch: gh-pages
@@ -18,10 +18,13 @@ website:
     left:
       - href: syllabus.qmd
         text: Syllabus
+        icon: journal-text
       - href: lectures.qmd
         text: Lectures
+        icon: mortarboard
       - href: assignments.qmd
         text: Assignments
+        icon: pencil-square
       - href: LICENSE.html
         text: " "
   page-footer: 
@@ -32,7 +35,11 @@ website:
 
 format:
   html:
-    theme: 
-      light: lumen
-      dark: solar
+    theme:
+      light: [cosmo, custom.scss]
+      dark: [darkly, custom.scss, custom-dark.scss]
+    css: styles.css
+    mainfont: "Source Sans 3"
+    monofont: "Inconsolata"
+    highlight-style: github
     toc: true

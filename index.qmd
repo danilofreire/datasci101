@@ -1,5 +1,8 @@
 ---
 title: "DATASCI 101 - Introduction to AI Applications"
+subtitle: "Emory University, Fall 2026"
+title-block-banner: "#1E40AF"
+title-block-banner-color: "white"
 ---
 
 Welcome to [DATASCI 101](https://github.com/danilofreire/datasci101)! This course provides a comprehensive introduction to the fundamental concepts, tools, and techniques used in artificial intelligence. The course is practical: students will learn how modern systems are designed and how to ask the right questions about data, reliability and harms. It combines short demonstrations (no programming experience required), case studies, and project work. It is suitable for undergraduate students from any faculty who want a grounded understanding of what AI can and cannot do.

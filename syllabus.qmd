@@ -4,7 +4,7 @@ title: "Syllabus"
 
 Welcome to [DATASCI 101!](https://github.com/danilofreire/datasci101) This course offers a non-technical introduction to artificial intelligence and its effects on institutions, work and everyday life. The course is practical: students will learn how modern systems are designed and how to ask the right questions about data, reliability and harms. The course combines short demonstrations (no programming experience required), case studies, and project work. It is suitable for undergraduate students from any faculty who want a grounded understanding of what AI can and cannot do.
 
-# Learning objectives
+# Learning Objectives
 
 By the end of the course, students will be able to:
 
@@ -14,18 +14,18 @@ By the end of the course, students will be able to:
 - Design a small, realistic plan for an AI application, including data needs, evaluation, and a basic harm-mitigation strategy.
 - Reflect critically on ethical, legal and social questions raised by AI deployment.
 
-# Course logistics
+# Course Logistics
 
 - **Lectures:** Tuesdays and Thursdays, 2:30-3:20pm.
 - **Location:** [White Hall, Room 206](https://maps.app.goo.gl/gynyTUkKqJ7meGjm8).
 - **Instructor:** Danilo Freire ([danilo.freire@emory.edu](mailto:danilo.freire@emory.edu)). Office hours by appointment; please email me to arrange a time.
 - **Materials:** Lecture notes, tutorials, and assignment templates are on [the course GitHub repository](https://github.com/danilofreire/datasci101). Students must check the repository often for updates.
 
-# Prerequisites and software
+# Prerequisites and Software
 
 No formal prerequisites. Familiarity with spreadsheets, basic statistics or introductory programming is useful but not required. We will discuss some simple Python code snippets in class, but no programming experience is needed.
 
-# Readings and resources
+# Readings and Resources
 
 Readings are short papers, essays and tutorials rather than a single textbook. Links and PDFs will be provided on the course website. Please note that the syllabus may be updated during the semester. For those interested in digging deeper into some of the topics we cover, here are some recommended books and resources:
 
@@ -39,7 +39,7 @@ Readings are short papers, essays and tutorials rather than a single textbook. L
 - [Weapons of math destruction: how big data increases inequality and threatens democracy](https://weaponsofmathdestructionbook.com/) by Cathy O'Neil (2016). A book on the dangers of unregulated mathematical models.
 - [Atlas of AI: Power, Politics, and the Planetary Costs of Artificial Intelligence](https://www.penguinrandomhouse.com/books/667487/atlas-of-ai-by-kate-crawford/) by Kate Crawford (2021). A critical look at the social and environmental impacts of AI technologies.
 
-### Online courses
+### Online Courses
 
 - [AI for everyone](https://www.coursera.org/learn/ai-for-everyone) by Andrew Ng (Coursera). A non-technical introduction to AI concepts and applications. Free to audit, with a paid certificate option.
 - [Elements of AI](https://www.elementsofai.com/) by the University of Helsinki. A free, friendly introduction to AI and some of its methods.
@@ -47,7 +47,7 @@ Readings are short papers, essays and tutorials rather than a single textbook. L
 - [Google prompting essentials](https://grow.google/prompting-essentials/) by Google (Coursera). A short course on how to effectively use and design prompts for large language models.
 - [Radical ideas in AI ethics](https://www.edx.org/learn/computer-science/pragmatic-ai-labs-radical-ideas-ai-ethics) by Pragmatic AI Labs (edX). A course that discusses AI through the lens of human rights and digital autonomy.
 
-### Other resources
+### Other Resources
 
 - [The AI doc: or how I became an apocaloptimist](https://www.youtube.com/watch?v=yvq-jYira9I) by Daniel Roher and Charlie Tyrell (2026). A light-hearted documentary featuring many of the field's most prominent voices, with views ranging from very optimistic to very pessimistic about AI. Worth watching.
 - [In machines we trust](https://www.technologyreview.com/supertopic/in-machines-we-trust/). A podcast series by MIT Technology Review about the promises and perils of AI. Very accessible and engaging.
@@ -67,7 +67,7 @@ Readings are short papers, essays and tutorials rather than a single textbook. L
 
 - **Final group project — 20%**. Groups of 4–5 choose one of seven domains (healthcare, education, finance, law, creative industries, scientific research, or customer service), test existing AI tools in that domain, and design a new AI application. Deliverables: an optional one-page proposal (not graded), a final report of about 5 pages, and a one-page infographic. No programming is required. [Detailed instructions (PDF)](https://github.com/danilofreire/datasci101/blob/main/project/project-instructions.pdf).
 
-# Grading scale
+# Grading Scale
 
 | Grade | A  | A- | B+ | B  | B- | C  | D  | F  |
 |-------|----|----|----|----|----|----|----|----|
@@ -75,7 +75,7 @@ Readings are short papers, essays and tutorials rather than a single textbook. L
 
 Final grades are rounded to the nearest point.
 
-# Academic integrity and AI use
+# Academic Integrity and AI Use
 
 Generative AI tools (for example ChatGPT, Claude, GitHub Copilot) may be used as aids for brainstorming or drafting, but all AI use must be declared on submissions. Students must take responsibility for correctness and must attribute any direct text or code produced by AI. The Emory Honour Code applies.
 
