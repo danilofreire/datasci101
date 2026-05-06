@@ -62,7 +62,7 @@ You can also download the entire repository:
 
 ## Final Project
 
-The final project is a group effort worth 20% of your final grade. Groups of 3–4 students will produce a report and a short demo video. The project involves conceptual elements and a harms assessment. More details will be provided in class.
+The final project is a group effort worth 20% of your final grade. Groups of 4–5 students will produce a 5–10 page report (excluding appendices) and a one-page infographic. The project involves testing existing AI tools in a chosen domain, designing a new AI application, and a harms assessment. Domains to choose from include healthcare, education, hiring, creative industries, finance, environment and climate, and misinformation and media.
 
 Detailed instructions for the final project are available at: <https://github.com/danilofreire/datasci101/tree/main/project>
 
