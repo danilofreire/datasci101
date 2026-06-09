@@ -9,7 +9,7 @@ Please find below the schedule of our lectures. Each lecture includes a brief de
 ### August 27, 2026:
 
 - Syllabus and course repository: <https://github.com/danilofreire/datasci101>.
-- Lecture 01: [Course introduction](https://raw.githack.com/danilofreire/datasci101/main/lectures/lecture-01/01-introduction.html).
+- Lecture 01: [Course introduction](https://danilofreire.github.io/datasci101/lectures/lecture-01/01-introduction.html).
 
 Readings:
 
@@ -22,7 +22,7 @@ Readings:
 
 ### September 1, 2026:
 
-- Lecture 02: [A brief history of AI and the recent shift](https://raw.githack.com/danilofreire/datasci101/main/lectures/lecture-02/02-history.html).
+- Lecture 02: [A brief history of AI and the recent shift](https://danilofreire.github.io/datasci101/lectures/lecture-02/02-history.html).
 
 Readings:
 
@@ -39,7 +39,7 @@ Readings:
 
 ### September 3, 2026:
 
-- Lecture 03: [Dataset design, labels, and tasks](https://raw.githack.com/danilofreire/datasci101/main/lectures/lecture-03/03-datasets.html).
+- Lecture 03: [Dataset design, labels, and tasks](https://danilofreire.github.io/datasci101/lectures/lecture-03/03-datasets.html).
 - [Kahoot Quiz](https://play.kahoot.it/v2/?quizId=8526c23e-eace-415a-a8c4-d15ba11766c0&hostId=05eb977d-4f8a-440e-9e45-95212b29d103)
 - [**Assignment 01**](https://github.com/danilofreire/datasci101/blob/main/assignments).
 
@@ -53,7 +53,7 @@ Readings:
 
 ### September 8, 2026:
 
-- Lecture 04: [Supervised, unsupervised, and reinforcement learning](https://raw.githack.com/danilofreire/datasci101/main/lectures/lecture-04/04-learning.html).
+- Lecture 04: [Supervised, unsupervised, and reinforcement learning](https://danilofreire.github.io/datasci101/lectures/lecture-04/04-learning.html).
 - [Kahoot Quiz](https://play.kahoot.it/v2/?quizId=43271e4a-cbfe-4f52-9c13-ec7ef00964a9&hostId=05eb977d-4f8a-440e-9e45-95212b29d103)
 
 Readings:
@@ -66,7 +66,7 @@ Readings:
 
 ### September 10, 2026:
 
-- Lecture 05: [Metrics, validation and overfitting](https://raw.githack.com/danilofreire/datasci101/main/lectures/lecture-05/05-metrics.html).
+- Lecture 05: [Metrics, validation and overfitting](https://danilofreire.github.io/datasci101/lectures/lecture-05/05-metrics.html).
 - [Kahoot Quiz](https://play.kahoot.it/v2/?quizId=09b3c6d7-f743-43aa-aff7-d16267aa404e&hostId=05eb977d-4f8a-440e-9e45-95212b29d103)
 - **Assignment 01 due (5%).**
 - [**Assignment 02**](https://github.com/danilofreire/datasci101/blob/main/assignments).
@@ -85,7 +85,7 @@ Readings:
 
 ### September 15, 2026:
 
-- Lecture 06: [How machines handle language: tokens, embeddings and context](https://raw.githack.com/danilofreire/datasci101/main/lectures/lecture-06/06-language.html).
+- Lecture 06: [How machines handle language: tokens, embeddings and context](https://danilofreire.github.io/datasci101/lectures/lecture-06/06-language.html).
 - [Kahoot Quiz](https://play.kahoot.it/v2/?quizId=11219f35-dabb-45ac-85ad-b8638a6a2769&hostId=05eb977d-4f8a-440e-9e45-95212b29d103)
 
 Readings:
@@ -99,7 +99,7 @@ Readings:
 
 ### September 17, 2026:
 
-- Lecture 07: [How machines see and hear](https://raw.githack.com/danilofreire/datasci101/main/lectures/lecture-07/07-multimodal.html).
+- Lecture 07: [How machines see and hear](https://danilofreire.github.io/datasci101/lectures/lecture-07/07-multimodal.html).
 - [Kahoot Quiz](https://play.kahoot.it/v2/?quizId=d539fc1e-248f-4ef9-86de-ba9926c28883&hostId=05eb977d-4f8a-440e-9e45-95212b29d103)
 - **Assignment 02 due (5%).**
 - [**Assignment 03**](https://github.com/danilofreire/datasci101/blob/main/assignments).
@@ -115,7 +115,7 @@ Readings:
 
 ### September 22, 2026:
 
-- Lecture 08: [Review session for Quiz 01](https://raw.githack.com/danilofreire/datasci101/main/lectures/lecture-08/08-review.html). This session covers Lectures 01-07 and prepares students for Quiz 01 on September 24.
+- Lecture 08: [Review session for Quiz 01](https://danilofreire.github.io/datasci101/lectures/lecture-08/08-review.html). This session covers Lectures 01-07 and prepares students for Quiz 01 on September 24.
 
 ### September 24, 2026:
 
@@ -125,7 +125,7 @@ Readings:
 
 ### September 29, 2026:
 
-- Lecture 10: [Prompting techniques](https://raw.githack.com/danilofreire/datasci101/main/lectures/lecture-10/10-prompting.html).
+- Lecture 10: [Prompting techniques](https://danilofreire.github.io/datasci101/lectures/lecture-10/10-prompting.html).
 - [Kahoot Quiz](https://play.kahoot.it/v2/?quizId=52c1d6cc-c11f-44a0-84b3-e3273ed07c71&hostId=05eb977d-4f8a-440e-9e45-95212b29d103)
 
 Readings:
@@ -143,7 +143,7 @@ Readings:
 
 ### October 1, 2026:
 
-- Lecture 11: [Creativity and hallucination](https://raw.githack.com/danilofreire/datasci101/main/lectures/lecture-11/11-hallucination.html).
+- Lecture 11: [Creativity and hallucination](https://danilofreire.github.io/datasci101/lectures/lecture-11/11-hallucination.html).
 - [Kahoot Quiz](https://play.kahoot.it/v2/?quizId=2eb129f2-3030-4ebd-9f5d-6afd251d0c53&hostId=05eb977d-4f8a-440e-9e45-95212b29d103)
 - **Assignment 04 due (5%).**
 - [**Assignment 05**](https://github.com/danilofreire/datasci101/blob/main/assignments).
@@ -159,7 +159,7 @@ Readings:
 
 ### October 6, 2026:
 
-- Lecture 12: [Retrieval-augmented workflows and semantic search](https://raw.githack.com/danilofreire/datasci101/main/lectures/lecture-12/12-rag.html).
+- Lecture 12: [Retrieval-augmented workflows and semantic search](https://danilofreire.github.io/datasci101/lectures/lecture-12/12-rag.html).
 - [Kahoot Quiz](https://play.kahoot.it/v2/?quizId=60414733-4795-4b9e-815f-3ad615072fab&hostId=05eb977d-4f8a-440e-9e45-95212b29d103)
 
 Readings:
@@ -178,7 +178,7 @@ Readings:
 
 ### October 15, 2026:
 
-- Lecture 14: [Building reliable pipelines: monitoring and testing](https://raw.githack.com/danilofreire/datasci101/main/lectures/lecture-14/14-pipelines.html).
+- Lecture 14: [Building reliable pipelines: monitoring and testing](https://danilofreire.github.io/datasci101/lectures/lecture-14/14-pipelines.html).
 
 Readings:
 
@@ -195,7 +195,7 @@ Readings:
 
 ### October 20, 2026:
 
-- Lecture 15: [Documentation and dataset governance](https://raw.githack.com/danilofreire/datasci101/main/lectures/lecture-15/15-documentation.html).
+- Lecture 15: [Documentation and dataset governance](https://danilofreire.github.io/datasci101/lectures/lecture-15/15-documentation.html).
 - [Kahoot Quiz](https://play.kahoot.it/v2/?quizId=75760dab-c0e2-43d5-9504-b94b74d93201&hostId=05eb977d-4f8a-440e-9e45-95212b29d103)
 
 Readings:
@@ -211,7 +211,7 @@ Readings:
 
 ### October 22, 2026:
 
-- Lecture 16: [Types of bias and how they arise](https://raw.githack.com/danilofreire/datasci101/main/lectures/lecture-16/16-bias.html).
+- Lecture 16: [Types of bias and how they arise](https://danilofreire.github.io/datasci101/lectures/lecture-16/16-bias.html).
 - **Assignment 06 due (5%).**
 - [**Assignment 07**](https://github.com/danilofreire/datasci101/blob/main/assignments).
 
@@ -226,7 +226,7 @@ Readings:
 
 ### October 27, 2026:
 
-- Lecture 17: [AI in Finance and Healthcare](https://raw.githack.com/danilofreire/datasci101/main/lectures/lecture-17/17-case-studies.html).
+- Lecture 17: [AI in Finance and Healthcare](https://danilofreire.github.io/datasci101/lectures/lecture-17/17-case-studies.html).
 - No assignment this week.
 - [Instructions for the final project (PDF)](https://github.com/danilofreire/datasci101/blob/main/project/project-instructions.pdf). Groups must be finalised by November 3. Optional proposal due November 12; final report and infographic due December 8.
 
@@ -243,7 +243,7 @@ Readings:
 
 ### October 29, 2026:
 
-- Lecture 18: [AI regulation and standards around the world](https://raw.githack.com/danilofreire/datasci101/main/lectures/lecture-18/18-regulation.html).
+- Lecture 18: [AI regulation and standards around the world](https://danilofreire.github.io/datasci101/lectures/lecture-18/18-regulation.html).
 - **Assignment 07 due (5%).**
 - [**Assignment 08**](https://github.com/danilofreire/datasci101/blob/main/assignments).
 
@@ -258,7 +258,7 @@ Readings:
 
 ### November 3, 2026:
 
-- Lecture 19: [Privacy and data protection](https://raw.githack.com/danilofreire/datasci101/main/lectures/lecture-19/19-privacy.html).
+- Lecture 19: [Privacy and data protection](https://danilofreire.github.io/datasci101/lectures/lecture-19/19-privacy.html).
 - **Group list due.**
 
 Readings:
@@ -279,7 +279,7 @@ Readings:
 
 ### November 10, 2026:
 
-- Lecture 21: [Labour markets and economic effects](https://raw.githack.com/danilofreire/datasci101/main/lectures/lecture-21/21-labour.html).
+- Lecture 21: [Labour markets and economic effects](https://danilofreire.github.io/datasci101/lectures/lecture-21/21-labour.html).
 
 Readings:
 
@@ -297,7 +297,7 @@ Readings:
 
 ### November 12, 2026:
 
-- Lecture 22: [AI and wellbeing: the attention economy, mental health, and the environment](https://raw.githack.com/danilofreire/datasci101/main/lectures/lecture-22/22-wellbeing.html).
+- Lecture 22: [AI and wellbeing: the attention economy, mental health, and the environment](https://danilofreire.github.io/datasci101/lectures/lecture-22/22-wellbeing.html).
 - **Assignment 09 due (5%).**
 - [**Assignment 10**](https://github.com/danilofreire/datasci101/blob/main/assignments).
 - **Optional project proposal due.**
@@ -316,7 +316,7 @@ Readings:
 
 ### November 17, 2026:
 
-- Lecture 23: [Misinformation, deepfakes and trust online](https://raw.githack.com/danilofreire/datasci101/main/lectures/lecture-23/23-misinformation.html).
+- Lecture 23: [Misinformation, deepfakes and trust online](https://danilofreire.github.io/datasci101/lectures/lecture-23/23-misinformation.html).
 
 Readings:
 
@@ -334,7 +334,7 @@ Readings:
 
 ### November 24, 2026:
 
-- Lecture 25: [Long-term safety, the alignment problem and the future of AI](https://raw.githack.com/danilofreire/datasci101/main/lectures/lecture-25/25-safety.html).
+- Lecture 25: [Long-term safety, the alignment problem and the future of AI](https://danilofreire.github.io/datasci101/lectures/lecture-25/25-safety.html).
 
 Readings:
 
@@ -351,7 +351,7 @@ Readings:
 
 ### December 1, 2026:
 
-- Lecture 26: [Course revision](https://raw.githack.com/danilofreire/datasci101/main/lectures/lecture-26/26-revision.html).
+- Lecture 26: [Course revision](https://danilofreire.github.io/datasci101/lectures/lecture-26/26-revision.html).
 
 ### December 3, 2026:
 
