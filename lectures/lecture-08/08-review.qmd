@@ -47,7 +47,7 @@ if (!require("fontawesome", character.only = TRUE)) {
 }
 ```
 
-# Welcome back! 🧠 {background-color="#2d4563"}
+# Welcome back! 🧠 {background-color="#1B3A6B"}
 
 ## Today's plan
 
@@ -87,7 +87,7 @@ The job is not to remember definitions. The job is to [recognise problems]{.aler
 :::
 :::
 
-# Part 1: rapid recap 🚀 {background-color="#2d4563"}
+# Part 1: rapid recap 🚀 {background-color="#1B3A6B"}
 
 ## How this part works
 
@@ -196,7 +196,7 @@ verifying sources matters.
   - When you upload a photo to ChatGPT, what is happening [under the hood]{.alert}?
 :::
 
-# Part 2: a real scenario 🏥 {background-color="#2d4563"}
+# Part 2: a real scenario 🏥 {background-color="#1B3A6B"}
 
 ## The setup
 
@@ -288,7 +288,7 @@ population); language (probably English-only).
 - Then the room: [what evidence would change your mind?]{.alert}
 :::
 
-# Part 3: practice questions 📝 {background-color="#2d4563"}
+# Part 3: practice questions 📝 {background-color="#1B3A6B"}
 
 ## How this part works
 
@@ -359,7 +359,7 @@ of sugar" when the recipe clearly says "2 cups of salt." 🧂
 [Two minutes.]{.alert} ⏱️
 :::
 
-# Part 4: open Q&A 💬 {background-color="#2d4563"}
+# Part 4: open Q&A 💬 {background-color="#1B3A6B"}
 
 ## Anything unclear
 
@@ -385,4 +385,4 @@ of sugar" when the recipe clearly says "2 cups of salt." 🧂
 - See you Thursday. You are ready. 💪
 :::
 
-# See you Thursday! 👋 {background-color="#2d4563"}
+# See you Thursday! 👋 {background-color="#1B3A6B"}

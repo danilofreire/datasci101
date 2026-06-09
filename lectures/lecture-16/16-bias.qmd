@@ -47,7 +47,7 @@ if (!require("fontawesome", character.only = TRUE)) {
 }
 ```
 
-# Welcome back! ⚖️ {background-color="#2d4563"}
+# Welcome back! ⚖️ {background-color="#1B3A6B"}
 
 ## Recap of last class
 
@@ -133,7 +133,7 @@ Source: [Anthropic](https://www-cdn.anthropic.com/14e4fb01875d2a69f646fa5e574dea
 Source: [Cortical Labs](https://corticallabs.com/)
 :::
 
-# Well, let's get back to our lecture... 😅 {background-color="#2d4563"} 
+# Well, let's get back to our lecture... 😅 {background-color="#1B3A6B"} 
 
 ## A story to start with
 
@@ -168,7 +168,7 @@ Source: [ACLU](https://www.aclumich.org/news/i-was-wrongfully-arrested-because-f
 :::
 :::
 
-# What is Bias? 🤔 {background-color="#2d4563"}
+# What is Bias? 🤔 {background-color="#1B3A6B"}
 
 ## Defining bias: It's complicated
 
@@ -320,7 +320,7 @@ Neither option is safe. The question is which [risk]{.alert} you'd rather take, 
 :::
 :::
 
-# Types of Bias 📊 {background-color="#2d4563"}
+# Types of Bias 📊 {background-color="#1B3A6B"}
 
 ## A taxonomy of bias
 
@@ -639,7 +639,7 @@ An AI recommends admissions based on SAT scores, high school GPA, and extracurri
 ⏱️ 2 minutes
 :::
 
-# The Hard Questions ❓ {background-color="#2d4563"}
+# The Hard Questions ❓ {background-color="#1B3A6B"}
 
 ## The impossibility theorem
 ### You can't have it all
@@ -822,7 +822,7 @@ Which approach would you choose and why?
 :::
 :::
 
-# Summary 📚 {background-color="#2d4563"}
+# Summary 📚 {background-color="#1B3A6B"}
 
 ## Main takeaways
 
@@ -844,4 +844,4 @@ Which approach would you choose and why?
 
 
 
-# ...and that's all for today! 🎉 {background-color="#2d4563"}
+# ...and that's all for today! 🎉 {background-color="#1B3A6B"}

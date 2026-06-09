@@ -51,7 +51,7 @@ if (!require("fontawesome", character.only = TRUE)) {
 }
 ```
 
-# Welcome back! 🤓 {background-color="#2d4563"}
+# Welcome back! 🤓 {background-color="#1B3A6B"}
 
 ## Recap of last class
 
@@ -110,7 +110,7 @@ Source: [Data Science Dojo](https://datasciencedojo.com/blog/machine-learning-10
 [![](figures/tweet-of-the-day.jpeg){width="100%"}](#){data-modal-type="image" data-modal-url="figures/tweet-of-the-day.jpeg"}
 :::
 
-# The three learning paradigms 🎓 {background-color="#2d4563"}
+# The three learning paradigms 🎓 {background-color="#1B3A6B"}
 
 ## How do machines learn?
 ### Three different approaches
@@ -137,7 +137,7 @@ Source: [Medium](https://luigi-bungaro.medium.com/what-is-machine-learning-short
 :::
 :::
 
-# Supervised learning 📚 {background-color="#2d4563"}
+# Supervised learning 📚 {background-color="#1B3A6B"}
 
 ## What is supervised learning?
 ### Learning from examples with answers
@@ -357,7 +357,7 @@ Source: [Vizuara](https://www.vizuaranewsletter.com/p/f6a)
 :::
 :::
 
-# Unsupervised learning 🔍 {background-color="#2d4563"}
+# Unsupervised learning 🔍 {background-color="#1B3A6B"}
 
 ## What is unsupervised learning?
 ### Finding structure without labels
@@ -484,7 +484,7 @@ Source: [Vizuara](https://www.vizuaranewsletter.com/p/understanding-principal-co
 :::
 :::
 
-# Reinforcement learning 🎮 {background-color="#2d4563"}
+# Reinforcement learning 🎮 {background-color="#1B3A6B"}
 
 ## What is reinforcement learning?
 ### Learning from interaction
@@ -678,7 +678,7 @@ Source: NanoBanana
 :::
 :::
 
-# Comparing the three paradigms 📊 {background-color="#2d4563"}
+# Comparing the three paradigms 📊 {background-color="#1B3A6B"}
 
 ## Side-by-side comparison
 ### Choosing the right approach
@@ -697,7 +697,7 @@ Source: NanoBanana
 
 :::
 
-# Summary 📚 {background-color="#2d4563"}
+# Summary 📚 {background-color="#1B3A6B"}
 
 ## Main takeaways
 
@@ -716,4 +716,4 @@ Source: NanoBanana
 - `r fa('robot')` [RLHF]{.alert} powers modern LLMs like ChatGPT: RL to align with human preferences
 :::
 
-# ... and that's all for today! 🎉 {background-color="#2d4563"}
+# ... and that's all for today! 🎉 {background-color="#1B3A6B"}

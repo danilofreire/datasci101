@@ -47,7 +47,7 @@ if (!require("fontawesome", character.only = TRUE)) {
 }
 ```
 
-# Welcome back! 💼 {background-color="#2d4563"}
+# Welcome back! 💼 {background-color="#1B3A6B"}
 
 ## Recap of last class
 
@@ -142,7 +142,7 @@ Source: <https://x.com/Fried_rice/status/2038894956459290963>
 :::
 :::
 
-# The automation question 🤖 {background-color="#2d4563"}
+# The automation question 🤖 {background-color="#1B3A6B"}
 
 ## This isn't the first time
 
@@ -299,7 +299,7 @@ Sources: [Frey & Osborne (2017)](https://www.oxfordmartin.ox.ac.uk/publications/
 :::
 :::
 
-# Current evidence 📊 {background-color="#2d4563"}
+# Current evidence 📊 {background-color="#1B3A6B"}
 
 ## What are people using AI for?
 
@@ -444,7 +444,7 @@ Source: [The Economist](https://www.economist.com/business/2025/12/14/job-apocal
 :::
 :::
 
-# Economic scenarios 🔮 {background-color="#2d4563"}
+# Economic scenarios 🔮 {background-color="#1B3A6B"}
 
 ## The optimistic view
 
@@ -592,7 +592,7 @@ Think about a job you might want after graduation.
 :::
 :::
 
-# What does this mean for you? 🎓 {background-color="#2d4563"}
+# What does this mean for you? 🎓 {background-color="#1B3A6B"}
 
 ## Skills that may remain valuable
 
@@ -734,7 +734,7 @@ Your younger sibling is about to start university. They ask:
 :::
 :::
 
-# Summary and takeaways 📝 {background-color="#2d4563"}
+# Summary and takeaways 📝 {background-color="#1B3A6B"}
 
 ## Main takeaways
 
@@ -785,4 +785,4 @@ Nobody predicted "social media manager" in 1990 or "prompt engineer" in 2020. Th
 :::
 :::
 
-# ... and that's all for today! 🎉 {background-color="#2d4563"}
+# ... and that's all for today! 🎉 {background-color="#1B3A6B"}

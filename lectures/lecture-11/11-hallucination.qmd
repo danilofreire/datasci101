@@ -47,7 +47,7 @@ if (!require("fontawesome", character.only = TRUE)) {
 }
 ```
 
-# Welcome back! 🎭 {background-color="#2d4563"}
+# Welcome back! 🎭 {background-color="#1B3A6B"}
 
 ## Recap of last class
 
@@ -119,7 +119,7 @@ Source: [Nielsen Norman Group](https://www.nngroup.com/articles/ai-hallucination
 Source: [X.com](https://x.com/wirespeed_/status/1962508239817589147)
 :::
 
-# What Are Hallucinations? 🤥 {background-color="#2d4563"}
+# What Are Hallucinations? 🤥 {background-color="#1B3A6B"}
 
 ## When AI confidently makes things up
 
@@ -330,7 +330,7 @@ Citation hallucinations are the hardest to catch because they look so specific
 :::
 :::
 
-# Real-World Failures 💥 {background-color="#2d4563"}
+# Real-World Failures 💥 {background-color="#1B3A6B"}
 
 ## The lawyer who trusted ChatGPT
 
@@ -484,7 +484,7 @@ Where do you stand?
 :::
 :::
 
-# Creativity vs. Accuracy ⚖️ {background-color="#2d4563"}
+# Creativity vs. Accuracy ⚖️ {background-color="#1B3A6B"}
 
 ## The creativity-accuracy tradeoff
 
@@ -626,7 +626,7 @@ Let's ask <https://chat.z.ai/> these questions and request a [confidence rating 
 :::
 :::
 
-# Detection and Prevention 🛡️ {background-color="#2d4563"}
+# Detection and Prevention 🛡️ {background-color="#1B3A6B"}
 
 ## How to spot hallucinations
 
@@ -912,7 +912,7 @@ Source: [Towards AI](https://pub.towardsai.net/what-is-rag-a-clear-and-simple-ex
 :::
 :::
 
-# Summary 📚 {background-color="#2d4563"}
+# Summary 📚 {background-color="#1B3A6B"}
 
 ## Main takeaways
 
@@ -971,4 +971,4 @@ For creative tasks, you can skip most of these. Let the model run wild 😄
 :::
 :::
 
-# ...and that's all for today! 🎉 {background-color="#2d4563"}
+# ...and that's all for today! 🎉 {background-color="#1B3A6B"}

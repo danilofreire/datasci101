@@ -47,7 +47,7 @@ if (!require("fontawesome", character.only = TRUE)) {
 }
 ```
 
-# Welcome back! 🌍 {background-color="#2d4563"}
+# Welcome back! 🌍 {background-color="#1B3A6B"}
 
 ## Recap of last class
 
@@ -118,7 +118,7 @@ Source: [OECD AI Policy Observatory](https://oecd.ai/en/dashboards/overview)
 Source: [r/agi](https://www.reddit.com/r/agi/comments/1klizks/how_do_you_feel_about_ai_regulation_will_it/)
 :::
 
-# Why regulate AI? 🤔 {background-color="#2d4563"}
+# Why regulate AI? 🤔 {background-color="#1B3A6B"}
 
 ## The case for intervention
 
@@ -217,7 +217,7 @@ Source: [X.com](https://x.com/pascal_bornet/status/1892786338015171026)
 :::
 :::
 
-# The EU AI Act 🇪🇺 {background-color="#2d4563"}
+# The EU AI Act 🇪🇺 {background-color="#1B3A6B"}
 
 ## The world's first comprehensive AI law
 
@@ -513,7 +513,7 @@ The classification often depends on [context and use]{.alert}, not just the tech
 :::
 :::
 
-# The US approach 🇺🇸 {background-color="#2d4563"}
+# The US approach 🇺🇸 {background-color="#1B3A6B"}
 
 ## No comprehensive federal AI law (yet)
 
@@ -667,7 +667,7 @@ Companies operating nationally face a [patchwork]{.alert} of state requirements.
 :::
 :::
 
-# Global perspectives 🌏 {background-color="#2d4563"}
+# Global perspectives 🌏 {background-color="#1B3A6B"}
 
 ## China's AI governance
 
@@ -769,7 +769,7 @@ The EU is the only jurisdiction that has passed a [comprehensive, binding law]{.
 :::
 :::
 
-# What this means for practitioners 💼 {background-color="#2d4563"}
+# What this means for practitioners 💼 {background-color="#1B3A6B"}
 
 ## Practical implications
 
@@ -844,7 +844,7 @@ Source: [LinkedIn](https://www.linkedin.com/posts/senkorasic_stealing-this-meme-
 :::
 :::
 
-# Summary and takeaways 📝 {background-color="#2d4563"}
+# Summary and takeaways 📝 {background-color="#1B3A6B"}
 
 ## Main takeaways
 
@@ -896,4 +896,4 @@ How do you hold someone accountable for a decision made by a machine? Every fram
 :::
 :::
 
-# ... and that's all for today! 🎉 {background-color="#2d4563"}
+# ... and that's all for today! 🎉 {background-color="#1B3A6B"}

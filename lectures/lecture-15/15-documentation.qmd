@@ -47,7 +47,7 @@ if (!require("fontawesome", character.only = TRUE)) {
 }
 ```
 
-# Welcome back! 📋 {background-color="#2d4563"}
+# Welcome back! 📋 {background-color="#1B3A6B"}
 
 ## Recap of last class
 
@@ -135,7 +135,7 @@ Source: [Mashable](https://mashable.com/article/meta-ai-ray-ban-glasses-intimate
 :::
 :::
 
-# Why Documentation Matters 📝 {background-color="#2d4563"}
+# Why Documentation Matters 📝 {background-color="#1B3A6B"}
 
 ## The horror stories: What happens without documentation
 
@@ -227,7 +227,7 @@ These are now [industry standards]{.alert} adopted by [Google](https://deepmind.
 :::
 :::
 
-# Datasheets for Datasets 📊 {background-color="#2d4563"}
+# Datasheets for Datasets 📊 {background-color="#1B3A6B"}
 
 ## What is a datasheet?
 
@@ -395,7 +395,7 @@ Source: [BRIDGE Center](https://bridge2ai.github.io/data-sheets-schema/html_outp
 :::
 :::
 
-# Model Cards 🤖 {background-color="#2d4563"}
+# Model Cards 🤖 {background-color="#1B3A6B"}
 
 ## What is a model card?
 
@@ -572,7 +572,7 @@ Modern AI products often chain several models together. A model card only covers
 :::
 :::
 
-# LLM Training Data Governance 🗂️ {background-color="#2d4563"}
+# LLM Training Data Governance 🗂️ {background-color="#1B3A6B"}
 
 ## How large AI datasets are built
 
@@ -703,7 +703,7 @@ This creates a "paper trail" for your dataset.
 :::
 :::
 
-# The FAIR Principles 🔬 {background-color="#2d4563"}
+# The FAIR Principles 🔬 {background-color="#1B3A6B"}
 
 ## FAIR: The gold standard for research data
 
@@ -755,7 +755,7 @@ The NIH, EU, and most major funders now [require]{.alert} FAIR data practices fo
 :::
 :::
 
-# Data Governance in Practice 🏛️ {background-color="#2d4563"}
+# Data Governance in Practice 🏛️ {background-color="#1B3A6B"}
 
 ## Consent and the data supply chain
 
@@ -872,7 +872,7 @@ You wrote a poem and posted it online in 2018. An AI company scraped it, and now
 :::
 :::
 
-# Putting It Into Practice 🛠️ {background-color="#2d4563"}
+# Putting It Into Practice 🛠️ {background-color="#1B3A6B"}
 
 ## Tools for documentation
 
@@ -911,7 +911,7 @@ Hugging Face [will not list]{.alert} a model or dataset without a card. Google D
 :::
 :::
 
-# Summary 📚 {background-color="#2d4563"}
+# Summary 📚 {background-color="#1B3A6B"}
 
 ## Main takeaways
 
@@ -933,4 +933,4 @@ Hugging Face [will not list]{.alert} a model or dataset without a card. Google D
 
 :::
 
-# ...and that's all for today! 🎉 {background-color="#2d4563"}
+# ...and that's all for today! 🎉 {background-color="#1B3A6B"}

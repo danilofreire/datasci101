@@ -47,7 +47,7 @@ if (!require("fontawesome", character.only = TRUE)) {
 }
 ```
 
-# Welcome back! 😊 {background-color="#2d4563"}
+# Welcome back! 😊 {background-color="#1B3A6B"}
 
 ## The whole course in 50 minutes
 
@@ -92,7 +92,7 @@ if (!require("fontawesome", character.only = TRUE)) {
 - Thank you so much for taking the time. I really appreciate it! 😊
 :::
 
-# Module 0: Orientation 🧭 {background-color="#2d4563"}
+# Module 0: Orientation 🧭 {background-color="#1B3A6B"}
 
 ## What AI is and how we got here (Lectures 1-2)
 
@@ -120,7 +120,7 @@ The transformer architecture (2017)
 :::
 :::
 
-# Module 1: How AI systems are designed ⚙️ {background-color="#2d4563"}
+# Module 1: How AI systems are designed ⚙️ {background-color="#1B3A6B"}
 
 ## Data, labels, and the proxy problem (Lecture 3)
 
@@ -201,7 +201,7 @@ The confusion matrix: TP, TN, FP, FN
 :::
 :::
 
-# Module 2: Language and perception 🗣️ {background-color="#2d4563"}
+# Module 2: Language and perception 🗣️ {background-color="#1B3A6B"}
 
 ## Tokens, embeddings, and context (Lecture 6)
 
@@ -282,7 +282,7 @@ Chain-of-thought prompting
 :::
 :::
 
-# Module 3: Retrieval, generation, and pipelines 🔍 {background-color="#2d4563"}
+# Module 3: Retrieval, generation, and pipelines 🔍 {background-color="#1B3A6B"}
 
 ## Hallucinations and creativity (Lecture 10)
 
@@ -362,7 +362,7 @@ The AI application stack
 :::
 :::
 
-# Module 4: Data ethics and bias ⚖️ {background-color="#2d4563"}
+# Module 4: Data ethics and bias ⚖️ {background-color="#1B3A6B"}
 
 ## Documentation as accountability (Lecture 14)
 
@@ -445,7 +445,7 @@ Obermeyer et al. (2019): changing the target variable fixed the bias
 :::
 :::
 
-# Module 5: Policy, governance, and social impact 🏛️ {background-color="#2d4563"}
+# Module 5: Policy, governance, and social impact 🏛️ {background-color="#1B3A6B"}
 
 ## AI regulation around the world (Lecture 17)
 
@@ -554,7 +554,7 @@ What remains hard to automate
 :::
 :::
 
-# Module 6: Applications, limits, and the future 🔮 {background-color="#2d4563"}
+# Module 6: Applications, limits, and the future 🔮 {background-color="#1B3A6B"}
 
 ## Misinformation and deepfakes (Lecture 23)
 
@@ -608,7 +608,7 @@ The misinformation spectrum
 :::
 :::
 
-# Six threads 🔄 {background-color="#2d4563"}
+# Six threads 🔄 {background-color="#1B3A6B"}
 
 ## Ideas that run through the whole course
 
@@ -648,7 +648,7 @@ If you understand these six threads, you understand the course!
 :::
 :::
 
-# Summary 📝 {background-color="#2d4563"}
+# Summary 📝 {background-color="#1B3A6B"}
 
 ## What we covered this semester
 
@@ -674,4 +674,4 @@ You now have the vocabulary to [read AI claims critically]{.alert} and ask the r
 :::
 :::
 
-# ...and that's all for today! 🎉 {background-color="#2d4563"}
+# ...and that's all for today! 🎉 {background-color="#1B3A6B"}

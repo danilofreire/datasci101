@@ -47,7 +47,7 @@ if (!require("fontawesome", character.only = TRUE)) {
 }
 ```
 
-# Welcome back! 🤓 {background-color="#2d4563"}
+# Welcome back! 🤓 {background-color="#1B3A6B"}
 
 ## Recap of last class
 
@@ -110,7 +110,7 @@ Source: [Miquido - AI Glossary](https://www.miquido.com/ai-glossary/ai-model-eva
 [![](figures/tweet-of-the-day.jpeg){width="55%"}](#){data-modal-type="image" data-modal-url="figures/tweet-of-the-day.jpeg"}
 :::
 
-# Why metrics matter 📊 {background-color="#2d4563"}
+# Why metrics matter 📊 {background-color="#1B3A6B"}
 
 ## Think about this 🤔
 
@@ -211,7 +211,7 @@ Source: [Medium](https://aws.plainenglish.io/model-performance-optimization-unde
 :::
 :::
 
-# Classification metrics 🎯 {background-color="#2d4563"}
+# Classification metrics 🎯 {background-color="#1B3A6B"}
 
 ## The confusion matrix
 ### The foundation of classification evaluation
@@ -289,7 +289,7 @@ Source: [Analytics Vidhya](https://www.analyticsvidhya.com/blog/2020/10/how-to-c
 :::
 :::
 
-# Validation & overfitting ⚠️ {background-color="#2d4563"}
+# Validation & overfitting ⚠️ {background-color="#1B3A6B"}
 
 ## What is overfitting?
 ### The enemy of generalisation
@@ -391,7 +391,7 @@ Source: [X.com](https://x.com/MaartenvSmeden/status/1522230905468862464)
 :::
 :::
 
-# Evaluating LLMs 🤖 {background-color="#2d4563"}
+# Evaluating LLMs 🤖 {background-color="#1B3A6B"}
 
 ## Why is LLM evaluation so hard?
 ### A fundamentally different problem
@@ -560,7 +560,7 @@ Source: [TinyML SubStack](https://tinyml.substack.com/p/death-by-rag-evals)
 :::
 :::
 
-# Hallucinations 🎭 {background-color="#2d4563"}
+# Hallucinations 🎭 {background-color="#1B3A6B"}
 
 ## What are hallucinations?
 ### When AI confidently makes things up
@@ -736,7 +736,7 @@ Vulnerabilities found before deployment
 :::
 :::
 
-# Benchmarks & leaderboards 🏆 {background-color="#2d4563"}
+# Benchmarks & leaderboards 🏆 {background-color="#1B3A6B"}
 
 ## Benchmarks, leaderboards, and their limits
 ### Comparing AI models...and when metrics fail
@@ -794,7 +794,7 @@ Source: [Anthropic Engineering](https://www.anthropic.com/engineering/eval-aware
 :::
 :::
 
-# Ethics beyond accuracy 🤔 {background-color="#2d4563"}
+# Ethics beyond accuracy 🤔 {background-color="#1B3A6B"}
 
 ## Fairness: When overall accuracy hides problems
 ### The disaggregation imperative
@@ -824,7 +824,7 @@ Source: [Medium](https://medium.com/@Joy.Buolamwini/ibm-leads-more-should-follow
 :::
 :::
 
-# Summary ✅ {background-color="#2d4563"}
+# Summary ✅ {background-color="#1B3A6B"}
 
 ## Main takeaways
 
@@ -857,4 +857,4 @@ Source: [Zurich University of Applied Sciences](https://blog.zhaw.ch/artificial-
 :::
 :::
 
-# ... and that's all for today! 🎉 {background-color="#2d4563"}
+# ... and that's all for today! 🎉 {background-color="#1B3A6B"}

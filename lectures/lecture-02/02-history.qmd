@@ -51,7 +51,7 @@ if (!require("fontawesome", character.only = TRUE)) {
 }
 ```
 
-# Welcome back! 🤓 {background-color="#2d4563"}
+# Welcome back! 🤓 {background-color="#1B3A6B"}
 
 ## Short recap of last class
 
@@ -96,7 +96,7 @@ Source: [University of Queensland's Brain Institute](https://qbi.uq.edu.au/brain
 :::
 :::
 
-# The pre-history of AI 🏛️  {background-color="#2d4563"}
+# The pre-history of AI 🏛️  {background-color="#1B3A6B"}
 
 ## The pre-history of AI
 ### Ancient myths of artificial life
@@ -219,7 +219,7 @@ Source: [Wikipedia - Turing Test](https://en.wikipedia.org/wiki/Turing_test)
 :::
 :::
 
-# The birth of AI (1950s–1970s) 🎂 {background-color="#2d4563"}
+# The birth of AI (1950s–1970s) 🎂 {background-color="#1B3A6B"}
 
 ## The Dartmouth Conference (1956)
 ### Where it all began
@@ -319,7 +319,7 @@ Maybe this time is different? 🤷🏻‍♂️
 :::
 :::
 
-# Neural networks: rise, fall, and rise again 🧠 {background-color="#2d4563"}
+# Neural networks: rise, fall, and rise again 🧠 {background-color="#1B3A6B"}
 
 ## Early neural networks
 ### Inspired by the brain
@@ -381,7 +381,7 @@ Source: [Medium](https://medium.com/@lmpo/backpropagation-the-backbone-of-neural
 :::
 :::
 
-# The data revolution 📊 {background-color="#2d4563"}
+# The data revolution 📊 {background-color="#1B3A6B"}
 
 ## The unreasonable effectiveness of data
 ### A paradigm shift
@@ -437,7 +437,7 @@ Source: [Medium](https://svelezg.medium.com/krizhevsky-sutskever-hinton-and-imag
 :::
 :::
 
-# Transformers: the architecture that changed everything ⚡ {background-color="#2d4563"}
+# Transformers: the architecture that changed everything ⚡ {background-color="#1B3A6B"}
 
 ## Attention is all you need (2017)
 ### The transformer revolution
@@ -652,7 +652,7 @@ Source: [Mohamed Traore](https://www.researchgate.net/figure/Overall-Structure-o
 Source: [Transformer Explainer](https://poloclub.github.io/transformer-explainer/)
 :::
 
-# From GPT to ChatGPT 🚀 {background-color="#2d4563"}
+# From GPT to ChatGPT 🚀 {background-color="#1B3A6B"}
 
 ## The rise of large language models
 ### Scaling up
@@ -727,7 +727,7 @@ Source: [Tarun Sharma](https://www.linkedin.com/pulse/multimodal-generative-ai-t
 :::
 :::
 
-# Takeaways 📚 {background-color="#2d4563"}
+# Takeaways 📚 {background-color="#1B3A6B"}
 
 ## What changed? What stayed the same?
 ### Continuity and transformation
@@ -771,6 +771,6 @@ Source: [Tarun Sharma](https://www.linkedin.com/pulse/multimodal-generative-ai-t
 :::
 :::
 
-# ... and that's all for today! 🎉 {background-color="#2d4563"}
+# ... and that's all for today! 🎉 {background-color="#1B3A6B"}
 
-# See you all soon! 😊 {background-color="#2d4563"}
+# See you all soon! 😊 {background-color="#1B3A6B"}

@@ -51,7 +51,7 @@ if (!require("fontawesome", character.only = TRUE)) {
 }
 ```
 
-# Welcome back! 🤓 {background-color="#2d4563"}
+# Welcome back! 🤓 {background-color="#1B3A6B"}
 
 ## Recap of last class
 
@@ -157,7 +157,7 @@ A [simple algorithm]{.alert} trained on high-quality data
 Source: [Medium](https://urwamuaz.medium.com/neural-networks-fail-on-data-with-spurious-correlation-b5010b107c32) (slightly exaggerated!)
 :::
 
-# Why data quality matters 📊 {background-color="#2d4563"}
+# Why data quality matters 📊 {background-color="#1B3A6B"}
 
 ## Garbage in, garbage out
 ### Why your model can't outrun bad data
@@ -202,7 +202,7 @@ Source: [xkcd](https://xkcd.com/1838/)
 :::
 :::
 
-# Types of machine learning tasks 🎯 {background-color="#2d4563"}
+# Types of machine learning tasks 🎯 {background-color="#1B3A6B"}
 
 ## Classification and regression tasks
 ### The two main types of AI tasks
@@ -315,7 +315,7 @@ Source: [Andrej Karpathy](https://vimeo.com/274274744)
 :::
 :::
 
-# Sourcing and collecting data 📥 {background-color="#2d4563"}
+# Sourcing and collecting data 📥 {background-color="#1B3A6B"}
 
 ## Where do the data come from?
 ### Common data sources
@@ -360,7 +360,7 @@ Source: [Our World in Data](https://ourworldindata.org/grapher/ai-performance-kn
 :::
 :::
 
-# Selection bias ⚠️ {background-color="#2d4563"}
+# Selection bias ⚠️ {background-color="#1B3A6B"}
 
 ## What is selection bias?
 ### When your data doesn't represent reality
@@ -452,7 +452,7 @@ Source: [WisdomPlexus](https://wisdomplexus.com/blogs/ai-bias-in-action-real-wor
 :::
 :::
 
-# Labelling data 🏷️ {background-color="#2d4563"}
+# Labelling data 🏷️ {background-color="#1B3A6B"}
 
 ## Why labelling is hard
 ### Humans are slow, expensive, and inconsistent
@@ -653,7 +653,7 @@ flowchart TB
 :::
 :::
 
-# Summary ✅ {background-color="#2d4563"}
+# Summary ✅ {background-color="#1B3A6B"}
 
 ## Main takeaways
 
@@ -672,4 +672,4 @@ flowchart TB
 - `r fa('file-medical-alt')` [Document everything]{.alert}, so your future self will thank you
 :::
 
-# ... and that's all for today! 🎉 {background-color="#2d4563"}
+# ... and that's all for today! 🎉 {background-color="#1B3A6B"}

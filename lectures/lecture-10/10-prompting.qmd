@@ -47,7 +47,7 @@ if (!require("fontawesome", character.only = TRUE)) {
 }
 ```
 
-# Welcome back! 😊 {background-color="#2d4563"}
+# Welcome back! 😊 {background-color="#1B3A6B"}
 
 ## Recap of last class
 
@@ -116,7 +116,7 @@ Source: [r/ProgrammerHumor](https://www.reddit.com/r/ProgrammerHumor/comments/1d
 [![](figures/tweet-of-the-day.jpg){width="55%"}](#){data-modal-type="image" data-modal-url="figures/tweet-of-the-day.jpg"}
 :::
 
-# How to talk to AI {background-color="#2d4563"}
+# How to talk to AI {background-color="#1B3A6B"}
 
 ## Let's start with an example
 
@@ -309,7 +309,7 @@ Let's rewrite this using PTCF for a specific use case!
 :::
 :::
 
-# System prompts and personas 🎭 {background-color="#2d4563"}
+# System prompts and personas 🎭 {background-color="#1B3A6B"}
 
 ## What are system prompts?
 
@@ -441,7 +441,7 @@ Think of it this way: the model has processed [millions of instruction-response 
 :::
 :::
 
-# Fundamental techniques 📝 {background-color="#2d4563"}
+# Fundamental techniques 📝 {background-color="#1B3A6B"}
 
 ## Zero-shot, one-shot, and few-shot prompting
 
@@ -617,7 +617,7 @@ With a fixed schema, you can feed LLM output straight into your code
 :::
 :::
 
-# Chain-of-Thought reasoning 🧠 {background-color="#2d4563"}
+# Chain-of-Thought reasoning 🧠 {background-color="#1B3A6B"}
 
 ## How "think step by step" started
 
@@ -766,7 +766,7 @@ Thinking models show their work differently ([Kimi K2 Thinking](https://huggingf
 :::
 :::
 
-# AI agents and tool use 🤖 {background-color="#2d4563"}
+# AI agents and tool use 🤖 {background-color="#1B3A6B"}
 
 ## From chatbots to agents: The ReAct pattern
 
@@ -868,7 +868,7 @@ Email content:
 :::
 :::
 
-# Common mistakes and debugging 🔧 {background-color="#2d4563"}
+# Common mistakes and debugging 🔧 {background-color="#1B3A6B"}
 
 ## Debugging prompts and jagged intelligence
 
@@ -911,7 +911,7 @@ Build a mental [reliability map]{.alert}: learn where your model works well and 
 :::
 :::
 
-# Summary 📚 {background-color="#2d4563"}
+# Summary 📚 {background-color="#1B3A6B"}
 
 ## Main takeaways
 
@@ -931,4 +931,4 @@ Build a mental [reliability map]{.alert}: learn where your model works well and 
 
 :::
 
-# ...and that's all for today! 🎉 {background-color="#2d4563"}
+# ...and that's all for today! 🎉 {background-color="#1B3A6B"}

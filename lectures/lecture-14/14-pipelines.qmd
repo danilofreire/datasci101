@@ -47,7 +47,7 @@ if (!require("fontawesome", character.only = TRUE)) {
 }
 ```
 
-# Welcome back! 🔧 {background-color="#2d4563"}
+# Welcome back! 🔧 {background-color="#1B3A6B"}
 
 ## Recap of last class
 
@@ -142,7 +142,7 @@ Source: [Astera Software](https://www.astera.com/type/blog/rag-pipeline/)
 :::
 :::
 
-# What is a Pipeline? 🏭 {background-color="#2d4563"}
+# What is a Pipeline? 🏭 {background-color="#1B3A6B"}
 
 ## From prompt to response
 
@@ -202,7 +202,7 @@ You can spot *what type* of failure happened, then choose the right response
 :::
 :::
 
-# When AI Breaks 💥 {background-color="#2d4563"}
+# When AI Breaks 💥 {background-color="#1B3A6B"}
 
 ## Real AI failures (recent headlines)
 
@@ -310,7 +310,7 @@ Source: [BBC News](https://www.bbc.com/news/technology-68412620)
 :::
 :::
 
-# Why Pipelines Break 🔥 {background-color="#2d4563"}
+# Why Pipelines Break 🔥 {background-color="#1B3A6B"}
 
 ## Data drift: The world changes
 
@@ -524,7 +524,7 @@ If any one layer goes down, you get errors, slowness, or silence
 :::
 :::
 
-# Monitoring Basics 📊 {background-color="#2d4563"}
+# Monitoring Basics 📊 {background-color="#1B3A6B"}
 
 ## What companies watch: Key metrics
 
@@ -780,7 +780,7 @@ Source: [ApX Machine Learning](https://apxml.com/courses/intro-llm-red-teaming/c
 :::
 :::
 
-# What Can YOU Do? 🛡️ {background-color="#2d4563"}
+# What Can YOU Do? 🛡️ {background-color="#1B3A6B"}
 
 ## Being a savvy AI user
 
@@ -940,7 +940,7 @@ Three different AI assistants give you three completely different answers about 
 :::
 :::
 
-# Summary 📚 {background-color="#2d4563"}
+# Summary 📚 {background-color="#1B3A6B"}
 
 ## Main takeaways
 
@@ -990,4 +990,4 @@ Three different AI assistants give you three completely different answers about 
 :::
 :::
 
-# ...and that's all for today! 🎉 {background-color="#2d4563"}
+# ...and that's all for today! 🎉 {background-color="#1B3A6B"}

@@ -47,7 +47,7 @@ if (!require("fontawesome", character.only = TRUE)) {
 }
 ```
 
-# Welcome back! 📚 {background-color="#2d4563"}
+# Welcome back! 📚 {background-color="#1B3A6B"}
 
 ## Recap of last class
 
@@ -183,7 +183,7 @@ Source: [AWS](https://aws.amazon.com/what-is/retrieval-augmented-generation/)
 :::
 :::
 
-# Semantic Search 🔍 {background-color="#2d4563"}
+# Semantic Search 🔍 {background-color="#1B3A6B"}
 
 ## Traditional search vs. semantic search
 
@@ -317,7 +317,7 @@ The search finds "puppies" when you ask about "dogs"!
 :::
 :::
 
-# The RAG Pipeline 🔄 {background-color="#2d4563"}
+# The RAG Pipeline 🔄 {background-color="#1B3A6B"}
 
 ## How RAG works
 
@@ -503,7 +503,7 @@ Retrieved chunks become the LLM's "reference material"
 :::
 :::
 
-# RAG vs. Alternatives 🔄 {background-color="#2d4563"}
+# RAG vs. Alternatives 🔄 {background-color="#1B3A6B"}
 
 ## RAG vs. fine-tuning vs. prompting
 
@@ -585,7 +585,7 @@ Source: [Liu et al. (2023)](https://arxiv.org/abs/2307.03172)
 :::
 :::
 
-# RAG Failure Modes ⚠️ {background-color="#2d4563"}
+# RAG Failure Modes ⚠️ {background-color="#1B3A6B"}
 
 ## When RAG goes wrong
 
@@ -686,7 +686,7 @@ Source: [Liu et al. (2023)](https://arxiv.org/abs/2307.03172)
 :::
 :::
 
-# No-Code RAG Tools 🛠️ {background-color="#2d4563"}
+# No-Code RAG Tools 🛠️ {background-color="#1B3A6B"}
 
 ## Tools you can use today!
 
@@ -791,7 +791,7 @@ You just built a RAG system! 🎉
 :::
 :::
 
-# Real-World Applications 🌍 {background-color="#2d4563"}
+# Real-World Applications 🌍 {background-color="#1B3A6B"}
 
 ## RAG is everywhere!
 
@@ -819,7 +819,7 @@ In each case, the user needs answers grounded in [specific documents]{.alert}, a
 :::
 :::
 
-# Summary 📚 {background-color="#2d4563"}
+# Summary 📚 {background-color="#1B3A6B"}
 
 ## Key takeaways
 
@@ -859,4 +859,4 @@ In each case, the user needs answers grounded in [specific documents]{.alert}, a
 :::
 :::
 
-# ...and that's all for today! 🎉 {background-color="#2d4563"}
+# ...and that's all for today! 🎉 {background-color="#1B3A6B"}

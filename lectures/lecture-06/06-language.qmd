@@ -47,7 +47,7 @@ if (!require("fontawesome", character.only = TRUE)) {
 }
 ```
 
-# Welcome back! 🤓 {background-color="#2d4563"}
+# Welcome back! 🤓 {background-color="#1B3A6B"}
 
 ## Recap of last class
 
@@ -133,7 +133,7 @@ Source: <https://www.anthropic.com/research/AI-assistance-coding-skills>
 :::
 :::
 
-# How LLMs "See" Text 👁️ {background-color="#2d4563"}
+# How LLMs "See" Text 👁️ {background-color="#1B3A6B"}
 
 ## The translation problem
 ### LLMs don't read English!
@@ -221,7 +221,7 @@ Source: [OpenAI](https://openai.com/api/pricing/)
 :::
 :::
 
-# Tokens and Tokenisation 🧩 {background-color="#2d4563"}
+# Tokens and Tokenisation 🧩 {background-color="#1B3A6B"}
 
 ## What is a token?
 ### The basic unit of LLM processing
@@ -382,7 +382,7 @@ Source: [Anthropic](https://platform.claude.com/docs/en/build-with-claude/contex
 :::
 :::
 
-# Embeddings 🌌 {background-color="#2d4563"}
+# Embeddings 🌌 {background-color="#1B3A6B"}
 
 ## What are embeddings?
 ### Words as points in space
@@ -526,7 +526,7 @@ Source: [Pinecone](https://www.pinecone.io/learn/bertopic/)
 :::
 :::
 
-# Parameters: The LLM's Brain 🧠 {background-color="#2d4563"}
+# Parameters: The LLM's Brain 🧠 {background-color="#1B3A6B"}
 
 ## What is a parameter?
 ### What are these numbers, exactly?
@@ -745,7 +745,7 @@ Source: [Medium](https://medium.com/@nigelgebodh/why-does-my-llm-have-a-temperat
 :::
 :::
 
-# Putting It All Together 🔗 {background-color="#2d4563"}
+# Putting It All Together 🔗 {background-color="#1B3A6B"}
 
 ## The full picture
 ### From your prompt to the response
@@ -840,7 +840,7 @@ Source: [Microsoft Education](https://www.microsoft.com/en-us/education/blog/202
 :::
 :::
 
-# Summary 📚 {background-color="#2d4563"}
+# Summary 📚 {background-color="#1B3A6B"}
 
 ## Main takeaways
 
@@ -861,4 +861,4 @@ Source: [Microsoft Education](https://www.microsoft.com/en-us/education/blog/202
 - `r fa('link')` [Attention]{.alert} mechanisms help models understand context and word relationships
 :::
 
-# ... and that's all for today! 🎉 {background-color="#2d4563"}
+# ... and that's all for today! 🎉 {background-color="#1B3A6B"}

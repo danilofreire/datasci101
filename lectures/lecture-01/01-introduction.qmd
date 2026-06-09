@@ -49,7 +49,7 @@ if (!require("fontawesome", character.only = TRUE)) {
 }
 ```
 
-# Welcome to DATASCI 101! 🎉 {background-color="#2d4563"}
+# Welcome to DATASCI 101! 🎉 {background-color="#1B3A6B"}
 
 ## Lecture overview
 ### Today's agenda
@@ -92,7 +92,7 @@ Please remember to check the course repository regularly for updates and announc
 :::
 :::
 
-# Nice to meet you! 😊 {background-color="#2d4563"}
+# Nice to meet you! 😊 {background-color="#1B3A6B"}
 
 ## Instructor
 ### A bit about me
@@ -279,7 +279,7 @@ By the end of this course, you will be able to:
 - [Academic integrity:]{.alert} Please refer to the syllabus for the university's policy on academic integrity
 :::
 
-# Motivation: <br> What the heck is AI anyway? 🤖 {background-color="#2d4563"}
+# Motivation: <br> What the heck is AI anyway? 🤖 {background-color="#1B3A6B"}
 
 ## What is AI?
 
@@ -515,6 +515,6 @@ Suggested video: [The AI Doc](https://www.youtube.com/watch?v=yvq-jYira9I)
 :::
 :::
 
-# ... and that's all for today! 🎉 {background-color="#2d4563"}
+# ... and that's all for today! 🎉 {background-color="#1B3A6B"}
 
-# Have a great day! 😊 {background-color="#2d4563"}
+# Have a great day! 😊 {background-color="#1B3A6B"}

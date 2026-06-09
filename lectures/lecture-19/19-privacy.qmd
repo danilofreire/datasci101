@@ -47,7 +47,7 @@ if (!require("fontawesome", character.only = TRUE)) {
 }
 ```
 
-# Welcome back! 🔒 {background-color="#2d4563"}
+# Welcome back! 🔒 {background-color="#1B3A6B"}
 
 ## Recap of last class
 
@@ -124,7 +124,7 @@ Source: [Caniphis](https://caniphish.com/blog/ai-memes)
 Source: [Financial Times](https://www.ft.com/content/3880176e-d3ac-4311-9052-fdfeaed56a0e)
 :::
 
-# Privacy in the AI age 🔍 {background-color="#2d4563"}
+# Privacy in the AI age 🔍 {background-color="#1B3A6B"}
 
 ## Why AI makes privacy harder
 
@@ -277,7 +277,7 @@ Would you share your data if...
 :::
 :::
 
-# Legal frameworks 📜 {background-color="#2d4563"}
+# Legal frameworks 📜 {background-color="#1B3A6B"}
 
 ## GDPR fundamentals
 
@@ -468,7 +468,7 @@ Source: [Secureframe](https://secureframe.com/hub/gdpr/fines-and-penalties)
 :::
 :::
 
-# Technical approaches to privacy 🛡️ {background-color="#2d4563"}
+# Technical approaches to privacy 🛡️ {background-color="#1B3A6B"}
 
 ## Differential privacy
 
@@ -610,7 +610,7 @@ Technical fixes work *within* the system. They don't change the system itself.
 :::
 :::
 
-# Challenges and tensions ⚖️ {background-color="#2d4563"}
+# Challenges and tensions ⚖️ {background-color="#1B3A6B"}
 
 ## Case study: Clearview AI 🔍
 
@@ -729,7 +729,7 @@ Using Signal instead of WhatsApp helps, but it won't change how insurers use you
 :::
 :::
 
-# Summary 📝 {background-color="#2d4563"}
+# Summary 📝 {background-color="#1B3A6B"}
 
 ## Main takeaways
 
@@ -776,4 +776,4 @@ The Target pregnancy case and the Clearview AI scraping both came down to the sa
 :::
 :::
 
-# ... and that's all for today! 🎉 {background-color="#2d4563"}
+# ... and that's all for today! 🎉 {background-color="#1B3A6B"}

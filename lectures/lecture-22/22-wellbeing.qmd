@@ -47,7 +47,7 @@ if (!require("fontawesome", character.only = TRUE)) {
 }
 ```
 
-# Welcome back! 😊 {background-color="#2d4563"}
+# Welcome back! 😊 {background-color="#1B3A6B"}
 
 ## Recap of last class
 
@@ -115,7 +115,7 @@ There are no right answers to the questions I put on screen. I'm curious what yo
 [![](figures/meme-of-the-day.jpg){width="40%"}](#){data-modal-type="image" data-modal-url="figures/meme-of-the-day.jpg"}
 :::
 
-# The attention economy 📱 {background-color="#2d4563"}
+# The attention economy 📱 {background-color="#1B3A6B"}
 
 ## What is the attention economy?
 
@@ -349,7 +349,7 @@ A real-world experiment in what happens when users can [choose]{.alert} whether 
 :::
 :::
 
-# AI and mental healthcare 🧠 {background-color="#2d4563"}
+# AI and mental healthcare 🧠 {background-color="#1B3A6B"}
 
 ## The treatment gap
 
@@ -550,7 +550,7 @@ The technology is moving faster than the evidence, the regulation, and the train
 :::
 :::
 
-# AI and the environment 🌍 {background-color="#2d4563"}
+# AI and the environment 🌍 {background-color="#1B3A6B"}
 
 ## The energy cost of training AI
 
@@ -690,7 +690,7 @@ Net impact? [Unclear]{.alert}. The evidence simply isn't there yet.
 :::
 :::
 
-# Summary 📚 {background-color="#2d4563"}
+# Summary 📚 {background-color="#1B3A6B"}
 
 ## Main takeaways
 
@@ -708,4 +708,4 @@ Net impact? [Unclear]{.alert}. The evidence simply isn't there yet.
 
 :::
 
-# ...and that's all for today! 🎉 {background-color="#2d4563"}
+# ...and that's all for today! 🎉 {background-color="#1B3A6B"}

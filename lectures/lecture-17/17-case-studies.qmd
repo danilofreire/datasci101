@@ -47,7 +47,7 @@ if (!require("fontawesome", character.only = TRUE)) {
 }
 ```
 
-# Welcome back! 😉 {background-color="#2d4563"}
+# Welcome back! 😉 {background-color="#1B3A6B"}
 
 ## Recap of last class
 
@@ -114,7 +114,7 @@ Source: [NIST](https://www.nist.gov/publications/towards-standard-identifying-an
 Source: [Medium](https://medium.com/@codingandcoffee/ai-luddites-and-the-future-of-finance-b06621999f7e)
 :::
 
-# Group project 📋 {background-color="#2d4563"}
+# Group project 📋 {background-color="#1B3A6B"}
 
 ## Group project
 
@@ -182,7 +182,7 @@ Groups should be confirmed by [March 23]{.alert}. Talk to your classmates this w
 :::
 :::
 
-# AI in healthcare 🏥 {background-color="#2d4563"}
+# AI in healthcare 🏥 {background-color="#1B3A6B"}
 
 ## Traditional ML in healthcare
 
@@ -321,7 +321,7 @@ Source: [The New York Times](https://www.nytimes.com/2025/11/16/briefing/meet-dr
 :::
 :::
 
-# AI in finance 📈 {background-color="#2d4563"}
+# AI in finance 📈 {background-color="#1B3A6B"}
 
 ## Traditional ML in finance
 
@@ -589,7 +589,7 @@ RAG is better than pure LLM generation, but "grounded" does not mean "correct." 
 :::
 :::
 
-# When bias creeps in 🤔 {background-color="#2d4563"}
+# When bias creeps in 🤔 {background-color="#1B3A6B"}
 
 ## Healthcare bias: the Optum case
 
@@ -810,4 +810,4 @@ The same algorithm can save lives or deny care, depending on what it optimises f
 :::
 :::
 
-# And that is all for today! {background-color="#2d4563"}
+# And that is all for today! {background-color="#1B3A6B"}

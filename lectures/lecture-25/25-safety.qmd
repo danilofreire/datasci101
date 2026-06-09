@@ -47,7 +47,7 @@ if (!require("fontawesome", character.only = TRUE)) {
 }
 ```
 
-# Welcome back! 😊 {background-color="#2d4563"}
+# Welcome back! 😊 {background-color="#1B3A6B"}
 
 ## Recap of last class
 
@@ -125,7 +125,7 @@ Source: [Cheezburger](https://cheezburger.com/20659973/20-memes-if-youre-feeling
 Source: [CNBC](https://www.cnbc.com/2026/04/15/allbirds-bird-stock-shoes-ai.html)
 :::
 
-# AI safety 🛡️ {background-color="#2d4563"}
+# AI safety 🛡️ {background-color="#1B3A6B"}
 
 ## Near-term vs long-term concerns
 
@@ -312,7 +312,7 @@ Nobody told the engagement algorithm "don't polarise society." [If you don't put
 :::
 :::
 
-# The alignment problem 🎯 {background-color="#2d4563"}
+# The alignment problem 🎯 {background-color="#1B3A6B"}
 
 ## What is alignment?
 
@@ -507,7 +507,7 @@ If we align AI to human values...
 :::
 :::
 
-# Future trajectories 🚀 {background-color="#2d4563"}
+# Future trajectories 🚀 {background-color="#1B3A6B"}
 
 ## Where is AI heading?
 
@@ -671,7 +671,7 @@ Source: [MIT Technology Review's YouTube channel](https://www.youtube.com/watch?
 :::
 :::
 
-# What can we do? 🔧 {background-color="#2d4563"}
+# What can we do? 🔧 {background-color="#1B3A6B"}
 
 ## Research directions
 
@@ -779,7 +779,7 @@ Source: [r/OptimistsUnite](https://www.reddit.com/r/OptimistsUnite/comments/1ew5
 :::
 :::
 
-# Summary 📝 {background-color="#2d4563"}
+# Summary 📝 {background-color="#1B3A6B"}
 
 ## Main takeaways
 
@@ -822,4 +822,4 @@ The future of AI is [not determined]{.alert}. The choices we make now, about ali
 :::
 :::
 
-# ... and that's all for today! 🎉 {background-color="#2d4563"}
+# ... and that's all for today! 🎉 {background-color="#1B3A6B"}

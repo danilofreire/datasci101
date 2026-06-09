@@ -47,7 +47,7 @@ if (!require("fontawesome", character.only = TRUE)) {
 }
 ```
 
-# Welcome back! 🕵️ {background-color="#2d4563"}
+# Welcome back! 🕵️ {background-color="#1B3A6B"}
 
 ## Recap of last class
 
@@ -126,7 +126,7 @@ Source: [X.com](https://x.com/kimmonismus/status/2041592321192718642)
 :::
 :::
 
-# Misinformation: definitions and scale 📰 {background-color="#2d4563"}
+# Misinformation: definitions and scale 📰 {background-color="#1B3A6B"}
 
 ## Three kinds of false content
 
@@ -249,7 +249,7 @@ Platform incentives often [work against truth]{.alert}. This isn't a bug; it's a
 :::
 :::
 
-# Deepfakes 🎬 {background-color="#2d4563"}
+# Deepfakes 🎬 {background-color="#1B3A6B"}
 
 ## What are deepfakes?
 
@@ -407,7 +407,7 @@ A video emerges of a political candidate you support saying something terrible. 
 4. What if experts disagree?
 :::
 
-# Why we fall for it 🧠 {background-color="#2d4563"}
+# Why we fall for it 🧠 {background-color="#1B3A6B"}
 
 ## Are we hard-wired for fake news?
 
@@ -581,7 +581,7 @@ We share what confirms our views *and* makes us look informed. The truth can wai
 :::
 :::
 
-# Responses 🛡️ {background-color="#2d4563"}
+# Responses 🛡️ {background-color="#1B3A6B"}
 
 ## Technical detection
 
@@ -717,7 +717,7 @@ Source: [Columbia Journal of Law and Arts](https://journals.library.columbia.edu
 - Effects are real but often [short-lived](https://onlinelibrary.wiley.com/doi/10.1111/jasp.13049) (Capewell et al., 2024). No single intervention scales to billions on its own
 :::
 
-# Summary 📝 {background-color="#2d4563"}
+# Summary 📝 {background-color="#1B3A6B"}
 
 ## Main takeaways
 
@@ -756,4 +756,4 @@ Source: [Columbia Journal of Law and Arts](https://journals.library.columbia.edu
 :::
 :::
 
-# ... and that's all for today! 🎉 {background-color="#2d4563"}
+# ... and that's all for today! 🎉 {background-color="#1B3A6B"}

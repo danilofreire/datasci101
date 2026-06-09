@@ -47,7 +47,7 @@ if (!require("fontawesome", character.only = TRUE)) {
 }
 ```
 
-# Welcome back! 🤓 {background-color="#2d4563"}
+# Welcome back! 🤓 {background-color="#1B3A6B"}
 
 ## Recap of last class
 
@@ -113,7 +113,7 @@ Source: [DeepSet AI](https://www.deepset.ai/blog/the-beginners-guide-to-text-emb
 [![](figures/tweet-of-the-day.png){width="55%"}](#){data-modal-type="image" data-modal-url="figures/tweet-of-the-day.png"}
 :::
 
-# How machines "see" images 🔍 {background-color="#2d4563"}
+# How machines "see" images 🔍 {background-color="#1B3A6B"}
 
 ## Discussion: Describe this to a computer 🤔
 
@@ -379,7 +379,7 @@ Source: [OpenAI CLIP](https://openai.com/research/clip)
 :::
 :::
 
-# Activity time! 🎮 {background-color="#2d4563"}
+# Activity time! 🎮 {background-color="#1B3A6B"}
 
 ## Train your own AI! 
 ### Teachable Machine demo
@@ -414,7 +414,7 @@ Source: [OpenAI CLIP](https://openai.com/research/clip)
 :::
 :::
 
-# How machines "hear" audio 🎵 {background-color="#2d4563"}
+# How machines "hear" audio 🎵 {background-color="#1B3A6B"}
 
 ## Sound is invisible...so how do we process it?
 
@@ -643,7 +643,7 @@ Source: [Sam Galope (2024)](https://www.samgalope.dev/2024/07/25/convert-wav-fil
 :::
 :::
 
-# The Big Picture 🌐 {background-color="#2d4563"}
+# The Big Picture 🌐 {background-color="#1B3A6B"}
 
 ## The main idea: Everything becomes numbers
 
@@ -722,7 +722,7 @@ Source: [Sebastian Raschka](https://magazine.sebastianraschka.com/p/understandin
 :::
 :::
 
-# What this means for society ⚠️ {background-color="#2d4563"}
+# What this means for society ⚠️ {background-color="#1B3A6B"}
 
 ## Class discussion: Where do we draw the line? 🤔
 
@@ -746,7 +746,7 @@ Should AI-generated content require...
 :::
 :::
 
-# Summary 📚 {background-color="#2d4563"}
+# Summary 📚 {background-color="#1B3A6B"}
 
 ## Main takeaways
 
@@ -765,4 +765,4 @@ Should AI-generated content require...
 - `r fa('exclamation-triangle')` **Critical thinking**: Deepfakes, bias, and privacy are [real concerns]{.alert} we must address
 :::
 
-# ... and that's all for today! 🎉 {background-color="#2d4563"}
+# ... and that's all for today! 🎉 {background-color="#1B3A6B"}
