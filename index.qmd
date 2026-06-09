@@ -1,7 +1,7 @@
 ---
 title: "DATASCI 101 - Introduction to AI Applications"
 subtitle: "Emory University, Fall 2026"
-title-block-banner: "#1E40AF"
+title-block-banner: "#1B3A6B"
 title-block-banner-color: "white"
 ---
 
