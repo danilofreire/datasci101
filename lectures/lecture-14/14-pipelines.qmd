@@ -9,7 +9,7 @@ author:
 format:
   clean-revealjs:
     self-contained: true
-    footer: "[Lecture 14](https://raw.githack.com/danilofreire/datasci101/main/lectures/lecture-14/14-pipelines.html)"
+    footer: "[Lecture 14](https://danilofreire.github.io/datasci101/lectures/lecture-14/14-pipelines.html)"
     transition: slide
     transition-speed: default
     scrollable: true

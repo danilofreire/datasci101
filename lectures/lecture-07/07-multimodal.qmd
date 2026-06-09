@@ -9,7 +9,7 @@ author:
 format:
   clean-revealjs:
     self-contained: true
-    footer: "[Lecture 07](https://raw.githack.com/danilofreire/datasci101/main/lectures/lecture-07/07-multimodal.html)"
+    footer: "[Lecture 07](https://danilofreire.github.io/datasci101/lectures/lecture-07/07-multimodal.html)"
     transition: slide
     transition-speed: default
     scrollable: true

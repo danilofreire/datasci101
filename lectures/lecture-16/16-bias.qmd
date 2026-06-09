@@ -9,7 +9,7 @@ author:
 format:
   clean-revealjs:
     self-contained: true
-    footer: "[Lecture 16](https://raw.githack.com/danilofreire/datasci101/main/lectures/lecture-16/16-bias.html)"
+    footer: "[Lecture 16](https://danilofreire.github.io/datasci101/lectures/lecture-16/16-bias.html)"
     transition: slide
     transition-speed: default
     scrollable: true

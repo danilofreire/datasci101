@@ -9,7 +9,7 @@ author:
 format:
   clean-revealjs:
     self-contained: true
-    footer: "[Lecture 11](https://raw.githack.com/danilofreire/datasci101/main/lectures/lecture-11/11-hallucination.html)"
+    footer: "[Lecture 11](https://danilofreire.github.io/datasci101/lectures/lecture-11/11-hallucination.html)"
     transition: slide
     transition-speed: default
     scrollable: true
@@ -723,7 +723,7 @@ Question: [your question]
 :::{style="margin-top: 30px; font-size: 22px;"}
 :::{.columns}
 :::{.column width=55%}
-Remember the [**PTCF framework**](https://raw.githack.com/danilofreire/datasci101/main/lectures/lecture-09/09-prompting.html) from last class?
+Remember the [**PTCF framework**](https://danilofreire.github.io/datasci101/lectures/lecture-09/09-prompting.html) from last class?
 
 | Element | Anti-Hallucination Version |
 |---------|---------------------------|

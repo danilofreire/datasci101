@@ -9,7 +9,7 @@ author:
 format:
   clean-revealjs:
     self-contained: true
-    footer: "[Lecture 17](https://raw.githack.com/danilofreire/datasci101/main/lectures/lecture-17/17-case-studies.html)"
+    footer: "[Lecture 17](https://danilofreire.github.io/datasci101/lectures/lecture-17/17-case-studies.html)"
     transition: slide
     transition-speed: default
     scrollable: true

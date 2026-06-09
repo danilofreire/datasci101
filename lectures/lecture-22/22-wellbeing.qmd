@@ -9,7 +9,7 @@ author:
 format:
   clean-revealjs:
     self-contained: true
-    footer: "[Lecture 22](https://raw.githack.com/danilofreire/datasci101/main/lectures/lecture-22/22-wellbeing.html)"
+    footer: "[Lecture 22](https://danilofreire.github.io/datasci101/lectures/lecture-22/22-wellbeing.html)"
     transition: slide
     transition-speed: default
     scrollable: true

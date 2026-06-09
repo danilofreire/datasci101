@@ -9,7 +9,7 @@ author:
 format:
   clean-revealjs:
     self-contained: true
-    footer: "[Lecture 05](https://raw.githack.com/danilofreire/datasci101/main/lectures/lecture-05/05-metrics-llms.html)"
+    footer: "[Lecture 05](https://danilofreire.github.io/datasci101/lectures/lecture-05/05-metrics-llms.html)"
     transition: slide
     transition-speed: default
     scrollable: true
