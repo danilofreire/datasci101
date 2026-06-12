@@ -77,11 +77,11 @@ if (!require("fontawesome", character.only = TRUE)) {
 ### Important links
 
 ::: {style="font-size: 26px;"}
+`r fa('globe')` [Course website:]{.alert} <https://danilofreire.github.io/datasci101>
+
 `r fa('github')` Course repository: <https://github.com/danilofreire/datasci101>
 
-`r fa('globe')` Course website: <https://danilofreire.github.io/datasci101>
-
-All course materials, including lectures, code, assignments, and project guidelines, are available on our [GitHub repository](https://github.com/danilofreire/datasci101) and [course website](https://danilofreire.github.io/datasci101)
+The website is [the main hub for your learning]{.alert}, while the assignments and group work files will be available on the repository
 
 We will use Canvas for course administration, including submitting assignments, accessing grades, and receiving announcements
 
@@ -228,13 +228,13 @@ By the end of this course, you will be able to:
 
 | Module | Topic | Key Questions |
 |--------|-------|---------------|
-| 0 | Orientation | What is AI? What will we learn? |
-| 1 | AI Design | How are AI systems built? |
-| 2 | Perception | How do machines read, write, see and hear? |
-| 3 | RAG & Pipelines | How do we make AI reliable? |
-| 4 | Ethics & Bias | What can go wrong? |
-| 5 | Policy & Impact | How is AI regulated? |
-| 6 | Applications | Real-world uses and limits |
+| 0 | [Orientation]{.alert} | What is AI? What will we learn? |
+| 1 | [AI Design]{.alert} | How are AI systems built? |
+| 2 | [Perception]{.alert} | How do machines read, write, see and hear? |
+| 3 | [RAG & Pipelines]{.alert} | How do we make AI reliable? |
+| 4 | [Ethics & Bias]{.alert} | What can go wrong? |
+| 5 | [Policy & Impact]{.alert} | How is AI regulated? |
+| 6 | [Applications]{.alert} | Real-world uses and limits |
 
 :::
 
