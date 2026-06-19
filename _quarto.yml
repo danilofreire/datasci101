@@ -1,6 +1,9 @@
 project:
   type: website
   output-dir: docs
+  render:
+    - "*.qmd"
+    - "!semester-transition-guide.md"
 
 website:
   title: "DATASCI 101"
@@ -32,7 +35,11 @@ website:
 
 format:
   html:
-    theme: 
-      light: lumen
-      dark: solar
+    theme:
+      light: [cosmo, custom.scss]
+      dark: [darkly, custom.scss, custom-dark.scss]
+    css: styles.css
+    mainfont: "Source Sans 3"
+    monofont: "Inconsolata"
+    highlight-style: github
     toc: true
