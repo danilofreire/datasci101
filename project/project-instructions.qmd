@@ -41,11 +41,11 @@ Pick one domain from the list below. Each domain includes a few example use case
 
 1. **Healthcare**: symptom checking, mental health chatbots, medical image interpretation
 2. **Education**: AI tutoring systems, automated grading, personalised learning platforms
-3. **Hiring and employment**: CV screening, interview analysis, workforce planning tools
-4. **Creative industries**: AI-generated art, music, or writing; content moderation systems
-5. **Finance**: credit scoring, fraud detection, robo-advisors
-6. **Environment and climate**: weather forecasting, energy optimisation, biodiversity monitoring
-7. **Misinformation and media**: deepfake detection, fact-checking tools, content recommendation algorithms
+3. **Finance**: credit scoring, fraud detection, robo-advisors
+4. **Law**: contract review, legal research assistants, case-outcome prediction
+5. **Creative industries**: AI-generated art, music, or writing; content moderation systems
+6. **Scientific research**: literature search and summarisation, protein-structure prediction, experiment design
+7. **Customer service**: support chatbots, ticket routing and triage, sentiment analysis of feedback
 
 Domain selection is first-come-first-served. Multiple groups can work in the same domain, but each group must address a different use case. If a domain becomes too crowded, I may ask latecomers to pick another one. Please feel free to email me if you have questions about which domain or use case to choose.
 
@@ -86,7 +86,7 @@ You will submit two items: a report and an infographic.
 
 ### Report
 
-Write a report of approximately 5 pages (excluding any appendices). Submit it as a PDF or Word document. The report should have five sections:
+Write a report of between 5 and 10 pages (excluding any appendices). Submit it as a PDF or Word document. The report should have five sections:
 
 **1. Introduction.** Describe the problem you are addressing and explain why AI is relevant to it. A reader unfamiliar with your domain should be able to follow along.
 
@@ -118,7 +118,7 @@ If your group wants to go further, you can build a simple working prototype usin
 - Set up a simple retrieval-augmented generation (RAG) workflow using a visual tool
 - Design a prompt chain that solves a multi-step task in your domain
 
-Document what you built with screenshots and a brief explanation of how it works. This appendix does not count toward the 5-page limit.
+Document what you built with screenshots and a brief explanation of how it works. This appendix does not count toward the page limit.
 
 **Bonus points:** up to 1 extra point. A working prototype with clear documentation earns 1 point; a partial attempt or one with minimal documentation earns 0.5.
 
@@ -157,7 +157,7 @@ The project is graded on a scale of 0-10, plus up to 1 bonus point.
 
 # Tips
 
-- **Be specific.** "This tool is biased" is too vague. "When we tested the hiring tool with identical CVs but different names, it scored the CV with a typically white-sounding name 15\% higher" is much better.
+- **Be specific.** "This tool is biased" is too vague. "When we tested the credit-scoring tool with identical applications but different names, it gave the one with a typically white-sounding name a 15\% higher score" is much better.
 - **Use what you learned in class.** The lectures on bias, documentation, hallucination, and harms assessment are all directly relevant to this project.
 - **Divide the work early.** With 4-5 people and 5-6 weeks, you have plenty of time if you start early. You do not have plenty of time if everyone waits until the last week.
 - **The proposal is optional but worth doing.** It takes an hour to write and saves you from going down the wrong path.

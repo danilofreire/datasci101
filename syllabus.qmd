@@ -31,17 +31,17 @@ editor:
 
 # Course description
 
-Welcome to [DATASCI 101!](https://github.com/danilofreire/datasci101) This course offers a non-technical introduction to artificial intelligence and its effects on institutions, work and everyday life. The course is practical: students will learn how modern systems are designed and how to ask the right questions about data, reliability and harms. The course combines short demonstrations (no programming experience required), case studies, and project work. It is suitable for undergraduate students from any faculty who want a grounded understanding of what AI can and cannot do.
+Welcome to [DATASCI 101!](https://github.com/danilofreire/datasci101) This is a non-technical introduction to artificial intelligence and how it is changing institutions, work and daily life. We will examine how modern AI systems are built and, just as much, how to question what they produce: where the data comes from, when the systems fail, and whom those failures affect. The classes combine short demonstrations (no programming required) with case studies and work on your own project. Anyone can take the course, whatever your major. The aim is a clear-eyed sense of what AI can do, and what it cannot.
 
 # Learning objectives
 
-By the end of the course, students will be able to:
+By the end of term, you should be able to:
 
-- Explain the main ideas behind contemporary AI systems in plain language.
-- Identify common failure modes of AI systems and the data issues that cause them.
-- Read and assess claims about AI in news articles, product pages and policy documents.
-- Design a small, realistic plan for an AI application, including data needs, evaluation, and a basic harm-mitigation strategy.
-- Reflect critically on ethical, legal and social questions raised by AI deployment.
+- Explain in plain language the main ideas behind today's AI systems.
+- Identify the common ways these systems fail, and the data problems that cause those failures.
+- Read a news article, product page or policy document about AI and assess whether its claims are credible.
+- Design a small, realistic plan for an AI application: the data it requires, how you would evaluate it, and how you would limit its potential for harm.
+- Consider the ethical, legal and social questions that arise when AI is deployed.
 
 # Course logistics
 
@@ -52,17 +52,17 @@ By the end of the course, students will be able to:
 
 # Prerequisites and software
 
-No formal prerequisites. Familiarity with spreadsheets, basic statistics or introductory programming is useful but not required. We will discuss some simple Python code snippets in class, but no programming experience is needed.
+There are no prerequisites. Familiarity with spreadsheets, basic statistics or introductory programming is useful but not required. We may discuss some simple Python code snippets in class, but you will not be asked to write any code.
 
 # Readings and resources
 
-Readings are short papers, essays and tutorials rather than a single textbook. Links and PDFs will be provided on the course website. Please note that the syllabus may be updated during the semester. For those interested in digging deeper into some of the topics we cover, here are some recommended books and resources:
+There is no single textbook. Instead, we read short papers, essays and tutorials, all linked on the course website. The syllabus may change during the term, so please check it periodically. If you would like to explore a topic in more depth, here are some books and resources I recommend:
 
 ### Books
 
 - [Artificial intelligence: a guide for thinking humans](https://melaniemitchell.me/aibook/) by Melanie Mitchell (2020). A clear, non-technical overview of AI concepts and history.
 - [The master algorithm](https://www.basicbooks.com/titles/pedro-domingos/the-master-algorithm/9780465065707/) by Pedro Domingos (2015). A readable introduction to machine learning concepts and applications.
-- [The coming wave: AI, power, and our future](https://www.penguinrandomhouse.com/books/713377/the-coming-wave-by-vinod-khosla-and-brock-manville/) by Mustafa Suleyman and Michael Bhaskar (2025). An award-winning book on the transformative potential of AI and its societal implications.
+- [The coming wave: technology, power, and the twenty-first century's greatest dilemma](https://www.penguinrandomhouse.com/books/722674/the-coming-wave-by-mustafa-suleyman-with-michael-bhaskar/) by Mustafa Suleyman and Michael Bhaskar (2023). A widely read argument that AI and synthetic biology will be very hard to contain, written by the co-founder of DeepMind.
 - [The alignment problem: machine learning and human values](https://www.penguinrandomhouse.com/books/622487/the-alignment-problem-by-brian-christian/) by Brian Christian (2020). An exploration of what can go wrong when AI systems are deployed in the real world.
 - [AI & I: An intellectual history of artificial intelligence](https://mitpress.mit.edu/9780262548731/ai-and-i/) by Eugene Charniak (2024). A new book by a leading AI researcher, covering the history of the field from the 1950s to the present day.
 - [Weapons of math destruction: how big data increases inequality and threatens democracy](https://weaponsofmathdestructionbook.com/) by Cathy O'Neil (2016). A book on the dangers of unregulated mathematical models.
@@ -95,7 +95,7 @@ Readings are short papers, essays and tutorials rather than a single textbook. L
 
 - **In-class quizzes (5) — 30%**. Each quiz occupies a full lecture. Quizzes are open-book/open-notes and individual assessments. Discussion during quizzes is not permitted.  
 
-- **Final group project — 20%**. Groups of 4–5 choose one of seven domains (healthcare, education, finance, law, creative industries, scientific research, or customer service), test existing AI tools in that domain, and design a new AI application. Deliverables: an optional one-page proposal (not graded), a final report of about 5 pages, and a one-page infographic. No programming is required. [Detailed instructions (PDF)](https://github.com/danilofreire/datasci101/blob/main/project/project-instructions.pdf).
+- **Final group project — 20%**. Groups of 4–5 choose one of seven domains (healthcare, education, finance, law, creative industries, scientific research, or customer service), test existing AI tools in that domain, and design a new AI application. Deliverables: an optional one-page proposal (not graded), a final report of 5–10 pages, and a one-page infographic. No programming is required. [Detailed instructions (PDF)](https://github.com/danilofreire/datasci101/blob/main/project/project-instructions.pdf).
 
 # Grading scale
 
@@ -107,7 +107,7 @@ Final grades are rounded to the nearest point.
 
 # Academic integrity and AI use
 
-Generative AI tools (for example ChatGPT, Claude, GitHub Copilot) may be used as aids for brainstorming or drafting, but all AI use must be declared on submissions. Students must take responsibility for correctness and must attribute any direct text or code produced by AI. The Emory Honour Code applies.
+You are welcome to use generative AI tools such as ChatGPT, Claude or GitHub Copilot to brainstorm or draft, but any such use must be declared on your submissions. You are responsible for the correctness of your answers, and any text or code produced directly by a model must be attributed. The Emory Honour Code applies throughout.
 
 # Emory Honour Code
 
@@ -115,7 +115,7 @@ The Emory Undergraduate Academic Honour Code is in effect throughout the semeste
 
 # Accessibility
 
-Students who require accommodations should contact the Department of Accessibility Services early in the semester and provide documentation. Reasonable accommodations will be made for assessments, including quizzes, according to DAS guidance. Please contact me privately to discuss any specific needs.
+If you require accommodations, please contact the Department of Accessibility Services early in the term and provide their documentation. I will follow DAS guidance for all assessments, quizzes included. Please contact me privately to discuss any specific needs.
 
 # Course schedule
 
