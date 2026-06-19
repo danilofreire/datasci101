@@ -10,13 +10,13 @@ You can complete assignments in Jupyter Notebooks (`.ipynb`), Word documents, or
 
 You will find the questions in the `assignments` folder on [the course repository](https://github.com/danilofreire/datasci101/tree/main/assignments). You can also access them through the links below.
 
-### Download Instructions
+### Download instructions
 
 1. Go to the `assignments` folder on GitHub: <https://github.com/danilofreire/datasci101/tree/main/assignments>
-1. Navigate to the file you want to download (e.g., `01-assignment.ipynb`)
-2. Click on the file name to open it
-3. Look for the **"Download raw file"** button (download icon ⬇️) in the top-right corner of the file preview
-4. Click to download the file to your computer
+2. Navigate to the file you want (e.g., `01-assignment.ipynb`)
+3. Click the file name to open it
+4. Look for the "Download raw file" button (the download icon) in the top-right corner of the file preview
+5. Click it to download the file to your computer
 
 You can also download the entire repository:
 
@@ -25,17 +25,17 @@ You can also download the entire repository:
 3. Select **"Download ZIP"**
 4. Extract the ZIP file and find the assignments in the `assignments/` folder
 
-## Submission Guidelines
+## Submission guidelines
 
-- **Submit via Canvas** by the deadline indicated on the syllabus
-- Submit as a **PDF** (preferred), as a Word document (`.docx`) or as a Jupyter Notebook (`.ipynb`)
-- **AI use is encouraged**: You may use ChatGPT, Claude, Gemini, or other LLMs to help explore questions
-- **All responses must be written in your own words** and demonstrate understanding
-- For each assignment, briefly **mention which AI tool you used** (if any)
-- **Screenshots of your AI interactions** are encouraged where relevant
-- Each answer should be at least **150-200 words** (be concise but thorough)
+- Submit via Canvas by the deadline indicated on the syllabus
+- Submit a PDF (preferred), a Word document (`.docx`), or a Jupyter Notebook (`.ipynb`)
+- You may use ChatGPT, Claude, Gemini or other LLMs to help you explore the questions
+- Write all responses in your own words, showing your understanding
+- For each assignment, say briefly which AI tool you used (if any)
+- Screenshots of your AI interactions are welcome where relevant
+- Each answer should be about 150-200 words: concise but complete
 
-## Assignment Timeline
+## Assignment timeline
 
 | Assignment | Due Date | Link |
 |-------------|----------|------|
@@ -50,7 +50,7 @@ You can also download the entire repository:
 | 9 | November 12, 2026 | [Assignment 09](https://github.com/danilofreire/datasci101/tree/main/assignments) |
 | 10 | November 19, 2026 | [Assignment 10](https://github.com/danilofreire/datasci101/tree/main/assignments) |
 
-## Quiz Timeline
+## Quiz timeline
 
 | Quiz | Topics Covered | Date | Link |
 |------|----------------|------|------|
@@ -60,9 +60,9 @@ You can also download the entire repository:
 | Quiz 4 | Lectures 19, 21, and 22 | November 19, 2026 | [Quiz 04](https://github.com/danilofreire/datasci101-quiz04) |
 | Quiz 5 | Lectures 23 and 25 | December 3, 2026 | [Quiz 05](https://github.com/danilofreire/datasci101-quiz05) |
 
-## Final Project
+## Final project
 
-The final project is a group effort worth 20% of your final grade. Groups of 4–5 students will produce a 5–10 page report (excluding appendices) and a one-page infographic. The project involves testing existing AI tools in a chosen domain, designing a new AI application, and a harms assessment. Domains to choose from include healthcare, education, hiring, creative industries, finance, environment and climate, and misinformation and media.
+The final project is a group effort worth 20% of your final grade. Groups of 4–5 students will produce a 5–10 page report (excluding appendices) and a one-page infographic. The project involves testing existing AI tools in a chosen domain, designing a new AI application, and a harms assessment. The domains to choose from are healthcare, education, finance, law, creative industries, scientific research, and customer service.
 
 Detailed instructions for the final project are available at: <https://github.com/danilofreire/datasci101/tree/main/project>
 

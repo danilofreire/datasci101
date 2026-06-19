@@ -2,7 +2,7 @@
 title: "Lectures"
 ---
 
-Please find below the schedule of our lectures. Each lecture includes a brief description, required readings, and suggested readings for further exploration. The lecture slides and additional resources will be posted on the course website and GitHub repository. Please remember that the schedule may change during the course. If you have any questions or need further assistance, please let me know!
+The schedule is below. For each class you will find a short description, the required readings, and optional readings for those who wish to read further. Slides and other materials will be posted on the course website and GitHub repository. The schedule may change during the term. Please contact me if anything is unclear.
 
 ## Module 0 — Orientation
 
@@ -28,9 +28,9 @@ Readings:
 
 - Dick, S. (2019). [Artificial intelligence.](https://doi.org/10.1162/99608f92.92fe150c) *Harvard Data Science Review*, *1*(1). A brief history of AI research and applications. Written for a general audience.
 - Grzybowski, A., Pawlikowska–Łagód, K., & Lambert, W. C. (2024). [A history of artificial intelligence.](https://doi.org/10.1016/j.clindermatol.2023.12.016) *Clinics in Dermatology*, *42*(3), 221-229. A "pre-history" overview, focusing on early ideas and milestones.
-- Cao, Y., Liu, L., Li, M., Huang, Y., & Li, S. (2023). [A comprehensive survey of AI-generated content (AIGC): A history of generative AI from GAN to ChatGPT.](https://arxiv.org/abs/2303.04226) *arXiv preprint*. A somewhat technical but comprehensive overview of generative AI methods.
+- Cao, Y., Liu, L., Li, M., Huang, Y., & Li, S. (2023). [A comprehensive survey of AI-generated content (AIGC): A history of generative AI from GAN to ChatGPT.](https://arxiv.org/abs/2303.04226) *arXiv preprint*. A somewhat technical but thorough overview of generative AI methods.
 - Halevy, A., Norvig, P., & Pereira, F. (2009). [The unreasonable effectiveness of data.](https://static.googleusercontent.com/media/research.google.com/en//pubs/archive/35179.pdf) *IEEE Intelligent Systems*, *24*(2), 8-12. A classic paper arguing that large datasets are often more important than sophisticated algorithms.
-- Pradhan, M. (2023). [A non-technical introduction to Transformers.](https://medium.com/healthcare-ai-sig/a-non-technical-introduction-to-transformers-6ca36b8246d) A clear explanation of the transformer architecture that underpins many modern AI systems.
+- Pradhan, M. (2023). [A non-technical introduction to Transformers.](https://medium.com/healthcare-ai-sig/a-non-technical-introduction-to-transformers-6ca36b8246d) A clear explanation of the transformer architecture behind many modern AI systems.
 - Georgia Tech's Polo Club of Data Science (2025). [Transformer explainer.](https://poloclub.github.io/transformer-explainer/) An interactive visualisation of how transformers work.
 - Vaswani, A., Shazeer, N., Parmar, N., Uszkoreit, J., Jones, L., Gomez, A. N., ... & Polosukhin, I. (2017). [Attention is all you need.](https://proceedings.neurips.cc/paper_files/paper/2017/file/3f5ee243547dee91fbd053c1c4a845aa-Paper.pdf)  *Advances in Neural Information Processing Systems*, 30. In case you want to read the original paper. Not for the faint of heart.
 - Whang, O. (2026). [We don't really know how AI works. That's a problem.](https://www.nytimes.com/2026/04/15/magazine/ai-black-box-interpretability-research.html) *The New York Times Magazine*. A feature-length, non-technical primer on interpretability research, from sparse autoencoders to Goodfire's work with Prima Mente on Alzheimer's diagnosis. A very accessible introduction to why the "black box" problem matters.
@@ -79,7 +79,7 @@ Readings:
 - Rashka, S. (2025) [Understanding the 4 main approaches to LLM evaluation.](https://magazine.sebastianraschka.com/p/llm-evaluation-4-approaches) Good blog post about the different ways to evaluate LLMs.
 - Coursera (2025). [Precision vs. recall in machine learning: What's the difference?](https://www.coursera.org/articles/precision-vs-recall-machine-learning). A short article about those two commonly confused metrics.
 - Inie, N., Stray, J., & Derczynski, L. (2023). [Summon a demon and bind it: a grounded theory of LLM red teaming in the wild.](https://arxiv.org/abs/2311.06237) *arXiv preprint*. A good overview of red teaming.
-- Radharapu, B., Robinson, K., Aroyo, L., & Lahoti, P. (2023). [Aart: AI-assisted red-teaming with diverse data generation for new LLM-powered applications.](https://arxiv.org/abs/2311.08592) *arXiv* preprint*. A method to improve LLM safety with simple adversarial attacks.
+- Radharapu, B., Robinson, K., Aroyo, L., & Lahoti, P. (2023). [Aart: AI-assisted red-teaming with diverse data generation for new LLM-powered applications.](https://arxiv.org/abs/2311.08592) *arXiv preprint*. A method to improve LLM safety with simple adversarial attacks.
 
 ## Module 2 — Language and perception
 
@@ -110,7 +110,7 @@ Readings:
 - Gupta, A. (2025). [How computers see the world: a beginner's guide to CNNs](https://pub.towardsai.net/how-computers-see-the-world-a-beginners-guide-to-cnns-c847ab855104) An illustrated introduction to convolutional neural networks. Feel free to skip the coding section if you are not interested.
 - AltexSoft (2025). [How AI sound, music, and voice generation works.](https://www.altexsoft.com/blog/sound-music-voice-generation/) Another practical introduction. It goes a little beyond what we cover in class.
 - Raschka, S. (2024). [Understanding Multimodal LLMs](https://magazine.sebastianraschka.com/p/understanding-multimodal-llms). More technical but clear.
-- Wu, J., Gan, W., Chen, Z., Wan, S., & Yu, P. S. (2023). [Multimodal Large Language Models: A Survey.](https://arxiv.org/abs/2311.13165) *arXiv preprint*. 
+- Wu, J., Gan, W., Chen, Z., Wan, S., & Yu, P. S. (2023). [Multimodal Large Language Models: A Survey.](https://arxiv.org/abs/2311.13165) *arXiv preprint*. A broad survey of how models combine text with images, audio and video.
 - Radford, A., Kim, J. W., Xu, T., Brockman, G., McLeavey, C., & Sutskever, I. (2023, July). [Robust speech recognition via large-scale weak supervision.](https://cdn.openai.com/papers/whisper.pdf) In *International conference on machine learning* (pp. 28492-28518). PMLR. The original paper for [Whisper](https://openai.com/research/whisper).
 
 ### September 22, 2026:
@@ -151,8 +151,8 @@ Readings:
 Readings:
 
 - Jiang, X., Tian, Y., Hua, F., Xu, C., Wang, Y., & Guo, J. (2024). [A survey on large language model hallucination via a creativity perspective.](https://arxiv.org/abs/2402.06647) *arXiv preprint*. Very interesting paper. If you want to read just one article on this topic, this is a good candidate.
-- Wang, C., Liu, X., Yue, Y., Guo, Q., Hu, X., Tang, X., ... & Zhang, Y. (2025). [Survey on factuality in large language models.](https://dl.acm.org/doi/full/10.1145/3742420) *ACM Computing Surveys, 58(1), 1-37*. Comprehensive and informative. Not technical.
-- Anh-Hoang, D., Tran, V., & Nguyen, L. M. (2025). [Survey and analysis of hallucinations in large language models: attribution to prompting strategies or model behavior.](https://www.frontiersin.org/journals/artificial-intelligence/articles/10.3389/frai.2025.1622292/full) *Frontiers in Artificial Intelligence, 8, 1622292*. The authors argue that chain-of-thought prompting reduce hallucinations in prompt-sensitive scenarios.
+- Wang, C., Liu, X., Yue, Y., Guo, Q., Hu, X., Tang, X., ... & Zhang, Y. (2025). [Survey on factuality in large language models.](https://dl.acm.org/doi/full/10.1145/3742420) *ACM Computing Surveys, 58(1), 1-37*. Wide-ranging and informative. Not technical.
+- Anh-Hoang, D., Tran, V., & Nguyen, L. M. (2025). [Survey and analysis of hallucinations in large language models: attribution to prompting strategies or model behavior.](https://www.frontiersin.org/journals/artificial-intelligence/articles/10.3389/frai.2025.1622292/full) *Frontiers in Artificial Intelligence, 8, 1622292*. The authors argue that chain-of-thought prompting reduces hallucinations in prompt-sensitive scenarios.
 - Shao, A. (2025). [New sources of inaccuracy? A conceptual framework for studying AI hallucinations.](https://misinforeview.hks.harvard.edu/article/new-sources-of-inaccuracy-a-conceptual-framework-for-studying-ai-hallucinations/) *Harvard Kennedy School Misinformation Review*. Worth reading as well.
 - OpenAI (2024). [Does ChatGPT tell the truth?](https://help.openai.com/en/articles/8313428-does-chatgpt-tell-the-truth) Practical advice.
 - Luo, Q., King, G., Puett, M., & Smith, M. D. (2026). [Inducing sustained creativity and diversity in large language models.](https://gking.harvard.edu/sites/g/files/omnuum7116/files/2026-03/Inducing%20sustained%20creativity%20and%20diversity%20in%20LLMs.pdf) *Working paper, Harvard University*. Proposes a novel decoding scheme that unlocks diverse and creative LLM outputs beyond standard modal decoding.
@@ -233,7 +233,7 @@ Readings:
 Readings:
 
 - Obermeyer, Z., Powers, B., Vogeli, C., & Mullainathan, S. (2019). [Dissecting racial bias in an algorithm used to manage the health of populations.](https://science.sciencemag.org/content/366/6464/447) *Science*, *366*(6464), 447-453. An important paper on the topic. We will discuss it in class.
-- Li, Y. et al. (2023). [Large language models in finance: a survey](https://arxiv.org/abs/2311.10723). *ICAIF-23*. A comprehensive overview. Easy to read.
+- Li, Y. et al. (2023). [Large language models in finance: a survey](https://arxiv.org/abs/2311.10723). *ICAIF-23*. A thorough overview. Easy to read.
 - Opel, N., & Breakspear, M. (2026). [Transforming mental health research and care through artificial intelligence](https://www.science.org/doi/10.1126/science.adz9193) *Science*, *391*(6782), 249-258. The authors review ways in which AI may reduce care inequities when deployed responsibly. They discuss how AI can be useful across several stages of care, from prevention to treatment and rehabilitation.
 - Agentic Health AI. (2025). [Awesome AI agents for healthcare](https://github.com/AgenticHealthAI/awesome-ai-agents-for-healthcare). A curated list of research papers, projects, and resources related to the application of AI agents for healthcare, including medical image analysis, EHR manipulation, counseling, drug discovery, patient dialogue, and healthcare administration.
 - Zouq, G. (2026). [Awesome AI in Finance](https://github.com/georgezouq/awesome-ai-in-finance). Same thing for finance.
@@ -264,7 +264,7 @@ Readings:
 Readings:
 
 - Taddeo, M., & Floridi, L. (2018). [How AI can be a force for good.](https://www.science.org/doi/abs/10.1126/science.aat5991) *Science*, *361*(6404), 751-752. A philosophical discussion on the ethical implications of AI, including privacy concerns.
-- Hoofnagle, C. J., Van Der Sloot, B., & Borgesius, F. Z. (2019). [The European Union general data protection regulation: what it is and what it means.](https://www.tandfonline.com/doi/full/10.1080/13600834.2019.1573501) *Information & Communications Technology Law*, *28*(1), 65-98. A comprehensive overview of the GDPR, the most influential data protection law in the world.
+- Hoofnagle, C. J., Van Der Sloot, B., & Borgesius, F. Z. (2019). [The European Union general data protection regulation: what it is and what it means.](https://www.tandfonline.com/doi/full/10.1080/13600834.2019.1573501) *Information & Communications Technology Law*, *28*(1), 65-98. A detailed overview of the GDPR, the most influential data protection law in the world.
 - European Data Protection Board (2025). [AI privacy risks & mitigations Large Language Models (LLMs).](https://www.edpb.europa.eu/our-work-tools/our-documents/support-pool-experts-projects/ai-privacy-risks-mitigations-large_en) This report provides use cases examples on the application of the risk management framework in real-world scenarios.
 - OECD (2026). [OECD due diligence guidance for responsible AI](https://www.oecd.org/en/publications/oecd-due-diligence-guidance-for-responsible-ai_41671712-en.html). Practical guidance for organisations to implement good AI practices.
 - King, J. & Meinhardt, C. (2024). [Rethinking privacy in the AI era: policy provocations for a data-centric world.](https://hai.stanford.edu/policy/white-paper-rethinking-privacy-ai-era-policy-provocations-data-centric-world) The authors analyse how existing and future privacy and data protection regulation will impact the development and deployment of AI systems.
@@ -284,7 +284,7 @@ Readings:
 Readings:
 
 - Acemoglu, D., & Restrepo, P. (2019). [Automation and new tasks: how technology displaces and reinstates labor.](https://www.aeaweb.org/articles?id=10.1257/jep.33.2.3) *Journal of Economic Perspectives*, *33*(2), 3-30.
-- World Economic Forum. (2025). [The future of jobs report 2025.](https://www.weforum.org/reports/the-future-of-jobs-report-2025) A comprehensive report on how jobs are expected to change.
+- World Economic Forum. (2025). [The future of jobs report 2025.](https://www.weforum.org/reports/the-future-of-jobs-report-2025) A wide-ranging report on how jobs are expected to change.
 - Financial Times. (2026). [The great graduate job drought](https://www.ft.com/content/c89496b1-bc8d-425e-b86b-ec89402410e4). Also available [here](https://archive.ph/qDFWp). An overview of the job market for recent graduates. You may want to read this one. Spoiler: it's not good.
 - Jones, C. (2026). [AI and our economic future](https://web.stanford.edu/~chadj/AIandEconomicFuture.pdf). A working paper that reviews the literature on the economic effects of AI. Written for a broad audience, to be published in the *Journal of Economic Perspectives*. 
 - Strain, Michael R. (2024). [The case for AI optimism.](https://nationalaffairs.com/publications/detail/the-case-for-ai-optimism). Maybe things as not as bad as they seem?
@@ -311,7 +311,7 @@ Readings:
 - McBain, R. K., et al. (2025). [Use of generative AI for mental health advice among adolescents and young adults.](https://doi.org/10.1001/jamanetworkopen.2025.42281) *JAMA Network Open*. A nationally representative survey showing 1 in 8 US adolescents and young adults use AI chatbots for mental health advice.
 - Orben, A., & Przybylski, A. K. (2019). [The association between adolescent well-being and digital technology use.](https://doi.org/10.1038/s41562-018-0506-1) *Nature Human Behaviour*, *3*, 173-182. A specification-curve analysis of 355,000+ adolescents finding that technology use explains at most 0.4% of variation in wellbeing.
 - Twenge, J. M., Haidt, J., Lozano, J., & Cummins, K. M. (2022). [Specification curve analysis shows that social media use is linked to poor mental health, especially among girls.](https://doi.org/10.1016/j.actpsy.2022.103512) *Acta Psychologica*, *224*, 103512. A direct rebuttal to Orben & Przybylski using the same method, arguing the relationship is stronger and gender-differentiated.
-- Arguedas, A. R., Robertson, C. T., Fletcher, R., & Nielsen, R. K. (2022). [Echo chambers, filter bubbles, and polarisation: a literature review.](https://reutersinstitute.politics.ox.ac.uk/echo-chambers-filter-bubbles-and-polarisation-literature-review) Reuters Institute, University of Oxford. A comprehensive synthesis of the evidence, finding the picture is more mixed than popular coverage suggests.
+- Arguedas, A. R., Robertson, C. T., Fletcher, R., & Nielsen, R. K. (2022). [Echo chambers, filter bubbles, and polarisation: a literature review.](https://reutersinstitute.politics.ox.ac.uk/echo-chambers-filter-bubbles-and-polarisation-literature-review) Reuters Institute, University of Oxford. A careful synthesis of the evidence, finding the picture is more mixed than popular coverage suggests.
 - MIT Technology Review (2025). [We did the math on AI’s energy footprint. Here’s the story you haven’t heard.](https://www.technologyreview.com/2025/05/20/1116327/ai-energy-usage-climate-footprint-big-tech/) A data-driven investigation into the opacity of Big Tech’s energy reporting.
 
 ### November 17, 2026:
@@ -324,7 +324,7 @@ Readings:
 - Vosoughi, S., Roy, D., & Aral, S. (2018). [The spread of true and false news online](https://www.science.org/doi/abs/10.1126/science.aap9559). *Science*, *359*(6380), 1146-1151. A seminal paper on the topic of misinformation. It shows that false news spreads faster and farther than true news, and that bots are not the main driver of this phenomenon.
 - Lazer, D. M., Baum, M. A., Benkler, Y., Berinsky, A. J., Greenhill, K. M., Menczer, F., ... & Zittrain, J. L. (2018). [The science of fake news](https://www.science.org/doi/abs/10.1126/science.aao2998). *Science*, 359(6380), 1094-1096. A call to action for researchers to study misinformation and develop solutions.
 - Allcott, H., & Gentzkow, M. (2017). [Social media and fake news in the 2016 election](https://www.aeaweb.org/articles?id=10.1257%2Fjep.31.2.211&ref=aurelius-ghost.ykaqi5.easypanel.host). *Journal of economic perspectives*, 31(2), 211-236. A widely-cited paper that analyses the economics of fake news.
-- Mirsky, Y., & Lee, W. (2020). [The creation and detection of deepfakes: a survey](https://arxiv.org/abs/2004.11138). *arXiv* preprint arXiv:2004.11138. A technical survey on deepfakes. Quite technical, though. If you are interested in the topic but don't have a technical background, you can skip this one and read the next one instead.
+- Mirsky, Y., & Lee, W. (2020). [The creation and detection of deepfakes: a survey](https://arxiv.org/abs/2004.11138). *arXiv preprint* arXiv:2004.11138. A technical survey on deepfakes. Quite technical, though. If you are interested in the topic but don't have a technical background, you can skip this one and read the next one instead.
 - Chesney, R., & Citron, D. K. (2019). [Deepfakes and the new disinformation war.](https://www.foreignaffairs.com/articles/world/2018-12-11/deepfakes-and-new-disinformation-war) *Foreign Affairs*. A short article about the risks of deepfakes and how to address them.
 
 ### November 19, 2026:
