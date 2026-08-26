@@ -1,4 +1,4 @@
-# Lecture 20: Labour Markets and Economic Effects
+# Lecture 21: Labour Markets and Economic Effects
 
 This lecture examines what AI means for jobs and the economy, combining historical perspective with current evidence and economic analysis to help students think about their own career paths.
 
@@ -30,8 +30,8 @@ This lecture examines what AI means for jobs and the economy, combining historic
 
 ## Resources
 
-* [Lecture slides (HTML)](20-labour.html)
-* [Lecture source (QMD)](20-labour.qmd)
+* [Lecture slides (HTML)](21-labour.html)
+* [Lecture source (QMD)](21-labour.qmd)
 * [Acemoglu & Restrepo (2019) – Automation and new tasks](https://www.aeaweb.org/articles?id=10.1257/jep.33.2.3)
 * [WEF Future of Jobs Report 2025](https://www.weforum.org/reports/the-future-of-jobs-report-2025)
 * [OpenAI – How people are using ChatGPT](https://openai.com/index/how-people-are-using-chatgpt/)

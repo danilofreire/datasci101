@@ -1,37 +1,40 @@
-# Lecture 14: Documentation and Dataset Governance
+# Lecture 15: AI Agents: When Models Start Doing Things
 
-This lecture introduces documentation as the first line of defence against AI bias. Students learn to read and create datasheets for datasets and model cards, and explore how large-scale AI training data is collected and governed.
+This lecture introduces AI agents to non-technical undergraduates: what changes when a model can use tools and act in the world, rather than just answer questions. Students learn the agent loop, where agents fail, and how to decide what to delegate.
 
 ## Main ideas
 
-### 1. Why documentation matters
+### 1. From chatbots to agents
 
-* **The "nutrition label" analogy**: just as food labels tell you what you are eating, datasheets tell you what your model is trained on.
-* **Without documentation**: you cannot identify bias, reproduce results, or hold anyone accountable.
-* **Documentation as accountability**: it forces developers to think about their data before training.
+* **The definition**: an agent = a language model + tools + a loop + a goal, with limited supervision.
+* **The agent loop**: goal → plan → act → observe → repeat → stop.
+* **Tools**: web search, browsing, code execution, files, email, payments. Every tool is a capability and an attack surface.
+* **Products students already use**: Deep Research, coding agents, computer use, customer service and booking agents.
 
-### 2. Datasheets for datasets
+### 2. How agents work
 
-* **Gebru et al. (2018)**: a standardised template covering motivation, composition, collection process, intended uses, and maintenance.
-* **Key questions**: who collected the data, why, from whom, and with what consent?
-* **Activity**: students create a mini-datasheet for a familiar dataset.
+* **Retrieval is just another tool**: agentic research as RAG with initiative.
+* **Memory**: scratchpads, summaries, and sub-tasks; why long tasks degrade.
+* **Multi-agent systems**: orchestrators and workers, and the coordination risks they add.
 
-### 3. Model cards
+### 3. When agents go wrong
 
-* **Mitchell et al. (2019)**: document intended use, metrics, ethical considerations, and what the model is *not* for.
-* **System cards**: document the whole AI system, not just one model (red teaming, oversight, component interactions).
-* **Disaggregated evaluation**: report metrics by subgroup to reveal hidden performance gaps.
+* **The multiplication of mistakes**: 95% per-step accuracy is ~36% over 20 steps.
+* **Prompt injection with tools**: Simon Willison's "lethal trifecta" (private data + untrusted content + external communication).
+* **Case studies**: Replit's agent deleting a production database (2025); Anthropic's Project Vend (Claudius runs a shop).
+* **Automation bias**: approval fatigue and over-delegation.
 
-### 4. LLM training data governance
+### 4. Trust and delegation
 
-* **Large-scale datasets**: LAION, Common Crawl, and questions about data provenance.
-* **FAIR principles**: Findable, Accessible, Interoperable, Reusable.
-* **The consent problem**: most AI training data is collected without explicit consent.
+* **The credit card test**: reversibility × stakes decides what to delegate.
+* **Guardrails**: permissions, sandboxes, action logs, undo, spending limits.
+* **Preview of Lecture 25**: goals taken literally; the proxy problem with hands.
+* **Activity**: audit a flawed agent action log and find the failures.
 
 ## Resources
 
-* [Lecture Slides (HTML)](14-documentation.html)
-* [Lecture Source (QMD)](14-documentation.qmd)
-* [Datasheets for Datasets (Gebru et al., 2021)](https://arxiv.org/abs/1803.09010)
-* [Model Cards for Model Reporting (Mitchell et al., 2019)](https://arxiv.org/abs/1810.03993)
-* [FAIR Principles](https://www.go-fair.org/fair-principles/)
+* [Lecture Slides (HTML)](15-agents.html)
+* [Lecture Source (QMD)](15-agents.qmd)
+* [Building Effective Agents (Anthropic, 2024)](https://www.anthropic.com/research/building-effective-agents)
+* [The Lethal Trifecta (Willison, 2025)](https://simonwillison.net/2025/Jun/16/the-lethal-trifecta/)
+* [Project Vend (Anthropic, 2025)](https://www.anthropic.com/research/project-vend-1)

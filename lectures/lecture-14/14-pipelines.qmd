@@ -1,6 +1,6 @@
 ---
 title: "DATASCI 101: Introduction to AI Applications"
-subtitle: "Lecture 14: Building Reliable Pipelines, Monitoring, and Testing"
+subtitle: "Lecture 14: When AI Systems Fail: Pipelines, Monitoring, and Documentation"
 author:
   - name: Danilo Freire
     orcid: 0000-0002-4712-6810
@@ -60,9 +60,10 @@ if (!require("fontawesome", character.only = TRUE)) {
 - Chunk → Embed → Retrieve → Generate
 - RAG reduces hallucinations by [30–50%]{.alert}
 - But RAG isn't perfect: [retrieval errors]{.alert} still occur
-- **Today**: What happens [behind the scenes]{.alert} when you use AI? 
+- **Today**: What happens [behind the scenes]{.alert} when you use AI?
 - You've all experienced AI going down, being slow, or giving weird answers
 - [Why does this happen?]{.alert} And what can you do about it?
+- We also look at [documentation]{.alert}: how companies record what their systems can and cannot do, and why that record matters when things break
 :::
 
 :::{.column width=50%}
@@ -96,17 +97,17 @@ Source: [Astera Software](https://www.astera.com/type/blog/rag-pipeline/)
 :::
 
 :::{.column width=50%}
-**Part 3: Monitoring Basics**
+**Part 3: Monitoring and Testing**
 
 - What to watch: the key metrics
-- Alerting: the "canary in the coal mine"
-- Dashboards and observability
+- Why testing AI is hard
+- Input and output validation
 
-**Part 4: Evaluating AI Tools as a User**
+**Part 4: Documentation and Accountability**
 
-- Signs of a reliable vs. unreliable AI
-- Your personal reliability checklist
-- Hands-on: Rate real AI tools!
+- Datasheets, model cards, system cards
+- Consent and the data supply chain
+- Being a savvy AI user
 :::
 :::
 :::
@@ -117,6 +118,9 @@ Source: [Astera Software](https://www.astera.com/type/blog/rag-pipeline/)
 :::{style="text-align: center; margin-top: 30px;"}
 [![](figures/turing-test.webp){width="55%"}](#){data-modal-type="image" data-modal-url="figures/turing-test.webp"}
 :::
+
+<!-- NOTE (Fall 2026 revision): this DataFest slide is a Spring leftover (sign-up deadline March 2026).
+Commented out rather than deleted; restore and update the dates if DataFest runs again this year.
 
 ## DataFest 2026
 
@@ -141,6 +145,8 @@ Source: [Astera Software](https://www.astera.com/type/blog/rag-pipeline/)
 :::
 :::
 :::
+
+END OF COMMENTED-OUT DATAFEST SLIDE -->
 
 # What is a Pipeline? 🏭 {background-color="#1B3A6B"}
 
@@ -780,6 +786,424 @@ Source: [ApX Machine Learning](https://apxml.com/courses/intro-llm-red-teaming/c
 :::
 :::
 
+# Documentation: The Missing Instruction Manual 📝 {background-color="#1B3A6B"}
+
+## The horror stories: What happens without documentation
+
+:::{style="margin-top: 30px; font-size: 18px;"}
+:::{.columns}
+:::{.column width=55%}
+**ImageNet's hidden problems (2019):**
+
+- Most influential computer vision dataset ever
+- Powered 10+ years of AI research
+- [Nobody knew]{.alert} where the images came from!
+- Later discovered:
+  - Scraped from Flickr without consent
+  - Racist and sexist labels ([MTurk](https://www.mturk.com/) workers)
+  - Non-consensual photos of minors
+  - Content from revenge porn sites
+
+**The root cause?**
+
+> They built it quickly and never documented what they were doing!
+
+[Thousands of AI systems were built on this undocumented foundation!]{.alert}
+
+Monitoring catches problems [after]{.alert} deployment. Documentation prevents some of them [before]{.alert} deployment
+:::
+
+:::{.column width=45%}
+:::{style="text-align: center;"}
+[![ImageNet analysis](figures/imagenet-issues.webp){width="100%"}](#){data-modal-type="image" data-modal-url="figures/imagenet-issues.webp"}
+
+Source: [Excavating AI](https://excavating.ai/) (great resource, check it out!)
+:::
+:::
+:::
+:::
+
+## Documentation as accountability
+
+:::{style="margin-top: 30px; font-size: 22px;"}
+:::{.columns}
+:::{.column width=55%}
+**Without documentation, we can't:**
+
+- ❌ Know if data were collected ethically
+- ❌ Identify sources of bias
+- ❌ Determine if a model is appropriate for a use case
+- ❌ Assign responsibility when things go wrong
+- ❌ Reproduce or verify results
+- ❌ Update or fix problems later
+
+**With documentation, we can:**
+
+- ✅ Make informed choices about using a dataset
+- ✅ Trace bias back to its source
+- ✅ Match models to appropriate applications
+- ✅ Hold creators accountable
+- ✅ Build trust with users and regulators
+:::
+
+:::{.column width=45%}
+:::{style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px;"}
+**The legal angle:**
+
+Regulations are [now requiring]{.alert} documentation:
+
+- **EU AI Act**: Mandates documentation for high-risk AI
+- **NYC Law 144**: Requires bias audits (needs documentation!)
+- **California CCPA**: Data transparency requirements
+
+We'll cover US vs EU regulations in detail in [Lecture 18]{.alert}.
+
+If you can't document it, you [can't deploy it]{.alert} (legally).
+:::
+:::
+:::
+:::
+
+## The three pillars: Datasheets, Model Cards, and System Cards
+
+:::{style="margin-top: 30px; font-size: 21px;"}
+:::{style="text-align: center;"}
+[![](figures/ai-model-cards.jpg){width="60%"}](#){data-modal-type="image" data-modal-url="figures/ai-model-cards.jpg"}
+
+Source: [Laurel Papworth](https://laurelpapworth.com/datasheets-model-cards/)
+:::
+
+:::{style="margin-top: 20px;"}
+They originated from landmark papers: [Gebru et al. (2018)](https://arxiv.org/abs/1803.09010) for datasheets and [Mitchell et al. (2019)](https://arxiv.org/abs/1810.03993) for model cards.
+
+These are now [industry standards]{.alert} adopted by [Google](https://deepmind.google/models/model-cards/), [Microsoft](https://azure.microsoft.com/en-us/products/ai-foundry/models), [Hugging Face](https://huggingface.co/docs/hub/en/model-cards), and others!
+:::
+:::
+
+## What is a datasheet?
+
+:::{style="margin-top: 30px; font-size: 20px;"}
+:::{.columns}
+:::{.column width=55%}
+**Inspired by electronics industry:**
+
+- Every electronic component has a "datasheet"
+- Spec sheet with all relevant information
+- Engineers can make informed decisions
+
+**[Timnit Gebru et al. (2018)](https://arxiv.org/abs/1803.09010) proposed the same for datasets:**
+
+> "A datasheet documents the motivation, composition, collection process, recommended uses, and other information about a dataset."
+
+**What a datasheet answers:**
+
+- [Motivation]{.alert}: Why was it created? Who funded it?
+- [Composition]{.alert}: What is in it? Errors? Sensitive data?
+- [Collection]{.alert}: Scraped, surveyed, sensors? Was there consent?
+- [Preprocessing]{.alert}: What was cleaned, filtered, or removed?
+- [Uses]{.alert}: What is it for, and what should it [NOT]{.alert} be used for?
+- [Distribution and maintenance]{.alert}: Who updates it? How to report issues?
+:::
+
+:::{.column width=45%}
+:::{style="text-align: center;"}
+[![Datasheets paper](figures/datasheet.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/datasheet.png"}
+
+:::{style="font-size: 18px; margin-top: 15px;"}
+Source: [Jonathan Rystrøm (2024) - Dataset Card: Multicultural WVS Alignment](https://huggingface.co/datasets/ryzzlestrizzle/multicultural-wvs-alignment)
+:::
+:::
+:::
+:::
+:::
+
+## Activity: Let's read a real datasheet! 📖
+
+:::{style="margin-top: 30px; font-size: 21px;"}
+:::{.columns}
+:::{.column width=50%}
+**Read Anthropic's HH-RLHF Dataset Card:**
+
+1. Visit [Anthropic/hh-rlhf](https://huggingface.co/datasets/Anthropic/hh-rlhf)
+2. Read the Dataset Card carefully
+3. This dataset is used to train AI assistants to be [helpful and harmless]{.alert}!
+
+**Questions to answer:**
+
+- What are the [two types]{.alert} of data in this dataset?
+- Why does Anthropic warn against using this for supervised training of dialogue agents?
+- What content warning does the dataset include?
+- How can you contact the authors with issues?
+:::
+
+:::{.column width=50%}
+**Evaluate the documentation:**
+
+- ✅ Clear purpose: Train preference/reward models for RLHF
+- ✅ Explicit warnings about misuse (don't train chatbots directly!)
+- ✅ Content disclaimer about harmful material
+- ✅ Links to papers for methodology details
+- ✅ Contact email provided
+
+**Discussion:**
+
+- Would you be comfortable using this dataset?
+- What [ethical responsibilities]{.alert} come with accessing data that contains harmful content for research purposes?
+
+⏱️ 3 minutes to explore!
+:::
+:::
+:::
+
+## Model cards: The "user manual" for AI models
+
+:::{style="margin-top: 30px; font-size: 19px;"}
+:::{.columns}
+:::{.column width=55%}
+Just like datasheets document data, [model cards]{.alert} document models.
+
+**Margaret Mitchell et al. (2019):**
+
+> "Model cards are short documents accompanying trained ML models that provide benchmarked evaluation in a variety of conditions."
+
+**Core sections:**
+
+1. **Model details**: What is this model?
+2. **Intended use**: What should it be used for?
+3. **Factors**: What affects performance?
+4. **Metrics**: How was it evaluated?
+5. **Training data**: What was it trained on?
+6. **Ethical considerations**: What could go wrong?
+7. **Caveats and recommendations**: Warnings!
+:::
+
+:::{.column width=45%}
+:::{style="text-align: center;"}
+[![Model cards paper](figures/model-cards-paper.png){width="50%"}](#){data-modal-type="image" data-modal-url="figures/model-cards-paper.png"}
+
+:::{style="font-size: 18px; margin-top: 15px;"}
+Source: [Mitchell et al. (2019)](https://arxiv.org/abs/1810.03993)
+:::
+:::
+:::
+:::
+:::
+
+## Intended use: The most important section
+
+:::{style="margin-top: 30px; font-size: 22px;"}
+:::{.columns}
+:::{.column width=55%}
+**Why "intended use" matters:**
+
+A hammer is a great tool. But:
+
+- ✅ Intended use: Driving nails
+- ❌ NOT intended for: Brain surgery
+
+**Models need the same clarity:**
+
+:::{style="font-size: 20px;"}
+| Model | Intended Use | NOT For |
+|-------|--------------|---------|
+| Gemini 3 | Conversation, assistance | Medical diagnosis |
+| Face detection | Placing cameras | Law enforcement ID |
+| Sentiment analysis | Product feedback | Hiring decisions |
+:::
+
+**Without this guidance:**
+
+People [will]{.alert} use models inappropriately and harm others.
+
+Remember Air Canada? The chatbot's "intended use" was answering questions, [not writing refund policy]{.alert}. Nobody enforced the boundary
+:::
+
+:::{.column width=45%}
+:::{style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px;"}
+**Real example: [Gemini 3 Model Card](https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-3-Pro-Model-Card.pdf)** (edited and summarised)
+
+**Intended use:**
+
+"Assistance with a variety of text-based tasks"
+
+**Out-of-scope:**
+
+"Assistance with illegal activities"
+
+"Chemical synthesis"
+
+"Mental health crisis intervention"
+
+:::
+:::
+:::
+:::
+
+## Disaggregated evaluation: Breaking it down
+
+:::{style="margin-top: 30px; font-size: 21px;"}
+:::{.columns}
+:::{.column width=55%}
+**Why overall accuracy isn't enough:**
+
+- A model can be [90% accurate overall]{.alert}
+- But 95% for Group A and 70% for Group B!
+
+**Disaggregated evaluation** = report performance [separately]{.alert} for different groups.
+
+**Real example: [OpenAI CLIP Model Card (2021)](https://github.com/openai/clip/blob/main/model-card.md)**
+
+Gender classification accuracy using [FairFace](https://arxiv.org/abs/1908.04913) dataset:
+
+:::{style="font-size: 18px;"}
+| Race Category | Gender Accuracy |
+|---------------|-----------------|
+| Middle Eastern | [98.4%]{.alert} (highest) |
+| White | [96.5%]{.alert} (lowest) |
+| All races | >96% |
+:::
+
+Racial classification: ~93% | Age classification: ~63%
+:::
+
+:::{.column width=45%}
+:::{style="background: rgba(230, 57, 70, 0.1); padding: 15px; border-radius: 10px; font-size: 18px;"}
+**CLIP's bias findings:**
+
+OpenAI found [significant disparities]{.alert} when classifying people into crime-related categories:
+
+- Performance varied by race and gender
+- Disparities shifted based on how classes were constructed
+- Risk of denigration harms identified
+
+> "We tested the risk of certain kinds of denigration with CLIP by classifying images of people from Fairface into crime-related and non-human animal categories."
+:::
+
+:::
+:::
+:::
+
+## System cards vs model cards
+
+:::{style="margin-top: 30px; font-size: 20px;"}
+:::{.columns}
+:::{.column width=55%}
+**A newer concept: System Cards**
+
+Modern AI products often chain several models together. A model card only covers one of them, so **system cards** document the [entire system]{.alert}.
+
+**What's included in a system card:**
+
+- Multiple models working together
+- How components interact
+- Human oversight mechanisms
+- Deployment context and safeguards
+- Red teaming and safety evaluations
+
+**Who's using system cards:**
+
+- **OpenAI**: Released [o1 System Card](https://openai.com/index/openai-o1-system-card/) in December 2024
+- **Anthropic**: Publishes system cards for each Claude release
+- **Meta**: Released 22 system cards in 2023 for their AI products
+:::
+
+:::{.column width=45%}
+:::{style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; font-size: 20px;"}
+**Model Card vs System Card:**
+
+| Aspect | Model Card | System Card |
+|--------|------------|-------------|
+| Scope | Single model | Entire system |
+| Focus | Performance | Safety + deployment |
+| Audience | Developers | Developers + public |
+| Includes | Training data, metrics | Red teaming, safeguards |
+:::
+
+:::{style="margin-top: 20px; text-align: center;"}
+[![](figures/system-card.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/system-card.png"}
+
+:::{style="font-size: 18px;"}
+[OpenAI o1 System Card (Dec 2024)](https://openai.com/index/openai-o1-system-card)
+:::
+:::
+:::
+:::
+:::
+
+## Consent and the data supply chain
+
+:::{style="margin-top: 30px; font-size: 22px;"}
+:::{.columns}
+:::{.column width=55%}
+**The uncomfortable truth about AI training data:**
+
+Most large AI models are trained on data [without explicit consent]{.alert}:
+
+- Web scraping (your blog posts, photos, art)
+- Social media posts (even "private" ones)
+- Books and articles (often without author permission)
+- Code repositories (GPL violations?)
+
+**The consent problem:**
+
+- You posted a photo to Instagram in 2015
+- It was scraped into a dataset
+- That dataset trained a facial recognition system
+- That system is now used for surveillance
+:::
+
+:::{.column width=45%}
+:::{style="background: rgba(230, 57, 70, 0.1); padding: 15px; border-radius: 10px;"}
+**High-profile cases:**
+
+- **LAION-5B**: Billions of images scraped; later found to contain child pornography (Source: [CNN](https://www.cnn.com/2023/12/21/tech/child-sexual-abuse-material-ai-training-data))
+- **Clearview AI**: Scraped 30+ billion faces from social media (Source: [BBC](https://www.bbc.com/news/technology-67133157))
+- **Getty Images vs. Stability AI**: Lawsuit over image scraping (rejected!) (Source: [Paul Weiss](https://www.paulweiss.com/insights/client-memos/getty-images-v-stability-ai-the-uk-courts-first-word-on-use-of-copyright-works-in-ai-model-development))
+:::
+
+:::{style="margin-top: 10px; font-size: 26px; text-align: center;"}
+[Did you consent to this?]{.alert} 🤔
+:::
+:::
+:::
+:::
+
+## Discussion: Who owns the data? 💭
+
+:::{style="margin-top: 30px; font-size: 22px;"}
+:::{.columns}
+:::{.column width=50%}
+**Scenario:**
+
+You wrote a poem and posted it online in 2018. An AI company scraped it, and now their AI can write poems "inspired by" your style.
+
+**Questions to debate:**
+
+1. Did the company do anything wrong?
+2. Should you be compensated?
+3. Should you be able to opt out [retroactively]{.alert}?
+:::
+
+:::{.column width=50%}
+**Different perspectives:**
+
+:::{style="font-size: 20px;"}
+**Tech companies**: "It's fair use, like learning from reading books"
+
+**Artists**: "You're profiting from my creative work without consent"
+
+**Lawyers**: "Current law wasn't designed for this"
+
+**Users**: "I just want cool AI. I don't care about the source"
+:::
+
+:::{style="margin-top: 20px; background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px;"}
+**Your turn**: Where do you stand?
+:::
+:::
+:::
+:::
+
 # What Can YOU Do? 🛡️ {background-color="#1B3A6B"}
 
 ## Being a savvy AI user
@@ -801,6 +1225,10 @@ Source: [ApX Machine Learning](https://apxml.com/courses/intro-llm-red-teaming/c
    - Pipeline problem: AI is down, slow, or glitching
    - Hallucination: AI is confident but wrong
    - Working as intended: AI refuses for safety reasons
+
+4. **Read the documentation**
+   - Model cards say what a tool is [not]{.alert} for
+   - Using it outside its intended use? That risk is on you
 :::
 
 :::{.column width=45%}
@@ -956,7 +1384,11 @@ Three different AI assistants give you three completely different answers about 
 
 - `r fa('bell')` [Monitoring]{.alert}: Companies track metrics you never see. When monitoring fails, you read about it in the news
 
-- `r fa('user-shield')` [You should]{.alert} compare AIs, check status pages, distinguish pipeline problems from hallucinations
+- `r fa('file-alt')` [Documentation]{.alert}: Datasheets describe data, model cards describe models and their [intended use]{.alert}, system cards describe whole products
+
+- `r fa('user-check')` [Consent]{.alert}: Much AI training data was collected without permission. Undocumented data (ImageNet!) hides problems for years
+
+- `r fa('user-shield')` [You should]{.alert} compare AIs, check status pages, read model cards, and distinguish pipeline problems from hallucinations
 
 :::
 

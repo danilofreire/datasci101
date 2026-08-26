@@ -1,4 +1,4 @@
-# Lecture 17: AI Regulation and Standards Around the World
+# Lecture 18: AI Regulation and Standards Around the World
 
 This lecture surveys the emerging global landscape of AI governance, comparing approaches across major jurisdictions and examining what these regulatory frameworks mean for practitioners and citizens.
 
@@ -32,8 +32,8 @@ This lecture surveys the emerging global landscape of AI governance, comparing a
 
 ## Resources
 
-* [Lecture slides (HTML)](17-regulation.html)
-* [Lecture source (QMD)](17-regulation.qmd)
+* [Lecture slides (HTML)](18-regulation.html)
+* [Lecture source (QMD)](18-regulation.qmd)
 * [EU AI Act text](https://www.europarl.europa.eu/topics/en/article/20230601STO93804/eu-ai-act-first-regulation-on-artificial-intelligence)
 * [OECD AI Policy Observatory](https://oecd.ai/)
 * [Stanford HAI AI Policy](https://hai.stanford.edu/policy)

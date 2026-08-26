@@ -378,7 +378,7 @@ of sugar" when the recipe clearly says "2 cups of salt." 🧂
 :::{style="margin-top: 30px; font-size: 28px;"}
 - [Thursday, September 24, 2:30 pm, this room]{.alert}
 - Bring your laptop and your charger 🔌
-- The quiz is on [Canvas]{.alert} — log in before you arrive
+- The questions are handed out [on paper]{.alert}; you type your answers in a Word document or PDF and [upload the file to Canvas]{.alert} before the end of class, so log in before you arrive
 - Read each question [twice]{.alert} before you start writing
 - If you are stuck, [skip and come back]{.alert} — do not lose the easy points
 - Cite the AI tool you used (if any). [Honesty over polish]{.alert}

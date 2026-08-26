@@ -1,4 +1,4 @@
-# Lecture 09: Prompt Engineering and Advanced Prompting Techniques
+# Lecture 10: Prompt Engineering and Advanced Prompting Techniques
 
 This lecture covers the science and practice of effective prompting for large language models. We examine research-backed techniques that improve AI performance, from basic prompt structure to chain-of-thought reasoning and AI agents.
 
@@ -37,8 +37,8 @@ This lecture covers the science and practice of effective prompting for large la
 
 ## Resources
 
-- [Lecture Slides (HTML)](09-prompting-new.html)
-- [Lecture Source (QMD)](09-prompting-new.qmd)
+- [Lecture Slides (HTML)](10-prompting.html)
+- [Lecture Source (QMD)](10-prompting.qmd)
 - [Wei et al. (2022) Chain-of-Thought Paper](https://arxiv.org/abs/2201.11903)
 - [Prompting Guide](https://www.promptingguide.ai/)
 - [Google Gemini Prompting Guide (PDF)](https://services.google.com/fh/files/misc/gemini-for-google-workspace-prompting-guide-101.pdf)

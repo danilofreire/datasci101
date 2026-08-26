@@ -1,4 +1,4 @@
-# Lecture 14: Types of Bias and How They Arise
+# Lecture 16: Types of Bias and How They Arise
 
 This lecture provides a deep, critical exploration of AI bias for undergraduate students. Through case studies, debates, and the impossibility theorem, students grapple with difficult questions about fairness, accountability, and whether AI can ever be truly "fair."
 
@@ -32,8 +32,8 @@ This lecture provides a deep, critical exploration of AI bias for undergraduate 
 
 ## Resources
 
-* [Lecture Slides (HTML)](14-bias.html)
-* [Lecture Source (QMD)](14-bias.qmd)
+* [Lecture Slides (HTML)](16-bias.html)
+* [Lecture Source (QMD)](16-bias.qmd)
 * [Fairness and Machine Learning Book](https://fairmlbook.org/) (free)
 * [Gender Shades Project](http://gendershades.org/)
 * [ProPublica COMPAS Analysis](https://www.propublica.org/article/machine-bias-risk-assessments-in-criminal-sentencing)

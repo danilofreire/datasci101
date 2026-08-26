@@ -1,4 +1,4 @@
-# Lecture 24: Long-term Safety, Alignment, and Future of AI
+# Lecture 25: Long-term Safety, Alignment, and Future of AI
 
 This lecture addresses the longer-term challenges of ensuring AI systems remain safe and beneficial as capabilities increase. We examine the alignment problem, review current technical approaches, and consider different future trajectories and how we might shape them.
 

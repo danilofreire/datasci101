@@ -54,9 +54,9 @@ if (!require("fontawesome", character.only = TRUE)) {
 :::{style="margin-top: 20px; font-size: 27px;"}
 :::{.columns}
 :::{.column width=50%}
-- Last time we explored [data documentation and governance]{.alert}
-- Datasheets for datasets, model cards for models, system cards for AI systems
-- Data lineage: tracking where data comes from
+- Last time we explored [AI agents]{.alert}: models that act, not just answer
+- Tools, loops, compounding errors, and the [credit card test]{.alert}
+- Before that: pipelines, monitoring, and [documentation]{.alert} (datasheets, model cards, system cards)
 - The consent problem in AI training data
 - **Today**: [Types of bias]{.alert} and how they arise
 - This topic affects [real people in real ways]{.alert}, as we'll see

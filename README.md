@@ -2,7 +2,7 @@
 
 ## Course Overview
 
-This repository contains the source materials for [DATASCI 101: Introduction to AI Applications](https://danilofreire.github.io/datasci101). The course provides a comprehensive introduction to the fundamental concepts, tools, and techniques used in data science.
+This repository contains the source materials for [DATASCI 101: Introduction to AI Applications](https://danilofreire.github.io/datasci101). The course is a non-technical introduction to AI: how modern AI systems are built, where they fail, and how they affect society and the economy. No programming is required.
 
 ## Course Information
 
@@ -26,7 +26,7 @@ The course covers six main modules:
 1. **Orientation** - Introduction to AI and course overview
 2. **How AI systems are designed** - Dataset design, learning paradigms
 3. **Language and perception** - Natural language processing and computer vision
-4. **Retrieval, generation and pipelines** - Modern AI systems and workflows
+4. **Retrieval, generation, pipelines and agents** - Modern AI systems, workflows, and AI agents
 5. **Data ethics and bias** - Ethical considerations and bias mitigation
 6. **Policy, governance and social impact** - Regulation, privacy, and societal effects
 

@@ -1,4 +1,4 @@
-# Lecture 10: RAG, Semantic Search, and Grounding AI
+# Lecture 12: RAG, Semantic Search, and Grounding AI
 
 This lecture explains Retrieval-Augmented Generation (RAG) in accessible terms for non-technical undergraduates. Students learn why LLMs hallucinate, how semantic search works, and try no-code RAG tools hands-on.
 
@@ -38,8 +38,8 @@ This lecture explains Retrieval-Augmented Generation (RAG) in accessible terms f
 
 ## Resources
 
-* [Lecture Slides (HTML)](10-rag.html)
-* [Lecture Source (QMD)](10-rag.qmd)
+* [Lecture Slides (HTML)](12-rag.html)
+* [Lecture Source (QMD)](12-rag.qmd)
 * [NotebookLM](https://notebooklm.google.com/)
 * [ChatPDF](https://www.chatpdf.com/)
 * [Perplexity](https://perplexity.ai/)

@@ -66,7 +66,7 @@ if (!require("fontawesome", character.only = TRUE)) {
 | 0 | Orientation |
 | 1 | How AI systems are designed |
 | 2 | Language and perception |
-| 3 | Retrieval, generation, pipelines |
+| 3 | Retrieval, generation, pipelines, agents |
 | 4 | Data ethics and bias |
 | 5 | Policy, governance, social impact |
 | 6 | Applications, limits, and the future |
@@ -106,7 +106,7 @@ if (!require("fontawesome", character.only = TRUE)) {
 - The hype cycle keeps repeating. Worth keeping in mind when reading today's headlines
 
 :::{style="margin-top: 10px; background: rgba(45, 69, 99, 0.1); padding: 12px; border-radius: 10px; font-size: 17px;"}
-`r fa('link')` Next-token prediction explains hallucinations and creativity (L10) and sycophancy (L24). RLHF comes back in Lectures 4 and 24.
+`r fa('link')` Next-token prediction explains hallucinations and creativity (L11) and sycophancy (L25). RLHF comes back in Lectures 4 and 25.
 :::
 :::
 
@@ -133,7 +133,7 @@ The transformer architecture (2017)
 - [Cohen's Kappa]{.alert}: do annotators agree beyond chance? (> 0.61 = substantial agreement)
 
 :::{style="margin-top: 10px; background: rgba(45, 69, 99, 0.1); padding: 12px; border-radius: 10px; font-size: 17px;"}
-`r fa('link')` The proxy problem is the most recurring idea in this course: Goodhart's Law (L5), measurement bias (L15), the Optum case (L16), engagement metrics (L21).
+`r fa('link')` The proxy problem is the most recurring idea in this course: Goodhart's Law (L5), measurement bias (L16), the Optum case (L17), engagement metrics (L22).
 :::
 :::
 
@@ -187,7 +187,7 @@ The bias-variance trade-off
 - Always do [subgroup analysis]{.alert}: aggregate numbers can hide massive gaps
 
 :::{style="margin-top: 10px; background: rgba(45, 69, 99, 0.1); padding: 12px; border-radius: 10px; font-size: 17px;"}
-`r fa('link')` Goodhart's Law returns in RLHF (L4), the Optum case (L16), and engagement metrics (L21). Subgroup analysis is formalised as disaggregated evaluation in Lecture 14.
+`r fa('link')` Goodhart's Law returns in RLHF (L4), the Optum case (L17), and engagement metrics (L22). Subgroup analysis is formalised as disaggregated evaluation in Lecture 14.
 :::
 :::
 
@@ -215,7 +215,7 @@ The confusion matrix: TP, TN, FP, FN
 - [Parameters]{.alert} (learned by the model) vs [hyperparameters]{.alert} (set by you): [temperature]{.alert} controls randomness (low = safe, high = creative)
 
 :::{style="margin-top: 10px; background: rgba(45, 69, 99, 0.1); padding: 12px; border-radius: 10px; font-size: 17px;"}
-`r fa('link')` Embeddings come back in Lecture 7 (images as vectors), Lecture 11 (RAG/cosine similarity), and Lecture 23 (deepfake detection).
+`r fa('link')` Embeddings come back in Lecture 7 (images as vectors), Lecture 12 (RAG/cosine similarity), and Lecture 23 (deepfake detection).
 :::
 :::
 
@@ -241,7 +241,7 @@ king - man + woman ≈ queen
 - The unifying idea: text, images, and audio all become [embeddings]{.alert}. Once in vector space, the model cannot tell the modality apart
 
 :::{style="margin-top: 10px; background: rgba(45, 69, 99, 0.1); padding: 12px; border-radius: 10px; font-size: 17px;"}
-`r fa('link')` Same embedding idea as Lecture 6, applied to images and audio. Same vision tech powers medical imaging and deepfakes (L23). Regulating dual-use models: Lecture 17.
+`r fa('link')` Same embedding idea as Lecture 6, applied to images and audio. Same vision tech powers medical imaging and deepfakes (L23). Regulating dual-use models: Lecture 18.
 :::
 :::
 
@@ -255,7 +255,7 @@ CLIP: images and text in one shared space
 :::
 :::
 
-## Prompting techniques (Lecture 9)
+## Prompting techniques (Lecture 10)
 
 :::{style="margin-top: 30px; font-size: 22px;"}
 :::{.columns}
@@ -268,7 +268,7 @@ CLIP: images and text in one shared space
 - [Prompt injection]{.alert}: malicious input hijacks the agent's instructions
 
 :::{style="margin-top: 10px; background: rgba(45, 69, 99, 0.1); padding: 12px; border-radius: 10px; font-size: 17px;"}
-`r fa('link')` CoT reduces hallucinations (L10). Prompt injection came back in the chatbot failures (L13) and in why we need regulation (L17).
+`r fa('link')` CoT reduces hallucinations (L11). Prompt injection came back in the chatbot failures (L14), AI agents (L15), and in why we need regulation (L18).
 :::
 :::
 
@@ -282,9 +282,9 @@ Chain-of-thought prompting
 :::
 :::
 
-# Module 3: Retrieval, generation, and pipelines 🔍 {background-color="#1B3A6B"}
+# Module 3: Retrieval, generation, pipelines, and agents 🔍 {background-color="#1B3A6B"}
 
-## Hallucinations and creativity (Lecture 10)
+## Hallucinations and creativity (Lecture 11)
 
 :::{style="margin-top: 30px; font-size: 22px;"}
 :::{.columns}
@@ -296,7 +296,7 @@ Chain-of-thought prompting
 - Red flags: very specific numbers, precise citations, zero hedging, answers that feel too perfect
 
 :::{style="margin-top: 10px; background: rgba(45, 69, 99, 0.1); padding: 12px; border-radius: 10px; font-size: 17px;"}
-`r fa('link')` Root cause: next-token prediction (L1-2). Fix: RAG (L11). Sycophancy connects to the alignment problem (L24).
+`r fa('link')` Root cause: next-token prediction (L1-2). Fix: RAG (L12). Sycophancy connects to the alignment problem (L25).
 :::
 :::
 
@@ -310,7 +310,7 @@ Same mechanism, different outcomes
 :::
 :::
 
-## RAG and semantic search (Lecture 11)
+## RAG and semantic search (Lecture 12)
 
 :::{style="margin-top: 30px; font-size: 22px;"}
 :::{.columns}
@@ -322,7 +322,7 @@ Same mechanism, different outcomes
 - [Lost in the Middle]{.alert}: LLMs pay most attention to the start and end of context; the middle gets ignored
 
 :::{style="margin-top: 10px; background: rgba(45, 69, 99, 0.1); padding: 12px; border-radius: 10px; font-size: 17px;"}
-`r fa('link')` Uses embeddings (L6) to fix hallucinations (L10). But if the documents are biased, the retrieval will be too (L16).
+`r fa('link')` Uses embeddings (L6) to fix hallucinations (L11). But if the documents are biased, the retrieval will be too (L16).
 :::
 :::
 
@@ -336,7 +336,7 @@ The RAG pipeline
 :::
 :::
 
-## Pipelines and what can go wrong (Lecture 13)
+## Pipelines and what can go wrong (Lecture 14)
 
 :::{style="margin-top: 30px; font-size: 22px;"}
 :::{.columns}
@@ -348,7 +348,7 @@ The RAG pipeline
 - [Input validation]{.alert} blocks prompt injection; [output filtering]{.alert} catches harmful content
 
 :::{style="margin-top: 10px; background: rgba(45, 69, 99, 0.1); padding: 12px; border-radius: 10px; font-size: 17px;"}
-`r fa('link')` Concept drift relates to bias (L15): the world changes, the model doesn't. The chatbot failures set legal precedents that motivated regulation (L17).
+`r fa('link')` Concept drift relates to bias (L16): the world changes, the model doesn't. The chatbot failures set legal precedents that motivated regulation (L18).
 :::
 :::
 
@@ -362,8 +362,6 @@ The AI application stack
 :::
 :::
 
-# Module 4: Data ethics and bias ⚖️ {background-color="#1B3A6B"}
-
 ## Documentation as accountability (Lecture 14)
 
 :::{style="margin-top: 30px; font-size: 22px;"}
@@ -376,7 +374,7 @@ The AI application stack
 - Most AI training data is collected [without explicit consent]{.alert}
 
 :::{style="margin-top: 10px; background: rgba(45, 69, 99, 0.1); padding: 12px; border-radius: 10px; font-size: 17px;"}
-`r fa('link')` Disaggregated evaluation is how the Optum bias was found (L16). The EU AI Act (L17) now requires this documentation for high-risk systems.
+`r fa('link')` Disaggregated evaluation is how the Optum bias was found (L17). The EU AI Act (L18) now requires this documentation for high-risk systems.
 :::
 :::
 
@@ -390,7 +388,37 @@ Datasheets: the "nutrition label" for datasets
 :::
 :::
 
-## Where bias comes from (Lecture 15)
+## AI agents (Lecture 15)
+
+:::{style="margin-top: 30px; font-size: 22px;"}
+:::{.columns}
+:::{.column width=55%}
+- An [agent]{.alert} = a model + [tools]{.alert} + a [loop]{.alert} + a goal. Chatbots answer; agents [act]{.alert} (search, browse, run code, send, pay)
+- Reliability [multiplies away]{.alert}: 95% accuracy per step is only ~36% over 20 steps. Long tasks are where agents break
+- [Prompt injection]{.alert} becomes dangerous with tools: the [lethal trifecta]{.alert} is private data + untrusted content + external communication
+- Real failures: Replit's agent deleted a production database; Anthropic's Claudius ran a shop at a loss. [Instructions are not guardrails]{.alert}
+- Delegate by the [credit card test]{.alert}: reversibility × stakes. Demand approvals, sandboxes, action logs, and limits
+
+:::{style="margin-top: 10px; background: rgba(45, 69, 99, 0.1); padding: 12px; border-radius: 10px; font-size: 17px;"}
+`r fa('link')` Agents extend the ReAct idea from prompting (L10) and RAG (L12). Their failures are pipeline failures (L14) with higher stakes. Goals taken literally previews alignment (L25).
+:::
+:::
+
+:::{.column width=45%}
+:::{style="background: rgba(45, 69, 99, 0.1); padding: 20px; border-radius: 10px; font-size: 19px; margin-top: 30px;"}
+**The one-sentence version:**
+
+A chatbot with a bad goal writes a bad essay
+
+An agent with a bad goal [does bad things efficiently]{.alert}
+:::
+:::
+:::
+:::
+
+# Module 4: Data ethics and bias ⚖️ {background-color="#1B3A6B"}
+
+## Where bias comes from (Lecture 16)
 
 :::{style="margin-top: 30px; font-size: 22px;"}
 :::{.columns}
@@ -401,7 +429,7 @@ Datasheets: the "nutrition label" for datasets
 - [Impossibility theorem]{.alert}: with different base rates across groups, you cannot satisfy calibration, equal false positive rates, and equal false negative rates all at once. Fairness is a [values choice]{.alert}, not a technical fix
 
 :::{style="margin-top: 10px; background: rgba(45, 69, 99, 0.1); padding: 12px; border-radius: 10px; font-size: 17px;"}
-`r fa('link')` Measurement bias = the proxy problem (L3). Textbook example: Optum (L16). Feedback loops relate to concept drift (L13). The impossibility theorem connects to alignment (L24).
+`r fa('link')` Measurement bias = the proxy problem (L3). Textbook example: Optum (L17). Feedback loops relate to concept drift (L14). The impossibility theorem connects to alignment (L25).
 :::
 :::
 
@@ -419,7 +447,7 @@ Bias at every stage
 :::
 :::
 
-## The Optum case and proxy variables (Lecture 16)
+## The Optum case and proxy variables (Lecture 17)
 
 :::{style="margin-top: 30px; font-size: 22px;"}
 :::{.columns}
@@ -431,7 +459,7 @@ Bias at every stage
 - The fix: predict health outcomes instead of costs. Bias reduced by ~84%
 
 :::{style="margin-top: 10px; background: rgba(45, 69, 99, 0.1); padding: 12px; border-radius: 10px; font-size: 17px;"}
-`r fa('link')` Ties together the proxy problem (L3), measurement bias (L15), and Goodhart's Law (L5). The bias was invisible until disaggregated evaluation (L14).
+`r fa('link')` Ties together the proxy problem (L3), measurement bias (L16), and Goodhart's Law (L5). The bias was invisible until disaggregated evaluation (L14).
 :::
 :::
 
@@ -447,7 +475,7 @@ Obermeyer et al. (2019): changing the target variable fixed the bias
 
 # Module 5: Policy, governance, and social impact 🏛️ {background-color="#1B3A6B"}
 
-## AI regulation around the world (Lecture 17)
+## AI regulation around the world (Lecture 18)
 
 :::{style="margin-top: 30px; font-size: 21px;"}
 :::{.columns}
@@ -469,7 +497,7 @@ Obermeyer et al. (2019): changing the target variable fixed the bias
 - [Brussels Effect]{.alert}: EU rules may become the global default, as happened with the General Data Protection Regulation (GDPR)
 
 :::{style="margin-top: 10px; background: rgba(45, 69, 99, 0.1); padding: 12px; border-radius: 10px; font-size: 17px;"}
-`r fa('link')` "High-risk" = the systems from Lectures 15-16. The Act requires documentation from Lecture 14. Brussels Effect connects to GDPR (L19).
+`r fa('link')` "High-risk" = the systems from Lectures 16-17. The Act requires documentation from Lecture 14. Brussels Effect connects to GDPR (L19).
 :::
 :::
 
@@ -496,7 +524,7 @@ The EU AI Act: world's first binding AI law
 - [Privacy paradox]{.alert}: people say they care about privacy but accept all cookies anyway
 
 :::{style="margin-top: 10px; background: rgba(45, 69, 99, 0.1); padding: 12px; border-radius: 10px; font-size: 17px;"}
-`r fa('link')` Inference = the proxy problem (L3) applied to personal data. GDPR is the Brussels Effect (L17) in practice. Consent ties to Lecture 14.
+`r fa('link')` Inference = the proxy problem (L3) applied to personal data. GDPR is the Brussels Effect (L18) in practice. Consent ties to Lecture 14.
 :::
 :::
 
@@ -514,12 +542,12 @@ Clearview AI: scraped billions of faces without consent
 :::
 :::
 
-## Labour markets and wellbeing (Lectures 20-21)
+## Labour markets and wellbeing (Lectures 21-22)
 
 :::{style="margin-top: 30px; font-size: 21px;"}
 :::{.columns}
 :::{.column width=55%}
-**Lecture 20: Labour**
+**Lecture 21: Labour**
 
 - Previous automation targeted physical tasks; [AI targets cognitive work]{.alert}
 - Think [tasks, not jobs]{.alert}: most jobs are a mix of automatable and non-automatable tasks
@@ -527,7 +555,7 @@ Clearview AI: scraped billions of faces without consent
 - AI [compresses the skill distribution]{.alert}: novices gain more than experts
 - Augmentation vs [replacement]{.alert} (Acemoglu): policy choices can shift the balance
 
-**Lecture 21: Wellbeing**
+**Lecture 22: Wellbeing**
 
 - [Attention economy]{.alert}: algorithms optimise for engagement, not wellbeing
 - Filter bubbles and polarisation are [probably overstated]{.alert}; effects on body image and sleep are real
@@ -569,7 +597,7 @@ What remains hard to automate
 - No single tool works on its own. Media literacy is the most reliable individual defence
 
 :::{style="margin-top: 10px; background: rgba(45, 69, 99, 0.1); padding: 12px; border-radius: 10px; font-size: 17px;"}
-`r fa('link')` Powered by vision models (L7), detected via embeddings (L6), regulated by the EU AI Act (L17).
+`r fa('link')` Powered by vision models (L7), detected via embeddings (L6), regulated by the EU AI Act (L18).
 :::
 :::
 
@@ -583,7 +611,7 @@ The misinformation spectrum
 :::
 :::
 
-## Safety, alignment, and the future (Lecture 24)
+## Safety, alignment, and the future (Lecture 25)
 
 :::{style="margin-top: 30px; font-size: 22px;"}
 :::{.columns}
@@ -596,7 +624,7 @@ The misinformation spectrum
 - [Neither panic nor complacency]{.alert}. Serious researchers disagree genuinely. Evidence over vibes
 
 :::{style="margin-top: 10px; background: rgba(45, 69, 99, 0.1); padding: 12px; border-radius: 10px; font-size: 17px;"}
-`r fa('link')` Ties together RLHF (L4), Goodhart's Law (L5), bias (L15-16), and regulation (L17). This is the question the whole course builds toward.
+`r fa('link')` Ties together RLHF (L4), Goodhart's Law (L5), bias (L16-17), agents acting on goals (L15), and regulation (L18). This is the question the whole course builds toward.
 :::
 :::
 
@@ -617,29 +645,29 @@ The misinformation spectrum
 :::{.column width=50%}
 1. [Next-token prediction is the basis of everything]{.alert}
 
-LLMs predict the next word, not the truth. This explains hallucinations, creativity, and sycophancy (Lectures 1, 2, 6, 10)
+LLMs predict the next word, not the truth. This explains hallucinations, creativity, and sycophancy (Lectures 1, 2, 6, 11)
 
 2. [The proxy problem is pervasive]{.alert}
 
-Labels, metrics, objectives, and engagement are all proxies. Optimising a proxy corrupts it (Lectures 3, 5, 15, 16, 21)
+Labels, metrics, objectives, and engagement are all proxies. Optimising a proxy corrupts it (Lectures 3, 5, 16, 17, 22)
 
 3. [Embeddings are the universal language]{.alert}
 
-Text, images, and audio all become vectors. RAG, semantic search, CLIP, and multimodal AI all rely on this (Lectures 6, 7, 11)
+Text, images, and audio all become vectors. RAG, semantic search, CLIP, and multimodal AI all rely on this (Lectures 6, 7, 12)
 :::
 
 :::{.column width=50%}
 4. [Bias can enter at every stage]{.alert}
 
-Data, labels, training, evaluation, deployment. Feedback loops make it self-reinforcing. The impossibility theorem means fairness requires a values choice (Lectures 3, 14, 15, 16)
+Data, labels, training, evaluation, deployment. Feedback loops make it self-reinforcing. The impossibility theorem means fairness requires a values choice (Lectures 3, 14, 16, 17)
 
 5. [Documentation is accountability]{.alert}
 
-Datasheets, model cards, system cards. Disaggregated evaluation reveals hidden gaps (Lectures 14, 15, 16)
+Datasheets, model cards, system cards. Disaggregated evaluation reveals hidden gaps (Lectures 14, 16, 17)
 
 6. [Regulation is catching up]{.alert}
 
-EU AI Act, GDPR, the Brussels Effect. Market failures justify intervention (Lectures 17, 19)
+EU AI Act, GDPR, the Brussels Effect. Market failures justify intervention (Lectures 18, 19)
 
 :::{style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; font-size: 18px; margin-top: 15px;"}
 If you understand these six threads, you understand the course!
@@ -657,7 +685,7 @@ If you understand these six threads, you understand the course!
 :::{.column width=55%}
 `r fa('microchip')` [How AI works]{.alert}: next-token prediction, transformers, embeddings, three learning paradigms, metrics and their limits
 
-`r fa('magnifying-glass')` [How AI handles information]{.alert}: tokens, prompting (PTCF, CoT), hallucinations, RAG, pipelines and drift
+`r fa('magnifying-glass')` [How AI handles information]{.alert}: tokens, prompting (PTCF, CoT), hallucinations, RAG, agents, pipelines and drift
 
 `r fa('scale-balanced')` [Ethics and bias]{.alert}: bias at every stage, the impossibility theorem, the Optum case, documentation as accountability
 :::

@@ -1,4 +1,4 @@
-# Lecture 10: Creativity and Hallucination
+# Lecture 11: Creativity and Hallucination
 
 This lecture explores one of the most important problems in AI: when LLMs confidently state false information. Students learn why hallucinations happen, how they relate to creativity, and how to detect and mitigate them.
 
@@ -30,7 +30,7 @@ This lecture explores one of the most important problems in AI: when LLMs confid
 
 ## Resources
 
-* [Lecture Slides (HTML)](10-hallucination.html)
-* [Lecture Source (QMD)](10-hallucination.qmd)
+* [Lecture Slides (HTML)](11-hallucination.html)
+* [Lecture Source (QMD)](11-hallucination.qmd)
 * [Survey on LLM Hallucination](https://arxiv.org/abs/2402.06647)
 * [Wikipedia: AI Hallucination](https://en.wikipedia.org/wiki/Hallucination_(artificial_intelligence))

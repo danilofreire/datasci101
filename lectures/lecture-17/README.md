@@ -1,38 +1,35 @@
-# Lecture 16: Case Studies — Biased Outcomes in Health, Hiring, and Policing
+# Lecture 17: AI in Finance and Healthcare
 
-This lecture examines three high-profile cases where algorithmic systems produced discriminatory outcomes. We move from theory to practice, looking at real systems that affected real people and asking what went wrong and what we can learn.
+This lecture examines how AI is used in two high-stakes domains: healthcare and finance. We compare traditional machine learning with what LLMs add in each field, and we ask what happens when bias creeps into systems that decide who gets care and who gets credit.
 
 ## Main ideas
 
-### 1. Healthcare: the Optum algorithm
+### 1. AI in healthcare
 
-* **The proxy problem**: The algorithm used healthcare costs to predict healthcare needs, but costs reflect access to care, not need for care.
-* **Hidden disparity**: At the same risk score, Black patients were considerably sicker than white patients.
-* **The fix**: Switching from predicting costs to predicting health outcomes reduced racial bias by around 80%.
+* **Traditional ML**: Risk scores and medical imaging models that predict a single outcome from structured data.
+* **What LLMs add**: Reading clinical notes, summarising records, and drafting patient communication.
+* **Discussion**: Would you trust an AI doctor?
 
-### 2. Facial recognition: Gender Shades
+### 2. AI in finance
 
-* **Representation bias**: Commercial systems from IBM, Microsoft, and Face++ had error rates up to 34x higher for darker-skinned women compared to lighter-skinned men.
-* **Training data skew**: Standard face datasets were predominantly male and lighter-skinned, so models learned to recognise what they saw most often.
-* **Real-world harm**: Documented wrongful arrests in the US based on facial recognition errors have all involved Black individuals.
+* **Traditional ML**: Credit scoring, fraud detection, and algorithmic trading built on structured data.
+* **What LLMs add**: Finance-specific models, sentiment analysis for trading, and agentic workflows.
+* **When to use which**: Traditional ML for structured prediction; LLMs for unstructured text and language tasks.
 
-### 3. Criminal justice: COMPAS
+### 3. RAG in healthcare and finance
 
-* **Fairness impossibility**: When base rates differ between groups, you cannot simultaneously achieve equal calibration and equal error rates.
-* **Feedback loops**: Higher predicted risk leads to more incarceration, which destabilises communities and increases actual crime.
-* **No neutral choice**: Choosing calibration over equal error rates is a value judgment, not a technical decision.
+* **Grounding**: Retrieval-augmented generation lets models draw on clinical guidelines and financial filings instead of memory alone.
+* **Risks**: Retrieval failures are costly when the answer informs a diagnosis or a trade.
 
-### 4. Common patterns
+### 4. When bias creeps in
 
-* **Proxy problems**: Using one thing (costs, arrests) to predict another (health needs, danger) encodes hidden assumptions.
-* **Historical bias**: Systems trained on biased historical data reproduce and amplify that bias.
-* **Invisible disparities**: Overall accuracy can hide group-specific failures; disaggregated analysis is essential.
+* **The Optum case**: Using healthcare costs as a proxy for healthcare needs understated how sick Black patients were; predicting health outcomes instead reduced the bias by around 80%.
+* **Credit scoring**: Historical lending data encodes past discrimination and shapes who gets access to credit.
+* **Common patterns**: Proxy problems and historical bias appear in both domains; disaggregated analysis is essential.
 
 ## Resources
 
-* [Lecture slides (HTML)](16-case-studies.html)
-* [Lecture source (QMD)](16-case-studies.qmd)
+* [Lecture slides (HTML)](17-case-studies.html)
+* [Lecture source (QMD)](17-case-studies.qmd)
 * [Obermeyer et al. (2019) – Dissecting racial bias in healthcare algorithms](https://www.science.org/doi/10.1126/science.aax2342)
-* [Gender Shades Project](http://gendershades.org/)
-* [ProPublica – Machine Bias](https://www.propublica.org/article/machine-bias-risk-assessments-in-criminal-sentencing)
-* [Coded Bias documentary](https://www.codedbias.com/)
+* [Li et al. (2023) – Large language models in finance: a survey](https://arxiv.org/abs/2311.10723)
