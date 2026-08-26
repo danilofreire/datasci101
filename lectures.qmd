@@ -2,6 +2,7 @@
 title: "Lectures"
 ---
 
+
 The schedule is below. For each class you will find a short description, the required readings, and optional readings for those who wish to read further. Slides and other materials will be posted on the course website and GitHub repository. The schedule may change during the term. Please contact me if anything is unclear.
 
 ## Module 0 — Orientation
@@ -139,7 +140,7 @@ Readings:
 - Google (2025). [Prompting essentials](https://grow.google/prompting-essentials/). Free course on Coursera.
 - Berryman, J., & Ziegler, A. (2024). [Prompt engineering for LLMs: the art and science of building large language model–based applications](https://www.oreilly.com/library/view/prompt-engineering-for/9781098156145/). A recent book about the topic.
 
-## Module 3 — Retrieval, generation and pipelines
+## Module 3 — Retrieval, generation, pipelines and agents
 
 ### October 1, 2026:
 
@@ -178,36 +179,34 @@ Readings:
 
 ### October 15, 2026:
 
-- Lecture 14: [Building reliable pipelines: monitoring and testing](https://danilofreire.github.io/datasci101/lectures/lecture-14/14-pipelines.html).
+- Lecture 14: [When AI systems fail: pipelines, monitoring, and documentation](https://danilofreire.github.io/datasci101/lectures/lecture-14/14-pipelines.html).
 
 Readings:
 
 - Google (2025). [Production ML systems: monitoring pipelines.](https://developers.google.com/machine-learning/crash-course/production-ml-systems/monitoring) Practical guide to monitoring ML pipelines.
-- Allen, J. (2024). [Data pipeline monitoring: best practices for full observability.](https://www.prefect.io/blog/data-pipeline-monitoring-best-practices) Practical tips.
 - Spot Intelligence (2024). [Data drift in machine learning.](https://spotintelligence.com/2024/04/08/data-drift-in-machine-learning/) An accessible overview of how data drift affects ML systems over time.
 - Howard, J. (2024). [Context degradation syndrome: when large language models lose the plot.](https://jameshoward.us/2024/11/26/context-degradation-syndrome-when-large-language-models-lose-the-plot) A discussion on why model performance degrades over time.
 - Nawani, M. (2025). [From correctness to confidence: understanding LLM testing.](https://medium.com/@monikanawani25/from-correctness-to-confidence-understanding-llm-testing-0ad555bc797e) Explains the challenges of testing non-deterministic AI systems.
 - ApX Machine Learning (2025). [Input validation and sanitization for LLMs.](https://apxml.com/courses/intro-llm-red-teaming/chapter-5-defenses-mitigation-strategies-llms/input-validation-sanitization-llms) Practical guide to defending AI systems against prompt injection attacks.
-- ApX Machine Learning (2025). [Output filtering and content moderation.](https://apxml.com/courses/intro-llm-red-teaming/chapter-5-defenses-mitigation-strategies-llms/output-filtering-content-moderation) Best practices for validating AI outputs before sending to users.
+- Gebru, T., et al. (2018). [Datasheets for datasets.](https://arxiv.org/abs/1803.09010) *arXiv preprint*. The original paper proposing datasheets for datasets.
+- Mitchell, M., et al. (2019). [Model cards for model reporting.](https://arxiv.org/abs/1810.03993) *Proceedings of FAccT*. The original paper proposing model cards.
+- Crawford, K., & Paglen, T. (2019). [Excavating AI: The politics of images in machine learning training sets.](https://excavating.ai/) A compelling visual essay on ImageNet's problems and the politics of training data.
 - AI Incident Database. [AI Incident Database.](https://incidentdatabase.ai/) A collection of real-world AI failures and incidents for case study research.
-
-## Module 4 — Data ethics and bias
 
 ### October 20, 2026:
 
-- Lecture 15: [Documentation and dataset governance](https://danilofreire.github.io/datasci101/lectures/lecture-15/15-documentation.html).
-- [Kahoot Quiz](https://play.kahoot.it/v2/?quizId=75760dab-c0e2-43d5-9504-b94b74d93201&hostId=05eb977d-4f8a-440e-9e45-95212b29d103)
+- Lecture 15: [AI agents: when models start doing things](https://danilofreire.github.io/datasci101/lectures/lecture-15/15-agents.html).
 
 Readings:
 
-- Gebru, T., et al. (2018). [Datasheets for datasets.](https://arxiv.org/abs/1803.09010) *arXiv preprint*. The original paper proposing datasheets for datasets.
-- Mitchell, M., et al. (2019). [Model cards for model reporting.](https://arxiv.org/abs/1810.03993) *Proceedings of FAccT*. The original paper proposing model cards.
-- IBM (2025). [What is data lineage?](https://www.ibm.com/think/topics/data-lineage) A short guide.
-- GO-FAIR (2025). [FAIR principles.](https://www.go-fair.org/fair-principles/) The gold standard for making research data Findable, Accessible, Interoperable, and Reusable.
-- OpenAI (2021). [CLIP model card.](https://github.com/openai/clip/blob/main/model-card.md) A practical example of model documentation, including disaggregated performance evaluation.
-- Lanier, J. (2019). [Data dignity and the inversion of AI.](https://cdss.berkeley.edu/video/data-dignity-and-inversion-ai-jaron-lanier) A philosophical perspective on data rights and the idea that your data is your labour.
-- Hutchinson, B., et al. (2021). [Towards accountability for machine learning datasets: Practices from software engineering and infrastructure.](https://arxiv.org/abs/2010.13561) *FAccT*. Bridges software engineering practices to dataset accountability.
-- Crawford, K., & Paglen, T. (2019). [Excavating AI: The politics of images in machine learning training sets.](https://excavating.ai/) A compelling visual essay on ImageNet's problems and the politics of training data.
+- IBM (2025). [What are AI agents?](https://www.ibm.com/think/topics/ai-agents) A friendly explainer to start with.
+- Heikkilä, M. (2024). [What are AI agents?](https://www.technologyreview.com/2024/07/05/1094711/what-are-ai-agents/) *MIT Technology Review*. A clear, non-technical overview of the agent idea and the hype around it.
+- Anthropic (2024). [Building effective agents.](https://www.anthropic.com/research/building-effective-agents) How Claude's creators think about agent design. Slightly technical, but the diagrams alone are worth your time.
+- OpenAI (2025). [A practical guide to building agents.](https://cdn.openai.com/business-guides-and-resources/a-practical-guide-to-building-agents.pdf) OpenAI's guide for companies deploying agents. Skim the sections on guardrails.
+- Willison, S. (2025). [The lethal trifecta for AI agents.](https://simonwillison.net/2025/Jun/16/the-lethal-trifecta/) Why agents with private data, untrusted content, and the ability to communicate are a security nightmare. Short and very readable.
+- Anthropic (2025). [Project Vend: Can Claude run a small shop?](https://www.anthropic.com/research/project-vend-1) Anthropic let an AI agent run their office shop for a month. It did not go well, and the write-up is honest and funny. Read this one.
+
+## Module 4 — Data ethics and bias
 
 ### October 22, 2026:
 
