@@ -665,3 +665,9 @@ semester-transition-guide.md
 # Quizzes (private - do not share with students)
 quiz/
 quizzes/
+
+# Local planning files (working notes, not course material)
+plan/
+
+# Student accommodation notes (private, never committed)
+accommodations.md
