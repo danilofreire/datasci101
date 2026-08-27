@@ -55,14 +55,12 @@ if (!require("fontawesome", character.only = TRUE)) {
 
 ## Short recap of last class
 
-:::{style="margin-top: 20px; font-size: 28px;"}
+:::{style="margin-top: 30px; font-size: 29px;"}
 - Course website: <https://danilofreire.github.io/datasci101>
 - Course GitHub repo: <https://github.com/danilofreire/datasci101>
 - Syllabus, schedule, and assignments will be posted on both sites
 - We will use Canvas for announcements, submissions, and grades
 - Instructor: Danilo Freire (<danilo.freire@emory.edu>)
-- In-class TAs: Tom Suo (<tom.suo@emory.edu>) and Sissi Li (<sissi.li@emory.edu>)
-- Grading TAs: Philip Wang (<xipu.wang@emory.edu>) and Anita Osuri (<anita.osuri@emory.edu>)
 - Grading:
   - 10 problem sets (50%)
   - 5 in-class quizzes (30%)
@@ -413,7 +411,7 @@ Source: [Google Research](https://static.googleusercontent.com/media/research.go
 ## The ImageNet moment (2012)
 ### Deep learning arrives
 
-:::{style="margin-top: 30px; font-size: 24px;"}
+:::{style="margin-top: 30px; font-size: 23px;"}
 :::{.columns}
 :::{.column width=55%}
 - [ImageNet](https://www.image-net.org/): A dataset of 14 million labeled images
@@ -421,7 +419,7 @@ Source: [Google Research](https://static.googleusercontent.com/media/research.go
 - **2012**: [AlexNet](https://spectrum.ieee.org/alexnet-source-code) ([Krizhevsky, Sutskever, Hinton](https://proceedings.neurips.cc/paper_files/paper/2012/file/c399862d3b9d6b76c8436e924a68c45b-Paper.pdf)) wins by a [huge margin]{.alert}
   - Error rate: 15.3% (next best: 26.2%)
   - Used [deep neural networks]{.alert}
-  - Trained on Graphics Processing Units (GPUs), which are better than Central Processing Units for parallel processing
+  - Trained on [Graphics Processing Units (GPUs),](https://en.wikipedia.org/wiki/Graphics_processing_unit) which are better than [Central Processing Units](https://en.wikipedia.org/wiki/Central_processing_unit) for parallel processing
 - This was a great moment for deep learning!
 - Within years, deep learning dominated computer vision
 - Proved that [neural networks + big data + GPUs = breakthrough]{.alert}
@@ -437,7 +435,7 @@ Source: [Medium](https://svelezg.medium.com/krizhevsky-sutskever-hinton-and-imag
 :::
 :::
 
-# Transformers: the architecture that changed everything ⚡ {background-color="#1B3A6B"}
+# Transformers: that's all you need ⚡ {background-color="#1B3A6B"}
 
 ## Attention is all you need (2017)
 ### The transformer revolution
@@ -451,7 +449,7 @@ Source: [Medium](https://svelezg.medium.com/krizhevsky-sutskever-hinton-and-imag
   - Each word can "look at" [every other word]{.alert} directly
   - Computes relevance scores between all pairs
   - [Parallel processing]{.alert}: Much faster to train
-- This architecture powers [GPT (Generative Pre-trained Transformer), BERT, and pretty much all modern AI]{.alert}
+- This architecture powers [GPT (Generative Pre-trained Transformer)](https://cdn.openai.com/research-covers/language-unsupervised/language_understanding_paper.pdf), [BERT](https://arxiv.org/abs/1810.04805), and pretty much all modern AI
 - Beyond text: Now used in images, audio, video, proteins, games...
 :::
 
@@ -479,11 +477,15 @@ Source: [Hivenet](https://compute.hivenet.com/post/simplifying-transformer-archi
 
 :::{.column width=45%}
 :::{style="margin-top: 20px;"}
-A transformer has [three main parts]{.alert}:
+Five steps, one per slide:
 
-1. **Embedding**: Turn words into numbers
-2. **Transformer Blocks**: Mix and refine information (the magic happens here!)
-3. **Output**: Predict the next word
+1. **Tokenise**: cut the text into pieces
+2. **Embed**: give each piece a list of numbers
+3. **Attend**: let the pieces look at each other
+4. **Stack**: repeat step 3 dozens of times
+5. **Predict**: guess the next piece
+
+We will follow ["The cat sat on the ___"]{.alert} all the way through
 :::
 :::
 :::
@@ -542,19 +544,22 @@ Source: [Google Cloud](https://cloud.google.com/blog/topics/developers-practitio
 :::
 
 ## Step 3: Self-attention
-### The key innovation
+### The main innovation of the paper
 
-:::{style="margin-top: 30px; font-size: 24px;"}
+:::{style="margin-top: 30px; font-size: 22px;"}
 :::{.columns}
 :::{.column width=55%}
-- The [core mechanism]{.alert} that makes transformers powerful
-- For each word, ask: "[Which other words are relevant to understanding me?]{.alert}"
-- Creates three vectors for each token:
-  - **Query (Q)**: "What am I looking for?" (does "it" refer to "animal" or "street"?)
-  - **Key (K)**: "What do I contain?" (check the characteristics of "it" as a token)
-  - **Value (V)**: "What information can I provide?" (provide the information: "ah, it's animal!")
-- Attention score = how well Query matches Key
-- Like a [search engine]{.alert} where each word searches for relevant context
+- Every word carries a [contacts app]{.alert} listing all the other words
+- "The animal didn't cross the street because [it]{.alert} was too tired"
+- "it" searches its contacts for "who can get tired?"
+- Each word is filed under a name: "animal" under *living creature*, "street" under *place*
+- ["animal" is the best match,]{.alert} so "it" pulls in the animal's details
+- Every word does this at the same time, for every other word
+- You search by name, but you actually wanted the details
+
+:::{style="font-size: 18px; margin-top: 15px;"}
+You may meet these called [Query]{.alert} (the search), [Key]{.alert} (the name) and [Value]{.alert} (the details). How well a search matches a name is the [attention score]{.alert}
+:::
 :::
 
 :::{.column width=45%}
@@ -599,20 +604,19 @@ Source: [Thomas Wiecki](https://twiecki.io/blog/2024/01/04/)
 ## Step 4: Feed-forward and stacking
 ### Building deeper understanding
 
-:::{style="margin-top: 30px; font-size: 22px;"}
+:::{style="margin-top: 30px; font-size: 24px;"}
 :::{.columns}
 :::{.column width=55%}
-- After attention, each token passes through a [feed-forward network]{.alert} (FFN, Multi-Layer Perceptron, MLP)
-- Attention is about "looking around" to find connections between words
-- FFN is about "thinking" about what those connections actually mean for each individual word
-- This refines and transforms the representation
-- Models stack [many blocks]{.alert}:
+- Attention is [looking around]{.alert}: which other words matter here?
+- Next comes [thinking it over]{.alert}: what do those connections mean for this word?
+- That second step is a [feed-forward network]{.alert} (also called an MLP)
+- The two together make one [block]{.alert}, and models stack many:
   - GPT-2 (small): 12 blocks
   - GPT-3: 96 blocks
-  - GPT-4: Rumoured to be much larger
-- Each block builds more [abstract understanding]{.alert}
-  - Early layers: Grammar, syntax
-  - Later layers: Meaning, context, reasoning
+  - GPT-4 and later: far more
+- Each block works at a higher level than the last:
+  - Early blocks: spelling and grammar
+  - Late blocks: meaning and context
 :::
 
 :::{.column width=45%}
@@ -629,17 +633,27 @@ Source: [Mohamed Traore](https://www.researchgate.net/figure/Overall-Structure-o
 ### The final output
 
 :::{style="margin-top: 30px; font-size: 24px;"}
-- After all blocks, the model predicts: "[What comes next?]{.alert}"
-- Outputs a [probability]{.alert} for every token in vocabulary
-- Example: "The cat sat on the..."
-  - "floor": 27.4%
-  - "bed": 22.5%
-  - "couch": 17.8%
-  - ...
-- **Temperature** controls randomness:
-  - Low (0.2): More predictable
-  - High (1.0+): More creative/random
-- The chosen token is added, and the process [repeats]{.alert}
+:::{.columns}
+:::{.column width=55%}
+- After all the blocks, the model asks: "[what comes next?]{.alert}"
+- It gives [every token in its vocabulary]{.alert} a score
+- Most score roughly zero. A handful take almost everything
+- **Temperature** controls how the winner is picked:
+  - Low (0.2): takes the safe option
+  - High (1.0+): takes more risks
+- The chosen token joins the sentence, and the whole process [repeats]{.alert}
+:::
+
+:::{.column width=45%}
+:::{style="text-align: center; margin-top: -60px;"}
+[![](figures/next-token-probs.png){width="60%"}](#){data-modal-type="image" data-modal-url="figures/next-token-probs.png"}
+
+"The cat sat on the ___"
+
+Source: [Transformer Explainer](https://poloclub.github.io/transformer-explainer/)
+:::
+:::
+:::
 :::
 
 ## Step 5: Predicting the next token
@@ -687,7 +701,7 @@ Source: [Transformer Explainer](https://poloclub.github.io/transformer-explainer
   2. [RLHF (Reinforcement Learning from Human Feedback)](https://en.wikipedia.org/wiki/Reinforcement_learning_from_human_feedback): Humans rate responses; model learns what's helpful
   3. [Safety training](https://en.wikipedia.org/wiki/AI_safety): Reduce harmful outputs
 - Result: A model that's [actually useful]{.alert} for conversation
-- [100 million users in 2 months]{.alert}—fastest-growing consumer app ever
+- [100 million users in 2 months]{.alert}, the fastest-growing consumer app ever
 :::
 
 :::{.column width=45%}
@@ -713,7 +727,7 @@ Source: [Voronoi](https://www.voronoiapp.com/technology/OpenAIs-ChatGPT-Hits-Rec
   - Text ↔ Video (Sora, Runway)
   - Text ↔ Code (Codex, Copilot)
 - [Same transformer architecture]{.alert}, different inputs/outputs
-- Vision Transformers (ViT): Treat images as sequences of patches
+- [Vision Transformers (ViT):](https://arxiv.org/abs/2010.11929) Treat images as sequences of patches
 - The boundaries between modalities are [blurring]{.alert}
 :::
 

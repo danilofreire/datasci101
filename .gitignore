@@ -671,3 +671,5 @@ plan/
 
 # Student accommodation notes (private, never committed)
 accommodations.md
+
+**/*.quarto_ipynb
