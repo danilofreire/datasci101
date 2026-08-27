@@ -38,6 +38,7 @@ There is no single textbook. Instead, we read short papers, essays and tutorials
 - [AI & I: An intellectual history of artificial intelligence](https://mitpress.mit.edu/9780262548731/ai-and-i/) by Eugene Charniak (2024). A new book by a leading AI researcher, covering the history of the field from the 1950s to the present day.
 - [Weapons of math destruction: how big data increases inequality and threatens democracy](https://weaponsofmathdestructionbook.com/) by Cathy O'Neil (2016). A book on the dangers of unregulated mathematical models.
 - [Atlas of AI: Power, Politics, and the Planetary Costs of Artificial Intelligence](https://www.penguinrandomhouse.com/books/667487/atlas-of-ai-by-kate-crawford/) by Kate Crawford (2021). A critical look at the social and environmental impacts of AI technologies.
+- [Hands-on large language models: language understanding and generation](https://www.oreilly.com/library/view/hands-on-large-language/9781098160160/) by Jay Alammar and Maarten Grootendorst (2024). A practical guide to large language models.
 
 ### Online courses
 
