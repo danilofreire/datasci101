@@ -1,0 +1,47 @@
+# Copies rendered lecture files from main into docs/lectures/ on gh-pages,
+# which is the folder GitHub Pages serves. Runs on every push to main that
+# touches lectures/.
+name: Sync lectures to website
+
+on:
+  push:
+    branches: [main]
+    paths: ["lectures/**"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out main
+        uses: actions/checkout@v4
+        with:
+          path: main
+
+      - name: Check out gh-pages
+        uses: actions/checkout@v4
+        with:
+          ref: gh-pages
+          path: site
+
+      - name: Copy lecture outputs (html, figures, extensions; not qmd/md/ipynb)
+        run: |
+          rsync -a --delete \
+            --exclude='*.qmd' --exclude='*.md' --exclude='*.ipynb' \
+            main/lectures/ site/docs/lectures/
+          rsync -a --delete \
+            --exclude='*.qmd' --exclude='*.md' --exclude='*.ipynb' \
+            main/lectures/ site/lectures/
+
+      - name: Commit and push
+        working-directory: site
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A lectures docs/lectures
+          git diff --cached --quiet && echo "Nothing to sync" && exit 0
+          git commit -m "docs(website): sync lectures from main (${GITHUB_SHA::7})"
+          git push
