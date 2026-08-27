@@ -24,11 +24,7 @@ The course covers six main modules:
 
 - **Name**: [Danilo Freire](https://danilofreire.github.io/)
 - **Email**: [`danilo.freire@emory.edu`](mailto:danilo.freire@emory.edu)
-- **Teaching Assistants**:
-  - Tom Suo: <tom.suo@emory.edu> (in class)
-  - Sissi Li: <sissi.li@emory.edu> (in class)
-  - Philip Wang: <xipu.wang@emory.edu> (grading)
-  - Anita Osuri: <anita.osuri@emory.edu> (grading)
+- **Teaching Assistants**: to be announced
 - **Office Hours**: By appointment at your convenience, please email me to schedule a meeting
 
 ## Learning outcomes
