@@ -10,7 +10,7 @@ format:
 
 ## Instructions
 
-This assignment covers material from **Lecture 15**: Documentation and Dataset Governance, and **Lecture 16**: Types of Bias and How They Arise.
+This assignment covers material from **Lecture 16**: Types of Bias and How They Arise, and the documentation section of **Lecture 14**.
 
 **Guidelines:**
 
@@ -26,7 +26,7 @@ This assignment covers material from **Lecture 15**: Documentation and Dataset G
 
 ### Question 1: The Model Card Bluff
 
-Lecture 15 introduced **model cards**: standardised documentation that describes what a model does, how it was evaluated, and where it fails. A good model card helps users decide whether a model is safe to deploy. A bad one hides problems behind vague language.
+Lecture 14 introduced **model cards**: standardised documentation that describes what a model does, how it was evaluated, and where it fails. A good model card helps users decide whether a model is safe to deploy. A bad one hides problems behind vague language.
 
 Below is a model card for **MediScreen**, an AI system that reads chest X-rays and flags potential pneumonia cases for radiologists to review. The model card was written by the vendor's marketing team, not the engineering team. It contains **4 errors**: facts that are misleading, vague, or missing.
 
@@ -48,7 +48,7 @@ Below is a model card for **MediScreen**, an AI system that reads chest X-rays a
 
 2. Pick the **2 most dangerous** problems, that is, the ones most likely to cause real harm if a hospital relies on this model card. Explain why those two are worse than the others.
 
-3. Rewrite the **Training data** and **Performance** sections so they meet the standards described in Lecture 15. You'll need to invent plausible details (e.g., dataset size, demographic breakdown, disaggregated metrics). The point is just to show what should be there.
+3. Rewrite the **Training data** and **Performance** sections so they meet the standards described in Lecture 14. You'll need to invent plausible details (e.g., dataset size, demographic breakdown, disaggregated metrics). The point is just to show what should be there.
 
 ---
 
@@ -153,11 +153,11 @@ Here is a different scenario:
 
 > **TrustMod** is a social media platform that uses an AI content moderation system. The system flags posts that it predicts to be "harmful." Flagged posts are reviewed by human moderators, and confirmed violations are added back into the training data for the next version of the model.
 >
-> Over the past year, TrustMod's moderation team has noticed a pattern: the system flags posts written in African American Vernacular English (AAVE) at roughly **twice the rate** of posts written in Standard American English, even when the content is similar. The flagged AAVE posts are often not actually harmful. They just use slang, cultural references, or informal grammar that the model interprets as aggressive.
+> Over the past year, TrustMod's moderation team has noticed a pattern: the system flags posts written in informal or regional dialects of English at roughly **twice the rate** of posts written in standard English, even when the content is similar. The flagged posts are often not actually harmful. They just use slang, cultural references, or informal grammar that the model interprets as aggressive.
 
 **Your task:**
 
-1. Describe the feedback loop in **5 steps**. Start with the initial bias (AAVE flagged more often) and trace through to the point where the bias has worsened. Number each step.
+1. Describe the feedback loop in **5 steps**. Start with the initial bias (dialect posts flagged more often) and trace through to the point where the bias has worsened. Number each step.
 
 2. At which step in your feedback loop could an intervention break the cycle? Propose **two different interventions**: one technical (e.g., changing the model or data) and one organisational (e.g., changing the process or people). For each, explain how it would help and what could go wrong with it.
 
@@ -177,7 +177,7 @@ Here is a different scenario:
 
 ### Question 5: The "We Didn't Know" Defence
 
-This question ties together both lectures: documentation from Lecture 15 and bias from Lecture 16.
+This question ties together both lectures: documentation from Lecture 14 and bias from Lecture 16.
 
 Here is the scenario:
 
@@ -191,10 +191,10 @@ Here is the scenario:
 
 1. Identify which **type(s) of bias** from Lecture 16's taxonomy are present in this scenario. Name at least two and explain how each one operates here.
 
-2. Using Lecture 15's documentation framework, identify **3 specific pieces of documentation** that would have revealed the problem before QuickLend deployed the model. For each one, state: (a) what type of document it is (datasheet, model card, or system card), (b) which section of that document, and (c) what information it would have contained.
+2. Using Lecture 14's documentation framework, identify **3 specific pieces of documentation** that would have revealed the problem before QuickLend deployed the model. For each one, state: (a) what type of document it is (datasheet, model card, or system card), (b) which section of that document, and (c) what information it would have contained.
 
 3. Now evaluate the CEO's defence. Is "we didn't know" an acceptable excuse, legally, ethically, or both? Consider these angles:
-   - The EU AI Act requires documentation for high-risk AI systems (Lecture 15). Would QuickLend's lending system qualify as high-risk?
+   - Lecture 14 introduced datasheets, model cards, and system cards. If documentation like this were legally required for high-stakes AI (as the EU is moving towards; more in Lecture 18), would this case have been prevented, or only easier to blame?
    - Who bears more responsibility: QuickLend for not asking, or the vendor for not disclosing?
    - Write 150–200 words taking a clear position.
 

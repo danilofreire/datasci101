@@ -1,5 +1,5 @@
 ---
-title: "Assignment 05: Hallucinations, Creativity, and AI Alignment"
+title: "Assignment 05: Hallucinations, Creativity, and Grounded AI"
 subtitle: "DATASCI 101: Introduction to AI Applications"
 author: "Emory University"
 format:
@@ -117,11 +117,15 @@ Lecture 11 showed that hallucination rates vary dramatically by domain. Common k
 
 ---
 
-### Question 4: The AI Alignment Problem
+### Question 4: Grounding AI in Real Documents
 
-AI systems are trained to be "helpful, harmless, and honest", but these goals can conflict. Being helpful might mean guessing (risking harm). Being harmless might mean refusing to answer (being unhelpful). Being honest might mean saying things people don't want to hear. Write 100–200 words on: 
+Lecture 12 introduced **retrieval-augmented generation (RAG)**: instead of answering from memory, the model first searches your documents and answers from what it finds.
 
-> *"Which of these three goals should take priority, and why? Can you think of a situation where prioritising one goal harms another?"*
+**Your task:**
+
+1. Ask an LLM: *"What is retrieval-augmented generation, and why does it reduce hallucinations?"* Copy the response.
+2. Consider the query *"How do I fix a broken pipe?"* In 2-3 sentences, explain why keyword search could miss a helpful document titled "Plumbing repair basics" while semantic search would find it
+3. RAG reduces hallucinations but does not eliminate them. Describe one concrete way a RAG system could still give a wrong answer. Think about what happens when the retrieved documents are wrong, outdated, or irrelevant
 
 ---
 

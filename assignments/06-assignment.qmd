@@ -10,7 +10,7 @@ format:
 
 ## Instructions
 
-This assignment covers material from **Lecture 14**: Building Reliable Pipelines, Monitoring, and Testing, and **Lecture 15**: Documentation and Dataset Governance (only the bonus question).
+This assignment covers material from **Lecture 14**: Building Reliable Pipelines, Monitoring, Testing, and Documentation.
 
 **Guidelines:**
 
@@ -116,7 +116,7 @@ In February 2024, users asked Google's Gemini to generate images of "1943 German
 
 1. Using the failure taxonomy from Lecture 14 (pipeline failure, hallucination, policy failure, data drift), classify this incident. Was it one type or a combination? Explain your reasoning.
 
-2. Lecture 14 discussed **property-based testing**, that is, testing AI for properties rather than exact outputs. Which type of property-based test could have caught Gemini's problem before launch? Write one specific test case: describe the prompt you would use and what a "pass" vs. "fail" would look like.
+2. Lecture 14 argued you should **test for properties** (is it safe? is the format correct?) rather than exact outputs. Which test type from Lecture 14's table (safety, format, consistency, boundary, bias, regression) could have caught Gemini's problem before launch? Write one specific test case: describe the prompt you would use and what a "pass" vs. "fail" would look like.
 
 3. In your view, is overcorrecting for diversity bias worse than undercorrecting? Or are both equally bad for different reasons? Write 3-4 sentences explaining your position.
 
@@ -144,7 +144,7 @@ This sort of thing has happened in real life. Clearview AI scraped over 30 billi
 
 1. Should companies be required to get your consent before using your publicly posted photos to train AI? Write 3-4 sentences taking a clear position. Consider: is posting something publicly the same as consenting to any use of it?
 
-2. There is a concept called **data dignity** — the idea that your data is your labour, and companies should pay for it (proposed by Jaron Lanier). In 2-3 sentences, explain whether you find this idea practical or unrealistic. Would it actually change how AI companies operate?
+2. Lecture 14 mentioned Getty Images' lawsuit against Stability AI over scraped images. Suppose courts decide that scraping publicly posted images for AI training is legal. In 2-3 sentences, explain whether that would settle the ethical question too, or whether something legal can still be wrong
 
 ---
 
@@ -160,7 +160,7 @@ This sort of thing has happened in real life. Clearview AI scraped over 30 billi
 
 ### Bonus Question: Write a Mini-Datasheet
 
-Lecture 15 introduced **datasheets for datasets**, documentation that describes where a dataset came from, what's in it, and how it should (and shouldn't) be used. The framework comes from Gebru et al. (2018) and has 7 sections.
+Lecture 14 introduced **datasheets for datasets**, documentation that describes where a dataset came from, what's in it, and how it should (and shouldn't) be used. The framework comes from Gebru et al. (2018) and has 7 sections.
 
 Here is a dataset you need to document:
 

@@ -1,5 +1,5 @@
 ---
-title: "Assignment 03: Tokenisation, Prompting, and Multimodal AI"
+title: "Assignment 03: Evaluating AI Models and Their Limits"
 subtitle: "DATASCI 101: Introduction to AI Applications"
 author: "Emory University"
 format:
@@ -10,7 +10,7 @@ format:
 
 ## Instructions
 
-This assignment covers material from **Lectures 05-07**: Metrics and Validation, Tokenisation and Embeddings, and Multimodal AI.
+This assignment covers material from **Lectures 05-06**: Metrics and Validation, and Tokenisation and Embeddings. The bonus question draws on **Lecture 07**: Multimodal AI.
 
 **Guidelines:**
 

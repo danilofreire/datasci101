@@ -121,7 +121,7 @@ Labelling data is one of the main bottlenecks in AI. It is time-consuming and ex
 
 1. Ask an LLM: *"What are three alternatives to manually labelling data?"*
 2. Copy the response.
-3. Ask: *"What is Amazon Mechanical Turk, and why is it controversial for data labelling?"*
+3. Ask: *"Why do different people often give the same example different labels, and how do annotation guidelines help?"*
 4. Copy the response.
 
 **Analysis:**
@@ -141,17 +141,22 @@ Labelling data is one of the main bottlenecks in AI. It is time-consuming and ex
 
 ---
 
-### Question 5: AI Ethics Panel
+### Question 5: Seeing Like a Tokeniser
 
-Imagine you're on a panel debating the following question: *"Should AI-generated images and voices require mandatory watermarks or disclosure labels?"*
+Before an LLM can process your words, it splits them into tokens and turns each token into an embedding (Lecture 06).
 
-**Part 1:** Ask an LLM for arguments **both FOR and AGAINST** this policy. Document the main points it provides.
+**Your task:**
 
-**Part 2:** Write your own position on this issue. Your position should include:
+1. Visit OpenAI's tokeniser at [platform.openai.com/tokenizer](https://platform.openai.com/tokenizer)
+2. Paste this sentence: *"The quick brown fox jumps over the lazy dog"* and record the token count
+3. Paste the Spanish translation: *"El rápido zorro marrón salta sobre el perro perezoso"* and record the token count
+4. Paste the words *"unbelievable"* and *"unbelievableness"* and note how each one is split
 
-- Your stance (for, against, or somewhere in between)
-- At least **one original argument** that the LLM did not provide
-- Consideration of some group that might be affected by this policy (creators, consumers, artists, journalists, etc.)
+**Analysis:**
+
+- Does the Spanish sentence need more tokens than the English one? Record what you find
+- Ask an LLM: *"Why do LLMs often perform better in English than in other languages?"* Compare its answer with what you observed
+- In your own words, explain what an embedding captures that a token ID alone does not
 
 ---
 

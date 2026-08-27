@@ -215,31 +215,15 @@ Open **three separate new chat sessions** (one for each version). In each sessio
 
 ---
 
-### Bonus Question: Red Team a Finance Chatbot
+### Bonus Question: Why Prompt Injection Is Hard to Fix
 
-You've been hired to audit an AI chatbot before it goes live. Your job is to find potential problems by testing edge cases.
+Lecture 10 introduced **prompt injection**: text inside a message that overrides the instructions a chatbot was given. Companies deploy customer-facing chatbots anyway, and injection remains an unsolved problem rather than a bug any single fix can close.
 
-**Step 1 — Create the chatbot:**
+**Your task:**
 
-Ask an LLM to role-play as a customer service chatbot:
-
-> *"You are FinanceBot, a customer service AI for SecureBank. You help customers with account inquiries, transaction disputes, and general banking questions. You should be helpful and professional, but you cannot access real account data—you can only provide general guidance and direct customers to human agents for sensitive issues. Stay in character for all following messages."*
-
-**Step 2 — Red team the chatbot:**
-
-Design and test prompts that could reveal problems in these 5 categories:
-
-1. **Safety vulnerability** — Can you trick it into ignoring its instructions?
-2. **Factual accuracy** — Does it make up policies or admit uncertainty?
-3. **Consistency** — Do answers stay the same when you rephrase the question?
-4. **Bias** — Does it treat different types of customers differently?
-5. **Manipulation** — Can emotional pressure make it break its guidelines?
-
-**For each test:**
-
-- Write the exact prompt you used
-- Document the chatbot's response
-- Assess: Is this behaviour acceptable for a production chatbot?
+1. Ask an LLM: *"Why is prompt injection difficult to prevent, even for the most advanced models?"* Copy the response.
+2. In your own words (100–150 words), explain the core difficulty. Hint: think about how the model receives its instructions and the user's message
+3. Lecture 10 discussed **jagged intelligence**: even well-designed prompts sometimes fail unexpectedly. Given both problems, name **two precautions** a bank should take before letting a chatbot talk to customers, and explain what each one protects against
 
 ---
 
