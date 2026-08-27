@@ -13,6 +13,8 @@ format:
     transition: slide
     transition-speed: default
     scrollable: true
+revealjs-plugins:
+  - multimodal
 engine: knitr
 editor:
   render-on-save: true
@@ -67,7 +69,7 @@ if (!require("fontawesome", character.only = TRUE)) {
 
 :::{.column width=50%}
 :::{style="text-align: center; margin-top: -50px;"}
-![](figures/cute-robot.png){width="65%"}
+[![](figures/cute-robot.png){width="65%"}](#){data-modal-type="image" data-modal-url="figures/cute-robot.png"}
 :::
 :::
 :::
@@ -196,7 +198,7 @@ Please remember to check the course repository regularly for updates and announc
 
 :::{.column width=40%}
 :::{style="text-align: center;"}
-![](figures/stupid.png){width="80%"}
+[![](figures/stupid.png){width="80%"}](#){data-modal-type="image" data-modal-url="figures/stupid.png"}
 :::
 :::
 :::
@@ -299,7 +301,7 @@ By the end of this course, you will be able to:
 ## AI taxonomy
 
 :::{style="margin-top: 40px; font-size: 26px; text-align: center;"}
-![](figures/ai-overview.png){width="80%"}
+[![](figures/ai-overview.png){width="80%"}](#){data-modal-type="image" data-modal-url="figures/ai-overview.png"}
 
 Source: [McKinsey & Company (2024)](https://www.mckinsey.com/featured-insights/mckinsey-explainers/what-is-ai)
 :::
@@ -324,7 +326,7 @@ Source: [McKinsey & Company (2024)](https://www.mckinsey.com/featured-insights/m
 
 :::{.column width=50%}
 :::{style="text-align: center;"}
-![](figures/wave.jpg){width="100%"}
+[![](figures/wave.jpg){width="100%"}](#){data-modal-type="image" data-modal-url="figures/wave.jpg"}
 :::
 :::
 :::
@@ -358,9 +360,9 @@ Source: [McKinsey & Company (2024)](https://www.mckinsey.com/featured-insights/m
 
 :::{.column width=50%}
 :::{style="text-align: center;"}
-![](figures/hinton.jpg){width="80%"}
+[![](figures/hinton.jpg){width="80%"}](#){data-modal-type="image" data-modal-url="figures/hinton.jpg"}
 
-![](figures/hinton-chicken.png){width="80%"}
+[![](figures/hinton-chicken.png){width="80%"}](#){data-modal-type="image" data-modal-url="figures/hinton-chicken.png"}
 :::
 :::
 :::
@@ -369,7 +371,7 @@ Source: [McKinsey & Company (2024)](https://www.mckinsey.com/featured-insights/m
 ## AI benchmarks and human performance
 
 :::{style="margin-top: 40px; font-size: 28px; text-align: center;"}
-![](figures/ai-benchmarks.png){width="60%"}
+[![](figures/ai-benchmarks.png){width="60%"}](#){data-modal-type="image" data-modal-url="figures/ai-benchmarks.png"}
 
 Source: [Artificial Intelligence Index Report (2025)](https://hai.stanford.edu/ai-index/2025-ai-index-report)
 :::
@@ -433,7 +435,7 @@ Source: [Artificial Intelligence Index Report (2025)](https://hai.stanford.edu/a
 - Can you spot the bias?
 
 :::{style="text-align: center;"}
-![](figures/biases.jpg)
+[![](figures/biases.jpg)](#){data-modal-type="image" data-modal-url="figures/biases.jpg"}
 :::
 :::
 :::
