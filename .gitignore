@@ -635,7 +635,7 @@ $RECYCLE.BIN/
 # Quarto
 /.quarto/
 
-**/*.quarto_ipynb
+**/*.quarto_ipynb*
 
 # Claude and AI agent configuration files
 CLAUDE.md
