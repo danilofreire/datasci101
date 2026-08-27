@@ -46,9 +46,9 @@ You can also download the entire repository:
 | 5 | October 8, 2026 | [Assignment 05](https://github.com/danilofreire/datasci101/tree/main/assignments) |
 | 6 | October 22, 2026 | [Assignment 06](https://github.com/danilofreire/datasci101/tree/main/assignments) |
 | 7 | October 29, 2026 | [Assignment 07](https://github.com/danilofreire/datasci101/tree/main/assignments) |
-| 8 | November 5, 2026 | [Assignment 08](https://github.com/danilofreire/datasci101/tree/main/assignments) |
-| 9 | November 12, 2026 | [Assignment 09](https://github.com/danilofreire/datasci101/tree/main/assignments) |
-| 10 | November 19, 2026 | [Assignment 10](https://github.com/danilofreire/datasci101/tree/main/assignments) |
+| 8 | November 12, 2026 | [Assignment 08](https://github.com/danilofreire/datasci101/tree/main/assignments) |
+| 9 | November 19, 2026 | [Assignment 09](https://github.com/danilofreire/datasci101/tree/main/assignments) |
+| 10 | December 3, 2026 | [Assignment 10](https://github.com/danilofreire/datasci101/tree/main/assignments) |
 
 ## Quiz timeline
 

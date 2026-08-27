@@ -244,7 +244,6 @@ Readings:
 
 - Lecture 18: [AI regulation and standards around the world](https://danilofreire.github.io/datasci101/lectures/lecture-18/18-regulation.html).
 - **Assignment 07 due (5%).**
-- [**Assignment 08**](https://github.com/danilofreire/datasci101/blob/main/assignments).
 
 Readings:
 
@@ -273,8 +272,7 @@ Readings:
 ### November 5, 2026:
 
 - Lecture 20: **Quiz 03**. This quiz covers Lectures 14-18.
-- **Assignment 08 due (5%).**
-- [**Assignment 09**](https://github.com/danilofreire/datasci101/blob/main/assignments).
+- [**Assignment 08**](https://github.com/danilofreire/datasci101/blob/main/assignments).
 
 ### November 10, 2026:
 
@@ -297,8 +295,8 @@ Readings:
 ### November 12, 2026:
 
 - Lecture 22: [AI and wellbeing: the attention economy, mental health, and the environment](https://danilofreire.github.io/datasci101/lectures/lecture-22/22-wellbeing.html).
-- **Assignment 09 due (5%).**
-- [**Assignment 10**](https://github.com/danilofreire/datasci101/blob/main/assignments).
+- **Assignment 08 due (5%).**
+- [**Assignment 09**](https://github.com/danilofreire/datasci101/blob/main/assignments).
 - **Optional project proposal due.**
 
 Readings:
@@ -329,7 +327,8 @@ Readings:
 ### November 19, 2026:
 
 - Lecture 24: **Quiz 04**. This quiz covers Lectures 19, 21, and 22 (Privacy, Labour, and Wellbeing).
-- **Assignment 10 due (5%).**
+- **Assignment 09 due (5%).**
+- [**Assignment 10**](https://github.com/danilofreire/datasci101/blob/main/assignments).
 
 ### November 24, 2026:
 
@@ -355,6 +354,7 @@ Readings:
 ### December 3, 2026:
 
 - Lecture 27: **Quiz 05**. This quiz covers Lectures 23 and 25 (Misinformation and Safety).
+- **Assignment 10 due (5%).**
 
 ### December 8, 2026:
 
