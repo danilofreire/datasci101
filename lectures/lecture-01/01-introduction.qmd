@@ -157,13 +157,10 @@ Please remember to check the course repository regularly for updates and announc
 
 ## Teaching assistants
 
-:::{style="margin-top: 63px; font-size: 34px;"}
+:::{style="margin-top: 60px; font-size: 34px;"}
+- The teaching assistants for this course will be announced soon
 
-- We have [four amazing TAs]{.alert} with us this semester!
-
-- [Tom Suo]{.alert} and [Sissi Li]{.alert} will be answering questions during our lectures and holding office hours. You can reach out to them at <tom.suo@emory.edu> and <sissi.li@emory.edu>
-
-- [Philip Wang]{.alert} and [Anita Osuri]{.alert} will also be grading your assignments and quizzes (with my oversight). Their email addresses are <xipu.wang@emory.edu> and <anita.osuri@emory.edu>
+- They will be available to help you with assignments, quizzes, and any questions you may have about the course material
 
 - [We are all here to help you!]{.alert} So feel free to ask questions during class, office hours, or via email 😃
 :::
@@ -191,7 +188,7 @@ Please remember to check the course repository regularly for updates and announc
 
 :::{.columns}
 :::{.column width=60%}
-- Learning a new topic can be tough and push you out of your comfort zone. If the course pace is too fast, let us know. I expect your commitment, but [I do not want anyone to fail]{.alert}
+- Learning a new topic can be tough and push you out of your comfort zone. If the course pace is too fast, let me know. I expect your commitment, but [I do not want anyone to fail]{.alert}
 - You are all keen on AI, but your backgrounds may vary. That is great! Some sessions might be more engaging than others. If you are bored, [help others]{.alert} or explore additional resources (we have plenty!)
 - [Please be respectful]{.alert} to each other
 - [Ask questions]{.alert} whenever you need to!
@@ -211,15 +208,17 @@ Please remember to check the course repository regularly for updates and announc
 
 By the end of this course, you will be able to:
 
-- `r fa('comment-dots')` [Explain]{.alert} the main ideas behind contemporary AI systems in plain language
+:::{.incremental}
+- [Explain]{.alert} the main ideas behind contemporary AI systems in plain language
 
-- `r fa('triangle-exclamation')` [Identify]{.alert} common failure modes of AI systems and the data issues that cause them
+- [Identify]{.alert} common failure modes of AI systems and the data issues that cause them
 
-- `r fa('newspaper')` [Read and assess]{.alert} claims about AI in news articles, product pages and policy documents
+- [Read and assess]{.alert} claims about AI in news articles, product pages and policy documents
 
-- `r fa('pencil-ruler')` [Design]{.alert} a small, realistic plan for an AI application, including data needs, evaluation, and a basic harm-mitigation strategy 
+- [Design]{.alert} a small, realistic plan for an AI application, including data needs, evaluation, and a basic harm-mitigation strategy 
   
-- `r fa('scale-balanced')` [Reflect critically]{.alert} on ethical, legal and social questions raised by AI deployment
+- [Reflect critically]{.alert} on ethical, legal and social questions raised by AI deployment
+:::
 :::
 
 ## Course overview
@@ -240,23 +239,25 @@ By the end of this course, you will be able to:
 
 ## What makes this course unique
 
-:::{style="margin-top: 40px; font-size: 32px;"}
+:::{style="margin-top: 40px; font-size: 31px;"}
 - We're starting a new AI track in the Data Science curriculum! 🚀
 
 - This is the second offering of DATASCI 101 — help us make it great! 🙂
 
 - Why is this course different from others?
-  - `r fa('user-graduate')` [Non-technical approach:]{.alert} No heavy maths or programming required
-  - `r fa('question')` [Critical perspective:]{.alert} Learn to ask the right questions about AI
-  - `r fa('briefcase')` [Real-world focus:]{.alert} Learn how AI is applied in practice
-  - `r fa('users')` [For all backgrounds:]{.alert} Whether you're a humanities or STEM student, this course is for you!
+  - [Non-technical approach:]{.alert} No heavy maths or programming required
+  - [Critical perspective:]{.alert} Learn to ask the right questions about AI
+  - [Real-world focus:]{.alert} Learn how AI is applied in practice
+  - [For all backgrounds:]{.alert} Whether you're a humanities or STEM student, this course is for you!
 :::
 
 ## Logistics
 ### Course information
 
-:::{style="margin-top: 40px; font-size: 28px;"}
-- [Syllabus:]{.alert} Available on our [course repository](https://github.com/danilofreire/datasci101/blob/main/syllabus.pdf) and [website](https://danilofreire.github.io/datasci101/syllabus.html). The course is designed to be self-contained. The syllabus includes links to the slides we will use in class, along with recommended readings, and problem sets. I will upload slides throughout the term as we progress
+:::{style="margin-top: 40px; font-size: 24px;"}
+- [Syllabus:]{.alert} Available on our [course repository](https://github.com/danilofreire/datasci101/blob/main/syllabus.pdf) and [website](https://danilofreire.github.io/datasci101/syllabus.html). The course is designed to be self-contained
+- The syllabus and the website includes links to the slides we will use in class, along with recommended readings, and problem sets
+- I may update the slides as the course progresses, so please check the website regularly for updates
 - [Schedule:]{.alert} Lectures are on Tuesdays and Thursdays from 2:30 to 3:20 pm in [White Hall 206](https://maps.app.goo.gl/gynyTUkKqJ7meGjm8)
 - [Office Hours:]{.alert} We're always happy to help. Please [reach out to the TAs or me]{.alert} via email to schedule a time
 
@@ -279,7 +280,7 @@ By the end of this course, you will be able to:
 - [Academic integrity:]{.alert} Please refer to the syllabus for the university's policy on academic integrity
 :::
 
-# Motivation: <br> What the heck is AI anyway? 🤖 {background-color="#1B3A6B"}
+# Motivation: <br> What is AI anyway? 🤖 {background-color="#1B3A6B"}
 
 ## What is AI?
 
@@ -331,12 +332,12 @@ Source: [McKinsey & Company (2024)](https://www.mckinsey.com/featured-insights/m
 
 ## Key questions we'll explore
 
-:::{style="margin-top: 40px; font-size: 19px;"}
+:::{style="margin-top: 40px; font-size: 20px;"}
 :::{.columns}
 :::{.column width=50%}
 - [What can AI actually do vs. what's hype?]{.alert}
   - Can AI truly think or is it just pattern matching?
-  - Why does ChatGPT sometimes give wrong answers?
+  - Why does AI sometimes give wrong answers?
   - What can and cannot be automated?
 
 - [Why do AI systems fail?]{.alert}
@@ -364,19 +365,6 @@ Source: [McKinsey & Company (2024)](https://www.mckinsey.com/featured-insights/m
 :::
 :::
 :::
-
-<!--
-## Current state of AI
-
-:::{style="margin-top: 40px; font-size: 27px;"}
-- [OpenAI's o1](https://openai.com/index/learning-to-reason-with-llms/) and [DeepSeek's R1](https://github.com/deepseek-ai/DeepSeek-R1) have shown that "thinking" AI systems can outperform humans on a variety of tasks
-- [Neural scaling law](https://en.wikipedia.org/wiki/Neural_scaling_law) suggests that larger models trained on more data will continue to improve performance
-- [Open-source models are closing the gap with proprietary ones](https://llm-stats.com/), democratising access to AI technology
-- [We have never built as many datacentres as we are building now](https://www.mckinsey.com/industries/technology-media-and-telecommunications/our-insights/infrastructure-matters-the-future-of-data-centers), and AI workloads are a major driver of this growth
-  - USD 300 billion just in 2025, and 5.2 trillion by 2030 (that's the size of Germany's economy!)
-- Despite the hype, [two-thirds of companies report that their organisation has not begun scaling AI](https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai), highlighting the gap between potential and real-world application
-:::
--->
 
 ## AI benchmarks and human performance
 
@@ -446,45 +434,6 @@ Source: [Artificial Intelligence Index Report (2025)](https://hai.stanford.edu/a
 
 :::{style="text-align: center;"}
 ![](figures/biases.jpg)
-:::
-:::
-:::
-:::
-
-## AI challenges: Hallucinations
-
-:::{style="margin-top: 30px; font-size: 22px;"}
-:::{.columns}
-:::{.column width="50%"}
-- AI can produce [incorrect or misleading content]{.alert}
-- Errors in the model, incorrect information in the training data, limitations of model architecture
-- [Check the output of these models and not take it at face value]{.alert}
-- I asked Copilot (powered by GPT-4) to solve a simple quadratic equation, and [it very confidently gave me a very wrong answer]{.alert} 😅
-- It provided the answers of $\frac{1}{2}$ and $\frac{-5}{4}$ when the correct answers were 0.804 and -1.55. 
-:::
-
-:::{.column width="50%"}
-:::{style="text-align: center;"}
-![](figures/quadratic.png)
-:::
-:::
-:::
-:::
-
-## AI challenges: Confusion
-
-:::{style="margin-top: 30px; font-size: 22px;"}
-:::{.columns}
-:::{.column width="50%"}
-- AI models can be [easily confused](https://www.technologyreview.com/2022/07/07/1045821/ai-bias-ethics/) by small changes in the input
-- AIs have an annoying tendency to be overpolite and [agree with you even when you are wrong]{.alert}
-- Thus, they can be easily manipulated (including by bad actors)
-- I asked Copilot what the westernmost point of Europe was, and easily contradicted its answer
-:::
-
-:::{.column width="50%"}
-:::{style="text-align: center;"}
-![](figures/europe.png)
 :::
 :::
 :::
