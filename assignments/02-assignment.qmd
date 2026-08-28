@@ -93,7 +93,6 @@ The **temperature** setting controls how random an LLM's output is.
 
 - Compare the three answers at each setting. What changed?
 - At temperature 2, is the writing still coherent? Quote your worst result
-- Now try *"Name a fruit. Answer with one word."* at both settings. It probably says apple every time. Explain why temperature cannot fix that
 - Telling ChatGPT to "be more creative" does not change its temperature. Explain what that instruction changes instead
 
 ---
