@@ -60,11 +60,14 @@ A bank tests a fraud detection system on 10,000 transactions, of which 100 are f
 - Correctly clears **9,880 legitimate transactions** (True Negatives)
 - Wrongly flags **20 legitimate transactions** as fraud (False Positives)
 
+Every fraud the bank misses costs it **$200**. Every legitimate transaction it wrongly flags costs it **$5** in support calls.
+
 **Your task:**
 
 1. Calculate the **accuracy**, **precision** and **recall** of this system. Show your working. You may ask an LLM to explain what these metrics mean, but do the arithmetic yourself
-2. The vendor advertises the system using its accuracy. Explain what that number hides
-3. Which of the two errors costs the bank more, and which metric would you prioritise? Say what you would give up in exchange
+2. A second system flags nothing at all, so it catches no fraud. Calculate its accuracy on the same 10,000 transactions
+3. Calculate what the errors cost the bank under each system: the one tested, and the one that flags nothing
+4. Which measure should the bank use to decide whether to deploy the tested system, accuracy or total cost? Justify your answer with your own numbers
 
 ---
 
