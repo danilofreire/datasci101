@@ -722,6 +722,7 @@ Source: [OpenAI Scaling Laws Paper](https://arxiv.org/abs/2001.08361)
   - Low (0.1-0.3): Focused, deterministic
   - High (0.7-1.0): Creative, varied
   - 0.0: Always picks most likely word
+  - (Google AI Studio divides the scale up to 2.0)
 
 - **Top-p** (nucleus sampling)
   - Only consider words in top p% probability

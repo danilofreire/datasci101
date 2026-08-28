@@ -32,7 +32,7 @@ For each system below, state which learning paradigm it uses (supervised, unsupe
 2. A delivery app tells you your order will arrive in 23 minutes
 3. A data centre adjusts its cooling equipment and uses less energy every month
 4. A news app displays today's articles about the same event together
-5. ChatGPT
+5. ChatGPT, counting both how it was first trained on text and how it was tuned afterwards
 
 **Then:**
 
