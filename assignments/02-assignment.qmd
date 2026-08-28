@@ -26,15 +26,18 @@ This assignment covers material from **Lectures 04-06**: Supervised/Unsupervised
 
 ### Question 1: Learning Paradigm Sorter
 
-Ask ChatGPT, Claude, Gemini, or another LLM: *"Give me 5 real-world examples of AI applications."*
+For each system below, state which learning paradigm it uses (supervised, unsupervised or reinforcement), and what data it must have learned from.
 
-For each example the LLM provides, identify which learning paradigm it uses:
+1. A hospital system reviews a chest X-ray and flags it as likely pneumonia
+2. A delivery app tells you your order will arrive in 23 minutes
+3. A data centre adjusts its cooling equipment and uses less energy every month
+4. A news app displays today's articles about the same event together
+5. ChatGPT
 
-1. **Supervised learning** (learns from labelled examples)
-2. **Unsupervised learning** (finds patterns without labels)
-3. **Reinforcement learning** (learns from rewards and trial-and-error)
+**Then:**
 
-Explain your reasoning for each classification. If you're uncertain about any example, explain why it's ambiguous.
+- Exactly one of the five combines two paradigms. Identify it and name both
+- Answer everything above before asking an LLM. Then ask one to check your work, and report anything it disagreed with you about
 
 ---
 
@@ -48,20 +51,20 @@ Explain your reasoning for each classification. If you're uncertain about any ex
 
 ---
 
-### Question 2: Confusion Matrix Builder
+### Question 2: Reading a confusion matrix
 
-Ask an LLM to generate a confusion matrix for a spam filter with the following results:
+A bank tests a fraud detection system on 10,000 transactions, of which 100 are fraudulent. The results:
 
-- Correctly identifies **90 spam emails** (True Positives)
-- Misses **10 spam emails** that go to the inbox (False Negatives)
-- Correctly identifies **900 legitimate emails** (True Negatives)
-- Wrongly marks **5 legitimate emails** as spam (False Positives)
+- Correctly flags **20 fraudulent transactions** (True Positives)
+- Misses **80 fraudulent transactions** (False Negatives)
+- Correctly clears **9,880 legitimate transactions** (True Negatives)
+- Wrongly flags **20 legitimate transactions** as fraud (False Positives)
 
-Based on this confusion matrix:
+**Your task:**
 
-1. Calculate the **precision** of this spam filter (you can ask the LLM to explain what the concepts are if you are not familiar with them)
-2. Calculate the **recall** of this spam filter
-3. Which metric would you prioritise for a spam filter, and why? Consider the costs of each type of error.
+1. Calculate the **accuracy**, **precision** and **recall** of this system. Show your working. You may ask an LLM to explain what these metrics mean, but do the arithmetic yourself
+2. The vendor advertises the system using its accuracy. Explain what that number hides
+3. Which of the two errors costs the bank more, and which metric would you prioritise? Say what you would give up in exchange
 
 ---
 
@@ -77,29 +80,18 @@ Based on this confusion matrix:
 
 ### Question 3: Temperature Experiment
 
-The **temperature** parameter controls how random or deterministic an LLM's responses are. In this question, you'll experiment with temperature settings.
+The **temperature** setting controls how random an LLM's output is.
 
-**Option A: Use Google AI Studio** (recommended for this experiment)
-
-1. Go to [aistudio.google.com](https://aistudio.google.com/)
-2. Sign in with your Google account
-3. Find the temperature slider in the settings panel
-4. Ask the same creative question (e.g., *"Write a short poem about machine learning"*) at:
-   - Low temperature (0.1 or 0.2)
-   - High temperature (0.9 or 1.0)
-5. Ask the same question multiple times at each temperature setting
-
-**Option B: Use ChatGPT**
-
-1. Go to [chat.openai.com](https://chat.openai.com/)
-2. Try prompting ChatGPT to be "very factual and deterministic" vs. "very creative and varied"
-3. Ask the same question multiple times in each mode
+1. Go to [aistudio.google.com](https://aistudio.google.com/) and sign in. In the settings panel, turn **off** "Grounding with Google Search" and set **Thinking level** to **Minimum**. Both of these interfere with the experiment
+2. Set the temperature to **0**. Send the prompt *"Write a six-word story about the sea."* three times, **starting a new chat each time**. You can start one quickly with the **+** at the top of the page. Record all three
+3. Set the temperature to **2**. Repeat, and record all three
 
 **Your task:**
 
-- Document the responses you receive at different temperature settings (or different prompting styles)
-- Do you notice any differences in creativity, variation, or consistency?
-- If you don't notice much difference, speculate on why that might be (consider: default settings, model guardrails, the type of question asked)
+- Compare the three answers at each setting. What changed?
+- At temperature 2, is the writing still coherent? Quote your worst result
+- Now try *"Name a fruit. Answer with one word."* at both settings. It probably says apple every time. Explain why temperature cannot fix that
+- Telling ChatGPT to "be more creative" does not change its temperature. Explain what that instruction changes instead
 
 ---
 
@@ -113,21 +105,19 @@ The **temperature** parameter controls how random or deterministic an LLM's resp
 
 ---
 
-### Question 4: The Data Labelling Challenge
+### Question 4: Which rule would you trust?
 
-Labelling data is one of the main bottlenecks in AI. It is time-consuming and expensive, and the quality of labels is a key factor in training effective models.
+A shop wants to predict whether a customer will come back within 30 days. It has records for its last 10 customers, and builds two rules from them.
+
+**Rule A** predicts a customer will return if they spent over $40, paid by card, bought more than two items, came on a weekday, are aged 25 to 34, and live within three miles. It classifies all 10 past customers correctly.
+
+**Rule B** predicts a customer will return if they spent over $40. It gets 8 of the 10 right.
 
 **Your task:**
 
-1. Ask an LLM: *"What are three alternatives to manually labelling data?"*
-2. Copy the response.
-3. Ask: *"Why do different people often give the same example different labels, and how do annotation guidelines help?"*
-4. Copy the response.
-
-**Analysis:**
-
-- In your own words, explain why the quality of labels matters as much as the quantity
-- What could go wrong if you train an AI system on poorly labelled data?
+1. The shop is about to apply one rule to its next 1,000 customers. Which would you choose, and what accuracy would you expect from each?
+2. Rule A is perfect on the data it was built from. Name what has gone wrong, and explain why adding conditions made it worse
+3. The shop has no new customers yet. Using only the 10 records it already has, how could it have caught this problem before deploying?
 
 ---
 
@@ -147,14 +137,15 @@ Before an LLM can process your words, it splits them into tokens and turns each 
 
 **Your task:**
 
-1. Visit OpenAI's tokeniser at [platform.openai.com/tokenizer](https://platform.openai.com/tokenizer)
+1. Visit OpenAI's tokeniser at [platform.openai.com/tokenizer](https://platform.openai.com/tokenizer) and select the **"GPT-5.x & O1/3"** tokeniser
 2. Paste this sentence: *"The quick brown fox jumps over the lazy dog"* and record the token count
-3. Paste the Spanish translation: *"El rápido zorro marrón salta sobre el perro perezoso"* and record the token count
-4. Paste the words *"unbelievable"* and *"unbelievableness"* and note how each one is split
+3. Paste the Spanish translation: *"El rápido zorro marrón salta sobre el perro perezoso"* and record the count
+4. Paste the Hindi translation: *"फुर्तीली भूरी लोमड़ी आलसी कुत्ते के ऊपर कूदती है"* and record the count
+5. Paste the words *"unbelievable"* and *"unbelievableness"* and note how each one is split
 
 **Analysis:**
 
-- Does the Spanish sentence need more tokens than the English one? Record what you find
+- Which language needed the most tokens for the same sentence? Lecture 06 covered context windows: if your language needs three times as many tokens, what do you lose?
 - Ask an LLM: *"Why do LLMs often perform better in English than in other languages?"* Compare its answer with what you observed
 - In your own words, explain what an embedding captures that a token ID alone does not
 
@@ -170,19 +161,15 @@ Before an LLM can process your words, it splits them into tokens and turns each 
 
 ---
 
-### Bonus Question: Can Machines Think?
+### Bonus Question: Whose values is it repeating?
 
-In 1950, Alan Turing published "Computing Machinery and Intelligence," where he proposed replacing the question "Can machines think?" with a practical test: can a machine fool a human into believing it is human? Turing argued that if a machine behaves indistinguishably from a thinking being, we have no good reason to deny it thinks.
-
-But not everyone agrees. Some philosophers argue there is a difference between *simulating* intelligence and *having* intelligence. A calculator can multiply faster than any human, but we don't say it "understands" multiplication. A chatbot can write a poem, but does it "understand" poetry?
+Lecture 04 covered RLHF: after pretraining, a model is tuned on human raters choosing between responses. Those raters were paid, worked to a rubric, and had deadlines. What the model learned is which answers those particular people preferred.
 
 **Your task:**
 
-1. Have a short conversation (at least 5 exchanges) with ChatGPT, Claude, or another LLM about a topic you care about. Pay attention to whether the responses feel like genuine understanding or sophisticated pattern matching.
-
-2. Take a position: is there a meaningful difference between simulating intelligence and having intelligence? Or is the distinction meaningless, since we can only ever judge intelligence by outward behaviour? Defend your view.
-
-3. Consider this thought experiment: if a future AI passes every test of intelligence we can design, responds emotionally, asks its own questions, and claims to be conscious, would you believe it? Why or why not?
+1. In assignment 01 you pushed a model into calling weak work A-grade. Explain how RLHF could have produced that behaviour
+2. Imagine a model that never flatters and never softens bad news. Describe what using it would feel like, and say honestly whether you would keep using it
+3. Whose values should a model hold: the raters', the company's, the user's, or someone else's? Defend one answer, and name what your choice costs
 
 ---
 
@@ -193,4 +180,3 @@ But not everyone agrees. Some philosophers argue there is a difference between *
 \
 
 \
-
