@@ -121,10 +121,10 @@ If you require accommodations, please contact the Department of Accessibility Se
 
 The schedule is below. Each class comes with a short description and two reading lists.
 
-- *Suggested readings* are the two to four short, non-technical pieces I would start with. If you read anything for a class, read these.
+- *Suggested readings* are the two to four short, non-technical pieces I recommend for that class. Start with these.
 - *Further readings* go deeper. Some are academic papers, some are long reports, and a few are technical. Use them for the topics that interest you most, and for your final project.
 
-No reading is required. The slides are self-contained, and everything the assignments and quizzes ask of you is covered in class. Come talk to me if you would like more on any topic. The schedule may change during the term. Please contact me if anything is unclear.
+The slides are self-contained, and everything the assignments and quizzes ask of you is covered in class. Come talk to me if you would like more on any topic. The schedule may change during the term. Please contact me if anything is unclear.
 
 ## Module 0 — Orientation
 
