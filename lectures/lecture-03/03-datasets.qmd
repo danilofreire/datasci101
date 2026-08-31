@@ -193,7 +193,7 @@ Source: [xkcd](https://xkcd.com/1838/)
 | Case | What went wrong | Impact |
 |------|-----------------|--------|
 | Credit scoring | Data reflected historical gender-based income gaps | [Lower credit limits]{.alert} for women with similar profiles |
-| Facial recognition | Training data mostly light-skinned faces | [Error rates 34x higher]{.alert} for dark-skinned women |
+| Facial recognition | Training data mostly light-skinned faces | [Error rates 43x higher]{.alert} for dark-skinned women |
 | Criminal risk assessment | Historical arrest data reflected biased policing | [Perpetuated racial disparities]{.alert} in sentencing |
 | Hiring AI | Trained on historical (male-dominated) hiring decisions | [Penalised female candidates]{.alert} |
 
