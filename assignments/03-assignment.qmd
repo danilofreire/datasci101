@@ -1,5 +1,5 @@
 ---
-title: "Assignment 03: Evaluating AI Models and Their Limits"
+title: "Assignment 03: Language, Tokens and Multimodal AI"
 subtitle: "DATASCI 101: Introduction to AI Applications"
 author: "Emory University"
 format:
@@ -10,7 +10,7 @@ format:
 
 ## Instructions
 
-This assignment covers material from **Lectures 05-06**: Metrics and Validation, and Tokenisation and Embeddings. The bonus question draws on **Lecture 07**: Multimodal AI.
+This assignment covers material from **Lectures 06-07**: Tokenisation and Embeddings, and Multimodal AI.
 
 **Guidelines:**
 
@@ -24,31 +24,7 @@ This assignment covers material from **Lectures 05-06**: Metrics and Validation,
 
 ---
 
-### Question 1: Why the "Best" AI Might Not Be Best for You
-
-Lecture 05 introduces Goodhart's Law: "When a measure becomes a target, it ceases to be a good measure." AI companies rank their models on benchmarks, standardised tests that measure reasoning, coding, and knowledge. But a model that tops the leaderboard might still give you a confusing explanation or miss the point of your question entirely.
-
-**Your task:**
-
-1. Think of one example from your own experience (school, sports, social media, anything) where chasing a metric made things worse instead of better. Describe what happened in 2-3 sentences.
-
-2. Ask an LLM: *"What is benchmark contamination in AI, and why does it make leaderboard rankings unreliable?"* Summarise the answer in 2-3 sentences.
-
-3. If you were choosing an LLM for your own coursework, what would you test it on instead of looking at benchmark scores? Describe one specific task you'd try, and what a good vs bad response would look like.
-
----
-
-*Your answer:*
-
-\
-
-\
-
-\
-
----
-
-### Question 2: Context Window Math
+### Question 1: Context window math
 
 A model has a **32,000 token** context window. You want to analyse a legal document that is approximately **25,000 words**.
 
@@ -68,14 +44,19 @@ A model has a **32,000 token** context window. You want to analyse a legal docum
 
 ---
 
-### Question 3: The Cost of Being Wrong
+### Question 2: Temperature experiment
 
-Not all errors are equal. In some settings, a **false positive** is worse; in others, a **false negative** is worse.
+The **temperature** setting controls how random an LLM's output is.
+
+1. Go to [aistudio.google.com](https://aistudio.google.com/) and sign in. In the settings panel, turn **off** "Grounding with Google Search" and set **Thinking level** to **Minimum**. Both of these interfere with the experiment
+2. Set the temperature to **0**. Send the prompt *"Write a six-word story about the sea."* three times, **starting a new chat each time**. You can start one quickly with the **+** at the top of the page. Record all three
+3. Set the temperature to **2**. Repeat, and record all three
 
 **Your task:**
 
-1. Think about one real-world AI application where false negatives is more dangerous than false positives, and one where false positives is more dangerous. Explain why for each.
-2. In your own words, why is it impossible to maximise both precision and recall at the same time?
+- Compare the three answers at each setting. What changed?
+- At temperature 2, is the writing still coherent? Quote your worst result
+- Telling ChatGPT to "be more creative" does not change its temperature. Explain what that instruction changes instead
 
 ---
 
@@ -89,19 +70,23 @@ Not all errors are equal. In some settings, a **false positive** is worse; in ot
 
 ---
 
-### Question 4: Overfitting vs Underfitting Detective
+### Question 3: Seeing like a tokeniser
 
-Ask an LLM to generate a simple analogy for overfitting and underfitting.
+Before an LLM can process your words, it splits them into tokens and turns each token into an embedding (Lecture 06).
 
 **Your task:**
 
-1. Ask an LLM: *"Explain overfitting and underfitting in machine learning using a school exam analogy. Give me a specific example for each."*
-2. Now ask it: *"A model gets 99% on training data but only 55% on new data. Is this overfitting or underfitting? What could be done to fix it?"*
+1. Visit OpenAI's tokeniser at [platform.openai.com/tokenizer](https://platform.openai.com/tokenizer) and select the **"GPT-5.x & O1/3"** tokeniser
+2. Paste this sentence: *"The quick brown fox jumps over the lazy dog"* and record the token count
+3. Paste the Spanish translation: *"El rápido zorro marrón salta sobre el perro perezoso"* and record the count
+4. Paste the Hindi translation: *"फुर्तीली भूरी लोमड़ी आलसी कुत्ते के ऊपर कूदती है"* and record the count
+5. Paste the words *"unbelievable"* and *"unbelievableness"* and note how each one is split
 
 **Analysis:**
 
-- In your own words, explain why a model that memorises its training data is not actually useful
-- When would you use **cross-validation** instead of a simple train/test split?
+- Which language needed the most tokens for the same sentence? Lecture 06 covered context windows: if your language needs three times as many tokens, what do you lose?
+- Ask an LLM: *"Why do LLMs often perform better in English than in other languages?"* Compare its answer with what you observed
+- In your own words, explain what an embedding captures that a token ID alone does not
 
 ---
 
@@ -115,21 +100,20 @@ Ask an LLM to generate a simple analogy for overfitting and underfitting.
 
 ---
 
-### Question 5: LLM-as-a-Judge Experiment
+### Question 4: Does it understand your voice?
 
-Use one LLM to evaluate the output of another (or the same LLM with different prompts).
+Lecture 07 covered Whisper, the model behind most speech recognition.
 
-**Your task:**
-
-1. Ask an LLM: *"Summarise the concept of climate change in 3 sentences."*
-2. Copy the summary
-3. Now give the same LLM (or a different one) this prompt: *"You are an expert evaluator. Rate the following summary on a scale of 1-5 for: (a) accuracy, (b) completeness, (c) clarity. Provide a one-sentence justification for each score."* Then paste the summary from step 2
-4. Copy the evaluation
+1. Go to [huggingface.co/spaces/openai/whisper](https://huggingface.co/spaces/openai/whisper). If the page is down, record the sentences as voice memos on your phone instead, upload each file to ChatGPT or Gemini, and ask for an exact transcript
+2. Record yourself reading this sentence at a normal pace: *"The doctor asked whether the patient had taken the medication yesterday."*
+3. Record the same sentence again, this time speaking quickly
+4. Paste both transcripts exactly as they came out
 
 **Analysis:**
 
-- Do you agree with the LLM judge's ratings? Would you change any score?
-- What is one risk of using an LLM to judge other LLMs?
+- What changed between the two transcripts? Quote the exact words
+- The audio contains no punctuation. So who decided where the full stops and commas go?
+- Name one group of speakers this system is likely to serve worse, and say what about the training data would cause it
 
 ---
 
@@ -143,12 +127,44 @@ Use one LLM to evaluate the output of another (or the same LLM with different pr
 
 ---
 
-### Bonus Question: AI Content Watermarking
+### Question 5: Train your own classifier
 
-Ask an LLM: *"What are two arguments FOR mandatory AI watermarks on generated images, and two arguments AGAINST?"*
+1. Go to [teachablemachine.withgoogle.com](https://teachablemachine.withgoogle.com/), then "Get Started" → "Image Project" → "Standard"
+2. Create two classes, **thumbs up** and **thumbs down**. Record about 12 examples of each with your webcam
+3. Click "Train Model", then test it live. Confirm it works
+4. Now show it something that is neither: your face, a book, or an empty hand. Record what it predicts and how confident it says it is
 
-1. List all four arguments
-2. Take a position: should AI images require watermarks? Explain your view
+**Analysis:**
+
+- The model gave a confident answer for something that belongs to neither class. Why can it not answer "neither"?
+- Lecture 03 said classes should be **collectively exhaustive**. What third class would you add, and how would you collect examples for it?
+- Does a high confidence score mean the model is probably right?
+
+---
+
+*Your answer:*
+
+\
+
+\
+
+\
+
+---
+
+### Bonus Question: Where do we draw the line?
+
+Lecture 07 ended with a question we did not settle. When a model can generate a person's face, voice and words, what should be required?
+
+- Watermarks that cannot be removed
+- A visible label saying it is AI-made
+- Consent from the person depicted
+- Nothing at all
+
+**Your task:**
+
+1. Choose one and defend it. Name what your choice costs
+2. Your rule must work for a satirical cartoon of a politician **and** for a fake video of a classmate. Explain how it handles both, or admit where it fails
 
 ---
 

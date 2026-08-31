@@ -23,15 +23,19 @@ This assignment covers material from **Lectures 01-03**: Introduction to AI, His
 - Submit this assignment as a **PDF** (preferred) or Word document via Canvas
 ---
 
-### Question 1: AI Definition Challenge
+### Question 1: Write the labelling instructions
 
-Ask ChatGPT or another LLM to explain what "artificial intelligence" means in **three different ways**:
+A city wants an app that reports whether a photo of a bike lane shows it **blocked** or **clear**. Before any model is trained, human labellers must tag thousands of photos (Lecture 03). Your job is to write their instructions.
 
-1. As if explaining to a 10-year-old child
-2. As a technical definition for computer science students
-3. As a philosopher might define it
+**Your task:**
 
-Then **compare** these three explanations. What key elements appear in all three? What's different?
+1. Write your instructions as three to five rules. Each rule must be one sentence a labeller can apply by looking at the photo alone, written as "If X, label it Y". Here is the format, from a different task: *"If standing water covers more than half the pothole, label it flooded."* Together, your rules must give every photo exactly one label
+2. Now apply your own rules to these three photos, and state the label your rules produce:
+   - A delivery van stopped in the lane with its hazard lights on
+   - A wheelchair user travelling along the lane
+   - The lane completely covered in snow
+3. If any case made you want to add a rule, you have found the problem: name it (Lecture 03 called it edge cases)
+4. Ask an LLM to label the same three photos using only your written rules. Where it disagrees with you, whose reading of the rules was wrong?
 
 ---
 
@@ -121,9 +125,7 @@ Experiment with the tool and answer:
 
 1. Type a sentence and observe the **attention patterns**. Which words attend strongly to each other? Take a screenshot if possible.
 
-2. Try changing the **temperature** setting. What differences do you notice between low temperature (0.2) and high temperature (1.0)?
-
-3. In your own words, explain what "self-attention" does. Use an analogy if helpful.
+2. In your own words, explain what "self-attention" does. Use an analogy if helpful.
 
 ---
 

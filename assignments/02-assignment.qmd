@@ -1,5 +1,5 @@
 ---
-title: "Assignment 02: Machine Learning Concepts and LLM Internals"
+title: "Assignment 02: Learning Paradigms and Model Evaluation"
 subtitle: "DATASCI 101: Introduction to AI Applications"
 author: "Emory University"
 format:
@@ -10,7 +10,7 @@ format:
 
 ## Instructions
 
-This assignment covers material from **Lectures 04-06**: Supervised/Unsupervised/Reinforcement Learning, Metrics and Validation, and Tokenisation and Embeddings.
+This assignment covers material from **Lectures 04-05**: Supervised, Unsupervised and Reinforcement Learning, and Metrics and Validation.
 
 **Guidelines:**
 
@@ -24,7 +24,7 @@ This assignment covers material from **Lectures 04-06**: Supervised/Unsupervised
 
 ---
 
-### Question 1: Learning Paradigm Sorter
+### Question 1: Learning paradigm sorter
 
 For each system below, state which learning paradigm it uses (supervised, unsupervised or reinforcement), and what data it must have learned from.
 
@@ -81,19 +81,15 @@ Every fraud the bank misses costs it **$200**. Every legitimate transaction it w
 
 ---
 
-### Question 3: Temperature Experiment
+### Question 3: Why the "best" AI might not be best for you
 
-The **temperature** setting controls how random an LLM's output is.
-
-1. Go to [aistudio.google.com](https://aistudio.google.com/) and sign in. In the settings panel, turn **off** "Grounding with Google Search" and set **Thinking level** to **Minimum**. Both of these interfere with the experiment
-2. Set the temperature to **0**. Send the prompt *"Write a six-word story about the sea."* three times, **starting a new chat each time**. You can start one quickly with the **+** at the top of the page. Record all three
-3. Set the temperature to **2**. Repeat, and record all three
+Lecture 05 introduced Goodhart's Law: "When a measure becomes a target, it ceases to be a good measure." AI companies rank their models on benchmarks, but a model that tops the leaderboard might still give you a confusing explanation or miss the point of your question.
 
 **Your task:**
 
-- Compare the three answers at each setting. What changed?
-- At temperature 2, is the writing still coherent? Quote your worst result
-- Telling ChatGPT to "be more creative" does not change its temperature. Explain what that instruction changes instead
+1. Describe one example from your own experience, at school, in sport, on social media, anywhere, where chasing a metric made things worse. Two or three sentences
+2. Lecture 05 described two ways a model can score well without being any better: test data leaking into its training, and the model looking up answers during the test itself. Explain in your own words why each one makes a leaderboard score unreliable
+3. If you were choosing an LLM for your own coursework, what would you test it on instead of reading its benchmark scores? Describe one specific task you would set it, and what a good and a bad response would look like
 
 ---
 
@@ -133,23 +129,21 @@ A shop wants to predict whether a customer will come back within 30 days. It has
 
 ---
 
-### Question 5: Seeing Like a Tokeniser
+### Question 5: Can an AI judge another AI?
 
-Before an LLM can process your words, it splits them into tokens and turns each token into an embedding (Lecture 06).
+Lecture 05 covered using one model to evaluate another's output, with a rubric.
 
 **Your task:**
 
-1. Visit OpenAI's tokeniser at [platform.openai.com/tokenizer](https://platform.openai.com/tokenizer) and select the **"GPT-5.x & O1/3"** tokeniser
-2. Paste this sentence: *"The quick brown fox jumps over the lazy dog"* and record the token count
-3. Paste the Spanish translation: *"El rápido zorro marrón salta sobre el perro perezoso"* and record the count
-4. Paste the Hindi translation: *"फुर्तीली भूरी लोमड़ी आलसी कुत्ते के ऊपर कूदती है"* and record the count
-5. Paste the words *"unbelievable"* and *"unbelievableness"* and note how each one is split
+1. Ask an LLM: *"Summarise the concept of climate change in three sentences."* Copy the summary
+2. Now edit the summary yourself: change one number, or reverse one cause-and-effect claim, so that the summary is factually wrong. Keep every other word the same, and note what you changed
+3. In a **new chat**, paste this prompt followed by your edited summary: *"You are an expert evaluator. Rate the following summary from 1 to 5 for (a) accuracy, (b) completeness, (c) clarity. Give a one-sentence justification for each score."*
+4. Record all three scores and the justifications
 
 **Analysis:**
 
-- Which language needed the most tokens for the same sentence? Lecture 06 covered context windows: if your language needs three times as many tokens, what do you lose?
-- Ask an LLM: *"Why do LLMs often perform better in English than in other languages?"* Compare its answer with what you observed
-- In your own words, explain what an embedding captures that a token ID alone does not
+- Did the judge notice the error you planted? Quote its accuracy justification word for word
+- A checkable false fact is the easiest case for a judge. Lecture 05 warned that judges "may favour their own style" when comparing two good answers. Would you trust a leaderboard built by LLM judges?
 
 ---
 
