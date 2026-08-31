@@ -1,5 +1,5 @@
 ---
-title: "Assignment 04: Advanced Prompting Techniques"
+title: "Assignment 04: Evaluating an AI Proctor"
 subtitle: "DATASCI 101: Introduction to AI Applications"
 author: "Emory University"
 format:
@@ -10,7 +10,7 @@ format:
 
 ## Instructions
 
-This assignment covers material from **Lecture 10**: Prompting Techniques.
+This assignment covers material from **Lectures 05 and 07**: Metrics and Fairness, and Multimodal AI.
 
 **Guidelines:**
 
@@ -24,112 +24,27 @@ This assignment covers material from **Lecture 10**: Prompting Techniques.
 
 ---
 
-### Question 1: Adversarial Persona Testing
+## The case
 
-The **PTCF framework** is a structured approach to prompting developed by Google:
+A company has offered Emory a remote proctoring system for online exams. We will call it **Invigil**. During an exam, Invigil takes a photograph through the student's webcam every three seconds and records audio for the whole session. Software scores each exam and flags some for review by the Honour Council. The brochure says the system is **96% accurate**.
 
-- **P**ersona: Who should the AI act as?
-- **T**ask: What do you want done?
-- **C**ontext: What background information is relevant?
-- **F**ormat: How should the output be structured?
+In a pilot of **2,000 exams** at another university, an independent audit found **40** cases of cheating. Invigil flagged **80** exams. The Honour Council confirmed cheating in **20** of them. So three in four flags were honest students, and half the cheaters were never flagged.
 
-**Your task:** Use PTCF to create two contradictory personas, then have them debate.
-
-1. Write a system prompt for a **"climate skeptic economist"** who prioritises economic growth. Use all four PTCF elements.
-
-2. Write a system prompt for an **"environmental activist scientist"** who prioritises sustainability. Use all four PTCF elements.
-
-3. Ask both the same question: *"Should governments subsidise electric vehicles?"*
-
-4. **Analysis:** 
-   - Which persona produces more factually accurate claims? 
-   - Does the model ever "break character" to correct misinformation in either persona?
+The provost has asked your committee to assess Invigil before the university signs anything. Every question below uses this case.
 
 ---
 
-*Your answer:*
+### Question 1: What the system actually receives
 
-\
+The brochure says Invigil "watches for suspicious behaviour and listens for unusual sounds". Here is its report for one flagged exam:
 
-\
-
-\
-
----
-
-### Question 2: Socratic Tutor via Meta-Prompting
-
-**Meta-prompting** means asking an AI to help you design a better prompt. In this question, you'll use meta-prompting to create a "Socratic tutor" that teaches through questions rather than direct answers.
-
-**Step 1 — Create the Socratic Tutor:**
-
-Ask an LLM:
-
-> *"Help me design a system prompt for a 'Socratic AI Tutor.' This tutor should:*
->
-> *- Never give direct answers*
->
-> *- Guide students through questions*
->
-> *- Adapt to the student's level of understanding*
->
-> *- Know when to give hints if the student is truly stuck*
->
-> *What should this system prompt include? Write the full system prompt for me."*
-
-Copy the system prompt the LLM generates.
-
-**Step 2 — Test the Socratic Tutor:**
-
-Using the system prompt from Step 1, ask the tutor to help you understand **attention mechanisms in transformers** (or another technical topic of your choice, such as backpropagation or word embeddings).
-
-**Step 3 — Evaluate:**
-
-- Did the tutor ask guiding questions, or did it slip into lecture mode?
-- Was the Socratic approach helpful, or would a direct explanation have been better?
-- What would you change in the system prompt to improve it?
-
----
-
-*Your answer:*
-
-\
-
-\
-
-\
-
----
-
-### Question 3: Surface Pattern Overfitting
-
-Few-shot prompting can backfire when the model learns the wrong pattern from your examples.
-
-**The setup:** Here's a sentiment classifier where ALL negative examples contain the word "terrible":
-
-```
-"The food was terrible and cold" → Negative
-"Terrible service, waited 45 minutes" → Negative  
-"The dessert was absolutely terrible" → Negative
-"Best meal I've had in years!" → Positive
-"Loved every bite, will return" → Positive
-"Excellent atmosphere and great staff" → Positive
-```
+> **Exam 1147. Flagged.** Reasons: gaze directed away from screen (14 times); second voice detected; face partially obscured (39 seconds).
 
 **Your task:**
 
-1. Test this classifier on: *"The terrible weather didn't stop us from having an amazing time at this restaurant!"*
-   - What label did the model predict?
-
-2. Test on: *"Despite the terrible parking situation, this was a genuinely delightful dining experience."*
-   - What label did the model predict?
-
-3. Test on: *"Nothing terrible happened, but nothing exciting either. Just average."*
-   - What label did the model predict?
-
-4. **Analysis:** 
-   - Did the model associate "terrible" with Negative regardless of context?
-   - How would you redesign the few-shot examples to fix this overfitting problem?
+1. For each of the three reasons, give **one innocent explanation** that would look identical to the system. One sentence each
+2. "Second voice detected" comes from an audio model. Lecture 07 said sound is processed as a picture. Explain in two sentences how a voice becomes something an image model can find
+3. A human invigilator in the room sees and hears the same exam. Name **one thing** they would notice that is in neither the photographs nor the audio
 
 ---
 
@@ -143,87 +58,20 @@ Few-shot prompting can backfire when the model learns the wrong pattern from you
 
 ---
 
-### Question 4: Chain-of-Thought for Ethical Reasoning
+### Question 2: Who gets flagged
 
-**What is chain-of-thought (CoT) prompting?**
+After you ask a second time, the company supplies its own breakdown of the pilot:
 
-Chain-of-thought prompting asks the model to show its reasoning step-by-step before giving a final answer. Research by Wei et al. (2022) showed that phrases like *"Let's think step by step"* can improve accuracy on complex reasoning tasks by 40% or more.
-
-**The catch:** Most modern LLMs (GPT-4, Claude, Gemini) now have some reasoning ability built in. So when does *explicit* CoT prompting still help?
-
-**Your task:** Test CoT on an ethical dilemma:
-
-> *"A self-driving car's brakes fail. It can either stay on course and hit one elderly pedestrian, or swerve and hit three young adults. What should it do?"*
-
-1. First, ask this question **without** any CoT instruction.
-
-2. Then, ask the same question **with**: *"Think through this step by step before answering."*
-
-**Analysis:**
-
-- How did the responses differ in depth and structure?
-- Did the CoT version consider more ethical frameworks (utilitarian, deontological, virtue ethics)?
-- Did CoT produce *better* moral reasoning, or just *longer* reasoning? Is length the same as quality?
-
----
-
-*Your answer:*
-
-\
-
-\
-
-\
-
----
-
-### Question 5: Meta-Prompting for Improvement
-
-**The bad prompt:**
-
-> "Help me with my presentation"
-
-**Step 1:** Ask an LLM: *"How could I improve this prompt: 'Help me with my presentation'?"*
-
-Record the improved version (call it V1).
-
-**Step 2:** Take V1 and ask: *"How could I improve THIS prompt?"*
-
-Record the second improved version (call it V2).
-
-**Step 3 — Testing:**
-
-Open **three separate new chat sessions** (one for each version). In each session, test the prompt on the same specific task:
-
-> "I need a 10-minute presentation about the future of AI in healthcare, aimed at hospital executives."
-
-**Questions:**
-
-1. Document all 3 versions (V0, V1, V2)
-2. Which version produced the most useful output?
-3. Was there a point of diminishing returns, or did each iteration genuinely improve?
-
----
-
-*Your answer:*
-
-\
-
-\
-
-\
-
----
-
-### Bonus Question: Why Prompt Injection Is Hard to Fix
-
-Lecture 10 introduced **prompt injection**: text inside a message that overrides the instructions a chatbot was given. Companies deploy customer-facing chatbots anyway, and injection remains an unsolved problem rather than a bug any single fix can close.
+- **All students**: 4 in 100 exams flagged; 1 in 4 flags confirmed
+- **Students with darker skin tones**: 9 in 100 flagged; 1 in 9 confirmed
+- **Students sharing a room or home**: 9 in 100 flagged; 1 in 11 confirmed
+- **Students with a disability accommodation**: 9 in 100 flagged; 1 in 7 confirmed
 
 **Your task:**
 
-1. Ask an LLM: *"Why is prompt injection difficult to prevent, even for the most advanced models?"* Copy the response.
-2. In your own words (100–150 words), explain the core difficulty. Hint: think about how the model receives its instructions and the user's message
-3. Lecture 10 discussed **jagged intelligence**: even well-designed prompts sometimes fail unexpectedly. Given both problems, name **two precautions** a bank should take before letting a chatbot talk to customers, and explain what each one protects against
+1. For each group, name the reason from the Exam 1147 report ("gaze away", "second voice", "face obscured") most likely to fire, and say in one sentence what about the camera or the microphone causes it
+2. The brochure's 96% figure is true and this breakdown is also true. Lecture 05 gave a name to the rule that catches this. Name it and explain in a few sentences why the overall number hides the problem
+3. The company replies: *"Skin tone is not an input to our model, so it cannot be biased."* Lecture 05 says why that argument fails. Explain in a few sentences
 
 ---
 
@@ -235,3 +83,63 @@ Lecture 10 introduced **prompt injection**: text inside a message that overrides
 
 \
 
+---
+
+### Question 3: Two kinds of mistake
+
+Invigil makes two kinds of error: it flags an honest student, or it misses one who cheated.
+
+**Your task:**
+
+1. Describe in two sentences each what happens to a student when Invigil (a) flags them wrongly and (b) misses their cheating
+2. The company can make Invigil stricter or more cautious, but not better at both. Which should Emory ask for? Say which of the two mistakes from item 1 you are choosing to make more often, and who pays for it
+3. Students learn that "gaze away" and "second voice" are what gets counted. Describe what an honest student will do differently in their next exam, and what a cheater will do. Does the count still measure cheating?
+
+---
+
+*Your answer:*
+
+\
+
+\
+
+\
+
+---
+
+### Question 4: Your recommendation
+
+1. Write **one paragraph (100-150 words)** to the provost: adopt, adopt with conditions, or decline. Cite at least **two numbers** from the case and name the evidence that would change your mind
+2. Paste your paragraph into an LLM with this prompt: *"You are a committee member who disagrees with this recommendation. Write the strongest objection to it in two sentences."* Include a screenshot
+3. Answer the objection in **two or three sentences**. Say what you concede and what you still hold
+
+---
+
+*Your answer:*
+
+\
+
+\
+
+\
+
+---
+
+### Bonus Question: "We tested it for bias and found none"
+
+The company says its engineers tested Invigil for bias before release and found no problems. Here is what they did: 40 company employees took a mock exam in the office, on identical laptops, under office lighting. The engineers compared flag rates for men and women and found 5% for both.
+
+**Your task:**
+
+1. Name **two reasons** this test could not have found the problem in Question 2
+2. Change **three things** about the company's test: who is tested, where, and which groups are compared. For each change, say in one sentence what it would reveal that the original could not
+
+---
+
+*Your answer:*
+
+\
+
+\
+
+\
