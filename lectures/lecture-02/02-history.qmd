@@ -198,11 +198,12 @@ Source: [Wikipedia - Turing Test](https://en.wikipedia.org/wiki/Turing_test)
 
 ## Live Turing test!
 
-:::{style="margin-top: 30px; font-size: 22px;"}
+:::{style="margin-top: 30px; font-size: 24px;"}
 :::{.incremental}
 - Guess if the following sentences were written by a human or a machine:
 
-<br>
+:::{style="margin-top: 20px;"}
+:::
 
 - "The universe (which others call the Library) is composed of an indefinite, perhaps an infinite number of hexagonal galleries, with enormous ventilation shafts in the middle, encircled by very low railings."
   - Human! [Jorge Luis Borges (Argentine writer)](https://en.wikipedia.org/wiki/Jorge_Luis_Borges)
@@ -322,26 +323,28 @@ Maybe this time is different? 🤷🏻‍♂️
 ## Early neural networks
 ### Inspired by the brain
 
-:::{style="margin-top: 30px; font-size: 19px;"}
+:::{style="margin-top: 30px; font-size: 21px;"}
 :::{.columns}
 :::{.column width=50%}
 - **1943**: [McCulloch](https://en.wikipedia.org/wiki/Warren_McCulloch) and [Pitts](https://en.wikipedia.org/wiki/Walter_Pitts) propose [artificial neurons](https://en.wikipedia.org/wiki/A_Logical_Calculus_of_the_Ideas_Immanent_in_Nervous_Activity)
-  - Simple binary units that mimic biological neurons
-- **1958**: [Frank Rosenblatt](https://en.wikipedia.org/wiki/Frank_Rosenblatt) invents the [Perceptron](https://en.wikipedia.org/wiki/Perceptron)
-  - A simple neural network that could [learn]{.alert} to classify patterns
-  - Trained by adjusting weights based on errors
+  - Binary units that mimic biological ones
+- **1958**: [Frank Rosenblatt](https://en.wikipedia.org/wiki/Frank_Rosenblatt) builds the [Perceptron](https://en.wikipedia.org/wiki/Perceptron)
+  - The first network that could [learn]{.alert}, adjusting its weights whenever it got something wrong
 - The New York Times (1958) predicted it would ["walk, talk, see, write, reproduce itself"](https://www.nytimes.com/1958/07/08/archives/new-navy-device-learns-by-doing-psychologist-shows-embryo-of.html)
-- Instead of programming rules, let the machine [learn from examples]{.alert}
-- However, single-layer perceptrons [couldn't solve certain simple problems]{.alert}, so interest waned
-- [Multi-layer networks](https://en.wikipedia.org/wiki/Artificial_neural_network) *could* solve these problems, but [training them was hard]{.alert}
-- It took [nearly 20 years for neural networks to make their comeback]{.alert}
+- Stop writing rules. Show the machine [examples]{.alert}
+- Single-layer perceptrons [failed on simple problems]{.alert}, and interest waned
+- [Multi-layer networks](https://en.wikipedia.org/wiki/Artificial_neural_network) could solve them, but [nobody knew how to train them]{.alert}
+- The comeback took [nearly 20 years]{.alert}
 - [But how does an artificial neuron work?]{.alert}
 :::
 
 :::{.column width=50%}
-- Each [input]{.alert} ($x_i$) (e.g., pixel brightness) is multiplied by a [weight]{.alert} ($w_i$) to increase or decrease the importance of that signal, then summed with a [bias]{.alert} ($b$) (a threshold that determines when the neuron "fires"): $z = \sum x_i \cdot w_i + b$
-- The result passes through an [activation function]{.alert} (non-linear transformation) to produce the output: $y = f(z)$
-- Without the activation function, the network would be just a linear model!
+- Each [input]{.alert} ($x_i$) is a number, say a pixel's brightness
+- A [weight]{.alert} ($w_i$) sets how much that input matters
+- Add the weighted inputs, plus a [bias]{.alert} ($b$) that decides when the neuron fires:
+  $z = \sum x_i \cdot w_i + b$
+- Pass $z$ through an [activation function]{.alert}, a non-linear bend: $y = f(z)$
+- Without that bend, the whole network is just a linear model
 
 :::{style="text-align: center;"}
 [![Perceptron diagram](figures/perceptron.png){width="80%"}](#){data-modal-type="image" data-modal-url="figures/perceptron.png"}
@@ -476,16 +479,14 @@ Source: [Hivenet](https://compute.hivenet.com/post/simplifying-transformer-archi
 :::
 
 :::{.column width=45%}
-:::{style="margin-top: 20px;"}
-Five steps, one per slide:
+:::{style="margin-top: 22px;"}
+Five steps:
 
 1. **Tokenise**: cut the text into pieces
 2. **Embed**: give each piece a list of numbers
 3. **Attend**: let the pieces look at each other
 4. **Stack**: repeat step 3 dozens of times
 5. **Predict**: guess the next piece
-
-We will follow ["The cat sat on the ___"]{.alert} all the way through
 :::
 :::
 :::
@@ -519,18 +520,20 @@ Source: [Medium](https://shanmugasundaram.in/llm-tokenizers-the-hidden-engine-be
 ## Step 2: Embeddings
 ### Words as points in space
 
-:::{style="margin-top: 30px; font-size: 26px;"}
+:::{style="margin-top: 30px; font-size: 24px;"}
 :::{.columns}
 :::{.column width=55%}
 - Each token becomes a [vector]{.alert} (a list of numbers)
-- GPT-2: Each token → 768 numbers
+- GPT-2: Each token → 768 numbers (nothing special about 768; models use different sizes)
 - These vectors capture [meaning]{.alert}:
   - Similar words are close together
   - "king" - "man" + "woman" ≈ "queen"
 - Also add [position information]{.alert}:
   - Word order matters in language!
   - "Dog bites man" ≠ "Man bites dog"
-- These embeddings are [learned during training]{.alert}
+- Embeddings start as [random numbers]{.alert}
+  - Every bad guess nudges them, and words used alike drift together
+- Nobody arranges them. Meaning is a [side effect of predicting well]{.alert}
 :::
 
 :::{.column width=45%}
@@ -546,19 +549,19 @@ Source: [Google Cloud](https://cloud.google.com/blog/topics/developers-practitio
 ## Step 3: Self-attention
 ### The main innovation of the paper
 
-:::{style="margin-top: 30px; font-size: 22px;"}
+:::{style="margin-top: 30px; font-size: 24px;"}
 :::{.columns}
 :::{.column width=55%}
-- Every word carries a [contacts app]{.alert} listing all the other words
-- "The animal didn't cross the street because [it]{.alert} was too tired"
-- "it" searches its contacts for "who can get tired?"
-- Each word is filed under a name: "animal" under *living creature*, "street" under *place*
-- ["animal" is the best match,]{.alert} so "it" pulls in the animal's details
-- Every word does this at the same time, for every other word
-- You search by name, but you actually wanted the details
+- The model is always guessing the next word:
+  - "The animal didn't cross the street because [it]{.alert} was too ___"
+- "tired" if "it" means the animal, "wide" if it means the street
+- So the guess depends on [what "it" refers to]{.alert}
+- But after Step 2 each word sits alone, and "it" is the [same 768 numbers]{.alert} in every sentence
+- Attention lets "it" reach back to ["animal" and "street"]{.alert}, weigh both, and "tired" wins
+- [Attention is the only step where words see each other]{.alert}
 
-:::{style="font-size: 18px; margin-top: 15px;"}
-You may meet these called [Query]{.alert} (the search), [Key]{.alert} (the name) and [Value]{.alert} (the details). How well a search matches a name is the [attention score]{.alert}
+:::{style="font-size: 17px; margin-top: 15px;"}
+You may meet these called [Query]{.alert} (what a word is looking for), [Key]{.alert} (what a word advertises about itself) and [Value]{.alert} (what it hands over when matched). How well a query matches a key is the [attention score]{.alert}
 :::
 :::
 
@@ -573,10 +576,10 @@ Source: [Jay Alammar](https://jalammar.github.io/illustrated-transformer/)
 :::
 :::
 
-## Self-attention example
+## Multi-head attention
 ### "The cat sat on the mat"
 
-:::{style="margin-top: 30px; font-size: 24px;"}
+:::{style="margin-top: 30px; font-size: 23px;"}
 
 :::{.columns}
 :::{.column width=55%}
@@ -589,41 +592,45 @@ Source: [Thomas Wiecki](https://twiecki.io/blog/2024/01/04/)
 
 :::{.column width=45%}
 :::{style="margin-top: 20px;"}
-- When processing "sat", the model might attend strongly to:
-  - "cat" (who is sitting?)
-  - "mat" (where are they sitting?)
-- [Multi-head attention]{.alert}: Multiple attention patterns in parallel (division of labour again!)
-  - One head might focus on subject-verb relationships
-  - Another on adjective-noun relationships
-  - GPT-2 uses [12 attention heads]{.alert}
+- Same idea, new sentence: "The cat sat on the ___"
+- One search is not enough. The guess needs several things at once:
+  - Who is doing it: "cat"
+  - What they are doing: "sat"
+  - What kind of word follows "on": a place
+- [Multi-head attention]{.alert}: 12 searches side by side, each asking its own question (GPT-2 small)
+- Nobody assigns the questions. The heads specialise during training
+- [Division of labour]{.alert} again, and this time it organises itself
 :::
 :::
 :::
 :::
 
 ## Step 4: Feed-forward and stacking
-### Building deeper understanding
+### Where the model keeps what it knows
 
-:::{style="margin-top: 30px; font-size: 24px;"}
+:::{style="margin-top: 30px; font-size: 22px;"}
 :::{.columns}
 :::{.column width=55%}
-- Attention is [looking around]{.alert}: which other words matter here?
-- Next comes [thinking it over]{.alert}: what do those connections mean for this word?
-- That second step is a [feed-forward network]{.alert} (also called an MLP)
-- The two together make one [block]{.alert}, and models stack many:
-  - GPT-2 (small): 12 blocks
-  - GPT-3: 96 blocks
-  - GPT-4 and later: far more
-- Each block works at a higher level than the last:
-  - Early blocks: spelling and grammar
-  - Late blocks: meaning and context
+- "The cat sat on the ___"
+- Attention brings "cat" and "sat" to the guessing position
+- But nothing in the sentence says [what a cat sits on]{.alert}, so it must come from memory
+- That memory is the [feed-forward network](https://en.wikipedia.org/wiki/Feedforward_neural_network) (MLP)
+- Attention [moves]{.alert} what is in the sentence. The network [adds]{.alert} what is not
+- The two make one [block]{.alert}: 12 in GPT-2, 96 in GPT-3, far more since
+- Each block [adds]{.alert} to the word rather than replacing it, so nothing is lost on the way up
+- Each round asks a better question than the last:
+  - Early blocks: what kind of word is this?
+  - Late blocks: what is this text about, and what comes next?
 :::
 
 :::{.column width=45%}
 :::{style="text-align: center;"}
-[![One transformer block](figures/transformer-blocks-02.png){width="45%"}](#){data-modal-type="image" data-modal-url="figures/transformer-blocks-02.png"}
+[![One transformer block](figures/transformer-blocks-02.png){width="35%"}](#){data-modal-type="image" data-modal-url="figures/transformer-blocks-02.png"}
 
 Source: [Mohamed Traore](https://www.researchgate.net/figure/Overall-Structure-of-Transformer-Encoder-Block_fig3_365101390)
+:::
+:::{style="font-size: 18px; margin-top: 15px;"}
+Also called a [multi-layer perceptron (MLP):](https://en.wikipedia.org/wiki/Multilayer_perceptron) Rosenblatt's perceptron from 1958, stacked in layers and trained by backpropagation. Two thirds of a model's weights live here, not in attention
 :::
 :::
 :::

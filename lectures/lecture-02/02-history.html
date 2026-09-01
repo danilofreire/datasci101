@@ -1400,11 +1400,13 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </section>
 <section id="live-turing-test" class="slide level2">
 <h2>Live Turing test!</h2>
-<div style="margin-top: 30px; font-size: 22px;">
+<div style="margin-top: 30px; font-size: 24px;">
 <ul>
 <li class="fragment">Guess if the following sentences were written by a human or a machine:</li>
 </ul>
-<p><br></p>
+<div style="margin-top: 20px;">
+
+</div>
 <ul>
 <li class="fragment">“The universe (which others call the Library) is composed of an indefinite, perhaps an infinite number of hexagonal galleries, with enormous ventilation shafts in the middle, encircled by very low railings.”
 <ul>
@@ -1532,31 +1534,32 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <section id="early-neural-networks" class="slide level2">
 <h2>Early neural networks</h2>
 <h3 id="inspired-by-the-brain">Inspired by the brain</h3>
-<div style="margin-top: 30px; font-size: 19px;">
+<div style="margin-top: 30px; font-size: 21px;">
 <div class="columns">
 <div class="column" style="width:50%;">
 <ul>
 <li><strong>1943</strong>: <a href="https://en.wikipedia.org/wiki/Warren_McCulloch">McCulloch</a> and <a href="https://en.wikipedia.org/wiki/Walter_Pitts">Pitts</a> propose <a href="https://en.wikipedia.org/wiki/A_Logical_Calculus_of_the_Ideas_Immanent_in_Nervous_Activity">artificial neurons</a>
 <ul>
-<li>Simple binary units that mimic biological neurons</li>
+<li>Binary units that mimic biological ones</li>
 </ul></li>
-<li><strong>1958</strong>: <a href="https://en.wikipedia.org/wiki/Frank_Rosenblatt">Frank Rosenblatt</a> invents the <a href="https://en.wikipedia.org/wiki/Perceptron">Perceptron</a>
+<li><strong>1958</strong>: <a href="https://en.wikipedia.org/wiki/Frank_Rosenblatt">Frank Rosenblatt</a> builds the <a href="https://en.wikipedia.org/wiki/Perceptron">Perceptron</a>
 <ul>
-<li>A simple neural network that could <span class="alert">learn</span> to classify patterns</li>
-<li>Trained by adjusting weights based on errors</li>
+<li>The first network that could <span class="alert">learn</span>, adjusting its weights whenever it got something wrong</li>
 </ul></li>
 <li>The New York Times (1958) predicted it would <a href="https://www.nytimes.com/1958/07/08/archives/new-navy-device-learns-by-doing-psychologist-shows-embryo-of.html">“walk, talk, see, write, reproduce itself”</a></li>
-<li>Instead of programming rules, let the machine <span class="alert">learn from examples</span></li>
-<li>However, single-layer perceptrons <span class="alert">couldn’t solve certain simple problems</span>, so interest waned</li>
-<li><a href="https://en.wikipedia.org/wiki/Artificial_neural_network">Multi-layer networks</a> <em>could</em> solve these problems, but <span class="alert">training them was hard</span></li>
-<li>It took <span class="alert">nearly 20 years for neural networks to make their comeback</span></li>
+<li>Stop writing rules. Show the machine <span class="alert">examples</span></li>
+<li>Single-layer perceptrons <span class="alert">failed on simple problems</span>, and interest waned</li>
+<li><a href="https://en.wikipedia.org/wiki/Artificial_neural_network">Multi-layer networks</a> could solve them, but <span class="alert">nobody knew how to train them</span></li>
+<li>The comeback took <span class="alert">nearly 20 years</span></li>
 <li><span class="alert">But how does an artificial neuron work?</span></li>
 </ul>
 </div><div class="column" style="width:50%;">
 <ul>
-<li>Each <span class="alert">input</span> (<span class="math inline">\(x_i\)</span>) (e.g., pixel brightness) is multiplied by a <span class="alert">weight</span> (<span class="math inline">\(w_i\)</span>) to increase or decrease the importance of that signal, then summed with a <span class="alert">bias</span> (<span class="math inline">\(b\)</span>) (a threshold that determines when the neuron “fires”): <span class="math inline">\(z = \sum x_i \cdot w_i + b\)</span></li>
-<li>The result passes through an <span class="alert">activation function</span> (non-linear transformation) to produce the output: <span class="math inline">\(y = f(z)\)</span></li>
-<li>Without the activation function, the network would be just a linear model!</li>
+<li>Each <span class="alert">input</span> (<span class="math inline">\(x_i\)</span>) is a number, say a pixel’s brightness</li>
+<li>A <span class="alert">weight</span> (<span class="math inline">\(w_i\)</span>) sets how much that input matters</li>
+<li>Add the weighted inputs, plus a <span class="alert">bias</span> (<span class="math inline">\(b\)</span>) that decides when the neuron fires: <span class="math inline">\(z = \sum x_i \cdot w_i + b\)</span></li>
+<li>Pass <span class="math inline">\(z\)</span> through an <span class="alert">activation function</span>, a non-linear bend: <span class="math inline">\(y = f(z)\)</span></li>
+<li>Without that bend, the whole network is just a linear model</li>
 </ul>
 <div style="text-align: center;">
 <div class="quarto-figure quarto-figure-center">
@@ -1722,8 +1725,8 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <p>Source: <a href="https://compute.hivenet.com/post/simplifying-transformer-architecture-a-beginners-guide-to-understanding-ai-magic">Hivenet</a></p>
 </div>
 </div><div class="column" style="width:45%;">
-<div style="margin-top: 20px;">
-<p>Five steps, one per slide:</p>
+<div style="margin-top: 22px;">
+<p>Five steps:</p>
 <ol type="1">
 <li><strong>Tokenise</strong>: cut the text into pieces</li>
 <li><strong>Embed</strong>: give each piece a list of numbers</li>
@@ -1731,7 +1734,6 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <li><strong>Stack</strong>: repeat step 3 dozens of times</li>
 <li><strong>Predict</strong>: guess the next piece</li>
 </ol>
-<p>We will follow <span class="alert">“The cat sat on the ___”</span> all the way through</p>
 </div>
 </div></div>
 </div>
@@ -1769,12 +1771,12 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <section id="step-2-embeddings" class="slide level2">
 <h2>Step 2: Embeddings</h2>
 <h3 id="words-as-points-in-space">Words as points in space</h3>
-<div style="margin-top: 30px; font-size: 26px;">
+<div style="margin-top: 30px; font-size: 24px;">
 <div class="columns">
 <div class="column" style="width:55%;">
 <ul>
 <li>Each token becomes a <span class="alert">vector</span> (a list of numbers)</li>
-<li>GPT-2: Each token → 768 numbers</li>
+<li>GPT-2: Each token → 768 numbers (nothing special about 768; models use different sizes)</li>
 <li>These vectors capture <span class="alert">meaning</span>:
 <ul>
 <li>Similar words are close together</li>
@@ -1785,7 +1787,11 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <li>Word order matters in language!</li>
 <li>“Dog bites man” ≠ “Man bites dog”</li>
 </ul></li>
-<li>These embeddings are <span class="alert">learned during training</span></li>
+<li>Embeddings start as <span class="alert">random numbers</span>
+<ul>
+<li>Every bad guess nudges them, and words used alike drift together</li>
+</ul></li>
+<li>Nobody arranges them. Meaning is a <span class="alert">side effect of predicting well</span></li>
 </ul>
 </div><div class="column" style="width:45%;">
 <div style="text-align: center;">
@@ -1803,20 +1809,22 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <section id="step-3-self-attention" class="slide level2">
 <h2>Step 3: Self-attention</h2>
 <h3 id="the-main-innovation-of-the-paper">The main innovation of the paper</h3>
-<div style="margin-top: 30px; font-size: 22px;">
+<div style="margin-top: 30px; font-size: 24px;">
 <div class="columns">
 <div class="column" style="width:55%;">
 <ul>
-<li>Every word carries a <span class="alert">contacts app</span> listing all the other words</li>
-<li>“The animal didn’t cross the street because <span class="alert">it</span> was too tired”</li>
-<li>“it” searches its contacts for “who can get tired?”</li>
-<li>Each word is filed under a name: “animal” under <em>living creature</em>, “street” under <em>place</em></li>
-<li><span class="alert">“animal” is the best match,</span> so “it” pulls in the animal’s details</li>
-<li>Every word does this at the same time, for every other word</li>
-<li>You search by name, but you actually wanted the details</li>
+<li>The model is always guessing the next word:
+<ul>
+<li>“The animal didn’t cross the street because <span class="alert">it</span> was too ___”</li>
+</ul></li>
+<li>“tired” if “it” means the animal, “wide” if it means the street</li>
+<li>So the guess depends on <span class="alert">what “it” refers to</span></li>
+<li>But after Step 2 each word sits alone, and “it” is the <span class="alert">same 768 numbers</span> in every sentence</li>
+<li>Attention lets “it” reach back to <span class="alert">“animal” and “street”</span>, weigh both, and “tired” wins</li>
+<li><span class="alert">Attention is the only step where words see each other</span></li>
 </ul>
-<div style="font-size: 18px; margin-top: 15px;">
-<p>You may meet these called <span class="alert">Query</span> (the search), <span class="alert">Key</span> (the name) and <span class="alert">Value</span> (the details). How well a search matches a name is the <span class="alert">attention score</span></p>
+<div style="font-size: 17px; margin-top: 15px;">
+<p>You may meet these called <span class="alert">Query</span> (what a word is looking for), <span class="alert">Key</span> (what a word advertises about itself) and <span class="alert">Value</span> (what it hands over when matched). How well a query matches a key is the <span class="alert">attention score</span></p>
 </div>
 </div><div class="column" style="width:45%;">
 <div style="text-align: center;">
@@ -1831,10 +1839,10 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </div></div>
 </div>
 </section>
-<section id="self-attention-example" class="slide level2">
-<h2>Self-attention example</h2>
+<section id="multi-head-attention" class="slide level2">
+<h2>Multi-head attention</h2>
 <h3 id="the-cat-sat-on-the-mat">“The cat sat on the mat”</h3>
-<div style="margin-top: 30px; font-size: 24px;">
+<div style="margin-top: 30px; font-size: 23px;">
 <div class="columns">
 <div class="column" style="width:55%;">
 <div style="text-align: center;">
@@ -1844,17 +1852,16 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </div><div class="column" style="width:45%;">
 <div style="margin-top: 20px;">
 <ul>
-<li>When processing “sat”, the model might attend strongly to:
+<li>Same idea, new sentence: “The cat sat on the ___”</li>
+<li>One search is not enough. The guess needs several things at once:
 <ul>
-<li>“cat” (who is sitting?)</li>
-<li>“mat” (where are they sitting?)</li>
+<li>Who is doing it: “cat”</li>
+<li>What they are doing: “sat”</li>
+<li>What kind of word follows “on”: a place</li>
 </ul></li>
-<li><span class="alert">Multi-head attention</span>: Multiple attention patterns in parallel (division of labour again!)
-<ul>
-<li>One head might focus on subject-verb relationships</li>
-<li>Another on adjective-noun relationships</li>
-<li>GPT-2 uses <span class="alert">12 attention heads</span></li>
-</ul></li>
+<li><span class="alert">Multi-head attention</span>: 12 searches side by side, each asking its own question (GPT-2 small)</li>
+<li>Nobody assigns the questions. The heads specialise during training</li>
+<li><span class="alert">Division of labour</span> again, and this time it organises itself</li>
 </ul>
 </div>
 </div></div>
@@ -1862,35 +1869,36 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </section>
 <section id="step-4-feed-forward-and-stacking" class="slide level2">
 <h2>Step 4: Feed-forward and stacking</h2>
-<h3 id="building-deeper-understanding">Building deeper understanding</h3>
-<div style="margin-top: 30px; font-size: 24px;">
+<h3 id="where-the-model-keeps-what-it-knows">Where the model keeps what it knows</h3>
+<div style="margin-top: 30px; font-size: 22px;">
 <div class="columns">
 <div class="column" style="width:55%;">
 <ul>
-<li>Attention is <span class="alert">looking around</span>: which other words matter here?</li>
-<li>Next comes <span class="alert">thinking it over</span>: what do those connections mean for this word?</li>
-<li>That second step is a <span class="alert">feed-forward network</span> (also called an MLP)</li>
-<li>The two together make one <span class="alert">block</span>, and models stack many:
+<li>“The cat sat on the ___”</li>
+<li>Attention brings “cat” and “sat” to the guessing position</li>
+<li>But nothing in the sentence says <span class="alert">what a cat sits on</span>, so it must come from memory</li>
+<li>That memory is the <a href="https://en.wikipedia.org/wiki/Feedforward_neural_network">feed-forward network</a> (MLP)</li>
+<li>Attention <span class="alert">moves</span> what is in the sentence. The network <span class="alert">adds</span> what is not</li>
+<li>The two make one <span class="alert">block</span>: 12 in GPT-2, 96 in GPT-3, far more since</li>
+<li>Each block <span class="alert">adds</span> to the word rather than replacing it, so nothing is lost on the way up</li>
+<li>Each round asks a better question than the last:
 <ul>
-<li>GPT-2 (small): 12 blocks</li>
-<li>GPT-3: 96 blocks</li>
-<li>GPT-4 and later: far more</li>
-</ul></li>
-<li>Each block works at a higher level than the last:
-<ul>
-<li>Early blocks: spelling and grammar</li>
-<li>Late blocks: meaning and context</li>
+<li>Early blocks: what kind of word is this?</li>
+<li>Late blocks: what is this text about, and what comes next?</li>
 </ul></li>
 </ul>
 </div><div class="column" style="width:45%;">
 <div style="text-align: center;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><a href="#/" data-modal-type="image" data-modal-url="figures/transformer-blocks-02.png"><img role="img" data-src="data:image/png;base64,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" style="width:45.0%"></a></p>
+<p><a href="#/" data-modal-type="image" data-modal-url="figures/transformer-blocks-02.png"><img role="img" data-src="data:image/png;base64,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" style="width:35.0%"></a></p>
 <figcaption>One transformer block</figcaption>
 </figure>
 </div>
 <p>Source: <a href="https://www.researchgate.net/figure/Overall-Structure-of-Transformer-Encoder-Block_fig3_365101390">Mohamed Traore</a></p>
+</div>
+<div style="font-size: 18px; margin-top: 15px;">
+<p>Also called a <a href="https://en.wikipedia.org/wiki/Multilayer_perceptron">multi-layer perceptron (MLP):</a> Rosenblatt’s perceptron from 1958, stacked in layers and trained by backpropagation. Two thirds of a model’s weights live here, not in attention</p>
 </div>
 </div></div>
 </div>
