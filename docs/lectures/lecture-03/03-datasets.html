@@ -4436,7 +4436,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <section id="garbage-in-garbage-out" class="slide level2">
 <h2>Garbage in, garbage out</h2>
 <h3 id="why-your-model-cant-outrun-bad-data">Why your model can’t outrun bad data</h3>
-<div style="margin-top: 30px; font-size: 22px;">
+<div style="margin-top: 30px; font-size: 24px;">
 <div class="columns">
 <div class="column" style="width:55%;">
 <ul>
@@ -4469,7 +4469,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <section id="real-world-impact-of-data-quality" class="slide level2">
 <h2>Real-world impact of data quality</h2>
 <h3 id="when-bad-data-causes-harm">When bad data causes harm</h3>
-<div style="margin-top: 30px; font-size: 28px;">
+<div style="margin-top: 60px; font-size: 30px;">
 <table class="caption-top">
 <thead>
 <tr class="header">
@@ -4519,7 +4519,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <div style="margin-top: 30px; font-size: 22px;">
 <div class="columns">
 <div class="column" style="width:50%;">
-<p><strong>Classification: Predicting categories</strong></p>
+<p><span class="alert">Classification: Predicting categories</span></p>
 <ul>
 <li><strong>Goal</strong>: Assign inputs to discrete categories</li>
 <li>Examples: Email → Spam/Not Spam; Image → Cat/Dog/Bird; Text → Positive/Negative/Neutral</li>
@@ -4537,7 +4537,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </div>
 </div>
 </div><div class="column" style="width:50%;">
-<p><strong>Regression: Predicting continuous values</strong></p>
+<p><span class="alert">Regression: Predicting continuous values</span></p>
 <ul>
 <li><strong>Goal</strong>: Predict a continuous numerical value</li>
 <li>Examples: Features → House price; Patient data → Hospital stay length; Weather data → Temperature</li>
@@ -4558,7 +4558,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <section id="other-common-ai-tasks" class="slide level2">
 <h2>Other common AI tasks</h2>
 <h3 id="beyond-classification-and-regression">Beyond classification and regression</h3>
-<div style="margin-top: 30px; font-size: 26px;">
+<div style="margin-top: 60px; font-size:30px;">
 <table class="caption-top">
 <colgroup>
 <col style="width: 21%">
@@ -4574,41 +4574,43 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </thead>
 <tbody>
 <tr class="odd">
-<td><strong>Object Detection</strong></td>
+<td><span class="alert">Object Detection</span></td>
 <td>Find and locate objects in images</td>
 <td>Self-driving cars detecting pedestrians</td>
 </tr>
 <tr class="even">
-<td><strong>Segmentation</strong></td>
+<td><span class="alert">Segmentation</span></td>
 <td>Label every pixel in an image</td>
 <td>Medical imaging (tumour boundaries)</td>
 </tr>
 <tr class="odd">
-<td><strong>Sequence Labelling</strong></td>
+<td><span class="alert">Sequence Labelling</span></td>
 <td>Label each element in a sequence</td>
 <td>Named entity recognition in text</td>
 </tr>
 <tr class="even">
-<td><strong>Generation</strong></td>
+<td><span class="alert">Generation</span></td>
 <td>Create new content</td>
 <td>ChatGPT, DALL-E, music generation</td>
 </tr>
 <tr class="odd">
-<td><strong>Ranking</strong></td>
+<td><span class="alert">Ranking</span></td>
 <td>Order items by relevance</td>
 <td>Search results, recommendations</td>
 </tr>
 </tbody>
 </table>
 <div class="fragment">
+<blockquote>
 <p>Each task requires <span class="alert">different types of labels</span> in your dataset!</p>
+</blockquote>
 </div>
 </div>
 </section>
 <section id="defining-your-classes" class="slide level2">
 <h2>Defining your classes</h2>
 <h3 id="classification-pitfalls">Classification pitfalls</h3>
-<div style="margin-top: 30px; font-size: 22px;">
+<div style="margin-top: 30px; font-size: 24px;">
 <div class="columns">
 <div class="column" style="width:55%;">
 <ul>
@@ -4662,7 +4664,6 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <li>Available data: Number of followers</li>
 <li><span class="alert">Followers ≠ Expertise</span>: Popularity can be gamed or unrelated to domain knowledge</li>
 </ul></li>
-<li>Always ask: <span class="alert">Does this label actually measure what I care about?</span></li>
 </ul>
 </div><div class="column" style="width:45%;">
 <div style="text-align: center;">
@@ -4674,6 +4675,10 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </div>
 <p>Source: <a href="https://vimeo.com/274274744">Andrej Karpathy</a></p>
 </div>
+<p><br></p>
+<ul>
+<li>Always ask: <span class="alert">Does this label actually measure what I care about?</span></li>
+</ul>
 </div></div>
 </div>
 </section></section>
@@ -4685,7 +4690,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <section id="where-do-the-data-come-from" class="slide level2">
 <h2>Where do the data come from?</h2>
 <h3 id="common-data-sources">Common data sources</h3>
-<div style="margin-top: 30px; font-size: 24px;">
+<div style="margin-top: 60px; font-size: 28px;">
 <table class="caption-top">
 <colgroup>
 <col style="width: 23%">
@@ -4701,32 +4706,32 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </thead>
 <tbody>
 <tr class="odd">
-<td><strong>Existing databases</strong></td>
+<td><span class="alert">Existing databases</span></td>
 <td>Hospital records, transaction logs</td>
 <td>May have missing fields, inconsistent formats</td>
 </tr>
 <tr class="even">
-<td><strong>Public datasets</strong></td>
+<td><span class="alert">Public datasets</span></td>
 <td>ImageNet, Wikipedia, Common Crawl</td>
 <td>May not match your specific domain</td>
 </tr>
 <tr class="odd">
-<td><strong>Web scraping</strong></td>
+<td><span class="alert">Web scraping</span></td>
 <td>Social media, news articles</td>
 <td>Legal and ethical concerns</td>
 </tr>
 <tr class="even">
-<td><strong>Surveys/Forms</strong></td>
+<td><span class="alert">Surveys/Forms</span></td>
 <td>User feedback, questionnaires</td>
 <td>Response bias, sampling issues</td>
 </tr>
 <tr class="odd">
-<td><strong>Sensors/IoT</strong></td>
+<td><span class="alert">Sensors/IoT</span></td>
 <td>Cameras, wearables, satellites</td>
 <td>Privacy concerns, data volume</td>
 </tr>
 <tr class="even">
-<td><strong>Synthetic data</strong></td>
+<td><span class="alert">Synthetic data</span></td>
 <td>Generated by other models</td>
 <td>May not capture real-world complexity</td>
 </tr>
@@ -4741,15 +4746,15 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <div class="columns">
 <div class="column" style="width:55%;">
 <ul>
-<li>There’s no universal answer… it depends on:
+<li><span class="alert">There’s no universal answer…</span> it depends on:
 <ul>
 <li>Task complexity: harder tasks need more data</li>
 <li>Number of classes/features: more categories = more examples needed</li>
 <li>Model architecture: deep learning is data-hungry</li>
 <li>Required accuracy: higher stakes = more data</li>
 </ul></li>
-<li><strong>Rule of thumb</strong>: Start small, then scale up</li>
-<li><strong>Scaling laws</strong>: Performance improves predictably with more data
+<li><span class="alert">Rule of thumb</span>: Start small, then scale up</li>
+<li><span class="alert">Scaling laws</span>: Performance improves predictably with more data
 <ul>
 <li>You can <span class="alert">estimate</span> how much data you’ll need by training on subsets and extrapolating</li>
 </ul></li>
@@ -4803,7 +4808,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <section id="common-causes-of-selection-bias" class="slide level2">
 <h2>Common causes of selection bias</h2>
 <h3 id="where-does-bias-creep-in">Where does bias creep in?</h3>
-<div style="margin-top: 30px; font-size: 26px;">
+<div style="margin-top: 60px; font-size: 26px;">
 <table class="caption-top">
 <colgroup>
 <col style="width: 21%">
@@ -4819,39 +4824,39 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </thead>
 <tbody>
 <tr class="odd">
-<td><strong>Time bias</strong></td>
+<td><span class="alert">Time bias</span></td>
 <td>Data from the past applied to the future</td>
 <td>Training on 2021 data for 2026 predictions</td>
 </tr>
 <tr class="even">
-<td><strong>Location bias</strong></td>
+<td><span class="alert">Location bias</span></td>
 <td>Data from one place applied elsewhere</td>
 <td>US healthcare model used in India</td>
 </tr>
 <tr class="odd">
-<td><strong>Demographic bias</strong></td>
+<td><span class="alert">Demographic bias</span></td>
 <td>Certain groups under/over-represented</td>
 <td>Clinical trial with mostly young, white, male participants</td>
 </tr>
 <tr class="even">
-<td><strong>Availability bias</strong></td>
+<td><span class="alert">Availability bias</span></td>
 <td>Using convenient rather than representative data</td>
 <td>Surveying only friends</td>
 </tr>
 <tr class="odd">
-<td><strong>Response bias</strong></td>
+<td><span class="alert">Response bias</span></td>
 <td>Who responds differs from who doesn’t</td>
 <td>Online surveys miss offline populations</td>
 </tr>
 <tr class="even">
-<td><strong>Long-tail bias</strong></td>
+<td><span class="alert">Long-tail bias</span></td>
 <td>Rare events underrepresented</td>
 <td>Self-driving cars: unusual scenarios</td>
 </tr>
 </tbody>
 </table>
 <ul>
-<li>Try it out: Generate an image of “a CEO” and “a nurse” using two different models, such as <a href="https://qwen.ai/">Qwen</a> and <a href="https://gemini.google.com">Gemini</a>. What do you notice?</li>
+<li>Try it out: Let’s generate an image of a CEO and a nurse using two different models, such as <a href="https://qwen.ai/">Qwen</a> and <a href="https://gemini.google.com">Gemini</a>. What do you notice?</li>
 </ul>
 </div>
 </section>
