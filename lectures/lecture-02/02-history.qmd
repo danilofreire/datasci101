@@ -214,7 +214,7 @@ Source: [Wikipedia - Turing Test](https://en.wikipedia.org/wiki/Turing_test)
 - "The epistemological ramifications of this ontological framework necessitate a paradigmatic shift in our heuristic methodologies."
   - Machine!
 
-- And yes, [ChatGPT did pass the Turing test](https://arxiv.org/abs/2405.08007v1)
+- And yes, [GPT-4.5 did pass the Turing test](https://arxiv.org/abs/2503.23674) (judged human 73% of the time, more often than actual humans)
 :::
 :::
 
@@ -417,7 +417,7 @@ Source: [Google Research](https://static.googleusercontent.com/media/research.go
 :::{style="margin-top: 30px; font-size: 23px;"}
 :::{.columns}
 :::{.column width=55%}
-- [ImageNet](https://www.image-net.org/): A dataset of 14 million labeled images
+- [ImageNet](https://www.image-net.org/): A dataset of 14 million labelled images
 - Annual competition: Classify images into 1,000 categories
 - **2012**: [AlexNet](https://spectrum.ieee.org/alexnet-source-code) ([Krizhevsky, Sutskever, Hinton](https://proceedings.neurips.cc/paper_files/paper/2012/file/c399862d3b9d6b76c8436e924a68c45b-Paper.pdf)) wins by a [huge margin]{.alert}
   - Error rate: 15.3% (next best: 26.2%)
@@ -509,7 +509,7 @@ Five steps:
 
 :::{.column width=45%}
 :::{style="text-align: center;"}
-[![Tokenisation diagram](figures/tokenisation.webp)](#){data-modal-type="image" data-modal-url="figures/tokenisation.webp" width="100%"}
+[![Tokenisation diagram](figures/tokenisation.webp){width="100%"}](#){data-modal-type="image" data-modal-url="figures/tokenisation.webp"}
 
 Source: [Medium](https://shanmugasundaram.in/llm-tokenizers-the-hidden-engine-behind-ai-language-models-00f1135d4b3c)
 :::
@@ -538,7 +538,7 @@ Source: [Medium](https://shanmugasundaram.in/llm-tokenizers-the-hidden-engine-be
 
 :::{.column width=45%}
 :::{style="text-align: center;"}
-[![Words plotted in 3-dimensional space. Embeddings can have hundreds or thousands of dimensions–too many for humans to visualise](figures/embeddings.png)](#){data-modal-type="image" data-modal-url="figures/embeddings.png" width="100%"}
+[![Words plotted in 3-dimensional space. Embeddings can have hundreds or thousands of dimensions, too many for humans to visualise](figures/embeddings.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/embeddings.png"}
 
 Source: [Google Cloud](https://cloud.google.com/blog/topics/developers-practitioners/meet-ais-multitool-vector-embeddings)
 :::
@@ -687,7 +687,7 @@ Source: [Transformer Explainer](https://poloclub.github.io/transformer-explainer
 | GPT-2 | 2019 | 1.5B | "Too dangerous to release" |
 | GPT-3 | 2020 | 175B | Few-shot learning emergence |
 | GPT-4 | 2023 | ~1.7T? | Multimodal, near-human reasoning |
-| GPT-5 | 2025 | 635B? | More efficient, even better reasoning |
+| GPT-5 | 2025 | Undisclosed | More efficient, even better reasoning |
 
 <br>
 
@@ -708,7 +708,7 @@ Source: [Transformer Explainer](https://poloclub.github.io/transformer-explainer
   2. [RLHF (Reinforcement Learning from Human Feedback)](https://en.wikipedia.org/wiki/Reinforcement_learning_from_human_feedback): Humans rate responses; model learns what's helpful
   3. [Safety training](https://en.wikipedia.org/wiki/AI_safety): Reduce harmful outputs
 - Result: A model that's [actually useful]{.alert} for conversation
-- [100 million users in 2 months]{.alert}, the fastest-growing consumer app ever
+- [100 million users in 2 months]{.alert}, the fastest-growing consumer app at the time
 :::
 
 :::{.column width=45%}
