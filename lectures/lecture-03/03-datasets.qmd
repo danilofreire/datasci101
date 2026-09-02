@@ -63,7 +63,7 @@ if (!require("fontawesome", character.only = TRUE)) {
 - [AI Winters]{.alert}: When hype exceeded reality (twice!)
 - [Neural networks]{.alert}: From perceptrons to deep learning
 - [Transformers]{.alert} (2017): Attention is all you need!
-- [Data became the new oil]{.alert}... but where do the data come from? 🤔
+- [More data beat better algorithms]{.alert}... but where do the data come from? 🤔
 :::
 
 :::{.column width=50%}
@@ -83,7 +83,7 @@ Source: [Clay.Global](https://clay.global/blog/ai-guide/timeline-of-ai)
 
 :::{.columns}
 :::{.column width=50%}
-- Today we'll explore the foundation of all AI systems: [the data they're trained on]{.alert}
+- Today's topic is [the data AI systems learn from]{.alert}
 - Why data quality matters
 - Types of AI tasks
 - Sourcing and collecting data
@@ -109,43 +109,27 @@ Source: [Medium](https://blog.dataengineerthings.org/the-ai-revolution-is-nothin
 [![](figures/tweet-of-the-day.jpg){width="40%"}](#){data-modal-type="image" data-modal-url="figures/tweet-of-the-day.jpg"}
 :::
 
-## What matters more?
-### Take a moment to think...
+## Live labelling
+### Positive, negative, or neutral?
 
-:::{style="margin-top: 50px; font-size: 26px; text-align: center;"}
+:::{style="margin-top: 30px; font-size: 26px;"}
+- You are the annotators. Three product reviews, one vote each: [positive]{.alert}, [negative]{.alert}, or [neutral]{.alert}
+- No discussion, no changing your mind. Hands up when I say the label
 
-> **"If you had to choose, which would give you better AI predictions?"**
-
-:::{.columns}
-:::{.column width=50%}
 :::{.fragment}
-**Option A:** 🧠
-
-A [state-of-the-art algorithm]{.alert} trained on low-quality data
-:::
-:::
-
-:::{.column width=50%}
-:::{.fragment}
-**Option B:** 📊
-
-A [simple algorithm]{.alert} trained on high-quality data
-:::
-:::
-:::
-
-:::{style="margin-top: 40px;"}
-:::{.fragment}
-**Discuss with your neighbour for 1 minute!** 
+> "The food was fine, I guess. Service was quick."
 :::
 
 :::{.fragment}
-**Raise your hand if you think Option A is better**
+> "Took three weeks to arrive, but honestly the best headphones I have owned."
 :::
 
 :::{.fragment}
-**And now raise your hand if you think Option B is better**
+> "I have had worse."
 :::
+
+:::{.fragment}
+- Did everyone agree? Keep the split in mind. We will come back to it when we measure [annotator agreement]{.alert}
 :::
 :::
 
@@ -166,12 +150,12 @@ Source: [Medium](https://urwamuaz.medium.com/neural-networks-fail-on-data-with-s
 :::{.columns}
 :::{.column width=55%}
 - AI models are only as good as [the data they're trained on]{.alert}
-- No amount of algorithmic sophistication can fix bad data
+- A better algorithm cannot fix bad data
 - Common data problems:
   - Missing important information (e.g., age, income, etc.)
   - Conflicting labels or formats (e.g., "yes" vs "1")
   - Biases, not representative of reality (e.g., gender, race, etc.)
-- **Data-centric AI**: Andrew Ng's insight (2021): focus on [improving the data]{.alert}, not just the model
+- **Data-centric AI**: Andrew Ng (2021) argues you should [improve the data]{.alert} before you improve the model
   - Check: <https://datacentricai.org/>
 :::
 
@@ -192,13 +176,13 @@ Source: [xkcd](https://xkcd.com/1838/)
 
 | Case | What went wrong | Impact |
 |------|-----------------|--------|
-| Credit scoring | Data reflected historical gender-based income gaps | [Lower credit limits]{.alert} for women with similar profiles |
-| Facial recognition | Training data mostly light-skinned faces | [Error rates 43x higher]{.alert} for dark-skinned women |
-| Criminal risk assessment | Historical arrest data reflected biased policing | [Perpetuated racial disparities]{.alert} in sentencing |
-| Hiring AI | Trained on historical (male-dominated) hiring decisions | [Penalised female candidates]{.alert} |
+| Credit scoring | [Data reflected historical gender-based income gaps](https://www.bbc.com/news/business-50365609) | [Lower credit limits]{.alert} for women with similar profiles |
+| Facial recognition | [Training data mostly light-skinned faces](http://gendershades.org/) | [Error rates 43x higher]{.alert} for dark-skinned women |
+| Criminal risk assessment | [Historical arrest data reflected biased policing](https://www.propublica.org/article/machine-bias-risk-assessments-in-criminal-sentencing) | [Perpetuated racial disparities]{.alert} in sentencing |
+| Hiring AI | [Trained on historical (male-dominated) hiring decisions](https://www.reuters.com/article/us-amazon-com-jobs-automation-insight-idUSKCN1MK08G) | [Penalised female candidates]{.alert} |
 
 :::{.fragment}
-> These weren't algorithm failures; they were [data failures]{.alert}.
+> In all four cases the model learned [exactly what the data taught it]{.alert}
 :::
 :::
 
@@ -292,7 +276,7 @@ Source: [The Independent](https://www.independent.co.uk/news/science/duck-and-ra
 :::{.columns}
 :::{.column width=55%}
 - Often we can't directly measure what we want to predict
-- We use [proxy variables]{.alert} instead...but proxies can be misleading!
+- So we use [proxy variables]{.alert} instead, and proxies can mislead
 - **Example 01: Predicting "health needs"**
   - What we want: How sick is this patient?
   - Available data: Healthcare spending
@@ -368,8 +352,8 @@ Source: [Our World in Data](https://ourworldindata.org/grapher/ai-performance-kn
 :::{style="margin-top: 30px; font-size: 26px;"}
 :::{.columns}
 :::{.column width=55%}
-- [Selection bias]{.alert} is the systematic deviation between your training data and the real-world distribution
-- Also called: confounding, distribution shift, sampling bias
+- [Selection bias]{.alert}: your training data differ systematically from the cases the model will meet
+- Close relatives: sampling bias, distribution shift, survivorship bias
 - The model learns patterns that [won't generalise]{.alert}
 - [Extremely hard to fix after the fact]{.alert}
 - [Prevention is better than cure]{.alert}!
@@ -393,14 +377,14 @@ Source: [Wikipedia](https://en.wikipedia.org/wiki/Survivorship_bias)
 
 | Type | Description | Example |
 |------|-------------|---------|
-| **Time bias** | Data from the past applied to the future | Training on 2019 data for 2024 predictions |
+| **Time bias** | Data from the past applied to the future | Training on 2021 data for 2026 predictions |
 | **Location bias** | Data from one place applied elsewhere | US healthcare model used in India |
-| **Demographics bias** | Certain groups under/over-represented | Clinical trial with mostly young, white, male participants |
+| **Demographic bias** | Certain groups under/over-represented | Clinical trial with mostly young, white, male participants |
 | **Availability bias** | Using convenient rather than representative data | Surveying only friends |
 | **Response bias** | Who responds differs from who doesn't | Online surveys miss offline populations |
 | **Long-tail bias** | Rare events underrepresented | Self-driving cars: unusual scenarios |
 
-- Try it out: Generate an image of "a CEO" and "a nurse" using two different LLMs, such as [Qwen](https://qwen.ai/) and [Gemini](https://gemini.ai/). What do you notice?
+- Try it out: Generate an image of "a CEO" and "a nurse" using two different models, such as [Qwen](https://qwen.ai/) and [Gemini](https://gemini.google.com). What do you notice?
 :::
 
 ## Prompt: Create an image of a CEO and a nurse
@@ -429,14 +413,14 @@ Source: [Gemini's NanoBanana](https://gemini.google.com)
 :::{.column width=55%}
 **Before collection:**
 
-- [Enumerate potential biases]{.alert} before collecting data
+- [List the biases you expect]{.alert} before collecting data
 - Design collection to [cover important subgroups]{.alert}
 - [Over-sample]{.alert} rare but [important cases]{.alert}
-- Use [data augmentation]{.alert} to increase dataset size
-  - Try it out at home! Use an image generator to create variations of the same object (different angles, lighting, etc)
 
 **After collection:**
 
+- Use [data augmentation]{.alert} to increase dataset size
+  - Try it out at home! Use an image generator to create variations of the same object (different angles, lighting, etc)
 - Use [representative validation sets]{.alert}
 - If deploying in new locations: validate on location-specific data
 - [Document known limitations]{.alert} of your dataset
@@ -460,7 +444,7 @@ Source: [WisdomPlexus](https://wisdomplexus.com/blogs/ai-bias-in-action-real-wor
 :::{style="margin-top: 30px; font-size: 23px;"}
 :::{.columns}
 :::{.column width=55%}
-- Most AI models requires [labelled data]{.alert}
+- Most AI models require [labelled data]{.alert}
 - Labels come from humans → humans make mistakes
 - Common issues:
   - **Inconsistency**: Different people label differently
@@ -469,7 +453,7 @@ Source: [WisdomPlexus](https://wisdomplexus.com/blogs/ai-bias-in-action-real-wor
   - **Fatigue**: Quality drops over time
   - **Expertise**: Some tasks need domain experts
 - Labelling is [expensive and time-consuming]{.alert}
-  - See [Alex Wang's Scale AI](https://scale.com/)
+  - See [Alexandr Wang's Scale AI](https://scale.com/)
 - Quality control is super important!
 :::
 
@@ -531,7 +515,7 @@ Best practices:
 
 - [Test guidelines]{.alert} with a small group first
 - [Iterate]{.alert} based on confusion and disagreements
-- Keep guidelines as [living documents]{.alert} and update them as needed
+- Keep guidelines as [living documents]{.alert}
 :::
 
 :::{.column width=45%}
@@ -544,7 +528,7 @@ Source: [Google's Healthcare Text Annotation Guidelines](https://github.com/goog
 :::
 :::
 
-## Multiple annotators and agreement
+## Multiple annotators and agreement {#sec-agreement}
 ### Reducing individual errors
 
 :::{style="margin-top: 30px; font-size: 20px;"}
@@ -571,11 +555,17 @@ Source: [Google's Healthcare Text Annotation Guidelines](https://github.com/goog
 - [Inter-annotator agreement]{.alert}: Do annotators agree?
 - High agreement → Labels are reliable
 - Low agreement → Problem with guidelines or task
-- Common metric: [Cohen's Kappa](https://en.wikipedia.org/wiki/Cohen%27s_kappa)
+- Common metric: [Cohen's Kappa](https://en.wikipedia.org/wiki/Cohen%27s_kappa) ([Fleiss' Kappa](https://en.wikipedia.org/wiki/Fleiss%27_kappa) for more than two annotators)
 
 :::{style="text-align: center;"}
 **Cohen's Kappa:**
-$$\kappa = \frac{\text{obs. agreement} - \text{exp. agreement}}{1 - \text{exp. agreement}}$$
+$$\kappa = \frac{p_o - p_e}{1 - p_e}$$
+
+:::{style="font-size: 17px; text-align: left;"}
+- $p_o$ (observed agreement): share of items both annotators labelled the same way
+- $p_e$ (expected agreement): share they would agree on by chance, given how often each one uses each label
+- [[Worked example]{.button}](#sec-appendix-kappa)
+:::
 
 | Kappa | Interpretation |
 |-------|----------------|
@@ -596,12 +586,11 @@ $$\kappa = \frac{\text{obs. agreement} - \text{exp. agreement}}{1 - \text{exp. a
 :::{.columns}
 :::{.column width=55%}
 - [Quality control (QC) examples]{.alert}: Examples where you already know the correct answer
-- Slip QC examples into the labelling queue without telling annotators
+- Slip QC examples into the labelling queue [without telling annotators]{.alert}
 - Use them to:
   - Monitor annotator accuracy over time
   - Identify annotators who need retraining
   - Catch low-quality work early
-- Important: [Don't let annotators know]{.alert} which examples are QC
 - Flag annotators who fail too many QC checks
 - Combine with [regular audits]{.alert} of random samples
 :::
@@ -653,23 +642,57 @@ flowchart TB
 :::
 :::
 
-# Summary ✅ {background-color="#1B3A6B"}
+# Summary {background-color="#1B3A6B"}
 
 ## Main takeaways
 
 :::{style="margin-top: 30px; font-size: 32px;"}
 
-- `r fa('database')` [Data quality > Algorithm sophistication]{.alert} for most real-world problems
+- [Data quality > Algorithm sophistication]{.alert} for most real-world problems
 
-- `r fa('crosshairs')` [Problem framing]{.alert} determines what data you need and how to label it
+- [Problem framing]{.alert} determines what data you need and how to label it
 
-- `r fa('exclamation-circle')` [Selection bias]{.alert} is a major source of error. Enumerate biases before collecting
+- [Selection bias]{.alert} is a major source of error. List the biases before you collect
 
-- `r fa('tags')` [Labelling is hard]{.alert}, so clear guidelines and quality control are very important
+- [Labelling is hard]{.alert}, so write clear guidelines and check the work
 
-- `r fa('users')` [Multiple annotators]{.alert} improve reliability, but aggregate intelligently
+- [Multiple annotators]{.alert} improve reliability, but aggregate intelligently
 
-- `r fa('file-medical-alt')` [Document everything]{.alert}, so your future self will thank you
+- [Document everything]{.alert}, so your future self will thank you
 :::
 
 # ... and that's all for today! 🎉 {background-color="#1B3A6B"}
+
+# Appendix {background-color="#1B3A6B"}
+
+## Cohen's kappa by hand {#sec-appendix-kappa}
+### Two annotators labeling 100 product reviews as "positive" or "negative"
+
+:::{style="margin-top: 40px; font-size: 24px;"}
+:::{.columns}
+:::{.column width=45%}
+:::{style="text-align: center;"}
+|  | B: Positive | B: Negative | Total |
+|---|:---:|:---:|:---:|
+| **A: Positive** | 40 | 10 | 50 |
+| **A: Negative** | 15 | 35 | 50 |
+| **Total** | 55 | 45 | 100 |
+:::
+
+<br>
+
+- The diagonal (40 and 35) is where A and B agree
+- A says "positive" 50% of the time, B says it 55% of the time
+:::
+
+:::{.column width=55%}
+1. Observed agreement: $p_o = \frac{40 + 35}{100} = 0.75$
+2. Chance both say positive: $0.50 \times 0.55 = 0.275$
+3. Chance both say negative: $0.50 \times 0.45 = 0.225$
+4. Expected agreement: $p_e = 0.275 + 0.225 = 0.50$
+5. Kappa: $\kappa = \frac{0.75 - 0.50}{1 - 0.50} = 0.50$, "moderate"
+
+[[Back to the lecture]{.button}](#sec-agreement)
+:::
+:::
+:::
