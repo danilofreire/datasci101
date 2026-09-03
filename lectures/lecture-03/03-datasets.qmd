@@ -109,6 +109,12 @@ Source: [Medium](https://blog.dataengineerthings.org/the-ai-revolution-is-nothin
 [![](figures/tweet-of-the-day.jpg){width="40%"}](#){data-modal-type="image" data-modal-url="figures/tweet-of-the-day.jpg"}
 :::
 
+## News of the day
+
+:::{style="margin-top: 30px; font-size: 26px; text-align: center;"}
+[![](figures/astra.png){width="60%"}](#){data-modal-type="image" data-modal-url="figures/astra.png"}
+:::
+
 ## Live labelling
 ### Positive, negative, or neutral?
 
