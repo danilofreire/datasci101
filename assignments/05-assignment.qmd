@@ -82,31 +82,33 @@ Bank of America is hiring summer analysts for 2027, with positions in Atlanta. T
 
 ### Question 2: The constraint game
 
-Lecture 10 said the Format element tells the model exactly how the output should look. This question tests how many constraints a model can hold at once, and how you fix a prompt when it drops one.
+Lecture 10 said the Format element tells the model exactly how the output should look. This question tests how many constraints a model can hold at once, and whether it holds them every time.
 
 **Your task:**
 
-1. Open a new chat. Write a prompt asking the model for a paragraph explaining what an AI hallucination is. Your prompt must state these four constraints, in your own words:
-   - Exactly 40 words
+1. Open a new chat. Write a prompt asking the model for a paragraph explaining what an AI hallucination is. Your prompt must state these five constraints, in your own words:
+   - Exactly 30 words
    - Never uses the letter "e"
+   - Never uses the letter "a"
    - Mentions a fruit
    - Ends with a question
-2. Copy the response. Count the words yourself, and search for the letter "e" yourself. Do not trust the model's own count.
-3. If any constraint failed, change your prompt and try again, up to three attempts in total. Keep every prompt and every response.
+2. Copy the response. Count the words yourself, and search for "e" and "a" yourself. Do not trust the model's own count.
+3. Open two more new chats and send the **same prompt** again in each, so you have three responses to one prompt. Keep all three.
+4. If any run failed a constraint, change your prompt once, run it three times again, and keep those too.
 
 **Report:**
 
-| Attempt | Word count | Letter "e" present? | Fruit? | Ends with "?" | Constraints met (out of 4) |
-|:---:|:---:|:---:|:---:|:---:|:---:|
-| 1 | | | | | |
-| 2 | | | | | |
-| 3 | | | | | |
+| Run | Word count | "e" present? | "a" present? | Fruit? | Ends with "?" | Constraints met (out of 5) |
+|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+| 1 | | | | | | |
+| 2 | | | | | | |
+| 3 | | | | | | |
 
 **Analysis:**
 
-- Which constraint failed most often? Why do you think that one is hard for a model that predicts one token at a time (Lecture 10)?
-- What did you change between attempts, and which change helped most?
-- If all four passed on the first attempt, make the task harder (30 words, or no "e" and no "a") and report that instead
+- Did the three runs give the same result? If not, what differed? The same prompt does not always give the same output (Lecture 06 covered temperature)
+- Which constraint failed, if any? Why might that one be hard for a model that predicts one token at a time (Lecture 10)?
+- If all three runs passed every constraint, say which constraint you would add to make it fail, and test it once
 
 ---
 
@@ -133,7 +135,7 @@ Meta-prompting means asking the model to improve your prompt (Lecture 10). This 
 1. Open a new chat. Paste the task description above, then write: *"Improve this prompt so it gets a better result for the task above. Return only the improved prompt, in under 120 words."* Then paste V0. Record the result as V1.
 2. In the same chat, write: *"Improve this prompt further. Return only the improved prompt, in under 120 words."* Paste V1. Record the result as V2.
 3. Check V1 and V2 against the task description. If a version dropped the audience, the length, or the real example, add it back by hand and say so.
-4. Open **three new chats**. In each, run one version (V0, V1, V2) followed by the task description. Copy the first 150 words of each output.
+4. Open **three new chats**. In the first, send V0 on its own, with nothing else: this is what the model gets when you skip the details. In the second, send V1 followed by the task description. In the third, send V2 followed by the task description. Copy the first 150 words of each output.
 
 **Report:**
 
@@ -146,7 +148,7 @@ Meta-prompting means asking the model to improve your prompt (Lecture 10). This 
 
 **Analysis:**
 
-- Report the three scores. Where did the biggest jump happen, V0 to V1 or V1 to V2?
+- Report the three scores. What did the model do with V0 alone: guess a topic, ask you questions, or produce something generic? Where did the biggest jump happen, V0 to V1 or V1 to V2?
 - What did V2 add over V1? Was it a real improvement or just more words?
 - Write your own V3 in under 60 words. What did you keep from V2 and what did you cut?
 
