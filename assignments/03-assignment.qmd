@@ -48,7 +48,7 @@ A model has a **32,000 token** context window. You want to analyse a legal docum
 
 The **temperature** setting controls how random an LLM's output is.
 
-1. Go to [aistudio.google.com](https://aistudio.google.com/) and sign in. In the settings panel, turn **off** "Grounding with Google Search" and set **Thinking level** to **Minimum**. Both of these interfere with the experiment
+1. Go to [aistudio.google.com](https://aistudio.google.com/) and sign in. In the settings panel, turn **off** any web search or grounding option and set the thinking or reasoning level to its lowest setting. Both of these interfere with the experiment. (The labels change often. If you cannot find one of them, say so in your answer and carry on)
 2. Set the temperature to **0**. Send the prompt *"Write a six-word story about the sea."* three times, **starting a new chat each time**. You can start one quickly with the **+** at the top of the page. Record all three
 3. Set the temperature to **2**. Repeat, and record all three
 
@@ -76,7 +76,7 @@ Before an LLM can process your words, it splits them into tokens and turns each 
 
 **Your task:**
 
-1. Visit OpenAI's tokeniser at [platform.openai.com/tokenizer](https://platform.openai.com/tokenizer) and select the **"GPT-5.x & O1/3"** tokeniser
+1. Visit OpenAI's tokeniser at [platform.openai.com/tokenizer](https://platform.openai.com/tokenizer) and select the most recent GPT tokeniser in the dropdown (the exact label changes as models are released)
 2. Paste this sentence: *"The quick brown fox jumps over the lazy dog"* and record the token count
 3. Paste the Spanish translation: *"El rápido zorro marrón salta sobre el perro perezoso"* and record the count
 4. Paste the Hindi translation: *"फुर्तीली भूरी लोमड़ी आलसी कुत्ते के ऊपर कूदती है"* and record the count
@@ -102,7 +102,7 @@ Before an LLM can process your words, it splits them into tokens and turns each 
 
 ### Question 4: Does it understand your voice?
 
-Lecture 07 covered Whisper, the model behind most speech recognition.
+Lecture 07 covered Whisper, the open-source model behind much of today's speech recognition.
 
 1. Go to [huggingface.co/spaces/openai/whisper](https://huggingface.co/spaces/openai/whisper). If the page is down, record the sentences as voice memos on your phone instead, upload each file to ChatGPT or Gemini, and ask for an exact transcript
 2. Record yourself reading this sentence at a normal pace: *"The doctor asked whether the patient had taken the medication yesterday."*
@@ -138,7 +138,7 @@ Lecture 07 covered Whisper, the model behind most speech recognition.
 
 - The model gave a confident answer for something that belongs to neither class. Why can it not answer "neither"?
 - Lecture 03 said classes should be **collectively exhaustive**. What third class would you add, and how would you collect examples for it?
-- Does a high confidence score mean the model is probably right?
+- Teachable Machine shows a confidence score for each prediction (we did not cover this in class). Does a high score mean the model is probably right? Test it with an object that belongs to neither class
 
 ---
 

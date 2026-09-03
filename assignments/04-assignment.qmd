@@ -26,9 +26,9 @@ This assignment covers material from **Lectures 05 and 07**: Metrics and Fairnes
 
 ## The case
 
-A company has offered Emory a remote proctoring system for online exams. We will call it **Invigil**. During an exam, Invigil takes a photograph through the student's webcam every three seconds and records audio for the whole session. Software scores each exam and flags some for review by the Honour Council. The brochure says the system is **96% accurate**.
+A company has offered Emory a remote proctoring system for online exams. We will call it **Invigil**. During an exam, Invigil takes a photograph through the student's webcam every three seconds and records audio for the whole session. Software scores each exam and flags some for review by the Honor Council. The brochure says the system is **96% accurate**.
 
-In a pilot of **2,000 exams** at another university, an independent audit found **40** cases of cheating. Invigil flagged **80** exams. The Honour Council confirmed cheating in **20** of them. So three in four flags were honest students, and half the cheaters were never flagged.
+In a pilot of **2,000 exams** at another university, an independent audit found **40** cases of cheating. Invigil flagged **80** exams. The Honor Council confirmed cheating in **20** of them. So three in four flags were honest students, and half the cheaters were never flagged.
 
 The provost has asked your committee to assess Invigil before the university signs anything. Every question below uses this case.
 
@@ -69,9 +69,9 @@ After you ask a second time, the company supplies its own breakdown of the pilot
 
 **Your task:**
 
-1. For each group, name the reason from the Exam 1147 report ("gaze away", "second voice", "face obscured") most likely to fire, and say in one sentence what about the camera or the microphone causes it
-2. The brochure's 96% figure is true and this breakdown is also true. Lecture 05 gave a name to the rule that catches this. Name it and explain in a few sentences why the overall number hides the problem
-3. The company replies: *"Skin tone is not an input to our model, so it cannot be biased."* Lecture 05 says why that argument fails. Explain in a few sentences
+1. For each group, name the reason from the Exam 1147 report ("gaze away", "second voice", "face obscured") most likely to fire, and say in one sentence what about the camera or the microphone causes it (Lecture 05 covered how cameras perform across skin tones)
+2. The brochure's 96% figure is true and this breakdown is also true. Using what Lecture 05 said about evaluating models across groups, explain in a few sentences how both can hold at once, and what Emory should have asked the company for before reading the brochure
+3. The company replies: *"Skin tone is not an input to our model, so it cannot be biased."* Explain in a few sentences why that argument fails
 
 ---
 
@@ -92,8 +92,8 @@ Invigil makes two kinds of error: it flags an honest student, or it misses one w
 **Your task:**
 
 1. Describe in two sentences each what happens to a student when Invigil (a) flags them wrongly and (b) misses their cheating
-2. The company can make Invigil stricter or more cautious, but not better at both. Which should Emory ask for? Say which of the two mistakes from item 1 you are choosing to make more often, and who pays for it
-3. Students learn that "gaze away" and "second voice" are what gets counted. Describe what an honest student will do differently in their next exam, and what a cheater will do. Does the count still measure cheating?
+2. Suppose the company can retune Invigil, but only by moving along the trade-off from item 1. Which direction should Emory ask for? Say which of the two mistakes you are choosing to make more often, and who pays for it
+3. Students learn that "gaze away" and "second voice" are what gets counted. Describe what an honest student will do differently in their next exam, and what a cheater will do. What does the count measure after that, and what name did Lecture 05 give to this problem?
 
 ---
 
