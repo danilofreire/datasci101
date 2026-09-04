@@ -56,7 +56,7 @@ if (!require("fontawesome", character.only = TRUE)) {
 :::{.column width=50%}
 - Last time, we explored [prompt engineering]{.alert}
 - Key techniques:
-  - **PTCF Framework**: Purpose, Task, Context, Format
+  - **PTCF Framework**: Persona, Task, Context, Format
   - **Chain-of-Thought**: "Let's think step by step"
   - **Personas**: Giving AI expert roles
   - **AI Agents**: LLMs that use tools
@@ -712,7 +712,7 @@ Question: [your question]
 :::
 
 :::{style="margin-top: 15px; font-size: 18px;"}
-**Next slides**: We'll build [more sophisticated templates]{.alert} using PTCF and meta-prompting from Lecture 09!
+**Next slides**: We'll build [more sophisticated templates]{.alert} using PTCF and meta-prompting from Lecture 10!
 :::
 :::
 :::
@@ -723,7 +723,7 @@ Question: [your question]
 :::{style="margin-top: 30px; font-size: 22px;"}
 :::{.columns}
 :::{.column width=55%}
-Remember the [**PTCF framework**](https://danilofreire.github.io/datasci101/lectures/lecture-09/09-prompting.html) from last class?
+Remember the [**PTCF framework**](https://danilofreire.github.io/datasci101/lectures/lecture-10/10-prompting.html) from last class?
 
 | Element | Anti-Hallucination Version |
 |---------|---------------------------|
