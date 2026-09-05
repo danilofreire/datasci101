@@ -68,7 +68,7 @@ Further readings:
 ### September 8, 2026:
 
 - Lecture 04: [Supervised, unsupervised, and reinforcement learning](https://danilofreire.github.io/datasci101/lectures/lecture-04/04-learning.html).
-- [Kahoot Quiz](https://play.kahoot.it/v2/?quizId=43271e4a-cbfe-4f52-9c13-ec7ef00964a9&hostId=05eb977d-4f8a-440e-9e45-95212b29d103)
+- [Kahoot Quiz](https://play.kahoot.it/v2/?quizId=9f07a1f4-2c44-44fd-8d34-220441497cd3&hostId=05eb977d-4f8a-440e-9e45-95212b29d103)
 
 Suggested readings:
 
@@ -84,7 +84,7 @@ Further readings:
 ### September 10, 2026:
 
 - Lecture 05: [Metrics, validation and overfitting](https://danilofreire.github.io/datasci101/lectures/lecture-05/05-metrics.html).
-- [Kahoot Quiz](https://play.kahoot.it/v2/?quizId=09b3c6d7-f743-43aa-aff7-d16267aa404e&hostId=05eb977d-4f8a-440e-9e45-95212b29d103)
+- [Kahoot Quiz](https://play.kahoot.it/v2/?quizId=ff6023c3-a7be-40ac-807c-cefcdd881128&hostId=05eb977d-4f8a-440e-9e45-95212b29d103)
 - **Assignment 01 due (5%).**
 - [**Assignment 02**](https://github.com/danilofreire/datasci101/blob/main/assignments).
 
@@ -106,7 +106,7 @@ Further readings:
 ### September 15, 2026:
 
 - Lecture 06: [How machines handle language: tokens, embeddings and context](https://danilofreire.github.io/datasci101/lectures/lecture-06/06-language.html).
-- [Kahoot Quiz](https://play.kahoot.it/v2/?quizId=11219f35-dabb-45ac-85ad-b8638a6a2769&hostId=05eb977d-4f8a-440e-9e45-95212b29d103)
+- [Kahoot Quiz](https://play.kahoot.it/v2/?quizId=3f1282a6-6b9a-4fbe-b916-104cd6d11f98&hostId=05eb977d-4f8a-440e-9e45-95212b29d103)
 
 Suggested readings:
 
@@ -123,7 +123,7 @@ Further readings:
 ### September 17, 2026:
 
 - Lecture 07: [How machines see and hear](https://danilofreire.github.io/datasci101/lectures/lecture-07/07-multimodal.html).
-- [Kahoot Quiz](https://play.kahoot.it/v2/?quizId=d539fc1e-248f-4ef9-86de-ba9926c28883&hostId=05eb977d-4f8a-440e-9e45-95212b29d103)
+- [Kahoot Quiz](https://play.kahoot.it/v2/?quizId=5656ef85-3824-4d8d-a1a8-fa79a440105f&hostId=05eb977d-4f8a-440e-9e45-95212b29d103)
 - **Assignment 02 due (5%).**
 - [**Assignment 03**](https://github.com/danilofreire/datasci101/blob/main/assignments).
 
@@ -142,6 +142,7 @@ Further readings:
 ### September 22, 2026:
 
 - Lecture 08: [Review session for Quiz 01](https://danilofreire.github.io/datasci101/lectures/lecture-08/08-review.html). This session covers Lectures 01-07 and prepares students for Quiz 01 on September 24.
+- [Kahoot Quiz](https://play.kahoot.it/v2/?quizId=fa5d4ca5-9425-4242-99c1-e792f58377a3&hostId=05eb977d-4f8a-440e-9e45-95212b29d103)
 
 ### September 24, 2026:
 
@@ -152,7 +153,6 @@ Further readings:
 ### September 29, 2026:
 
 - Lecture 10: [Prompting techniques](https://danilofreire.github.io/datasci101/lectures/lecture-10/10-prompting.html).
-- [Kahoot Quiz](https://play.kahoot.it/v2/?quizId=52c1d6cc-c11f-44a0-84b3-e3273ed07c71&hostId=05eb977d-4f8a-440e-9e45-95212b29d103)
 
 Suggested readings:
 
@@ -173,7 +173,7 @@ Further readings:
 ### October 1, 2026:
 
 - Lecture 11: [Creativity and hallucination](https://danilofreire.github.io/datasci101/lectures/lecture-11/11-hallucination.html).
-- [Kahoot Quiz](https://play.kahoot.it/v2/?quizId=2eb129f2-3030-4ebd-9f5d-6afd251d0c53&hostId=05eb977d-4f8a-440e-9e45-95212b29d103)
+- [Kahoot Quiz](https://play.kahoot.it/v2/?quizId=2b4a7952-9357-4542-a2c3-7707bb8da206&hostId=05eb977d-4f8a-440e-9e45-95212b29d103)
 - **Assignment 04 due (5%).**
 - [**Assignment 05**](https://github.com/danilofreire/datasci101/blob/main/assignments).
 
@@ -233,6 +233,7 @@ Further readings:
 ### October 20, 2026:
 
 - Lecture 15: [AI agents: when models start doing things](https://danilofreire.github.io/datasci101/lectures/lecture-15/15-agents.html).
+- [Kahoot Quiz](https://play.kahoot.it/v2/?quizId=7d2aadb9-5bdb-4ed0-b366-6f80b46b53d0&hostId=05eb977d-4f8a-440e-9e45-95212b29d103)
 
 Suggested readings:
 
@@ -251,6 +252,7 @@ Further readings:
 ### October 22, 2026:
 
 - Lecture 16: [Types of bias and how they arise](https://danilofreire.github.io/datasci101/lectures/lecture-16/16-bias.html).
+- [Kahoot Quiz](https://play.kahoot.it/v2/?quizId=9c25b0fe-41fe-4ad0-8e9c-dd0fe68fa480&hostId=05eb977d-4f8a-440e-9e45-95212b29d103)
 - **Assignment 06 due (5%).**
 - [**Assignment 07**](https://github.com/danilofreire/datasci101/blob/main/assignments).
 
@@ -268,21 +270,24 @@ Further readings:
 
 ### October 27, 2026:
 
-- Lecture 17: [AI in Finance and Healthcare](https://danilofreire.github.io/datasci101/lectures/lecture-17/17-case-studies.html).
+- Lecture 17: [Setting up AI: instructions, memory and connectors](https://danilofreire.github.io/datasci101/lectures/lecture-17/17-setting-up-ai.html).
+- [Kahoot Quiz](https://play.kahoot.it/v2/?quizId=4862869d-eec7-467b-8f6b-f8fcb7d01301&hostId=05eb977d-4f8a-440e-9e45-95212b29d103)
 - No assignment this week.
 - [Instructions for the final project (PDF)](https://github.com/danilofreire/datasci101/blob/main/project/project-instructions.pdf). Groups must be finalised by November 3. Optional proposal due November 12; final report and infographic due December 8.
 
 Suggested readings:
 
-- Obermeyer, Z., Powers, B., Vogeli, C., & Mullainathan, S. (2019). [Dissecting racial bias in an algorithm used to manage the health of populations.](https://science.sciencemag.org/content/366/6464/447) *Science*, *366*(6464), 447-453. An important paper on the topic. We will discuss it in class.
-- Li, Y. et al. (2023). [Large language models in finance: a survey](https://arxiv.org/abs/2311.10723). *ICAIF-23*. A thorough overview. Easy to read.
+- Anthropic (2026). [How can I create and manage projects?](https://support.claude.com/en/articles/9519177-how-can-i-create-and-manage-projects) *Claude Help Center*. The official walk-through of project instructions, knowledge files and the five-project limit on the free plan. The companion page on [memory and chat search](https://support.claude.com/en/articles/11817273-use-claude-s-chat-search-and-memory-to-build-on-previous-context) shows you how to read, edit and delete what Claude has saved about you.
+- Chandrasekar, A. (2026). [Your chatbot's memory of you can shape the information you see.](https://www.cjr.org/tow_center/chatbots-memory-remember-users-conversations-history-openai-sam-altman-llm-gemini.php) *Columbia Journalism Review*, Tow Center. A short piece on what memory does to the answers you get, including memory poisoning and deleted memories that come back. Read it before you open your own memory panel.
+- Anthropic (2024). [Introducing the Model Context Protocol.](https://www.anthropic.com/news/model-context-protocol) The original announcement, written for a general audience. Useful for seeing what problem MCP was meant to solve before it became an industry standard.
+- Agentic AI Foundation (2026). [AGENTS.md.](https://agents.md/) The whole specification is one page of plain Markdown with examples, which is the point. It is now used in tens of thousands of open-source projects and read by more than twenty different coding tools.
 
 Further readings:
 
-- Opel, N., & Breakspear, M. (2026). [Transforming mental health research and care through artificial intelligence](https://www.science.org/doi/10.1126/science.adz9193) *Science*, *391*(6782), 249-258. The authors review ways in which AI may reduce care inequities when deployed responsibly. They discuss how AI can be useful across several stages of care, from prevention to treatment and rehabilitation.
-- Agentic Health AI. (2025). [Awesome AI agents for healthcare](https://github.com/AgenticHealthAI/awesome-ai-agents-for-healthcare). A curated list of research papers, projects, and resources related to the application of AI agents for healthcare, including medical image analysis, EHR manipulation, counseling, drug discovery, patient dialogue, and healthcare administration.
-- Zouq, G. (2026). [Awesome AI in Finance](https://github.com/georgezouq/awesome-ai-in-finance). Same thing for finance.
-- AI4Finance Foundation (2026). [AI4Finance](https://ai4finance.org/). A series of open-source frameworks to build AI models for finance. Requires coding skills.
+- Dash, A., Das, S., Kirsten, E., Wu, Q., Karnam, S. K., Gummadi, K. P., Holz, T., Zafar, M. B., & Zannettou, S. (2026). [The algorithmic self-portrait: deconstructing memory in ChatGPT.](https://arxiv.org/abs/2602.01450) *Proceedings of the ACM Web Conference 2026*. Eighty people donated their ChatGPT memories, 2,050 entries in all. The system wrote 96% of them without being asked, 28% held personal data under the GDPR definition, and 52% held psychological inferences.
+- Greshake, K., Abdelnabi, S., Mishra, S., Endres, C., Holz, T., & Fritz, M. (2023). [Not what you've signed up for: compromising real-world LLM-integrated applications with indirect prompt injection.](https://arxiv.org/abs/2302.12173) *arXiv preprint*. The paper that named indirect prompt injection and showed it working against Bing Chat. Once a tool fetches outside text, data and instructions look the same to the model.
+- Hou, X., Zhao, Y., Wang, S., & Wang, H. (2025). [Model Context Protocol (MCP): landscape, security threats, and future research directions.](https://arxiv.org/abs/2503.23278) *arXiv preprint*. A survey of how MCP servers are built, deployed and maintained, with sixteen named attack scenarios. Technical in places, but the threat table reads on its own.
+- Anthropic (2025). [Effective context engineering for AI agents.](https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents) An engineering post arguing that context is a finite resource, so the aim is the smallest set of high-signal instructions rather than the longest. It explains why a two-page instruction file often performs worse than ten good lines.
 
 ## Module 5 — Policy, governance and social impact
 
