@@ -680,3 +680,6 @@ accommodations.md
 
 # Playwright MCP
 .playwright-mcp/
+
+# Site output must never be ignored by the generic template rules above
+!docs/**/dist/
