@@ -1,0 +1,759 @@
+---
+title: "DATASCI 101: Introduction to AI Applications"
+subtitle: "Lecture 23: Misinformation, Deepfakes and Trust Online"
+author:
+  - name: Danilo Freire
+    orcid: 0000-0002-4712-6810
+    email: danilo.freire@emory.edu
+    affiliations: "Department of Data and Decision Sciences <br> Emory University"
+format:
+  clean-revealjs:
+    self-contained: false
+    footer: "[Lecture 23](https://danilofreire.github.io/datasci101/lectures/lecture-23/23-misinformation.html)"
+    transition: slide
+    transition-speed: default
+    scrollable: true
+revealjs-plugins:
+  - multimodal
+engine: knitr
+editor:
+  render-on-save: true
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+library(knitr)
+opts_chunk$set(
+  prompt = T,
+  fig.align="center",
+  dpi=300,
+  cache=T,
+  engine.opts = list(bash = "-l")
+  )
+
+knit_hooks$set(
+  prompt = function(before, options, envir) {
+    options(
+      prompt = if (options$engine %in% c('sh','bash', 'zsh')) '$ ' else 'R> ',
+      continue = if (options$engine %in% c('sh','bash', 'zsh')) '$ ' else '+ '
+      )
+})
+
+options(repos = c(CRAN = "https://cran.rstudio.com/"))
+
+if (!require("fontawesome", character.only = TRUE)) {
+  install.packages("fontawesome", dependencies = TRUE)
+  library(fontawesome, character.only = TRUE)
+}
+```
+
+# Welcome back! 🕵️ {background-color="#1B3A6B"}
+
+## Recap of last class
+
+:::{style="margin-top: 20px; font-size: 24px;"}
+:::{.columns}
+:::{.column width=50%}
+- Last time: [AI and wellbeing]{.alert} (attention, mental health, environment)
+- Algorithms optimise [engagement, not wellbeing]{.alert}. Filter bubbles look overstated; anxiety, sleep, and body-image effects don't
+- AI mental-health tools: [short-term promise]{.alert}, thin long-term evidence. [Augmentation, not replacement]{.alert}
+- Training is a one-off cost; [inference at scale]{.alert} is what keeps growing
+- Common thread: [incentive structures beat intentions]{.alert}
+- Today: [what happens when AI is used to deceive?]{.alert}
+:::
+
+:::{.column width=50%}
+:::{style="text-align: center;"}
+[![Pope Francis in Balenciaga! 😂](figures/pope.webp){width="80%"}](#){data-modal-type="image" data-modal-url="figures/pope.webp"}
+:::
+:::
+:::
+:::
+
+## Lecture overview
+### What we will cover today
+
+:::{style="margin-top: 20px; font-size: 24px;"}
+
+:::{.columns}
+:::{.column width=50%}
+**Part 1: Misinformation and AI**
+
+- What is misinformation?
+- AI and synthetic media
+- Why it matters now
+
+**Part 2: Deepfakes**
+
+- Technical foundations
+- Real-world examples
+:::
+
+:::{.column width=50%}
+**Part 3: Why we fall for it**
+
+- Evolutionary wiring and fake news
+- System 1 vs System 2
+- Confirmation bias and motivated reasoning
+- Bandwagon effect and the "in the know" feeling
+
+**Part 4: Responses**
+
+- Technical detection
+- Platform policies
+- Legal frameworks
+- Media literacy
+:::
+:::
+:::
+
+## AI news of the week 😮
+### Anthropic's new Claude Mythos model
+
+:::{style="text-align: center; margin-top: 30px; font-size: 22px;"}
+:::{.columns}
+:::{.column width=50%}
+[![](figures/mythos.png){width="80%"}](#){data-modal-type="image" data-modal-url="figures/mythos.png"}
+
+Source: [System Card: Claude Mythos Preview](https://www-cdn.anthropic.com/53566bf5440a10affd749724787c8913a2ae0841.pdf)
+:::
+
+:::{.column width=50%}
+[![](figures/mythos-2.png){width="60%"}](#){data-modal-type="image" data-modal-url="figures/mythos-2.png"}
+
+Source: [X.com](https://x.com/kimmonismus/status/2041592321192718642)
+:::
+:::
+:::
+
+# Misinformation: definitions and scale 📰 {background-color="#1B3A6B"}
+
+## Three kinds of false content
+
+:::{style="margin-top: 30px; font-size: 20px;"}
+:::{.columns}
+:::{.column width=55%}
+**The trichotomy ([Wardle & Derakhshan, 2017](https://edoc.coe.int/en/media/7495-information-disorder-toward-an-interdisciplinary-framework-for-research-and-policy-making.html), Council of Europe):**
+
+| Term | Definition |
+|------|------------|
+| [Misinformation]{.alert} | False information spread without intent to deceive |
+| [Disinformation]{.alert} | False information spread deliberately to deceive |
+| [Malinformation]{.alert} | True information shared to cause harm |
+
+A related but broader concept: [synthetic media]{.alert} (content created or manipulated by AI)
+
+**Why the distinction matters:**
+
+- Intent shapes the appropriate response
+- Different actors, different motivations
+- Legal treatment and solutions vary by category
+
+**The old problem:**
+
+- Misinformation is ancient
+- Technology changes [scale and speed]{.alert}
+:::
+
+:::{.column width=45%}
+:::{style="text-align: center;"}
+[![](figures/mis-dis-mal.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/mis-dis-mal.png"}
+
+Source: [CUNY Library](https://library.csi.cuny.edu/misinformation)
+
+:::{style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; font-size: 18px; margin-top: 15px;"}
+The response to a grandmother sharing a wrong health tip is very different from the response to a state-sponsored disinformation campaign. [Intent matters]{.alert}.
+:::
+:::
+:::
+:::
+:::
+
+## Why AI changes things
+
+:::{style="margin-top: 30px; font-size: 20px;"}
+:::{.columns}
+:::{.column width=55%}
+**Before generative AI:**
+
+- Fake images required Photoshop skills
+- Fake videos needed studios, fake audio needed voice actors
+- Production was [expensive and slow]{.alert}
+- Detection was often possible
+
+**After generative AI:**
+
+- Anyone can create convincing fakes
+- [Production cost approaches zero]{.alert}
+- Quality improves rapidly
+- Detection becomes harder as generators improve
+
+**The scale problem:**
+
+- Thousands of fake articles, generated in minutes
+- Targeted content for specific audiences
+- [Human moderators can't keep up]{.alert} ([Lazer et al., 2018](https://www.science.org/doi/10.1126/science.aao2998))
+:::
+
+:::{.column width=45%}
+:::{style="text-align: center;"}
+[![](figures/zion.webp){width="50%"}](#){data-modal-type="image" data-modal-url="figures/zion.webp"}
+
+Source: [Encyclopedia Britannica](https://www.britannica.com/topic/Protocols-of-the-Elders-of-Zion)
+
+:::{style="font-size: 18px; margin-top: 15px;"}
+Fake news is not new. The "Protocols of the Elders of Zion" was a fabricated antisemitic text from 1903 that fuelled hatred for over a century. Now anyone can produce similar content in minutes.
+:::
+:::
+:::
+:::
+:::
+
+## The attention economy revisited
+
+:::{style="margin-top: 30px; font-size: 20px;"}
+:::{.columns}
+:::{.column width=55%}
+**How platforms amplify misinformation:**
+
+- Engagement = revenue
+- Outrage drives engagement
+- False information is [often more engaging]{.alert}
+- Algorithms optimise for clicks, not truth
+
+**The correction problem:**
+
+- [Lies spread faster than corrections]{.alert}
+- False stories reach millions
+- Corrections reach thousands
+- Even debunked claims persist in memory
+
+**[Vosoughi et al. (2018)](https://www.science.org/doi/10.1126/science.aap9559):**
+
+- Analysed 126,000 stories on Twitter
+- False stories [6x more likely]{.alert} to be retweeted
+- Reached more people, spread faster
+:::
+
+:::{.column width=45%}
+:::{style="text-align: center;"}
+[![](figures/misinfo-spread.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/misinfo-spread.png"}
+
+Source: [NYU School of Engineering](https://engineering.nyu.edu/news/fake-news-gets-more-engagement-facebook-only-if-its-right-wing)
+
+:::{style="background: rgba(230, 57, 70, 0.1); padding: 15px; border-radius: 10px; font-size: 18px; margin-top: 15px;"}
+Platform incentives often [work against truth]{.alert}. This isn't a bug; it's a feature of ad-supported media.
+:::
+:::
+:::
+:::
+:::
+
+# Deepfakes 🎬 {background-color="#1B3A6B"}
+
+## What are deepfakes?
+
+:::{style="margin-top: 30px; font-size: 20px;"}
+:::{.columns}
+:::{.column width=55%}
+**Technical definition:**
+
+- Synthetic media using [deep learning](https://en.wikipedia.org/wiki/Deep_learning)
+- Typically [face-swapping]{.alert} or [face synthesis]{.alert}, with [DeepFaceLab](https://github.com/iperov/DeepFaceLab) the most widely used open-source tool
+- Can also include [voice cloning](https://www.technologyreview.com/2024/05/16/1092596/how-fake-voices-are-stealing-millions/)
+- [Named after a Reddit user, "deepfakes" (2017)](https://mitsloan.mit.edu/ideas-made-to-matter/deepfakes-explained)
+
+**How they work:**
+
+1. Collect training data (images/video of target)
+2. Train neural network to generate target's face
+3. Apply to source video or image
+4. Refine to reduce artefacts
+
+**Main techniques:**
+
+- [Diffusion models](https://arxiv.org/abs/2006.11239): newest and highest quality
+- [Voice synthesis](https://en.wikipedia.org/wiki/Voice_synthesis): similar principles for audio
+:::
+
+:::{.column width=45%}
+:::{style="text-align: center;"}
+[![](figures/encoder-decoder.webp){width="100%"}](#){data-modal-type="image" data-modal-url="figures/encoder-decoder.webp"}
+
+:::{style="font-size: 18px; margin-top: 15px;"}
+For a technical deep dive, see the [survey by Tolosana et al. (2020)](https://arxiv.org/abs/2004.11138).
+:::
+:::
+:::
+:::
+:::
+
+## Real-world examples
+
+:::{style="margin-top: 30px; font-size: 19px;"}
+:::{.columns}
+:::{.column width=55%}
+**Political deepfakes:**
+
+| Example | Impact |
+|---------|--------|
+| Obama PSA (2018) | [BuzzFeed/Jordan Peele demonstration](https://www.vox.com/2018/4/18/17252410/jordan-peele-obama-deepfake-buzzfeed) |
+| Zelensky surrender video | [Attempted wartime deception](https://www.npr.org/2022/03/16/1087062648/deepfake-video-zelenskyy-experts-war-manipulation-ukraine-russia) |
+| Indian election audio | [AI voice clones of politicians](https://www.bbc.com/news/world-asia-india-68918330) |
+
+**Financial fraud:**
+
+- [CEO voice clone authorised £200K transfer](https://www.dclsearch.com/blog/2019/09/ai-mimics-ceo-voice-to-scam-uk-energy-firm-out-of-ps200k)
+- [Estimated [$25 million scam]{.alert} in Hong Kong (2024)](https://www.cnn.com/2024/05/16/tech/arup-deepfake-scam-loss-hong-kong-intl-hnk)
+
+**Non-consensual intimate imagery:**
+
+- 96% of deepfakes online ([Sensity/Deeptrace, 2019](https://sensity.ai/reports/))
+- [Women overwhelmingly targeted]{.alert}: a tool for harassment and extortion
+- 2024 update from [Home Security Heroes](https://www.securityhero.io/state-of-deepfakes/) put the share at 98%
+- Legal response is lagging
+:::
+
+:::{.column width=45%}
+:::{style="text-align: center;"}
+[![](figures/deepfake-examples.png){width="80%"}](#){data-modal-type="image" data-modal-url="figures/deepfake-examples.png"}
+
+Source: [NPR](https://www.npr.org/2022/03/16/1087062648/deepfake-video-zelenskyy-experts-war-manipulation-ukraine-russia)
+
+:::{style="font-size: 18px; margin-top: 15px;"}
+The first big audit of deepfakes online ([Sensity, 2019](https://sensity.ai/reports/)) found that almost all of them were pornographic, and almost all targeted women.
+:::
+:::
+:::
+:::
+:::
+
+## RAND's primer on deepfakes
+
+:::{style="margin-top: 30px; font-size: 21px;"}
+:::{.columns}
+:::{.column width=55%}
+- Deepfakes are [one tool among many]{.alert}
+- ["Cheap fakes" often just as effective]{.alert} ([Paris & Donovan, 2019](https://datasociety.net/library/deepfakes-and-cheap-fakes/) coined the term)
+- Context matters more than technical quality
+- [Social vulnerability]{.alert} enables technical attacks
+
+**The liar's dividend:**
+
+- When anything could be fake...
+- Real evidence can be dismissed as fake
+- "That video of me is a deepfake!"
+- [Truth becomes contested terrain]{.alert}
+
+**RAND's threat assessment:**
+
+- Near-term: Targeted harassment, fraud
+- Medium-term: Election manipulation
+- Long-term: Erosion of shared reality
+:::
+
+:::{.column width=45%}
+:::{style="text-align: center;"}
+[![](figures/rand-deepfakes.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/rand-deepfakes.png"}
+
+Source: [RAND Corporation](https://www.rand.org/pubs/perspectives/PEA1043-1.html)
+
+:::{style="background: rgba(230, 57, 70, 0.1); padding: 15px; border-radius: 10px; font-size: 18px; margin-top: 15px;"}
+Even if every deepfake were labelled tomorrow, the damage is done: people now [doubt real video too]{.alert}. That is the liar's dividend.
+:::
+:::
+:::
+:::
+:::
+
+## The authenticity crisis
+
+:::{style="margin-top: 30px; font-size: 20px;"}
+:::{.columns}
+:::{.column width=55%}
+**[Chesney & Citron (2019)](https://www.foreignaffairs.com/articles/world/2018-12-11/deepfakes-and-new-disinformation-war):**
+
+- Frame deepfakes as an [epistemic threat]{.alert}: a danger to public knowledge itself, separate from privacy or fraud harms
+- News loses the ability to verify its own sources
+- Politicians get [plausible deniability]{.alert} for everything caught on camera
+- People retreat further into the views they already hold
+
+**What the empirical work has found since:**
+
+- [Vaccari & Chadwick (2020)](https://journals.sagepub.com/doi/10.1177/2056305120903408): UK survey (N=2,005) showed people are [more uncertain]{.alert} after seeing deepfakes than directly deceived, and this lowers trust in news overall
+- [Schiff, Schiff & Bueno (2024)](https://www.cambridge.org/core/journals/american-political-science-review/article/liars-dividend-can-politicians-claim-misinformation-to-evade-accountability/687FEE54DBD7ED0C96D72B26606AA073): five experiments, 15,000 Americans. False "deepfake!" claims help politicians dodge scandals, but mostly for [text-based reporting, not video]{.alert} (so far)
+:::
+
+:::{.column width=45%}
+:::{style="text-align: center;"}
+[![](figures/trust-erosion.png){width="80%"}](#){data-modal-type="image" data-modal-url="figures/trust-erosion.png"}
+
+Source: [Chesney & Citron (2019)](https://www.foreignaffairs.com/articles/world/2018-12-11/deepfakes-and-new-disinformation-war)
+:::
+:::
+:::
+:::
+
+## Discussion: what would convince you? 🤔
+
+:::{style="margin-top: 30px; font-size: 26px;"}
+**Scenario:**
+
+A video emerges of a political candidate you support saying something terrible. The candidate claims it's a deepfake.
+
+1. How would you decide if it's real?
+2. What evidence would convince you either way?
+3. Does your political alignment affect your judgment?
+4. What if experts disagree?
+:::
+
+# Why we fall for it 🧠 {background-color="#1B3A6B"}
+
+## Are we hard-wired for fake news?
+
+:::{style="margin-top: 30px; font-size: 23px;"}
+:::{.columns}
+:::{.column width=55%}
+**The evolutionary angle:**
+
+- Our brains evolved for small groups and immediate threats
+- Novelty once meant [survival-relevant information]{.alert}
+- We still react to new, surprising claims the same way
+- False news is almost by definition more novel than truth
+
+**Why outrage spreads:**
+
+- Threat detection is [fast and automatic]{.alert}
+- Emotionally charged content bypasses careful evaluation
+- Fear and disgust trigger sharing behaviour
+- We evolved to warn the group, not fact-check first
+:::
+
+:::{.column width=45%}
+:::{style="text-align: center;"}
+[![](figures/hardwired.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/hardwired.png"}
+
+Source: [Soroka et al. (2019)](https://www.pnas.org/doi/abs/10.1073/pnas.1908369116)
+:::
+:::
+:::
+:::
+
+## System 1 vs System 2
+
+:::{style="margin-top: 30px; font-size: 19px;"}
+:::{.columns}
+:::{.column width=55%}
+**[Kahneman's (2011)](https://en.wikipedia.org/wiki/Thinking,_Fast_and_Slow) dual-process theory:**
+
+:::{style="text-align: center;"}
+| | System 1 | System 2 |
+|--|----------|----------|
+| Speed | Fast, automatic | Slow, deliberate |
+| Effort | Effortless | Requires concentration |
+| Mode | Intuitive, emotional | Analytical, logical |
+| Default? | [Yes]{.alert} | Only when triggered |
+:::
+
+**Social media is a System 1 environment:**
+
+- Infinite scroll rewards quick reactions
+- You see a video, react, share, move on
+- System 2 never kicks in unless something [jolts]{.alert} you
+- Deepfakes are designed to feel real at System 1 speed
+
+**The problem:**
+
+- Catching a fake requires [System 2]{.alert}
+- But strong emotion (outrage, fear) [suppresses]{.alert} System 2
+- [Pennycook & Rand (2019)](https://www.sciencedirect.com/science/article/abs/pii/S001002771830163X) tested this directly: people who score higher on cognitive reflection tests are better at spotting fake news, regardless of party
+:::
+
+:::{.column width=45%}
+:::{style="text-align: center;"}
+[![](figures/fast-slow.jpg){width="70%"}](#){data-modal-type="image" data-modal-url="figures/fast-slow.jpg"}
+:::
+:::
+:::
+:::
+
+## Confirmation bias
+
+:::{style="margin-top: 30px; font-size: 21px;"}
+:::{.columns}
+:::{.column width=55%}
+**What it is:**
+
+- We seek evidence that [confirms what we already believe]{.alert}
+- We dismiss evidence that contradicts it
+- This isn't laziness; it's how brains manage information overload
+- [Nickerson (1998)](https://doi.org/10.1037/1089-2680.2.2.175) called it the most pervasive bias in human reasoning
+
+**How it works with deepfakes:**
+
+- [Who said it?]{.alert} If it's someone we trust, we're more likely to believe it, even if it's fake (the opposite is also true)
+- [Taber & Lodge (2006)](https://doi.org/10.1111/j.1540-5907.2006.00214.x): people argue back when corrected, sometimes [hardening]{.alert} their position
+- Corrections still feel like an attack on identity, even when they aren't
+:::
+
+:::{.column width=45%}
+:::{style="text-align: center;"}
+[![](figures/confirmation-bias.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/confirmation-bias.png"}
+
+:::{style="font-size: 18px; margin-top: 15px;"}
+Confirmation bias is not about intelligence. Educated people are sometimes [better]{.alert} at rationalising bad evidence, because they have more tools to construct justifications.
+:::
+:::
+:::
+:::
+:::
+
+## The bandwagon effect
+
+:::{style="margin-top: 30px; font-size: 19px;"}
+:::{.columns}
+:::{.column width=55%}
+**What [Asch (1956)](https://psycnet.apa.org/record/2011-16966-001) showed in the 1950s:**
+
+- People will deny [what their own eyes tell them]{.alert} if enough others disagree
+- About 75% of participants conformed at least once on an obvious task
+- [Bond & Smith (1996)](https://psycnet.apa.org/record/1996-01401-006) replicated Asch across 17 countries and confirmed the effect, though weaker in individualistic cultures
+
+**On social media, numbers are social proof:**
+
+- A video with 2 million views "must be real"
+- We outsource our judgment to the crowd
+
+**How this helps deepfakes spread:**
+
+- Early shares create a snowball
+- Each share adds perceived legitimacy
+- By the time fact-checkers respond, [millions have seen it]{.alert}
+- Taking it down can actually increase belief ("they're hiding something")
+:::
+
+:::{.column width=45%}
+:::{style="text-align: center;"}
+[![](figures/bandwagon-effect.jpg){width="100%"}](#){data-modal-type="image" data-modal-url="figures/bandwagon-effect.jpg"}
+
+:::{style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; font-size: 18px; margin-top: 15px;"}
+Asch's experiments used lines on a card. Today, the same psychology plays out with [deepfake videos shared millions of times]{.alert}.
+:::
+:::
+:::
+:::
+:::
+
+## The "in the know" feeling
+
+:::{style="margin-top: 30px; font-size: 20px;"}
+:::{.columns}
+:::{.column width=55%}
+**Sharing as social currency:**
+
+- Breaking news makes you feel like an [insider]{.alert}
+- "Did you see this?!" = status in your group
+- Being first to share gets the attention
+
+**Why this matters:**
+
+- Creates a [race to share before verifying]{.alert}
+- People share content they haven't fully read ([Gabielkov et al., 2016](https://inria.hal.science/hal-01281190): 59% of links shared on Twitter were never clicked)
+
+**Combined with the other biases:**
+
+- Confirmation bias picks *what* we share (things we agree with)
+- The bandwagon effect picks *when* (once it's already popular)
+- The "in the know" feeling picks *how fast* (immediately, no checking)
+:::
+
+:::{.column width=45%}
+:::{style="text-align: center;"}
+[![](figures/in-the-know.png){width="80%"}](#){data-modal-type="image" data-modal-url="figures/in-the-know.png"}
+
+Source: [Adam Grant](https://www.instagram.com/p/CoxwfquP3F7/)
+
+:::{style="font-size: 18px; margin-top: 15px;"}
+We share what confirms our views *and* makes us look informed. The truth can wait; the [dopamine hit]{.alert} can't.
+:::
+:::
+:::
+:::
+:::
+
+# Responses 🛡️ {background-color="#1B3A6B"}
+
+## Technical detection
+
+:::{style="margin-top: 30px; font-size: 21px;"}
+:::{.columns}
+:::{.column width=55%}
+**Detection approaches:**
+
+:::{style="text-align: center;"}
+| Method | How it works |
+|--------|--------------|
+| Artefact detection | Unnatural blinking, lighting |
+| Biological signals | Pulse, micro-expressions |
+| Source forensics | Compression artefacts, metadata |
+| [AI vs AI]{.alert} | Train detectors on known fakes |
+:::
+
+**Why it's hard:**
+
+- Detectors can be fooled
+- [Adversarial training]{.alert} improves generators
+- Real-time detection is difficult
+- Scale: Millions of images, few moderators
+- [Groh et al. (2022)](https://www.pnas.org/doi/10.1073/pnas.2110013119) tested ordinary people against a state-of-the-art detector on 5,000 deepfakes: humans and the model made [different mistakes]{.alert}, and combining them beat either alone
+:::
+
+:::{.column width=45%}
+:::{style="text-align: center;"}
+[![](figures/deepfake-detection.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/deepfake-detection.png"}
+
+Source: [Kumar et al. (2025)](https://www.sciencedirect.com/science/article/abs/pii/S1566253525000661)
+:::
+:::
+:::
+:::
+
+## Content provenance
+
+:::{style="margin-top: 30px; font-size: 26px;"}
+:::{.columns}
+:::{.column width=50%}
+**A new idea:**
+
+- Instead of trying to catch fakes after the fact, [verify the real thing at the source]{.alert}.
+- The [C2PA standard](https://c2pa.org/) (Adobe, Microsoft, BBC, the New York Times and others) embeds a cryptographic signature when a camera takes a picture, then logs every edit
+- Viewers can check the chain back to source, and unsigned content becomes the suspicious one
+:::
+
+:::{.column width=50%}
+**Why it isn't a fix on its own:**
+
+- Needs [near-universal adoption]{.alert} to be useful at all
+- Legacy content has no provenance to attach
+- Signatures can be stripped, screenshots wash them out
+- Tracks creation, but [doesn't prevent it]{.alert}
+- Real privacy concerns about tying every image to a device and identity
+:::
+:::
+:::
+
+## Platform policies
+
+:::{style="margin-top: 30px; font-size: 21px;"}
+:::{.columns}
+:::{.column width=55%}
+**What platforms actually do:**
+
+- [YouTube](https://support.google.com/youtube/answer/14328491) requires creators to label realistic AI-generated content
+- [Meta](https://about.fb.com/news/2024/04/metas-approach-to-labeling-ai-generated-content-and-manipulated-media/) tags AI-generated images and video using C2PA
+- [TikTok](https://newsroom.tiktok.com/en-us/partnering-with-our-industry-to-advance-ai-transparency-and-literacy) requires disclosure
+- X has [rolled back](https://www.theguardian.com/technology/2023/sep/26/x-twitter-disinformation-rate-rises-elon-musk) most of its 2020 synthetic-media rules
+
+**What happens when platforms remove content:**
+
+- Moves to less moderated platforms
+- Removal can increase distrust
+- [Bak-Coleman et al. (2021)](https://www.pnas.org/doi/10.1073/pnas.2025764118) argue platforms function as a [planetary-scale behavioural system]{.alert} and need the same crisis discipline as climate science 
+- Piecewise content rules cannot fix system-level effects
+:::
+
+:::{.column width=45%}
+:::{style="text-align: center;"}
+[![](figures/moderation.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/moderation.png"}
+
+Source: [Vice - YouTube](https://youtu.be/cHGbWn6iwHw)
+:::
+:::
+:::
+:::
+
+## Legal frameworks
+
+:::{style="margin-top: 30px; font-size: 22px;"}
+:::{.columns}
+:::{.column width=55%}
+**Emerging legislation:**
+
+- **US**: [Texas SB 751](https://capitol.texas.gov/tlodocs/86R/billtext/html/SB00751F.htm) and similar [state laws](https://natlawreview.com/article/texas-did-it-first-texas-was-first-enact-state-legislation-use-deep-fakes-elections) target election deepfakes
+- **EU**: [AI Act Article 50](https://artificialintelligenceact.eu/article/50/) requires deepfake disclosure
+- **UK**: [Online Safety Act](https://www.gov.uk/government/news/government-crackdown-on-explicit-deepfakes) plus a 2025 amendment criminalising the creation of non-consensual sexual deepfakes
+- **China**: [Deep Synthesis Provisions (2023)](https://www.loc.gov/item/global-legal-monitor/2023-04-25/china-provisions-on-deep-synthesis-technology-enter-into-effect/) require disclosure of AI-generated content
+
+**Challenges:**
+
+- [Jurisdictional]{.alert}: creators can be anywhere
+- [Enforcement]{.alert}: finding perpetrators is hard
+- [Definition]{.alert}: what counts as a "deepfake"?
+- [Speech]{.alert}: satire, art, legitimate uses
+:::
+
+:::{.column width=45%}
+:::{style="text-align: center;"}
+[![](figures/legal-frameworks.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/legal-frameworks.png"}
+
+Source: [Columbia Journal of Law and Arts](https://journals.library.columbia.edu/index.php/lawandarts/announcement/view/844)
+
+**Where the legal scholarship lands:**
+
+- [Chesney & Citron (2019)](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3213954): [no single legal tool fits]{.alert}. Defamation is too slow, criminal law too narrow, and [Section 230](https://www.eff.org/issues/cda230) (the US law that shields platforms from liability for user content) too broad
+:::
+:::
+:::
+:::
+
+## Media literacy
+
+:::{style="margin-top: 30px; font-size: 28px;"}
+**What the evidence says works:**
+
+- [Pennycook & Rand (2021)](https://www.nature.com/articles/s41586-021-03344-2): a small [accuracy nudge]{.alert} before sharing improves the quality of news people pass along
+- [Roozenbeek et al. (2022)](https://www.science.org/doi/10.1126/sciadv.abo6254): short [inoculation]{.alert} videos teaching manipulation tactics. Tested on YouTube with 22,632 users, with measurable effects
+- [Guess et al. (2020)](https://www.pnas.org/doi/10.1073/pnas.1920498117): media literacy tips improved discernment of false news by [26.5% in the US]{.alert} and 17.5% in India
+- Effects are real but often [short-lived](https://onlinelibrary.wiley.com/doi/10.1111/jasp.13049) (Capewell et al., 2024). No single intervention scales to billions on its own
+:::
+
+# Summary 📝 {background-color="#1B3A6B"}
+
+## Main takeaways
+
+:::{style="margin-top: 30px; font-size: 21px;"}
+:::{.columns}
+:::{.column width=55%}
+`r fa('newspaper')` **Misinformation and AI**
+
+- Misinformation is old; AI changes scale
+- Attention economy amplifies false content
+- Platform incentives work against truth
+
+`r fa('masks-theater')` **Deepfakes**
+
+- Synthetic media quality improving rapidly
+- Political manipulation, NCII, fraud
+- The "liar's dividend" undermines all evidence
+:::
+
+:::{.column width=45%}
+`r fa('brain')` **Why we fall for it**
+
+- Evolutionary wiring makes novelty irresistible
+- System 1 scrolling, System 2 sleeping
+- Confirmation bias is the vulnerability no patch can fix
+- Bandwagon and "in the know" feeling accelerate sharing
+
+`r fa('shield-halved')` **Responses**
+
+- Detection: necessary, insufficient
+- Provenance: promising, years away
+- Legal: slow, jurisdictional
+- Literacy: helps, doesn't scale
+- No single fix works; [layering defences]{.alert} is the best we have
+:::
+:::
+:::
+
+# ... and that's all for today! 🎉 {background-color="#1B3A6B"}

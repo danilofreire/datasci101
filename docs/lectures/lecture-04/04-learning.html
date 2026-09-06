@@ -1,0 +1,1472 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-html/tabby.min.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.9.38">
+
+  <meta name="author" content="Danilo Freire">
+  <title>DATASCI 101 – DATASCI 101: Introduction to AI Applications</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="../../site_libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="../../site_libs/revealjs/dist/reveal.css">
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+  </style>
+  <link rel="stylesheet" href="../../site_libs/revealjs/dist/theme/quarto-1f887e6eea2afc034e29e6c7c4bed039.css">
+  <link href="../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="../../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="../../site_libs/revealjs/plugin/multimodal/multimodal.css" rel="stylesheet">
+  <link href="../../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+</head>
+<body class="quarto-light">
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" class="quarto-title-block center">
+  <h1 class="title">DATASCI 101: Introduction to AI Applications</h1>
+  <p class="subtitle">Lecture 04: Supervised, Unsupervised, and Reinforcement Learning</p>
+
+<div class="quarto-title-authors">
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-title-author-orcid"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a>
+</div>
+<div class="quarto-title-author-email">
+<a href="mailto:danilo.freire@emory.edu">danilo.freire@emory.edu</a>
+</div>
+        <p class="quarto-title-affiliation">
+            Department of Data and Decision Sciences <br> Emory University
+          </p>
+    </div>
+</div>
+
+</section>
+<section>
+<section id="welcome-back" class="title-slide slide level1 center" data-background-color="#1B3A6B">
+<h1>Welcome back! 🤓</h1>
+
+</section>
+<section id="recap-of-last-class" class="slide level2">
+<h2>Recap of last class</h2>
+<div style="margin-top: 20px; font-size: 24px;">
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li>We discussed the <span class="alert">foundation of AI systems: (good) data!</span></li>
+<li><span class="alert">Garbage in, garbage out!</span></li>
+<li>Different AI/ML tasks require different types of labels (classification, regression, etc.)</li>
+<li><span class="alert">Selection bias</span> is dangerous and hard to fix after the fact</li>
+<li>Labelling is harder than it looks, and <span class="alert">clear guidelines and multiple annotators</span> improve quality</li>
+<li><span class="alert">Inter-annotator agreement</span> (Cohen’s Kappa) measures labelling reliability</li>
+<li>Today: How do machines actually <span class="alert">learn from data</span>? 🤔</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<div style="text-align: center; margin-top: -30px;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><a href="#/" data-modal-type="image" data-modal-url="figures/hard-pill.jpeg"><img data-src="figures/hard-pill.jpeg" style="width:60.0%"></a></p>
+<figcaption>You can’t out-train bad data</figcaption>
+</figure>
+</div>
+<p>Source: <a href="https://programmerhumor.io/ai-memes/you-cant-out-train-bad-data-by7a">Programmer Humor</a></p>
+</div>
+</div></div>
+</div>
+</section>
+<section id="lecture-overview" class="slide level2">
+<h2>Lecture overview</h2>
+<h3 id="todays-agenda">Today’s agenda</h3>
+<div style="margin-top: 20px; font-size: 24px;">
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li>The three paradigms of machine learning</li>
+<li><span class="alert">Supervised learning</span>: Learning from labelled examples
+<ul>
+<li>Linear regression, decision trees, neural networks</li>
+</ul></li>
+<li>The bias-variance trade-off</li>
+<li><span class="alert">Unsupervised learning</span>: Finding hidden structure
+<ul>
+<li>Clustering and dimensionality reduction</li>
+</ul></li>
+<li><span class="alert">Reinforcement learning</span>: Learning from interaction
+<ul>
+<li>Agents, rewards, and policies</li>
+</ul></li>
+</ul>
+</div><div class="column" style="width:50%;">
+<div style="text-align: center; margin-top: -10px;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><a href="#/" data-modal-type="image" data-modal-url="figures/ml-ds-algos.jpg"><img data-src="figures/ml-ds-algos.jpg" style="width:100.0%"></a></p>
+<figcaption>The three paradigms of ML</figcaption>
+</figure>
+</div>
+<p>Source: <a href="https://datasciencedojo.com/blog/machine-learning-101/">Data Science Dojo</a></p>
+</div>
+</div></div>
+</div>
+</section>
+<section id="tweet-of-the-day" class="slide level2">
+<h2>Tweet of the day 😄</h2>
+<div style="margin-top: 20px; font-size: 24px; text-align: center;">
+<p><a href="#/" data-modal-type="image" data-modal-url="figures/tweet-of-the-day.jpeg"><img data-src="figures/tweet-of-the-day.jpeg" style="width:100.0%"></a></p>
+</div>
+</section></section>
+<section>
+<section id="the-three-learning-paradigms" class="title-slide slide level1 center" data-background-color="#1B3A6B">
+<h1>The three learning paradigms 🎓</h1>
+
+</section>
+<section id="how-do-machines-learn" class="slide level2 scrollable">
+<h2>How do machines learn?</h2>
+<h3 id="three-different-approaches">Three different approaches</h3>
+<div style="margin-top: 30px; font-size: 24px;">
+<div class="columns">
+<div class="column" style="width:55%;">
+<ul>
+<li>AI algorithms learn patterns from data</li>
+<li>But <span class="alert">what kind of data</span> and <span class="alert">what kind of feedback</span>?</li>
+<li>Three main paradigms:
+<ol type="1">
+<li><a href="https://en.wikipedia.org/wiki/Supervised_learning">Supervised learning</a>: Learn from labelled examples (what we saw in previous lecture)</li>
+<li><a href="https://en.wikipedia.org/wiki/Unsupervised_learning">Unsupervised learning</a>: Find structure in unlabelled data</li>
+<li><a href="https://en.wikipedia.org/wiki/Reinforcement_learning">Reinforcement learning</a>: Learn from rewards and punishments</li>
+</ol></li>
+<li>The paradigm you choose depends on <span class="alert">what data you have</span> and <span class="alert">what you want to achieve</span></li>
+</ul>
+</div><div class="column" style="width:45%;">
+<div style="text-align: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><a href="#/" data-modal-type="image" data-modal-url="figures/learning-types.png"><img data-src="figures/learning-types.png" style="width:100.0%"></a></p>
+<figcaption>Learning paradigms overview and examples</figcaption>
+</figure>
+</div>
+<p>Source: <a href="https://luigi-bungaro.medium.com/what-is-machine-learning-short-and-complete-guide-9e474a89396a">Medium</a></p>
+</div>
+</div></div>
+</div>
+</section></section>
+<section>
+<section id="supervised-learning" class="title-slide slide level1 center" data-background-color="#1B3A6B">
+<h1>Supervised learning 📚</h1>
+
+</section>
+<section id="what-is-supervised-learning" class="slide level2">
+<h2>What is supervised learning?</h2>
+<h3 id="learning-from-examples-with-answers">Learning from examples with answers</h3>
+<div style="margin-top: 30px; font-size: 24px;">
+<div class="columns">
+<div class="column" style="width:55%;">
+<ul>
+<li><span class="alert">Supervised learning</span>: The model learns from labelled examples</li>
+<li>Training data: Input-output pairs <span class="math inline">\((x_i, y_i)\)</span></li>
+<li>Goal: Learn a function <span class="math inline">\(f\)</span> such that <span class="math inline">\(f(x) \approx y\)</span></li>
+<li>Like learning with a <span class="alert">teacher</span> who provides correct answers</li>
+<li>The “supervision” comes from <span class="alert">known labels</span></li>
+<li><span class="alert">Most common paradigm</span> in real-world applications</li>
+<li>Examples:
+<ul>
+<li>Email → Spam/Not spam</li>
+<li>Image → Cat/Dog/Bird</li>
+<li>Patient data → Disease risk</li>
+</ul></li>
+</ul>
+</div><div class="column" style="width:45%;">
+<div style="text-align: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><a href="#/" data-modal-type="image" data-modal-url="figures/muffins.jpeg"><img data-src="figures/muffins.jpeg" style="width:75.0%"></a></p>
+<figcaption>A hard classification problem 😂</figcaption>
+</figure>
+</div>
+<p>Source: <a href="https://pt.memedroid.com/memes/detail/4155054/Confusing-machine-learning?refGallery=random&amp;page=109&amp;goComments=1">Memedroid (!)</a></p>
+</div>
+</div></div>
+</div>
+</section>
+<section id="classification-vs-regression" class="slide level2">
+<h2>Classification vs regression</h2>
+<h3 id="the-two-main-supervised-tasks">The two main supervised tasks</h3>
+<div style="margin-top: 30px; font-size: 23px;">
+<p>You may remember them from last class:</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Classification</strong> 🏷️</p>
+<ul>
+<li>Predict a <span class="alert">discrete category</span></li>
+<li>Binary: Yes/No, Spam/Ham</li>
+<li>Multi-class: Cat/Dog/Bird/Fish</li>
+<li>Output: Class label (or probabilities)</li>
+<li>Examples:
+<ul>
+<li>Fraud detection</li>
+<li>Disease diagnosis</li>
+<li>Sentiment analysis</li>
+</ul></li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><strong>Regression</strong> 📈</p>
+<ul>
+<li>Predict a <span class="alert">continuous value</span></li>
+<li>Output: A number on a continuous scale</li>
+<li>Examples:
+<ul>
+<li>House price prediction</li>
+<li>Stock price forecasting</li>
+<li>Temperature prediction</li>
+<li>Age estimation from photo</li>
+</ul></li>
+</ul>
+</div></div>
+<div class="fragment">
+<div style="margin-top: 20px; text-align: center;">
+<blockquote>
+<p>The same algorithm family often handles both tasks with minor modifications!</p>
+</blockquote>
+</div>
+</div>
+</div>
+</section>
+<section id="linear-models" class="slide level2">
+<h2>Linear models</h2>
+<h3 id="the-simplest-supervised-learners">The simplest supervised learners</h3>
+<div style="margin-top: 30px; font-size: 22px;">
+<div class="columns">
+<div class="column" style="width:55%;">
+<ul>
+<li><span class="alert">Linear regression</span>: Predict y as a weighted sum of features</li>
+</ul>
+<p><span class="math display">\[\hat{y} = w_0 + w_1 x_1 + w_2 x_2 + \ldots + w_n x_n\]</span></p>
+<ul>
+<li>Learn weights <span class="math inline">\(w\)</span> that minimise prediction error</li>
+<li><span class="alert">Logistic regression</span>: Classification via <a href="https://en.wikipedia.org/wiki/Sigmoid_function">sigmoid function</a></li>
+</ul>
+<p><span class="math display">\[P(y=1|x) = \frac{1}{1 + e^{-(w_0 + w_1 x_1 + \ldots)}}\]</span></p>
+<ul>
+<li>Simple, interpretable, fast to train</li>
+<li>Works well when relationships are approximately linear</li>
+<li>Often a <span class="alert">strong baseline</span> before trying complex models</li>
+</ul>
+</div><div class="column" style="width:45%;">
+<div style="text-align: center; margin-top: -70px;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><a href="#/" data-modal-type="image" data-modal-url="figures/linear-regression.gif"><img data-src="figures/linear-regression.gif" style="width:70.0%"></a></p>
+<figcaption>Linear regression fits a line</figcaption>
+</figure>
+</div>
+<p>Source: <a href="https://medium.com/swlh/from-animation-to-intuition-linear-regression-and-logistic-regression-f641a31e1caf">Medium</a></p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><a href="#/" data-modal-type="image" data-modal-url="figures/logistic-function.png"><img data-src="figures/logistic-function.png" style="width:60.0%"></a></p>
+<figcaption>A logistic function converts a line into a curve</figcaption>
+</figure>
+</div>
+<p>Source: <a href="https://en.wikipedia.org/wiki/Logistic_function">Wikipedia</a></p>
+</div>
+</div></div>
+</div>
+</section>
+<section id="decision-trees" class="slide level2">
+<h2>Decision trees</h2>
+<h3 id="learning-rules-from-data">Learning rules from data</h3>
+<div style="margin-top: 30px; font-size: 25px;">
+<div class="columns">
+<div class="column" style="width:55%;">
+<ul>
+<li><span class="alert">Decision trees</span>: Learn a hierarchy of yes/no questions</li>
+<li>Each node splits data based on a feature</li>
+<li>Leaves contain predictions</li>
+<li>Easy to interpret: “If income &gt; £50k AND age &gt; 30, then approve loan”</li>
+<li>Can capture <span class="alert">non-linear relationships</span></li>
+<li>Prone to <span class="alert">overfitting</span> (memorising training data)</li>
+<li>Solution: <a href="https://en.wikipedia.org/wiki/Random_forest">Random forests</a>, which combine many trees
+<ul>
+<li>Each tree sees different data/features</li>
+<li>Average their predictions for better accuracy</li>
+</ul></li>
+</ul>
+</div><div class="column" style="width:45%;">
+<div style="text-align: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><a href="#/" data-modal-type="image" data-modal-url="figures/decision-tree.gif"><img data-src="figures/decision-tree.gif" style="width:100.0%"></a></p>
+<figcaption>Decision tree structure</figcaption>
+</figure>
+</div>
+<p>Source: <a href="https://medium.com/towards-data-engineering/100-days-of-machine-learning-on-databricks-day-63-decision-trees-5d4df25b194f">Medium</a></p>
+</div>
+</div></div>
+</div>
+</section>
+<section id="neural-networks-for-supervised-learning" class="slide level2">
+<h2>Neural networks for supervised learning</h2>
+<h3 id="learning-complex-patterns">Learning complex patterns</h3>
+<div style="margin-top: 30px; font-size: 24px;">
+<div class="columns">
+<div class="column" style="width:55%;">
+<ul>
+<li><span class="alert">Neural networks</span>: Layers of interconnected nodes</li>
+<li>Each layer transforms the input</li>
+<li>Can learn <span class="alert">arbitrarily complex</span> functions</li>
+<li>Deep networks (many layers) = <span class="alert">deep learning</span></li>
+<li>Require <span class="alert">more data</span> than simpler models</li>
+<li>Less interpretable (“black box”)</li>
+<li>State-of-the-art for:
+<ul>
+<li>Image classification (CNNs)</li>
+<li>Speech recognition</li>
+<li>Natural language processing</li>
+</ul></li>
+<li>Remember from Lecture 02: <span class="alert">backpropagation</span> enables training!</li>
+</ul>
+</div><div class="column" style="width:45%;">
+<div style="text-align: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><a href="#/" data-modal-type="image" data-modal-url="figures/neural-network.gif"><img data-src="figures/neural-network.gif" style="width:100.0%"></a></p>
+<figcaption>Neural network architecture</figcaption>
+</figure>
+</div>
+<p>Source: <a href="https://www.3blue1brown.com/topics/neural-networks">3Blue1Brown</a></p>
+</div>
+</div></div>
+</div>
+</section>
+<section id="the-bias-variance-trade-off" class="slide level2">
+<h2>The bias-variance trade-off</h2>
+<h3 id="too-simple-or-too-complex">Too simple or too complex?</h3>
+<div style="margin-top: 30px; font-size: 22px;">
+<div class="columns">
+<div class="column" style="width:55%;">
+<ul>
+<li><span class="alert">Every model makes errors!</span> Two sources:</li>
+<li><span class="alert">Bias</span>: Error from oversimplified assumptions
+<ul>
+<li>Underfitting: Model too simple</li>
+<li>Misses real patterns in the data</li>
+</ul></li>
+<li><span class="alert">Variance</span>: Error from sensitivity to training data
+<ul>
+<li>Overfitting: Model too complex</li>
+<li>Memorises noise, fails on new data</li>
+</ul></li>
+</ul>
+<p><span class="math display">\[\text{Total Error} = \text{Bias}^2 + \text{Variance} + \text{Noise}\]</span></p>
+<ul>
+<li><span class="alert">Trade-off</span>: Reducing one often increases the other</li>
+<li>Goal: Find the <span class="alert">sweet spot</span> where total error is minimised</li>
+</ul>
+</div><div class="column" style="width:45%;">
+<div style="text-align: center; margin-top: -50px;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><a href="#/" data-modal-type="image" data-modal-url="figures/bias-variance.gif"><img data-src="figures/bias-variance.gif" style="width:80.0%"></a></p>
+<figcaption>Bias-variance trade-off</figcaption>
+</figure>
+</div>
+<p>Source: <a href="https://www.vizuaranewsletter.com/p/e91">Vizuara</a></p>
+</div>
+</div></div>
+</div>
+</section>
+<section id="cross-validation" class="slide level2">
+<h2>Cross-validation</h2>
+<h3 id="testing-your-model-properly">Testing your model properly</h3>
+<div style="margin-top: 30px; font-size: 24px;">
+<div class="columns">
+<div class="column" style="width:55%;">
+<ul>
+<li>Problem: Single train/test split can be <span class="alert">misleading</span>
+<ul>
+<li>Why? It doesn’t account for enough <span class="alert">random variation</span></li>
+</ul></li>
+<li><span class="alert">Cross-validation</span>: Multiple train/test splits</li>
+<li><strong>K-fold CV</strong>: Split data into K parts
+<ul>
+<li>Train on K-1 folds, test on 1 fold</li>
+<li>Repeat K times, rotate the test fold</li>
+<li>Average the results</li>
+</ul></li>
+<li>Benefits:
+<ul>
+<li><span class="alert">Every data point</span> is tested once</li>
+<li>More reliable performance estimate</li>
+<li>Helps detect overfitting</li>
+</ul></li>
+<li>Common choice: K = 5 or K = 10</li>
+</ul>
+</div><div class="column" style="width:45%;">
+<div style="text-align: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><a href="#/" data-modal-type="image" data-modal-url="figures/cross-validation.gif"><img data-src="figures/cross-validation.gif" style="width:100.0%"></a></p>
+<figcaption>5-fold cross-validation</figcaption>
+</figure>
+</div>
+<p>Source: <a href="https://www.vizuaranewsletter.com/p/f6a">Vizuara</a></p>
+</div>
+</div></div>
+</div>
+</section></section>
+<section>
+<section id="unsupervised-learning" class="title-slide slide level1 center" data-background-color="#1B3A6B">
+<h1>Unsupervised learning 🔍</h1>
+
+</section>
+<section id="what-is-unsupervised-learning" class="slide level2">
+<h2>What is unsupervised learning?</h2>
+<h3 id="finding-structure-without-labels">Finding structure without labels</h3>
+<div style="margin-top: 30px; font-size: 22px;">
+<div class="columns">
+<div class="column" style="width:55%;">
+<ul>
+<li><span class="alert">Unsupervised learning</span>: Learn from data without labels</li>
+<li>No “correct answers” provided</li>
+<li>Goal: Discover <span class="alert">hidden patterns or structure</span></li>
+<li>Like learning <span class="alert">without a teacher</span>, explore and discover</li>
+<li>Why use it?
+<ul>
+<li><span class="alert">Labels are expensive</span> (experts needed)</li>
+<li>Sometimes labels <span class="alert">don’t exist</span> (“How many customer types?”)</li>
+<li><span class="alert">Exploration</span>: Understand data before modelling</li>
+<li><span class="alert">Pre-training</span>: Learn representations, then fine-tune</li>
+</ul></li>
+<li>Some questions to ask before using these models:
+<ul>
+<li>Are there natural groups in the data?</li>
+<li>Can we represent data more compactly?</li>
+</ul></li>
+</ul>
+</div><div class="column" style="width:45%;">
+<div style="text-align: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><a href="#/" data-modal-type="image" data-modal-url="figures/unsupervised-learning.png"><img data-src="figures/unsupervised-learning.png" style="width:100.0%"></a></p>
+<figcaption>Unsupervised learning finds structure</figcaption>
+</figure>
+</div>
+<p>Source: <a href="https://docs.science.ai.cam.ac.uk/ai-core-concepts/unsupervised-learning/">University of Cambridge</a></p>
+</div>
+</div></div>
+</div>
+</section>
+<section id="clustering" class="slide level2 scrollable">
+<h2>Clustering</h2>
+<h3 id="grouping-similar-data-points">Grouping similar data points</h3>
+<div style="margin-top: 30px; font-size: 22px;">
+<div class="columns">
+<div class="column" style="width:55%;">
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Cluster_analysis">Clustering</a>: Partition data into groups (clusters)</li>
+<li>Points in same cluster are <span class="alert">similar</span>, different clusters are <span class="alert">dissimilar</span></li>
+<li><a href="https://en.wikipedia.org/wiki/K-means_clustering">K-means</a>: Most popular algorithm
+<ol type="1">
+<li>Choose K cluster centres randomly</li>
+<li>Assign each point to nearest centre</li>
+<li>Move centres to mean of assigned points</li>
+<li>Repeat until convergence</li>
+</ol></li>
+<li><a href="https://en.wikipedia.org/wiki/Hierarchical_clustering">Hierarchical clustering</a>: Builds dendrograms without pre-specifying K</li>
+</ul>
+</div><div class="column" style="width:45%;">
+<div style="text-align: center; margin-top: -50px;">
+<p><strong>Real-world uses:</strong></p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Domain</th>
+<th>Application</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Marketing</td>
+<td>Customer segmentation</td>
+</tr>
+<tr class="even">
+<td>Biology</td>
+<td>Cell types, disease subtypes</td>
+</tr>
+<tr class="odd">
+<td>Finance</td>
+<td>Fraud detection</td>
+</tr>
+<tr class="even">
+<td>Healthcare</td>
+<td>Patient risk groups</td>
+</tr>
+</tbody>
+</table>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><a href="#/" data-modal-type="image" data-modal-url="figures/kmeans2.gif"><img data-src="figures/kmeans2.gif" style="width:90.0%"></a></p>
+<figcaption>K-means clustering</figcaption>
+</figure>
+</div>
+<p>Source: <a href="https://machinelearningcoban.com/2017/01/01/kmeans/">Machine Learning CoBan</a></p>
+</div>
+</div></div>
+</div>
+</section>
+<section id="dimensionality-reduction" class="slide level2">
+<h2>Dimensionality reduction</h2>
+<h3 id="compressing-information">Compressing information</h3>
+<div style="margin-top: 30px; font-size: 22px;">
+<div class="columns">
+<div class="column" style="width:55%;">
+<ul>
+<li><span class="alert">Curse of dimensionality</span>: High-dimensional data is hard to work with
+<ul>
+<li>Distances become meaningless</li>
+<li>Need exponentially more data</li>
+<li>Visualisation impossible</li>
+</ul></li>
+<li><span class="alert">Dimensionality reduction</span>: Find lower-dimensional representation</li>
+<li>Preserve important structure, discard noise</li>
+<li>Two main approaches:
+<ul>
+<li><strong>Linear</strong>: PCA (Principal Component Analysis)</li>
+<li><strong>Non-linear</strong>: t-SNE, UMAP</li>
+</ul></li>
+<li>Applications: Visualisation, preprocessing, compression</li>
+<li><span class="alert">Super cool example</span> (we will see it in <a href="https://danilofreire.github.io/datasci101/lectures/lecture-06/06-language.html">lecture 06!</a>): <a href="https://projector.tensorflow.org/" class="uri">https://projector.tensorflow.org/</a></li>
+</ul>
+</div><div class="column" style="width:45%;">
+<div style="text-align: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><a href="#/" data-modal-type="image" data-modal-url="figures/dimensionality-reduction.png"><img data-src="figures/dimensionality-reduction.png" style="width:100.0%"></a></p>
+<figcaption>Reducing dimensions while preserving structure</figcaption>
+</figure>
+</div>
+<p>Source: <a href="https://muhammadtaha01.medium.com/dimensionality-reduction-in-machine-learning-46d45747eaee">Medium</a></p>
+</div>
+</div></div>
+</div>
+</section>
+<section id="dimensionality-reduction-techniques" class="slide level2">
+<h2>Dimensionality reduction techniques</h2>
+<h3 id="pca-t-sne-and-umap">PCA, t-SNE, and UMAP</h3>
+<div style="margin-top: 30px; font-size: 22px;">
+<div class="columns">
+<div class="column" style="width:55%;">
+<p><strong>Linear: <span class="alert">PCA</span></strong> (Principal Component Analysis)</p>
+<ul>
+<li>Find directions of <span class="alert">maximum variance</span></li>
+<li>Keep top K components to reduce dimensions</li>
+<li>Fast, well-understood, preserves global structure</li>
+<li>Limitation: Only captures linear relationships</li>
+</ul>
+<p><strong>Non-linear: <span class="alert">t-SNE</span> and <span class="alert">UMAP</span></strong></p>
+<ul>
+<li>Preserve <span class="alert">local structure</span>: Nearby points stay nearby</li>
+<li>Excellent for <span class="alert">visualisation</span></li>
+<li>Reveal clusters that PCA misses</li>
+<li>Caution: Cluster sizes and distances can be misleading</li>
+</ul>
+</div><div class="column" style="width:45%;">
+<div style="text-align: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><a href="#/" data-modal-type="image" data-modal-url="figures/pca.gif"><img data-src="figures/pca.gif" style="width:100.0%"></a></p>
+<figcaption>Principal Component Analysis</figcaption>
+</figure>
+</div>
+<p>Source: <a href="https://www.vizuaranewsletter.com/p/understanding-principal-component">Vizuara</a></p>
+</div>
+</div></div>
+</div>
+</section></section>
+<section>
+<section id="reinforcement-learning" class="title-slide slide level1 center" data-background-color="#1B3A6B">
+<h1>Reinforcement learning 🎮</h1>
+
+</section>
+<section id="what-is-reinforcement-learning" class="slide level2">
+<h2>What is reinforcement learning?</h2>
+<h3 id="learning-from-interaction">Learning from interaction</h3>
+<div style="margin-top: 30px; font-size: 24px;">
+<div class="columns">
+<div class="column" style="width:55%;">
+<ul>
+<li><span class="alert">Reinforcement learning (RL)</span>: Learn by trial and error</li>
+<li>An <span class="alert">agent</span> interacts with an <span class="alert">environment</span></li>
+<li>Takes <span class="alert">actions</span>, receives <span class="alert">rewards</span> (or punishments)</li>
+<li>Goal: Learn a <span class="alert">policy</span> that maximises cumulative reward</li>
+<li>No labelled examples, machines learn from <span class="alert">experience</span></li>
+<li>Like training a dog (or kids!): <span class="alert">Reward good behaviour!</span></li>
+<li><span class="alert">Different from supervised</span>: No “correct” action given</li>
+<li><span class="alert">Different from unsupervised</span>: There IS a goal (maximise reward)</li>
+</ul>
+</div><div class="column" style="width:45%;">
+<div style="text-align: center; margin-top: -20px;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><a href="#/" data-modal-type="image" data-modal-url="figures/rl-loop.png"><img data-src="figures/rl-loop.png" style="width:100.0%"></a></p>
+<figcaption>The RL loop</figcaption>
+</figure>
+</div>
+<p>Source: <a href="https://en.wikipedia.org/wiki/Reinforcement_learning">Wikipedia</a></p>
+</div>
+</div></div>
+</div>
+</section>
+<section id="key-concepts-in-rl" class="slide level2">
+<h2>Key concepts in RL</h2>
+<h3 id="the-vocabulary-you-need">The vocabulary you need</h3>
+<div style="margin-top: 30px; font-size: 30px;">
+<table class="caption-top">
+<colgroup>
+<col style="width: 23%">
+<col style="width: 31%">
+<col style="width: 44%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Concept</th>
+<th>Definition</th>
+<th>Example (Chess)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Agent</strong></td>
+<td>The learner/decision-maker</td>
+<td>The chess-playing AI</td>
+</tr>
+<tr class="even">
+<td><strong>Environment</strong></td>
+<td>What the agent interacts with</td>
+<td>The chess board and opponent</td>
+</tr>
+<tr class="odd">
+<td><strong>State</strong></td>
+<td>Current situation</td>
+<td>Board position</td>
+</tr>
+<tr class="even">
+<td><strong>Action</strong></td>
+<td>What the agent can do</td>
+<td>Move a piece</td>
+</tr>
+<tr class="odd">
+<td><strong>Reward</strong></td>
+<td>Feedback signal</td>
+<td>+1 win, -1 lose, 0 otherwise</td>
+</tr>
+<tr class="even">
+<td><strong>Policy</strong></td>
+<td>Strategy: state → action</td>
+<td>“In this position, move queen”</td>
+</tr>
+<tr class="odd">
+<td><strong>Value</strong></td>
+<td>Expected future reward from a state</td>
+<td>How good is this position?</td>
+</tr>
+</tbody>
+</table>
+<div style="font-size: 20px;">
+<blockquote>
+<p>Fun fact: <a href="https://en.wikipedia.org/wiki/Magnus_Carlsen">Magnus Carlsen</a> once said he <a href="https://www.firstpost.com/sports/chess/magnus-carlsen-on-playing-against-chess-computer-engine-difficulty-joe-rogan-podcast-13867015.html">“can’t beat his phone in chess”</a>. RL really works! 😅</p>
+</blockquote>
+</div>
+</div>
+</section>
+<section id="the-exploration-exploitation-trade-off" class="slide level2">
+<h2>The exploration-exploitation trade-off</h2>
+<h3 id="should-you-try-something-new-or-stick-with-what-works">Should you try something new or stick with what works?</h3>
+<div style="margin-top: 30px; font-size: 22px;">
+<div class="columns">
+<div class="column" style="width:55%;">
+<ul>
+<li><span class="alert">Exploration</span>: Try new actions to discover better strategies</li>
+<li><span class="alert">Exploitation</span>: Use known good actions to maximise reward</li>
+<li>The dilemma:
+<ul>
+<li>Too much exploration: Waste time on bad actions</li>
+<li>Too much exploitation: Miss better strategies</li>
+</ul></li>
+<li>Example: Restaurant choice
+<ul>
+<li>Exploit: Go to your favourite restaurant</li>
+<li>Explore: Try a new restaurant (might be better!)</li>
+</ul></li>
+<li>RL algorithms must <span class="alert">balance both</span></li>
+<li>Common approach: <a href="https://en.wikipedia.org/wiki/Epsilon-greedy">ε-greedy</a> (explore with probability ε, also called <a href="https://en.wikipedia.org/wiki/Multi-armed_bandit">multi-armed bandit</a>)</li>
+</ul>
+</div><div class="column" style="width:45%;">
+<div style="text-align: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><a href="#/" data-modal-type="image" data-modal-url="figures/exploration-exploitation.png"><img data-src="figures/exploration-exploitation.png" style="width:100.0%"></a></p>
+<figcaption>Exploration vs exploitation</figcaption>
+</figure>
+</div>
+<p>Source: <a href="https://lilianweng.github.io/lil-log/2018/01/23/the-multi-armed-bandit-problem-and-its-solutions.html">Lilian Weng</a></p>
+</div>
+</div></div>
+</div>
+</section>
+<section id="q-learning" class="slide level2 scrollable">
+<h2>Q-learning</h2>
+<h3 id="learning-action-values">Learning action values</h3>
+<div style="margin-top: 30px; font-size: 19px;">
+<div class="columns">
+<div class="column" style="width:55%;">
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Q-learning">Q-learning</a>: Learn which actions are best in each situation</li>
+<li>Think of it as keeping a <strong>score card</strong>:
+<ul>
+<li><span class="math inline">\(Q(s, a)\)</span> = “How good is action <span class="math inline">\(a\)</span> in state <span class="math inline">\(s\)</span>?”</li>
+</ul></li>
+<li>The agent learns by doing:
+<ol type="1">
+<li>Try an action, see what reward you get → <em>“Go right… hit a wall, ouch!”</em></li>
+<li>Update your score → <em>“Going right here is bad”</em></li>
+<li>Repeat thousands of times → <em>“Eventually: always go left here!”</em></li>
+</ol></li>
+</ul>
+<p><strong>The update rule:</strong> <span class="math display">\[\text{New Score} = \text{Old Score} + \text{Small Correction}\]</span></p>
+<ul>
+<li><span class="alert">Policy</span>: Always pick the action with the highest score</li>
+<li><span class="alert">Cool example</span>: (Poor) Albert learns to walk: <a href="https://youtu.be/L_4BPjLBF4E?&amp;t=137" class="uri">https://youtu.be/L_4BPjLBF4E?&amp;t=137</a></li>
+<li><span class="alert">Super cool example</span>: <a href="https://deepmind.google/research/alphago/">DeepMind’s AlphaGo</a>: <a href="https://youtu.be/WXuK6gekU1Y" class="uri">https://youtu.be/WXuK6gekU1Y</a></li>
+</ul>
+</div><div class="column" style="width:45%;">
+<div style="text-align: center;">
+<p><a href="#/" data-modal-type="image" data-modal-url="figures/q-learning01.gif"><img data-src="figures/q-learning01.gif" style="width:70.0%"></a> <a href="#/" data-modal-type="image" data-modal-url="figures/q-learning02.gif"><img data-src="figures/q-learning02.gif" style="width:70.0%"></a></p>
+<p>Source: <a href="https://medium.com/data-science/getting-started-with-reinforcement-q-learning-77499b1766b6">Medium</a></p>
+</div>
+</div></div>
+</div>
+</section>
+<section id="rlhf-rl-for-language-models" class="slide level2 scrollable">
+<h2>RLHF: RL for language models</h2>
+<h3 id="from-alphago-to-chatgpt">From AlphaGo to ChatGPT</h3>
+<div style="margin-top: 30px; font-size: 22px;">
+<div class="columns">
+<div class="column" style="width:55%;">
+<ul>
+<li><span class="alert">RLHF</span>: Reinforcement Learning from Human Feedback</li>
+<li><span class="alert">Key to ChatGPT’s success!</span></li>
+<li>Process:
+<ol type="1">
+<li>Train base LLM on text (supervised)</li>
+<li>Collect human preferences on model outputs</li>
+<li>Train a <span class="alert">reward model</span> on preferences</li>
+<li>Use RL to optimise LLM for reward</li>
+</ol></li>
+<li>Why it works:
+<ul>
+<li>Hard to specify “good response” in a formula</li>
+<li>Humans can <span class="alert">compare</span> responses more easily</li>
+<li>RL optimises for what humans actually want</li>
+</ul></li>
+<li>More here: <a href="https://openai.com/index/learning-from-human-preferences/" class="uri">https://openai.com/index/learning-from-human-preferences/</a></li>
+</ul>
+</div><div class="column" style="width:45%;">
+<div style="text-align: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><a href="#/" data-modal-type="image" data-modal-url="figures/rlhf.png"><img data-src="figures/rlhf.png" style="width:100.0%"></a></p>
+<figcaption>RLHF pipeline</figcaption>
+</figure>
+</div>
+<p>Source: <a href="https://www.simform.com/blog/reinforcement-learning-from-human-feedback/">Simform</a></p>
+</div>
+</div></div>
+</div>
+</section>
+<section id="rlhf" class="slide level2">
+<h2>RLHF</h2>
+<div style="margin-top: 30px; font-size: 22px; text-align: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><a href="#/" data-modal-type="image" data-modal-url="figures/anthropic-rlhf.png"><img data-src="figures/anthropic-rlhf.png" style="width:100.0%"></a></p>
+<figcaption>RLHF from Anthropic</figcaption>
+</figure>
+</div>
+<p>Source: <a href="https://huggingface.co/datasets/Anthropic/hh-rlhf?row=2">Anthropic’s hh-rlhf dataset (check it out, it’s really cool!)</a></p>
+</div>
+</section>
+<section id="jailbreaking-rlhf" class="slide level2">
+<h2>Jailbreaking RLHF</h2>
+<h3 id="if-you-can-make-it-you-can-jailbreak-it">If you can make it, you can jailbreak it!</h3>
+<div style="margin-top: 30px; font-size: 22px;">
+<div class="columns">
+<div class="column" style="width:60%;">
+<ul>
+<li>When it comes to LLMs, you can make it do (almost) anything with the right prompt</li>
+<li>This is more art than science (as most things in AI are), but it can be fun!</li>
+<li>Please note that <span class="alert">I’m not encouraging you to jailbreak anything</span>, as you may get permanently banned from using LLMs or worse</li>
+<li>One of the best people in this field is/was <a href="https://pliny.gg/">Pliny the Liberator</a>, who jailbroke pretty much all LLMs he could get his hands on 😂</li>
+<li>If you’re interested in jailbreaking, check out this repository: <a href="https://github.com/elder-plinius/L1B3RT4S" class="uri">https://github.com/elder-plinius/L1B3RT4S</a></li>
+<li>Here’s <a href="https://claude.ai">Claude Sonnet</a> teaching how to produce drugs: <a href="https://x.com/elder_plinius/status/1972885831955484830" class="uri">https://x.com/elder_plinius/status/1972885831955484830</a></li>
+</ul>
+</div><div class="column" style="width:40%;">
+<div style="text-align: center; margin-top: -20px;">
+<p><a href="#/" data-modal-type="image" data-modal-url="figures/pliny.jpg"><img data-src="figures/pliny.jpg" style="width:90.0%"></a></p>
+<p>Source: <a href="https://pliny.gg/">Pliny the Liberator</a></p>
+</div>
+</div></div>
+</div>
+</section>
+<section id="ai-safety" class="slide level2">
+<h2>AI safety</h2>
+<h3 id="making-sure-ai-does-what-we-actually-mean">Making sure AI does what we actually mean</h3>
+<div style="margin-top: 30px; font-size: 27px;">
+<div class="columns">
+<div class="column" style="width:55%;">
+<ul>
+<li><span class="alert">Alignment problem</span>: Ensuring models do what we <em>mean</em>, not what we literally <em>say</em></li>
+<li><span class="alert">Specification gaming</span>: Models finding perverse ways to maximise rewards (e.g., <span class="alert">reward hacking</span>)</li>
+<li><span class="alert">Scalable oversight</span>: How to supervise models that are more capable than their human evaluators</li>
+<li><span class="alert">Red teaming</span>: Proactively finding vulnerabilities and <span class="alert">jailbreaks</span></li>
+<li><span class="alert">Safety needs to be part of training</span>, not something you bolt on later</li>
+</ul>
+</div><div class="column" style="width:45%;">
+<div style="text-align: center; margin-top: -10px;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><a href="#/" data-modal-type="image" data-modal-url="figures/ai-safety.png"><img data-src="figures/ai-safety.png" style="width:90.0%"></a></p>
+<figcaption>AI alignment</figcaption>
+</figure>
+</div>
+<p>Source: NanoBanana</p>
+</div>
+</div></div>
+</div>
+</section></section>
+<section>
+<section id="comparing-the-three-paradigms" class="title-slide slide level1 center" data-background-color="#1B3A6B">
+<h1>Comparing the three paradigms 📊</h1>
+
+</section>
+<section id="side-by-side-comparison" class="slide level2">
+<h2>Side-by-side comparison</h2>
+<h3 id="choosing-the-right-approach">Choosing the right approach</h3>
+<div style="margin-top: 30px; font-size: 30px;">
+<table class="caption-top">
+<colgroup>
+<col style="width: 5%">
+<col style="width: 28%">
+<col style="width: 32%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th><span class="alert">Supervised</span></th>
+<th><span class="alert">Unsupervised</span></th>
+<th><span class="alert">Reinforcement</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Data</strong></td>
+<td>Labelled (X, y)</td>
+<td>Unlabelled (X)</td>
+<td>States, actions, rewards</td>
+</tr>
+<tr class="even">
+<td><strong>Goal</strong></td>
+<td>Predict y from X</td>
+<td>Find structure</td>
+<td>Maximise reward</td>
+</tr>
+<tr class="odd">
+<td><strong>Feedback</strong></td>
+<td>Correct answers</td>
+<td>None</td>
+<td>Reward signal</td>
+</tr>
+<tr class="even">
+<td><strong>Analogy</strong></td>
+<td>Learning with a teacher</td>
+<td>Exploring alone</td>
+<td>Learning by trial and error</td>
+</tr>
+<tr class="odd">
+<td><strong>Evaluation</strong></td>
+<td>Compare to known labels</td>
+<td>Internal metrics</td>
+<td>Cumulative reward</td>
+</tr>
+<tr class="even">
+<td><strong>Examples</strong></td>
+<td>Spam detection, diagnosis</td>
+<td>Customer segments</td>
+<td>Game playing, robotics</td>
+</tr>
+<tr class="odd">
+<td><strong>Difficulty</strong></td>
+<td>Medium (if labels exist)</td>
+<td>Hard to evaluate</td>
+<td>Hard to train</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section></section>
+<section>
+<section id="summary" class="title-slide slide level1 center" data-background-color="#1B3A6B">
+<h1>Summary 📚</h1>
+
+</section>
+<section id="main-takeaways" class="slide level2">
+<h2>Main takeaways</h2>
+<div style="margin-top: 30px; font-size: 30px;">
+<ul>
+<li><p><svg aria-hidden="true" role="img" viewbox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M320 32c-8.1 0-16.1 1.4-23.7 4.1L15.8 137.4C6.3 140.9 0 149.9 0 160s6.3 19.1 15.8 22.6l57.9 20.9C57.3 229.3 48 259.8 48 291.9v28.1c0 28.4-10.8 57.7-22.3 80.8c-6.5 13-13.9 25.8-22.5 37.6C0 442.7-.9 448.3 .9 453.4s6 8.9 11.2 10.2l64 16c4.2 1.1 8.7 .3 12.4-2s6.3-6.1 7.1-10.4c8.6-42.8 4.3-81.2-2.1-108.7C90.3 344.3 86 329.8 80 316.5V291.9c0-30.2 10.2-58.7 27.9-81.5c12.9-15.5 29.6-28 49.2-35.7l157-61.7c8.2-3.2 17.5 .8 20.7 9s-.8 17.5-9 20.7l-157 61.7c-12.4 4.9-23.3 12.4-32.2 21.6l159.6 57.6c7.6 2.7 15.6 4.1 23.7 4.1s16.1-1.4 23.7-4.1L624.2 182.6c9.5-3.4 15.8-12.5 15.8-22.6s-6.3-19.1-15.8-22.6L343.7 36.1C336.1 33.4 328.1 32 320 32zM128 408c0 35.3 86 72 192 72s192-36.7 192-72L496.7 262.6 354.5 314c-11.1 4-22.8 6-34.5 6s-23.5-2-34.5-6L143.3 262.6 128 408z"></path></svg> <span class="alert">Three paradigms</span>: Supervised (labels), unsupervised (no labels), reinforcement (rewards)</p></li>
+<li><p><svg aria-hidden="true" role="img" viewbox="0 0 448 512" style="height:1em;width:0.88em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M96 0C43 0 0 43 0 96V416c0 53 43 96 96 96H384h32c17.7 0 32-14.3 32-32s-14.3-32-32-32V384c17.7 0 32-14.3 32-32V32c0-17.7-14.3-32-32-32H384 96zm0 384H352v64H96c-17.7 0-32-14.3-32-32s14.3-32 32-32zm32-240c0-8.8 7.2-16 16-16H336c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16zm16 48H336c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16s7.2-16 16-16z"></path></svg> <span class="alert">Supervised learning</span> is most common: Learn from labelled examples to predict</p></li>
+<li><p><svg aria-hidden="true" role="img" viewbox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M384 32H512c17.7 0 32 14.3 32 32s-14.3 32-32 32H398.4c-5.2 25.8-22.9 47.1-46.4 57.3V448H512c17.7 0 32 14.3 32 32s-14.3 32-32 32H320 128c-17.7 0-32-14.3-32-32s14.3-32 32-32H288V153.3c-23.5-10.3-41.2-31.6-46.4-57.3H128c-17.7 0-32-14.3-32-32s14.3-32 32-32H256c14.6-19.4 37.8-32 64-32s49.4 12.6 64 32zm55.6 288H584.4L512 195.8 439.6 320zM512 416c-62.9 0-115.2-34-126-78.9c-2.6-11 1-22.3 6.7-32.1l95.2-163.2c5-8.6 14.2-13.8 24.1-13.8s19.1 5.3 24.1 13.8l95.2 163.2c5.7 9.8 9.3 21.1 6.7 32.1C627.2 382 574.9 416 512 416zM126.8 195.8L54.4 320H199.3L126.8 195.8zM.9 337.1c-2.6-11 1-22.3 6.7-32.1l95.2-163.2c5-8.6 14.2-13.8 24.1-13.8s19.1 5.3 24.1 13.8l95.2 163.2c5.7 9.8 9.3 21.1 6.7 32.1C242 382 189.7 416 126.8 416S11.7 382 .9 337.1z"></path></svg> The <span class="alert">bias-variance trade-off</span>: Simple models underfit, complex models overfit</p></li>
+<li><p><svg aria-hidden="true" role="img" viewbox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"></path></svg> <span class="alert">Unsupervised learning</span> discovers hidden structure: Clustering, dimensionality reduction</p></li>
+<li><p><svg aria-hidden="true" role="img" viewbox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M192 64C86 64 0 150 0 256S86 448 192 448H448c106 0 192-86 192-192s-86-192-192-192H192zM496 168a40 40 0 1 1 0 80 40 40 0 1 1 0-80zM392 304a40 40 0 1 1 80 0 40 40 0 1 1 -80 0zM168 200c0-13.3 10.7-24 24-24s24 10.7 24 24v32h32c13.3 0 24 10.7 24 24s-10.7 24-24 24H216v32c0 13.3-10.7 24-24 24s-24-10.7-24-24V280H136c-13.3 0-24-10.7-24-24s10.7-24 24-24h32V200z"></path></svg> <span class="alert">Reinforcement learning</span> learns from interaction: Exploration vs exploitation</p></li>
+<li><p><svg aria-hidden="true" role="img" viewbox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M320 0c17.7 0 32 14.3 32 32V96H472c39.8 0 72 32.2 72 72V440c0 39.8-32.2 72-72 72H168c-39.8 0-72-32.2-72-72V168c0-39.8 32.2-72 72-72H288V32c0-17.7 14.3-32 32-32zM208 384c-8.8 0-16 7.2-16 16s7.2 16 16 16h32c8.8 0 16-7.2 16-16s-7.2-16-16-16H208zm96 0c-8.8 0-16 7.2-16 16s7.2 16 16 16h32c8.8 0 16-7.2 16-16s-7.2-16-16-16H304zm96 0c-8.8 0-16 7.2-16 16s7.2 16 16 16h32c8.8 0 16-7.2 16-16s-7.2-16-16-16H400zM264 256a40 40 0 1 0 -80 0 40 40 0 1 0 80 0zm152 40a40 40 0 1 0 0-80 40 40 0 1 0 0 80zM48 224H64V416H48c-26.5 0-48-21.5-48-48V272c0-26.5 21.5-48 48-48zm544 0c26.5 0 48 21.5 48 48v96c0 26.5-21.5 48-48 48H576V224h16z"></path></svg> <span class="alert">RLHF</span> powers modern LLMs like ChatGPT: RL to align with human preferences</p></li>
+</ul>
+</div>
+</section></section>
+<section id="and-thats-all-for-today" class="title-slide slide level1 center" data-background-color="#1B3A6B">
+<h1>… and that’s all for today! 🎉</h1>
+
+
+</section>
+    </div>
+  <div class="quarto-auto-generated-content" style="display: none;">
+<div class="footer footer-default">
+<p><a href="https://danilofreire.github.io/datasci101/lectures/lecture-04/04-learning.html">Lecture 04</a></p>
+</div>
+</div></div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="../../site_libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="../../site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="../../site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="../../site_libs/revealjs/plugin/multimodal/multimodal.js"></script>
+  <script src="../../site_libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="../../site_libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="../../site_libs/revealjs/plugin/search/search.js"></script>
+  <script src="../../site_libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="../../site_libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': true,
+'previewLinksAuto': false,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'jumpToSlide': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: false,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: 'c/t',
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'slide',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'none',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1050,
+
+        height: 700,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.1,
+
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, Multimodal, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
+    <script id="quarto-html-after-body" type="application/javascript">
+      window.document.addEventListener("DOMContentLoaded", function (event) {
+        const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+        tabsets.forEach(function(tabset) {
+          const tabby = new Tabby('#' + tabset.id);
+        });
+        const isCodeAnnotation = (el) => {
+          for (const clz of el.classList) {
+            if (clz.startsWith('code-annotation-')) {                     
+              return true;
+            }
+          }
+          return false;
+        }
+        const onCopySuccess = function(e) {
+          // button target
+          const button = e.trigger;
+          // don't keep focus
+          button.blur();
+          // flash "checked"
+          button.classList.add('code-copy-button-checked');
+          var currentTitle = button.getAttribute("title");
+          button.setAttribute("title", "Copied!");
+          let tooltip;
+          if (window.bootstrap) {
+            button.setAttribute("data-bs-toggle", "tooltip");
+            button.setAttribute("data-bs-placement", "left");
+            button.setAttribute("data-bs-title", "Copied!");
+            tooltip = new bootstrap.Tooltip(button, 
+              { trigger: "manual", 
+                customClass: "code-copy-button-tooltip",
+                offset: [0, -8]});
+            tooltip.show();    
+          }
+          setTimeout(function() {
+            if (tooltip) {
+              tooltip.hide();
+              button.removeAttribute("data-bs-title");
+              button.removeAttribute("data-bs-toggle");
+              button.removeAttribute("data-bs-placement");
+            }
+            button.setAttribute("title", currentTitle);
+            button.classList.remove('code-copy-button-checked');
+          }, 1000);
+          // clear code selection
+          e.clearSelection();
+        }
+        const getTextToCopy = function(trigger) {
+          const outerScaffold = trigger.parentElement.cloneNode(true);
+          const codeEl = outerScaffold.querySelector('code');
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+        }
+        const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+          text: getTextToCopy
+        });
+        clipboard.on('success', onCopySuccess);
+        if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+          const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+            text: getTextToCopy,
+            container: window.document.getElementById('quarto-embedded-source-code-modal')
+          });
+          clipboardModal.on('success', onCopySuccess);
+        }
+          var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+          var mailtoRegex = new RegExp(/^mailto:/);
+            var filterRegex = new RegExp('/' + window.location.host + '/');
+          var isInternal = (href) => {
+              return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+          }
+          // Inspect non-navigation links and adorn them if external
+         var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+          for (var i=0; i<links.length; i++) {
+            const link = links[i];
+            if (!isInternal(link.href)) {
+              // undo the damage that might have been done by quarto-nav.js in the case of
+              // links that we want to consider external
+              if (link.dataset.originalHref !== undefined) {
+                link.href = link.dataset.originalHref;
+              }
+            }
+          }
+        function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+          const config = {
+            allowHTML: true,
+            maxWidth: 500,
+            delay: 100,
+            arrow: false,
+            appendTo: function(el) {
+                return el.closest('section.slide') || el.parentElement;
+            },
+            interactive: true,
+            interactiveBorder: 10,
+            theme: 'light-border',
+            placement: 'bottom-start',
+          };
+          if (contentFn) {
+            config.content = contentFn;
+          }
+          if (onTriggerFn) {
+            config.onTrigger = onTriggerFn;
+          }
+          if (onUntriggerFn) {
+            config.onUntrigger = onUntriggerFn;
+          }
+            config['offset'] = [0,0];
+            config['maxWidth'] = 700;
+          window.tippy(el, config); 
+        }
+        const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+        for (var i=0; i<noterefs.length; i++) {
+          const ref = noterefs[i];
+          tippyHover(ref, function() {
+            // use id or data attribute instead here
+            let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+            try { href = new URL(href).hash; } catch {}
+            const id = href.replace(/^#\/?/, "");
+            const note = window.document.getElementById(id);
+            if (note) {
+              return note.innerHTML;
+            } else {
+              return "";
+            }
+          });
+        }
+        const findCites = (el) => {
+          const parentEl = el.parentElement;
+          if (parentEl) {
+            const cites = parentEl.dataset.cites;
+            if (cites) {
+              return {
+                el,
+                cites: cites.split(' ')
+              };
+            } else {
+              return findCites(el.parentElement)
+            }
+          } else {
+            return undefined;
+          }
+        };
+        var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+        for (var i=0; i<bibliorefs.length; i++) {
+          const ref = bibliorefs[i];
+          const citeInfo = findCites(ref);
+          if (citeInfo) {
+            tippyHover(citeInfo.el, function() {
+              var popup = window.document.createElement('div');
+              citeInfo.cites.forEach(function(cite) {
+                var citeDiv = window.document.createElement('div');
+                citeDiv.classList.add('hanging-indent');
+                citeDiv.classList.add('csl-entry');
+                var biblioDiv = window.document.getElementById('ref-' + cite);
+                if (biblioDiv) {
+                  citeDiv.innerHTML = biblioDiv.innerHTML;
+                }
+                popup.appendChild(citeDiv);
+              });
+              return popup.innerHTML;
+            });
+          }
+        }
+      });
+      </script>
+    
+
+</body></html>

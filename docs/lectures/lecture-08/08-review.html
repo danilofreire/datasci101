@@ -1,0 +1,967 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-html/tabby.min.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.9.38">
+
+  <meta name="author" content="Danilo Freire">
+  <title>DATASCI 101 – DATASCI 101: Introduction to AI Applications</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="../../site_libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="../../site_libs/revealjs/dist/reveal.css">
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+  </style>
+  <link rel="stylesheet" href="../../site_libs/revealjs/dist/theme/quarto-1f887e6eea2afc034e29e6c7c4bed039.css">
+  <link href="../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="../../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="../../site_libs/revealjs/plugin/multimodal/multimodal.css" rel="stylesheet">
+  <link href="../../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+</head>
+<body class="quarto-light">
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" class="quarto-title-block center">
+  <h1 class="title">DATASCI 101: Introduction to AI Applications</h1>
+  <p class="subtitle">Lecture 08: Quiz 01 Review Session</p>
+
+<div class="quarto-title-authors">
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-title-author-orcid"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a>
+</div>
+<div class="quarto-title-author-email">
+<a href="mailto:danilo.freire@emory.edu">danilo.freire@emory.edu</a>
+</div>
+        <p class="quarto-title-affiliation">
+            Department of Data and Decision Sciences <br> Emory University
+          </p>
+    </div>
+</div>
+
+</section>
+<section>
+<section id="welcome-back" class="title-slide slide level1 center" data-background-color="#1B3A6B">
+<h1>Welcome back! 🧠</h1>
+
+</section>
+<section id="todays-plan" class="slide level2 scrollable">
+<h2>Today’s plan</h2>
+<div style="margin-top: 20px; font-size: 28px;">
+<ul>
+<li>Quiz 01 is on <span class="alert">Thursday, September 24</span> (50 minutes, in class)</li>
+<li>Open laptop and notes; you can search the web</li>
+<li>The quiz tests <span class="alert">understanding and critical evaluation</span>, not memorisation</li>
+<li>Today is <span class="alert">your session</span>, not mine. I will ask, you will answer</li>
+<li>We will work through:
+<ol type="1">
+<li>A rapid recap of the seven lectures</li>
+<li>One realistic scenario, broken down together</li>
+<li>Practice questions in pairs</li>
+<li>Open Q&amp;A</li>
+</ol></li>
+<li><span class="alert">Stop me</span> whenever something is unclear. That is the whole point of today</li>
+</ul>
+</div>
+</section>
+<section id="quiz-logistics" class="slide level2">
+<h2>Quiz logistics</h2>
+<div style="margin-top: 20px; font-size: 28px;">
+<div class="columns">
+<div class="column" style="width:55%;">
+<ul>
+<li><span class="alert">Format:</span> 5 short essay questions plus one bonus</li>
+<li><span class="alert">Length:</span> 50 minutes, in person</li>
+<li><span class="alert">Material allowed:</span> laptops, notes, lecture slides, web search, AI assistants</li>
+<li><span class="alert">What is graded:</span> your reasoning, not the polish of your AI’s prose</li>
+<li><span class="alert">Honour code:</span> write your own answers; if you used an AI, say which one</li>
+<li><span class="alert">Coverage:</span> Lectures 01 to 07</li>
+</ul>
+</div><div class="column" style="width:45%;">
+<div style="text-align: center; margin-top: 20px; font-size: 24px;">
+<p><span class="alert">Why open laptop?</span></p>
+<p>The job is not to remember definitions. The job is to <span class="alert">recognise problems</span>, <span class="alert">judge trade-offs</span>, and <span class="alert">write something useful</span> faster than the AI can.</p>
+</div>
+</div></div>
+</div>
+</section></section>
+<section>
+<section id="part-1-rapid-recap" class="title-slide slide level1 center" data-background-color="#1B3A6B">
+<h1>Part 1: rapid recap 🚀</h1>
+
+</section>
+<section id="how-this-part-works" class="slide level2">
+<h2>How this part works</h2>
+<div style="margin-top: 30px; font-size: 30px;">
+<ul>
+<li>I will name a <span class="alert">concept</span> from one of the seven lectures</li>
+<li>One of you explains it in <span class="alert">your own words</span> (about 30 seconds)</li>
+<li>The rest of us <span class="alert">push back, add nuance, or correct</span></li>
+<li>I will keep it moving. Wrong answers are useful; silence is not</li>
+<li>We have about 12 minutes for this section</li>
+</ul>
+</div>
+</section>
+<section id="concept-1-hallucination" class="slide level2">
+<h2>Concept 1: hallucination</h2>
+<div style="margin-top: 40px; font-size: 32px;">
+<ul>
+<li>Volunteer or victim? 🙋</li>
+<li>In one sentence: <span class="alert">what is an AI hallucination, and why does it happen?</span></li>
+<li>Follow-ups for the room:
+<ul>
+<li>Is a hallucination the same as a <span class="alert">lie</span>?</li>
+<li>Is a hallucination the same as a <span class="alert">factual error</span>?</li>
+<li>Why might an open-laptop quiz <span class="alert">punish</span> someone who copy-pastes an LLM answer?</li>
+</ul></li>
+</ul>
+</div>
+<aside class="notes">
+<p>Aim for: hallucination = output that is fluent and confident but not grounded in the training data or the prompt. Different from a “lie” because there is no intent. Different from a “factual error” because the model often invents plausible-sounding details. Push the third question to remind students that verifying sources matters.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="concept-2-dataset-and-labels" class="slide level2">
+<h2>Concept 2: dataset and labels</h2>
+<div style="margin-top: 40px; font-size: 30px;">
+<ul>
+<li>Pick someone new</li>
+<li><span class="alert">What does it mean to “label” a dataset, and why is it usually the most expensive step?</span></li>
+<li>Quick room poll: in each case, <span class="alert">is the label easy, hard, or contested?</span>
+<ul>
+<li>“Is this email spam?”</li>
+<li>“Is this tweet toxic?”</li>
+<li>“Is this CT scan showing pneumonia?”</li>
+<li>“Is this résumé a good fit for the role?”</li>
+</ul></li>
+<li>Connect to: <span class="alert">garbage in, garbage out</span></li>
+</ul>
+</div>
+</section>
+<section id="concept-3-the-three-learning-paradigms" class="slide level2">
+<h2>Concept 3: the three learning paradigms</h2>
+<div style="margin-top: 30px; font-size: 28px;">
+<ul>
+<li>Three students, one paradigm each. One sentence per person:
+<ul>
+<li><span class="alert">Supervised learning</span> — ?</li>
+<li><span class="alert">Unsupervised learning</span> — ?</li>
+<li><span class="alert">Reinforcement learning</span> — ?</li>
+</ul></li>
+<li>Then back to the room: name one <span class="alert">real product</span> that uses each</li>
+<li>Trick question: where does <span class="alert">training a chatbot with thumbs up / thumbs down</span> fit? (answer: RL from human feedback — RLHF)</li>
+</ul>
+</div>
+</section>
+<section id="concept-4-precision-vs-recall" class="slide level2">
+<h2>Concept 4: precision vs recall</h2>
+<div style="margin-top: 30px; font-size: 28px;">
+<ul>
+<li>This is the single most quiz-worthy concept of the block. 🎯</li>
+<li>Volunteer to <span class="alert">draw the confusion matrix</span> on the board (or describe it)</li>
+<li>Then the room debates:
+<ul>
+<li>A <span class="alert">cancer screening</span> model — should you optimise precision or recall? Why?</li>
+<li>A <span class="alert">spam filter</span> for your inbox — same question</li>
+<li>A <span class="alert">criminal sentencing</span> risk score — same question</li>
+</ul></li>
+<li>Punchline: the answer depends on <span class="alert">which mistake is more costly</span>, and who pays the cost</li>
+</ul>
+</div>
+</section>
+<section id="concept-5-overfitting-and-validation" class="slide level2">
+<h2>Concept 5: overfitting and validation</h2>
+<div style="margin-top: 30px; font-size: 28px;">
+<ul>
+<li>Cold call: <span class="alert">what is overfitting, in plain English?</span></li>
+<li>Follow-up: <span class="alert">why do we split data into training and validation sets?</span></li>
+<li>Room scenario:
+<ul>
+<li>You train a model on Emory student grades from 2018-2024</li>
+<li>It scores 99% accuracy on those students</li>
+<li>Should you trust it on the 2026 cohort? <span class="alert">Why or why not?</span></li>
+</ul></li>
+<li>Connect to: <span class="alert">Goodhart’s law</span> — when a measure becomes a target, it ceases to be a good measure</li>
+</ul>
+</div>
+</section>
+<section id="concept-6-tokens-and-embeddings" class="slide level2">
+<h2>Concept 6: tokens and embeddings</h2>
+<div style="margin-top: 30px; font-size: 28px;">
+<ul>
+<li>Pair up with the person next to you. One minute. 🗣️
+<ul>
+<li>One of you explains <span class="alert">tokenisation</span></li>
+<li>The other explains <span class="alert">embeddings</span></li>
+</ul></li>
+<li>Then I pick two pairs to share</li>
+<li>Rapid-fire room questions:
+<ul>
+<li>Why does ChatGPT charge by the <span class="alert">token</span> and not by the word?</li>
+<li>Why does the <span class="alert">order</span> of words in a sentence matter, even after embedding?</li>
+<li>What is a <span class="alert">context window</span>, and why does it cost so much to make it bigger?</li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section id="concept-7-multimodal" class="slide level2">
+<h2>Concept 7: multimodal</h2>
+<div style="margin-top: 30px; font-size: 28px;">
+<ul>
+<li>Last concept of the recap</li>
+<li><span class="alert">What does “multimodal” mean for an AI system?</span></li>
+<li>Room:
+<ul>
+<li>Name three <span class="alert">modalities</span> we discussed</li>
+<li>Why is <span class="alert">audio</span> harder than text in some ways and easier in others?</li>
+<li>When you upload a photo to ChatGPT, what is happening <span class="alert">under the hood</span>?</li>
+</ul></li>
+</ul>
+</div>
+</section></section>
+<section>
+<section id="part-2-a-real-scenario" class="title-slide slide level1 center" data-background-color="#1B3A6B">
+<h1>Part 2: a real scenario 🏥</h1>
+
+</section>
+<section id="the-setup" class="slide level2">
+<h2>The setup</h2>
+<div style="margin-top: 20px; font-size: 26px;">
+<div class="columns">
+<div class="column" style="width:60%;">
+<p>A startup, <span class="alert">HealthScribe</span>, sells an AI tool to hospitals. The tool listens to doctor-patient conversations and writes the clinical note.</p>
+<ul>
+<li>The model is a <span class="alert">fine-tuned LLM</span></li>
+<li>Training data: 80,000 doctor-patient transcripts from a single large hospital network in California, 2019-2024</li>
+<li>The labels are the <span class="alert">final clinical notes</span> that doctors wrote and signed off on</li>
+<li>HealthScribe reports <span class="alert">92% agreement</span> with doctor-written notes on a held-out test set</li>
+<li>They are now selling the product to hospitals across the country</li>
+</ul>
+</div><div class="column" style="width:40%;">
+<div style="text-align: center; margin-top: 30px; font-size: 28px;">
+<p>🩺</p>
+<p>We will work through this together.</p>
+<p>I will <span class="alert">not move on</span> until I get answers from at least three different people on each question.</p>
+</div>
+</div></div>
+</div>
+</section>
+<section id="question-a-the-dataset" class="slide level2">
+<h2>Question A: the dataset</h2>
+<div style="margin-top: 30px; font-size: 28px;">
+<ul>
+<li><span class="alert">What problems can you spot</span> with the training data?</li>
+<li>Hints, if the room is quiet:
+<ul>
+<li>Where did the data come from? Who is in it? Who is <span class="alert">not</span> in it?</li>
+<li>The labels are <span class="alert">doctor-written notes</span> — is that the truth, or one person’s interpretation?</li>
+<li>The data is from <span class="alert">2019-2024</span> — does medicine change over five years?</li>
+</ul></li>
+<li>Try to name <span class="alert">at least three distinct issues</span></li>
+</ul>
+</div>
+<aside class="notes">
+<p>Issues to surface: representativeness (one network, one state, one country); selection (only patients who came to that network); label quality (doctor’s interpretation, not ground truth); temporal drift (medicine evolves, COVID is in this data); demographic skew (California population is not the US population); language (probably English-only).</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="question-b-the-metric" class="slide level2">
+<h2>Question B: the metric</h2>
+<div style="margin-top: 30px; font-size: 28px;">
+<ul>
+<li>HealthScribe reports <span class="alert">92% agreement with doctor-written notes</span></li>
+<li>Volunteer: <span class="alert">what is being measured here?</span></li>
+<li>Then the room:
+<ul>
+<li>Is “agreement with the doctor” the same as <span class="alert">getting it right</span>?</li>
+<li>What are the model and the doctor <span class="alert">agreeing on</span> when they agree?</li>
+<li>On what kind of patient might the <span class="alert">8% disagreement</span> concentrate?</li>
+</ul></li>
+<li>This is a classic case of <span class="alert">Goodhart’s law</span>: optimising agreement is not the same as optimising care</li>
+</ul>
+</div>
+</section>
+<section id="question-c-precision-and-recall" class="slide level2">
+<h2>Question C: precision and recall</h2>
+<div style="margin-top: 30px; font-size: 28px;">
+<ul>
+<li>Imagine the AI’s job is to <span class="alert">flag every mention of an allergy</span> in the conversation, so it can be added to the patient record</li>
+<li>The room decides:
+<ul>
+<li>Would you optimise <span class="alert">precision</span> (only flag what you are very sure of) or <span class="alert">recall</span> (flag everything that might be an allergy)?</li>
+<li>Defend your choice with <span class="alert">a real harm</span> that comes from each kind of mistake</li>
+</ul></li>
+<li>This is the single most likely structure for a quiz question. ✏️</li>
+</ul>
+</div>
+</section>
+<section id="question-d-a-deployment-decision" class="slide level2">
+<h2>Question D: a deployment decision</h2>
+<div style="margin-top: 30px; font-size: 28px;">
+<ul>
+<li>Your hospital is considering buying HealthScribe</li>
+<li>The room votes by show of hands:
+<ul>
+<li><span class="alert">Yes, buy it</span></li>
+<li><span class="alert">No, do not buy it</span></li>
+<li><span class="alert">Buy it, but with conditions</span></li>
+</ul></li>
+<li>Whatever the room votes, I want one defender of each position to <span class="alert">argue for 60 seconds</span></li>
+<li>Then the room: <span class="alert">what evidence would change your mind?</span></li>
+</ul>
+</div>
+</section></section>
+<section>
+<section id="part-3-practice-questions" class="title-slide slide level1 center" data-background-color="#1B3A6B">
+<h1>Part 3: practice questions 📝</h1>
+
+</section>
+<section id="how-this-part-works-1" class="slide level2">
+<h2>How this part works</h2>
+<div style="margin-top: 30px; font-size: 28px;">
+<ul>
+<li>I will show you <span class="alert">three practice questions</span>, one at a time</li>
+<li>They are written in the same style as the real Quiz 01</li>
+<li>Pair up with the person next to you</li>
+<li>You have <span class="alert">two minutes per question</span> to discuss your answer</li>
+<li>Then I will pick a pair to share, and the room critiques</li>
+<li>These are <span class="alert">not the real quiz questions</span>, but the format is identical</li>
+</ul>
+</div>
+</section>
+<section id="practice-question-1" class="slide level2 scrollable">
+<h2>Practice question 1</h2>
+<div style="margin-top: 20px; font-size: 26px;">
+<p>A friend tells you: “ChatGPT is just an autocomplete on steroids. It doesn’t actually understand anything.” Another friend says: “It got 90% on the bar exam, so clearly it understands law.” 🤷</p>
+<p><span class="alert">Your task:</span> who is closer to the truth, and why? In your answer:</p>
+<ol type="1">
+<li>Explain what <span class="alert">tokenisation and next-token prediction</span> have to do with the first friend’s claim</li>
+<li>Explain why <span class="alert">a high benchmark score</span> is not the same as understanding (cite Goodhart’s law if you can)</li>
+<li>Take a position. Defend it in 3-4 sentences</li>
+</ol>
+<p><span class="alert">Two minutes. Discuss with your partner.</span> ⏱️</p>
+</div>
+</section>
+<section id="practice-question-2" class="slide level2 scrollable">
+<h2>Practice question 2</h2>
+<div style="margin-top: 20px; font-size: 26px;">
+<p>A university wants to build an AI that flags students who are “at risk of dropping out.” They have:</p>
+<ul>
+<li>Five years of student records (grades, attendance, financial aid status)</li>
+<li>The label is “did this student drop out by the end of year 2”</li>
+</ul>
+<p><span class="alert">Your task:</span></p>
+<ol type="1">
+<li>What <span class="alert">kind of learning problem</span> is this (supervised, unsupervised, reinforcement)?</li>
+<li>What is the difference between <span class="alert">precision and recall</span> for this model, and which would you optimise? Defend your choice</li>
+<li>Name <span class="alert">one ethical concern</span> that does not appear anywhere in the technical metric</li>
+</ol>
+<p><span class="alert">Two minutes.</span> ⏱️</p>
+</div>
+</section>
+<section id="practice-question-3" class="slide level2 scrollable">
+<h2>Practice question 3</h2>
+<div style="margin-top: 20px; font-size: 26px;">
+<p>You upload a photo of a handwritten recipe to ChatGPT and ask it to convert it to a typed shopping list. It gets the recipe mostly right, but lists “2 cups of sugar” when the recipe clearly says “2 cups of salt.” 🧂</p>
+<p><span class="alert">Your task:</span></p>
+<ol type="1">
+<li>What is happening at the <span class="alert">tokeniser and vision encoder</span> stage that could cause this kind of mistake?</li>
+<li>Is this a <span class="alert">hallucination</span>, a <span class="alert">factual error</span>, or both? Explain</li>
+<li>If you were Anthropic or OpenAI, <span class="alert">what is one thing you would change</span> to make this kind of error less likely?</li>
+</ol>
+<p><span class="alert">Two minutes.</span> ⏱️</p>
+</div>
+</section></section>
+<section>
+<section id="part-4-open-qa" class="title-slide slide level1 center" data-background-color="#1B3A6B">
+<h1>Part 4: open Q&amp;A 💬</h1>
+
+</section>
+<section id="anything-unclear" class="slide level2">
+<h2>Anything unclear</h2>
+<div style="margin-top: 50px; font-size: 32px;">
+<ul>
+<li>This is your last chance before Thursday</li>
+<li>No question is too small. If <span class="alert">you</span> are unsure, <span class="alert">others</span> are too</li>
+<li>Topics most often asked about in past semesters:
+<ul>
+<li><span class="alert">Embeddings</span> — what does the vector “mean”?</li>
+<li><span class="alert">Validation vs test set</span> — what is the difference?</li>
+<li><span class="alert">Multimodal</span> — how does the model “see” an image?</li>
+<li><span class="alert">The proxy problem</span> — when is a metric a bad proxy?</li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section id="last-reminders-before-thursday" class="slide level2">
+<h2>Last reminders before Thursday</h2>
+<div style="margin-top: 30px; font-size: 28px;">
+<ul>
+<li><span class="alert">Thursday, September 24, 2:30 pm, this room</span></li>
+<li>Bring your laptop and your charger 🔌</li>
+<li>The questions are handed out <span class="alert">on paper</span>; you type your answers in a Word document or PDF and <span class="alert">upload the file to Canvas</span> before the end of class, so log in before you arrive</li>
+<li>Read each question <span class="alert">twice</span> before you start writing</li>
+<li>If you are stuck, <span class="alert">skip and come back</span> — do not lose the easy points</li>
+<li>Cite the AI tool you used (if any). <span class="alert">Honesty over polish</span></li>
+<li>See you Thursday. You are ready. 💪</li>
+</ul>
+</div>
+</section></section>
+<section id="see-you-thursday" class="title-slide slide level1 center" data-background-color="#1B3A6B">
+<h1>See you Thursday! 👋</h1>
+
+
+</section>
+    </div>
+  <div class="quarto-auto-generated-content" style="display: none;">
+<div class="footer footer-default">
+<p><a href="https://danilofreire.github.io/datasci101/lectures/lecture-08/08-review.html">Lecture 08</a></p>
+</div>
+</div></div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="../../site_libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="../../site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="../../site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="../../site_libs/revealjs/plugin/multimodal/multimodal.js"></script>
+  <script src="../../site_libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="../../site_libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="../../site_libs/revealjs/plugin/search/search.js"></script>
+  <script src="../../site_libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="../../site_libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': true,
+'previewLinksAuto': false,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'jumpToSlide': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: false,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: 'c/t',
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'slide',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'none',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1050,
+
+        height: 700,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.1,
+
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, Multimodal, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
+    <script id="quarto-html-after-body" type="application/javascript">
+      window.document.addEventListener("DOMContentLoaded", function (event) {
+        const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+        tabsets.forEach(function(tabset) {
+          const tabby = new Tabby('#' + tabset.id);
+        });
+        const isCodeAnnotation = (el) => {
+          for (const clz of el.classList) {
+            if (clz.startsWith('code-annotation-')) {                     
+              return true;
+            }
+          }
+          return false;
+        }
+        const onCopySuccess = function(e) {
+          // button target
+          const button = e.trigger;
+          // don't keep focus
+          button.blur();
+          // flash "checked"
+          button.classList.add('code-copy-button-checked');
+          var currentTitle = button.getAttribute("title");
+          button.setAttribute("title", "Copied!");
+          let tooltip;
+          if (window.bootstrap) {
+            button.setAttribute("data-bs-toggle", "tooltip");
+            button.setAttribute("data-bs-placement", "left");
+            button.setAttribute("data-bs-title", "Copied!");
+            tooltip = new bootstrap.Tooltip(button, 
+              { trigger: "manual", 
+                customClass: "code-copy-button-tooltip",
+                offset: [0, -8]});
+            tooltip.show();    
+          }
+          setTimeout(function() {
+            if (tooltip) {
+              tooltip.hide();
+              button.removeAttribute("data-bs-title");
+              button.removeAttribute("data-bs-toggle");
+              button.removeAttribute("data-bs-placement");
+            }
+            button.setAttribute("title", currentTitle);
+            button.classList.remove('code-copy-button-checked');
+          }, 1000);
+          // clear code selection
+          e.clearSelection();
+        }
+        const getTextToCopy = function(trigger) {
+          const outerScaffold = trigger.parentElement.cloneNode(true);
+          const codeEl = outerScaffold.querySelector('code');
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+        }
+        const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+          text: getTextToCopy
+        });
+        clipboard.on('success', onCopySuccess);
+        if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+          const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+            text: getTextToCopy,
+            container: window.document.getElementById('quarto-embedded-source-code-modal')
+          });
+          clipboardModal.on('success', onCopySuccess);
+        }
+          var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+          var mailtoRegex = new RegExp(/^mailto:/);
+            var filterRegex = new RegExp('/' + window.location.host + '/');
+          var isInternal = (href) => {
+              return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+          }
+          // Inspect non-navigation links and adorn them if external
+         var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+          for (var i=0; i<links.length; i++) {
+            const link = links[i];
+            if (!isInternal(link.href)) {
+              // undo the damage that might have been done by quarto-nav.js in the case of
+              // links that we want to consider external
+              if (link.dataset.originalHref !== undefined) {
+                link.href = link.dataset.originalHref;
+              }
+            }
+          }
+        function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+          const config = {
+            allowHTML: true,
+            maxWidth: 500,
+            delay: 100,
+            arrow: false,
+            appendTo: function(el) {
+                return el.closest('section.slide') || el.parentElement;
+            },
+            interactive: true,
+            interactiveBorder: 10,
+            theme: 'light-border',
+            placement: 'bottom-start',
+          };
+          if (contentFn) {
+            config.content = contentFn;
+          }
+          if (onTriggerFn) {
+            config.onTrigger = onTriggerFn;
+          }
+          if (onUntriggerFn) {
+            config.onUntrigger = onUntriggerFn;
+          }
+            config['offset'] = [0,0];
+            config['maxWidth'] = 700;
+          window.tippy(el, config); 
+        }
+        const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+        for (var i=0; i<noterefs.length; i++) {
+          const ref = noterefs[i];
+          tippyHover(ref, function() {
+            // use id or data attribute instead here
+            let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+            try { href = new URL(href).hash; } catch {}
+            const id = href.replace(/^#\/?/, "");
+            const note = window.document.getElementById(id);
+            if (note) {
+              return note.innerHTML;
+            } else {
+              return "";
+            }
+          });
+        }
+        const findCites = (el) => {
+          const parentEl = el.parentElement;
+          if (parentEl) {
+            const cites = parentEl.dataset.cites;
+            if (cites) {
+              return {
+                el,
+                cites: cites.split(' ')
+              };
+            } else {
+              return findCites(el.parentElement)
+            }
+          } else {
+            return undefined;
+          }
+        };
+        var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+        for (var i=0; i<bibliorefs.length; i++) {
+          const ref = bibliorefs[i];
+          const citeInfo = findCites(ref);
+          if (citeInfo) {
+            tippyHover(citeInfo.el, function() {
+              var popup = window.document.createElement('div');
+              citeInfo.cites.forEach(function(cite) {
+                var citeDiv = window.document.createElement('div');
+                citeDiv.classList.add('hanging-indent');
+                citeDiv.classList.add('csl-entry');
+                var biblioDiv = window.document.getElementById('ref-' + cite);
+                if (biblioDiv) {
+                  citeDiv.innerHTML = biblioDiv.innerHTML;
+                }
+                popup.appendChild(citeDiv);
+              });
+              return popup.innerHTML;
+            });
+          }
+        }
+      });
+      </script>
+    
+
+</body></html>

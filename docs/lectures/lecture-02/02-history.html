@@ -1,0 +1,1478 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-html/tabby.min.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.9.38">
+
+  <meta name="author" content="Danilo Freire">
+  <title>DATASCI 101 – DATASCI 101: Introduction to AI Applications</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="../../site_libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="../../site_libs/revealjs/dist/reveal.css">
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+  </style>
+  <link rel="stylesheet" href="../../site_libs/revealjs/dist/theme/quarto-1f887e6eea2afc034e29e6c7c4bed039.css">
+  <link href="../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="../../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="../../site_libs/revealjs/plugin/multimodal/multimodal.css" rel="stylesheet">
+  <link href="../../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+</head>
+<body class="quarto-light">
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" class="quarto-title-block center">
+  <h1 class="title">DATASCI 101: Introduction to AI Applications</h1>
+  <p class="subtitle">Lecture 02: A Brief History of AI and the Recent Shift</p>
+
+<div class="quarto-title-authors">
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-title-author-orcid"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a>
+</div>
+<div class="quarto-title-author-email">
+<a href="mailto:danilo.freire@emory.edu">danilo.freire@emory.edu</a>
+</div>
+        <p class="quarto-title-affiliation">
+            Department of Data and Decision Sciences <br> Emory University
+          </p>
+    </div>
+</div>
+
+</section>
+<section>
+<section id="welcome-back" class="title-slide slide level1 center" data-background-color="#1B3A6B">
+<h1>Welcome back! 🤓</h1>
+
+</section>
+<section id="short-recap-of-last-class" class="slide level2">
+<h2>Short recap of last class</h2>
+<div style="margin-top: 30px; font-size: 29px;">
+<ul>
+<li>Course website: <a href="https://danilofreire.github.io/datasci101" class="uri">https://danilofreire.github.io/datasci101</a></li>
+<li>Course GitHub repo: <a href="https://github.com/danilofreire/datasci101" class="uri">https://github.com/danilofreire/datasci101</a></li>
+<li>Syllabus, schedule, and assignments will be posted on both sites</li>
+<li>We will use Canvas for announcements, submissions, and grades</li>
+<li>Instructor: Danilo Freire (<a href="mailto:danilo.freire@emory.edu" class="email">danilo.freire@emory.edu</a>)</li>
+<li>Grading:
+<ul>
+<li>10 problem sets (50%)</li>
+<li>5 in-class quizzes (30%)</li>
+<li>Final project (20%)</li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section id="lecture-overview" class="slide level2">
+<h2>Lecture overview</h2>
+<h3 id="todays-agenda">Today’s agenda</h3>
+<div style="margin-top: 20px; font-size: 32px;">
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li>The pre-history of AI</li>
+<li>Birth of AI: Dartmouth 1956</li>
+<li>Symbolic AI and expert systems</li>
+<li>AI winters and why they happened</li>
+<li>The neural network comeback</li>
+<li>The data revolution</li>
+<li>Transformers explained simply</li>
+<li>From GPT to ChatGPT</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<div style="text-align: center; margin-top: -30px; font-size: 22px;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><a href="#/" data-modal-type="image" data-modal-url="figures/ai-timeline.jpg"><img data-src="figures/ai-timeline.jpg" style="width:85.0%"></a></p>
+<figcaption>Click to enlarge (all images can be enlarged by clicking on them)</figcaption>
+</figure>
+</div>
+<p>Source: <a href="https://qbi.uq.edu.au/brain/intelligent-machines/history-artificial-intelligence">University of Queensland’s Brain Institute</a></p>
+</div>
+</div></div>
+</div>
+</section></section>
+<section>
+<section id="the-pre-history-of-ai" class="title-slide slide level1 center" data-background-color="#1B3A6B">
+<h1>The pre-history of AI 🏛️</h1>
+
+</section>
+<section id="the-pre-history-of-ai-1" class="slide level2">
+<h2>The pre-history of AI</h2>
+<h3 id="ancient-myths-of-artificial-life">Ancient myths of artificial life</h3>
+<div style="margin-top: 30px; font-size: 26px;">
+<div class="columns">
+<div class="column" style="width:55%;">
+<ul>
+<li>Humans have <span class="alert">long dreamed of creating artificial life</span></li>
+<li>Ancient myths featured mechanical beings:
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Talos">Talos</a> (Greek): Bronze giant protecting Crete</li>
+<li><a href="https://en.wikipedia.org/wiki/Golem">Golem</a> (Jewish folklore): Clay figure brought to life</li>
+<li><a href="https://en.wikipedia.org/wiki/Frankenstein">Frankenstein</a> (1818): Mary Shelley’s novel about creating life</li>
+</ul></li>
+<li>We’ve always been fascinated with <span class="alert">replicating intelligence</span></li>
+<li><span class="alert">Can machines truly think, or only simulate thinking?</span></li>
+</ul>
+</div><div class="column" style="width:45%;">
+<div style="text-align: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><a href="#/" data-modal-type="image" data-modal-url="figures/talos.jpg"><img data-src="figures/talos.jpg" style="width:80.0%"></a></p>
+<figcaption>Talos</figcaption>
+</figure>
+</div>
+<p>Source: <a href="https://en.wikipedia.org/wiki/Talos">Wikipedia - Talos</a></p>
+</div>
+</div></div>
+</div>
+</section>
+<section id="early-mechanical-calculators" class="slide level2">
+<h2>Early mechanical calculators</h2>
+<h3 id="from-pascal-to-babbage">From Pascal to Babbage</h3>
+<div style="margin-top: 30px; font-size: 22px;">
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li><span class="alert">Can intelligence be reduced to rules and symbols, or does it emerge from interconnected units?</span></li>
+<li><strong>1642</strong>: <a href="https://en.wikipedia.org/wiki/Blaise_Pascal">Blaise Pascal</a> builds the <a href="https://en.wikipedia.org/wiki/Pascaline">Pascaline</a>, a mechanical calculator for addition and subtraction</li>
+<li><strong>1673</strong>: <a href="https://en.wikipedia.org/wiki/Gottfried_Wilhelm_Leibniz">Gottfried Leibniz</a> creates a <a href="https://en.wikipedia.org/wiki/Leibniz_calculator">machine that can multiply and divide</a></li>
+<li><strong>1837</strong>: <a href="https://en.wikipedia.org/wiki/Charles_Babbage">Charles Babbage</a> designs the <a href="https://en.wikipedia.org/wiki/Analytical_Engine">Analytical Engine</a>, a programmable, general-purpose computer (never completed)</li>
+<li><a href="https://en.wikipedia.org/wiki/Ada_Lovelace">Ada Lovelace</a> writes what many consider the <a href="https://en.wikipedia.org/wiki/Ada_Lovelace">first computer program</a> for Babbage’s machine</li>
+<li><span class="alert">Calculation could be separated from human minds</span></li>
+</ul>
+</div><div class="column" style="width:50%;">
+<div style="text-align: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><a href="#/" data-modal-type="image" data-modal-url="figures/babbage.jpg"><img data-src="figures/babbage.jpg" style="width:90.0%"></a></p>
+<figcaption>Babbage’s Analytical Engine (replica)</figcaption>
+</figure>
+</div>
+<p>Source: <a href="https://en.wikipedia.org/wiki/Analytical_Engine">Wikipedia - Analytical Engine</a></p>
+</div>
+</div></div>
+</div>
+</section>
+<section id="human-computers" class="slide level2">
+<h2>Human computers</h2>
+<h3 id="when-computer-meant-a-person">When “computer” meant a person</h3>
+<div style="margin-top: 30px; font-size: 24px;">
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li>For most of history, <span class="alert">the word “computer” referred to a person</span>, not a machine!</li>
+<li>Large teams of human computers performed complex calculations:
+<ul>
+<li>Astronomical tables</li>
+<li>Ballistics trajectories</li>
+<li>Census data</li>
+</ul></li>
+<li>Often women, who were paid less than male mathematicians</li>
+<li>This <span class="alert">division of mental labour</span> (Adam Smith!) showed that complex calculations could be broken into simple, mechanical steps</li>
+<li>Historian Lorraine Daston: <a href="https://hdsr.mitpress.mit.edu/pub/0aytgrau/release/3">Calculation shifted from “genius” to “merely mechanical”</a></li>
+</ul>
+</div><div class="column" style="width:50%;">
+<div style="text-align: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><a href="#/" data-modal-type="image" data-modal-url="figures/human-computers.webp"><img data-src="figures/human-computers.webp" style="width:100.0%"></a></p>
+<figcaption>Human computers at NASA (1950s)</figcaption>
+</figure>
+</div>
+<p>Source: <a href="https://www.nasa.gov/centers-and-facilities/jpl/when-computers-were-human/">NASA</a></p>
+</div>
+</div></div>
+</div>
+</section>
+<section id="alan-turing-and-the-foundations-of-computing" class="slide level2">
+<h2>Alan Turing and the foundations of computing</h2>
+<h3 id="the-theoretical-breakthrough">The theoretical breakthrough</h3>
+<div style="margin-top: 30px; font-size: 22px;">
+<div class="columns">
+<div class="column" style="width:55%;">
+<ul>
+<li><strong>1936</strong>: <a href="https://en.wikipedia.org/wiki/Alan_Turing">Alan Turing</a> publishes “<a href="https://www.cs.virginia.edu/~robins/Turing_Paper_1936.pdf">On Computable Numbers, with an Application to the Entscheidungsproblem</a>” (decision problem)</li>
+<li>Introduces the concept of a <span class="alert">universal machine</span> that can compute anything computable</li>
+<li><strong>1950</strong>: Publishes “<a href="https://phil415.pbworks.com/f/TuringComputing.pdf">Computing Machinery and Intelligence</a>” in <a href="https://en.wikipedia.org/wiki/Mind_(journal)">Mind</a> (philosophy journal)
+<ul>
+<li>Proposes the famous <a href="https://en.wikipedia.org/wiki/Turing_test">Turing Test</a>: Can a machine fool a human into thinking it’s human?</li>
+<li>Asks: <span class="alert">“Can machines think?”</span> and reframes it as a practical question (<span class="alert">“Can machines do what we (as thinking entities) can do?”</span>)</li>
+</ul></li>
+<li>Turing’s ideas laid the <span class="alert">theoretical foundation</span> for both computing and AI</li>
+<li>He suggested machines could <span class="alert">learn</span>, not just follow fixed rules</li>
+</ul>
+</div><div class="column" style="width:45%;">
+<div style="text-align: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><a href="#/" data-modal-type="image" data-modal-url="figures/turing-test.png"><img data-src="figures/turing-test.png" style="width:90.0%"></a></p>
+<figcaption>The standard version of the Turing test</figcaption>
+</figure>
+</div>
+<p>Source: <a href="https://en.wikipedia.org/wiki/Turing_test">Wikipedia - Turing Test</a></p>
+</div>
+</div></div>
+</div>
+</section>
+<section id="live-turing-test" class="slide level2">
+<h2>Live Turing test!</h2>
+<div style="margin-top: 30px; font-size: 24px;">
+<ul>
+<li class="fragment">Guess if the following sentences were written by a human or a machine:</li>
+</ul>
+<div style="margin-top: 20px;">
+
+</div>
+<ul>
+<li class="fragment">“The universe (which others call the Library) is composed of an indefinite, perhaps an infinite number of hexagonal galleries, with enormous ventilation shafts in the middle, encircled by very low railings.”
+<ul>
+<li class="fragment">Human! <a href="https://en.wikipedia.org/wiki/Jorge_Luis_Borges">Jorge Luis Borges (Argentine writer)</a></li>
+</ul></li>
+<li class="fragment">“This is a multifaceted issue that requires us to examine several different perspectives.”
+<ul>
+<li class="fragment">Machine!</li>
+</ul></li>
+<li class="fragment">“The function of science fiction is not always to predict the future but sometimes to prevent it.”
+<ul>
+<li class="fragment">Human! Attributed to <a href="https://en.wikipedia.org/wiki/Frank_Herbert">Frank Herbert (author of Dune)</a></li>
+</ul></li>
+<li class="fragment">“The epistemological ramifications of this ontological framework necessitate a paradigmatic shift in our heuristic methodologies.”
+<ul>
+<li class="fragment">Machine!</li>
+</ul></li>
+<li class="fragment">And yes, <a href="https://arxiv.org/abs/2503.23674">GPT-4.5 did pass the Turing test</a> (judged human 73% of the time, more often than actual humans)</li>
+</ul>
+</div>
+</section></section>
+<section>
+<section id="the-birth-of-ai-1950s1970s" class="title-slide slide level1 center" data-background-color="#1B3A6B">
+<h1>The birth of AI (1950s–1970s) 🎂</h1>
+
+</section>
+<section id="the-dartmouth-conference-1956" class="slide level2">
+<h2>The Dartmouth Conference (1956)</h2>
+<h3 id="where-it-all-began">Where it all began</h3>
+<div style="margin-top: 30px; font-size: 22px;">
+<div class="columns">
+<div class="column" style="width:55%;">
+<ul>
+<li><strong>Summer 1956</strong>: <a href="https://en.wikipedia.org/wiki/Dartmouth_workshop">A workshop at Dartmouth College</a> marks the birth of AI as a field</li>
+<li>Organised by <a href="https://en.wikipedia.org/wiki/John_McCarthy_(computer_scientist)">John McCarthy</a>, <a href="https://en.wikipedia.org/wiki/Marvin_Minsky">Marvin Minsky</a>, <a href="https://en.wikipedia.org/wiki/Nathaniel_Rochester_(computer_scientist)">Nathaniel Rochester</a>, and <a href="https://en.wikipedia.org/wiki/Claude_Shannon">Claude Shannon</a></li>
+<li>First use of the term “<span class="alert">Artificial Intelligence</span>”</li>
+<li>The founding conjecture:</li>
+</ul>
+<blockquote>
+<p>“Every aspect of learning or any other feature of intelligence can in principle be so precisely described that <span class="alert">a machine can be made to simulate it</span>.”</p>
+</blockquote>
+<ul>
+<li>Attendees included <a href="https://en.wikipedia.org/wiki/Herbert_A._Simon">Herbert Simon</a> and <a href="https://en.wikipedia.org/wiki/Allen_Newell">Allen Newell</a></li>
+<li><span class="alert">Optimism was high</span>: Many believed human-level AI was just decades away</li>
+</ul>
+</div><div class="column" style="width:45%;">
+<div style="text-align: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><a href="#/" data-modal-type="image" data-modal-url="figures/dartmouth.webp"><img data-src="figures/dartmouth.webp" style="width:100.0%"></a></p>
+<figcaption>The Dartmouth workshop participants</figcaption>
+</figure>
+</div>
+<p>Source: <a href="https://spectrum.ieee.org/dartmouth-ai-workshop">IEEE Spectrum</a></p>
+</div>
+</div></div>
+</div>
+</section>
+<section id="symbolic-ai-and-expert-systems" class="slide level2">
+<h2>Symbolic AI and expert systems</h2>
+<h3 id="two-approaches-to-intelligence">Two approaches to intelligence</h3>
+<div style="margin-top: 30px; font-size: 24px;">
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Symbolic AI, 1956–1980s</strong></p>
+<ul>
+<li><span class="alert">Intelligence = manipulating symbols according to rules</span></li>
+<li>Program the <span class="alert">formal rules</span> behind intelligent behaviour into machines</li>
+<li>Early successes: <a href="https://en.wikipedia.org/wiki/ELIZA">ELIZA</a> (therapist, <a href="https://www.youtube.com/watch?v=RMK9AphfLco">video here</a>), <a href="https://en.wikipedia.org/wiki/SHRDLU">SHRDLU</a> (block world, <a href="https://www.youtube.com/watch?v=bo4RvYJYOzI">video here</a>)
+<ul>
+<li>Try ELIZA here: <a href="https://anthay.github.io/eliza.html" class="uri">https://anthay.github.io/eliza.html</a> (by the <a href="https://sites.google.com/view/elizaarchaeology/try-eliza">ELIZA Archaeology Project</a>)</li>
+</ul></li>
+<li><span class="alert">Bold but overconfident predictions</span>: Minsky and Simon expected human-level AI within a generation</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><strong>Expert systems, 1970s–1980s</strong></p>
+<ul>
+<li><p>Shift to <span class="alert">narrow domains</span> with expert knowledge</p></li>
+<li><p>Encode human expertise as <span class="alert">if-then rules</span></p></li>
+<li><p>Examples: <a href="https://en.wikipedia.org/wiki/Mycin">MYCIN</a> (bacterial infections, <a href="https://www.youtube.com/watch?v=bro6fkDxCUE">video here</a>), <a href="https://en.wikipedia.org/wiki/Dendral">DENDRAL</a> (chemical analysis, <a href="https://www.youtube.com/watch?v=lH3IgyGlpzw">video here</a>)</p></li>
+<li><p>Edward Feigenbaum: “<span class="alert">The problem-solving power… is primarily a consequence of the specialist’s knowledge employed</span>”</p></li>
+<li><p>Both approaches relied on <span class="alert">hand-crafted knowledge</span>, not learning from data</p></li>
+<li><p>Neither could <span class="alert">learn or improve automatically</span></p></li>
+</ul>
+</div></div>
+</div>
+</section>
+<section id="the-ai-winters" class="slide level2 scrollable">
+<h2>The AI winters</h2>
+<div style="margin-top: 30px; font-size: 24px;">
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>The first winter (1974–1980)</strong></p>
+<ul>
+<li><span class="alert">Combinatorial explosion</span>, <span class="alert">limited computing power</span>, <span class="alert">brittleness</span></li>
+<li>Funding collapsed, researchers left the field</li>
+<li><span class="alert">Lesson: AI is harder than pioneers thought</span></li>
+</ul>
+<p><strong>The second winter (1987–1993)</strong></p>
+<ul>
+<li><span class="alert">Expensive to maintain</span>, <span class="alert">knowledge bottleneck</span>, <span class="alert">couldn’t learn</span></li>
+<li>Desktop computers made specialised AI hardware obsolete</li>
+<li>Market collapsed by 1987</li>
+<li>“<span class="alert">AI</span>” became a dirty word</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><strong>The pattern</strong></p>
+<ol type="1">
+<li>Bold claims attract funding</li>
+<li>Initial successes create excitement</li>
+<li>Limitations become apparent at scale</li>
+<li>Funding dries up, researchers move on</li>
+<li>Quiet research continues, laying groundwork…</li>
+</ol>
+<p><br> Anything familiar about this pattern? 😅</p>
+<p>Maybe this time is different? 🤷🏻‍♂️</p>
+</div></div>
+</div>
+</section></section>
+<section>
+<section id="neural-networks-rise-fall-and-rise-again" class="title-slide slide level1 center" data-background-color="#1B3A6B">
+<h1>Neural networks: rise, fall, and rise again 🧠</h1>
+
+</section>
+<section id="early-neural-networks" class="slide level2">
+<h2>Early neural networks</h2>
+<h3 id="inspired-by-the-brain">Inspired by the brain</h3>
+<div style="margin-top: 30px; font-size: 21px;">
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li><strong>1943</strong>: <a href="https://en.wikipedia.org/wiki/Warren_McCulloch">McCulloch</a> and <a href="https://en.wikipedia.org/wiki/Walter_Pitts">Pitts</a> propose <a href="https://en.wikipedia.org/wiki/A_Logical_Calculus_of_the_Ideas_Immanent_in_Nervous_Activity">artificial neurons</a>
+<ul>
+<li>Binary units that mimic biological ones</li>
+</ul></li>
+<li><strong>1958</strong>: <a href="https://en.wikipedia.org/wiki/Frank_Rosenblatt">Frank Rosenblatt</a> builds the <a href="https://en.wikipedia.org/wiki/Perceptron">Perceptron</a>
+<ul>
+<li>The first network that could <span class="alert">learn</span>, adjusting its weights whenever it got something wrong</li>
+</ul></li>
+<li>The New York Times (1958) predicted it would <a href="https://www.nytimes.com/1958/07/08/archives/new-navy-device-learns-by-doing-psychologist-shows-embryo-of.html">“walk, talk, see, write, reproduce itself”</a></li>
+<li>Stop writing rules. Show the machine <span class="alert">examples</span></li>
+<li>Single-layer perceptrons <span class="alert">failed on simple problems</span>, and interest waned</li>
+<li><a href="https://en.wikipedia.org/wiki/Artificial_neural_network">Multi-layer networks</a> could solve them, but <span class="alert">nobody knew how to train them</span></li>
+<li>The comeback took <span class="alert">nearly 20 years</span></li>
+<li><span class="alert">But how does an artificial neuron work?</span></li>
+</ul>
+</div><div class="column" style="width:50%;">
+<ul>
+<li>Each <span class="alert">input</span> (<span class="math inline">\(x_i\)</span>) is a number, say a pixel’s brightness</li>
+<li>A <span class="alert">weight</span> (<span class="math inline">\(w_i\)</span>) sets how much that input matters</li>
+<li>Add the weighted inputs, plus a <span class="alert">bias</span> (<span class="math inline">\(b\)</span>) that decides when the neuron fires: <span class="math inline">\(z = \sum x_i \cdot w_i + b\)</span></li>
+<li>Pass <span class="math inline">\(z\)</span> through an <span class="alert">activation function</span>, a non-linear bend: <span class="math inline">\(y = f(z)\)</span></li>
+<li>Without that bend, the whole network is just a linear model</li>
+</ul>
+<div style="text-align: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><a href="#/" data-modal-type="image" data-modal-url="figures/perceptron.png"><img data-src="figures/perceptron.png" style="width:80.0%"></a></p>
+<figcaption>Perceptron diagram</figcaption>
+</figure>
+</div>
+<p>Source: <a href="https://pub.aimind.so/perceptron-101-the-building-blocks-of-a-neural-network-496f6b9b3826">AI Mind</a></p>
+</div>
+</div></div>
+</div>
+</section>
+<section id="the-backpropagation-breakthrough-1986" class="slide level2">
+<h2>The backpropagation breakthrough (1986)</h2>
+<h3 id="learning-to-learn">Learning to learn</h3>
+<div style="margin-top: 30px; font-size: 24px;">
+<div class="columns">
+<div class="column" style="width:55%;">
+<ul>
+<li><strong>1986</strong>: <a href="https://en.wikipedia.org/wiki/David_Rumelhart">Rumelhart</a>, <a href="https://en.wikipedia.org/wiki/Geoffrey_Hinton">Hinton</a>, and <a href="https://en.wikipedia.org/wiki/Ronald_J._Williams">Williams</a> popularise <a href="https://en.wikipedia.org/wiki/Backpropagation">backpropagation</a></li>
+<li>You can <span class="alert">train multi-layer networks</span> by propagating errors backwards through the layers</li>
+<li>It finds functions that are <span class="alert">highly non-linear</span> with very <span class="alert">precise adjustments to many weights</span></li>
+<li>Finally, neural networks could learn complex patterns!</li>
+<li>Renewed interest in <span class="alert">connectionism</span></li>
+<li>But challenges remained:
+<ul>
+<li>Limited computing power</li>
+<li>Not enough training data</li>
+</ul></li>
+<li>Neural networks showed promise but couldn’t yet compete with other methods</li>
+</ul>
+</div><div class="column" style="width:45%;">
+<div style="text-align: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><a href="#/" data-modal-type="image" data-modal-url="figures/backprop.png"><img data-src="figures/backprop.png" style="width:100.0%"></a></p>
+<figcaption>Backpropagation diagram</figcaption>
+</figure>
+</div>
+<p>Source: <a href="https://medium.com/@lmpo/backpropagation-the-backbone-of-neural-network-training-64946d6c3ae5">Medium</a></p>
+</div>
+</div></div>
+</div>
+</section></section>
+<section>
+<section id="the-data-revolution" class="title-slide slide level1 center" data-background-color="#1B3A6B">
+<h1>The data revolution 📊</h1>
+
+</section>
+<section id="the-unreasonable-effectiveness-of-data" class="slide level2">
+<h2>The unreasonable effectiveness of data</h2>
+<h3 id="a-paradigm-shift">A paradigm shift</h3>
+<div style="margin-top: 30px; font-size: 20px;">
+<div class="columns">
+<div class="column" style="width:55%;">
+<ul>
+<li><strong>2009</strong>: Google researchers (<a href="https://en.wikipedia.org/wiki/Alon_Halevy">Halevy</a>, <a href="https://en.wikipedia.org/wiki/Peter_Norvig">Norvig</a>, <a href="https://research.google/people/author1092/?&amp;type=google">Pereira</a>) publish a landmark paper called “<a href="https://static.googleusercontent.com/media/research.google.com/en//pubs/archive/35179.pdf">The Unreasonable Effectiveness of Data</a>”</li>
+<li><span class="alert">Simple models with lots of data beat complex models with less data</span></li>
+<li>Traditional AI: Design clever algorithms</li>
+<li>New AI: <span class="alert">Feed massive amounts of data</span> to simple learning algorithms</li>
+</ul>
+<blockquote>
+<p>“Now go out and gather some data, and see what it can do.”</p>
+</blockquote>
+<ul>
+<li><span class="alert">Data, computing power, and better algorithms</span> came together at the same time</li>
+<li>Any one alone wasn’t enough, but all three together changed the field</li>
+</ul>
+</div><div class="column" style="width:45%;">
+<div style="text-align: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><a href="#/" data-modal-type="image" data-modal-url="figures/data-effectiveness.png"><img data-src="figures/data-effectiveness.png" style="width:90.0%"></a></p>
+<figcaption>More data beats better algorithms</figcaption>
+</figure>
+</div>
+<p>Source: <a href="https://static.googleusercontent.com/media/research.google.com/en//pubs/archive/35179.pdf">Google Research</a></p>
+</div>
+</div></div>
+</div>
+</section>
+<section id="the-imagenet-moment-2012" class="slide level2">
+<h2>The ImageNet moment (2012)</h2>
+<h3 id="deep-learning-arrives">Deep learning arrives</h3>
+<div style="margin-top: 30px; font-size: 23px;">
+<div class="columns">
+<div class="column" style="width:55%;">
+<ul>
+<li><a href="https://www.image-net.org/">ImageNet</a>: A dataset of 14 million labelled images</li>
+<li>Annual competition: Classify images into 1,000 categories</li>
+<li><strong>2012</strong>: <a href="https://spectrum.ieee.org/alexnet-source-code">AlexNet</a> (<a href="https://proceedings.neurips.cc/paper_files/paper/2012/file/c399862d3b9d6b76c8436e924a68c45b-Paper.pdf">Krizhevsky, Sutskever, Hinton</a>) wins by a <span class="alert">huge margin</span>
+<ul>
+<li>Error rate: 15.3% (next best: 26.2%)</li>
+<li>Used <span class="alert">deep neural networks</span></li>
+<li>Trained on <a href="https://en.wikipedia.org/wiki/Graphics_processing_unit">Graphics Processing Units (GPUs),</a> which are better than <a href="https://en.wikipedia.org/wiki/Central_processing_unit">Central Processing Units</a> for parallel processing</li>
+</ul></li>
+<li>This was a great moment for deep learning!</li>
+<li>Within years, deep learning dominated computer vision</li>
+<li>Proved that <span class="alert">neural networks + big data + GPUs = breakthrough</span></li>
+</ul>
+</div><div class="column" style="width:45%;">
+<div style="text-align: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><a href="#/" data-modal-type="image" data-modal-url="figures/alexnet.png"><img data-src="figures/alexnet.png" style="width:95.0%"></a></p>
+<figcaption>Ilya Sutskever, Alex Krizhevsky, and Geoffrey Hinton</figcaption>
+</figure>
+</div>
+<p>Source: <a href="https://svelezg.medium.com/krizhevsky-sutskever-hinton-and-imagenet-d1c7f2fba113">Medium</a></p>
+</div>
+</div></div>
+</div>
+</section></section>
+<section>
+<section id="transformers-thats-all-you-need" class="title-slide slide level1 center" data-background-color="#1B3A6B">
+<h1>Transformers: that’s all you need ⚡</h1>
+
+</section>
+<section id="attention-is-all-you-need-2017" class="slide level2">
+<h2>Attention is all you need (2017)</h2>
+<h3 id="the-transformer-revolution">The transformer revolution</h3>
+<div style="margin-top: 30px; font-size: 24px;">
+<div class="columns">
+<div class="column" style="width:55%;">
+<ul>
+<li><strong>2017</strong>: Google researchers publish “<a href="https://arxiv.org/abs/1706.03762">Attention Is All You Need</a>” (Vaswani et al.)</li>
+<li><span class="alert">Self-attention mechanism</span></li>
+<li>Instead of processing sequentially:
+<ul>
+<li>Each word can “look at” <span class="alert">every other word</span> directly</li>
+<li>Computes relevance scores between all pairs</li>
+<li><span class="alert">Parallel processing</span>: Much faster to train</li>
+</ul></li>
+<li>This architecture powers <a href="https://cdn.openai.com/research-covers/language-unsupervised/language_understanding_paper.pdf">GPT (Generative Pre-trained Transformer)</a>, <a href="https://arxiv.org/abs/1810.04805">BERT</a>, and pretty much all modern AI</li>
+<li>Beyond text: Now used in images, audio, video, proteins, games…</li>
+</ul>
+</div><div class="column" style="width:45%;">
+<div style="text-align: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><a href="#/" data-modal-type="image" data-modal-url="figures/transformer-paper.png"><img data-src="figures/transformer-paper.png" style="width:100.0%"></a></p>
+<figcaption>The paper that started it all</figcaption>
+</figure>
+</div>
+</div>
+</div></div>
+</div>
+</section>
+<section id="how-transformers-work-simplified" class="slide level2 scrollable">
+<h2>How transformers work (simplified!)</h2>
+<h3 id="the-big-picture">The big picture</h3>
+<div style="margin-top: 30px; font-size: 26px;">
+<div class="columns">
+<div class="column" style="width:55%;">
+<div style="text-align: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><a href="#/" data-modal-type="image" data-modal-url="figures/transformer.gif"><img data-src="figures/transformer.gif" style="width:100.0%"></a></p>
+<figcaption>Transformer architecture overview</figcaption>
+</figure>
+</div>
+<p>Source: <a href="https://compute.hivenet.com/post/simplifying-transformer-architecture-a-beginners-guide-to-understanding-ai-magic">Hivenet</a></p>
+</div>
+</div><div class="column" style="width:45%;">
+<div style="margin-top: 22px;">
+<p>Five steps:</p>
+<ol type="1">
+<li><strong>Tokenise</strong>: cut the text into pieces</li>
+<li><strong>Embed</strong>: give each piece a list of numbers</li>
+<li><strong>Attend</strong>: let the pieces look at each other</li>
+<li><strong>Stack</strong>: repeat step 3 dozens of times</li>
+<li><strong>Predict</strong>: guess the next piece</li>
+</ol>
+</div>
+</div></div>
+</div>
+</section>
+<section id="step-1-tokenisation" class="slide level2">
+<h2>Step 1: Tokenisation</h2>
+<h3 id="breaking-text-into-pieces">Breaking text into pieces</h3>
+<div style="margin-top: 30px; font-size: 26px;">
+<div class="columns">
+<div class="column" style="width:55%;">
+<ul>
+<li>Text must be converted to numbers</li>
+<li><strong>Tokenisation</strong>: Split text into <span class="alert">tokens</span>
+<ul>
+<li>Usually words, letters, or word pieces</li>
+<li>“unhappiness” → “un”, “happiness”</li>
+<li>GPT-2 has a vocabulary of 50,257 tokens</li>
+</ul></li>
+<li>Each token gets a unique ID number</li>
+<li>Think of it as creating a <span class="alert">dictionary</span> where each word/piece has a code</li>
+</ul>
+</div><div class="column" style="width:45%;">
+<div style="text-align: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><a href="#/" data-modal-type="image" data-modal-url="figures/tokenisation.webp"><img data-src="figures/tokenisation.webp" style="width:100.0%"></a></p>
+<figcaption>Tokenisation diagram</figcaption>
+</figure>
+</div>
+<p>Source: <a href="https://shanmugasundaram.in/llm-tokenizers-the-hidden-engine-behind-ai-language-models-00f1135d4b3c">Medium</a></p>
+</div>
+</div></div>
+</div>
+</section>
+<section id="step-2-embeddings" class="slide level2">
+<h2>Step 2: Embeddings</h2>
+<h3 id="words-as-points-in-space">Words as points in space</h3>
+<div style="margin-top: 30px; font-size: 24px;">
+<div class="columns">
+<div class="column" style="width:55%;">
+<ul>
+<li>Each token becomes a <span class="alert">vector</span> (a list of numbers)</li>
+<li>GPT-2: Each token → 768 numbers (nothing special about 768; models use different sizes)</li>
+<li>These vectors capture <span class="alert">meaning</span>:
+<ul>
+<li>Similar words are close together</li>
+<li>“king” - “man” + “woman” ≈ “queen”</li>
+</ul></li>
+<li>Also add <span class="alert">position information</span>:
+<ul>
+<li>Word order matters in language!</li>
+<li>“Dog bites man” ≠ “Man bites dog”</li>
+</ul></li>
+<li>Embeddings start as <span class="alert">random numbers</span>
+<ul>
+<li>Every bad guess nudges them, and words used alike drift together</li>
+</ul></li>
+<li>Nobody arranges them. Meaning is a <span class="alert">side effect of predicting well</span></li>
+</ul>
+</div><div class="column" style="width:45%;">
+<div style="text-align: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><a href="#/" data-modal-type="image" data-modal-url="figures/embeddings.png"><img data-src="figures/embeddings.png" style="width:100.0%"></a></p>
+<figcaption>Words plotted in 3-dimensional space. Embeddings can have hundreds or thousands of dimensions, too many for humans to visualise</figcaption>
+</figure>
+</div>
+<p>Source: <a href="https://cloud.google.com/blog/topics/developers-practitioners/meet-ais-multitool-vector-embeddings">Google Cloud</a></p>
+</div>
+</div></div>
+</div>
+</section>
+<section id="step-3-self-attention" class="slide level2">
+<h2>Step 3: Self-attention</h2>
+<h3 id="the-main-innovation-of-the-paper">The main innovation of the paper</h3>
+<div style="margin-top: 30px; font-size: 24px;">
+<div class="columns">
+<div class="column" style="width:55%;">
+<ul>
+<li>The model is always guessing the next word:
+<ul>
+<li>“The animal didn’t cross the street because <span class="alert">it</span> was too ___”</li>
+</ul></li>
+<li>“tired” if “it” means the animal, “wide” if it means the street</li>
+<li>So the guess depends on <span class="alert">what “it” refers to</span></li>
+<li>But after Step 2 each word sits alone, and “it” is the <span class="alert">same 768 numbers</span> in every sentence</li>
+<li>Attention lets “it” reach back to <span class="alert">“animal” and “street”</span>, weigh both, and “tired” wins</li>
+<li><span class="alert">Attention is the only step where words see each other</span></li>
+</ul>
+<div style="font-size: 17px; margin-top: 15px;">
+<p>You may meet these called <span class="alert">Query</span> (what a word is looking for), <span class="alert">Key</span> (what a word advertises about itself) and <span class="alert">Value</span> (what it hands over when matched). How well a query matches a key is the <span class="alert">attention score</span></p>
+</div>
+</div><div class="column" style="width:45%;">
+<div style="text-align: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><a href="#/" data-modal-type="image" data-modal-url="figures/attention.webp"><img data-src="figures/attention.webp" style="width:70.0%"></a></p>
+<figcaption>Self-attention: Words attend to each other</figcaption>
+</figure>
+</div>
+<p>Source: <a href="https://jalammar.github.io/illustrated-transformer/">Jay Alammar</a></p>
+</div>
+</div></div>
+</div>
+</section>
+<section id="multi-head-attention" class="slide level2">
+<h2>Multi-head attention</h2>
+<h3 id="the-cat-sat-on-the-mat">“The cat sat on the mat”</h3>
+<div style="margin-top: 30px; font-size: 23px;">
+<div class="columns">
+<div class="column" style="width:55%;">
+<div style="text-align: center;">
+<p><a href="#/" data-modal-type="image" data-modal-url="figures/cat.png"><img data-src="figures/cat.png" style="width:80.0%"></a></p>
+<p>Source: <a href="https://twiecki.io/blog/2024/01/04/">Thomas Wiecki</a></p>
+</div>
+</div><div class="column" style="width:45%;">
+<div style="margin-top: 20px;">
+<ul>
+<li>Same idea, new sentence: “The cat sat on the ___”</li>
+<li>One search is not enough. The guess needs several things at once:
+<ul>
+<li>Who is doing it: “cat”</li>
+<li>What they are doing: “sat”</li>
+<li>What kind of word follows “on”: a place</li>
+</ul></li>
+<li><span class="alert">Multi-head attention</span>: 12 searches side by side, each asking its own question (GPT-2 small)</li>
+<li>Nobody assigns the questions. The heads specialise during training</li>
+<li><span class="alert">Division of labour</span> again, and this time it organises itself</li>
+</ul>
+</div>
+</div></div>
+</div>
+</section>
+<section id="step-4-feed-forward-and-stacking" class="slide level2">
+<h2>Step 4: Feed-forward and stacking</h2>
+<h3 id="where-the-model-keeps-what-it-knows">Where the model keeps what it knows</h3>
+<div style="margin-top: 30px; font-size: 22px;">
+<div class="columns">
+<div class="column" style="width:55%;">
+<ul>
+<li>“The cat sat on the ___”</li>
+<li>Attention brings “cat” and “sat” to the guessing position</li>
+<li>But nothing in the sentence says <span class="alert">what a cat sits on</span>, so it must come from memory</li>
+<li>That memory is the <a href="https://en.wikipedia.org/wiki/Feedforward_neural_network">feed-forward network</a> (MLP)</li>
+<li>Attention <span class="alert">moves</span> what is in the sentence. The network <span class="alert">adds</span> what is not</li>
+<li>The two make one <span class="alert">block</span>: 12 in GPT-2, 96 in GPT-3, far more since</li>
+<li>Each block <span class="alert">adds</span> to the word rather than replacing it, so nothing is lost on the way up</li>
+<li>Each round asks a better question than the last:
+<ul>
+<li>Early blocks: what kind of word is this?</li>
+<li>Late blocks: what is this text about, and what comes next?</li>
+</ul></li>
+</ul>
+</div><div class="column" style="width:45%;">
+<div style="text-align: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><a href="#/" data-modal-type="image" data-modal-url="figures/transformer-blocks-02.png"><img data-src="figures/transformer-blocks-02.png" style="width:35.0%"></a></p>
+<figcaption>One transformer block</figcaption>
+</figure>
+</div>
+<p>Source: <a href="https://www.researchgate.net/figure/Overall-Structure-of-Transformer-Encoder-Block_fig3_365101390">Mohamed Traore</a></p>
+</div>
+<div style="font-size: 18px; margin-top: 15px;">
+<p>Also called a <a href="https://en.wikipedia.org/wiki/Multilayer_perceptron">multi-layer perceptron (MLP):</a> Rosenblatt’s perceptron from 1958, stacked in layers and trained by backpropagation. Two thirds of a model’s weights live here, not in attention</p>
+</div>
+</div></div>
+</div>
+</section>
+<section id="step-5-predicting-the-next-token" class="slide level2">
+<h2>Step 5: Predicting the next token</h2>
+<h3 id="the-final-output">The final output</h3>
+<div style="margin-top: 30px; font-size: 24px;">
+<div class="columns">
+<div class="column" style="width:55%;">
+<ul>
+<li>After all the blocks, the model asks: “<span class="alert">what comes next?</span>”</li>
+<li>It gives <span class="alert">every token in its vocabulary</span> a score</li>
+<li>Most score roughly zero. A handful take almost everything</li>
+<li><strong>Temperature</strong> controls how the winner is picked:
+<ul>
+<li>Low (0.2): takes the safe option</li>
+<li>High (1.0+): takes more risks</li>
+</ul></li>
+<li>The chosen token joins the sentence, and the whole process <span class="alert">repeats</span></li>
+</ul>
+</div><div class="column" style="width:45%;">
+<div style="text-align: center; margin-top: -60px;">
+<p><a href="#/" data-modal-type="image" data-modal-url="figures/next-token-probs.png"><img data-src="figures/next-token-probs.png" style="width:60.0%"></a></p>
+<p>“The cat sat on the ___”</p>
+<p>Source: <a href="https://poloclub.github.io/transformer-explainer/">Transformer Explainer</a></p>
+</div>
+</div></div>
+</div>
+</section>
+<section id="step-5-predicting-the-next-token-1" class="slide level2">
+<h2>Step 5: Predicting the next token</h2>
+<h3 id="the-final-output-1">The final output</h3>
+<div style="text-align: center; margin-top: 20px;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><a href="#/" data-modal-type="image" data-modal-url="figures/next-token.png"><img data-src="figures/next-token.png" style="width:90.0%"></a></p>
+<figcaption>Probability distribution over vocabulary</figcaption>
+</figure>
+</div>
+<p>Source: <a href="https://poloclub.github.io/transformer-explainer/">Transformer Explainer</a></p>
+</div>
+</section></section>
+<section>
+<section id="from-gpt-to-chatgpt" class="title-slide slide level1 center" data-background-color="#1B3A6B">
+<h1>From GPT to ChatGPT 🚀</h1>
+
+</section>
+<section id="the-rise-of-large-language-models" class="slide level2">
+<h2>The rise of large language models</h2>
+<h3 id="scaling-up">Scaling up</h3>
+<div style="margin-top: 30px; font-size: 24px;">
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Model</th>
+<th>Year</th>
+<th>Parameters</th>
+<th>Notable Achievement</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>GPT-1</td>
+<td>2018</td>
+<td>117M</td>
+<td>Showed pre-training works</td>
+</tr>
+<tr class="even">
+<td>BERT</td>
+<td>2018</td>
+<td>340M</td>
+<td>Revolutionised NLP benchmarks</td>
+</tr>
+<tr class="odd">
+<td>GPT-2</td>
+<td>2019</td>
+<td>1.5B</td>
+<td>“Too dangerous to release”</td>
+</tr>
+<tr class="even">
+<td>GPT-3</td>
+<td>2020</td>
+<td>175B</td>
+<td>Few-shot learning emergence</td>
+</tr>
+<tr class="odd">
+<td>GPT-4</td>
+<td>2023</td>
+<td>~1.7T?</td>
+<td>Multimodal, near-human reasoning</td>
+</tr>
+<tr class="even">
+<td>GPT-5</td>
+<td>2025</td>
+<td>Undisclosed</td>
+<td>More efficient, even better reasoning</td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
+<ul>
+<li><span class="alert">Bigger models + more data = emergent abilities</span></li>
+<li>Capabilities appear at scale that weren’t explicitly trained</li>
+<li>This is the “<span class="alert">scaling hypothesis</span>” (although some people, like <a href="https://en.wikipedia.org/wiki/Ilya_Sutskever">Ilya Sutskever</a>, argue that <a href="https://www.youtube.com/watch?v=aR20FWCCjAs">scaling has reached its limits</a>)</li>
+</ul>
+</div>
+</section>
+<section id="what-makes-chatgpt-different" class="slide level2 scrollable">
+<h2>What makes ChatGPT different?</h2>
+<h3 id="beyond-just-scaling">Beyond just scaling</h3>
+<div style="margin-top: 30px; font-size: 24px;">
+<div class="columns">
+<div class="column" style="width:55%;">
+<ul>
+<li>ChatGPT (Nov 2022) wasn’t just a bigger model</li>
+<li>Three key innovations:
+<ol type="1">
+<li><a href="https://www.ibm.com/think/topics/instruction-tuning">Instruction tuning</a>: Trained to follow instructions</li>
+<li><a href="https://en.wikipedia.org/wiki/Reinforcement_learning_from_human_feedback">RLHF (Reinforcement Learning from Human Feedback)</a>: Humans rate responses; model learns what’s helpful</li>
+<li><a href="https://en.wikipedia.org/wiki/AI_safety">Safety training</a>: Reduce harmful outputs</li>
+</ol></li>
+<li>Result: A model that’s <span class="alert">actually useful</span> for conversation</li>
+<li><span class="alert">100 million users in 2 months</span>, the fastest-growing consumer app at the time</li>
+</ul>
+</div><div class="column" style="width:45%;">
+<div style="text-align: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><a href="#/" data-modal-type="image" data-modal-url="figures/chatgpt-growth.webp"><img data-src="figures/chatgpt-growth.webp" style="width:80.0%"></a></p>
+<figcaption>ChatGPT’s explosive growth</figcaption>
+</figure>
+</div>
+<p>Source: <a href="https://www.voronoiapp.com/technology/OpenAIs-ChatGPT-Hits-Record-5846-Billion-Monthly-Website-Visits-in-August-2025-6532">Voronoi</a></p>
+</div>
+</div></div>
+</div>
+</section>
+<section id="multimodal-ai" class="slide level2">
+<h2>Multimodal AI</h2>
+<h3 id="beyond-text">Beyond text</h3>
+<div style="margin-top: 30px; font-size: 24px;">
+<div class="columns">
+<div class="column" style="width:55%;">
+<ul>
+<li>Modern AI isn’t just about text anymore</li>
+<li><span class="alert">Multimodal models</span> can process:
+<ul>
+<li>Text ↔︎ Images (DALL-E, Midjourney)</li>
+<li>Text ↔︎ Audio (Whisper, ElevenLabs)</li>
+<li>Text ↔︎ Video (Sora, Runway)</li>
+<li>Text ↔︎ Code (Codex, Copilot)</li>
+</ul></li>
+<li><span class="alert">Same transformer architecture</span>, different inputs/outputs</li>
+<li><a href="https://arxiv.org/abs/2010.11929">Vision Transformers (ViT):</a> Treat images as sequences of patches</li>
+<li>The boundaries between modalities are <span class="alert">blurring</span></li>
+</ul>
+</div><div class="column" style="width:45%;">
+<div style="text-align: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><a href="#/" data-modal-type="image" data-modal-url="figures/multimodal.png"><img data-src="figures/multimodal.png" style="width:100.0%"></a></p>
+<figcaption>Multimodal AI: Understanding multiple types of data</figcaption>
+</figure>
+</div>
+<p>Source: <a href="https://www.linkedin.com/pulse/multimodal-generative-ai-tarun-sharma-zzf9c">Tarun Sharma</a></p>
+</div>
+</div></div>
+</div>
+</section></section>
+<section>
+<section id="takeaways" class="title-slide slide level1 center" data-background-color="#1B3A6B">
+<h1>Takeaways 📚</h1>
+
+</section>
+<section id="what-changed-what-stayed-the-same" class="slide level2">
+<h2>What changed? What stayed the same?</h2>
+<h3 id="continuity-and-transformation">Continuity and transformation</h3>
+<div style="margin-top: 30px; font-size: 26px;">
+<p><strong>What changed:</strong></p>
+<ul>
+<li>We stopped writing rules by hand and started <span class="alert">letting machines learn from data</span></li>
+<li>AI went from doing one narrow thing to doing <span class="alert">many things with a single architecture</span></li>
+<li>The bottleneck shifted from clever algorithms to <span class="alert">data and computing power</span></li>
+</ul>
+<p><strong>What stayed the same:</strong></p>
+<ul>
+<li>We still ask the same question Turing asked in 1950: <span class="alert">can machines think?</span></li>
+<li>AI systems are still brittle, biased, and lacking common sense</li>
+<li>We still go through hype cycles. Are we in one now? 🤷🏻‍♂️</li>
+</ul>
+</div>
+</section>
+<section id="interactive-resource" class="slide level2">
+<h2>Interactive resource</h2>
+<h3 id="explore-transformers-yourself">Explore transformers yourself!</h3>
+<div style="margin-top: 30px; font-size: 26px;">
+<div class="columns">
+<div class="column" style="width:55%;">
+<ul>
+<li>Georgia Tech’s <a href="https://poloclub.github.io/transformer-explainer/">Transformer Explainer</a></li>
+<li>Interactive visualisation of how transformers work</li>
+<li>See attention patterns in real time</li>
+<li>Experiment with temperature and sampling</li>
+<li>Runs GPT-2 directly in your browser!</li>
+<li>Great for building intuition</li>
+</ul>
+<p><a href="https://poloclub.github.io/transformer-explainer/">https://poloclub.github.io/transformer-explainer</a></p>
+</div><div class="column" style="width:45%;">
+<div style="text-align: center;">
+<p><a href="#/" data-modal-type="image" data-modal-url="figures/transformer-explainer.png"><img data-src="figures/transformer-explainer.png" style="width:95.0%"></a></p>
+</div>
+</div></div>
+</div>
+</section></section>
+<section id="and-thats-all-for-today" class="title-slide slide level1 center" data-background-color="#1B3A6B">
+<h1>… and that’s all for today! 🎉</h1>
+
+</section>
+
+<section id="see-you-all-soon" class="title-slide slide level1 center" data-background-color="#1B3A6B">
+<h1>See you all soon! 😊</h1>
+
+
+</section>
+    </div>
+  <div class="quarto-auto-generated-content" style="display: none;">
+<div class="footer footer-default">
+<p><a href="https://danilofreire.github.io/datasci101/lectures/lecture-02/02-history.html">Lecture 02</a></p>
+</div>
+</div></div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="../../site_libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="../../site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="../../site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="../../site_libs/revealjs/plugin/multimodal/multimodal.js"></script>
+  <script src="../../site_libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="../../site_libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="../../site_libs/revealjs/plugin/search/search.js"></script>
+  <script src="../../site_libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="../../site_libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': true,
+'previewLinksAuto': false,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'jumpToSlide': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: false,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: 'c/t',
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'slide',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'none',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1050,
+
+        height: 700,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.1,
+
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, Multimodal, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
+    <script id="quarto-html-after-body" type="application/javascript">
+      window.document.addEventListener("DOMContentLoaded", function (event) {
+        const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+        tabsets.forEach(function(tabset) {
+          const tabby = new Tabby('#' + tabset.id);
+        });
+        const isCodeAnnotation = (el) => {
+          for (const clz of el.classList) {
+            if (clz.startsWith('code-annotation-')) {                     
+              return true;
+            }
+          }
+          return false;
+        }
+        const onCopySuccess = function(e) {
+          // button target
+          const button = e.trigger;
+          // don't keep focus
+          button.blur();
+          // flash "checked"
+          button.classList.add('code-copy-button-checked');
+          var currentTitle = button.getAttribute("title");
+          button.setAttribute("title", "Copied!");
+          let tooltip;
+          if (window.bootstrap) {
+            button.setAttribute("data-bs-toggle", "tooltip");
+            button.setAttribute("data-bs-placement", "left");
+            button.setAttribute("data-bs-title", "Copied!");
+            tooltip = new bootstrap.Tooltip(button, 
+              { trigger: "manual", 
+                customClass: "code-copy-button-tooltip",
+                offset: [0, -8]});
+            tooltip.show();    
+          }
+          setTimeout(function() {
+            if (tooltip) {
+              tooltip.hide();
+              button.removeAttribute("data-bs-title");
+              button.removeAttribute("data-bs-toggle");
+              button.removeAttribute("data-bs-placement");
+            }
+            button.setAttribute("title", currentTitle);
+            button.classList.remove('code-copy-button-checked');
+          }, 1000);
+          // clear code selection
+          e.clearSelection();
+        }
+        const getTextToCopy = function(trigger) {
+          const outerScaffold = trigger.parentElement.cloneNode(true);
+          const codeEl = outerScaffold.querySelector('code');
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+        }
+        const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+          text: getTextToCopy
+        });
+        clipboard.on('success', onCopySuccess);
+        if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+          const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+            text: getTextToCopy,
+            container: window.document.getElementById('quarto-embedded-source-code-modal')
+          });
+          clipboardModal.on('success', onCopySuccess);
+        }
+          var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+          var mailtoRegex = new RegExp(/^mailto:/);
+            var filterRegex = new RegExp('/' + window.location.host + '/');
+          var isInternal = (href) => {
+              return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+          }
+          // Inspect non-navigation links and adorn them if external
+         var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+          for (var i=0; i<links.length; i++) {
+            const link = links[i];
+            if (!isInternal(link.href)) {
+              // undo the damage that might have been done by quarto-nav.js in the case of
+              // links that we want to consider external
+              if (link.dataset.originalHref !== undefined) {
+                link.href = link.dataset.originalHref;
+              }
+            }
+          }
+        function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+          const config = {
+            allowHTML: true,
+            maxWidth: 500,
+            delay: 100,
+            arrow: false,
+            appendTo: function(el) {
+                return el.closest('section.slide') || el.parentElement;
+            },
+            interactive: true,
+            interactiveBorder: 10,
+            theme: 'light-border',
+            placement: 'bottom-start',
+          };
+          if (contentFn) {
+            config.content = contentFn;
+          }
+          if (onTriggerFn) {
+            config.onTrigger = onTriggerFn;
+          }
+          if (onUntriggerFn) {
+            config.onUntrigger = onUntriggerFn;
+          }
+            config['offset'] = [0,0];
+            config['maxWidth'] = 700;
+          window.tippy(el, config); 
+        }
+        const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+        for (var i=0; i<noterefs.length; i++) {
+          const ref = noterefs[i];
+          tippyHover(ref, function() {
+            // use id or data attribute instead here
+            let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+            try { href = new URL(href).hash; } catch {}
+            const id = href.replace(/^#\/?/, "");
+            const note = window.document.getElementById(id);
+            if (note) {
+              return note.innerHTML;
+            } else {
+              return "";
+            }
+          });
+        }
+        const findCites = (el) => {
+          const parentEl = el.parentElement;
+          if (parentEl) {
+            const cites = parentEl.dataset.cites;
+            if (cites) {
+              return {
+                el,
+                cites: cites.split(' ')
+              };
+            } else {
+              return findCites(el.parentElement)
+            }
+          } else {
+            return undefined;
+          }
+        };
+        var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+        for (var i=0; i<bibliorefs.length; i++) {
+          const ref = bibliorefs[i];
+          const citeInfo = findCites(ref);
+          if (citeInfo) {
+            tippyHover(citeInfo.el, function() {
+              var popup = window.document.createElement('div');
+              citeInfo.cites.forEach(function(cite) {
+                var citeDiv = window.document.createElement('div');
+                citeDiv.classList.add('hanging-indent');
+                citeDiv.classList.add('csl-entry');
+                var biblioDiv = window.document.getElementById('ref-' + cite);
+                if (biblioDiv) {
+                  citeDiv.innerHTML = biblioDiv.innerHTML;
+                }
+                popup.appendChild(citeDiv);
+              });
+              return popup.innerHTML;
+            });
+          }
+        }
+      });
+      </script>
+    
+
+</body></html>

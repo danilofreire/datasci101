@@ -1,0 +1,797 @@
+---
+title: "DATASCI 101: Introduction to AI Applications"
+subtitle: "Lecture 02: A Brief History of AI and the Recent Shift"
+author:
+  - name: Danilo Freire
+    orcid: 0000-0002-4712-6810
+    email: danilo.freire@emory.edu
+    affiliations: "Department of Data and Decision Sciences <br> Emory University"
+format:
+  clean-revealjs:
+    self-contained: false
+    footer: "[Lecture 02](https://danilofreire.github.io/datasci101/lectures/lecture-02/02-history.html)"
+    transition: slide
+    transition-speed: default
+    scrollable: true
+revealjs-plugins:
+  - multimodal
+engine: knitr
+editor:
+  render-on-save: true
+---
+
+```{r setup, include=FALSE}
+# figures formatting setup
+options(htmltools.dir.version = FALSE)
+library(knitr)
+opts_chunk$set(
+  prompt = T,
+  fig.align="center", #fig.width=6, fig.height=4.5, 
+  # out.width="748px", #out.length="520.75px",
+  dpi=300, #fig.path='Figs/',
+  cache=T, #echo=F, warning=F, message=F
+  engine.opts = list(bash = "-l")
+  )
+
+## Next hook based on this SO answer: https://stackoverflow.com/a/39025054
+knit_hooks$set(
+  prompt = function(before, options, envir) {
+	options(
+	  prompt = if (options$engine %in% c('sh','bash', 'zsh')) '$ ' else 'R> ',
+	  continue = if (options$engine %in% c('sh','bash', 'zsh')) '$ ' else '+ '
+	  )
+})
+
+# Set CRAN mirror
+options(repos = c(CRAN = "https://cran.rstudio.com/"))
+
+if (!require("fontawesome", character.only = TRUE)) {
+  install.packages("fontawesome", dependencies = TRUE)
+  library(fontawesome, character.only = TRUE)
+}
+```
+
+# Welcome back! 🤓 {background-color="#1B3A6B"}
+
+## Short recap of last class
+
+:::{style="margin-top: 30px; font-size: 29px;"}
+- Course website: <https://danilofreire.github.io/datasci101>
+- Course GitHub repo: <https://github.com/danilofreire/datasci101>
+- Syllabus, schedule, and assignments will be posted on both sites
+- We will use Canvas for announcements, submissions, and grades
+- Instructor: Danilo Freire (<danilo.freire@emory.edu>)
+- Grading:
+  - 10 problem sets (50%)
+  - 5 in-class quizzes (30%)
+  - Final project (20%)
+:::
+
+## Lecture overview
+### Today's agenda
+
+:::{style="margin-top: 20px; font-size: 32px;"}
+
+:::{.columns}
+:::{.column width=50%}
+- The pre-history of AI
+- Birth of AI: Dartmouth 1956
+- Symbolic AI and expert systems
+- AI winters and why they happened
+- The neural network comeback
+- The data revolution
+- Transformers explained simply
+- From GPT to ChatGPT
+:::
+
+:::{.column width=50%}
+:::{style="text-align: center; margin-top: -30px; font-size: 22px;"}
+[![Click to enlarge (all images can be enlarged by clicking on them)](figures/ai-timeline.jpg){width="85%"}](#){data-modal-type="image" data-modal-url="figures/ai-timeline.jpg"}
+
+Source: [University of Queensland's Brain Institute](https://qbi.uq.edu.au/brain/intelligent-machines/history-artificial-intelligence)
+:::
+:::
+:::
+:::
+
+# The pre-history of AI 🏛️  {background-color="#1B3A6B"}
+
+## The pre-history of AI
+### Ancient myths of artificial life
+
+:::{style="margin-top: 30px; font-size: 26px;"}
+:::{.columns}
+:::{.column width=55%}
+- Humans have [long dreamed of creating artificial life]{.alert}
+- Ancient myths featured mechanical beings:
+  - [Talos](https://en.wikipedia.org/wiki/Talos) (Greek): Bronze giant protecting Crete
+  - [Golem](https://en.wikipedia.org/wiki/Golem) (Jewish folklore): Clay figure brought to life
+  - [Frankenstein](https://en.wikipedia.org/wiki/Frankenstein) (1818): Mary Shelley's novel about creating life
+- We've always been fascinated with [replicating intelligence]{.alert}
+- [Can machines truly think, or only simulate thinking?]{.alert}
+:::
+
+:::{.column width=45%}
+:::{style="text-align: center;"}
+[![Talos](figures/talos.jpg){width="80%"}](#){data-modal-type="image" data-modal-url="figures/talos.jpg"}
+
+Source: [Wikipedia - Talos](https://en.wikipedia.org/wiki/Talos)
+:::
+:::
+:::
+:::
+
+## Early mechanical calculators
+### From Pascal to Babbage
+
+:::{style="margin-top: 30px; font-size: 22px;"}
+:::{.columns}
+:::{.column width=50%}
+- [Can intelligence be reduced to rules and symbols, or does it emerge from interconnected units?]{.alert}
+- **1642**: [Blaise Pascal](https://en.wikipedia.org/wiki/Blaise_Pascal) builds the [Pascaline](https://en.wikipedia.org/wiki/Pascaline), a mechanical calculator for addition and subtraction
+- **1673**: [Gottfried Leibniz](https://en.wikipedia.org/wiki/Gottfried_Wilhelm_Leibniz) creates a [machine that can multiply and divide](https://en.wikipedia.org/wiki/Leibniz_calculator)
+- **1837**: [Charles Babbage](https://en.wikipedia.org/wiki/Charles_Babbage) designs the [Analytical Engine](https://en.wikipedia.org/wiki/Analytical_Engine), a programmable, general-purpose computer (never completed)
+- [Ada Lovelace](https://en.wikipedia.org/wiki/Ada_Lovelace) writes what many consider the [first computer program](https://en.wikipedia.org/wiki/Ada_Lovelace) for Babbage's machine
+- [Calculation could be separated from human minds]{.alert}
+:::
+
+:::{.column width=50%}
+:::{style="text-align: center;"}
+[![Babbage's Analytical Engine (replica)](figures/babbage.jpg){width="90%"}](#){data-modal-type="image" data-modal-url="figures/babbage.jpg"}
+
+Source: [Wikipedia - Analytical Engine](https://en.wikipedia.org/wiki/Analytical_Engine)
+:::
+:::
+:::
+:::
+
+## Human computers
+### When "computer" meant a person
+
+:::{style="margin-top: 30px; font-size: 24px;"}
+:::{.columns}
+:::{.column width=50%}
+- For most of history, [the word "computer" referred to a person]{.alert}, not a machine!
+- Large teams of human computers performed complex calculations:
+  - Astronomical tables
+  - Ballistics trajectories
+  - Census data
+- Often women, who were paid less than male mathematicians
+- This [division of mental labour]{.alert} (Adam Smith!) showed that complex calculations could be broken into simple, mechanical steps
+- Historian Lorraine Daston: [Calculation shifted from "genius" to "merely mechanical"](https://hdsr.mitpress.mit.edu/pub/0aytgrau/release/3)
+:::
+
+:::{.column width=50%}
+:::{style="text-align: center;"}
+[![Human computers at NASA (1950s)](figures/human-computers.webp){width="100%"}](#){data-modal-type="image" data-modal-url="figures/human-computers.webp"}
+
+Source: [NASA](https://www.nasa.gov/centers-and-facilities/jpl/when-computers-were-human/)
+:::
+:::
+:::
+:::
+
+## Alan Turing and the foundations of computing
+### The theoretical breakthrough
+
+:::{style="margin-top: 30px; font-size: 22px;"}
+:::{.columns}
+:::{.column width=55%}
+- **1936**: [Alan Turing](https://en.wikipedia.org/wiki/Alan_Turing) publishes "[On Computable Numbers, with an Application to the Entscheidungsproblem](https://www.cs.virginia.edu/~robins/Turing_Paper_1936.pdf)" (decision problem)
+- Introduces the concept of a [universal machine]{.alert} that can compute anything computable
+- **1950**: Publishes "[Computing Machinery and Intelligence](https://phil415.pbworks.com/f/TuringComputing.pdf)" in [Mind](https://en.wikipedia.org/wiki/Mind_(journal)) (philosophy journal)
+  - Proposes the famous [Turing Test](https://en.wikipedia.org/wiki/Turing_test): Can a machine fool a human into thinking it's human?
+  - Asks: ["Can machines think?"]{.alert} and reframes it as a practical question (["Can machines do what we (as thinking entities) can do?"]{.alert})
+- Turing's ideas laid the [theoretical foundation]{.alert} for both computing and AI
+- He suggested machines could [learn]{.alert}, not just follow fixed rules
+:::
+
+:::{.column width=45%}
+:::{style="text-align: center;"}
+[![The standard version of the Turing test](figures/turing-test.png){width="90%"}](#){data-modal-type="image" data-modal-url="figures/turing-test.png"}
+
+Source: [Wikipedia - Turing Test](https://en.wikipedia.org/wiki/Turing_test)
+:::
+:::
+:::
+:::
+
+## Live Turing test!
+
+:::{style="margin-top: 30px; font-size: 24px;"}
+:::{.incremental}
+- Guess if the following sentences were written by a human or a machine:
+
+:::{style="margin-top: 20px;"}
+:::
+
+- "The universe (which others call the Library) is composed of an indefinite, perhaps an infinite number of hexagonal galleries, with enormous ventilation shafts in the middle, encircled by very low railings."
+  - Human! [Jorge Luis Borges (Argentine writer)](https://en.wikipedia.org/wiki/Jorge_Luis_Borges)
+- "This is a multifaceted issue that requires us to examine several different perspectives."
+  - Machine!
+- "The function of science fiction is not always to predict the future but sometimes to prevent it."
+  - Human! Attributed to [Frank Herbert (author of Dune)](https://en.wikipedia.org/wiki/Frank_Herbert)
+- "The epistemological ramifications of this ontological framework necessitate a paradigmatic shift in our heuristic methodologies."
+  - Machine!
+
+- And yes, [GPT-4.5 did pass the Turing test](https://arxiv.org/abs/2503.23674) (judged human 73% of the time, more often than actual humans)
+:::
+:::
+
+# The birth of AI (1950s–1970s) 🎂 {background-color="#1B3A6B"}
+
+## The Dartmouth Conference (1956)
+### Where it all began
+
+:::{style="margin-top: 30px; font-size: 22px;"}
+:::{.columns}
+:::{.column width=55%}
+- **Summer 1956**: [A workshop at Dartmouth College](https://en.wikipedia.org/wiki/Dartmouth_workshop) marks the birth of AI as a field
+- Organised by [John McCarthy](https://en.wikipedia.org/wiki/John_McCarthy_(computer_scientist)), [Marvin Minsky](https://en.wikipedia.org/wiki/Marvin_Minsky), [Nathaniel Rochester](https://en.wikipedia.org/wiki/Nathaniel_Rochester_(computer_scientist)), and [Claude Shannon](https://en.wikipedia.org/wiki/Claude_Shannon)
+- First use of the term "[Artificial Intelligence]{.alert}"
+- The founding conjecture:
+
+> "Every aspect of learning or any other feature of intelligence can in principle be so precisely described that [a machine can be made to simulate it]{.alert}."
+
+- Attendees included [Herbert Simon](https://en.wikipedia.org/wiki/Herbert_A._Simon) and [Allen Newell](https://en.wikipedia.org/wiki/Allen_Newell)
+- [Optimism was high]{.alert}: Many believed human-level AI was just decades away
+:::
+
+:::{.column width=45%}
+:::{style="text-align: center;"}
+[![The Dartmouth workshop participants](figures/dartmouth.webp){width="100%"}](#){data-modal-type="image" data-modal-url="figures/dartmouth.webp"}
+
+Source: [IEEE Spectrum](https://spectrum.ieee.org/dartmouth-ai-workshop)
+:::
+:::
+:::
+:::
+
+## Symbolic AI and expert systems
+### Two approaches to intelligence
+
+:::{style="margin-top: 30px; font-size: 24px;"}
+:::{.columns}
+:::{.column width=50%}
+
+**Symbolic AI, 1956–1980s**
+
+- [Intelligence = manipulating symbols according to rules]{.alert}
+- Program the [formal rules]{.alert} behind intelligent behaviour into machines
+- Early successes: [ELIZA](https://en.wikipedia.org/wiki/ELIZA) (therapist, [video here](https://www.youtube.com/watch?v=RMK9AphfLco)), [SHRDLU](https://en.wikipedia.org/wiki/SHRDLU) (block world, [video here](https://www.youtube.com/watch?v=bo4RvYJYOzI))
+  - Try ELIZA here: <https://anthay.github.io/eliza.html> (by the [ELIZA Archaeology Project](https://sites.google.com/view/elizaarchaeology/try-eliza))
+- [Bold but overconfident predictions]{.alert}: Minsky and Simon expected human-level AI within a generation
+:::
+
+:::{.column width=50%}
+
+**Expert systems, 1970s–1980s**
+
+- Shift to [narrow domains]{.alert} with expert knowledge
+- Encode human expertise as [if-then rules]{.alert}
+- Examples: [MYCIN](https://en.wikipedia.org/wiki/Mycin) (bacterial infections, [video here](https://www.youtube.com/watch?v=bro6fkDxCUE)), [DENDRAL](https://en.wikipedia.org/wiki/Dendral) (chemical analysis, [video here](https://www.youtube.com/watch?v=lH3IgyGlpzw))
+- Edward Feigenbaum: "[The problem-solving power... is primarily a consequence of the specialist's knowledge employed]{.alert}"
+
+- Both approaches relied on [hand-crafted knowledge]{.alert}, not learning from data
+- Neither could [learn or improve automatically]{.alert}
+
+:::
+:::
+:::
+
+## The AI winters
+
+:::{style="margin-top: 30px; font-size: 24px;"}
+:::{.columns}
+:::{.column width=50%}
+
+**The first winter (1974–1980)**
+
+- [Combinatorial explosion]{.alert}, [limited computing power]{.alert}, [brittleness]{.alert}
+- Funding collapsed, researchers left the field
+- [Lesson: AI is harder than pioneers thought]{.alert}
+
+**The second winter (1987–1993)**
+
+- [Expensive to maintain]{.alert}, [knowledge bottleneck]{.alert}, [couldn't learn]{.alert}
+- Desktop computers made specialised AI hardware obsolete
+- Market collapsed by 1987
+- "[AI]{.alert}" became a dirty word
+
+:::
+
+:::{.column width=50%}
+
+**The pattern**
+
+1. Bold claims attract funding
+2. Initial successes create excitement
+3. Limitations become apparent at scale
+4. Funding dries up, researchers move on
+5. Quiet research continues, laying groundwork...
+
+<br>
+Anything familiar about this pattern? 😅
+
+Maybe this time is different? 🤷🏻‍♂️
+:::
+:::
+:::
+
+# Neural networks: rise, fall, and rise again 🧠 {background-color="#1B3A6B"}
+
+## Early neural networks
+### Inspired by the brain
+
+:::{style="margin-top: 30px; font-size: 21px;"}
+:::{.columns}
+:::{.column width=50%}
+- **1943**: [McCulloch](https://en.wikipedia.org/wiki/Warren_McCulloch) and [Pitts](https://en.wikipedia.org/wiki/Walter_Pitts) propose [artificial neurons](https://en.wikipedia.org/wiki/A_Logical_Calculus_of_the_Ideas_Immanent_in_Nervous_Activity)
+  - Binary units that mimic biological ones
+- **1958**: [Frank Rosenblatt](https://en.wikipedia.org/wiki/Frank_Rosenblatt) builds the [Perceptron](https://en.wikipedia.org/wiki/Perceptron)
+  - The first network that could [learn]{.alert}, adjusting its weights whenever it got something wrong
+- The New York Times (1958) predicted it would ["walk, talk, see, write, reproduce itself"](https://www.nytimes.com/1958/07/08/archives/new-navy-device-learns-by-doing-psychologist-shows-embryo-of.html)
+- Stop writing rules. Show the machine [examples]{.alert}
+- Single-layer perceptrons [failed on simple problems]{.alert}, and interest waned
+- [Multi-layer networks](https://en.wikipedia.org/wiki/Artificial_neural_network) could solve them, but [nobody knew how to train them]{.alert}
+- The comeback took [nearly 20 years]{.alert}
+- [But how does an artificial neuron work?]{.alert}
+:::
+
+:::{.column width=50%}
+- Each [input]{.alert} ($x_i$) is a number, say a pixel's brightness
+- A [weight]{.alert} ($w_i$) sets how much that input matters
+- Add the weighted inputs, plus a [bias]{.alert} ($b$) that decides when the neuron fires:
+  $z = \sum x_i \cdot w_i + b$
+- Pass $z$ through an [activation function]{.alert}, a non-linear bend: $y = f(z)$
+- Without that bend, the whole network is just a linear model
+
+:::{style="text-align: center;"}
+[![Perceptron diagram](figures/perceptron.png){width="80%"}](#){data-modal-type="image" data-modal-url="figures/perceptron.png"}
+
+Source: [AI Mind](https://pub.aimind.so/perceptron-101-the-building-blocks-of-a-neural-network-496f6b9b3826)
+:::
+:::
+:::
+:::
+
+## The backpropagation breakthrough (1986)
+### Learning to learn
+
+:::{style="margin-top: 30px; font-size: 24px;"}
+:::{.columns}
+:::{.column width=55%}
+- **1986**: [Rumelhart](https://en.wikipedia.org/wiki/David_Rumelhart), [Hinton](https://en.wikipedia.org/wiki/Geoffrey_Hinton), and [Williams](https://en.wikipedia.org/wiki/Ronald_J._Williams) popularise [backpropagation](https://en.wikipedia.org/wiki/Backpropagation)
+- You can [train multi-layer networks]{.alert} by propagating errors backwards through the layers
+- It finds functions that are [highly non-linear]{.alert} with very [precise adjustments to many weights]{.alert}
+- Finally, neural networks could learn complex patterns!
+- Renewed interest in [connectionism]{.alert}
+- But challenges remained:
+  - Limited computing power
+  - Not enough training data
+- Neural networks showed promise but couldn't yet compete with other methods
+:::
+
+:::{.column width=45%}
+:::{style="text-align: center;"}
+[![Backpropagation diagram](figures/backprop.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/backprop.png"}
+
+Source: [Medium](https://medium.com/@lmpo/backpropagation-the-backbone-of-neural-network-training-64946d6c3ae5)
+:::
+:::
+:::
+:::
+
+# The data revolution 📊 {background-color="#1B3A6B"}
+
+## The unreasonable effectiveness of data
+### A paradigm shift
+
+:::{style="margin-top: 30px; font-size: 20px;"}
+:::{.columns}
+:::{.column width=55%}
+- **2009**: Google researchers ([Halevy](https://en.wikipedia.org/wiki/Alon_Halevy), [Norvig](https://en.wikipedia.org/wiki/Peter_Norvig), [Pereira](https://research.google/people/author1092/?&type=google)) publish a landmark paper called "[The Unreasonable Effectiveness of Data](https://static.googleusercontent.com/media/research.google.com/en//pubs/archive/35179.pdf)"
+- [Simple models with lots of data beat complex models with less data]{.alert}
+- Traditional AI: Design clever algorithms
+- New AI: [Feed massive amounts of data]{.alert} to simple learning algorithms
+
+> "Now go out and gather some data, and see what it can do."
+
+- [Data, computing power, and better algorithms]{.alert} came together at the same time
+- Any one alone wasn't enough, but all three together changed the field
+:::
+
+:::{.column width=45%}
+:::{style="text-align: center;"}
+[![More data beats better algorithms](figures/data-effectiveness.png){width="90%"}](#){data-modal-type="image" data-modal-url="figures/data-effectiveness.png"}
+
+Source: [Google Research](https://static.googleusercontent.com/media/research.google.com/en//pubs/archive/35179.pdf)
+:::
+:::
+:::
+:::
+
+## The ImageNet moment (2012)
+### Deep learning arrives
+
+:::{style="margin-top: 30px; font-size: 23px;"}
+:::{.columns}
+:::{.column width=55%}
+- [ImageNet](https://www.image-net.org/): A dataset of 14 million labelled images
+- Annual competition: Classify images into 1,000 categories
+- **2012**: [AlexNet](https://spectrum.ieee.org/alexnet-source-code) ([Krizhevsky, Sutskever, Hinton](https://proceedings.neurips.cc/paper_files/paper/2012/file/c399862d3b9d6b76c8436e924a68c45b-Paper.pdf)) wins by a [huge margin]{.alert}
+  - Error rate: 15.3% (next best: 26.2%)
+  - Used [deep neural networks]{.alert}
+  - Trained on [Graphics Processing Units (GPUs),](https://en.wikipedia.org/wiki/Graphics_processing_unit) which are better than [Central Processing Units](https://en.wikipedia.org/wiki/Central_processing_unit) for parallel processing
+- This was a great moment for deep learning!
+- Within years, deep learning dominated computer vision
+- Proved that [neural networks + big data + GPUs = breakthrough]{.alert}
+:::
+
+:::{.column width=45%}
+:::{style="text-align: center;"}
+[![Ilya Sutskever, Alex Krizhevsky, and Geoffrey Hinton](figures/alexnet.png){width="95%"}](#){data-modal-type="image" data-modal-url="figures/alexnet.png"}
+
+Source: [Medium](https://svelezg.medium.com/krizhevsky-sutskever-hinton-and-imagenet-d1c7f2fba113)
+:::
+:::
+:::
+:::
+
+# Transformers: that's all you need ⚡ {background-color="#1B3A6B"}
+
+## Attention is all you need (2017)
+### The transformer revolution
+
+:::{style="margin-top: 30px; font-size: 24px;"}
+:::{.columns}
+:::{.column width=55%}
+- **2017**: Google researchers publish "[Attention Is All You Need](https://arxiv.org/abs/1706.03762)" (Vaswani et al.)
+- [Self-attention mechanism]{.alert}
+- Instead of processing sequentially:
+  - Each word can "look at" [every other word]{.alert} directly
+  - Computes relevance scores between all pairs
+  - [Parallel processing]{.alert}: Much faster to train
+- This architecture powers [GPT (Generative Pre-trained Transformer)](https://cdn.openai.com/research-covers/language-unsupervised/language_understanding_paper.pdf), [BERT](https://arxiv.org/abs/1810.04805), and pretty much all modern AI
+- Beyond text: Now used in images, audio, video, proteins, games...
+:::
+
+:::{.column width=45%}
+:::{style="text-align: center;"}
+[![The paper that started it all](figures/transformer-paper.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/transformer-paper.png"}
+:::
+:::
+:::
+:::
+
+## How transformers work (simplified!)
+### The big picture
+
+:::{style="margin-top: 30px; font-size: 26px;"}
+
+:::{.columns}
+:::{.column width=55%}
+:::{style="text-align: center;"}
+[![Transformer architecture overview](figures/transformer.gif){width="100%"}](#){data-modal-type="image" data-modal-url="figures/transformer.gif"}
+
+Source: [Hivenet](https://compute.hivenet.com/post/simplifying-transformer-architecture-a-beginners-guide-to-understanding-ai-magic)
+:::
+:::
+
+:::{.column width=45%}
+:::{style="margin-top: 22px;"}
+Five steps:
+
+1. **Tokenise**: cut the text into pieces
+2. **Embed**: give each piece a list of numbers
+3. **Attend**: let the pieces look at each other
+4. **Stack**: repeat step 3 dozens of times
+5. **Predict**: guess the next piece
+:::
+:::
+:::
+:::
+
+## Step 1: Tokenisation
+### Breaking text into pieces
+
+:::{style="margin-top: 30px; font-size: 26px;"}
+:::{.columns}
+:::{.column width=55%}
+- Text must be converted to numbers
+- **Tokenisation**: Split text into [tokens]{.alert}
+  - Usually words, letters, or word pieces
+  - "unhappiness" → "un", "happiness"
+  - GPT-2 has a vocabulary of 50,257 tokens
+- Each token gets a unique ID number
+- Think of it as creating a [dictionary]{.alert} where each word/piece has a code
+:::
+
+:::{.column width=45%}
+:::{style="text-align: center;"}
+[![Tokenisation diagram](figures/tokenisation.webp){width="100%"}](#){data-modal-type="image" data-modal-url="figures/tokenisation.webp"}
+
+Source: [Medium](https://shanmugasundaram.in/llm-tokenizers-the-hidden-engine-behind-ai-language-models-00f1135d4b3c)
+:::
+:::
+:::
+:::
+
+## Step 2: Embeddings
+### Words as points in space
+
+:::{style="margin-top: 30px; font-size: 24px;"}
+:::{.columns}
+:::{.column width=55%}
+- Each token becomes a [vector]{.alert} (a list of numbers)
+- GPT-2: Each token → 768 numbers (nothing special about 768; models use different sizes)
+- These vectors capture [meaning]{.alert}:
+  - Similar words are close together
+  - "king" - "man" + "woman" ≈ "queen"
+- Also add [position information]{.alert}:
+  - Word order matters in language!
+  - "Dog bites man" ≠ "Man bites dog"
+- Embeddings start as [random numbers]{.alert}
+  - Every bad guess nudges them, and words used alike drift together
+- Nobody arranges them. Meaning is a [side effect of predicting well]{.alert}
+:::
+
+:::{.column width=45%}
+:::{style="text-align: center;"}
+[![Words plotted in 3-dimensional space. Embeddings can have hundreds or thousands of dimensions, too many for humans to visualise](figures/embeddings.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/embeddings.png"}
+
+Source: [Google Cloud](https://cloud.google.com/blog/topics/developers-practitioners/meet-ais-multitool-vector-embeddings)
+:::
+:::
+:::
+:::
+
+## Step 3: Self-attention
+### The main innovation of the paper
+
+:::{style="margin-top: 30px; font-size: 24px;"}
+:::{.columns}
+:::{.column width=55%}
+- The model is always guessing the next word:
+  - "The animal didn't cross the street because [it]{.alert} was too ___"
+- "tired" if "it" means the animal, "wide" if it means the street
+- So the guess depends on [what "it" refers to]{.alert}
+- But after Step 2 each word sits alone, and "it" is the [same 768 numbers]{.alert} in every sentence
+- Attention lets "it" reach back to ["animal" and "street"]{.alert}, weigh both, and "tired" wins
+- [Attention is the only step where words see each other]{.alert}
+
+:::{style="font-size: 17px; margin-top: 15px;"}
+You may meet these called [Query]{.alert} (what a word is looking for), [Key]{.alert} (what a word advertises about itself) and [Value]{.alert} (what it hands over when matched). How well a query matches a key is the [attention score]{.alert}
+:::
+:::
+
+:::{.column width=45%}
+:::{style="text-align: center;"}
+[![Self-attention: Words attend to each other](figures/attention.webp){width="70%"}](#){data-modal-type="image" data-modal-url="figures/attention.webp"}
+
+
+Source: [Jay Alammar](https://jalammar.github.io/illustrated-transformer/)
+:::
+:::
+:::
+:::
+
+## Multi-head attention
+### "The cat sat on the mat"
+
+:::{style="margin-top: 30px; font-size: 23px;"}
+
+:::{.columns}
+:::{.column width=55%}
+:::{style="text-align: center;"}
+[![](figures/cat.png){width="80%"}](#){data-modal-type="image" data-modal-url="figures/cat.png"}
+
+Source: [Thomas Wiecki](https://twiecki.io/blog/2024/01/04/)
+:::
+:::
+
+:::{.column width=45%}
+:::{style="margin-top: 20px;"}
+- Same idea, new sentence: "The cat sat on the ___"
+- One search is not enough. The guess needs several things at once:
+  - Who is doing it: "cat"
+  - What they are doing: "sat"
+  - What kind of word follows "on": a place
+- [Multi-head attention]{.alert}: 12 searches side by side, each asking its own question (GPT-2 small)
+- Nobody assigns the questions. The heads specialise during training
+- [Division of labour]{.alert} again, and this time it organises itself
+:::
+:::
+:::
+:::
+
+## Step 4: Feed-forward and stacking
+### Where the model keeps what it knows
+
+:::{style="margin-top: 30px; font-size: 22px;"}
+:::{.columns}
+:::{.column width=55%}
+- "The cat sat on the ___"
+- Attention brings "cat" and "sat" to the guessing position
+- But nothing in the sentence says [what a cat sits on]{.alert}, so it must come from memory
+- That memory is the [feed-forward network](https://en.wikipedia.org/wiki/Feedforward_neural_network) (MLP)
+- Attention [moves]{.alert} what is in the sentence. The network [adds]{.alert} what is not
+- The two make one [block]{.alert}: 12 in GPT-2, 96 in GPT-3, far more since
+- Each block [adds]{.alert} to the word rather than replacing it, so nothing is lost on the way up
+- Each round asks a better question than the last:
+  - Early blocks: what kind of word is this?
+  - Late blocks: what is this text about, and what comes next?
+:::
+
+:::{.column width=45%}
+:::{style="text-align: center;"}
+[![One transformer block](figures/transformer-blocks-02.png){width="35%"}](#){data-modal-type="image" data-modal-url="figures/transformer-blocks-02.png"}
+
+Source: [Mohamed Traore](https://www.researchgate.net/figure/Overall-Structure-of-Transformer-Encoder-Block_fig3_365101390)
+:::
+:::{style="font-size: 18px; margin-top: 15px;"}
+Also called a [multi-layer perceptron (MLP):](https://en.wikipedia.org/wiki/Multilayer_perceptron) Rosenblatt's perceptron from 1958, stacked in layers and trained by backpropagation. Two thirds of a model's weights live here, not in attention
+:::
+:::
+:::
+:::
+
+## Step 5: Predicting the next token
+### The final output
+
+:::{style="margin-top: 30px; font-size: 24px;"}
+:::{.columns}
+:::{.column width=55%}
+- After all the blocks, the model asks: "[what comes next?]{.alert}"
+- It gives [every token in its vocabulary]{.alert} a score
+- Most score roughly zero. A handful take almost everything
+- **Temperature** controls how the winner is picked:
+  - Low (0.2): takes the safe option
+  - High (1.0+): takes more risks
+- The chosen token joins the sentence, and the whole process [repeats]{.alert}
+:::
+
+:::{.column width=45%}
+:::{style="text-align: center; margin-top: -60px;"}
+[![](figures/next-token-probs.png){width="60%"}](#){data-modal-type="image" data-modal-url="figures/next-token-probs.png"}
+
+"The cat sat on the ___"
+
+Source: [Transformer Explainer](https://poloclub.github.io/transformer-explainer/)
+:::
+:::
+:::
+:::
+
+## Step 5: Predicting the next token
+### The final output
+
+:::{style="text-align: center; margin-top: 20px;"}
+
+[![Probability distribution over vocabulary](figures/next-token.png){width="90%"}](#){data-modal-type="image" data-modal-url="figures/next-token.png"}
+
+Source: [Transformer Explainer](https://poloclub.github.io/transformer-explainer/)
+:::
+
+# From GPT to ChatGPT 🚀 {background-color="#1B3A6B"}
+
+## The rise of large language models
+### Scaling up
+
+:::{style="margin-top: 30px; font-size: 24px;"}
+
+| Model | Year | Parameters | Notable Achievement |
+|-------|------|------------|---------------------|
+| GPT-1 | 2018 | 117M | Showed pre-training works |
+| BERT | 2018 | 340M | Revolutionised NLP benchmarks |
+| GPT-2 | 2019 | 1.5B | "Too dangerous to release" |
+| GPT-3 | 2020 | 175B | Few-shot learning emergence |
+| GPT-4 | 2023 | ~1.7T? | Multimodal, near-human reasoning |
+| GPT-5 | 2025 | Undisclosed | More efficient, even better reasoning |
+
+<br>
+
+- [Bigger models + more data = emergent abilities]{.alert}
+- Capabilities appear at scale that weren't explicitly trained
+- This is the "[scaling hypothesis]{.alert}" (although some people, like [Ilya Sutskever](https://en.wikipedia.org/wiki/Ilya_Sutskever), argue that [scaling has reached its limits](https://www.youtube.com/watch?v=aR20FWCCjAs))
+:::
+
+## What makes ChatGPT different?
+### Beyond just scaling
+
+:::{style="margin-top: 30px; font-size: 24px;"}
+:::{.columns}
+:::{.column width=55%}
+- ChatGPT (Nov 2022) wasn't just a bigger model
+- Three key innovations:
+  1. [Instruction tuning](https://www.ibm.com/think/topics/instruction-tuning): Trained to follow instructions
+  2. [RLHF (Reinforcement Learning from Human Feedback)](https://en.wikipedia.org/wiki/Reinforcement_learning_from_human_feedback): Humans rate responses; model learns what's helpful
+  3. [Safety training](https://en.wikipedia.org/wiki/AI_safety): Reduce harmful outputs
+- Result: A model that's [actually useful]{.alert} for conversation
+- [100 million users in 2 months]{.alert}, the fastest-growing consumer app at the time
+:::
+
+:::{.column width=45%}
+:::{style="text-align: center;"}
+[![ChatGPT's explosive growth](figures/chatgpt-growth.webp){width="80%"}](#){data-modal-type="image" data-modal-url="figures/chatgpt-growth.webp"}
+
+Source: [Voronoi](https://www.voronoiapp.com/technology/OpenAIs-ChatGPT-Hits-Record-5846-Billion-Monthly-Website-Visits-in-August-2025-6532)
+:::
+:::
+:::
+:::
+
+## Multimodal AI
+### Beyond text
+
+:::{style="margin-top: 30px; font-size: 24px;"}
+:::{.columns}
+:::{.column width=55%}
+- Modern AI isn't just about text anymore
+- [Multimodal models]{.alert} can process:
+  - Text ↔ Images (DALL-E, Midjourney)
+  - Text ↔ Audio (Whisper, ElevenLabs)
+  - Text ↔ Video (Sora, Runway)
+  - Text ↔ Code (Codex, Copilot)
+- [Same transformer architecture]{.alert}, different inputs/outputs
+- [Vision Transformers (ViT):](https://arxiv.org/abs/2010.11929) Treat images as sequences of patches
+- The boundaries between modalities are [blurring]{.alert}
+:::
+
+:::{.column width=45%}
+:::{style="text-align: center;"}
+[![Multimodal AI: Understanding multiple types of data](figures/multimodal.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/multimodal.png"}
+
+Source: [Tarun Sharma](https://www.linkedin.com/pulse/multimodal-generative-ai-tarun-sharma-zzf9c)
+:::
+:::
+:::
+:::
+
+# Takeaways 📚 {background-color="#1B3A6B"}
+
+## What changed? What stayed the same?
+### Continuity and transformation
+
+:::{style="margin-top: 30px; font-size: 26px;"}
+
+**What changed:**
+
+- We stopped writing rules by hand and started [letting machines learn from data]{.alert}
+- AI went from doing one narrow thing to doing [many things with a single architecture]{.alert}
+- The bottleneck shifted from clever algorithms to [data and computing power]{.alert}
+
+**What stayed the same:**
+
+- We still ask the same question Turing asked in 1950: [can machines think?]{.alert}
+- AI systems are still brittle, biased, and lacking common sense
+- We still go through hype cycles. Are we in one now? 🤷🏻‍♂️
+:::
+
+## Interactive resource
+### Explore transformers yourself!
+
+:::{style="margin-top: 30px; font-size: 26px;"}
+:::{.columns}
+:::{.column width=55%}
+- Georgia Tech's [Transformer Explainer](https://poloclub.github.io/transformer-explainer/)
+- Interactive visualisation of how transformers work
+- See attention patterns in real time
+- Experiment with temperature and sampling
+- Runs GPT-2 directly in your browser!
+- Great for building intuition
+
+[https://poloclub.github.io/transformer-explainer](https://poloclub.github.io/transformer-explainer/)
+:::
+
+:::{.column width=45%}
+:::{style="text-align: center;"}
+[![](figures/transformer-explainer.png){width="95%"}](#){data-modal-type="image" data-modal-url="figures/transformer-explainer.png"}
+:::
+:::
+:::
+:::
+
+# ... and that's all for today! 🎉 {background-color="#1B3A6B"}
+
+# See you all soon! 😊 {background-color="#1B3A6B"}

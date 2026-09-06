@@ -1,0 +1,1309 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.38">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Lectures – DATASCI 101</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-711d1f9ca8572b13a79b12eced64be79.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-452aa33a76078c0c050d7f0839f841f1.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-711d1f9ca8572b13a79b12eced64be79.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-bc1e766888e0a40e940cc4941409c5fa.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-f4a0ff7eb3b23cc8c3f50f9ba342a2b7.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-bc1e766888e0a40e940cc4941409c5fa.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const darkModeDefault = authorPrefersDark;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">DATASCI 101</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./syllabus.html"> <i class="bi bi-journal-text" role="img">
+</i> 
+<span class="menu-text">Syllabus</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="./lectures.html" aria-current="page"> <i class="bi bi-mortarboard" role="img">
+</i> 
+<span class="menu-text">Lectures</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./assignments.html"> <i class="bi bi-pencil-square" role="img">
+</i> 
+<span class="menu-text">Assignments</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./LICENSE.html"> 
+<span class="menu-text"> </span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+    <a href="https://github.com/danilofreire/datasci101" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-github"></i></a>
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#module-0-orientation" id="toc-module-0-orientation" class="nav-link active" data-scroll-target="#module-0-orientation">Module 0 — Orientation</a>
+  <ul class="collapse">
+  <li><a href="#august-27-2026" id="toc-august-27-2026" class="nav-link" data-scroll-target="#august-27-2026">August 27, 2026:</a></li>
+  <li><a href="#september-1-2026" id="toc-september-1-2026" class="nav-link" data-scroll-target="#september-1-2026">September 1, 2026:</a></li>
+  </ul></li>
+  <li><a href="#module-1-how-ai-systems-are-designed" id="toc-module-1-how-ai-systems-are-designed" class="nav-link" data-scroll-target="#module-1-how-ai-systems-are-designed">Module 1 — How AI systems are designed</a>
+  <ul class="collapse">
+  <li><a href="#september-3-2026" id="toc-september-3-2026" class="nav-link" data-scroll-target="#september-3-2026">September 3, 2026:</a></li>
+  <li><a href="#september-8-2026" id="toc-september-8-2026" class="nav-link" data-scroll-target="#september-8-2026">September 8, 2026:</a></li>
+  <li><a href="#september-10-2026" id="toc-september-10-2026" class="nav-link" data-scroll-target="#september-10-2026">September 10, 2026:</a></li>
+  </ul></li>
+  <li><a href="#module-2-language-and-perception" id="toc-module-2-language-and-perception" class="nav-link" data-scroll-target="#module-2-language-and-perception">Module 2 — Language and perception</a>
+  <ul class="collapse">
+  <li><a href="#september-15-2026" id="toc-september-15-2026" class="nav-link" data-scroll-target="#september-15-2026">September 15, 2026:</a></li>
+  <li><a href="#september-17-2026" id="toc-september-17-2026" class="nav-link" data-scroll-target="#september-17-2026">September 17, 2026:</a></li>
+  <li><a href="#september-22-2026" id="toc-september-22-2026" class="nav-link" data-scroll-target="#september-22-2026">September 22, 2026:</a></li>
+  <li><a href="#september-24-2026" id="toc-september-24-2026" class="nav-link" data-scroll-target="#september-24-2026">September 24, 2026:</a></li>
+  <li><a href="#september-29-2026" id="toc-september-29-2026" class="nav-link" data-scroll-target="#september-29-2026">September 29, 2026:</a></li>
+  </ul></li>
+  <li><a href="#module-3-retrieval-generation-pipelines-and-agents" id="toc-module-3-retrieval-generation-pipelines-and-agents" class="nav-link" data-scroll-target="#module-3-retrieval-generation-pipelines-and-agents">Module 3 — Retrieval, generation, pipelines and agents</a>
+  <ul class="collapse">
+  <li><a href="#october-1-2026" id="toc-october-1-2026" class="nav-link" data-scroll-target="#october-1-2026">October 1, 2026:</a></li>
+  <li><a href="#october-6-2026" id="toc-october-6-2026" class="nav-link" data-scroll-target="#october-6-2026">October 6, 2026:</a></li>
+  <li><a href="#october-8-2026" id="toc-october-8-2026" class="nav-link" data-scroll-target="#october-8-2026">October 8, 2026:</a></li>
+  <li><a href="#october-13-2026-fall-break-no-classes" id="toc-october-13-2026-fall-break-no-classes" class="nav-link" data-scroll-target="#october-13-2026-fall-break-no-classes">October 13, 2026: Fall Break (No Classes)</a></li>
+  <li><a href="#october-15-2026" id="toc-october-15-2026" class="nav-link" data-scroll-target="#october-15-2026">October 15, 2026:</a></li>
+  <li><a href="#october-20-2026" id="toc-october-20-2026" class="nav-link" data-scroll-target="#october-20-2026">October 20, 2026:</a></li>
+  </ul></li>
+  <li><a href="#module-4-data-ethics-and-bias" id="toc-module-4-data-ethics-and-bias" class="nav-link" data-scroll-target="#module-4-data-ethics-and-bias">Module 4 — Data ethics and bias</a>
+  <ul class="collapse">
+  <li><a href="#october-22-2026" id="toc-october-22-2026" class="nav-link" data-scroll-target="#october-22-2026">October 22, 2026:</a></li>
+  <li><a href="#october-27-2026" id="toc-october-27-2026" class="nav-link" data-scroll-target="#october-27-2026">October 27, 2026:</a></li>
+  </ul></li>
+  <li><a href="#module-5-policy-governance-and-social-impact" id="toc-module-5-policy-governance-and-social-impact" class="nav-link" data-scroll-target="#module-5-policy-governance-and-social-impact">Module 5 — Policy, governance and social impact</a>
+  <ul class="collapse">
+  <li><a href="#october-29-2026" id="toc-october-29-2026" class="nav-link" data-scroll-target="#october-29-2026">October 29, 2026:</a></li>
+  <li><a href="#november-3-2026" id="toc-november-3-2026" class="nav-link" data-scroll-target="#november-3-2026">November 3, 2026:</a></li>
+  <li><a href="#november-5-2026" id="toc-november-5-2026" class="nav-link" data-scroll-target="#november-5-2026">November 5, 2026:</a></li>
+  <li><a href="#november-10-2026" id="toc-november-10-2026" class="nav-link" data-scroll-target="#november-10-2026">November 10, 2026:</a></li>
+  </ul></li>
+  <li><a href="#module-6-applications-limits-and-projects" id="toc-module-6-applications-limits-and-projects" class="nav-link" data-scroll-target="#module-6-applications-limits-and-projects">Module 6 — Applications, limits and projects</a>
+  <ul class="collapse">
+  <li><a href="#november-12-2026" id="toc-november-12-2026" class="nav-link" data-scroll-target="#november-12-2026">November 12, 2026:</a></li>
+  <li><a href="#november-17-2026" id="toc-november-17-2026" class="nav-link" data-scroll-target="#november-17-2026">November 17, 2026:</a></li>
+  <li><a href="#november-19-2026" id="toc-november-19-2026" class="nav-link" data-scroll-target="#november-19-2026">November 19, 2026:</a></li>
+  <li><a href="#november-24-2026" id="toc-november-24-2026" class="nav-link" data-scroll-target="#november-24-2026">November 24, 2026:</a></li>
+  <li><a href="#november-26-2026-thanksgiving-recess-no-classes" id="toc-november-26-2026-thanksgiving-recess-no-classes" class="nav-link" data-scroll-target="#november-26-2026-thanksgiving-recess-no-classes">November 26, 2026: Thanksgiving Recess (No Classes)</a></li>
+  <li><a href="#december-1-2026" id="toc-december-1-2026" class="nav-link" data-scroll-target="#december-1-2026">December 1, 2026:</a></li>
+  <li><a href="#december-3-2026" id="toc-december-3-2026" class="nav-link" data-scroll-target="#december-3-2026">December 3, 2026:</a></li>
+  <li><a href="#december-8-2026" id="toc-december-8-2026" class="nav-link" data-scroll-target="#december-8-2026">December 8, 2026:</a></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/danilofreire/datasci101/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li><li><a href="https://github.com/danilofreire/datasci101/blob/main/lectures.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Lectures</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>The schedule is below. Each class comes with a short description and two reading lists.</p>
+<ul>
+<li><em>Suggested readings</em> are the two to four short, non-technical pieces I recommend for that class. Start with these.</li>
+<li><em>Further readings</em> go deeper. Some are academic papers, some are long reports, and a few are technical. Use them for the topics that interest you most, and for your final project.</li>
+</ul>
+<p>The slides are self-contained, and everything the assignments and quizzes ask of you is covered in class. Come talk to me if you would like more on any topic. The schedule may change during the term. Please contact me if anything is unclear.</p>
+<section id="module-0-orientation" class="level2">
+<h2 class="anchored" data-anchor-id="module-0-orientation">Module 0 — Orientation</h2>
+<section id="august-27-2026" class="level3">
+<h3 class="anchored" data-anchor-id="august-27-2026">August 27, 2026:</h3>
+<ul>
+<li>Syllabus and course repository: <a href="https://github.com/danilofreire/datasci101" class="uri">https://github.com/danilofreire/datasci101</a>.</li>
+<li>Lecture 01: <a href="https://danilofreire.github.io/datasci101/lectures/lecture-01/01-introduction.html">Course introduction</a>.</li>
+</ul>
+<p>Suggested readings:</p>
+<ul>
+<li>Our World in Data (2025). <a href="https://ourworldindata.org/artificial-intelligence">Artificial intelligence</a>. A concise overview of AI trends and applications, with links to further resources.</li>
+<li>Stanford University’s Human-Centered Artificial Intelligence (2025). <a href="https://hai.stanford.edu/ai-index/2025-ai-index-report">AI index annual report</a>. An excellent report on the state of AI, with many useful charts and references.</li>
+<li>The New Yorker (2026). <a href="https://www.newyorker.com/magazine/2026/02/16/what-is-claude-anthropic-doesnt-know-either">What is Claude? Anthropic doesn’t know, either</a>. A fascinating article about the challenges of building and understanding large language models. <a href="https://archive.ph/i6vbW">Also available here</a>.</li>
+</ul>
+<p>Further readings:</p>
+<ul>
+<li>Menlo Ventures (2025). <a href="https://menlovc.com/perspective/2025-the-state-of-consumer-ai/">2025: the state of consumer AI</a>. How AI is being used in consumer products, with examples and market data.</li>
+<li>Morgan Stanley (2025). <a href="https://www.morganstanley.com/insights/articles/ai-trends-reasoning-frontier-models-2025-tmt">AI’s next leap: 5 trends shaping innovation and ROI</a>. A short text on the current state of AI applications in industry.</li>
+<li>McKinsey &amp; Company (2025). <a href="https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai">The state of AI: how organizations are rewiring to capture value</a>. A business-focused overview of AI adoption and impact.</li>
+</ul>
+</section>
+<section id="september-1-2026" class="level3">
+<h3 class="anchored" data-anchor-id="september-1-2026">September 1, 2026:</h3>
+<ul>
+<li>Lecture 02: <a href="https://danilofreire.github.io/datasci101/lectures/lecture-02/02-history.html">A brief history of AI and the recent shift</a>.</li>
+</ul>
+<p>Suggested readings:</p>
+<ul>
+<li>Dick, S. (2019). <a href="https://doi.org/10.1162/99608f92.92fe150c">Artificial intelligence.</a> <em>Harvard Data Science Review</em>, <em>1</em>(1). A brief history of AI research and applications. Written for a general audience.</li>
+<li>Pradhan, M. (2023). <a href="https://medium.com/healthcare-ai-sig/a-non-technical-introduction-to-transformers-6ca36b8246d">A non-technical introduction to Transformers.</a> A clear explanation of the transformer architecture behind many modern AI systems.</li>
+<li>Georgia Tech’s Polo Club of Data Science (2025). <a href="https://poloclub.github.io/transformer-explainer/">Transformer explainer.</a> An interactive visualisation of how transformers work.</li>
+<li>Whang, O. (2026). <a href="https://www.nytimes.com/2026/04/15/magazine/ai-black-box-interpretability-research.html">We don’t really know how AI works. That’s a problem.</a> <em>The New York Times Magazine</em>. A feature-length, non-technical primer on interpretability research, from sparse autoencoders to Goodfire’s work with Prima Mente on Alzheimer’s diagnosis. A very accessible introduction to why the “black box” problem matters.</li>
+</ul>
+<p>Further readings:</p>
+<ul>
+<li>Grzybowski, A., Pawlikowska–Łagód, K., &amp; Lambert, W. C. (2024). <a href="https://doi.org/10.1016/j.clindermatol.2023.12.016">A history of artificial intelligence.</a> <em>Clinics in Dermatology</em>, <em>42</em>(3), 221-229. A “pre-history” overview, focusing on early ideas and milestones.</li>
+<li>Cao, Y., Liu, L., Li, M., Huang, Y., &amp; Li, S. (2023). <a href="https://arxiv.org/abs/2303.04226">A comprehensive survey of AI-generated content (AIGC): A history of generative AI from GAN to ChatGPT.</a> <em>arXiv preprint</em>. A somewhat technical but thorough overview of generative AI methods.</li>
+<li>Halevy, A., Norvig, P., &amp; Pereira, F. (2009). <a href="https://static.googleusercontent.com/media/research.google.com/en//pubs/archive/35179.pdf">The unreasonable effectiveness of data.</a> <em>IEEE Intelligent Systems</em>, <em>24</em>(2), 8-12. A classic paper arguing that large datasets are often more important than sophisticated algorithms.</li>
+<li>Vaswani, A., Shazeer, N., Parmar, N., Uszkoreit, J., Jones, L., Gomez, A. N., … &amp; Polosukhin, I. (2017). <a href="https://proceedings.neurips.cc/paper_files/paper/2017/file/3f5ee243547dee91fbd053c1c4a845aa-Paper.pdf">Attention is all you need.</a> <em>Advances in Neural Information Processing Systems</em>, 30. In case you want to read the original paper. Not for the faint of heart.</li>
+</ul>
+</section>
+</section>
+<section id="module-1-how-ai-systems-are-designed" class="level2">
+<h2 class="anchored" data-anchor-id="module-1-how-ai-systems-are-designed">Module 1 — How AI systems are designed</h2>
+<section id="september-3-2026" class="level3">
+<h3 class="anchored" data-anchor-id="september-3-2026">September 3, 2026:</h3>
+<ul>
+<li>Lecture 03: <a href="https://danilofreire.github.io/datasci101/lectures/lecture-03/03-datasets.html">Dataset design, labels, and tasks</a>.</li>
+<li><a href="https://play.kahoot.it/v2/?quizId=8526c23e-eace-415a-a8c4-d15ba11766c0&amp;hostId=05eb977d-4f8a-440e-9e45-95212b29d103">Kahoot Quiz</a></li>
+<li><a href="https://github.com/danilofreire/datasci101/blob/main/assignments"><strong>Assignment 01</strong></a>.</li>
+</ul>
+<p>Suggested readings:</p>
+<ul>
+<li>Athalye, A., Northcutt, C., &amp; Mueller, J. (2024). <a href="https://dcai.csail.mit.edu/2024/dataset-creation-curation/">Dataset creation and curation</a> in <em>Data-Centric AI</em>. A chapter from a forthcoming book on data-centric AI, covering the main ideas in dataset design.</li>
+<li>Rich, A. S., &amp; Gureckis, T. M. (2019). <a href="https://www.nature.com/articles/s42256-019-0038-z">Lessons for artificial intelligence from the study of natural stupidity.</a> <em>Nature Machine Intelligence</em>, 1(4), 174-180. A title this good is hard to find. The article discusses different sources of bias in AI systems.</li>
+<li>Sapien Labs. (2024). <a href="https://www.sapien.io/blog/labeling-data-for-machine-learning-best-practices-and-quality-control">Labeling data for machine learning: best practices and quality control.</a> A practical guide to data labelling, with tips and common pitfalls.</li>
+</ul>
+<p>Further readings:</p>
+<ul>
+<li>Liang, W., Tadesse, G. A., Ho, D., Fei-Fei, L., Zaharia, M., Zhang, C., &amp; Zou, J. (2022). <a href="https://www.nature.com/articles/s42256-022-00516-1">Advances, challenges and opportunities in creating data for trustworthy AI.</a> <em>Nature Machine Intelligence</em>, 4(8), 669-677. A good discussion on the challenges of creating high-quality datasets.</li>
+<li>Chai, C., &amp; Li, G. (2020). <a href="http://sites.computer.org/debull/A20sept/p37.pdf">Human-in-the-loop techniques in machine learning.</a> <em>IEEE Data Eng. Bull.</em>, 43(3), 37-52. A little more technical, but quite comprehensive.</li>
+</ul>
+</section>
+<section id="september-8-2026" class="level3">
+<h3 class="anchored" data-anchor-id="september-8-2026">September 8, 2026:</h3>
+<ul>
+<li>Lecture 04: <a href="https://danilofreire.github.io/datasci101/lectures/lecture-04/04-learning.html">Supervised, unsupervised, and reinforcement learning</a>.</li>
+<li><a href="https://play.kahoot.it/v2/?quizId=9f07a1f4-2c44-44fd-8d34-220441497cd3&amp;hostId=05eb977d-4f8a-440e-9e45-95212b29d103">Kahoot Quiz</a></li>
+</ul>
+<p>Suggested readings:</p>
+<ul>
+<li>Jiang, T., Gradus, J. L., &amp; Rosellini, A. J. (2020). <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC7431677/">Supervised machine learning: a brief primer.</a> <em>Behavior Therapy</em>, <em>51</em>(5), 675-687. A non-technical introduction to supervised machine learning.</li>
+<li>Amazon Web Services (2025). <a href="https://aws.amazon.com/compare/the-difference-between-machine-learning-supervised-and-unsupervised/">What is the difference between supervised and unsupervised learning?</a> A practical overview with examples.</li>
+<li>Ghasemi, M., &amp; Ebrahimi, D. (2024). <a href="https://arxiv.org/abs/2408.07712">Introduction to reinforcement learning.</a> <em>arXiv preprint</em>. Short introduction to the topic. If you would like to read something more advanced, please refer to <a href="https://web.stanford.edu/class/psych209/Readings/SuttonBartoIPRLBook2ndEd.pdf">Sutton &amp; Barto (2015)</a>.</li>
+</ul>
+<p>Further readings:</p>
+<ul>
+<li>Goodfellow, I., Bengio, Y., &amp; Courville, A. (2016). <a href="https://www.deeplearningbook.org/contents/ml.html">Chapter 5: Machine learning basics</a> in <em>Deep Learning</em>. A technical but clear introduction to the main ideas behind machine learning, by some of the founders of deep learning.</li>
+<li>James, G., Witten, D., Hastie, T., &amp; Tibshirani, R. (2021). <a href="https://www.statlearning.com/">An introduction to statistical learning.</a> A widely used book covering supervised and unsupervised learning methods. Included here for reference, as you’ll surely use it in your future career.</li>
+</ul>
+</section>
+<section id="september-10-2026" class="level3">
+<h3 class="anchored" data-anchor-id="september-10-2026">September 10, 2026:</h3>
+<ul>
+<li>Lecture 05: <a href="https://danilofreire.github.io/datasci101/lectures/lecture-05/05-metrics.html">Metrics, validation and overfitting</a>.</li>
+<li><a href="https://play.kahoot.it/v2/?quizId=ff6023c3-a7be-40ac-807c-cefcdd881128&amp;hostId=05eb977d-4f8a-440e-9e45-95212b29d103">Kahoot Quiz</a></li>
+<li><strong>Assignment 01 due (5%).</strong></li>
+<li><a href="https://github.com/danilofreire/datasci101/blob/main/assignments"><strong>Assignment 02</strong></a>.</li>
+</ul>
+<p>Suggested readings:</p>
+<ul>
+<li>Coursera (2025). <a href="https://www.coursera.org/articles/precision-vs-recall-machine-learning">Precision vs.&nbsp;recall in machine learning: What’s the difference?</a>. A short article about those two commonly confused metrics.</li>
+<li>Akinkugbe, A. (2025). <a href="https://pub.towardsai.net/the-essential-guide-to-model-evaluation-metrics-for-classification-560efee6f445">The essential guide to model evaluation metrics for classification.</a> A practical guide to common evaluation metrics.</li>
+<li>Thomas, R. L., &amp; Uminsky, D. (2022). <a href="https://www.cell.com/patterns/fulltext/S2666-3899(22)00056-3">Reliance on metrics is a fundamental challenge for AI.</a> <em>Patterns</em>, 3(5).100440. A discussion of the limitations of metrics.</li>
+</ul>
+<p>Further readings:</p>
+<ul>
+<li>Confident AI (2025). <a href="https://www.confident-ai.com/blog/llm-evaluation-metrics-everything-you-need-for-llm-evaluation">LLM evaluation metrics: the ultimate LLM evaluation guide.</a> A simple guide on new ways to measure the quality of LLM outputs.</li>
+<li>Rashka, S. (2025) <a href="https://magazine.sebastianraschka.com/p/llm-evaluation-4-approaches">Understanding the 4 main approaches to LLM evaluation.</a> Good blog post about the different ways to evaluate LLMs.</li>
+<li>Inie, N., Stray, J., &amp; Derczynski, L. (2023). <a href="https://arxiv.org/abs/2311.06237">Summon a demon and bind it: a grounded theory of LLM red teaming in the wild.</a> <em>arXiv preprint</em>. A good overview of red teaming.</li>
+<li>Radharapu, B., Robinson, K., Aroyo, L., &amp; Lahoti, P. (2023). <a href="https://arxiv.org/abs/2311.08592">Aart: AI-assisted red-teaming with diverse data generation for new LLM-powered applications.</a> <em>arXiv preprint</em>. A method to improve LLM safety with simple adversarial attacks.</li>
+</ul>
+</section>
+</section>
+<section id="module-2-language-and-perception" class="level2">
+<h2 class="anchored" data-anchor-id="module-2-language-and-perception">Module 2 — Language and perception</h2>
+<section id="september-15-2026" class="level3">
+<h3 class="anchored" data-anchor-id="september-15-2026">September 15, 2026:</h3>
+<ul>
+<li>Lecture 06: <a href="https://danilofreire.github.io/datasci101/lectures/lecture-06/06-language.html">How machines handle language: tokens, embeddings and context</a>.</li>
+<li><a href="https://play.kahoot.it/v2/?quizId=3f1282a6-6b9a-4fbe-b916-104cd6d11f98&amp;hostId=05eb977d-4f8a-440e-9e45-95212b29d103">Kahoot Quiz</a></li>
+</ul>
+<p>Suggested readings:</p>
+<ul>
+<li>StackOverflow (2023). <a href="https://stackoverflow.blog/2023/11/09/an-intuitive-introduction-to-text-embeddings/">An intuitive introduction to text embeddings.</a> A practical introduction to embeddings.</li>
+<li>Metzger, S. (2022). <a href="https://medium.com/@saschametzger/what-are-tokens-vectors-and-embeddings-how-do-you-create-them-e2a3e698e037">A beginner’s guide to tokens, vectors, and embeddings in NLP.</a> Easy to read and with interesting examples.</li>
+<li>HuggingFace (2025). <a href="https://huggingface.co/docs/transformers/tokenizer_summary">Tokenizer summary</a> A really good overview of tokenisation, with examples and videos.</li>
+</ul>
+<p>Further readings:</p>
+<ul>
+<li>Neptune.ai (2025). <a href="https://neptune.ai/blog/word-embeddings-guide">The ultimate guide to word embeddings.</a> A clear and practical introduction to word embeddings.</li>
+<li>Neptune.ai (2025). <a href="https://neptune.ai/blog/tokenization-in-nlp">Tokenization in NLP: types, challenges, examples, tools.</a> Another article by the same group on tokenisation.</li>
+<li>Boykis, V. (2022). <a href="https://vickiboykis.com/what_are_embeddings/">What are embeddings?</a>. A whole book dedicated to embeddings. For those who are interested in a more in-depth treatment. There’s also a <a href="https://github.com/veekaybee/what_are_embeddings">GitHub repository</a> with code examples.</li>
+</ul>
+</section>
+<section id="september-17-2026" class="level3">
+<h3 class="anchored" data-anchor-id="september-17-2026">September 17, 2026:</h3>
+<ul>
+<li>Lecture 07: <a href="https://danilofreire.github.io/datasci101/lectures/lecture-07/07-multimodal.html">How machines see and hear</a>.</li>
+<li><a href="https://play.kahoot.it/v2/?quizId=5656ef85-3824-4d8d-a1a8-fa79a440105f&amp;hostId=05eb977d-4f8a-440e-9e45-95212b29d103">Kahoot Quiz</a></li>
+<li><strong>Assignment 02 due (5%).</strong></li>
+<li><a href="https://github.com/danilofreire/datasci101/blob/main/assignments"><strong>Assignment 03</strong></a>.</li>
+</ul>
+<p>Suggested readings:</p>
+<ul>
+<li>Gupta, A. (2025). <a href="https://pub.towardsai.net/how-computers-see-the-world-a-beginners-guide-to-cnns-c847ab855104">How computers see the world: a beginner’s guide to CNNs.</a> An illustrated introduction to convolutional neural networks. Feel free to skip the coding section if you are not interested.</li>
+<li>AltexSoft (2025). <a href="https://www.altexsoft.com/blog/sound-music-voice-generation/">How AI sound, music, and voice generation works.</a> Another practical introduction. It goes a little beyond what we cover in class.</li>
+</ul>
+<p>Further readings:</p>
+<ul>
+<li>O’Shea, K., &amp; Nash, R. (2015). <a href="https://arxiv.org/abs/1511.08458">An introduction to convolutional neural networks.</a> <em>arXiv preprint</em>. A clear and concise tutorial.</li>
+<li>Raschka, S. (2024). <a href="https://magazine.sebastianraschka.com/p/understanding-multimodal-llms">Understanding Multimodal LLMs</a>. More technical but clear.</li>
+<li>Wu, J., Gan, W., Chen, Z., Wan, S., &amp; Yu, P. S. (2023). <a href="https://arxiv.org/abs/2311.13165">Multimodal Large Language Models: A Survey.</a> <em>arXiv preprint</em>. A broad survey of how models combine text with images, audio and video.</li>
+<li>Radford, A., Kim, J. W., Xu, T., Brockman, G., McLeavey, C., &amp; Sutskever, I. (2023, July). <a href="https://cdn.openai.com/papers/whisper.pdf">Robust speech recognition via large-scale weak supervision.</a> In <em>International conference on machine learning</em> (pp.&nbsp;28492-28518). PMLR. The original paper for <a href="https://openai.com/research/whisper">Whisper</a>.</li>
+</ul>
+</section>
+<section id="september-22-2026" class="level3">
+<h3 class="anchored" data-anchor-id="september-22-2026">September 22, 2026:</h3>
+<ul>
+<li>Lecture 08: <a href="https://danilofreire.github.io/datasci101/lectures/lecture-08/08-review.html">Review session for Quiz 01</a>. This session covers Lectures 01-07 and prepares students for Quiz 01 on September 24.</li>
+<li><a href="https://play.kahoot.it/v2/?quizId=fa5d4ca5-9425-4242-99c1-e792f58377a3&amp;hostId=05eb977d-4f8a-440e-9e45-95212b29d103">Kahoot Quiz</a></li>
+</ul>
+</section>
+<section id="september-24-2026" class="level3">
+<h3 class="anchored" data-anchor-id="september-24-2026">September 24, 2026:</h3>
+<ul>
+<li>Lecture 09: <strong>Quiz 01</strong>. This quiz covers Lectures 01-07.</li>
+<li><strong>Assignment 03 due (5%).</strong></li>
+<li><a href="https://github.com/danilofreire/datasci101/blob/main/assignments"><strong>Assignment 04</strong></a>.</li>
+</ul>
+</section>
+<section id="september-29-2026" class="level3">
+<h3 class="anchored" data-anchor-id="september-29-2026">September 29, 2026:</h3>
+<ul>
+<li>Lecture 10: <a href="https://danilofreire.github.io/datasci101/lectures/lecture-10/10-prompting.html">Prompting techniques</a>.</li>
+</ul>
+<p>Suggested readings:</p>
+<ul>
+<li>Anthropic (2025). <a href="https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/overview">Prompt engineering overview</a>. Official guide from Claude’s creators.</li>
+<li>Google (2025). <a href="https://services.google.com/fh/files/misc/gemini-for-google-workspace-prompting-guide-101.pdf">Gemini for Workspace Prompting Guide</a>. The persona-task-context-format (PTCF) framework.</li>
+<li><a href="https://www.promptingguide.ai/">Prompting Guide</a>. Community-maintained reference with examples.</li>
+</ul>
+<p>Further readings:</p>
+<ul>
+<li>OpenAI (2025). <a href="https://platform.openai.com/docs/guides/prompt-engineering">Prompt engineering</a>. OpenAI’s best practices.</li>
+<li>Brown, T., Mann, B., Ryder, N., Subbiah, M., Kaplan, J. D., Dhariwal, P., … &amp; Amodei, D. (2020). <a href="https://arxiv.org/abs/2005.14165">Language models are few-shot learners.</a> <em>Advances in neural information processing systems</em>, 33, 1877-1901.</li>
+<li>Wei, J., et al.&nbsp;(2022). <a href="https://arxiv.org/abs/2201.11903">Chain-of-Thought prompting elicits reasoning in large language models</a>. The original CoT paper.</li>
+<li>Google (2025). <a href="https://grow.google/prompting-essentials/">Prompting essentials</a>. Free course on Coursera.</li>
+<li>Berryman, J., &amp; Ziegler, A. (2024). <a href="https://www.oreilly.com/library/view/prompt-engineering-for/9781098156145/">Prompt engineering for LLMs: the art and science of building large language model–based applications</a>. A recent book about the topic.</li>
+</ul>
+</section>
+</section>
+<section id="module-3-retrieval-generation-pipelines-and-agents" class="level2">
+<h2 class="anchored" data-anchor-id="module-3-retrieval-generation-pipelines-and-agents">Module 3 — Retrieval, generation, pipelines and agents</h2>
+<section id="october-1-2026" class="level3">
+<h3 class="anchored" data-anchor-id="october-1-2026">October 1, 2026:</h3>
+<ul>
+<li>Lecture 11: <a href="https://danilofreire.github.io/datasci101/lectures/lecture-11/11-hallucination.html">Creativity and hallucination</a>.</li>
+<li><a href="https://play.kahoot.it/v2/?quizId=2b4a7952-9357-4542-a2c3-7707bb8da206&amp;hostId=05eb977d-4f8a-440e-9e45-95212b29d103">Kahoot Quiz</a></li>
+<li><strong>Assignment 04 due (5%).</strong></li>
+<li><a href="https://github.com/danilofreire/datasci101/blob/main/assignments"><strong>Assignment 05</strong></a>.</li>
+</ul>
+<p>Suggested readings:</p>
+<ul>
+<li>Jiang, X., Tian, Y., Hua, F., Xu, C., Wang, Y., &amp; Guo, J. (2024). <a href="https://arxiv.org/abs/2402.06647">A survey on large language model hallucination via a creativity perspective.</a> <em>arXiv preprint</em>. Very interesting paper. If you want to read just one article on this topic, this is a good candidate.</li>
+<li>Shao, A. (2025). <a href="https://misinforeview.hks.harvard.edu/article/new-sources-of-inaccuracy-a-conceptual-framework-for-studying-ai-hallucinations/">New sources of inaccuracy? A conceptual framework for studying AI hallucinations.</a> <em>Harvard Kennedy School Misinformation Review</em>. Worth reading as well.</li>
+<li>OpenAI (2024). <a href="https://help.openai.com/en/articles/8313428-does-chatgpt-tell-the-truth">Does ChatGPT tell the truth?</a> Practical advice.</li>
+</ul>
+<p>Further readings:</p>
+<ul>
+<li>Wang, C., Liu, X., Yue, Y., Guo, Q., Hu, X., Tang, X., … &amp; Zhang, Y. (2025). <a href="https://dl.acm.org/doi/full/10.1145/3742420">Survey on factuality in large language models.</a> <em>ACM Computing Surveys, 58(1), 1-37</em>. Wide-ranging and informative. Not technical.</li>
+<li>Anh-Hoang, D., Tran, V., &amp; Nguyen, L. M. (2025). <a href="https://www.frontiersin.org/journals/artificial-intelligence/articles/10.3389/frai.2025.1622292/full">Survey and analysis of hallucinations in large language models: attribution to prompting strategies or model behavior.</a> <em>Frontiers in Artificial Intelligence, 8, 1622292</em>. The authors argue that chain-of-thought prompting reduces hallucinations in prompt-sensitive scenarios.</li>
+<li>Luo, Q., King, G., Puett, M., &amp; Smith, M. D. (2026). <a href="https://gking.harvard.edu/sites/g/files/omnuum7116/files/2026-03/Inducing%20sustained%20creativity%20and%20diversity%20in%20LLMs.pdf">Inducing sustained creativity and diversity in large language models.</a> <em>Working paper, Harvard University</em>. The authors propose a decoding method that produces more varied outputs than standard mode-seeking decoding.</li>
+</ul>
+</section>
+<section id="october-6-2026" class="level3">
+<h3 class="anchored" data-anchor-id="october-6-2026">October 6, 2026:</h3>
+<ul>
+<li>Lecture 12: <a href="https://danilofreire.github.io/datasci101/lectures/lecture-12/12-rag.html">Retrieval-augmented workflows and semantic search</a>.</li>
+<li><a href="https://play.kahoot.it/v2/?quizId=60414733-4795-4b9e-815f-3ad615072fab&amp;hostId=05eb977d-4f8a-440e-9e45-95212b29d103">Kahoot Quiz</a></li>
+</ul>
+<p>Suggested readings:</p>
+<ul>
+<li>Amazon Web Services (2025). <a href="https://aws.amazon.com/what-is/retrieval-augmented-generation/">What is retrieval-augmented generation (RAG)?</a> Beginners’ guide to RAG.</li>
+<li>Slack (2025). <a href="https://slack.com/blog/productivity/semantic-search-explained-how-it-works-and-why-it-matters">Semantic search explained: how it works, and why it matters.</a> Good explainer.</li>
+</ul>
+<p>Further readings:</p>
+<ul>
+<li>Mastering LLM (2024). <a href="https://masteringllm.medium.com/11-chunking-strategies-for-rag-simplified-visualized-df0dbec8e373">11 chunking strategies for RAG — simplified &amp; visualized</a> Nice explanation of chunking strategies.</li>
+</ul>
+</section>
+<section id="october-8-2026" class="level3">
+<h3 class="anchored" data-anchor-id="october-8-2026">October 8, 2026:</h3>
+<ul>
+<li>Lecture 13: <strong>Quiz 02</strong>. This quiz covers Lectures 10-12.</li>
+<li><strong>Assignment 05 due (5%).</strong></li>
+<li><a href="https://github.com/danilofreire/datasci101/blob/main/assignments"><strong>Assignment 06</strong></a>.</li>
+</ul>
+</section>
+<section id="october-13-2026-fall-break-no-classes" class="level3">
+<h3 class="anchored" data-anchor-id="october-13-2026-fall-break-no-classes">October 13, 2026: Fall Break (No Classes)</h3>
+</section>
+<section id="october-15-2026" class="level3">
+<h3 class="anchored" data-anchor-id="october-15-2026">October 15, 2026:</h3>
+<ul>
+<li>Lecture 14: <a href="https://danilofreire.github.io/datasci101/lectures/lecture-14/14-pipelines.html">When AI systems fail: pipelines, monitoring, and documentation</a>.</li>
+</ul>
+<p>Suggested readings:</p>
+<ul>
+<li>Spot Intelligence (2024). <a href="https://spotintelligence.com/2024/04/08/data-drift-in-machine-learning/">Data drift in machine learning.</a> An accessible overview of how data drift affects ML systems over time.</li>
+<li>Howard, J. (2024). <a href="https://jameshoward.us/2024/11/26/context-degradation-syndrome-when-large-language-models-lose-the-plot">Context degradation syndrome: when large language models lose the plot.</a> A discussion on why model performance degrades over time.</li>
+<li>Crawford, K., &amp; Paglen, T. (2019). <a href="https://excavating.ai/">Excavating AI: The politics of images in machine learning training sets.</a> A compelling visual essay on ImageNet’s problems and the politics of training data.</li>
+</ul>
+<p>Further readings:</p>
+<ul>
+<li>Google (2025). <a href="https://developers.google.com/machine-learning/crash-course/production-ml-systems/monitoring">Production ML systems: monitoring pipelines.</a> Practical guide to monitoring ML pipelines.</li>
+<li>Nawani, M. (2025). <a href="https://medium.com/@monikanawani25/from-correctness-to-confidence-understanding-llm-testing-0ad555bc797e">From correctness to confidence: understanding LLM testing.</a> Explains the challenges of testing non-deterministic AI systems.</li>
+<li>ApX Machine Learning (2025). <a href="https://apxml.com/courses/intro-llm-red-teaming/chapter-5-defenses-mitigation-strategies-llms/input-validation-sanitization-llms">Input validation and sanitization for LLMs.</a> Practical guide to defending AI systems against prompt injection attacks.</li>
+<li>Gebru, T., et al.&nbsp;(2018). <a href="https://arxiv.org/abs/1803.09010">Datasheets for datasets.</a> <em>arXiv preprint</em>. The original paper proposing datasheets for datasets.</li>
+<li>Mitchell, M., et al.&nbsp;(2019). <a href="https://arxiv.org/abs/1810.03993">Model cards for model reporting.</a> <em>Proceedings of FAccT</em>. The original paper proposing model cards.</li>
+<li>AI Incident Database. <a href="https://incidentdatabase.ai/">AI Incident Database.</a> A collection of real-world AI failures and incidents for case study research.</li>
+</ul>
+</section>
+<section id="october-20-2026" class="level3">
+<h3 class="anchored" data-anchor-id="october-20-2026">October 20, 2026:</h3>
+<ul>
+<li>Lecture 15: <a href="https://danilofreire.github.io/datasci101/lectures/lecture-15/15-agents.html">AI agents: when models start doing things</a>.</li>
+<li><a href="https://play.kahoot.it/v2/?quizId=7d2aadb9-5bdb-4ed0-b366-6f80b46b53d0&amp;hostId=05eb977d-4f8a-440e-9e45-95212b29d103">Kahoot Quiz</a></li>
+</ul>
+<p>Suggested readings:</p>
+<ul>
+<li>IBM (2025). <a href="https://www.ibm.com/think/topics/ai-agents">What are AI agents?</a> A friendly explainer to start with.</li>
+<li>Heikkilä, M. (2024). <a href="https://www.technologyreview.com/2024/07/05/1094711/what-are-ai-agents/">What are AI agents?</a> <em>MIT Technology Review</em>. A clear, non-technical overview of the agent idea and the hype around it.</li>
+<li>Willison, S. (2025). <a href="https://simonwillison.net/2025/Jun/16/the-lethal-trifecta/">The lethal trifecta for AI agents.</a> Why agents with private data, untrusted content, and the ability to communicate are a security nightmare. Short and very readable.</li>
+<li>Anthropic (2025). <a href="https://www.anthropic.com/research/project-vend-1">Project Vend: Can Claude run a small shop?</a> Anthropic let an AI agent run their office shop for a month. It did not go well, and the write-up is honest and funny. Read this one.</li>
+</ul>
+<p>Further readings:</p>
+<ul>
+<li>Anthropic (2024). <a href="https://www.anthropic.com/research/building-effective-agents">Building effective agents.</a> How Claude’s creators think about agent design. Slightly technical, but the diagrams alone are worth your time.</li>
+<li>OpenAI (2025). <a href="https://cdn.openai.com/business-guides-and-resources/a-practical-guide-to-building-agents.pdf">A practical guide to building agents.</a> OpenAI’s guide for companies deploying agents. Skim the sections on guardrails.</li>
+</ul>
+</section>
+</section>
+<section id="module-4-data-ethics-and-bias" class="level2">
+<h2 class="anchored" data-anchor-id="module-4-data-ethics-and-bias">Module 4 — Data ethics and bias</h2>
+<section id="october-22-2026" class="level3">
+<h3 class="anchored" data-anchor-id="october-22-2026">October 22, 2026:</h3>
+<ul>
+<li>Lecture 16: <a href="https://danilofreire.github.io/datasci101/lectures/lecture-16/16-bias.html">Types of bias and how they arise</a>.</li>
+<li><a href="https://play.kahoot.it/v2/?quizId=9c25b0fe-41fe-4ad0-8e9c-dd0fe68fa480&amp;hostId=05eb977d-4f8a-440e-9e45-95212b29d103">Kahoot Quiz</a></li>
+<li><strong>Assignment 06 due (5%).</strong></li>
+<li><a href="https://github.com/danilofreire/datasci101/blob/main/assignments"><strong>Assignment 07</strong></a>.</li>
+</ul>
+<p>Suggested readings:</p>
+<ul>
+<li>Silberg, J., &amp; Manyika, J. (2019). <a href="https://www.mckinsey.com/~/media/McKinsey/Featured%20Insights/Artificial%20Intelligence/Tackling%20bias%20in%20artificial%20intelligence%20and%20in%20humans/MGI-Tackling-bias-in-AI-June-2019.pdf">Notes from the AI frontier: tackling bias in AI (and in humans).</a> McKinsey Global Institute.</li>
+<li>Liu Roc, A. (2023). <a href="https://medium.com/@alex.liu.roc/understanding-the-impossibility-of-fairness-199bba6c9072">Understanding the impossibility of fairness.</a> <em>Medium</em>. A good, accessible overview of the impossibility results in fairness.</li>
+<li>Kantayya, S. (2020). <a href="https://www.codedbiasfilm.com/">Coded Bias.</a> Documentary film. May or may not be available on Netflix depending on your location.</li>
+</ul>
+<p>Further readings:</p>
+<ul>
+<li>Barocas, S., Hardt, M., &amp; Narayanan, A. (2019). <a href="https://fairmlbook.org/">Fairness and machine learning.</a> Chapter 2: When is automated decision making legitimate?</li>
+<li>Mehrabi, N., Morstatter, F., Saxena, N., Lettich, A., &amp; Galstyan, A. (2021). <a href="https://arxiv.org/abs/1908.09635">A survey on bias and fairness in machine learning.</a> <em>ACM Computing Surveys</em>, <em>54</em>(6), 1-35.</li>
+<li>Hellman, D. (2025). <a href="https://plato.stanford.edu/archives/fall2025/entries/algorithmic-fairness/">Algorithmic fairness.</a> <em>The Stanford Encyclopedia of Philosophy</em> (Fall 2025 Edition).</li>
+</ul>
+</section>
+<section id="october-27-2026" class="level3">
+<h3 class="anchored" data-anchor-id="october-27-2026">October 27, 2026:</h3>
+<ul>
+<li>Lecture 17: <a href="https://danilofreire.github.io/datasci101/lectures/lecture-17/17-setting-up-ai.html">Setting up AI: instructions, memory and connectors</a>.</li>
+<li><a href="https://play.kahoot.it/v2/?quizId=4862869d-eec7-467b-8f6b-f8fcb7d01301&amp;hostId=05eb977d-4f8a-440e-9e45-95212b29d103">Kahoot Quiz</a></li>
+<li>No assignment this week.</li>
+<li><a href="https://github.com/danilofreire/datasci101/blob/main/project/project-instructions.pdf">Instructions for the final project (PDF)</a>. Groups must be finalised by November 3. Optional proposal due November 12; final report and infographic due December 8.</li>
+</ul>
+<p>Suggested readings:</p>
+<ul>
+<li>Anthropic (2026). <a href="https://support.claude.com/en/articles/9519177-how-can-i-create-and-manage-projects">How can I create and manage projects?</a> <em>Claude Help Center</em>. The official walk-through of project instructions, knowledge files and the five-project limit on the free plan. The companion page on <a href="https://support.claude.com/en/articles/11817273-use-claude-s-chat-search-and-memory-to-build-on-previous-context">memory and chat search</a> shows you how to read, edit and delete what Claude has saved about you.</li>
+<li>Chandrasekar, A. (2026). <a href="https://www.cjr.org/tow_center/chatbots-memory-remember-users-conversations-history-openai-sam-altman-llm-gemini.php">Your chatbot’s memory of you can shape the information you see.</a> <em>Columbia Journalism Review</em>, Tow Center. A short piece on what memory does to the answers you get, including memory poisoning and deleted memories that come back. Read it before you open your own memory panel.</li>
+<li>Anthropic (2024). <a href="https://www.anthropic.com/news/model-context-protocol">Introducing the Model Context Protocol.</a> The original announcement, written for a general audience. Useful for seeing what problem MCP was meant to solve before it became an industry standard.</li>
+<li>Agentic AI Foundation (2026). <a href="https://agents.md/">AGENTS.md.</a> The whole specification is one page of plain Markdown with examples, which is the point. It is now used in tens of thousands of open-source projects and read by more than twenty different coding tools.</li>
+</ul>
+<p>Further readings:</p>
+<ul>
+<li>Dash, A., Das, S., Kirsten, E., Wu, Q., Karnam, S. K., Gummadi, K. P., Holz, T., Zafar, M. B., &amp; Zannettou, S. (2026). <a href="https://arxiv.org/abs/2602.01450">The algorithmic self-portrait: deconstructing memory in ChatGPT.</a> <em>Proceedings of the ACM Web Conference 2026</em>. Eighty people donated their ChatGPT memories, 2,050 entries in all. The system wrote 96% of them without being asked, 28% held personal data under the GDPR definition, and 52% held psychological inferences.</li>
+<li>Greshake, K., Abdelnabi, S., Mishra, S., Endres, C., Holz, T., &amp; Fritz, M. (2023). <a href="https://arxiv.org/abs/2302.12173">Not what you’ve signed up for: compromising real-world LLM-integrated applications with indirect prompt injection.</a> <em>arXiv preprint</em>. The paper that named indirect prompt injection and showed it working against Bing Chat. Once a tool fetches outside text, data and instructions look the same to the model.</li>
+<li>Hou, X., Zhao, Y., Wang, S., &amp; Wang, H. (2025). <a href="https://arxiv.org/abs/2503.23278">Model Context Protocol (MCP): landscape, security threats, and future research directions.</a> <em>arXiv preprint</em>. A survey of how MCP servers are built, deployed and maintained, with sixteen named attack scenarios. Technical in places, but the threat table reads on its own.</li>
+<li>Anthropic (2025). <a href="https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents">Effective context engineering for AI agents.</a> An engineering post arguing that context is a finite resource, so the aim is the smallest set of high-signal instructions rather than the longest. It explains why a two-page instruction file often performs worse than ten good lines.</li>
+</ul>
+</section>
+</section>
+<section id="module-5-policy-governance-and-social-impact" class="level2">
+<h2 class="anchored" data-anchor-id="module-5-policy-governance-and-social-impact">Module 5 — Policy, governance and social impact</h2>
+<section id="october-29-2026" class="level3">
+<h3 class="anchored" data-anchor-id="october-29-2026">October 29, 2026:</h3>
+<ul>
+<li>Lecture 18: <a href="https://danilofreire.github.io/datasci101/lectures/lecture-18/18-regulation.html">AI regulation and standards around the world</a>.</li>
+<li><strong>Assignment 07 due (5%).</strong></li>
+</ul>
+<p>Suggested readings:</p>
+<ul>
+<li>European Parliament (2023). <a href="https://www.europarl.europa.eu/topics/en/article/20230601STO93804/eu-ai-act-first-regulation-on-artificial-intelligence">EU AI act</a>. The original text.</li>
+<li>Wikipedia (2026). <a href="https://en.wikipedia.org/wiki/Regulation_of_artificial_intelligence">Regulation of artificial intelligence</a>. It’s hard to be updated on this topic, so this Wikipedia page is a good resource to keep track of the latest developments.</li>
+<li>The White House (2025). <a href="https://www.whitehouse.gov/wp-content/uploads/2025/07/Americas-AI-Action-Plan.pdf">Winning the race: America’s AI action plan</a>. What the US government wants to do about AI.</li>
+</ul>
+<p>Further readings:</p>
+<ul>
+<li>GOV.UK (2023). <a href="https://www.gov.uk/government/publications/ai-regulation-a-pro-innovation-approach/white-paper">A pro-innovation approach to AI regulation.</a>. The UK’s approach to AI regulation.</li>
+<li>Cole, M. D. (2024). <a href="https://web.archive.org/web/20240330165240id_/https://aire.lexxion.eu/data/article/19406/pdf/aire_2024_01-017.pdf">AI regulation and governance on a global scale.</a> <em>Journal of AI Law and Regulation</em>, <em>1</em>(1), 126-142. A short report on national and international efforts to regulate AI.</li>
+<li>G’Sell, F. (2025). <a href="https://cyber.fsi.stanford.edu/content/regulating-under-uncertainty-governance-options-generative-ai">Regulating under uncertainty: governance options for generative AI.</a> A report on the challenges of regulating AI and possible approaches to do it effectively.</li>
+</ul>
+</section>
+<section id="november-3-2026" class="level3">
+<h3 class="anchored" data-anchor-id="november-3-2026">November 3, 2026:</h3>
+<ul>
+<li>Lecture 19: <a href="https://danilofreire.github.io/datasci101/lectures/lecture-19/19-privacy.html">Privacy and data protection</a>.</li>
+<li><strong>Group list due.</strong></li>
+</ul>
+<p>Suggested readings:</p>
+<ul>
+<li>Taddeo, M., &amp; Floridi, L. (2018). <a href="https://www.science.org/doi/abs/10.1126/science.aat5991">How AI can be a force for good.</a> <em>Science</em>, <em>361</em>(6404), 751-752. A philosophical discussion on the ethical implications of AI, including privacy concerns.</li>
+<li>OpenAI (2025). <a href="https://privacy.openai.com/policies/en/">OpenAI privacy portal.</a> OpenAI’s privacy policy and practices.</li>
+<li>King, J. &amp; Meinhardt, C. (2024). <a href="https://hai.stanford.edu/policy/white-paper-rethinking-privacy-ai-era-policy-provocations-data-centric-world">Rethinking privacy in the AI era: policy provocations for a data-centric world.</a> The authors analyse how existing and future privacy and data protection regulation will impact the development and deployment of AI systems.</li>
+</ul>
+<p>Further readings:</p>
+<ul>
+<li>Hoofnagle, C. J., Van Der Sloot, B., &amp; Borgesius, F. Z. (2019). <a href="https://www.tandfonline.com/doi/full/10.1080/13600834.2019.1573501">The European Union general data protection regulation: what it is and what it means.</a> <em>Information &amp; Communications Technology Law</em>, <em>28</em>(1), 65-98. A detailed overview of the GDPR, the most influential data protection law in the world.</li>
+<li>European Data Protection Board (2025). <a href="https://www.edpb.europa.eu/our-work-tools/our-documents/support-pool-experts-projects/ai-privacy-risks-mitigations-large_en">AI privacy risks &amp; mitigations Large Language Models (LLMs).</a> This report provides use cases examples on the application of the risk management framework in real-world scenarios.</li>
+<li>OECD (2026). <a href="https://www.oecd.org/en/publications/oecd-due-diligence-guidance-for-responsible-ai_41671712-en.html">OECD due diligence guidance for responsible AI</a>. Practical guidance for organisations to implement good AI practices.</li>
+<li>Future of Privacy Forum (2025). <a href="https://fpf.org/">https://fpf.org/</a>. An NGO that advances principled and pragmatic data protection, AI and digital governance practices. Many resources on their website.</li>
+</ul>
+</section>
+<section id="november-5-2026" class="level3">
+<h3 class="anchored" data-anchor-id="november-5-2026">November 5, 2026:</h3>
+<ul>
+<li>Lecture 20: <strong>Quiz 03</strong>. This quiz covers Lectures 14-18.</li>
+<li><a href="https://github.com/danilofreire/datasci101/blob/main/assignments"><strong>Assignment 08</strong></a>.</li>
+</ul>
+</section>
+<section id="november-10-2026" class="level3">
+<h3 class="anchored" data-anchor-id="november-10-2026">November 10, 2026:</h3>
+<ul>
+<li>Lecture 21: <a href="https://danilofreire.github.io/datasci101/lectures/lecture-21/21-labour.html">Labour markets and economic effects</a>.</li>
+</ul>
+<p>Suggested readings:</p>
+<ul>
+<li>Financial Times. (2026). <a href="https://www.ft.com/content/c89496b1-bc8d-425e-b86b-ec89402410e4">The great graduate job drought</a>. Also available <a href="https://archive.ph/qDFWp">here</a>. An overview of the job market for recent graduates. You may want to read this one. Spoiler: it’s not good.</li>
+<li>Oks, D. (2026). <a href="https://davidoks.blog/p/why-the-atm-didnt-kill-bank-teller">Why the ATM didn’t kill bank teller jobs (but the iPhone did).</a> A short essay arguing that task-automating technologies rarely eliminate jobs, while paradigm-shifting ones can. The author applies this distinction to AI.</li>
+<li>Karpathy, A. (2025). <a href="https://karpathy.ai/jobs/">AI exposure across US occupations.</a> An interactive visualisation of AI exposure scores for 342 US occupations, with breakdowns by education level, pay band, and employment outlook.</li>
+</ul>
+<p>Further readings:</p>
+<ul>
+<li>Acemoglu, D., &amp; Restrepo, P. (2019). <a href="https://www.aeaweb.org/articles?id=10.1257/jep.33.2.3">Automation and new tasks: how technology displaces and reinstates labor.</a> <em>Journal of Economic Perspectives</em>, <em>33</em>(2), 3-30.</li>
+<li>World Economic Forum. (2025). <a href="https://www.weforum.org/reports/the-future-of-jobs-report-2025">The future of jobs report 2025.</a> A wide-ranging report on how jobs are expected to change.</li>
+<li>Jones, C. (2026). <a href="https://web.stanford.edu/~chadj/AIandEconomicFuture.pdf">AI and our economic future</a>. A working paper that reviews the literature on the economic effects of AI. Written for a broad audience, to be published in the <em>Journal of Economic Perspectives</em>.</li>
+<li>Strain, Michael R. (2024). <a href="https://nationalaffairs.com/publications/detail/the-case-for-ai-optimism">The case for AI optimism.</a>. Maybe things as not as bad as they seem?</li>
+<li>Anthropic (2026). <a href="https://www.anthropic.com/research/economic-index-primitives">Anthropic economic index.</a> How people use Claude and what are its possible impacts on the economy.</li>
+<li>OpenAI (2025). <a href="https://openai.com/index/how-people-are-using-chatgpt/">How people are using ChatGPT.</a> Same thing, but for ChatGPT. Spoiler: most people are not using it for work. The full article is available <a href="https://www.nber.org/papers/w34255">here</a>.</li>
+</ul>
+</section>
+</section>
+<section id="module-6-applications-limits-and-projects" class="level2">
+<h2 class="anchored" data-anchor-id="module-6-applications-limits-and-projects">Module 6 — Applications, limits and projects</h2>
+<section id="november-12-2026" class="level3">
+<h3 class="anchored" data-anchor-id="november-12-2026">November 12, 2026:</h3>
+<ul>
+<li>Lecture 22: <a href="https://danilofreire.github.io/datasci101/lectures/lecture-22/22-wellbeing.html">AI and wellbeing: the attention economy, mental health, and the environment</a>.</li>
+<li><strong>Assignment 08 due (5%).</strong></li>
+<li><a href="https://github.com/danilofreire/datasci101/blob/main/assignments"><strong>Assignment 09</strong></a>.</li>
+<li><strong>Optional project proposal due.</strong></li>
+</ul>
+<p>Suggested readings:</p>
+<ul>
+<li>OpenAI. (2025). <a href="https://openai.com/index/strengthening-chatgpt-responses-in-sensitive-conversations/">Strengthening ChatGPT’s responses in sensitive conversations</a>. OpenAI’s approach to making ChatGPT more helpful in sensitive conversations.</li>
+<li>McBain, R. K., et al.&nbsp;(2025). <a href="https://doi.org/10.1001/jamanetworkopen.2025.42281">Use of generative AI for mental health advice among adolescents and young adults.</a> <em>JAMA Network Open</em>. A nationally representative survey showing 1 in 8 US adolescents and young adults use AI chatbots for mental health advice.</li>
+<li>MIT Technology Review (2025). <a href="https://www.technologyreview.com/2025/05/20/1116327/ai-energy-usage-climate-footprint-big-tech/">We did the math on AI’s energy footprint. Here’s the story you haven’t heard.</a> A data-driven investigation into the opacity of Big Tech’s energy reporting.</li>
+</ul>
+<p>Further readings:</p>
+<ul>
+<li>Habicht, J., Dina, L. M., McFadyen, J., Stylianou, M., Harper, R., Hauser, T. U., &amp; Rollwage, M. (2025). <a href="https://www.jmir.org/2025/1/e60435">Generative AI–enabled therapy support tool for improved clinical outcomes and patient engagement in group therapy: real-world observational study</a>. <em>Journal of Medical Internet Research</em>, <em>27</em>, e60435. An experiment on the use of AI in group therapy. It has a positive result.</li>
+<li>Moore, J., Grabb, D., Agnew, W., Klyman, K., Chancellor, S., Ong, D. C., &amp; Haber, N. (2025). <a href="https://arxiv.org/abs/2504.18412">Expressing stigma and inappropriate responses prevents LLMs from safely replacing mental health providers</a>. <em>arXiv preprint arXiv:2504.18412</em>. The authors question the idea that LLMs should replace mental health providers.</li>
+<li>Habicht, J., et al.&nbsp;(2024). <a href="https://doi.org/10.1038/s41591-023-02766-x">Closing the accessibility gap to mental health treatment with a personalised self-referral chatbot.</a> <em>Nature Medicine</em>. A study of 129,400 NHS patients showing a chatbot self-referral system increased mental health referrals by 15% overall and 29% among ethnic minorities.</li>
+<li>Orben, A., &amp; Przybylski, A. K. (2019). <a href="https://doi.org/10.1038/s41562-018-0506-1">The association between adolescent well-being and digital technology use.</a> <em>Nature Human Behaviour</em>, <em>3</em>, 173-182. A specification-curve analysis of 355,000+ adolescents finding that technology use explains at most 0.4% of variation in wellbeing.</li>
+<li>Twenge, J. M., Haidt, J., Lozano, J., &amp; Cummins, K. M. (2022). <a href="https://doi.org/10.1016/j.actpsy.2022.103512">Specification curve analysis shows that social media use is linked to poor mental health, especially among girls.</a> <em>Acta Psychologica</em>, <em>224</em>, 103512. A direct rebuttal to Orben &amp; Przybylski using the same method, arguing the relationship is stronger and gender-differentiated.</li>
+<li>Arguedas, A. R., Robertson, C. T., Fletcher, R., &amp; Nielsen, R. K. (2022). <a href="https://reutersinstitute.politics.ox.ac.uk/echo-chambers-filter-bubbles-and-polarisation-literature-review">Echo chambers, filter bubbles, and polarisation: a literature review.</a> Reuters Institute, University of Oxford. A careful synthesis of the evidence, finding the picture is more mixed than popular coverage suggests.</li>
+</ul>
+</section>
+<section id="november-17-2026" class="level3">
+<h3 class="anchored" data-anchor-id="november-17-2026">November 17, 2026:</h3>
+<ul>
+<li>Lecture 23: <a href="https://danilofreire.github.io/datasci101/lectures/lecture-23/23-misinformation.html">Misinformation, deepfakes and trust online</a>.</li>
+</ul>
+<p>Suggested readings:</p>
+<ul>
+<li>Chesney, R., &amp; Citron, D. K. (2019). <a href="https://www.foreignaffairs.com/articles/world/2018-12-11/deepfakes-and-new-disinformation-war">Deepfakes and the new disinformation war.</a> <em>Foreign Affairs</em>. A short article about the risks of deepfakes and how to address them.</li>
+<li>Vosoughi, S., Roy, D., &amp; Aral, S. (2018). <a href="https://www.science.org/doi/abs/10.1126/science.aap9559">The spread of true and false news online</a>. <em>Science</em>, <em>359</em>(6380), 1146-1151. A seminal paper on the topic of misinformation. It shows that false news spreads faster and farther than true news, and that bots are not the main driver of this phenomenon.</li>
+<li>Helmus, T. C. (2022). <a href="https://www.rand.org/pubs/perspectives/PEA1043-1.html">Artificial intelligence, deepfakes, and disinformation: a primer.</a> <em>RAND Corporation</em>. A major revision of the literature.</li>
+</ul>
+<p>Further readings:</p>
+<ul>
+<li>Lazer, D. M., Baum, M. A., Benkler, Y., Berinsky, A. J., Greenhill, K. M., Menczer, F., … &amp; Zittrain, J. L. (2018). <a href="https://www.science.org/doi/abs/10.1126/science.aao2998">The science of fake news</a>. <em>Science</em>, 359(6380), 1094-1096. A call to action for researchers to study misinformation and develop solutions.</li>
+<li>Allcott, H., &amp; Gentzkow, M. (2017). <a href="https://www.aeaweb.org/articles?id=10.1257%2Fjep.31.2.211&amp;ref=aurelius-ghost.ykaqi5.easypanel.host">Social media and fake news in the 2016 election</a>. <em>Journal of economic perspectives</em>, 31(2), 211-236. A widely-cited paper that analyses the economics of fake news.</li>
+<li>Mirsky, Y., &amp; Lee, W. (2020). <a href="https://arxiv.org/abs/2004.11138">The creation and detection of deepfakes: a survey</a>. <em>arXiv preprint</em> arXiv:2004.11138. A technical survey on deepfakes. Quite technical, though. If you are interested in the topic but don’t have a technical background, you can skip this one and read the next one instead.</li>
+</ul>
+</section>
+<section id="november-19-2026" class="level3">
+<h3 class="anchored" data-anchor-id="november-19-2026">November 19, 2026:</h3>
+<ul>
+<li>Lecture 24: <strong>Quiz 04</strong>. This quiz covers Lectures 19, 21, and 22 (Privacy, Labour, and Wellbeing).</li>
+<li><strong>Assignment 09 due (5%).</strong></li>
+<li><a href="https://github.com/danilofreire/datasci101/blob/main/assignments"><strong>Assignment 10</strong></a>.</li>
+</ul>
+</section>
+<section id="november-24-2026" class="level3">
+<h3 class="anchored" data-anchor-id="november-24-2026">November 24, 2026:</h3>
+<ul>
+<li>Lecture 25: <a href="https://danilofreire.github.io/datasci101/lectures/lecture-25/25-safety.html">Long-term safety, the alignment problem and the future of AI</a>.</li>
+</ul>
+<p>Suggested readings:</p>
+<ul>
+<li>Russell, S. (2017). <a href="https://www.ted.com/talks/stuart_russell_3_principles_for_creating_safer_ai">3 principles for creating safer AI.</a> <em>TED Talk</em>.</li>
+<li>Anthropic. (2025). <a href="https://www.anthropic.com/news/constitutional-classifiers">Constitutional classifiers: defending against universal jailbreaks</a>. A jailbreak defense system using input/output classifiers trained on synthetic data. It reduced jailbreak success rates by a lot… but some people still found ways around it. If you would like to read the whole academic paper, <a href="https://arxiv.org/abs/2501.18837">check it out here</a>.</li>
+<li><a href="https://safe.ai/">Center for AI Safety</a>. A non-profit organisation working on this topic. They have a lot of resources on their website.</li>
+</ul>
+<p>Further readings:</p>
+<ul>
+<li>Amodei, D., et al.&nbsp;(2016). <a href="https://arxiv.org/abs/1606.06565">Concrete problems in AI safety.</a> <em>arXiv preprint</em>. A highly influential paper on the practical challenges of AI safety.</li>
+<li>Ji, J., Qiu, T., Chen, B., Zhang, B., Lou, H., Wang, K., … &amp; Gao, W. (2023). <a href="https://arxiv.org/abs/2310.19852">AI alignment: a comprehensive survey.</a> <em>arXiv preprint</em>. A survey of the field of AI alignment.</li>
+<li>Zhi-Xuan, T., Carroll, M., Franklin, M., &amp; Ashton, H. (2025). <a href="https://link.springer.com/article/10.1007/s11098-024-02249-w">Beyond preferences in AI alignment</a>. <em>Philosophical Studies</em>, 182(7), 1813-1863. A philosophical take on the limits of rational choice in AI alignment. A little more abstract, but very interesting.</li>
+<li>Christian, B. (2024). <a href="https://brianchristian.org/the-alignment-problem/">The alignment problem: machine learning and human values</a>. <em>Penguin Random House</em>. A great book on the challenges of aligning AI systems with human values.</li>
+<li><a href="https://www.alignmentforum.org/">AI Alignment Forum</a>. A community website for discussing AI alignment. Many of the most important papers in the field are posted here.</li>
+</ul>
+</section>
+<section id="november-26-2026-thanksgiving-recess-no-classes" class="level3">
+<h3 class="anchored" data-anchor-id="november-26-2026-thanksgiving-recess-no-classes">November 26, 2026: Thanksgiving Recess (No Classes)</h3>
+</section>
+<section id="december-1-2026" class="level3">
+<h3 class="anchored" data-anchor-id="december-1-2026">December 1, 2026:</h3>
+<ul>
+<li>Lecture 26: <a href="https://danilofreire.github.io/datasci101/lectures/lecture-26/26-revision.html">Course revision</a>.</li>
+</ul>
+</section>
+<section id="december-3-2026" class="level3">
+<h3 class="anchored" data-anchor-id="december-3-2026">December 3, 2026:</h3>
+<ul>
+<li>Lecture 27: <strong>Quiz 05</strong>. This quiz covers Lectures 23 and 25 (Misinformation and Safety).</li>
+<li><strong>Assignment 10 due (5%).</strong></li>
+</ul>
+</section>
+<section id="december-8-2026" class="level3">
+<h3 class="anchored" data-anchor-id="december-8-2026">December 8, 2026:</h3>
+<ul>
+<li>No lecture.</li>
+<li>Q&amp;A session and final project work time.</li>
+<li><a href="https://github.com/danilofreire/datasci101/blob/main/project/project-instructions.pdf">Final project due (20%).</a></li>
+</ul>
+
+
+</section>
+</section>
+
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>The content of this site is licensed under the <a href="./LICENSE.html">MIT License</a>.</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/danilofreire/datasci101/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li><li><a href="https://github.com/danilofreire/datasci101/blob/main/lectures.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></div>
+    <div class="nav-footer-right">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/danilofreire/datasci101">
+      <i class="bi bi-github" role="img">
+</i> 
+    </a>
+  </li>  
+</ul>
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

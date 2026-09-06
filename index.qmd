@@ -1,0 +1,59 @@
+---
+title: "DATASCI 101 - Introduction to AI Applications"
+subtitle: "Emory University, Fall 2026"
+title-block-banner: "#1B3A6B"
+title-block-banner-color: "white"
+---
+
+Welcome to [DATASCI 101](https://github.com/danilofreire/datasci101)! This course is a practical, non-technical introduction to artificial intelligence: how modern systems are built, and how to ask sharp questions about data, reliability and harms. It mixes short demonstrations (no programming experience required) with case studies and project work, and it is open to undergraduates from any faculty who want a grounded understanding of what AI can and cannot do.
+
+We meet every Tuesday and Thursday, 2:30-3:20pm, in [White Hall, Room 206](https://maps.app.goo.gl/gynyTUkKqJ7meGjm8). Please read the assigned texts before each class, and check this website regularly for updates and extra resources. If you have any questions, contact me or the course TAs.
+
+## Course content
+
+The course covers six main modules:
+
+1. **Orientation** - Introduction to AI and course overview
+2. **How AI systems are designed** - Dataset design, learning paradigms
+3. **Language and perception** - Natural language processing and computer vision
+4. **Retrieval, generation and pipelines** - Modern AI systems and workflows
+5. **Data ethics and bias** - Ethical considerations and bias mitigation
+6. **Policy, governance and social impact** - Regulation, privacy, and societal effects
+
+## Contact information
+
+- **Name**: [Danilo Freire](https://danilofreire.github.io/)
+- **Email**: [`danilo.freire@emory.edu`](mailto:danilo.freire@emory.edu)
+- **Teaching Assistants**: to be announced
+- **Office Hours**: By appointment at your convenience, please email me to schedule a meeting
+
+## Learning outcomes
+
+By the end of term, you should be able to:
+
+- Explain in plain language the main ideas behind today's AI systems.
+- Identify the common ways these systems fail, and the data problems that cause those failures.
+- Read a news article, product page or policy document about AI and assess whether its claims are credible.
+- Design a small, realistic plan for an AI application: the data it requires, how you would evaluate it, and how you would limit its potential for harm.
+- Consider the ethical, legal and social questions that arise when AI is deployed.
+
+## Website structure
+
+This website contains the [course syllabus](https://danilofreire.github.io/datasci101/syllabus.html), [lecture materials](https://danilofreire.github.io/datasci101/lectures.html), and [assignments](https://danilofreire.github.io/datasci101/assignments.html) for the course. The course repository at <https://github.com/danilofreire/datasci101> is similarly structured. Browse the materials and use whatever helps.
+
+## Getting help
+
+If you encounter any issues with the course materials or have questions about the content, please:
+
+1. Check the [course syllabus](https://danilofreire.github.io/datasci101/syllabus.html) and this README for relevant information
+2. Review the [lecture materials](https://danilofreire.github.io/datasci101/lectures.html) in the repository
+3. Contact the TAs or instructor via email
+4. [Open an issue](https://github.com/danilofreire/datasci101/issues) on GitHub
+
+## Contributing to the repository
+
+This repository is maintained by the course instructor, but you are welcome to contribute. You can suggest improvements or report issues by [opening a GitHub issue](https://github.com/danilofreire/datasci101/issues), [submitting a pull request](https://github.com/danilofreire/datasci101/pulls), [starting a discussion](https://github.com/danilofreire/datasci101/discussions), or [emailing me directly](mailto:danilo.freire@emory.edu).
+
+## License
+
+This repository is licensed under the [MIT License](https://github.com/danilofreire/datasci101/blob/main/LICENSE.md). You are free to use, modify, and distribute the materials as needed, with appropriate attribution to the original source.

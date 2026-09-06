@@ -1,0 +1,1405 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-html/tabby.min.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.9.38">
+
+  <meta name="author" content="Danilo Freire">
+  <title>DATASCI 101 – DATASCI 101: Introduction to AI Applications</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="../../site_libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="../../site_libs/revealjs/dist/reveal.css">
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+  </style>
+  <link rel="stylesheet" href="../../site_libs/revealjs/dist/theme/quarto-1f887e6eea2afc034e29e6c7c4bed039.css">
+  <link href="../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="../../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="../../site_libs/revealjs/plugin/multimodal/multimodal.css" rel="stylesheet">
+  <link href="../../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+</head>
+<body class="quarto-light">
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" class="quarto-title-block center">
+  <h1 class="title">DATASCI 101: Introduction to AI Applications</h1>
+  <p class="subtitle">Lecture 21: Labour Markets and Economic Effects</p>
+
+<div class="quarto-title-authors">
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-title-author-orcid"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a>
+</div>
+<div class="quarto-title-author-email">
+<a href="mailto:danilo.freire@emory.edu">danilo.freire@emory.edu</a>
+</div>
+        <p class="quarto-title-affiliation">
+            Department of Data and Decision Sciences <br> Emory University
+          </p>
+    </div>
+</div>
+
+</section>
+<section>
+<section id="welcome-back" class="title-slide slide level1 center" data-background-color="#1B3A6B">
+<h1>Welcome back! 💼</h1>
+
+</section>
+<section id="recap-of-last-class" class="slide level2">
+<h2>Recap of last class</h2>
+<div style="margin-top: 20px; font-size: 24px;">
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li>We saw how <span class="alert">privacy and data protection</span> are challenged by AI models</li>
+<li>AI enables collection at scale and <span class="alert">inference of sensitive data</span></li>
+<li><span class="alert">General Data Protection Regulation</span> (GDPR - EU): Comprehensive rights (access, erasure, portability)</li>
+<li>US: <span class="alert">Patchwork of sectoral laws</span> (healthcare, finance) and state laws (CCPA in California)</li>
+<li>Technical approaches (<span class="alert">differential privacy, federated learning, synthetic data</span>) help but have trade-offs</li>
+<li><span class="alert">Collection is the core problem</span>. Same data enables benefits and surveillance</li>
+<li>Today: <span class="alert">What does AI mean for jobs and the economy?</span></li>
+</ul>
+</div><div class="column" style="width:50%;">
+<div style="text-align: center; margin-top: -30px;">
+<p><a href="#/" data-modal-type="image" data-modal-url="figures/automation-worker.jpg"><img data-src="figures/automation-worker.jpg" style="width:100.0%"></a></p>
+<p>Source: <a href="https://x.com/johnkoetsier/status/1603234885791285248">X.com</a></p>
+</div>
+</div></div>
+</div>
+</section>
+<section id="lecture-overview" class="slide level2">
+<h2>Lecture overview</h2>
+<h3 id="what-we-will-cover-today">What we will cover today</h3>
+<div style="margin-top: 20px; font-size: 24px;">
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Part 1: The automation question</strong></p>
+<ul>
+<li>Historical perspective on technology and jobs</li>
+<li>Why “this time might be different”</li>
+<li>Task-based framework for thinking about AI</li>
+</ul>
+<p><strong>Part 2: Current evidence</strong></p>
+<ul>
+<li>What are people using AI for?</li>
+<li>Productivity effects</li>
+<li>Early job market signals</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><strong>Part 3: Economic scenarios</strong></p>
+<ul>
+<li>Optimistic views: augmentation and new tasks</li>
+<li>Pessimistic views: displacement and polarisation</li>
+<li>What economists actually think</li>
+</ul>
+<p><strong>Part 4: What does this mean for you?</strong></p>
+<ul>
+<li>Skills that may remain valuable</li>
+<li>Adapting to an AI-influenced economy</li>
+<li>The graduate job market in 2026</li>
+</ul>
+</div></div>
+</div>
+</section>
+<section id="meme-of-the-day" class="slide level2">
+<h2>Meme of the day 😄</h2>
+<div style="text-align: center; margin-top: 30px;">
+<p><a href="#/" data-modal-type="image" data-modal-url="figures/ai-jobs-meme.webp"><img data-src="figures/ai-jobs-meme.webp" style="width:40.0%"></a></p>
+<p>Source: <a href="https://www.reddit.com/r/ProgrammerHumor/comments/11wozfs/finally_thanks_ai_s/">r/ProgrammerHumor</a></p>
+</div>
+</section>
+<section id="funny-ai-news-of-the-day" class="slide level2">
+<h2>Funny AI news of the day 😂</h2>
+<div style="margin-top: 20px; font-size: 23px;">
+<div class="columns">
+<div class="column" style="width:55%;">
+<ul>
+<li>Anthropic shipped a debug file with <span class="alert">512K lines of source code</span> inside a routine update (<a href="https://decrypt.co/362917/anthropic-accidentally-leaked-claude-code-source-internet-keeping-forever">Decrypt</a>)</li>
+<li>Spotted within minutes, posted on X</li>
+<li><span class="alert">21 million views</span> before the team woke up</li>
+<li>Code mirrored across GitHub; DMCA takedowns couldn’t keep up</li>
+<li><a href="https://github.com/instructkr">Sigrid Jin</a> (most active Claude Code user in the world, <a href="https://www.wsj.com/tech/ai/claude-code-cursor-codex-vibe-coding-52750531">25B tokens/year per the WSJ</a>) rewrote it all in Python before sunrise</li>
+<li><a href="https://github.com/instructkr/claw-code">His repo</a> hit <span class="alert">50K stars in 2 hours</span> 🚀</li>
+<li>Anthropic had built “Undercover Mode” to stop Claude from leaking secrets. <span class="alert">Then leaked their own code</span> 🤦🏻‍♂️</li>
+<li>I guess our jobs are safe for now? 😅</li>
+</ul>
+</div><div class="column" style="width:45%;">
+<div style="text-align: center; margin-top: -30px;">
+<p><a href="#/" data-modal-type="image" data-modal-url="figures/anthropic-code-leak.png"><img data-src="figures/anthropic-code-leak.png" style="width:75.0%"></a></p>
+<p>Source: <a href="https://x.com/Fried_rice/status/2038894956459290963" class="uri">https://x.com/Fried_rice/status/2038894956459290963</a></p>
+</div>
+</div></div>
+</div>
+</section></section>
+<section>
+<section id="the-automation-question" class="title-slide slide level1 center" data-background-color="#1B3A6B">
+<h1>The automation question 🤖</h1>
+
+</section>
+<section id="this-isnt-the-first-time" class="slide level2">
+<h2>This isn’t the first time</h2>
+<div style="margin-top: 30px; font-size: 20px;">
+<div class="columns">
+<div class="column" style="width:55%;">
+<p><strong>Historical fears of technological unemployment:</strong></p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Era</th>
+<th>Technology</th>
+<th>Fear</th>
+<th>Outcome</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1810s</td>
+<td>Power looms</td>
+<td><a href="https://www.smithsonianmag.com/history/what-the-luddites-really-fought-against-264412/">Luddites destroy machines</a></td>
+<td><a href="https://www.history.com/articles/who-were-the-luddites">Textile jobs changed but grew</a></td>
+</tr>
+<tr class="even">
+<td>1930s</td>
+<td>Mechanisation</td>
+<td><a href="http://www.econ.yale.edu/smith/econ116a/keynes1.pdf">Keynes: “technological unemployment”</a></td>
+<td><a href="https://www.project-syndicate.org/commentary/what-keynes-famous-1930-essay-got-right-and-wrong-by-kaushik-basu-2024-02">Post-war prosperity</a></td>
+</tr>
+<tr class="odd">
+<td>1960s</td>
+<td>Mainframes</td>
+<td><a href="https://www.jfklibrary.org/archives/other-resources/john-f-kennedy-speeches/grand-rapids-mi-19600607">JFK warns of job losses</a></td>
+<td><a href="https://conversableeconomist.com/2014/12/01/automation-and-job-loss-the-fears-of-1964/">Service sector expansion</a></td>
+</tr>
+<tr class="even">
+<td>1990s</td>
+<td>Personal computers</td>
+<td><a href="https://www.technologyreview.com/2024/01/27/1087041/technological-unemployment-elon-musk-jobs-ai/">End of clerical work</a></td>
+<td><a href="https://www.aeaweb.org/articles?id=10.1257/jep.33.2.3">New jobs created</a></td>
+</tr>
+<tr class="odd">
+<td>2010s</td>
+<td>Robots</td>
+<td><a href="https://news.mit.edu/2020/how-many-jobs-robots-replace-0504">Manufacturing decline</a></td>
+<td><a href="https://www.nber.org/papers/w23285">Mixed results</a></td>
+</tr>
+</tbody>
+</table>
+<p><strong>The pattern so far:</strong></p>
+<ul>
+<li>Technology destroys some jobs but creates others</li>
+<li>The net effect has been <span class="alert">positive</span> over time</li>
+<li>The adjustment periods, though, are painful</li>
+</ul>
+</div><div class="column" style="width:45%;">
+<div style="text-align: center; margin-top: 30px;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><a href="#/" data-modal-type="image" data-modal-url="figures/luddites.jpg"><img data-src="figures/luddites.jpg" style="width:100.0%"></a></p>
+<figcaption>Rage against the machine: the Luddites</figcaption>
+</figure>
+</div>
+<p>Source: <a href="https://www.currentaffairs.org/news/2021/06/the-luddites-were-right">Current Affairs</a></p>
+<div style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; font-size: 18px; margin-top: 15px;">
+<p>Every wave of automation sparked fears of mass unemployment. <span class="alert">So far, those fears haven’t materialised</span>. But past performance doesn’t guarantee future results! 😅</p>
+</div>
+</div>
+</div></div>
+</div>
+</section>
+<section id="why-this-time-might-be-different" class="slide level2">
+<h2>Why this time might be different</h2>
+<div style="margin-top: 30px; font-size: 19px;">
+<div class="columns">
+<div class="column" style="width:55%;">
+<p><strong>Previous automation:</strong></p>
+<ul>
+<li>Targeted <span class="alert">physical tasks</span></li>
+<li>Humans retained cognitive advantage</li>
+<li>Automation was task-specific (a loom weaves cloth, a lathe cuts metal, an ATM dispenses cash)</li>
+</ul>
+<p><strong>AI is different:</strong></p>
+<ul>
+<li>Targets <span class="alert">cognitive tasks</span>, not just physical ones</li>
+<li>General-purpose: the same model writes essays, analyses data, and generates images</li>
+<li>Improving <span class="alert">very rapidly</span></li>
+<li>People used to say “computers can’t do intellectual work” or “computers can’t be creative”. <span class="alert">Both claims look shaky now</span></li>
+</ul>
+<p><strong>Counter-argument:</strong></p>
+<ul>
+<li>Similar claims made before</li>
+<li>We keep underestimating human adaptability</li>
+<li>New tasks we can’t imagine will emerge</li>
+</ul>
+</div><div class="column" style="width:45%;">
+<div style="text-align: center;">
+<p><a href="#/" data-modal-type="image" data-modal-url="figures/automation-waves.jpg"><img data-src="figures/automation-waves.jpg" style="width:100.0%"></a></p>
+<p>Source: <a href="https://www.visualcapitalist.com/the-history-of-innovation-cycles/">Edelson Institute</a></p>
+<div style="font-size: 18px; margin-top: 15px;">
+<p>AI will change work. Everyone agrees on that much. The real unknowns are <span class="alert">how fast</span> it happens and <span class="alert">who pays the price</span> while the rest of us adjust.</p>
+</div>
+</div>
+</div></div>
+</div>
+</section>
+<section id="tasks-vs-jobs" class="slide level2">
+<h2>Tasks vs jobs</h2>
+<div style="margin-top: 30px; font-size: 20px;">
+<div class="columns">
+<div class="column" style="width:55%;">
+<p><strong>A more useful framework (<a href="https://www.aeaweb.org/articles?id=10.1257/jep.33.2.3">Acemoglu &amp; Restrepo, 2019</a>; <a href="https://hbr.org/2024/05/ai-is-making-economists-rethink-the-story-of-automation">HBR explainer</a>):</strong></p>
+<ul>
+<li>Don’t think about <span class="alert">jobs</span> being replaced</li>
+<li>Think about <span class="alert">tasks</span> being automated</li>
+<li>Most jobs contain many tasks</li>
+<li><span class="alert">AI might automate some but not all</span></li>
+</ul>
+<p><strong>Example: Lawyer</strong></p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Task</th>
+<th>AI capability</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Document review</td>
+<td><span class="alert">High</span></td>
+</tr>
+<tr class="even">
+<td>Legal research</td>
+<td>High</td>
+</tr>
+<tr class="odd">
+<td>Contract drafting</td>
+<td>Medium-high</td>
+</tr>
+<tr class="even">
+<td>Client counselling</td>
+<td>Medium</td>
+</tr>
+<tr class="odd">
+<td>Court appearance</td>
+<td>Low</td>
+</tr>
+<tr class="even">
+<td>Negotiation</td>
+<td>Low</td>
+</tr>
+<tr class="odd">
+<td>Judgment calls</td>
+<td>Low</td>
+</tr>
+</tbody>
+</table>
+</div><div class="column" style="width:45%;">
+<p><strong>The effect:</strong></p>
+<ul>
+<li>Fewer lawyers needed per case, because AI handles the grunt work</li>
+<li>The role shifts toward <span class="alert">higher-value tasks</span> (counselling clients, arguing in court)</li>
+<li>The lawyer doesn’t disappear, but firms hire fewer of them. <span class="alert">What happens to the rest?</span></li>
+</ul>
+<div style="text-align: center;">
+<p><a href="#/" data-modal-type="image" data-modal-url="figures/economist-ai-labour.png"><img data-src="figures/economist-ai-labour.png" style="width:70.0%"></a></p>
+<p>Source: <a href="https://www.economist.com/finance-and-economics/2025/05/26/why-ai-hasnt-taken-your-job">The Economist</a></p>
+</div>
+</div></div>
+</div>
+</section>
+<section id="which-tasks-are-most-exposed" class="slide level2">
+<h2>Which tasks are most exposed?</h2>
+<div style="margin-top: 30px; font-size: 20px;">
+<div class="columns">
+<div class="column" style="width:55%;">
+<p><strong>High exposure to AI:</strong></p>
+<ul>
+<li>Content generation (text, code, images)</li>
+<li>Data analysis and pattern recognition</li>
+<li>Translation and summarisation</li>
+<li>Customer service (text-based)</li>
+</ul>
+<p><strong>Lower exposure (for now):</strong></p>
+<ul>
+<li>Physical work in unpredictable environments (construction, plumbing)</li>
+<li>Jobs where you need to be there in person (nursing, firefighting)</li>
+<li>Real-time judgment in new situations (emergency medicine, crisis management)</li>
+<li>Work built on deep personal relationships (therapy, social work)</li>
+</ul>
+</div><div class="column" style="width:45%;">
+<p><strong>Exposure by occupation:</strong> (AI exposure rises with wages, but there are exceptions)</p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Occupation</th>
+<th>Exposure</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Telemarketers</td>
+<td>Very high</td>
+</tr>
+<tr class="even">
+<td>Accountants</td>
+<td>High</td>
+</tr>
+<tr class="odd">
+<td>Paralegals</td>
+<td>High</td>
+</tr>
+<tr class="even">
+<td>Software developers</td>
+<td>Medium-high</td>
+</tr>
+<tr class="odd">
+<td>Teachers</td>
+<td>Medium</td>
+</tr>
+<tr class="even">
+<td>Nurses</td>
+<td>Medium-low</td>
+</tr>
+<tr class="odd">
+<td>Electricians</td>
+<td>Low</td>
+</tr>
+<tr class="even">
+<td>Plumbers</td>
+<td>Low</td>
+</tr>
+</tbody>
+</table>
+<p>Sources: <a href="https://www.oxfordmartin.ox.ac.uk/publications/the-future-of-employment">Frey &amp; Osborne (2017)</a>; <a href="https://arxiv.org/abs/2303.10130">Eloundou et al.&nbsp;(2023)</a>; <a href="https://www.imf.org/en/blogs/articles/2024/01/14/ai-will-transform-the-global-economy-lets-make-sure-it-benefits-humanity">IMF (2024)</a></p>
+</div></div>
+</div>
+</section></section>
+<section>
+<section id="current-evidence" class="title-slide slide level1 center" data-background-color="#1B3A6B">
+<h1>Current evidence 📊</h1>
+
+</section>
+<section id="what-are-people-using-ai-for" class="slide level2">
+<h2>What are people using AI for?</h2>
+<div style="margin-top: 30px; font-size: 20px;">
+<div class="columns">
+<div class="column" style="width:55%;">
+<p><strong><a href="https://www.nber.org/system/files/working_papers/w34255/w34255.pdf">OpenAI’s research on ChatGPT use (2025)</a>:</strong></p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Category</th>
+<th>Jul 2024</th>
+<th>Jun 2025</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Practical Guidance</td>
+<td>~29%</td>
+<td>~29%</td>
+</tr>
+<tr class="even">
+<td>Writing</td>
+<td>~36%</td>
+<td>~24%</td>
+</tr>
+<tr class="odd">
+<td>Seeking Information</td>
+<td>~14%</td>
+<td>~24%</td>
+</tr>
+<tr class="even">
+<td>Technical Help</td>
+<td>~12%</td>
+<td>~5%</td>
+</tr>
+<tr class="odd">
+<td>Multimedia</td>
+<td>~2%</td>
+<td>~7%</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Among work-related messages only</strong> (Jun 2025): Writing dominates at ~40%, Practical Guidance ~24%, Technical Help ~10%.</p>
+<p><strong>What this tells us:</strong></p>
+<ul>
+<li>Only about <span class="alert">27% of use is work-related</span>, 73% is personal</li>
+<li>Writing’s share fell as people found other uses</li>
+<li>Technical help moved to coding tools (Copilot, Codex) outside ChatGPT</li>
+</ul>
+</div><div class="column" style="width:45%;">
+<div style="text-align: center;">
+<p><a href="#/" data-modal-type="image" data-modal-url="figures/how-people-use-chatgpt.png"><img data-src="figures/how-people-use-chatgpt.png" style="width:100.0%"></a></p>
+<p>Source: <a href="https://openai.com/index/how-people-are-using-chatgpt/">OpenAI (2025)</a></p>
+</div>
+</div></div>
+</div>
+</section>
+<section id="productivity-effects-early-evidence" class="slide level2">
+<h2>Productivity effects: early evidence</h2>
+<div style="margin-top: 30px; font-size: 20px;">
+<div class="columns">
+<div class="column" style="width:55%;">
+<p><strong>Studies finding positive effects:</strong></p>
+<ul>
+<li><strong>Customer service <a href="https://academic.oup.com/qje/article/140/2/889/7990658">(Brynjolfsson et al., 2025)</a></strong>: 14% productivity increase, biggest gains for <span class="alert">novice workers</span></li>
+<li><strong>Programmers <a href="https://github.blog/news-insights/research/research-quantifying-github-copilots-impact-on-developer-productivity-and-happiness/">(GitHub, 2022)</a></strong>: 55% faster task completion with Copilot</li>
+<li><strong>Consultants <a href="https://www.bcg.com/publications/2023/how-people-create-and-destroy-value-with-gen-ai">(BCG study, 2023)</a></strong>: 40% better performance on applicable tasks</li>
+<li><strong>Writers <a href="https://www.science.org/doi/10.1126/science.adh2586">(Noy &amp; Zhang, 2023)</a></strong>: 40% faster, 18% better quality</li>
+</ul>
+<p><strong>Important caveats:</strong></p>
+<ul>
+<li>Most studies are <span class="alert">short-term</span></li>
+<li>Often sponsored by AI companies</li>
+<li>Lab settings vs real work differ</li>
+<li>Long-term effects unclear</li>
+</ul>
+</div><div class="column" style="width:45%;">
+<p><strong>The pattern emerging:</strong></p>
+<ul>
+<li>AI <span class="alert">compresses the skill distribution</span></li>
+<li>Novices improve more than experts</li>
+<li>Experts sometimes do worse with AI</li>
+<li>Benefits concentrated in <span class="alert">specific tasks</span></li>
+</ul>
+<div style="text-align: center; margin-top: 15px;">
+<!-- Suggested image: Productivity gains chart -->
+<p><a href="#/" data-modal-type="image" data-modal-url="figures/productivity-gains.png"><img data-src="figures/productivity-gains.png" style="width:100.0%"></a></p>
+<p>Source: <a href="https://www.bcg.com/publications/2023/how-people-create-and-destroy-value-with-gen-ai">Boston Consulting Group (2023)</a></p>
+</div>
+</div></div>
+</div>
+</section>
+<section id="the-graduate-job-drought" class="slide level2">
+<h2>The graduate job drought</h2>
+<div style="margin-top: 30px; font-size: 21px;">
+<div class="columns">
+<div class="column" style="width:55%;">
+<p><strong>What the data shows (2024-2026):</strong></p>
+<ul>
+<li><span class="alert">Entry-level job postings down</span> significantly (<a href="https://restofworld.org/2025/engineering-graduates-ai-job-losses/">Rest of World</a>; <a href="https://spectrum.ieee.org/ai-effect-entry-level-jobs">IEEE Spectrum</a>)</li>
+<li><a href="https://digitaleconomy.stanford.edu/publication/canaries-in-the-coal-mine-six-facts-about-the-recent-employment-effects-of-artificial-intelligence/">Brynjolfsson et al.&nbsp;(2025)</a>: <span class="alert">13% employment decline</span> for workers aged 22-25 in AI-exposed jobs (mainly in tech, finance, consulting)</li>
+</ul>
+<p><strong><a href="https://www.ft.com/content/c89496b1-bc8d-425e-b86b-ec89402410e4">Financial Times reporting (2026)</a>:</strong></p>
+<ul>
+<li>Graduate hiring at lowest level in a decade</li>
+<li>Tech companies leading the pullback</li>
+<li>Law and consulting firms reducing trainee intakes</li>
+</ul>
+<p><strong>The logic (from the employer’s side):</strong></p>
+<ul>
+<li>Junior employees used to do the tasks AI now handles</li>
+<li>AI doesn’t need healthcare, holidays, or mentoring</li>
+</ul>
+</div><div class="column" style="width:45%;">
+<div style="text-align: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><a href="#/" data-modal-type="image" data-modal-url="figures/graduate-jobs.png"><img data-src="figures/graduate-jobs.png" style="width:100.0%"></a></p>
+<figcaption>Keep in mind that this is UK data.</figcaption>
+</figure>
+</div>
+<p>Source: <a href="https://www.ft.com/content/c89496b1-bc8d-425e-b86b-ec89402410e4">Financial Times (2026)</a></p>
+<div style="background: rgba(230, 57, 70, 0.1); padding: 15px; border-radius: 10px; font-size: 18px; margin-top: 15px;">
+<p>This matters for you personally: if companies replace junior roles with AI, <span class="alert">where do you get your first job?</span></p>
+</div>
+</div>
+</div></div>
+</div>
+</section>
+<section id="but-the-aggregate-numbers-are-confusing" class="slide level2">
+<h2>But the aggregate numbers are confusing</h2>
+<div style="margin-top: 30px; font-size: 20px;">
+<div class="columns">
+<div class="column" style="width:55%;">
+<p><strong>What we’re not seeing (yet):</strong></p>
+<ul>
+<li>Mass unemployment</li>
+<li>Dramatic productivity surge</li>
+<li>Clear sectoral collapse</li>
+</ul>
+<p><strong>What we are seeing:</strong></p>
+<ul>
+<li><span class="alert">Slower hiring</span> rather than mass firing</li>
+<li>Some sectors growing, others shrinking</li>
+<li>Geographic concentration of effects</li>
+<li>Rising inequality</li>
+</ul>
+<p><strong>Why the disconnect?</strong></p>
+<ul>
+<li>Adoption takes time (most firms are still experimenting)</li>
+<li>Many tasks don’t work well with current AI</li>
+<li>Regulations, contracts, and organisational inertia slow everything down</li>
+</ul>
+</div><div class="column" style="width:45%;">
+<div style="text-align: center;">
+<p><a href="#/" data-modal-type="image" data-modal-url="figures/jobs-apocalypse.png"><img data-src="figures/jobs-apocalypse.png" style="width:100.0%"></a></p>
+<p>Source: <a href="https://www.economist.com/business/2025/12/14/job-apocalypse-not-yet-ai-is-creating-brand-new-occupations">The Economist</a></p>
+</div>
+</div></div>
+</div>
+</section></section>
+<section>
+<section id="economic-scenarios" class="title-slide slide level1 center" data-background-color="#1B3A6B">
+<h1>Economic scenarios 🔮</h1>
+
+</section>
+<section id="the-optimistic-view" class="slide level2">
+<h2>The optimistic view</h2>
+<div style="margin-top: 30px; font-size: 19px;">
+<div class="columns">
+<div class="column" style="width:55%;">
+<p><strong>Augmentation, not replacement:</strong></p>
+<ul>
+<li>AI makes workers <span class="alert">more productive</span></li>
+<li>One person can do what five did before</li>
+<li>But demand expands to absorb capacity</li>
+<li>Net effect: more output, same or more jobs</li>
+</ul>
+<p><strong>New tasks emerge:</strong></p>
+<ul>
+<li>AI creates <span class="alert">new kinds of work</span></li>
+<li>Prompt engineering, AI training, oversight</li>
+<li>Jobs we can’t imagine yet</li>
+<li>Like social media manager in 1990</li>
+</ul>
+<p><strong>Historical pattern continues:</strong></p>
+<ul>
+<li>Technology has always created more jobs than it destroyed</li>
+<li>Higher productivity → higher incomes → more demand</li>
+<li>“Lump of labour fallacy”: there isn’t a fixed amount of work</li>
+</ul>
+</div><div class="column" style="width:45%;">
+<div style="text-align: center;">
+<p><a href="#/" data-modal-type="image" data-modal-url="figures/optimistic-future.png"><img data-src="figures/optimistic-future.png" style="width:60.0%"></a> <a href="#/" data-modal-type="image" data-modal-url="figures/strainchart2verysmall.jpg"><img data-src="figures/strainchart2verysmall.jpg" style="width:60.0%"></a></p>
+<p>Source: <a href="https://nationalaffairs.com/publications/detail/the-case-for-ai-optimism">Michael R. Strain</a></p>
+</div>
+</div></div>
+</div>
+</section>
+<section id="the-pessimistic-view" class="slide level2">
+<h2>The pessimistic view</h2>
+<div style="margin-top: 30px; font-size: 21px;">
+<div class="columns">
+<div class="column" style="width:55%;">
+<p><strong>Displacement dominates:</strong></p>
+<ul>
+<li>AI replaces workers <span class="alert">faster than new jobs emerge</span></li>
+<li>Transition period could be very long</li>
+<li>Many workers never recover</li>
+<li>Skills mismatch is severe</li>
+</ul>
+<p><strong>Polarisation:</strong></p>
+<ul>
+<li>High-skill jobs get more valuable</li>
+<li>Low-skill service jobs persist (hard to automate)</li>
+<li>Middle gets <span class="alert">hollowed out</span></li>
+<li>Inequality increases dramatically</li>
+</ul>
+<p><strong>Power dynamics:</strong></p>
+<ul>
+<li>Productivity gains go to <span class="alert">capital, not labour</span></li>
+<li>“Race to the bottom” for wages</li>
+</ul>
+</div><div class="column" style="width:45%;">
+<div style="text-align: center;">
+<p><a href="#/" data-modal-type="image" data-modal-url="figures/pessimistic-future-02.png"><img data-src="figures/pessimistic-future-02.png" style="width:100.0%"></a></p>
+<p>Source: <a href="https://fortune.com/2025/09/06/godfather-of-ai-geoffrey-hinton-massive-unemployment-soaring-profits-capitalist-system/">Fortune</a></p>
+<div style="background: rgba(230, 57, 70, 0.1); padding: 15px; border-radius: 10px; font-size: 18px; margin-top: 15px;">
+<p><strong>Pessimist’s argument</strong>: “The horse population never recovered from the automobile. <span class="alert">What if humans are the horses?</span>”</p>
+</div>
+</div>
+</div></div>
+</div>
+</section>
+<section id="what-economists-actually-think" class="slide level2">
+<h2>What economists actually think</h2>
+<div style="margin-top: 30px; font-size: 19px;">
+<div class="columns">
+<div class="column" style="width:55%;">
+<p><strong>Survey results <a href="https://www.igmchicago.org/surveys/inequality-and-ai/">(IGM Forum, 2024)</a>:</strong></p>
+<ul>
+<li>Large majority: AI will <span class="alert">significantly change</span> labour markets</li>
+<li>Wide uncertainty about direction</li>
+<li>Most expect <span class="alert">some job displacement</span>, but not mass unemployment</li>
+<li>Strong agreement: <span class="alert">inequality likely to increase</span></li>
+</ul>
+<p><strong><a href="https://economics.mit.edu/sites/default/files/2024-04/The%20Simple%20Macroeconomics%20of%20AI.pdf">Acemoglu (2025)</a> framework:</strong></p>
+<ul>
+<li>AI can <span class="alert">augment</span> workers (make them more productive)</li>
+<li>Or <span class="alert">replace</span> them (automate their tasks)</li>
+<li>Current AI is <span class="alert">biased toward replacement</span></li>
+<li>Policy could shift toward augmentation</li>
+</ul>
+<p><strong><a href="https://web.stanford.edu/~chadj/AIandEconomicFuture.pdf">Jones (2026)</a> summary:</strong></p>
+<ul>
+<li>Historical precedent supports optimism</li>
+<li>But <span class="alert">speed and scope</span> are unprecedented</li>
+<li>Transition will be <span class="alert">rough</span> even if outcome is good</li>
+</ul>
+</div><div class="column" style="width:45%;">
+<div style="text-align: center;">
+<!-- Suggested image: Economist survey or Acemoglu diagram -->
+<p><a href="#/" data-modal-type="image" data-modal-url="figures/dont-know.png"><img data-src="figures/dont-know.png" style="width:60.0%"></a></p>
+<p>Source: <a href="https://www.noahpinion.blog/p/stop-pretending-you-know-what-ai">Noah Smith</a></p>
+<div style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; font-size: 18px; margin-top: 15px;">
+<p><span class="alert">Nobody knows.</span> Anyone who claims certainty is <span class="alert">selling something</span>. The range of possible outcomes is very wide.</p>
+</div>
+</div>
+</div></div>
+</div>
+</section>
+<section id="discussion-your-predictions" class="slide level2 scrollable">
+<h2>Discussion: your predictions 🤔</h2>
+<div style="margin-top: 30px; font-size: 25px;">
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Quick exercise:</strong></p>
+<p>Think about a job you might want after graduation.</p>
+<ol type="1">
+<li>List 3-4 main tasks in that job</li>
+<li>For each task: Could AI do this?
+<ul>
+<li>Now?</li>
+<li>In 5 years?</li>
+<li>In 10 years?</li>
+</ul></li>
+<li>What tasks would remain human?</li>
+<li>How might the job change rather than disappear?</li>
+</ol>
+</div><div class="column" style="width:50%;">
+<p><strong>Share with us!</strong></p>
+<ul>
+<li>What job did you pick?</li>
+<li>Which tasks seemed most automatable?</li>
+<li>Which seemed most human?</li>
+<li>Did this make you more or less worried?</li>
+</ul>
+</div></div>
+</div>
+</section></section>
+<section>
+<section id="what-does-this-mean-for-you" class="title-slide slide level1 center" data-background-color="#1B3A6B">
+<h1>What does this mean for you? 🎓</h1>
+
+</section>
+<section id="skills-that-may-remain-valuable" class="slide level2">
+<h2>Skills that may remain valuable</h2>
+<div style="margin-top: 30px; font-size: 20px;">
+<div class="columns">
+<div class="column" style="width:55%;">
+<p><strong>Human-centric skills (<a href="https://academic.oup.com/qje/article-abstract/132/4/1593/3861633">Deming, 2017</a>):</strong></p>
+<ul>
+<li><span class="alert">Building relationships</span> and trust</li>
+<li>Emotional intelligence</li>
+<li>Cultural and contextual judgment</li>
+</ul>
+<p><strong>Knowing how to work with AI (<a href="https://www.weforum.org/publications/the-future-of-jobs-report-2025/">WEF Future of Jobs Report, 2025</a>):</strong></p>
+<ul>
+<li>Knowing when to use it and when not to</li>
+<li><span class="alert">Evaluating AI outputs</span> with a critical eye</li>
+<li>Asking the right questions (garbage in, garbage out)</li>
+<li>Recognising where AI falls short</li>
+</ul>
+<p><strong>Domain expertise (<a href="https://www.mckinsey.com/mgi/our-research/agents-robots-and-us-skill-partnerships-in-the-age-of-ai">McKinsey, 2025</a>):</strong></p>
+<ul>
+<li><span class="alert">Judgment in novel situations</span></li>
+<li>Ethical reasoning and values</li>
+<li>Accountability and responsibility</li>
+</ul>
+</div><div class="column" style="width:45%;">
+<div style="text-align: center;">
+<p><a href="#/" data-modal-type="image" data-modal-url="figures/valuable-skills.png"><img data-src="figures/valuable-skills.png" style="width:100.0%"></a></p>
+<p>Source: <a href="https://www.library.hbs.edu/working-knowledge/why-soft-skills-still-matter-in-the-age-of-ai">Harvard Business School</a></p>
+<div style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; font-size: 18px; margin-top: 15px;">
+<p>The irony: <span class="alert">“soft skills”</span>, the ones people used to dismiss as fluffy, may turn out to be the hardest to automate.</p>
+</div>
+</div>
+</div></div>
+</div>
+</section>
+<section id="adapting-to-an-ai-influenced-economy" class="slide level2">
+<h2>Adapting to an AI-influenced economy</h2>
+<div style="margin-top: 30px; font-size: 19px;">
+<div class="columns">
+<div class="column" style="width:55%;">
+<p><strong>Be AI-literate:</strong></p>
+<ul>
+<li>Understand what AI can and can’t do</li>
+<li>Know how to use tools effectively</li>
+<li>Recognise AI hype vs reality</li>
+<li><span class="alert">This course is a start!</span> 🤓</li>
+</ul>
+<p><strong>Build skills that complement AI:</strong></p>
+<ul>
+<li>If AI does X, learn to do Y (what AI makes possible but can’t do alone)</li>
+<li>Focus on <span class="alert">orchestration</span>: directing, checking, and combining AI outputs</li>
+<li><span class="alert">Learning how to learn</span> matters more than any single skill</li>
+<li>Don’t over-specialise too early</li>
+</ul>
+<p><strong>Maintain perspective:</strong></p>
+<ul>
+<li>Your career will span 40+ years. AI in 2066 will be very different from AI today</li>
+<li><span class="alert">Adaptability</span> beats any specific prediction</li>
+</ul>
+</div><div class="column" style="width:45%;">
+<div style="text-align: center;">
+<p><a href="#/" data-modal-type="image" data-modal-url="figures/feynman.jpg"><img data-src="figures/feynman.jpg" style="width:100.0%"></a></p>
+<div style="font-size: 18px; margin-top: 15px;">
+<p><span class="alert">Become someone who can keep learning</span>!</p>
+</div>
+</div>
+</div></div>
+</div>
+</section>
+<section id="the-graduate-market-in-2026" class="slide level2">
+<h2>The graduate market in 2026</h2>
+<div style="margin-top: 30px; font-size: 21px;">
+<div class="columns">
+<div class="column" style="width:55%;">
+<p><strong>The tough reality:</strong></p>
+<ul>
+<li>Entry-level hiring is down</li>
+<li>Competition is intense</li>
+<li>Traditional paths are narrowing</li>
+<li>“Just get a degree” isn’t enough</li>
+</ul>
+<p><strong>What might help:</strong></p>
+<ul>
+<li>Show that you can actually use AI tools, not just talk about them</li>
+<li>Build <span class="alert">applied projects</span> people can see (a portfolio beats a transcript)</li>
+<li>Get internship or work experience while you can</li>
+<li>Pick up skills outside your major</li>
+<li><span class="alert">Build a network</span> (still a human activity!)</li>
+<li>Be open to non-traditional paths</li>
+</ul>
+</div><div class="column" style="width:45%;">
+<div style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; font-size: 20px;">
+<p>The job market <span class="alert">shifted while you were in university</span>. That is unsettling, and I won’t pretend otherwise. Learning to <span class="alert">work with AI</span> won’t fix everything, but ignoring it is worse.</p>
+</div>
+<div style="text-align: center; margin-top: 15px;">
+<p><a href="#/" data-modal-type="image" data-modal-url="figures/mark-cuban.png"><img data-src="figures/mark-cuban.png" style="width:80.0%"></a></p>
+<p>Source: <a href="https://fortune.com/2025/08/26/billionaire-mark-cuban-gen-z-job-opportunity-teach-ai-implementation-companies-struggles-to-understand-future-of-work-former-shark-tank-star/">Fortune</a></p>
+</div>
+</div></div>
+</div>
+</section>
+<section id="what-would-you-advise" class="slide level2">
+<h2>What would you advise? 💬</h2>
+<div style="margin-top: 30px; font-size: 24px;">
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Scenario:</strong></p>
+<p>Your younger sibling is about to start university. They ask:</p>
+<blockquote>
+<p>“What should I study? I keep hearing AI will take all the jobs. Should I even bother with a degree? What career should I aim for?”</p>
+</blockquote>
+<ul>
+<li>What would you tell them?</li>
+<li>What field would you recommend?</li>
+<li>What skills should they prioritise?</li>
+<li>How would you address their anxiety?</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><strong>Some thoughts to consider:</strong></p>
+<ul>
+<li>The value of education beyond job training</li>
+<li>The danger of chasing “hot” fields</li>
+<li>The importance of genuine interest</li>
+<li>The limits of prediction</li>
+</ul>
+</div></div>
+</div>
+</section></section>
+<section>
+<section id="summary-and-takeaways" class="title-slide slide level1 center" data-background-color="#1B3A6B">
+<h1>Summary and takeaways 📝</h1>
+
+</section>
+<section id="main-takeaways" class="slide level2">
+<h2>Main takeaways</h2>
+<div style="margin-top: 30px; font-size: 18px;">
+<div class="columns">
+<div class="column" style="width:55%;">
+<p><svg aria-hidden="true" role="img" viewbox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"></path></svg> <strong>Historical context</strong></p>
+<ul>
+<li>Technology has always disrupted labour</li>
+<li>Net effect has been positive over time</li>
+<li>But this time may be different in speed and scope</li>
+<li>Cognitive tasks now exposed</li>
+</ul>
+<p><svg aria-hidden="true" role="img" viewbox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zm-312 8v64c0 13.3 10.7 24 24 24s24-10.7 24-24l0-64c0-13.3-10.7-24-24-24s-24 10.7-24 24zm80-96V280c0 13.3 10.7 24 24 24s24-10.7 24-24V120c0-13.3-10.7-24-24-24s-24 10.7-24 24zm80 64v96c0 13.3 10.7 24 24 24s24-10.7 24-24V184c0-13.3-10.7-24-24-24s-24 10.7-24 24z"></path></svg> <strong>Current evidence</strong></p>
+<ul>
+<li>Most AI use is not work-related</li>
+<li>Productivity gains real but task-specific</li>
+<li>Graduate job market is challenging</li>
+<li>Aggregate effects still unclear</li>
+</ul>
+<p><svg aria-hidden="true" role="img" viewbox="0 0 448 512" style="height:1em;width:0.88em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M48 24C48 10.7 37.3 0 24 0S0 10.7 0 24V64 350.5 400v88c0 13.3 10.7 24 24 24s24-10.7 24-24V388l80.3-20.1c41.1-10.3 84.6-5.5 122.5 13.4c44.2 22.1 95.5 24.8 141.7 7.4l34.7-13c12.5-4.7 20.8-16.6 20.8-30V66.1c0-23-24.2-38-44.8-27.7l-9.6 4.8c-46.3 23.2-100.8 23.2-147.1 0c-35.1-17.6-75.4-22-113.5-12.5L48 52V24zm0 77.5l96.6-24.2c27-6.7 55.5-3.6 80.4 8.8c54.9 27.4 118.7 29.7 175 6.8V334.7l-24.4 9.1c-33.7 12.6-71.2 10.7-103.4-5.4c-48.2-24.1-103.3-30.1-155.6-17.1L48 338.5v-237z"></path></svg> <strong>Economic scenarios</strong></p>
+<ul>
+<li>Optimists: augmentation, new tasks</li>
+<li>Pessimists: displacement, polarisation</li>
+<li>Economists: uncertain, expect inequality</li>
+<li>Honest answer: nobody knows</li>
+</ul>
+</div><div class="column" style="width:45%;">
+<p><svg aria-hidden="true" role="img" viewbox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M320 32c-8.1 0-16.1 1.4-23.7 4.1L15.8 137.4C6.3 140.9 0 149.9 0 160s6.3 19.1 15.8 22.6l57.9 20.9C57.3 229.3 48 259.8 48 291.9v28.1c0 28.4-10.8 57.7-22.3 80.8c-6.5 13-13.9 25.8-22.5 37.6C0 442.7-.9 448.3 .9 453.4s6 8.9 11.2 10.2l64 16c4.2 1.1 8.7 .3 12.4-2s6.3-6.1 7.1-10.4c8.6-42.8 4.3-81.2-2.1-108.7C90.3 344.3 86 329.8 80 316.5V291.9c0-30.2 10.2-58.7 27.9-81.5c12.9-15.5 29.6-28 49.2-35.7l157-61.7c8.2-3.2 17.5 .8 20.7 9s-.8 17.5-9 20.7l-157 61.7c-12.4 4.9-23.3 12.4-32.2 21.6l159.6 57.6c7.6 2.7 15.6 4.1 23.7 4.1s16.1-1.4 23.7-4.1L624.2 182.6c9.5-3.4 15.8-12.5 15.8-22.6s-6.3-19.1-15.8-22.6L343.7 36.1C336.1 33.4 328.1 32 320 32zM128 408c0 35.3 86 72 192 72s192-36.7 192-72L496.7 262.6 354.5 314c-11.1 4-22.8 6-34.5 6s-23.5-2-34.5-6L143.3 262.6 128 408z"></path></svg> <strong>For your career</strong></p>
+<ul>
+<li>Build skills that complement AI</li>
+<li>Be AI-literate, not AI-resistant</li>
+<li>Adaptability beats any specific bet on the future</li>
+<li>“Soft skills” may be the hardest to automate</li>
+</ul>
+<p><svg aria-hidden="true" role="img" viewbox="0 0 384 512" style="height:1em;width:0.75em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M297.2 248.9C311.6 228.3 320 203.2 320 176c0-70.7-57.3-128-128-128S64 105.3 64 176c0 27.2 8.4 52.3 22.8 72.9c3.7 5.3 8.1 11.3 12.8 17.7l0 0c12.9 17.7 28.3 38.9 39.8 59.8c10.4 19 15.7 38.8 18.3 57.5H109c-2.2-12-5.9-23.7-11.8-34.5c-9.9-18-22.2-34.9-34.5-51.8l0 0 0 0c-5.2-7.1-10.4-14.2-15.4-21.4C27.6 247.9 16 213.3 16 176C16 78.8 94.8 0 192 0s176 78.8 176 176c0 37.3-11.6 71.9-31.4 100.3c-5 7.2-10.2 14.3-15.4 21.4l0 0 0 0c-12.3 16.8-24.6 33.7-34.5 51.8c-5.9 10.8-9.6 22.5-11.8 34.5H226.4c2.6-18.7 7.9-38.6 18.3-57.5c11.5-20.9 26.9-42.1 39.8-59.8l0 0 0 0 0 0c4.7-6.4 9-12.4 12.7-17.7zM192 128c-26.5 0-48 21.5-48 48c0 8.8-7.2 16-16 16s-16-7.2-16-16c0-44.2 35.8-80 80-80c8.8 0 16 7.2 16 16s-7.2 16-16 16zm0 384c-44.2 0-80-35.8-80-80V416H272v16c0 44.2-35.8 80-80 80z"></path></svg> <strong>Key insights</strong></p>
+<ul>
+<li>Think <span class="alert">tasks not jobs</span></li>
+<li><span class="alert">Transition pain</span> matters even if outcome is good</li>
+<li>Policy choices will shape outcomes</li>
+<li>Learning AI tools helps, but <span class="alert">policy choices</span> will matter more</li>
+</ul>
+<div style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; margin-top: 15px; font-size: 18px;">
+<p>Nobody predicted “social media manager” in 1990 or “prompt engineer” in 2020. The jobs of 2036 probably don’t have names yet!</p>
+</div>
+</div></div>
+</div>
+</section></section>
+<section id="and-thats-all-for-today" class="title-slide slide level1 center" data-background-color="#1B3A6B">
+<h1>… and that’s all for today! 🎉</h1>
+
+
+</section>
+    </div>
+  <div class="quarto-auto-generated-content" style="display: none;">
+<div class="footer footer-default">
+<p><a href="https://danilofreire.github.io/datasci101/lectures/lecture-21/21-labour.html">Lecture 21</a></p>
+</div>
+</div></div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="../../site_libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="../../site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="../../site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="../../site_libs/revealjs/plugin/multimodal/multimodal.js"></script>
+  <script src="../../site_libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="../../site_libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="../../site_libs/revealjs/plugin/search/search.js"></script>
+  <script src="../../site_libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="../../site_libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': true,
+'previewLinksAuto': false,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'jumpToSlide': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: false,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: 'c/t',
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'slide',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'none',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1050,
+
+        height: 700,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.1,
+
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, Multimodal, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
+    <script id="quarto-html-after-body" type="application/javascript">
+      window.document.addEventListener("DOMContentLoaded", function (event) {
+        const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+        tabsets.forEach(function(tabset) {
+          const tabby = new Tabby('#' + tabset.id);
+        });
+        const isCodeAnnotation = (el) => {
+          for (const clz of el.classList) {
+            if (clz.startsWith('code-annotation-')) {                     
+              return true;
+            }
+          }
+          return false;
+        }
+        const onCopySuccess = function(e) {
+          // button target
+          const button = e.trigger;
+          // don't keep focus
+          button.blur();
+          // flash "checked"
+          button.classList.add('code-copy-button-checked');
+          var currentTitle = button.getAttribute("title");
+          button.setAttribute("title", "Copied!");
+          let tooltip;
+          if (window.bootstrap) {
+            button.setAttribute("data-bs-toggle", "tooltip");
+            button.setAttribute("data-bs-placement", "left");
+            button.setAttribute("data-bs-title", "Copied!");
+            tooltip = new bootstrap.Tooltip(button, 
+              { trigger: "manual", 
+                customClass: "code-copy-button-tooltip",
+                offset: [0, -8]});
+            tooltip.show();    
+          }
+          setTimeout(function() {
+            if (tooltip) {
+              tooltip.hide();
+              button.removeAttribute("data-bs-title");
+              button.removeAttribute("data-bs-toggle");
+              button.removeAttribute("data-bs-placement");
+            }
+            button.setAttribute("title", currentTitle);
+            button.classList.remove('code-copy-button-checked');
+          }, 1000);
+          // clear code selection
+          e.clearSelection();
+        }
+        const getTextToCopy = function(trigger) {
+          const outerScaffold = trigger.parentElement.cloneNode(true);
+          const codeEl = outerScaffold.querySelector('code');
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+        }
+        const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+          text: getTextToCopy
+        });
+        clipboard.on('success', onCopySuccess);
+        if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+          const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+            text: getTextToCopy,
+            container: window.document.getElementById('quarto-embedded-source-code-modal')
+          });
+          clipboardModal.on('success', onCopySuccess);
+        }
+          var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+          var mailtoRegex = new RegExp(/^mailto:/);
+            var filterRegex = new RegExp('/' + window.location.host + '/');
+          var isInternal = (href) => {
+              return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+          }
+          // Inspect non-navigation links and adorn them if external
+         var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+          for (var i=0; i<links.length; i++) {
+            const link = links[i];
+            if (!isInternal(link.href)) {
+              // undo the damage that might have been done by quarto-nav.js in the case of
+              // links that we want to consider external
+              if (link.dataset.originalHref !== undefined) {
+                link.href = link.dataset.originalHref;
+              }
+            }
+          }
+        function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+          const config = {
+            allowHTML: true,
+            maxWidth: 500,
+            delay: 100,
+            arrow: false,
+            appendTo: function(el) {
+                return el.closest('section.slide') || el.parentElement;
+            },
+            interactive: true,
+            interactiveBorder: 10,
+            theme: 'light-border',
+            placement: 'bottom-start',
+          };
+          if (contentFn) {
+            config.content = contentFn;
+          }
+          if (onTriggerFn) {
+            config.onTrigger = onTriggerFn;
+          }
+          if (onUntriggerFn) {
+            config.onUntrigger = onUntriggerFn;
+          }
+            config['offset'] = [0,0];
+            config['maxWidth'] = 700;
+          window.tippy(el, config); 
+        }
+        const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+        for (var i=0; i<noterefs.length; i++) {
+          const ref = noterefs[i];
+          tippyHover(ref, function() {
+            // use id or data attribute instead here
+            let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+            try { href = new URL(href).hash; } catch {}
+            const id = href.replace(/^#\/?/, "");
+            const note = window.document.getElementById(id);
+            if (note) {
+              return note.innerHTML;
+            } else {
+              return "";
+            }
+          });
+        }
+        const findCites = (el) => {
+          const parentEl = el.parentElement;
+          if (parentEl) {
+            const cites = parentEl.dataset.cites;
+            if (cites) {
+              return {
+                el,
+                cites: cites.split(' ')
+              };
+            } else {
+              return findCites(el.parentElement)
+            }
+          } else {
+            return undefined;
+          }
+        };
+        var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+        for (var i=0; i<bibliorefs.length; i++) {
+          const ref = bibliorefs[i];
+          const citeInfo = findCites(ref);
+          if (citeInfo) {
+            tippyHover(citeInfo.el, function() {
+              var popup = window.document.createElement('div');
+              citeInfo.cites.forEach(function(cite) {
+                var citeDiv = window.document.createElement('div');
+                citeDiv.classList.add('hanging-indent');
+                citeDiv.classList.add('csl-entry');
+                var biblioDiv = window.document.getElementById('ref-' + cite);
+                if (biblioDiv) {
+                  citeDiv.innerHTML = biblioDiv.innerHTML;
+                }
+                popup.appendChild(citeDiv);
+              });
+              return popup.innerHTML;
+            });
+          }
+        }
+      });
+      </script>
+    
+
+</body></html>

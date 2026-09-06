@@ -1,0 +1,701 @@
+---
+title: "DATASCI 101: Introduction to AI Applications"
+subtitle: "Lecture 03: Dataset Design, Labels, and Tasks"
+author:
+  - name: Danilo Freire
+    orcid: 0000-0002-4712-6810
+    email: danilo.freire@emory.edu
+    affiliations: "Department of Data and Decision Sciences <br> Emory University"
+format:
+  clean-revealjs:
+    self-contained: false
+    footer: "[Lecture 03](https://danilofreire.github.io/datasci101/lectures/lecture-03/03-datasets.html)"
+    transition: slide
+    transition-speed: default
+    scrollable: true
+revealjs-plugins:
+  - multimodal
+engine: knitr
+editor:
+  render-on-save: true
+---
+
+```{r setup, include=FALSE}
+# figures formatting setup
+options(htmltools.dir.version = FALSE)
+library(knitr)
+opts_chunk$set(
+  prompt = T,
+  fig.align="center", #fig.width=6, fig.height=4.5, 
+  # out.width="748px", #out.length="520.75px",
+  dpi=300, #fig.path='Figs/',
+  cache=T, #echo=F, warning=F, message=F
+  engine.opts = list(bash = "-l")
+  )
+
+## Next hook based on this SO answer: https://stackoverflow.com/a/39025054
+knit_hooks$set(
+  prompt = function(before, options, envir) {
+    options(
+      prompt = if (options$engine %in% c('sh','bash', 'zsh')) '$ ' else 'R> ',
+      continue = if (options$engine %in% c('sh','bash', 'zsh')) '$ ' else '+ '
+      )
+})
+
+# Set CRAN mirror
+options(repos = c(CRAN = "https://cran.rstudio.com/"))
+
+if (!require("fontawesome", character.only = TRUE)) {
+  install.packages("fontawesome", dependencies = TRUE)
+  library(fontawesome, character.only = TRUE)
+}
+```
+
+# Welcome back! 🤓 {background-color="#1B3A6B"}
+
+## Recap of last class
+
+:::{style="margin-top: 20px; font-size: 28px;"}
+:::{.columns}
+:::{.column width=50%}
+- We traced AI from Ancient Greece to modern transformers
+- [Symbolic AI]{.alert} (1950s-1980s): Hand-coded rules and logic
+- [AI Winters]{.alert}: When hype exceeded reality (twice!)
+- [Neural networks]{.alert}: From perceptrons to deep learning
+- [Transformers]{.alert} (2017): Attention is all you need!
+- [More data beat better algorithms]{.alert}... but where do the data come from? 🤔
+:::
+
+:::{.column width=50%}
+:::{style="text-align: center; margin-top: -30px;"}
+[![A short history of AI](figures/history.avif){width="100%"}](#){data-modal-type="image" data-modal-url="figures/history.avif"}
+
+Source: [Clay.Global](https://clay.global/blog/ai-guide/timeline-of-ai)
+:::
+:::
+:::
+:::
+
+## Lecture overview
+### Today's agenda
+
+:::{style="margin-top: 20px; font-size: 30px;"}
+
+:::{.columns}
+:::{.column width=50%}
+- Today's topic is [the data AI systems learn from]{.alert}
+- Why data quality matters
+- Types of AI tasks
+- Sourcing and collecting data
+- Selection bias and its dangers
+- Best practices for labelling data
+- Working with multiple annotators
+- Quality control in datasets
+:::
+
+:::{.column width=50%}
+:::{style="text-align: center; margin-top: -30px;"}
+[![The Modern Data Pipeline](figures/data-pipeline.webp){width="100%"}](#){data-modal-type="image" data-modal-url="figures/data-pipeline.webp"}
+
+Source: [Medium](https://blog.dataengineerthings.org/the-ai-revolution-is-nothing-without-data-pipelines-288f1dfd8ca0)
+:::
+:::
+:::
+:::
+
+## Tweet of the day
+
+:::{style="margin-top: 30px; font-size: 26px; text-align: center;"}
+[![](figures/tweet-of-the-day.jpg){width="40%"}](#){data-modal-type="image" data-modal-url="figures/tweet-of-the-day.jpg"}
+:::
+
+## Live labelling
+### Positive, negative, or neutral?
+
+:::{style="margin-top: 30px; font-size: 26px;"}
+- You are the annotators. Three product reviews, one vote each: [positive]{.alert}, [negative]{.alert}, or [neutral]{.alert}
+- No discussion, no changing your mind. Hands up when I say the label
+
+:::{.fragment}
+> "The food was fine, I guess. Service was quick."
+:::
+
+:::{.fragment}
+> "Took three weeks to arrive, but honestly the best headphones I have owned."
+:::
+
+:::{.fragment}
+> "I have had worse."
+:::
+
+:::{.fragment}
+- Did everyone agree? Keep the split in mind. We will come back to it when we measure [annotator agreement]{.alert}
+:::
+:::
+
+## A cow, a camel or a polar bear?
+
+:::{style="margin-top: 30px; font-size: 26px; text-align: center;"}
+[![](figures/cows.webp){width="100%"}](#){data-modal-type="image" data-modal-url="figures/cows.webp"}
+
+Source: [Medium](https://urwamuaz.medium.com/neural-networks-fail-on-data-with-spurious-correlation-b5010b107c32) (slightly exaggerated!)
+:::
+
+# Why data quality matters 📊 {background-color="#1B3A6B"}
+
+## Garbage in, garbage out
+### Why your model can't outrun bad data
+
+:::{style="margin-top: 30px; font-size: 24px;"}
+:::{.columns}
+:::{.column width=55%}
+- AI models are only as good as [the data they're trained on]{.alert}
+- A better algorithm cannot fix bad data
+- Common data problems:
+  - Missing important information (e.g., age, income, etc.)
+  - Conflicting labels or formats (e.g., "yes" vs "1")
+  - Biases, not representative of reality (e.g., gender, race, etc.)
+- **Data-centric AI**: Andrew Ng (2021) argues you should [improve the data]{.alert} before you improve the model
+  - Check: <https://datacentricai.org/>
+:::
+
+:::{.column width=45%}
+:::{style="text-align: center;"}
+[![Garbage In, Garbage Out](figures/garbage-in-out.png){width="70%"}](#){data-modal-type="image" data-modal-url="figures/garbage-in-out.png"}
+
+Source: [xkcd](https://xkcd.com/1838/)
+:::
+:::
+:::
+:::
+
+## Real-world impact of data quality
+### When bad data causes harm
+
+:::{style="margin-top: 60px; font-size: 30px;"}
+
+| Case | What went wrong | Impact |
+|------|-----------------|--------|
+| Credit scoring | [Data reflected historical gender-based income gaps](https://www.bbc.com/news/business-50365609) | [Lower credit limits]{.alert} for women with similar profiles |
+| Facial recognition | [Training data mostly light-skinned faces](http://gendershades.org/) | [Error rates 43x higher]{.alert} for dark-skinned women |
+| Criminal risk assessment | [Historical arrest data reflected biased policing](https://www.propublica.org/article/machine-bias-risk-assessments-in-criminal-sentencing) | [Perpetuated racial disparities]{.alert} in sentencing |
+| Hiring AI | [Trained on historical (male-dominated) hiring decisions](https://www.reuters.com/article/us-amazon-com-jobs-automation-insight-idUSKCN1MK08G) | [Penalised female candidates]{.alert} |
+
+:::{.fragment}
+> In all four cases the model learned [exactly what the data taught it]{.alert}
+:::
+:::
+
+# Types of machine learning tasks 🎯 {background-color="#1B3A6B"}
+
+## Classification and regression tasks
+### The two main types of AI tasks
+
+:::{style="margin-top: 30px; font-size: 22px;"}
+:::{.columns}
+:::{.column width=50%}
+[Classification: Predicting categories]{.alert}
+
+- **Goal**: Assign inputs to discrete categories
+- Examples: Email → Spam/Not Spam; Image → Cat/Dog/Bird; Text → Positive/Negative/Neutral
+- **Binary classification**: Two classes
+- **Multi-class**: Many classes (one per input)
+- **Multi-label**: Multiple labels per input
+- [How do you define the classes?]{.alert}
+
+:::{style="text-align: center;"}
+[![Classification](figures/classification.png){width="80%"}](#){data-modal-type="image" data-modal-url="figures/classification.png"}
+:::
+:::
+
+:::{.column width=50%}
+[Regression: Predicting continuous values]{.alert}
+
+- **Goal**: Predict a continuous numerical value
+- Examples: Features → House price; Patient data → Hospital stay length; Weather data → Temperature
+- The choice of target variable is [a design decision]{.alert}
+- Different targets can lead to very different models
+
+:::{style="text-align: center;"}
+[![Regression](figures/regression.png){width="80%"}](#){data-modal-type="image" data-modal-url="figures/regression.png"}
+:::
+:::
+:::
+:::
+
+## Other common AI tasks
+### Beyond classification and regression
+
+:::{style="margin-top: 60px; font-size:30px;"}
+
+| Task | Description | Example |
+|------|-------------|---------|
+| [Object Detection]{.alert} | Find and locate objects in images | Self-driving cars detecting pedestrians |
+| [Segmentation]{.alert} | Label every pixel in an image | Medical imaging (tumour boundaries) |
+| [Sequence Labelling]{.alert} | Label each element in a sequence | Named entity recognition in text |
+| [Generation]{.alert} | Create new content | ChatGPT, DALL-E, music generation |
+| [Ranking]{.alert} | Order items by relevance | Search results, recommendations |
+
+:::{.fragment}
+> Each task requires [different types of labels]{.alert} in your dataset!
+:::
+:::
+
+## Defining your classes
+### Classification pitfalls
+
+:::{style="margin-top: 30px; font-size: 24px;"}
+:::{.columns}
+:::{.column width=55%}
+- Classes should be:
+  - **Mutually exclusive**: No overlap between categories
+  - **Collectively exhaustive**: Cover all possible cases
+  - **Consistently definable**: Clear boundaries
+- Common problems:
+  - [Ambiguous categories]{.alert}: What counts as "spam"?
+  - [Subjective judgments]{.alert}: Is this review "positive"?
+  - [Cultural differences]{.alert}: What's "offensive" varies
+  - [Evolving definitions]{.alert}: Categories change over time
+- Solution: [Clear annotation guidelines]{.alert}
+:::
+
+:::{.column width=45%}
+:::{style="text-align: center;"}
+[![A duck or a rabbit?](figures/duck-rabbit.png){width="90%"}](#){data-modal-type="image" data-modal-url="figures/duck-rabbit.png"}
+
+Source: [The Independent](https://www.independent.co.uk/news/science/duck-and-rabbit-illusion-b1821663.html)
+:::
+:::
+:::
+:::
+
+## The proxy problem
+### When labels don't measure what you care about
+
+:::{style="margin-top: 30px; font-size: 21px;"}
+:::{.columns}
+:::{.column width=55%}
+- Often we can't directly measure what we want to predict
+- So we use [proxy variables]{.alert} instead, and proxies can mislead
+- **Example 01: Predicting "health needs"**
+  - What we want: How sick is this patient?
+  - Available data: Healthcare spending
+  - [Spending ≠ health needs]{.alert}: Black patients had less spent on them due to systemic barriers
+  - Algorithm learned: "Black patients need less care" → [Wrong!]{.alert}
+- **Example 02: Predicting expertise on social media**
+  - What we want: Who is an expert in a field?
+  - Available data: Number of followers
+  - [Followers ≠ Expertise]{.alert}: Popularity can be gamed or unrelated to domain knowledge
+:::
+
+:::{.column width=45%}
+:::{style="text-align: center;"}
+[![Model-centric vs. Data-centric AI](figures/data-centric.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/data-centric.png"}
+
+Source: [Andrej Karpathy](https://vimeo.com/274274744)
+:::
+
+<br>
+
+- Always ask: [Does this label actually measure what I care about?]{.alert}
+:::
+:::
+:::
+
+# Sourcing and collecting data 📥 {background-color="#1B3A6B"}
+
+## Where do the data come from?
+### Common data sources
+
+:::{style="margin-top: 60px; font-size: 28px;"}
+
+| Source | Examples | Considerations |
+|--------|----------|----------------|
+| [Existing databases]{.alert} | Hospital records, transaction logs | May have missing fields, inconsistent formats |
+| [Public datasets]{.alert} | ImageNet, Wikipedia, Common Crawl | May not match your specific domain |
+| [Web scraping]{.alert} | Social media, news articles | Legal and ethical concerns |
+| [Surveys/Forms]{.alert} | User feedback, questionnaires | Response bias, sampling issues |
+| [Sensors/IoT]{.alert} | Cameras, wearables, satellites | Privacy concerns, data volume |
+| [Synthetic data]{.alert} | Generated by other models | May not capture real-world complexity |
+
+:::
+
+## How much data do you need?
+### The million-dollar question
+
+:::{style="margin-top: 30px; font-size: 22px;"}
+:::{.columns}
+:::{.column width=55%}
+- [There's no universal answer...]{.alert} it depends on:
+  - Task complexity: harder tasks need more data
+  - Number of classes/features: more categories = more examples needed
+  - Model architecture: deep learning is data-hungry
+  - Required accuracy: higher stakes = more data
+- [Rule of thumb]{.alert}: Start small, then scale up
+- [Scaling laws]{.alert}: Performance improves predictably with more data
+  - You can [estimate]{.alert} how much data you'll need by training on subsets and extrapolating
+- For most real-world problems, [more high-quality data beats more sophisticated algorithms]{.alert}
+:::
+
+:::{.column width=45%}
+:::{style="text-align: center;"}
+[![Performance vs. dataset size](figures/scaling-curve.png){width="90%"}](#){data-modal-type="image" data-modal-url="figures/scaling-curve.png"}
+
+Source: [Our World in Data](https://ourworldindata.org/grapher/ai-performance-knowledge-tests-vs-dataset-size)
+:::
+:::
+:::
+:::
+
+# Selection bias ⚠️ {background-color="#1B3A6B"}
+
+## What is selection bias?
+### When your data doesn't represent reality
+
+:::{style="margin-top: 30px; font-size: 26px;"}
+:::{.columns}
+:::{.column width=55%}
+- [Selection bias]{.alert}: your training data differ systematically from the cases the model will meet
+- Close relatives: sampling bias, distribution shift, survivorship bias
+- The model learns patterns that [won't generalise]{.alert}
+- [Extremely hard to fix after the fact]{.alert}
+- [Prevention is better than cure]{.alert}!
+- Always ask: "In what ways might my data not be representative?"
+:::
+
+:::{.column width=45%}
+:::{style="text-align: center;"}
+[![Selection bias](figures/survivorship-bias.png){width="90%"}](#){data-modal-type="image" data-modal-url="figures/survivorship-bias.png"}
+
+Source: [Wikipedia](https://en.wikipedia.org/wiki/Survivorship_bias)
+:::
+:::
+:::
+:::
+
+## Common causes of selection bias
+### Where does bias creep in?
+
+:::{style="margin-top: 60px; font-size: 26px;"}
+
+| Type | Description | Example |
+|------|-------------|---------|
+| [Time bias]{.alert} | Data from the past applied to the future | Training on 2021 data for 2026 predictions |
+| [Location bias]{.alert} | Data from one place applied elsewhere | US healthcare model used in India |
+| [Demographic bias]{.alert} | Certain groups under/over-represented | Clinical trial with mostly young, white, male participants |
+| [Availability bias]{.alert} | Using convenient rather than representative data | Surveying only friends |
+| [Response bias]{.alert} | Who responds differs from who doesn't | Online surveys miss offline populations |
+| [Long-tail bias]{.alert} | Rare events underrepresented | Self-driving cars: unusual scenarios |
+
+- Try it out: Let's generate an image of a CEO and a nurse using two different models, such as [Qwen](https://qwen.ai/) and [Gemini](https://gemini.google.com). What do you notice?
+:::
+
+## Prompt: Create an image of a CEO and a nurse
+
+:::{style="margin-top: 30px; font-size: 22px; text-align: center;"}
+:::{.columns}
+:::{.column width=50%}
+[![Qwen](figures/qwen.png){width="70%"}](#){data-modal-type="image" data-modal-url="figures/qwen.png"}
+
+Source: [Qwen](https://qwen.ai/) via [nanoGPT](https://nano-gpt.com)
+:::
+
+:::{.column width=50%}
+[![Gemini](figures/gemini.png){width="65%"}](#){data-modal-type="image" data-modal-url="figures/gemini.png"}
+
+Source: [Gemini's NanoBanana](https://gemini.google.com)
+:::
+:::
+:::
+
+## Dealing with selection bias
+### Mitigation strategies
+
+:::{style="margin-top: 30px; font-size: 22px;"}
+:::{.columns}
+:::{.column width=55%}
+**Before collection:**
+
+- [List the biases you expect]{.alert} before collecting data
+- Design collection to [cover important subgroups]{.alert}
+- [Over-sample]{.alert} rare but [important cases]{.alert}
+
+**After collection:**
+
+- Use [data augmentation]{.alert} to increase dataset size
+  - Try it out at home! Use an image generator to create variations of the same object (different angles, lighting, etc)
+- Use [representative validation sets]{.alert}
+- If deploying in new locations: validate on location-specific data
+- [Document known limitations]{.alert} of your dataset
+:::
+
+:::{.column width=45%}
+:::{style="text-align: center;"}
+[![Strategies to reduce bias](figures/bias-mitigation.jpg){width="90%"}](#){data-modal-type="image" data-modal-url="figures/bias-mitigation.jpg"}
+
+Source: [WisdomPlexus](https://wisdomplexus.com/blogs/ai-bias-in-action-real-world-examples-and-mitigation-strategies/)
+:::
+:::
+:::
+:::
+
+# Labelling data 🏷️ {background-color="#1B3A6B"}
+
+## Why labelling is hard
+### Humans are slow, expensive, and inconsistent
+
+:::{style="margin-top: 30px; font-size: 23px;"}
+:::{.columns}
+:::{.column width=55%}
+- Most AI models require [labelled data]{.alert}
+- Labels come from humans → humans make mistakes
+- Common issues:
+  - **Inconsistency**: Different people label differently
+  - **Ambiguity**: Some examples are genuinely unclear
+  - **Mislabelling**: Human errors happen
+  - **Fatigue**: Quality drops over time
+  - **Expertise**: Some tasks need domain experts
+- Labelling is [expensive and time-consuming]{.alert}
+  - See [Alexandr Wang's Scale AI](https://scale.com/)
+- Quality control is super important!
+:::
+
+:::{.column width=45%}
+:::{style="text-align: center;"}
+[![Labelling is harder than it looks!](figures/labeling-challenge.jpg){width="90%"}](#){data-modal-type="image" data-modal-url="figures/labeling-challenge.jpg"}
+
+Source: [Galliot](https://galliot.us/blog/data-labeling-approaches-challenges-tools/)
+:::
+:::
+:::
+:::
+
+## Example
+
+:::{style="margin-top: 30px; font-size: 24px; text-align: center;"}
+:::{.columns}
+:::{.column width=55%}
+[![](figures/annotation01.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/annotation01.png"}
+:::
+
+:::{.column width=45%}
+[![](figures/annotation02.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/annotation02.png"}
+:::
+:::
+
+Source: [LeewayHertz](https://www.leewayhertz.com/data-annotation/)
+:::
+
+## MNIST dataset
+
+:::{style="margin-top: 30px; font-size: 24px;"}
+- How would you label these images?
+
+:::{style="text-align: center;"}
+[![](figures/mnist01.png){width="40%"}](#){data-modal-type="image" data-modal-url="figures/mnist01.png"}
+
+[![](figures/mnist02.png){width="40%"}](#){data-modal-type="image" data-modal-url="figures/mnist02.png"}
+
+Source: <https://labelerrors.com/>
+:::
+:::
+
+## Writing good annotation guidelines
+### What annotators actually need from you
+
+:::{style="margin-top: 30px; font-size: 24px;"}
+:::{.columns}
+:::{.column width=55%}
+Good guidelines should include:
+
+1. **Clear definitions**: What does each label mean?
+2. **Examples**: Canonical cases for each class
+3. **Counter-examples**: What does NOT belong
+4. **Edge cases**: How to handle ambiguity
+5. **Visual aids**: Screenshots, annotated examples
+
+Best practices:
+
+- [Test guidelines]{.alert} with a small group first
+- [Iterate]{.alert} based on confusion and disagreements
+- Keep guidelines as [living documents]{.alert}
+:::
+
+:::{.column width=45%}
+:::{style="text-align: center;"}
+[![](figures/annotation-guidelines.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/annotation-guidelines.png"}
+
+Source: [Google's Healthcare Text Annotation Guidelines](https://github.com/google/healthcare-text-annotation/blob/master/guidelines/defining-entity-categories.md)
+:::
+:::
+:::
+:::
+
+## Multiple annotators and agreement {#sec-agreement}
+### Reducing individual errors
+
+:::{style="margin-top: 30px; font-size: 20px;"}
+:::{.columns}
+:::{.column width=50%}
+**Why use multiple annotators:**
+
+- Individual annotators make mistakes
+- [Multiple annotators → more reliable labels]{.alert}
+- Benefits: Catch errors, identify ambiguous cases, assess label quality, reduce biases
+- Trade-off: [More expensive]{.alert}
+
+**Aggregation strategies:**
+
+- **Majority vote**: Most common label wins (limitations: ties, equal weighting)
+- **Weighted voting**: Trust reliable annotators more
+- **Adjudication**: Expert makes final call
+- **Keep all labels**: Train on disagreement (for uncertainty research)
+:::
+
+:::{.column width=50%}
+**Measuring agreement (IAA):**
+
+- [Inter-annotator agreement]{.alert}: Do annotators agree?
+- High agreement → Labels are reliable
+- Low agreement → Problem with guidelines or task
+- Common metric: [Cohen's Kappa](https://en.wikipedia.org/wiki/Cohen%27s_kappa) ([Fleiss' Kappa](https://en.wikipedia.org/wiki/Fleiss%27_kappa) for more than two annotators)
+
+:::{style="text-align: center;"}
+**Cohen's Kappa:**
+$$\kappa = \frac{p_o - p_e}{1 - p_e}$$
+
+:::{style="font-size: 17px; text-align: left;"}
+- $p_o$ (observed agreement): share of items both annotators labelled the same way
+- $p_e$ (expected agreement): share they would agree on by chance, given how often each one uses each label
+- [[Worked example]{.button}](#sec-appendix-kappa)
+:::
+
+| Kappa | Interpretation |
+|-------|----------------|
+| < 0.20 | Slight |
+| 0.21–0.40 | Fair |
+| 0.41–0.60 | Moderate |
+| 0.61–0.80 | Substantial |
+| 0.81–1.00 | Almost perfect |
+:::
+:::
+:::
+:::
+
+## Quality control
+### Catching mistakes before they reach your model
+
+:::{style="margin-top: 30px; font-size: 24px;"}
+:::{.columns}
+:::{.column width=55%}
+- [Quality control (QC) examples]{.alert}: Examples where you already know the correct answer
+- Slip QC examples into the labelling queue [without telling annotators]{.alert}
+- Use them to:
+  - Monitor annotator accuracy over time
+  - Identify annotators who need retraining
+  - Catch low-quality work early
+- Flag annotators who fail too many QC checks
+- Combine with [regular audits]{.alert} of random samples
+:::
+
+:::{.column width=45%}
+:::{style="text-align: center;"}
+[![QC examples catch errors](figures/quality-control.jpeg){width="90%"}](#){data-modal-type="image" data-modal-url="figures/quality-control.jpeg"}
+
+Source: [SuperAnnotate](https://www.superannotate.com/blog/guide-to-data-labeling)
+:::
+:::
+:::
+:::
+
+## Building an annotation pipeline
+### From guidelines to final dataset
+
+:::{style="margin-top: 20px; font-size: 24px;"}
+:::{.columns}
+:::{.column width=50%}
+```{mermaid}
+%%{init: {'theme': 'base', 'themeVariables': {'fontSize': '17px'}}}%%
+flowchart TB
+    A[📊 Data Selection] --> B[📝 Guideline Design]
+    B --> C[👥 Annotator Training]
+    C --> D[🧪 Pilot Labelling]
+    D --> E{Quality OK?}
+    E -->|No| B
+    E -->|Yes| F[🏭 Full Labelling]
+    F --> G[✅ QC Checks]
+    G --> H[📈 Aggregation]
+    H --> I[🎯 Final Dataset]
+    style E fill:#f9f,stroke:#333,stroke-width:2px
+    style I fill:#90EE90,stroke:#333,stroke-width:2px
+```
+:::
+
+:::{.column width=50%}
+**Key stages:**
+
+1. **Select data** stratified by important subgroups
+2. **Design guidelines** with clear definitions and examples
+3. **Train annotators** and calibrate their judgments
+4. **Pilot** on a small sample, iterate on guidelines
+5. **Scale up** with ongoing quality control
+6. **Aggregate labels** using appropriate strategies
+7. **Document** everything for reproducibility
+:::
+:::
+:::
+
+# Summary {background-color="#1B3A6B"}
+
+## Main takeaways
+
+:::{style="margin-top: 30px; font-size: 32px;"}
+
+- [Data quality > Algorithm sophistication]{.alert} for most real-world problems
+
+- [Problem framing]{.alert} determines what data you need and how to label it
+
+- [Selection bias]{.alert} is a major source of error. List the biases before you collect
+
+- [Labelling is hard]{.alert}, so write clear guidelines and check the work
+
+- [Multiple annotators]{.alert} improve reliability, but aggregate intelligently
+
+- [Document everything]{.alert}, so your future self will thank you
+:::
+
+# ... and that's all for today! 🎉 {background-color="#1B3A6B"}
+
+# Appendix {background-color="#1B3A6B"}
+
+## Cohen's kappa by hand {#sec-appendix-kappa}
+### Two annotators labeling 100 product reviews as "positive" or "negative"
+
+:::{style="margin-top: 40px; font-size: 24px;"}
+:::{.columns}
+:::{.column width=45%}
+:::{style="text-align: center;"}
+|  | B: Positive | B: Negative | Total |
+|---|:---:|:---:|:---:|
+| **A: Positive** | 40 | 10 | 50 |
+| **A: Negative** | 15 | 35 | 50 |
+| **Total** | 55 | 45 | 100 |
+:::
+
+<br>
+
+- The diagonal (40 and 35) is where A and B agree
+- A says "positive" 50% of the time, B says it 55% of the time
+:::
+
+:::{.column width=55%}
+1. Observed agreement: $p_o = \frac{40 + 35}{100} = 0.75$
+2. Chance both say positive: $0.50 \times 0.55 = 0.275$
+3. Chance both say negative: $0.50 \times 0.45 = 0.225$
+4. Expected agreement: $p_e = 0.275 + 0.225 = 0.50$
+5. Kappa: $\kappa = \frac{0.75 - 0.50}{1 - 0.50} = 0.50$, "moderate"
+
+[[Back to the lecture]{.button}](#sec-agreement)
+:::
+:::
+:::
