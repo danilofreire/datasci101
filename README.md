@@ -13,11 +13,7 @@ This repository contains the source materials for [DATASCI 101: Introduction to 
 - **Location**: [White Hall, Room 206](https://maps.app.goo.gl/gynyTUkKqJ7meGjm8)
 - **Instructor**: [Danilo Freire](https://danilofreire.github.io)
 - **Email**: <danilo.freire@emory.edu>
-- **Teaching Assistants**:
-  - Tom Suo: <tom.suo@emory.edu> (in class)
-  - Sissi Li: <sissi.li@emory.edu> (in class)
-  - Philip Wang: <xipu.wang@emory.edu> (grading)
-  - Anita Osuri: <anita.osuri@emory.edu> (grading)
+- **Teaching Assistants**: TBC
 
 ## Course Content
 
