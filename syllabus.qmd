@@ -175,10 +175,11 @@ Suggested readings:
 
 - Athalye, A., Northcutt, C., & Mueller, J. (2024). [Dataset creation and curation](https://dcai.csail.mit.edu/2024/dataset-creation-curation/) in *Data-Centric AI*. A chapter from a forthcoming book on data-centric AI, covering the main ideas in dataset design.
 - Rich, A. S., & Gureckis, T. M. (2019). [Lessons for artificial intelligence from the study of natural stupidity.](https://www.nature.com/articles/s42256-019-0038-z) *Nature Machine Intelligence*, 1(4), 174-180. A title this good is hard to find. The article discusses different sources of bias in AI systems.
-- Sapien Labs. (2024). [Labeling data for machine learning: best practices and quality control.](https://www.sapien.io/blog/labeling-data-for-machine-learning-best-practices-and-quality-control) A practical guide to data labelling, with tips and common pitfalls.
+- Google PAIR. (2021). [People + AI Guidebook: data collection and evaluation.](https://pair.withgoogle.com/chapter/data-collection/) How to plan a dataset, write labeller instructions, test inter-labeller reliability, and treat data workers fairly.
 
 Further readings:
 
+- Sambasivan, N., Kapania, S., Highfill, H., Akrong, D., Paritosh, P., & Aroyo, L. (2021). ["Everyone wants to do the model work, not the data work": data cascades in high-stakes AI.](https://storage.googleapis.com/gweb-research2023-media/pubtools/5936.pdf) *CHI 2021*. Interviews with 53 practitioners showing how small labelling problems compound downstream.
 - Liang, W., Tadesse, G. A., Ho, D., Fei-Fei, L., Zaharia, M., Zhang, C., & Zou, J. (2022). [Advances, challenges and opportunities in creating data for trustworthy AI.](https://www.nature.com/articles/s42256-022-00516-1) *Nature Machine Intelligence*, 4(8), 669-677. A good discussion on the challenges of creating high-quality datasets.
 - Chai, C., & Li, G. (2020). [Human-in-the-loop techniques in machine learning.](http://sites.computer.org/debull/A20sept/p37.pdf) *IEEE Data Eng. Bull.*, 43(3), 37-52. A little more technical, but quite comprehensive.
 
