@@ -157,17 +157,16 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </section>
 <section id="recap-of-last-class" class="slide level2">
 <h2>Recap of last class</h2>
-<div style="margin-top: 20px; font-size: 24px;">
+<div style="margin-top: 40px; font-size: 28px;">
 <div class="columns">
 <div class="column" style="width:50%;">
 <ul>
-<li>We discussed the <span class="alert">foundation of AI systems: (good) data!</span></li>
-<li><span class="alert">Garbage in, garbage out!</span></li>
-<li>Different AI/ML tasks require different types of labels (classification, regression, etc.)</li>
+<li><span class="alert">Good data is the foundation of AI systems</span>: garbage in, garbage out!</li>
+<li>Different AI/ML tasks need different labels (classification, regression, etc.)</li>
 <li><span class="alert">Selection bias</span> is dangerous and hard to fix after the fact</li>
-<li>Labelling is harder than it looks, and <span class="alert">clear guidelines and multiple annotators</span> improve quality</li>
+<li><span class="alert">Clear guidelines and multiple annotators</span> improve labelling quality</li>
 <li><span class="alert">Inter-annotator agreement</span> (Cohen’s Kappa) measures labelling reliability</li>
-<li>Today: How do machines actually <span class="alert">learn from data</span>? 🤔</li>
+<li>Today: how do machines <span class="alert">learn from data</span>? 🤔</li>
 </ul>
 </div><div class="column" style="width:50%;">
 <div style="text-align: center; margin-top: -30px;">
@@ -185,21 +184,21 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <section id="lecture-overview" class="slide level2">
 <h2>Lecture overview</h2>
 <h3 id="todays-agenda">Today’s agenda</h3>
-<div style="margin-top: 20px; font-size: 24px;">
+<div style="margin-top: 30px; font-size: 25px;">
 <div class="columns">
 <div class="column" style="width:50%;">
 <ul>
 <li>The three paradigms of machine learning</li>
-<li><span class="alert">Supervised learning</span>: Learning from labelled examples
+<li><span class="alert">Supervised learning</span>: learn from labelled examples
 <ul>
 <li>Linear regression, decision trees, neural networks</li>
 </ul></li>
 <li>The bias-variance trade-off</li>
-<li><span class="alert">Unsupervised learning</span>: Finding hidden structure
+<li><span class="alert">Unsupervised learning</span>: find hidden structure
 <ul>
 <li>Clustering and dimensionality reduction</li>
 </ul></li>
-<li><span class="alert">Reinforcement learning</span>: Learning from interaction
+<li><span class="alert">Reinforcement learning</span>: learn from interaction
 <ul>
 <li>Agents, rewards, and policies</li>
 </ul></li>
@@ -231,19 +230,18 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <section id="how-do-machines-learn" class="slide level2 scrollable">
 <h2>How do machines learn?</h2>
 <h3 id="three-different-approaches">Three different approaches</h3>
-<div style="margin-top: 30px; font-size: 24px;">
+<div style="margin-top: 30px; font-size: 26px;">
 <div class="columns">
 <div class="column" style="width:55%;">
 <ul>
 <li>AI algorithms learn patterns from data</li>
-<li>But <span class="alert">what kind of data</span> and <span class="alert">what kind of feedback</span>?</li>
-<li>Three main paradigms:
+<li>But <span class="alert">what kind of data</span> and <span class="alert">what kind of feedback</span>?
 <ol type="1">
-<li><a href="https://en.wikipedia.org/wiki/Supervised_learning">Supervised learning</a>: Learn from labelled examples (what we saw in previous lecture)</li>
-<li><a href="https://en.wikipedia.org/wiki/Unsupervised_learning">Unsupervised learning</a>: Find structure in unlabelled data</li>
-<li><a href="https://en.wikipedia.org/wiki/Reinforcement_learning">Reinforcement learning</a>: Learn from rewards and punishments</li>
+<li><a href="https://en.wikipedia.org/wiki/Supervised_learning">Supervised learning</a>: learn from labelled examples (last lecture)</li>
+<li><a href="https://en.wikipedia.org/wiki/Unsupervised_learning">Unsupervised learning</a>: find structure in unlabelled data</li>
+<li><a href="https://en.wikipedia.org/wiki/Reinforcement_learning">Reinforcement learning</a>: learn from rewards and punishments</li>
 </ol></li>
-<li>The paradigm you choose depends on <span class="alert">what data you have</span> and <span class="alert">what you want to achieve</span></li>
+<li>Your choice depends on <span class="alert">the data you have</span> and <span class="alert">the goal you want</span></li>
 </ul>
 </div><div class="column" style="width:45%;">
 <div style="text-align: center;">
@@ -266,15 +264,14 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <section id="what-is-supervised-learning" class="slide level2">
 <h2>What is supervised learning?</h2>
 <h3 id="learning-from-examples-with-answers">Learning from examples with answers</h3>
-<div style="margin-top: 30px; font-size: 24px;">
+<div style="margin-top: 30px; font-size: 26px;">
 <div class="columns">
 <div class="column" style="width:55%;">
 <ul>
-<li><span class="alert">Supervised learning</span>: The model learns from labelled examples</li>
-<li>Training data: Input-output pairs <span class="math inline">\((x_i, y_i)\)</span></li>
-<li>Goal: Learn a function <span class="math inline">\(f\)</span> such that <span class="math inline">\(f(x) \approx y\)</span></li>
-<li>Like learning with a <span class="alert">teacher</span> who provides correct answers</li>
-<li>The “supervision” comes from <span class="alert">known labels</span></li>
+<li><span class="alert">Supervised learning</span>: learn from labelled examples</li>
+<li>Training data: input-output pairs <span class="math inline">\((x_i, y_i)\)</span></li>
+<li>Goal: learn a function <span class="math inline">\(f\)</span> such that <span class="math inline">\(f(x) \approx y\)</span></li>
+<li>The “supervision” is a <span class="alert">teacher</span> giving the correct answers: the <span class="alert">known labels</span></li>
 <li><span class="alert">Most common paradigm</span> in real-world applications</li>
 <li>Examples:
 <ul>
@@ -299,8 +296,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <section id="classification-vs-regression" class="slide level2">
 <h2>Classification vs regression</h2>
 <h3 id="the-two-main-supervised-tasks">The two main supervised tasks</h3>
-<div style="margin-top: 30px; font-size: 23px;">
-<p>You may remember them from last class:</p>
+<div style="margin-top: 30px; font-size: 26px;">
 <div class="columns">
 <div class="column" style="width:50%;">
 <p><strong>Classification</strong> 🏷️</p>
@@ -308,7 +304,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <li>Predict a <span class="alert">discrete category</span></li>
 <li>Binary: Yes/No, Spam/Ham</li>
 <li>Multi-class: Cat/Dog/Bird/Fish</li>
-<li>Output: Class label (or probabilities)</li>
+<li>Output: class label (or probabilities)</li>
 <li>Examples:
 <ul>
 <li>Fraud detection</li>
@@ -319,8 +315,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </div><div class="column" style="width:50%;">
 <p><strong>Regression</strong> 📈</p>
 <ul>
-<li>Predict a <span class="alert">continuous value</span></li>
-<li>Output: A number on a continuous scale</li>
+<li>Predict a <span class="alert">continuous value</span> (a number)</li>
 <li>Examples:
 <ul>
 <li>House price prediction</li>
@@ -342,22 +337,22 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <section id="linear-models" class="slide level2">
 <h2>Linear models</h2>
 <h3 id="the-simplest-supervised-learners">The simplest supervised learners</h3>
-<div style="margin-top: 30px; font-size: 22px;">
+<div style="margin-top: 30px; font-size: 23px;">
 <div class="columns">
 <div class="column" style="width:55%;">
 <ul>
-<li><span class="alert">Linear regression</span>: Predict y as a weighted sum of features</li>
+<li><span class="alert">Linear regression</span>: predict y as a weighted sum of features</li>
 </ul>
 <p><span class="math display">\[\hat{y} = w_0 + w_1 x_1 + w_2 x_2 + \ldots + w_n x_n\]</span></p>
 <ul>
 <li>Learn weights <span class="math inline">\(w\)</span> that minimise prediction error</li>
-<li><span class="alert">Logistic regression</span>: Classification via <a href="https://en.wikipedia.org/wiki/Sigmoid_function">sigmoid function</a></li>
+<li><span class="alert">Logistic regression</span>: classification via the <a href="https://en.wikipedia.org/wiki/Sigmoid_function">sigmoid function</a></li>
 </ul>
 <p><span class="math display">\[P(y=1|x) = \frac{1}{1 + e^{-(w_0 + w_1 x_1 + \ldots)}}\]</span></p>
 <ul>
 <li>Simple, interpretable, fast to train</li>
-<li>Works well when relationships are approximately linear</li>
-<li>Often a <span class="alert">strong baseline</span> before trying complex models</li>
+<li>Works well when relationships are roughly linear</li>
+<li>A <span class="alert">strong baseline</span> before trying complex models</li>
 </ul>
 </div><div class="column" style="width:45%;">
 <div style="text-align: center; margin-top: -70px;">
@@ -382,20 +377,19 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <section id="decision-trees" class="slide level2">
 <h2>Decision trees</h2>
 <h3 id="learning-rules-from-data">Learning rules from data</h3>
-<div style="margin-top: 30px; font-size: 25px;">
+<div style="margin-top: 30px; font-size: 26px;">
 <div class="columns">
 <div class="column" style="width:55%;">
 <ul>
-<li><span class="alert">Decision trees</span>: Learn a hierarchy of yes/no questions</li>
-<li>Each node splits data based on a feature</li>
-<li>Leaves contain predictions</li>
-<li>Easy to interpret: “If income &gt; £50k AND age &gt; 30, then approve loan”</li>
-<li>Can capture <span class="alert">non-linear relationships</span></li>
+<li><span class="alert">Decision trees</span>: learn a hierarchy of yes/no questions</li>
+<li>Each node splits the data on a feature; leaves hold the predictions</li>
+<li>Easy to interpret: “If income &gt; $50k AND age &gt; 30, then approve loan”</li>
+<li>Capture <span class="alert">non-linear relationships</span></li>
 <li>Prone to <span class="alert">overfitting</span> (memorising training data)</li>
-<li>Solution: <a href="https://en.wikipedia.org/wiki/Random_forest">Random forests</a>, which combine many trees
+<li>Fix: <a href="https://en.wikipedia.org/wiki/Random_forest">random forests</a> combine many trees
 <ul>
 <li>Each tree sees different data/features</li>
-<li>Average their predictions for better accuracy</li>
+<li>Averaging their predictions raises accuracy</li>
 </ul></li>
 </ul>
 </div><div class="column" style="width:45%;">
@@ -414,15 +408,14 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <section id="neural-networks-for-supervised-learning" class="slide level2">
 <h2>Neural networks for supervised learning</h2>
 <h3 id="learning-complex-patterns">Learning complex patterns</h3>
-<div style="margin-top: 30px; font-size: 24px;">
+<div style="margin-top: 30px; font-size: 26px;">
 <div class="columns">
 <div class="column" style="width:55%;">
 <ul>
-<li><span class="alert">Neural networks</span>: Layers of interconnected nodes</li>
-<li>Each layer transforms the input</li>
-<li>Can learn <span class="alert">arbitrarily complex</span> functions</li>
+<li><span class="alert">Neural networks</span>: layers of interconnected nodes, each transforming the input</li>
+<li>Learn <span class="alert">arbitrarily complex</span> functions</li>
 <li>Deep networks (many layers) = <span class="alert">deep learning</span></li>
-<li>Require <span class="alert">more data</span> than simpler models</li>
+<li>Need <span class="alert">more data</span> than simpler models</li>
 <li>Less interpretable (“black box”)</li>
 <li>State-of-the-art for:
 <ul>
@@ -430,7 +423,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <li>Speech recognition</li>
 <li>Natural language processing</li>
 </ul></li>
-<li>Remember from Lecture 02: <span class="alert">backpropagation</span> enables training!</li>
+<li><span class="alert">Backpropagation</span> makes training possible (lecture 02)</li>
 </ul>
 </div><div class="column" style="width:45%;">
 <div style="text-align: center;">
@@ -448,29 +441,27 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <section id="the-bias-variance-trade-off" class="slide level2">
 <h2>The bias-variance trade-off</h2>
 <h3 id="too-simple-or-too-complex">Too simple or too complex?</h3>
-<div style="margin-top: 30px; font-size: 22px;">
+<div style="margin-top: 30px; font-size: 24px;">
 <div class="columns">
 <div class="column" style="width:55%;">
 <ul>
 <li><span class="alert">Every model makes errors!</span> Two sources:</li>
-<li><span class="alert">Bias</span>: Error from oversimplified assumptions
+<li><span class="alert">Bias</span>: error from oversimplified assumptions
 <ul>
-<li>Underfitting: Model too simple</li>
-<li>Misses real patterns in the data</li>
+<li>Underfitting: model too simple, misses real patterns</li>
 </ul></li>
-<li><span class="alert">Variance</span>: Error from sensitivity to training data
+<li><span class="alert">Variance</span>: error from sensitivity to training data
 <ul>
-<li>Overfitting: Model too complex</li>
-<li>Memorises noise, fails on new data</li>
+<li>Overfitting: model too complex, memorises noise and fails on new data</li>
 </ul></li>
 </ul>
 <p><span class="math display">\[\text{Total Error} = \text{Bias}^2 + \text{Variance} + \text{Noise}\]</span></p>
 <ul>
-<li><span class="alert">Trade-off</span>: Reducing one often increases the other</li>
-<li>Goal: Find the <span class="alert">sweet spot</span> where total error is minimised</li>
+<li><span class="alert">Trade-off</span>: reducing one often increases the other</li>
+<li>Goal: find the <span class="alert">sweet spot</span> where total error is smallest</li>
 </ul>
 </div><div class="column" style="width:45%;">
-<div style="text-align: center; margin-top: -50px;">
+<div style="text-align: center; margin-top: -30px;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <p><a href="#/" data-modal-type="image" data-modal-url="figures/bias-variance.gif"><img data-src="figures/bias-variance.gif" style="width:80.0%"></a></p>
@@ -485,25 +476,21 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <section id="cross-validation" class="slide level2">
 <h2>Cross-validation</h2>
 <h3 id="testing-your-model-properly">Testing your model properly</h3>
-<div style="margin-top: 30px; font-size: 24px;">
+<div style="margin-top: 30px; font-size: 26px;">
 <div class="columns">
 <div class="column" style="width:55%;">
 <ul>
-<li>Problem: Single train/test split can be <span class="alert">misleading</span>
-<ul>
-<li>Why? It doesn’t account for enough <span class="alert">random variation</span></li>
-</ul></li>
-<li><span class="alert">Cross-validation</span>: Multiple train/test splits</li>
-<li><strong>K-fold CV</strong>: Split data into K parts
+<li>A single train/test split can be <span class="alert">misleading</span>: it ignores <span class="alert">random variation</span></li>
+<li><span class="alert">Cross-validation</span>: use multiple train/test splits</li>
+<li><span class="alert">K-fold CV</span>: split the data into K parts
 <ul>
 <li>Train on K-1 folds, test on 1 fold</li>
-<li>Repeat K times, rotate the test fold</li>
+<li>Repeat K times, rotating the test fold</li>
 <li>Average the results</li>
 </ul></li>
 <li>Benefits:
 <ul>
-<li><span class="alert">Every data point</span> is tested once</li>
-<li>More reliable performance estimate</li>
+<li><span class="alert">Every data point</span> is tested once, so the estimate is more reliable</li>
 <li>Helps detect overfitting</li>
 </ul></li>
 <li>Common choice: K = 5 or K = 10</li>
@@ -533,22 +520,17 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <div class="columns">
 <div class="column" style="width:55%;">
 <ul>
-<li><span class="alert">Unsupervised learning</span>: Learn from data without labels</li>
-<li>No “correct answers” provided</li>
-<li>Goal: Discover <span class="alert">hidden patterns or structure</span></li>
-<li>Like learning <span class="alert">without a teacher</span>, explore and discover</li>
+<li><span class="alert">Unsupervised learning</span>: learn from data without labels</li>
+<li>No correct answers given. The goal is to find <span class="alert">hidden structure</span></li>
+<li>Like learning <span class="alert">without a teacher</span></li>
 <li>Why use it?
 <ul>
-<li><span class="alert">Labels are expensive</span> (experts needed)</li>
-<li>Sometimes labels <span class="alert">don’t exist</span> (“How many customer types?”)</li>
-<li><span class="alert">Exploration</span>: Understand data before modelling</li>
-<li><span class="alert">Pre-training</span>: Learn representations, then fine-tune</li>
+<li><span class="alert">Labels are expensive</span>: experts have to make them</li>
+<li>Labels sometimes <span class="alert">don’t exist</span> (“How many customer types?”)</li>
+<li><span class="alert">Exploration</span>: understand the data before modelling</li>
+<li><span class="alert">Pre-training</span>: learn representations, then fine-tune</li>
 </ul></li>
-<li>Some questions to ask before using these models:
-<ul>
-<li>Are there natural groups in the data?</li>
-<li>Can we represent data more compactly?</li>
-</ul></li>
+<li>Two questions to ask first: are there natural groups? Can the data be compressed?</li>
 </ul>
 </div><div class="column" style="width:45%;">
 <div style="text-align: center;">
@@ -566,20 +548,20 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <section id="clustering" class="slide level2 scrollable">
 <h2>Clustering</h2>
 <h3 id="grouping-similar-data-points">Grouping similar data points</h3>
-<div style="margin-top: 30px; font-size: 22px;">
+<div style="margin-top: 30px; font-size: 26px;">
 <div class="columns">
 <div class="column" style="width:55%;">
 <ul>
-<li><a href="https://en.wikipedia.org/wiki/Cluster_analysis">Clustering</a>: Partition data into groups (clusters)</li>
-<li>Points in same cluster are <span class="alert">similar</span>, different clusters are <span class="alert">dissimilar</span></li>
-<li><a href="https://en.wikipedia.org/wiki/K-means_clustering">K-means</a>: Most popular algorithm
+<li><a href="https://en.wikipedia.org/wiki/Cluster_analysis">Clustering</a>: partition data into groups (clusters)</li>
+<li>Points in a cluster are <span class="alert">similar</span>, points across clusters are <span class="alert">dissimilar</span></li>
+<li><a href="https://en.wikipedia.org/wiki/K-means_clustering">K-means</a>, the most popular algorithm:
 <ol type="1">
-<li>Choose K cluster centres randomly</li>
-<li>Assign each point to nearest centre</li>
-<li>Move centres to mean of assigned points</li>
+<li>Choose K cluster centres at random</li>
+<li>Assign each point to the nearest centre</li>
+<li>Move each centre to the mean of its points</li>
 <li>Repeat until convergence</li>
 </ol></li>
-<li><a href="https://en.wikipedia.org/wiki/Hierarchical_clustering">Hierarchical clustering</a>: Builds dendrograms without pre-specifying K</li>
+<li><a href="https://en.wikipedia.org/wiki/Hierarchical_clustering">Hierarchical clustering</a>: builds dendrograms without pre-specifying K</li>
 </ul>
 </div><div class="column" style="width:45%;">
 <div style="text-align: center; margin-top: -50px;">
@@ -624,25 +606,20 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <section id="dimensionality-reduction" class="slide level2">
 <h2>Dimensionality reduction</h2>
 <h3 id="compressing-information">Compressing information</h3>
-<div style="margin-top: 30px; font-size: 22px;">
+<div style="margin-top: 30px; font-size: 24px;">
 <div class="columns">
 <div class="column" style="width:55%;">
 <ul>
-<li><span class="alert">Curse of dimensionality</span>: High-dimensional data is hard to work with
+<li><span class="alert">Curse of dimensionality</span>: high-dimensional data is hard to work with
 <ul>
-<li>Distances become meaningless</li>
-<li>Need exponentially more data</li>
-<li>Visualisation impossible</li>
+<li>Distances lose meaning, data needs grow exponentially, plots become impossible</li>
 </ul></li>
-<li><span class="alert">Dimensionality reduction</span>: Find lower-dimensional representation</li>
-<li>Preserve important structure, discard noise</li>
-<li>Two main approaches:
-<ul>
-<li><strong>Linear</strong>: PCA (Principal Component Analysis)</li>
-<li><strong>Non-linear</strong>: t-SNE, UMAP</li>
-</ul></li>
-<li>Applications: Visualisation, preprocessing, compression</li>
-<li><span class="alert">Super cool example</span> (we will see it in <a href="https://danilofreire.github.io/datasci101/lectures/lecture-06/06-language.html">lecture 06!</a>): <a href="https://projector.tensorflow.org/" class="uri">https://projector.tensorflow.org/</a></li>
+<li><span class="alert">Dimensionality reduction</span>: find a lower-dimensional representation</li>
+<li>Keep the structure, drop the noise</li>
+<li><span class="alert">Linear</span>: PCA (Principal Component Analysis)</li>
+<li><span class="alert">Non-linear</span>: t-SNE, UMAP</li>
+<li>Uses: visualisation, preprocessing, compression</li>
+<li><span class="alert">Cool example</span>, more in <a href="https://danilofreire.github.io/datasci101/lectures/lecture-06/06-language.html">lecture 06</a>: <a href="https://projector.tensorflow.org/" class="uri">https://projector.tensorflow.org/</a></li>
 </ul>
 </div><div class="column" style="width:45%;">
 <div style="text-align: center;">
@@ -660,22 +637,22 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <section id="dimensionality-reduction-techniques" class="slide level2">
 <h2>Dimensionality reduction techniques</h2>
 <h3 id="pca-t-sne-and-umap">PCA, t-SNE, and UMAP</h3>
-<div style="margin-top: 30px; font-size: 22px;">
+<div style="margin-top: 30px; font-size: 24px;">
 <div class="columns">
 <div class="column" style="width:55%;">
 <p><strong>Linear: <span class="alert">PCA</span></strong> (Principal Component Analysis)</p>
 <ul>
-<li>Find directions of <span class="alert">maximum variance</span></li>
-<li>Keep top K components to reduce dimensions</li>
-<li>Fast, well-understood, preserves global structure</li>
-<li>Limitation: Only captures linear relationships</li>
+<li>Find the directions of <span class="alert">maximum variance</span></li>
+<li>Keep the top K components to reduce dimensions</li>
+<li>Fast, well understood, keeps global structure</li>
+<li>Limitation: only captures linear relationships</li>
 </ul>
 <p><strong>Non-linear: <span class="alert">t-SNE</span> and <span class="alert">UMAP</span></strong></p>
 <ul>
-<li>Preserve <span class="alert">local structure</span>: Nearby points stay nearby</li>
+<li>Keep <span class="alert">local structure</span>: nearby points stay nearby</li>
 <li>Excellent for <span class="alert">visualisation</span></li>
 <li>Reveal clusters that PCA misses</li>
-<li>Caution: Cluster sizes and distances can be misleading</li>
+<li>Caution: cluster sizes and distances can mislead</li>
 </ul>
 </div><div class="column" style="width:45%;">
 <div style="text-align: center;">
@@ -698,18 +675,17 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <section id="what-is-reinforcement-learning" class="slide level2">
 <h2>What is reinforcement learning?</h2>
 <h3 id="learning-from-interaction">Learning from interaction</h3>
-<div style="margin-top: 30px; font-size: 24px;">
+<div style="margin-top: 30px; font-size: 26px;">
 <div class="columns">
 <div class="column" style="width:55%;">
 <ul>
-<li><span class="alert">Reinforcement learning (RL)</span>: Learn by trial and error</li>
+<li><span class="alert">Reinforcement learning (RL)</span>: learn by trial and error</li>
 <li>An <span class="alert">agent</span> interacts with an <span class="alert">environment</span></li>
-<li>Takes <span class="alert">actions</span>, receives <span class="alert">rewards</span> (or punishments)</li>
-<li>Goal: Learn a <span class="alert">policy</span> that maximises cumulative reward</li>
-<li>No labelled examples, machines learn from <span class="alert">experience</span></li>
-<li>Like training a dog (or kids!): <span class="alert">Reward good behaviour!</span></li>
-<li><span class="alert">Different from supervised</span>: No “correct” action given</li>
-<li><span class="alert">Different from unsupervised</span>: There IS a goal (maximise reward)</li>
+<li>It takes <span class="alert">actions</span> and receives <span class="alert">rewards</span> (or punishments)</li>
+<li>Goal: learn a <span class="alert">policy</span> that maximises cumulative reward</li>
+<li>Like training a dog (or kids!): <span class="alert">reward good behaviour!</span></li>
+<li><span class="alert">Unlike supervised</span>: no “correct” action is given</li>
+<li><span class="alert">Unlike unsupervised</span>: there IS a goal (maximise reward)</li>
 </ul>
 </div><div class="column" style="width:45%;">
 <div style="text-align: center; margin-top: -20px;">
@@ -726,8 +702,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </section>
 <section id="key-concepts-in-rl" class="slide level2">
 <h2>Key concepts in RL</h2>
-<h3 id="the-vocabulary-you-need">The vocabulary you need</h3>
-<div style="margin-top: 30px; font-size: 30px;">
+<div style="margin-top: 40px; font-size: 32px;">
 <table class="caption-top">
 <colgroup>
 <col style="width: 23%">
@@ -779,7 +754,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </tr>
 </tbody>
 </table>
-<div style="font-size: 20px;">
+<div style="font-size: 22px;">
 <blockquote>
 <p>Fun fact: <a href="https://en.wikipedia.org/wiki/Magnus_Carlsen">Magnus Carlsen</a> once said he <a href="https://www.firstpost.com/sports/chess/magnus-carlsen-on-playing-against-chess-computer-engine-difficulty-joe-rogan-podcast-13867015.html">“can’t beat his phone in chess”</a>. RL really works! 😅</p>
 </blockquote>
@@ -789,24 +764,16 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <section id="the-exploration-exploitation-trade-off" class="slide level2">
 <h2>The exploration-exploitation trade-off</h2>
 <h3 id="should-you-try-something-new-or-stick-with-what-works">Should you try something new or stick with what works?</h3>
-<div style="margin-top: 30px; font-size: 22px;">
+<div style="margin-top: 30px; font-size: 25px;">
 <div class="columns">
 <div class="column" style="width:55%;">
 <ul>
-<li><span class="alert">Exploration</span>: Try new actions to discover better strategies</li>
-<li><span class="alert">Exploitation</span>: Use known good actions to maximise reward</li>
-<li>The dilemma:
-<ul>
-<li>Too much exploration: Waste time on bad actions</li>
-<li>Too much exploitation: Miss better strategies</li>
-</ul></li>
-<li>Example: Restaurant choice
-<ul>
-<li>Exploit: Go to your favourite restaurant</li>
-<li>Explore: Try a new restaurant (might be better!)</li>
-</ul></li>
-<li>RL algorithms must <span class="alert">balance both</span></li>
-<li>Common approach: <a href="https://en.wikipedia.org/wiki/Epsilon-greedy">ε-greedy</a> (explore with probability ε, also called <a href="https://en.wikipedia.org/wiki/Multi-armed_bandit">multi-armed bandit</a>)</li>
+<li><span class="alert">Exploration</span>: try new actions to find better strategies</li>
+<li><span class="alert">Exploitation</span>: use known good actions to maximise reward</li>
+<li>Too much exploration wastes time on bad actions</li>
+<li>Too much exploitation misses better strategies</li>
+<li>Restaurant choice: exploit your favourite, or explore a new one (might be better!)</li>
+<li>To <span class="alert">balance both</span>, a common approach is <a href="https://en.wikipedia.org/wiki/Epsilon-greedy">ε-greedy</a>, explore with probability ε, also called <a href="https://en.wikipedia.org/wiki/Multi-armed_bandit">multi-armed bandit</a></li>
 </ul>
 </div><div class="column" style="width:45%;">
 <div style="text-align: center;">
@@ -828,23 +795,20 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <div class="columns">
 <div class="column" style="width:55%;">
 <ul>
-<li><a href="https://en.wikipedia.org/wiki/Q-learning">Q-learning</a>: Learn which actions are best in each situation</li>
-<li>Think of it as keeping a <strong>score card</strong>:
-<ul>
-<li><span class="math inline">\(Q(s, a)\)</span> = “How good is action <span class="math inline">\(a\)</span> in state <span class="math inline">\(s\)</span>?”</li>
-</ul></li>
+<li><a href="https://en.wikipedia.org/wiki/Q-learning">Q-learning</a>: learn which action is best in each situation</li>
+<li>Keep a <span class="alert">score card</span>: <span class="math inline">\(Q(s, a)\)</span> = “How good is action <span class="math inline">\(a\)</span> in state <span class="math inline">\(s\)</span>?”</li>
 <li>The agent learns by doing:
 <ol type="1">
-<li>Try an action, see what reward you get → <em>“Go right… hit a wall, ouch!”</em></li>
-<li>Update your score → <em>“Going right here is bad”</em></li>
+<li>Try an action, see the reward → <em>“Go right… hit a wall, ouch!”</em></li>
+<li>Update the score → <em>“Going right here is bad”</em></li>
 <li>Repeat thousands of times → <em>“Eventually: always go left here!”</em></li>
 </ol></li>
 </ul>
 <p><strong>The update rule:</strong> <span class="math display">\[\text{New Score} = \text{Old Score} + \text{Small Correction}\]</span></p>
 <ul>
-<li><span class="alert">Policy</span>: Always pick the action with the highest score</li>
+<li><span class="alert">Policy</span>: always pick the action with the highest score</li>
 <li><span class="alert">Cool example</span>: (Poor) Albert learns to walk: <a href="https://youtu.be/L_4BPjLBF4E?&amp;t=137" class="uri">https://youtu.be/L_4BPjLBF4E?&amp;t=137</a></li>
-<li><span class="alert">Super cool example</span>: <a href="https://deepmind.google/research/alphago/">DeepMind’s AlphaGo</a>: <a href="https://youtu.be/WXuK6gekU1Y" class="uri">https://youtu.be/WXuK6gekU1Y</a></li>
+<li><span class="alert">Even better</span>: <a href="https://deepmind.google/research/alphago/">DeepMind’s AlphaGo</a>: <a href="https://youtu.be/WXuK6gekU1Y" class="uri">https://youtu.be/WXuK6gekU1Y</a></li>
 </ul>
 </div><div class="column" style="width:45%;">
 <div style="text-align: center;">
@@ -865,16 +829,15 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <li><span class="alert">Key to ChatGPT’s success!</span></li>
 <li>Process:
 <ol type="1">
-<li>Train base LLM on text (supervised)</li>
+<li>Train a base LLM on text (supervised)</li>
 <li>Collect human preferences on model outputs</li>
-<li>Train a <span class="alert">reward model</span> on preferences</li>
-<li>Use RL to optimise LLM for reward</li>
+<li>Train a <span class="alert">reward model</span> on those preferences</li>
+<li>Use RL to optimise the LLM for that reward</li>
 </ol></li>
 <li>Why it works:
 <ul>
-<li>Hard to specify “good response” in a formula</li>
-<li>Humans can <span class="alert">compare</span> responses more easily</li>
-<li>RL optimises for what humans actually want</li>
+<li>No formula can specify a “good response”</li>
+<li>Humans find it easier to <span class="alert">compare</span> responses</li>
 </ul></li>
 <li>More here: <a href="https://openai.com/index/learning-from-human-preferences/" class="uri">https://openai.com/index/learning-from-human-preferences/</a></li>
 </ul>
@@ -906,18 +869,17 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <section id="jailbreaking-rlhf" class="slide level2">
 <h2>Jailbreaking RLHF</h2>
 <h3 id="if-you-can-make-it-you-can-jailbreak-it">If you can make it, you can jailbreak it!</h3>
-<div style="margin-top: 30px; font-size: 22px;">
+<div style="margin-top: 30px; font-size: 24px;">
 <div class="columns">
-<div class="column" style="width:60%;">
+<div class="column" style="width:70%;">
 <ul>
-<li>When it comes to LLMs, you can make it do (almost) anything with the right prompt</li>
-<li>This is more art than science (as most things in AI are), but it can be fun!</li>
-<li>Please note that <span class="alert">I’m not encouraging you to jailbreak anything</span>, as you may get permanently banned from using LLMs or worse</li>
-<li>One of the best people in this field is/was <a href="https://pliny.gg/">Pliny the Liberator</a>, who jailbroke pretty much all LLMs he could get his hands on 😂</li>
-<li>If you’re interested in jailbreaking, check out this repository: <a href="https://github.com/elder-plinius/L1B3RT4S" class="uri">https://github.com/elder-plinius/L1B3RT4S</a></li>
-<li>Here’s <a href="https://claude.ai">Claude Sonnet</a> teaching how to produce drugs: <a href="https://x.com/elder_plinius/status/1972885831955484830" class="uri">https://x.com/elder_plinius/status/1972885831955484830</a></li>
+<li>With the right prompt, you can make an LLM do (almost) anything</li>
+<li>More art than science (as most things in AI are), but fun!</li>
+<li><span class="alert">I’m not encouraging you to jailbreak anything</span>: you may get permanently banned from LLMs, or worse</li>
+<li><a href="https://x.com/elder_plinius">Pliny the Liberator</a> has jailbroken pretty much every LLM he could reach 😂: <a href="https://pliny.gg/" class="uri">https://pliny.gg/</a></li>
+<li><a href="https://claude.ai">Claude Sonnet</a> teaching how to produce drugs: <a href="https://x.com/elder_plinius/status/1972885831955484830" class="uri">https://x.com/elder_plinius/status/1972885831955484830</a></li>
 </ul>
-</div><div class="column" style="width:40%;">
+</div><div class="column" style="width:30%;">
 <div style="text-align: center; margin-top: -20px;">
 <p><a href="#/" data-modal-type="image" data-modal-url="figures/pliny.jpg"><img data-src="figures/pliny.jpg" style="width:90.0%"></a></p>
 <p>Source: <a href="https://pliny.gg/">Pliny the Liberator</a></p>
@@ -932,11 +894,11 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <div class="columns">
 <div class="column" style="width:55%;">
 <ul>
-<li><span class="alert">Alignment problem</span>: Ensuring models do what we <em>mean</em>, not what we literally <em>say</em></li>
-<li><span class="alert">Specification gaming</span>: Models finding perverse ways to maximise rewards (e.g., <span class="alert">reward hacking</span>)</li>
-<li><span class="alert">Scalable oversight</span>: How to supervise models that are more capable than their human evaluators</li>
-<li><span class="alert">Red teaming</span>: Proactively finding vulnerabilities and <span class="alert">jailbreaks</span></li>
-<li><span class="alert">Safety needs to be part of training</span>, not something you bolt on later</li>
+<li><span class="alert">Alignment problem</span>: make models do what we <em>mean</em>, not what we literally <em>say</em></li>
+<li><span class="alert">Specification gaming</span>: models find perverse ways to maximise rewards (e.g., <span class="alert">reward hacking</span>)</li>
+<li><span class="alert">Scalable oversight</span>: how to supervise models more capable than their human evaluators</li>
+<li><span class="alert">Red teaming</span>: hunt for vulnerabilities and <span class="alert">jailbreaks</span> before others do</li>
+<li><span class="alert">Build safety into training</span>, don’t bolt it on later</li>
 </ul>
 </div><div class="column" style="width:45%;">
 <div style="text-align: center; margin-top: -10px;">
@@ -958,8 +920,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </section>
 <section id="side-by-side-comparison" class="slide level2">
 <h2>Side-by-side comparison</h2>
-<h3 id="choosing-the-right-approach">Choosing the right approach</h3>
-<div style="margin-top: 30px; font-size: 30px;">
+<div style="margin-top: 70px; font-size: 30px;">
 <table class="caption-top">
 <colgroup>
 <col style="width: 5%">
@@ -996,13 +957,13 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </tr>
 <tr class="even">
 <td><strong>Analogy</strong></td>
-<td>Learning with a teacher</td>
+<td>With a teacher</td>
 <td>Exploring alone</td>
-<td>Learning by trial and error</td>
+<td>Trial and error</td>
 </tr>
 <tr class="odd">
 <td><strong>Evaluation</strong></td>
-<td>Compare to known labels</td>
+<td>Against known labels</td>
 <td>Internal metrics</td>
 <td>Cumulative reward</td>
 </tr>
@@ -1031,12 +992,12 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <h2>Main takeaways</h2>
 <div style="margin-top: 30px; font-size: 30px;">
 <ul>
-<li><p><svg aria-hidden="true" role="img" viewbox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M320 32c-8.1 0-16.1 1.4-23.7 4.1L15.8 137.4C6.3 140.9 0 149.9 0 160s6.3 19.1 15.8 22.6l57.9 20.9C57.3 229.3 48 259.8 48 291.9v28.1c0 28.4-10.8 57.7-22.3 80.8c-6.5 13-13.9 25.8-22.5 37.6C0 442.7-.9 448.3 .9 453.4s6 8.9 11.2 10.2l64 16c4.2 1.1 8.7 .3 12.4-2s6.3-6.1 7.1-10.4c8.6-42.8 4.3-81.2-2.1-108.7C90.3 344.3 86 329.8 80 316.5V291.9c0-30.2 10.2-58.7 27.9-81.5c12.9-15.5 29.6-28 49.2-35.7l157-61.7c8.2-3.2 17.5 .8 20.7 9s-.8 17.5-9 20.7l-157 61.7c-12.4 4.9-23.3 12.4-32.2 21.6l159.6 57.6c7.6 2.7 15.6 4.1 23.7 4.1s16.1-1.4 23.7-4.1L624.2 182.6c9.5-3.4 15.8-12.5 15.8-22.6s-6.3-19.1-15.8-22.6L343.7 36.1C336.1 33.4 328.1 32 320 32zM128 408c0 35.3 86 72 192 72s192-36.7 192-72L496.7 262.6 354.5 314c-11.1 4-22.8 6-34.5 6s-23.5-2-34.5-6L143.3 262.6 128 408z"></path></svg> <span class="alert">Three paradigms</span>: Supervised (labels), unsupervised (no labels), reinforcement (rewards)</p></li>
-<li><p><svg aria-hidden="true" role="img" viewbox="0 0 448 512" style="height:1em;width:0.88em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M96 0C43 0 0 43 0 96V416c0 53 43 96 96 96H384h32c17.7 0 32-14.3 32-32s-14.3-32-32-32V384c17.7 0 32-14.3 32-32V32c0-17.7-14.3-32-32-32H384 96zm0 384H352v64H96c-17.7 0-32-14.3-32-32s14.3-32 32-32zm32-240c0-8.8 7.2-16 16-16H336c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16zm16 48H336c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16s7.2-16 16-16z"></path></svg> <span class="alert">Supervised learning</span> is most common: Learn from labelled examples to predict</p></li>
-<li><p><svg aria-hidden="true" role="img" viewbox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M384 32H512c17.7 0 32 14.3 32 32s-14.3 32-32 32H398.4c-5.2 25.8-22.9 47.1-46.4 57.3V448H512c17.7 0 32 14.3 32 32s-14.3 32-32 32H320 128c-17.7 0-32-14.3-32-32s14.3-32 32-32H288V153.3c-23.5-10.3-41.2-31.6-46.4-57.3H128c-17.7 0-32-14.3-32-32s14.3-32 32-32H256c14.6-19.4 37.8-32 64-32s49.4 12.6 64 32zm55.6 288H584.4L512 195.8 439.6 320zM512 416c-62.9 0-115.2-34-126-78.9c-2.6-11 1-22.3 6.7-32.1l95.2-163.2c5-8.6 14.2-13.8 24.1-13.8s19.1 5.3 24.1 13.8l95.2 163.2c5.7 9.8 9.3 21.1 6.7 32.1C627.2 382 574.9 416 512 416zM126.8 195.8L54.4 320H199.3L126.8 195.8zM.9 337.1c-2.6-11 1-22.3 6.7-32.1l95.2-163.2c5-8.6 14.2-13.8 24.1-13.8s19.1 5.3 24.1 13.8l95.2 163.2c5.7 9.8 9.3 21.1 6.7 32.1C242 382 189.7 416 126.8 416S11.7 382 .9 337.1z"></path></svg> The <span class="alert">bias-variance trade-off</span>: Simple models underfit, complex models overfit</p></li>
-<li><p><svg aria-hidden="true" role="img" viewbox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"></path></svg> <span class="alert">Unsupervised learning</span> discovers hidden structure: Clustering, dimensionality reduction</p></li>
-<li><p><svg aria-hidden="true" role="img" viewbox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M192 64C86 64 0 150 0 256S86 448 192 448H448c106 0 192-86 192-192s-86-192-192-192H192zM496 168a40 40 0 1 1 0 80 40 40 0 1 1 0-80zM392 304a40 40 0 1 1 80 0 40 40 0 1 1 -80 0zM168 200c0-13.3 10.7-24 24-24s24 10.7 24 24v32h32c13.3 0 24 10.7 24 24s-10.7 24-24 24H216v32c0 13.3-10.7 24-24 24s-24-10.7-24-24V280H136c-13.3 0-24-10.7-24-24s10.7-24 24-24h32V200z"></path></svg> <span class="alert">Reinforcement learning</span> learns from interaction: Exploration vs exploitation</p></li>
-<li><p><svg aria-hidden="true" role="img" viewbox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M320 0c17.7 0 32 14.3 32 32V96H472c39.8 0 72 32.2 72 72V440c0 39.8-32.2 72-72 72H168c-39.8 0-72-32.2-72-72V168c0-39.8 32.2-72 72-72H288V32c0-17.7 14.3-32 32-32zM208 384c-8.8 0-16 7.2-16 16s7.2 16 16 16h32c8.8 0 16-7.2 16-16s-7.2-16-16-16H208zm96 0c-8.8 0-16 7.2-16 16s7.2 16 16 16h32c8.8 0 16-7.2 16-16s-7.2-16-16-16H304zm96 0c-8.8 0-16 7.2-16 16s7.2 16 16 16h32c8.8 0 16-7.2 16-16s-7.2-16-16-16H400zM264 256a40 40 0 1 0 -80 0 40 40 0 1 0 80 0zm152 40a40 40 0 1 0 0-80 40 40 0 1 0 0 80zM48 224H64V416H48c-26.5 0-48-21.5-48-48V272c0-26.5 21.5-48 48-48zm544 0c26.5 0 48 21.5 48 48v96c0 26.5-21.5 48-48 48H576V224h16z"></path></svg> <span class="alert">RLHF</span> powers modern LLMs like ChatGPT: RL to align with human preferences</p></li>
+<li><p><span class="alert">Three paradigms</span>: Supervised (labels), unsupervised (no labels), reinforcement (rewards)</p></li>
+<li><p><span class="alert">Supervised learning</span> is most common: Learn from labelled examples to predict</p></li>
+<li><p>The <span class="alert">bias-variance trade-off</span>: Simple models underfit, complex models overfit</p></li>
+<li><p><span class="alert">Unsupervised learning</span> discovers hidden structure: Clustering, dimensionality reduction</p></li>
+<li><p><span class="alert">Reinforcement learning</span> learns from interaction: Exploration vs exploitation</p></li>
+<li><p><span class="alert">RLHF</span> powers modern LLMs like ChatGPT: RL to align with human preferences</p></li>
 </ul>
 </div>
 </section></section>

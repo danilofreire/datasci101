@@ -1719,14 +1719,14 @@
     "href": "lectures/lecture-04/04-learning.html#recap-of-last-class",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Recap of last class",
-    "text": "Recap of last class\n\n\n\n\nWe discussed the foundation of AI systems: (good) data!\nGarbage in, garbage out!\nDifferent AI/ML tasks require different types of labels (classification, regression, etc.)\nSelection bias is dangerous and hard to fix after the fact\nLabelling is harder than it looks, and clear guidelines and multiple annotators improve quality\nInter-annotator agreement (Cohen’s Kappa) measures labelling reliability\nToday: How do machines actually learn from data? 🤔\n\n\n\n\n\n\nYou can’t out-train bad data\n\n\nSource: Programmer Humor"
+    "text": "Recap of last class\n\n\n\n\nGood data is the foundation of AI systems: garbage in, garbage out!\nDifferent AI/ML tasks need different labels (classification, regression, etc.)\nSelection bias is dangerous and hard to fix after the fact\nClear guidelines and multiple annotators improve labelling quality\nInter-annotator agreement (Cohen’s Kappa) measures labelling reliability\nToday: how do machines learn from data? 🤔\n\n\n\n\n\n\nYou can’t out-train bad data\n\n\nSource: Programmer Humor"
   },
   {
     "objectID": "lectures/lecture-04/04-learning.html#lecture-overview",
     "href": "lectures/lecture-04/04-learning.html#lecture-overview",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Lecture overview",
-    "text": "Lecture overview\nToday’s agenda\n\n\n\n\nThe three paradigms of machine learning\nSupervised learning: Learning from labelled examples\n\nLinear regression, decision trees, neural networks\n\nThe bias-variance trade-off\nUnsupervised learning: Finding hidden structure\n\nClustering and dimensionality reduction\n\nReinforcement learning: Learning from interaction\n\nAgents, rewards, and policies\n\n\n\n\n\n\n\nThe three paradigms of ML\n\n\nSource: Data Science Dojo"
+    "text": "Lecture overview\nToday’s agenda\n\n\n\n\nThe three paradigms of machine learning\nSupervised learning: learn from labelled examples\n\nLinear regression, decision trees, neural networks\n\nThe bias-variance trade-off\nUnsupervised learning: find hidden structure\n\nClustering and dimensionality reduction\n\nReinforcement learning: learn from interaction\n\nAgents, rewards, and policies\n\n\n\n\n\n\n\nThe three paradigms of ML\n\n\nSource: Data Science Dojo"
   },
   {
     "objectID": "lectures/lecture-04/04-learning.html#tweet-of-the-day",
@@ -1740,119 +1740,119 @@
     "href": "lectures/lecture-04/04-learning.html#how-do-machines-learn",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "How do machines learn?",
-    "text": "How do machines learn?\nThree different approaches\n\n\n\n\nAI algorithms learn patterns from data\nBut what kind of data and what kind of feedback?\nThree main paradigms:\n\nSupervised learning: Learn from labelled examples (what we saw in previous lecture)\nUnsupervised learning: Find structure in unlabelled data\nReinforcement learning: Learn from rewards and punishments\n\nThe paradigm you choose depends on what data you have and what you want to achieve\n\n\n\n\n\n\nLearning paradigms overview and examples\n\n\nSource: Medium"
+    "text": "How do machines learn?\nThree different approaches\n\n\n\n\nAI algorithms learn patterns from data\nBut what kind of data and what kind of feedback?\n\nSupervised learning: learn from labelled examples (last lecture)\nUnsupervised learning: find structure in unlabelled data\nReinforcement learning: learn from rewards and punishments\n\nYour choice depends on the data you have and the goal you want\n\n\n\n\n\n\nLearning paradigms overview and examples\n\n\nSource: Medium"
   },
   {
     "objectID": "lectures/lecture-04/04-learning.html#what-is-supervised-learning",
     "href": "lectures/lecture-04/04-learning.html#what-is-supervised-learning",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "What is supervised learning?",
-    "text": "What is supervised learning?\nLearning from examples with answers\n\n\n\n\nSupervised learning: The model learns from labelled examples\nTraining data: Input-output pairs \\((x_i, y_i)\\)\nGoal: Learn a function \\(f\\) such that \\(f(x) \\approx y\\)\nLike learning with a teacher who provides correct answers\nThe “supervision” comes from known labels\nMost common paradigm in real-world applications\nExamples:\n\nEmail → Spam/Not spam\nImage → Cat/Dog/Bird\nPatient data → Disease risk\n\n\n\n\n\n\n\nA hard classification problem 😂\n\n\nSource: Memedroid (!)"
+    "text": "What is supervised learning?\nLearning from examples with answers\n\n\n\n\nSupervised learning: learn from labelled examples\nTraining data: input-output pairs \\((x_i, y_i)\\)\nGoal: learn a function \\(f\\) such that \\(f(x) \\approx y\\)\nThe “supervision” is a teacher giving the correct answers: the known labels\nMost common paradigm in real-world applications\nExamples:\n\nEmail → Spam/Not spam\nImage → Cat/Dog/Bird\nPatient data → Disease risk\n\n\n\n\n\n\n\nA hard classification problem 😂\n\n\nSource: Memedroid (!)"
   },
   {
     "objectID": "lectures/lecture-04/04-learning.html#classification-vs-regression",
     "href": "lectures/lecture-04/04-learning.html#classification-vs-regression",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Classification vs regression",
-    "text": "Classification vs regression\nThe two main supervised tasks\n\nYou may remember them from last class:\n\n\nClassification 🏷️\n\nPredict a discrete category\nBinary: Yes/No, Spam/Ham\nMulti-class: Cat/Dog/Bird/Fish\nOutput: Class label (or probabilities)\nExamples:\n\nFraud detection\nDisease diagnosis\nSentiment analysis\n\n\n\nRegression 📈\n\nPredict a continuous value\nOutput: A number on a continuous scale\nExamples:\n\nHouse price prediction\nStock price forecasting\nTemperature prediction\nAge estimation from photo\n\n\n\n\n\n\nThe same algorithm family often handles both tasks with minor modifications!"
+    "text": "Classification vs regression\nThe two main supervised tasks\n\n\n\nClassification 🏷️\n\nPredict a discrete category\nBinary: Yes/No, Spam/Ham\nMulti-class: Cat/Dog/Bird/Fish\nOutput: class label (or probabilities)\nExamples:\n\nFraud detection\nDisease diagnosis\nSentiment analysis\n\n\n\nRegression 📈\n\nPredict a continuous value (a number)\nExamples:\n\nHouse price prediction\nStock price forecasting\nTemperature prediction\nAge estimation from photo\n\n\n\n\n\n\nThe same algorithm family often handles both tasks with minor modifications!"
   },
   {
     "objectID": "lectures/lecture-04/04-learning.html#linear-models",
     "href": "lectures/lecture-04/04-learning.html#linear-models",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Linear models",
-    "text": "Linear models\nThe simplest supervised learners\n\n\n\n\nLinear regression: Predict y as a weighted sum of features\n\n\\[\\hat{y} = w_0 + w_1 x_1 + w_2 x_2 + \\ldots + w_n x_n\\]\n\nLearn weights \\(w\\) that minimise prediction error\nLogistic regression: Classification via sigmoid function\n\n\\[P(y=1|x) = \\frac{1}{1 + e^{-(w_0 + w_1 x_1 + \\ldots)}}\\]\n\nSimple, interpretable, fast to train\nWorks well when relationships are approximately linear\nOften a strong baseline before trying complex models\n\n\n\n\n\n\nLinear regression fits a line\n\n\nSource: Medium\n\n\n\nA logistic function converts a line into a curve\n\n\nSource: Wikipedia"
+    "text": "Linear models\nThe simplest supervised learners\n\n\n\n\nLinear regression: predict y as a weighted sum of features\n\n\\[\\hat{y} = w_0 + w_1 x_1 + w_2 x_2 + \\ldots + w_n x_n\\]\n\nLearn weights \\(w\\) that minimise prediction error\nLogistic regression: classification via the sigmoid function\n\n\\[P(y=1|x) = \\frac{1}{1 + e^{-(w_0 + w_1 x_1 + \\ldots)}}\\]\n\nSimple, interpretable, fast to train\nWorks well when relationships are roughly linear\nA strong baseline before trying complex models\n\n\n\n\n\n\nLinear regression fits a line\n\n\nSource: Medium\n\n\n\nA logistic function converts a line into a curve\n\n\nSource: Wikipedia"
   },
   {
     "objectID": "lectures/lecture-04/04-learning.html#decision-trees",
     "href": "lectures/lecture-04/04-learning.html#decision-trees",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Decision trees",
-    "text": "Decision trees\nLearning rules from data\n\n\n\n\nDecision trees: Learn a hierarchy of yes/no questions\nEach node splits data based on a feature\nLeaves contain predictions\nEasy to interpret: “If income &gt; £50k AND age &gt; 30, then approve loan”\nCan capture non-linear relationships\nProne to overfitting (memorising training data)\nSolution: Random forests, which combine many trees\n\nEach tree sees different data/features\nAverage their predictions for better accuracy\n\n\n\n\n\n\n\nDecision tree structure\n\n\nSource: Medium"
+    "text": "Decision trees\nLearning rules from data\n\n\n\n\nDecision trees: learn a hierarchy of yes/no questions\nEach node splits the data on a feature; leaves hold the predictions\nEasy to interpret: “If income &gt; $50k AND age &gt; 30, then approve loan”\nCapture non-linear relationships\nProne to overfitting (memorising training data)\nFix: random forests combine many trees\n\nEach tree sees different data/features\nAveraging their predictions raises accuracy\n\n\n\n\n\n\n\nDecision tree structure\n\n\nSource: Medium"
   },
   {
     "objectID": "lectures/lecture-04/04-learning.html#neural-networks-for-supervised-learning",
     "href": "lectures/lecture-04/04-learning.html#neural-networks-for-supervised-learning",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Neural networks for supervised learning",
-    "text": "Neural networks for supervised learning\nLearning complex patterns\n\n\n\n\nNeural networks: Layers of interconnected nodes\nEach layer transforms the input\nCan learn arbitrarily complex functions\nDeep networks (many layers) = deep learning\nRequire more data than simpler models\nLess interpretable (“black box”)\nState-of-the-art for:\n\nImage classification (CNNs)\nSpeech recognition\nNatural language processing\n\nRemember from Lecture 02: backpropagation enables training!\n\n\n\n\n\n\nNeural network architecture\n\n\nSource: 3Blue1Brown"
+    "text": "Neural networks for supervised learning\nLearning complex patterns\n\n\n\n\nNeural networks: layers of interconnected nodes, each transforming the input\nLearn arbitrarily complex functions\nDeep networks (many layers) = deep learning\nNeed more data than simpler models\nLess interpretable (“black box”)\nState-of-the-art for:\n\nImage classification (CNNs)\nSpeech recognition\nNatural language processing\n\nBackpropagation makes training possible (lecture 02)\n\n\n\n\n\n\nNeural network architecture\n\n\nSource: 3Blue1Brown"
   },
   {
     "objectID": "lectures/lecture-04/04-learning.html#the-bias-variance-trade-off",
     "href": "lectures/lecture-04/04-learning.html#the-bias-variance-trade-off",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "The bias-variance trade-off",
-    "text": "The bias-variance trade-off\nToo simple or too complex?\n\n\n\n\nEvery model makes errors! Two sources:\nBias: Error from oversimplified assumptions\n\nUnderfitting: Model too simple\nMisses real patterns in the data\n\nVariance: Error from sensitivity to training data\n\nOverfitting: Model too complex\nMemorises noise, fails on new data\n\n\n\\[\\text{Total Error} = \\text{Bias}^2 + \\text{Variance} + \\text{Noise}\\]\n\nTrade-off: Reducing one often increases the other\nGoal: Find the sweet spot where total error is minimised\n\n\n\n\n\n\nBias-variance trade-off\n\n\nSource: Vizuara"
+    "text": "The bias-variance trade-off\nToo simple or too complex?\n\n\n\n\nEvery model makes errors! Two sources:\nBias: error from oversimplified assumptions\n\nUnderfitting: model too simple, misses real patterns\n\nVariance: error from sensitivity to training data\n\nOverfitting: model too complex, memorises noise and fails on new data\n\n\n\\[\\text{Total Error} = \\text{Bias}^2 + \\text{Variance} + \\text{Noise}\\]\n\nTrade-off: reducing one often increases the other\nGoal: find the sweet spot where total error is smallest\n\n\n\n\n\n\nBias-variance trade-off\n\n\nSource: Vizuara"
   },
   {
     "objectID": "lectures/lecture-04/04-learning.html#cross-validation",
     "href": "lectures/lecture-04/04-learning.html#cross-validation",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Cross-validation",
-    "text": "Cross-validation\nTesting your model properly\n\n\n\n\nProblem: Single train/test split can be misleading\n\nWhy? It doesn’t account for enough random variation\n\nCross-validation: Multiple train/test splits\nK-fold CV: Split data into K parts\n\nTrain on K-1 folds, test on 1 fold\nRepeat K times, rotate the test fold\nAverage the results\n\nBenefits:\n\nEvery data point is tested once\nMore reliable performance estimate\nHelps detect overfitting\n\nCommon choice: K = 5 or K = 10\n\n\n\n\n\n\n5-fold cross-validation\n\n\nSource: Vizuara"
+    "text": "Cross-validation\nTesting your model properly\n\n\n\n\nA single train/test split can be misleading: it ignores random variation\nCross-validation: use multiple train/test splits\nK-fold CV: split the data into K parts\n\nTrain on K-1 folds, test on 1 fold\nRepeat K times, rotating the test fold\nAverage the results\n\nBenefits:\n\nEvery data point is tested once, so the estimate is more reliable\nHelps detect overfitting\n\nCommon choice: K = 5 or K = 10\n\n\n\n\n\n\n5-fold cross-validation\n\n\nSource: Vizuara"
   },
   {
     "objectID": "lectures/lecture-04/04-learning.html#what-is-unsupervised-learning",
     "href": "lectures/lecture-04/04-learning.html#what-is-unsupervised-learning",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "What is unsupervised learning?",
-    "text": "What is unsupervised learning?\nFinding structure without labels\n\n\n\n\nUnsupervised learning: Learn from data without labels\nNo “correct answers” provided\nGoal: Discover hidden patterns or structure\nLike learning without a teacher, explore and discover\nWhy use it?\n\nLabels are expensive (experts needed)\nSometimes labels don’t exist (“How many customer types?”)\nExploration: Understand data before modelling\nPre-training: Learn representations, then fine-tune\n\nSome questions to ask before using these models:\n\nAre there natural groups in the data?\nCan we represent data more compactly?\n\n\n\n\n\n\n\nUnsupervised learning finds structure\n\n\nSource: University of Cambridge"
+    "text": "What is unsupervised learning?\nFinding structure without labels\n\n\n\n\nUnsupervised learning: learn from data without labels\nNo correct answers given. The goal is to find hidden structure\nLike learning without a teacher\nWhy use it?\n\nLabels are expensive: experts have to make them\nLabels sometimes don’t exist (“How many customer types?”)\nExploration: understand the data before modelling\nPre-training: learn representations, then fine-tune\n\nTwo questions to ask first: are there natural groups? Can the data be compressed?\n\n\n\n\n\n\nUnsupervised learning finds structure\n\n\nSource: University of Cambridge"
   },
   {
     "objectID": "lectures/lecture-04/04-learning.html#clustering",
     "href": "lectures/lecture-04/04-learning.html#clustering",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Clustering",
-    "text": "Clustering\nGrouping similar data points\n\n\n\n\nClustering: Partition data into groups (clusters)\nPoints in same cluster are similar, different clusters are dissimilar\nK-means: Most popular algorithm\n\nChoose K cluster centres randomly\nAssign each point to nearest centre\nMove centres to mean of assigned points\nRepeat until convergence\n\nHierarchical clustering: Builds dendrograms without pre-specifying K\n\n\n\nReal-world uses:\n\n\n\nDomain\nApplication\n\n\n\n\nMarketing\nCustomer segmentation\n\n\nBiology\nCell types, disease subtypes\n\n\nFinance\nFraud detection\n\n\nHealthcare\nPatient risk groups\n\n\n\n\n\n\nK-means clustering\n\n\nSource: Machine Learning CoBan"
+    "text": "Clustering\nGrouping similar data points\n\n\n\n\nClustering: partition data into groups (clusters)\nPoints in a cluster are similar, points across clusters are dissimilar\nK-means, the most popular algorithm:\n\nChoose K cluster centres at random\nAssign each point to the nearest centre\nMove each centre to the mean of its points\nRepeat until convergence\n\nHierarchical clustering: builds dendrograms without pre-specifying K\n\n\n\nReal-world uses:\n\n\n\nDomain\nApplication\n\n\n\n\nMarketing\nCustomer segmentation\n\n\nBiology\nCell types, disease subtypes\n\n\nFinance\nFraud detection\n\n\nHealthcare\nPatient risk groups\n\n\n\n\n\n\nK-means clustering\n\n\nSource: Machine Learning CoBan"
   },
   {
     "objectID": "lectures/lecture-04/04-learning.html#dimensionality-reduction",
     "href": "lectures/lecture-04/04-learning.html#dimensionality-reduction",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Dimensionality reduction",
-    "text": "Dimensionality reduction\nCompressing information\n\n\n\n\nCurse of dimensionality: High-dimensional data is hard to work with\n\nDistances become meaningless\nNeed exponentially more data\nVisualisation impossible\n\nDimensionality reduction: Find lower-dimensional representation\nPreserve important structure, discard noise\nTwo main approaches:\n\nLinear: PCA (Principal Component Analysis)\nNon-linear: t-SNE, UMAP\n\nApplications: Visualisation, preprocessing, compression\nSuper cool example (we will see it in lecture 06!): https://projector.tensorflow.org/\n\n\n\n\n\n\nReducing dimensions while preserving structure\n\n\nSource: Medium"
+    "text": "Dimensionality reduction\nCompressing information\n\n\n\n\nCurse of dimensionality: high-dimensional data is hard to work with\n\nDistances lose meaning, data needs grow exponentially, plots become impossible\n\nDimensionality reduction: find a lower-dimensional representation\nKeep the structure, drop the noise\nLinear: PCA (Principal Component Analysis)\nNon-linear: t-SNE, UMAP\nUses: visualisation, preprocessing, compression\nCool example, more in lecture 06: https://projector.tensorflow.org/\n\n\n\n\n\n\nReducing dimensions while preserving structure\n\n\nSource: Medium"
   },
   {
     "objectID": "lectures/lecture-04/04-learning.html#dimensionality-reduction-techniques",
     "href": "lectures/lecture-04/04-learning.html#dimensionality-reduction-techniques",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Dimensionality reduction techniques",
-    "text": "Dimensionality reduction techniques\nPCA, t-SNE, and UMAP\n\n\n\nLinear: PCA (Principal Component Analysis)\n\nFind directions of maximum variance\nKeep top K components to reduce dimensions\nFast, well-understood, preserves global structure\nLimitation: Only captures linear relationships\n\nNon-linear: t-SNE and UMAP\n\nPreserve local structure: Nearby points stay nearby\nExcellent for visualisation\nReveal clusters that PCA misses\nCaution: Cluster sizes and distances can be misleading\n\n\n\n\n\n\nPrincipal Component Analysis\n\n\nSource: Vizuara"
+    "text": "Dimensionality reduction techniques\nPCA, t-SNE, and UMAP\n\n\n\nLinear: PCA (Principal Component Analysis)\n\nFind the directions of maximum variance\nKeep the top K components to reduce dimensions\nFast, well understood, keeps global structure\nLimitation: only captures linear relationships\n\nNon-linear: t-SNE and UMAP\n\nKeep local structure: nearby points stay nearby\nExcellent for visualisation\nReveal clusters that PCA misses\nCaution: cluster sizes and distances can mislead\n\n\n\n\n\n\nPrincipal Component Analysis\n\n\nSource: Vizuara"
   },
   {
     "objectID": "lectures/lecture-04/04-learning.html#what-is-reinforcement-learning",
     "href": "lectures/lecture-04/04-learning.html#what-is-reinforcement-learning",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "What is reinforcement learning?",
-    "text": "What is reinforcement learning?\nLearning from interaction\n\n\n\n\nReinforcement learning (RL): Learn by trial and error\nAn agent interacts with an environment\nTakes actions, receives rewards (or punishments)\nGoal: Learn a policy that maximises cumulative reward\nNo labelled examples, machines learn from experience\nLike training a dog (or kids!): Reward good behaviour!\nDifferent from supervised: No “correct” action given\nDifferent from unsupervised: There IS a goal (maximise reward)\n\n\n\n\n\n\nThe RL loop\n\n\nSource: Wikipedia"
+    "text": "What is reinforcement learning?\nLearning from interaction\n\n\n\n\nReinforcement learning (RL): learn by trial and error\nAn agent interacts with an environment\nIt takes actions and receives rewards (or punishments)\nGoal: learn a policy that maximises cumulative reward\nLike training a dog (or kids!): reward good behaviour!\nUnlike supervised: no “correct” action is given\nUnlike unsupervised: there IS a goal (maximise reward)\n\n\n\n\n\n\nThe RL loop\n\n\nSource: Wikipedia"
   },
   {
     "objectID": "lectures/lecture-04/04-learning.html#key-concepts-in-rl",
     "href": "lectures/lecture-04/04-learning.html#key-concepts-in-rl",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Key concepts in RL",
-    "text": "Key concepts in RL\nThe vocabulary you need\n\n\n\n\n\n\n\n\n\nConcept\nDefinition\nExample (Chess)\n\n\n\n\nAgent\nThe learner/decision-maker\nThe chess-playing AI\n\n\nEnvironment\nWhat the agent interacts with\nThe chess board and opponent\n\n\nState\nCurrent situation\nBoard position\n\n\nAction\nWhat the agent can do\nMove a piece\n\n\nReward\nFeedback signal\n+1 win, -1 lose, 0 otherwise\n\n\nPolicy\nStrategy: state → action\n“In this position, move queen”\n\n\nValue\nExpected future reward from a state\nHow good is this position?\n\n\n\n\n\nFun fact: Magnus Carlsen once said he “can’t beat his phone in chess”. RL really works! 😅"
+    "text": "Key concepts in RL\n\n\n\n\n\n\n\n\n\nConcept\nDefinition\nExample (Chess)\n\n\n\n\nAgent\nThe learner/decision-maker\nThe chess-playing AI\n\n\nEnvironment\nWhat the agent interacts with\nThe chess board and opponent\n\n\nState\nCurrent situation\nBoard position\n\n\nAction\nWhat the agent can do\nMove a piece\n\n\nReward\nFeedback signal\n+1 win, -1 lose, 0 otherwise\n\n\nPolicy\nStrategy: state → action\n“In this position, move queen”\n\n\nValue\nExpected future reward from a state\nHow good is this position?\n\n\n\n\n\nFun fact: Magnus Carlsen once said he “can’t beat his phone in chess”. RL really works! 😅"
   },
   {
     "objectID": "lectures/lecture-04/04-learning.html#the-exploration-exploitation-trade-off",
     "href": "lectures/lecture-04/04-learning.html#the-exploration-exploitation-trade-off",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "The exploration-exploitation trade-off",
-    "text": "The exploration-exploitation trade-off\nShould you try something new or stick with what works?\n\n\n\n\nExploration: Try new actions to discover better strategies\nExploitation: Use known good actions to maximise reward\nThe dilemma:\n\nToo much exploration: Waste time on bad actions\nToo much exploitation: Miss better strategies\n\nExample: Restaurant choice\n\nExploit: Go to your favourite restaurant\nExplore: Try a new restaurant (might be better!)\n\nRL algorithms must balance both\nCommon approach: ε-greedy (explore with probability ε, also called multi-armed bandit)\n\n\n\n\n\n\nExploration vs exploitation\n\n\nSource: Lilian Weng"
+    "text": "The exploration-exploitation trade-off\nShould you try something new or stick with what works?\n\n\n\n\nExploration: try new actions to find better strategies\nExploitation: use known good actions to maximise reward\nToo much exploration wastes time on bad actions\nToo much exploitation misses better strategies\nRestaurant choice: exploit your favourite, or explore a new one (might be better!)\nTo balance both, a common approach is ε-greedy, explore with probability ε, also called multi-armed bandit\n\n\n\n\n\n\nExploration vs exploitation\n\n\nSource: Lilian Weng"
   },
   {
     "objectID": "lectures/lecture-04/04-learning.html#q-learning",
     "href": "lectures/lecture-04/04-learning.html#q-learning",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Q-learning",
-    "text": "Q-learning\nLearning action values\n\n\n\n\nQ-learning: Learn which actions are best in each situation\nThink of it as keeping a score card:\n\n\\(Q(s, a)\\) = “How good is action \\(a\\) in state \\(s\\)?”\n\nThe agent learns by doing:\n\nTry an action, see what reward you get → “Go right… hit a wall, ouch!”\nUpdate your score → “Going right here is bad”\nRepeat thousands of times → “Eventually: always go left here!”\n\n\nThe update rule: \\[\\text{New Score} = \\text{Old Score} + \\text{Small Correction}\\]\n\nPolicy: Always pick the action with the highest score\nCool example: (Poor) Albert learns to walk: https://youtu.be/L_4BPjLBF4E?&t=137\nSuper cool example: DeepMind’s AlphaGo: https://youtu.be/WXuK6gekU1Y\n\n\n\n \nSource: Medium"
+    "text": "Q-learning\nLearning action values\n\n\n\n\nQ-learning: learn which action is best in each situation\nKeep a score card: \\(Q(s, a)\\) = “How good is action \\(a\\) in state \\(s\\)?”\nThe agent learns by doing:\n\nTry an action, see the reward → “Go right… hit a wall, ouch!”\nUpdate the score → “Going right here is bad”\nRepeat thousands of times → “Eventually: always go left here!”\n\n\nThe update rule: \\[\\text{New Score} = \\text{Old Score} + \\text{Small Correction}\\]\n\nPolicy: always pick the action with the highest score\nCool example: (Poor) Albert learns to walk: https://youtu.be/L_4BPjLBF4E?&t=137\nEven better: DeepMind’s AlphaGo: https://youtu.be/WXuK6gekU1Y\n\n\n\n \nSource: Medium"
   },
   {
     "objectID": "lectures/lecture-04/04-learning.html#rlhf-rl-for-language-models",
     "href": "lectures/lecture-04/04-learning.html#rlhf-rl-for-language-models",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "RLHF: RL for language models",
-    "text": "RLHF: RL for language models\nFrom AlphaGo to ChatGPT\n\n\n\n\nRLHF: Reinforcement Learning from Human Feedback\nKey to ChatGPT’s success!\nProcess:\n\nTrain base LLM on text (supervised)\nCollect human preferences on model outputs\nTrain a reward model on preferences\nUse RL to optimise LLM for reward\n\nWhy it works:\n\nHard to specify “good response” in a formula\nHumans can compare responses more easily\nRL optimises for what humans actually want\n\nMore here: https://openai.com/index/learning-from-human-preferences/\n\n\n\n\n\n\nRLHF pipeline\n\n\nSource: Simform"
+    "text": "RLHF: RL for language models\nFrom AlphaGo to ChatGPT\n\n\n\n\nRLHF: Reinforcement Learning from Human Feedback\nKey to ChatGPT’s success!\nProcess:\n\nTrain a base LLM on text (supervised)\nCollect human preferences on model outputs\nTrain a reward model on those preferences\nUse RL to optimise the LLM for that reward\n\nWhy it works:\n\nNo formula can specify a “good response”\nHumans find it easier to compare responses\n\nMore here: https://openai.com/index/learning-from-human-preferences/\n\n\n\n\n\n\nRLHF pipeline\n\n\nSource: Simform"
   },
   {
     "objectID": "lectures/lecture-04/04-learning.html#rlhf",
@@ -1866,28 +1866,28 @@
     "href": "lectures/lecture-04/04-learning.html#jailbreaking-rlhf",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Jailbreaking RLHF",
-    "text": "Jailbreaking RLHF\nIf you can make it, you can jailbreak it!\n\n\n\n\nWhen it comes to LLMs, you can make it do (almost) anything with the right prompt\nThis is more art than science (as most things in AI are), but it can be fun!\nPlease note that I’m not encouraging you to jailbreak anything, as you may get permanently banned from using LLMs or worse\nOne of the best people in this field is/was Pliny the Liberator, who jailbroke pretty much all LLMs he could get his hands on 😂\nIf you’re interested in jailbreaking, check out this repository: https://github.com/elder-plinius/L1B3RT4S\nHere’s Claude Sonnet teaching how to produce drugs: https://x.com/elder_plinius/status/1972885831955484830\n\n\n\n\nSource: Pliny the Liberator"
+    "text": "Jailbreaking RLHF\nIf you can make it, you can jailbreak it!\n\n\n\n\nWith the right prompt, you can make an LLM do (almost) anything\nMore art than science (as most things in AI are), but fun!\nI’m not encouraging you to jailbreak anything: you may get permanently banned from LLMs, or worse\nPliny the Liberator has jailbroken pretty much every LLM he could reach 😂: https://pliny.gg/\nClaude Sonnet teaching how to produce drugs: https://x.com/elder_plinius/status/1972885831955484830\n\n\n\n\nSource: Pliny the Liberator"
   },
   {
     "objectID": "lectures/lecture-04/04-learning.html#ai-safety",
     "href": "lectures/lecture-04/04-learning.html#ai-safety",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "AI safety",
-    "text": "AI safety\nMaking sure AI does what we actually mean\n\n\n\n\nAlignment problem: Ensuring models do what we mean, not what we literally say\nSpecification gaming: Models finding perverse ways to maximise rewards (e.g., reward hacking)\nScalable oversight: How to supervise models that are more capable than their human evaluators\nRed teaming: Proactively finding vulnerabilities and jailbreaks\nSafety needs to be part of training, not something you bolt on later\n\n\n\n\n\n\nAI alignment\n\n\nSource: NanoBanana"
+    "text": "AI safety\nMaking sure AI does what we actually mean\n\n\n\n\nAlignment problem: make models do what we mean, not what we literally say\nSpecification gaming: models find perverse ways to maximise rewards (e.g., reward hacking)\nScalable oversight: how to supervise models more capable than their human evaluators\nRed teaming: hunt for vulnerabilities and jailbreaks before others do\nBuild safety into training, don’t bolt it on later\n\n\n\n\n\n\nAI alignment\n\n\nSource: NanoBanana"
   },
   {
     "objectID": "lectures/lecture-04/04-learning.html#side-by-side-comparison",
     "href": "lectures/lecture-04/04-learning.html#side-by-side-comparison",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Side-by-side comparison",
-    "text": "Side-by-side comparison\nChoosing the right approach\n\n\n\n\n\n\n\n\n\n\n\nSupervised\nUnsupervised\nReinforcement\n\n\n\n\nData\nLabelled (X, y)\nUnlabelled (X)\nStates, actions, rewards\n\n\nGoal\nPredict y from X\nFind structure\nMaximise reward\n\n\nFeedback\nCorrect answers\nNone\nReward signal\n\n\nAnalogy\nLearning with a teacher\nExploring alone\nLearning by trial and error\n\n\nEvaluation\nCompare to known labels\nInternal metrics\nCumulative reward\n\n\nExamples\nSpam detection, diagnosis\nCustomer segments\nGame playing, robotics\n\n\nDifficulty\nMedium (if labels exist)\nHard to evaluate\nHard to train"
+    "text": "Side-by-side comparison\n\n\n\n\n\n\n\n\n\n\n\nSupervised\nUnsupervised\nReinforcement\n\n\n\n\nData\nLabelled (X, y)\nUnlabelled (X)\nStates, actions, rewards\n\n\nGoal\nPredict y from X\nFind structure\nMaximise reward\n\n\nFeedback\nCorrect answers\nNone\nReward signal\n\n\nAnalogy\nWith a teacher\nExploring alone\nTrial and error\n\n\nEvaluation\nAgainst known labels\nInternal metrics\nCumulative reward\n\n\nExamples\nSpam detection, diagnosis\nCustomer segments\nGame playing, robotics\n\n\nDifficulty\nMedium (if labels exist)\nHard to evaluate\nHard to train"
   },
   {
     "objectID": "lectures/lecture-04/04-learning.html#main-takeaways",
     "href": "lectures/lecture-04/04-learning.html#main-takeaways",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Main takeaways",
-    "text": "Main takeaways\n\n\n Three paradigms: Supervised (labels), unsupervised (no labels), reinforcement (rewards)\n Supervised learning is most common: Learn from labelled examples to predict\n The bias-variance trade-off: Simple models underfit, complex models overfit\n Unsupervised learning discovers hidden structure: Clustering, dimensionality reduction\n Reinforcement learning learns from interaction: Exploration vs exploitation\n RLHF powers modern LLMs like ChatGPT: RL to align with human preferences"
+    "text": "Main takeaways\n\n\nThree paradigms: Supervised (labels), unsupervised (no labels), reinforcement (rewards)\nSupervised learning is most common: Learn from labelled examples to predict\nThe bias-variance trade-off: Simple models underfit, complex models overfit\nUnsupervised learning discovers hidden structure: Clustering, dimensionality reduction\nReinforcement learning learns from interaction: Exploration vs exploitation\nRLHF powers modern LLMs like ChatGPT: RL to align with human preferences"
   },
   {
     "objectID": "lectures/lecture-02/02-history.html#short-recap-of-last-class",
