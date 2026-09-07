@@ -54,12 +54,12 @@ if (!require("fontawesome", character.only = TRUE)) {
 :::{style="margin-top: 20px; font-size: 27px;"}
 :::{.columns}
 :::{.column width=50%}
-- We explored three major [paradigms of machine learning]{.alert}
-- [Supervised learning]{.alert}: Learn from labelled examples (classification, regression)
-- [Unsupervised learning]{.alert}: Find patterns without labels (clustering, dimensionality reduction)
-- [Reinforcement learning]{.alert}: Learn from rewards (agents and environments)
-- We discussed how [different problems require different approaches]{.alert}
-- Today: [How do we know if our models are actually any good?]{.alert} 🤔
+- We covered three [paradigms of machine learning]{.alert}
+- [Supervised learning]{.alert}: learn from labelled examples (classification, regression)
+- [Unsupervised learning]{.alert}: find patterns without labels (clustering, dimensionality reduction)
+- [Reinforcement learning]{.alert}: learn from rewards (agents and environments)
+- [Different problems need different approaches]{.alert}
+- Today: [how do we know if our models are any good?]{.alert} 🤔
 :::
 
 :::{.column width=50%}
@@ -115,36 +115,33 @@ Source: [Miquido - AI Glossary](https://www.miquido.com/ai-glossary/ai-model-eva
 ## Think about this 🤔
 
 :::{style="margin-top: 40px; font-size: 26px;"}
-**Scenario**: You're building a model to predict whether patients have a rare disease that affects [1 in 1,000 people]{.alert}.
+**Scenario**: your model predicts a rare disease that affects [1 in 1,000 people]{.alert}.
 
-Your colleague shows you a model and proudly announces: ["It achieves 99.9% accuracy!"]{.alert}
+A colleague announces: ["It achieves 99.9% accuracy!"]{.alert}
 
 :::{.fragment}
-**Question for you**: Is this model any good?
-
-Take 30 seconds to think about it...
+**Question**: is this model any good? Take 30 seconds
 :::
 
 :::{.fragment}
-**The uncomfortable truth**: That "99.9% accurate" model [catches zero actual cases]{.alert}. Every sick patient is missed!
+That model [catches zero actual cases]{.alert}. Every sick patient is missed!
 :::
 :::
 
 ## The accuracy paradox
 
-:::{style="margin-top: 30px; font-size: 24px;"}
+:::{style="margin-top: 30px; font-size: 25px;"}
 :::{.columns}
 :::{.column width=55%}
-- This is called the [accuracy paradox](https://en.wikipedia.org/wiki/Accuracy_paradox)
-- [Accuracy](https://en.wikipedia.org/wiki/Accuracy_and_precision) measures [overall correctness]{.alert}, but doesn't tell us:
-  - How many sick patients we actually found
-  - How many healthy patients we falsely alarmed
-  - Whether errors are concentrated in one group
-- The problem is especially severe with [class imbalance](https://en.wikipedia.org/wiki/Class_imbalance)
-- Real examples of imbalanced data:
-  - Fraud: [0.2% of transactions]{.alert}
-  - Security threats: [< 0.01%]{.alert} of events
-  - Manufacturing defects: Often [< 1%]{.alert}
+- This is the [accuracy paradox](https://en.wikipedia.org/wiki/Accuracy_paradox)
+- [Accuracy](https://en.wikipedia.org/wiki/Accuracy_and_precision) measures [overall correctness]{.alert}, but hides:
+  - how many sick patients we found
+  - how many healthy patients we falsely alarmed
+  - whether errors sit in one group
+- [Class imbalance](https://en.wikipedia.org/wiki/Class_imbalance) makes it much worse
+  - fraud: [0.2% of transactions]{.alert}
+  - security threats: [< 0.01%]{.alert} of events
+  - manufacturing defects: often [< 1%]{.alert}
 :::
 
 :::{.column width=45%}
@@ -191,14 +188,13 @@ Take 30 seconds to think about it...
 :::{style="margin-top: 30px; font-size: 24px;"}
 :::{.columns}
 :::{.column width=55%}
-- Every metric captures [one aspect]{.alert} of model performance
-- There's no single "best" metric, it all depends on [your specific context]{.alert}
-- Questions to ask yourself:
-  - What's the cost of a [false positive]{.alert}? (Saying "yes" when it's "no")
-  - What's the cost of a [false negative]{.alert}? (Saying "no" when it's "yes")
-  - Are the classes [balanced]{.alert} or imbalanced?
-  - What [action]{.alert} will be taken based on the prediction?
-- Picking the wrong metric can mean [missing every sick patient or flagging every healthy one]{.alert}
+- Every metric captures [one aspect]{.alert} of performance, so the best one depends on [your context]{.alert}
+- Four questions to ask:
+  - what does a [false positive]{.alert} cost? (saying "yes" when it's "no")
+  - what does a [false negative]{.alert} cost? (saying "no" when it's "yes")
+  - are the classes [balanced]{.alert} or imbalanced?
+  - what [action]{.alert} follows the prediction?
+- The wrong metric can mean [missing every sick patient or flagging every healthy one]{.alert}
 :::
 
 :::{.column width=45%}
@@ -216,15 +212,14 @@ Source: [Medium](https://aws.plainenglish.io/model-performance-optimization-unde
 ## The confusion matrix
 ### The foundation of classification evaluation
 
-:::{style="margin-top: 30px; font-size: 23px;"}
+:::{style="margin-top: 30px; font-size: 26px;"}
 :::{.columns}
 :::{.column width=55%}
-- A table showing [all possible prediction outcomes](https://en.wikipedia.org/wiki/Confusion_matrix)
-- Four key quantities:
-  - **True Positives (TP)**: Correctly predicted positive
-  - **True Negatives (TN)**: Correctly predicted negative
-  - **False Positives (FP)**: Predicted positive, but actually negative (Type I error)
-  - **False Negatives (FN)**: Predicted negative, but actually positive (Type II error)
+- A table of [all possible prediction outcomes](https://en.wikipedia.org/wiki/Confusion_matrix)
+- **True Positives (TP)**: correctly predicted positive
+- **True Negatives (TN)**: correctly predicted negative
+- **False Positives (FP)**: predicted positive, actually negative (Type I error)
+- **False Negatives (FN)**: predicted negative, actually positive (Type II error)
 - [All classification metrics come from these four numbers!]{.alert}
 :::
 
@@ -246,15 +241,15 @@ Source: [Medium](https://aws.plainenglish.io/model-performance-optimization-unde
 
 - When the model says "yes", [how often is it right?]{.alert}
 - High precision = [few false alarms]{.alert}
-- Important when **false positives are costly** (spam, fraud)
+- Use it when [false positives are costly]{.alert} (spam, fraud)
 
 **[Recall](https://en.wikipedia.org/wiki/Precision_and_recall)** = TP / (TP + FN)
 
 - Of all actual positives, [how many did we find?]{.alert}
-- High recall = [we don't miss many positives]{.alert}
-- Important when **false negatives are costly** (disease, security)
+- High recall = [we miss few positives]{.alert}
+- Use it when [false negatives are costly]{.alert} (disease, security)
 
-Most classifiers output a [probability score]{.alert}. Moving the threshold trades off precision and recall...[you can't maximise both!]{.alert}
+Most classifiers output a [probability score]{.alert}. Moving the threshold trades precision against recall, so [you can't maximise both!]{.alert}
 :::
 
 :::{.column width=50%}
@@ -270,22 +265,22 @@ Source: [Analytics Vidhya](https://www.analyticsvidhya.com/blog/2020/10/how-to-c
 ## Regression metrics
 ### When the target is continuous
 
-:::{style="margin-top: 30px; font-size: 24px;"}
-- For regression (predicting numbers), we need different metrics:
+:::{style="margin-top: 30px; font-size: 25px;"}
+- Predicting numbers needs different metrics:
 
 | Metric | Formula | Intuition |
 |--------|---------|-----------|
-| **MAE** | Mean of \|actual - predicted\| | Average error size (in original units) |
-| **MSE** | Mean of (actual - predicted)² | Average squared error (penalises big errors) |
-| **RMSE** | √MSE | Same as MSE, but in original units |
-| **R²** | 1 - (SS_res / SS_tot) | Proportion of variance explained |
+| **MAE** | Mean of \|actual - predicted\| | Average error size, original units |
+| **MSE** | Mean of (actual - predicted)² | Average squared error, penalises big errors |
+| **RMSE** | √MSE | MSE in original units |
+| **R²** | 1 - (SS_res / SS_tot) | Variance explained |
 
 :::{.fragment}
 [Easy examples:]{.alert}
 
-- **MAE** (Mean Absolute Error): Predict 10 pizzas, 12 arrive → off by 2. Predict 10, get 8 → off by 2. [MAE = 2 pizzas]{.alert}
-- **RMSE** (Root Mean Squared Error): Off by 2 one day, off by 10 another. RMSE [punishes that 10 way more]{.alert} than the 2
-- **R²**: R² = 0.8 means your model [explains 80%]{.alert} of why scores differ; [20% remains unexplained]{.alert}
+- **MAE** (Mean Absolute Error): predict 10 pizzas, 12 arrive → off by 2. Predict 10, get 8 → off by 2. [MAE = 2 pizzas]{.alert}
+- **RMSE** (Root Mean Squared Error): off by 2 one day, off by 10 another. RMSE [punishes that 10 far more]{.alert}
+- **R²**: R² = 0.8 means the model [explains 80%]{.alert} of why scores differ, [20% stays unexplained]{.alert}
 :::
 :::
 
@@ -294,18 +289,13 @@ Source: [Analytics Vidhya](https://www.analyticsvidhya.com/blog/2020/10/how-to-c
 ## What is overfitting?
 ### The enemy of generalisation
 
-:::{style="margin-top: 30px; font-size: 24px;"}
+:::{style="margin-top: 30px; font-size: 26px;"}
 :::{.columns}
 :::{.column width=55%}
-- [Overfitting](https://en.wikipedia.org/wiki/Overfitting): Model performs well on training data but poorly on new data
-- The model has [memorised]{.alert} the training set, including its noise and quirks
-- It hasn't learned the [underlying patterns]{.alert}
-- Signs of overfitting:
-  - [Excellent training performance]{.alert}
-  - [Poor test performance]{.alert}
-  - Gap grows with model complexity
-- Think of it like [memorising exam answers vs understanding the material]{.alert}
-- The student who memorises fails when questions are rephrased
+- [Overfitting](https://en.wikipedia.org/wiki/Overfitting): the model does well on training data, badly on new data
+- It has [memorised]{.alert} the training set, noise and quirks included, instead of the [underlying patterns]{.alert}
+- Signs: [excellent training score, poor test score]{.alert}, and a gap that grows with model complexity
+- Like [memorising exam answers instead of understanding the material]{.alert}: the student fails when questions are rephrased
 :::
 
 :::{.column width=45%}
@@ -332,9 +322,9 @@ Source: [X.com](https://x.com/MaartenvSmeden/status/1522230905468862464)
 
 - Model [too simple]{.alert}
 - High bias, low variance
-- Poor on training AND test
-- Hasn't captured the pattern
-- Solution: More complex model
+- Poor on training and test
+- Has not captured the pattern
+- Solution: more complex model
 :::
 
 :::{.column width=33%}
@@ -344,7 +334,6 @@ Source: [X.com](https://x.com/MaartenvSmeden/status/1522230905468862464)
 - Balanced bias and variance
 - Good on both sets
 - Captures the true pattern
-- This is what we want!
 :::
 
 :::{.column width=33%}
@@ -354,7 +343,7 @@ Source: [X.com](https://x.com/MaartenvSmeden/status/1522230905468862464)
 - Low bias, high variance
 - Great on training, poor on test
 - Memorised noise
-- Solution: Regularisation
+- Solution: regularisation
 :::
 :::
 :::
@@ -367,16 +356,16 @@ Source: [X.com](https://x.com/MaartenvSmeden/status/1522230905468862464)
 :::{.column width=55%}
 **The three-way split:**
 
-- **Training set** (~60-70%): Fit the model
-- **Validation set** (~15-20%): Tune hyperparameters
-- **Test set** (~15-20%): [Final evaluation only!]{.alert}
-- [Never peek at test data during development]{.alert} (that's cheating!)
+- **Training set** (~60-70%): fit the model
+- **Validation set** (~15-20%): tune hyperparameters
+- **Test set** (~15-20%): [final evaluation only!]{.alert}
+- [Never peek at test data during development]{.alert}
 
 **K-fold cross-validation:**
 
-- Split data into K parts (folds)
-- Train on K-1 folds, validate on the remaining fold
-- Repeat K times, average the results
+- Split the data into K folds
+- Train on K-1 folds, validate on the one left out
+- Repeat K times and average the results
 - Every data point gets tested once
 - More [reliable]{.alert} than a single split, especially for small datasets
 :::
@@ -399,18 +388,17 @@ Source: [X.com](https://x.com/MaartenvSmeden/status/1522230905468862464)
 :::{style="margin-top: 30px; font-size: 22px;"}
 :::{.columns}
 :::{.column width=55%}
-- Traditional ML: [One correct answer]{.alert} per input
-  - 😺: Cat or dog? → "Cat" ✅
-- Language generation: [Many valid outputs]{.alert}!
+- Traditional ML: [one correct answer]{.alert} per input
+  - 😺: cat or dog? → "Cat" ✅
+- Language generation: [many valid outputs]{.alert}!
   - "The cat sat on the mat" ≈ "A feline rested upon the rug"
-  - Both are correct! How do we score them?
-- We need to evaluate multiple dimensions at once:
-  - [Fluency]{.alert}: Is it grammatical and natural?
-  - [Relevance]{.alert}: Does it address the question?
-  - [Factuality]{.alert}: Is it actually true?
-  - [Helpfulness]{.alert}: Is it useful to the user?
-- Old text metrics ([BLEU](https://en.wikipedia.org/wiki/BLEU), [ROUGE](https://en.wikipedia.org/wiki/ROUGE_(metric))) just count word overlaps
-- [They can't tell if text is meaningful or even correct!]{.alert}
+  - Both correct, so how do we score them?
+- Four dimensions to judge at once:
+  - [fluency]{.alert}: is it grammatical and natural?
+  - [relevance]{.alert}: does it address the question?
+  - [factuality]{.alert}: is it true?
+  - [helpfulness]{.alert}: is it useful?
+- Old text metrics ([BLEU](https://en.wikipedia.org/wiki/BLEU), [ROUGE](https://en.wikipedia.org/wiki/ROUGE_(metric))) only count word overlap, so [they can't tell if text is meaningful or even correct!]{.alert}
 :::
 
 :::{.column width=45%}
@@ -426,18 +414,18 @@ Source: [TinyML SubStack](https://tinyml.substack.com/p/death-by-rag-evals)
 ## Perplexity explained
 ### Measuring how "surprised" the model is
 
-:::{style="margin-top: 30px; font-size: 20px;"}
+:::{style="margin-top: 30px; font-size: 22px;"}
 :::{.columns}
 :::{.column width=55%}
-- [Perplexity](https://en.wikipedia.org/wiki/Perplexity) measures how well an LLM predicts a sequence of text
-- Imagine the model guessing the next word
-  - If it's very confident about the right answer → [Low perplexity]{.alert}
-  - If it's confused among many options → [High perplexity]{.alert}
-- Think of it as: [How many equally likely words could come next?]{.alert}
-  - Perplexity of 10 → Model choosing from ~10 words
-  - Perplexity of 100 → Model choosing from ~100 words
-- **Lower is better**: A model that understands language well makes confident, correct predictions
-- **Critical limitation**: Perplexity measures [fluency, not truth]{.alert}
+- [Perplexity](https://en.wikipedia.org/wiki/Perplexity) measures how well an LLM predicts a text
+- Picture the model guessing the next word
+  - confident about the right answer → [low perplexity]{.alert}
+  - confused among many options → [high perplexity]{.alert}
+- Read it as: [how many equally likely words could come next?]{.alert}
+  - perplexity of 10 → choosing from ~10 words
+  - perplexity of 100 → choosing from ~100 words
+- [Lower is better]{.alert}
+- [Key limitation]{.alert}: perplexity measures [fluency, not truth]{.alert}
 - 🎬 Watch: [What is Perplexity for LLMs?](https://www.youtube.com/watch?v=fKw_khue_ck) (5 min)
 :::
 
@@ -447,8 +435,8 @@ Source: [TinyML SubStack](https://tinyml.substack.com/p/death-by-rag-evals)
 
 "The capital of France is ___"
 
-- "Paris" → [Low perplexity ✅]{.alert}
-- "elephant" → High perplexity ❌
+- "Paris" → [low perplexity ✅]{.alert}
+- "elephant" → high perplexity ❌
 
 <br>
 
@@ -457,9 +445,9 @@ Source: [TinyML SubStack](https://tinyml.substack.com/p/death-by-rag-evals)
 
 "The earth is ___"
 
-- "flat" → Could have [low perplexity]{.alert}!
+- "flat" → could have [low perplexity]{.alert}!
 
-[Perplexity measures how well language flows, not whether statements are true.]{.alert}
+[Fluent text can still be false]{.alert}
 :::
 :::
 :::
@@ -469,21 +457,19 @@ Source: [TinyML SubStack](https://tinyml.substack.com/p/death-by-rag-evals)
 ## LLM-as-a-Judge
 ### Using AI to evaluate AI
 
-:::{style="margin-top: 30px; font-size: 21px;"}
+:::{style="margin-top: 30px; font-size: 22px;"}
 :::{.columns}
 :::{.column width=50%}
 - Use a [powerful LLM]{.alert} to grade responses from other models
 - Give the judge a [rubric]{.alert} (evaluation criteria) and examples
-- The judge scores responses on dimensions like:
-  - Helpfulness, accuracy, relevance, safety
+- It scores helpfulness, accuracy, relevance and safety
 - **Why it works**:
-  - [Evaluating]{.alert} is often easier than [generating]{.alert}
-  - Scales infinitely (no human bottleneck)
-  - Can evaluate subjective qualities
+  - [evaluating]{.alert} is often easier than [generating]{.alert}
+  - scales with no human bottleneck
+  - handles subjective qualities
 - **The catch**:
-  - The judge is only as good as [its own capabilities]{.alert}
-  - Potential biases: May favour its own style
-  - Need a strong judge (often GPT-5 or Claude)
+  - the judge is only as good as [its own capabilities]{.alert}, so use a strong one (often GPT-5 or Claude)
+  - it may favour its own style
 :::
 
 :::{.column width=50%}
@@ -520,26 +506,25 @@ Source: [TinyML SubStack](https://tinyml.substack.com/p/death-by-rag-evals)
 ## G-Eval: A practical framework
 ### Chain-of-thought evaluation
 
-:::{style="margin-top: 30px; font-size: 21px;"}
+:::{style="margin-top: 30px; font-size: 23px;"}
 :::{.columns}
 :::{.column width=55%}
 - [G-Eval](https://arxiv.org/pdf/2303.16634.pdf) is a popular method for custom LLM evaluation
 - **How it works**:
-  1. Define your [evaluation criteria]{.alert} (e.g., coherence, relevance)
-  2. The LLM generates [evaluation steps]{.alert} using chain-of-thought
-  3. Apply these steps to score the output (typically 1-5)
-- **Example criteria**: "Coherence: The collective quality of all sentences in the actual output"
-- **Why it's useful**:
-  - Creates [task-specific metrics]{.alert} on the fly
-  - The LLM "thinks through" how to evaluate
-  - Better alignment with human judgement than simpler metrics
+  1. define your [evaluation criteria]{.alert} (e.g., coherence, relevance)
+  2. the LLM generates [evaluation steps]{.alert} using chain-of-thought
+  3. apply those steps to score the output (typically 1-5)
+- **Example criterion**: "Coherence: The collective quality of all sentences in the actual output"
+- **Why it helps**:
+  - builds [task-specific metrics]{.alert} on the fly
+  - matches human judgement better than simpler metrics
 :::
 
 :::{.column width=45%}
 :::{style="text-align: center;"}
 **G-Eval in action:**
 
-:::{style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; text-align: left; font-size: 18px;"}
+:::{style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; text-align: left; font-size: 20px;"}
 **Step 1**: Define criterion
 
 *"Rate coherence from 1-5"*
@@ -565,25 +550,22 @@ Source: [TinyML SubStack](https://tinyml.substack.com/p/death-by-rag-evals)
 ## What are hallucinations?
 ### When AI confidently makes things up
 
-:::{style="margin-top: 30px; font-size: 22px;"}
+:::{style="margin-top: 30px; font-size: 23px;"}
 :::{.columns}
 :::{.column width=55%}
-- [Hallucination](https://en.wikipedia.org/wiki/Hallucination_(artificial_intelligence)): AI output that is fluent but factually incorrect or fabricated
-- The model generates plausible-sounding content that [isn't grounded in reality]{.alert}
+- [Hallucination](https://en.wikipedia.org/wiki/Hallucination_(artificial_intelligence)): fluent AI output that is factually wrong or fabricated
 - Common forms:
-  - **Fabricated citations**: Inventing papers that don't exist
+  - **Fabricated citations**: papers that don't exist
   - **Made-up statistics**: "73% of scientists agree..."
-  - **False biographical details**: Wrong dates, events, achievements
-  - **Confident nonsense**: Eloquent explanations of things that are simply wrong
-- [This is one of the biggest challenges]{.alert} in deploying language models
-- Why? Because they're trained to predict [likely text]{.alert}, not [true text]{.alert}
+  - **False biographical details**: wrong dates, events, achievements
+  - **Confident nonsense**: eloquent explanations of things that are simply wrong
+- [One of the biggest challenges]{.alert} in deploying language models
+- Models are trained to predict [likely text]{.alert}, not [true text]{.alert}
 :::
 
 :::{.column width=45%}
-:::{style="text-align: center;"}
-[Please remember that:]{.alert}
-
-Models optimise for:
+:::{style="text-align: center; margin-top: -20px;"}
+[Models optimise for:]{.alert}
 
 `P(next word | context)`
 
@@ -602,19 +584,19 @@ Source: [Nielsen Norman Group](https://www.nngroup.com/articles/ai-hallucination
 ## Real-world consequences
 ### Why hallucinations matter
 
-:::{style="margin-top: 30px; font-size: 20px;"}
+:::{style="margin-top: 30px; font-size: 22px;"}
 :::{.columns}
 :::{.column width=55%}
 **Notable incidents (all real!):**
 
-- ⚖️ **Legal** (2023): [Two lawyers submitted a brief citing [six non-existent cases]{.alert} generated by ChatGPT. They were sanctioned by the court.](https://www.theguardian.com/technology/2023/jun/23/two-us-lawyers-fined-submitting-fake-court-citations-chatgpt)
-- 🏥 **Medical**: [AI chatbots have provided [dangerous health advice]{.alert} citing fabricated studies](https://www.mountsinai.org/about/newsroom/2025/ai-chatbots-can-run-with-medical-misinformation-study-finds-highlighting-the-need-for-stronger-safeguards)
-- 📰 **News**: [AI-generated fake news stories have [moved stock prices]{.alert}](https://www.nytimes.com/2023/05/23/business/ai-picture-stock-market.html)
-- 📚 **Academic**: [Students have submitted essays with [entirely invented references]{.alert}](https://teche.mq.edu.au/2023/02/why-does-chatgpt-generate-fake-references/)
+- ⚖️ **Legal** (2023): [two lawyers were sanctioned for a brief citing [six non-existent cases]{.alert} from ChatGPT](https://www.theguardian.com/technology/2023/jun/23/two-us-lawyers-fined-submitting-fake-court-citations-chatgpt)
+- 🏥 **Medical**: [chatbots gave [dangerous health advice]{.alert} citing fabricated studies](https://www.mountsinai.org/about/newsroom/2025/ai-chatbots-can-run-with-medical-misinformation-study-finds-highlighting-the-need-for-stronger-safeguards)
+- 📰 **News**: [AI-generated fake news [moved stock prices]{.alert}](https://www.nytimes.com/2023/05/23/business/ai-picture-stock-market.html)
+- 📚 **Academic**: [students submitted essays with [entirely invented references]{.alert}](https://teche.mq.edu.au/2023/02/why-does-chatgpt-generate-fake-references/)
 
-- More people trusting AI outputs without verification
-- Harder for non-experts to spot fabrications
-- Legal and reputational risks for organisations
+- More people trust AI outputs without checking them
+- Non-experts struggle to spot fabrications
+- Organisations face legal and reputational risks
 :::
 
 :::{.column width=45%}
@@ -622,19 +604,19 @@ Source: [Nielsen Norman Group](https://www.nngroup.com/articles/ai-hallucination
 
 **Discussion question:**
 
-How would you verify if an AI's answer is correct?
+How would you check if an AI's answer is correct?
 
 - Check primary sources?
 - Ask another AI?
 - Trust your intuition?
-- Rely on reputation of the AI company?
+- Rely on the AI company's reputation?
 
-<br>
-
+:::{style="margin-top: 50px;"}
+:::
 [Always check the sources yourself!]{.alert}
 
-<br>
-
+:::{style="margin-top: 50px;"}
+:::
 🎬 Watch: [IBM Explains AI Hallucinations](https://www.youtube.com/watch?v=cfqtFvWOfg0) (5 min)
 :::
 :::
@@ -647,19 +629,19 @@ How would you verify if an AI's answer is correct?
 :::{style="margin-top: 30px; font-size: 20px;"}
 :::{.columns}
 :::{.column width=55%}
-- [RAG]{.alert}: Instead of relying on "memory", the model [looks things up]{.alert}
+- [RAG]{.alert}: the model [looks things up]{.alert} instead of relying on memory
 - **How it works**:
-  1. User asks a question
-  2. System [retrieves]{.alert} relevant documents from a knowledge base
-  3. LLM generates answer using [retrieved context]{.alert}
-  4. Answer includes citations to sources
-- **RAG reduces hallucinations**:
-  - Model must base answers on [actual documents]{.alert}
-  - Easier to audit and update knowledge
+  1. the user asks a question
+  2. the system [retrieves]{.alert} relevant documents from a knowledge base
+  3. the LLM answers using the [retrieved context]{.alert}
+  4. the answer cites its sources
+- **Why it reduces hallucinations**:
+  - answers must rest on [actual documents]{.alert}
+  - knowledge is easier to audit and update
 - **Evaluation metrics for RAG**:
-  - **Faithfulness**: Does it stick to what docs say?
-  - **Answer relevancy**: Does it address the question?
-  - **Contextual relevancy**: Were the right docs retrieved?
+  - **Faithfulness**: does it stick to what the docs say?
+  - **Answer relevancy**: does it address the question?
+  - **Contextual relevancy**: were the right docs retrieved?
 :::
 
 :::{.column width=45%}
@@ -699,21 +681,20 @@ How would you verify if an AI's answer is correct?
 ## Red teaming: Adversarial evaluation
 ### Finding weaknesses before they find you
 
-:::{style="margin-top: 30px; font-size: 20px;"}
+:::{style="margin-top: 30px; font-size: 22px;"}
 :::{.columns}
 :::{.column width=55%}
-- [Red teaming]{.alert}: Deliberately trying to make the AI fail or behave badly
-- Like hiring hackers to test your security!
+- [Red teaming]{.alert}: deliberately trying to make the AI fail, like hiring hackers to test your security
 - **What red teamers look for**:
-  - Harmful or unsafe outputs
-  - Jailbreaks (bypassing safety guardrails)
-  - Bias and offensive content
-  - Factual errors and hallucinations
-- **Manual red teaming**: Humans craft tricky prompts
-  - Gold standard but expensive and slow
-- [AI-Assisted Red Teaming (AART)]{.alert}: Use AI to generate adversarial test cases automatically
-  - Scales up testing dramatically
-  - Covers diverse cultural and geographic contexts
+  - harmful or unsafe outputs
+  - jailbreaks (bypassing safety guardrails)
+  - bias and offensive content
+  - factual errors and hallucinations
+- **Manual red teaming**: humans craft tricky prompts
+  - gold standard, but expensive and slow
+- [AI-Assisted Red Teaming (AART)]{.alert}: AI generates adversarial test cases automatically
+  - scales testing up sharply
+  - covers diverse cultural and geographic contexts
   - [Paper: AART (2023)](https://arxiv.org/abs/2311.08592)
 :::
 
@@ -721,13 +702,13 @@ How would you verify if an AI's answer is correct?
 :::{style="text-align: center;"}
 :::{style="background: rgba(230, 57, 70, 0.1); padding: 15px; border-radius: 10px; text-align: left; font-size: 18px;"}
 🔴 **Without red teaming**:
-Vulnerabilities discovered by users in production
-→ Reputational damage, harm, legal liability
+Users find the vulnerabilities in production
+→ reputational damage, harm, legal liability
 
 🟢 **With red teaming**:
-Vulnerabilities found before deployment
-→ Fixes applied proactively
-→ Safer, more reliable models
+You find them before deployment
+→ fixes applied early
+→ safer, more reliable models
 :::
 
 [![Examples of red teaming](figures/red-teaming.png){width="100%"}](figures/red-teaming.png){data-modal-type="image" data-modal-url="figures/red-teaming.png"}
@@ -752,9 +733,9 @@ Vulnerabilities found before deployment
 
 **Common problems:**
 
-- **Benchmark contamination**: Test data leaks into training
-- **Teaching to the test**: Optimising for quirks, not capability
-- **Metric saturation**: "Human-level" on benchmarks, fails in real-world
+- **Benchmark contamination**: test data leaks into training
+- **Teaching to the test**: optimising for quirks, not capability
+- **Metric saturation**: "human-level" on benchmarks, fails in the real world
 
 **What benchmarks miss:** Robustness, safety, creativity, long-horizon reasoning
 :::
@@ -774,14 +755,14 @@ Source: [X.com](https://x.com/andrewlamb1111/status/1952386263450841233)
 ## Benchmark contamination in practice
 ### When the model finds the answer key
 
-:::{style="margin-top: 30px; font-size: 22px;"}
+:::{style="margin-top: 30px; font-size: 25px;"}
 :::{.columns}
 :::{.column width=55%}
-- In 2025, Anthropic discovered that [Claude Opus independently identified it was being evaluated]{.alert} on BrowseComp, a benchmark by OpenAI
-- The model [located the answer key online and used it]{.alert} to solve the evaluation
-- This is a new form of [benchmark contamination]{.alert}: the model is not trained on the answers, but finds them during the test
-- Raises questions about the [validity of benchmarks]{.alert} that assume models cannot access external information
-- As models become more capable, [evaluation itself becomes harder]{.alert}
+- In 2025, Anthropic found that [Claude Opus worked out on its own that it was being evaluated]{.alert} on BrowseComp, an OpenAI benchmark
+- The model [found the answer key online and used it]{.alert}
+- A new form of [benchmark contamination]{.alert}: the model is not trained on the answers, it finds them during the test
+- This threatens the [validity of benchmarks]{.alert} that assume models cannot reach external information
+- As models get more capable, [evaluation itself gets harder]{.alert}
 :::
 
 :::{.column width=45%}
@@ -799,19 +780,17 @@ Source: [Anthropic Engineering](https://www.anthropic.com/engineering/eval-aware
 ## Fairness: When overall accuracy hides problems
 ### The disaggregation imperative
 
-:::{style="margin-top: 30px; font-size: 22px;"}
+:::{style="margin-top: 30px; font-size: 24px;"}
 :::{.columns}
 :::{.column width=55%}
 - Overall accuracy can hide [serious failures for specific groups]{.alert}
-- **Real example** [(Buolamwini & Gebru, 2018)](https://proceedings.mlr.press/v81/buolamwini18a/buolamwini18a.pdf):
-  - Commercial face recognition error rates:
-  - Light-skinned men: [0.8% error]{.alert}
-  - Dark-skinned women: [34.7% error]{.alert}
-  - 43× worse performance for one group!
-- This is called [data slicing]{.alert} or [subgroup analysis]{.alert}
-- The model "works" overall, but [fails for specific populations]{.alert}
-- Even removing sensitive features doesn't help—they [correlate with other features]{.alert}
-- [Always evaluate models per subgroup, not just overall]{.alert}
+- **Real example** [(Buolamwini & Gebru, 2018)](https://proceedings.mlr.press/v81/buolamwini18a/buolamwini18a.pdf), commercial face recognition:
+  - light-skinned men: [0.8% error]{.alert}
+  - dark-skinned women: [34.7% error]{.alert}
+  - 43× worse for one group!
+- Checking per group is called [data slicing]{.alert} or [subgroup analysis]{.alert}
+- Dropping sensitive features does not fix this, they [correlate with other features]{.alert}
+- [Always evaluate per subgroup, never only overall]{.alert}
 :::
 
 :::{.column width=45%}
@@ -824,32 +803,32 @@ Source: [Medium](https://medium.com/@Joy.Buolamwini/ibm-leads-more-should-follow
 :::
 :::
 
-# Summary ✅ {background-color="#1B3A6B"}
+# Summary {background-color="#1B3A6B"}
 
 ## Main takeaways
 
-:::{style="margin-top: 20px; font-size: 20px;"}
+:::{style="margin-top: 20px; font-size: 21px;"}
 :::{.columns}
 :::{.column width=55%}
 **Traditional ML Metrics**:
 
-- [Accuracy is not enough]{.alert}: Especially dangerous with class imbalance
-- [Precision/Recall trade-off]{.alert}: Choose based on false positive vs. false negative costs
+- [Accuracy is not enough]{.alert}: dangerous with class imbalance
+- [Precision/recall trade-off]{.alert}: choose by false positive vs false negative costs
 - Use [cross-validation]{.alert} and keep a truly unseen test set
 
 **LLM Evaluation**:
 
-- [Perplexity ≠ truth]{.alert}: Fluent text can still be wrong
-- [LLM-as-a-Judge and G-Eval]{.alert}: Scalable evaluation with rubrics
-- [RAG]{.alert}: Ground answers in documents to reduce hallucinations
-- [Red teaming]{.alert}: Proactively find vulnerabilities before users do
+- [Perplexity ≠ truth]{.alert}: fluent text can still be wrong
+- [LLM-as-a-Judge and G-Eval]{.alert}: scalable evaluation with rubrics
+- [RAG]{.alert}: ground answers in documents to cut hallucinations
+- [Red teaming]{.alert}: find vulnerabilities before users do
 - [Benchmarks have limits]{.alert}: Goodhart's Law and "benchmaxxing"
-- [Subgroup analysis]{.alert}: Always look beyond averages
+- [Subgroup analysis]{.alert}: always look beyond averages
 :::
 
 :::{.column width=45%}
 :::{style="text-align: center; margin-top: 20px;"}
-[![Oh well 😄](figures/evaluation-bear-meme.png){width="80%"}](#){data-modal-type="image" data-modal-url="figures/evaluation-bear-meme.png"}
+[![Oh well 😄](figures/evaluation-bear-meme.png){width="70%"}](#){data-modal-type="image" data-modal-url="figures/evaluation-bear-meme.png"}
 
 Source: [Zurich University of Applied Sciences](https://blog.zhaw.ch/artificial-intelligence/2023/04/05/evaluation-of-text-generation-systems-a-theoretical-series/)
 :::

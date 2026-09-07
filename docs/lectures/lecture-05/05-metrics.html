@@ -161,12 +161,12 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <div class="columns">
 <div class="column" style="width:50%;">
 <ul>
-<li>We explored three major <span class="alert">paradigms of machine learning</span></li>
-<li><span class="alert">Supervised learning</span>: Learn from labelled examples (classification, regression)</li>
-<li><span class="alert">Unsupervised learning</span>: Find patterns without labels (clustering, dimensionality reduction)</li>
-<li><span class="alert">Reinforcement learning</span>: Learn from rewards (agents and environments)</li>
-<li>We discussed how <span class="alert">different problems require different approaches</span></li>
-<li>Today: <span class="alert">How do we know if our models are actually any good?</span> 🤔</li>
+<li>We covered three <span class="alert">paradigms of machine learning</span></li>
+<li><span class="alert">Supervised learning</span>: learn from labelled examples (classification, regression)</li>
+<li><span class="alert">Unsupervised learning</span>: find patterns without labels (clustering, dimensionality reduction)</li>
+<li><span class="alert">Reinforcement learning</span>: learn from rewards (agents and environments)</li>
+<li><span class="alert">Different problems need different approaches</span></li>
+<li>Today: <span class="alert">how do we know if our models are any good?</span> 🤔</li>
 </ul>
 </div><div class="column" style="width:50%;">
 <div style="text-align: center; margin-top: -30px;">
@@ -223,36 +223,34 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <section id="think-about-this" class="slide level2">
 <h2>Think about this 🤔</h2>
 <div style="margin-top: 40px; font-size: 26px;">
-<p><strong>Scenario</strong>: You’re building a model to predict whether patients have a rare disease that affects <span class="alert">1 in 1,000 people</span>.</p>
-<p>Your colleague shows you a model and proudly announces: <span class="alert">“It achieves 99.9% accuracy!”</span></p>
+<p><strong>Scenario</strong>: your model predicts a rare disease that affects <span class="alert">1 in 1,000 people</span>.</p>
+<p>A colleague announces: <span class="alert">“It achieves 99.9% accuracy!”</span></p>
 <div class="fragment">
-<p><strong>Question for you</strong>: Is this model any good?</p>
-<p>Take 30 seconds to think about it…</p>
+<p><strong>Question</strong>: is this model any good? Take 30 seconds</p>
 </div>
 <div class="fragment">
-<p><strong>The uncomfortable truth</strong>: That “99.9% accurate” model <span class="alert">catches zero actual cases</span>. Every sick patient is missed!</p>
+<p>That model <span class="alert">catches zero actual cases</span>. Every sick patient is missed!</p>
 </div>
 </div>
 </section>
 <section id="the-accuracy-paradox" class="slide level2">
 <h2>The accuracy paradox</h2>
-<div style="margin-top: 30px; font-size: 24px;">
+<div style="margin-top: 30px; font-size: 25px;">
 <div class="columns">
 <div class="column" style="width:55%;">
 <ul>
-<li>This is called the <a href="https://en.wikipedia.org/wiki/Accuracy_paradox">accuracy paradox</a></li>
-<li><a href="https://en.wikipedia.org/wiki/Accuracy_and_precision">Accuracy</a> measures <span class="alert">overall correctness</span>, but doesn’t tell us:
+<li>This is the <a href="https://en.wikipedia.org/wiki/Accuracy_paradox">accuracy paradox</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Accuracy_and_precision">Accuracy</a> measures <span class="alert">overall correctness</span>, but hides:
 <ul>
-<li>How many sick patients we actually found</li>
-<li>How many healthy patients we falsely alarmed</li>
-<li>Whether errors are concentrated in one group</li>
+<li>how many sick patients we found</li>
+<li>how many healthy patients we falsely alarmed</li>
+<li>whether errors sit in one group</li>
 </ul></li>
-<li>The problem is especially severe with <a href="https://en.wikipedia.org/wiki/Class_imbalance">class imbalance</a></li>
-<li>Real examples of imbalanced data:
+<li><a href="https://en.wikipedia.org/wiki/Class_imbalance">Class imbalance</a> makes it much worse
 <ul>
-<li>Fraud: <span class="alert">0.2% of transactions</span></li>
-<li>Security threats: <span class="alert">&lt; 0.01%</span> of events</li>
-<li>Manufacturing defects: Often <span class="alert">&lt; 1%</span></li>
+<li>fraud: <span class="alert">0.2% of transactions</span></li>
+<li>security threats: <span class="alert">&lt; 0.01%</span> of events</li>
+<li>manufacturing defects: often <span class="alert">&lt; 1%</span></li>
 </ul></li>
 </ul>
 </div><div class="column" style="width:45%;">
@@ -313,16 +311,15 @@ Actual: <span style="color: #457b9d;">Healthy</span>
 <div class="columns">
 <div class="column" style="width:55%;">
 <ul>
-<li>Every metric captures <span class="alert">one aspect</span> of model performance</li>
-<li>There’s no single “best” metric, it all depends on <span class="alert">your specific context</span></li>
-<li>Questions to ask yourself:
+<li>Every metric captures <span class="alert">one aspect</span> of performance, so the best one depends on <span class="alert">your context</span></li>
+<li>Four questions to ask:
 <ul>
-<li>What’s the cost of a <span class="alert">false positive</span>? (Saying “yes” when it’s “no”)</li>
-<li>What’s the cost of a <span class="alert">false negative</span>? (Saying “no” when it’s “yes”)</li>
-<li>Are the classes <span class="alert">balanced</span> or imbalanced?</li>
-<li>What <span class="alert">action</span> will be taken based on the prediction?</li>
+<li>what does a <span class="alert">false positive</span> cost? (saying “yes” when it’s “no”)</li>
+<li>what does a <span class="alert">false negative</span> cost? (saying “no” when it’s “yes”)</li>
+<li>are the classes <span class="alert">balanced</span> or imbalanced?</li>
+<li>what <span class="alert">action</span> follows the prediction?</li>
 </ul></li>
-<li>Picking the wrong metric can mean <span class="alert">missing every sick patient or flagging every healthy one</span></li>
+<li>The wrong metric can mean <span class="alert">missing every sick patient or flagging every healthy one</span></li>
 </ul>
 </div><div class="column" style="width:45%;">
 <div style="text-align: center;">
@@ -345,18 +342,15 @@ Actual: <span style="color: #457b9d;">Healthy</span>
 <section id="the-confusion-matrix" class="slide level2">
 <h2>The confusion matrix</h2>
 <h3 id="the-foundation-of-classification-evaluation">The foundation of classification evaluation</h3>
-<div style="margin-top: 30px; font-size: 23px;">
+<div style="margin-top: 30px; font-size: 26px;">
 <div class="columns">
 <div class="column" style="width:55%;">
 <ul>
-<li>A table showing <a href="https://en.wikipedia.org/wiki/Confusion_matrix">all possible prediction outcomes</a></li>
-<li>Four key quantities:
-<ul>
-<li><strong>True Positives (TP)</strong>: Correctly predicted positive</li>
-<li><strong>True Negatives (TN)</strong>: Correctly predicted negative</li>
-<li><strong>False Positives (FP)</strong>: Predicted positive, but actually negative (Type I error)</li>
-<li><strong>False Negatives (FN)</strong>: Predicted negative, but actually positive (Type II error)</li>
-</ul></li>
+<li>A table of <a href="https://en.wikipedia.org/wiki/Confusion_matrix">all possible prediction outcomes</a></li>
+<li><strong>True Positives (TP)</strong>: correctly predicted positive</li>
+<li><strong>True Negatives (TN)</strong>: correctly predicted negative</li>
+<li><strong>False Positives (FP)</strong>: predicted positive, actually negative (Type I error)</li>
+<li><strong>False Negatives (FN)</strong>: predicted negative, actually positive (Type II error)</li>
 <li><span class="alert">All classification metrics come from these four numbers!</span></li>
 </ul>
 </div><div class="column" style="width:45%;">
@@ -381,15 +375,15 @@ Actual: <span style="color: #457b9d;">Healthy</span>
 <ul>
 <li>When the model says “yes”, <span class="alert">how often is it right?</span></li>
 <li>High precision = <span class="alert">few false alarms</span></li>
-<li>Important when <strong>false positives are costly</strong> (spam, fraud)</li>
+<li>Use it when <span class="alert">false positives are costly</span> (spam, fraud)</li>
 </ul>
 <p><strong><a href="https://en.wikipedia.org/wiki/Precision_and_recall">Recall</a></strong> = TP / (TP + FN)</p>
 <ul>
 <li>Of all actual positives, <span class="alert">how many did we find?</span></li>
-<li>High recall = <span class="alert">we don’t miss many positives</span></li>
-<li>Important when <strong>false negatives are costly</strong> (disease, security)</li>
+<li>High recall = <span class="alert">we miss few positives</span></li>
+<li>Use it when <span class="alert">false negatives are costly</span> (disease, security)</li>
 </ul>
-<p>Most classifiers output a <span class="alert">probability score</span>. Moving the threshold trades off precision and recall…<span class="alert">you can’t maximise both!</span></p>
+<p>Most classifiers output a <span class="alert">probability score</span>. Moving the threshold trades precision against recall, so <span class="alert">you can’t maximise both!</span></p>
 </div><div class="column" style="width:50%;">
 <div style="text-align: center;">
 <div class="quarto-figure quarto-figure-center">
@@ -406,9 +400,9 @@ Actual: <span style="color: #457b9d;">Healthy</span>
 <section id="regression-metrics" class="slide level2">
 <h2>Regression metrics</h2>
 <h3 id="when-the-target-is-continuous">When the target is continuous</h3>
-<div style="margin-top: 30px; font-size: 24px;">
+<div style="margin-top: 30px; font-size: 25px;">
 <ul>
-<li>For regression (predicting numbers), we need different metrics:</li>
+<li>Predicting numbers needs different metrics:</li>
 </ul>
 <table class="caption-top">
 <colgroup>
@@ -427,31 +421,31 @@ Actual: <span style="color: #457b9d;">Healthy</span>
 <tr class="odd">
 <td><strong>MAE</strong></td>
 <td>Mean of |actual - predicted|</td>
-<td>Average error size (in original units)</td>
+<td>Average error size, original units</td>
 </tr>
 <tr class="even">
 <td><strong>MSE</strong></td>
 <td>Mean of (actual - predicted)²</td>
-<td>Average squared error (penalises big errors)</td>
+<td>Average squared error, penalises big errors</td>
 </tr>
 <tr class="odd">
 <td><strong>RMSE</strong></td>
 <td>√MSE</td>
-<td>Same as MSE, but in original units</td>
+<td>MSE in original units</td>
 </tr>
 <tr class="even">
 <td><strong>R²</strong></td>
 <td>1 - (SS_res / SS_tot)</td>
-<td>Proportion of variance explained</td>
+<td>Variance explained</td>
 </tr>
 </tbody>
 </table>
 <div class="fragment">
 <p><span class="alert">Easy examples:</span></p>
 <ul>
-<li><strong>MAE</strong> (Mean Absolute Error): Predict 10 pizzas, 12 arrive → off by 2. Predict 10, get 8 → off by 2. <span class="alert">MAE = 2 pizzas</span></li>
-<li><strong>RMSE</strong> (Root Mean Squared Error): Off by 2 one day, off by 10 another. RMSE <span class="alert">punishes that 10 way more</span> than the 2</li>
-<li><strong>R²</strong>: R² = 0.8 means your model <span class="alert">explains 80%</span> of why scores differ; <span class="alert">20% remains unexplained</span></li>
+<li><strong>MAE</strong> (Mean Absolute Error): predict 10 pizzas, 12 arrive → off by 2. Predict 10, get 8 → off by 2. <span class="alert">MAE = 2 pizzas</span></li>
+<li><strong>RMSE</strong> (Root Mean Squared Error): off by 2 one day, off by 10 another. RMSE <span class="alert">punishes that 10 far more</span></li>
+<li><strong>R²</strong>: R² = 0.8 means the model <span class="alert">explains 80%</span> of why scores differ, <span class="alert">20% stays unexplained</span></li>
 </ul>
 </div>
 </div>
@@ -464,21 +458,14 @@ Actual: <span style="color: #457b9d;">Healthy</span>
 <section id="what-is-overfitting" class="slide level2">
 <h2>What is overfitting?</h2>
 <h3 id="the-enemy-of-generalisation">The enemy of generalisation</h3>
-<div style="margin-top: 30px; font-size: 24px;">
+<div style="margin-top: 30px; font-size: 26px;">
 <div class="columns">
 <div class="column" style="width:55%;">
 <ul>
-<li><a href="https://en.wikipedia.org/wiki/Overfitting">Overfitting</a>: Model performs well on training data but poorly on new data</li>
-<li>The model has <span class="alert">memorised</span> the training set, including its noise and quirks</li>
-<li>It hasn’t learned the <span class="alert">underlying patterns</span></li>
-<li>Signs of overfitting:
-<ul>
-<li><span class="alert">Excellent training performance</span></li>
-<li><span class="alert">Poor test performance</span></li>
-<li>Gap grows with model complexity</li>
-</ul></li>
-<li>Think of it like <span class="alert">memorising exam answers vs understanding the material</span></li>
-<li>The student who memorises fails when questions are rephrased</li>
+<li><a href="https://en.wikipedia.org/wiki/Overfitting">Overfitting</a>: the model does well on training data, badly on new data</li>
+<li>It has <span class="alert">memorised</span> the training set, noise and quirks included, instead of the <span class="alert">underlying patterns</span></li>
+<li>Signs: <span class="alert">excellent training score, poor test score</span>, and a gap that grows with model complexity</li>
+<li>Like <span class="alert">memorising exam answers instead of understanding the material</span>: the student fails when questions are rephrased</li>
 </ul>
 </div><div class="column" style="width:45%;">
 <div style="text-align: center;">
@@ -506,9 +493,9 @@ Actual: <span style="color: #457b9d;">Healthy</span>
 <ul>
 <li>Model <span class="alert">too simple</span></li>
 <li>High bias, low variance</li>
-<li>Poor on training AND test</li>
-<li>Hasn’t captured the pattern</li>
-<li>Solution: More complex model</li>
+<li>Poor on training and test</li>
+<li>Has not captured the pattern</li>
+<li>Solution: more complex model</li>
 </ul>
 </div><div class="column" style="width:33%;">
 <p><strong>Good fit</strong> ✅</p>
@@ -517,7 +504,6 @@ Actual: <span style="color: #457b9d;">Healthy</span>
 <li>Balanced bias and variance</li>
 <li>Good on both sets</li>
 <li>Captures the true pattern</li>
-<li>This is what we want!</li>
 </ul>
 </div><div class="column" style="width:33%;">
 <p><strong>Overfitting</strong> 📈</p>
@@ -526,7 +512,7 @@ Actual: <span style="color: #457b9d;">Healthy</span>
 <li>Low bias, high variance</li>
 <li>Great on training, poor on test</li>
 <li>Memorised noise</li>
-<li>Solution: Regularisation</li>
+<li>Solution: regularisation</li>
 </ul>
 </div></div>
 </div>
@@ -539,16 +525,16 @@ Actual: <span style="color: #457b9d;">Healthy</span>
 <div class="column" style="width:55%;">
 <p><strong>The three-way split:</strong></p>
 <ul>
-<li><strong>Training set</strong> (~60-70%): Fit the model</li>
-<li><strong>Validation set</strong> (~15-20%): Tune hyperparameters</li>
-<li><strong>Test set</strong> (~15-20%): <span class="alert">Final evaluation only!</span></li>
-<li><span class="alert">Never peek at test data during development</span> (that’s cheating!)</li>
+<li><strong>Training set</strong> (~60-70%): fit the model</li>
+<li><strong>Validation set</strong> (~15-20%): tune hyperparameters</li>
+<li><strong>Test set</strong> (~15-20%): <span class="alert">final evaluation only!</span></li>
+<li><span class="alert">Never peek at test data during development</span></li>
 </ul>
 <p><strong>K-fold cross-validation:</strong></p>
 <ul>
-<li>Split data into K parts (folds)</li>
-<li>Train on K-1 folds, validate on the remaining fold</li>
-<li>Repeat K times, average the results</li>
+<li>Split the data into K folds</li>
+<li>Train on K-1 folds, validate on the one left out</li>
+<li>Repeat K times and average the results</li>
 <li>Every data point gets tested once</li>
 <li>More <span class="alert">reliable</span> than a single split, especially for small datasets</li>
 </ul>
@@ -582,24 +568,23 @@ Actual: <span style="color: #457b9d;">Healthy</span>
 <div class="columns">
 <div class="column" style="width:55%;">
 <ul>
-<li>Traditional ML: <span class="alert">One correct answer</span> per input
+<li>Traditional ML: <span class="alert">one correct answer</span> per input
 <ul>
-<li>😺: Cat or dog? → “Cat” ✅</li>
+<li>😺: cat or dog? → “Cat” ✅</li>
 </ul></li>
-<li>Language generation: <span class="alert">Many valid outputs</span>!
+<li>Language generation: <span class="alert">many valid outputs</span>!
 <ul>
 <li>“The cat sat on the mat” ≈ “A feline rested upon the rug”</li>
-<li>Both are correct! How do we score them?</li>
+<li>Both correct, so how do we score them?</li>
 </ul></li>
-<li>We need to evaluate multiple dimensions at once:
+<li>Four dimensions to judge at once:
 <ul>
-<li><span class="alert">Fluency</span>: Is it grammatical and natural?</li>
-<li><span class="alert">Relevance</span>: Does it address the question?</li>
-<li><span class="alert">Factuality</span>: Is it actually true?</li>
-<li><span class="alert">Helpfulness</span>: Is it useful to the user?</li>
+<li><span class="alert">fluency</span>: is it grammatical and natural?</li>
+<li><span class="alert">relevance</span>: does it address the question?</li>
+<li><span class="alert">factuality</span>: is it true?</li>
+<li><span class="alert">helpfulness</span>: is it useful?</li>
 </ul></li>
-<li>Old text metrics (<a href="https://en.wikipedia.org/wiki/BLEU">BLEU</a>, <a href="https://en.wikipedia.org/wiki/ROUGE_(metric)">ROUGE</a>) just count word overlaps</li>
-<li><span class="alert">They can’t tell if text is meaningful or even correct!</span></li>
+<li>Old text metrics (<a href="https://en.wikipedia.org/wiki/BLEU">BLEU</a>, <a href="https://en.wikipedia.org/wiki/ROUGE_(metric)">ROUGE</a>) only count word overlap, so <span class="alert">they can’t tell if text is meaningful or even correct!</span></li>
 </ul>
 </div><div class="column" style="width:45%;">
 <div style="text-align: center;">
@@ -617,23 +602,23 @@ Actual: <span style="color: #457b9d;">Healthy</span>
 <section id="perplexity-explained" class="slide level2">
 <h2>Perplexity explained</h2>
 <h3 id="measuring-how-surprised-the-model-is">Measuring how “surprised” the model is</h3>
-<div style="margin-top: 30px; font-size: 20px;">
+<div style="margin-top: 30px; font-size: 22px;">
 <div class="columns">
 <div class="column" style="width:55%;">
 <ul>
-<li><a href="https://en.wikipedia.org/wiki/Perplexity">Perplexity</a> measures how well an LLM predicts a sequence of text</li>
-<li>Imagine the model guessing the next word
+<li><a href="https://en.wikipedia.org/wiki/Perplexity">Perplexity</a> measures how well an LLM predicts a text</li>
+<li>Picture the model guessing the next word
 <ul>
-<li>If it’s very confident about the right answer → <span class="alert">Low perplexity</span></li>
-<li>If it’s confused among many options → <span class="alert">High perplexity</span></li>
+<li>confident about the right answer → <span class="alert">low perplexity</span></li>
+<li>confused among many options → <span class="alert">high perplexity</span></li>
 </ul></li>
-<li>Think of it as: <span class="alert">How many equally likely words could come next?</span>
+<li>Read it as: <span class="alert">how many equally likely words could come next?</span>
 <ul>
-<li>Perplexity of 10 → Model choosing from ~10 words</li>
-<li>Perplexity of 100 → Model choosing from ~100 words</li>
+<li>perplexity of 10 → choosing from ~10 words</li>
+<li>perplexity of 100 → choosing from ~100 words</li>
 </ul></li>
-<li><strong>Lower is better</strong>: A model that understands language well makes confident, correct predictions</li>
-<li><strong>Critical limitation</strong>: Perplexity measures <span class="alert">fluency, not truth</span></li>
+<li><span class="alert">Lower is better</span></li>
+<li><span class="alert">Key limitation</span>: perplexity measures <span class="alert">fluency, not truth</span></li>
 <li>🎬 Watch: <a href="https://www.youtube.com/watch?v=fKw_khue_ck">What is Perplexity for LLMs?</a> (5 min)</li>
 </ul>
 </div><div class="column" style="width:45%;">
@@ -641,17 +626,17 @@ Actual: <span style="color: #457b9d;">Healthy</span>
 <p><strong>Examples:</strong></p>
 <p>“The capital of France is ___”</p>
 <ul>
-<li>“Paris” → <span class="alert">Low perplexity ✅</span></li>
-<li>“elephant” → High perplexity ❌</li>
+<li>“Paris” → <span class="alert">low perplexity ✅</span></li>
+<li>“elephant” → high perplexity ❌</li>
 </ul>
 <p><br></p>
 <div style="background: rgba(230, 57, 70, 0.1); padding: 15px; border-radius: 10px;">
 <p><strong>The big catch:</strong></p>
 <p>“The earth is ___”</p>
 <ul>
-<li>“flat” → Could have <span class="alert">low perplexity</span>!</li>
+<li>“flat” → could have <span class="alert">low perplexity</span>!</li>
 </ul>
-<p><span class="alert">Perplexity measures how well language flows, not whether statements are true.</span></p>
+<p><span class="alert">Fluent text can still be false</span></p>
 </div>
 </div>
 </div></div>
@@ -660,27 +645,23 @@ Actual: <span style="color: #457b9d;">Healthy</span>
 <section id="llm-as-a-judge" class="slide level2">
 <h2>LLM-as-a-Judge</h2>
 <h3 id="using-ai-to-evaluate-ai">Using AI to evaluate AI</h3>
-<div style="margin-top: 30px; font-size: 21px;">
+<div style="margin-top: 30px; font-size: 22px;">
 <div class="columns">
 <div class="column" style="width:50%;">
 <ul>
 <li>Use a <span class="alert">powerful LLM</span> to grade responses from other models</li>
 <li>Give the judge a <span class="alert">rubric</span> (evaluation criteria) and examples</li>
-<li>The judge scores responses on dimensions like:
-<ul>
-<li>Helpfulness, accuracy, relevance, safety</li>
-</ul></li>
+<li>It scores helpfulness, accuracy, relevance and safety</li>
 <li><strong>Why it works</strong>:
 <ul>
-<li><span class="alert">Evaluating</span> is often easier than <span class="alert">generating</span></li>
-<li>Scales infinitely (no human bottleneck)</li>
-<li>Can evaluate subjective qualities</li>
+<li><span class="alert">evaluating</span> is often easier than <span class="alert">generating</span></li>
+<li>scales with no human bottleneck</li>
+<li>handles subjective qualities</li>
 </ul></li>
 <li><strong>The catch</strong>:
 <ul>
-<li>The judge is only as good as <span class="alert">its own capabilities</span></li>
-<li>Potential biases: May favour its own style</li>
-<li>Need a strong judge (often GPT-5 or Claude)</li>
+<li>the judge is only as good as <span class="alert">its own capabilities</span>, so use a strong one (often GPT-5 or Claude)</li>
+<li>it may favour its own style</li>
 </ul></li>
 </ul>
 </div><div class="column" style="width:50%;">
@@ -714,29 +695,28 @@ Actual: <span style="color: #457b9d;">Healthy</span>
 <section id="g-eval-a-practical-framework" class="slide level2 scrollable">
 <h2>G-Eval: A practical framework</h2>
 <h3 id="chain-of-thought-evaluation">Chain-of-thought evaluation</h3>
-<div style="margin-top: 30px; font-size: 21px;">
+<div style="margin-top: 30px; font-size: 23px;">
 <div class="columns">
 <div class="column" style="width:55%;">
 <ul>
 <li><a href="https://arxiv.org/pdf/2303.16634.pdf">G-Eval</a> is a popular method for custom LLM evaluation</li>
 <li><strong>How it works</strong>:
 <ol type="1">
-<li>Define your <span class="alert">evaluation criteria</span> (e.g., coherence, relevance)</li>
-<li>The LLM generates <span class="alert">evaluation steps</span> using chain-of-thought</li>
-<li>Apply these steps to score the output (typically 1-5)</li>
+<li>define your <span class="alert">evaluation criteria</span> (e.g., coherence, relevance)</li>
+<li>the LLM generates <span class="alert">evaluation steps</span> using chain-of-thought</li>
+<li>apply those steps to score the output (typically 1-5)</li>
 </ol></li>
-<li><strong>Example criteria</strong>: “Coherence: The collective quality of all sentences in the actual output”</li>
-<li><strong>Why it’s useful</strong>:
+<li><strong>Example criterion</strong>: “Coherence: The collective quality of all sentences in the actual output”</li>
+<li><strong>Why it helps</strong>:
 <ul>
-<li>Creates <span class="alert">task-specific metrics</span> on the fly</li>
-<li>The LLM “thinks through” how to evaluate</li>
-<li>Better alignment with human judgement than simpler metrics</li>
+<li>builds <span class="alert">task-specific metrics</span> on the fly</li>
+<li>matches human judgement better than simpler metrics</li>
 </ul></li>
 </ul>
 </div><div class="column" style="width:45%;">
 <div style="text-align: center;">
 <p><strong>G-Eval in action:</strong></p>
-<div style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; text-align: left; font-size: 18px;">
+<div style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; text-align: left; font-size: 20px;">
 <p><strong>Step 1</strong>: Define criterion</p>
 <p><em>“Rate coherence from 1-5”</em></p>
 <p><strong>Step 2</strong>: LLM generates steps</p>
@@ -756,26 +736,24 @@ Actual: <span style="color: #457b9d;">Healthy</span>
 <section id="what-are-hallucinations" class="slide level2">
 <h2>What are hallucinations?</h2>
 <h3 id="when-ai-confidently-makes-things-up">When AI confidently makes things up</h3>
-<div style="margin-top: 30px; font-size: 22px;">
+<div style="margin-top: 30px; font-size: 23px;">
 <div class="columns">
 <div class="column" style="width:55%;">
 <ul>
-<li><a href="https://en.wikipedia.org/wiki/Hallucination_(artificial_intelligence)">Hallucination</a>: AI output that is fluent but factually incorrect or fabricated</li>
-<li>The model generates plausible-sounding content that <span class="alert">isn’t grounded in reality</span></li>
+<li><a href="https://en.wikipedia.org/wiki/Hallucination_(artificial_intelligence)">Hallucination</a>: fluent AI output that is factually wrong or fabricated</li>
 <li>Common forms:
 <ul>
-<li><strong>Fabricated citations</strong>: Inventing papers that don’t exist</li>
+<li><strong>Fabricated citations</strong>: papers that don’t exist</li>
 <li><strong>Made-up statistics</strong>: “73% of scientists agree…”</li>
-<li><strong>False biographical details</strong>: Wrong dates, events, achievements</li>
-<li><strong>Confident nonsense</strong>: Eloquent explanations of things that are simply wrong</li>
+<li><strong>False biographical details</strong>: wrong dates, events, achievements</li>
+<li><strong>Confident nonsense</strong>: eloquent explanations of things that are simply wrong</li>
 </ul></li>
-<li><span class="alert">This is one of the biggest challenges</span> in deploying language models</li>
-<li>Why? Because they’re trained to predict <span class="alert">likely text</span>, not <span class="alert">true text</span></li>
+<li><span class="alert">One of the biggest challenges</span> in deploying language models</li>
+<li>Models are trained to predict <span class="alert">likely text</span>, not <span class="alert">true text</span></li>
 </ul>
 </div><div class="column" style="width:45%;">
-<div style="text-align: center;">
-<p><span class="alert">Please remember that:</span></p>
-<p>Models optimise for:</p>
+<div style="text-align: center; margin-top: -20px;">
+<p><span class="alert">Models optimise for:</span></p>
 <p><code>P(next word | context)</code></p>
 <p>Not for:</p>
 <p><code>P(statement is true)</code></p>
@@ -793,32 +771,36 @@ Actual: <span style="color: #457b9d;">Healthy</span>
 <section id="real-world-consequences" class="slide level2">
 <h2>Real-world consequences</h2>
 <h3 id="why-hallucinations-matter">Why hallucinations matter</h3>
-<div style="margin-top: 30px; font-size: 20px;">
+<div style="margin-top: 30px; font-size: 22px;">
 <div class="columns">
 <div class="column" style="width:55%;">
 <p><strong>Notable incidents (all real!):</strong></p>
 <ul>
-<li><p>⚖️ <strong>Legal</strong> (2023): <a href="https://www.theguardian.com/technology/2023/jun/23/two-us-lawyers-fined-submitting-fake-court-citations-chatgpt">Two lawyers submitted a brief citing <span class="alert">six non-existent cases</span> generated by ChatGPT. They were sanctioned by the court.</a></p></li>
-<li><p>🏥 <strong>Medical</strong>: <a href="https://www.mountsinai.org/about/newsroom/2025/ai-chatbots-can-run-with-medical-misinformation-study-finds-highlighting-the-need-for-stronger-safeguards">AI chatbots have provided <span class="alert">dangerous health advice</span> citing fabricated studies</a></p></li>
-<li><p>📰 <strong>News</strong>: <a href="https://www.nytimes.com/2023/05/23/business/ai-picture-stock-market.html">AI-generated fake news stories have <span class="alert">moved stock prices</span></a></p></li>
-<li><p>📚 <strong>Academic</strong>: <a href="https://teche.mq.edu.au/2023/02/why-does-chatgpt-generate-fake-references/">Students have submitted essays with <span class="alert">entirely invented references</span></a></p></li>
-<li><p>More people trusting AI outputs without verification</p></li>
-<li><p>Harder for non-experts to spot fabrications</p></li>
-<li><p>Legal and reputational risks for organisations</p></li>
+<li><p>⚖️ <strong>Legal</strong> (2023): <a href="https://www.theguardian.com/technology/2023/jun/23/two-us-lawyers-fined-submitting-fake-court-citations-chatgpt">two lawyers were sanctioned for a brief citing <span class="alert">six non-existent cases</span> from ChatGPT</a></p></li>
+<li><p>🏥 <strong>Medical</strong>: <a href="https://www.mountsinai.org/about/newsroom/2025/ai-chatbots-can-run-with-medical-misinformation-study-finds-highlighting-the-need-for-stronger-safeguards">chatbots gave <span class="alert">dangerous health advice</span> citing fabricated studies</a></p></li>
+<li><p>📰 <strong>News</strong>: <a href="https://www.nytimes.com/2023/05/23/business/ai-picture-stock-market.html">AI-generated fake news <span class="alert">moved stock prices</span></a></p></li>
+<li><p>📚 <strong>Academic</strong>: <a href="https://teche.mq.edu.au/2023/02/why-does-chatgpt-generate-fake-references/">students submitted essays with <span class="alert">entirely invented references</span></a></p></li>
+<li><p>More people trust AI outputs without checking them</p></li>
+<li><p>Non-experts struggle to spot fabrications</p></li>
+<li><p>Organisations face legal and reputational risks</p></li>
 </ul>
 </div><div class="column" style="width:45%;">
 <div style="text-align: center;">
 <p><strong>Discussion question:</strong></p>
-<p>How would you verify if an AI’s answer is correct?</p>
+<p>How would you check if an AI’s answer is correct?</p>
 <ul>
 <li>Check primary sources?</li>
 <li>Ask another AI?</li>
 <li>Trust your intuition?</li>
-<li>Rely on reputation of the AI company?</li>
+<li>Rely on the AI company’s reputation?</li>
 </ul>
-<p><br></p>
+<div style="margin-top: 50px;">
+
+</div>
 <p><span class="alert">Always check the sources yourself!</span></p>
-<p><br></p>
+<div style="margin-top: 50px;">
+
+</div>
 <p>🎬 Watch: <a href="https://www.youtube.com/watch?v=cfqtFvWOfg0">IBM Explains AI Hallucinations</a> (5 min)</p>
 </div>
 </div></div>
@@ -831,24 +813,24 @@ Actual: <span style="color: #457b9d;">Healthy</span>
 <div class="columns">
 <div class="column" style="width:55%;">
 <ul>
-<li><span class="alert">RAG</span>: Instead of relying on “memory”, the model <span class="alert">looks things up</span></li>
+<li><span class="alert">RAG</span>: the model <span class="alert">looks things up</span> instead of relying on memory</li>
 <li><strong>How it works</strong>:
 <ol type="1">
-<li>User asks a question</li>
-<li>System <span class="alert">retrieves</span> relevant documents from a knowledge base</li>
-<li>LLM generates answer using <span class="alert">retrieved context</span></li>
-<li>Answer includes citations to sources</li>
+<li>the user asks a question</li>
+<li>the system <span class="alert">retrieves</span> relevant documents from a knowledge base</li>
+<li>the LLM answers using the <span class="alert">retrieved context</span></li>
+<li>the answer cites its sources</li>
 </ol></li>
-<li><strong>RAG reduces hallucinations</strong>:
+<li><strong>Why it reduces hallucinations</strong>:
 <ul>
-<li>Model must base answers on <span class="alert">actual documents</span></li>
-<li>Easier to audit and update knowledge</li>
+<li>answers must rest on <span class="alert">actual documents</span></li>
+<li>knowledge is easier to audit and update</li>
 </ul></li>
 <li><strong>Evaluation metrics for RAG</strong>:
 <ul>
-<li><strong>Faithfulness</strong>: Does it stick to what docs say?</li>
-<li><strong>Answer relevancy</strong>: Does it address the question?</li>
-<li><strong>Contextual relevancy</strong>: Were the right docs retrieved?</li>
+<li><strong>Faithfulness</strong>: does it stick to what the docs say?</li>
+<li><strong>Answer relevancy</strong>: does it address the question?</li>
+<li><strong>Contextual relevancy</strong>: were the right docs retrieved?</li>
 </ul></li>
 </ul>
 </div><div class="column" style="width:45%;">
@@ -885,35 +867,34 @@ Actual: <span style="color: #457b9d;">Healthy</span>
 <section id="red-teaming-adversarial-evaluation" class="slide level2">
 <h2>Red teaming: Adversarial evaluation</h2>
 <h3 id="finding-weaknesses-before-they-find-you">Finding weaknesses before they find you</h3>
-<div style="margin-top: 30px; font-size: 20px;">
+<div style="margin-top: 30px; font-size: 22px;">
 <div class="columns">
 <div class="column" style="width:55%;">
 <ul>
-<li><span class="alert">Red teaming</span>: Deliberately trying to make the AI fail or behave badly</li>
-<li>Like hiring hackers to test your security!</li>
+<li><span class="alert">Red teaming</span>: deliberately trying to make the AI fail, like hiring hackers to test your security</li>
 <li><strong>What red teamers look for</strong>:
 <ul>
-<li>Harmful or unsafe outputs</li>
-<li>Jailbreaks (bypassing safety guardrails)</li>
-<li>Bias and offensive content</li>
-<li>Factual errors and hallucinations</li>
+<li>harmful or unsafe outputs</li>
+<li>jailbreaks (bypassing safety guardrails)</li>
+<li>bias and offensive content</li>
+<li>factual errors and hallucinations</li>
 </ul></li>
-<li><strong>Manual red teaming</strong>: Humans craft tricky prompts
+<li><strong>Manual red teaming</strong>: humans craft tricky prompts
 <ul>
-<li>Gold standard but expensive and slow</li>
+<li>gold standard, but expensive and slow</li>
 </ul></li>
-<li><span class="alert">AI-Assisted Red Teaming (AART)</span>: Use AI to generate adversarial test cases automatically
+<li><span class="alert">AI-Assisted Red Teaming (AART)</span>: AI generates adversarial test cases automatically
 <ul>
-<li>Scales up testing dramatically</li>
-<li>Covers diverse cultural and geographic contexts</li>
+<li>scales testing up sharply</li>
+<li>covers diverse cultural and geographic contexts</li>
 <li><a href="https://arxiv.org/abs/2311.08592">Paper: AART (2023)</a></li>
 </ul></li>
 </ul>
 </div><div class="column" style="width:45%;">
 <div style="text-align: center;">
 <div style="background: rgba(230, 57, 70, 0.1); padding: 15px; border-radius: 10px; text-align: left; font-size: 18px;">
-<p>🔴 <strong>Without red teaming</strong>: Vulnerabilities discovered by users in production → Reputational damage, harm, legal liability</p>
-<p>🟢 <strong>With red teaming</strong>: Vulnerabilities found before deployment → Fixes applied proactively → Safer, more reliable models</p>
+<p>🔴 <strong>Without red teaming</strong>: Users find the vulnerabilities in production → reputational damage, harm, legal liability</p>
+<p>🟢 <strong>With red teaming</strong>: You find them before deployment → fixes applied early → safer, more reliable models</p>
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -941,9 +922,9 @@ Actual: <span style="color: #457b9d;">Healthy</span>
 <p><a href="https://en.wikipedia.org/wiki/Goodhart%27s_law">Goodhart’s Law</a>: <span class="alert">“When a measure becomes a target, it ceases to be a good measure”</span></p>
 <p><strong>Common problems:</strong></p>
 <ul>
-<li><strong>Benchmark contamination</strong>: Test data leaks into training</li>
-<li><strong>Teaching to the test</strong>: Optimising for quirks, not capability</li>
-<li><strong>Metric saturation</strong>: “Human-level” on benchmarks, fails in real-world</li>
+<li><strong>Benchmark contamination</strong>: test data leaks into training</li>
+<li><strong>Teaching to the test</strong>: optimising for quirks, not capability</li>
+<li><strong>Metric saturation</strong>: “human-level” on benchmarks, fails in the real world</li>
 </ul>
 <p><strong>What benchmarks miss:</strong> Robustness, safety, creativity, long-horizon reasoning</p>
 </div><div class="column" style="width:45%;">
@@ -963,15 +944,15 @@ Actual: <span style="color: #457b9d;">Healthy</span>
 <section id="benchmark-contamination-in-practice" class="slide level2">
 <h2>Benchmark contamination in practice</h2>
 <h3 id="when-the-model-finds-the-answer-key">When the model finds the answer key</h3>
-<div style="margin-top: 30px; font-size: 22px;">
+<div style="margin-top: 30px; font-size: 25px;">
 <div class="columns">
 <div class="column" style="width:55%;">
 <ul>
-<li>In 2025, Anthropic discovered that <span class="alert">Claude Opus independently identified it was being evaluated</span> on BrowseComp, a benchmark by OpenAI</li>
-<li>The model <span class="alert">located the answer key online and used it</span> to solve the evaluation</li>
-<li>This is a new form of <span class="alert">benchmark contamination</span>: the model is not trained on the answers, but finds them during the test</li>
-<li>Raises questions about the <span class="alert">validity of benchmarks</span> that assume models cannot access external information</li>
-<li>As models become more capable, <span class="alert">evaluation itself becomes harder</span></li>
+<li>In 2025, Anthropic found that <span class="alert">Claude Opus worked out on its own that it was being evaluated</span> on BrowseComp, an OpenAI benchmark</li>
+<li>The model <span class="alert">found the answer key online and used it</span></li>
+<li>A new form of <span class="alert">benchmark contamination</span>: the model is not trained on the answers, it finds them during the test</li>
+<li>This threatens the <span class="alert">validity of benchmarks</span> that assume models cannot reach external information</li>
+<li>As models get more capable, <span class="alert">evaluation itself gets harder</span></li>
 </ul>
 </div><div class="column" style="width:45%;">
 <div style="text-align: center;">
@@ -994,22 +975,20 @@ Actual: <span style="color: #457b9d;">Healthy</span>
 <section id="fairness-when-overall-accuracy-hides-problems" class="slide level2">
 <h2>Fairness: When overall accuracy hides problems</h2>
 <h3 id="the-disaggregation-imperative">The disaggregation imperative</h3>
-<div style="margin-top: 30px; font-size: 22px;">
+<div style="margin-top: 30px; font-size: 24px;">
 <div class="columns">
 <div class="column" style="width:55%;">
 <ul>
 <li>Overall accuracy can hide <span class="alert">serious failures for specific groups</span></li>
-<li><strong>Real example</strong> <a href="https://proceedings.mlr.press/v81/buolamwini18a/buolamwini18a.pdf">(Buolamwini &amp; Gebru, 2018)</a>:
+<li><strong>Real example</strong> <a href="https://proceedings.mlr.press/v81/buolamwini18a/buolamwini18a.pdf">(Buolamwini &amp; Gebru, 2018)</a>, commercial face recognition:
 <ul>
-<li>Commercial face recognition error rates:</li>
-<li>Light-skinned men: <span class="alert">0.8% error</span></li>
-<li>Dark-skinned women: <span class="alert">34.7% error</span></li>
-<li>43× worse performance for one group!</li>
+<li>light-skinned men: <span class="alert">0.8% error</span></li>
+<li>dark-skinned women: <span class="alert">34.7% error</span></li>
+<li>43× worse for one group!</li>
 </ul></li>
-<li>This is called <span class="alert">data slicing</span> or <span class="alert">subgroup analysis</span></li>
-<li>The model “works” overall, but <span class="alert">fails for specific populations</span></li>
-<li>Even removing sensitive features doesn’t help—they <span class="alert">correlate with other features</span></li>
-<li><span class="alert">Always evaluate models per subgroup, not just overall</span></li>
+<li>Checking per group is called <span class="alert">data slicing</span> or <span class="alert">subgroup analysis</span></li>
+<li>Dropping sensitive features does not fix this, they <span class="alert">correlate with other features</span></li>
+<li><span class="alert">Always evaluate per subgroup, never only overall</span></li>
 </ul>
 </div><div class="column" style="width:45%;">
 <div style="text-align: center;">
@@ -1026,34 +1005,34 @@ Actual: <span style="color: #457b9d;">Healthy</span>
 </section></section>
 <section>
 <section id="summary" class="title-slide slide level1 center" data-background-color="#1B3A6B">
-<h1>Summary ✅</h1>
+<h1>Summary</h1>
 
 </section>
 <section id="main-takeaways" class="slide level2">
 <h2>Main takeaways</h2>
-<div style="margin-top: 20px; font-size: 20px;">
+<div style="margin-top: 20px; font-size: 21px;">
 <div class="columns">
 <div class="column" style="width:55%;">
 <p><strong>Traditional ML Metrics</strong>:</p>
 <ul>
-<li><span class="alert">Accuracy is not enough</span>: Especially dangerous with class imbalance</li>
-<li><span class="alert">Precision/Recall trade-off</span>: Choose based on false positive vs.&nbsp;false negative costs</li>
+<li><span class="alert">Accuracy is not enough</span>: dangerous with class imbalance</li>
+<li><span class="alert">Precision/recall trade-off</span>: choose by false positive vs false negative costs</li>
 <li>Use <span class="alert">cross-validation</span> and keep a truly unseen test set</li>
 </ul>
 <p><strong>LLM Evaluation</strong>:</p>
 <ul>
-<li><span class="alert">Perplexity ≠ truth</span>: Fluent text can still be wrong</li>
-<li><span class="alert">LLM-as-a-Judge and G-Eval</span>: Scalable evaluation with rubrics</li>
-<li><span class="alert">RAG</span>: Ground answers in documents to reduce hallucinations</li>
-<li><span class="alert">Red teaming</span>: Proactively find vulnerabilities before users do</li>
+<li><span class="alert">Perplexity ≠ truth</span>: fluent text can still be wrong</li>
+<li><span class="alert">LLM-as-a-Judge and G-Eval</span>: scalable evaluation with rubrics</li>
+<li><span class="alert">RAG</span>: ground answers in documents to cut hallucinations</li>
+<li><span class="alert">Red teaming</span>: find vulnerabilities before users do</li>
 <li><span class="alert">Benchmarks have limits</span>: Goodhart’s Law and “benchmaxxing”</li>
-<li><span class="alert">Subgroup analysis</span>: Always look beyond averages</li>
+<li><span class="alert">Subgroup analysis</span>: always look beyond averages</li>
 </ul>
 </div><div class="column" style="width:45%;">
 <div style="text-align: center; margin-top: 20px;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><a href="#/" data-modal-type="image" data-modal-url="figures/evaluation-bear-meme.png"><img data-src="figures/evaluation-bear-meme.png" style="width:80.0%"></a></p>
+<p><a href="#/" data-modal-type="image" data-modal-url="figures/evaluation-bear-meme.png"><img data-src="figures/evaluation-bear-meme.png" style="width:70.0%"></a></p>
 <figcaption>Oh well 😄</figcaption>
 </figure>
 </div>
