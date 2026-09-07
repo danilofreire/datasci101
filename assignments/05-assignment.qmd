@@ -14,7 +14,7 @@ This assignment covers material from **Lectures 10-11**: Prompt Engineering, and
 
 **Guidelines:**
 
-- You are **encouraged** to use ChatGPT, Claude, Gemini, or other LLMs to help you explore these questions. Question 5 must be done in Google AI Studio (instructions below)
+- You are **encouraged** to use ChatGPT, Claude, Gemini, or other LLMs to help you explore these questions
 - However, you must **write your answers in your own words** and demonstrate genuine understanding
 - Please **disclose which AI tool you used** for each question
 - Your answers should be thoughtful and show critical thinking, not just copy-pasted LLM outputs
@@ -199,40 +199,7 @@ Models write in a recognisable house style. Lecture 10 showed that examples in a
 
 ---
 
-### Question 5: What does it know about us?
-
-Lecture 11 explained that a model can only be right about what was in its training data, and that it fills gaps with plausible patterns. This course is a good test: our slides are (probably) not in any model's training data.
-
-**Setup.** Go to [aistudio.google.com](https://aistudio.google.com/) and sign in. In the settings panel, turn **off** any web search or grounding option and set the thinking or reasoning level to its lowest setting. We want the model's memory, not a search result. If you cannot find a setting, say so in your answer and carry on.
-
-**Your task:**
-
-1. In a new chat, ask: *"Describe DATASCI 101, Introduction to AI Applications, at Emory University. What topics does it cover, how is it assessed, and what was covered in lecture 02?"* Copy the response.
-2. Open the [syllabus](https://danilofreire.github.io/datasci101/) and check the response sentence by sentence. Mark each sentence as **True**, **False**, or **Unverifiable** (too vague to check either way).
-
-**Report:**
-
-| Response | True sentences | False sentences | Unverifiable sentences | Did the model say it was unsure? |
-|---|:---:|:---:|:---:|:---:|
-| Course description | | | | |
-| Lecture 02 | | | | |
-
-**Analysis:**
-
-- Quote the most confident false sentence. Where do you think it came from? (Lecture 11 called this interpolation: filling a gap with what similar courses usually contain)
-- If the model refused or said it did not know, was that the right response? What would it take for a model to answer this question correctly?
-
----
-
-*Your answer:*
-
-\
-\
-\
-
----
-
-### Question 6: Real-world failures
+### Question 5: Real-world failures
 
 Lecture 11 presented three categories of real-world hallucination failures: **legal** (fake case citations), **medical** (wrong drug advice; Hadi et al. 2024 found 51% of medical answers incorrect) and **academic** (fabricated sources).
 
