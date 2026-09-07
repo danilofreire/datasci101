@@ -79,15 +79,15 @@ if (!require("fontawesome", character.only = TRUE)) {
 ### Important links
 
 ::: {style="font-size: 26px;"}
-`r fa('globe')` [Course website:]{.alert} <https://danilofreire.github.io/datasci101>
+[Course website:]{.alert} <https://danilofreire.github.io/datasci101>
 
-`r fa('github')` Course repository: <https://github.com/danilofreire/datasci101>
+Course repository: <https://github.com/danilofreire/datasci101>
 
-The website is [the main hub for your learning]{.alert}, while the assignments and group work files will be available on the repository
+The website is [the main hub for your learning]{.alert}. Assignments and group work files live in the repository
 
-We will use Canvas for course administration, including submitting assignments, accessing grades, and receiving announcements
+Canvas handles course administration: assignment submission, grades, and announcements
 
-Please take some time to get to know both platforms, and reach out if you have any questions
+Please get to know both platforms, and ask me if you have questions 😉
 
 ::: {.callout-note}
 Please remember to check the course repository regularly for updates and announcements!
@@ -104,21 +104,21 @@ Please remember to check the course repository regularly for updates and announc
 <img src="figures/profile.jpg" alt="Danilo Freire" width="200" height="200" align="center"/>
 
 ::: {style="font-size: 26px;"}
-`r fa('envelope')` [danilo.freire@emory.edu](mailto:danilo.freire@emory.edu)
+[danilo.freire@emory.edu](mailto:danilo.freire@emory.edu)
 
-`r fa('globe')` <https://danilofreire.github.io/>
+<https://danilofreire.github.io/>
 
-`r fa('github')` <https://github.com/danilofreire/>
+<https://github.com/danilofreire/>
 :::
 :::
 
 :::{.column}
 :::{style="font-size: 28px;"}
-`r fa('chalkboard-user')` Visiting Assistant Professor in the [Department of Data and Decision Sciences](https://quantitative.emory.edu)
+Visiting Assistant Professor in the [Department of Data and Decision Sciences](https://quantitative.emory.edu)
 
-`r fa('graduation-cap')` MA from the Graduate Institute Geneva, PhD from King's College London, Postdoc at Brown University, Senior Lecturer at the University of Lincoln, UK
+MA from the Graduate Institute Geneva, PhD from King's College London, Postdoc at Brown University, Senior Lecturer at the University of Lincoln, UK
 
-`r fa('book-open')` Research interests: computational social science, experimental methods, policy evaluation, political violence, organised crime
+Research interests: computational social science, experimental methods, policy evaluation, political violence, organised crime
 :::
 :::
 ::::
@@ -141,30 +141,28 @@ Please remember to check the course repository regularly for updates and announc
 
 - Now it's your turn! 😉
 
-- Please introduce yourself! 👋
-
-- Tell us your name, your major, and what would you like to learn in this course!
+- Tell us your name, your major, and what you would like to learn in this course! 👋
 :::
 
 ## My teaching philosophy
 
 :::{style="margin-top: 60px; font-size: 36px;"}
 
-- I love teaching and aim to make learning fun 
+- I love teaching and aim to make learning fun
 - Classes where students participate are the best!
 - Hands-on activities help you learn better
-- I am always available to help and answer questions. [And I mean it!]{.alert}
-- Your feedback helps me improve my teaching. Please let me know what is working and what is not 😉
+- I am always available to help. [And I mean it!]{.alert}
+- Tell me what is working and what is not 😉
 :::
 
 ## Teaching assistants
 
 :::{style="margin-top: 60px; font-size: 34px;"}
-- The teaching assistants for this course will be announced soon
+- The teaching assistants will be announced soon
 
-- They will be available to help you with assignments, quizzes, and any questions you may have about the course material
+- They can help you with assignments, quizzes, and any questions about the course material
 
-- [We are all here to help you!]{.alert} So feel free to ask questions during class, office hours, or via email 😃
+- [We are all here to help you!]{.alert} Ask questions in class, in office hours, or by email 😃
 :::
 
 ## Office hours
@@ -173,13 +171,13 @@ Please remember to check the course repository regularly for updates and announc
 :::{style="margin-top: 60px;"}
 :::
 
-- What office hours are meant for:
+- What office hours are for:
   - Applying tools in practice
-  - Discussion of issues related to the assignments
-  - Boosting your knowledge of AI and data science more generally
+  - Discussing problems with the assignments
+  - Building your knowledge of AI and data science more generally
 
 :::{.fragment .fade-in}
-- What these sessions are [not]{.alert} meant for: 
+- What they are [not]{.alert} for:
     - Summarising lecture content
     - Solving the assignments for you
 :::
@@ -190,8 +188,8 @@ Please remember to check the course repository regularly for updates and announc
 
 :::{.columns}
 :::{.column width=60%}
-- Learning a new topic can be tough and push you out of your comfort zone. If the course pace is too fast, let me know. I expect your commitment, but [I do not want anyone to fail]{.alert}
-- You are all keen on AI, but your backgrounds may vary. That is great! Some sessions might be more engaging than others. If you are bored, [help others]{.alert} or explore additional resources (we have plenty!)
+- A new topic can push you out of your comfort zone. If the pace is too fast, tell me. I expect your commitment, but [I do not want anyone to fail]{.alert}
+- Your backgrounds vary, so some sessions will suit you better than others. If you are bored, [help others]{.alert} or explore the extra resources (we have plenty!)
 - [Please be respectful]{.alert} to each other
 - [Ask questions]{.alert} whenever you need to!
 :::
@@ -217,8 +215,8 @@ By the end of this course, you will be able to:
 
 - [Read and assess]{.alert} claims about AI in news articles, product pages and policy documents
 
-- [Design]{.alert} a small, realistic plan for an AI application, including data needs, evaluation, and a basic harm-mitigation strategy 
-  
+- [Design]{.alert} a small, realistic plan for an AI application: data needs, evaluation, and a basic harm-mitigation strategy
+
 - [Reflect critically]{.alert} on ethical, legal and social questions raised by AI deployment
 :::
 :::
@@ -244,26 +242,26 @@ By the end of this course, you will be able to:
 :::{style="margin-top: 40px; font-size: 31px;"}
 - We're starting a new AI track in the Data Science curriculum! 🚀
 
-- This is the second offering of DATASCI 101 — help us make it great! 🙂
+- This is the second offering of DATASCI 101, so help us make it great! 🙂
 
-- Why is this course different from others?
-  - [Non-technical approach:]{.alert} No heavy maths or programming required
-  - [Critical perspective:]{.alert} Learn to ask the right questions about AI
-  - [Real-world focus:]{.alert} Learn how AI is applied in practice
-  - [For all backgrounds:]{.alert} Whether you're a humanities or STEM student, this course is for you!
+- Why is this course different?
+  - [Non-technical approach:]{.alert} no heavy maths or programming required
+  - [Critical perspective:]{.alert} learn to ask the right questions about AI
+  - [Real-world focus:]{.alert} learn how AI is used in practice
+  - [For all backgrounds:]{.alert} humanities or STEM, this course is for you!
 :::
 
 ## Logistics
 ### Course information
 
-:::{style="margin-top: 40px; font-size: 24px;"}
-- [Syllabus:]{.alert} Available on our [course repository](https://github.com/danilofreire/datasci101/blob/main/syllabus.pdf) and [website](https://danilofreire.github.io/datasci101/syllabus.html). The course is designed to be self-contained
-- The syllabus and the website includes links to the slides we will use in class, along with recommended readings, and problem sets
-- I may update the slides as the course progresses, so please check the website regularly for updates
-- [Schedule:]{.alert} Lectures are on Tuesdays and Thursdays from 2:30 to 3:20 pm in [White Hall 206](https://maps.app.goo.gl/gynyTUkKqJ7meGjm8)
-- [Office Hours:]{.alert} We're always happy to help. Please [reach out to the TAs or me]{.alert} via email to schedule a time
+:::{style="margin-top: 40px; font-size: 28px;"}
+- [Syllabus:]{.alert} on the [course repository](https://github.com/danilofreire/datasci101/blob/main/syllabus.pdf) and the [website](https://danilofreire.github.io/datasci101/syllabus.html). The course is self-contained
+- Both link to the class slides, the recommended readings and the problem sets
+- I may update the slides during the term, so check the website regularly
+- [Schedule:]{.alert} Tuesdays and Thursdays, 2:30 to 3:20 pm, in [White Hall 206](https://maps.app.goo.gl/gynyTUkKqJ7meGjm8)
+- [Office Hours:]{.alert} email [the TAs or me]{.alert} to schedule a time
 
-- [Materials (recap):]{.alert} All course materials will be available on:
+- [Materials (recap):]{.alert} everything is available on:
     - Course repository: <https://github.com/danilofreire/datasci101>
     - Course website: <https://danilofreire.github.io/datasci101>
     - Canvas
@@ -274,27 +272,26 @@ By the end of this course, you will be able to:
 
 :::{style="margin-top: 40px; font-size: 30px;"}
 
-- [Problem sets:]{.alert} Ten of them, due on Thursdays at 11:59 pm (50%)
-- [In-class quizzes:]{.alert} Five of them (30%)
-- [Final project:]{.alert} Due on the last day of class (20%)
+- [Problem sets:]{.alert} ten, due on Thursdays at 11:59 pm (50%)
+- [In-class quizzes:]{.alert} five (30%)
+- [Final project:]{.alert} due on the last day of class (20%)
 - [Late policy:]{.alert} 10% off per day late
-- [Collaboration:]{.alert} You can discuss assignments with your classmates, but you must write your own code and submit your own work. AI is allowed, but you must disclose its use and ensure you understand the output
-- [Academic integrity:]{.alert} Please refer to the syllabus for the university's policy on academic integrity
+- [Collaboration:]{.alert} discuss with classmates, but write your own code and submit your own work. AI is allowed if you disclose its use and understand the output
+- [Academic integrity:]{.alert} see the syllabus for the university's policy
 :::
 
 # Motivation: <br> What is AI anyway? 🤖 {background-color="#1B3A6B"}
 
 ## What is AI?
 
-:::{style="margin-top: 40px; font-size: 27px;"}
+:::{style="margin-top: 40px; font-size: 28px;"}
 :::{.incremental}
-- A simple definition: [Artificial Intelligence (AI) is a branch of computer science focused on creating systems capable of performing tasks that typically require human intelligence]{.alert} 
-- These tasks include learning, reasoning, problem-solving, perception, language understanding, and many more!
-- AI can be classified into [three main categories:]{.alert} 
-    - [Narrow AI:]{.alert} Designed for specific tasks (e.g., virtual assistants, recommendation systems)
-    - [General AI:]{.alert} Hypothetical systems that possess human-like intelligence across a wide range of tasks
-    - [Superintelligent AI:]{.alert} Surpasses human intelligence in all aspects (still theoretical)
-- AI is powered by various techniques, including [machine learning, deep learning, and natural language processing]{.alert}
+- A simple definition: [Artificial Intelligence (AI) is a branch of computer science that builds systems able to do tasks that usually require human intelligence]{.alert}
+- Those tasks include learning, reasoning, problem-solving, perception and language understanding
+- [Narrow AI:]{.alert} built for specific tasks (e.g., virtual assistants, recommendation systems)
+- [General AI:]{.alert} hypothetical systems with human-like intelligence across a wide range of tasks
+- [Superintelligent AI:]{.alert} surpasses human intelligence in all aspects (still theoretical)
+- The techniques behind AI include [machine learning, deep learning, and natural language processing]{.alert}
 :::
 :::
 
@@ -311,17 +308,17 @@ Source: [McKinsey & Company (2024)](https://www.mckinsey.com/featured-insights/m
 :::{style="margin-top: 40px; font-size: 20px;"}
 :::{.columns}
 :::{.column width=50%}
-- [AI already impacts many aspects of our daily lives:]{.alert} 
+- [AI already shapes daily life:]{.alert}
     - Virtual assistants (e.g., Siri, Alexa)
     - Recommendation systems (e.g., Netflix, Amazon)
     - Dating apps (e.g., Tinder, Bumble)
     - Social media algorithms (e.g., Facebook, Instagram)
-- [AI is transforming industries:]{.alert} 
+- [AI is changing industries:]{.alert}
     - Healthcare (e.g., diagnostics, personalised medicine)
     - Finance (e.g., fraud detection, algorithmic trading)
     - Transportation (e.g., autonomous vehicles, route optimisation)
     - Education (e.g., personalised learning, 24/7 tutoring)
-- Whether AI lives up to the hype or not, [it is already changing how many of these industries work]{.alert}
+- Hype or not, [these industries already work differently because of it]{.alert}
 :::
 
 :::{.column width=50%}
@@ -338,7 +335,7 @@ Source: [McKinsey & Company (2024)](https://www.mckinsey.com/featured-insights/m
 :::{.columns}
 :::{.column width=50%}
 - [What can AI actually do vs. what's hype?]{.alert}
-  - Can AI truly think or is it just pattern matching?
+  - Does AI think, or does it match patterns?
   - Why does AI sometimes give wrong answers?
   - What can and cannot be automated?
 
@@ -386,10 +383,10 @@ Source: [Artificial Intelligence Index Report (2025)](https://hai.stanford.edu/a
   - [False!]{.alert} AI predicts likely next tokens (what are they?)
 
 - [AI will replace all jobs]{.alert}
-  - [Probably not.]{.alert} AI transforms jobs more than it eliminates them
+  - [Probably not.]{.alert} AI changes jobs more than it removes them
 
 - [AI hallucinations are easy to spot]{.alert}
-  - [False!]{.alert} AI sometimes confidently states incorrect information, and it's not always obvious
+  - [False!]{.alert} AI states wrong information confidently, and it is not always obvious
 
 - [We can test AI systems by deliberately trying to trick them]{.alert}
   - [True!]{.alert} This is called adversarial testing or red-teaming
@@ -399,10 +396,10 @@ Source: [Artificial Intelligence Index Report (2025)](https://hai.stanford.edu/a
 :::{.column width=50%}
 :::{.incremental}
 - [AI systems that learn without any human labels exist]{.alert}
-  - [True!]{.alert} This is called unsupervised learning, and it finds hidden patterns automatically
+  - [True!]{.alert} This is unsupervised learning, and it finds hidden patterns automatically
 
 - [AI systems can explain why they made a particular decision]{.alert}
-  - [False!]{.alert} Many AI systems are "black boxes", that is, we don't know for sure how they came up with their answers
+  - [False!]{.alert} Many AI systems are "black boxes": we don't know for sure how they reached their answers
 
 - [The order of words in a sentence affects how AI processes it]{.alert}
   - [True!]{.alert} Attention mechanisms let models weigh the importance of different words
@@ -444,16 +441,16 @@ Source: [Artificial Intelligence Index Report (2025)](https://hai.stanford.edu/a
 
 ## Next class
 
-:::{style="margin-top: 40px; font-size: 24px;"}
+:::{style="margin-top: 40px; font-size: 25px;"}
 :::{.columns}
 :::{.column width=50%}
-- [Topic:]{.alert} A brief history of AI and the recent shift
+- [Topic:]{.alert} a brief history of AI and the recent shift
 - [What we'll cover:]{.alert}
   - From symbolic approaches to data-driven learning
-  - The transformer architecture explained in plain language
+  - The transformer architecture in plain language
   - How we got from early AI to ChatGPT
-- [Main takeaway:]{.alert} You can't make sense of ChatGPT without knowing the 70 years of ideas that led to it
-- [Preparation:]{.alert} Read the assigned articles on AI history and transformers
+- [Main takeaway:]{.alert} ChatGPT only makes sense against the 70 years of ideas that led to it
+- [Preparation:]{.alert} read the assigned articles on AI history and transformers
 :::
 
 :::{.column width=50%}

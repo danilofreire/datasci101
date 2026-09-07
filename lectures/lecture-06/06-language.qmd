@@ -54,13 +54,13 @@ if (!require("fontawesome", character.only = TRUE)) {
 :::{style="margin-top: 20px; font-size: 25px;"}
 :::{.columns}
 :::{.column width=50%}
-- We explored [model evaluation]{.alert} across two domains
-- **Traditional ML metrics**: Accuracy, precision, recall
+- We covered [model evaluation]{.alert} across two domains
+- [Traditional ML metrics]{.alert}: accuracy, precision, recall
 - The [accuracy paradox]{.alert}: 99.9% accuracy can be useless!
-- **Overfitting**: When models memorise instead of learn
-- **Cross-validation**: More reliable evaluation
-- **LLM evaluation**: Perplexity, LLM-as-a-Judge, G-Eval
-- **Hallucinations** and **RAG** for grounding answers
+- [Overfitting]{.alert}: models memorise instead of learn
+- [Cross-validation]{.alert}: more reliable evaluation
+- [LLM evaluation]{.alert}: perplexity, LLM-as-a-Judge, G-Eval
+- [Hallucinations]{.alert} and [RAG]{.alert} for grounding answers
 - Today: [How do LLMs actually understand language?]{.alert} 🤔
 :::
 
@@ -141,16 +141,16 @@ Source: <https://www.anthropic.com/research/AI-assistance-coding-skills>
 :::{style="margin-top: 30px; font-size: 22px;"}
 :::{.columns}
 :::{.column width=55%}
-- Here's something you probably know by now: [Computers only understand numbers]{.alert}
-- When you type "Hello, how are you?", the [LLM doesn't see letters!]{.alert}
+- [Computers only understand numbers]{.alert}
+- Type "Hello, how are you?" and the [LLM does not see letters]{.alert}
 - It sees something like: `[15496, 11, 703, 527, 499, 30]`
 - This creates a [translation problem]{.alert}:
-  - How do we convert text into numbers?
-  - How do we preserve [meaning]{.alert} in those numbers?
-  - How do we capture relationships between words?
-- The solution involves two key concepts:
-  - [Tokenisation]{.alert}: Breaking text into pieces
-  - [Embeddings]{.alert}: Converting pieces into meaningful vectors
+  - how do we convert text into numbers?
+  - how do we preserve [meaning]{.alert} in those numbers?
+  - how do we capture relationships between words?
+- Two concepts solve it:
+  - [Tokenisation]{.alert}: break text into pieces
+  - [Embeddings]{.alert}: turn pieces into meaningful vectors
 :::
 
 :::{.column width=45%}
@@ -168,15 +168,13 @@ Source: <https://www.anthropic.com/research/AI-assistance-coding-skills>
 :::{style="margin-top: 30px; font-size: 22px;"}
 :::{.columns}
 :::{.column width=55%}
-[How prompting really works:]{.alert}
-
 1. **Input text**: "The cat sat on the mat"
-2. **Tokenisation**: Break into tokens → `["The", "cat", "sat", "on", "the", "mat"]`
-3. **Token IDs**: Map to numbers → `[464, 3797, 3332, 319, 262, 2603]`
-4. **Embeddings**: Convert to vectors → Each token becomes a list of ~4,096 numbers!
-5. **Processing**: Pass through neural network layers
-6. **Output**: Generate next token probabilities
-7. **Decoding**: Convert back to text
+2. **Tokenisation**: break into tokens → `["The", "cat", "sat", "on", "the", "mat"]`
+3. **Token IDs**: map to numbers → `[464, 3797, 3332, 319, 262, 2603]`
+4. **Embeddings**: each token becomes a list of ~4,096 numbers!
+5. **Processing**: pass through neural network layers
+6. **Output**: generate next token probabilities
+7. **Decoding**: convert back to text
 
 [Your prompt goes through all of these steps before the model produces a single word]{.alert}
 :::
@@ -197,13 +195,13 @@ Source: [NanoBanana](https://gemini.google/overview/image-generation/)
 :::{style="margin-top: 30px; font-size: 22px;"}
 :::{.columns}
 :::{.column width=55%}
-Understanding the pipeline helps you:
+The pipeline helps you:
 
-- **Write better prompts**: Know what the model "sees"
-- **Understand costs**: API pricing is [per token]{.alert}, not per word
-- **Avoid surprises**: Some words use more tokens than others
-- **Debug issues**: Why did the model misunderstand?
-- **Use context wisely**: [Token limits]{.alert} are real constraints
+- [Write better prompts]{.alert}: know what the model "sees"
+- [Understand costs]{.alert}: API pricing is per token, not per word
+- [Avoid surprises]{.alert}: some words use more tokens than others
+- [Debug issues]{.alert}: why did the model misunderstand?
+- [Use context wisely]{.alert}: token limits are real constraints
 
 :::{style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; margin-top: 20px;"}
 **Fun fact**: The word "everything" is 1 token, but "ChatGPT" is 3 tokens in OpenAI's (old) tokeniser! 🤯
@@ -229,18 +227,16 @@ Source: [OpenAI](https://openai.com/api/pricing/)
 :::{style="margin-top: 30px; font-size: 22px;"}
 :::{.columns}
 :::{.column width=55%}
-- A [token]{.alert} is the basic unit that an LLM reads
-- Tokens are [NOT always words!]{.alert}
+- A [token]{.alert} is the basic unit an LLM reads
+- Tokens are [not always words]{.alert}
 - A token can be:
-  - A full word: "hello" → 1 token
-  - Part of a word: "unhappiness" → "un" + "happiness" (2 tokens)
-  - A single character: "!" → 1 token
-  - A space: " " → often included with the next word
-- Rule of thumb: [1 token ≈ 4 characters]{.alert} in English
-- Or roughly: [100 tokens ≈ 75 words]{.alert}
+  - a full word: "hello" → 1 token
+  - part of a word: "unhappiness" → "un" + "happiness" (2 tokens)
+  - a single character: "!" → 1 token
+  - a space: " " → often included with the next word
+- Rule of thumb: [1 token ≈ 4 characters]{.alert} in English, or [100 tokens ≈ 75 words]{.alert}
 - Other languages often use [more tokens]{.alert} per word
-- Let's try it out with "Hello, it's Danilo here!"
-- We'll use [OpenAI's tokenizer](https://platform.openai.com/tokenizer) for this example
+- Let's try "Hello, it's Danilo here!" in [OpenAI's tokenizer](https://platform.openai.com/tokenizer)
 :::
 
 :::{.column width=45%}
@@ -271,12 +267,10 @@ Source: [OpenAI Tokenizer](https://platform.openai.com/tokenizer)
 <br>
 
 - Modern LLMs use [Byte Pair Encoding (BPE)](https://huggingface.co/docs/transformers/tokenizer_summary#byte-pair-encoding)
-- Common subwords become single tokens
-- Rare words are split into known pieces
+- Common subwords become single tokens; rare words split into known pieces
 - This is why "ChatGPT" → ["Chat", "G", "PT"]
-- How does this save space?
-  - Example: "unbelievable", "unhappy", "undo", and "unknown" all share the same "un"
-  - The model only needs to store "un" once!
+- It also saves space: "unbelievable", "unhappy", "undo" and "unknown" share the same "un"
+- The model stores "un" only once!
 :::
 
 :::{.column width=45%}
@@ -286,8 +280,7 @@ Source: [OpenAI Tokenizer](https://platform.openai.com/tokenizer)
 :::{style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; font-size: 20px;"}
 - ✅ Handles [unknown words]{.alert} gracefully
 - ✅ Keeps vocabulary manageable (~50,000 tokens)
-- ✅ Common words stay whole
-- ✅ Rare words get broken up sensibly
+- ✅ Common words stay whole, rare words split sensibly
 - ✅ Works across languages
 :::
 
@@ -306,9 +299,9 @@ Source: [Hugging Face](https://huggingface.co/docs/transformers/tokenizer_summar
 :::{style="margin-top: 30px; font-size: 21px;"}
 :::{.columns}
 :::{.column width=55%}
-**OpenAI's Tokeniser** (try it!): [platform.openai.com/tokenizer](https://platform.openai.com/tokenizer)
+**OpenAI's Tokeniser**: [platform.openai.com/tokenizer](https://platform.openai.com/tokenizer)
 
-The number of tokens can change from one version to another!
+Token counts change from one version to another!
 
 **Some surprising examples:**
 
@@ -323,7 +316,7 @@ The number of tokens can change from one version to another!
 | "São Paulo" | ["S", "ão", " Paulo"] | 3 |
 | "🎉" | Multiple bytes | 2+ |
 
-Notice: [Capitalisation, spacing, and punctuation]{.alert} all affect tokenisation!
+[Capitalisation, spacing and punctuation]{.alert} all affect tokenisation!
 :::
 
 :::{.column width=45%}
@@ -343,9 +336,9 @@ Source: [OpenAI Platform](https://platform.openai.com/tokenizer)
 :::{style="margin-top: 30px; font-size: 20px;"}
 :::{.columns}
 :::{.column width=55%}
-- Every LLM has a [context window]{.alert}: Maximum tokens it can process
-- This limit includes [both your prompt AND the response!]{.alert}
-- Output tokens typically cost [2-4x more]{.alert} than input tokens!
+- Every LLM has a [context window]{.alert}: the maximum tokens it can process
+- The limit covers [both your prompt and the response]{.alert}
+- Output tokens usually cost [2-4x more]{.alert} than input tokens!
 
 :::{style="text-align: center;"}
 | Model | Context Window |
@@ -355,12 +348,11 @@ Source: [OpenAI Platform](https://platform.openai.com/tokenizer)
 | Gemini Pro | 1,000,000+ tokens |
 :::
 
-- If your prompt uses 3,500 tokens and the limit is 4,096...
-- You only have [596 tokens left]{.alert} for the response!
-- Exceeding limits → [Error]{.alert} or truncated output
-- Curiosity: [Non-English languages use more tokens]{.alert}
+- A 3,500-token prompt against a 4,096 limit leaves [596 tokens]{.alert} for the response!
+- Exceeding limits gives an [error]{.alert} or truncated output
+- [Non-English languages use more tokens]{.alert}
   - Chinese, Japanese, Korean: ~2-3x more tokens per concept
-  - This means higher costs and shorter effective context
+  - so higher costs and shorter effective context
 :::
 
 :::{.column width=45%}
@@ -390,16 +382,14 @@ Source: [Anthropic](https://platform.claude.com/docs/en/build-with-claude/contex
 :::{style="margin-top: 30px; font-size: 22px;"}
 :::{.columns}
 :::{.column width=55%}
-- Once text is tokenised, each token gets converted to an [embedding]{.alert}
-- An embedding is a [vector]{.alert}: A list of numbers
-- Typically [768 to 4,096 numbers]{.alert} per word!
+- Each token gets converted to an [embedding]{.alert}
+- An embedding is a [vector]{.alert}: a list of numbers, typically [768 to 4,096]{.alert} per word
 - Example: "cat" → `[0.23, -0.45, 0.12, -0.89, ... (4,096 numbers)]`
 - These numbers [capture the meaning]{.alert} of the word
 - [Similar words have similar vectors]{.alert}
-  - "cat" and "dog" will be close together
-  - "cat" and "aeroplane" will be far apart
-- The model [learns]{.alert} these representations during training
-- This is where the "understanding" happens!
+  - "cat" and "dog" sit close together
+  - "cat" and "aeroplane" sit far apart
+- The model [learns]{.alert} these representations during training, and this is where the "understanding" happens
 - Remember $\vec{\text{king}} - \vec{\text{man}} + \vec{\text{woman}} \approx \vec{\text{queen}}$
 :::
 
@@ -423,15 +413,14 @@ Source: [TensorFlow Projector](https://projector.tensorflow.org/)
 :::{.columns}
 :::{.column width=55%}
 - [Word2Vec]{.alert} [(2013, Google's Mikolov et al.)](https://arxiv.org/abs/1301.3781) revolutionised NLP
-- Two training approaches:
-  - **CBOW** (Continuous Bag of Words): Predict word from context
-  - **Skip-gram**: Predict context from word
-- Key insight: [Words appearing in similar contexts have similar meanings]{.alert}
+- [CBOW]{.alert} (Continuous Bag of Words): predict the word from its context
+- [Skip-gram]{.alert}: predict the context from the word
+- Key insight: [words in similar contexts have similar meanings]{.alert}
   - "I love my _____" → cat, dog, hamster are all likely
-  - So cat, dog, hamster should be near each other!
+  - so cat, dog and hamster should sit near each other!
 - Trained on billions of words from the web
 - Created the embedding approach modern LLMs use
-- 🎬 Watch: [Word2Vec Explained](https://www.youtube.com/watch?v=viZrOnJclY0) (10 min)
+- Watch: [Word2Vec Explained](https://www.youtube.com/watch?v=viZrOnJclY0) (10 min)
 :::
 
 :::{.column width=45%}
@@ -456,12 +445,11 @@ Source: [Chris McCormick](https://mccormickml.com/2016/04/19/word2vec-tutorial-t
 :::{style="margin-top: 30px; font-size: 22px;"}
 :::{.columns}
 :::{.column width=55%}
-- Imagine we have the word embeddings for a few words
-- The colours represent numbers from -2 to +2, obtained from our model
-- See how "woman" and "girl" are similar to each other, but "queen" is further away?
-- [This tell us something!]{.alert}
-- Although [we don't know what each dimension codes for]{.alert}, we can see some patterns
-- There are clear places where “king” and “queen” are similar to each other and distinct from all the others
+- Here are the embeddings for a few words
+- The colours show numbers from -2 to +2, taken from our model
+- See how "woman" and "girl" are similar, but "queen" is further away?
+- [We don't know what each dimension codes for]{.alert}, yet patterns still show
+- In some places "king" and "queen" match each other and differ from all the rest
 - [The model has learned something about gender and royalty!]{.alert}
 - Note that "water" has few connections to other words
 :::
@@ -485,21 +473,17 @@ Source: [Jay Alammar](https://jalammar.github.io/illustrated-word2vec/)
 :::{.column width=55%}
 **How embeddings power modern AI:**
 
-- **Semantic search** 🔍
-  - Search by meaning, not just keywords
+- [Semantic search]{.alert}: search by meaning, not keywords
   - "cheap flights" finds "budget airfare"
   
-- **Recommendations** 📚
-  - Find similar products, articles, or content
+- [Recommendations]{.alert}: find similar products, articles or content
   - "Users who liked X also liked Y"
   
-- **Clustering** 📊
-  - Group similar documents automatically
-  - Topic modelling without labels
+- [Clustering]{.alert}: group similar documents automatically
+  - topic modelling without labels
   
-- **RAG** (Retrieval-Augmented Generation)
-  - Find relevant documents for LLM context
-  - Power behind ChatGPT + browsing/search
+- [RAG]{.alert} (Retrieval-Augmented Generation): find relevant documents for LLM context
+  - the power behind ChatGPT + browsing/search
 :::
 
 :::{.column width=45%}
@@ -535,16 +519,15 @@ Source: [Pinecone](https://www.pinecone.io/learn/bertopic/)
 :::{.columns}
 :::{.column width=55%}
 - Think back to algebra: $y = 2x + 3$
-- The numbers 2 and 3 are [parameters]{.alert}
-- They determine the behaviour of the function
+- The numbers 2 and 3 are [parameters]{.alert}: they set the behaviour of the function
 - In an LLM, parameters are numbers that:
-  - Get set during [training]{.alert}
-  - Control how the model processes text
-  - Determine what the model "knows"
+  - get set during [training]{.alert}
+  - control how the model processes text
+  - determine what the model "knows"
 - GPT-3: [175 billion]{.alert} parameters
 - GPT-4: estimated [1+ trillion]{.alert} parameters
 - Each parameter is adjusted [thousands of times]{.alert} during training
-- Training = finding the right numbers to make predictions accurate
+- Training means finding the numbers that make predictions accurate
 :::
 
 :::{.column width=45%}
@@ -579,9 +562,9 @@ Source: [Medium](https://catherinebreslin.medium.com/what-is-a-parameter-3d4b773
 **To put this in perspective:**
 
 - 175 billion parameters = [175,000,000,000]{.alert} individual numbers
-- If you counted 1 per second, it would take [5,500 years]{.alert}!
-- Training GPT-3 required [~3.6 million GPU hours]{.alert}
-- Each of those parameters was updated [tens of thousands of times]{.alert}
+- Counting 1 per second would take [5,500 years]{.alert}!
+- Training GPT-3 took [~3.6 million GPU hours]{.alert}
+- Each parameter was updated [tens of thousands of times]{.alert}
 :::
 :::
 :::
@@ -595,20 +578,17 @@ Source: [Medium](https://catherinebreslin.medium.com/what-is-a-parameter-3d4b773
 **1. Embedding parameters**
 
 - Store the learned vector for each token
-- Vocabulary (~50,000) × dimensions (~4,096)
-- = ~200 million parameters just for embeddings!
+- Vocabulary (~50,000) × dimensions (~4,096) = ~200 million parameters just for embeddings!
 
 **2. Weight parameters**
 
-- Control [connections between neurons]{.alert}
-- Determine how strongly different parts influence each other
-- Like volume knobs: amplify or diminish signals
+- Control [connections between neurons]{.alert}, and how strongly parts influence each other
+- Like volume knobs: amplify or damp signals
 
 **3. Bias parameters**
 
-- [Adjust thresholds]{.alert} for neuron activation
-- Help detect subtle patterns that might otherwise be missed
-- Like a baseline adjustment
+- [Adjust thresholds]{.alert} for neuron activation, like a baseline adjustment
+- Help detect subtle patterns that would otherwise be missed
 
 [In short: embeddings store word meanings, weights connect the dots, and biases fine-tune the thresholds]{.alert}
 :::
@@ -644,13 +624,12 @@ Source: [Medium](https://medium.com/ai-insights-cobet/no-more-floating-points-th
 2. Show the model text: "The cat sat on the ___"
 3. Model predicts: "table" (wrong!)
 4. Calculate the [error]{.alert}
-5. [Backpropagation]{.alert}: Adjust parameters to reduce error
+5. [Backpropagation]{.alert}: adjust parameters to reduce the error
 6. Repeat [billions of times]{.alert}
 
 **Key insight:**
 
-- The model learns by [predicting the next word]{.alert}
-- Every error teaches it something
+- The model learns by [predicting the next word]{.alert}, and every error teaches it something
 - Patterns emerge from massive repetition
 - Training GPT-3 cost [~$3.5 million]{.alert} in compute!
 :::
@@ -678,25 +657,24 @@ Source: [Daniel McKee and Maghav Kumar](https://slazebni.cs.illinois.edu/spring2
 :::{.column width=55%}
 **The scaling hypothesis:**
 
-- More parameters = more capability (generally)
-- But [diminishing returns]{.alert} set in
-- A 10x bigger model isn't 10x smarter
+- More parameters generally means more capability
+- But [diminishing returns]{.alert} set in: a 10x bigger model isn't 10x smarter
 
 **Small models fighting back:**
 
-- [Efficient training]{.alert}: Better data, longer training
-- [Distillation]{.alert}: Teach small models from big ones
-- [Quantisation]{.alert}: Reduce precision (32-bit → 4-bit)
-- [Mixture of Experts]{.alert}: Only use relevant parts
+- [Efficient training]{.alert}: better data, longer training
+- [Distillation]{.alert}: teach small models from big ones
+- [Quantisation]{.alert}: reduce precision (32-bit → 4-bit)
+- [Mixture of Experts]{.alert}: use only the relevant parts
 :::
 
 :::{.column width=45%}
 :::{style="text-align: center;"}
 **Example:**
 
-- LLaMA 2 (7B) can outperform GPT-3 (175B) on some tasks!
+- LLaMA 2 (7B) can beat GPT-3 (175B) on some tasks!
 - Why? Better training data and techniques
-- [Quality over quantity]{.alert} matters for training data
+- [Quality beats quantity]{.alert} in training data
   
 <!-- Suggested image: Model size vs performance chart -->
 [![](figures/scaling-laws.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/scaling-laws.png"}
@@ -710,27 +688,22 @@ Source: [OpenAI Scaling Laws Paper](https://arxiv.org/abs/2001.08361)
 ## Hyperparameters: The creativity dials
 ### Temperature, top-p, and top-k
 
-:::{style="margin-top: 30px; font-size: 20px;"}
+:::{style="margin-top: 30px; font-size: 22px;"}
 :::{.columns}
 :::{.column width=55%}
-**Not all parameters are learned!**
+Not all parameters are learned. [Hyperparameters]{.alert} are settings you control:
 
-[Hyperparameters]{.alert} are settings YOU control:
+- [Temperature]{.alert}: controls randomness
+  - low (0.1-0.3): focused, deterministic
+  - high (0.7-1.0): creative, varied
+  - 0.0: always picks the most likely word
+  - (Google AI Studio extends the scale to 2.0)
 
-- **Temperature** 🌡️
-  - Controls randomness/creativity
-  - Low (0.1-0.3): Focused, deterministic
-  - High (0.7-1.0): Creative, varied
-  - 0.0: Always picks most likely word
-  - (Google AI Studio divides the scale up to 2.0)
+- [Top-p]{.alert} (nucleus sampling): only consider words in the top p% probability
+  - 0.9: the top 90% of likely words
 
-- **Top-p** (nucleus sampling)
-  - Only consider words in top p% probability
-  - 0.9: Consider top 90% of likely words
-
-- **Top-k**
-  - Only consider top k most likely words
-  - k=50: Choose from 50 most likely words
+- [Top-k]{.alert}: only consider the top k most likely words
+  - k=50: choose from the 50 most likely words
 :::
 
 :::{.column width=45%}
@@ -760,26 +733,23 @@ Source: [Medium](https://medium.com/@nigelgebodh/why-does-my-llm-have-a-temperat
 ## The attention mechanism (recap)
 ### How LLMs understand context
 
-:::{style="margin-top: 30px; font-size: 21px;"}
+:::{style="margin-top: 30px; font-size: 22px;"}
 :::{.columns}
 :::{.column width=55%}
 - [Attention]{.alert} is the key innovation of transformers
-- Every word "looks at" every other word
-- Determines which words are [relevant to each other]{.alert}
+- Every word "looks at" every other word to find which are [relevant to each other]{.alert}
 
 **Example:**
 
 *"The animal didn't cross the street because it was too tired"*
 
-- What does "it" refer to?
-- Attention helps the model [connect "it" to "animal"]{.alert}
+- What does "it" refer to? Attention [connects "it" to "animal"]{.alert}
 - Not all words matter equally for understanding
 
 **How it works:**
 
-- Each word asks: "Who should I pay attention to?"
-- Creates weighted connections between all words
-- Allows understanding of [long-range dependencies]{.alert}
+- Each word asks: "who should I pay attention to?"
+- Weighted connections between all words capture [long-range dependencies]{.alert}
 :::
 
 :::{.column width=45%}
@@ -805,18 +775,18 @@ Source: [Jay Alammar](https://jalammar.github.io/illustrated-transformer/)
 :::{.column width=55%}
 **Now that you understand the internals:**
 
-- ✅ [Be concise]{.alert}: Fewer tokens = lower cost, more room for response
-- ✅ [Use clear language]{.alert}: Common words tokenise efficiently
-- ✅ [Provide context]{.alert}: Help the attention mechanism
-- ✅ [Be specific]{.alert}: The model uses your exact words
-- ✅ [Test different temperatures]{.alert}: Match creativity to task
-- ✅ [Mind the context limit]{.alert}: Plan for both prompt AND response
+- ✅ [Be concise]{.alert}: fewer tokens mean lower cost and more room for the response
+- ✅ [Use clear language]{.alert}: common words tokenise efficiently
+- ✅ [Provide context]{.alert}: help the attention mechanism
+- ✅ [Be specific]{.alert}: the model uses your exact words
+- ✅ [Test different temperatures]{.alert}: match creativity to the task
+- ✅ [Mind the context limit]{.alert}: plan for both prompt and response
 
 **When things go wrong:**
 
-- Model confused? → Try rephrasing with different words
-- Model doesn't understand? → Provide more context
-- Running out of context? → Summarise earlier content
+- Model confused? → rephrase with different words
+- Model doesn't understand? → give more context
+- Running out of context? → summarise earlier content
 :::
 
 :::{.column width=45%}
@@ -847,19 +817,19 @@ Source: [Microsoft Education](https://www.microsoft.com/en-us/education/blog/202
 
 :::{style="margin-top: 30px; font-size: 28px;"}
 
-- `r fa('language')` LLMs don't read text; they process [tokens]{.alert}, numerical representations of text chunks
+- LLMs don't read text; they process [tokens]{.alert}, numerical representations of text chunks
 
-- `r fa('puzzle-piece')` [Tokenisation]{.alert} breaks text into pieces; ~100 tokens ≈ 75 words; affects cost and limits
+- [Tokenisation]{.alert} breaks text into pieces; ~100 tokens ≈ 75 words; affects cost and limits
 
-- `r fa('cube')` [Embeddings]{.alert} convert tokens to vectors, capturing meaning in ~4,096 dimensions
+- [Embeddings]{.alert} convert tokens to vectors, capturing meaning in ~4,096 dimensions
 
-- `r fa('crown')` The famous [king − man + woman ≈ queen]{.alert} shows embeddings encode semantic relationships
+- The famous [king − man + woman ≈ queen]{.alert} shows embeddings encode semantic relationships
 
-- `r fa('brain')` [Parameters]{.alert} (billions of them!) are the numbers learned during training
+- [Parameters]{.alert} (billions of them!) are the numbers learned during training
 
-- `r fa('sliders-h')` [Hyperparameters]{.alert} like temperature let you control creativity vs. determinism
+- [Hyperparameters]{.alert} like temperature let you control creativity vs. determinism
 
-- `r fa('link')` [Attention]{.alert} mechanisms help models understand context and word relationships
+- [Attention]{.alert} mechanisms help models understand context and word relationships
 :::
 
 # ... and that's all for today! 🎉 {background-color="#1B3A6B"}

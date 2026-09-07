@@ -227,16 +227,13 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <div class="columns">
 <div class="column" style="width:50%;">
 <ul>
-<li>Last time, we explored <span class="alert">RAG</span> (Retrieval-Augmented Generation)</li>
+<li><span class="alert">RAG</span> (Retrieval-Augmented Generation) grounds AI in <span class="alert">your own documents</span></li>
 <li>LLMs have knowledge cutoffs and hallucinate</li>
-<li>Ground AI in <span class="alert">your own documents</span></li>
 <li>Chunk → Embed → Retrieve → Generate</li>
-<li>RAG reduces hallucinations by <span class="alert">30–50%</span></li>
-<li>But RAG isn’t perfect: <span class="alert">retrieval errors</span> still occur</li>
-<li><strong>Today</strong>: What happens <span class="alert">behind the scenes</span> when you use AI?</li>
-<li>You’ve all experienced AI going down, being slow, or giving weird answers</li>
+<li>RAG cuts hallucinations by <span class="alert">30–50%</span>, but <span class="alert">retrieval errors</span> still occur</li>
+<li><strong>Today</strong>: what happens <span class="alert">behind the scenes</span> when AI goes down, runs slow, or answers oddly?</li>
 <li><span class="alert">Why does this happen?</span> And what can you do about it?</li>
-<li>We also look at <span class="alert">documentation</span>: how companies record what their systems can and cannot do, and why that record matters when things break</li>
+<li>Also <span class="alert">documentation</span>: how companies record what their systems can and cannot do</li>
 </ul>
 </div><div class="column" style="width:50%;">
 <div style="text-align: center; margin-top: -30px;">
@@ -329,15 +326,15 @@ END OF COMMENTED-OUT DATAFEST SLIDE -->
 <ol type="1">
 <li><span class="alert">Your prompt</span> goes from your browser to servers</li>
 <li><span class="alert">Load balancers</span> route it to an available GPU (cloud infrastructure)</li>
-<li><span class="alert">Preprocessing</span> cleans and formats your text (with LLMs, this is usually minimal)</li>
+<li><span class="alert">Preprocessing</span> cleans and formats your text (usually minimal with LLMs)</li>
 <li><span class="alert">Tokenisation</span> converts text to numbers (you know how to do that!)</li>
 <li><span class="alert">The model</span> processes tokens (billions of operations!)</li>
 <li><span class="alert">Postprocessing</span> formats the output</li>
-<li><span class="alert">Safety filters</span> check for harmful content (e.g., hate speech, etc.)</li>
+<li><span class="alert">Safety filters</span> check for harmful content (e.g., hate speech)</li>
 <li><span class="alert">Response</span> travels back to your screen</li>
 </ol>
 <p><span class="alert">Each step can fail independently!</span></p>
-<p>This entire process is called a <a href="https://en.wikipedia.org/wiki/Pipeline_(computing)">pipeline</a>.</p>
+<p>The whole process is a <a href="https://en.wikipedia.org/wiki/Pipeline_(computing)">pipeline</a>.</p>
 </div><div class="column" style="width:45%;">
 <div style="text-align: center;">
 <div class="quarto-figure quarto-figure-center">
@@ -395,7 +392,7 @@ END OF COMMENTED-OUT DATAFEST SLIDE -->
 </tr>
 </tbody>
 </table>
-<p>You can spot <em>what type</em> of failure happened, then choose the right response</p>
+<p>Spot <em>which type</em> of failure happened, then choose the right response</p>
 </div><div class="column" style="width:45%;">
 <div style="text-align: center;">
 <p><a href="#/" data-modal-type="image" data-modal-url="figures/ai-failures.png"><img data-src="figures/ai-failures.png" style="width:100.0%"></a></p>
@@ -475,7 +472,7 @@ END OF COMMENTED-OUT DATAFEST SLIDE -->
 <p><strong>What happened (January 2024):</strong></p>
 <ul>
 <li>DPD (UK delivery company) updated their AI chatbot</li>
-<li>After the update, customer Ashley Beauchamp discovered it would:
+<li>Customer Ashley Beauchamp found it would:
 <ul>
 <li>Swear when asked nicely</li>
 <li>Write poems criticising DPD</li>
@@ -484,9 +481,9 @@ END OF COMMENTED-OUT DATAFEST SLIDE -->
 </ul></li>
 </ul>
 <p><strong>DPD’s response:</strong></p>
-<p>Immediately disabled the AI chatbot, apologised, launched investigation.</p>
+<p>Disabled the chatbot, apologised, launched an investigation.</p>
 <p><strong>What went wrong:</strong></p>
-<p>A <span class="alert">system update broke the guardrails</span>. The content filtering that prevented inappropriate responses stopped working, but no one noticed until customers posted screenshots on social media</p>
+<p>A <span class="alert">system update broke the guardrails</span>. Content filtering stopped working, and no one noticed until customers posted screenshots on social media</p>
 </div><div class="column" style="width:45%;">
 <div style="text-align: center;">
 <p><a href="#/" data-modal-type="image" data-modal-url="figures/dpd-chatbot.png"><img data-src="figures/dpd-chatbot.png" style="width:60.0%"></a></p>
@@ -494,7 +491,7 @@ END OF COMMENTED-OUT DATAFEST SLIDE -->
 </div>
 <div style="margin-top: 15px; background: rgba(230, 57, 70, 0.1); padding: 15px; border-radius: 10px;">
 <p><strong>Pipeline failure point:</strong></p>
-<p><span class="alert">No monitoring after deployment</span>. The update was pushed without testing, and no automated checks caught the broken guardrails.</p>
+<p><span class="alert">No monitoring after deployment</span>. The update shipped without testing, and no automated check caught the broken guardrails.</p>
 </div>
 </div></div>
 </div>
@@ -506,11 +503,10 @@ END OF COMMENTED-OUT DATAFEST SLIDE -->
 <div class="column" style="width:55%;">
 <p><strong>What happened (February 2024):</strong></p>
 <ul>
-<li>Users asked Gemini for images of “1943 German soldiers”</li>
-<li>Gemini generated images of <span class="alert">Black men and Asian women</span> in Nazi uniforms</li>
-<li>Similar problems with “US Founding Fathers” and other historical figures</li>
-<li>Google CEO called results “completely unacceptable”</li>
-<li>Image generation feature <span class="alert">paused for weeks</span></li>
+<li>Asked for “1943 German soldiers”, Gemini drew <span class="alert">Black men and Asian women</span> in Nazi uniforms</li>
+<li>Same problem with “US Founding Fathers” and other historical figures</li>
+<li>Google’s CEO called the results “completely unacceptable”</li>
+<li>Image generation <span class="alert">paused for weeks</span></li>
 </ul>
 <p><strong>Why did this happen? Can you guess?</strong></p>
 </div><div class="column" style="width:45%;">
@@ -531,12 +527,12 @@ END OF COMMENTED-OUT DATAFEST SLIDE -->
 
 </section>
 <section id="data-drift-the-world-changes" class="slide level2">
-<h2>Data drift: The world changes</h2>
+<h2>Data drift: the world changes</h2>
 <div style="margin-top: 30px; font-size: 22px;">
 <div class="columns">
 <div class="column" style="width:55%;">
-<p><strong>Data drift</strong> = When real-world data differs from training data</p>
-<p><strong>Example: A sentiment analyser trained in 2020:</strong></p>
+<p><strong>Data drift</strong> = real-world data differs from training data</p>
+<p><strong>A sentiment analyser trained in 2020:</strong></p>
 <ul>
 <li>“This product is sick!” → Probably means: Amazing ✅</li>
 <li>“This slaps!” → Might not understand 🤔</li>
@@ -590,26 +586,23 @@ END OF COMMENTED-OUT DATAFEST SLIDE -->
 <div style="margin-top: 30px; font-size: 21px;">
 <div class="columns">
 <div class="column" style="width:55%;">
-<p>Models assume <span class="math inline">\(P_{\text{train}}(X, Y) = P_{\text{prod}}(X, Y)\)</span></p>
-<p>But in reality, this joint distribution shifts over time:</p>
+<p>Models assume <span class="math inline">\(P_{\text{train}}(X, Y) = P_{\text{prod}}(X, Y)\)</span>, but the joint distribution shifts over time:</p>
 <ol type="1">
 <li><strong>Data drift</strong>: <span class="math inline">\(P(X)\)</span> changes
 <ul>
-<li>Input distribution differs from training</li>
-<li>Example: New user demographics, device types</li>
 <li>Model sees inputs it never learned from</li>
+<li>Example: new user demographics, device types</li>
 </ul></li>
 <li><strong>Label drift</strong>: <span class="math inline">\(P(Y)\)</span> changes
 <ul>
-<li>Class frequencies change over time</li>
-<li>Example: Fraud rate increases during holidays</li>
-<li>Model’s decision boundaries become suboptimal</li>
+<li>Class frequencies shift, so decision boundaries become suboptimal</li>
+<li>Example: fraud rate rises during holidays</li>
 </ul></li>
 <li><strong>Concept drift</strong>: <span class="math inline">\(P(Y|X)\)</span> changes
 <ul>
 <li>Same input → different correct output</li>
-<li>Example: “Sick” now means “great” in slang</li>
-<li><span class="alert">The most dangerous type</span>: model is confident but wrong</li>
+<li>Example: “sick” now means “great” in slang</li>
+<li><span class="alert">The most dangerous type</span>: the model is confident but wrong</li>
 </ul></li>
 </ol>
 </div><div class="column" style="width:45%;">
@@ -643,8 +636,7 @@ END OF COMMENTED-OUT DATAFEST SLIDE -->
 </table>
 </div>
 <div style="margin-top: 20px; background: rgba(230, 57, 70, 0.1); padding: 15px; border-radius: 10px; font-size: 19px;">
-<p><strong>Why it’s inevitable:</strong></p>
-<p>Machine learning assumes <span class="alert">i.i.d. data</span> (independent and identically distributed). But real-world data is:</p>
+<p>Machine learning assumes <span class="alert">i.i.d. data</span> (independent and identically distributed). Real-world data is:</p>
 <ul>
 <li><strong>Temporally correlated</strong> (today depends on yesterday)</li>
 <li><strong>Non-stationary</strong> (distributions shift over months and years)</li>
@@ -656,27 +648,26 @@ END OF COMMENTED-OUT DATAFEST SLIDE -->
 </div>
 </section>
 <section id="model-degradation-models-get-stale" class="slide level2">
-<h2>Model degradation: Models get stale</h2>
+<h2>Model degradation: models get stale</h2>
 <div style="margin-top: 30px; font-size: 20px;">
 <div class="columns">
 <div class="column" style="width:55%;">
-<p><strong>Even without drift, models degrade over time:</strong></p>
+<p><strong>Even without drift, models degrade:</strong></p>
 <ul>
 <li>User expectations evolve</li>
 <li>Competitors improve their products</li>
-<li>Edge cases accumulate</li>
-<li>Small errors compound</li>
+<li>Edge cases accumulate and small errors compound</li>
 </ul>
-<p><strong>Signs your AI tool is degrading (as a user):</strong></p>
+<p><strong>Signs your AI tool is degrading:</strong></p>
 <ul>
 <li>❌ Answers that used to work now don’t</li>
 <li>❌ More “I don’t know” or refusals</li>
-<li>❌ Inconsistent responses to same prompt</li>
+<li>❌ Inconsistent responses to the same prompt</li>
 <li>❌ Friends getting better results elsewhere</li>
-<li>❌ You’re finding workarounds more often</li>
+<li>❌ You need workarounds more often</li>
 </ul>
 <p><strong>The “boiling frog” problem:</strong></p>
-<p>Changes happen so gradually you don’t notice until it’s too late!</p>
+<p>Changes come so gradually you don’t notice until it’s too late!</p>
 </div><div class="column" style="width:45%;">
 <div style="text-align: center;">
 <div class="quarto-figure quarto-figure-center">
@@ -702,21 +693,19 @@ END OF COMMENTED-OUT DATAFEST SLIDE -->
 <ol type="1">
 <li><strong>Entropy accumulation</strong>
 <ul>
-<li>Small prediction errors compound over time</li>
-<li>Error rate <span class="math inline">\(\epsilon\)</span> grows: <span class="math inline">\(\epsilon(t) \approx \epsilon_0 \cdot e^{\lambda t}\)</span></li>
+<li>Small prediction errors compound: <span class="math inline">\(\epsilon(t) \approx \epsilon_0 \cdot e^{\lambda t}\)</span></li>
 <li>Edge cases create cascading failures</li>
 </ul></li>
 <li><strong>Distribution shift in deployment</strong>
 <ul>
-<li>Model outputs influence user behaviour</li>
-<li>Users adapt prompts based on past responses</li>
-<li>Creates <span class="alert">feedback loops</span> that amplify biases</li>
+<li>Users adapt prompts to past responses</li>
+<li>This creates <span class="alert">feedback loops</span> that amplify biases</li>
 </ul></li>
 <li><strong>Catastrophic forgetting</strong> (after updates)
 <ul>
 <li>Fine-tuning on new data overwrites old knowledge</li>
 <li>Safety training can reduce capability</li>
-<li>Model “forgets” how to handle rare cases</li>
+<li>The model “forgets” rare cases</li>
 </ul></li>
 </ol>
 </div><div class="column" style="width:45%;">
@@ -750,25 +739,24 @@ END OF COMMENTED-OUT DATAFEST SLIDE -->
 </table>
 </div>
 <div style="margin-top: 20px; background: rgba(230, 57, 70, 0.1); padding: 15px; border-radius: 10px; font-size: 19px;">
-<p>Models optimise for <span class="alert">average-case performance</span>. But users remember the <strong>worst</strong> failures.</p>
-<p>User trust is proportional to min(performance)</p>
-<p>Not the mean!</p>
+<p>Models optimise for <span class="alert">average-case performance</span>, but users remember the <strong>worst</strong> failures.</p>
+<p>User trust tracks min(performance), not the mean!</p>
 </div>
 </div></div>
 </div>
 </section>
 <section id="infrastructure-issues-when-computers-fail" class="slide level2">
-<h2>Infrastructure issues: When computers fail</h2>
+<h2>Infrastructure issues: when computers fail</h2>
 <div style="margin-top: 30px; font-size: 22px;">
 <div class="columns">
 <div class="column" style="width:55%;">
-<p><strong>AI systems run on physical computers that can fail:</strong></p>
+<p><strong>AI runs on physical computers that fail:</strong></p>
 <ul>
 <li><strong>Hardware failures</strong>: GPUs overheat, disks die</li>
-<li><strong>Network issues</strong>: Connections timeout, packets lost</li>
-<li><strong>Scaling problems</strong>: Too many users at once</li>
-<li><strong>Resource exhaustion</strong>: Running out of memory</li>
-<li><strong>Dependency failures</strong>: External APIs go down</li>
+<li><strong>Network issues</strong>: connections time out, packets lost</li>
+<li><strong>Scaling problems</strong>: too many users at once</li>
+<li><strong>Resource exhaustion</strong>: running out of memory</li>
+<li><strong>Dependency failures</strong>: external APIs go down</li>
 </ul>
 <p><strong>What you see as a user:</strong></p>
 <div style="font-size: 24px;">
@@ -825,7 +813,7 @@ END OF COMMENTED-OUT DATAFEST SLIDE -->
 
 </section>
 <section id="what-companies-watch-key-metrics" class="slide level2">
-<h2>What companies watch: Key metrics</h2>
+<h2>What companies watch: key metrics</h2>
 <div style="margin-top: 30px; font-size: 23px;">
 <div class="columns">
 <div class="column" style="width:55%;">
@@ -886,7 +874,7 @@ END OF COMMENTED-OUT DATAFEST SLIDE -->
 </tr>
 </tbody>
 </table>
-<p><span class="alert">As a user</span>: You experience these as speed, accuracy, and availability!</p>
+<p><span class="alert">As a user</span>: you experience these as speed, accuracy, and availability!</p>
 </div><div class="column" style="width:45%;">
 <div style="text-align: center; margin-top: 30px;">
 <div class="quarto-figure quarto-figure-center">
@@ -904,7 +892,7 @@ END OF COMMENTED-OUT DATAFEST SLIDE -->
 </div>
 </section>
 <section id="status-pages-checking-ai-reliability" class="slide level2">
-<h2>Status pages: Checking AI reliability</h2>
+<h2>Status pages: checking AI reliability</h2>
 <div style="margin-top: 30px; font-size: 22px;">
 <div class="columns">
 <div class="column" style="width:55%;">
@@ -942,7 +930,7 @@ END OF COMMENTED-OUT DATAFEST SLIDE -->
 <li>Maintenance windows</li>
 <li>Incident post-mortems (what went wrong)</li>
 </ul>
-<p><strong>Tip</strong>: <span class="alert">Check the status page</span> before blaming your prompt!</p>
+<p><strong>Tip</strong>: <span class="alert">check the status page</span> before blaming your prompt!</p>
 </div><div class="column" style="width:45%;">
 <div style="text-align: center;">
 <!-- Suggested image: OpenAI status page screenshot -->
@@ -952,13 +940,13 @@ END OF COMMENTED-OUT DATAFEST SLIDE -->
 </div>
 </div>
 <div style="margin-top: 15px; background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px;">
-<p><strong>Fun fact</strong>: OpenAI’s status page shows <span class="alert">frequent incidents</span>: error rates, regional outages, feature degradation. AI reliability is super hard!</p>
+<p><strong>Fun fact</strong>: OpenAI’s page shows <span class="alert">frequent incidents</span>: error rates, regional outages, feature degradation. AI reliability is hard!</p>
 </div>
 </div></div>
 </div>
 </section>
 <section id="testing-ai-why-its-hard" class="slide level2">
-<h2>Testing AI: Why it’s hard</h2>
+<h2>Testing AI: why it’s hard</h2>
 <div style="margin-top: 30px; font-size: 19px;">
 <div class="columns">
 <div class="column" style="width:55%;">
@@ -968,17 +956,16 @@ END OF COMMENTED-OUT DATAFEST SLIDE -->
 <li>Expected output: 4</li>
 <li>Test: Assert(2+2 == 4) ✅</li>
 </ul>
-<p><span class="alert">Deterministic</span>: Same input → same output, always</p>
+<p><span class="alert">Deterministic</span>: same input → same output, always</p>
 <p><strong>AI testing:</strong></p>
 <ul>
 <li>Input: “What’s the weather like?”</li>
 <li>Expected output: … um … 🤔</li>
-<li>The response changes every time!</li>
-<li>Many “correct” answers exist!</li>
+<li>The response changes every time, and many answers are “correct”</li>
 </ul>
-<p><span class="alert">Non-deterministic</span>: Same input → different outputs!</p>
+<p><span class="alert">Non-deterministic</span>: same input → different outputs!</p>
 <p><strong>This is why Gemini’s image bug wasn’t caught:</strong></p>
-<p>Testing “generate a cute cat” worked fine. Testing “generate 1943 German soldiers” probably <span class="alert">wasn’t in the test suite</span></p>
+<p>“Generate a cute cat” worked fine. “Generate 1943 German soldiers” probably <span class="alert">wasn’t in the test suite</span></p>
 </div><div class="column" style="width:45%;">
 <div style="text-align: center;">
 <div class="quarto-figure quarto-figure-center">
@@ -989,7 +976,7 @@ END OF COMMENTED-OUT DATAFEST SLIDE -->
 </div>
 <p>Source: <a href="https://medium.com/@monikanawani25/from-correctness-to-confidence-understanding-llm-testing-0ad555bc797e">Medium</a></p>
 <div style="margin-top: 15px; background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px;">
-<p><span class="alert">Solution</span>: Test for <span class="alert">properties</span> (is it safe? is the format correct?) rather than exact outputs!</p>
+<p><span class="alert">Solution</span>: test <span class="alert">properties</span> (is it safe? is the format correct?) rather than exact outputs!</p>
 </div>
 </div>
 </div></div>
@@ -1070,27 +1057,26 @@ END OF COMMENTED-OUT DATAFEST SLIDE -->
 <span id="cb1-11"><a></a>Instead: Response went directly to user</span>
 <span id="cb1-12"><a></a>         → Company lost lawsuit</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div style="margin-top: 15px;">
-<p><span class="alert">Both ends matter</span>: Validate inputs AND outputs!</p>
+<div style="margin-top: 15px; text-align: center;">
+<p>Validate inputs AND outputs!</p>
 </div>
 </div></div>
 </div>
 </section>
 <section id="input-validation-first-line-of-defence" class="slide level2">
-<h2>Input validation: First line of defence</h2>
+<h2>Input validation: first line of defence</h2>
 <div style="margin-top: 30px; font-size: 22px;">
 <div class="columns">
 <div class="column" style="width:55%;">
 <p><strong>Check inputs BEFORE they reach the model:</strong></p>
-<p><strong>Things to validate:</strong></p>
 <ul>
-<li>✅ <strong>Length</strong>: Too short? Too long?</li>
-<li>✅ <strong>Language</strong>: Is it in expected language?</li>
-<li>✅ <strong>Content</strong>: Any prohibited content?</li>
-<li>✅ <strong>Format</strong>: Does it make sense?</li>
-<li>✅ <strong>Rate</strong>: Is this user spamming us?</li>
+<li>✅ <strong>Length</strong>: too short? Too long?</li>
+<li>✅ <strong>Language</strong>: is it the expected language?</li>
+<li>✅ <strong>Content</strong>: any prohibited content?</li>
+<li>✅ <strong>Format</strong>: does it make sense?</li>
+<li>✅ <strong>Rate</strong>: is this user spamming us?</li>
 </ul>
-<p><strong>Example input validation:</strong></p>
+<p><strong>Example:</strong></p>
 <div style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; font-size: 18px;">
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb2-1"><a></a>Prompt: "Ignore all previous instructions..."</span>
 <span id="cb2-2"><a></a></span>
@@ -1111,21 +1097,20 @@ END OF COMMENTED-OUT DATAFEST SLIDE -->
 </div>
 </section>
 <section id="output-validation-last-line-of-defence" class="slide level2">
-<h2>Output validation: Last line of defence</h2>
+<h2>Output validation: last line of defence</h2>
 <div style="margin-top: 30px; font-size: 22px;">
 <div class="columns">
 <div class="column" style="width:55%;">
 <p><strong>Check outputs BEFORE sending to users:</strong></p>
-<p><strong>Things to validate:</strong></p>
 <ul>
-<li>✅ <strong>Safety</strong>: No harmful or offensive content</li>
-<li>✅ <strong>Accuracy</strong>: Core facts should be verifiable</li>
-<li>✅ <strong>Consistency</strong>: Shouldn’t contradict itself</li>
-<li>✅ <strong>Format</strong>: Meets expected structure</li>
-<li>✅ <strong>Length</strong>: Not too short, not too long</li>
-<li>✅ <strong>Privacy</strong>: No personal data leakage</li>
+<li>✅ <strong>Safety</strong>: no harmful or offensive content</li>
+<li>✅ <strong>Accuracy</strong>: core facts should be verifiable</li>
+<li>✅ <strong>Consistency</strong>: shouldn’t contradict itself</li>
+<li>✅ <strong>Format</strong>: meets the expected structure</li>
+<li>✅ <strong>Length</strong>: not too short, not too long</li>
+<li>✅ <strong>Privacy</strong>: no personal data leakage</li>
 </ul>
-<p><strong>Tools for output validation:</strong></p>
+<p><strong>Tools:</strong></p>
 <ul>
 <li><span class="alert">Content moderation APIs</span> (OpenAI, Perspective)</li>
 <li><span class="alert">Domain-specific rules</span> (e.g., medical disclaimers)</li>
@@ -1154,8 +1139,8 @@ END OF COMMENTED-OUT DATAFEST SLIDE -->
 </div>
 </section></section>
 <section>
-<section id="documentation-the-missing-instruction-manual" class="title-slide slide level1 center" data-background-color="#1B3A6B">
-<h1>Documentation: The Missing Instruction Manual 📝</h1>
+<section id="documentation" class="title-slide slide level1 center" data-background-color="#1B3A6B">
+<h1>Documentation 📝</h1>
 
 </section>
 <section id="the-horror-stories-what-happens-without-documentation" class="slide level2">
@@ -1165,8 +1150,7 @@ END OF COMMENTED-OUT DATAFEST SLIDE -->
 <div class="column" style="width:55%;">
 <p><strong>ImageNet’s hidden problems (2019):</strong></p>
 <ul>
-<li>Most influential computer vision dataset ever</li>
-<li>Powered 10+ years of AI research</li>
+<li>The most influential computer vision dataset ever, powering 10+ years of research</li>
 <li><span class="alert">Nobody knew</span> where the images came from!</li>
 <li>Later discovered:
 <ul>
@@ -1176,12 +1160,11 @@ END OF COMMENTED-OUT DATAFEST SLIDE -->
 <li>Content from revenge porn sites</li>
 </ul></li>
 </ul>
-<p><strong>The root cause?</strong></p>
 <blockquote>
 <p>They built it quickly and never documented what they were doing!</p>
 </blockquote>
 <p><span class="alert">Thousands of AI systems were built on this undocumented foundation!</span></p>
-<p>Monitoring catches problems <span class="alert">after</span> deployment. Documentation prevents some of them <span class="alert">before</span> deployment</p>
+<p>Monitoring catches problems <span class="alert">after</span> deployment. Documentation prevents some <span class="alert">before</span> deployment</p>
 </div><div class="column" style="width:45%;">
 <div style="text-align: center;">
 <div class="quarto-figure quarto-figure-center">
@@ -1204,44 +1187,43 @@ END OF COMMENTED-OUT DATAFEST SLIDE -->
 <ul>
 <li>❌ Know if data were collected ethically</li>
 <li>❌ Identify sources of bias</li>
-<li>❌ Determine if a model is appropriate for a use case</li>
+<li>❌ Tell whether a model suits a use case</li>
 <li>❌ Assign responsibility when things go wrong</li>
 <li>❌ Reproduce or verify results</li>
 <li>❌ Update or fix problems later</li>
 </ul>
 <p><strong>With documentation, we can:</strong></p>
 <ul>
-<li>✅ Make informed choices about using a dataset</li>
+<li>✅ Choose datasets knowingly</li>
 <li>✅ Trace bias back to its source</li>
-<li>✅ Match models to appropriate applications</li>
+<li>✅ Match models to the right applications</li>
 <li>✅ Hold creators accountable</li>
 <li>✅ Build trust with users and regulators</li>
 </ul>
 </div><div class="column" style="width:45%;">
-<div style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px;">
-<p><strong>The legal angle:</strong></p>
-<p>Regulations are <span class="alert">now requiring</span> documentation:</p>
+<div style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; margin-top: 30px;">
+<p>Regulations <span class="alert">now require</span> documentation:</p>
 <ul>
-<li><strong>EU AI Act</strong>: Mandates documentation for high-risk AI</li>
-<li><strong>NYC Law 144</strong>: Requires bias audits (needs documentation!)</li>
-<li><strong>California CCPA</strong>: Data transparency requirements</li>
+<li><strong>EU AI Act</strong>: mandates documentation for high-risk AI</li>
+<li><strong>NYC Law 144</strong>: requires bias audits (which need documentation!)</li>
+<li><strong>California CCPA</strong>: data transparency requirements</li>
 </ul>
-<p>We’ll cover US vs EU regulations in detail in <span class="alert">Lecture 18</span>.</p>
+<p>We cover US vs EU regulations in <span class="alert">Lecture 18</span>.</p>
 <p>If you can’t document it, you <span class="alert">can’t deploy it</span> (legally).</p>
 </div>
 </div></div>
 </div>
 </section>
 <section id="the-three-pillars-datasheets-model-cards-and-system-cards" class="slide level2">
-<h2>The three pillars: Datasheets, Model Cards, and System Cards</h2>
+<h2>The three pillars: datasheets, model cards, and system cards</h2>
 <div style="margin-top: 30px; font-size: 21px;">
 <div style="text-align: center;">
-<p><a href="#/" data-modal-type="image" data-modal-url="figures/ai-model-cards.jpg"><img data-src="figures/ai-model-cards.jpg" style="width:60.0%"></a></p>
+<p><a href="#/" data-modal-type="image" data-modal-url="figures/ai-model-cards.jpg"><img data-src="figures/ai-model-cards.jpg" style="width:55.0%"></a></p>
 <p>Source: <a href="https://laurelpapworth.com/datasheets-model-cards/">Laurel Papworth</a></p>
 </div>
 <div style="margin-top: 20px;">
-<p>They originated from landmark papers: <a href="https://arxiv.org/abs/1803.09010">Gebru et al.&nbsp;(2018)</a> for datasheets and <a href="https://arxiv.org/abs/1810.03993">Mitchell et al.&nbsp;(2019)</a> for model cards.</p>
-<p>These are now <span class="alert">industry standards</span> adopted by <a href="https://deepmind.google/models/model-cards/">Google</a>, <a href="https://azure.microsoft.com/en-us/products/ai-foundry/models">Microsoft</a>, <a href="https://huggingface.co/docs/hub/en/model-cards">Hugging Face</a>, and others!</p>
+<p>Two papers started them: <a href="https://arxiv.org/abs/1803.09010">Gebru et al.&nbsp;(2018)</a> for datasheets and <a href="https://arxiv.org/abs/1810.03993">Mitchell et al.&nbsp;(2019)</a> for model cards.</p>
+<p>They are now <span class="alert">industry standards</span> at <a href="https://deepmind.google/models/model-cards/">Google</a>, <a href="https://azure.microsoft.com/en-us/products/ai-foundry/models">Microsoft</a>, <a href="https://huggingface.co/docs/hub/en/model-cards">Hugging Face</a>, and others!</p>
 </div>
 </div>
 </section>
@@ -1250,11 +1232,10 @@ END OF COMMENTED-OUT DATAFEST SLIDE -->
 <div style="margin-top: 30px; font-size: 20px;">
 <div class="columns">
 <div class="column" style="width:55%;">
-<p><strong>Inspired by electronics industry:</strong></p>
+<p><strong>Inspired by the electronics industry:</strong></p>
 <ul>
-<li>Every electronic component has a “datasheet”</li>
-<li>Spec sheet with all relevant information</li>
-<li>Engineers can make informed decisions</li>
+<li>Every component ships with a “datasheet”, a spec sheet with all relevant information</li>
+<li>Engineers can then decide knowingly</li>
 </ul>
 <p><strong><a href="https://arxiv.org/abs/1803.09010">Timnit Gebru et al.&nbsp;(2018)</a> proposed the same for datasets:</strong></p>
 <blockquote>
@@ -1262,12 +1243,12 @@ END OF COMMENTED-OUT DATAFEST SLIDE -->
 </blockquote>
 <p><strong>What a datasheet answers:</strong></p>
 <ul>
-<li><span class="alert">Motivation</span>: Why was it created? Who funded it?</li>
-<li><span class="alert">Composition</span>: What is in it? Errors? Sensitive data?</li>
-<li><span class="alert">Collection</span>: Scraped, surveyed, sensors? Was there consent?</li>
-<li><span class="alert">Preprocessing</span>: What was cleaned, filtered, or removed?</li>
-<li><span class="alert">Uses</span>: What is it for, and what should it <span class="alert">NOT</span> be used for?</li>
-<li><span class="alert">Distribution and maintenance</span>: Who updates it? How to report issues?</li>
+<li><span class="alert">Motivation</span>: why was it created? Who funded it?</li>
+<li><span class="alert">Composition</span>: what is in it? Errors? Sensitive data?</li>
+<li><span class="alert">Collection</span>: scraped, surveyed, sensors? Was there consent?</li>
+<li><span class="alert">Preprocessing</span>: what was cleaned, filtered, or removed?</li>
+<li><span class="alert">Uses</span>: what is it for, and what should it <span class="alert">NOT</span> be used for?</li>
+<li><span class="alert">Distribution and maintenance</span>: who updates it? How do you report issues?</li>
 </ul>
 </div><div class="column" style="width:45%;">
 <div style="text-align: center;">
@@ -1293,7 +1274,7 @@ END OF COMMENTED-OUT DATAFEST SLIDE -->
 <ol type="1">
 <li>Visit <a href="https://huggingface.co/datasets/Anthropic/hh-rlhf">Anthropic/hh-rlhf</a></li>
 <li>Read the Dataset Card carefully</li>
-<li>This dataset is used to train AI assistants to be <span class="alert">helpful and harmless</span>!</li>
+<li>It trains AI assistants to be <span class="alert">helpful and harmless</span>!</li>
 </ol>
 <p><strong>Questions to answer:</strong></p>
 <ul>
@@ -1305,16 +1286,16 @@ END OF COMMENTED-OUT DATAFEST SLIDE -->
 </div><div class="column" style="width:50%;">
 <p><strong>Evaluate the documentation:</strong></p>
 <ul>
-<li>✅ Clear purpose: Train preference/reward models for RLHF</li>
-<li>✅ Explicit warnings about misuse (don’t train chatbots directly!)</li>
+<li>✅ Clear purpose: train preference/reward models for RLHF</li>
+<li>✅ Explicit misuse warnings (don’t train chatbots directly!)</li>
 <li>✅ Content disclaimer about harmful material</li>
-<li>✅ Links to papers for methodology details</li>
-<li>✅ Contact email provided</li>
+<li>✅ Links to papers for methodology</li>
+<li>✅ Contact email</li>
 </ul>
 <p><strong>Discussion:</strong></p>
 <ul>
 <li>Would you be comfortable using this dataset?</li>
-<li>What <span class="alert">ethical responsibilities</span> come with accessing data that contains harmful content for research purposes?</li>
+<li>What <span class="alert">ethical responsibilities</span> come with using harmful content for research?</li>
 </ul>
 <p>⏱️ 3 minutes to explore!</p>
 </div></div>
@@ -1325,20 +1306,20 @@ END OF COMMENTED-OUT DATAFEST SLIDE -->
 <div style="margin-top: 30px; font-size: 19px;">
 <div class="columns">
 <div class="column" style="width:55%;">
-<p>Just like datasheets document data, <span class="alert">model cards</span> document models.</p>
+<p>Datasheets document data; <span class="alert">model cards</span> document models.</p>
 <p><strong>Margaret Mitchell et al.&nbsp;(2019):</strong></p>
 <blockquote>
 <p>“Model cards are short documents accompanying trained ML models that provide benchmarked evaluation in a variety of conditions.”</p>
 </blockquote>
 <p><strong>Core sections:</strong></p>
 <ol type="1">
-<li><strong>Model details</strong>: What is this model?</li>
-<li><strong>Intended use</strong>: What should it be used for?</li>
-<li><strong>Factors</strong>: What affects performance?</li>
-<li><strong>Metrics</strong>: How was it evaluated?</li>
-<li><strong>Training data</strong>: What was it trained on?</li>
-<li><strong>Ethical considerations</strong>: What could go wrong?</li>
-<li><strong>Caveats and recommendations</strong>: Warnings!</li>
+<li><strong>Model details</strong>: what is this model?</li>
+<li><strong>Intended use</strong>: what should it be used for?</li>
+<li><strong>Factors</strong>: what affects performance?</li>
+<li><strong>Metrics</strong>: how was it evaluated?</li>
+<li><strong>Training data</strong>: what was it trained on?</li>
+<li><strong>Ethical considerations</strong>: what could go wrong?</li>
+<li><strong>Caveats and recommendations</strong>: warnings!</li>
 </ol>
 </div><div class="column" style="width:45%;">
 <div style="text-align: center;">
@@ -1356,15 +1337,15 @@ END OF COMMENTED-OUT DATAFEST SLIDE -->
 </div>
 </section>
 <section id="intended-use-the-most-important-section" class="slide level2">
-<h2>Intended use: The most important section</h2>
+<h2>Intended use: the most important section</h2>
 <div style="margin-top: 30px; font-size: 22px;">
 <div class="columns">
 <div class="column" style="width:55%;">
 <p><strong>Why “intended use” matters:</strong></p>
-<p>A hammer is a great tool. But:</p>
+<p>A hammer is a great tool, but:</p>
 <ul>
-<li>✅ Intended use: Driving nails</li>
-<li>❌ NOT intended for: Brain surgery</li>
+<li>✅ Intended use: driving nails</li>
+<li>❌ NOT intended for: brain surgery</li>
 </ul>
 <p><strong>Models need the same clarity:</strong></p>
 <div style="font-size: 20px;">
@@ -1396,8 +1377,8 @@ END OF COMMENTED-OUT DATAFEST SLIDE -->
 </table>
 </div>
 <p><strong>Without this guidance:</strong></p>
-<p>People <span class="alert">will</span> use models inappropriately and harm others.</p>
-<p>Remember Air Canada? The chatbot’s “intended use” was answering questions, <span class="alert">not writing refund policy</span>. Nobody enforced the boundary</p>
+<p>People <span class="alert">will</span> misuse models and harm others.</p>
+<p>Air Canada’s chatbot was meant to answer questions, <span class="alert">not write refund policy</span>. Nobody enforced the boundary</p>
 </div><div class="column" style="width:45%;">
 <div style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px;">
 <p><strong>Real example: <a href="https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-3-Pro-Model-Card.pdf">Gemini 3 Model Card</a></strong> (edited and summarised)</p>
@@ -1412,18 +1393,17 @@ END OF COMMENTED-OUT DATAFEST SLIDE -->
 </div>
 </section>
 <section id="disaggregated-evaluation-breaking-it-down" class="slide level2">
-<h2>Disaggregated evaluation: Breaking it down</h2>
+<h2>Disaggregated evaluation: breaking it down</h2>
 <div style="margin-top: 30px; font-size: 21px;">
 <div class="columns">
 <div class="column" style="width:55%;">
 <p><strong>Why overall accuracy isn’t enough:</strong></p>
 <ul>
-<li>A model can be <span class="alert">90% accurate overall</span></li>
-<li>But 95% for Group A and 70% for Group B!</li>
+<li>A model can be <span class="alert">90% accurate overall</span>, yet 95% for Group A and 70% for Group B!</li>
 </ul>
-<p><strong>Disaggregated evaluation</strong> = report performance <span class="alert">separately</span> for different groups.</p>
+<p><strong>Disaggregated evaluation</strong> = report performance <span class="alert">separately</span> per group.</p>
 <p><strong>Real example: <a href="https://github.com/openai/clip/blob/main/model-card.md">OpenAI CLIP Model Card (2021)</a></strong></p>
-<p>Gender classification accuracy using <a href="https://arxiv.org/abs/1908.04913">FairFace</a> dataset:</p>
+<p>Gender classification accuracy on the <a href="https://arxiv.org/abs/1908.04913">FairFace</a> dataset:</p>
 <div style="font-size: 18px;">
 <table class="caption-top">
 <thead>
@@ -1455,8 +1435,8 @@ END OF COMMENTED-OUT DATAFEST SLIDE -->
 <p>OpenAI found <span class="alert">significant disparities</span> when classifying people into crime-related categories:</p>
 <ul>
 <li>Performance varied by race and gender</li>
-<li>Disparities shifted based on how classes were constructed</li>
-<li>Risk of denigration harms identified</li>
+<li>Disparities shifted with how classes were built</li>
+<li>They identified a risk of denigration harms</li>
 </ul>
 <blockquote>
 <p>“We tested the risk of certain kinds of denigration with CLIP by classifying images of people from Fairface into crime-related and non-human animal categories.”</p>
@@ -1470,21 +1450,20 @@ END OF COMMENTED-OUT DATAFEST SLIDE -->
 <div style="margin-top: 30px; font-size: 20px;">
 <div class="columns">
 <div class="column" style="width:55%;">
-<p><strong>A newer concept: System Cards</strong></p>
-<p>Modern AI products often chain several models together. A model card only covers one of them, so <strong>system cards</strong> document the <span class="alert">entire system</span>.</p>
-<p><strong>What’s included in a system card:</strong></p>
+<p><strong>A newer concept: system cards</strong></p>
+<p>Modern AI products chain several models together. A model card covers only one, so <strong>system cards</strong> document the <span class="alert">entire system</span>.</p>
+<p><strong>What a system card includes:</strong></p>
 <ul>
-<li>Multiple models working together</li>
-<li>How components interact</li>
+<li>Multiple models working together, and how components interact</li>
 <li>Human oversight mechanisms</li>
 <li>Deployment context and safeguards</li>
 <li>Red teaming and safety evaluations</li>
 </ul>
-<p><strong>Who’s using system cards:</strong></p>
+<p><strong>Who uses them:</strong></p>
 <ul>
-<li><strong>OpenAI</strong>: Released <a href="https://openai.com/index/openai-o1-system-card/">o1 System Card</a> in December 2024</li>
-<li><strong>Anthropic</strong>: Publishes system cards for each Claude release</li>
-<li><strong>Meta</strong>: Released 22 system cards in 2023 for their AI products</li>
+<li><strong>OpenAI</strong>: <a href="https://openai.com/index/openai-o1-system-card/">o1 System Card</a>, December 2024</li>
+<li><strong>Anthropic</strong>: one for each Claude release</li>
+<li><strong>Meta</strong>: 22 system cards in 2023 for their AI products</li>
 </ul>
 </div><div class="column" style="width:45%;">
 <div style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; font-size: 20px;">
@@ -1536,7 +1515,7 @@ END OF COMMENTED-OUT DATAFEST SLIDE -->
 <div class="columns">
 <div class="column" style="width:55%;">
 <p><strong>The uncomfortable truth about AI training data:</strong></p>
-<p>Most large AI models are trained on data <span class="alert">without explicit consent</span>:</p>
+<p>Most large models train on data <span class="alert">without explicit consent</span>:</p>
 <ul>
 <li>Web scraping (your blog posts, photos, art)</li>
 <li>Social media posts (even “private” ones)</li>
@@ -1548,7 +1527,7 @@ END OF COMMENTED-OUT DATAFEST SLIDE -->
 <li>You posted a photo to Instagram in 2015</li>
 <li>It was scraped into a dataset</li>
 <li>That dataset trained a facial recognition system</li>
-<li>That system is now used for surveillance</li>
+<li>That system now runs surveillance</li>
 </ul>
 </div><div class="column" style="width:45%;">
 <div style="background: rgba(230, 57, 70, 0.1); padding: 15px; border-radius: 10px;">
@@ -1587,7 +1566,7 @@ END OF COMMENTED-OUT DATAFEST SLIDE -->
 <p><strong>Users</strong>: “I just want cool AI. I don’t care about the source”</p>
 </div>
 <div style="margin-top: 20px; background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px;">
-<p><strong>Your turn</strong>: Where do you stand?</p>
+<p><span class="alert">Where do you stand?</span></p>
 </div>
 </div></div>
 </div>
@@ -1599,19 +1578,19 @@ END OF COMMENTED-OUT DATAFEST SLIDE -->
 </section>
 <section id="being-a-savvy-ai-user" class="slide level2 scrollable">
 <h2>Being a savvy AI user</h2>
-<div style="margin-top: 30px; font-size: 22px;">
+<div style="margin-top: 30px; font-size: 21px;">
 <div class="columns">
 <div class="column" style="width:55%;">
 <p><strong>You can’t fix AI pipelines, but you can:</strong></p>
 <ol type="1">
 <li><strong>Compare answers from different models</strong>
 <ul>
-<li>Same question to ChatGPT + Claude + Gemini</li>
-<li>If they disagree, investigate further</li>
+<li>Ask ChatGPT, Claude and Gemini the same question</li>
+<li>If they disagree, investigate</li>
 </ul></li>
 <li><strong>Check status pages</strong>
 <ul>
-<li>AI acting weird? Maybe it’s not your prompt</li>
+<li>AI acting oddly? Maybe it’s not your prompt</li>
 <li><a href="https://status.openai.com">status.openai.com</a>, <a href="https://status.anthropic.com">status.anthropic.com</a></li>
 </ul></li>
 <li><strong>Recognise the difference</strong>
@@ -1623,12 +1602,11 @@ END OF COMMENTED-OUT DATAFEST SLIDE -->
 <li><strong>Read the documentation</strong>
 <ul>
 <li>Model cards say what a tool is <span class="alert">not</span> for</li>
-<li>Using it outside its intended use? That risk is on you</li>
+<li>Use it outside that, and the risk is on you</li>
 </ul></li>
 </ol>
 </div><div class="column" style="width:45%;">
 <div style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; margin-top: 30px;">
-<p><strong>Quick diagnostic:</strong></p>
 <table class="caption-top">
 <thead>
 <tr class="header">
@@ -1674,15 +1652,15 @@ END OF COMMENTED-OUT DATAFEST SLIDE -->
 <div class="column" style="width:55%;">
 <p><strong>Why does AI give different answers to the same question?</strong></p>
 <ol type="1">
-<li><strong>Temperature</strong>: Randomness dial (creativity vs.&nbsp;consistency)</li>
-<li><strong>Load balancing</strong>: Your request might hit a different server</li>
-<li><strong>Model versions</strong>: A/B testing different versions</li>
-<li><strong>Context</strong>: Time of day, your chat history</li>
-<li><strong>Updates</strong>: The model literally changed since yesterday</li>
+<li><strong>Temperature</strong>: the randomness dial (creativity vs.&nbsp;consistency)</li>
+<li><strong>Load balancing</strong>: your request may hit a different server</li>
+<li><strong>Model versions</strong>: A/B testing</li>
+<li><strong>Context</strong>: time of day, your chat history</li>
+<li><strong>Updates</strong>: the model changed since yesterday</li>
 </ol>
-<p>If AI always gave the exact same response, it would feel robotic. Some variation keeps it natural.</p>
+<p>Identical responses every time would feel robotic. Some variation keeps it natural.</p>
 <p><strong>But for important decisions:</strong></p>
-<p>Ask multiple times. Ask different AIs. If answers diverge on something critical, <span class="alert">don’t trust any of them</span>!</p>
+<p>Ask multiple times, and ask different AIs. If answers diverge on something critical, <span class="alert">don’t trust any of them</span>!</p>
 </div><div class="column" style="width:45%;">
 <div style="text-align: center;">
 <p><a href="#/" data-modal-type="image" data-modal-url="figures/ab-testing.png"><img data-src="figures/ab-testing.png" style="width:70.0%"></a></p>
@@ -1696,7 +1674,7 @@ END OF COMMENTED-OUT DATAFEST SLIDE -->
 </div>
 </section>
 <section id="activity-diagnose-the-problem" class="slide level2">
-<h2>Activity: Diagnose the problem! 🔍</h2>
+<h2>Activity: Diagnose the problem!</h2>
 <div style="margin-top: 30px; font-size: 20px;">
 <div class="columns">
 <div class="column" style="width:50%;">
@@ -1721,7 +1699,7 @@ END OF COMMENTED-OUT DATAFEST SLIDE -->
 <li>How would you verify?</li>
 </ul>
 </div>
-<p>⏱️ 5 minutes to diagnose!</p>
+<p>⏱️ a few minutes to diagnose!</p>
 </div></div>
 </div>
 </section>
@@ -1732,55 +1710,52 @@ END OF COMMENTED-OUT DATAFEST SLIDE -->
 <div class="column" style="width:50%;">
 <p><strong>Scenario A: 45 seconds, cut off mid-sentence</strong></p>
 <ul>
-<li><span class="alert">Pipeline problem</span>: Server overload or timeout</li>
-<li>Check status page</li>
-<li>Retry in a few minutes</li>
+<li><span class="alert">Pipeline problem</span>: server overload or timeout</li>
+<li>Check the status page, then retry in a few minutes</li>
 </ul>
 <p><strong>Scenario B: 2027 Super Bowl answer</strong></p>
 <ul>
-<li><span class="alert">Hallucination</span>: Event hasn’t happened yet!</li>
-<li>AI doesn’t know it doesn’t know</li>
+<li><span class="alert">Hallucination</span>: the event hasn’t happened yet!</li>
+<li>The AI doesn’t know that it doesn’t know</li>
 <li>Always verify time-sensitive claims</li>
 </ul>
 <p><strong>Scenario C: Code refused today but worked yesterday</strong></p>
 <ul>
-<li><span class="alert">Model update</span> changed safety guardrails</li>
-<li>Or: Your specific prompt triggered a new filter</li>
-<li>Try rephrasing; if still blocked, guardrails changed</li>
+<li>A <span class="alert">model update</span> changed the safety guardrails</li>
+<li>Or your prompt triggered a new filter</li>
+<li>Rephrase; if it stays blocked, the guardrails changed</li>
 </ul>
 </div><div class="column" style="width:50%;">
 <p><strong>Scenario D: “Photo of my professor” = random person</strong></p>
 <ul>
-<li><span class="alert">Working as intended</span>: AI doesn’t know your professor!</li>
-<li>It generates a plausible “professor-looking” person</li>
-<li>This is expected behaviour, not a failure</li>
+<li><span class="alert">Working as intended</span>: the AI doesn’t know your professor!</li>
+<li>It generates a plausible “professor-looking” person, not a failure</li>
 </ul>
 <p><strong>Scenario E: Different AIs, different historical dates</strong></p>
 <ul>
 <li><span class="alert">Potential hallucination from all of them</span></li>
-<li>Don’t trust any AI for verifiable facts</li>
-<li>Look it up in a reliable source!</li>
+<li>Don’t trust any AI for verifiable facts, look it up in a reliable source!</li>
 </ul>
 </div></div>
 </div>
 </section></section>
 <section>
 <section id="summary" class="title-slide slide level1 center" data-background-color="#1B3A6B">
-<h1>Summary 📚</h1>
+<h1>Summary</h1>
 
 </section>
 <section id="main-takeaways" class="slide level2">
 <h2>Main takeaways</h2>
-<div style="margin-top: 30px; font-size: 32px;">
+<div style="margin-top: 30px; font-size: 26px;">
 <ul>
-<li><p><svg aria-hidden="true" role="img" viewbox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M352 256c0 22.2-1.2 43.6-3.3 64H163.3c-2.2-20.4-3.3-41.8-3.3-64s1.2-43.6 3.3-64H348.7c2.2 20.4 3.3 41.8 3.3 64zm28.8-64H503.9c5.3 20.5 8.1 41.9 8.1 64s-2.8 43.5-8.1 64H380.8c2.1-20.6 3.2-42 3.2-64s-1.1-43.4-3.2-64zm112.6-32H376.7c-10-63.9-29.8-117.4-55.3-151.6c78.3 20.7 142 77.5 171.9 151.6zm-149.1 0H167.7c6.1-36.4 15.5-68.6 27-94.7c10.5-23.6 22.2-40.7 33.5-51.5C239.4 3.2 248.7 0 256 0s16.6 3.2 27.8 13.8c11.3 10.8 23 27.9 33.5 51.5c11.6 26 20.9 58.2 27 94.7zm-209 0H18.6C48.6 85.9 112.2 29.1 190.6 8.4C165.1 42.6 145.3 96.1 135.3 160zM8.1 192H131.2c-2.1 20.6-3.2 42-3.2 64s1.1 43.4 3.2 64H8.1C2.8 299.5 0 278.1 0 256s2.8-43.5 8.1-64zM194.7 446.6c-11.6-26-20.9-58.2-27-94.6H344.3c-6.1 36.4-15.5 68.6-27 94.6c-10.5 23.6-22.2 40.7-33.5 51.5C272.6 508.8 263.3 512 256 512s-16.6-3.2-27.8-13.8c-11.3-10.8-23-27.9-33.5-51.5zM135.3 352c10 63.9 29.8 117.4 55.3 151.6C112.2 482.9 48.6 426.1 18.6 352H135.3zm358.1 0c-30 74.1-93.6 130.9-171.9 151.6c25.5-34.2 45.2-87.7 55.3-151.6H493.4z"></path></svg> You use <span class="alert">dozens of AI pipelines daily</span>: text, image, voice, recommendations</p></li>
-<li><p><svg aria-hidden="true" role="img" viewbox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"></path></svg> Pipelines are the <span class="alert">multi-step process</span> from your input to AI’s output. <span class="alert">Every step can fail</span></p></li>
-<li><p><svg aria-hidden="true" role="img" viewbox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M168 80c-13.3 0-24 10.7-24 24V408c0 8.4-1.4 16.5-4.1 24H440c13.3 0 24-10.7 24-24V104c0-13.3-10.7-24-24-24H168zM72 480c-39.8 0-72-32.2-72-72V112C0 98.7 10.7 88 24 88s24 10.7 24 24V408c0 13.3 10.7 24 24 24s24-10.7 24-24V104c0-39.8 32.2-72 72-72H440c39.8 0 72 32.2 72 72V408c0 39.8-32.2 72-72 72H72zM176 136c0-13.3 10.7-24 24-24h96c13.3 0 24 10.7 24 24v80c0 13.3-10.7 24-24 24H200c-13.3 0-24-10.7-24-24V136zm200-24h32c13.3 0 24 10.7 24 24s-10.7 24-24 24H376c-13.3 0-24-10.7-24-24s10.7-24 24-24zm0 80h32c13.3 0 24 10.7 24 24s-10.7 24-24 24H376c-13.3 0-24-10.7-24-24s10.7-24 24-24zM200 272H408c13.3 0 24 10.7 24 24s-10.7 24-24 24H200c-13.3 0-24-10.7-24-24s10.7-24 24-24zm0 80H408c13.3 0 24 10.7 24 24s-10.7 24-24 24H200c-13.3 0-24-10.7-24-24s10.7-24 24-24z"></path></svg> Real failures: Air Canada lawsuit, DPD swearing, Gemini images. <span class="alert">Pipeline problems, not “rogue AI”</span></p></li>
-<li><p><svg aria-hidden="true" role="img" viewbox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M64 64c0-17.7-14.3-32-32-32S0 46.3 0 64V400c0 44.2 35.8 80 80 80H480c17.7 0 32-14.3 32-32s-14.3-32-32-32H80c-8.8 0-16-7.2-16-16V64zm406.6 86.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L320 210.7l-57.4-57.4c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L240 221.3l57.4 57.4c12.5 12.5 32.8 12.5 45.3 0l128-128z"></path></svg> <span class="alert">Data drift: The world changes, AI stays frozen</span></p></li>
-<li><p><svg aria-hidden="true" role="img" viewbox="0 0 448 512" style="height:1em;width:0.88em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M224 0c-17.7 0-32 14.3-32 32V51.2C119 66 64 130.6 64 208v25.4c0 45.4-15.5 89.5-43.8 124.9L5.3 377c-5.8 7.2-6.9 17.1-2.9 25.4S14.8 416 24 416H424c9.2 0 17.6-5.3 21.6-13.6s2.9-18.2-2.9-25.4l-14.9-18.6C399.5 322.9 384 278.8 384 233.4V208c0-77.4-55-142-128-156.8V32c0-17.7-14.3-32-32-32zm0 96c61.9 0 112 50.1 112 112v25.4c0 47.9 13.9 94.6 39.7 134.6H72.3C98.1 328 112 281.3 112 233.4V208c0-61.9 50.1-112 112-112zm64 352H224 160c0 17 6.7 33.3 18.7 45.3s28.3 18.7 45.3 18.7s33.3-6.7 45.3-18.7s18.7-28.3 18.7-45.3z"></path></svg> <span class="alert">Monitoring</span>: Companies track metrics you never see. When monitoring fails, you read about it in the news</p></li>
-<li><p><svg aria-hidden="true" role="img" viewbox="0 0 384 512" style="height:1em;width:0.75em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M64 464c-8.8 0-16-7.2-16-16V64c0-8.8 7.2-16 16-16H224v80c0 17.7 14.3 32 32 32h80V448c0 8.8-7.2 16-16 16H64zM64 0C28.7 0 0 28.7 0 64V448c0 35.3 28.7 64 64 64H320c35.3 0 64-28.7 64-64V154.5c0-17-6.7-33.3-18.7-45.3L274.7 18.7C262.7 6.7 246.5 0 229.5 0H64zm56 256c-13.3 0-24 10.7-24 24s10.7 24 24 24H264c13.3 0 24-10.7 24-24s-10.7-24-24-24H120zm0 96c-13.3 0-24 10.7-24 24s10.7 24 24 24H264c13.3 0 24-10.7 24-24s-10.7-24-24-24H120z"></path></svg> <span class="alert">Documentation</span>: Datasheets describe data, model cards describe models and their <span class="alert">intended use</span>, system cards describe whole products</p></li>
-<li><p><svg aria-hidden="true" role="img" viewbox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M96 128a128 128 0 1 1 256 0A128 128 0 1 1 96 128zM0 482.3C0 383.8 79.8 304 178.3 304h91.4C368.2 304 448 383.8 448 482.3c0 16.4-13.3 29.7-29.7 29.7H29.7C13.3 512 0 498.7 0 482.3zM625 177L497 305c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L591 143c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"></path></svg> <span class="alert">Consent</span>: Much AI training data was collected without permission. Undocumented data (ImageNet!) hides problems for years</p></li>
-<li><p><svg aria-hidden="true" role="img" viewbox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c1.8 0 3.5-.2 5.3-.5c-76.3-55.1-99.8-141-103.1-200.2c-16.1-4.8-33.1-7.3-50.7-7.3H178.3zm308.8-78.3l-120 48C358 277.4 352 286.2 352 296c0 63.3 25.9 168.8 134.8 214.2c5.9 2.5 12.6 2.5 18.5 0C614.1 464.8 640 359.3 640 296c0-9.8-6-18.6-15.1-22.3l-120-48c-5.7-2.3-12.1-2.3-17.8 0zM591.4 312c-3.9 50.7-27.2 116.7-95.4 149.7V273.8L591.4 312z"></path></svg> <span class="alert">You should</span> compare AIs, check status pages, read model cards, and distinguish pipeline problems from hallucinations</p></li>
+<li><p>You use <span class="alert">dozens of AI pipelines daily</span>: text, image, voice, recommendations</p></li>
+<li><p>A pipeline is the <span class="alert">multi-step process</span> from your input to the AI’s output, and <span class="alert">every step can fail</span></p></li>
+<li><p>Real failures: Air Canada lawsuit, DPD swearing, Gemini images. <span class="alert">Pipeline problems, not “rogue AI”</span></p></li>
+<li><p><span class="alert">Data drift: the world changes, AI stays frozen</span></p></li>
+<li><p><span class="alert">Monitoring</span>: companies track metrics you never see. When monitoring fails, you read about it in the news</p></li>
+<li><p><span class="alert">Documentation</span>: datasheets describe data, model cards describe models and their <span class="alert">intended use</span>, system cards describe whole products</p></li>
+<li><p><span class="alert">Consent</span>: much AI training data was collected without permission. Undocumented data (ImageNet!) hides problems for years</p></li>
+<li><p><span class="alert">You should</span> compare AIs, check status pages, read model cards, and tell pipeline problems from hallucinations</p></li>
 </ul>
 </div>
 </section>

@@ -54,12 +54,12 @@ if (!require("fontawesome", character.only = TRUE)) {
 :::{style="margin-top: 50px; font-size: 28px;"}
 :::{.columns}
 :::{.column width=50%}
-- Last time, we explored [hallucinations]{.alert}
-- **Why they happen**: no fact-checking mechanism, sycophancy
-- **Types**: factual errors, fake citations, logical contradictions
+- Last time: [hallucinations]{.alert}
+- [Why they happen]{.alert}: no fact-checking mechanism, sycophancy
+- [Types]{.alert}: factual errors, fake citations, logical contradictions
 - Higher risk for: recent events, legal/medical, obscure topics
 - Prompting helps, but [doesn't fully solve]{.alert} the problem
-- **Today**: What if AI could access [your own documents]{.alert}? 📄
+- [Today]{.alert}: what if AI could access [your own documents]{.alert}? 📄
 :::
 
 :::{.column width=50%}
@@ -120,12 +120,10 @@ Source: [Bhavishya Pandit](https://bhavishyapandit9.substack.com/p/multimodal-re
 :::{style="margin-top: 30px; font-size: 23px;"}
 :::{.columns}
 :::{.column width=55%}
-- LLMs are just [pattern-matching machines]{.alert}. They:
-  - Generate text that fits statistical expectations
-  - [Have no internal verification system]{.alert} for truth
-
+- LLMs are [pattern-matching machines]{.alert}: they generate text that fits statistical expectations
+- They have [no internal verification system]{.alert} for truth
 - They'd rather [make something up than admit ignorance]{.alert}
-- Information from [credible sources gets mixed with unreliable ones]{.alert} during training
+- Training mixes [credible sources with unreliable ones]{.alert}
 - Fabricated answers sound [just as convincing]{.alert} as accurate ones
 
 :::{style="margin-top: 20px; background: rgba(230, 57, 70, 0.1); padding: 15px; border-radius: 10px;"}
@@ -151,23 +149,23 @@ Source: [Iguazio](https://www.iguazio.com/glossary/llm-hallucination/)
 
 ## The solution: Give AI access to real information!
 
-:::{style="margin-top: 30px; font-size: 24px;"}
+:::{style="margin-top: 30px; font-size: 23px;"}
 :::{.columns}
 :::{.column width=55%}
 **RAG = [R]{.alert}etrieval-[A]{.alert}ugmented [G]{.alert}eneration**
 
 **The main idea:**
 
-1. When you ask a question...
-2. First [search your documents]{.alert} for relevant information
-3. Then give that information to the LLM
-4. The LLM generates an answer [using your data]{.alert}
+1. You ask a question
+2. [Search your documents]{.alert} for relevant information
+3. Give that information to the LLM
+4. The LLM answers [using your data]{.alert}
 
 **Why this works:**
 
-- LLM gets [real, up-to-date information]{.alert}
+- The LLM gets [real, up-to-date information]{.alert}
 - Answers are [grounded]{.alert} in your documents
-- Can [cite sources]{.alert}, so you can verify them!
+- It can [cite sources]{.alert}, so you can verify them
 - No need to retrain the model
 
 [It's like giving the AI an open-book exam!]{.alert} 📖
@@ -204,17 +202,16 @@ Source: [AWS](https://aws.amazon.com/what-is/retrieval-augmented-generation/)
 :::{style="margin-top: 40px; font-size: 22px;"}
 **Example query**: "How do I fix a broken pipe?"
 
-- Keyword search: Only finds documents with "broken pipe"
-- Semantic search: Also finds "plumbing repair", "leaky faucet solutions"
+- Keyword search: only documents with "broken pipe"
+- Semantic search: also "plumbing repair", "leaky faucet solutions"
 :::
 :::
 
 :::{.column width=45%}
 **Why does this matter for RAG?**
 
-- Users ask questions in [natural language]{.alert}
-- Your documents may use [different terminology]{.alert}
-- Semantic search bridges this gap!
+- Users ask in [natural language]{.alert}; your documents use [different terminology]{.alert}
+- Semantic search bridges this gap
 
 :::{style="text-align: center; margin-top: 15px;"}
 [![](figures/semantic-vs-keyword.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/semantic-vs-keyword.png"}
@@ -228,9 +225,9 @@ Source: [AWS](https://aws.amazon.com/what-is/retrieval-augmented-generation/)
 :::{style="margin-top: 30px; font-size: 20px;"}
 :::{.columns}
 :::{.column width=55%}
-**Remember from Lecture 06?**
+**From Lecture 06:**
 
-Text gets converted to [vectors]{.alert} (lists of numbers):
+Text becomes [vectors]{.alert} (lists of numbers):
 
 | Text | Vector (simplified) |
 |------|--------------------|
@@ -241,8 +238,7 @@ Text gets converted to [vectors]{.alert} (lists of numbers):
 **Key properties:**
 
 - Similar meanings → [similar vectors]{.alert}
-- "king" and "queen" are close in vector space
-- "king" and "apple" are far apart
+- "king" and "queen" are close in vector space; "king" and "apple" are far apart
 - Modern embedding models produce [768 to 3,072 dimensions]{.alert}
 
 | Model | Dimensions | Use Case |
@@ -266,17 +262,17 @@ Similar sentences cluster together in embedding space
 
 ## Measuring similarity: Cosine similarity
 
-:::{style="margin-top: 30px; font-size: 17px;"}
+:::{style="margin-top: 30px; font-size: 18px;"}
 :::{.columns}
 :::{.column width=55%}
 **How do we measure if two vectors are similar?**
 
 - [Cosine similarity]{.alert} measures the angle between vectors
-- The numerator is the dot product (multiply their corresponding components and add them all up; how much they point in the same direction)
-- The denominator normalises by their lengths (magnitude)
-  - If vector $A = [0.8, 0.6]$, then $\|A\| = \sqrt{0.8^2 + 0.6^2} = 1$ 
-- If vectors are identical, cosine similarity = 1; if orthogonal, = 0; if opposite, = -1
-- The values range from 0 to 1 because word counts cannot be negative
+- Numerator: the dot product (multiply corresponding components and add them up; how much they point the same way)
+- Denominator: normalises by their lengths (magnitude)
+  - If $A = [0.8, 0.6]$, then $\|A\| = \sqrt{0.8^2 + 0.6^2} = 1$
+- Identical vectors = 1; orthogonal = 0; opposite = -1
+- Values range from 0 to 1 because word counts cannot be negative
 
 $$\text{similarity}(A, B) = \frac{A \cdot B}{\|A\| \times \|B\|}$$
 
@@ -293,8 +289,8 @@ $$\text{similarity}(A, B) = \frac{A \cdot B}{\|A\| \times \|B\|}$$
 :::{.column width=45%}
 **In RAG systems:**
 
-- Query embedding compared to all chunk embeddings
-- Return chunks with [highest similarity scores]{.alert}
+- Compare the query embedding to all chunk embeddings
+- Return chunks with the [highest similarity scores]{.alert}
 - Typical threshold: retrieve if score > 0.7
 
 :::{style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; font-size: 18px;"}
@@ -331,7 +327,7 @@ The search finds "puppies" when you ask about "dogs"!
 
 **Right side (every query)**: Find relevant info, then generate answer
 
-[The preparation work pays off because you only do it once; after that, every query is fast]{.alert} 📚
+[You prepare once, then every query is fast]{.alert} 📚
 :::
 :::
 
@@ -353,10 +349,9 @@ The search finds "puppies" when you ask about "dogs"!
 **The challenge:**
 
 - Documents are [unstructured]{.alert}
-- Need to extract clean text
-- Preserve meaningful structure
+- Extract clean text while preserving meaningful structure
 
-**Good news:** Tools like NotebookLM and ChatGPT handle extraction automatically!
+**Good news:** NotebookLM and ChatGPT handle extraction automatically
 :::
 
 :::{.column width=45%}
@@ -378,10 +373,9 @@ Many document types → unified text
 :::{.column width=55%}
 **Why chunk?**
 
-- LLMs have [context window limits]{.alert} (4K–128K tokens)
-- Can't fit a whole book in one prompt!
-- Need to find the [most relevant parts]{.alert}
-- There are many strategies for chunking, each with its own trade-offs. More [here](https://masteringllm.medium.com/11-chunking-strategies-for-rag-simplified-visualized-df0dbec8e373)
+- LLMs have [context window limits]{.alert} (4K–128K tokens), so a whole book won't fit in one prompt
+- You need the [most relevant parts]{.alert}
+- Many chunking strategies exist, each with trade-offs. More [here](https://masteringllm.medium.com/11-chunking-strategies-for-rag-simplified-visualized-df0dbec8e373)
 
 **Chunking parameters:**
 
@@ -392,7 +386,7 @@ Many document types → unified text
 | **Strategy** | Sentence, paragraph, semantic | Depends on document structure |
 
 :::{style="margin-top: 10px; background: rgba(45, 69, 99, 0.1); padding: 10px; border-radius: 10px;"}
-**Rule of thumb:** Start with [512 tokens, 20% overlap]{.alert}. Adjust based on your documents and retrieval quality.
+**Rule of thumb:** start with [512 tokens, 20% overlap]{.alert}, then adjust to your documents and retrieval quality
 :::
 :::
 
@@ -422,7 +416,7 @@ Source: [Mastering LLM](https://masteringllm.medium.com/11-chunking-strategies-f
 **Convert chunks to vectors & store:**
 
 - Each chunk → embedding model → vector
-- Same embedding model used for queries later!
+- Use the same embedding model for queries later
 
 | Database | Type | Speed (1M vectors) |
 |----------|------|-------------------|
@@ -435,7 +429,7 @@ Source: [Mastering LLM](https://masteringllm.medium.com/11-chunking-strategies-f
 - Traditional databases: [exact match]{.alert}
 - Vector databases: [similarity search]{.alert}
 
-[Don't worry: no-code tools handle this for you!]{.alert}
+[No-code tools handle this for you]{.alert}
 :::
 
 :::{.column width=50%}
@@ -467,8 +461,6 @@ Source: [Mastering LLM](https://masteringllm.medium.com/11-chunking-strategies-f
 :::{style="margin-top: 30px; font-size: 20px;"}
 :::{.columns}
 :::{.column width=55%}
-**The final step:**
-
 The LLM receives a prompt like this:
 
 :::{style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; font-size: 16px;"}
@@ -482,8 +474,7 @@ The LLM receives a prompt like this:
 **The LLM now:**
 
 - Has [specific, relevant information]{.alert} to work with
-- Is instructed to [cite sources]{.alert}
-- Is told to say "I don't know" if context doesn't contain the answer
+- Is told to [cite sources]{.alert} and to say "I don't know" when the context lacks the answer
 - Generates a [grounded response]{.alert}
 :::
 
@@ -528,9 +519,9 @@ Retrieved chunks become the LLM's "reference material"
 :::{style="margin-top: 30px;"}
 **When to use each:**
 
-- [Prompting]{.alert}: Quick experiments, general tasks, no private data
-- [RAG]{.alert}: Customer support, research, legal/medical QA, any task needing current or private information
-- [Fine-tuning]{.alert}: Specific writing style, consistent persona, specialised domain language
+- [Prompting]{.alert}: quick experiments, general tasks, no private data
+- [RAG]{.alert}: customer support, research, legal/medical QA, anything needing current or private information
+- [Fine-tuning]{.alert}: specific writing style, consistent persona, specialised domain language
 :::
 :::
 :::
@@ -541,7 +532,7 @@ Retrieved chunks become the LLM's "reference material"
 :::{style="margin-top: 30px; font-size: 19px;"}
 :::{.columns}
 :::{.column width=55%}
-**Yes! The evidence is strong:**
+**Yes, the evidence is strong:**
 
 | Study | Finding |
 |-------|--------|
@@ -565,15 +556,13 @@ Retrieved chunks become the LLM's "reference material"
 :::{style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; font-size: 16px; margin-top: 40px;"}
 **The "Lost in the Middle" problem:**
 
-[Liu et al. (2023)](https://arxiv.org/abs/2307.03172) found that LLMs pay most attention to:
+[Liu et al. (2023)](https://arxiv.org/abs/2307.03172): LLMs pay most attention to the
 
 1. [Beginning]{.alert} of context (primacy)
 2. [End]{.alert} of context (recency)
-3. [Middle]{.alert} is often ignored!
+3. [Middle]{.alert} is often ignored
 
-**Implication for RAG:**
-
-Put the most relevant chunks [first or last]{.alert}, not in the middle!
+**Implication for RAG:** put the most relevant chunks [first or last]{.alert}, not in the middle
 :::
 
 :::{style="margin-top: 15px; text-align: center; font-size: 18px;"}
@@ -592,7 +581,7 @@ Source: [Liu et al. (2023)](https://arxiv.org/abs/2307.03172)
 :::{style="margin-top: 30px; font-size: 19px;"}
 :::{.columns}
 :::{.column width=55%}
-**RAG isn't perfect. Common failure modes:**
+**Common failure modes:**
 
 | Failure Type | What Happens | Frequency |
 |--------------|--------------|----------|
@@ -604,10 +593,10 @@ Source: [Liu et al. (2023)](https://arxiv.org/abs/2307.03172)
 
 **Retrieval failures happen when:**
 
-- Query uses different terms than documents
-- Question is ambiguous
+- The query uses different terms than the documents
+- The question is ambiguous
 - Multiple topics compete for relevance
-- Embedding model doesn't capture domain-specific meaning
+- The embedding model misses domain-specific meaning
 :::
 
 :::{.column width=45%}
@@ -622,7 +611,7 @@ Source: [Liu et al. (2023)](https://arxiv.org/abs/2307.03172)
 
 **Problem:** "investor meeting" ≠ "earnings call" in embedding space
 
-**Result:** Wrong chunks retrieved, wrong answer!
+**Result:** wrong chunks retrieved, wrong answer
 :::
 
 :::{style="margin-top: 15px; background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px;"}
@@ -645,20 +634,16 @@ Source: [Liu et al. (2023)](https://arxiv.org/abs/2307.03172)
 **For document preparation:**
 
 1. **Clean your documents**
-   - Remove headers, footers, page numbers
-   - Fix OCR errors in scanned PDFs
+   - Remove headers, footers, page numbers; fix OCR errors in scanned PDFs
 
 2. **Use descriptive headings**
-   - Helps chunking and retrieval
-   - "Q4 2024 Revenue" > "Section 3.2"
+   - Helps chunking and retrieval: "Q4 2024 Revenue" > "Section 3.2"
 
 3. **Keep documents updated**
-   - Stale docs = stale answers
-   - Version control your knowledge base
+   - Stale docs = stale answers, so version control your knowledge base
 
 4. **Test with real queries**
-   - What questions will users actually ask?
-   - Do retrieved chunks contain the answer?
+   - Ask what users will actually ask, and check the retrieved chunks contain the answer
 :::
 
 :::{.column width=50%}
@@ -672,8 +657,7 @@ Source: [Liu et al. (2023)](https://arxiv.org/abs/2307.03172)
    - If doc says "associates", ask about "associates" not "employees"
 
 3. **Check the citations!**
-   - Does the answer match what the source says?
-   - This is your [verification step]{.alert}
+   - Does the answer match the source? This is your [verification step]{.alert}
 
 4. **Ask follow-up questions**
    - "What source did you use for that?"
@@ -701,13 +685,13 @@ Source: [Liu et al. (2023)](https://arxiv.org/abs/2307.03172)
 :::
 
 :::{style="margin-top: 40px; font-size: 22px;"}
-**All of these implement RAG internally!**
+**All of these implement RAG internally:**
 
 - You upload documents → (Retrieval source)
 - System finds relevant parts → (Augmented)
 - LLM generates answers → (Generation)
 
-[No coding required, just upload and ask!]{.alert}
+[No coding required, just upload and ask]{.alert}
 :::
 :::
 
@@ -719,9 +703,8 @@ Source: [Liu et al. (2023)](https://arxiv.org/abs/2307.03172)
 **What is NotebookLM?**
 
 - Free tool from Google
-- Upload up to [50 sources]{.alert} (PDFs, docs, websites, YouTube)
-- Creates a personal knowledge base
-- AI answers questions from [YOUR sources only]{.alert}
+- Upload up to [50 sources]{.alert} (PDFs, docs, websites, YouTube) to build a personal knowledge base
+- The AI answers from [YOUR sources only]{.alert}
 
 **Features:**
 
@@ -748,27 +731,25 @@ Source: [Liu et al. (2023)](https://arxiv.org/abs/2307.03172)
 :::
 :::
 
-## Activity: Z.ai file upload RAG 📎
+## Activity: File upload RAG 📎
 
 :::{style="margin-top: 30px; font-size: 20px;"}
 :::{.columns}
 :::{.column width=50%}
-**Compare: With vs. without your documents. Let's do it together (or at home if Emory's connection doesn't allow us to! 😂)**
+**Compare: with vs. without your documents. Let's do it together (or at home if Emory's connection doesn't allow us to! 😂)**
 
 **Step 1: Without documents**
 
-1. Open [chat.z.ai](https://chat.z.ai/)
-2. Start a [new chat]{.alert}
-3. Ask: "What are the assignment deadlines for DATASCI 101 at Emory University?"
-4. Note: Z.ai doesn't know! (It's not in training data)
+1. Open <https://aistudio.google.com/> and start a [new chat]{.alert}
+2. Ask: "What are the assignment deadlines for DATASCI 101 at Emory University?"
+3. Qwen doesn't know: it's not in the training data
 
 **Step 2: With your document**
 
 1. Start another [new chat]{.alert}
-2. Click the 📎 (attach) button
-3. Upload the course syllabus PDF
-4. Ask the same question: "What are the assignment deadlines?"
-5. Compare the answers
+2. Click the 📎 (attach) button and upload the course syllabus PDF
+3. Ask the same question: "What are the assignment deadlines?"
+4. Compare the answers
 :::
 
 :::{.column width=50%}
@@ -783,7 +764,7 @@ Source: [Liu et al. (2023)](https://arxiv.org/abs/2307.03172)
 :::{style="margin-top: 15px; background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px;"}
 **This is RAG in action!**
 
-The LLM [retrieves]{.alert} relevant parts of your uploaded file and uses them to [generate]{.alert} an accurate answer.
+The LLM [retrieves]{.alert} relevant parts of your file and uses them to [generate]{.alert} an accurate answer.
 
 You just built a RAG system! 🎉
 :::
@@ -809,36 +790,36 @@ You just built a RAG system! 🎉
 | 💻 **Developer Tools** | Documentation QA | Answer questions from codebases | GitHub Copilot, Cursor |
 
 :::{style="margin-top: 15px; font-size: 20px;"}
-In each case, the user needs answers grounded in [specific documents]{.alert}, and the system needs to cite where the answer came from
+In each case, users need answers grounded in [specific documents]{.alert}, with a citation for where the answer came from
 
-**Market size**: Enterprise RAG solutions expected to reach [$40B+ by 2028]{.alert} (estimates vary)
+**Market size**: enterprise RAG solutions expected to reach [$40B+ by 2035](https://www.businesswire.com/news/home/20251010008494/en/Retrieval-Augmented-Generation-RAG-Industry-Report-2025-2035-Global-RAG-Market-to-Surpass-%2440-Billion-by-2035-as-Enterprises-Accelerate-AI-Integration---ResearchAndMarkets.com) (estimates vary)
 
-**Advanced RAG**: [LangChain](https://www.langchain.com/) is a popular framework for building RAG applications. Feel free to explore it if you're familiar with Python/JavaScript and want to build your own RAG system!
+**Advanced RAG**: [LangChain](https://www.langchain.com/) is a popular framework for building RAG applications. Explore it if you know Python or JavaScript and want to build your own
 :::
 :::
 :::
 :::
 
-# Summary 📚 {background-color="#1B3A6B"}
+# Summary {background-color="#1B3A6B"}
 
 ## Key takeaways
 
 :::{style="margin-top: 30px; font-size: 26px;"}
 :::{.columns}
 :::{.column width=55%}
-- `r fa('exclamation-circle')` **The problem**: LLMs hallucinate and lack access to private/current information
+- [The problem]{.alert}: LLMs hallucinate and lack access to private or current information
 
-- `r fa('search')` **Semantic search**: Find by meaning using embeddings and [cosine similarity]{.alert}
+- [Semantic search]{.alert}: find by meaning using embeddings and cosine similarity
 
-- `r fa('sync')` **The RAG pipeline**: Chunk → Embed → Store → Retrieve → Generate
+- [The RAG pipeline]{.alert}: chunk → embed → store → retrieve → generate
 
-- `r fa('chart-line')` **Research shows**: RAG reduces hallucinations by [30–50%]{.alert}
+- [Research shows]{.alert}: RAG reduces hallucinations by 30–50%
 
-- `r fa('exclamation-triangle')` **Watch out for**: Retrieval failures, lost-in-the-middle, outdated docs
+- [Watch out for]{.alert}: retrieval failures, lost-in-the-middle, outdated docs
 
-- `r fa('tools')` **No-code tools**: NotebookLM, ChatGPT with files, etc
+- [No-code tools]{.alert}: NotebookLM, ChatGPT with files, etc
 
-- `r fa('check-circle')` **Always verify**: RAG reduces errors but doesn't eliminate them!
+- [Always verify]{.alert}: RAG reduces errors but doesn't eliminate them
 :::
 
 :::{.column width=45%}
@@ -853,7 +834,7 @@ In each case, the user needs answers grounded in [specific documents]{.alert}, a
 | Hallucination reduction | 30–50% |
 
 :::{style="margin-top: 15px; font-size: 20px;"}
-**Remember:** Upload your docs, ask specific questions, and [always check citations]{.alert}!
+Upload your docs, ask specific questions, and [always check citations]{.alert}
 :::
 :::
 :::

@@ -51,22 +51,21 @@ if (!require("fontawesome", character.only = TRUE)) {
 
 ## Today's plan
 
-:::{style="margin-top: 20px; font-size: 28px;"}
+:::{style="margin-top: 50px; font-size: 28px;"}
 - Quiz 01 is on [Thursday, September 24]{.alert} (50 minutes, in class)
 - Open laptop and notes; you can search the web
 - The quiz tests [understanding and critical evaluation]{.alert}, not memorisation
-- Today is [your session]{.alert}, not mine. I will ask, you will answer
-- We will work through:
+- Today is [your session]{.alert}: I ask, you answer
   1. A rapid recap of the seven lectures
   2. One realistic scenario, broken down together
   3. Practice questions in pairs
   4. Open Q&A
-- [Stop me]{.alert} whenever something is unclear. That is the whole point of today
+- [Stop me]{.alert} whenever something is unclear
 :::
 
 ## Quiz logistics
 
-:::{style="margin-top: 20px; font-size: 28px;"}
+:::{style="margin-top: 50px; font-size: 28px;"}
 :::{.columns}
 :::{.column width=55%}
 - [Format:]{.alert} 5 short essay questions plus one bonus
@@ -81,7 +80,7 @@ if (!require("fontawesome", character.only = TRUE)) {
 :::{style="text-align: center; margin-top: 20px; font-size: 24px;"}
 [Why open laptop?]{.alert}
 
-The job is not to remember definitions. The job is to [recognise problems]{.alert}, [judge trade-offs]{.alert}, and [write something useful]{.alert} faster than the AI can.
+The job is not to remember definitions. It is to [recognise problems]{.alert}, [judge trade-offs]{.alert}, and [write something useful]{.alert} faster than the AI can
 :::
 :::
 :::
@@ -92,11 +91,11 @@ The job is not to remember definitions. The job is to [recognise problems]{.aler
 ## How this part works
 
 :::{style="margin-top: 30px; font-size: 30px;"}
-- I will name a [concept]{.alert} from one of the seven lectures
+- I name a [concept]{.alert} from one of the seven lectures
 - One of you explains it in [your own words]{.alert} (about 30 seconds)
 - The rest of us [push back, add nuance, or correct]{.alert}
-- I will keep it moving. Wrong answers are useful; silence is not
-- We have about 12 minutes for this section
+- Wrong answers are useful; silence is not
+- About 12 minutes for this section
 :::
 
 ## Concept 1: hallucination
@@ -104,10 +103,8 @@ The job is not to remember definitions. The job is to [recognise problems]{.aler
 :::{style="margin-top: 40px; font-size: 32px;"}
 - Volunteer or victim? 🙋
 - In one sentence: [what is an AI hallucination, and why does it happen?]{.alert}
-- Follow-ups for the room:
-  - Is a hallucination the same as a [lie]{.alert}?
-  - Is a hallucination the same as a [factual error]{.alert}?
-  - Why might an open-laptop quiz [punish]{.alert} someone who copy-pastes an LLM answer?
+- Is a hallucination the same as a [lie]{.alert}? The same as a [factual error]{.alert}?
+- Why might an open-laptop quiz [punish]{.alert} someone who copy-pastes an LLM answer?
 :::
 
 ::: {.notes}
@@ -124,7 +121,7 @@ verifying sources matters.
 - Pick someone new
 - [What does it mean to "label" a dataset, and why is it usually the most
   expensive step?]{.alert}
-- Quick room poll: in each case, [is the label easy, hard, or contested?]{.alert}
+- Room poll: [is the label easy, hard, or contested?]{.alert}
   - "Is this email spam?"
   - "Is this tweet toxic?"
   - "Is this CT scan showing pneumonia?"
@@ -135,38 +132,38 @@ verifying sources matters.
 ## Concept 3: the three learning paradigms
 
 :::{style="margin-top: 30px; font-size: 28px;"}
-- Three students, one paradigm each. One sentence per person:
-  - [Supervised learning]{.alert} — ?
-  - [Unsupervised learning]{.alert} — ?
-  - [Reinforcement learning]{.alert} — ?
-- Then back to the room: name one [real product]{.alert} that uses each
+- Three students, one paradigm each, one sentence per person:
+  - [Supervised learning]{.alert}?
+  - [Unsupervised learning]{.alert}?
+  - [Reinforcement learning]{.alert}?
+- Room: name one [real product]{.alert} that uses each
 - Trick question: where does [training a chatbot with thumbs up / thumbs down]{.alert}
-  fit? (answer: RL from human feedback — RLHF)
+  fit? (answer: RL from human feedback, RLHF)
 :::
 
 ## Concept 4: precision vs recall
 
 :::{style="margin-top: 30px; font-size: 28px;"}
-- This is the single most quiz-worthy concept of the block. 🎯
+- The single most quiz-worthy concept of the block. 🎯
 - Volunteer to [draw the confusion matrix]{.alert} on the board (or describe it)
-- Then the room debates:
-  - A [cancer screening]{.alert} model — should you optimise precision or recall? Why?
-  - A [spam filter]{.alert} for your inbox — same question
-  - A [criminal sentencing]{.alert} risk score — same question
-- Punchline: the answer depends on [which mistake is more costly]{.alert}, and
-  who pays the cost
+- Precision or recall, and why?
+  - A [cancer screening]{.alert} model
+  - A [spam filter]{.alert} for your inbox
+  - A [criminal sentencing]{.alert} risk score
+- Punchline: it depends on [which mistake is more costly]{.alert}, and who pays
+  the cost
 :::
 
 ## Concept 5: overfitting and validation
 
 :::{style="margin-top: 30px; font-size: 28px;"}
 - Cold call: [what is overfitting, in plain English?]{.alert}
-- Follow-up: [why do we split data into training and validation sets?]{.alert}
+- [Why do we split data into training and validation sets?]{.alert}
 - Room scenario:
   - You train a model on Emory student grades from 2018-2024
   - It scores 99% accuracy on those students
   - Should you trust it on the 2026 cohort? [Why or why not?]{.alert}
-- Connect to: [Goodhart's law]{.alert} — when a measure becomes a target, it
+- Connect to [Goodhart's law]{.alert}: when a measure becomes a target, it
   ceases to be a good measure
 :::
 
@@ -177,10 +174,9 @@ verifying sources matters.
   - One of you explains [tokenisation]{.alert}
   - The other explains [embeddings]{.alert}
 - Then I pick two pairs to share
-- Rapid-fire room questions:
+- Rapid-fire:
   - Why does ChatGPT charge by the [token]{.alert} and not by the word?
-  - Why does the [order]{.alert} of words in a sentence matter, even after
-    embedding?
+  - Why does the [order]{.alert} of words matter, even after embedding?
   - What is a [context window]{.alert}, and why does it cost so much to make it
     bigger?
 :::
@@ -190,54 +186,37 @@ verifying sources matters.
 :::{style="margin-top: 30px; font-size: 28px;"}
 - Last concept of the recap
 - [What does "multimodal" mean for an AI system?]{.alert}
-- Room:
-  - Name three [modalities]{.alert} we discussed
-  - Why is [audio]{.alert} harder than text in some ways and easier in others?
-  - When you upload a photo to ChatGPT, what is happening [under the hood]{.alert}?
+- Name three [modalities]{.alert} we discussed
+- Why is [audio]{.alert} harder than text in some ways and easier in others?
+- When you upload a photo to ChatGPT, what is happening [under the hood]{.alert}?
 :::
 
 # Part 2: a real scenario 🏥 {background-color="#1B3A6B"}
 
 ## The setup
 
-:::{style="margin-top: 20px; font-size: 26px;"}
-:::{.columns}
-:::{.column width=60%}
+:::{style="margin-top: 20px; font-size: 27px;"}
 A startup, [HealthScribe]{.alert}, sells an AI tool to hospitals. The tool
 listens to doctor-patient conversations and writes the clinical note.
 
 - The model is a [fine-tuned LLM]{.alert}
 - Training data: 80,000 doctor-patient transcripts from a single large hospital
   network in California, 2019-2024
-- The labels are the [final clinical notes]{.alert} that doctors wrote and
-  signed off on
+- The labels are the [final clinical notes]{.alert} doctors wrote and signed off
 - HealthScribe reports [92% agreement]{.alert} with doctor-written notes on a
   held-out test set
-- They are now selling the product to hospitals across the country
-:::
-
-:::{.column width=40%}
-:::{style="text-align: center; margin-top: 30px; font-size: 28px;"}
-🩺
-
-We will work through this together.
-
-I will [not move on]{.alert} until I get answers from at least three different
-people on each question.
-:::
-:::
-:::
+- They now sell the product to hospitals across the country
 :::
 
 ## Question A: the dataset
 
 :::{style="margin-top: 30px; font-size: 28px;"}
 - [What problems can you spot]{.alert} with the training data?
-- Hints, if the room is quiet:
+- Hints:
   - Where did the data come from? Who is in it? Who is [not]{.alert} in it?
-  - The labels are [doctor-written notes]{.alert} — is that the truth, or one
-    person's interpretation?
-  - The data is from [2019-2024]{.alert} — does medicine change over five years?
+  - The labels are [doctor-written notes]{.alert}: the truth, or one person's
+    interpretation?
+  - The data is from [2019-2024]{.alert}: does medicine change over five years?
 - Try to name [at least three distinct issues]{.alert}
 :::
 
@@ -254,25 +233,22 @@ population); language (probably English-only).
 :::{style="margin-top: 30px; font-size: 28px;"}
 - HealthScribe reports [92% agreement with doctor-written notes]{.alert}
 - Volunteer: [what is being measured here?]{.alert}
-- Then the room:
-  - Is "agreement with the doctor" the same as [getting it right]{.alert}?
-  - What are the model and the doctor [agreeing on]{.alert} when they agree?
-  - On what kind of patient might the [8% disagreement]{.alert} concentrate?
-- This is a classic case of [Goodhart's law]{.alert}: optimising agreement is
-  not the same as optimising care
+- Is "agreement with the doctor" the same as [getting it right]{.alert}?
+- What are the model and the doctor [agreeing on]{.alert} when they agree?
+- On what kind of patient might the [8% disagreement]{.alert} concentrate?
+- A classic [Goodhart's law]{.alert} case: optimising agreement is not
+  optimising care
 :::
 
 ## Question C: precision and recall
 
 :::{style="margin-top: 30px; font-size: 28px;"}
-- Imagine the AI's job is to [flag every mention of an allergy]{.alert} in the
-  conversation, so it can be added to the patient record
-- The room decides:
-  - Would you optimise [precision]{.alert} (only flag what you are very sure of)
-    or [recall]{.alert} (flag everything that might be an allergy)?
-  - Defend your choice with [a real harm]{.alert} that comes from each kind of
-    mistake
-- This is the single most likely structure for a quiz question. ✏️
+- The AI's job: [flag every mention of an allergy]{.alert} in the conversation,
+  for the patient record
+- Would you optimise [precision]{.alert} (only flag what you are very sure of)
+  or [recall]{.alert} (flag everything that might be an allergy)?
+- Defend your choice with [a real harm]{.alert} from each kind of mistake
+- The single most likely structure for a quiz question. ✏️
 :::
 
 ## Question D: a deployment decision
@@ -283,9 +259,8 @@ population); language (probably English-only).
   - [Yes, buy it]{.alert}
   - [No, do not buy it]{.alert}
   - [Buy it, but with conditions]{.alert}
-- Whatever the room votes, I want one defender of each position to [argue for
-  60 seconds]{.alert}
-- Then the room: [what evidence would change your mind?]{.alert}
+- One defender of each position [argues for 60 seconds]{.alert}
+- Then: [what evidence would change your mind?]{.alert}
 :::
 
 # Part 3: practice questions 📝 {background-color="#1B3A6B"}
@@ -293,12 +268,11 @@ population); language (probably English-only).
 ## How this part works
 
 :::{style="margin-top: 30px; font-size: 28px;"}
-- I will show you [three practice questions]{.alert}, one at a time
-- They are written in the same style as the real Quiz 01
+- I show you [three practice questions]{.alert}, one at a time
 - Pair up with the person next to you
 - You have [two minutes per question]{.alert} to discuss your answer
-- Then I will pick a pair to share, and the room critiques
-- These are [not the real quiz questions]{.alert}, but the format is identical
+- Then I pick a pair to share, and the room critiques
+- These are [not the real quiz questions]{.alert}, but the format is similar
 :::
 
 ## Practice question 1
@@ -364,13 +338,13 @@ of sugar" when the recipe clearly says "2 cups of salt." 🧂
 ## Anything unclear
 
 :::{style="margin-top: 50px; font-size: 32px;"}
-- This is your last chance before Thursday
-- No question is too small. If [you]{.alert} are unsure, [others]{.alert} are too
+- Your last chance before Thursday
+- If [you]{.alert} are unsure, [others]{.alert} are too
 - Topics most often asked about in past semesters:
-  - [Embeddings]{.alert} — what does the vector "mean"?
-  - [Validation vs test set]{.alert} — what is the difference?
-  - [Multimodal]{.alert} — how does the model "see" an image?
-  - [The proxy problem]{.alert} — when is a metric a bad proxy?
+  - [Embeddings]{.alert}: what does the vector "mean"?
+  - [Validation vs test set]{.alert}: what is the difference?
+  - [Multimodal]{.alert}: how does the model "see" an image?
+  - [The proxy problem]{.alert}: when is a metric a bad proxy?
 :::
 
 ## Last reminders before Thursday
@@ -378,11 +352,12 @@ of sugar" when the recipe clearly says "2 cups of salt." 🧂
 :::{style="margin-top: 30px; font-size: 28px;"}
 - [Thursday, September 24, 2:30 pm, this room]{.alert}
 - Bring your laptop and your charger 🔌
-- The questions are handed out [on paper]{.alert}; you type your answers in a Word document or PDF and [upload the file to Canvas]{.alert} before the end of class, so log in before you arrive
+- Questions are handed out [on paper]{.alert}
+- Type your answers in a Word document or PDF and [upload the file to Canvas]{.alert} before the end of class, so log in to Canvas before you arrive
 - Read each question [twice]{.alert} before you start writing
-- If you are stuck, [skip and come back]{.alert} — do not lose the easy points
+- If you are stuck, [skip and come back]{.alert}: do not lose the easy points
 - Cite the AI tool you used (if any). [Honesty over polish]{.alert}
 - See you Thursday. You are ready. 💪
 :::
 
-# See you Thursday! 👋 {background-color="#1B3A6B"}
+# Many thanks and see you soon! 👋 {background-color="#1B3A6B"}

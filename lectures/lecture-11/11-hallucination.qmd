@@ -51,17 +51,16 @@ if (!require("fontawesome", character.only = TRUE)) {
 
 ## Recap of last class
 
-:::{style="margin-top: 20px; font-size: 26px;"}
+:::{style="margin-top: 50px; font-size: 26px;"}
 :::{.columns}
 :::{.column width=50%}
-- Last time, we explored [prompt engineering]{.alert}
-- Key techniques:
-  - **PTCF Framework**: Persona, Task, Context, Format
-  - **Chain-of-Thought**: "Let's think step by step"
-  - **Personas**: Giving AI expert roles
-  - **AI Agents**: LLMs that use tools
-- Practical tips for better prompts, iterative design
-- **Today**: When LLMs go [creatively wrong]{.alert} 🎭
+- Last class: [prompt engineering]{.alert}
+  - [PTCF]{.alert}: persona, task, context, format
+  - [Chain-of-thought]{.alert}: "Let's think step by step"
+  - [Personas]{.alert}: giving AI expert roles
+  - [AI agents]{.alert}: LLMs that use tools
+- Plus practical tips and iterative design
+- [Today]{.alert}: when LLMs go creatively wrong 🎭
 - Are [hallucinations]{.alert} AI's biggest problem?
 :::
 
@@ -119,7 +118,7 @@ Source: [Nielsen Norman Group](https://www.nngroup.com/articles/ai-hallucination
 Source: [X.com](https://x.com/wirespeed_/status/1962508239817589147)
 :::
 
-# What Are Hallucinations? 🤥 {background-color="#1B3A6B"}
+# What are hallucinations? 🤥 {background-color="#1B3A6B"}
 
 ## When AI confidently makes things up
 
@@ -141,7 +140,7 @@ Source: [X.com](https://x.com/wirespeed_/status/1962508239817589147)
 
 **The tricky part:**
 
-There's often [no signal]{.alert} that the AI is hallucinating. It sounds just as confident as when it's correct.
+There's often [no signal]{.alert}: the AI sounds as confident as when it's correct
 :::
 
 :::{.column width=45%}
@@ -163,7 +162,7 @@ The AI sounds confident, but is completely wrong
 :::{.column width=55%}
 [It's not a bug, it's how LLMs work!]{.alert}
 
-**Remember: LLMs predict the next word**
+**LLMs predict the next word**
 
 - Input: "The capital of France is"
 - Output: "Paris" (high probability)
@@ -173,8 +172,8 @@ The AI sounds confident, but is completely wrong
 **The problem:**
 
 - Plausibility ≠ truth
-- LLMs have no "fact-checking" mechanism
-- They can't access the internet during generation (unless designed to)
+- No fact-checking mechanism
+- No internet access during generation (unless designed to)
 - No way to say "I genuinely don't know"
 - LLMs are optimised [to sound right, not to *be* right]{.alert}
 :::
@@ -202,10 +201,10 @@ Source: [Medium](https://guyernest.medium.com/learn-the-intuition-behind-llm-hal
 
 **How this causes hallucinations:**
 
-- User asks a question → model doesn't know → but saying "I don't know" feels unhelpful → [model makes something up]{.alert}
-- User pushes back → model changes its (correct!) answer to agree
-- User asks leading questions → model confirms false premises
-- According to [Geng et al (2025)](https://arxiv.org/abs/2511.01805), GPT-5 changed their answers [up to 55% of the time]{.alert} after 10 rounds of discussion!
+- Model doesn't know → "I don't know" feels unhelpful → [it makes something up]{.alert}
+- User pushes back → model drops its correct answer to agree
+- Leading question → model confirms the false premise
+- [Geng et al (2025)](https://arxiv.org/abs/2511.01805): GPT-5 changed its answers [up to 55% of the time]{.alert} after 10 rounds of discussion
 :::
 
 :::{.column width=45%}
@@ -226,7 +225,7 @@ Source: [Zvi Mowshovitz (2025)](https://thezvi.substack.com/p/gpt-4o-is-an-absur
 :::{.column width=55%}
 **Garbage in, hallucination out!** (remember lecture 03 about data?)
 
-LLMs learn from [trillions of tokens]{.alert} scraped from the internet. This creates problems:
+LLMs learn from [trillions of tokens]{.alert} scraped from the internet:
 
 | Problem | What Happens |
 |---------|--------------|
@@ -238,7 +237,7 @@ LLMs learn from [trillions of tokens]{.alert} scraped from the internet. This cr
 
 **The interpolation problem:**
 
-For rare topics, the model [fills in gaps]{.alert} using patterns from similar-but-different topics. This is where confident nonsense comes from!
+For rare topics, the model [fills in gaps]{.alert} with patterns from similar-but-different topics. That is where confident nonsense comes from
 :::
 
 :::{.column width=45%}
@@ -253,13 +252,13 @@ The model might:
 2. Know 1987 election patterns in Europe ✓
 3. [Invent specific parties, candidates, results]{.alert} ✗
 
-It sounds plausible because it's *statistically consistent* with European elections...but it's all fabricated!
+It sounds plausible because it is *statistically consistent* with European elections, but it is all fabricated
 :::
 
 :::{style="margin-top: 15px; font-size: 18px;"}
 **Rule of thumb:**
 
-The more [obscure or specific]{.alert} your question, the higher the hallucination risk. Models are most reliable on topics with abundant, consistent training data.
+The more [obscure or specific]{.alert} your question, the higher the hallucination risk. Models are most reliable on topics with abundant, consistent training data
 :::
 :::
 :::
@@ -270,9 +269,7 @@ The more [obscure or specific]{.alert} your question, the higher the hallucinati
 :::{style="margin-top: 30px; font-size: 22px;"}
 :::{.columns}
 :::{.column width=55%}
-**Not all domains are equally risky.**
-
-Research shows hallucination rates vary dramatically by topic:
+**Hallucination rates vary dramatically by topic:**
 
 | Domain | Hallucination Risk | Why? |
 |--------|-------------------|------|
@@ -283,7 +280,7 @@ Research shows hallucination rates vary dramatically by topic:
 | **Obscure history** | Very High | Sparse data → interpolation |
 | **Citations** | Very High | Specific strings rarely memorised |
 
-- GPT-4 hallucinated on [~29% of common references]{.alert} ([Chelli et al. (2024)](https://www.jmir.org/2024/1/e53164))
+- GPT-4: [~29% of common references]{.alert} ([Chelli et al. (2024)](https://www.jmir.org/2024/1/e53164))
 - But [~58% on legal questions]{.alert} ([Dahl et al. (2024)](https://dho.stanford.edu/wp-content/uploads/Hallucinations_JLA.pdf))
 :::
 
@@ -330,7 +327,7 @@ Citation hallucinations are the hardest to catch because they look so specific
 :::
 :::
 
-# Real-World Failures 💥 {background-color="#1B3A6B"}
+# Real-world failures 💥 {background-color="#1B3A6B"}
 
 ## The lawyer who trusted ChatGPT
 
@@ -340,10 +337,10 @@ Citation hallucinations are the hardest to catch because they look so specific
 **Mata v. Avianca Airlines (2023)**
 
 - Lawyer Steven Schwartz used ChatGPT for legal research
-- Submitted a brief citing [6 cases that didn't exist]{.alert}
-- ChatGPT had invented case names, citations, and quotes
-- Cases sounded completely plausible!
-- Judge sanctioned both attorneys
+- He filed a brief citing [6 cases that didn't exist]{.alert}
+- ChatGPT invented the case names, citations and quotes
+- They sounded completely plausible
+- The judge sanctioned both attorneys
 
 **The wake-up call:**
 
@@ -361,7 +358,7 @@ Source: [CNN](https://www.cnn.com/2023/05/27/business/chat-gpt-avianca-mata-lawy
 :::
 
 :::{style="margin-top: 15px; background: rgba(230, 57, 70, 0.1); padding: 15px; border-radius: 10px;"}
-[Warning]{.alert}: Asking AI "Is this true?" doesn't work, it will usually confirm its own hallucinations!
+[Warning]{.alert}: asking AI "Is this true?" usually just confirms its own hallucinations
 :::
 :::
 :::
@@ -372,32 +369,32 @@ Source: [CNN](https://www.cnn.com/2023/05/27/business/chat-gpt-avianca-mata-lawy
 :::{style="margin-top: 30px; font-size: 22px;"}
 :::{.columns}
 :::{.column width=55%}
-**Healthcare hallucinations can be lethal:**
+**Healthcare hallucinations can be lethal**
 
-**Examples documented in research:**
+**Documented in research:**
 
-- AI suggested [wrong drug dosages]{.alert}
-- Invented drug interactions that don't exist
-- Recommended treatments for wrong conditions
-- Created fake medical citations
+- [Wrong drug dosages]{.alert}
+- Invented drug interactions
+- Treatments for the wrong conditions
+- Fake medical citations
 
 **A 2024 study found:**
 
 - ChatGPT gave incorrect medical advice 51% of the time
 - Many errors could cause [serious patient harm]{.alert}
-- Model couldn't identify its own errors
+- The model couldn't identify its own errors
 - Source: [Hadi et al. (2024)](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0307383)
 :::
 
 :::{.column width=45%}
 :::{style="text-align: center;"}
-[![Medical hallucination dangers](figures/dr-chatgpt.png){width="60%"}](#){data-modal-type="image" data-modal-url="figures/dr-chatgpt.png"}
+[![Medical hallucination dangers](figures/dr-chatgpt.png){width="50%"}](#){data-modal-type="image" data-modal-url="figures/dr-chatgpt.png"}
 
 Source: [The New York Times (2025)](https://www.nytimes.com/2025/11/16/briefing/meet-dr-chatgpt.html)
 :::
 
 - Many people can't afford doctors
-- Easy to believe confident AI, hard to verify
+- Confident AI is easy to believe, hard to verify
 - Medical jargon sounds authoritative
 :::
 :::
@@ -408,13 +405,12 @@ Source: [The New York Times (2025)](https://www.nytimes.com/2025/11/16/briefing/
 :::{style="margin-top: 30px; font-size: 22px;"}
 :::{.columns}
 :::{.column width=55%}
-**Fake citations are a major problem:**
+**Fake citations are a major problem**
 
 **For students:**
 
-- AI invents realistic-sounding paper titles
-- Creates plausible author names
-- Fabricates journals and conferences
+- AI invents realistic paper titles and author names
+- It fabricates journals and conferences
 - Very hard to detect without checking
 
 **For academia more broadly:**
@@ -430,9 +426,8 @@ Source: [The New York Times (2025)](https://www.nytimes.com/2025/11/16/briefing/
 **How to avoid this:**
 
 1. Never trust AI citations
-2. Verify EVERY reference
-3. Use academic databases (Google Scholar, PubMed)
-4. Look up authors and journals
+2. Verify EVERY reference in academic databases (Google Scholar, PubMed)
+3. Look up authors and journals
 
 **Red flags:**
 
@@ -445,14 +440,12 @@ Source: [The New York Times (2025)](https://www.nytimes.com/2025/11/16/briefing/
 :::
 :::
 
-## Discussion: Who is responsible? 🤔
+## Discussion: who is responsible? 🤔
 
 :::{style="margin-top: 30px; font-size: 24px;"}
 :::{.columns}
 :::{.column width=50%}
-**When AI hallucinations cause harm...**
-
-**Who bears responsibility?**
+**When AI hallucinations cause harm, who bears responsibility?**
 
 A. The user who relied on AI
 
@@ -484,21 +477,17 @@ Where do you stand?
 :::
 :::
 
-# Creativity vs. Accuracy ⚖️ {background-color="#1B3A6B"}
+# Creativity vs. accuracy ⚖️ {background-color="#1B3A6B"}
 
 ## The creativity-accuracy tradeoff
 
 :::{style="margin-top: 30px; font-size: 20px;"}
 :::{.columns}
 :::{.column width=55%}
-**However...**
+The same mechanism that causes hallucinations also enables [creativity]{.alert}
 
-The same mechanism that causes hallucinations also enables [creativity]{.alert}!
-
-**Consider:**
-
-- A very "safe" AI only says things it's 100% sure of
-- A creative AI takes risks, combines ideas in new ways
+- A very "safe" AI only says things it is 100% sure of
+- A creative AI takes risks and combines ideas in new ways
 - [You can't have unlimited creativity with perfect accuracy]{.alert}
 
 **The spectrum:**
@@ -512,12 +501,12 @@ but accurate           but risky
 Refuses often          Sometimes wrong
 ```
 
-**Different tasks need different points on this spectrum!**
+**Different tasks need different points on this spectrum**
 :::
 
 :::{.column width=45%}
 :::{style="text-align: center;"}
-[![Creativity-accuracy tradeoff](figures/creativity-accuracy.jpg){width="80%"}](#){data-modal-type="image" data-modal-url="figures/creativity-accuracy.jpg"}
+[![Creativity-accuracy tradeoff](figures/creativity-accuracy.jpg){width="70%"}](#){data-modal-type="image" data-modal-url="figures/creativity-accuracy.jpg"}
 
 Source: [Kevin Kelly (2024)](https://kk.org/thetechnium/the-tradeoffs-in-ai/)
 
@@ -531,28 +520,22 @@ You'd want a creative AI for brainstorming, but a cautious one for tax advice
 
 ## When hallucinations are... useful? 🤔
 
-:::{style="margin-top: 30px; font-size: 19px;"}
+:::{style="margin-top: 30px; font-size: 21px;"}
 :::{.columns}
 :::{.column width=55%}
-**Controversial take: [Hallucinations can be great, too!]{.alert}**
-
-**Consider these use cases:**
+**Controversial take: [hallucinations can be great, too!]{.alert}**
 
 1. **Creative writing**
-   - We WANT the AI to invent characters, plots, dialogue
-   - "Hallucinating" is literally the job!
+   - We WANT invented characters, plots and dialogue: hallucinating is the job
 
 2. **Brainstorming**
-   - Novel combinations of ideas
-   - "What if..." scenarios
+   - Novel combinations of ideas and "what if..." scenarios
 
 3. **Role-playing games**
-   - Improvising characters and worlds
-   - Making up stories on the fly
+   - Improvising characters and worlds on the fly
 
 4. **Art and design**
-   - Imagining things that don't exist
-   - Creating impossible visuals
+   - Imagining things that don't exist, creating impossible visuals
 
 **The problem isn't hallucination _per se_, it's [hallucination at the wrong time]{.alert}**
 :::
@@ -569,20 +552,20 @@ More here: [The Case for AI Hallucination](https://uxdesign.cc/the-case-for-ai-h
 :::
 
 :::{style="margin-top: 15px; background: rgba(230, 57, 70, 0.1); padding: 15px; border-radius: 10px;"}
-[Bottom line]{.alert}: Before you worry about hallucinations, ask yourself whether you actually need the AI to be factual right now.
+Before worrying about hallucinations, ask whether you need the AI to be factual 
 :::
 :::
 :::
 :::
 
-## Activity: Confidence Calibration Test 📊
+## Activity: confidence calibration test 📊
 
 :::{style="margin-top: 30px; font-size: 20px;"}
 :::{.columns}
 :::{.column width=50%}
 **Does AI know when it's wrong?**
 
-Let's ask <https://chat.z.ai/> these questions and request a [confidence rating (1-10)]{.alert} for each answer. [Z.ai](https://chat.z.ai/) was chosen because you can turn off web access
+Ask <https://chat.qwen.ai/c/guest> (fast model) these questions and request a [confidence rating (1-10)]{.alert} for each answer. [Qwen](https://chat.qwen.ai/) lets you turn off web access
 
 1. "What day of the week was January 14, 1642?" Confidence?"
   - Tuesday (I checked on Google Calendar!)
@@ -599,7 +582,7 @@ Let's ask <https://chat.z.ai/> these questions and request a [confidence rating 
 5. "Who is the current mayor of Reykjavik, Iceland? Confidence?"
   - Heiða Björg Hilmisdóttir
 
-**Then let's verify each answer!**
+**Then verify each answer**
 :::
 
 :::{.column width=50%}
@@ -619,14 +602,14 @@ Let's ask <https://chat.z.ai/> these questions and request a [confidence rating 
 **Discussion:**
 
 - Is confidence correlated with accuracy?
-- Did the AI ever give high confidence but wrong answers?
+- Any high-confidence wrong answers?
 - [Can you trust AI's self-assessment?]{.alert}
 :::
 :::
 :::
 :::
 
-# Detection and Prevention 🛡️ {background-color="#1B3A6B"}
+# Detection and prevention 🛡️ {background-color="#1B3A6B"}
 
 ## How to spot hallucinations
 
@@ -647,7 +630,7 @@ Let's ask <https://chat.z.ai/> these questions and request a [confidence rating 
 
 1. **Google the claim**: does it appear elsewhere?
 2. **Check citations**: do they exist?
-3. **Ask for sources**: then verify them!
+3. **Ask for sources**: then verify them
 4. **Cross-reference**: use multiple sources
 5. **Trust your expertise**: if something seems off, it might be
 :::
@@ -662,7 +645,7 @@ Impressive-sounding detail is often the first sign something is made up
 :::
 
 :::{style="margin-top: 15px; background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px;"}
-[Golden rule]{.alert}: If the AI gives you a precise percentage or a page number, that's exactly when you should double-check.
+A precise percentage or page number is exactly when to double-check!
 :::
 :::
 :::
@@ -673,7 +656,7 @@ Impressive-sounding detail is often the first sign something is made up
 :::{style="margin-top: 30px; font-size: 24px;"}
 :::{.columns}
 :::{.column width=55%}
-**You can reduce hallucinations through prompting:**
+**Prompting can reduce hallucinations:**
 
 | Technique | What to Add to Your Prompt |
 |-----------|---------------------------|
@@ -686,7 +669,7 @@ Impressive-sounding detail is often the first sign something is made up
 :::{style="margin-top: 15px;"}
 **Does this eliminate hallucinations?**
 
-[No!]{.alert} But it can reduce them. Combining several of these techniques in one prompt works better than any single trick.
+[No!]{.alert} But combining several of them in one prompt works better than any single trick
 :::
 :::
 
@@ -712,7 +695,7 @@ Question: [your question]
 :::
 
 :::{style="margin-top: 15px; font-size: 18px;"}
-**Next slides**: We'll build [more sophisticated templates]{.alert} using PTCF and meta-prompting from Lecture 10!
+**Next slides**: [richer templates]{.alert} using PTCF and meta-prompting from lecture 10
 :::
 :::
 :::
@@ -723,7 +706,7 @@ Question: [your question]
 :::{style="margin-top: 30px; font-size: 22px;"}
 :::{.columns}
 :::{.column width=55%}
-Remember the [**PTCF framework**](https://danilofreire.github.io/datasci101/lectures/lecture-10/10-prompting.html) from last class?
+The [**PTCF framework**](https://danilofreire.github.io/datasci101/lectures/lecture-10/10-prompting.html) from last class:
 
 | Element | Anti-Hallucination Version |
 |---------|---------------------------|
@@ -735,8 +718,8 @@ Remember the [**PTCF framework**](https://danilofreire.github.io/datasci101/lect
 **Why PTCF helps:**
 
 - **Persona** activates [cautious, precise patterns]{.alert} from training
-- **Task** constrains scope, no room for invention
-- **Context** grounds responses in [real information]{.alert}
+- **Task** constrains scope, leaving no room for invention
+- **Context** grounds answers in [real information]{.alert}
 - **Format** forces explicit uncertainty signals
 :::
 
@@ -778,15 +761,15 @@ QUESTION: [your question]
 :::{style="margin-top: 30px; font-size: 19px;"}
 :::{.columns}
 :::{.column width=55%}
-**Meta-prompting** means [asking AI to help you write better prompts]{.alert}. This is especially useful for reducing hallucinations!
+**Meta-prompting** means [asking AI to help you write better prompts]{.alert}
 
 **Why it works:**
 
 - The model has seen millions of prompts in training
 - It knows which phrasings activate careful vs. creative modes
-- It can identify ambiguities you might miss
+- It can spot ambiguities you might miss
 
-**When to use meta-prompting:**
+**When to use it:**
 
 - You're getting unreliable outputs
 - You're not sure what constraints to add
@@ -794,7 +777,7 @@ QUESTION: [your question]
 - You need prompts for high-stakes tasks
 
 :::{style="margin-top: 15px; background: rgba(230, 57, 70, 0.1); padding: 15px; border-radius: 10px;"}
-[Key insight]{.alert}: You're basically asking the model "how should I talk to you so you don't make things up?"
+You are asking the model "how should I talk to you so you don't make things up?"
 :::
 :::
 
@@ -822,7 +805,7 @@ chance you'll make things up?
 :::
 
 :::{style="margin-top: 15px; font-size: 18px;"}
-**Try it!** Ask ChatGPT or Claude to critique and improve your prompts. The suggestions are often [better than what you'd write on your own]{.alert}.
+**Try it!** Ask ChatGPT or Claude to critique your prompts. The suggestions are often [better than what you'd write on your own]{.alert}
 :::
 :::
 :::
@@ -836,9 +819,7 @@ chance you'll make things up?
 **LLMs only know what they learned during training**
 
 - ChatGPT's training data has a [cutoff date]{.alert}
-- Ask about yesterday's news → doesn't know
-- Ask about your company's policies → doesn't know
-- Ask about your course materials → doesn't know
+- Yesterday's news, your company's policies, your course materials → doesn't know
 
 **What happens when you ask about recent events?**
 
@@ -867,7 +848,7 @@ Anything after the cutoff date is a blind spot, and the model won't tell you tha
 :::
 
 :::{style="margin-top: 15px; background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px;"}
-[Preview of next class]{.alert}: RAG solves this by giving AI access to real, up-to-date documents!
+[Preview of next class]{.alert}: RAG solves this by giving AI real, up-to-date documents
 :::
 :::
 :::
@@ -882,19 +863,18 @@ Anything after the cutoff date is a blind spot, and the model won't tell you tha
 
 **The core idea:**
 
-1. When you ask a question...
-2. First [search your documents]{.alert} for relevant information
+1. You ask a question
+2. [Search your documents]{.alert} for relevant information
 3. Give that information to the LLM
-4. LLM generates an answer [using your data]{.alert}
+4. The LLM answers [using your data]{.alert}
 
 **Why this reduces hallucinations:**
 
-- AI has [real information]{.alert} to work with
-- Answers are [grounded]{.alert} in documents
-- Can [cite sources]{.alert}, so you can verify!
-- Reduces need to "make stuff up"
+- Answers are [grounded]{.alert} in real documents
+- The AI can [cite sources]{.alert}, so you can verify
+- Less need to make things up
 
-**Next class, we'll explore RAG in depth!**
+**Next class: RAG in depth**
 :::
 
 :::{.column width=45%}
@@ -912,23 +892,23 @@ Source: [Towards AI](https://pub.towardsai.net/what-is-rag-a-clear-and-simple-ex
 :::
 :::
 
-# Summary 📚 {background-color="#1B3A6B"}
+# Summary {background-color="#1B3A6B"}
 
 ## Main takeaways
 
 :::{style="margin-top: 30px; font-size: 32px;"}
 
-- `r fa('ghost')` **Hallucinations**: AI confidently states false information
+- [Hallucinations]{.alert}: AI confidently states false information
 
-- `r fa('lightbulb')` **Why it happens**: LLMs predict plausible, not true
+- [Why it happens]{.alert}: LLMs predict plausible, not true
 
-- `r fa('sliders-h')` **Temperature**: The creativity-accuracy dial
+- [Temperature]{.alert}: the creativity-accuracy dial
 
-- `r fa('exclamation-triangle')` **Real failures**: Lawyers, doctors, academics affected
+- [Real failures]{.alert}: lawyers, doctors, academics affected
 
-- `r fa('search')` **Detection**: Verify specific claims, check citations
+- [Detection]{.alert}: verify specific claims, check citations
 
-- `r fa('shield-alt')` **Prevention**: Careful prompting helps but doesn't eliminate
+- [Prevention]{.alert}: careful prompting helps but doesn't eliminate
 
 :::
 
@@ -942,7 +922,7 @@ Source: [Towards AI](https://pub.towardsai.net/what-is-rag-a-clear-and-simple-ex
 - ✅ Verify specific facts
 - ✅ Check every citation
 - ✅ Cross-reference with trusted sources
-- ✅ Be sceptical of confident tones
+- ✅ Distrust a confident tone
 - ✅ Ask AI to admit uncertainty
 
 **Never do:**

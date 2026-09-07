@@ -161,13 +161,13 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <div class="columns">
 <div class="column" style="width:50%;">
 <ul>
-<li>We explored <span class="alert">model evaluation</span> across two domains</li>
-<li><strong>Traditional ML metrics</strong>: Accuracy, precision, recall</li>
+<li>We covered <span class="alert">model evaluation</span> across two domains</li>
+<li><span class="alert">Traditional ML metrics</span>: accuracy, precision, recall</li>
 <li>The <span class="alert">accuracy paradox</span>: 99.9% accuracy can be useless!</li>
-<li><strong>Overfitting</strong>: When models memorise instead of learn</li>
-<li><strong>Cross-validation</strong>: More reliable evaluation</li>
-<li><strong>LLM evaluation</strong>: Perplexity, LLM-as-a-Judge, G-Eval</li>
-<li><strong>Hallucinations</strong> and <strong>RAG</strong> for grounding answers</li>
+<li><span class="alert">Overfitting</span>: models memorise instead of learn</li>
+<li><span class="alert">Cross-validation</span>: more reliable evaluation</li>
+<li><span class="alert">LLM evaluation</span>: perplexity, LLM-as-a-Judge, G-Eval</li>
+<li><span class="alert">Hallucinations</span> and <span class="alert">RAG</span> for grounding answers</li>
 <li>Today: <span class="alert">How do LLMs actually understand language?</span> 🤔</li>
 </ul>
 </div><div class="column" style="width:50%;">
@@ -241,19 +241,19 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <div class="columns">
 <div class="column" style="width:55%;">
 <ul>
-<li>Here’s something you probably know by now: <span class="alert">Computers only understand numbers</span></li>
-<li>When you type “Hello, how are you?”, the <span class="alert">LLM doesn’t see letters!</span></li>
+<li><span class="alert">Computers only understand numbers</span></li>
+<li>Type “Hello, how are you?” and the <span class="alert">LLM does not see letters</span></li>
 <li>It sees something like: <code>[15496, 11, 703, 527, 499, 30]</code></li>
 <li>This creates a <span class="alert">translation problem</span>:
 <ul>
-<li>How do we convert text into numbers?</li>
-<li>How do we preserve <span class="alert">meaning</span> in those numbers?</li>
-<li>How do we capture relationships between words?</li>
+<li>how do we convert text into numbers?</li>
+<li>how do we preserve <span class="alert">meaning</span> in those numbers?</li>
+<li>how do we capture relationships between words?</li>
 </ul></li>
-<li>The solution involves two key concepts:
+<li>Two concepts solve it:
 <ul>
-<li><span class="alert">Tokenisation</span>: Breaking text into pieces</li>
-<li><span class="alert">Embeddings</span>: Converting pieces into meaningful vectors</li>
+<li><span class="alert">Tokenisation</span>: break text into pieces</li>
+<li><span class="alert">Embeddings</span>: turn pieces into meaningful vectors</li>
 </ul></li>
 </ul>
 </div><div class="column" style="width:45%;">
@@ -270,15 +270,14 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <div style="margin-top: 30px; font-size: 22px;">
 <div class="columns">
 <div class="column" style="width:55%;">
-<p><span class="alert">How prompting really works:</span></p>
 <ol type="1">
 <li><strong>Input text</strong>: “The cat sat on the mat”</li>
-<li><strong>Tokenisation</strong>: Break into tokens → <code>["The", "cat", "sat", "on", "the", "mat"]</code></li>
-<li><strong>Token IDs</strong>: Map to numbers → <code>[464, 3797, 3332, 319, 262, 2603]</code></li>
-<li><strong>Embeddings</strong>: Convert to vectors → Each token becomes a list of ~4,096 numbers!</li>
-<li><strong>Processing</strong>: Pass through neural network layers</li>
-<li><strong>Output</strong>: Generate next token probabilities</li>
-<li><strong>Decoding</strong>: Convert back to text</li>
+<li><strong>Tokenisation</strong>: break into tokens → <code>["The", "cat", "sat", "on", "the", "mat"]</code></li>
+<li><strong>Token IDs</strong>: map to numbers → <code>[464, 3797, 3332, 319, 262, 2603]</code></li>
+<li><strong>Embeddings</strong>: each token becomes a list of ~4,096 numbers!</li>
+<li><strong>Processing</strong>: pass through neural network layers</li>
+<li><strong>Output</strong>: generate next token probabilities</li>
+<li><strong>Decoding</strong>: convert back to text</li>
 </ol>
 <p><span class="alert">Your prompt goes through all of these steps before the model produces a single word</span></p>
 </div><div class="column" style="width:45%;">
@@ -295,13 +294,13 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <div style="margin-top: 30px; font-size: 22px;">
 <div class="columns">
 <div class="column" style="width:55%;">
-<p>Understanding the pipeline helps you:</p>
+<p>The pipeline helps you:</p>
 <ul>
-<li><strong>Write better prompts</strong>: Know what the model “sees”</li>
-<li><strong>Understand costs</strong>: API pricing is <span class="alert">per token</span>, not per word</li>
-<li><strong>Avoid surprises</strong>: Some words use more tokens than others</li>
-<li><strong>Debug issues</strong>: Why did the model misunderstand?</li>
-<li><strong>Use context wisely</strong>: <span class="alert">Token limits</span> are real constraints</li>
+<li><span class="alert">Write better prompts</span>: know what the model “sees”</li>
+<li><span class="alert">Understand costs</span>: API pricing is per token, not per word</li>
+<li><span class="alert">Avoid surprises</span>: some words use more tokens than others</li>
+<li><span class="alert">Debug issues</span>: why did the model misunderstand?</li>
+<li><span class="alert">Use context wisely</span>: token limits are real constraints</li>
 </ul>
 <div style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; margin-top: 20px;">
 <p><strong>Fun fact</strong>: The word “everything” is 1 token, but “ChatGPT” is 3 tokens in OpenAI’s (old) tokeniser! 🤯</p>
@@ -327,20 +326,18 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <div class="columns">
 <div class="column" style="width:55%;">
 <ul>
-<li>A <span class="alert">token</span> is the basic unit that an LLM reads</li>
-<li>Tokens are <span class="alert">NOT always words!</span></li>
+<li>A <span class="alert">token</span> is the basic unit an LLM reads</li>
+<li>Tokens are <span class="alert">not always words</span></li>
 <li>A token can be:
 <ul>
-<li>A full word: “hello” → 1 token</li>
-<li>Part of a word: “unhappiness” → “un” + “happiness” (2 tokens)</li>
-<li>A single character: “!” → 1 token</li>
-<li>A space: ” ” → often included with the next word</li>
+<li>a full word: “hello” → 1 token</li>
+<li>part of a word: “unhappiness” → “un” + “happiness” (2 tokens)</li>
+<li>a single character: “!” → 1 token</li>
+<li>a space: ” ” → often included with the next word</li>
 </ul></li>
-<li>Rule of thumb: <span class="alert">1 token ≈ 4 characters</span> in English</li>
-<li>Or roughly: <span class="alert">100 tokens ≈ 75 words</span></li>
+<li>Rule of thumb: <span class="alert">1 token ≈ 4 characters</span> in English, or <span class="alert">100 tokens ≈ 75 words</span></li>
 <li>Other languages often use <span class="alert">more tokens</span> per word</li>
-<li>Let’s try it out with “Hello, it’s Danilo here!”</li>
-<li>We’ll use <a href="https://platform.openai.com/tokenizer">OpenAI’s tokenizer</a> for this example</li>
+<li>Let’s try “Hello, it’s Danilo here!” in <a href="https://platform.openai.com/tokenizer">OpenAI’s tokenizer</a></li>
 </ul>
 </div><div class="column" style="width:45%;">
 <div style="text-align: center;">
@@ -391,14 +388,10 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <p><br></p>
 <ul>
 <li>Modern LLMs use <a href="https://huggingface.co/docs/transformers/tokenizer_summary#byte-pair-encoding">Byte Pair Encoding (BPE)</a></li>
-<li>Common subwords become single tokens</li>
-<li>Rare words are split into known pieces</li>
+<li>Common subwords become single tokens; rare words split into known pieces</li>
 <li>This is why “ChatGPT” → [“Chat”, “G”, “PT”]</li>
-<li>How does this save space?
-<ul>
-<li>Example: “unbelievable”, “unhappy”, “undo”, and “unknown” all share the same “un”</li>
-<li>The model only needs to store “un” once!</li>
-</ul></li>
+<li>It also saves space: “unbelievable”, “unhappy”, “undo” and “unknown” share the same “un”</li>
+<li>The model stores “un” only once!</li>
 </ul>
 </div><div class="column" style="width:45%;">
 <div style="text-align: center;">
@@ -407,8 +400,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <ul>
 <li>✅ Handles <span class="alert">unknown words</span> gracefully</li>
 <li>✅ Keeps vocabulary manageable (~50,000 tokens)</li>
-<li>✅ Common words stay whole</li>
-<li>✅ Rare words get broken up sensibly</li>
+<li>✅ Common words stay whole, rare words split sensibly</li>
 <li>✅ Works across languages</li>
 </ul>
 </div>
@@ -425,8 +417,8 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <div style="margin-top: 30px; font-size: 21px;">
 <div class="columns">
 <div class="column" style="width:55%;">
-<p><strong>OpenAI’s Tokeniser</strong> (try it!): <a href="https://platform.openai.com/tokenizer">platform.openai.com/tokenizer</a></p>
-<p>The number of tokens can change from one version to another!</p>
+<p><strong>OpenAI’s Tokeniser</strong>: <a href="https://platform.openai.com/tokenizer">platform.openai.com/tokenizer</a></p>
+<p>Token counts change from one version to another!</p>
 <p><strong>Some surprising examples:</strong></p>
 <table class="caption-top">
 <thead>
@@ -479,7 +471,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </tr>
 </tbody>
 </table>
-<p>Notice: <span class="alert">Capitalisation, spacing, and punctuation</span> all affect tokenisation!</p>
+<p><span class="alert">Capitalisation, spacing and punctuation</span> all affect tokenisation!</p>
 </div><div class="column" style="width:45%;">
 <div style="text-align: center;">
 <!-- Suggested image: Screenshot of OpenAI tokenizer with coloured tokens -->
@@ -496,9 +488,9 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <div class="columns">
 <div class="column" style="width:55%;">
 <ul>
-<li>Every LLM has a <span class="alert">context window</span>: Maximum tokens it can process</li>
-<li>This limit includes <span class="alert">both your prompt AND the response!</span></li>
-<li>Output tokens typically cost <span class="alert">2-4x more</span> than input tokens!</li>
+<li>Every LLM has a <span class="alert">context window</span>: the maximum tokens it can process</li>
+<li>The limit covers <span class="alert">both your prompt and the response</span></li>
+<li>Output tokens usually cost <span class="alert">2-4x more</span> than input tokens!</li>
 </ul>
 <div style="text-align: center;">
 <table class="caption-top">
@@ -525,13 +517,12 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </table>
 </div>
 <ul>
-<li>If your prompt uses 3,500 tokens and the limit is 4,096…</li>
-<li>You only have <span class="alert">596 tokens left</span> for the response!</li>
-<li>Exceeding limits → <span class="alert">Error</span> or truncated output</li>
-<li>Curiosity: <span class="alert">Non-English languages use more tokens</span>
+<li>A 3,500-token prompt against a 4,096 limit leaves <span class="alert">596 tokens</span> for the response!</li>
+<li>Exceeding limits gives an <span class="alert">error</span> or truncated output</li>
+<li><span class="alert">Non-English languages use more tokens</span>
 <ul>
 <li>Chinese, Japanese, Korean: ~2-3x more tokens per concept</li>
-<li>This means higher costs and shorter effective context</li>
+<li>so higher costs and shorter effective context</li>
 </ul></li>
 </ul>
 </div><div class="column" style="width:45%;">
@@ -586,18 +577,16 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <div class="columns">
 <div class="column" style="width:55%;">
 <ul>
-<li>Once text is tokenised, each token gets converted to an <span class="alert">embedding</span></li>
-<li>An embedding is a <span class="alert">vector</span>: A list of numbers</li>
-<li>Typically <span class="alert">768 to 4,096 numbers</span> per word!</li>
+<li>Each token gets converted to an <span class="alert">embedding</span></li>
+<li>An embedding is a <span class="alert">vector</span>: a list of numbers, typically <span class="alert">768 to 4,096</span> per word</li>
 <li>Example: “cat” → <code>[0.23, -0.45, 0.12, -0.89, ... (4,096 numbers)]</code></li>
 <li>These numbers <span class="alert">capture the meaning</span> of the word</li>
 <li><span class="alert">Similar words have similar vectors</span>
 <ul>
-<li>“cat” and “dog” will be close together</li>
-<li>“cat” and “aeroplane” will be far apart</li>
+<li>“cat” and “dog” sit close together</li>
+<li>“cat” and “aeroplane” sit far apart</li>
 </ul></li>
-<li>The model <span class="alert">learns</span> these representations during training</li>
-<li>This is where the “understanding” happens!</li>
+<li>The model <span class="alert">learns</span> these representations during training, and this is where the “understanding” happens</li>
 <li>Remember <span class="math inline">\(\vec{\text{king}} - \vec{\text{man}} + \vec{\text{woman}} \approx \vec{\text{queen}}\)</span></li>
 </ul>
 </div><div class="column" style="width:45%;">
@@ -618,19 +607,16 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <div class="column" style="width:55%;">
 <ul>
 <li><span class="alert">Word2Vec</span> <a href="https://arxiv.org/abs/1301.3781">(2013, Google’s Mikolov et al.)</a> revolutionised NLP</li>
-<li>Two training approaches:
-<ul>
-<li><strong>CBOW</strong> (Continuous Bag of Words): Predict word from context</li>
-<li><strong>Skip-gram</strong>: Predict context from word</li>
-</ul></li>
-<li>Key insight: <span class="alert">Words appearing in similar contexts have similar meanings</span>
+<li><span class="alert">CBOW</span> (Continuous Bag of Words): predict the word from its context</li>
+<li><span class="alert">Skip-gram</span>: predict the context from the word</li>
+<li>Key insight: <span class="alert">words in similar contexts have similar meanings</span>
 <ul>
 <li>“I love my _____” → cat, dog, hamster are all likely</li>
-<li>So cat, dog, hamster should be near each other!</li>
+<li>so cat, dog and hamster should sit near each other!</li>
 </ul></li>
 <li>Trained on billions of words from the web</li>
 <li>Created the embedding approach modern LLMs use</li>
-<li>🎬 Watch: <a href="https://www.youtube.com/watch?v=viZrOnJclY0">Word2Vec Explained</a> (10 min)</li>
+<li>Watch: <a href="https://www.youtube.com/watch?v=viZrOnJclY0">Word2Vec Explained</a> (10 min)</li>
 </ul>
 </div><div class="column" style="width:45%;">
 <div style="text-align: center;">
@@ -651,12 +637,11 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <div class="columns">
 <div class="column" style="width:55%;">
 <ul>
-<li>Imagine we have the word embeddings for a few words</li>
-<li>The colours represent numbers from -2 to +2, obtained from our model</li>
-<li>See how “woman” and “girl” are similar to each other, but “queen” is further away?</li>
-<li><span class="alert">This tell us something!</span></li>
-<li>Although <span class="alert">we don’t know what each dimension codes for</span>, we can see some patterns</li>
-<li>There are clear places where “king” and “queen” are similar to each other and distinct from all the others</li>
+<li>Here are the embeddings for a few words</li>
+<li>The colours show numbers from -2 to +2, taken from our model</li>
+<li>See how “woman” and “girl” are similar, but “queen” is further away?</li>
+<li><span class="alert">We don’t know what each dimension codes for</span>, yet patterns still show</li>
+<li>In some places “king” and “queen” match each other and differ from all the rest</li>
 <li><span class="alert">The model has learned something about gender and royalty!</span></li>
 <li>Note that “water” has few connections to other words</li>
 </ul>
@@ -677,25 +662,21 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <div class="column" style="width:55%;">
 <p><strong>How embeddings power modern AI:</strong></p>
 <ul>
-<li><strong>Semantic search</strong> 🔍
+<li><span class="alert">Semantic search</span>: search by meaning, not keywords
 <ul>
-<li>Search by meaning, not just keywords</li>
 <li>“cheap flights” finds “budget airfare”</li>
 </ul></li>
-<li><strong>Recommendations</strong> 📚
+<li><span class="alert">Recommendations</span>: find similar products, articles or content
 <ul>
-<li>Find similar products, articles, or content</li>
 <li>“Users who liked X also liked Y”</li>
 </ul></li>
-<li><strong>Clustering</strong> 📊
+<li><span class="alert">Clustering</span>: group similar documents automatically
 <ul>
-<li>Group similar documents automatically</li>
-<li>Topic modelling without labels</li>
+<li>topic modelling without labels</li>
 </ul></li>
-<li><strong>RAG</strong> (Retrieval-Augmented Generation)
+<li><span class="alert">RAG</span> (Retrieval-Augmented Generation): find relevant documents for LLM context
 <ul>
-<li>Find relevant documents for LLM context</li>
-<li>Power behind ChatGPT + browsing/search</li>
+<li>the power behind ChatGPT + browsing/search</li>
 </ul></li>
 </ul>
 </div><div class="column" style="width:45%;">
@@ -726,18 +707,17 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <div class="column" style="width:55%;">
 <ul>
 <li>Think back to algebra: <span class="math inline">\(y = 2x + 3\)</span></li>
-<li>The numbers 2 and 3 are <span class="alert">parameters</span></li>
-<li>They determine the behaviour of the function</li>
+<li>The numbers 2 and 3 are <span class="alert">parameters</span>: they set the behaviour of the function</li>
 <li>In an LLM, parameters are numbers that:
 <ul>
-<li>Get set during <span class="alert">training</span></li>
-<li>Control how the model processes text</li>
-<li>Determine what the model “knows”</li>
+<li>get set during <span class="alert">training</span></li>
+<li>control how the model processes text</li>
+<li>determine what the model “knows”</li>
 </ul></li>
 <li>GPT-3: <span class="alert">175 billion</span> parameters</li>
 <li>GPT-4: estimated <span class="alert">1+ trillion</span> parameters</li>
 <li>Each parameter is adjusted <span class="alert">thousands of times</span> during training</li>
-<li>Training = finding the right numbers to make predictions accurate</li>
+<li>Training means finding the numbers that make predictions accurate</li>
 </ul>
 </div><div class="column" style="width:45%;">
 <div style="text-align: center;">
@@ -796,9 +776,9 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <p><strong>To put this in perspective:</strong></p>
 <ul>
 <li>175 billion parameters = <span class="alert">175,000,000,000</span> individual numbers</li>
-<li>If you counted 1 per second, it would take <span class="alert">5,500 years</span>!</li>
-<li>Training GPT-3 required <span class="alert">~3.6 million GPU hours</span></li>
-<li>Each of those parameters was updated <span class="alert">tens of thousands of times</span></li>
+<li>Counting 1 per second would take <span class="alert">5,500 years</span>!</li>
+<li>Training GPT-3 took <span class="alert">~3.6 million GPU hours</span></li>
+<li>Each parameter was updated <span class="alert">tens of thousands of times</span></li>
 </ul>
 </div>
 </div>
@@ -813,20 +793,17 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <p><strong>1. Embedding parameters</strong></p>
 <ul>
 <li>Store the learned vector for each token</li>
-<li>Vocabulary (~50,000) × dimensions (~4,096)</li>
-<li>= ~200 million parameters just for embeddings!</li>
+<li>Vocabulary (~50,000) × dimensions (~4,096) = ~200 million parameters just for embeddings!</li>
 </ul>
 <p><strong>2. Weight parameters</strong></p>
 <ul>
-<li>Control <span class="alert">connections between neurons</span></li>
-<li>Determine how strongly different parts influence each other</li>
-<li>Like volume knobs: amplify or diminish signals</li>
+<li>Control <span class="alert">connections between neurons</span>, and how strongly parts influence each other</li>
+<li>Like volume knobs: amplify or damp signals</li>
 </ul>
 <p><strong>3. Bias parameters</strong></p>
 <ul>
-<li><span class="alert">Adjust thresholds</span> for neuron activation</li>
-<li>Help detect subtle patterns that might otherwise be missed</li>
-<li>Like a baseline adjustment</li>
+<li><span class="alert">Adjust thresholds</span> for neuron activation, like a baseline adjustment</li>
+<li>Help detect subtle patterns that would otherwise be missed</li>
 </ul>
 <p><span class="alert">In short: embeddings store word meanings, weights connect the dots, and biases fine-tune the thresholds</span></p>
 </div><div class="column" style="width:45%;">
@@ -858,13 +835,12 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <li>Show the model text: “The cat sat on the ___”</li>
 <li>Model predicts: “table” (wrong!)</li>
 <li>Calculate the <span class="alert">error</span></li>
-<li><span class="alert">Backpropagation</span>: Adjust parameters to reduce error</li>
+<li><span class="alert">Backpropagation</span>: adjust parameters to reduce the error</li>
 <li>Repeat <span class="alert">billions of times</span></li>
 </ol>
 <p><strong>Key insight:</strong></p>
 <ul>
-<li>The model learns by <span class="alert">predicting the next word</span></li>
-<li>Every error teaches it something</li>
+<li>The model learns by <span class="alert">predicting the next word</span>, and every error teaches it something</li>
 <li>Patterns emerge from massive repetition</li>
 <li>Training GPT-3 cost <span class="alert">~$3.5 million</span> in compute!</li>
 </ul>
@@ -888,24 +864,23 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <div class="column" style="width:55%;">
 <p><strong>The scaling hypothesis:</strong></p>
 <ul>
-<li>More parameters = more capability (generally)</li>
-<li>But <span class="alert">diminishing returns</span> set in</li>
-<li>A 10x bigger model isn’t 10x smarter</li>
+<li>More parameters generally means more capability</li>
+<li>But <span class="alert">diminishing returns</span> set in: a 10x bigger model isn’t 10x smarter</li>
 </ul>
 <p><strong>Small models fighting back:</strong></p>
 <ul>
-<li><span class="alert">Efficient training</span>: Better data, longer training</li>
-<li><span class="alert">Distillation</span>: Teach small models from big ones</li>
-<li><span class="alert">Quantisation</span>: Reduce precision (32-bit → 4-bit)</li>
-<li><span class="alert">Mixture of Experts</span>: Only use relevant parts</li>
+<li><span class="alert">Efficient training</span>: better data, longer training</li>
+<li><span class="alert">Distillation</span>: teach small models from big ones</li>
+<li><span class="alert">Quantisation</span>: reduce precision (32-bit → 4-bit)</li>
+<li><span class="alert">Mixture of Experts</span>: use only the relevant parts</li>
 </ul>
 </div><div class="column" style="width:45%;">
 <div style="text-align: center;">
 <p><strong>Example:</strong></p>
 <ul>
-<li>LLaMA 2 (7B) can outperform GPT-3 (175B) on some tasks!</li>
+<li>LLaMA 2 (7B) can beat GPT-3 (175B) on some tasks!</li>
 <li>Why? Better training data and techniques</li>
-<li><span class="alert">Quality over quantity</span> matters for training data</li>
+<li><span class="alert">Quality beats quantity</span> in training data</li>
 </ul>
 <!-- Suggested image: Model size vs performance chart -->
 <p><a href="#/" data-modal-type="image" data-modal-url="figures/scaling-laws.png"><img data-src="figures/scaling-laws.png" style="width:100.0%"></a></p>
@@ -917,29 +892,25 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <section id="hyperparameters-the-creativity-dials" class="slide level2">
 <h2>Hyperparameters: The creativity dials</h2>
 <h3 id="temperature-top-p-and-top-k">Temperature, top-p, and top-k</h3>
-<div style="margin-top: 30px; font-size: 20px;">
+<div style="margin-top: 30px; font-size: 22px;">
 <div class="columns">
 <div class="column" style="width:55%;">
-<p><strong>Not all parameters are learned!</strong></p>
-<p><span class="alert">Hyperparameters</span> are settings YOU control:</p>
+<p>Not all parameters are learned. <span class="alert">Hyperparameters</span> are settings you control:</p>
 <ul>
-<li><strong>Temperature</strong> 🌡️
+<li><span class="alert">Temperature</span>: controls randomness
 <ul>
-<li>Controls randomness/creativity</li>
-<li>Low (0.1-0.3): Focused, deterministic</li>
-<li>High (0.7-1.0): Creative, varied</li>
-<li>0.0: Always picks most likely word</li>
-<li>(Google AI Studio divides the scale up to 2.0)</li>
+<li>low (0.1-0.3): focused, deterministic</li>
+<li>high (0.7-1.0): creative, varied</li>
+<li>0.0: always picks the most likely word</li>
+<li>(Google AI Studio extends the scale to 2.0)</li>
 </ul></li>
-<li><strong>Top-p</strong> (nucleus sampling)
+<li><span class="alert">Top-p</span> (nucleus sampling): only consider words in the top p% probability
 <ul>
-<li>Only consider words in top p% probability</li>
-<li>0.9: Consider top 90% of likely words</li>
+<li>0.9: the top 90% of likely words</li>
 </ul></li>
-<li><strong>Top-k</strong>
+<li><span class="alert">Top-k</span>: only consider the top k most likely words
 <ul>
-<li>Only consider top k most likely words</li>
-<li>k=50: Choose from 50 most likely words</li>
+<li>k=50: choose from the 50 most likely words</li>
 </ul></li>
 </ul>
 </div><div class="column" style="width:45%;">
@@ -969,26 +940,23 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <section id="the-attention-mechanism-recap" class="slide level2">
 <h2>The attention mechanism (recap)</h2>
 <h3 id="how-llms-understand-context">How LLMs understand context</h3>
-<div style="margin-top: 30px; font-size: 21px;">
+<div style="margin-top: 30px; font-size: 22px;">
 <div class="columns">
 <div class="column" style="width:55%;">
 <ul>
 <li><span class="alert">Attention</span> is the key innovation of transformers</li>
-<li>Every word “looks at” every other word</li>
-<li>Determines which words are <span class="alert">relevant to each other</span></li>
+<li>Every word “looks at” every other word to find which are <span class="alert">relevant to each other</span></li>
 </ul>
 <p><strong>Example:</strong></p>
 <p><em>“The animal didn’t cross the street because it was too tired”</em></p>
 <ul>
-<li>What does “it” refer to?</li>
-<li>Attention helps the model <span class="alert">connect “it” to “animal”</span></li>
+<li>What does “it” refer to? Attention <span class="alert">connects “it” to “animal”</span></li>
 <li>Not all words matter equally for understanding</li>
 </ul>
 <p><strong>How it works:</strong></p>
 <ul>
-<li>Each word asks: “Who should I pay attention to?”</li>
-<li>Creates weighted connections between all words</li>
-<li>Allows understanding of <span class="alert">long-range dependencies</span></li>
+<li>Each word asks: “who should I pay attention to?”</li>
+<li>Weighted connections between all words capture <span class="alert">long-range dependencies</span></li>
 </ul>
 </div><div class="column" style="width:45%;">
 <div style="text-align: center; margin-top: -20px;">
@@ -1010,18 +978,18 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <div class="column" style="width:55%;">
 <p><strong>Now that you understand the internals:</strong></p>
 <ul>
-<li>✅ <span class="alert">Be concise</span>: Fewer tokens = lower cost, more room for response</li>
-<li>✅ <span class="alert">Use clear language</span>: Common words tokenise efficiently</li>
-<li>✅ <span class="alert">Provide context</span>: Help the attention mechanism</li>
-<li>✅ <span class="alert">Be specific</span>: The model uses your exact words</li>
-<li>✅ <span class="alert">Test different temperatures</span>: Match creativity to task</li>
-<li>✅ <span class="alert">Mind the context limit</span>: Plan for both prompt AND response</li>
+<li>✅ <span class="alert">Be concise</span>: fewer tokens mean lower cost and more room for the response</li>
+<li>✅ <span class="alert">Use clear language</span>: common words tokenise efficiently</li>
+<li>✅ <span class="alert">Provide context</span>: help the attention mechanism</li>
+<li>✅ <span class="alert">Be specific</span>: the model uses your exact words</li>
+<li>✅ <span class="alert">Test different temperatures</span>: match creativity to the task</li>
+<li>✅ <span class="alert">Mind the context limit</span>: plan for both prompt and response</li>
 </ul>
 <p><strong>When things go wrong:</strong></p>
 <ul>
-<li>Model confused? → Try rephrasing with different words</li>
-<li>Model doesn’t understand? → Provide more context</li>
-<li>Running out of context? → Summarise earlier content</li>
+<li>Model confused? → rephrase with different words</li>
+<li>Model doesn’t understand? → give more context</li>
+<li>Running out of context? → summarise earlier content</li>
 </ul>
 </div><div class="column" style="width:45%;">
 <div style="text-align: center;">
@@ -1070,13 +1038,13 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <h2>Main takeaways</h2>
 <div style="margin-top: 30px; font-size: 28px;">
 <ul>
-<li><p><svg aria-hidden="true" role="img" viewbox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M0 128C0 92.7 28.7 64 64 64H256h48 16H576c35.3 0 64 28.7 64 64V384c0 35.3-28.7 64-64 64H320 304 256 64c-35.3 0-64-28.7-64-64V128zm320 0V384H576V128H320zM178.3 175.9c-3.2-7.2-10.4-11.9-18.3-11.9s-15.1 4.7-18.3 11.9l-64 144c-4.5 10.1 .1 21.9 10.2 26.4s21.9-.1 26.4-10.2l8.9-20.1h73.6l8.9 20.1c4.5 10.1 16.3 14.6 26.4 10.2s14.6-16.3 10.2-26.4l-64-144zM160 233.2L179 276H141l19-42.8zM448 164c11 0 20 9 20 20v4h44 16c11 0 20 9 20 20s-9 20-20 20h-2l-1.6 4.5c-8.9 24.4-22.4 46.6-39.6 65.4c.9 .6 1.8 1.1 2.7 1.6l18.9 11.3c9.5 5.7 12.5 18 6.9 27.4s-18 12.5-27.4 6.9l-18.9-11.3c-4.5-2.7-8.8-5.5-13.1-8.5c-10.6 7.5-21.9 14-34 19.4l-3.6 1.6c-10.1 4.5-21.9-.1-26.4-10.2s.1-21.9 10.2-26.4l3.6-1.6c6.4-2.9 12.6-6.1 18.5-9.8l-12.2-12.2c-7.8-7.8-7.8-20.5 0-28.3s20.5-7.8 28.3 0l14.6 14.6 .5 .5c12.4-13.1 22.5-28.3 29.8-45H448 376c-11 0-20-9-20-20s9-20 20-20h52v-4c0-11 9-20 20-20z"></path></svg> LLMs don’t read text; they process <span class="alert">tokens</span>, numerical representations of text chunks</p></li>
-<li><p><svg aria-hidden="true" role="img" viewbox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M192 104.8c0-9.2-5.8-17.3-13.2-22.8C167.2 73.3 160 61.3 160 48c0-26.5 28.7-48 64-48s64 21.5 64 48c0 13.3-7.2 25.3-18.8 34c-7.4 5.5-13.2 13.6-13.2 22.8c0 12.8 10.4 23.2 23.2 23.2H336c26.5 0 48 21.5 48 48v56.8c0 12.8 10.4 23.2 23.2 23.2c9.2 0 17.3-5.8 22.8-13.2c8.7-11.6 20.7-18.8 34-18.8c26.5 0 48 28.7 48 64s-21.5 64-48 64c-13.3 0-25.3-7.2-34-18.8c-5.5-7.4-13.6-13.2-22.8-13.2c-12.8 0-23.2 10.4-23.2 23.2V464c0 26.5-21.5 48-48 48H279.2c-12.8 0-23.2-10.4-23.2-23.2c0-9.2 5.8-17.3 13.2-22.8c11.6-8.7 18.8-20.7 18.8-34c0-26.5-28.7-48-64-48s-64 21.5-64 48c0 13.3 7.2 25.3 18.8 34c7.4 5.5 13.2 13.6 13.2 22.8c0 12.8-10.4 23.2-23.2 23.2H48c-26.5 0-48-21.5-48-48V343.2C0 330.4 10.4 320 23.2 320c9.2 0 17.3 5.8 22.8 13.2C54.7 344.8 66.7 352 80 352c26.5 0 48-28.7 48-64s-21.5-64-48-64c-13.3 0-25.3 7.2-34 18.8C40.5 250.2 32.4 256 23.2 256C10.4 256 0 245.6 0 232.8V176c0-26.5 21.5-48 48-48H168.8c12.8 0 23.2-10.4 23.2-23.2z"></path></svg> <span class="alert">Tokenisation</span> breaks text into pieces; ~100 tokens ≈ 75 words; affects cost and limits</p></li>
-<li><p><svg aria-hidden="true" role="img" viewbox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M234.5 5.7c13.9-5 29.1-5 43.1 0l192 68.6C495 83.4 512 107.5 512 134.6V377.4c0 27-17 51.2-42.5 60.3l-192 68.6c-13.9 5-29.1 5-43.1 0l-192-68.6C17 428.6 0 404.5 0 377.4V134.6c0-27 17-51.2 42.5-60.3l192-68.6zM256 66L82.3 128 256 190l173.7-62L256 66zm32 368.6l160-57.1v-188L288 246.6v188z"></path></svg> <span class="alert">Embeddings</span> convert tokens to vectors, capturing meaning in ~4,096 dimensions</p></li>
-<li><p><svg aria-hidden="true" role="img" viewbox="0 0 576 512" style="height:1em;width:1.12em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M309 106c11.4-7 19-19.7 19-34c0-22.1-17.9-40-40-40s-40 17.9-40 40c0 14.4 7.6 27 19 34L209.7 220.6c-9.1 18.2-32.7 23.4-48.6 10.7L72 160c5-6.7 8-15 8-24c0-22.1-17.9-40-40-40S0 113.9 0 136s17.9 40 40 40c.2 0 .5 0 .7 0L86.4 427.4c5.5 30.4 32 52.6 63 52.6H426.6c30.9 0 57.4-22.1 63-52.6L535.3 176c.2 0 .5 0 .7 0c22.1 0 40-17.9 40-40s-17.9-40-40-40s-40 17.9-40 40c0 9 3 17.3 8 24l-89.1 71.3c-15.9 12.7-39.5 7.5-48.6-10.7L309 106z"></path></svg> The famous <span class="alert">king − man + woman ≈ queen</span> shows embeddings encode semantic relationships</p></li>
-<li><p><svg aria-hidden="true" role="img" viewbox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M184 0c30.9 0 56 25.1 56 56V456c0 30.9-25.1 56-56 56c-28.9 0-52.7-21.9-55.7-50.1c-5.2 1.4-10.7 2.1-16.3 2.1c-35.3 0-64-28.7-64-64c0-7.4 1.3-14.6 3.6-21.2C21.4 367.4 0 338.2 0 304c0-31.9 18.7-59.5 45.8-72.3C37.1 220.8 32 207 32 192c0-30.7 21.6-56.3 50.4-62.6C80.8 123.9 80 118 80 112c0-29.9 20.6-55.1 48.3-62.1C131.3 21.9 155.1 0 184 0zM328 0c28.9 0 52.6 21.9 55.7 49.9c27.8 7 48.3 32.1 48.3 62.1c0 6-.8 11.9-2.4 17.4c28.8 6.2 50.4 31.9 50.4 62.6c0 15-5.1 28.8-13.8 39.7C493.3 244.5 512 272.1 512 304c0 34.2-21.4 63.4-51.6 74.8c2.3 6.6 3.6 13.8 3.6 21.2c0 35.3-28.7 64-64 64c-5.6 0-11.1-.7-16.3-2.1c-3 28.2-26.8 50.1-55.7 50.1c-30.9 0-56-25.1-56-56V56c0-30.9 25.1-56 56-56z"></path></svg> <span class="alert">Parameters</span> (billions of them!) are the numbers learned during training</p></li>
-<li><p><svg aria-hidden="true" role="img" viewbox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M0 416c0 17.7 14.3 32 32 32l54.7 0c12.3 28.3 40.5 48 73.3 48s61-19.7 73.3-48L480 448c17.7 0 32-14.3 32-32s-14.3-32-32-32l-246.7 0c-12.3-28.3-40.5-48-73.3-48s-61 19.7-73.3 48L32 384c-17.7 0-32 14.3-32 32zm128 0a32 32 0 1 1 64 0 32 32 0 1 1 -64 0zM320 256a32 32 0 1 1 64 0 32 32 0 1 1 -64 0zm32-80c-32.8 0-61 19.7-73.3 48L32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l246.7 0c12.3 28.3 40.5 48 73.3 48s61-19.7 73.3-48l54.7 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-54.7 0c-12.3-28.3-40.5-48-73.3-48zM192 128a32 32 0 1 1 0-64 32 32 0 1 1 0 64zm73.3-64C253 35.7 224.8 16 192 16s-61 19.7-73.3 48L32 64C14.3 64 0 78.3 0 96s14.3 32 32 32l86.7 0c12.3 28.3 40.5 48 73.3 48s61-19.7 73.3-48L480 128c17.7 0 32-14.3 32-32s-14.3-32-32-32L265.3 64z"></path></svg> <span class="alert">Hyperparameters</span> like temperature let you control creativity vs.&nbsp;determinism</p></li>
-<li><p><svg aria-hidden="true" role="img" viewbox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"></path></svg> <span class="alert">Attention</span> mechanisms help models understand context and word relationships</p></li>
+<li><p>LLMs don’t read text; they process <span class="alert">tokens</span>, numerical representations of text chunks</p></li>
+<li><p><span class="alert">Tokenisation</span> breaks text into pieces; ~100 tokens ≈ 75 words; affects cost and limits</p></li>
+<li><p><span class="alert">Embeddings</span> convert tokens to vectors, capturing meaning in ~4,096 dimensions</p></li>
+<li><p>The famous <span class="alert">king − man + woman ≈ queen</span> shows embeddings encode semantic relationships</p></li>
+<li><p><span class="alert">Parameters</span> (billions of them!) are the numbers learned during training</p></li>
+<li><p><span class="alert">Hyperparameters</span> like temperature let you control creativity vs.&nbsp;determinism</p></li>
+<li><p><span class="alert">Attention</span> mechanisms help models understand context and word relationships</p></li>
 </ul>
 </div>
 </section></section>

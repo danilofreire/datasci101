@@ -59,10 +59,10 @@ if (!require("fontawesome", character.only = TRUE)) {
 :::{.columns}
 :::{.column width=50%}
 - We traced AI from Ancient Greece to modern transformers
-- [Symbolic AI]{.alert} (1950s-1980s): Hand-coded rules and logic
-- [AI Winters]{.alert}: When hype exceeded reality (twice!)
-- [Neural networks]{.alert}: From perceptrons to deep learning
-- [Transformers]{.alert} (2017): Attention is all you need!
+- [Symbolic AI]{.alert} (1950s-1980s): hand-coded rules and logic
+- [AI Winters]{.alert}: hype exceeded reality, twice
+- [Neural networks]{.alert}: from perceptrons to deep learning
+- [Transformers]{.alert} (2017): attention is all you need!
 - [More data beat better algorithms]{.alert}... but where do the data come from? 🤔
 :::
 
@@ -83,12 +83,12 @@ Source: [Clay.Global](https://clay.global/blog/ai-guide/timeline-of-ai)
 
 :::{.columns}
 :::{.column width=50%}
-- Today's topic is [the data AI systems learn from]{.alert}
+- Today's topic: [the data AI systems learn from]{.alert}
 - Why data quality matters
 - Types of AI tasks
 - Sourcing and collecting data
 - Selection bias and its dangers
-- Best practices for labelling data
+- How to label data well
 - Working with multiple annotators
 - Quality control in datasets
 :::
@@ -113,7 +113,7 @@ Source: [Medium](https://blog.dataengineerthings.org/the-ai-revolution-is-nothin
 ### Positive, negative, or neutral?
 
 :::{style="margin-top: 30px; font-size: 26px;"}
-- You are the annotators. Three product reviews, one vote each: [positive]{.alert}, [negative]{.alert}, or [neutral]{.alert}
+- You are the annotators. Three reviews, one vote each: [positive]{.alert}, [negative]{.alert}, or [neutral]{.alert}
 - No discussion, no changing your mind. Hands up when I say the label
 
 :::{.fragment}
@@ -129,7 +129,7 @@ Source: [Medium](https://blog.dataengineerthings.org/the-ai-revolution-is-nothin
 :::
 
 :::{.fragment}
-- Did everyone agree? Keep the split in mind. We will come back to it when we measure [annotator agreement]{.alert}
+- Did everyone agree? Keep the split in mind: we return to it when we measure [annotator agreement]{.alert}
 :::
 :::
 
@@ -152,10 +152,10 @@ Source: [Medium](https://urwamuaz.medium.com/neural-networks-fail-on-data-with-s
 - AI models are only as good as [the data they're trained on]{.alert}
 - A better algorithm cannot fix bad data
 - Common data problems:
-  - Missing important information (e.g., age, income, etc.)
+  - Missing information (e.g., age, income)
   - Conflicting labels or formats (e.g., "yes" vs "1")
-  - Biases, not representative of reality (e.g., gender, race, etc.)
-- **Data-centric AI**: Andrew Ng (2021) argues you should [improve the data]{.alert} before you improve the model
+  - Biases: the data do not represent reality (e.g., gender, race)
+- [Data-centric AI]{.alert}: Andrew Ng (2021) says improve the data before the model
   - Check: <https://datacentricai.org/>
 :::
 
@@ -196,11 +196,10 @@ Source: [xkcd](https://xkcd.com/1838/)
 :::{.column width=50%}
 [Classification: Predicting categories]{.alert}
 
-- **Goal**: Assign inputs to discrete categories
+- Assign inputs to discrete categories
 - Examples: Email → Spam/Not Spam; Image → Cat/Dog/Bird; Text → Positive/Negative/Neutral
-- **Binary classification**: Two classes
-- **Multi-class**: Many classes (one per input)
-- **Multi-label**: Multiple labels per input
+- [Binary]{.alert}: two classes. [Multi-class]{.alert}: many classes, one per input
+- [Multi-label]{.alert}: several labels per input
 - [How do you define the classes?]{.alert}
 
 :::{style="text-align: center;"}
@@ -211,10 +210,10 @@ Source: [xkcd](https://xkcd.com/1838/)
 :::{.column width=50%}
 [Regression: Predicting continuous values]{.alert}
 
-- **Goal**: Predict a continuous numerical value
+- Predict a continuous numerical value
 - Examples: Features → House price; Patient data → Hospital stay length; Weather data → Temperature
-- The choice of target variable is [a design decision]{.alert}
-- Different targets can lead to very different models
+- Choosing the target variable is [a design decision]{.alert}
+- Different targets give very different models
 
 :::{style="text-align: center;"}
 [![Regression](figures/regression.png){width="80%"}](#){data-modal-type="image" data-modal-url="figures/regression.png"}
@@ -248,15 +247,15 @@ Source: [xkcd](https://xkcd.com/1838/)
 :::{.columns}
 :::{.column width=55%}
 - Classes should be:
-  - **Mutually exclusive**: No overlap between categories
-  - **Collectively exhaustive**: Cover all possible cases
-  - **Consistently definable**: Clear boundaries
+  - [Mutually exclusive]{.alert}: no overlap between categories
+  - [Collectively exhaustive]{.alert}: cover all possible cases
+  - [Consistently definable]{.alert}: clear boundaries
 - Common problems:
-  - [Ambiguous categories]{.alert}: What counts as "spam"?
-  - [Subjective judgments]{.alert}: Is this review "positive"?
-  - [Cultural differences]{.alert}: What's "offensive" varies
-  - [Evolving definitions]{.alert}: Categories change over time
-- Solution: [Clear annotation guidelines]{.alert}
+  - [Ambiguous categories]{.alert}: what counts as "spam"?
+  - [Subjective judgments]{.alert}: is this review "positive"?
+  - [Cultural differences]{.alert}: what is "offensive" varies
+  - [Evolving definitions]{.alert}: categories change over time
+- Solution: [clear annotation guidelines]{.alert}
 :::
 
 :::{.column width=45%}
@@ -275,17 +274,15 @@ Source: [The Independent](https://www.independent.co.uk/news/science/duck-and-ra
 :::{style="margin-top: 30px; font-size: 21px;"}
 :::{.columns}
 :::{.column width=55%}
-- Often we can't directly measure what we want to predict
-- So we use [proxy variables]{.alert} instead, and proxies can mislead
-- **Example 01: Predicting "health needs"**
-  - What we want: How sick is this patient?
-  - Available data: Healthcare spending
-  - [Spending ≠ health needs]{.alert}: Black patients had less spent on them due to systemic barriers
-  - Algorithm learned: "Black patients need less care" → [Wrong!]{.alert}
-- **Example 02: Predicting expertise on social media**
-  - What we want: Who is an expert in a field?
-  - Available data: Number of followers
-  - [Followers ≠ Expertise]{.alert}: Popularity can be gamed or unrelated to domain knowledge
+- We often cannot measure what we want to predict, so we use [proxy variables]{.alert}
+- Proxies can mislead
+- [Example 01, predicting "health needs"]{.alert}
+  - We want: how sick is this patient? Available data: healthcare spending
+  - [Spending ≠ health needs]{.alert}: systemic barriers meant less was spent on Black patients
+  - Algorithm learned "Black patients need less care" → [wrong!]{.alert}
+- [Example 02, predicting expertise on social media]{.alert}
+  - We want: who is an expert? Available data: number of followers
+  - [Followers ≠ expertise]{.alert}: popularity can be gamed or unrelated to the field
 :::
 
 :::{.column width=45%}
@@ -328,13 +325,13 @@ Source: [Andrej Karpathy](https://vimeo.com/274274744)
 :::{.column width=55%}
 - [There's no universal answer...]{.alert} it depends on:
   - Task complexity: harder tasks need more data
-  - Number of classes/features: more categories = more examples needed
+  - Number of classes/features: more categories = more examples
   - Model architecture: deep learning is data-hungry
   - Required accuracy: higher stakes = more data
-- [Rule of thumb]{.alert}: Start small, then scale up
-- [Scaling laws]{.alert}: Performance improves predictably with more data
-  - You can [estimate]{.alert} how much data you'll need by training on subsets and extrapolating
-- For most real-world problems, [more high-quality data beats more sophisticated algorithms]{.alert}
+- [Rule of thumb]{.alert}: start small, then scale up
+- [Scaling laws]{.alert}: performance improves predictably with more data
+  - [Estimate]{.alert} what you need by training on subsets and extrapolating
+- For most real problems, [more high-quality data beats more sophisticated algorithms]{.alert}
 :::
 
 :::{.column width=45%}
@@ -358,8 +355,7 @@ Source: [Our World in Data](https://ourworldindata.org/grapher/ai-performance-kn
 - [Selection bias]{.alert}: your training data differ systematically from the cases the model will meet
 - Close relatives: sampling bias, distribution shift, survivorship bias
 - The model learns patterns that [won't generalise]{.alert}
-- [Extremely hard to fix after the fact]{.alert}
-- [Prevention is better than cure]{.alert}!
+- [Extremely hard to fix after the fact]{.alert}, so prevention beats cure
 - Always ask: "In what ways might my data not be representative?"
 :::
 
@@ -387,7 +383,7 @@ Source: [Wikipedia](https://en.wikipedia.org/wiki/Survivorship_bias)
 | [Response bias]{.alert} | Who responds differs from who doesn't | Online surveys miss offline populations |
 | [Long-tail bias]{.alert} | Rare events underrepresented | Self-driving cars: unusual scenarios |
 
-- Try it out: Let's generate an image of a CEO and a nurse using two different models, such as [Qwen](https://qwen.ai/) and [Gemini](https://gemini.google.com). What do you notice?
+- Try it out: generate an image of a CEO and a nurse with two models, [Qwen](https://qwen.ai/) and [Gemini](https://gemini.google.com). What do you notice?
 :::
 
 ## Prompt: Create an image of a CEO and a nurse
@@ -422,10 +418,10 @@ Source: [Gemini's NanoBanana](https://gemini.google.com)
 
 **After collection:**
 
-- Use [data augmentation]{.alert} to increase dataset size
-  - Try it out at home! Use an image generator to create variations of the same object (different angles, lighting, etc)
+- Use [data augmentation]{.alert} to grow the dataset
+  - Try it at home: use an image generator to make variations of the same object (angles, lighting)
 - Use [representative validation sets]{.alert}
-- If deploying in new locations: validate on location-specific data
+- Deploying in a new location? Validate on data from there
 - [Document known limitations]{.alert} of your dataset
 :::
 
@@ -447,15 +443,14 @@ Source: [WisdomPlexus](https://wisdomplexus.com/blogs/ai-bias-in-action-real-wor
 :::{style="margin-top: 30px; font-size: 23px;"}
 :::{.columns}
 :::{.column width=55%}
-- Most AI models require [labelled data]{.alert}
-- Labels come from humans → humans make mistakes
+- Most AI models need [labelled data]{.alert}, and labels come from humans
 - Common issues:
-  - **Inconsistency**: Different people label differently
-  - **Ambiguity**: Some examples are genuinely unclear
-  - **Mislabelling**: Human errors happen
-  - **Fatigue**: Quality drops over time
-  - **Expertise**: Some tasks need domain experts
-- Labelling is [expensive and time-consuming]{.alert}
+  - [Inconsistency]{.alert}: different people label differently
+  - [Ambiguity]{.alert}: some examples are genuinely unclear
+  - [Mislabelling]{.alert}: human errors happen
+  - [Fatigue]{.alert}: quality drops over time
+  - [Expertise]{.alert}: some tasks need domain experts
+- Labelling is [expensive and slow]{.alert}
   - See [Alexandr Wang's Scale AI](https://scale.com/)
 - Quality control is super important!
 :::
@@ -508,16 +503,16 @@ Source: <https://labelerrors.com/>
 :::{.column width=55%}
 Good guidelines should include:
 
-1. **Clear definitions**: What does each label mean?
-2. **Examples**: Canonical cases for each class
-3. **Counter-examples**: What does NOT belong
-4. **Edge cases**: How to handle ambiguity
-5. **Visual aids**: Screenshots, annotated examples
+1. [Clear definitions]{.alert}: what does each label mean?
+2. [Examples]{.alert}: canonical cases for each class
+3. [Counter-examples]{.alert}: what does NOT belong
+4. [Edge cases]{.alert}: how to handle ambiguity
+5. [Visual aids]{.alert}: screenshots, annotated examples
 
 Best practices:
 
 - [Test guidelines]{.alert} with a small group first
-- [Iterate]{.alert} based on confusion and disagreements
+- [Iterate]{.alert} on confusion and disagreements
 - Keep guidelines as [living documents]{.alert}
 :::
 
@@ -539,25 +534,24 @@ Source: [Google's Healthcare Text Annotation Guidelines](https://github.com/goog
 :::{.column width=50%}
 **Why use multiple annotators:**
 
-- Individual annotators make mistakes
 - [Multiple annotators → more reliable labels]{.alert}
-- Benefits: Catch errors, identify ambiguous cases, assess label quality, reduce biases
-- Trade-off: [More expensive]{.alert}
+- Benefits: catch errors, identify ambiguous cases, assess label quality, reduce biases
+- Trade-off: [more expensive]{.alert}
 
 **Aggregation strategies:**
 
-- **Majority vote**: Most common label wins (limitations: ties, equal weighting)
-- **Weighted voting**: Trust reliable annotators more
-- **Adjudication**: Expert makes final call
-- **Keep all labels**: Train on disagreement (for uncertainty research)
+- [Majority vote]{.alert}: most common label wins (limitations: ties, equal weighting)
+- [Weighted voting]{.alert}: trust reliable annotators more
+- [Adjudication]{.alert}: expert makes the final call
+- [Keep all labels]{.alert}: train on disagreement (for uncertainty research)
 :::
 
 :::{.column width=50%}
 **Measuring agreement (IAA):**
 
-- [Inter-annotator agreement]{.alert}: Do annotators agree?
-- High agreement → Labels are reliable
-- Low agreement → Problem with guidelines or task
+- [Inter-annotator agreement]{.alert}: do annotators agree?
+- High agreement → labels are reliable
+- Low agreement → problem with the guidelines or the task
 - Common metric: [Cohen's Kappa](https://en.wikipedia.org/wiki/Cohen%27s_kappa) ([Fleiss' Kappa](https://en.wikipedia.org/wiki/Fleiss%27_kappa) for more than two annotators)
 
 :::{style="text-align: center;"}
@@ -588,8 +582,8 @@ $$\kappa = \frac{p_o - p_e}{1 - p_e}$$
 :::{style="margin-top: 30px; font-size: 24px;"}
 :::{.columns}
 :::{.column width=55%}
-- [Quality control (QC) examples]{.alert}: Examples where you already know the correct answer
-- Slip QC examples into the labelling queue [without telling annotators]{.alert}
+- [Quality control (QC) examples]{.alert}: items where you already know the correct answer
+- Slip them into the labelling queue [without telling annotators]{.alert}
 - Use them to:
   - Monitor annotator accuracy over time
   - Identify annotators who need retraining
@@ -634,13 +628,13 @@ flowchart TB
 :::{.column width=50%}
 **Key stages:**
 
-1. **Select data** stratified by important subgroups
-2. **Design guidelines** with clear definitions and examples
-3. **Train annotators** and calibrate their judgments
-4. **Pilot** on a small sample, iterate on guidelines
-5. **Scale up** with ongoing quality control
-6. **Aggregate labels** using appropriate strategies
-7. **Document** everything for reproducibility
+1. [Select data]{.alert} stratified by important subgroups
+2. [Design guidelines]{.alert} with clear definitions and examples
+3. [Train annotators]{.alert} and calibrate their judgments
+4. [Pilot]{.alert} on a small sample, then iterate on the guidelines
+5. [Scale up]{.alert} with ongoing quality control
+6. [Aggregate labels]{.alert} with a suitable strategy
+7. [Document]{.alert} everything for reproducibility
 :::
 :::
 :::
@@ -651,9 +645,9 @@ flowchart TB
 
 :::{style="margin-top: 30px; font-size: 32px;"}
 
-- [Data quality > Algorithm sophistication]{.alert} for most real-world problems
+- [Data quality > algorithm sophistication]{.alert} for most real problems
 
-- [Problem framing]{.alert} determines what data you need and how to label it
+- [Problem framing]{.alert} sets what data you need and how to label it
 
 - [Selection bias]{.alert} is a major source of error. List the biases before you collect
 
@@ -661,7 +655,7 @@ flowchart TB
 
 - [Multiple annotators]{.alert} improve reliability, but aggregate intelligently
 
-- [Document everything]{.alert}, so your future self will thank you
+- [Document everything]{.alert}, and your future self will thank you
 :::
 
 # ... and that's all for today! 🎉 {background-color="#1B3A6B"}

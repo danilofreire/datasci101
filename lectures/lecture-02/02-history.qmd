@@ -55,11 +55,11 @@ if (!require("fontawesome", character.only = TRUE)) {
 
 ## Short recap of last class
 
-:::{style="margin-top: 30px; font-size: 29px;"}
+:::{style="margin-top: 30px; font-size: 30px;"}
 - Course website: <https://danilofreire.github.io/datasci101>
 - Course GitHub repo: <https://github.com/danilofreire/datasci101>
-- Syllabus, schedule, and assignments will be posted on both sites
-- We will use Canvas for announcements, submissions, and grades
+- Syllabus, schedule, and assignments go on both sites
+- Canvas: announcements, submissions, and grades
 - Instructor: Danilo Freire (<danilo.freire@emory.edu>)
 - Grading:
   - 10 problem sets (50%)
@@ -99,15 +99,14 @@ Source: [University of Queensland's Brain Institute](https://qbi.uq.edu.au/brain
 ## The pre-history of AI
 ### Ancient myths of artificial life
 
-:::{style="margin-top: 30px; font-size: 26px;"}
+:::{style="margin-top: 30px; font-size: 28px;"}
 :::{.columns}
 :::{.column width=55%}
 - Humans have [long dreamed of creating artificial life]{.alert}
 - Ancient myths featured mechanical beings:
-  - [Talos](https://en.wikipedia.org/wiki/Talos) (Greek): Bronze giant protecting Crete
-  - [Golem](https://en.wikipedia.org/wiki/Golem) (Jewish folklore): Clay figure brought to life
+  - [Talos](https://en.wikipedia.org/wiki/Talos) (Greek): bronze giant protecting Crete
+  - [Golem](https://en.wikipedia.org/wiki/Golem) (Jewish folklore): clay figure brought to life
   - [Frankenstein](https://en.wikipedia.org/wiki/Frankenstein) (1818): Mary Shelley's novel about creating life
-- We've always been fascinated with [replicating intelligence]{.alert}
 - [Can machines truly think, or only simulate thinking?]{.alert}
 :::
 
@@ -124,14 +123,14 @@ Source: [Wikipedia - Talos](https://en.wikipedia.org/wiki/Talos)
 ## Early mechanical calculators
 ### From Pascal to Babbage
 
-:::{style="margin-top: 30px; font-size: 22px;"}
+:::{style="margin-top: 30px; font-size: 23px;"}
 :::{.columns}
 :::{.column width=50%}
 - [Can intelligence be reduced to rules and symbols, or does it emerge from interconnected units?]{.alert}
-- **1642**: [Blaise Pascal](https://en.wikipedia.org/wiki/Blaise_Pascal) builds the [Pascaline](https://en.wikipedia.org/wiki/Pascaline), a mechanical calculator for addition and subtraction
-- **1673**: [Gottfried Leibniz](https://en.wikipedia.org/wiki/Gottfried_Wilhelm_Leibniz) creates a [machine that can multiply and divide](https://en.wikipedia.org/wiki/Leibniz_calculator)
+- **1642**: [Blaise Pascal](https://en.wikipedia.org/wiki/Blaise_Pascal) builds the [Pascaline](https://en.wikipedia.org/wiki/Pascaline), a calculator for addition and subtraction
+- **1673**: [Gottfried Leibniz](https://en.wikipedia.org/wiki/Gottfried_Wilhelm_Leibniz) builds a [machine that multiplies and divides](https://en.wikipedia.org/wiki/Leibniz_calculator)
 - **1837**: [Charles Babbage](https://en.wikipedia.org/wiki/Charles_Babbage) designs the [Analytical Engine](https://en.wikipedia.org/wiki/Analytical_Engine), a programmable, general-purpose computer (never completed)
-- [Ada Lovelace](https://en.wikipedia.org/wiki/Ada_Lovelace) writes what many consider the [first computer program](https://en.wikipedia.org/wiki/Ada_Lovelace) for Babbage's machine
+- Many credit [Ada Lovelace](https://en.wikipedia.org/wiki/Ada_Lovelace) with the [first computer program](https://en.wikipedia.org/wiki/Ada_Lovelace), written for Babbage's machine
 - [Calculation could be separated from human minds]{.alert}
 :::
 
@@ -148,17 +147,14 @@ Source: [Wikipedia - Analytical Engine](https://en.wikipedia.org/wiki/Analytical
 ## Human computers
 ### When "computer" meant a person
 
-:::{style="margin-top: 30px; font-size: 24px;"}
+:::{style="margin-top: 30px; font-size: 25px;"}
 :::{.columns}
 :::{.column width=50%}
-- For most of history, [the word "computer" referred to a person]{.alert}, not a machine!
-- Large teams of human computers performed complex calculations:
-  - Astronomical tables
-  - Ballistics trajectories
-  - Census data
-- Often women, who were paid less than male mathematicians
-- This [division of mental labour]{.alert} (Adam Smith!) showed that complex calculations could be broken into simple, mechanical steps
-- Historian Lorraine Daston: [Calculation shifted from "genius" to "merely mechanical"](https://hdsr.mitpress.mit.edu/pub/0aytgrau/release/3)
+- For most of history, [the word "computer" meant a person]{.alert}, not a machine!
+- Large teams of them worked out astronomical tables, ballistics trajectories and census data
+- Often women, paid less than male mathematicians
+- This [division of mental labour]{.alert} (Adam Smith!) broke complex calculations into simple, mechanical steps
+- Historian Lorraine Daston: [calculation shifted from "genius" to "merely mechanical"](https://hdsr.mitpress.mit.edu/pub/0aytgrau/release/3)
 :::
 
 :::{.column width=50%}
@@ -178,11 +174,11 @@ Source: [NASA](https://www.nasa.gov/centers-and-facilities/jpl/when-computers-we
 :::{.columns}
 :::{.column width=55%}
 - **1936**: [Alan Turing](https://en.wikipedia.org/wiki/Alan_Turing) publishes "[On Computable Numbers, with an Application to the Entscheidungsproblem](https://www.cs.virginia.edu/~robins/Turing_Paper_1936.pdf)" (decision problem)
-- Introduces the concept of a [universal machine]{.alert} that can compute anything computable
-- **1950**: Publishes "[Computing Machinery and Intelligence](https://phil415.pbworks.com/f/TuringComputing.pdf)" in [Mind](https://en.wikipedia.org/wiki/Mind_(journal)) (philosophy journal)
-  - Proposes the famous [Turing Test](https://en.wikipedia.org/wiki/Turing_test): Can a machine fool a human into thinking it's human?
-  - Asks: ["Can machines think?"]{.alert} and reframes it as a practical question (["Can machines do what we (as thinking entities) can do?"]{.alert})
-- Turing's ideas laid the [theoretical foundation]{.alert} for both computing and AI
+- Introduces the [universal machine]{.alert}, which can compute anything computable
+- **1950**: publishes "[Computing Machinery and Intelligence](https://phil415.pbworks.com/f/TuringComputing.pdf)" in [Mind](https://en.wikipedia.org/wiki/Mind_(journal)) (philosophy journal)
+  - Proposes the [Turing Test](https://en.wikipedia.org/wiki/Turing_test): can a machine fool a human into thinking it's human?
+  - Asks ["Can machines think?"]{.alert}, then reframes it as ["Can machines do what we (as thinking entities) can do?"]{.alert}
+- These ideas laid the [theoretical foundation]{.alert} for computing and AI
 - He suggested machines could [learn]{.alert}, not just follow fixed rules
 :::
 
@@ -200,7 +196,7 @@ Source: [Wikipedia - Turing Test](https://en.wikipedia.org/wiki/Turing_test)
 
 :::{style="margin-top: 30px; font-size: 24px;"}
 :::{.incremental}
-- Guess if the following sentences were written by a human or a machine:
+- Human or machine? Guess for each sentence:
 
 :::{style="margin-top: 20px;"}
 :::
@@ -214,7 +210,7 @@ Source: [Wikipedia - Turing Test](https://en.wikipedia.org/wiki/Turing_test)
 - "The epistemological ramifications of this ontological framework necessitate a paradigmatic shift in our heuristic methodologies."
   - Machine!
 
-- And yes, [GPT-4.5 did pass the Turing test](https://arxiv.org/abs/2503.23674) (judged human 73% of the time, more often than actual humans)
+- [GPT-4.5 did pass the Turing test](https://arxiv.org/abs/2503.23674): judged human 73% of the time, more often than actual humans
 :::
 :::
 
@@ -226,7 +222,7 @@ Source: [Wikipedia - Turing Test](https://en.wikipedia.org/wiki/Turing_test)
 :::{style="margin-top: 30px; font-size: 22px;"}
 :::{.columns}
 :::{.column width=55%}
-- **Summer 1956**: [A workshop at Dartmouth College](https://en.wikipedia.org/wiki/Dartmouth_workshop) marks the birth of AI as a field
+- **Summer 1956**: [a workshop at Dartmouth College](https://en.wikipedia.org/wiki/Dartmouth_workshop) marks the birth of AI as a field
 - Organised by [John McCarthy](https://en.wikipedia.org/wiki/John_McCarthy_(computer_scientist)), [Marvin Minsky](https://en.wikipedia.org/wiki/Marvin_Minsky), [Nathaniel Rochester](https://en.wikipedia.org/wiki/Nathaniel_Rochester_(computer_scientist)), and [Claude Shannon](https://en.wikipedia.org/wiki/Claude_Shannon)
 - First use of the term "[Artificial Intelligence]{.alert}"
 - The founding conjecture:
@@ -234,7 +230,7 @@ Source: [Wikipedia - Turing Test](https://en.wikipedia.org/wiki/Turing_test)
 > "Every aspect of learning or any other feature of intelligence can in principle be so precisely described that [a machine can be made to simulate it]{.alert}."
 
 - Attendees included [Herbert Simon](https://en.wikipedia.org/wiki/Herbert_A._Simon) and [Allen Newell](https://en.wikipedia.org/wiki/Allen_Newell)
-- [Optimism was high]{.alert}: Many believed human-level AI was just decades away
+- [Optimism was high]{.alert}: many believed human-level AI was decades away
 :::
 
 :::{.column width=45%}
@@ -257,10 +253,10 @@ Source: [IEEE Spectrum](https://spectrum.ieee.org/dartmouth-ai-workshop)
 **Symbolic AI, 1956–1980s**
 
 - [Intelligence = manipulating symbols according to rules]{.alert}
-- Program the [formal rules]{.alert} behind intelligent behaviour into machines
+- Program the [formal rules]{.alert} behind intelligent behaviour into the machine
 - Early successes: [ELIZA](https://en.wikipedia.org/wiki/ELIZA) (therapist, [video here](https://www.youtube.com/watch?v=RMK9AphfLco)), [SHRDLU](https://en.wikipedia.org/wiki/SHRDLU) (block world, [video here](https://www.youtube.com/watch?v=bo4RvYJYOzI))
   - Try ELIZA here: <https://anthay.github.io/eliza.html> (by the [ELIZA Archaeology Project](https://sites.google.com/view/elizaarchaeology/try-eliza))
-- [Bold but overconfident predictions]{.alert}: Minsky and Simon expected human-level AI within a generation
+- [Overconfident predictions]{.alert}: Minsky and Simon expected human-level AI within a generation
 :::
 
 :::{.column width=50%}
@@ -272,8 +268,7 @@ Source: [IEEE Spectrum](https://spectrum.ieee.org/dartmouth-ai-workshop)
 - Examples: [MYCIN](https://en.wikipedia.org/wiki/Mycin) (bacterial infections, [video here](https://www.youtube.com/watch?v=bro6fkDxCUE)), [DENDRAL](https://en.wikipedia.org/wiki/Dendral) (chemical analysis, [video here](https://www.youtube.com/watch?v=lH3IgyGlpzw))
 - Edward Feigenbaum: "[The problem-solving power... is primarily a consequence of the specialist's knowledge employed]{.alert}"
 
-- Both approaches relied on [hand-crafted knowledge]{.alert}, not learning from data
-- Neither could [learn or improve automatically]{.alert}
+- Both approaches relied on [hand-crafted knowledge]{.alert}: neither could learn or improve on its own
 
 :::
 :::
@@ -330,7 +325,7 @@ Maybe this time is different? 🤷🏻‍♂️
   - Binary units that mimic biological ones
 - **1958**: [Frank Rosenblatt](https://en.wikipedia.org/wiki/Frank_Rosenblatt) builds the [Perceptron](https://en.wikipedia.org/wiki/Perceptron)
   - The first network that could [learn]{.alert}, adjusting its weights whenever it got something wrong
-- The New York Times (1958) predicted it would ["walk, talk, see, write, reproduce itself"](https://www.nytimes.com/1958/07/08/archives/new-navy-device-learns-by-doing-psychologist-shows-embryo-of.html)
+- The New York Times (1958) said it would ["walk, talk, see, write, reproduce itself"](https://www.nytimes.com/1958/07/08/archives/new-navy-device-learns-by-doing-psychologist-shows-embryo-of.html)
 - Stop writing rules. Show the machine [examples]{.alert}
 - Single-layer perceptrons [failed on simple problems]{.alert}, and interest waned
 - [Multi-layer networks](https://en.wikipedia.org/wiki/Artificial_neural_network) could solve them, but [nobody knew how to train them]{.alert}
@@ -358,18 +353,15 @@ Source: [AI Mind](https://pub.aimind.so/perceptron-101-the-building-blocks-of-a-
 ## The backpropagation breakthrough (1986)
 ### Learning to learn
 
-:::{style="margin-top: 30px; font-size: 24px;"}
+:::{style="margin-top: 30px; font-size: 25px;"}
 :::{.columns}
 :::{.column width=55%}
 - **1986**: [Rumelhart](https://en.wikipedia.org/wiki/David_Rumelhart), [Hinton](https://en.wikipedia.org/wiki/Geoffrey_Hinton), and [Williams](https://en.wikipedia.org/wiki/Ronald_J._Williams) popularise [backpropagation](https://en.wikipedia.org/wiki/Backpropagation)
 - You can [train multi-layer networks]{.alert} by propagating errors backwards through the layers
-- It finds functions that are [highly non-linear]{.alert} with very [precise adjustments to many weights]{.alert}
-- Finally, neural networks could learn complex patterns!
+- It finds [highly non-linear]{.alert} functions through [precise adjustments to many weights]{.alert}
 - Renewed interest in [connectionism]{.alert}
-- But challenges remained:
-  - Limited computing power
-  - Not enough training data
-- Neural networks showed promise but couldn't yet compete with other methods
+- Two limits remained: computing power and training data
+- Neural networks showed promise but still lost to other methods
 :::
 
 :::{.column width=45%}
@@ -387,18 +379,18 @@ Source: [Medium](https://medium.com/@lmpo/backpropagation-the-backbone-of-neural
 ## The unreasonable effectiveness of data
 ### A paradigm shift
 
-:::{style="margin-top: 30px; font-size: 20px;"}
+:::{style="margin-top: 30px; font-size: 22px;"}
 :::{.columns}
 :::{.column width=55%}
-- **2009**: Google researchers ([Halevy](https://en.wikipedia.org/wiki/Alon_Halevy), [Norvig](https://en.wikipedia.org/wiki/Peter_Norvig), [Pereira](https://research.google/people/author1092/?&type=google)) publish a landmark paper called "[The Unreasonable Effectiveness of Data](https://static.googleusercontent.com/media/research.google.com/en//pubs/archive/35179.pdf)"
+- **2009**: Google researchers ([Halevy](https://en.wikipedia.org/wiki/Alon_Halevy), [Norvig](https://en.wikipedia.org/wiki/Peter_Norvig), [Pereira](https://research.google/people/author1092/?&type=google)) publish "[The Unreasonable Effectiveness of Data](https://static.googleusercontent.com/media/research.google.com/en//pubs/archive/35179.pdf)"
 - [Simple models with lots of data beat complex models with less data]{.alert}
-- Traditional AI: Design clever algorithms
-- New AI: [Feed massive amounts of data]{.alert} to simple learning algorithms
+- Traditional AI: design clever algorithms
+- New AI: [feed massive amounts of data]{.alert} to simple learning algorithms
 
 > "Now go out and gather some data, and see what it can do."
 
-- [Data, computing power, and better algorithms]{.alert} came together at the same time
-- Any one alone wasn't enough, but all three together changed the field
+- [Data, computing power, and better algorithms]{.alert} arrived together
+- No one of them was enough alone. All three changed the field
 :::
 
 :::{.column width=45%}
@@ -417,13 +409,12 @@ Source: [Google Research](https://static.googleusercontent.com/media/research.go
 :::{style="margin-top: 30px; font-size: 23px;"}
 :::{.columns}
 :::{.column width=55%}
-- [ImageNet](https://www.image-net.org/): A dataset of 14 million labelled images
-- Annual competition: Classify images into 1,000 categories
+- [ImageNet](https://www.image-net.org/): a dataset of 14 million labelled images
+- Annual competition: classify images into 1,000 categories
 - **2012**: [AlexNet](https://spectrum.ieee.org/alexnet-source-code) ([Krizhevsky, Sutskever, Hinton](https://proceedings.neurips.cc/paper_files/paper/2012/file/c399862d3b9d6b76c8436e924a68c45b-Paper.pdf)) wins by a [huge margin]{.alert}
   - Error rate: 15.3% (next best: 26.2%)
   - Used [deep neural networks]{.alert}
-  - Trained on [Graphics Processing Units (GPUs),](https://en.wikipedia.org/wiki/Graphics_processing_unit) which are better than [Central Processing Units](https://en.wikipedia.org/wiki/Central_processing_unit) for parallel processing
-- This was a great moment for deep learning!
+  - Trained on [Graphics Processing Units (GPUs),](https://en.wikipedia.org/wiki/Graphics_processing_unit) better than [Central Processing Units](https://en.wikipedia.org/wiki/Central_processing_unit) at parallel processing
 - Within years, deep learning dominated computer vision
 - Proved that [neural networks + big data + GPUs = breakthrough]{.alert}
 :::
@@ -447,13 +438,12 @@ Source: [Medium](https://svelezg.medium.com/krizhevsky-sutskever-hinton-and-imag
 :::{.columns}
 :::{.column width=55%}
 - **2017**: Google researchers publish "[Attention Is All You Need](https://arxiv.org/abs/1706.03762)" (Vaswani et al.)
-- [Self-attention mechanism]{.alert}
-- Instead of processing sequentially:
-  - Each word can "look at" [every other word]{.alert} directly
-  - Computes relevance scores between all pairs
-  - [Parallel processing]{.alert}: Much faster to train
+- The [self-attention mechanism]{.alert} replaces sequential processing:
+  - Each word "looks at" [every other word]{.alert} directly
+  - It computes relevance scores between all pairs
+  - [Parallel processing]{.alert}: much faster to train
 - This architecture powers [GPT (Generative Pre-trained Transformer)](https://cdn.openai.com/research-covers/language-unsupervised/language_understanding_paper.pdf), [BERT](https://arxiv.org/abs/1810.04805), and pretty much all modern AI
-- Beyond text: Now used in images, audio, video, proteins, games...
+- Beyond text: images, audio, video, proteins, games...
 :::
 
 :::{.column width=45%}
@@ -499,12 +489,11 @@ Five steps:
 :::{.columns}
 :::{.column width=55%}
 - Text must be converted to numbers
-- **Tokenisation**: Split text into [tokens]{.alert}
+- [Tokenisation]{.alert}: split text into tokens
   - Usually words, letters, or word pieces
   - "unhappiness" → "un", "happiness"
   - GPT-2 has a vocabulary of 50,257 tokens
-- Each token gets a unique ID number
-- Think of it as creating a [dictionary]{.alert} where each word/piece has a code
+- Each token gets a unique ID number, like a [dictionary]{.alert} of codes
 :::
 
 :::{.column width=45%}
@@ -524,15 +513,12 @@ Source: [Medium](https://shanmugasundaram.in/llm-tokenizers-the-hidden-engine-be
 :::{.columns}
 :::{.column width=55%}
 - Each token becomes a [vector]{.alert} (a list of numbers)
-- GPT-2: Each token → 768 numbers (nothing special about 768; models use different sizes)
+- GPT-2: each token → 768 numbers (nothing special about 768; models use different sizes)
 - These vectors capture [meaning]{.alert}:
   - Similar words are close together
   - "king" - "man" + "woman" ≈ "queen"
-- Also add [position information]{.alert}:
-  - Word order matters in language!
-  - "Dog bites man" ≠ "Man bites dog"
-- Embeddings start as [random numbers]{.alert}
-  - Every bad guess nudges them, and words used alike drift together
+- Also add [position information]{.alert}: word order matters ("Dog bites man" ≠ "Man bites dog")
+- Embeddings start as [random numbers]{.alert}. Every bad guess nudges them, and words used alike drift together
 - Nobody arranges them. Meaning is a [side effect of predicting well]{.alert}
 :::
 
@@ -691,9 +677,8 @@ Source: [Transformer Explainer](https://poloclub.github.io/transformer-explainer
 
 <br>
 
-- [Bigger models + more data = emergent abilities]{.alert}
-- Capabilities appear at scale that weren't explicitly trained
-- This is the "[scaling hypothesis]{.alert}" (although some people, like [Ilya Sutskever](https://en.wikipedia.org/wiki/Ilya_Sutskever), argue that [scaling has reached its limits](https://www.youtube.com/watch?v=aR20FWCCjAs))
+- [Bigger models + more data = emergent abilities]{.alert}: capabilities nobody trained for appear at scale
+- This is the "[scaling hypothesis]{.alert}". Some, like [Ilya Sutskever](https://en.wikipedia.org/wiki/Ilya_Sutskever), argue [scaling has reached its limits](https://www.youtube.com/watch?v=aR20FWCCjAs)
 :::
 
 ## What makes ChatGPT different?
@@ -702,12 +687,11 @@ Source: [Transformer Explainer](https://poloclub.github.io/transformer-explainer
 :::{style="margin-top: 30px; font-size: 24px;"}
 :::{.columns}
 :::{.column width=55%}
-- ChatGPT (Nov 2022) wasn't just a bigger model
-- Three key innovations:
-  1. [Instruction tuning](https://www.ibm.com/think/topics/instruction-tuning): Trained to follow instructions
-  2. [RLHF (Reinforcement Learning from Human Feedback)](https://en.wikipedia.org/wiki/Reinforcement_learning_from_human_feedback): Humans rate responses; model learns what's helpful
-  3. [Safety training](https://en.wikipedia.org/wiki/AI_safety): Reduce harmful outputs
-- Result: A model that's [actually useful]{.alert} for conversation
+- ChatGPT (Nov 2022) wasn't just a bigger model. It added three things:
+  1. [Instruction tuning](https://www.ibm.com/think/topics/instruction-tuning): trained to follow instructions
+  2. [RLHF (Reinforcement Learning from Human Feedback)](https://en.wikipedia.org/wiki/Reinforcement_learning_from_human_feedback): humans rate responses, the model learns what's helpful
+  3. [Safety training](https://en.wikipedia.org/wiki/AI_safety): reduce harmful outputs
+- Result: a model [actually useful]{.alert} for conversation
 - [100 million users in 2 months]{.alert}, the fastest-growing consumer app at the time
 :::
 
@@ -727,14 +711,13 @@ Source: [Voronoi](https://www.voronoiapp.com/technology/OpenAIs-ChatGPT-Hits-Rec
 :::{style="margin-top: 30px; font-size: 24px;"}
 :::{.columns}
 :::{.column width=55%}
-- Modern AI isn't just about text anymore
 - [Multimodal models]{.alert} can process:
   - Text ↔ Images (DALL-E, Midjourney)
   - Text ↔ Audio (Whisper, ElevenLabs)
   - Text ↔ Video (Sora, Runway)
   - Text ↔ Code (Codex, Copilot)
 - [Same transformer architecture]{.alert}, different inputs/outputs
-- [Vision Transformers (ViT):](https://arxiv.org/abs/2010.11929) Treat images as sequences of patches
+- [Vision Transformers (ViT):](https://arxiv.org/abs/2010.11929) treat images as sequences of patches
 - The boundaries between modalities are [blurring]{.alert}
 :::
 
@@ -775,11 +758,10 @@ Source: [Tarun Sharma](https://www.linkedin.com/pulse/multimodal-generative-ai-t
 :::{.columns}
 :::{.column width=55%}
 - Georgia Tech's [Transformer Explainer](https://poloclub.github.io/transformer-explainer/)
-- Interactive visualisation of how transformers work
+- An interactive visualisation of how transformers work
 - See attention patterns in real time
 - Experiment with temperature and sampling
 - Runs GPT-2 directly in your browser!
-- Great for building intuition
 
 [https://poloclub.github.io/transformer-explainer](https://poloclub.github.io/transformer-explainer/)
 :::

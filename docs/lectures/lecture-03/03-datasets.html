@@ -165,10 +165,10 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <div class="column" style="width:50%;">
 <ul>
 <li>We traced AI from Ancient Greece to modern transformers</li>
-<li><span class="alert">Symbolic AI</span> (1950s-1980s): Hand-coded rules and logic</li>
-<li><span class="alert">AI Winters</span>: When hype exceeded reality (twice!)</li>
-<li><span class="alert">Neural networks</span>: From perceptrons to deep learning</li>
-<li><span class="alert">Transformers</span> (2017): Attention is all you need!</li>
+<li><span class="alert">Symbolic AI</span> (1950s-1980s): hand-coded rules and logic</li>
+<li><span class="alert">AI Winters</span>: hype exceeded reality, twice</li>
+<li><span class="alert">Neural networks</span>: from perceptrons to deep learning</li>
+<li><span class="alert">Transformers</span> (2017): attention is all you need!</li>
 <li><span class="alert">More data beat better algorithms</span>… but where do the data come from? 🤔</li>
 </ul>
 </div><div class="column" style="width:50%;">
@@ -191,12 +191,12 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <div class="columns">
 <div class="column" style="width:50%;">
 <ul>
-<li>Today’s topic is <span class="alert">the data AI systems learn from</span></li>
+<li>Today’s topic: <span class="alert">the data AI systems learn from</span></li>
 <li>Why data quality matters</li>
 <li>Types of AI tasks</li>
 <li>Sourcing and collecting data</li>
 <li>Selection bias and its dangers</li>
-<li>Best practices for labelling data</li>
+<li>How to label data well</li>
 <li>Working with multiple annotators</li>
 <li>Quality control in datasets</li>
 </ul>
@@ -224,7 +224,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <h3 id="positive-negative-or-neutral">Positive, negative, or neutral?</h3>
 <div style="margin-top: 30px; font-size: 26px;">
 <ul>
-<li>You are the annotators. Three product reviews, one vote each: <span class="alert">positive</span>, <span class="alert">negative</span>, or <span class="alert">neutral</span></li>
+<li>You are the annotators. Three reviews, one vote each: <span class="alert">positive</span>, <span class="alert">negative</span>, or <span class="alert">neutral</span></li>
 <li>No discussion, no changing your mind. Hands up when I say the label</li>
 </ul>
 <div class="fragment">
@@ -244,7 +244,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </div>
 <div class="fragment">
 <ul>
-<li>Did everyone agree? Keep the split in mind. We will come back to it when we measure <span class="alert">annotator agreement</span></li>
+<li>Did everyone agree? Keep the split in mind: we return to it when we measure <span class="alert">annotator agreement</span></li>
 </ul>
 </div>
 </div>
@@ -272,11 +272,11 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <li>A better algorithm cannot fix bad data</li>
 <li>Common data problems:
 <ul>
-<li>Missing important information (e.g., age, income, etc.)</li>
+<li>Missing information (e.g., age, income)</li>
 <li>Conflicting labels or formats (e.g., “yes” vs “1”)</li>
-<li>Biases, not representative of reality (e.g., gender, race, etc.)</li>
+<li>Biases: the data do not represent reality (e.g., gender, race)</li>
 </ul></li>
-<li><strong>Data-centric AI</strong>: Andrew Ng (2021) argues you should <span class="alert">improve the data</span> before you improve the model
+<li><span class="alert">Data-centric AI</span>: Andrew Ng (2021) says improve the data before the model
 <ul>
 <li>Check: <a href="https://datacentricai.org/" class="uri">https://datacentricai.org/</a></li>
 </ul></li>
@@ -349,11 +349,10 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <div class="column" style="width:50%;">
 <p><span class="alert">Classification: Predicting categories</span></p>
 <ul>
-<li><strong>Goal</strong>: Assign inputs to discrete categories</li>
+<li>Assign inputs to discrete categories</li>
 <li>Examples: Email → Spam/Not Spam; Image → Cat/Dog/Bird; Text → Positive/Negative/Neutral</li>
-<li><strong>Binary classification</strong>: Two classes</li>
-<li><strong>Multi-class</strong>: Many classes (one per input)</li>
-<li><strong>Multi-label</strong>: Multiple labels per input</li>
+<li><span class="alert">Binary</span>: two classes. <span class="alert">Multi-class</span>: many classes, one per input</li>
+<li><span class="alert">Multi-label</span>: several labels per input</li>
 <li><span class="alert">How do you define the classes?</span></li>
 </ul>
 <div style="text-align: center;">
@@ -367,10 +366,10 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </div><div class="column" style="width:50%;">
 <p><span class="alert">Regression: Predicting continuous values</span></p>
 <ul>
-<li><strong>Goal</strong>: Predict a continuous numerical value</li>
+<li>Predict a continuous numerical value</li>
 <li>Examples: Features → House price; Patient data → Hospital stay length; Weather data → Temperature</li>
-<li>The choice of target variable is <span class="alert">a design decision</span></li>
-<li>Different targets can lead to very different models</li>
+<li>Choosing the target variable is <span class="alert">a design decision</span></li>
+<li>Different targets give very different models</li>
 </ul>
 <div style="text-align: center;">
 <div class="quarto-figure quarto-figure-center">
@@ -444,18 +443,18 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <ul>
 <li>Classes should be:
 <ul>
-<li><strong>Mutually exclusive</strong>: No overlap between categories</li>
-<li><strong>Collectively exhaustive</strong>: Cover all possible cases</li>
-<li><strong>Consistently definable</strong>: Clear boundaries</li>
+<li><span class="alert">Mutually exclusive</span>: no overlap between categories</li>
+<li><span class="alert">Collectively exhaustive</span>: cover all possible cases</li>
+<li><span class="alert">Consistently definable</span>: clear boundaries</li>
 </ul></li>
 <li>Common problems:
 <ul>
-<li><span class="alert">Ambiguous categories</span>: What counts as “spam”?</li>
-<li><span class="alert">Subjective judgments</span>: Is this review “positive”?</li>
-<li><span class="alert">Cultural differences</span>: What’s “offensive” varies</li>
-<li><span class="alert">Evolving definitions</span>: Categories change over time</li>
+<li><span class="alert">Ambiguous categories</span>: what counts as “spam”?</li>
+<li><span class="alert">Subjective judgments</span>: is this review “positive”?</li>
+<li><span class="alert">Cultural differences</span>: what is “offensive” varies</li>
+<li><span class="alert">Evolving definitions</span>: categories change over time</li>
 </ul></li>
-<li>Solution: <span class="alert">Clear annotation guidelines</span></li>
+<li>Solution: <span class="alert">clear annotation guidelines</span></li>
 </ul>
 </div><div class="column" style="width:45%;">
 <div style="text-align: center;">
@@ -477,20 +476,18 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <div class="columns">
 <div class="column" style="width:55%;">
 <ul>
-<li>Often we can’t directly measure what we want to predict</li>
-<li>So we use <span class="alert">proxy variables</span> instead, and proxies can mislead</li>
-<li><strong>Example 01: Predicting “health needs”</strong>
+<li>We often cannot measure what we want to predict, so we use <span class="alert">proxy variables</span></li>
+<li>Proxies can mislead</li>
+<li><span class="alert">Example 01, predicting “health needs”</span>
 <ul>
-<li>What we want: How sick is this patient?</li>
-<li>Available data: Healthcare spending</li>
-<li><span class="alert">Spending ≠ health needs</span>: Black patients had less spent on them due to systemic barriers</li>
-<li>Algorithm learned: “Black patients need less care” → <span class="alert">Wrong!</span></li>
+<li>We want: how sick is this patient? Available data: healthcare spending</li>
+<li><span class="alert">Spending ≠ health needs</span>: systemic barriers meant less was spent on Black patients</li>
+<li>Algorithm learned “Black patients need less care” → <span class="alert">wrong!</span></li>
 </ul></li>
-<li><strong>Example 02: Predicting expertise on social media</strong>
+<li><span class="alert">Example 02, predicting expertise on social media</span>
 <ul>
-<li>What we want: Who is an expert in a field?</li>
-<li>Available data: Number of followers</li>
-<li><span class="alert">Followers ≠ Expertise</span>: Popularity can be gamed or unrelated to domain knowledge</li>
+<li>We want: who is an expert? Available data: number of followers</li>
+<li><span class="alert">Followers ≠ expertise</span>: popularity can be gamed or unrelated to the field</li>
 </ul></li>
 </ul>
 </div><div class="column" style="width:45%;">
@@ -577,16 +574,16 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <li><span class="alert">There’s no universal answer…</span> it depends on:
 <ul>
 <li>Task complexity: harder tasks need more data</li>
-<li>Number of classes/features: more categories = more examples needed</li>
+<li>Number of classes/features: more categories = more examples</li>
 <li>Model architecture: deep learning is data-hungry</li>
 <li>Required accuracy: higher stakes = more data</li>
 </ul></li>
-<li><span class="alert">Rule of thumb</span>: Start small, then scale up</li>
-<li><span class="alert">Scaling laws</span>: Performance improves predictably with more data
+<li><span class="alert">Rule of thumb</span>: start small, then scale up</li>
+<li><span class="alert">Scaling laws</span>: performance improves predictably with more data
 <ul>
-<li>You can <span class="alert">estimate</span> how much data you’ll need by training on subsets and extrapolating</li>
+<li><span class="alert">Estimate</span> what you need by training on subsets and extrapolating</li>
 </ul></li>
-<li>For most real-world problems, <span class="alert">more high-quality data beats more sophisticated algorithms</span></li>
+<li>For most real problems, <span class="alert">more high-quality data beats more sophisticated algorithms</span></li>
 </ul>
 </div><div class="column" style="width:45%;">
 <div style="text-align: center;">
@@ -616,8 +613,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <li><span class="alert">Selection bias</span>: your training data differ systematically from the cases the model will meet</li>
 <li>Close relatives: sampling bias, distribution shift, survivorship bias</li>
 <li>The model learns patterns that <span class="alert">won’t generalise</span></li>
-<li><span class="alert">Extremely hard to fix after the fact</span></li>
-<li><span class="alert">Prevention is better than cure</span>!</li>
+<li><span class="alert">Extremely hard to fix after the fact</span>, so prevention beats cure</li>
 <li>Always ask: “In what ways might my data not be representative?”</li>
 </ul>
 </div><div class="column" style="width:45%;">
@@ -684,7 +680,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </tbody>
 </table>
 <ul>
-<li>Try it out: Let’s generate an image of a CEO and a nurse using two different models, such as <a href="https://qwen.ai/">Qwen</a> and <a href="https://gemini.google.com">Gemini</a>. What do you notice?</li>
+<li>Try it out: generate an image of a CEO and a nurse with two models, <a href="https://qwen.ai/">Qwen</a> and <a href="https://gemini.google.com">Gemini</a>. What do you notice?</li>
 </ul>
 </div>
 </section>
@@ -725,12 +721,12 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </ul>
 <p><strong>After collection:</strong></p>
 <ul>
-<li>Use <span class="alert">data augmentation</span> to increase dataset size
+<li>Use <span class="alert">data augmentation</span> to grow the dataset
 <ul>
-<li>Try it out at home! Use an image generator to create variations of the same object (different angles, lighting, etc)</li>
+<li>Try it at home: use an image generator to make variations of the same object (angles, lighting)</li>
 </ul></li>
 <li>Use <span class="alert">representative validation sets</span></li>
-<li>If deploying in new locations: validate on location-specific data</li>
+<li>Deploying in a new location? Validate on data from there</li>
 <li><span class="alert">Document known limitations</span> of your dataset</li>
 </ul>
 </div><div class="column" style="width:45%;">
@@ -758,17 +754,16 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <div class="columns">
 <div class="column" style="width:55%;">
 <ul>
-<li>Most AI models require <span class="alert">labelled data</span></li>
-<li>Labels come from humans → humans make mistakes</li>
+<li>Most AI models need <span class="alert">labelled data</span>, and labels come from humans</li>
 <li>Common issues:
 <ul>
-<li><strong>Inconsistency</strong>: Different people label differently</li>
-<li><strong>Ambiguity</strong>: Some examples are genuinely unclear</li>
-<li><strong>Mislabelling</strong>: Human errors happen</li>
-<li><strong>Fatigue</strong>: Quality drops over time</li>
-<li><strong>Expertise</strong>: Some tasks need domain experts</li>
+<li><span class="alert">Inconsistency</span>: different people label differently</li>
+<li><span class="alert">Ambiguity</span>: some examples are genuinely unclear</li>
+<li><span class="alert">Mislabelling</span>: human errors happen</li>
+<li><span class="alert">Fatigue</span>: quality drops over time</li>
+<li><span class="alert">Expertise</span>: some tasks need domain experts</li>
 </ul></li>
-<li>Labelling is <span class="alert">expensive and time-consuming</span>
+<li>Labelling is <span class="alert">expensive and slow</span>
 <ul>
 <li>See <a href="https://scale.com/">Alexandr Wang’s Scale AI</a></li>
 </ul></li>
@@ -820,16 +815,16 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <div class="column" style="width:55%;">
 <p>Good guidelines should include:</p>
 <ol type="1">
-<li><strong>Clear definitions</strong>: What does each label mean?</li>
-<li><strong>Examples</strong>: Canonical cases for each class</li>
-<li><strong>Counter-examples</strong>: What does NOT belong</li>
-<li><strong>Edge cases</strong>: How to handle ambiguity</li>
-<li><strong>Visual aids</strong>: Screenshots, annotated examples</li>
+<li><span class="alert">Clear definitions</span>: what does each label mean?</li>
+<li><span class="alert">Examples</span>: canonical cases for each class</li>
+<li><span class="alert">Counter-examples</span>: what does NOT belong</li>
+<li><span class="alert">Edge cases</span>: how to handle ambiguity</li>
+<li><span class="alert">Visual aids</span>: screenshots, annotated examples</li>
 </ol>
 <p>Best practices:</p>
 <ul>
 <li><span class="alert">Test guidelines</span> with a small group first</li>
-<li><span class="alert">Iterate</span> based on confusion and disagreements</li>
+<li><span class="alert">Iterate</span> on confusion and disagreements</li>
 <li>Keep guidelines as <span class="alert">living documents</span></li>
 </ul>
 </div><div class="column" style="width:45%;">
@@ -848,24 +843,23 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <div class="column" style="width:50%;">
 <p><strong>Why use multiple annotators:</strong></p>
 <ul>
-<li>Individual annotators make mistakes</li>
 <li><span class="alert">Multiple annotators → more reliable labels</span></li>
-<li>Benefits: Catch errors, identify ambiguous cases, assess label quality, reduce biases</li>
-<li>Trade-off: <span class="alert">More expensive</span></li>
+<li>Benefits: catch errors, identify ambiguous cases, assess label quality, reduce biases</li>
+<li>Trade-off: <span class="alert">more expensive</span></li>
 </ul>
 <p><strong>Aggregation strategies:</strong></p>
 <ul>
-<li><strong>Majority vote</strong>: Most common label wins (limitations: ties, equal weighting)</li>
-<li><strong>Weighted voting</strong>: Trust reliable annotators more</li>
-<li><strong>Adjudication</strong>: Expert makes final call</li>
-<li><strong>Keep all labels</strong>: Train on disagreement (for uncertainty research)</li>
+<li><span class="alert">Majority vote</span>: most common label wins (limitations: ties, equal weighting)</li>
+<li><span class="alert">Weighted voting</span>: trust reliable annotators more</li>
+<li><span class="alert">Adjudication</span>: expert makes the final call</li>
+<li><span class="alert">Keep all labels</span>: train on disagreement (for uncertainty research)</li>
 </ul>
 </div><div class="column" style="width:50%;">
 <p><strong>Measuring agreement (IAA):</strong></p>
 <ul>
-<li><span class="alert">Inter-annotator agreement</span>: Do annotators agree?</li>
-<li>High agreement → Labels are reliable</li>
-<li>Low agreement → Problem with guidelines or task</li>
+<li><span class="alert">Inter-annotator agreement</span>: do annotators agree?</li>
+<li>High agreement → labels are reliable</li>
+<li>Low agreement → problem with the guidelines or the task</li>
 <li>Common metric: <a href="https://en.wikipedia.org/wiki/Cohen%27s_kappa">Cohen’s Kappa</a> (<a href="https://en.wikipedia.org/wiki/Fleiss%27_kappa">Fleiss’ Kappa</a> for more than two annotators)</li>
 </ul>
 <div style="text-align: center;">
@@ -918,8 +912,8 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <div class="columns">
 <div class="column" style="width:55%;">
 <ul>
-<li><span class="alert">Quality control (QC) examples</span>: Examples where you already know the correct answer</li>
-<li>Slip QC examples into the labelling queue <span class="alert">without telling annotators</span></li>
+<li><span class="alert">Quality control (QC) examples</span>: items where you already know the correct answer</li>
+<li>Slip them into the labelling queue <span class="alert">without telling annotators</span></li>
 <li>Use them to:
 <ul>
 <li>Monitor annotator accuracy over time</li>
@@ -975,13 +969,13 @@ flowchart TB
 </div><div class="column" style="width:50%;">
 <p><strong>Key stages:</strong></p>
 <ol type="1">
-<li><strong>Select data</strong> stratified by important subgroups</li>
-<li><strong>Design guidelines</strong> with clear definitions and examples</li>
-<li><strong>Train annotators</strong> and calibrate their judgments</li>
-<li><strong>Pilot</strong> on a small sample, iterate on guidelines</li>
-<li><strong>Scale up</strong> with ongoing quality control</li>
-<li><strong>Aggregate labels</strong> using appropriate strategies</li>
-<li><strong>Document</strong> everything for reproducibility</li>
+<li><span class="alert">Select data</span> stratified by important subgroups</li>
+<li><span class="alert">Design guidelines</span> with clear definitions and examples</li>
+<li><span class="alert">Train annotators</span> and calibrate their judgments</li>
+<li><span class="alert">Pilot</span> on a small sample, then iterate on the guidelines</li>
+<li><span class="alert">Scale up</span> with ongoing quality control</li>
+<li><span class="alert">Aggregate labels</span> with a suitable strategy</li>
+<li><span class="alert">Document</span> everything for reproducibility</li>
 </ol>
 </div></div>
 </div>
@@ -995,12 +989,12 @@ flowchart TB
 <h2>Main takeaways</h2>
 <div style="margin-top: 30px; font-size: 32px;">
 <ul>
-<li><p><span class="alert">Data quality &gt; Algorithm sophistication</span> for most real-world problems</p></li>
-<li><p><span class="alert">Problem framing</span> determines what data you need and how to label it</p></li>
+<li><p><span class="alert">Data quality &gt; algorithm sophistication</span> for most real problems</p></li>
+<li><p><span class="alert">Problem framing</span> sets what data you need and how to label it</p></li>
 <li><p><span class="alert">Selection bias</span> is a major source of error. List the biases before you collect</p></li>
 <li><p><span class="alert">Labelling is hard</span>, so write clear guidelines and check the work</p></li>
 <li><p><span class="alert">Multiple annotators</span> improve reliability, but aggregate intelligently</p></li>
-<li><p><span class="alert">Document everything</span>, so your future self will thank you</p></li>
+<li><p><span class="alert">Document everything</span>, and your future self will thank you</p></li>
 </ul>
 </div>
 </section></section>

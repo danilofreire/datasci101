@@ -157,17 +157,16 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </section>
 <section id="recap-of-last-class" class="slide level2">
 <h2>Recap of last class</h2>
-<div style="margin-top: 20px; font-size: 27px;">
+<div style="margin-top: 40px; font-size: 30px;">
 <div class="columns">
 <div class="column" style="width:50%;">
 <ul>
-<li>Last time, we saw <span class="alert">how LLMs process text</span></li>
-<li>Words become <span class="alert">numbers</span>! (embeddings)</li>
-<li>These numbers capture <span class="alert">meaning</span>, and similar words are close together</li>
-<li>Remember: <span class="alert">king − man + woman ≈ queen</span>?</li>
+<li>LLMs turn words into <span class="alert">numbers</span> (embeddings)</li>
+<li>These numbers capture <span class="alert">meaning</span>: similar words sit close together</li>
+<li><span class="alert">king − man + woman ≈ queen</span></li>
 <li>The model learns which words tend to appear near each other</li>
 <li><span class="alert">What about images and sounds?</span> 🖼️🎵</li>
-<li>Spoiler: They become numbers too!</li>
+<li>Spoiler: they become numbers too!</li>
 </ul>
 </div><div class="column" style="width:50%;">
 <div style="text-align: center; margin-top: -30px;">
@@ -180,14 +179,14 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <section id="lecture-overview" class="slide level2">
 <h2>Lecture overview</h2>
 <h3 id="todays-agenda">Today’s agenda</h3>
-<div style="margin-top: 20px; font-size: 25px;">
+<div style="margin-top: 40px; font-size: 25px;">
 <div class="columns">
 <div class="column" style="width:50%;">
 <p><strong>Part 1: How Machines “See”</strong></p>
 <ul>
-<li>What computers actually see (again: just numbers!)</li>
+<li>What computers actually see (just numbers!)</li>
 <li>How AI learns to recognise objects</li>
-<li>Fun activity: Train your own image classifier!</li>
+<li>Activity: train your own image classifier</li>
 </ul>
 <p><strong>Part 2: How Machines “Hear”</strong></p>
 <ul>
@@ -197,13 +196,13 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </div><div class="column" style="width:50%;">
 <p><strong>Part 3: The Big Picture</strong></p>
 <ul>
-<li>The main insight: Everything becomes the same kind of numbers!</li>
+<li>Everything becomes the same kind of numbers</li>
 </ul>
 <p><strong>Part 4: What This Means for Society</strong></p>
 <ul>
 <li>Can you trust what you see and hear?</li>
 <li>Deepfakes, bias, and privacy</li>
-<li>Class discussion: Where do we draw the line?</li>
+<li>Class discussion: where do we draw the line?</li>
 </ul>
 </div></div>
 </div>
@@ -239,8 +238,8 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </div>
 <div class="fragment">
 <div style="margin-top: 30px;">
-<p>Just like text needs to become numbers, <span class="alert">images need to become numbers too</span>!</p>
-<p>And it turns out there’s a nice way to do this…</p>
+<p>Like text, <span class="alert">images need to become numbers</span></p>
+<p>And there’s a nice way to do this…</p>
 </div>
 </div>
 </div><div class="column" style="width:50%;">
@@ -258,28 +257,26 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <section id="what-computers-actually-see" class="slide level2">
 <h2>What computers actually see</h2>
 <h3 id="its-just-a-grid-of-numbers">It’s just a grid of numbers!</h3>
-<div style="margin-top: 30px; font-size: 20px;">
+<div style="margin-top: 30px; font-size: 21px;">
 <div class="columns">
 <div class="column" style="width:55%;">
 <ul>
 <li>A digital photo is just a <span class="alert">grid of tiny coloured squares</span> (pixels)</li>
-<li>Each pixel has three numbers:
+<li>Each pixel has three numbers, each saying <span class="alert">how much light is there</span>:
 <ul>
 <li><strong>Red</strong>: 0 (none) to 255 (brightest red)</li>
 <li><strong>Green</strong>: 0 to 255</li>
 <li><strong>Blue</strong>: 0 to 255</li>
 </ul></li>
-<li>Each number tells the computer <span class="alert">how much light is at that pixel</span></li>
 <li>Mix them together → millions of colours!</li>
-<li>A small 3x3 grayscale image (which has only one channel) could look like this:</li>
+<li>A 3x3 grayscale image (one channel only) looks like this:</li>
 </ul>
 <pre><code>[[255, 128, 0],
  [64, 200, 150],
  [0, 50, 255]]</code></pre>
 <ul>
-<li>A typical photo might have <span class="alert">millions of pixels</span></li>
-<li>That’s millions of numbers for the AI to process</li>
-<li>But here’s the problem: <span class="alert">Raw numbers don’t tell you “this is a cute cat with a hat”</span> (and that’s inefficient!) 😺</li>
+<li>A typical photo has <span class="alert">millions of pixels</span>, so millions of numbers to process</li>
+<li>The problem: <span class="alert">raw numbers don’t tell you “this is a cute cat with a hat”</span>, and processing them all is inefficient 😺</li>
 </ul>
 </div><div class="column" style="width:45%;">
 <div style="text-align: center;">
@@ -305,19 +302,19 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <div class="columns">
 <div class="column" style="width:55%;">
 <ul>
-<li class="fragment">Think about how you learned to read:</li>
+<li class="fragment">How you learned to read:</li>
 </ul>
 <ol type="1">
-<li class="fragment">First, you learned to recognise <span class="alert">letters</span></li>
-<li class="fragment">Then you combined letters into <span class="alert">words</span></li>
-<li class="fragment">Then words into <span class="alert">sentences</span></li>
-<li class="fragment">Then sentences into <span class="alert">meaning</span></li>
+<li class="fragment">Recognise <span class="alert">letters</span></li>
+<li class="fragment">Combine letters into <span class="alert">words</span></li>
+<li class="fragment">Combine words into <span class="alert">sentences</span></li>
+<li class="fragment">Combine sentences into <span class="alert">meaning</span></li>
 </ol>
 <ul>
 <li class="fragment"><strong>AI vision works the same way!</strong></li>
 </ul>
 <ol type="1">
-<li class="fragment">First, detect <span class="alert">simple edges and colours</span></li>
+<li class="fragment">Detect <span class="alert">simple edges and colours</span></li>
 <li class="fragment">Combine edges into <span class="alert">shapes and textures</span></li>
 <li class="fragment">Combine shapes into <span class="alert">parts</span> (eyes, wheels, petals)</li>
 <li class="fragment">Combine parts into <span class="alert">whole objects</span> (cat, car, flower)</li>
@@ -345,15 +342,11 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <div class="columns">
 <div class="column" style="width:55%;">
 <ul>
-<li><span class="alert">Convolution</span>: A small filter “slides” across the image</li>
-<li>At each position, it performs element-wise multiplication and sums the result</li>
-<li>Different filters detect different features:
-<ul>
-<li>Vertical edges, horizontal edges</li>
-<li>Corners, textures, gradients</li>
-</ul></li>
-<li>The filter <span class="alert">learns what to look for</span> during training!</li>
-<li>Output: A <span class="alert">feature map</span> showing where that feature appears</li>
+<li><span class="alert">Convolution</span>: a small filter slides across the image</li>
+<li>At each position it multiplies element-wise and sums the result</li>
+<li>Different filters detect different features: vertical and horizontal edges, corners, textures, gradients</li>
+<li>The filter <span class="alert">learns what to look for</span> during training</li>
+<li>Output: a <span class="alert">feature map</span> showing where that feature appears</li>
 </ul>
 <div style="margin-top: 20px;">
 <p><strong>Analogy</strong>: Like using a stencil to find specific patterns 🔍</p>
@@ -378,17 +371,15 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <div class="columns">
 <div class="column" style="width:50%;">
 <ul>
-<li>CNNs stack <span class="alert">multiple convolutional layers</span></li>
-<li>Each layer builds on the previous one:
+<li>CNNs stack <span class="alert">multiple convolutional layers</span>, each building on the previous one:
 <ul>
 <li><strong>Layer 1</strong>: Simple edges and colours</li>
 <li><strong>Layer 2</strong>: Textures and corners</li>
 <li><strong>Layer 3</strong>: Parts (eyes, wheels, leaves)</li>
 <li><strong>Layer 4+</strong>: Whole objects and scenes</li>
 </ul></li>
-<li>This is called a <span class="alert">feature hierarchy</span></li>
-<li>The network learns to <span class="alert">compose simple features into complex concepts</span></li>
-<li>Similar to how our visual cortex works!</li>
+<li>This <span class="alert">feature hierarchy</span> composes simple features into complex concepts</li>
+<li>Similar to how our visual cortex works</li>
 </ul>
 </div><div class="column" style="width:50%;">
 <div style="text-align: center; margin-top: -30px;">
@@ -431,19 +422,20 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <section id="vision-transformers-vit" class="slide level2 scrollable">
 <h2>Vision Transformers (ViT)</h2>
 <h3 id="an-image-is-worth-1616-words">“An Image is Worth 16×16 Words”</h3>
-<div style="margin-top: 30px; font-size: 21px;">
+<div style="margin-top: 30px; font-size: 22px;">
 <div class="columns">
 <div class="column" style="width:55%;">
 <ul>
-<li>In 2020, researchers asked: <span class="alert">Can we use Transformers for images?</span></li>
-<li>Key idea: Treat image patches like tokens!</li>
-<li>The process:
+<li>In 2020, researchers asked: <span class="alert">can we use Transformers for images?</span></li>
+<li>Key idea: <a href="https://arxiv.org/abs/2010.11929">treat image patches like tokens</a></li>
+</ul>
 <ol type="1">
 <li><strong>Divide</strong> image into fixed-size patches (e.g., 16×16 pixels)</li>
 <li><strong>Flatten</strong> each patch into a vector</li>
-<li><strong>Add positional embeddings</strong> (so model knows patch locations)</li>
-<li><strong>Process through Transformer</strong> (same attention mechanism as LLMs, so patches can “look at” other patches to understand context)</li>
-</ol></li>
+<li><strong>Add positional embeddings</strong> so the model knows patch locations</li>
+<li><strong>Process through Transformer</strong>: the same attention as LLMs, so patches “look at” other patches for context</li>
+</ol>
+<ul>
 <li><span class="alert">Same architecture for text AND images</span></li>
 <li>Foundation for multimodal models like GPT-4V and Gemini</li>
 </ul>
@@ -475,15 +467,14 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <ul>
 <li><span class="alert">CLIP</span> (Contrastive Language-Image Pre-training) by OpenAI</li>
 <li>Trained on <span class="alert">400 million image-text pairs</span> from the internet</li>
-<li>Key innovation: <span class="alert">Shared embedding space</span> for images AND text</li>
-<li>How it works:
+<li>Key innovation: <span class="alert">shared embedding space</span> for images AND text
 <ul>
 <li>Image encoder → image embedding</li>
 <li>Text encoder → text embedding</li>
 <li>Train so matching pairs are <span class="alert">close together</span></li>
 </ul></li>
-<li>Result: Can match images to text descriptions <span class="alert">without task-specific training</span></li>
-<li>Foundation for DALL-E, Stable Diffusion, and multimodal LLMs!</li>
+<li>Result: matches images to text descriptions <span class="alert">without task-specific training</span></li>
+<li>Foundation for DALL-E, Stable Diffusion, and multimodal LLMs</li>
 </ul>
 </div><div class="column" style="width:45%;">
 <div style="text-align: center;">
@@ -557,7 +548,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <div style="margin-top: 30px; font-size: 22px;">
 <div class="columns">
 <div class="column" style="width:55%;">
-<p><strong>Let’s train an image classifier: no coding required!</strong></p>
+<p><strong>Train an image classifier: no coding required!</strong></p>
 <ol type="1">
 <li>Go to <a href="https://teachablemachine.withgoogle.com/">teachablemachine.withgoogle.com</a></li>
 <li>Click “Get Started” → “Image Project” → “Standard”</li>
@@ -597,14 +588,14 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <div class="columns">
 <div class="column" style="width:55%;">
 <p>Sound is just <span class="alert">vibrations in the air</span>. We can’t see it!</p>
-<p>But here’s a clever trick:</p>
+<p>The trick:</p>
 <ol type="1">
 <li>Record the vibrations as a <span class="alert">waveform</span> (line going up and down)</li>
 <li>Transform the waveform into a <span class="alert">picture</span> called a spectrogram</li>
-<li>Now we can use <span class="alert">the same AI that understands images</span>!</li>
+<li>Use <span class="alert">the same AI that understands images</span></li>
 </ol>
 <p><strong>It’s like creating a “photograph” of sound</strong> 📸🎵</p>
-<p>This is why modern AI is so powerful! We can turn <span class="alert">anything into pictures or numbers</span> and use similar techniques!</p>
+<p>This is why modern AI is so powerful: turn <span class="alert">anything into pictures or numbers</span> and reuse the same techniques</p>
 </div><div class="column" style="width:45%;">
 <div style="text-align: center;">
 <div class="quarto-figure quarto-figure-center">
@@ -634,7 +625,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <li><strong>Vertical axis</strong>: Pitch (low notes at bottom, high at top)</li>
 <li><strong>Colour/brightness</strong>: How loud that frequency is</li>
 </ul>
-<p>What patterns can AI find?</p>
+<p>Patterns AI can find:</p>
 <ul>
 <li><span class="alert">Your unique voice “fingerprint”</span></li>
 <li>The difference between “cat” and “bat”</li>
@@ -707,9 +698,8 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <p><a href="https://openai.com/research/whisper">Whisper</a> is OpenAI’s speech recognition system:</p>
 <ul>
 <li>Trained on <span class="alert">680,000 hours</span> of audio from the internet</li>
-<li>Understands <span class="alert">99 languages</span>!</li>
-<li>Can handle accents, background noise, different speaking styles</li>
-<li>Completely <span class="alert">open source and free</span></li>
+<li>Understands <span class="alert">99 languages</span></li>
+<li>Handles accents, background noise, and different speaking styles</li>
 </ul>
 <p><strong>How it works:</strong></p>
 <ol type="1">
@@ -717,19 +707,19 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <li><strong>FFT</strong>: Convert each window from waveform to frequencies (how much of each frequency is present)</li>
 <li><strong>Mel mapping</strong>: Apply mel scale to match human perception</li>
 <li><strong>Stack</strong>: Create 2D spectrogram from all windows</li>
-<li><strong>Process</strong>: Use Transformers, <span class="alert">same as text and images!</span></li>
-<li><strong>Context</strong>: Use context (attention) to predict next tokens</li>
+<li><strong>Process</strong>: Use Transformers, <span class="alert">same as text and images</span></li>
+<li><strong>Context</strong>: Use attention to predict the next tokens</li>
 </ol>
 </div><div class="column" style="width:45%;">
 <ul>
-<li>Architecture: <span class="alert">Encoder-decoder Transformer</span>
+<li>Architecture: <span class="alert">encoder-decoder Transformer</span>
 <ul>
-<li>Encoder: Processes mel spectrogram</li>
-<li>Decoder: Generates text tokens</li>
+<li>Encoder: processes the mel spectrogram</li>
+<li>Decoder: generates text tokens</li>
 </ul></li>
-<li><a href="https://github.com/openai/whisper">Open source and free to use!</a></li>
+<li><a href="https://github.com/openai/whisper">Open source and free to use</a></li>
 </ul>
-<p>This powers much of what Siri, Alexa, and Google Assistant do!</p>
+<p>This powers much of what Siri, Alexa, and Google Assistant do</p>
 <div style="text-align: center;">
 <p><a href="#/" data-modal-type="image" data-modal-url="figures/whisper-demo.webp"><img data-src="figures/whisper-demo.webp" style="width:100.0%"></a></p>
 <p>Source: <a href="https://www.samgalope.dev/2024/07/25/convert-wav-files-to-text-using-whisper-api/">Sam Galope (2024)</a></p>
@@ -742,7 +732,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <div style="margin-top: 30px; font-size: 22px;">
 <div class="columns">
 <div class="column" style="width:55%;">
-<p><strong>Let’s try the Whisper demo:</strong></p>
+<p><strong>Try the Whisper demo:</strong></p>
 <p><a href="https://huggingface.co/spaces/openai/whisper">huggingface.co/spaces/openai/whisper</a></p>
 <p><strong>Experiments to try at home:</strong></p>
 <ol type="1">
@@ -782,19 +772,18 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <p><strong><a href="https://suno.ai/">Suno.ai</a></strong> generates complete songs from text prompts:</p>
 <ul>
 <li>Give it a description: “upbeat pop song about studying for exams”</li>
-<li>It creates: melody, harmony, rhythm, <span class="alert">AND vocals</span>!</li>
-<li>A full song in about 30 seconds</li>
+<li>It creates melody, harmony, rhythm, <span class="alert">and vocals</span>, a full song in about 30 seconds</li>
 </ul>
 <p><strong>How does it work?</strong></p>
 <ul>
 <li>Trained on <span class="alert">millions of hours of music</span></li>
-<li>Learns patterns: chord progressions, song structures, vocal styles</li>
-<li>Uses the same “sound → numbers → AI” pipeline we discussed</li>
+<li>Learns chord progressions, song structures, and vocal styles</li>
+<li>Uses the same “sound → numbers → AI” pipeline</li>
 </ul>
 <p><strong>The questions this raises:</strong></p>
 <ul>
 <li>Anyone can now create professional-sounding music</li>
-<li>But: <span class="alert">Who owns AI-generated music?</span></li>
+<li><span class="alert">Who owns AI-generated music?</span></li>
 <li>Some AI songs sound eerily similar to real artists</li>
 <li>Musicians worry about their livelihoods</li>
 </ul>
@@ -827,16 +816,14 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <div class="columns">
 <div class="column" style="width:55%;">
 <ul>
-<li>So… whether it’s text, images, or audio…</li>
-<li>Everything gets converted to <span class="alert">embeddings</span>!</li>
-<li><span class="alert">Same mathematical representation</span>:
+<li>Text, images, and audio all become <span class="alert">embeddings</span>, the <span class="alert">same mathematical representation</span>:
 <ul>
 <li>Text token → 4096-dimensional vector</li>
 <li>Image patch → 4096-dimensional vector</li>
 <li>Audio segment → 4096-dimensional vector</li>
 </ul></li>
-<li>Once in embedding space, the <span class="alert">LLM doesn’t know the original modality</span>!</li>
-<li>This is why <span class="alert">multimodal models</span> can work with text, images, and audio at the same time</li>
+<li>Once in embedding space, the <span class="alert">LLM doesn’t know the original modality</span></li>
+<li>This is why <span class="alert">multimodal models</span> handle text, images, and audio at the same time</li>
 </ul>
 </div><div class="column" style="width:45%;">
 <div style="text-align: center;">
@@ -869,9 +856,9 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </div>
 <div style="margin-top: 20px;">
 <ol type="1">
-<li><strong>Modality Encoder</strong>: Vision Transformer (images) or Whisper (audio). These are <span class="alert">pre-trained specialists</span></li>
-<li><strong>Projection Layer</strong>: Aligns encoder outputs to the LLM’s embedding space. This part is <span class="alert">often surprisingly simple!</span></li>
-<li><strong>LLM Backbone</strong>: The “brain” (GPT, Gemini, Claude), which processes everything as tokens</li>
+<li><strong>Modality Encoder</strong>: Vision Transformer (images) or Whisper (audio), both <span class="alert">pre-trained specialists</span></li>
+<li><strong>Projection Layer</strong>: Aligns encoder outputs to the LLM’s embedding space, and is <span class="alert">often surprisingly simple</span></li>
+<li><strong>LLM Backbone</strong>: The “brain” (GPT, Gemini, Claude), processing everything as tokens</li>
 </ol>
 </div>
 </div></div>
@@ -880,21 +867,20 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <section id="training-multimodal-models" class="slide level2">
 <h2>Training multimodal models</h2>
 <h3 id="two-stage-learning">Two-stage learning</h3>
-<div style="margin-top: 30px; font-size: 21px;">
+<div style="margin-top: 30px; font-size: 22px;">
 <div class="columns">
 <div class="column" style="width:55%;">
 <p><strong>Stage 1: Feature Alignment</strong></p>
 <ul>
 <li><span class="alert">Freeze</span> vision encoder and LLM</li>
-<li>Only train the neural network that projects the encoder outputs to the LLM’s embedding space</li>
-<li>Goal: Learn that “dog image” and “dog text” should be close</li>
-<li>Dataset: Millions of image-caption pairs</li>
+<li>Train only the network projecting encoder outputs into the LLM’s embedding space</li>
+<li>Goal: learn that “dog image” and “dog text” should be close</li>
+<li>Dataset: millions of image-caption pairs</li>
 </ul>
 <p><strong>Stage 2: Instruction Tuning</strong></p>
 <ul>
-<li><span class="alert">Unfreeze</span> the LLM</li>
-<li>Train on question-answer datasets</li>
-<li>Goal: Learn to follow complex multimodal instructions</li>
+<li><span class="alert">Unfreeze</span> the LLM and train on question-answer datasets</li>
+<li>Goal: follow complex multimodal instructions</li>
 <li>Dataset: “Describe this image”, “What’s wrong with this chart?”</li>
 </ul>
 </div><div class="column" style="width:45%;">
@@ -917,9 +903,8 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </section>
 <section id="class-discussion-where-do-we-draw-the-line" class="slide level2">
 <h2>Class discussion: Where do we draw the line? 🤔</h2>
-<div style="margin-top: 30px; font-size: 24px;">
-<p><strong>In small groups, discuss this question:</strong></p>
-<p><strong>Voice/image generation</strong></p>
+<div style="margin-top: 50px; font-size: 24px;">
+<p><strong>In small groups: voice and image generation</strong></p>
 <p>Should AI-generated content require…</p>
 <ul>
 <li>Watermarks that can’t be removed?</li>
@@ -935,19 +920,19 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </section></section>
 <section>
 <section id="summary" class="title-slide slide level1 center" data-background-color="#1B3A6B">
-<h1>Summary 📚</h1>
+<h1>Summary</h1>
 
 </section>
 <section id="main-takeaways" class="slide level2">
 <h2>Main takeaways</h2>
 <div style="margin-top: 30px; font-size: 28px;">
 <ul>
-<li><p><svg aria-hidden="true" role="img" viewbox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M448 80c8.8 0 16 7.2 16 16V415.8l-5-6.5-136-176c-4.5-5.9-11.6-9.3-19-9.3s-14.4 3.4-19 9.3L202 340.7l-30.5-42.7C167 291.7 159.8 288 152 288s-15 3.7-19.5 10.1l-80 112L48 416.3l0-.3V96c0-8.8 7.2-16 16-16H448zM64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zm80 192a48 48 0 1 0 0-96 48 48 0 1 0 0 96z"></path></svg> <strong>Images = grids of numbers</strong>: AI learns to spot patterns, from edges to objects</p></li>
-<li><p><svg aria-hidden="true" role="img" viewbox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M499.1 6.3c8.1 6 12.9 15.6 12.9 25.7v72V368c0 44.2-43 80-96 80s-96-35.8-96-80s43-80 96-80c11.2 0 22 1.6 32 4.6V147L192 223.8V432c0 44.2-43 80-96 80s-96-35.8-96-80s43-80 96-80c11.2 0 22 1.6 32 4.6V200 128c0-14.1 9.3-26.6 22.8-30.7l320-96c9.7-2.9 20.2-1.1 28.3 5z"></path></svg> <strong>Sound = pictures of vibrations</strong>: We turn audio into spectrograms and use image AI!</p></li>
-<li><p><svg aria-hidden="true" role="img" viewbox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M184 0c30.9 0 56 25.1 56 56V456c0 30.9-25.1 56-56 56c-28.9 0-52.7-21.9-55.7-50.1c-5.2 1.4-10.7 2.1-16.3 2.1c-35.3 0-64-28.7-64-64c0-7.4 1.3-14.6 3.6-21.2C21.4 367.4 0 338.2 0 304c0-31.9 18.7-59.5 45.8-72.3C37.1 220.8 32 207 32 192c0-30.7 21.6-56.3 50.4-62.6C80.8 123.9 80 118 80 112c0-29.9 20.6-55.1 48.3-62.1C131.3 21.9 155.1 0 184 0zM328 0c28.9 0 52.6 21.9 55.7 49.9c27.8 7 48.3 32.1 48.3 62.1c0 6-.8 11.9-2.4 17.4c28.8 6.2 50.4 31.9 50.4 62.6c0 15-5.1 28.8-13.8 39.7C493.3 244.5 512 272.1 512 304c0 34.2-21.4 63.4-51.6 74.8c2.3 6.6 3.6 13.8 3.6 21.2c0 35.3-28.7 64-64 64c-5.6 0-11.1-.7-16.3-2.1c-3 28.2-26.8 50.1-55.7 50.1c-30.9 0-56-25.1-56-56V56c0-30.9 25.1-56 56-56z"></path></svg> <strong>The big insight</strong>: Text, images, and audio all become <span class="alert">embeddings</span>, the same kind of numbers</p></li>
-<li><p><svg aria-hidden="true" role="img" viewbox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"></path></svg> <strong>Multimodal AI</strong>: ChatGPT, Claude, and Gemini can see images because <span class="alert">everything speaks the same mathematical “language”</span></p></li>
-<li><p><svg aria-hidden="true" role="img" viewbox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M256 0c-25.3 0-47.2 14.7-57.6 36c-7-2.6-14.5-4-22.4-4c-35.3 0-64 28.7-64 64V261.5l-2.7-2.7c-25-25-65.5-25-90.5 0s-25 65.5 0 90.5L106.5 437c48 48 113.1 75 181 75H296h8c1.5 0 3-.1 4.5-.4c91.7-6.2 165-79.4 171.1-171.1c.3-1.5 .4-3 .4-4.5V160c0-35.3-28.7-64-64-64c-5.5 0-10.9 .7-16 2V96c0-35.3-28.7-64-64-64c-7.9 0-15.4 1.4-22.4 4C303.2 14.7 281.3 0 256 0zM240 96.1c0 0 0-.1 0-.1V64c0-8.8 7.2-16 16-16s16 7.2 16 16V95.9c0 0 0 .1 0 .1V232c0 13.3 10.7 24 24 24s24-10.7 24-24V96c0 0 0 0 0-.1c0-8.8 7.2-16 16-16s16 7.2 16 16v55.9c0 0 0 .1 0 .1v80c0 13.3 10.7 24 24 24s24-10.7 24-24V160.1c0 0 0-.1 0-.1c0-8.8 7.2-16 16-16s16 7.2 16 16V332.9c-.1 .6-.1 1.3-.2 1.9c-3.4 69.7-59.3 125.6-129 129c-.6 0-1.3 .1-1.9 .2H296h-8.5c-55.2 0-108.1-21.9-147.1-60.9L52.7 315.3c-6.2-6.2-6.2-16.4 0-22.6s16.4-6.2 22.6 0L119 336.4c6.9 6.9 17.2 8.9 26.2 5.2s14.8-12.5 14.8-22.2V96c0-8.8 7.2-16 16-16c8.8 0 16 7.1 16 15.9V232c0 13.3 10.7 24 24 24s24-10.7 24-24V96.1z"></path></svg> <strong>Hands-on</strong>: You trained your own AI with Teachable Machine!</p></li>
-<li><p><svg aria-hidden="true" role="img" viewbox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M256 32c14.2 0 27.3 7.5 34.5 19.8l216 368c7.3 12.4 7.3 27.7 .2 40.1S486.3 480 472 480H40c-14.3 0-27.6-7.7-34.7-20.1s-7-27.8 .2-40.1l216-368C228.7 39.5 241.8 32 256 32zm0 128c-13.3 0-24 10.7-24 24V296c0 13.3 10.7 24 24 24s24-10.7 24-24V184c0-13.3-10.7-24-24-24zm32 224a32 32 0 1 0 -64 0 32 32 0 1 0 64 0z"></path></svg> <strong>Critical thinking</strong>: Deepfakes, bias, and privacy are <span class="alert">real concerns</span> we must address</p></li>
+<li><p><strong>Images = grids of numbers</strong>: AI spots patterns, from edges to objects</p></li>
+<li><p><strong>Sound = pictures of vibrations</strong>: turn audio into spectrograms, then use image AI</p></li>
+<li><p><strong>The big insight</strong>: text, images, and audio all become <span class="alert">embeddings</span></p></li>
+<li><p><strong>Multimodal AI</strong>: ChatGPT, Claude, and Gemini see images because <span class="alert">everything speaks the same mathematical “language”</span></p></li>
+<li><p><strong>Hands-on</strong>: you trained your own AI with Teachable Machine</p></li>
+<li><p><strong>Critical thinking</strong>: deepfakes, bias, and privacy are <span class="alert">real concerns</span> we must address</p></li>
 </ul>
 </div>
 </section></section>

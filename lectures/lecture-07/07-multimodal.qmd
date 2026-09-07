@@ -51,16 +51,15 @@ if (!require("fontawesome", character.only = TRUE)) {
 
 ## Recap of last class
 
-:::{style="margin-top: 20px; font-size: 27px;"}
+:::{style="margin-top: 40px; font-size: 30px;"}
 :::{.columns}
 :::{.column width=50%}
-- Last time, we saw [how LLMs process text]{.alert}
-- Words become [numbers]{.alert}! (embeddings)
-- These numbers capture [meaning]{.alert}, and similar words are close together
-- Remember: [king − man + woman ≈ queen]{.alert}?
+- LLMs turn words into [numbers]{.alert} (embeddings)
+- These numbers capture [meaning]{.alert}: similar words sit close together
+- [king − man + woman ≈ queen]{.alert}
 - The model learns which words tend to appear near each other
 - [What about images and sounds?]{.alert} 🖼️🎵
-- Spoiler: They become numbers too!
+- Spoiler: they become numbers too!
 :::
 
 :::{.column width=50%}
@@ -76,15 +75,15 @@ Source: [DeepSet AI](https://www.deepset.ai/blog/the-beginners-guide-to-text-emb
 ## Lecture overview
 ### Today's agenda
 
-:::{style="margin-top: 20px; font-size: 25px;"}
+:::{style="margin-top: 40px; font-size: 25px;"}
 
 :::{.columns}
 :::{.column width=50%}
 **Part 1: How Machines "See"**
 
-- What computers actually see (again: just numbers!)
+- What computers actually see (just numbers!)
 - How AI learns to recognise objects
-- Fun activity: Train your own image classifier!
+- Activity: train your own image classifier
 
 **Part 2: How Machines "Hear"**
 
@@ -95,13 +94,13 @@ Source: [DeepSet AI](https://www.deepset.ai/blog/the-beginners-guide-to-text-emb
 :::{.column width=50%}
 **Part 3: The Big Picture**
 
-- The main insight: Everything becomes the same kind of numbers!
+- Everything becomes the same kind of numbers
 
 **Part 4: What This Means for Society**
 
 - Can you trust what you see and hear?
 - Deepfakes, bias, and privacy
-- Class discussion: Where do we draw the line?
+- Class discussion: where do we draw the line?
 :::
 :::
 :::
@@ -135,9 +134,9 @@ Source: [DeepSet AI](https://www.deepset.ai/blog/the-beginners-guide-to-text-emb
 
 :::{.fragment}
 :::{style="margin-top: 30px;"}
-Just like text needs to become numbers, [images need to become numbers too]{.alert}!
+Like text, [images need to become numbers]{.alert}
 
-And it turns out there's a nice way to do this...
+And there's a nice way to do this...
 :::
 :::
 :::
@@ -153,17 +152,16 @@ And it turns out there's a nice way to do this...
 ## What computers actually see
 ### It's just a grid of numbers!
 
-:::{style="margin-top: 30px; font-size: 20px;"}
+:::{style="margin-top: 30px; font-size: 21px;"}
 :::{.columns}
 :::{.column width=55%}
 - A digital photo is just a [grid of tiny coloured squares]{.alert} (pixels)
-- Each pixel has three numbers:
+- Each pixel has three numbers, each saying [how much light is there]{.alert}:
   - **Red**: 0 (none) to 255 (brightest red)
   - **Green**: 0 to 255
   - **Blue**: 0 to 255
-- Each number tells the computer [how much light is at that pixel]{.alert}
 - Mix them together → millions of colours!
-- A small 3x3 grayscale image (which has only one channel) could look like this:
+- A 3x3 grayscale image (one channel only) looks like this:
 
 ```
 [[255, 128, 0],
@@ -171,9 +169,8 @@ And it turns out there's a nice way to do this...
  [0, 50, 255]]
 ```
 
-- A typical photo might have [millions of pixels]{.alert}
-- That's millions of numbers for the AI to process
-- But here's the problem: [Raw numbers don't tell you "this is a cute cat with a hat"]{.alert} (and that's inefficient!) 😺
+- A typical photo has [millions of pixels]{.alert}, so millions of numbers to process
+- The problem: [raw numbers don't tell you "this is a cute cat with a hat"]{.alert}, and processing them all is inefficient 😺
 :::
 
 :::{.column width=45%}
@@ -199,16 +196,16 @@ Source: [Reddit](https://www.reddit.com/r/apple/comments/9fp1ty/did_you_ever_loo
 :::{.columns}
 :::{.column width=55%}
 :::{.incremental}
-- Think about how you learned to read:
+- How you learned to read:
 
-1. First, you learned to recognise [letters]{.alert}
-2. Then you combined letters into [words]{.alert}
-3. Then words into [sentences]{.alert}
-4. Then sentences into [meaning]{.alert}
+1. Recognise [letters]{.alert}
+2. Combine letters into [words]{.alert}
+3. Combine words into [sentences]{.alert}
+4. Combine sentences into [meaning]{.alert}
 
 - **AI vision works the same way!**
 
-1. First, detect [simple edges and colours]{.alert}
+1. Detect [simple edges and colours]{.alert}
 2. Combine edges into [shapes and textures]{.alert}
 3. Combine shapes into [parts]{.alert} (eyes, wheels, petals)
 4. Combine parts into [whole objects]{.alert} (cat, car, flower)
@@ -233,13 +230,11 @@ Source: [Towards AI](https://pub.towardsai.net/how-computers-see-the-world-a-beg
 :::{style="margin-top: 30px; font-size: 24px;"}
 :::{.columns}
 :::{.column width=55%}
-- [Convolution]{.alert}: A small filter "slides" across the image
-- At each position, it performs element-wise multiplication and sums the result
-- Different filters detect different features:
-  - Vertical edges, horizontal edges
-  - Corners, textures, gradients
-- The filter [learns what to look for]{.alert} during training!
-- Output: A [feature map]{.alert} showing where that feature appears
+- [Convolution]{.alert}: a small filter slides across the image
+- At each position it multiplies element-wise and sums the result
+- Different filters detect different features: vertical and horizontal edges, corners, textures, gradients
+- The filter [learns what to look for]{.alert} during training
+- Output: a [feature map]{.alert} showing where that feature appears
 
 :::{style="margin-top: 20px;"}
 **Analogy**: Like using a stencil to find specific patterns 🔍
@@ -262,15 +257,13 @@ Source: [vdumoulin/conv_arithmetic](https://github.com/vdumoulin/conv_arithmetic
 :::{style="margin-top: 30px; font-size: 24px;"}
 :::{.columns}
 :::{.column width=50%}
-- CNNs stack [multiple convolutional layers]{.alert}
-- Each layer builds on the previous one:
+- CNNs stack [multiple convolutional layers]{.alert}, each building on the previous one:
   - **Layer 1**: Simple edges and colours
   - **Layer 2**: Textures and corners
   - **Layer 3**: Parts (eyes, wheels, leaves)
   - **Layer 4+**: Whole objects and scenes
-- This is called a [feature hierarchy]{.alert}
-- The network learns to [compose simple features into complex concepts]{.alert}
-- Similar to how our visual cortex works!
+- This [feature hierarchy]{.alert} composes simple features into complex concepts
+- Similar to how our visual cortex works
 :::
 
 :::{.column width=50%}
@@ -306,16 +299,17 @@ Source: [Towards Data Science](https://towardsdatascience.com/exploring-feature-
 ## Vision Transformers (ViT)
 ### "An Image is Worth 16×16 Words"
 
-:::{style="margin-top: 30px; font-size: 21px;"}
+:::{style="margin-top: 30px; font-size: 22px;"}
 :::{.columns}
 :::{.column width=55%}
-- In 2020, researchers asked: [Can we use Transformers for images?]{.alert}
-- Key idea: Treat image patches like tokens!
-- The process:
-  1. **Divide** image into fixed-size patches (e.g., 16×16 pixels)
-  2. **Flatten** each patch into a vector
-  3. **Add positional embeddings** (so model knows patch locations)
-  4. **Process through Transformer** (same attention mechanism as LLMs, so patches can "look at" other patches to understand context)
+- In 2020, researchers asked: [can we use Transformers for images?]{.alert}
+- Key idea: [treat image patches like tokens](https://arxiv.org/abs/2010.11929)
+
+1. **Divide** image into fixed-size patches (e.g., 16×16 pixels)
+2. **Flatten** each patch into a vector
+3. **Add positional embeddings** so the model knows patch locations
+4. **Process through Transformer**: the same attention as LLMs, so patches "look at" other patches for context
+
 - [Same architecture for text AND images]{.alert}
 - Foundation for multimodal models like GPT-4V and Gemini
 :::
@@ -340,13 +334,12 @@ Source: [Dosovitskiy et al. (2020)](https://arxiv.org/abs/2010.11929)
 :::{.column width=55%}
 - [CLIP]{.alert} (Contrastive Language-Image Pre-training) by OpenAI
 - Trained on [400 million image-text pairs]{.alert} from the internet
-- Key innovation: [Shared embedding space]{.alert} for images AND text
-- How it works:
+- Key innovation: [shared embedding space]{.alert} for images AND text
   - Image encoder → image embedding
   - Text encoder → text embedding
   - Train so matching pairs are [close together]{.alert}
-- Result: Can match images to text descriptions [without task-specific training]{.alert}
-- Foundation for DALL-E, Stable Diffusion, and multimodal LLMs!
+- Result: matches images to text descriptions [without task-specific training]{.alert}
+- Foundation for DALL-E, Stable Diffusion, and multimodal LLMs
 :::
 
 :::{.column width=45%}
@@ -387,7 +380,7 @@ Source: [OpenAI CLIP](https://openai.com/research/clip)
 :::{style="margin-top: 30px; font-size: 22px;"}
 :::{.columns}
 :::{.column width=55%}
-**Let's train an image classifier: no coding required!**
+**Train an image classifier: no coding required!**
 
 1. Go to [teachablemachine.withgoogle.com](https://teachablemachine.withgoogle.com/)
 2. Click "Get Started" → "Image Project" → "Standard"
@@ -424,15 +417,15 @@ Source: [OpenAI CLIP](https://openai.com/research/clip)
 :::{.column width=55%}
 Sound is just [vibrations in the air]{.alert}. We can't see it!
 
-But here's a clever trick:
+The trick:
 
 1. Record the vibrations as a [waveform]{.alert} (line going up and down)
 2. Transform the waveform into a [picture]{.alert} called a spectrogram
-3. Now we can use [the same AI that understands images]{.alert}!
+3. Use [the same AI that understands images]{.alert}
 
 **It's like creating a "photograph" of sound** 📸🎵
 
-This is why modern AI is so powerful! We can turn [anything into pictures or numbers]{.alert} and use similar techniques!
+This is why modern AI is so powerful: turn [anything into pictures or numbers]{.alert} and reuse the same techniques
 :::
 
 :::{.column width=45%}
@@ -464,7 +457,7 @@ In a spectrogram:
 - **Vertical axis**: Pitch (low notes at bottom, high at top)
 - **Colour/brightness**: How loud that frequency is
 
-What patterns can AI find?
+Patterns AI can find:
 
 - [Your unique voice "fingerprint"]{.alert}
 - The difference between "cat" and "bat"
@@ -534,9 +527,8 @@ Try making different sounds and watch the patterns!
 [Whisper](https://openai.com/research/whisper) is OpenAI's speech recognition system:
 
 - Trained on [680,000 hours]{.alert} of audio from the internet
-- Understands [99 languages]{.alert}!
-- Can handle accents, background noise, different speaking styles
-- Completely [open source and free]{.alert}
+- Understands [99 languages]{.alert}
+- Handles accents, background noise, and different speaking styles
 
 **How it works:**
 
@@ -544,17 +536,17 @@ Try making different sounds and watch the patterns!
 2. **FFT**: Convert each window from waveform to frequencies (how much of each frequency is present)
 3. **Mel mapping**: Apply mel scale to match human perception
 4. **Stack**: Create 2D spectrogram from all windows
-5. **Process**: Use Transformers, [same as text and images!]{.alert}
-6. **Context**: Use context (attention) to predict next tokens
+5. **Process**: Use Transformers, [same as text and images]{.alert}
+6. **Context**: Use attention to predict the next tokens
 :::
 
 :::{.column width=45%}
-- Architecture: [Encoder-decoder Transformer]{.alert}
-  - Encoder: Processes mel spectrogram
-  - Decoder: Generates text tokens
-- [Open source and free to use!](https://github.com/openai/whisper)
-  
-This powers much of what Siri, Alexa, and Google Assistant do!
+- Architecture: [encoder-decoder Transformer]{.alert}
+  - Encoder: processes the mel spectrogram
+  - Decoder: generates text tokens
+- [Open source and free to use](https://github.com/openai/whisper)
+
+This powers much of what Siri, Alexa, and Google Assistant do
 
 :::{style="text-align: center;"}
 [![](figures/whisper-demo.webp){width="100%"}](#){data-modal-type="image" data-modal-url="figures/whisper-demo.webp"}
@@ -570,7 +562,7 @@ Source: [Sam Galope (2024)](https://www.samgalope.dev/2024/07/25/convert-wav-fil
 :::{style="margin-top: 30px; font-size: 22px;"}
 :::{.columns}
 :::{.column width=55%}
-**Let's try the Whisper demo:**
+**Try the Whisper demo:**
 
 [huggingface.co/spaces/openai/whisper](https://huggingface.co/spaces/openai/whisper)
 
@@ -610,19 +602,18 @@ Source: [Sam Galope (2024)](https://www.samgalope.dev/2024/07/25/convert-wav-fil
 **[Suno.ai](https://suno.ai/)** generates complete songs from text prompts:
 
 - Give it a description: "upbeat pop song about studying for exams"
-- It creates: melody, harmony, rhythm, [AND vocals]{.alert}!
-- A full song in about 30 seconds
+- It creates melody, harmony, rhythm, [and vocals]{.alert}, a full song in about 30 seconds
 
 **How does it work?**
 
 - Trained on [millions of hours of music]{.alert}
-- Learns patterns: chord progressions, song structures, vocal styles
-- Uses the same "sound → numbers → AI" pipeline we discussed
+- Learns chord progressions, song structures, and vocal styles
+- Uses the same "sound → numbers → AI" pipeline
 
 **The questions this raises:**
 
 - Anyone can now create professional-sounding music
-- But: [Who owns AI-generated music?]{.alert}
+- [Who owns AI-generated music?]{.alert}
 - Some AI songs sound eerily similar to real artists
 - Musicians worry about their livelihoods
 :::
@@ -650,14 +641,12 @@ Source: [Sam Galope (2024)](https://www.samgalope.dev/2024/07/25/convert-wav-fil
 :::{style="margin-top: 30px; font-size: 26px;"}
 :::{.columns}
 :::{.column width=55%}
-- So... whether it's text, images, or audio...
-- Everything gets converted to [embeddings]{.alert}!
-- [Same mathematical representation]{.alert}:
+- Text, images, and audio all become [embeddings]{.alert}, the [same mathematical representation]{.alert}:
   - Text token → 4096-dimensional vector
   - Image patch → 4096-dimensional vector
   - Audio segment → 4096-dimensional vector
-- Once in embedding space, the [LLM doesn't know the original modality]{.alert}!
-- This is why [multimodal models]{.alert} can work with text, images, and audio at the same time
+- Once in embedding space, the [LLM doesn't know the original modality]{.alert}
+- This is why [multimodal models]{.alert} handle text, images, and audio at the same time
 :::
 
 :::{.column width=45%}
@@ -683,9 +672,9 @@ Text, images, and audio all become the same kind of numbers, so AI can understan
 :::
 
 :::{style="margin-top: 20px;"}
-1. **Modality Encoder**: Vision Transformer (images) or Whisper (audio). These are [pre-trained specialists]{.alert}
-2. **Projection Layer**: Aligns encoder outputs to the LLM's embedding space. This part is [often surprisingly simple!]{.alert}
-3. **LLM Backbone**: The "brain" (GPT, Gemini, Claude), which processes everything as tokens
+1. **Modality Encoder**: Vision Transformer (images) or Whisper (audio), both [pre-trained specialists]{.alert}
+2. **Projection Layer**: Aligns encoder outputs to the LLM's embedding space, and is [often surprisingly simple]{.alert}
+3. **LLM Backbone**: The "brain" (GPT, Gemini, Claude), processing everything as tokens
 :::
 :::
 :::
@@ -694,21 +683,20 @@ Text, images, and audio all become the same kind of numbers, so AI can understan
 ## Training multimodal models
 ### Two-stage learning
 
-:::{style="margin-top: 30px; font-size: 21px;"}
+:::{style="margin-top: 30px; font-size: 22px;"}
 :::{.columns}
 :::{.column width=55%}
 **Stage 1: Feature Alignment**
 
 - [Freeze]{.alert} vision encoder and LLM
-- Only train the neural network that projects the encoder outputs to the LLM's embedding space
-- Goal: Learn that "dog image" and "dog text" should be close
-- Dataset: Millions of image-caption pairs
+- Train only the network projecting encoder outputs into the LLM's embedding space
+- Goal: learn that "dog image" and "dog text" should be close
+- Dataset: millions of image-caption pairs
 
 **Stage 2: Instruction Tuning**
 
-- [Unfreeze]{.alert} the LLM
-- Train on question-answer datasets
-- Goal: Learn to follow complex multimodal instructions
+- [Unfreeze]{.alert} the LLM and train on question-answer datasets
+- Goal: follow complex multimodal instructions
 - Dataset: "Describe this image", "What's wrong with this chart?"
 :::
 
@@ -726,11 +714,9 @@ Source: [Sebastian Raschka](https://magazine.sebastianraschka.com/p/understandin
 
 ## Class discussion: Where do we draw the line? 🤔
 
-:::{style="margin-top: 30px; font-size: 24px;"}
+:::{style="margin-top: 50px; font-size: 24px;"}
 
-**In small groups, discuss this question:**
-
-**Voice/image generation**
+**In small groups: voice and image generation**
 
 Should AI-generated content require...
 
@@ -746,23 +732,23 @@ Should AI-generated content require...
 :::
 :::
 
-# Summary 📚 {background-color="#1B3A6B"}
+# Summary {background-color="#1B3A6B"}
 
 ## Main takeaways
 
 :::{style="margin-top: 30px; font-size: 28px;"}
 
-- `r fa('image')` **Images = grids of numbers**: AI learns to spot patterns, from edges to objects
+- **Images = grids of numbers**: AI spots patterns, from edges to objects
 
-- `r fa('music')` **Sound = pictures of vibrations**: We turn audio into spectrograms and use image AI!
+- **Sound = pictures of vibrations**: turn audio into spectrograms, then use image AI
 
-- `r fa('brain')` **The big insight**: Text, images, and audio all become [embeddings]{.alert}, the same kind of numbers
+- **The big insight**: text, images, and audio all become [embeddings]{.alert}
 
-- `r fa('link')` **Multimodal AI**: ChatGPT, Claude, and Gemini can see images because [everything speaks the same mathematical "language"]{.alert}
+- **Multimodal AI**: ChatGPT, Claude, and Gemini see images because [everything speaks the same mathematical "language"]{.alert}
 
-- `r fa('hand-paper')` **Hands-on**: You trained your own AI with Teachable Machine!
+- **Hands-on**: you trained your own AI with Teachable Machine
 
-- `r fa('exclamation-triangle')` **Critical thinking**: Deepfakes, bias, and privacy are [real concerns]{.alert} we must address
+- **Critical thinking**: deepfakes, bias, and privacy are [real concerns]{.alert} we must address
 :::
 
 # ... and that's all for today! 🎉 {background-color="#1B3A6B"}
