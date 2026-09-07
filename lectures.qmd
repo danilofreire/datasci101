@@ -294,6 +294,7 @@ Further readings:
 ### October 29, 2026:
 
 - Lecture 18: [AI regulation and standards around the world](https://danilofreire.github.io/datasci101/lectures/lecture-18/18-regulation.html).
+- [Kahoot Quiz](https://play.kahoot.it/v2/?quizId=b917688e-1437-4a7a-8c98-e306e31de6e4&hostId=05eb977d-4f8a-440e-9e45-95212b29d103)
 - **Assignment 07 due (5%).**
 
 Suggested readings:
@@ -311,6 +312,7 @@ Further readings:
 ### November 3, 2026:
 
 - Lecture 19: [Privacy and data protection](https://danilofreire.github.io/datasci101/lectures/lecture-19/19-privacy.html).
+- [Kahoot Quiz](https://play.kahoot.it/v2/?quizId=a200e8dd-98e9-4dba-9e7d-a61461c533bc&hostId=05eb977d-4f8a-440e-9e45-95212b29d103)
 - **Group list due.**
 
 Suggested readings:
@@ -355,6 +357,7 @@ Further readings:
 ### November 12, 2026:
 
 - Lecture 22: [AI and wellbeing: the attention economy, mental health, and the environment](https://danilofreire.github.io/datasci101/lectures/lecture-22/22-wellbeing.html).
+- [Kahoot Quiz](https://play.kahoot.it/v2/?quizId=a02ad8cb-5fdf-46cf-a39e-5531d740659e&hostId=05eb977d-4f8a-440e-9e45-95212b29d103)
 - **Assignment 08 due (5%).**
 - [**Assignment 09**](https://github.com/danilofreire/datasci101/blob/main/assignments).
 - **Optional project proposal due.**
@@ -377,6 +380,7 @@ Further readings:
 ### November 17, 2026:
 
 - Lecture 23: [Misinformation, deepfakes and trust online](https://danilofreire.github.io/datasci101/lectures/lecture-23/23-misinformation.html).
+- [Kahoot Quiz](https://play.kahoot.it/v2/?quizId=e537211e-9447-4617-ace1-3eab6343e8d2&hostId=05eb977d-4f8a-440e-9e45-95212b29d103)
 
 Suggested readings:
 
@@ -419,6 +423,7 @@ Further readings:
 ### December 1, 2026:
 
 - Lecture 26: [Course revision](https://danilofreire.github.io/datasci101/lectures/lecture-26/26-revision.html).
+- [Kahoot Quiz](https://play.kahoot.it/v2/?quizId=34f938d6-a5cd-4ada-8fa9-d8572f76e0fc&hostId=05eb977d-4f8a-440e-9e45-95212b29d103)
 
 ### December 3, 2026:
 
