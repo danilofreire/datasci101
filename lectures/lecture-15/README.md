@@ -1,40 +1,38 @@
 # Lecture 15: AI Agents: When Models Start Doing Things
 
-This lecture introduces AI agents to non-technical undergraduates: what changes when a model can use tools and act in the world, rather than just answer questions. Students learn the agent loop, where agents fail, and how to decide what to delegate.
+This lecture covers what changes when a language model stops answering questions and starts taking actions. We define an agent as a model with tools, a loop and a goal, then look at how research, memory and multi-agent teams work in practice. The second half is about failure: errors that compound over long tasks, prompt injection that turns into real actions, and two documented cases where agents caused expensive damage.
 
-## Main ideas
+## Main Ideas
 
-### 1. From chatbots to agents
+### 1. From Chatbots to Agents
 
-* **The definition**: an agent = a language model + tools + a loop + a goal, with limited supervision.
-* **The agent loop**: goal → plan → act → observe → repeat → stop.
-* **Tools**: web search, browsing, code execution, files, email, payments. Every tool is a capability and an attack surface.
-* **Products students already use**: Deep Research, coding agents, computer use, customer service and booking agents.
+* **The definition**: a model that uses tools, in a loop, to pursue a goal with limited supervision.
+* **The loop**: goal, plan, act, observe, repeat, and the model decides when to stop.
+* **Tools**: search, browsers, code execution, files, email, payments. The model asks, software does.
 
-### 2. How agents work
+### 2. How Agents Work
 
-* **Retrieval is just another tool**: agentic research as RAG with initiative.
-* **Memory**: scratchpads, summaries, and sub-tasks; why long tasks degrade.
-* **Multi-agent systems**: orchestrators and workers, and the coordination risks they add.
+* **Research with initiative**: RAG retrieves once, an agent chooses what to search next.
+* **Memory**: scratchpads, summaries and sub-tasks work around the context window.
+* **Teams**: an orchestrator splits work between workers, and coordination becomes a new failure mode.
 
-### 3. When agents go wrong
+### 3. When Agents Go Wrong
 
-* **The multiplication of mistakes**: 95% per-step accuracy is ~36% over 20 steps.
-* **Prompt injection with tools**: Simon Willison's "lethal trifecta" (private data + untrusted content + external communication).
-* **Case studies**: Replit's agent deleting a production database (2025); Anthropic's Project Vend (Claudius runs a shop).
-* **Automation bias**: approval fatigue and over-delegation.
+* **Compounding errors**: 95% accuracy per step is 36% over a 20-step task.
+* **Prompt injection with tools**: the lethal trifecta of private data, untrusted content and a way to send data out.
+* **Two case studies**: Replit's deleted production database and Anthropic's Project Vend shop.
 
-### 4. Trust and delegation
+### 4. Trust and Delegation
 
-* **The credit card test**: reversibility × stakes decides what to delegate.
-* **Guardrails**: permissions, sandboxes, action logs, undo, spending limits.
-* **Preview of Lecture 25**: goals taken literally; the proxy problem with hands.
-* **Activity**: audit a flawed agent action log and find the failures.
+* **The credit card test**: reversibility times stakes decides what you hand over.
+* **Guardrails**: permissions, sandboxes, action logs, undo and spending limits.
+* **Goals taken literally**: the proxy problem from lecture 03, now with hands.
 
 ## Resources
 
 * [Lecture Slides (HTML)](15-agents.html)
 * [Lecture Source (QMD)](15-agents.qmd)
-* [Building Effective Agents (Anthropic, 2024)](https://www.anthropic.com/research/building-effective-agents)
-* [The Lethal Trifecta (Willison, 2025)](https://simonwillison.net/2025/Jun/16/the-lethal-trifecta/)
-* [Project Vend (Anthropic, 2025)](https://www.anthropic.com/research/project-vend-1)
+* [Anthropic, Building effective agents](https://www.anthropic.com/engineering/building-effective-agents)
+* [Anthropic, Project Vend](https://www.anthropic.com/research/project-vend-1)
+* [Simon Willison, The lethal trifecta](https://simonwillison.net/2025/Jun/16/the-lethal-trifecta/)
+* [Business Insider, Replit CEO apologises](https://www.businessinsider.com/replit-ceo-apologizes-ai-coding-tool-delete-company-database-2025-7)

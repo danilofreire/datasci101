@@ -1,0 +1,921 @@
+---
+title: "DATASCI 101: Introduction to AI Applications"
+subtitle: "Lecture 15: Documentation and Dataset Governance"
+author:
+  - name: Danilo Freire
+    orcid: 0000-0002-4712-6810
+    email: danilo.freire@emory.edu
+    affiliations: "Department of Data and Decision Sciences <br> Emory University"
+format:
+  clean-revealjs:
+    self-contained: false
+    footer: "[Lecture 15](https://danilofreire.github.io/datasci101/lectures/lecture-15/15-documentation-v2.html)"
+    transition: slide
+    transition-speed: default
+    scrollable: true
+revealjs-plugins:
+  - multimodal
+engine: knitr
+editor:
+  render-on-save: true
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+library(knitr)
+opts_chunk$set(
+  prompt = T,
+  fig.align="center",
+  dpi=300,
+  cache=T,
+  engine.opts = list(bash = "-l")
+  )
+
+knit_hooks$set(
+  prompt = function(before, options, envir) {
+    options(
+      prompt = if (options$engine %in% c('sh','bash', 'zsh')) '$ ' else 'R> ',
+      continue = if (options$engine %in% c('sh','bash', 'zsh')) '$ ' else '+ '
+      )
+})
+
+options(repos = c(CRAN = "https://cran.rstudio.com/"))
+
+if (!require("fontawesome", character.only = TRUE)) {
+  install.packages("fontawesome", dependencies = TRUE)
+  library(fontawesome, character.only = TRUE)
+}
+```
+
+# Welcome back! 📋 {background-color="#1B3A6B"}
+
+## Recap of last class
+
+:::{style="margin-top: 20px; font-size: 24px;"}
+:::{.columns}
+:::{.column width=50%}
+- Last time: [pipelines and monitoring]{.alert}
+- AI systems are chains that can fail at any step
+- Monitoring catches problems before users do
+- Test for properties, not exact outputs
+- [Today]{.alert}: Module 4, Data Ethics and Bias
+- [Documentation]{.alert} is the first line of defence
+- If you don't know where your data came from, [you can't fix bias]{.alert}
+- Meta AI research scientist [Moustapha Cissé](https://venturebeat.com/technology/datasheets-could-be-the-solution-to-biased-ai): "_You are what you eat, and right now we feed our models junk food_."
+:::
+
+:::{.column width=50%}
+:::{style="text-align: center; margin-top: -30px;"}
+[![](figures/pipeline.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/pipeline.png"}
+
+Source: [Labellerr](https://www.labellerr.com/blog/top-platforms-to-manage-the-ai-ml-pipeline/)
+:::
+:::
+:::
+:::
+
+## Lecture overview
+### Today's agenda
+
+:::{style="margin-top: 20px; font-size: 24px;"}
+
+:::{.columns}
+:::{.column width=50%}
+**Part 1: Why Documentation Matters**
+
+- The "nutrition label" for AI
+- What happens without it (spoiler: chaos)
+- Documentation as accountability
+
+**Part 2: Datasheets for Datasets**
+
+- What, why, how, who, when
+- Reading and writing datasheets
+- Hands-on: Create your own!
+:::
+
+:::{.column width=50%}
+**Part 3: Model Cards**
+
+- What does the model do (and not do)?
+- Intended uses and limitations
+- Ethical considerations
+
+**Part 4: LLM Training Data Governance**
+
+- How modern AI datasets are documented
+- LAION, Common Crawl, and data provenance
+- The FAIR principles for research data
+:::
+:::
+:::
+
+## Fun fact of the day! 😁
+
+:::{style="margin-top: 20px; font-size: 24px; text-align: center;"}
+[![](figures/fun-fact.png){width="60%"}](#){data-modal-type="image" data-modal-url="figures/fun-fact.png"}
+
+Source: [Reddit](https://www.reddit.com/r/dataisbeautiful/comments/1qu5ccf/the_chatgpt_effect_ai_domain_registrations_grew/)
+:::
+
+## Revolting fact of the day! 😠
+
+:::{style="margin-top: 20px; font-size: 24px; text-align: center;"}
+:::{.columns}
+:::{.column width=50%}
+[![Very nice, Zuck!](figures/meta.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/meta.png"}
+
+:::
+
+:::{.column width=50%}
+[![](figures/meta-2.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/meta-2.png"}
+
+Source: [Mashable](https://mashable.com/article/meta-ai-ray-ban-glasses-intimate-videos-workers)
+:::
+:::
+:::
+
+# Why Documentation Matters 📝 {background-color="#1B3A6B"}
+
+## The horror stories: What happens without documentation
+
+:::{style="margin-top: 30px; font-size: 18px;"}
+:::{.columns}
+:::{.column width=55%}
+**ImageNet's hidden problems (2019):**
+
+- Most influential computer vision dataset ever, powering 10+ years of AI research
+- [Nobody knew]{.alert} where the images came from
+- Scraped from Flickr without consent
+- Racist and sexist labels ([MTurk](https://www.mturk.com/) workers)
+- Non-consensual photos of minors, and content from revenge porn sites
+
+**The root cause?**
+
+> They built it quickly and never documented what they were doing!
+
+[Thousands of AI systems were built on this undocumented foundation]{.alert}
+:::
+
+:::{.column width=45%}
+:::{style="text-align: center;"}
+[![ImageNet analysis](figures/imagenet-issues.webp){width="100%"}](#){data-modal-type="image" data-modal-url="figures/imagenet-issues.webp"}
+
+Source: [Excavating AI](https://excavating.ai/) (great resource, check it out!)
+:::
+:::
+:::
+:::
+
+## Documentation as accountability
+
+:::{style="margin-top: 30px; font-size: 22px;"}
+:::{.columns}
+:::{.column width=55%}
+**Without documentation, we can't:**
+
+- ❌ Know if data were collected ethically
+- ❌ Identify sources of bias
+- ❌ Judge if a model fits a use case
+- ❌ Assign responsibility when things go wrong
+- ❌ Reproduce or verify results
+- ❌ Fix problems later
+
+**With documentation, we can:**
+
+- ✅ Choose datasets knowingly
+- ✅ Trace bias back to its source
+- ✅ Match models to applications
+- ✅ Hold creators accountable
+- ✅ Build trust with users and regulators
+:::
+
+:::{.column width=45%}
+:::{style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px;"}
+**The legal angle:**
+
+Regulations [now require]{.alert} documentation:
+
+- **EU AI Act**: mandates documentation for high-risk AI
+- **NYC Law 144**: requires bias audits (needs documentation!)
+- **California CCPA**: data transparency requirements
+
+We cover US vs EU regulations in [Lecture 17]{.alert}.
+
+If you can't document it, you [can't deploy it]{.alert} (legally)
+:::
+:::
+:::
+:::
+
+## The three pillars: Datasheets, Model Cards, and System Cards
+
+:::{style="margin-top: 30px; font-size: 21px;"}
+:::{style="text-align: center;"}
+[![](figures/ai-model-cards.jpg){width="60%"}](#){data-modal-type="image" data-modal-url="figures/ai-model-cards.jpg"}
+
+Source: [Laurel Papworth](https://laurelpapworth.com/datasheets-model-cards/)
+:::
+
+:::{style="margin-top: 20px;"}
+They originated from landmark papers: [Gebru et al. (2018)](https://arxiv.org/abs/1803.09010) for datasheets and [Mitchell et al. (2019)](https://arxiv.org/abs/1810.03993) for model cards.
+
+These are now [industry standards]{.alert} adopted by [Google](https://deepmind.google/models/model-cards/), [Microsoft](https://azure.microsoft.com/en-us/products/ai-foundry/models), [Hugging Face](https://huggingface.co/docs/hub/en/model-cards), and others!
+:::
+:::
+
+# Datasheets for Datasets 📊 {background-color="#1B3A6B"}
+
+## What is a datasheet?
+
+:::{style="margin-top: 30px; font-size: 22px;"}
+:::{.columns}
+:::{.column width=55%}
+**Inspired by electronics industry:**
+
+- Every electronic component ships with a spec sheet of all relevant information
+- Engineers can then make informed decisions
+
+**[Timnit Gebru et al. (2018)](https://arxiv.org/abs/1803.09010) proposed the same for datasets:**
+
+> "A datasheet documents the motivation, composition, collection process, recommended uses, and other information about a dataset."
+
+**Core sections:**
+
+[Motivation, Composition, Collection, Preprocessing, Uses, Distribution, Maintenance]{.alert}
+:::
+
+:::{.column width=45%}
+:::{style="text-align: center;"}
+[![Datasheets paper](figures/datasheet.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/datasheet.png"}
+
+:::{style="font-size: 18px; margin-top: 15px;"}
+Source: [Jonathan Rystrøm (2024) - Dataset Card: Multicultural WVS Alignment](https://huggingface.co/datasets/ryzzlestrizzle/multicultural-wvs-alignment)
+:::
+:::
+:::
+:::
+:::
+
+## What a datasheet answers
+
+:::{style="margin-top: 30px; font-size: 18px;"}
+:::{.columns}
+:::{.column width=50%}
+[Motivation:]{.alert}
+
+- Why was the dataset created, and for what task?
+- Who created it and who funded it?
+
+[Composition:]{.alert}
+
+- What types of data are included?
+- How many instances are there?
+- Is there any sensitive information?
+- Are there known errors or noise?
+
+[Collection:]{.alert}
+
+- How was it collected (scraped, survey, sensors)?
+- Was consent obtained, and from which data subjects?
+- What timeframe was covered?
+:::
+
+:::{.column width=50%}
+[Preprocessing:]{.alert}
+
+- Was it cleaned, filtered, or were instances removed?
+- How was it labelled?
+
+[Uses:]{.alert}
+
+- What tasks has it been used for?
+- What should it [NOT]{.alert} be used for?
+- Are there known impact areas?
+
+[Distribution:]{.alert}
+
+- How is the dataset shared?
+- Is it versioned?
+
+[Maintenance:]{.alert}
+
+- Who is responsible for updates?
+- Is there a way to report issues?
+:::
+:::
+:::
+
+## Example: A good datasheet
+
+:::{style="margin-top: 30px; font-size: 20px;"}
+:::{.columns}
+:::{.column width=55%}
+**The [CHoRUS Dataset Datasheet](https://bridge2ai.github.io/data-sheets-schema/html_output/concatenated/curated/CHORUS_human_readable.html) (excerpt):**
+
+:::{style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; font-size: 15px;"}
+**Motivation:**
+
+Develop diverse, ethically sourced, AI-ready dataset to improve recovery from acute illness, with attention to diversity, equity, and Social Determinants of Health.
+
+**Composition:**
+
+23,400 hospital admissions from 14 hospitals. Multi-modal: EHR, waveforms, imaging (DICOM), clinical notes (OHNLP), EEG data.
+
+**Ethical considerations:**
+
+- Multi-site IRB approvals
+- Patient-focused ethical frameworks
+- BRIDGE Center ethics expertise on AI/ML biases
+
+**Recommended uses:**
+
+AI/ML for clinical care, particularly acute illness recovery prediction.
+
+**NOT recommended for:**
+
+Re-identification of patients (prohibited), applications perpetuating bias or discrimination.
+:::
+:::
+
+:::{.column width=45%}
+:::{style="text-align: center; margin-top: 20px;"}
+[![Collaborative Hospital Repository Uniting Standards for Equitable AI](figures/chorus-datasheet.jpeg){width="50%"}](#){data-modal-type="image" data-modal-url="figures/chorus-datasheet.jpeg"}
+
+:::{style="font-size: 18px; margin-top: 15px;"}
+Source: [BRIDGE Center](https://bridge2ai.github.io/data-sheets-schema/html_output/concatenated/curated/CHORUS_human_readable.html)
+:::
+:::
+:::
+:::
+:::
+
+## Activity: Let's read a real datasheet! 📖
+
+:::{style="margin-top: 30px; font-size: 21px;"}
+:::{.columns}
+:::{.column width=50%}
+**Read Anthropic's HH-RLHF Dataset Card:**
+
+1. Visit [Anthropic/hh-rlhf](https://huggingface.co/datasets/Anthropic/hh-rlhf)
+2. Read the Dataset Card carefully
+3. It trains AI assistants to be [helpful and harmless]{.alert}
+
+**Questions to answer:**
+
+- What are the [two types]{.alert} of data in this dataset?
+- Why does Anthropic warn against using this for supervised training of dialogue agents?
+- What content warning does the dataset include?
+- How can you contact the authors with issues?
+:::
+
+:::{.column width=50%}
+**Evaluate the documentation:**
+
+- ✅ Clear purpose: train preference/reward models for RLHF
+- ✅ Warns against misuse (don't train chatbots directly!)
+- ✅ Content disclaimer about harmful material
+- ✅ Links to papers for methodology
+- ✅ Contact email
+
+**Discussion:**
+
+- Would you be comfortable using this dataset?
+- What [ethical responsibilities]{.alert} come with using harmful content for research?
+
+⏱️ 3 minutes to explore!
+:::
+:::
+:::
+
+# Model Cards 🤖 {background-color="#1B3A6B"}
+
+## What is a model card?
+
+:::{style="margin-top: 30px; font-size: 19px;"}
+:::{.columns}
+:::{.column width=55%}
+**The "user manual" for AI models:**
+
+Datasheets document data; [model cards]{.alert} document models.
+
+**Margaret Mitchell et al. (2019):**
+
+> "Model cards are short documents accompanying trained ML models that provide benchmarked evaluation in a variety of conditions."
+
+**Core sections:**
+
+1. **Model details**: what is this model?
+2. **Intended use**: what should it be used for?
+3. **Factors**: what affects performance?
+4. **Metrics**: how was it evaluated?
+5. **Training data**: what was it trained on?
+6. **Ethical considerations**: what could go wrong?
+7. **Caveats and recommendations**: warnings!
+:::
+
+:::{.column width=45%}
+:::{style="text-align: center;"}
+[![Model cards paper](figures/model-cards-paper.png){width="50%"}](#){data-modal-type="image" data-modal-url="figures/model-cards-paper.png"}
+
+:::{style="font-size: 18px; margin-top: 15px;"}
+Source: [Mitchell et al. (2019)](https://arxiv.org/abs/1810.03993)
+:::
+:::
+:::
+:::
+:::
+
+## Intended use: The most important section
+
+:::{style="margin-top: 30px; font-size: 22px;"}
+:::{.columns}
+:::{.column width=55%}
+**Why "intended use" matters:**
+
+A hammer is a great tool. But:
+
+- ✅ Intended use: driving nails
+- ❌ NOT intended for: brain surgery
+
+**Models need the same clarity:**
+
+:::{style="font-size: 20px;"}
+| Model | Intended Use | NOT For |
+|-------|--------------|---------|
+| Gemini 3 | Conversation, assistance | Medical diagnosis |
+| Face detection | Placing cameras | Law enforcement ID |
+| Sentiment analysis | Product feedback | Hiring decisions |
+:::
+
+**Without this guidance:**
+
+People [will]{.alert} use models inappropriately and harm others
+:::
+
+:::{.column width=45%}
+:::{style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px;"}
+**Real example: [Gemini 3 Model Card](https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-3-Pro-Model-Card.pdf)** (edited and summarised)
+
+**Intended use:**
+
+"Assistance with a variety of text-based tasks"
+
+**Out-of-scope:**
+
+"Assistance with illegal activities"
+
+"Chemical synthesis"
+
+"Mental health crisis intervention"
+
+:::
+:::
+:::
+:::
+
+## Disaggregated evaluation: Breaking it down
+
+:::{style="margin-top: 30px; font-size: 21px;"}
+:::{.columns}
+:::{.column width=55%}
+**Why overall accuracy isn't enough:**
+
+- A model can be [90% accurate overall]{.alert}, yet 95% for Group A and 70% for Group B
+
+**Disaggregated evaluation** = report performance [separately]{.alert} by group.
+
+**Real example: [OpenAI CLIP Model Card (2021)](https://github.com/openai/clip/blob/main/model-card.md)**
+
+Gender classification accuracy using [FairFace](https://arxiv.org/abs/1908.04913) dataset:
+
+:::{style="font-size: 18px;"}
+| Race Category | Gender Accuracy |
+|---------------|-----------------|
+| Middle Eastern | [98.4%]{.alert} (highest) |
+| White | [96.5%]{.alert} (lowest) |
+| All races | >96% |
+:::
+
+Racial classification: ~93% | Age classification: ~63%
+:::
+
+:::{.column width=45%}
+:::{style="background: rgba(230, 57, 70, 0.1); padding: 15px; border-radius: 10px; font-size: 18px;"}
+**CLIP's bias findings:**
+
+OpenAI found [large disparities]{.alert} when classifying people into crime-related categories:
+
+- Performance varied by race and gender
+- Disparities shifted with how classes were built
+- Risk of denigration harms identified
+
+> "We tested the risk of certain kinds of denigration with CLIP by classifying images of people from Fairface into crime-related and non-human animal categories."
+:::
+
+:::
+:::
+:::
+
+## System cards vs model cards
+
+:::{style="margin-top: 30px; font-size: 20px;"}
+:::{.columns}
+:::{.column width=55%}
+**A newer concept: System Cards**
+
+Modern AI products chain several models together. A model card covers one model, so **system cards** document the [entire system]{.alert}.
+
+**What's included in a system card:**
+
+- Multiple models working together, and how components interact
+- Human oversight mechanisms
+- Deployment context and safeguards
+- Red teaming and safety evaluations
+
+**Who's using system cards:**
+
+- **OpenAI**: [o1 System Card](https://openai.com/index/openai-o1-system-card/), December 2024
+- **Anthropic**: a system card for each Claude release
+- **Meta**: 22 system cards in 2023
+:::
+
+:::{.column width=45%}
+:::{style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; font-size: 20px;"}
+**Model Card vs System Card:**
+
+| Aspect | Model Card | System Card |
+|--------|------------|-------------|
+| Scope | Single model | Entire system |
+| Focus | Performance | Safety + deployment |
+| Audience | Developers | Developers + public |
+| Includes | Training data, metrics | Red teaming, safeguards |
+:::
+
+:::{style="margin-top: 20px; text-align: center;"}
+[![](figures/system-card.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/system-card.png"}
+
+:::{style="font-size: 18px;"}
+[OpenAI o1 System Card (Dec 2024)](https://openai.com/index/openai-o1-system-card)
+:::
+:::
+:::
+:::
+:::
+
+# LLM Training Data Governance 🗂️ {background-color="#1B3A6B"}
+
+## How large AI datasets are built
+
+:::{style="margin-top: 30px; font-size: 19px;"}
+:::{.columns}
+:::{.column width=55%}
+**The data behind modern AI:**
+
+Language models and image generators train on [massive datasets]{.alert} scraped from the web. To understand bias, start with how the data was collected.
+
+**[Common Crawl](https://commoncrawl.org/): The foundation**
+
+- Non-profit that crawls the web monthly, archiving billions of pages
+- Raw HTML, metadata, and extracted text
+- [Free and open]{.alert} for anyone to use
+- No consent from content creators
+
+**The pipeline:**
+
+1. Common Crawl provides raw web data
+2. Organisations filter and clean it
+3. Datasets like LAION, The Pile, C4 are created
+4. These train models like GPT, DALL-E, Stable Diffusion
+:::
+
+:::{.column width=45%}
+:::{style="text-align: center; margin-top: 20px;"}
+[![Common Crawl archives the web monthly](figures/common-crawl.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/common-crawl.png"}
+
+:::{style="font-size: 18px; margin-top: 10px;"}
+Source: [Common Crawl](https://commoncrawl.org/)
+:::
+:::
+:::
+:::
+:::
+
+## Data provenance: Where did this come from?
+
+:::{style="margin-top: 30px; font-size: 22px;"}
+:::{.columns}
+:::{.column width=55%}
+**Data provenance** = tracking data from source to use, like a [family tree]{.alert} for your data
+
+**Why it matters:**
+
+1. **Debugging**: where did this error originate?
+2. **Compliance**: can we legally use this data?
+3. **Quality**: has this data been validated?
+4. **Reproducibility**: can we recreate this analysis?
+
+**Tools for tracking provenance:**
+
+- **Data Provenance Explorer** (MIT): summarises dataset sources, licenses, and allowable uses
+- **DVC** (Data Version Control): git for data
+- **MLflow**: tracks experiments and data versions
+:::
+
+:::{.column width=45%}
+:::{style="text-align: center;"}
+[![Data lineage diagram](figures/data-lineage.webp){width="100%"}](#){data-modal-type="image" data-modal-url="figures/data-lineage.webp"}
+
+:::{style="font-size: 18px; margin-top: 15px;"}
+Source: [Geeks for Geeks](https://www.geeksforgeeks.org/data-analysis/what-is-data-lineage/)
+:::
+:::
+
+:::{style="margin-top: 15px; background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px;"}
+[Analogy]{.alert}: Like a food supply chain. If there's contamination, you need to trace it back to the source!
+:::
+:::
+:::
+:::
+
+## Simplified example: Tracking data with Python
+
+:::{style="margin-top: 20px; font-size: 20px;"}
+:::{.columns}
+:::{.column width=55%}
+**What this code does:**
+
+Tracks by hand where your data comes from. Tools like [DVC](https://dvc.org/) do this automatically
+
+**Key concepts:**
+
+- **source**: where did the data originate?
+- **collected_at**: when was it gathered?
+- **transformations**: what processing was applied?
+- **version**: which version is this?
+
+**Why this matters:**
+
+If your model starts behaving badly, you can ask: "Did the data change? Was a filter removed?"
+:::
+
+:::{.column width=45%}
+:::{style="margin-top: 30px;"}
+```python
+# Simple data provenance tracking
+# This is metadata, not actual data
+
+provenance = {
+    "dataset_name": "restaurant_reviews",
+    "version": "2.1",
+    "source": "yelp_api",
+    "collected_at": "2024-01-15",
+    "transformations": [
+        "removed_duplicates",
+        "filtered_english_only",
+        "anonymised_usernames"
+    ],
+    "row_count": 50000,
+    "known_issues": [
+        "US restaurants only",
+        "2023 reviews missing"
+    ]
+}
+```
+
+:::{style="margin-top: 10px; font-size: 16px; text-align: center;"}
+This creates a "paper trail" for your dataset.
+:::
+:::
+:::
+:::
+:::
+
+# The FAIR Principles 🔬 {background-color="#1B3A6B"}
+
+## FAIR: The gold standard for research data
+
+:::{style="margin-top: 30px; font-size: 20px;"}
+:::{.columns}
+:::{.column width=55%}
+**FAIR Principles (2016):**
+
+A framework from the scientific community for making research data more useful.
+
+**F - Findable:**
+
+- Unique, persistent identifier (like a DOI)
+- Rich metadata describes the data
+- Registered in a searchable resource
+
+**A - Accessible:**
+
+- Retrievable by identifier using standard protocols
+- Metadata stays accessible even if the data isn't
+- Clear authentication if access is restricted
+
+**I - Interoperable:**
+
+- Standardised formats and vocabularies
+- Machine-readable, and combinable with other datasets
+
+**R - Reusable:**
+
+- Clear usage license
+- Detailed provenance information
+- Meets domain-relevant standards
+:::
+
+:::{.column width=45%}
+:::{style="text-align: center;"}
+[![FAIR principles](figures/fair-principles.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/fair-principles.png"}
+
+:::{style="font-size: 18px; margin-top: 10px;"}
+Source: [GO-FAIR](https://www.go-fair.org/fair-principles/)
+:::
+:::
+
+:::{style="margin-top: 15px; background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px;"}
+The NIH, EU, and most major funders now [require]{.alert} FAIR data practices for grant-funded research.
+:::
+:::
+:::
+:::
+
+# Data Governance in Practice 🏛️ {background-color="#1B3A6B"}
+
+## Consent and the data supply chain
+
+:::{style="margin-top: 30px; font-size: 22px;"}
+:::{.columns}
+:::{.column width=55%}
+**The uncomfortable truth about AI training data:**
+
+Most large AI models train on data [without explicit consent]{.alert}:
+
+- Web scraping (your blog posts, photos, art)
+- Social media posts (even "private" ones)
+- Books and articles (often without author permission)
+- Code repositories (GPL violations?)
+
+**The consent problem:**
+
+- You posted a photo to Instagram in 2015
+- It was scraped into a dataset
+- That dataset trained a facial recognition system
+- That system is now used for surveillance
+:::
+
+:::{.column width=45%}
+:::{style="background: rgba(230, 57, 70, 0.1); padding: 15px; border-radius: 10px;"}
+**High-profile cases:**
+
+- **LAION-5B**: billions of images scraped, later found to contain child pornography (Source: [CNN](https://www.cnn.com/2023/12/21/tech/child-sexual-abuse-material-ai-training-data))
+- **Clearview AI**: 30+ billion faces scraped from social media (Source: [BBC](https://www.bbc.com/news/technology-67133157))
+- **Getty Images vs. Stability AI**: lawsuit over image scraping (rejected!) (Source: [Paul Weiss](https://www.paulweiss.com/insights/client-memos/getty-images-v-stability-ai-the-uk-courts-first-word-on-use-of-copyright-works-in-ai-model-development))
+:::
+
+:::{style="margin-top: 10px; font-size: 26px; text-align: center;"}
+[Did you consent to this?]{.alert} 🤔
+:::
+:::
+:::
+:::
+
+## Data rights movements: The future
+
+:::{style="margin-top: 30px; font-size: 21px;"}
+:::{.columns}
+:::{.column width=55%}
+**New movements emerging:**
+
+**1. Data dignity:**
+
+- "Your data = your labour", so companies should pay for it
+- [Jaron Lanier](https://cdss.berkeley.edu/video/data-dignity-and-inversion-ai-jaron-lanier), [Radical Markets movement](https://www.amazon.com/Radical-Markets-Uprooting-Capitalism-Democracy/dp/0691177503)
+
+**2. Opt-out rights:**
+
+- GDPR: right to be forgotten
+- CCPA: right to know and delete
+- AI training opt-out (some systems now support this)
+
+**3. Data trusts:**
+
+- Independent organisations manage your data, negotiating terms and protecting privacy
+:::
+
+:::{.column width=45%}
+:::{style="text-align: center; margin-top: 20px;"}
+[![Data rights](figures/lanier.jpg){width="100%"}](#){data-modal-type="image" data-modal-url="figures/lanier.png"}
+
+:::{style="font-size: 18px; margin-top: 10px;"}
+Jaron Lanier, author of *Who Owns the Future?*
+:::
+:::
+
+:::{style="margin-top: 15px; background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px;"}
+**Discussion**: Should YOU be paid when your data trains an AI that makes billions?
+:::
+:::
+:::
+:::
+
+## Discussion: Who owns the data? 💭
+
+:::{style="margin-top: 30px; font-size: 22px;"}
+:::{.columns}
+:::{.column width=50%}
+**Scenario:**
+
+You posted a poem online in 2018. An AI company scraped it, and now their AI writes poems "inspired by" your style.
+
+**Questions to debate:**
+
+1. Did the company do anything wrong?
+2. Should you be compensated?
+3. Should you be able to opt out [retroactively]{.alert}?
+:::
+
+:::{.column width=50%}
+**Different perspectives:**
+
+:::{style="font-size: 20px;"}
+**Tech companies**: "It's fair use, like learning from reading books"
+
+**Artists**: "You're profiting from my creative work without consent"
+
+**Lawyers**: "Current law wasn't designed for this"
+
+**Users**: "I just want cool AI. I don't care about the source"
+:::
+
+:::{style="margin-top: 20px; background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px;"}
+**Your turn**: Where do you stand?
+:::
+:::
+:::
+:::
+
+# Putting It Into Practice 🛠️ {background-color="#1B3A6B"}
+
+## Tools for documentation
+
+:::{style="margin-top: 30px; font-size: 20px;"}
+:::{.columns}
+:::{.column width=55%}
+**Good news: Tools exist!**
+
+**For Datasheets:**
+
+- [Hugging Face Dataset Cards](https://huggingface.co/docs/hub/datasets-cards): standard format, easy to publish
+- [Data Nutrition Project](https://datanutrition.org/): visual "nutrition labels"
+- [Google Dataset Search](https://datasetsearch.research.google.com/): requires documentation to be indexed!
+
+**For Model Cards:**
+
+- [Hugging Face Model Cards](https://huggingface.co/docs/hub/model-cards): industry standard
+- [TensorFlow Model Card Toolkit](https://github.com/tensorflow/model-card-toolkit): automated card generation
+- [Google Model Cards](https://modelcards.withgoogle.com/about): example cards
+:::
+
+:::{.column width=45%}
+**For Data Lineage:** (advanced)
+
+- DVC (Data Version Control) - <https://dvc.org/>
+- MLflow - <https://mlflow.org/>
+
+:::{style="text-align: center;"}
+[![Mintlify](figures/mintlify.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/mintlify.png"}
+:::
+
+:::{style="margin-top: 15px; background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px;"}
+Hugging Face [will not list]{.alert} a model or dataset without a card. Google Dataset Search ignores undocumented datasets entirely.
+:::
+:::
+:::
+:::
+
+# Summary 📚 {background-color="#1B3A6B"}
+
+## Main takeaways
+
+:::{style="margin-top: 30px; font-size: 28px;"}
+
+- [Datasheets]{.alert}: motivation, composition, and limitations of a dataset
+
+- [Model cards]{.alert}: intended use, performance by group, and ethics of a model
+
+- [System cards]{.alert}: entire AI systems, including safety evaluations
+
+- [Data lineage]{.alert}: where data came from and how it changed
+
+- [FAIR principles]{.alert}: findable, accessible, interoperable, reusable data
+
+- [Consent matters]{.alert}: much AI training data lacks proper consent
+
+- [Career opportunity]{.alert}: employers are hiring for documentation and data governance roles
+
+:::
+
+# ...and that's all for today! 🎉 {background-color="#1B3A6B"}

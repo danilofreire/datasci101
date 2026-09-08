@@ -248,33 +248,12 @@ Further readings:
 - Anthropic (2024). [Building effective agents.](https://www.anthropic.com/research/building-effective-agents) How Claude's creators think about agent design. Slightly technical, but the diagrams alone are worth your time.
 - OpenAI (2025). [A practical guide to building agents.](https://cdn.openai.com/business-guides-and-resources/a-practical-guide-to-building-agents.pdf) OpenAI's guide for companies deploying agents. Skim the sections on guardrails.
 
-## Module 4 — Data ethics and bias
-
 ### October 22, 2026:
 
-- Lecture 16: [Types of bias and how they arise](https://danilofreire.github.io/datasci101/lectures/lecture-16/16-bias.html).
-- [Kahoot Quiz](https://play.kahoot.it/v2/?quizId=9c25b0fe-41fe-4ad0-8e9c-dd0fe68fa480&hostId=05eb977d-4f8a-440e-9e45-95212b29d103)
+- Lecture 16: [Setting up AI: instructions, memory and connectors](https://danilofreire.github.io/datasci101/lectures/lecture-16/16-setting-up-ai.html).
+- [Kahoot Quiz](https://play.kahoot.it/v2/?quizId=4862869d-eec7-467b-8f6b-f8fcb7d01301&hostId=05eb977d-4f8a-440e-9e45-95212b29d103)
 - **Assignment 06 due (5%).**
 - [**Assignment 07**](https://github.com/danilofreire/datasci101/blob/main/assignments).
-
-Suggested readings:
-
-- Silberg, J., & Manyika, J. (2019). [Notes from the AI frontier: tackling bias in AI (and in humans).](https://www.mckinsey.com/~/media/McKinsey/Featured%20Insights/Artificial%20Intelligence/Tackling%20bias%20in%20artificial%20intelligence%20and%20in%20humans/MGI-Tackling-bias-in-AI-June-2019.pdf) McKinsey Global Institute.
-- Liu Roc, A. (2023). [Understanding the impossibility of fairness.](https://medium.com/@alex.liu.roc/understanding-the-impossibility-of-fairness-199bba6c9072) *Medium*. A good, accessible overview of the impossibility results in fairness.
-- Kantayya, S. (2020). [Coded Bias.](https://www.codedbiasfilm.com/) Documentary film. May or may not be available on Netflix depending on your location.
-
-Further readings:
-
-- Barocas, S., Hardt, M., & Narayanan, A. (2019). [Fairness and machine learning.](https://fairmlbook.org/) Chapter 2: When is automated decision making legitimate?
-- Mehrabi, N., Morstatter, F., Saxena, N., Lettich, A., & Galstyan, A. (2021). [A survey on bias and fairness in machine learning.](https://arxiv.org/abs/1908.09635) *ACM Computing Surveys*, *54*(6), 1-35.
-- Hellman, D. (2025). [Algorithmic fairness.](https://plato.stanford.edu/archives/fall2025/entries/algorithmic-fairness/) *The Stanford Encyclopedia of Philosophy* (Fall 2025 Edition).
-
-### October 27, 2026:
-
-- Lecture 17: [Setting up AI: instructions, memory and connectors](https://danilofreire.github.io/datasci101/lectures/lecture-17/17-setting-up-ai.html).
-- [Kahoot Quiz](https://play.kahoot.it/v2/?quizId=4862869d-eec7-467b-8f6b-f8fcb7d01301&hostId=05eb977d-4f8a-440e-9e45-95212b29d103)
-- No assignment this week.
-- [Instructions for the final project (PDF)](https://github.com/danilofreire/datasci101/blob/main/project/project-instructions.pdf). Groups must be finalised by November 3. Optional proposal due November 12; final report and infographic due December 8.
 
 Suggested readings:
 
@@ -289,6 +268,27 @@ Further readings:
 - Greshake, K., Abdelnabi, S., Mishra, S., Endres, C., Holz, T., & Fritz, M. (2023). [Not what you've signed up for: compromising real-world LLM-integrated applications with indirect prompt injection.](https://arxiv.org/abs/2302.12173) *arXiv preprint*. The paper that named indirect prompt injection and showed it working against Bing Chat. Once a tool fetches outside text, data and instructions look the same to the model.
 - Hou, X., Zhao, Y., Wang, S., & Wang, H. (2025). [Model Context Protocol (MCP): landscape, security threats, and future research directions.](https://arxiv.org/abs/2503.23278) *arXiv preprint*. A survey of how MCP servers are built, deployed and maintained, with sixteen named attack scenarios. Technical in places, but the threat table reads on its own.
 - Anthropic (2025). [Effective context engineering for AI agents.](https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents) An engineering post arguing that context is a finite resource, so the aim is the smallest set of high-signal instructions rather than the longest. It explains why a two-page instruction file often performs worse than ten good lines.
+
+## Module 4 — Data ethics and bias
+
+### October 27, 2026:
+
+- Lecture 17: [Types of bias and how they arise](https://danilofreire.github.io/datasci101/lectures/lecture-17/17-bias.html).
+- [Kahoot Quiz](https://play.kahoot.it/v2/?quizId=9c25b0fe-41fe-4ad0-8e9c-dd0fe68fa480&hostId=05eb977d-4f8a-440e-9e45-95212b29d103)
+- No assignment this week.
+- [Instructions for the final project (PDF)](https://github.com/danilofreire/datasci101/blob/main/project/project-instructions.pdf). Groups must be finalised by November 3. Optional proposal due November 12; final report and infographic due December 8.
+
+Suggested readings:
+
+- Silberg, J., & Manyika, J. (2019). [Notes from the AI frontier: tackling bias in AI (and in humans).](https://www.mckinsey.com/~/media/McKinsey/Featured%20Insights/Artificial%20Intelligence/Tackling%20bias%20in%20artificial%20intelligence%20and%20in%20humans/MGI-Tackling-bias-in-AI-June-2019.pdf) McKinsey Global Institute.
+- Liu Roc, A. (2023). [Understanding the impossibility of fairness.](https://medium.com/@alex.liu.roc/understanding-the-impossibility-of-fairness-199bba6c9072) *Medium*. A good, accessible overview of the impossibility results in fairness.
+- Kantayya, S. (2020). [Coded Bias.](https://www.codedbiasfilm.com/) Documentary film. May or may not be available on Netflix depending on your location.
+
+Further readings:
+
+- Barocas, S., Hardt, M., & Narayanan, A. (2019). [Fairness and machine learning.](https://fairmlbook.org/) Chapter 2: When is automated decision making legitimate?
+- Mehrabi, N., Morstatter, F., Saxena, N., Lettich, A., & Galstyan, A. (2021). [A survey on bias and fairness in machine learning.](https://arxiv.org/abs/1908.09635) *ACM Computing Surveys*, *54*(6), 1-35.
+- Hellman, D. (2025). [Algorithmic fairness.](https://plato.stanford.edu/archives/fall2025/entries/algorithmic-fairness/) *The Stanford Encyclopedia of Philosophy* (Fall 2025 Edition).
 
 ## Module 5 — Policy, governance and social impact
 
