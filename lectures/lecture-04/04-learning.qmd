@@ -441,14 +441,14 @@ Source: [Medium](https://muhammadtaha01.medium.com/dimensionality-reduction-in-m
 :::{style="margin-top: 30px; font-size: 24px;"}
 :::{.columns}
 :::{.column width=55%}
-**Linear: [PCA]{.alert}** (Principal Component Analysis)
+**Linear:** [PCA](https://en.wikipedia.org/wiki/Principal_component_analysis) (Principal Component Analysis)
 
 - Find the directions of [maximum variance]{.alert}
 - Keep the top K components to reduce dimensions
 - Fast, well understood, keeps global structure
 - Limitation: only captures linear relationships
 
-**Non-linear: [t-SNE]{.alert} and [UMAP]{.alert}**
+**Non-linear:** [t-SNE](https://en.wikipedia.org/wiki/T-distributed_stochastic_neighbor_embedding) and [UMAP](https://umap-learn.readthedocs.io/en/latest/)
 
 - Keep [local structure]{.alert}: nearby points stay nearby
 - Excellent for [visualisation]{.alert}
@@ -574,7 +574,7 @@ Source: [Medium](https://medium.com/data-science/getting-started-with-reinforcem
 :::{style="margin-top: 30px; font-size: 22px;"}
 :::{.columns}
 :::{.column width=55%}
-- [RLHF]{.alert}: Reinforcement Learning from Human Feedback
+- [RLHF]{.alert}: [Reinforcement Learning from Human Feedback](https://openai.com/index/learning-from-human-preferences/)
 - [Key to ChatGPT's success!]{.alert}
 - Process:
   1. Train a base LLM on text (supervised)
