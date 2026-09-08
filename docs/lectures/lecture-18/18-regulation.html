@@ -157,18 +157,16 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </section>
 <section id="recap-of-last-class" class="slide level2">
 <h2>Recap of last class</h2>
-<div style="margin-top: 20px; font-size: 21px;">
+<div style="margin-top: 20px; font-size: 24px;">
 <div class="columns">
 <div class="column" style="width:50%;">
 <ul>
-<li>We explored <span class="alert">AI in healthcare and finance</span>, comparing traditional ML with LLMs in each field</li>
-<li><strong>Healthcare</strong>: ML for imaging and risk scoring; LLMs for clinical notes, patient communication, and RAG-based Q&amp;A</li>
-<li><strong>Finance</strong>: ML for credit scoring, fraud, and trading; LLMs for sentiment analysis, finance-specific models (BloombergGPT, FinGPT), and <span class="alert">agentic workflows</span></li>
-<li><strong>Optum case</strong>: healthcare costs as a proxy for needs penalised Black patients</li>
-<li><strong>Apple Card</strong>: unexplainable credit limits</li>
-<li>RAG reduces hallucination but inherits <span class="alert">knowledge base biases</span></li>
-<li>We also spoke about the <span class="alert">group project</span>: test AI tools in a real-world domain and design a new application</li>
-<li>Today: how are governments responding to these challenges?</li>
+<li>Last time: <span class="alert">bias</span> in AI systems, and who pays for it</li>
+<li>Robert Williams, Detroit 2020: a facial recognition match, <span class="alert">30 hours in a cell</span></li>
+<li>Six types: historical, representation, measurement, aggregation, evaluation, deployment</li>
+<li>Delete race from the data and the <span class="alert">proxies</span> do the work: ZIP code, test scores</li>
+<li>The <span class="alert">impossibility theorem</span>: no model satisfies every fairness criterion at once</li>
+<li>Today: fairness is a <span class="alert">values question</span>, so how are governments responding?</li>
 </ul>
 </div><div class="column" style="width:50%;">
 <div style="text-align: center; margin-top: 30px;">
@@ -181,7 +179,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <section id="lecture-overview" class="slide level2">
 <h2>Lecture overview</h2>
 <h3 id="what-we-will-cover-today">What we will cover today</h3>
-<div style="margin-top: 20px; font-size: 24px;">
+<div style="margin-top: 20px; font-size: 26px;">
 <div class="columns">
 <div class="column" style="width:50%;">
 <p><strong>Part 1: Why regulate AI?</strong></p>
@@ -226,29 +224,22 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </section>
 <section id="the-case-for-intervention" class="slide level2">
 <h2>The case for intervention</h2>
-<div style="margin-top: 30px; font-size: 20px;">
+<div style="margin-top: 30px; font-size: 22px;">
 <div class="columns">
 <div class="column" style="width:55%;">
 <p><strong>Market failures:</strong></p>
 <ul>
-<li><span class="alert">Information asymmetry</span>: Users can’t evaluate AI systems
+<li><span class="alert">Information asymmetry</span>: users can’t evaluate AI systems
 <ul>
 <li>How accurate is this hiring algorithm? Nobody knows</li>
 <li>Is this chatbot hallucinating? Hard to tell</li>
 </ul></li>
-<li><span class="alert">Externalities</span>: Harms fall on people who didn’t choose to use the system
-<ul>
-<li>For instance, deepfakes harm people who never consented</li>
-</ul></li>
-<li><span class="alert">Collective action problems</span>: Race to the bottom
-<ul>
-<li>Company A deploys unsafe AI</li>
-<li>Company B must follow or lose market share</li>
-</ul></li>
+<li><span class="alert">Externalities</span>: harms fall on people who never chose the system, like deepfakes of people who never consented</li>
+<li><span class="alert">Collective action problems</span>: company A deploys unsafe AI, company B must follow or lose market share</li>
 </ul>
 <p><strong>Rights and dignity:</strong></p>
 <ul>
-<li>Some uses may violate <span class="alert">fundamental rights</span></li>
+<li>Some uses violate <span class="alert">fundamental rights</span></li>
 <li>Facial recognition in public spaces</li>
 <li>Manipulation of democratic processes</li>
 </ul>
@@ -264,29 +255,26 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </section>
 <section id="the-case-against-heavy-intervention" class="slide level2">
 <h2>The case against (heavy) intervention</h2>
-<div style="margin-top: 30px; font-size: 19px;">
+<div style="margin-top: 30px; font-size: 22px;">
 <div class="columns">
 <div class="column" style="width:55%;">
 <p><strong>Innovation concerns:</strong></p>
 <ul>
-<li>Regulation can <span class="alert">slow development</span></li>
+<li>Regulation <span class="alert">slows development</span></li>
 <li>Compliance costs burden small companies</li>
-<li>May push innovation to less regulated jurisdictions</li>
+<li>Innovation may move to laxer jurisdictions</li>
 </ul>
 <p><strong>Technical challenges:</strong></p>
 <ul>
 <li>Technology moves faster than law</li>
 <li><span class="alert">General-purpose systems</span> defy categorisation</li>
-<li>Enforcement requires technical expertise</li>
+<li>Enforcement needs technical expertise</li>
 </ul>
 <p><strong>Existing laws may suffice:</strong></p>
 <ul>
-<li>Discrimination laws already apply</li>
-<li>Consumer protection already exists</li>
+<li>Discrimination and consumer protection laws already apply</li>
+<li>The question is <span class="alert">where to draw the line</span> and who gets to draw it</li>
 </ul>
-<div style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; margin-top: 15px; font-size: 18px;">
-<p>Most people agree AI needs some rules. The real argument is <span class="alert">where to draw the line</span> and who gets to draw it.</p>
-</div>
 </div><div class="column" style="width:45%;">
 <div style="text-align: center;">
 <p><a href="#/" data-modal-type="image" data-modal-url="figures/innovation-regulation.png"><img data-src="figures/innovation-regulation.jpg" style="width:100.0%"></a></p>
@@ -375,14 +363,14 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <ul>
 <li>Applies to AI systems <span class="alert">placed on the EU market</span></li>
 <li>Covers providers, deployers, importers, distributors</li>
-<li><span class="alert">Extraterritorial reach</span>: If you sell to the EU, you must comply</li>
-<li>Since the EU market is huge, <span class="alert">most companies will comply globally to avoid fragmentation</span></li>
+<li><span class="alert">Extraterritorial reach</span>: sell to the EU, you must comply</li>
+<li>The EU market is large, so <span class="alert">most companies comply globally to avoid fragmentation</span></li>
 </ul>
 <p><strong>Approach:</strong></p>
 <ul>
-<li><span class="alert">Risk-based</span>: Rules depend on potential harm</li>
-<li>Horizontal: Applies across all sectors</li>
-<li>Technology-neutral: Doesn’t define specific techniques</li>
+<li><span class="alert">Risk-based</span>: rules depend on potential harm</li>
+<li>Horizontal: applies across all sectors</li>
+<li>Technology-neutral: names no specific techniques</li>
 </ul>
 </div><div class="column" style="width:45%;">
 <div style="text-align: center;">
@@ -394,27 +382,27 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </section>
 <section id="the-risk-pyramid" class="slide level2">
 <h2>The risk pyramid</h2>
-<div style="margin-top: 30px; font-size: 18px;">
+<div style="margin-top: 30px; font-size: 22px;">
 <div class="columns">
 <div class="column" style="width:55%;">
 <p><strong>Unacceptable risk (banned):</strong></p>
 <ul>
-<li>Social scoring by governments</li>
-<li>Real-time biometric identification in public (with exceptions)</li>
-<li>Emotion recognition in workplaces and schools</li>
-<li>Predictive policing based solely on profiling</li>
+<li>Government social scoring</li>
+<li>Real-time public biometric ID (with exceptions)</li>
+<li>Emotion recognition at work and school</li>
+<li>Predictive policing by profiling alone</li>
 </ul>
 <p><strong>High risk (strict requirements):</strong></p>
 <ul>
-<li>Biometric identification systems</li>
-<li>Critical infrastructure management</li>
+<li>Biometric identification</li>
+<li>Critical infrastructure</li>
 <li>Employment and worker management</li>
-<li>Access to essential services (credit, insurance)</li>
+<li>Essential services (credit, insurance)</li>
 <li>Law enforcement and border control</li>
 <li>Justice and democratic processes</li>
 </ul>
 </div><div class="column" style="width:45%;">
-<div style="text-align: center; margin-top: 10px;">
+<div style="text-align: center; margin-top: -20px;">
 <p><a href="#/" data-modal-type="image" data-modal-url="figures/risk-pyramid.png"><img data-src="figures/risk-pyramid.png" style="width:60.0%"></a></p>
 </div>
 <p><strong>Limited risk (transparency only):</strong></p>
@@ -425,53 +413,46 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </ul>
 <p><strong>Minimal risk (no requirements):</strong></p>
 <ul>
-<li>Spam filters</li>
-<li>Video game AI</li>
-<li>Most consumer applications</li>
+<li>Most consumer applications: spam filters, video games, etc</li>
 </ul>
 </div></div>
 </div>
 </section>
 <section id="high-risk-system-requirements" class="slide level2">
 <h2>High-risk system requirements</h2>
-<div style="margin-top: 30px; font-size: 18px;">
+<div style="margin-top: 30px; font-size: 22px;">
 <div class="columns">
 <div class="column" style="width:55%;">
-<p>If your AI system is classified as high-risk, you must:</p>
 <p><strong>Before deployment:</strong></p>
 <ul>
-<li>Conduct a <span class="alert">conformity assessment</span></li>
-<li>Establish a <span class="alert">risk management system</span></li>
-<li>Maintain <span class="alert">technical documentation</span></li>
-<li>Enable <span class="alert">logging and traceability</span></li>
+<li><span class="alert">Conformity assessment</span> and <span class="alert">risk management system</span></li>
+<li><span class="alert">Technical documentation</span></li>
+<li><span class="alert">Logging and traceability</span></li>
 </ul>
 <p><strong>During operation:</strong></p>
 <ul>
-<li>Ensure <span class="alert">human oversight</span> capability</li>
-<li>Guarantee <span class="alert">accuracy, robustness, cybersecurity</span></li>
-<li>Register in <span class="alert">EU database</span></li>
-<li>Report serious incidents</li>
+<li><span class="alert">Human oversight</span> capability</li>
+<li><span class="alert">Accuracy, robustness, cybersecurity</span></li>
+<li>Register in <span class="alert">EU database</span>; report serious incidents</li>
 </ul>
 <p><strong>For deployers (users of high-risk AI):</strong></p>
 <ul>
-<li>Use according to instructions</li>
-<li>Ensure human oversight</li>
-<li>Monitor for issues</li>
-<li>Inform affected individuals</li>
+<li>Follow the instructions and ensure human oversight</li>
+<li>Monitor for issues and inform affected individuals</li>
 </ul>
 </div><div class="column" style="width:45%;">
-<div style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; font-size: 18px; margin-top: 30px;">
-<p><strong>Data governance requirements:</strong></p>
+<div style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; font-size: 22px; margin-top: 30px;">
+<p><strong>Data governance:</strong></p>
 <ul>
 <li>Training data must be <span class="alert">relevant, representative, free of errors</span></li>
-<li>Must examine for possible biases</li>
-<li>Must be able to <span class="alert">demonstrate compliance</span></li>
+<li>Must be examined for biases</li>
+<li>Must <span class="alert">demonstrate compliance</span></li>
 </ul>
-<p><strong>Transparency requirements:</strong></p>
+<p><strong>Transparency:</strong></p>
 <ul>
-<li>Clear information about capabilities and limitations</li>
+<li>Clear information on capabilities and limitations</li>
 <li>Instructions for use</li>
-<li>Contact information for oversight</li>
+<li>Contact details for oversight</li>
 </ul>
 </div>
 </div></div>
@@ -482,7 +463,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <div style="margin-top: 30px; font-size: 21px;">
 <div class="columns">
 <div class="column" style="width:55%;">
-<p>The Act includes special rules for <span class="alert">foundation models</span> like GPT-5, Claude, and Gemini</p>
+<p>The Act sets special rules for <span class="alert">foundation models</span> like GPT-5, Claude, and Gemini</p>
 <p><strong>All GPAI providers must:</strong></p>
 <ul>
 <li>Maintain technical documentation</li>
@@ -507,26 +488,25 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </section>
 <section id="open-source-models-a-partial-exemption" class="slide level2">
 <h2>Open-source models: a partial exemption</h2>
-<div style="margin-top: 30px; font-size: 20px;">
+<div style="margin-top: 30px; font-size: 23px;">
 <div class="columns">
 <div class="column" style="width:55%;">
-<p>The Act gives a <span class="alert">partial exemption</span> to open-source AI models:</p>
 <ul>
-<li>If you release model weights under a free licence, you are generally <span class="alert">exempt from most GPAI transparency requirements</span></li>
-<li>But if the model is classified as posing <span class="alert">systemic risk</span> (trained with more than 10<sup>25</sup> FLOPs), the stricter tier still applies</li>
-<li><span class="alert">Why the exception?</span> Open-source models allow <span class="alert">independent scrutiny</span>, which partly substitutes for regulatory oversight</li>
-<li>Supports European open-source ecosystem and research</li>
+<li>Release weights under a free licence and you are generally <span class="alert">exempt from most GPAI transparency requirements</span></li>
+<li>Models of <span class="alert">systemic risk</span> (over 10<sup>25</sup> FLOPs) still face the stricter tier</li>
+<li>Open models allow <span class="alert">independent scrutiny</span>, a partial substitute for regulatory oversight</li>
+<li>Supports European open-source research</li>
 </ul>
 <p><strong>Criticism:</strong></p>
 <ul>
-<li>Creates a potential <span class="alert">loophole</span>: open models can still cause harm once deployed by third parties</li>
+<li>A potential <span class="alert">loophole</span>: open models can still cause harm once third parties deploy them</li>
 <li>The deployer bears responsibility, but small deployers may lack resources to comply</li>
 </ul>
 </div><div class="column" style="width:45%;">
 <div style="text-align: center; margin-top: 30px;">
 <p><a href="#/" data-modal-type="image" data-modal-url="figures/mistral.webp"><img data-src="figures/mistral.webp" style="width:80.0%"></a></p>
-<div style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; font-size: 18px; margin-top: 15px;">
-<p><strong>Example:</strong> <a href="https://mistral.ai/">Mistral</a> is a French open-source AI company. Its larger models (like Mistral Large) are trained above the systemic risk threshold, so they still face the stricter GPAI rules. Its smaller models, released under open licences, would be largely exempt.</p>
+<div style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; font-size: 21px; margin-top: 15px;">
+<p><strong>Example:</strong> <a href="https://mistral.ai/">Mistral</a> is a French open-source AI company. Its larger models (like Mistral Large) are trained above the systemic risk threshold, so they still face the stricter GPAI rules. Its smaller open-licence models would be largely exempt.</p>
 </div>
 </div>
 </div></div>
@@ -637,36 +617,6 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </div>
 </div><div class="column" style="width:50%;">
 <div class="fragment">
-<ol start="5" type="1">
-<li>An AI that predicts which students will drop out</li>
-</ol>
-</div>
-<div class="fragment">
-<ul>
-<li><span class="alert">High risk</span> – educational access</li>
-</ul>
-</div>
-<div class="fragment">
-<ol start="6" type="1">
-<li>Deepfake detection software</li>
-</ol>
-</div>
-<div class="fragment">
-<ul>
-<li><span class="alert">Minimal risk</span> – helps detect manipulation</li>
-</ul>
-</div>
-<div class="fragment">
-<ol start="7" type="1">
-<li>China-style social credit scoring in the EU</li>
-</ol>
-</div>
-<div class="fragment">
-<ul>
-<li><span class="alert">Prohibited</span> – social scoring by government</li>
-</ul>
-</div>
-<div class="fragment">
 <div style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; margin-top: 15px; font-size: 18px;">
 <p>The classification often depends on <span class="alert">context and use</span>, not just the technology itself</p>
 </div>
@@ -681,16 +631,15 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </section>
 <section id="no-comprehensive-federal-ai-law-yet" class="slide level2">
 <h2>No comprehensive federal AI law (yet)</h2>
-<div style="margin-top: 30px; font-size: 17px;">
+<div style="margin-top: 30px; font-size: 18px;">
 <div class="columns">
 <div class="column" style="width:55%;">
-<p>The US has taken a <span class="alert">different path</span> from the EU:</p>
+<p>The US took a <span class="alert">different path</span> from the EU: <span class="alert">no single AI authority</span></p>
 <p><strong>Sectoral approach:</strong></p>
 <ul>
-<li>Healthcare AI: <a href="https://www.fda.gov/medical-devices/software-medical-device-samd/artificial-intelligence-software-medical-device">Food and Drug Administration (FDA)</a> regulates medical devices</li>
-<li>Financial AI: <a href="https://www.sec.gov/ai">Securities and Exchange Commission (SEC)</a> oversees lending/trading</li>
-<li>Employment AI: <a href="https://www.eeoc.gov/newsroom/eeoc-launches-initiative-artificial-intelligence-and-algorithmic-fairness">Equal Employment Opportunity Commission (EEOC)</a> applies discrimination law</li>
-<li><span class="alert">No single AI authority</span></li>
+<li><a href="https://www.fda.gov/medical-devices/software-medical-device-samd/artificial-intelligence-software-medical-device">Food and Drug Administration (FDA)</a> regulates medical devices</li>
+<li><a href="https://www.sec.gov/ai">Securities and Exchange Commission (SEC)</a> oversees lending/trading</li>
+<li><a href="https://www.eeoc.gov/newsroom/eeoc-launches-initiative-artificial-intelligence-and-algorithmic-fairness">Equal Employment Opportunity Commission (EEOC)</a> applies discrimination law</li>
 </ul>
 <p><strong>Recent developments:</strong></p>
 <ul>
@@ -726,13 +675,13 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </ul>
 <p><strong>Focus on national security:</strong></p>
 <ul>
-<li>Reporting requirements for <span class="alert">large training runs</span></li>
+<li>Report <span class="alert">large training runs</span></li>
 <li>Export controls on AI chips</li>
-<li>Protection of critical infrastructure</li>
+<li>Protect critical infrastructure</li>
 </ul>
 <p><strong>Limitations:</strong></p>
 <ul>
-<li>Executive orders can be <span class="alert">reversed</span> by next president (and they were!)</li>
+<li>The next president can <span class="alert">reverse</span> an executive order (and did!)</li>
 <li>Many provisions are <span class="alert">voluntary</span> or guidance</li>
 <li>Congress hasn’t passed comprehensive legislation</li>
 </ul>
@@ -749,7 +698,6 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <div style="margin-top: 30px; font-size: 21px;">
 <div class="columns">
 <div class="column" style="width:55%;">
-<p>The Trump administration’s approach differs from Biden’s:</p>
 <p><strong>Priorities:</strong></p>
 <ul>
 <li><span class="alert">American AI dominance</span> over global competitors</li>
@@ -791,7 +739,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <ul>
 <li>First comprehensive state AI law</li>
 <li>Requires <span class="alert">impact assessments</span> for high-risk systems</li>
-<li>Disclosure requirements for consumers</li>
+<li>Requires disclosure to consumers</li>
 </ul>
 <p><strong>California (various bills):</strong></p>
 <ul>
@@ -830,7 +778,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <p><strong>Features:</strong></p>
 <ul>
 <li><span class="alert">Content control</span>: AI must uphold “socialist values”</li>
-<li><span class="alert">Registration requirements</span> for public-facing AI</li>
+<li><span class="alert">Registration</span> for public-facing AI</li>
 <li>Three targeted regulations form the core “trio”:
 <ul>
 <li><a href="https://digichina.stanford.edu/work/translation-internet-information-service-algorithmic-recommendation-management-provisions-effective-march-1-2022/">Algorithm Recommendation Provisions (2022)</a>: transparency and control over recommendation systems</li>
@@ -844,7 +792,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <li>Regulates facial recognition but <span class="alert">deploys it extensively</span></li>
 <li>Restricts AI manipulation but uses AI for surveillance</li>
 <li>Rules for companies, <span class="alert">exceptions for government</span></li>
-<li>Innovation priorities vs content control tensions</li>
+<li>Innovation priorities clash with content control</li>
 </ul>
 </div><div class="column" style="width:45%;">
 <div style="text-align: center;">
@@ -870,12 +818,12 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </ul>
 <p><strong>Canada:</strong></p>
 <ul>
-<li><a href="https://ised-isde.canada.ca/site/innovation-better-canada/en/artificial-intelligence-and-data-act">AIDA (Artificial Intelligence and Data Act)</a> was proposed but <a href="https://www.mcinnescooper.com/publications/the-demise-of-the-artificial-intelligence-and-data-act-aida-5-key-lessons/">died in parliament</a> in January 2025</li>
-<li>Now pursuing AI governance through privacy legislation instead</li>
+<li><a href="https://ised-isde.canada.ca/site/innovation-better-canada/en/artificial-intelligence-and-data-act">AIDA (Artificial Intelligence and Data Act)</a> <a href="https://www.mcinnescooper.com/publications/the-demise-of-the-artificial-intelligence-and-data-act-aida-5-key-lessons/">died in parliament</a> in January 2025</li>
+<li>Now pursues AI governance through privacy legislation</li>
 </ul>
 <p><strong>Brazil:</strong></p>
 <ul>
-<li><a href="https://artificialintelligenceact.com/brazil-ai-act/">Comprehensive AI bill (PL 2338/2023)</a> approved by Senate, now in the Chamber of Deputies</li>
+<li><a href="https://artificialintelligenceact.com/brazil-ai-act/">Comprehensive AI bill (PL 2338/2023)</a> passed the Senate, now in the Chamber of Deputies</li>
 <li>Influenced by EU approach; rights-based framework</li>
 </ul>
 </div><div class="column" style="width:45%;">
@@ -991,41 +939,38 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </section></section>
 <section>
 <section id="what-this-means-for-practitioners" class="title-slide slide level1 center" data-background-color="#1B3A6B">
-<h1>What this means for practitioners 💼</h1>
+<h1>What this means for practitioners</h1>
 
 </section>
 <section id="practical-implications" class="slide level2">
 <h2>Practical implications</h2>
-<div style="margin-top: 30px; font-size: 21px;">
+<div style="margin-top: 30px; font-size: 25px;">
 <div class="columns">
 <div class="column" style="width:55%;">
 <p><strong>If you’re building AI systems:</strong></p>
 <ul>
-<li>Know your <span class="alert">use case classification</span> under EU AI Act</li>
-<li>Document training data and development process</li>
-<li>Build in <span class="alert">human oversight</span> capabilities</li>
-<li>Plan for <span class="alert">audits and assessments</span></li>
-<li>Consider compliance early, not as afterthought</li>
+<li>Know your <span class="alert">use case classification</span></li>
+<li>Document training data and development</li>
+<li>Build in <span class="alert">human oversight</span></li>
+<li>Plan for <span class="alert">audits</span> early</li>
 </ul>
 <p><strong>If you’re deploying AI systems:</strong></p>
 <ul>
 <li>Understand what system you’re using</li>
 <li>Ensure appropriate <span class="alert">human review</span></li>
 <li>Inform affected individuals</li>
-<li>Monitor for problems</li>
 <li>Know your <span class="alert">liability</span></li>
 </ul>
 </div><div class="column" style="width:45%;">
 <p><strong>If you’re affected by AI systems:</strong></p>
 <ul>
 <li>You may have <span class="alert">transparency rights</span></li>
-<li>Ask how decisions are made</li>
 <li>Challenge automated decisions</li>
 <li>Report problems to authorities</li>
 </ul>
-<div style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; font-size: 20px; margin-top: 60px;">
+<div style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; font-size: 23px; margin-top: 60px;">
 <p><strong>Compliance as competitive advantage:</strong></p>
-<p>Companies that document their training data and build in oversight now will have less to fix when regulations arrive. Compliance is cheaper when you plan for it from the start.</p>
+<p>Companies that document their data and build in oversight now will have less to fix later</p>
 </div>
 </div></div>
 </div>
@@ -1051,7 +996,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <ul>
 <li>Every major economy is working on AI rules</li>
 <li>Companies that sell globally will face multiple regimes</li>
-<li>The EU’s rules will likely shape what other countries do, just as GDPR did for data protection</li>
+<li>The EU’s rules will likely shape other countries, as GDPR did for data protection</li>
 </ul>
 </div><div class="column" style="width:45%;">
 <div style="text-align: center;">
@@ -1062,51 +1007,44 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </div>
 </section></section>
 <section>
-<section id="summary-and-takeaways" class="title-slide slide level1 center" data-background-color="#1B3A6B">
-<h1>Summary and takeaways 📝</h1>
+<section id="summary" class="title-slide slide level1 center" data-background-color="#1B3A6B">
+<h1>Summary</h1>
 
 </section>
 <section id="main-takeaways" class="slide level2">
 <h2>Main takeaways</h2>
-<div style="margin-top: 30px; font-size: 19px;">
+<div style="margin-top: 30px; font-size: 22px;">
 <div class="columns">
 <div class="column" style="width:55%;">
-<p><svg aria-hidden="true" role="img" viewbox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M384 32H512c17.7 0 32 14.3 32 32s-14.3 32-32 32H398.4c-5.2 25.8-22.9 47.1-46.4 57.3V448H512c17.7 0 32 14.3 32 32s-14.3 32-32 32H320 128c-17.7 0-32-14.3-32-32s14.3-32 32-32H288V153.3c-23.5-10.3-41.2-31.6-46.4-57.3H128c-17.7 0-32-14.3-32-32s14.3-32 32-32H256c14.6-19.4 37.8-32 64-32s49.4 12.6 64 32zm55.6 288H584.4L512 195.8 439.6 320zM512 416c-62.9 0-115.2-34-126-78.9c-2.6-11 1-22.3 6.7-32.1l95.2-163.2c5-8.6 14.2-13.8 24.1-13.8s19.1 5.3 24.1 13.8l95.2 163.2c5.7 9.8 9.3 21.1 6.7 32.1C627.2 382 574.9 416 512 416zM126.8 195.8L54.4 320H199.3L126.8 195.8zM.9 337.1c-2.6-11 1-22.3 6.7-32.1l95.2-163.2c5-8.6 14.2-13.8 24.1-13.8s19.1 5.3 24.1 13.8l95.2 163.2c5.7 9.8 9.3 21.1 6.7 32.1C242 382 189.7 416 126.8 416S11.7 382 .9 337.1z"></path></svg> <strong>Why regulate?</strong></p>
+<p><strong>Why regulate?</strong></p>
 <ul>
 <li>Market failures: information asymmetry, externalities</li>
 <li>Rights protection and human dignity</li>
-<li>Collective action problems</li>
 </ul>
-<p><svg aria-hidden="true" role="img" viewbox="0 0 448 512" style="height:1em;width:0.88em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M48 24C48 10.7 37.3 0 24 0S0 10.7 0 24V64 350.5 400v88c0 13.3 10.7 24 24 24s24-10.7 24-24V388l80.3-20.1c41.1-10.3 84.6-5.5 122.5 13.4c44.2 22.1 95.5 24.8 141.7 7.4l34.7-13c12.5-4.7 20.8-16.6 20.8-30V66.1c0-23-24.2-38-44.8-27.7l-9.6 4.8c-46.3 23.2-100.8 23.2-147.1 0c-35.1-17.6-75.4-22-113.5-12.5L48 52V24zm0 77.5l96.6-24.2c27-6.7 55.5-3.6 80.4 8.8c54.9 27.4 118.7 29.7 175 6.8V334.7l-24.4 9.1c-33.7 12.6-71.2 10.7-103.4-5.4c-48.2-24.1-103.3-30.1-155.6-17.1L48 338.5v-237z"></path></svg> <strong>EU AI Act</strong></p>
+<p><strong>EU AI Act</strong></p>
 <ul>
 <li>World’s first comprehensive AI law</li>
-<li>Risk-based approach with four tiers</li>
-<li>Strict requirements for high-risk systems</li>
-<li>Special rules for foundation models</li>
-<li>Fines up to 7% global turnover</li>
+<li>Four risk tiers, strict rules for high-risk systems</li>
+<li>Fines up to 7% of global turnover</li>
 </ul>
-<p><svg aria-hidden="true" role="img" viewbox="0 0 448 512" style="height:1em;width:0.88em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M48 24C48 10.7 37.3 0 24 0S0 10.7 0 24V64 350.5 400v88c0 13.3 10.7 24 24 24s24-10.7 24-24V388l80.3-20.1c41.1-10.3 84.6-5.5 122.5 13.4c44.2 22.1 95.5 24.8 141.7 7.4l34.7-13c12.5-4.7 20.8-16.6 20.8-30V66.1c0-23-24.2-38-44.8-27.7l-9.6 4.8c-46.3 23.2-100.8 23.2-147.1 0c-35.1-17.6-75.4-22-113.5-12.5L48 52V24zm0 77.5l96.6-24.2c27-6.7 55.5-3.6 80.4 8.8c54.9 27.4 118.7 29.7 175 6.8V334.7l-24.4 9.1c-33.7 12.6-71.2 10.7-103.4-5.4c-48.2-24.1-103.3-30.1-155.6-17.1L48 338.5v-237z"></path></svg> <strong>US approach</strong></p>
+<p><strong>US approach</strong></p>
 <ul>
-<li>Sectoral regulation, no comprehensive law</li>
-<li>Executive orders and voluntary commitments</li>
-<li>State-level initiatives filling gaps</li>
+<li>Sectoral rules, no comprehensive law</li>
+<li>States filling the gaps</li>
 <li>Innovation-first philosophy</li>
 </ul>
 </div><div class="column" style="width:45%;">
-<p><svg aria-hidden="true" role="img" viewbox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M352 256c0 22.2-1.2 43.6-3.3 64H163.3c-2.2-20.4-3.3-41.8-3.3-64s1.2-43.6 3.3-64H348.7c2.2 20.4 3.3 41.8 3.3 64zm28.8-64H503.9c5.3 20.5 8.1 41.9 8.1 64s-2.8 43.5-8.1 64H380.8c2.1-20.6 3.2-42 3.2-64s-1.1-43.4-3.2-64zm112.6-32H376.7c-10-63.9-29.8-117.4-55.3-151.6c78.3 20.7 142 77.5 171.9 151.6zm-149.1 0H167.7c6.1-36.4 15.5-68.6 27-94.7c10.5-23.6 22.2-40.7 33.5-51.5C239.4 3.2 248.7 0 256 0s16.6 3.2 27.8 13.8c11.3 10.8 23 27.9 33.5 51.5c11.6 26 20.9 58.2 27 94.7zm-209 0H18.6C48.6 85.9 112.2 29.1 190.6 8.4C165.1 42.6 145.3 96.1 135.3 160zM8.1 192H131.2c-2.1 20.6-3.2 42-3.2 64s1.1 43.4 3.2 64H8.1C2.8 299.5 0 278.1 0 256s2.8-43.5 8.1-64zM194.7 446.6c-11.6-26-20.9-58.2-27-94.6H344.3c-6.1 36.4-15.5 68.6-27 94.6c-10.5 23.6-22.2 40.7-33.5 51.5C272.6 508.8 263.3 512 256 512s-16.6-3.2-27.8-13.8c-11.3-10.8-23-27.9-33.5-51.5zM135.3 352c10 63.9 29.8 117.4 55.3 151.6C112.2 482.9 48.6 426.1 18.6 352H135.3zm358.1 0c-30 74.1-93.6 130.9-171.9 151.6c25.5-34.2 45.2-87.7 55.3-151.6H493.4z"></path></svg> <strong>Global picture</strong></p>
+<p><strong>Global picture</strong></p>
 <ul>
 <li>No international consensus</li>
 <li>EU likely to set de facto global standards</li>
-<li>China: extensive but contradictory</li>
-<li>UK, Canada, others developing approaches</li>
+<li>China extensive but contradictory</li>
 </ul>
-<p><svg aria-hidden="true" role="img" viewbox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M184 48H328c4.4 0 8 3.6 8 8V96H176V56c0-4.4 3.6-8 8-8zm-56 8V96H64C28.7 96 0 124.7 0 160v96H192 320 512V160c0-35.3-28.7-64-64-64H384V56c0-30.9-25.1-56-56-56H184c-30.9 0-56 25.1-56 56zM512 288H320v32c0 17.7-14.3 32-32 32H224c-17.7 0-32-14.3-32-32V288H0V416c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V288z"></path></svg> <strong>For practitioners</strong></p>
+<p><strong>For practitioners</strong></p>
 <ul>
 <li>Know your use case classification</li>
 <li>Build compliance in from the start</li>
-<li>Document everything</li>
-<li>Plan for human oversight</li>
-<li>Stay informed as rules evolve</li>
+<li>Document everything and plan for human oversight</li>
 </ul>
 <div style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; margin-top: 15px; font-size: 18px;">
 <p>How do you hold someone accountable for a decision made by a machine? Every framework we covered today is trying to answer that!</p>
