@@ -106,8 +106,10 @@ Source: [Miquido - AI Glossary](https://www.miquido.com/ai-glossary/ai-model-eva
 
 ## Tweet of the day
 
-:::{style="text-align: center; margin-top: 30px;"}
-[![](figures/tweet-of-the-day.jpeg){width="55%"}](#){data-modal-type="image" data-modal-url="figures/tweet-of-the-day.jpeg"}
+:::{style="text-align: center; margin-top: 30px; font-size: 22px;"}
+[![](figures/tweet-alignment.png){width="65%"}](#){data-modal-type="image" data-modal-url="figures/tweet-of-the-day.jpeg"}
+
+<https://x.com/EvanHub/status/2097497037956891126>
 :::
 
 # Why metrics matter 📊 {background-color="#1B3A6B"}
