@@ -101,6 +101,7 @@ Further readings:
 - Rashka, S. (2025) [Understanding the 4 main approaches to LLM evaluation.](https://magazine.sebastianraschka.com/p/llm-evaluation-4-approaches) Good blog post about the different ways to evaluate LLMs.
 - Inie, N., Stray, J., & Derczynski, L. (2023). [Summon a demon and bind it: a grounded theory of LLM red teaming in the wild.](https://arxiv.org/abs/2311.06237) *arXiv preprint*. A good overview of red teaming.
 - Radharapu, B., Robinson, K., Aroyo, L., & Lahoti, P. (2023). [Aart: AI-assisted red-teaming with diverse data generation for new LLM-powered applications.](https://arxiv.org/abs/2311.08592) *arXiv preprint*. A method to improve LLM safety with simple adversarial attacks.
+- Yee, E. (2025). [AI red-teaming design: threat models and tools.](https://cset.georgetown.edu/article/ai-red-teaming-design-threat-models-and-tools/) *Center for Security and Emerging Technology*. A survey of 23 red-teaming tools showing how the threat model built into each one shapes the results you get.
 
 ## Module 2 — Language and perception
 
