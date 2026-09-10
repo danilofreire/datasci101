@@ -88,7 +88,7 @@ Lecture 05 introduced Goodhart's Law: "When a measure becomes a target, it cease
 **Your task:**
 
 1. Describe one example from your own experience, at school, in sport, on social media, anywhere, where chasing a metric made things worse. Two or three sentences
-2. Lecture 05 described two ways a model can score well on a benchmark without being any better at the underlying task. Name both, and explain in your own words why each one makes a leaderboard score unreliable
+2. Lecture 05 listed several ways a model can score well on a benchmark without being any better at the underlying task. Name two of them, and explain in your own words why each one makes a benchmark score unreliable
 3. If you were choosing an LLM for your own coursework, what would you test it on instead of reading its benchmark scores? Describe one specific task you would set it, and what a good and a bad response would look like
 
 ---
@@ -113,7 +113,7 @@ A shop wants to predict whether a customer will come back within 30 days. It has
 
 **Your task:**
 
-1. The shop is about to apply one rule to its next 1,000 customers. Which would you choose, and what accuracy would you expect from each?
+1. The shop is about to apply one rule to its next 1,000 customers. Which would you choose, and would you expect that rule to do better or worse on the new customers than on the 10 old ones? Explain why
 2. Rule A scores higher than Rule B on the 10 past customers, yet you probably did not choose it. Name the problem Lecture 05 gave this pattern, and explain why adding conditions made it worse
 3. The shop has no new customers yet. Using only the 10 records it already has, how could it have caught this problem before deploying?
 
@@ -159,11 +159,11 @@ Lecture 05 covered using one model to evaluate another's output, with a rubric.
 
 ### Bonus Question: Whose values is it repeating?
 
-Lecture 04 covered RLHF: after pretraining, a model is tuned on human raters choosing between responses. The slides did not say who those raters were. In practice they were paid contractors, working to a rubric, under deadlines. What the model learned is which answers those particular people preferred.
+Lecture 04 covered RLHF: after the base model is trained on text, it is tuned on human raters choosing between responses. The slides did not say who those raters were. In practice they were paid contractors, working to a rubric, under deadlines. What the model learned is which answers those particular people preferred.
 
 **Your task:**
 
-1. In assignment 01 you pushed a model into calling weak work A-grade. Explain how RLHF could have produced that behaviour
+1. In assignment 01 you pressed a model to upgrade weak work to an A. Whether or not it gave in, explain how RLHF could produce that behaviour
 2. Imagine a model that never flatters and never softens bad news. Describe what using it would feel like, and say honestly whether you would keep using it
 3. Whose values should a model hold: the raters', the company's, the user's, or someone else's? Defend one answer, and name what your choice costs
 
