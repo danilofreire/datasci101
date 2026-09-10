@@ -83,7 +83,7 @@ Source: [Codefinity](https://codefinity.com/courses/v2/a65bbc96-309e-4df9-a790-a
 
 - Why accuracy isn't enough
 - Confusion matrix, precision, recall
-- ROC curves and regression metrics
+- Regression metrics
 - Overfitting and cross-validation
 
 **Part 2: LLM Evaluation**
@@ -218,6 +218,7 @@ Source: [Medium](https://aws.plainenglish.io/model-performance-optimization-unde
 - **True Negatives (TN)**: correctly predicted negative
 - **False Positives (FP)**: predicted positive, actually negative (Type I error)
 - **False Negatives (FN)**: predicted negative, actually positive (Type II error)
+- **Accuracy** = (TP + TN) / (TP + TN + FP + FN)
 - [All classification metrics come from these four numbers!]{.alert}
 :::
 
