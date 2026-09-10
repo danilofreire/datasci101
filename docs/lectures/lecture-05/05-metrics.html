@@ -162,9 +162,9 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <div class="column" style="width:50%;">
 <ul>
 <li>We covered three <span class="alert">paradigms of machine learning</span></li>
-<li><span class="alert">Supervised learning</span>: learn from labelled examples (classification, regression)</li>
-<li><span class="alert">Unsupervised learning</span>: find patterns without labels (clustering, dimensionality reduction)</li>
-<li><span class="alert">Reinforcement learning</span>: learn from rewards (agents and environments)</li>
+<li><a href="https://en.wikipedia.org/wiki/Supervised_learning">Supervised learning</a>: learn from labelled examples (classification, regression)</li>
+<li><a href="https://en.wikipedia.org/wiki/Unsupervised_learning">Unsupervised learning</a>: find patterns without labels (clustering, dimensionality reduction)</li>
+<li><a href="https://en.wikipedia.org/wiki/Reinforcement_learning">Reinforcement learning</a>: learn from rewards (agents and environments)</li>
 <li><span class="alert">Different problems need different approaches</span></li>
 <li>Today: <span class="alert">how do we know if our models are any good?</span> 🤔</li>
 </ul>
@@ -222,14 +222,11 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </section>
 <section id="think-about-this" class="slide level2">
 <h2>Think about this 🤔</h2>
-<div style="margin-top: 40px; font-size: 26px;">
+<div style="margin-top: 40px; font-size: 28px;">
 <p><strong>Scenario</strong>: your model predicts a rare disease that affects <span class="alert">1 in 1,000 people</span>.</p>
 <p>A colleague announces: <span class="alert">“It achieves 99.9% accuracy!”</span></p>
 <div class="fragment">
 <p><strong>Question</strong>: is this model any good? Take 30 seconds</p>
-</div>
-<div class="fragment">
-<p>That model <span class="alert">catches zero actual cases</span>. Every sick patient is missed!</p>
 </div>
 </div>
 </section>
@@ -720,7 +717,9 @@ Actual: <span style="color: #457b9d;">Healthy</span>
 <p><strong>Step 1</strong>: Define criterion</p>
 <p><em>“Rate coherence from 1-5”</em></p>
 <p><strong>Step 2</strong>: LLM generates steps</p>
-<p><em>“1. Check logical flow between sentences<em> </em>2. Verify topic consistency<em> </em>3. Look for contradictions…”</em></p>
+<p><em>“1. Check logical flow between sentences</em></p>
+<p><em>2. Verify topic consistency</em></p>
+<p><em>3. Look for contradictions…“</em></p>
 <p><strong>Step 3</strong>: Apply and score</p>
 <p><em>Score: 4/5</em> <em>“Good flow but minor transition issue in paragraph 2”</em></p>
 </div>
@@ -813,7 +812,7 @@ Actual: <span style="color: #457b9d;">Healthy</span>
 <div class="columns">
 <div class="column" style="width:55%;">
 <ul>
-<li><span class="alert">RAG</span>: the model <span class="alert">looks things up</span> instead of relying on memory</li>
+<li><a href="https://en.wikipedia.org/wiki/Retrieval-augmented_generation">Retrieval-Augmented Generation (RAG)</a>: the model <span class="alert">looks things up</span> instead of relying on memory</li>
 <li><strong>How it works</strong>:
 <ol type="1">
 <li>the user asks a question</li>
@@ -871,7 +870,7 @@ Actual: <span style="color: #457b9d;">Healthy</span>
 <div class="columns">
 <div class="column" style="width:55%;">
 <ul>
-<li><span class="alert">Red teaming</span>: deliberately trying to make the AI fail, like hiring hackers to test your security</li>
+<li><a href="https://cset.georgetown.edu/article/ai-red-teaming-design-threat-models-and-tools/">Red teaming</a>: deliberately trying to make the AI fail, like hiring hackers to test your security</li>
 <li><strong>What red teamers look for</strong>:
 <ul>
 <li>harmful or unsafe outputs</li>
@@ -918,7 +917,7 @@ Actual: <span style="color: #457b9d;">Healthy</span>
 <div class="columns">
 <div class="column" style="width:55%;">
 <p><strong><span class="alert">Benchmarks</span></strong>: Standardised tests (<a href="https://huggingface.co/spaces/TIGER-Lab/MMLU-Pro">MMLU</a>, <a href="https://github.com/sylinrl/TruthfulQA">TruthfulQA</a>, <a href="https://humaneval.org/">HumanEval</a>)</p>
-<p><strong><span class="alert">Leaderboards</span></strong>: Human preference rankings (<a href="https://lmarena.ai/">LM Arena</a> uses Elo ratings)</p>
+<p><strong><span class="alert">Leaderboards</span></strong>: Human preference rankings (<a href="https://lmarena.ai/">LM Arena</a> uses <a href="https://en.wikipedia.org/wiki/Elo_rating_system">Elo ratings</a>, a chess-inspired scoring system to rank models)</p>
 <p><a href="https://en.wikipedia.org/wiki/Goodhart%27s_law">Goodhart’s Law</a>: <span class="alert">“When a measure becomes a target, it ceases to be a good measure”</span></p>
 <p><strong>Common problems:</strong></p>
 <ul>

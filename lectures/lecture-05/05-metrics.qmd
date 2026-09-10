@@ -55,9 +55,9 @@ if (!require("fontawesome", character.only = TRUE)) {
 :::{.columns}
 :::{.column width=50%}
 - We covered three [paradigms of machine learning]{.alert}
-- [Supervised learning]{.alert}: learn from labelled examples (classification, regression)
-- [Unsupervised learning]{.alert}: find patterns without labels (clustering, dimensionality reduction)
-- [Reinforcement learning]{.alert}: learn from rewards (agents and environments)
+- [Supervised learning](https://en.wikipedia.org/wiki/Supervised_learning): learn from labelled examples (classification, regression)
+- [Unsupervised learning](https://en.wikipedia.org/wiki/Unsupervised_learning): find patterns without labels (clustering, dimensionality reduction)
+- [Reinforcement learning](https://en.wikipedia.org/wiki/Reinforcement_learning): learn from rewards (agents and environments)
 - [Different problems need different approaches]{.alert}
 - Today: [how do we know if our models are any good?]{.alert} 🤔
 :::
@@ -114,17 +114,13 @@ Source: [Miquido - AI Glossary](https://www.miquido.com/ai-glossary/ai-model-eva
 
 ## Think about this 🤔
 
-:::{style="margin-top: 40px; font-size: 26px;"}
+:::{style="margin-top: 40px; font-size: 28px;"}
 **Scenario**: your model predicts a rare disease that affects [1 in 1,000 people]{.alert}.
 
 A colleague announces: ["It achieves 99.9% accuracy!"]{.alert}
 
 :::{.fragment}
 **Question**: is this model any good? Take 30 seconds
-:::
-
-:::{.fragment}
-That model [catches zero actual cases]{.alert}. Every sick patient is missed!
 :::
 :::
 
@@ -532,7 +528,9 @@ Source: [TinyML SubStack](https://tinyml.substack.com/p/death-by-rag-evals)
 **Step 2**: LLM generates steps
 
 *"1. Check logical flow between sentences*
+
 *2. Verify topic consistency*
+
 *3. Look for contradictions..."*
 
 **Step 3**: Apply and score
@@ -629,7 +627,7 @@ How would you check if an AI's answer is correct?
 :::{style="margin-top: 30px; font-size: 20px;"}
 :::{.columns}
 :::{.column width=55%}
-- [RAG]{.alert}: the model [looks things up]{.alert} instead of relying on memory
+- [Retrieval-Augmented Generation (RAG)](https://en.wikipedia.org/wiki/Retrieval-augmented_generation): the model [looks things up]{.alert} instead of relying on memory
 - **How it works**:
   1. the user asks a question
   2. the system [retrieves]{.alert} relevant documents from a knowledge base
@@ -684,7 +682,7 @@ How would you check if an AI's answer is correct?
 :::{style="margin-top: 30px; font-size: 22px;"}
 :::{.columns}
 :::{.column width=55%}
-- [Red teaming]{.alert}: deliberately trying to make the AI fail, like hiring hackers to test your security
+- [Red teaming](https://cset.georgetown.edu/article/ai-red-teaming-design-threat-models-and-tools/): deliberately trying to make the AI fail, like hiring hackers to test your security
 - **What red teamers look for**:
   - harmful or unsafe outputs
   - jailbreaks (bypassing safety guardrails)
@@ -727,7 +725,7 @@ You find them before deployment
 :::{.column width=55%}
 **[Benchmarks]{.alert}**: Standardised tests ([MMLU](https://huggingface.co/spaces/TIGER-Lab/MMLU-Pro), [TruthfulQA](https://github.com/sylinrl/TruthfulQA), [HumanEval](https://humaneval.org/))
 
-**[Leaderboards]{.alert}**: Human preference rankings ([LM Arena](https://lmarena.ai/) uses Elo ratings)
+**[Leaderboards]{.alert}**: Human preference rankings ([LM Arena](https://lmarena.ai/) uses [Elo ratings](https://en.wikipedia.org/wiki/Elo_rating_system), a chess-inspired scoring system to rank models)
 
 [Goodhart's Law](https://en.wikipedia.org/wiki/Goodhart%27s_law): ["When a measure becomes a target, it ceases to be a good measure"]{.alert}
 
