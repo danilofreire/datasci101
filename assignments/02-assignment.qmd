@@ -114,7 +114,7 @@ A shop wants to predict whether a customer will come back within 30 days. It has
 **Your task:**
 
 1. The shop is about to apply one rule to its next 1,000 customers. Which would you choose, and would you expect that rule to do better or worse on the new customers than on the 10 old ones? Explain why
-2. Rule A scores higher than Rule B on the 10 past customers, yet you probably did not choose it. Name the problem Lecture 05 gave this pattern, and explain why adding conditions made it worse
+2. Rule A scores higher than Rule B on the 10 past customers. Name the problem Lecture 05 gave this pattern, and explain why adding conditions made it worse
 3. The shop has no new customers yet. Using only the 10 records it already has, how could it have caught this problem before deploying?
 
 ---
