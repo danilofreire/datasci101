@@ -439,7 +439,7 @@ Source: [TinyML SubStack](https://tinyml.substack.com/p/death-by-rag-evals)
 <br>
 
 :::{style="background: rgba(230, 57, 70, 0.1); padding: 15px; border-radius: 10px;"}
-**The big catch:**
+**But there's a catch:**
 
 "The earth is ___"
 
