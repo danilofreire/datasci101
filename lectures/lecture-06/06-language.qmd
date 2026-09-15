@@ -122,13 +122,13 @@ Source: [Reddit r/Singularity](https://www.reddit.com/r/singularity/comments/1jj
 :::{style="margin-top: 20px; font-size: 23px; text-align: center;"}
 :::{.columns}
 :::{.column width=50%}
-[![](figures/anthropic01.png){width="80%"}](#){data-modal-type="image" data-modal-url="figures/anthropic-coding-skills.png"}
+[![](figures/anthropic01.png){width="80%"}](#){data-modal-type="image" data-modal-url="figures/anthropic01.png"}
 
 Source: <https://www.anthropic.com/research/AI-assistance-coding-skills>
 :::
 
 :::{.column width=50%}
-[![](figures/anthropic02.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/anthropic-coding-skills.png"}
+[![](figures/anthropic02.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/anthropic02.png"}
 :::
 :::
 :::
@@ -145,9 +145,9 @@ Source: <https://www.anthropic.com/research/AI-assistance-coding-skills>
 - Type "Hello, how are you?" and the [LLM does not see letters]{.alert}
 - It sees something like: `[15496, 11, 703, 527, 499, 30]`
 - This creates a [translation problem]{.alert}:
-  - how do we convert text into numbers?
-  - how do we preserve [meaning]{.alert} in those numbers?
-  - how do we capture relationships between words?
+  - How do we convert text into numbers?
+  - How do we preserve [meaning]{.alert} in those numbers?
+  - How do we capture relationships between words?
 - Two concepts solve it:
   - [Tokenisation]{.alert}: break text into pieces
   - [Embeddings]{.alert}: turn pieces into meaningful vectors
@@ -230,10 +230,10 @@ Source: [OpenAI](https://openai.com/api/pricing/)
 - A [token]{.alert} is the basic unit an LLM reads
 - Tokens are [not always words]{.alert}
 - A token can be:
-  - a full word: "hello" → 1 token
-  - part of a word: "unhappiness" → "un" + "happiness" (2 tokens)
-  - a single character: "!" → 1 token
-  - a space: " " → often included with the next word
+  - A full word: "hello" → 1 token
+  - Part of a word: "unhappiness" → "un" + "happiness" (2 tokens)
+  - A single character: "!" → 1 token
+  - A space: " " → often included with the next word
 - Rule of thumb: [1 token ≈ 4 characters]{.alert} in English, or [100 tokens ≈ 75 words]{.alert}
 - Other languages often use [more tokens]{.alert} per word
 - Let's try "Hello, it's Danilo here!" in [OpenAI's tokenizer](https://platform.openai.com/tokenizer)
@@ -251,9 +251,9 @@ Source: [OpenAI Tokenizer](https://platform.openai.com/tokenizer)
 :::
 
 ## Why use tokens instead of words?
-### The clever engineering choice
+### A clever engineering choice
 
-:::{style="margin-top: 30px; font-size: 21px;"}
+:::{style="margin-top: 30px; font-size: 20px;"}
 :::{.columns}
 :::{.column width=55%}
 **Three approaches to breaking up text:**
@@ -264,13 +264,15 @@ Source: [OpenAI Tokenizer](https://platform.openai.com/tokenizer)
 | **Character-based** | 9 tokens | Tiny vocabulary | Loses meaning |
 | **Subword (BPE)** | 2 tokens | Best of both! | Less intuitive |
 
-<br>
+:::{style="margin-top: 30px;"}
+:::
 
 - Modern LLMs use [Byte Pair Encoding (BPE)](https://huggingface.co/docs/transformers/tokenizer_summary#byte-pair-encoding)
-- Common subwords become single tokens; rare words split into known pieces
-- This is why "ChatGPT" → ["Chat", "G", "PT"]
-- It also saves space: "unbelievable", "unhappy", "undo" and "unknown" share the same "un"
-- The model stores "un" only once!
+  - Start with single characters (bytes) as tokens
+  - Find the pair that appears together most often in the training text, e.g. "u" + "n"
+  - Merge it into a new token ("un") and repeat until the vocabulary is big enough
+- [Common subwords become single tokens;]{.alert} rare words split into known pieces
+- It also saves space: "unbelievable", "unhappy", "undo" and "unknown" share the same "un". [The model stores "un" only once!]{.alert}
 :::
 
 :::{.column width=45%}
@@ -278,10 +280,10 @@ Source: [OpenAI Tokenizer](https://platform.openai.com/tokenizer)
 **Why subwords win:**
 
 :::{style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; font-size: 20px;"}
-- ✅ Handles [unknown words]{.alert} gracefully
-- ✅ Keeps vocabulary manageable (~50,000 tokens)
-- ✅ Common words stay whole, rare words split sensibly
-- ✅ Works across languages
+- Handles [unknown words]{.alert} gracefully
+- Keeps vocabulary manageable (~50,000 tokens)
+- Common words stay whole, rare words split sensibly
+- Works across languages
 :::
 
 <!-- Suggested image: BPE tokenisation diagram -->
@@ -337,22 +339,22 @@ Source: [OpenAI Platform](https://platform.openai.com/tokenizer)
 :::{.columns}
 :::{.column width=55%}
 - Every LLM has a [context window]{.alert}: the maximum tokens it can process
+  - Longer inputs need much more computing power and memory, so providers set a limit
 - The limit covers [both your prompt and the response]{.alert}
 - Output tokens usually cost [2-4x more]{.alert} than input tokens!
 
-:::{style="text-align: center;"}
+:::{style="text-align: center; margin-top: 20px; margin-bottom: 30px;"}
 | Model | Context Window |
 |-------|---------------|
 | GPT-3.5 | 4,096 or 16,384 tokens |
 | GPT-4 | 8,192 or 128,000 tokens |
-| Gemini Pro | 1,000,000+ tokens |
+| Gemini Pro / Claude / GPT-5 | 1,000,000+ tokens |
 :::
 
 - A 3,500-token prompt against a 4,096 limit leaves [596 tokens]{.alert} for the response!
 - Exceeding limits gives an [error]{.alert} or truncated output
 - [Non-English languages use more tokens]{.alert}
-  - Chinese, Japanese, Korean: ~2-3x more tokens per concept
-  - so higher costs and shorter effective context
+  - Chinese, Japanese, Korean: ~2-3x more tokens per concept. Higher costs and shorter effective context
 :::
 
 :::{.column width=45%}
@@ -446,7 +448,7 @@ Source: [Chris McCormick](https://mccormickml.com/2016/04/19/word2vec-tutorial-t
 :::{.columns}
 :::{.column width=55%}
 - Here are the embeddings for a few words
-- The colours show numbers from -2 to +2, taken from our model
+- The colours show numbers from -2 to +2, but the actual embeddings are 4,096-dimensional!
 - See how "woman" and "girl" are similar, but "queen" is further away?
 - [We don't know what each dimension codes for]{.alert}, yet patterns still show
 - In some places "king" and "queen" match each other and differ from all the rest
@@ -548,23 +550,25 @@ Source: [Medium](https://catherinebreslin.medium.com/what-is-a-parameter-3d4b773
 ## How many parameters?
 ### The scale of modern LLMs
 
-:::{style="margin-top: 30px; font-size: 26px;"}
-:::{style="text-align: center;"}
-| Model | Parameters | Training Data |
-|-------|-----------|---------------|
-| GPT-2 (2019) | 1.5 billion | 40 GB text |
-| GPT-3 (2020) | 175 billion | 570 GB text |
-| GPT-4 (2023) | ~1+ trillion (est.) | Undisclosed |
-| LLaMA 2 (2023) | 7B - 70B | 2 trillion tokens |
-| Gemini Ultra (2024) | Undisclosed | Massive |
+:::{style="margin-top: 30px; font-size: 22px;"}
+:::{style="text-align: center; margin-bottom: 30px; font-size: 24px;"}
+| Model | Total parameters | Used per token | Training data |
+|-------------|-----------------|----------------|---------------|
+| GPT-2 (2019) | 1.5 billion | All | 40 GB text |
+| GPT-3 (2020) | 175 billion | All | ~300 billion tokens |
+| Llama 3.1 (2024) | 405 billion | All | 15 trillion tokens |
+| Kimi K2 (2025) | 1 trillion | 32 billion | 15.5 trillion tokens |
+| DeepSeek-V4-Pro (2026) | 1.6 trillion | 49 billion | 33 trillion tokens |
+| GPT-5, Claude, Gemini | Undisclosed | Undisclosed | Undisclosed |
 
-:::{style="margin-top: 20px; font-size: 24px;"}
+:::{style="margin-top: 20px; font-size: 22px;"}
 **To put this in perspective:**
 
-- 175 billion parameters = [175,000,000,000]{.alert} individual numbers
-- Counting 1 per second would take [5,500 years]{.alert}!
-- Training GPT-3 took [~3.6 million GPU hours]{.alert}
-- Each parameter was updated [tens of thousands of times]{.alert}
+- 1.6 trillion parameters = [1,600,000,000,000]{.alert} individual numbers
+- Counting 1 per second would take [~50,000 years]{.alert}!
+- Most new models use [Mixture of Experts (MoE)]{.alert}: many smaller "expert" networks
+  - Each token goes to only a few experts: DeepSeek-V4-Pro uses [~3% of its parameters]{.alert} per token
+- Training data grew [~100x]{.alert} since GPT-3
 :::
 :::
 :::
@@ -584,18 +588,17 @@ Source: [Medium](https://catherinebreslin.medium.com/what-is-a-parameter-3d4b773
 
 - Control [connections between neurons]{.alert}, and how strongly parts influence each other
 - Like volume knobs: amplify or damp signals
+- Like regression coefficients: [almost all of an LLM's parameters are weights]{.alert}
 
 **3. Bias parameters**
 
-- [Adjust thresholds]{.alert} for neuron activation, like a baseline adjustment
-- Help detect subtle patterns that would otherwise be missed
-
-[In short: embeddings store word meanings, weights connect the dots, and biases fine-tune the thresholds]{.alert}
+- [Adjust thresholds]{.alert} for neuron activation
+- Like the intercept in a regression, they shift the output up or down
+- Many modern LLMs (Llama, DeepSeek) drop most biases
 :::
 
 :::{.column width=45%}
 :::{style="text-align: center;"}
-<!-- Suggested image: Diagram showing embeddings, weights, biases -->
 [![](figures/parameter-types.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/parameter-types.png"}
 
 Source: [Medium](https://medium.com/ai-insights-cobet/no-more-floating-points-the-era-of-1-58-bit-large-language-models-b9805879ac0a)
@@ -627,7 +630,7 @@ Source: [Medium](https://medium.com/ai-insights-cobet/no-more-floating-points-th
 5. [Backpropagation]{.alert}: adjust parameters to reduce the error
 6. Repeat [billions of times]{.alert}
 
-**Key insight:**
+**In short:**
 
 - The model learns by [predicting the next word]{.alert}, and every error teaches it something
 - Patterns emerge from massive repetition
@@ -652,7 +655,7 @@ Source: [Daniel McKee and Maghav Kumar](https://slazebni.cs.illinois.edu/spring2
 ## Model size vs. capability
 ### Bigger isn't always better
 
-:::{style="margin-top: 30px; font-size: 23px;"}
+:::{style="margin-top: 30px; font-size: 22px;"}
 :::{.columns}
 :::{.column width=55%}
 **The scaling hypothesis:**
@@ -674,9 +677,8 @@ Source: [Daniel McKee and Maghav Kumar](https://slazebni.cs.illinois.edu/spring2
 
 - LLaMA 2 (7B) can beat GPT-3 (175B) on some tasks!
 - Why? Better training data and techniques
-- [Quality beats quantity]{.alert} in training data
+- [Quality beats quantity]{.alert} in training data, although more parameters help with generalisation
   
-<!-- Suggested image: Model size vs performance chart -->
 [![](figures/scaling-laws.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/scaling-laws.png"}
 
 Source: [OpenAI Scaling Laws Paper](https://arxiv.org/abs/2001.08361)
@@ -733,7 +735,7 @@ Source: [Medium](https://medium.com/@nigelgebodh/why-does-my-llm-have-a-temperat
 ## The attention mechanism (recap)
 ### How LLMs understand context
 
-:::{style="margin-top: 30px; font-size: 22px;"}
+:::{style="margin-top: 30px; font-size: 21px;"}
 :::{.columns}
 :::{.column width=55%}
 - [Attention]{.alert} is the key innovation of transformers
@@ -775,12 +777,12 @@ Source: [Jay Alammar](https://jalammar.github.io/illustrated-transformer/)
 :::{.column width=55%}
 **Now that you understand the internals:**
 
-- ✅ [Be concise]{.alert}: fewer tokens mean lower cost and more room for the response
-- ✅ [Use clear language]{.alert}: common words tokenise efficiently
-- ✅ [Provide context]{.alert}: help the attention mechanism
-- ✅ [Be specific]{.alert}: the model uses your exact words
-- ✅ [Test different temperatures]{.alert}: match creativity to the task
-- ✅ [Mind the context limit]{.alert}: plan for both prompt and response
+- [Be concise]{.alert}: fewer tokens mean lower cost and more room for the response
+- [Use clear language]{.alert}: common words tokenise efficiently
+- [Provide context]{.alert}: help the attention mechanism
+- [Be specific]{.alert}: the model uses your exact words
+- [Test different temperatures]{.alert}: match creativity to the task
+- [Mind the context limit]{.alert}: plan for both prompt and response
 
 **When things go wrong:**
 

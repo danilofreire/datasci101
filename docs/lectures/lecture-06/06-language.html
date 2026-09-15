@@ -222,10 +222,10 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <div style="margin-top: 20px; font-size: 23px; text-align: center;">
 <div class="columns">
 <div class="column" style="width:50%;">
-<p><a href="#/" data-modal-type="image" data-modal-url="figures/anthropic-coding-skills.png"><img data-src="figures/anthropic01.png" style="width:80.0%"></a></p>
+<p><a href="#/" data-modal-type="image" data-modal-url="figures/anthropic01.png"><img data-src="figures/anthropic01.png" style="width:80.0%"></a></p>
 <p>Source: <a href="https://www.anthropic.com/research/AI-assistance-coding-skills" class="uri">https://www.anthropic.com/research/AI-assistance-coding-skills</a></p>
 </div><div class="column" style="width:50%;">
-<p><a href="#/" data-modal-type="image" data-modal-url="figures/anthropic-coding-skills.png"><img data-src="figures/anthropic02.png" style="width:100.0%"></a></p>
+<p><a href="#/" data-modal-type="image" data-modal-url="figures/anthropic02.png"><img data-src="figures/anthropic02.png" style="width:100.0%"></a></p>
 </div></div>
 </div>
 </section></section>
@@ -246,9 +246,9 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <li>It sees something like: <code>[15496, 11, 703, 527, 499, 30]</code></li>
 <li>This creates a <span class="alert">translation problem</span>:
 <ul>
-<li>how do we convert text into numbers?</li>
-<li>how do we preserve <span class="alert">meaning</span> in those numbers?</li>
-<li>how do we capture relationships between words?</li>
+<li>How do we convert text into numbers?</li>
+<li>How do we preserve <span class="alert">meaning</span> in those numbers?</li>
+<li>How do we capture relationships between words?</li>
 </ul></li>
 <li>Two concepts solve it:
 <ul>
@@ -330,10 +330,10 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <li>Tokens are <span class="alert">not always words</span></li>
 <li>A token can be:
 <ul>
-<li>a full word: “hello” → 1 token</li>
-<li>part of a word: “unhappiness” → “un” + “happiness” (2 tokens)</li>
-<li>a single character: “!” → 1 token</li>
-<li>a space: ” ” → often included with the next word</li>
+<li>A full word: “hello” → 1 token</li>
+<li>Part of a word: “unhappiness” → “un” + “happiness” (2 tokens)</li>
+<li>A single character: “!” → 1 token</li>
+<li>A space: ” ” → often included with the next word</li>
 </ul></li>
 <li>Rule of thumb: <span class="alert">1 token ≈ 4 characters</span> in English, or <span class="alert">100 tokens ≈ 75 words</span></li>
 <li>Other languages often use <span class="alert">more tokens</span> per word</li>
@@ -350,8 +350,8 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </section>
 <section id="why-use-tokens-instead-of-words" class="slide level2">
 <h2>Why use tokens instead of words?</h2>
-<h3 id="the-clever-engineering-choice">The clever engineering choice</h3>
-<div style="margin-top: 30px; font-size: 21px;">
+<h3 id="a-clever-engineering-choice">A clever engineering choice</h3>
+<div style="margin-top: 30px; font-size: 20px;">
 <div class="columns">
 <div class="column" style="width:55%;">
 <p><strong>Three approaches to breaking up text:</strong></p>
@@ -385,23 +385,28 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </tr>
 </tbody>
 </table>
-<p><br></p>
+<div style="margin-top: 30px;">
+
+</div>
 <ul>
-<li>Modern LLMs use <a href="https://huggingface.co/docs/transformers/tokenizer_summary#byte-pair-encoding">Byte Pair Encoding (BPE)</a></li>
-<li>Common subwords become single tokens; rare words split into known pieces</li>
-<li>This is why “ChatGPT” → [“Chat”, “G”, “PT”]</li>
-<li>It also saves space: “unbelievable”, “unhappy”, “undo” and “unknown” share the same “un”</li>
-<li>The model stores “un” only once!</li>
+<li>Modern LLMs use <a href="https://huggingface.co/docs/transformers/tokenizer_summary#byte-pair-encoding">Byte Pair Encoding (BPE)</a>
+<ul>
+<li>Start with single characters (bytes) as tokens</li>
+<li>Find the pair that appears together most often in the training text, e.g.&nbsp;“u” + “n”</li>
+<li>Merge it into a new token (“un”) and repeat until the vocabulary is big enough</li>
+</ul></li>
+<li><span class="alert">Common subwords become single tokens;</span> rare words split into known pieces</li>
+<li>It also saves space: “unbelievable”, “unhappy”, “undo” and “unknown” share the same “un”. <span class="alert">The model stores “un” only once!</span></li>
 </ul>
 </div><div class="column" style="width:45%;">
 <div style="text-align: center;">
 <p><strong>Why subwords win:</strong></p>
 <div style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; font-size: 20px;">
 <ul>
-<li>✅ Handles <span class="alert">unknown words</span> gracefully</li>
-<li>✅ Keeps vocabulary manageable (~50,000 tokens)</li>
-<li>✅ Common words stay whole, rare words split sensibly</li>
-<li>✅ Works across languages</li>
+<li>Handles <span class="alert">unknown words</span> gracefully</li>
+<li>Keeps vocabulary manageable (~50,000 tokens)</li>
+<li>Common words stay whole, rare words split sensibly</li>
+<li>Works across languages</li>
 </ul>
 </div>
 <!-- Suggested image: BPE tokenisation diagram -->
@@ -488,11 +493,14 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <div class="columns">
 <div class="column" style="width:55%;">
 <ul>
-<li>Every LLM has a <span class="alert">context window</span>: the maximum tokens it can process</li>
+<li>Every LLM has a <span class="alert">context window</span>: the maximum tokens it can process
+<ul>
+<li>Longer inputs need much more computing power and memory, so providers set a limit</li>
+</ul></li>
 <li>The limit covers <span class="alert">both your prompt and the response</span></li>
 <li>Output tokens usually cost <span class="alert">2-4x more</span> than input tokens!</li>
 </ul>
-<div style="text-align: center;">
+<div style="text-align: center; margin-top: 20px; margin-bottom: 30px;">
 <table class="caption-top">
 <thead>
 <tr class="header">
@@ -510,7 +518,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <td>8,192 or 128,000 tokens</td>
 </tr>
 <tr class="odd">
-<td>Gemini Pro</td>
+<td>Gemini Pro / Claude / GPT-5</td>
 <td>1,000,000+ tokens</td>
 </tr>
 </tbody>
@@ -521,8 +529,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <li>Exceeding limits gives an <span class="alert">error</span> or truncated output</li>
 <li><span class="alert">Non-English languages use more tokens</span>
 <ul>
-<li>Chinese, Japanese, Korean: ~2-3x more tokens per concept</li>
-<li>so higher costs and shorter effective context</li>
+<li>Chinese, Japanese, Korean: ~2-3x more tokens per concept. Higher costs and shorter effective context</li>
 </ul></li>
 </ul>
 </div><div class="column" style="width:45%;">
@@ -638,7 +645,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <div class="column" style="width:55%;">
 <ul>
 <li>Here are the embeddings for a few words</li>
-<li>The colours show numbers from -2 to +2, taken from our model</li>
+<li>The colours show numbers from -2 to +2, but the actual embeddings are 4,096-dimensional!</li>
 <li>See how “woman” and “girl” are similar, but “queen” is further away?</li>
 <li><span class="alert">We don’t know what each dimension codes for</span>, yet patterns still show</li>
 <li>In some places “king” and “queen” match each other and differ from all the rest</li>
@@ -734,51 +741,72 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <section id="how-many-parameters" class="slide level2">
 <h2>How many parameters?</h2>
 <h3 id="the-scale-of-modern-llms">The scale of modern LLMs</h3>
-<div style="margin-top: 30px; font-size: 26px;">
-<div style="text-align: center;">
+<div style="margin-top: 30px; font-size: 22px;">
+<div style="text-align: center; margin-bottom: 30px; font-size: 24px;">
 <table class="caption-top">
+<colgroup>
+<col style="width: 21%">
+<col style="width: 27%">
+<col style="width: 26%">
+<col style="width: 24%">
+</colgroup>
 <thead>
 <tr class="header">
 <th>Model</th>
-<th>Parameters</th>
-<th>Training Data</th>
+<th>Total parameters</th>
+<th>Used per token</th>
+<th>Training data</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td>GPT-2 (2019)</td>
 <td>1.5 billion</td>
+<td>All</td>
 <td>40 GB text</td>
 </tr>
 <tr class="even">
 <td>GPT-3 (2020)</td>
 <td>175 billion</td>
-<td>570 GB text</td>
+<td>All</td>
+<td>~300 billion tokens</td>
 </tr>
 <tr class="odd">
-<td>GPT-4 (2023)</td>
-<td>~1+ trillion (est.)</td>
-<td>Undisclosed</td>
+<td>Llama 3.1 (2024)</td>
+<td>405 billion</td>
+<td>All</td>
+<td>15 trillion tokens</td>
 </tr>
 <tr class="even">
-<td>LLaMA 2 (2023)</td>
-<td>7B - 70B</td>
-<td>2 trillion tokens</td>
+<td>Kimi K2 (2025)</td>
+<td>1 trillion</td>
+<td>32 billion</td>
+<td>15.5 trillion tokens</td>
 </tr>
 <tr class="odd">
-<td>Gemini Ultra (2024)</td>
+<td>DeepSeek-V4-Pro (2026)</td>
+<td>1.6 trillion</td>
+<td>49 billion</td>
+<td>33 trillion tokens</td>
+</tr>
+<tr class="even">
+<td>GPT-5, Claude, Gemini</td>
 <td>Undisclosed</td>
-<td>Massive</td>
+<td>Undisclosed</td>
+<td>Undisclosed</td>
 </tr>
 </tbody>
 </table>
-<div style="margin-top: 20px; font-size: 24px;">
+<div style="margin-top: 20px; font-size: 22px;">
 <p><strong>To put this in perspective:</strong></p>
 <ul>
-<li>175 billion parameters = <span class="alert">175,000,000,000</span> individual numbers</li>
-<li>Counting 1 per second would take <span class="alert">5,500 years</span>!</li>
-<li>Training GPT-3 took <span class="alert">~3.6 million GPU hours</span></li>
-<li>Each parameter was updated <span class="alert">tens of thousands of times</span></li>
+<li>1.6 trillion parameters = <span class="alert">1,600,000,000,000</span> individual numbers</li>
+<li>Counting 1 per second would take <span class="alert">~50,000 years</span>!</li>
+<li>Most new models use <span class="alert">Mixture of Experts (MoE)</span>: many smaller “expert” networks
+<ul>
+<li>Each token goes to only a few experts: DeepSeek-V4-Pro uses <span class="alert">~3% of its parameters</span> per token</li>
+</ul></li>
+<li>Training data grew <span class="alert">~100x</span> since GPT-3</li>
 </ul>
 </div>
 </div>
@@ -799,16 +827,16 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <ul>
 <li>Control <span class="alert">connections between neurons</span>, and how strongly parts influence each other</li>
 <li>Like volume knobs: amplify or damp signals</li>
+<li>Like regression coefficients: <span class="alert">almost all of an LLM’s parameters are weights</span></li>
 </ul>
 <p><strong>3. Bias parameters</strong></p>
 <ul>
-<li><span class="alert">Adjust thresholds</span> for neuron activation, like a baseline adjustment</li>
-<li>Help detect subtle patterns that would otherwise be missed</li>
+<li><span class="alert">Adjust thresholds</span> for neuron activation</li>
+<li>Like the intercept in a regression, they shift the output up or down</li>
+<li>Many modern LLMs (Llama, DeepSeek) drop most biases</li>
 </ul>
-<p><span class="alert">In short: embeddings store word meanings, weights connect the dots, and biases fine-tune the thresholds</span></p>
 </div><div class="column" style="width:45%;">
 <div style="text-align: center;">
-<!-- Suggested image: Diagram showing embeddings, weights, biases -->
 <p><a href="#/" data-modal-type="image" data-modal-url="figures/parameter-types.png"><img data-src="figures/parameter-types.png" style="width:100.0%"></a></p>
 <p>Source: <a href="https://medium.com/ai-insights-cobet/no-more-floating-points-the-era-of-1-58-bit-large-language-models-b9805879ac0a">Medium</a></p>
 <div style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; font-size: 18px; margin-top: 15px;">
@@ -838,7 +866,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <li><span class="alert">Backpropagation</span>: adjust parameters to reduce the error</li>
 <li>Repeat <span class="alert">billions of times</span></li>
 </ol>
-<p><strong>Key insight:</strong></p>
+<p><strong>In short:</strong></p>
 <ul>
 <li>The model learns by <span class="alert">predicting the next word</span>, and every error teaches it something</li>
 <li>Patterns emerge from massive repetition</li>
@@ -859,7 +887,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <section id="model-size-vs.-capability" class="slide level2">
 <h2>Model size vs.&nbsp;capability</h2>
 <h3 id="bigger-isnt-always-better">Bigger isn’t always better</h3>
-<div style="margin-top: 30px; font-size: 23px;">
+<div style="margin-top: 30px; font-size: 22px;">
 <div class="columns">
 <div class="column" style="width:55%;">
 <p><strong>The scaling hypothesis:</strong></p>
@@ -880,9 +908,8 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <ul>
 <li>LLaMA 2 (7B) can beat GPT-3 (175B) on some tasks!</li>
 <li>Why? Better training data and techniques</li>
-<li><span class="alert">Quality beats quantity</span> in training data</li>
+<li><span class="alert">Quality beats quantity</span> in training data, although more parameters help with generalisation</li>
 </ul>
-<!-- Suggested image: Model size vs performance chart -->
 <p><a href="#/" data-modal-type="image" data-modal-url="figures/scaling-laws.png"><img data-src="figures/scaling-laws.png" style="width:100.0%"></a></p>
 <p>Source: <a href="https://arxiv.org/abs/2001.08361">OpenAI Scaling Laws Paper</a></p>
 </div>
@@ -940,7 +967,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <section id="the-attention-mechanism-recap" class="slide level2">
 <h2>The attention mechanism (recap)</h2>
 <h3 id="how-llms-understand-context">How LLMs understand context</h3>
-<div style="margin-top: 30px; font-size: 22px;">
+<div style="margin-top: 30px; font-size: 21px;">
 <div class="columns">
 <div class="column" style="width:55%;">
 <ul>
@@ -978,12 +1005,12 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <div class="column" style="width:55%;">
 <p><strong>Now that you understand the internals:</strong></p>
 <ul>
-<li>✅ <span class="alert">Be concise</span>: fewer tokens mean lower cost and more room for the response</li>
-<li>✅ <span class="alert">Use clear language</span>: common words tokenise efficiently</li>
-<li>✅ <span class="alert">Provide context</span>: help the attention mechanism</li>
-<li>✅ <span class="alert">Be specific</span>: the model uses your exact words</li>
-<li>✅ <span class="alert">Test different temperatures</span>: match creativity to the task</li>
-<li>✅ <span class="alert">Mind the context limit</span>: plan for both prompt and response</li>
+<li><span class="alert">Be concise</span>: fewer tokens mean lower cost and more room for the response</li>
+<li><span class="alert">Use clear language</span>: common words tokenise efficiently</li>
+<li><span class="alert">Provide context</span>: help the attention mechanism</li>
+<li><span class="alert">Be specific</span>: the model uses your exact words</li>
+<li><span class="alert">Test different temperatures</span>: match creativity to the task</li>
+<li><span class="alert">Mind the context limit</span>: plan for both prompt and response</li>
 </ul>
 <p><strong>When things go wrong:</strong></p>
 <ul>
