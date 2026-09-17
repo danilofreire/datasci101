@@ -123,6 +123,27 @@ Source: [DeepSet AI](https://www.deepset.ai/blog/the-beginners-guide-to-text-emb
 <https://typesafe.ai/blog/introducing-system-one-models-and-jev>
 :::
 
+## Upcoming talk: AI, work and education
+
+:::{style="margin-top: 40px; font-size: 23px;"}
+:::{.columns}
+:::{.column width="50%"}
+- Speaker: [Jeff Ruhnow]{.alert}, head of AI strategy at Francisco Partners
+- Former Principal Architect at Amazon
+- Hosted by the Department of Economics
+- Tuesday, 22 September, 4:00 to 5:15 PM
+- White Hall 112
+- RSVP: <https://forms.cloud.microsoft/r/d0BkcCc35f>
+:::
+
+:::{.column width="50%"}
+:::{style="text-align: center; margin-top: -20px;"}
+[![](figures/ruhnow-talk.png){width="75%"}](#){data-modal-type="image" data-modal-url="figures/ruhnow-talk.png"}
+:::
+:::
+:::
+:::
+
 # How machines "see" images 🔍 {background-color="#1B3A6B"}
 
 ## Discussion: Describe this to a computer 🤔
