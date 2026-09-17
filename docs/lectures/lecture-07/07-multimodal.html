@@ -213,6 +213,15 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <div style="text-align: center; margin-top: 30px;">
 <p><a href="#/" data-modal-type="image" data-modal-url="figures/tweet-of-the-day.png"><img data-src="figures/tweet-of-the-day.png" style="width:55.0%"></a></p>
 </div>
+</section>
+<section id="second-tweet-of-the-day" class="slide level2">
+<h2>Second tweet of the day</h2>
+<h3 id="this-is-very-interesting">This is very interesting! 🤯</h3>
+<div style="text-align: center; margin-top: 30px; font-size: 22px;">
+<p><a href="#/" data-modal-type="image" data-modal-url="figures/tweet-jev.png"><img data-src="figures/tweet-jev.png" style="width:30.0%"></a></p>
+<p><a href="https://x.com/CompleteSkeptic/status/2099925684256899543" class="uri">https://x.com/CompleteSkeptic/status/2099925684256899543</a></p>
+<p><a href="https://typesafe.ai/blog/introducing-system-one-models-and-jev" class="uri">https://typesafe.ai/blog/introducing-system-one-models-and-jev</a></p>
+</div>
 </section></section>
 <section>
 <section id="how-machines-see-images" class="title-slide slide level1 center" data-background-color="#1B3A6B">
@@ -632,6 +641,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <li>Emotion (are you happy? angry? tired?)</li>
 <li>Whether you’re speaking or singing</li>
 <li>What language you’re using</li>
+<li><span class="alert">You can even create spectrogram art!</span> <a href="https://www.bastwood.com/?page_id=10">See some here</a></li>
 </ul>
 <div style="margin-top: 20px;">
 <p><strong>Fun fact</strong>: Dogs, cats, and humans all have distinctive spectrogram patterns! 🐕🐱👤</p>
@@ -806,12 +816,12 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </div>
 </section></section>
 <section>
-<section id="the-big-picture" class="title-slide slide level1 center" data-background-color="#1B3A6B">
-<h1>The Big Picture 🌐</h1>
+<section id="everything-becomes-numbers" class="title-slide slide level1 center" data-background-color="#1B3A6B">
+<h1>Everything becomes numbers! 🌐</h1>
 
 </section>
-<section id="the-main-idea-everything-becomes-numbers" class="slide level2">
-<h2>The main idea: Everything becomes numbers</h2>
+<section id="everything-becomes-numbers-1" class="slide level2">
+<h2>Everything becomes numbers</h2>
 <div style="margin-top: 30px; font-size: 26px;">
 <div class="columns">
 <div class="column" style="width:55%;">
@@ -860,38 +870,6 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <li><strong>Projection Layer</strong>: Aligns encoder outputs to the LLM’s embedding space, and is <span class="alert">often surprisingly simple</span></li>
 <li><strong>LLM Backbone</strong>: The “brain” (GPT, Gemini, Claude), processing everything as tokens</li>
 </ol>
-</div>
-</div></div>
-</div>
-</section>
-<section id="training-multimodal-models" class="slide level2">
-<h2>Training multimodal models</h2>
-<h3 id="two-stage-learning">Two-stage learning</h3>
-<div style="margin-top: 30px; font-size: 22px;">
-<div class="columns">
-<div class="column" style="width:55%;">
-<p><strong>Stage 1: Feature Alignment</strong></p>
-<ul>
-<li><span class="alert">Freeze</span> vision encoder and LLM</li>
-<li>Train only the network projecting encoder outputs into the LLM’s embedding space</li>
-<li>Goal: learn that “dog image” and “dog text” should be close</li>
-<li>Dataset: millions of image-caption pairs</li>
-</ul>
-<p><strong>Stage 2: Instruction Tuning</strong></p>
-<ul>
-<li><span class="alert">Unfreeze</span> the LLM and train on question-answer datasets</li>
-<li>Goal: follow complex multimodal instructions</li>
-<li>Dataset: “Describe this image”, “What’s wrong with this chart?”</li>
-</ul>
-</div><div class="column" style="width:45%;">
-<div style="text-align: center;">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><a href="#/" data-modal-type="image" data-modal-url="figures/multimodal-training.webp"><img data-src="figures/multimodal-training.webp" style="width:100.0%"></a></p>
-<figcaption>Two-stage training process</figcaption>
-</figure>
-</div>
-<p>Source: <a href="https://magazine.sebastianraschka.com/p/understanding-multimodal-llms">Sebastian Raschka</a></p>
 </div>
 </div></div>
 </div>

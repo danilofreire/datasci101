@@ -112,6 +112,17 @@ Source: [DeepSet AI](https://www.deepset.ai/blog/the-beginners-guide-to-text-emb
 [![](figures/tweet-of-the-day.png){width="55%"}](#){data-modal-type="image" data-modal-url="figures/tweet-of-the-day.png"}
 :::
 
+## Second tweet of the day
+### This is very interesting! 🤯
+
+:::{style="text-align: center; margin-top: 30px; font-size: 22px;"}
+[![](figures/tweet-jev.png){width="30%"}](#){data-modal-type="image" data-modal-url="figures/tweet-jev.png"}
+
+<https://x.com/CompleteSkeptic/status/2099925684256899543>
+
+<https://typesafe.ai/blog/introducing-system-one-models-and-jev>
+:::
+
 # How machines "see" images 🔍 {background-color="#1B3A6B"}
 
 ## Discussion: Describe this to a computer 🤔
@@ -464,6 +475,7 @@ Patterns AI can find:
 - Emotion (are you happy? angry? tired?)
 - Whether you're speaking or singing
 - What language you're using
+- [You can even create spectrogram art!]{.alert} [See some here](https://www.bastwood.com/?page_id=10)
 
 :::{style="margin-top: 20px;"}
 **Fun fact**: Dogs, cats, and humans all have distinctive spectrogram patterns! 🐕🐱👤
@@ -634,9 +646,9 @@ Source: [Sam Galope (2024)](https://www.samgalope.dev/2024/07/25/convert-wav-fil
 :::
 :::
 
-# The Big Picture 🌐 {background-color="#1B3A6B"}
+# Everything becomes numbers! 🌐 {background-color="#1B3A6B"}
 
-## The main idea: Everything becomes numbers
+## Everything becomes numbers
 
 :::{style="margin-top: 30px; font-size: 26px;"}
 :::{.columns}
@@ -675,36 +687,6 @@ Text, images, and audio all become the same kind of numbers, so AI can understan
 1. **Modality Encoder**: Vision Transformer (images) or Whisper (audio), both [pre-trained specialists]{.alert}
 2. **Projection Layer**: Aligns encoder outputs to the LLM's embedding space, and is [often surprisingly simple]{.alert}
 3. **LLM Backbone**: The "brain" (GPT, Gemini, Claude), processing everything as tokens
-:::
-:::
-:::
-:::
-
-## Training multimodal models
-### Two-stage learning
-
-:::{style="margin-top: 30px; font-size: 22px;"}
-:::{.columns}
-:::{.column width=55%}
-**Stage 1: Feature Alignment**
-
-- [Freeze]{.alert} vision encoder and LLM
-- Train only the network projecting encoder outputs into the LLM's embedding space
-- Goal: learn that "dog image" and "dog text" should be close
-- Dataset: millions of image-caption pairs
-
-**Stage 2: Instruction Tuning**
-
-- [Unfreeze]{.alert} the LLM and train on question-answer datasets
-- Goal: follow complex multimodal instructions
-- Dataset: "Describe this image", "What's wrong with this chart?"
-:::
-
-:::{.column width=45%}
-:::{style="text-align: center;"}
-[![Two-stage training process](figures/multimodal-training.webp){width="100%"}](#){data-modal-type="image" data-modal-url="figures/multimodal-training.webp"}
-
-Source: [Sebastian Raschka](https://magazine.sebastianraschka.com/p/understanding-multimodal-llms)
 :::
 :::
 :::
