@@ -242,7 +242,7 @@ Further readings:
 ### September 17, 2026:
 
 - Lecture 07: [How machines see and hear](https://danilofreire.github.io/datasci101/lectures/lecture-07/07-multimodal.html).
-- [Kahoot Quiz](https://play.kahoot.it/v2/?quizId=5656ef85-3824-4d8d-a1a8-fa79a440105f&hostId=05eb977d-4f8a-440e-9e45-95212b29d103)
+- [Kahoot Quiz](https://play.kahoot.it/v2/?quizId=d539fc1e-248f-4ef9-86de-ba9926c28883&hostId=05eb977d-4f8a-440e-9e45-95212b29d103)
 - **Assignment 02 due (5%).**
 - [**Assignment 03**](https://github.com/danilofreire/datasci101/blob/main/assignments).
 
