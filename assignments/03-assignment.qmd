@@ -48,7 +48,7 @@ A model has a **32,000 token** context window. You want to analyse a legal docum
 
 The **temperature** setting controls how random an LLM's output is.
 
-1. Go to [aistudio.google.com](https://aistudio.google.com/) and sign in. In the settings panel, turn **off** any web search or grounding option and set the thinking or reasoning level to its lowest setting. Both of these interfere with the experiment. (The labels change often. If you cannot find one of them, say so in your answer and carry on)
+1. Go to [aistudio.google.com](https://aistudio.google.com/) and sign in. Use **Gemini 3.1 Pro Preview** for every step of this question, because it is the only model that shows the temperature setting. This link opens it directly: <https://aistudio.google.com/prompts/new_chat?model=gemini-3.1-pro-preview>. In the settings panel, turn **off** any web search or grounding option and set the thinking or reasoning level to its lowest setting. Both of these interfere with the experiment. (The labels change often. If you cannot find one of them, say so in your answer and carry on)
 2. Set the temperature to **0**. Send the prompt *"Write a six-word story about the sea."* three times, **starting a new chat each time**. You can start one quickly with the **+** at the top of the page. Record all three
 3. Set the temperature to **2**. Repeat, and record all three
 
