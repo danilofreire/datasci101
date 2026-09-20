@@ -272,7 +272,7 @@ Similar sentences cluster together in embedding space
 - Denominator: normalises by their lengths (magnitude)
   - If $A = [0.8, 0.6]$, then $\|A\| = \sqrt{0.8^2 + 0.6^2} = 1$
 - Identical vectors = 1; orthogonal = 0; opposite = -1
-- Values range from 0 to 1 because word counts cannot be negative
+- In the word-count example the components are never negative, so scores fall between 0 and 1
 
 $$\text{similarity}(A, B) = \frac{A \cdot B}{\|A\| \times \|B\|}$$
 
