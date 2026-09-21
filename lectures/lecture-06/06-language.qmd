@@ -392,6 +392,7 @@ Source: [Anthropic](https://platform.claude.com/docs/en/build-with-claude/contex
   - "cat" and "dog" sit close together
   - "cat" and "aeroplane" sit far apart
 - The model [learns]{.alert} these representations during training, and this is where the "understanding" happens
+  - Each word gets [one vector]{.alert}, fixed once training ends
 - Remember $\vec{\text{king}} - \vec{\text{man}} + \vec{\text{woman}} \approx \vec{\text{queen}}$
 :::
 
@@ -766,6 +767,35 @@ Source: [Jay Alammar](https://jalammar.github.io/illustrated-transformer/)
 :::
 :::
 :::
+:::
+:::
+
+## Two ways of using context
+### Word2vec and attention are not the same thing
+
+:::{style="margin-top: 30px; font-size: 22px;"}
+:::{.columns}
+:::{.column width=50%}
+**Word2vec**
+
+- Happens [once]{.alert}, during training
+- Looks at neighbours across [billions of sentences]{.alert}
+- Averages everything it saw into [one point per word]{.alert}, then freezes it
+- "cheap" keeps that same vector for ever, in every sentence you ever write
+:::
+
+:::{.column width=50%}
+**Attention**
+
+- Happens [every time you run the model]{.alert}
+- Looks at the neighbours in [this sentence]{.alert} only
+- Rebuilds each word's vector [from scratch]{.alert}, every time
+- "cheap flights" and "cheap wine" give "cheap" [two different vectors]{.alert}
+:::
+:::
+
+:::{style="text-align: center; margin-top: 25px; font-size: 24px;"}
+When you add context to a prompt, [attention]{.alert} is the part that reads it
 :::
 :::
 

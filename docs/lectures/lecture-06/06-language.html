@@ -593,7 +593,10 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <li>“cat” and “dog” sit close together</li>
 <li>“cat” and “aeroplane” sit far apart</li>
 </ul></li>
-<li>The model <span class="alert">learns</span> these representations during training, and this is where the “understanding” happens</li>
+<li>The model <span class="alert">learns</span> these representations during training, and this is where the “understanding” happens
+<ul>
+<li>Each word gets <span class="alert">one vector</span>, fixed once training ends</li>
+</ul></li>
 <li>Remember <span class="math inline">\(\vec{\text{king}} - \vec{\text{man}} + \vec{\text{woman}} \approx \vec{\text{queen}}\)</span></li>
 </ul>
 </div><div class="column" style="width:45%;">
@@ -995,6 +998,33 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </div>
 </div>
 </div></div>
+</div>
+</section>
+<section id="two-ways-of-using-context" class="slide level2">
+<h2>Two ways of using context</h2>
+<h3 id="word2vec-and-attention-are-not-the-same-thing">Word2vec and attention are not the same thing</h3>
+<div style="margin-top: 30px; font-size: 22px;">
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Word2vec</strong></p>
+<ul>
+<li>Happens <span class="alert">once</span>, during training</li>
+<li>Looks at neighbours across <span class="alert">billions of sentences</span></li>
+<li>Averages everything it saw into <span class="alert">one point per word</span>, then freezes it</li>
+<li>“cheap” keeps that same vector for ever, in every sentence you ever write</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><strong>Attention</strong></p>
+<ul>
+<li>Happens <span class="alert">every time you run the model</span></li>
+<li>Looks at the neighbours in <span class="alert">this sentence</span> only</li>
+<li>Rebuilds each word’s vector <span class="alert">from scratch</span>, every time</li>
+<li>“cheap flights” and “cheap wine” give “cheap” <span class="alert">two different vectors</span></li>
+</ul>
+</div></div>
+<div style="text-align: center; margin-top: 25px; font-size: 24px;">
+<p>When you add context to a prompt, <span class="alert">attention</span> is the part that reads it</p>
+</div>
 </div>
 </section>
 <section id="practical-tips-for-prompting" class="slide level2">
