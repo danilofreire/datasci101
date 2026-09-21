@@ -194,7 +194,7 @@ listens to doctor-patient conversations and writes the clinical note.
 - They now sell the product to hospitals across the country
 :::
 
-## Question A: the dataset
+## Question A
 
 :::{style="margin-top: 30px; font-size: 28px;"}
 - [What problems can you spot]{.alert} with the training data?
@@ -206,15 +206,7 @@ listens to doctor-patient conversations and writes the clinical note.
 - Try to name [at least three distinct issues]{.alert}
 :::
 
-::: {.notes}
-Issues to surface: representativeness (one network, one state, one country);
-selection (only patients who came to that network); label quality (doctor's
-interpretation, not ground truth); temporal drift (medicine evolves, COVID is
-in this data); demographic skew (California population is not the US
-population); language (probably English-only).
-:::
-
-## Question B: the metric
+## Question B
 
 :::{style="margin-top: 30px; font-size: 28px;"}
 - HealthScribe reports [92% agreement with doctor-written notes]{.alert}
@@ -225,7 +217,7 @@ population); language (probably English-only).
   [Do the two versions agree 100%?]{.alert}
 :::
 
-## Question C: a deployment decision
+## Question C
 
 :::{style="margin-top: 30px; font-size: 28px;"}
 - Your hospital is considering buying HealthScribe
