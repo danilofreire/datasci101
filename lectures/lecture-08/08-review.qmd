@@ -76,6 +76,14 @@ if (!require("fontawesome", character.only = TRUE)) {
   [write something useful]{.alert}, better than the AI can
 :::
 
+## Comic of the day
+
+:::{style="margin-top: 40px; font-size: 28px; text-align: center;"}
+[![Hey, wait a minute 😅](figures/xkcd.png){width="23%"}](#){data-modal-type="image" data-modal-url="figures/xkcd.png"}
+
+Source: <https://xkcd.com/2228/>
+:::
+
 # Part 1: quick recap 🚀 {background-color="#1B3A6B"}
 
 ## How this part works
