@@ -8,7 +8,7 @@ author:
     affiliations: "Department of Data and Decision Sciences <br> Emory University"
 format:
   clean-revealjs:
-    self-contained: true
+    self-contained: false
     footer: "[Lecture 16](https://danilofreire.github.io/datasci101/lectures/lecture-16/16-setting-up-ai.html)"
     transition: slide
     transition-speed: default
@@ -51,26 +51,24 @@ if (!require("fontawesome", character.only = TRUE)) {
 # Welcome back! 🤓 {background-color="#1B3A6B"}
 
 ## Recap of last class
-### From agents to setup
 
-:::{style="margin-top: 20px; font-size: 19px;"}
+:::{style="margin-top: 50px; font-size: 26px;"}
 :::{.columns}
 :::{.column width=55%}
-- Last time: an [agent]{.alert} is a model plus tools plus a loop plus a goal
-- The loop: plan, act, [observe]{.alert}, repeat until the goal is met
-- Reliability [multiplies away]{.alert}: 95% per step is 36% over twenty steps
-- The [lethal trifecta]{.alert}: private data, untrusted content, a way to send it out
-- Replit and Claudius: delegate by the [credit card test]{.alert}, reversibility times stakes
-- **Today**: instructions, memory and connectors, or what the model [knows before you type]{.alert}
+- An [agent]{.alert} = model + tools + loop + goal
+- The loop: [plan, act, observe, and repeat]{.alert} until the goal is met
+- Errors [compound]{.alert}: 95% per step is only 36% over twenty steps
+- The [lethal trifecta]{.alert}: private data, untrusted content, and a way out
+- [[Replit]{.alert}](https://www.businessinsider.com/replit-ceo-apologizes-ai-coding-tool-delete-company-database-2025-7) and [[Project Vend]{.alert}](https://www.anthropic.com/research/project-vend-1): two agents that failed
+- Before you delegate, run the [credit card test]{.alert}: can I undo it, and how much can I lose?
+- **Today**: what the model knows [before you type]{.alert}, and what you should keep out
 :::
 
 :::{.column width=45%}
 :::{style="text-align: center;"}
-[![An agent is a model plus tools plus a loop](figures/augmented-llm.png){width="88%"}](#){data-modal-type="image" data-modal-url="figures/augmented-llm.png"}
-:::
+[![](figures/augmented-llm.png){width="88%"}](#){data-modal-type="image" data-modal-url="figures/augmented-llm.png"}
 
-:::{.fragment}
-> List what is in [your]{.alert} setup, and decide what should not be
+Source: [Anthropic](https://www.anthropic.com/research/building-effective-agents)
 :::
 :::
 :::
@@ -85,29 +83,29 @@ if (!require("fontawesome", character.only = TRUE)) {
 :::{.column width=50%}
 **Part 1: From prompts to setups**
 
-- Why one prompt is never enough
+- One prompt vs a reusable setup
 - The four layers of context
-- Instructions, memory, and Projects
+- Instructions, memory and Projects
 
 **Part 2: Instruction files for agents**
 
-- CLAUDE.md and what goes in it
-- AGENTS.md, one file many tools read
-- Which layer is the problem in?
+- Claude Code and CLAUDE.md
+- AGENTS.md and Skills
+- Spotting which layer went wrong
 :::
 
 :::{.column width=50%}
 **Part 3: Connectors and MCP**
 
-- The copy-paste problem
-- One plug for any app and any model
+- What MCP is
+- Connectors on the free plan
 - Finance as the worked example
-- When the connected tool talks back
+- Prompt injection through a connector
 
-**Part 4: Do it yourself**
+**Part 4: Beyond Claude**
 
-- Step by step in Claude, on the free plan
 - The same buttons in ChatGPT
+- Building your own setup
 :::
 :::
 :::
@@ -120,7 +118,7 @@ if (!require("fontawesome", character.only = TRUE)) {
 Source: [Andrej Karpathy on X](https://x.com/karpathy/status/1886192184808149383)
 :::
 
-# Group project 📋 {background-color="#1B3A6B"}
+# Group project {background-color="#1B3A6B"}
 
 ## Group project
 ### What you will do
@@ -170,21 +168,21 @@ A [bonus appendix]{.alert} with prompts, code or extended analysis is recommende
 :::
 
 :::{.column width=45%}
-**Key dates:**
+:::{style="margin-top: -20px;"}
+**Important dates:**
 
 - [3 November]{.alert}: group list due
   - No group? You will be assigned to one at random
 - [12 November]{.alert}: optional proposal
 - [8 December]{.alert}: report and infographic
 
-:::{.fragment}
-> Talk to your classmates this week. If you need help finding a group, come and ask us 😉
+> Talk to your classmates this week. If you need help finding a group, come and ask me 😉
 :::
 :::
 :::
 :::
 
-# From prompts to setups 🧠 {background-color="#1B3A6B"}
+# From prompts to setups {background-color="#1B3A6B"}
 
 ## Why one prompt is not enough
 ### You have all done this
@@ -194,23 +192,26 @@ A [bonus appendix]{.alert} with prompts, code or extended analysis is recommende
 :::{.column width=55%}
 - You explain the assignment, the style, the course, [again]{.alert}
 - You paste the same syllabus into every new chat
-- You close the tab and the model forgets everything
-- Next week: the same 200 words of background
-- A better prompt does not fix this. A [setup]{.alert} does
-- Hire an assistant every morning → explain the job every morning
-- Hire one → you explain it [once]{.alert}
-:::
+- The model has [no state]{.alert} between chats
+- Each chat starts from the weights plus the context window (Lecture 10)
+- The fix is a [setup]{.alert}: a standing instruction the tool applies to every chat
 
-:::{.column width=45%}
-
+:::{style="text-align: center; margin-top: 20px; font-size: 24px;"}
 | One prompt | A setup |
 |------------|---------|
 | Typed fresh every time | Written once, applied always |
 | Lives in one chat | Lives in the account |
 | You carry the context | The tool carries the context |
 | Good for a question | Good for a [job you repeat]{.alert} |
+:::
+:::
 
-A prompt is a request. A setup is a [standing instruction]{.alert}
+:::{.column width=45%}
+:::{style="text-align: center; margin-top: -20px;"}
+[![](figures/claude-md.png){width="90%"}](#){data-modal-type="image" data-modal-url="figures/claude-md.png"}
+
+Source: [Anthropic - Claude Code Docs](https://code.claude.com/docs/en/memory)
+:::
 :::
 :::
 :::
@@ -218,247 +219,179 @@ A prompt is a request. A setup is a [standing instruction]{.alert}
 ## The four layers of context
 ### Where an answer actually comes from
 
-:::{style="margin-top: 30px; font-size: 22px;"}
+:::{style="margin-top: 30px; font-size: 24px;"}
+
+:::{style="font-size: 26px;"}
+| Layer | Who writes it | What it holds | In Claude |
+|-------|---------------|---------------|-----------|
+| [Instructions]{.alert} | You | Standing rules | Settings, project instructions |
+| [Knowledge]{.alert} | You | Files it searches | Project knowledge |
+| [Memory]{.alert} | The tool | What it saved from past chats | Settings > Memory |
+| [Tools]{.alert} | The tool | Live accounts it can read or act on | Connectors |
+:::
+
+<br>
+
+- [Karpathy's "LLM OS" talk (Nov 2023)](https://www.youtube.com/watch?v=zjkBMFhNj_g) treats the context window as RAM
+- [Packer et al. (2023)](https://arxiv.org/abs/2310.08560), MemGPT: pages information in and out of that window
+- Anthropic's ["Building effective agents" (Dec 2024)](https://www.anthropic.com/research/building-effective-agents) calls this the [augmented LLM]{.alert}
+- You write layers 1 and 2, and layers 3 and 4 fill up on their own
+- Read the two you did not write once a month
+- A [Project]{.alert} bundles the first three layers in one place (five on the Free plan)
+:::
+
+## Instructions
+### Your own system prompt
+
+:::{style="margin-top: 30px; font-size: 23px;"}
 :::{.columns}
 :::{.column width=55%}
-- [Instructions]{.alert}: standing rules you write
-  - Who it is, how it answers
-- [Knowledge]{.alert}: files you attach
-  - Your syllabus, your notes, your data
-- [Memory]{.alert}: what it saves from past chats, unasked
-- [Tools]{.alert}: connected accounts it can read or act on
-- Layers 1 and 2 are [things you write]{.alert}
-- Layers 3 and 4 accumulate [on their own]{.alert}
-  - People are surprised by what their assistant knows
-  - [Who audits a layer they never typed?]{.alert}
-- Change one layer → every answer after it changes
+- Lecture 10 showed the company's hidden text above your message; now you write your own
+  - [Settings > Profile]{.alert}: every chat
+  - [Project instructions]{.alert}: one project, Free included
+- [Zheng et al. (2024)](https://aclanthology.org/2024.findings-emnlp.888/): ["you are an expert" changes nothing]{.alert}, so write constraints
+- [Sclar et al. (2024)](https://arxiv.org/abs/2310.11324): reformatting one prompt shifts accuracy up to [76 points]{.alert}
+- Rules do not scale ([SysBench](https://arxiv.org/abs/2408.10943)): near zero by 80 rules, so keep them few and first or last
+- Name five things: role, audience, format, refusals, first question
 :::
 
 :::{.column width=45%}
-```{mermaid}
-%%{init: {'theme': 'base', 'themeVariables': {'fontSize': '20px'}}}%%
-flowchart TB
-  A[Instructions] --> M[Model]
-  B[Knowledge files] --> M
-  C[Memory] --> M
-  D[Tools] --> M
-  M --> R[Answer]
-```
-:::
-:::
-:::
-
-## Instructions: writing your own system prompt
-### Remember system prompts from Lecture 10?
-
-:::{style="margin-top: 10px; font-size: 18px;"}
-:::{.columns}
-:::{.column width=55%}
-- In Lecture 10 a company wrote the hidden text above your message
-- Now you write your own, in two boxes:
-  - [Settings > Profile]{.alert}: applies to every chat you start
-  - [Project instructions]{.alert}: one project only, on [all plans]{.alert} including Free
-- Five things a good instruction names:
-  - [Role]{.alert}: what this assistant is for, in one sentence
-  - [Audience]{.alert}: who is reading, and what they already know
-  - [Format]{.alert}: length, tone, British English, no jargon
-  - [Refusals]{.alert}: what it must not do, even when you ask nicely
-  - [First question]{.alert}: what it should check before answering
-- Nothing here is a prompting trick. It is a job description
-:::
-
-:::{.column width=45%}
-:::{style="text-align: center;"}
-[![Custom instructions in Claude](figures/claude-instructions.png){width="62%"}](#){data-modal-type="image" data-modal-url="figures/claude-instructions.png"}
+:::{style="text-align: center; margin-top: -30px;"}
+[![](figures/claude-instructions.png){width="90%"}](#){data-modal-type="image" data-modal-url="figures/claude-instructions.png"}
 
 Source: [Anthropic Help Centre](https://support.claude.com/en/articles/9519177-how-can-i-create-and-manage-projects)
 :::
 
-**Three lines that already change the output:**
-
-> You are helping an undergraduate with no coding background. Answer in at most six bullets, British English, and define every technical term once. Ask which lecture I am on before you answer
+:::{style="font-size: 19px; margin-top: 10px;"}
+> You are helping an undergraduate with no coding background. Answer in at most six bullets, avoid jargon, and define every technical term once. Ask which lecture I am on before you answer
 :::
 :::
 :::
+:::
 
-## Memory: what it keeps without asking
-### On by default, on every plan
+## Memory
+### On by default, and it fills up on its own
 
-:::{style="margin-top: 10px; font-size: 18px;"}
+:::{style="margin-top: 30px; font-size: 24px;"}
 :::{.columns}
 :::{.column width=55%}
-- [Memory]{.alert} is on by default for Free, Pro and Max
-- What it stores, without being asked:
-  - Preferences you state once (British English, six bullets)
-  - Facts you drop in passing: your degree, your city, your job
-  - Projects you keep coming back to across weeks
-- [Settings > Memory]{.alert}: read it, edit any line, delete any line
-  - Open the panel once a month and read it as a stranger would
-- [Import and export]{.alert} move memory between accounts, both on Free
-- An [incognito chat]{.alert} is not saved and does not update memory
-  - Use it for anything you would not want written down
+- [Park et al. (2023)](https://arxiv.org/abs/2304.03442) gave 25 agents a [memory stream]{.alert}: a diary scored by recency, importance and relevance
+- Both do it: [ChatGPT since 2024](https://openai.com/index/memory-and-new-controls-for-chatgpt/), [Claude Free since 2026](https://www.anthropic.com/news/memory), and [on by default]{.alert}
+- It saves things unasked: your degree, city, job, the projects you return to
+- Memory spans [every chat in your account]{.alert}; a Project keeps its own, separate memory
+- The same question can get [different answers]{.alert} in two accounts, because the memory differs
+- [Settings > Memory]{.alert} lets you read, edit and delete each line
 :::
 
 :::{.column width=45%}
 :::{style="text-align: center;"}
-[![The memory panel](figures/claude-memory.png){width="54%"}](#){data-modal-type="image" data-modal-url="figures/claude-memory.png"}
+[![](figures/claude-memory.png){width="90%"}](#){data-modal-type="image" data-modal-url="figures/claude-memory.png"}
+
+Source: [Anthropic Help Centre](https://support.claude.com/en/articles/11817273-use-claude-s-chat-search-and-memory-to-build-on-previous-context)
+:::
+
+- Import and export move memory between accounts (experimental)
+:::
+:::
+:::
+
+## What should never sit in memory
+### The risks grow with time
+
+:::{style="margin-top: 30px; font-size: 24px;"}
+:::{.columns}
+:::{.column width=55%}
+- [Dong et al. (2025, *NeurIPS*)](https://arxiv.org/abs/2503.03704), Memory INJection Attack (MINJA): an ordinary user poisoned an agent's memory with normal questions, [98% success]{.alert}
+- [Al-Tawaha et al. (2026)](https://arxiv.org/abs/2605.17830), a preprint: violations rise the longer an agent runs, so safe on day one means little by day thirty
+- Three red flags to keep out:
+  - [Health]{.alert}: diagnoses, medication
+  - [Finances]{.alert}: salary, debts, account numbers
+  - [Other people]{.alert}: a classmate's grades, a friend's problems
+- An [incognito chat]{.alert} saves nothing, reads no memory and creates none (every plan, kept 30 days, not inside a Project)
+:::
+
+:::{.column width=45%}
+:::{style="text-align: center;"}
+[![](figures/claude-incognito.png){width="90%"}](#){data-modal-type="image" data-modal-url="figures/claude-incognito.png"}
 
 Source: [Anthropic Help Centre](https://support.claude.com/en/articles/12260368-use-incognito-chats)
 :::
-
-**Three red flags that should never sit in memory:**
-
-- [Health]{.alert}: diagnoses, medication, appointments
-- [Finances]{.alert}: salary, debts, card and account numbers
-- [Other people]{.alert}: a classmate's grades, a friend's problems
-
-Anything you would lock away does not belong in memory
 :::
 :::
 :::
 
-## Projects: three layers in one place
-### Five of them on the free plan
+# Instruction files for agents {background-color="#1B3A6B"}
 
-:::{style="margin-top: 10px; font-size: 18px;"}
+## CLAUDE.md: an instruction file for coding agents
+### The same idea as Project instructions, one level down
+
+:::{style="margin-top: 40px; font-size: 22px;"}
 :::{.columns}
-:::{.column width=55%}
-- A [Project]{.alert} bundles three of the four layers in one place
-  - [Instructions]{.alert}: the rules every chat inside it follows
-  - [Knowledge]{.alert}: the files it searches before it answers
-  - [Memory]{.alert}: what it keeps from the chats inside it
-- Up to [five projects]{.alert} on the Free plan
-- Uploaded files are the [RAG]{.alert} from Lecture 12, without the code
-  - Same failure mode: it finds the wrong page and answers anyway
-- Three you could build tonight:
-  - [Study helper]{.alert}: this syllabus, the slides, your own notes
-  - [Job applications]{.alert}: your CV, the roles you want, your writing style
-  - [Thesis or group project]{.alert}: the brief, your readings, the draft
-- One project with everything retrieves worse than three focused ones
-:::
-
-:::{.column width=45%}
-:::{style="text-align: center;"}
-[![Projects in Claude](figures/claude-projects.png){width="88%"}](#){data-modal-type="image" data-modal-url="figures/claude-projects.png"}
-
-Source: [Anthropic Help Centre](https://support.claude.com/en/articles/9517075-what-are-projects)
-:::
-
-- The project box is the one setting most students never open
-- It is also the only one that changes [every]{.alert} answer in the project
-:::
-:::
-:::
-
-# Instruction files for agents 📄 {background-color="#1B3A6B"}
-
-## When instructions become a file
-### CLAUDE.md, and its three scopes
-
-:::{style="margin-top: 10px; font-size: 20px;"}
-:::{.columns}
-:::{.column width=55%}
-- In a chat window, instructions live in a settings box
-- For an [agent]{.alert} on your files (Lecture 15), they live in a file
-  - Read at the start of every session, before your first word
-- Claude Code calls it [CLAUDE.md]{.alert}: plain text with headings
-  - No code, no configuration format, no schema to learn
-
-| File | Applies to |
-|------|-----------|
-| `~/.claude/CLAUDE.md` | Everything you do, on this machine |
-| `./CLAUDE.md` | This project, shared with your team |
-| `CLAUDE.local.md` | This project, only you |
-
-- The three stack, and the local file never reaches your teammates
-- `@path/to/file.md` imports another file, so one rule lives in one place
-- A `.claude/rules/` folder splits a long file into topics
-:::
-
-:::{.column width=45%}
-:::{style="text-align: center;"}
-[![Memory scopes in the Claude Code docs](figures/claude-md-docs.png){width="95%"}](#){data-modal-type="image" data-modal-url="figures/claude-md-docs.png"}
-
-Source: [Claude Code docs](https://code.claude.com/docs/en/memory)
-:::
-
-- Your personal file is the one that pays off fastest: write it once, and every project inherits it
-:::
-:::
-:::
-
-## A real CLAUDE.md, annotated
-### Four ingredients
-
-:::{style="margin-top: 0px; font-size: 19px;"}
-:::{.columns}
-:::{.column width=55%}
+:::{.column width=50%}
 ```markdown
-# Course materials repository
+# Legislature size meta-analysis
 
-You help me write lecture slides in Quarto.
+You help me analyse the meta-analysis data in R.
 
-## Writing rules
-- Always British English spelling.
-- Sentence case in headings, no title case.
-- One claim per bullet; keep bullets short.
+## Key files
+- Data in dataset/ and paper in article/.
+
+## Style
+- tidyverse; snake_case names.
+- British English in the paper and figures.
+- One idea per code chunk.
 
 ## Never do
-- Never modify syllabus.qmd.
-- Never delete an existing lecture file.
+- Never edit files in dataset/, they are raw.
+- Never change the random seed in the models.
 
 ## Before committing
-- Show me the commit message first.
+- Run the tests, then show me the commit message.
 ```
+
+- An example `CLAUDE.md` for a coding agent
 :::
 
-:::{.column width=45%}
-- [Role]{.alert}: one line saying what the job is
-- [House style]{.alert}: rules you would otherwise repeat weekly
-- [Hard limits]{.alert}: the "never" list, as bare commands
-- [Approval points]{.alert}: where it must stop and ask
-
-Two things this file is [not]{.alert}:
-
-- Documentation. Only the agent reads it, so write commands
-- A guardrail. Lecture 15's Replit case: "do not change anything" is [text, not a permission system]{.alert}
-
-The same four ingredients work in a Claude Project box
+:::{.column width=50%}
+:::{style="margin-top: -20px;"}
+- Only if you install [Claude Code](https://claude.com/product/claude-code) on your computer: [the web app never reads this file, and there is no Claude Code on Free]{.alert}. Sorry about that 🙁
+- It reads a plain `CLAUDE.md` at the start of every session, the same parts you would put in Project instructions:
+  - [Role]{.alert}, [orientation]{.alert}, [house style]{.alert}, [hard limits]{.alert}, [approval points]{.alert}
+- The file keeps growing: [Chakrabarti (2026)](https://arxiv.org/abs/2608.11095) saw these grow [226%]{.alert}, five rules added per commit and almost none removed
+- Lecture 15's Replit lesson holds: this file is text, and [text is not a permission system]{.alert}
 :::
 :::
 :::
+:::
 
-## AGENTS.md: one file, many tools
-### Released by OpenAI, August 2025
+## AGENTS.md and Skills
+### One shared file, and folders for repeatable tasks
 
-:::{style="margin-top: 10px; font-size: 18px;"}
+:::{style="margin-top: 25px; font-size: 22px;"}
 :::{.columns}
 :::{.column width=55%}
-- Every coding tool invented its own instruction file
-  - Users kept four copies of the same rules, and edited three of them
-- [AGENTS.md]{.alert} is the shared answer, an [open format](https://agents.md/)
-  - No schema, no required fields, no validator
-- Headings a human can read: setup, tests, style, what to avoid
-  - Read by Codex, Cursor, Devin, Gemini CLI, Copilot and VS Code
-  - Used in more than [60,000 public repositories]{.alert}
-- Claude Code still reads CLAUDE.md, not AGENTS.md
-  - Bridge the two with one line: `@AGENTS.md`
-- [9 December 2025]{.alert}: given to the [Agentic AI Foundation]{.alert}
-  - Part of the Linux Foundation, so no one company owns it
-  - MCP and goose went to the same foundation on the same day
+**[AGENTS.md](https://agents.md/):** one instruction file many coding tools read
+
+- Released Aug 2025 by OpenAI Codex; now ~two dozen tools (Cursor, Gemini CLI, Copilot, Zed), in [60,000+]{.alert} projects
+- Claude Code reads it too via `@AGENTS.md`; joined the [Agentic AI Foundation](https://www.linuxfoundation.org/press/linux-foundation-announces-the-formation-of-the-agentic-ai-foundation) (Dec 2025)
+- Claude Code can read `AGENTS.md`, `CLAUDE.md`, or both
+
+**[Skills](https://www.anthropic.com/engineering/equipping-agents-for-the-real-world-with-agent-skills):** a folder with a `SKILL.md` for one repeatable task
+
+- [Progressive disclosure]{.alert}: reads a short description first, loads the rest when a task matches
+- Pre-built skills run in the web app; writing your own needs a [paid plan]{.alert} and code execution
 :::
 
 :::{.column width=45%}
 :::{style="text-align: center;"}
-[![Agentic AI Foundation announcement](figures/aaif-announcement.png){width="66%"}](#){data-modal-type="image" data-modal-url="figures/aaif-announcement.png"}
+[![](figures/agents-md.png){width="85%"}](#){data-modal-type="image" data-modal-url="figures/agents-md.png"}
 
-Source: [Linux Foundation](https://www.linuxfoundation.org/press/linux-foundation-announces-the-formation-of-the-agentic-ai-foundation)
+Source: [agents.md](https://agents.md/)
 :::
 
-- Same idea for one repeatable task: a [skill]{.alert}, a folder with a `SKILL.md` inside
-  - [Launched 16 October 2025](https://claude.com/blog/skills), on the Free plan
-  - The model reads the description first, then loads the rest only when the task calls for it
-  - A file for who you are, a skill for what you do often
+:::{style="background: rgba(45, 69, 99, 0.1); padding: 12px; border-radius: 10px; font-size: 19px; margin-top: 12px;"}
+All of this needs software you install, often on a paid plan. Recognise it, do not memorise it. [It will not be on the quiz]{.alert} because not every student can run it
+:::
 :::
 :::
 :::
@@ -466,10 +399,10 @@ Source: [Linux Foundation](https://www.linuxfoundation.org/press/linux-foundatio
 ## The same four layers, different buttons
 ### Which layer is the problem in?
 
-:::{style="margin-top: 20px; font-size: 21px;"}
+:::{style="margin-top: 30px; font-size: 24px;"}
 :::{.columns}
 :::{.column width=50%}
-
+:::{style="margin-bottom: 30px; text-align: center;"}
 | In a chat app | In an agent tool |
 |---------------|------------------|
 | Account instructions | Personal `CLAUDE.md` |
@@ -478,33 +411,32 @@ Source: [Linux Foundation](https://www.linuxfoundation.org/press/linux-foundatio
 | Skills | Skills |
 | Connectors | Tools and MCP servers |
 | Memory | Notes the agent writes to a file |
+:::
 
 - Every product ships its own names for these six rows
-- Skills sit in both columns because they are the same object: a folder the tool loads on demand
-- A new tool is not a new skill. Find its version of each row and you are set up in ten minutes
+- Skills sit in both columns because they are the same folder
+- The left column is the [web app]{.alert} you use; the right is [developer tools]{.alert}
 :::
 
 :::{.column width=50%}
-Job adverts ask for people who can "configure" AI tools. So diagnose before you retype:
+**Diagnose before you retype:**
 
-- Keeps forgetting your format? [Instructions]{.alert}, not a better prompt
-- Keeps inventing figures? [Knowledge]{.alert}
-- Cannot see the file? [Tools]{.alert}
-- Remembers what you never told it today? [Memory]{.alert}
-- Follows rule one and ignores rule twelve? [Instructions]{.alert} again, and too many of them
-
-The buttons move between tools. The four layers do not
+- Keeps forgetting your format: [instructions]{.alert}
+- Keeps inventing figures: [knowledge]{.alert} (documents or files the model can read)
+- Cannot see the file: [tools]{.alert}
+- Remembers what you never told it today: [memory]{.alert}
+- Follows rule one and ignores rule twelve: too many instructions
 :::
 :::
 :::
 
-## Activity: write the setup 📝
+## Activity: write the setup
 ### In pairs, ten lines at most
 
 :::{style="margin-top: 30px; font-size: 24px;"}
 :::{.columns}
 :::{.column width=55%}
-Write the project instructions for a "DATASCI 101 study helper". Cover four things:
+Write the project instructions for an assistant that helps you revise for the [DATASCI 101 quizzes]{.alert} using only the course slides. Cover four things:
 
 1. [Role]{.alert}: what is this assistant for, in one sentence?
 2. [Never]{.alert}: what must it refuse to do, even if you ask?
@@ -520,22 +452,23 @@ Then decide two more:
 :::{.column width=45%}
 A hint on the "never" line:
 
-- The interesting rule is the one that [costs you something]{.alert}
-- "Never be rude" costs nothing
-- "Never give me the final answer before I have tried" costs you a shortcut, which is why it works
+- A good "never" rule [changes what the model does]{.alert}
+- "Never be rude" does nothing: it was not going to be rude
+- "Never give me the answer before I have tried" works better!
+- Quick test: delete the rule, would anything change? If not, cut it
 
 ⏱️ 5 minutes!
 :::
 :::
 :::
 
-## Activity answers
-### One version that works
+## One version that works
+### And two ways it goes wrong
 
-:::{style="margin-top: 0px; font-size: 18px;"}
+:::{style="margin-top: 30px; font-size: 19px;"}
 :::{.columns}
 :::{.column width=50%}
-> You are a study partner for DATASCI 101, an introductory AI course for non-technical students.
+> You are my study partner for DATASCI 101, an introductory AI course for non-technical students. Help me revise for the quizzes using only the course slides.
 >
 > Always ask which lecture I am working on before you answer.
 >
@@ -543,214 +476,213 @@ A hint on the "never" line:
 >
 > Explain any technical term the first time you use it.
 >
-> Answer in at most six bullets, British English.
+> Answer in at most six bullets, no jargon.
 >
 > If the slides and your knowledge disagree, follow the slides and say so.
 
 - [Upload as knowledge]{.alert}: the syllabus and this week's slides
-- [Keep out of memory]{.alert}: your grades, anything about classmates
+- [Keep out of memory]{.alert}: grades, anything about classmates
 :::
 
 :::{.column width=50%}
-Two ways this goes wrong:
+**Two ways this goes wrong:**
 
-- [Too vague]{.alert}: "Be a helpful study assistant and explain things clearly"
-  - Every model already tries to do that
-  - The instruction changes nothing, so you conclude instructions do not work
+- [Too vague]{.alert}: "be a helpful study assistant"
+  - Every model already tries, so the instruction changes nothing
+  - You then conclude that instructions do not work
 - [Too long]{.alert}: two pages covering every situation
-  - Long files compete with your actual question for attention
-  - Rules buried on page two get followed least
-
-The test for any line: [could the assistant behave differently tomorrow because of it?]{.alert} If not, delete it
+  - The file competes with your question for attention
+  - Rules buried on page two get followed least (the Instructions slide)
 :::
 :::
 :::
 
-# Connectors and MCP 🔌 {background-color="#1B3A6B"}
+# Connectors and MCP {background-color="#1B3A6B"}
 
-## MCP: one plug for any app
-### From copy-paste to the Model Context Protocol
+## What MCP is
+### One plug for any app and model
 
-:::{style="margin-top: 10px; font-size: 18px;"}
+:::{style="margin-top: 30px; font-size: 22px;"}
 :::{.columns}
 :::{.column width=55%}
-- A junior analyst's morning: download the 10-K, paste 40 pages in chunks, paste yesterday's summary, ask, copy the answer out
-  - Four of those five steps are [moving data by hand]{.alert}, and need no human
-- Uploading a file is a photograph. A [connector]{.alert} is a window
-- Before 2025 every app needed custom code for every model
-  - Fifty apps and five models → [250 integrations]{.alert} to build and maintain
-- [MCP]{.alert} is one shared plug: an app describes its tools once, and any model can use them
-- **25 November 2024**: [Anthropic releases MCP](https://www.anthropic.com/news/model-context-protocol)
-- **26 March 2025**: [OpenAI adopts it](https://techcrunch.com/2025/03/26/openai-adopts-rival-anthropics-standard-for-connecting-ai-models-to-data/), and the standard stops being one company's
-- **9 December 2025**: given to the [Agentic AI Foundation]{.alert}, with more than [10,000 public servers]{.alert} and [97 million]{.alert} SDK downloads a month
-
-Source: [modelcontextprotocol.io](https://modelcontextprotocol.io/)
+- A junior analyst wastes the morning [moving data by hand]{.alert}: pasting filings, summaries and answers between apps
+- Before 2025, every app needed custom code for every model: 50 apps by 5 models is [250 integrations]{.alert}
+- MCP fixes that like Microsoft's [Language Server Protocol](https://microsoft.github.io/language-server-protocol/) did for code editors: describe your tools once, any model can call them
+- The analogy is a [USB-C port]{.alert}: one plug, any device (Lecture 15's tool calling, tools from outside)
+- [Anthropic released it (Nov 2024)](https://www.anthropic.com/news/model-context-protocol), [OpenAI adopted it (Mar 2025)](https://techcrunch.com/2025/03/26/openai-adopts-rival-anthropics-standard-for-connecting-ai-models-to-data/), now [10,000+ servers]{.alert}
+- Every Claude connector is an MCP server with a friendlier name
 :::
 
 :::{.column width=45%}
-```{mermaid}
-%%{init: {'theme': 'base', 'themeVariables': {'fontSize': '20px'}}}%%
-flowchart LR
-  A[Drive] --> P[MCP]
-  B[Slack] --> P
-  C[Your database] --> P
-  P --> M1[Claude]
-  P --> M2[ChatGPT]
-  P --> M3[Any model]
-```
+:::{style="text-align: center;"}
+[![](figures/mcp-site.png){width="90%"}](#){data-modal-type="image" data-modal-url="figures/mcp-site.png"}
 
-- One plug, written once per app
-- The analyst's five steps become one question
-- Every connector in Claude's directory is an MCP server with a friendlier name
+Source: [modelcontextprotocol.io](https://modelcontextprotocol.io/)
+:::
 :::
 :::
 :::
 
 ## Connectors on the free plan
-### Read access and write access are different decisions
+### Read access and write access are separate decisions
 
-:::{style="margin-top: 10px; font-size: 18px;"}
+:::{style="margin-top: 30px; font-size: 24px;"}
 :::{.columns}
 :::{.column width=55%}
-- The connector directory is open to [all users]{.alert}, including Free
-  - Google Drive, Gmail, Google Calendar, Slack, Notion, GitHub
-- Free accounts can add [one custom remote MCP connector]{.alert}
-- You authorise each one separately, and you can revoke it
-- A connector is the [RAG]{.alert} from Lecture 12 with a live plug
-  - Same failure modes: retrieval quality, and false confidence
-  - A citation shows retrieval, not checking
+- The [connector directory](https://support.claude.com/en/articles/11176164-use-connectors-to-extend-claude-s-capabilities) is open to all users, including Free
+- Free accounts can add [one custom]{.alert} [remote MCP connector](https://support.claude.com/en/articles/11175166-get-started-with-custom-connectors-using-remote-mcp)
+- You authorise each connector separately, and you can revoke it
+- A connector is Lecture 12's RAG with a live plug, and it inherits the failure modes
+- A citation shows the model retrieved something, not that it checked it
 
-| Connector can | Worst case if it goes wrong |
-|---------------|-----------------------------|
+| Connector can | Worst case |
+|---------------|------------|
 | Read your calendar | It sees a private appointment |
 | Send email as you | Someone gets a message you never wrote |
 | Edit your files | Work disappears |
 
-Source: [Help Centre](https://support.claude.com/en/articles/11176164-use-connectors-to-extend-claude-s-capabilities), [custom connectors](https://support.claude.com/en/articles/11175166-get-started-with-custom-connectors-using-remote-mcp)
 :::
 
 :::{.column width=45%}
 :::{style="text-align: center;"}
-[![The Claude connectors directory](figures/claude-connectors.png){width="78%"}](#){data-modal-type="image" data-modal-url="figures/claude-connectors.png"}
+[![](figures/claude-connectors.png){width="90%"}](#){data-modal-type="image" data-modal-url="figures/claude-connectors.png"}
 
 Source: [Claude connectors](https://claude.com/connectors)
 :::
 
-- Ask what it can see [now]{.alert}, not what you meant to share
-  - A Drive connector reaches every folder shared with you
-  - A Gmail connector reads the thread you forgot about
-- Grant reading freely. Grant writing slowly
+- Check what it can see [now]{.alert}: a Drive connector reaches every folder shared with you
 :::
 :::
 :::
 
-## Two routes for a finance team 📈
+## Two routes for a finance team
 ### Train a model, or connect one
 
-:::{style="margin-top: 10px; font-size: 18px;"}
+:::{style="margin-top: 30px; font-size: 22px;"}
 :::{.columns}
 :::{.column width=55%}
-- [Route one, train]{.alert}: buy the vocabulary
-  - [BloombergGPT]{.alert}: 363 billion finance tokens, 345 billion general
-  - That is 708 billion tokens, frozen the day training stopped
-  - [FinGPT](https://github.com/AI4Finance-Foundation/FinGPT) trains a small LoRA adapter on LLaMA, under [$300 per run]{.alert}
-  - Same route in medicine: [Med-PaLM 2](https://sites.research.google/gr/med-palm/) scored [86.5%]{.alert} on US licensing exam questions
-- [Route two, connect]{.alert}: no training at all
-  - Instructions, documents, a connector to the filings
-  - It updates the moment the source updates
-- **Rule of thumb** ([Li et al., 2023](https://arxiv.org/abs/2311.10723)):
-  - Finance-tuned models win on sentiment and classification
-  - GPT-class models win on numerical reasoning
-  - For stock prediction, [no model is reliable]{.alert}
+- [Route one, train]{.alert}:
+  - [BloombergGPT (Wu et al., 2023)](https://arxiv.org/abs/2303.17564): 50B parameters, 363B finance + 345B general tokens, frozen the day training stopped
+  - [FinGPT (Yang et al., 2023)](https://arxiv.org/abs/2306.06031): a LoRA adapter for about [$300]{.alert} a run
+  - In medicine, [Med-PaLM 2 (Singhal et al., 2023)](https://arxiv.org/abs/2305.09617) scored [86.5%]{.alert} on licensing questions
+- [Route two, connect]{.alert}: instructions, documents, a connector to the filings, updating the moment the source does
+- [Li et al. (2023)](https://arxiv.org/abs/2311.10723) surveyed both: fine-tuned models beat GPT-4 on classification, GPT-class win on numerical reasoning, and [no model predicts stocks reliably]{.alert}
+- Most teams take route two, because their bottleneck is data access
 :::
 
 :::{.column width=45%}
 :::{style="text-align: center;"}
-[![BloombergGPT](figures/bloomberggpt-arxiv.png){width="72%"}](#){data-modal-type="image" data-modal-url="figures/bloomberggpt-arxiv.png"}
+[![](figures/bloomberggpt-arxiv.png){width="90%"}](#){data-modal-type="image" data-modal-url="figures/bloomberggpt-arxiv.png"}
 
 Source: [arXiv 2303.17564](https://arxiv.org/abs/2303.17564)
 :::
-
-- Both trained models know the jargon. Neither is cheap to keep current
-- Most teams take route two: their bottleneck is the data, and training does not fix that
 :::
 :::
 :::
 
-## When the connected tool talks back
-### GitHub MCP, 26 May 2025
+## Attacks through connectors
+### The trifecta, hidden in what the agent reads
 
-:::{style="margin-top: 20px; font-size: 20px;"}
-:::{.columns}
-:::{.column width=50%}
-- Invariant Labs opened a [public issue]{.alert} on a public repository
-- The issue text told the agent to copy the user's [private]{.alert} data
-  - Into a public pull request
-- The user asked their agent to "look at the issues"
-- It did exactly that, and published the private data
-- No password was stolen. The attacker [sent a document]{.alert} and waited
-- A connector brings in text the model did not write
-  - And models follow instructions found in text
-  - Same shape as [SQL injection](https://xkcd.com/327/), thirty years on
-
-Source: [Invariant Labs](https://invariantlabs.ai/blog/mcp-github-vulnerability)
-:::
-
-:::{.column width=50%}
-:::{style="text-align: center;"}
-[![The GitHub MCP attack](figures/github-mcp-diagram.png){width="88%"}](#){data-modal-type="image" data-modal-url="figures/github-mcp-diagram.png"}
-
-Source: [Invariant Labs](https://invariantlabs.ai/blog/mcp-github-vulnerability)
-:::
-:::
-:::
-:::
-
-## The lethal trifecta
-### Simon Willison, 16 June 2025, and the three rules that follow
-
-:::{style="margin-top: 10px; font-size: 18px;"}
-:::{.columns}
-:::{.column width=52%}
-Three ingredients. Hold all three and you have a problem:
-
-- [Private data]{.alert} the agent can read
-- [Untrusted content]{.alert} that reaches the agent
-- A way to [send data out]{.alert}
-
-- You met this in Lecture 15. Every connector you add moves you closer to holding all three
-- [SafeBreach](https://www.safebreach.com/blog/invitation-is-all-you-need-hacking-gemini/), August 2025: a calendar invite carried hidden instructions, and Gemini controlled smart-home devices and leaked email
-- [Notion 3.0](https://simonwillison.net/2025/Sep/19/notion-lethal-trifecta/), 19 September 2025: white text hidden in a PDF, and the agent sent workspace data out through a web search
-- Which of the three does your Drive connector hand over on its own?
-:::
-
-:::{.column width=48%}
-:::{style="text-align: center;"}
-[![The lethal trifecta](figures/lethal-trifecta.png){width="50%"}](#){data-modal-type="image" data-modal-url="figures/lethal-trifecta.png"}
-
-Source: [Simon Willison](https://simonwillison.net/2025/Jun/16/the-lethal-trifecta/)
-:::
-
-**Three rules, before you click "authorise":**
-
-- [Least access]{.alert}: one folder, one label, one repository, not the whole account
-- [Read-only by default]{.alert}: turn writing on for the task, then off again
-- [Confirm every write]{.alert}: sending, posting, paying and deleting each need a click
-- The fourth rule: assume anything it fetches carries instructions aimed at your assistant
-:::
-:::
-:::
-
-# Do it yourself 🧭 {background-color="#1B3A6B"}
-
-## Your setup, step by step
-### Twenty minutes tonight, free plan
-
-:::{style="margin-top: 10px; font-size: 20px;"}
+:::{style="margin-top: 30px; font-size: 21px;"}
 :::{.columns}
 :::{.column width=55%}
+- [A shared document (Notion, Sept 2025)](https://simonwillison.net/2025/Sep/19/notion-lethal-trifecta/): hidden white-on-white text gave the assistant secret orders
+  - It collected private notes and sent them to a stranger
+- [Gemini (SafeBreach, Aug 2025)](https://www.safebreach.com/blog/invitation-is-all-you-need-hacking-gemini/): a calendar invite title hid instructions
+  - Gemini then controlled smart-home devices and leaked email
+- No password stolen: the attacker just writes a document and waits
+- This is [indirect prompt injection]{.alert} ([Greshake et al., 2023](https://arxiv.org/abs/2302.12173))
+  - The poison rides in on content the agent reads
+- All three ingredients again: private data, untrusted content, a way out
+:::
+
+:::{.column width=45%}
+**Three rules before you click authorise:**
+
+- [Least access]{.alert}: one folder or repository, never the whole account
+- [Read-only by default]{.alert}: turn writing on for the task, then off
+- [Confirm every write]{.alert}: send, post, pay, delete
+
+:::{style="background: rgba(230, 57, 70, 0.1); padding: 15px; border-radius: 10px; margin-top: 15px;"}
+Assume anything a connector fetches carries [instructions aimed at your assistant]{.alert}
+:::
+:::
+:::
+:::
+
+# Beyond Claude {background-color="#1B3A6B"}
+
+## The same buttons in ChatGPT
+### Different limits, same four layers
+
+:::{style="margin-top: 30px; font-size: 23px;"}
+:::{.columns}
+:::{.column width=58%}
+:::{style="font-size: 24px; text-align: center; margin-bottom: 30px;"}
+| Layer | ChatGPT on the free plan |
+|-------|--------------------------|
+| Instructions | Custom instructions, [1,500 characters]{.alert} |
+| Knowledge | Projects (5 files on Free) |
+| Memory | A [lightweight version]{.alert} since June 2025 |
+| Skills | GPTs: usable on Free, building needs Plus |
+| Tools | Custom MCP connectors need Developer Mode |
+:::
+
+- Plus raised the instruction cap to 5,000 characters on 15 July 2026
+- [Developer Mode](https://help.openai.com/en/articles/12584461-developer-mode-and-mcp-apps-in-chatgpt) is Plus and above, so the tools layer is where the plans differ most
+- Temporary chat is the incognito equivalent
+- The limits change often, so check the help page before you quote a number
+:::
+
+:::{.column width=42%}
+:::{style="text-align: center; margin-top: -20px;"}
+[![](figures/chatgpt-custom-instructions.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/chatgpt-custom-instructions.png"}
+
+Source: [OpenAI Help Centre](https://help.openai.com/en/articles/8096356-chatgpt-custom-instructions)
+:::
+
+- Write the setup once, then copy it into whichever tool you use
+- The four layers are the same in every tool; the caps and button names differ
+:::
+:::
+:::
+
+# Summary {background-color="#1B3A6B"}
+
+## Main takeaways
+
+:::{style="margin-top: 30px; font-size: 30px;"}
+
+- [Four layers]{.alert} make up context: instructions, knowledge, memory, tools
+
+- [A setup]{.alert} is a standing instruction, and constraints beat personas (Zheng et al.)
+
+- [Memory]{.alert} is on by default and fills on its own, so read it and use incognito
+
+- [Rules]{.alert}: few, and first or last (SysBench, Lost in the middle)
+
+- [For agents]{.alert}, instructions become a file: CLAUDE.md, AGENTS.md, SKILL.md
+
+- [A file]{.alert} is text, and text is not a permission system
+
+- [MCP]{.alert} is one plug for any app and model (Nov 2024, over 10,000 servers)
+
+- [Connect]{.alert} with least access, read-only by default, confirm every write
+
+:::
+
+# Do it at home {background-color="#1B3A6B"}
+
+## Your setup, step by step
+### Homework, not for class: twenty minutes on the free plan
+
+:::{style="margin-top: 30px; font-size: 22px;"}
+:::{.columns}
+:::{.column width=55%}
+Do this tonight; we will not do it in class.
+
 1. Create a [Project]{.alert} called "DATASCI 101" (Free allows five)
-2. Write [ten lines]{.alert} of project instructions: role, audience, format, refusals, first question
+2. Write [ten lines]{.alert} of instructions: role, audience, format, refusals, first question
 3. Upload [two files]{.alert}: the syllabus and this week's slides
 4. Open [Settings > Memory]{.alert} and read every line as a stranger would
 5. Delete [one memory]{.alert} you would not want on a screen behind you
@@ -759,81 +691,21 @@ Source: [Simon Willison](https://simonwillison.net/2025/Jun/16/the-lethal-trifec
 8. Write down [one thing it got wrong]{.alert}, and which layer caused it
 
 - Did the three answers change? If not, your instructions were too vague
-  - Go back to step 2 and add a rule that costs you something
+- Go back to step 2 and add a rule that costs you something
 :::
 
 :::{.column width=45%}
 :::{style="text-align: center;"}
-[![Creating a project](figures/claude-projects.png){width="80%"}](#){data-modal-type="image" data-modal-url="figures/claude-projects.png"}
+[![](figures/claude-memory-import.png){width="85%"}](#){data-modal-type="image" data-modal-url="figures/claude-memory-import.png"}
 
-Source: [Anthropic Help Centre](https://support.claude.com/en/articles/9517075-what-are-projects)
+Source: [Importing and exporting memory, Anthropic Help Centre](https://support.claude.com/en/articles/11960358-import-and-export-your-memory-from-claude)
 :::
 
 :::{.fragment}
-> Do steps 4 and 5 even if you do nothing else today
+> Do steps 4 and 5 even if you do nothing else this week
 :::
 :::
 :::
-:::
-
-## The same buttons in ChatGPT
-### Different limits, same four layers
-
-:::{style="margin-top: 10px; font-size: 18px;"}
-
-:::{.columns}
-:::{.column width=58%}
-| Layer | ChatGPT on the free plan |
-|-------|--------------------------|
-| Instructions | Custom instructions, [1,500 characters]{.alert} (5,000 on Plus) |
-| Knowledge | Projects, with upload limits |
-| Memory | A [lightweight version]{.alert}, saved memories you read and delete |
-| Skills | GPTs, but personal accounts cannot create them |
-| Tools | Apps are available. [MCP connectors need Plus]{.alert} or above |
-
-- Temporary chat is the incognito equivalent
-- [1,500 characters]{.alert} is about 250 words, so the free plan forces you to be brief
-- Free accounts can use a GPT someone else built, but cannot build one
-- The tools layer is where the plans differ most: no custom MCP connector below Plus
-- The limits change often, so check the help pages before you quote a number
-- Whichever tool you pick, open its memory panel and read it
-
-Source: [OpenAI Help Centre](https://help.openai.com/en/articles/8096356-chatgpt-custom-instructions), [memory FAQ](https://help.openai.com/en/articles/8590148-memory-faq)
-:::
-
-:::{.column width=42%}
-:::{style="text-align: center;"}
-[![Custom instructions in ChatGPT](figures/chatgpt-custom-instructions.png){width="88%"}](#){data-modal-type="image" data-modal-url="figures/chatgpt-custom-instructions.png"}
-:::
-
-- Write the setup once, then copy it into whichever tool you end up using
-- The four layers survive the move. Only the caps and the button names change
-:::
-:::
-:::
-
-# Summary 📚 {background-color="#1B3A6B"}
-
-## Main takeaways
-
-:::{style="margin-top: 30px; font-size: 25px;"}
-
-- `r fa('layer-group')` Four layers make up context: [instructions]{.alert}, knowledge, memory, tools
-
-- `r fa('pen')` A prompt is a request. A [setup]{.alert} is a standing instruction that survives the tab closing
-
-- `r fa('brain')` Memory accumulates on its own. Read yours, edit it, use [incognito]{.alert} for sensitive topics
-
-- `r fa('file-lines')` For agents, instructions become a file: [CLAUDE.md]{.alert}, AGENTS.md, SKILL.md
-
-- `r fa('plug')` [MCP]{.alert} is one plug between any app and any model. Over 10,000 public servers since 2024
-
-- `r fa('shield-halved')` Connect with [least access]{.alert}, read-only by default, and confirm every write
-
-- `r fa('wand-magic-sparkles')` [Artifacts]{.alert} are free too. Write the spec first: inputs, outputs, what "correct" means
-
-- `r fa('graduation-cap')` Everything today is free. Build your DATASCI 101 setup this week
-
 :::
 
 # ... and that's all for today! 🎉 {background-color="#1B3A6B"}
