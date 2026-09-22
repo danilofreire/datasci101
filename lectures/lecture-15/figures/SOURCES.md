@@ -79,3 +79,33 @@ Source: [Model Context Protocol docs](https://modelcontextprotocol.io/docs/devel
 Amazon's "Buy for me": the agent completes the purchase on the user's behalf on another brand's site.
 
 Source: [About Amazon](https://www.aboutamazon.com/news/retail/amazon-shopping-app-buy-for-me-brands)
+
+## augmented-llm.png
+
+The "augmented LLM": one model wired to retrieval, tools and memory, used on the tool-calling slide.
+
+Source: [Anthropic, "Building effective agents"](https://www.anthropic.com/engineering/building-effective-agents)
+
+## react-figure1.png
+
+Figure 1 (top half) of the ReAct paper: the same HotpotQA question answered by standard prompting, chain-of-thought, act-only and ReAct. Cropped from the arXiv PDF at 300 dpi.
+
+Source: [Yao et al. (2022)](https://arxiv.org/abs/2210.03629)
+
+## lethal-trifecta.jpg
+
+Simon Willison's own diagram of the lethal trifecta: private data, untrusted content, and a way to send data out.
+
+Source: [Simon Willison](https://simonwillison.net/2025/Jun/16/the-lethal-trifecta/)
+
+## specification-gaming.gif
+
+A Lego-stacking agent rewarded for the height of the red block's bottom face, which flips the block over instead of stacking it.
+
+Source: [Google DeepMind](https://deepmind.google/discover/blog/specification-gaming-the-flip-side-of-ai-ingenuity/)
+
+## replit-rollback.png
+
+Replit's "Rollback to checkpoint" dialog, added after the deleted-database incident: it lists what will be restored (files, agent memory, optionally the database) before you confirm. Cropped to the dialog.
+
+Source: [Replit Docs](https://docs.replit.com/core-concepts/agent/checkpoints-and-rollbacks)

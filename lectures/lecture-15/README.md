@@ -9,12 +9,13 @@ This lecture covers what changes when a language model stops answering questions
 * **The definition**: a model that uses tools, in a loop, to pursue a goal with limited supervision.
 * **The loop**: goal, plan, act, observe, repeat, and the model decides when to stop.
 * **Tools**: search, browsers, code execution, files, email, payments. The model asks, software does.
+* **ReAct** (Yao et al., 2022): a thought, an action, an observation, repeated until the model stops.
 
 ### 2. How Agents Work
 
 * **Research with initiative**: RAG retrieves once, an agent chooses what to search next.
 * **Memory**: scratchpads, summaries and sub-tasks work around the context window.
-* **Teams**: an orchestrator splits work between workers, and coordination becomes a new failure mode.
+* **Teams**: an orchestrator splits work between workers, and coordination becomes a new failure mode (Cemri et al., 2025).
 
 ### 3. When Agents Go Wrong
 
@@ -26,7 +27,8 @@ This lecture covers what changes when a language model stops answering questions
 
 * **The credit card test**: reversibility times stakes decides what you hand over.
 * **Guardrails**: permissions, sandboxes, action logs, undo and spending limits.
-* **Goals taken literally**: the proxy problem from lecture 03, now with hands.
+* **Goals taken literally**: Goodhart's law and specification gaming, the proxy problem from lecture 03 with hands.
+* **Automation bias**: Parasuraman and Riley (1997) and Skitka et al. (1999) on over-reliance on systems that are usually right.
 
 ## Resources
 
@@ -35,4 +37,8 @@ This lecture covers what changes when a language model stops answering questions
 * [Anthropic, Building effective agents](https://www.anthropic.com/engineering/building-effective-agents)
 * [Anthropic, Project Vend](https://www.anthropic.com/research/project-vend-1)
 * [Simon Willison, The lethal trifecta](https://simonwillison.net/2025/Jun/16/the-lethal-trifecta/)
+* [Yao et al., ReAct](https://arxiv.org/abs/2210.03629)
+* [Cemri et al., Why do multi-agent LLM systems fail?](https://arxiv.org/abs/2503.13657)
+* [METR, Measuring AI ability to complete long tasks](https://metr.org/blog/2025-03-19-measuring-ai-ability-to-complete-long-tasks/)
+* [Google DeepMind, Specification gaming](https://deepmind.google/discover/blog/specification-gaming-the-flip-side-of-ai-ingenuity/)
 * [Business Insider, Replit CEO apologises](https://www.businessinsider.com/replit-ceo-apologizes-ai-coding-tool-delete-company-database-2025-7)
