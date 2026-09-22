@@ -69,7 +69,7 @@ After you ask a second time, the company supplies its own breakdown of the pilot
 
 **Your task:**
 
-1. For each group, name the reason from the Exam 1147 report ("gaze away", "second voice", "face obscured") most likely to fire, and say in one sentence what about the camera or the microphone causes it (Lecture 05 covered how cameras perform across skin tones)
+1. For each group, name the reason from the Exam 1147 report ("gaze away", "second voice", "face obscured") most likely to fire, and say in one sentence what about the camera or the microphone causes it (Lecture 05 covered how face-recognition systems perform across skin tones)
 2. The brochure's 96% figure is true and this breakdown is also true. Using what Lecture 05 said about evaluating models across groups, explain in a few sentences how both can hold at once, and what Emory should have asked the company for before reading the brochure
 3. The company replies: *"Skin tone is not an input to our model, so it cannot be biased."* Explain in a few sentences why that argument fails
 
@@ -93,7 +93,7 @@ Invigil makes two kinds of error: it flags an honest student, or it misses one w
 
 1. Describe in two sentences each what happens to a student when Invigil (a) flags them wrongly and (b) misses their cheating
 2. Suppose the company can retune Invigil, but only by moving along the trade-off from item 1. Which direction should Emory ask for? Say which of the two mistakes you are choosing to make more often, and who pays for it
-3. Students learn that "gaze away" and "second voice" are what gets counted. Describe what an honest student will do differently in their next exam, and what a cheater will do. What does the count measure after that, and what name did Lecture 05 give to this problem?
+3. Students learn that "gaze away" and "second voice" are what gets counted. Describe what an honest student will do differently in their next exam, and what a cheater will do. What does the count measure once both have adapted, and which kind of student ends up worse off under the new behaviour?
 
 ---
 

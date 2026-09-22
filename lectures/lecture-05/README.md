@@ -26,6 +26,12 @@ This lecture explains how we measure if an AI model is actually working. We disc
 * **Adversarial Testing**: Deliberately trying to trick or "jailbreak" an AI to find its weaknesses before users do.
 * **Safety First**: Proactively identifying bias and harmful outputs to make models more robust.
 
+### 5. Fairness and Subgroup Analysis
+
+* **When Averages Hide Failures**: Why a good overall accuracy can conceal much worse performance for a specific group (the Buolamwini & Gebru face-recognition result: 0.8% error for light-skinned men versus 34.7% for dark-skinned women).
+* **Subgroup Analysis**: Checking a model group by group (also called data slicing), rather than trusting a single overall score.
+* **Proxies for Sensitive Features**: Why dropping a feature like skin tone does not remove bias, because other features correlate with it.
+
 ## Resources
 
 * [Lecture Slides (HTML)](05-metrics.html)
