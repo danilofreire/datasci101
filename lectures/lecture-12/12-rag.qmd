@@ -742,7 +742,7 @@ Source: [Liu et al. (2023)](https://arxiv.org/abs/2307.03172)
 
 1. Open <https://aistudio.google.com/> and start a [new chat]{.alert}
 2. Ask: "What are the assignment deadlines for DATASCI 101 at Emory University?"
-3. Qwen doesn't know: it's not in the training data
+3. Gemini doesn't know: it's not in the training data
 
 **Step 2: With your document**
 
