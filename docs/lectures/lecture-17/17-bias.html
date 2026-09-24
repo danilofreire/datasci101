@@ -158,7 +158,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <section id="recap-of-last-class" class="slide level2">
 <h2>Recap of last class</h2>
 <h3 id="from-setup-to-bias">From setup to bias</h3>
-<div style="margin-top: 20px; font-size: 23px;">
+<div style="margin-top: 20px; font-size: 25px;">
 <div class="columns">
 <div class="column" style="width:50%;">
 <ul>
@@ -194,13 +194,14 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <li>Historical bias: the past baked in</li>
 <li>Representation bias: who’s missing?</li>
 <li>Measurement bias: bad proxies</li>
-<li>Aggregation and evaluation bias</li>
+<li>Aggregation, evaluation and deployment bias</li>
 </ul>
 </div><div class="column" style="width:50%;">
 <p><strong>Part 3: Applying the framework</strong></p>
 <ul>
-<li>Activity: Spot the bias!</li>
-<li>Where bias shows up (preview)</li>
+<li>Bias through the AI lifecycle</li>
+<li>Feedback loops: bias that amplifies itself</li>
+<li>Activity: spot the bias!</li>
 </ul>
 <p><strong>Part 4: The hard questions</strong></p>
 <ul>
@@ -226,7 +227,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <section id="cortical-labs" class="slide level2">
 <h2>Cortical Labs</h2>
 <div style="text-align: center; margin-top: 30px; font-size: 20px;">
-<p><a href="#/" data-modal-type="image" data-modal-url="figures/cortical-labs.png"><img data-src="figures/cortical-labs.png" style="width:80.0%"></a></p>
+<p><a href="#/" data-modal-type="image" data-modal-url="figures/cortical-labs.png"><img data-src="figures/cortical-labs.png" style="width:76.0%"></a></p>
 <p>Source: <a href="https://corticallabs.com/">Cortical Labs</a></p>
 </div>
 </section></section>
@@ -237,7 +238,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </section>
 <section id="a-story-to-start-with" class="slide level2">
 <h2>A story to start with</h2>
-<div style="margin-top: 30px; font-size: 23px;">
+<div style="margin-top: 30px; font-size: 25px;">
 <div class="columns">
 <div class="column" style="width:55%;">
 <p><strong>Robert Julian-Borchak Williams, Detroit, 2020</strong></p>
@@ -247,7 +248,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </ul>
 <p><strong>What happened?</strong></p>
 <ul>
-<li>A facial recognition system matched his driver’s licence photo to grainy surveillance footage, and was <span class="alert">wrong</span></li>
+<li>Facial recognition matched grainy shop footage to his licence photo, and was <span class="alert">wrong</span></li>
 <li>Robert is Black. Research shows facial recognition has <span class="alert">higher error rates</span> for darker-skinned faces</li>
 </ul>
 <p><span class="alert">This was how the system was built</span></p>
@@ -314,7 +315,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <tr class="odd">
 <td><strong>Historical</strong></td>
 <td>Past inequalities</td>
-<td>Less data on minorities</td>
+<td>Redlining-era loan data</td>
 </tr>
 </tbody>
 </table>
@@ -340,7 +341,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </section>
 <section id="the-mirror-problem-ai-reflects-us" class="slide level2">
 <h2>The mirror problem: AI reflects us</h2>
-<div style="margin-top: 30px; font-size: 21px;">
+<div style="margin-top: 30px; font-size: 23px;">
 <div class="columns">
 <div class="column" style="width:55%;">
 <blockquote>
@@ -353,7 +354,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </ul>
 <p><strong>Example: Word embeddings</strong></p>
 <ul>
-<li>“Man” is to “Doctor” as “Woman” is to… “Nurse”</li>
+<li>“Homemaker” and “nurse” sit closest to “she”; “captain” and “architect” lean “he”</li>
 <li>The AI picked up <span class="alert">our own sexism</span> from <span class="alert">millions of human texts</span></li>
 </ul>
 </div><div class="column" style="width:45%;">
@@ -379,7 +380,6 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <div style="margin-top: 30px; font-size: 20px;">
 <div class="columns">
 <div class="column" style="width:50%;">
-<p><strong>The scenario:</strong></p>
 <p>You’re applying to university. Choose who evaluates your application:</p>
 <p><strong>Option A: A human admissions officer</strong></p>
 <ul>
@@ -473,7 +473,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <li>2018: <a href="https://www.reuters.com/article/world/insight-amazon-scraps-secret-ai-recruiting-tool-that-showed-bias-against-women-idUSKCN1MK0AG/">Amazon’s hiring AI penalised women</a></li>
 <li>2019: <a href="https://www.scientificamerican.com/article/racial-bias-found-in-a-major-health-care-risk-algorithm/">Healthcare algorithm deprioritised Black patients</a></li>
 <li>2020: <a href="https://www.npr.org/2020/06/24/882683463/the-computer-got-it-wrong-how-facial-recognition-led-to-a-false-arrest-in-michig">Robert Williams arrested due to facial recognition</a></li>
-<li>2023: <a href="https://www.osc.ny.gov/press/releases/2025/12/dinapoli-new-yorkers-deserve-transparent-hiring-process-when-artificial-intelligence-used-vet-their">NYC passes AI hiring audit law</a></li>
+<li>2023: <a href="https://www.osc.ny.gov/press/releases/2025/12/dinapoli-new-yorkers-deserve-transparent-hiring-process-when-artificial-intelligence-used-vet-their">NYC starts enforcing AI hiring audit law</a></li>
 <li>2024: <a href="https://artificialintelligenceact.eu/article/6/">EU AI Act classifies high-risk AI systems</a></li>
 </ul>
 </div>
@@ -542,20 +542,20 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </div>
 </div>
 </section>
-<section id="historical-bias-the-past-baked-in" class="slide level2">
-<h2>Historical bias: the past baked in</h2>
-<div style="margin-top: 30px; font-size: 21px;">
+<section id="historical-bias-the-past-repeats-itself" class="slide level2">
+<h2>Historical bias: the past repeats itself</h2>
+<div style="margin-top: 30px; font-size: 22px;">
 <div class="columns">
 <div class="column" style="width:55%;">
 <p><span class="alert">Past discrimination</span> baked into the training data, even when the data accurately reflects the world at the time</p>
 <p><strong>The Amazon hiring case (2018):</strong></p>
 <ul>
-<li>Amazon built an AI to screen CVs, trained on <span class="alert">10 years of past hiring</span> decisions</li>
-<li>That hiring was male-dominated</li>
-<li>The AI learned to <span class="alert">penalise CVs mentioning “women’s”</span>: “women’s chess club captain” and all-women’s college both downgraded</li>
+<li>Amazon built an AI to screen CVs, trained on <span class="alert">10 years of CVs</span> sent to the company</li>
+<li>Most came from men, as in the tech industry as a whole</li>
+<li>The AI <span class="alert">penalised “women’s”</span> (“women’s chess club captain”) and two all-women’s colleges</li>
 <li>Amazon scrapped the tool</li>
 </ul>
-<p>The data was accurate: it reflected Amazon’s real hiring. That hiring was biased.</p>
+<p>The data was accurate: it reflected a male-dominated industry. That industry was biased.</p>
 </div><div class="column" style="width:45%;">
 <div style="text-align: center;">
 <div class="quarto-figure quarto-figure-center">
@@ -578,17 +578,16 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <h2>Representation bias: who’s missing?</h2>
 <div style="margin-top: 30px; font-size: 22px;">
 <div class="columns">
-<div class="column" style="width:55%;">
+<div class="column" style="width:62%;">
 <p>When a group is <span class="alert">underrepresented</span> in training data, the model performs poorly for them</p>
 <p><strong>Example: Voice assistants</strong></p>
 <ul>
-<li>Trained mostly on American and British accents, male voices (often tech employees), and native speakers</li>
+<li>Trained mostly on American and British accents, male voices and native speakers</li>
 <li>Result: <span class="alert">higher error rates</span> for:
 <ul>
-<li>Non-native English speakers</li>
-<li>Regional accents (Scottish, Indian, Nigerian)</li>
-<li>Women’s voices in some systems</li>
-<li>Children and elderly users</li>
+<li>Black speakers: 35% of words wrong vs 19% for white speakers (<a href="https://www.pnas.org/doi/10.1073/pnas.1915768117">Koenecke et al., 2020</a>)</li>
+<li>Non-native speakers; Scottish, Indian, Nigerian accents</li>
+<li>Women (in some systems), children and older users</li>
 </ul></li>
 </ul>
 <p><strong>Why?</strong></p>
@@ -596,11 +595,11 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <li>Whoever collects the data determines <span class="alert">who’s in it</span>, and developers sample themselves</li>
 <li>“Edge cases” are actually <span class="alert">most of the world</span></li>
 </ul>
-</div><div class="column" style="width:45%;">
+</div><div class="column" style="width:38%;">
 <div style="text-align: center;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><a href="#/" data-modal-type="image" data-modal-url="figures/voice-bias.png"><img data-src="figures/voice-bias.png" style="width:70.0%"></a></p>
+<p><a href="#/" data-modal-type="image" data-modal-url="figures/voice-bias.png"><img data-src="figures/voice-bias.png" style="width:85.0%"></a></p>
 <figcaption>Voice recognition bias</figcaption>
 </figure>
 </div>
@@ -609,15 +608,15 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </div></div>
 </div>
 </section>
-<section id="measurement-bias-proxies-gone-wrong" class="slide level2">
-<h2>Measurement bias: proxies gone wrong</h2>
+<section id="measurement-bias-bad-proxies" class="slide level2">
+<h2>Measurement bias: bad proxies</h2>
 <div style="margin-top: 30px; font-size: 21px;">
 <div class="columns">
 <div class="column" style="width:55%;">
 <p>A <span class="alert">measurable proxy</span> stands in for what you care about, but doesn’t work equally for everyone</p>
 <p><strong>Example: ZIP code as a credit proxy</strong></p>
 <ul>
-<li>Banks can’t legally use race in loan decisions, but they can use <span class="alert">ZIP codes</span></li>
+<li>Banks can’t use race in loan decisions, but <span class="alert">ZIP codes</span> can stand in for it</li>
 <li>Housing discrimination makes ZIP codes correlate strongly with race</li>
 <li>Result: a “race-neutral” variable that encodes race</li>
 </ul>
@@ -671,7 +670,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </section>
 <section id="aggregation-bias-one-size-doesnt-fit-all" class="slide level2">
 <h2>Aggregation bias: one size doesn’t fit all</h2>
-<div style="margin-top: 30px; font-size: 20px;">
+<div style="margin-top: 30px; font-size: 22px;">
 <div class="columns">
 <div class="column" style="width:55%;">
 <p>Treating <span class="alert">diverse populations as if they’re all the same</span>, when the underlying relationships differ across groups</p>
@@ -758,7 +757,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </section>
 <section id="deployment-bias-wrong-context" class="slide level2">
 <h2>Deployment bias: wrong context</h2>
-<div style="margin-top: 30px; font-size: 20px;">
+<div style="margin-top: 30px; font-size: 22px;">
 <div class="columns">
 <div class="column" style="width:55%;">
 <p>A model works fine where it was built but fails in a <span class="alert">different context</span></p>
@@ -768,11 +767,11 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <li>Banking systems, income patterns and credit histories all differ</li>
 <li>Result: <span class="alert">inappropriate decisions</span> for the new context</li>
 </ul>
-<p><strong>Example: COVID-19 detection</strong></p>
+<p><strong>Example: COVID-19 triage</strong></p>
 <ul>
-<li>Models trained on hospital data from one region, deployed in others</li>
-<li>X-ray machines, demographics and disease prevalence all differed</li>
-<li>Performance <span class="alert">dropped significantly</span></li>
+<li>Models trained on UK hospital blood tests and vital signs, then used in Vietnam</li>
+<li>Patients, recording practices and disease prevalence all differed</li>
+<li>Accuracy fell to <span class="alert">near coin-flip level</span></li>
 </ul>
 </div><div class="column" style="width:45%;">
 <div style="text-align: center;">
@@ -793,12 +792,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <section id="bias-through-the-ai-lifecycle" class="slide level2">
 <h2>Bias through the AI lifecycle</h2>
 <div style="margin-top: 30px; font-size: 22px; text-align: center;">
-<div class="quarto-figure quarto-figure-center">
-<figure>
 <p><a href="#/" data-modal-type="image" data-modal-url="figures/bias-lifecycle.png"><img data-src="figures/bias-lifecycle.png" style="width:100.0%"></a></p>
-<figcaption>Bias through the AI lifecycle</figcaption>
-</figure>
-</div>
 <p>Bias can appear at <span class="alert">every stage</span></p>
 </div>
 </section>
@@ -806,28 +800,26 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <h2>Feedback loops: bias that amplifies itself</h2>
 <div style="margin-top: 30px; font-size: 22px;">
 <div class="columns">
-<div class="column" style="width:55%;">
-<p><strong>What is a feedback loop?</strong></p>
-<p>An algorithm’s <span class="alert">predictions influence the data</span> it will be trained on in future</p>
+<div class="column" style="width:58%;">
+<p>A feedback loop: an algorithm’s <span class="alert">predictions shape the data</span> it is later trained on</p>
 <p><strong>Example: predictive policing</strong></p>
 <ol type="1">
 <li>Algorithm predicts hotspots from <span class="alert">past arrest data</span></li>
 <li>Police patrol those areas more heavily</li>
 <li>More patrols → more arrests (whatever the real crime rate)</li>
 <li>New arrest data confirms the predictions</li>
-<li>Algorithm grows <span class="alert">more confident</span> in biased patterns</li>
-<li>Cycle continues…</li>
+<li>The algorithm grows <span class="alert">more confident</span>; the cycle repeats</li>
 </ol>
 <p><strong>Why this is dangerous:</strong></p>
 <ul>
 <li>The algorithm creates evidence for its own predictions, so bias <span class="alert">compounds over time</span></li>
 <li>After a few cycles, nobody can tell what the real crime rate was</li>
 </ul>
-</div><div class="column" style="width:45%;">
+</div><div class="column" style="width:42%;">
 <div style="text-align: center;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><a href="#/" data-modal-type="image" data-modal-url="figures/feedback-loop.png"><img data-src="figures/feedback-loop.png" style="width:100.0%"></a></p>
+<p><a href="#/" data-modal-type="image" data-modal-url="figures/feedback-loop.png"><img data-src="figures/feedback-loop.png" style="width:72.0%"></a></p>
 <figcaption>Feedback loop: hot-spots policing</figcaption>
 </figure>
 </div>
@@ -837,7 +829,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <p><strong>Other feedback loops:</strong></p>
 <ul>
 <li>Loan denials → worse credit → more denials</li>
-<li>Resume filters → homogeneous workforce → more biased training data</li>
+<li>CV filters → homogeneous workforce → more biased data</li>
 </ul>
 </div>
 </div></div>
@@ -906,10 +898,10 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </div>
 </section>
 <section id="who-defines-fair" class="slide level2">
-<h2>Who defines “fair”? 🤔</h2>
+<h2>Who defines “fair”?</h2>
 <div style="margin-top: 30px; font-size: 30px; text-align: center;">
 <p><strong>What counts as fair depends on what you value:</strong></p>
-<div style="margin-top: 40px;">
+<div style="margin-top: 40px; margin-bottom: 40px; font-size: 32px;">
 <table class="caption-top">
 <thead>
 <tr class="header">
@@ -943,7 +935,6 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </table>
 </div>
 <div style="margin-top: 40px;">
-<p><strong>The problem:</strong></p>
 <ul>
 <li>There is <span class="alert">no neutral default</span></li>
 <li>Whoever picks the fairness definition <span class="alert">shapes who benefits</span></li>
@@ -952,30 +943,30 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </div>
 </div>
 </section>
-<section id="fairness-tradeoffs-uncomfortable-choices" class="slide level2">
-<h2>Fairness tradeoffs: uncomfortable choices</h2>
+<section id="fairness-tradeoffs" class="slide level2 scrollable">
+<h2>Fairness tradeoffs</h2>
 <div style="margin-top: 30px; font-size: 25px;">
 <div class="columns">
 <div class="column" style="width:55%;">
-<p><strong>1. Accuracy vs fairness</strong></p>
+<ol type="1">
+<li><span class="alert">Accuracy vs fairness</span>
 <ul>
 <li>Equal accuracy across groups may cost overall accuracy. Who pays?</li>
-</ul>
-<p><strong>2. Individual vs group fairness</strong></p>
+</ul></li>
+<li><span class="alert">Individual vs group fairness</span>
 <ul>
 <li>Identical treatment can produce unequal group outcomes</li>
 <li>Equal group treatment can disadvantage qualified individuals</li>
-</ul>
-<p><strong>3. Transparency vs gaming</strong></p>
+</ul></li>
+<li><span class="alert">Transparency vs gaming</span>
 <ul>
-<li>Revealing how the algorithm works lets people game it</li>
-<li>Keeping it secret prevents accountability</li>
-</ul>
-<p><strong>4. Short term vs long term</strong></p>
+<li>Reveal the algorithm and people game it; hide it and no one is accountable</li>
+</ul></li>
+<li><span class="alert">Short term vs long term</span>
 <ul>
-<li>Current data perpetuates historical inequalities</li>
-<li>Ignoring it may reduce accuracy today</li>
-</ul>
+<li>Current data repeats past inequality; correcting for it may cost accuracy today</li>
+</ul></li>
+</ol>
 </div><div class="column" style="width:45%;">
 <div style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; margin-top: 30px; font-size: 24px;">
 <p><strong>Different stakeholders want different things:</strong></p>
@@ -987,47 +978,6 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </ul>
 <p>Who gets to decide which tradeoff to make?</p>
 </div>
-</div></div>
-</div>
-</section>
-<section id="activity-make-the-tradeoff" class="slide level2 scrollable">
-<h2>Activity: make the tradeoff! ⚖️</h2>
-<div style="margin-top: 30px; font-size: 21px;">
-<div class="columns">
-<div class="column" style="width:50%;">
-<p><strong>You’re designing a loan approval algorithm</strong></p>
-<p><strong>The data shows:</strong></p>
-<ul>
-<li>Group A: 80% repay loans</li>
-<li>Group B: 60% repay (historical economic disadvantage)</li>
-</ul>
-<p><strong>Choose ONE approach:</strong></p>
-<ol type="1">
-<li><strong>Same threshold for all</strong>: approve at 70% predicted repayment
-<ul>
-<li>More Group B rejected</li>
-</ul></li>
-<li><strong>Equal approval rates</strong>: 50% approval in both groups
-<ul>
-<li>More defaults, higher risk</li>
-</ul></li>
-<li><strong>Equal false rejection rates</strong>: same % of good borrowers rejected in each group
-<ul>
-<li>Different approval rates</li>
-</ul></li>
-</ol>
-</div><div class="column" style="width:50%;">
-<p><strong>Questions to discuss:</strong></p>
-<ul>
-<li>Which approach is “fairest”?</li>
-<li>Who benefits and who is harmed by each?</li>
-<li>Should the algorithm <span class="alert">correct</span> historical injustice, or just not <span class="alert">perpetuate</span> it?</li>
-</ul>
-<div style="margin-top: 20px; background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px;">
-<p><strong>Vote with your class!</strong></p>
-<p>Which approach would you choose and why?</p>
-</div>
-<p>⏱️ 3 minutes to debate!</p>
 </div></div>
 </div>
 </section>
@@ -1072,7 +1022,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </section>
 <section id="main-takeaways" class="slide level2">
 <h2>Main takeaways</h2>
-<div style="margin-top: 30px; font-size: 35px;">
+<div style="margin-top: 30px; font-size: 30px;">
 <ul>
 <li><p>AI learns from human data, so it <span class="alert">inherits human biases</span></p></li>
 <li><p><span class="alert">Historical bias</span> bakes past discrimination into models</p></li>

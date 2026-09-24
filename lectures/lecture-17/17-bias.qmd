@@ -52,7 +52,7 @@ if (!require("fontawesome", character.only = TRUE)) {
 ## Recap of last class
 ### From setup to bias
 
-:::{style="margin-top: 20px; font-size: 23px;"}
+:::{style="margin-top: 20px; font-size: 25px;"}
 :::{.columns}
 :::{.column width=50%}
 - Last time: the four [layers of context]{.alert}: instructions, knowledge, memory, tools
@@ -91,14 +91,15 @@ Source: [Anthropic](https://code.claude.com/docs/en/memory)
 - Historical bias: the past baked in
 - Representation bias: who's missing?
 - Measurement bias: bad proxies
-- Aggregation and evaluation bias
+- Aggregation, evaluation and deployment bias
 :::
 
 :::{.column width=50%}
 **Part 3: Applying the framework**
 
-- Activity: Spot the bias!
-- Where bias shows up (preview)
+- Bias through the AI lifecycle
+- Feedback loops: bias that amplifies itself
+- Activity: spot the bias!
 
 **Part 4: The hard questions**
 
@@ -128,7 +129,7 @@ Source: [Anthropic](https://code.claude.com/docs/en/memory)
 ## Cortical Labs
 
 :::{style="text-align: center; margin-top: 30px; font-size: 20px;"}
-[![](figures/cortical-labs.png){width="80%"}](#){data-modal-type="image" data-modal-url="figures/cortical-labs.png"}
+[![](figures/cortical-labs.png){width="76%"}](#){data-modal-type="image" data-modal-url="figures/cortical-labs.png"}
 
 Source: [Cortical Labs](https://corticallabs.com/)
 :::
@@ -137,7 +138,7 @@ Source: [Cortical Labs](https://corticallabs.com/)
 
 ## A story to start with
 
-:::{style="margin-top: 30px; font-size: 23px;"}
+:::{style="margin-top: 30px; font-size: 25px;"}
 :::{.columns}
 :::{.column width=55%}
 **Robert Julian-Borchak Williams, Detroit, 2020**
@@ -147,7 +148,7 @@ Source: [Cortical Labs](https://corticallabs.com/)
 
 **What happened?**
 
-- A facial recognition system matched his driver's licence photo to grainy surveillance footage, and was [wrong]{.alert}
+- Facial recognition matched grainy shop footage to his licence photo, and was [wrong]{.alert}
 - Robert is Black. Research shows facial recognition has [higher error rates]{.alert} for darker-skinned faces
 
 [This was how the system was built]{.alert}
@@ -180,7 +181,7 @@ Source: [ACLU](https://www.aclumich.org/news/i-was-wrongfully-arrested-because-f
 | **Cognitive** | Mental shortcuts | Confirmation bias |
 | **Cultural** | Learned assumptions | "Doctors are male" |
 | **Algorithmic** | Systematic unfairness | Different error rates by group |
-| **Historical** | Past inequalities | Less data on minorities |
+| **Historical** | Past inequalities | Redlining-era loan data |
 
 **In AI, bias typically means:**
 
@@ -203,7 +204,7 @@ Source: [National Institute of Standards and Technology](https://www.nist.gov/ne
 
 ## The mirror problem: AI reflects us
 
-:::{style="margin-top: 30px; font-size: 21px;"}
+:::{style="margin-top: 30px; font-size: 23px;"}
 :::{.columns}
 :::{.column width=55%}
 > Is AI biased, or is it just [showing us what we already are]{.alert}?
@@ -214,7 +215,7 @@ Source: [National Institute of Standards and Technology](https://www.nist.gov/ne
 
 **Example: Word embeddings**
 
-- "Man" is to "Doctor" as "Woman" is to... "Nurse"
+- "Homemaker" and "nurse" sit closest to "she"; "captain" and "architect" lean "he"
 - The AI picked up [our own sexism]{.alert} from [millions of human texts]{.alert}
 :::
 
@@ -239,8 +240,6 @@ If the bias comes from us, does that make AI less accountable, or more?
 :::{style="margin-top: 30px; font-size: 20px;"}
 :::{.columns}
 :::{.column width=50%}
-**The scenario:**
-
 You're applying to university. Choose who evaluates your application:
 
 **Option A: A human admissions officer**
@@ -308,7 +307,7 @@ Neither option is safe. Which [risk]{.alert} would you rather take, and what doe
 - 2018: [Amazon's hiring AI penalised women](https://www.reuters.com/article/world/insight-amazon-scraps-secret-ai-recruiting-tool-that-showed-bias-against-women-idUSKCN1MK0AG/)
 - 2019: [Healthcare algorithm deprioritised Black patients](https://www.scientificamerican.com/article/racial-bias-found-in-a-major-health-care-risk-algorithm/)
 - 2020: [Robert Williams arrested due to facial recognition](https://www.npr.org/2020/06/24/882683463/the-computer-got-it-wrong-how-facial-recognition-led-to-a-false-arrest-in-michig)
-- 2023: [NYC passes AI hiring audit law](https://www.osc.ny.gov/press/releases/2025/12/dinapoli-new-yorkers-deserve-transparent-hiring-process-when-artificial-intelligence-used-vet-their)
+- 2023: [NYC starts enforcing AI hiring audit law](https://www.osc.ny.gov/press/releases/2025/12/dinapoli-new-yorkers-deserve-transparent-hiring-process-when-artificial-intelligence-used-vet-their)
 - 2024: [EU AI Act classifies high-risk AI systems](https://artificialintelligenceact.eu/article/6/)
 :::
 :::
@@ -338,21 +337,21 @@ Data collection → Data labelling → Model training → Model evaluation → D
 :::
 :::
 
-## Historical bias: the past baked in
+## Historical bias: the past repeats itself
 
-:::{style="margin-top: 30px; font-size: 21px;"}
+:::{style="margin-top: 30px; font-size: 22px;"}
 :::{.columns}
 :::{.column width=55%}
 [Past discrimination]{.alert} baked into the training data, even when the data accurately reflects the world at the time
 
 **The Amazon hiring case (2018):**
 
-- Amazon built an AI to screen CVs, trained on [10 years of past hiring]{.alert} decisions
-- That hiring was male-dominated
-- The AI learned to [penalise CVs mentioning "women's"]{.alert}: "women's chess club captain" and all-women's college both downgraded
+- Amazon built an AI to screen CVs, trained on [10 years of CVs]{.alert} sent to the company
+- Most came from men, as in the tech industry as a whole
+- The AI [penalised "women's"]{.alert} ("women's chess club captain") and two all-women's colleges
 - Amazon scrapped the tool
 
-The data was accurate: it reflected Amazon's real hiring. That hiring was biased.
+The data was accurate: it reflected a male-dominated industry. That industry was biased.
 :::
 
 :::{.column width=45%}
@@ -375,17 +374,16 @@ Accurate data ≠ fair data
 
 :::{style="margin-top: 30px; font-size: 22px;"}
 :::{.columns}
-:::{.column width=55%}
+:::{.column width=62%}
 When a group is [underrepresented]{.alert} in training data, the model performs poorly for them
 
 **Example: Voice assistants**
 
-- Trained mostly on American and British accents, male voices (often tech employees), and native speakers
+- Trained mostly on American and British accents, male voices and native speakers
 - Result: [higher error rates]{.alert} for:
-  - Non-native English speakers
-  - Regional accents (Scottish, Indian, Nigerian)
-  - Women's voices in some systems
-  - Children and elderly users
+  - Black speakers: 35% of words wrong vs 19% for white speakers ([Koenecke et al., 2020](https://www.pnas.org/doi/10.1073/pnas.1915768117))
+  - Non-native speakers; Scottish, Indian, Nigerian accents
+  - Women (in some systems), children and older users
 
 **Why?**
 
@@ -393,9 +391,9 @@ When a group is [underrepresented]{.alert} in training data, the model performs 
 - "Edge cases" are actually [most of the world]{.alert}
 :::
 
-:::{.column width=45%}
+:::{.column width=38%}
 :::{style="text-align: center;"}
-[![Voice recognition bias](figures/voice-bias.png){width="70%"}](#){data-modal-type="image" data-modal-url="figures/voice-bias.png"}
+[![Voice recognition bias](figures/voice-bias.png){width="85%"}](#){data-modal-type="image" data-modal-url="figures/voice-bias.png"}
 
 Source: [Axios](https://www.axios.com/2025/11/22/ai-accents-chatgpt-jobs-health)
 :::
@@ -403,7 +401,7 @@ Source: [Axios](https://www.axios.com/2025/11/22/ai-accents-chatgpt-jobs-health)
 :::
 :::
 
-## Measurement bias: proxies gone wrong
+## Measurement bias: bad proxies
 
 :::{style="margin-top: 30px; font-size: 21px;"}
 :::{.columns}
@@ -412,7 +410,7 @@ A [measurable proxy]{.alert} stands in for what you care about, but doesn't work
 
 **Example: ZIP code as a credit proxy**
 
-- Banks can't legally use race in loan decisions, but they can use [ZIP codes]{.alert}
+- Banks can't use race in loan decisions, but [ZIP codes]{.alert} can stand in for it
 - Housing discrimination makes ZIP codes correlate strongly with race
 - Result: a "race-neutral" variable that encodes race
 
@@ -442,7 +440,7 @@ Remove race from the data and the model can still be racially biased: the proxie
 
 ## Aggregation bias: one size doesn't fit all
 
-:::{style="margin-top: 30px; font-size: 20px;"}
+:::{style="margin-top: 30px; font-size: 22px;"}
 :::{.columns}
 :::{.column width=55%}
 Treating [diverse populations as if they're all the same]{.alert}, when the underlying relationships differ across groups
@@ -511,7 +509,7 @@ High scores on a biased benchmark just mean the model is good at being biased.
 
 ## Deployment bias: wrong context
 
-:::{style="margin-top: 30px; font-size: 20px;"}
+:::{style="margin-top: 30px; font-size: 22px;"}
 :::{.columns}
 :::{.column width=55%}
 A model works fine where it was built but fails in a [different context]{.alert}
@@ -522,11 +520,11 @@ A model works fine where it was built but fails in a [different context]{.alert}
 - Banking systems, income patterns and credit histories all differ
 - Result: [inappropriate decisions]{.alert} for the new context
 
-**Example: COVID-19 detection**
+**Example: COVID-19 triage**
 
-- Models trained on hospital data from one region, deployed in others
-- X-ray machines, demographics and disease prevalence all differed
-- Performance [dropped significantly]{.alert}
+- Models trained on UK hospital blood tests and vital signs, then used in Vietnam
+- Patients, recording practices and disease prevalence all differed
+- Accuracy fell to [near coin-flip level]{.alert}
 :::
 
 :::{.column width=45%}
@@ -546,7 +544,7 @@ A model trained in one context can fail quietly when moved to another.
 ## Bias through the AI lifecycle
 
 :::{style="margin-top: 30px; font-size: 22px; text-align: center;"}
-[![Bias through the AI lifecycle](figures/bias-lifecycle.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/bias-lifecycle.png"}
+[![](figures/bias-lifecycle.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/bias-lifecycle.png"}
 
 Bias can appear at [every stage]{.alert}
 :::
@@ -555,10 +553,8 @@ Bias can appear at [every stage]{.alert}
 
 :::{style="margin-top: 30px; font-size: 22px;"}
 :::{.columns}
-:::{.column width=55%}
-**What is a feedback loop?**
-
-An algorithm's [predictions influence the data]{.alert} it will be trained on in future
+:::{.column width=58%}
+A feedback loop: an algorithm's [predictions shape the data]{.alert} it is later trained on
 
 **Example: predictive policing**
 
@@ -566,8 +562,7 @@ An algorithm's [predictions influence the data]{.alert} it will be trained on in
 2. Police patrol those areas more heavily
 3. More patrols → more arrests (whatever the real crime rate)
 4. New arrest data confirms the predictions
-5. Algorithm grows [more confident]{.alert} in biased patterns
-6. Cycle continues...
+5. The algorithm grows [more confident]{.alert}; the cycle repeats
 
 **Why this is dangerous:**
 
@@ -575,9 +570,9 @@ An algorithm's [predictions influence the data]{.alert} it will be trained on in
 - After a few cycles, nobody can tell what the real crime rate was
 :::
 
-:::{.column width=45%}
+:::{.column width=42%}
 :::{style="text-align: center;"}
-[![Feedback loop: hot-spots policing](figures/feedback-loop.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/feedback-loop.png"}
+[![Feedback loop: hot-spots policing](figures/feedback-loop.png){width="72%"}](#){data-modal-type="image" data-modal-url="figures/feedback-loop.png"}
 
 Source: [SpotCrime](https://blog.spotcrime.com/2011/06/savanna-ga-heat-map.html)
 :::
@@ -586,7 +581,7 @@ Source: [SpotCrime](https://blog.spotcrime.com/2011/06/savanna-ga-heat-map.html)
 **Other feedback loops:**
 
 - Loan denials → worse credit → more denials
-- Resume filters → homogeneous workforce → more biased training data
+- CV filters → homogeneous workforce → more biased data
 :::
 :::
 :::
@@ -655,12 +650,12 @@ No algorithm can tell you which errors matter more. That is a [political and mor
 :::
 :::
 
-## Who defines "fair"? 🤔
+## Who defines "fair"?
 
 :::{style="margin-top: 30px; font-size: 30px; text-align: center;"}
 **What counts as fair depends on what you value:**
 
-:::{style="margin-top: 40px;"}
+:::{style="margin-top: 40px; margin-bottom: 40px; font-size: 32px;"}
 | Definition | Prioritises | Drawback |
 |------------|-------------|----------|
 | **Equal treatment** | Consistency | Ignores context |
@@ -670,7 +665,6 @@ No algorithm can tell you which errors matter more. That is a [political and mor
 :::
 
 :::{style="margin-top: 40px;"}
-**The problem:**
 
 - There is [no neutral default]{.alert}
 - Whoever picks the fairness definition [shapes who benefits]{.alert}
@@ -678,29 +672,20 @@ No algorithm can tell you which errors matter more. That is a [political and mor
 :::
 :::
 
-## Fairness tradeoffs: uncomfortable choices
+## Fairness tradeoffs
 
 :::{style="margin-top: 30px; font-size: 25px;"}
 :::{.columns}
 :::{.column width=55%}
-**1. Accuracy vs fairness**
-
-- Equal accuracy across groups may cost overall accuracy. Who pays?
-
-**2. Individual vs group fairness**
-
-- Identical treatment can produce unequal group outcomes
-- Equal group treatment can disadvantage qualified individuals
-
-**3. Transparency vs gaming**
-
-- Revealing how the algorithm works lets people game it
-- Keeping it secret prevents accountability
-
-**4. Short term vs long term**
-
-- Current data perpetuates historical inequalities
-- Ignoring it may reduce accuracy today
+1. [Accuracy vs fairness]{.alert}
+   - Equal accuracy across groups may cost overall accuracy. Who pays?
+2. [Individual vs group fairness]{.alert}
+   - Identical treatment can produce unequal group outcomes
+   - Equal group treatment can disadvantage qualified individuals
+3. [Transparency vs gaming]{.alert}
+   - Reveal the algorithm and people game it; hide it and no one is accountable
+4. [Short term vs long term]{.alert}
+   - Current data repeats past inequality; correcting for it may cost accuracy today
 :::
 
 :::{.column width=45%}
@@ -714,48 +699,6 @@ No algorithm can tell you which errors matter more. That is a [political and mor
 
 Who gets to decide which tradeoff to make?
 :::
-:::
-:::
-:::
-
-## Activity: make the tradeoff! ⚖️
-
-:::{style="margin-top: 30px; font-size: 21px;"}
-:::{.columns}
-:::{.column width=50%}
-**You're designing a loan approval algorithm**
-
-**The data shows:**
-
-- Group A: 80% repay loans
-- Group B: 60% repay (historical economic disadvantage)
-
-**Choose ONE approach:**
-
-1. **Same threshold for all**: approve at 70% predicted repayment
-   - More Group B rejected
-
-2. **Equal approval rates**: 50% approval in both groups
-   - More defaults, higher risk
-
-3. **Equal false rejection rates**: same % of good borrowers rejected in each group
-   - Different approval rates
-:::
-
-:::{.column width=50%}
-**Questions to discuss:**
-
-- Which approach is "fairest"?
-- Who benefits and who is harmed by each?
-- Should the algorithm [correct]{.alert} historical injustice, or just not [perpetuate]{.alert} it?
-
-:::{style="margin-top: 20px; background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px;"}
-**Vote with your class!**
-
-Which approach would you choose and why?
-:::
-
-⏱️ 3 minutes to debate!
 :::
 :::
 :::
@@ -795,7 +738,7 @@ Which approach would you choose and why?
 
 ## Main takeaways
 
-:::{style="margin-top: 30px; font-size: 35px;"}
+:::{style="margin-top: 30px; font-size: 30px;"}
 
 - AI learns from human data, so it [inherits human biases]{.alert}
 

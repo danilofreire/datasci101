@@ -4470,7 +4470,7 @@
     "href": "lectures/lecture-17/17-bias.html#lecture-overview",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Lecture overview",
-    "text": "Lecture overview\nToday’s agenda\n\n\n\nPart 1: The big picture\n\nWhat is bias? (It’s complicated!)\nThe mirror problem: AI reflects us\nReal-world harms: who gets hurt?\n\nPart 2: Types of bias\n\nHistorical bias: the past baked in\nRepresentation bias: who’s missing?\nMeasurement bias: bad proxies\nAggregation and evaluation bias\n\n\nPart 3: Applying the framework\n\nActivity: Spot the bias!\nWhere bias shows up (preview)\n\nPart 4: The hard questions\n\nThe impossibility theorem: can we be fair?\nFairness tradeoffs: uncomfortable choices\nIs AI bias fixable?"
+    "text": "Lecture overview\nToday’s agenda\n\n\n\nPart 1: The big picture\n\nWhat is bias? (It’s complicated!)\nThe mirror problem: AI reflects us\nReal-world harms: who gets hurt?\n\nPart 2: Types of bias\n\nHistorical bias: the past baked in\nRepresentation bias: who’s missing?\nMeasurement bias: bad proxies\nAggregation, evaluation and deployment bias\n\n\nPart 3: Applying the framework\n\nBias through the AI lifecycle\nFeedback loops: bias that amplifies itself\nActivity: spot the bias!\n\nPart 4: The hard questions\n\nThe impossibility theorem: can we be fair?\nFairness tradeoffs: uncomfortable choices\nIs AI bias fixable?"
   },
   {
     "objectID": "lectures/lecture-17/17-bias.html#neural-network-of-the-day",
@@ -4491,35 +4491,35 @@
     "href": "lectures/lecture-17/17-bias.html#a-story-to-start-with",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "A story to start with",
-    "text": "A story to start with\n\n\n\nRobert Julian-Borchak Williams, Detroit, 2020\n\nArrested in front of his family, accused of stealing watches\nHeld for 30 hours in jail, then released: wrong person\n\nWhat happened?\n\nA facial recognition system matched his driver’s licence photo to grainy surveillance footage, and was wrong\nRobert is Black. Research shows facial recognition has higher error rates for darker-skinned faces\n\nThis was how the system was built\n\n\n\n\n\nRobert Williams case\n\n\n\nSource: ACLU"
+    "text": "A story to start with\n\n\n\nRobert Julian-Borchak Williams, Detroit, 2020\n\nArrested in front of his family, accused of stealing watches\nHeld for 30 hours in jail, then released: wrong person\n\nWhat happened?\n\nFacial recognition matched grainy shop footage to his licence photo, and was wrong\nRobert is Black. Research shows facial recognition has higher error rates for darker-skinned faces\n\nThis was how the system was built\n\n\n\n\n\nRobert Williams case\n\n\n\nSource: ACLU"
   },
   {
     "objectID": "lectures/lecture-17/17-bias.html#defining-bias-its-complicated",
     "href": "lectures/lecture-17/17-bias.html#defining-bias-its-complicated",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Defining bias: it’s complicated",
-    "text": "Defining bias: it’s complicated\n\n\n\n“Bias” means different things:\n\n\n\n\n\n\n\n\nContext\nMeaning\nExample\n\n\n\n\nStatistical\nSystematic deviation\nBiased estimator under/overestimates\n\n\nCognitive\nMental shortcuts\nConfirmation bias\n\n\nCultural\nLearned assumptions\n“Doctors are male”\n\n\nAlgorithmic\nSystematic unfairness\nDifferent error rates by group\n\n\nHistorical\nPast inequalities\nLess data on minorities\n\n\n\nIn AI, bias typically means:\n\nA system that produces systematically unfair outcomes for certain groups of people.\n\nBut who defines “unfair”? That’s the hard part.\n\n\n\n\n\nTypes of bias\n\n\n\nSource: National Institute of Standards and Technology"
+    "text": "Defining bias: it’s complicated\n\n\n\n“Bias” means different things:\n\n\n\n\n\n\n\n\nContext\nMeaning\nExample\n\n\n\n\nStatistical\nSystematic deviation\nBiased estimator under/overestimates\n\n\nCognitive\nMental shortcuts\nConfirmation bias\n\n\nCultural\nLearned assumptions\n“Doctors are male”\n\n\nAlgorithmic\nSystematic unfairness\nDifferent error rates by group\n\n\nHistorical\nPast inequalities\nRedlining-era loan data\n\n\n\nIn AI, bias typically means:\n\nA system that produces systematically unfair outcomes for certain groups of people.\n\nBut who defines “unfair”? That’s the hard part.\n\n\n\n\n\nTypes of bias\n\n\n\nSource: National Institute of Standards and Technology"
   },
   {
     "objectID": "lectures/lecture-17/17-bias.html#the-mirror-problem-ai-reflects-us",
     "href": "lectures/lecture-17/17-bias.html#the-mirror-problem-ai-reflects-us",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "The mirror problem: AI reflects us",
-    "text": "The mirror problem: AI reflects us\n\n\n\n\nIs AI biased, or is it just showing us what we already are?\n\n\nAI learns from human-generated data, which contains historical discrimination\nIf humans made biased decisions, AI learns those patterns\nAI then amplifies those biases at scale\n\nExample: Word embeddings\n\n“Man” is to “Doctor” as “Woman” is to… “Nurse”\nThe AI picked up our own sexism from millions of human texts\n\n\n\n\n\n\nAI trained on human data inherits human biases\n\n\n\nSource: UNESCO\n\n\n\nIf the bias comes from us, does that make AI less accountable, or more?"
+    "text": "The mirror problem: AI reflects us\n\n\n\n\nIs AI biased, or is it just showing us what we already are?\n\n\nAI learns from human-generated data, which contains historical discrimination\nIf humans made biased decisions, AI learns those patterns\nAI then amplifies those biases at scale\n\nExample: Word embeddings\n\n“Homemaker” and “nurse” sit closest to “she”; “captain” and “architect” lean “he”\nThe AI picked up our own sexism from millions of human texts\n\n\n\n\n\n\nAI trained on human data inherits human biases\n\n\n\nSource: UNESCO\n\n\n\nIf the bias comes from us, does that make AI less accountable, or more?"
   },
   {
     "objectID": "lectures/lecture-17/17-bias.html#discussion-pick-your-risk",
     "href": "lectures/lecture-17/17-bias.html#discussion-pick-your-risk",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Discussion: pick your risk",
-    "text": "Discussion: pick your risk\n\n\n\nThe scenario:\nYou’re applying to university. Choose who evaluates your application:\nOption A: A human admissions officer\n\nMight favour applicants who remind them of themselves\nCould be swayed by mood, time of day, or fatigue\nYou can appeal and read social cues\nBias is inconsistent and unpredictable\n\nOption B: An AI admissions tool\n\nMight penalise your ZIP code, name, or school\nApplies the same criteria to everyone, every time\nYou cannot argue with it or explain context\nBias is systematic and invisible\n\n\n\nWhich do you choose, and why?\nThink about:\n\nDoes it matter that you can’t argue with an algorithm?\nIs consistent bias fairer than unpredictable bias?\nWould your answer change if you knew which group the bias disadvantaged?\nWhat would you want to know before choosing?\n\n\n\nNeither option is safe. Which risk would you rather take, and what does that say about what we value?\n\n⏱️ 2 minutes"
+    "text": "Discussion: pick your risk\n\n\n\nYou’re applying to university. Choose who evaluates your application:\nOption A: A human admissions officer\n\nMight favour applicants who remind them of themselves\nCould be swayed by mood, time of day, or fatigue\nYou can appeal and read social cues\nBias is inconsistent and unpredictable\n\nOption B: An AI admissions tool\n\nMight penalise your ZIP code, name, or school\nApplies the same criteria to everyone, every time\nYou cannot argue with it or explain context\nBias is systematic and invisible\n\n\n\nWhich do you choose, and why?\nThink about:\n\nDoes it matter that you can’t argue with an algorithm?\nIs consistent bias fairer than unpredictable bias?\nWould your answer change if you knew which group the bias disadvantaged?\nWhat would you want to know before choosing?\n\n\n\nNeither option is safe. Which risk would you rather take, and what does that say about what we value?\n\n⏱️ 2 minutes"
   },
   {
     "objectID": "lectures/lecture-17/17-bias.html#why-this-matters",
     "href": "lectures/lecture-17/17-bias.html#why-this-matters",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Why this matters",
-    "text": "Why this matters\n\n\n\nAI systems are making decisions about:\n\n\n\n\n\n\n\n\nDomain\nDecision\nAffected\n\n\n\n\nEmployment\nWho gets hired, promoted, fired\nMillions of applicants\n\n\nFinance\nWho gets loans, credit, insurance\nBillions globally\n\n\nHealthcare\nWho gets treatment, care priority\nLife and death\n\n\nCriminal justice\nBail, sentencing, parole\nFreedom and families\n\n\nEducation\nAdmissions, resources, grading\nFuture opportunities\n\n\n\nThe scale problem:\n\nAlgorithms decide faster than humans can review\nOne biased system can affect millions of people\nErrors compound: a bad decision today feeds worse data into tomorrow’s model\n\n\n\nA few real cases:\n\n2018: Amazon’s hiring AI penalised women\n2019: Healthcare algorithm deprioritised Black patients\n2020: Robert Williams arrested due to facial recognition\n2023: NYC passes AI hiring audit law\n2024: EU AI Act classifies high-risk AI systems"
+    "text": "Why this matters\n\n\n\nAI systems are making decisions about:\n\n\n\n\n\n\n\n\nDomain\nDecision\nAffected\n\n\n\n\nEmployment\nWho gets hired, promoted, fired\nMillions of applicants\n\n\nFinance\nWho gets loans, credit, insurance\nBillions globally\n\n\nHealthcare\nWho gets treatment, care priority\nLife and death\n\n\nCriminal justice\nBail, sentencing, parole\nFreedom and families\n\n\nEducation\nAdmissions, resources, grading\nFuture opportunities\n\n\n\nThe scale problem:\n\nAlgorithms decide faster than humans can review\nOne biased system can affect millions of people\nErrors compound: a bad decision today feeds worse data into tomorrow’s model\n\n\n\nA few real cases:\n\n2018: Amazon’s hiring AI penalised women\n2019: Healthcare algorithm deprioritised Black patients\n2020: Robert Williams arrested due to facial recognition\n2023: NYC starts enforcing AI hiring audit law\n2024: EU AI Act classifies high-risk AI systems"
   },
   {
     "objectID": "lectures/lecture-17/17-bias.html#a-taxonomy-of-bias",
@@ -4540,7 +4540,7 @@
     "href": "lectures/lecture-17/17-bias.html#representation-bias-whos-missing",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Representation bias: who’s missing?",
-    "text": "Representation bias: who’s missing?\n\n\n\nWhen a group is underrepresented in training data, the model performs poorly for them\nExample: Voice assistants\n\nTrained mostly on American and British accents, male voices (often tech employees), and native speakers\nResult: higher error rates for:\n\nNon-native English speakers\nRegional accents (Scottish, Indian, Nigerian)\nWomen’s voices in some systems\nChildren and elderly users\n\n\nWhy?\n\nWhoever collects the data determines who’s in it, and developers sample themselves\n“Edge cases” are actually most of the world\n\n\n\n\n\n\nVoice recognition bias\n\n\nSource: Axios"
+    "text": "Representation bias: who’s missing?\n\n\n\nWhen a group is underrepresented in training data, the model performs poorly for them\nExample: Voice assistants\n\nTrained mostly on American and British accents, male voices and native speakers\nResult: higher error rates for:\n\nBlack speakers: 35% of words wrong vs 19% for white speakers (Koenecke et al., 2020)\nNon-native speakers; Scottish, Indian, Nigerian accents\nWomen (in some systems), children and older users\n\n\nWhy?\n\nWhoever collects the data determines who’s in it, and developers sample themselves\n“Edge cases” are actually most of the world\n\n\n\n\n\n\nVoice recognition bias\n\n\nSource: Axios"
   },
   {
     "objectID": "lectures/lecture-17/17-bias.html#measurement-bias-proxies-gone-wrong",
@@ -4568,21 +4568,21 @@
     "href": "lectures/lecture-17/17-bias.html#deployment-bias-wrong-context",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Deployment bias: wrong context",
-    "text": "Deployment bias: wrong context\n\n\n\nA model works fine where it was built but fails in a different context\nExample: US model in India\n\nCredit scoring model trained on US financial data, deployed in India for loan applications\nBanking systems, income patterns and credit histories all differ\nResult: inappropriate decisions for the new context\n\nExample: COVID-19 detection\n\nModels trained on hospital data from one region, deployed in others\nX-ray machines, demographics and disease prevalence all differed\nPerformance dropped significantly\n\n\n\n\n\n\nDeployment bias\n\n\nSource: Yang et al (2024)\n\n\nA model trained in one context can fail quietly when moved to another."
+    "text": "Deployment bias: wrong context\n\n\n\nA model works fine where it was built but fails in a different context\nExample: US model in India\n\nCredit scoring model trained on US financial data, deployed in India for loan applications\nBanking systems, income patterns and credit histories all differ\nResult: inappropriate decisions for the new context\n\nExample: COVID-19 triage\n\nModels trained on UK hospital blood tests and vital signs, then used in Vietnam\nPatients, recording practices and disease prevalence all differed\nAccuracy fell to near coin-flip level\n\n\n\n\n\n\nDeployment bias\n\n\nSource: Yang et al (2024)\n\n\nA model trained in one context can fail quietly when moved to another."
   },
   {
     "objectID": "lectures/lecture-17/17-bias.html#bias-through-the-ai-lifecycle",
     "href": "lectures/lecture-17/17-bias.html#bias-through-the-ai-lifecycle",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Bias through the AI lifecycle",
-    "text": "Bias through the AI lifecycle\n\n\n\n\nBias through the AI lifecycle\n\n\nBias can appear at every stage"
+    "text": "Bias through the AI lifecycle\n\n\nBias can appear at every stage"
   },
   {
     "objectID": "lectures/lecture-17/17-bias.html#feedback-loops-bias-that-amplifies-itself",
     "href": "lectures/lecture-17/17-bias.html#feedback-loops-bias-that-amplifies-itself",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Feedback loops: bias that amplifies itself",
-    "text": "Feedback loops: bias that amplifies itself\n\n\n\nWhat is a feedback loop?\nAn algorithm’s predictions influence the data it will be trained on in future\nExample: predictive policing\n\nAlgorithm predicts hotspots from past arrest data\nPolice patrol those areas more heavily\nMore patrols → more arrests (whatever the real crime rate)\nNew arrest data confirms the predictions\nAlgorithm grows more confident in biased patterns\nCycle continues…\n\nWhy this is dangerous:\n\nThe algorithm creates evidence for its own predictions, so bias compounds over time\nAfter a few cycles, nobody can tell what the real crime rate was\n\n\n\n\n\n\nFeedback loop: hot-spots policing\n\n\nSource: SpotCrime\n\n\nOther feedback loops:\n\nLoan denials → worse credit → more denials\nResume filters → homogeneous workforce → more biased training data"
+    "text": "Feedback loops: bias that amplifies itself\n\n\n\nA feedback loop: an algorithm’s predictions shape the data it is later trained on\nExample: predictive policing\n\nAlgorithm predicts hotspots from past arrest data\nPolice patrol those areas more heavily\nMore patrols → more arrests (whatever the real crime rate)\nNew arrest data confirms the predictions\nThe algorithm grows more confident; the cycle repeats\n\nWhy this is dangerous:\n\nThe algorithm creates evidence for its own predictions, so bias compounds over time\nAfter a few cycles, nobody can tell what the real crime rate was\n\n\n\n\n\n\nFeedback loop: hot-spots policing\n\n\nSource: SpotCrime\n\n\nOther feedback loops:\n\nLoan denials → worse credit → more denials\nCV filters → homogeneous workforce → more biased data"
   },
   {
     "objectID": "lectures/lecture-17/17-bias.html#activity-spot-the-bias",
@@ -4602,8 +4602,8 @@
     "objectID": "lectures/lecture-17/17-bias.html#who-defines-fair",
     "href": "lectures/lecture-17/17-bias.html#who-defines-fair",
     "title": "DATASCI 101: Introduction to AI Applications",
-    "section": "Who defines “fair”? 🤔",
-    "text": "Who defines “fair”? 🤔\n\nWhat counts as fair depends on what you value:\n\n\n\n\nDefinition\nPrioritises\nDrawback\n\n\n\n\nEqual treatment\nConsistency\nIgnores context\n\n\nEqual outcomes\nEquity\nMay require discrimination\n\n\nEqual error rates\nGroup parity\nMay sacrifice accuracy\n\n\nCalibration\nIndividual accuracy\nHides disparity\n\n\n\n\n\nThe problem:\n\nThere is no neutral default\nWhoever picks the fairness definition shapes who benefits\nSaying “we just use the data” is itself a choice"
+    "section": "Who defines “fair”?",
+    "text": "Who defines “fair”?\n\nWhat counts as fair depends on what you value:\n\n\n\n\nDefinition\nPrioritises\nDrawback\n\n\n\n\nEqual treatment\nConsistency\nIgnores context\n\n\nEqual outcomes\nEquity\nMay require discrimination\n\n\nEqual error rates\nGroup parity\nMay sacrifice accuracy\n\n\nCalibration\nIndividual accuracy\nHides disparity\n\n\n\n\n\n\nThere is no neutral default\nWhoever picks the fairness definition shapes who benefits\nSaying “we just use the data” is itself a choice"
   },
   {
     "objectID": "lectures/lecture-17/17-bias.html#fairness-tradeoffs-uncomfortable-choices",
@@ -4982,5 +4982,26 @@
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "More on orchestrators",
     "text": "More on orchestrators\n\n\n\nFive patterns, from fixed to flexible (Anthropic, 2024):\n\nPrompt chaining: each step feeds the next\nRouting: each input goes to the right specialist\nParallelisation: run parts at once, or run the same task several times and vote\nOrchestrator-workers: a central model “dynamically breaks down tasks, delegates them to worker LLMs, and synthesizes their results”\nEvaluator-optimiser: one model drafts, another critiques\n\nEvery worker task needs (Anthropic, 2025): an objective, an output format, the tools and sources to use, and clear boundaries. Without them, “agents duplicate work, leave gaps, or fail to find necessary information”\n\nHow many workers? (Anthropic’s research agent)\n\n\n\nTask\nTeam\n\n\n\n\nSimple fact-finding\n1 agent, 3–10 tool calls\n\n\nDirect comparison\n2–4 workers, 10–15 calls each\n\n\nComplex research\n10+ workers\n\n\n\nCost: a single agent uses ~4× the tokens of a chat; a team ~15×\nSaved workers: in Claude Code, each subagent is a file in .claude/agents/ with its own context window (docs). It needs installed software, so it is not on the quiz"
+  },
+  {
+    "objectID": "lectures/lecture-17/17-bias.html#historical-bias-the-past-repeats-itself",
+    "href": "lectures/lecture-17/17-bias.html#historical-bias-the-past-repeats-itself",
+    "title": "DATASCI 101: Introduction to AI Applications",
+    "section": "Historical bias: the past repeats itself",
+    "text": "Historical bias: the past repeats itself\n\n\n\nPast discrimination baked into the training data, even when the data accurately reflects the world at the time\nThe Amazon hiring case (2018):\n\nAmazon built an AI to screen CVs, trained on 10 years of CVs sent to the company\nMost came from men, as in the tech industry as a whole\nThe AI penalised “women’s” (“women’s chess club captain”) and two all-women’s colleges\nAmazon scrapped the tool\n\nThe data was accurate: it reflected a male-dominated industry. That industry was biased.\n\n\n\n\n\nAmazon hiring AI\n\n\n\nSource: Reuters\n\n\n\nAccurate data ≠ fair data"
+  },
+  {
+    "objectID": "lectures/lecture-17/17-bias.html#measurement-bias-bad-proxies",
+    "href": "lectures/lecture-17/17-bias.html#measurement-bias-bad-proxies",
+    "title": "DATASCI 101: Introduction to AI Applications",
+    "section": "Measurement bias: bad proxies",
+    "text": "Measurement bias: bad proxies\n\n\n\nA measurable proxy stands in for what you care about, but doesn’t work equally for everyone\nExample: ZIP code as a credit proxy\n\nBanks can’t use race in loan decisions, but ZIP codes can stand in for it\nHousing discrimination makes ZIP codes correlate strongly with race\nResult: a “race-neutral” variable that encodes race\n\nOther problematic proxies:\n\n\n\nWhat we want\nProxy used\nProblem\n\n\n\n\nIntelligence\nStandardised tests\nReflects access to prep\n\n\nJob quality\nTenure\nPenalises caregivers\n\n\nCreditworthiness\nPayment history\nAssumes equal opportunity\n\n\nHealth needs\nPast spending\nReflects access barriers\n\n\n\n\n\n\n\n\nMeasurement bias\n\n\nSource: Harvard Law Review\n\n\nRemove race from the data and the model can still be racially biased: the proxies do the work instead."
+  },
+  {
+    "objectID": "lectures/lecture-17/17-bias.html#fairness-tradeoffs",
+    "href": "lectures/lecture-17/17-bias.html#fairness-tradeoffs",
+    "title": "DATASCI 101: Introduction to AI Applications",
+    "section": "Fairness tradeoffs",
+    "text": "Fairness tradeoffs\n\n\n\n\nAccuracy vs fairness\n\nEqual accuracy across groups may cost overall accuracy. Who pays?\n\nIndividual vs group fairness\n\nIdentical treatment can produce unequal group outcomes\nEqual group treatment can disadvantage qualified individuals\n\nTransparency vs gaming\n\nReveal the algorithm and people game it; hide it and no one is accountable\n\nShort term vs long term\n\nCurrent data repeats past inequality; correcting for it may cost accuracy today\n\n\n\n\nDifferent stakeholders want different things:\n\nAffected communities: equalise outcomes\nCompanies: maximise accuracy\nRegulators: ensure process fairness\nCourts: protect individual rights\n\nWho gets to decide which tradeoff to make?"
   }
 ]

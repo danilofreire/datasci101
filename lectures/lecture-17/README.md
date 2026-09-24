@@ -13,16 +13,19 @@ This lecture provides a deep, critical exploration of AI bias for undergraduate 
 ### 2. Types of Bias
 
 * **Historical bias**: Past discrimination encoded in training data (Amazon hiring)
-* **Representation bias**: Underrepresented groups have higher error rates (facial recognition)
-* **Measurement bias**: Proxies that don't work equally (healthcare costs for need)
+* **Representation bias**: Underrepresented groups have higher error rates (voice assistants)
+* **Measurement bias**: Proxies that don't work equally (ZIP codes, healthcare costs for need)
 * **Aggregation bias**: One-size-fits-all models fail diverse populations
+* **Evaluation bias**: Benchmarks that miss the people the model will serve (ImageNet)
+* **Deployment bias**: Models that fail in a new context (a UK COVID-19 model used in Vietnam)
+* **Feedback loops**: Predictions shape the next round of training data (predictive policing)
 
 ### 3. Case Studies
 
-* **Hiring**: LLMs favour white male-associated names; Amazon penalised women
-* **Facial analysis**: 43x error rate difference between light-skinned men and dark-skinned women
-* **Criminal justice (COMPAS)**: Black defendants twice as likely to be falsely flagged high-risk
-* **Healthcare**: Algorithms miss sick Black patients, AI fails on darker skin tones
+* **Policing**: Robert Williams, wrongly arrested in Detroit in 2020 after a facial recognition match
+* **Hiring**: Amazon's CV screener penalised women; NYC now requires bias audits of hiring AI
+* **Healthcare**: An algorithm used past spending as a proxy for need and deprioritised Black patients
+* **Speech**: Speech recognition gets 35% of words wrong for Black speakers vs 19% for white speakers
 
 ### 4. The Hard Questions
 
