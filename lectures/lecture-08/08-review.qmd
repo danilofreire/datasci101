@@ -108,8 +108,8 @@ Source: <https://xkcd.com/2228/>
 
 :::{style="margin-top: 40px; font-size: 30px;"}
 - Let's pick someone new!
-- [What does it mean to "label" a dataset, and why is it usually the most
-  expensive step?]{.alert}
+- [What does it mean to "label" a dataset, and why is it often one of the most
+  expensive steps?]{.alert}
 - Room poll: [is the label easy, hard, or contested?]{.alert}
   - "Is this email spam?"
   - "Is this tweet toxic?"
@@ -160,7 +160,7 @@ Source: <https://xkcd.com/2228/>
   - The other explains [embeddings]{.alert}
 - Then I pick two pairs to share
 - Rapid-fire:
-  - Why does ChatGPT charge by the [token]{.alert} and not by the word?
+  - Why does OpenAI's API charge by the [token]{.alert} and not by the word?
   - Why does the [order]{.alert} of words matter, even after embedding?
   - What is a [context window]{.alert}, and why does it cost so much to make it
     bigger?
@@ -181,7 +181,7 @@ Source: <https://xkcd.com/2228/>
 ## The setup
 
 :::{style="margin-top: 20px; font-size: 27px;"}
-A startup, [HealthScribe]{.alert}, sells an AI tool to hospitals. The tool
+A fictional startup, [ClinicNote]{.alert}, sells an AI tool to hospitals. The tool
 listens to doctor-patient conversations and writes the clinical note.
 
 - The model is a [fine-tuned LLM]{.alert}
@@ -189,7 +189,7 @@ listens to doctor-patient conversations and writes the clinical note.
   - All from [one hospital network]{.alert} in California
   - Collected between [2019 and 2024]{.alert}
 - The labels are the [final clinical notes]{.alert} doctors wrote and signed off
-- HealthScribe reports [92% agreement]{.alert} with doctor-written notes on a
+- ClinicNote reports [92% agreement]{.alert} with doctor-written notes on a
   held-out test set
 - They now sell the product to hospitals across the country
 :::
@@ -209,7 +209,7 @@ listens to doctor-patient conversations and writes the clinical note.
 ## Question B
 
 :::{style="margin-top: 30px; font-size: 28px;"}
-- HealthScribe reports [92% agreement with doctor-written notes]{.alert}
+- ClinicNote reports [92% agreement with doctor-written notes]{.alert}
 - The doctor writes something wrong and the model copies it.
   [What does it score?]{.alert}
 - Is the [8%]{.alert} spread evenly across patients?
@@ -220,7 +220,7 @@ listens to doctor-patient conversations and writes the clinical note.
 ## Question C
 
 :::{style="margin-top: 30px; font-size: 28px;"}
-- Your hospital is considering buying HealthScribe
+- Your hospital is considering buying ClinicNote
 - The room votes by show of hands:
   - [Yes, buy it]{.alert}
   - [No, do not buy it]{.alert}
@@ -246,7 +246,7 @@ listens to doctor-patient conversations and writes the clinical note.
 :::{style="margin-top: 20px; font-size: 26px;"}
 Lecture 06 said a model never sees words, only [tokens]{.alert}.
 
-Someone asks a model how many times the letter [r]{.alert} appears in
+Someone asks an older model how many times the letter [r]{.alert} appears in
 "strawberry". It answers two. They then ask it to spell "strawberry" one
 letter at a time, and it does so perfectly.
 

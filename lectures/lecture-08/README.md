@@ -6,14 +6,14 @@ This session prepares students for Quiz 01, which covers Lectures 01 to 07. Inst
 
 ### 1. Quiz logistics
 
-- **Format**: 5 short essay questions plus one bonus, 50 minutes, in class on 24 September.
+- **Format**: 4 short essay questions plus one bonus, 50 minutes, in class on 24 September.
 - **Open book**: laptops, notes, slides, web search, and AI tools are allowed if you disclose which you used.
 - **What is graded**: your reasoning and judgement, not the polish of an AI's prose.
 - **Coverage**: Lectures 01 to 07.
 
 ### 2. Rapid recap of seven concepts
 
-- **Hallucination**: fluent, confident output not grounded in the training data or the prompt.
+- **Hallucination**: fluent, confident output that is factually wrong or made up.
 - **Datasets and labels**: where the labels come from, and who decides what counts as correct.
 - **Learning paradigms**: supervised, unsupervised, and reinforcement learning.
 - **Precision and recall**: which errors a metric hides, and which one a given application should favour.
@@ -23,10 +23,9 @@ This session prepares students for Quiz 01, which covers Lectures 01 to 07. Inst
 
 ### 3. One realistic scenario
 
-- A hospital deployment case, broken down together in four steps.
+- A hospital deployment case, broken down together in three steps.
 - **The dataset**: what it contains, and what it leaves out.
 - **The metric**: which one matches the decision being made.
-- **Precision and recall**: the cost of each error type for patients.
 - **The deployment decision**: whether the evidence supports going live.
 
 ### 4. Practice and open questions

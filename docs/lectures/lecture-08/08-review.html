@@ -231,7 +231,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <div style="margin-top: 40px; font-size: 30px;">
 <ul>
 <li>Let’s pick someone new!</li>
-<li><span class="alert">What does it mean to “label” a dataset, and why is it usually the most expensive step?</span></li>
+<li><span class="alert">What does it mean to “label” a dataset, and why is it often one of the most expensive steps?</span></li>
 <li>Room poll: <span class="alert">is the label easy, hard, or contested?</span>
 <ul>
 <li>“Is this email spam?”</li>
@@ -298,7 +298,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <li>Then I pick two pairs to share</li>
 <li>Rapid-fire:
 <ul>
-<li>Why does ChatGPT charge by the <span class="alert">token</span> and not by the word?</li>
+<li>Why does OpenAI’s API charge by the <span class="alert">token</span> and not by the word?</li>
 <li>Why does the <span class="alert">order</span> of words matter, even after embedding?</li>
 <li>What is a <span class="alert">context window</span>, and why does it cost so much to make it bigger?</li>
 </ul></li>
@@ -325,7 +325,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <section id="the-setup" class="slide level2">
 <h2>The setup</h2>
 <div style="margin-top: 20px; font-size: 27px;">
-<p>A startup, <span class="alert">HealthScribe</span>, sells an AI tool to hospitals. The tool listens to doctor-patient conversations and writes the clinical note.</p>
+<p>A fictional startup, <span class="alert">ClinicNote</span>, sells an AI tool to hospitals. The tool listens to doctor-patient conversations and writes the clinical note.</p>
 <ul>
 <li>The model is a <span class="alert">fine-tuned LLM</span></li>
 <li>Training data: 80,000 doctor-patient transcripts
@@ -334,7 +334,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <li>Collected between <span class="alert">2019 and 2024</span></li>
 </ul></li>
 <li>The labels are the <span class="alert">final clinical notes</span> doctors wrote and signed off</li>
-<li>HealthScribe reports <span class="alert">92% agreement</span> with doctor-written notes on a held-out test set</li>
+<li>ClinicNote reports <span class="alert">92% agreement</span> with doctor-written notes on a held-out test set</li>
 <li>They now sell the product to hospitals across the country</li>
 </ul>
 </div>
@@ -358,7 +358,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <h2>Question B</h2>
 <div style="margin-top: 30px; font-size: 28px;">
 <ul>
-<li>HealthScribe reports <span class="alert">92% agreement with doctor-written notes</span></li>
+<li>ClinicNote reports <span class="alert">92% agreement with doctor-written notes</span></li>
 <li>The doctor writes something wrong and the model copies it. <span class="alert">What does it score?</span></li>
 <li>Is the <span class="alert">8%</span> spread evenly across patients?</li>
 <li>The same doctor writes that note again a week later. <span class="alert">Do the two versions agree 100%?</span></li>
@@ -369,7 +369,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <h2>Question C</h2>
 <div style="margin-top: 30px; font-size: 28px;">
 <ul>
-<li>Your hospital is considering buying HealthScribe</li>
+<li>Your hospital is considering buying ClinicNote</li>
 <li>The room votes by show of hands:
 <ul>
 <li><span class="alert">Yes, buy it</span></li>
@@ -402,7 +402,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <h2>Practice question 1</h2>
 <div style="margin-top: 20px; font-size: 26px;">
 <p>Lecture 06 said a model never sees words, only <span class="alert">tokens</span>.</p>
-<p>Someone asks a model how many times the letter <span class="alert">r</span> appears in “strawberry”. It answers two. They then ask it to spell “strawberry” one letter at a time, and it does so perfectly.</p>
+<p>Someone asks an older model how many times the letter <span class="alert">r</span> appears in “strawberry”. It answers two. They then ask it to spell “strawberry” one letter at a time, and it does so perfectly.</p>
 <p><span class="alert">Your task:</span></p>
 <ol type="1">
 <li>One answer is wrong, one is right. Explain how both come out of the <span class="alert">same machinery</span></li>
