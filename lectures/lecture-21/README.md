@@ -12,19 +12,19 @@ This lecture examines what AI means for jobs and the economy, combining historic
 
 ### 2. Current evidence
 
-* **Usage patterns**: Most AI use is learning and personal projects, not work-related. Adoption is slower than headlines suggest.
+* **Usage patterns**: 73% of ChatGPT messages are not work-related (June 2025); practical guidance, information and writing lead.
 * **Productivity effects**: Early studies show gains, particularly for novice workers, but these are task-specific and short-term.
-* **Job market signals**: Graduate hiring is down significantly, especially in tech and professional services. Companies cite AI as a factor.
+* **Job market signals**: 22-25 year-olds in AI-exposed jobs are 19% below less-exposed peers (Brynjolfsson et al., 2026), yet careful aggregate estimates find no effect on earnings or hours.
 
 ### 3. Economic scenarios
 
 * **Optimistic view**: Augmentation creates more productive workers; new tasks and jobs emerge; historical pattern continues.
 * **Pessimistic view**: Displacement outpaces job creation; middle-skill jobs hollowed out; gains go to capital not labour.
-* **Expert consensus**: Wide uncertainty; transition will be rough; inequality likely to increase; policy matters enormously.
+* **Expert views**: Wide uncertainty; most economists are unsure whether AI will raise inequality or unemployment, and policy can steer AI toward augmentation.
 
 ### 4. Career implications
 
-* **Valuable skills**: Human-centric skills (relationships, persuasion), metacognitive skills (knowing when to use AI), domain expertise and judgment.
+* **Valuable skills**: Human-centric skills (relationships, emotional intelligence), metacognitive skills (knowing when to use AI), domain expertise and judgment.
 * **Adaptation strategy**: Be AI-literate, develop complementary skills, stay adaptable, focus on learning how to learn.
 * **The graduate market**: Competition intense, traditional paths narrowing, demonstrated AI competence and applied projects increasingly important.
 

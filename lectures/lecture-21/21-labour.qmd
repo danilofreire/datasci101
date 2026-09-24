@@ -51,12 +51,12 @@ if (!require("fontawesome", character.only = TRUE)) {
 
 ## Recap of last class
 
-:::{style="margin-top: 20px; font-size: 24px;"}
+:::{style="margin-top: 50px; font-size: 25px;"}
 :::{.columns}
 :::{.column width=50%}
-- AI challenges [privacy and data protection]{.alert}: collection at scale plus [inference of sensitive data]{.alert}
+- AI strains [privacy]{.alert}: collection at scale plus [inference of sensitive data]{.alert}
 - [GDPR]{.alert} (EU): rights of access, erasure, portability
-- US: [patchwork of sectoral laws]{.alert} (healthcare, finance) and state laws (CCPA in California)
+- US: [patchwork of sectoral laws]{.alert} (healthcare, finance) plus 23 state privacy laws
 - [Differential privacy, federated learning, synthetic data]{.alert} help, but have trade-offs
 - [Collection is the core problem]{.alert}: the same data enables benefits and surveillance
 - Today: [what does AI mean for jobs and the economy?]{.alert}
@@ -131,7 +131,7 @@ Source: [r/ProgrammerHumor](https://www.reddit.com/r/ProgrammerHumor/comments/11
 | 1930s | Mechanisation | [Keynes: "technological unemployment"](http://www.econ.yale.edu/smith/econ116a/keynes1.pdf) | [Post-war prosperity](https://www.project-syndicate.org/commentary/what-keynes-famous-1930-essay-got-right-and-wrong-by-kaushik-basu-2024-02) |
 | 1960s | Mainframes | [JFK warns of job losses](https://www.jfklibrary.org/archives/other-resources/john-f-kennedy-speeches/grand-rapids-mi-19600607) | [Service sector expansion](https://conversableeconomist.com/2014/12/01/automation-and-job-loss-the-fears-of-1964/) |
 | 1990s | Personal computers | [End of clerical work](https://www.technologyreview.com/2024/01/27/1087041/technological-unemployment-elon-musk-jobs-ai/) | [New jobs created](https://www.aeaweb.org/articles?id=10.1257/jep.33.2.3) |
-| 2010s | Robots | [Manufacturing decline](https://news.mit.edu/2020/how-many-jobs-robots-replace-0504) | [Mixed results](https://www.nber.org/papers/w23285) |
+| 2010s | Robots | [Manufacturing decline](https://news.mit.edu/2020/how-many-jobs-robots-replace-0504) | [Local job and wage losses](https://www.nber.org/papers/w23285) |
 
 **The pattern so far:**
 
@@ -223,7 +223,7 @@ AI will change work. Everyone agrees on that much. The real unknowns are [how fa
 - The lawyer doesn't disappear, but firms hire fewer of them. [What happens to the rest?]{.alert}
 
 :::{style="text-align: center;"}
-[![](figures/economist-ai-labour.png){width="70%"}](#){data-modal-type="image" data-modal-url="figures/economist-ai-labour.png"}
+[![](figures/economist-ai-labour.png){width="55%"}](#){data-modal-type="image" data-modal-url="figures/economist-ai-labour.png"}
 
 Source: [The Economist](https://www.economist.com/finance-and-economics/2025/05/26/why-ai-hasnt-taken-your-job)
 :::
@@ -293,7 +293,7 @@ Sources: [Frey & Osborne (2017)](https://www.oxfordmartin.ox.ac.uk/publications/
 
 - Only [27% of use is work-related]{.alert}, 73% is personal
 - Writing's share fell as people found other uses
-- Technical help moved to coding tools (Copilot, Codex) outside ChatGPT
+- Technical help may have moved to coding tools (Copilot, Codex)
 :::
 
 :::{.column width=45%}
@@ -313,7 +313,7 @@ Source: [OpenAI (2025)](https://openai.com/index/how-people-are-using-chatgpt/)
 :::{.column width=55%}
 **Studies finding positive effects:**
 
-- **Customer service [(Brynjolfsson et al., 2025)](https://academic.oup.com/qje/article/140/2/889/7990658)**: 14% productivity increase, biggest gains for [novice workers]{.alert}
+- **Customer service [(Brynjolfsson et al., 2025)](https://academic.oup.com/qje/article/140/2/889/7990658)**: 15% productivity increase, biggest gains for [novice workers]{.alert}
 - **Programmers [(GitHub, 2022)](https://github.blog/news-insights/research/research-quantifying-github-copilots-impact-on-developer-productivity-and-happiness/)**: 55% faster task completion with Copilot
 - **Consultants [(BCG study, 2023)](https://www.bcg.com/publications/2023/how-people-create-and-destroy-value-with-gen-ai)**: 40% better performance on applicable tasks
 - **Writers [(Noy & Zhang, 2023)](https://www.science.org/doi/10.1126/science.adh2586)**: 40% faster, 18% better quality
@@ -350,11 +350,11 @@ Source: [Boston Consulting Group (2023)](https://www.bcg.com/publications/2023/h
 **What the data shows (2024-2026):**
 
 - [Entry-level job postings down]{.alert} significantly ([Rest of World](https://restofworld.org/2025/engineering-graduates-ai-job-losses/); [IEEE Spectrum](https://spectrum.ieee.org/ai-effect-entry-level-jobs))
-- [Brynjolfsson et al. (2025)](https://digitaleconomy.stanford.edu/publication/canaries-in-the-coal-mine-six-facts-about-the-recent-employment-effects-of-artificial-intelligence/): [13% employment decline]{.alert} for workers aged 22-25 in AI-exposed jobs (mainly in tech, finance, consulting)
+- [Brynjolfsson et al. (2026)](https://digitaleconomy.stanford.edu/publication/canaries-in-the-coal-mine-six-facts-about-the-recent-employment-effects-of-artificial-intelligence/): 22-25 year-olds in AI-exposed jobs are [19% below]{.alert} less-exposed peers
 
 **[Financial Times reporting (2026)](https://www.ft.com/content/c89496b1-bc8d-425e-b86b-ec89402410e4):**
 
-- Graduate hiring at lowest level in a decade
+- UK graduate vacancies at a 10-year low
 - Tech companies leading the pullback
 - Law and consulting firms reducing trainee intakes
 
@@ -394,7 +394,7 @@ This matters for you personally: if companies replace junior roles with AI, [whe
 - [Slower hiring]{.alert} rather than mass firing
 - Some sectors growing, others shrinking
 - Geographic concentration of effects
-- Rising inequality
+- [Young workers]{.alert} hit first; experienced workers show no gap
 
 **Why the disconnect?**
 
@@ -428,7 +428,7 @@ Source: [The Economist](https://www.economist.com/business/2025/12/14/job-apocal
 - Adopters do save time, around 3% of hours
 
 :::{style="text-align: center;"}
-[![](figures/humlum-did.png){width="72%"}](#){data-modal-type="image" data-modal-url="figures/humlum-did.png"}
+[![](figures/humlum-did.png){width="62%"}](#){data-modal-type="image" data-modal-url="figures/humlum-did.png"}
 
 Source: [Humlum & Vestergaard (2026)](https://www.nber.org/papers/w33777)
 :::
@@ -438,11 +438,11 @@ Source: [Humlum & Vestergaard (2026)](https://www.nber.org/papers/w33777)
 **[Yale Budget Lab tracker](https://budgetlab.yale.edu/research/tracking-impact-ai-labor-market):**
 
 - Share of US workers in low, middle and high AI-exposure occupations
-- Monthly CPS data, updated to July 2026
+- Monthly CPS data, updated to August 2026
 - The three lines are [flat since 2023]{.alert}
 
 :::{style="text-align: center;"}
-[![](figures/budgetlab-exposure.png){width="72%"}](#){data-modal-type="image" data-modal-url="figures/budgetlab-exposure.png"}
+[![](figures/budgetlab-exposure.png){width="62%"}](#){data-modal-type="image" data-modal-url="figures/budgetlab-exposure.png"}
 
 Source: [The Budget Lab at Yale (2026)](https://budgetlab.yale.edu/research/tracking-impact-ai-labor-market)
 :::
@@ -528,23 +528,21 @@ Source: [Fortune](https://fortune.com/2025/09/06/godfather-of-ai-geoffrey-hinton
 :::{style="margin-top: 30px; font-size: 19px;"}
 :::{.columns}
 :::{.column width=55%}
-**Survey results [(IGM Forum, 2024)](https://www.igmchicago.org/surveys/inequality-and-ai/):**
+**Economist polls ([Clark Center, 2023](https://kentclarkcenter.org/surveys/ai-and-the-labor-market/) and [2026](https://kentclarkcenter.org/surveys/ai-work-and-education/)):**
 
-- Large majority: AI will [significantly change]{.alert} labour markets, direction uncertain
-- Most expect [some job displacement]{.alert}, but not mass unemployment
-- Strong agreement: [inequality likely to increase]{.alert}
+- Most are [uncertain]{.alert} whether AI will raise inequality (10 agree, 19 uncertain, 3 disagree)
+- Few expect a [big rise in unemployment]{.alert} (5 agree, 25 uncertain, 11 disagree)
+- Most expect [less certain returns]{.alert} to education (27 of 41 agree)
 
-**[Acemoglu (2025)](https://economics.mit.edu/sites/default/files/2024-04/The%20Simple%20Macroeconomics%20of%20AI.pdf) framework:**
+**MIT economists:**
 
-- AI can [augment]{.alert} workers or [replace]{.alert} them by automating their tasks
-- Current AI is [biased toward replacement]{.alert}
-- Policy could shift it toward augmentation
+- [Acemoglu (2025)](https://economics.mit.edu/sites/default/files/2024-04/The%20Simple%20Macroeconomics%20of%20AI.pdf): AI adds at most [~0.7% to productivity]{.alert} over 10 years
+- [Acemoglu, Autor & Johnson (2023)](https://shapingwork.mit.edu/research/can-we-have-pro-worker-ai/): AI can [augment]{.alert} or [replace]{.alert} workers; today it leans to replacement, and policy could shift it
 
-**[Jones (2026)](https://web.stanford.edu/~chadj/AIandEconomicFuture.pdf) summary:**
+**[Jones (2026)](https://web.stanford.edu/~chadj/AIandEconomicFuture.pdf), now at Anthropic:**
 
-- Historical precedent supports optimism
-- But [speed and scope]{.alert} are unprecedented
-- Transition will be [rough]{.alert} even if outcome is good
+- The economy is only as fast as its [weakest links]{.alert}: tasks AI cannot yet do
+- Big gains may take [decades]{.alert}, which gives workers time to adjust
 :::
 
 :::{.column width=45%}
@@ -674,7 +672,7 @@ The irony: ["soft skills"]{.alert}, the ones people used to dismiss as fluffy, m
 :::{.column width=55%}
 **The tough reality:**
 
-- Entry-level hiring is down and competition is intense
+- Entry-level hiring is down in [AI-exposed jobs]{.alert} and competition is intense
 - Traditional paths are narrowing
 - "Just get a degree" isn't enough
 
