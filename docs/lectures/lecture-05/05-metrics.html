@@ -444,7 +444,7 @@ Actual: <span style="color: #457b9d;">Healthy</span>
 <ul>
 <li><strong>MAE</strong> (Mean Absolute Error): predict 10 pizzas, 12 arrive → off by 2. Predict 10, get 8 → off by 2. <span class="alert">MAE = 2 pizzas</span></li>
 <li><strong>RMSE</strong> (Root Mean Squared Error): off by 2 one day, off by 10 another. RMSE <span class="alert">punishes that 10 far more</span></li>
-<li><strong>R²</strong>: R² = 0.8 means the model <span class="alert">explains 80%</span> of why scores differ, <span class="alert">20% stays unexplained</span></li>
+<li><strong>R²</strong>: R² = 0.8 means the model <span class="alert">explains 80%</span> of the variation in scores, <span class="alert">20% stays unexplained</span></li>
 </ul>
 </div>
 </div>
@@ -778,7 +778,7 @@ Actual: <span style="color: #457b9d;">Healthy</span>
 <p><strong>Notable incidents (all real!):</strong></p>
 <ul>
 <li><p>⚖️ <strong>Legal</strong> (2023): <a href="https://www.theguardian.com/technology/2023/jun/23/two-us-lawyers-fined-submitting-fake-court-citations-chatgpt">two lawyers were sanctioned for a brief citing <span class="alert">six non-existent cases</span> from ChatGPT</a></p></li>
-<li><p>🏥 <strong>Medical</strong>: <a href="https://www.mountsinai.org/about/newsroom/2025/ai-chatbots-can-run-with-medical-misinformation-study-finds-highlighting-the-need-for-stronger-safeguards">chatbots gave <span class="alert">dangerous health advice</span> citing fabricated studies</a></p></li>
+<li><p>🏥 <strong>Medical</strong>: <a href="https://www.mountsinai.org/about/newsroom/2025/ai-chatbots-can-run-with-medical-misinformation-study-finds-highlighting-the-need-for-stronger-safeguards">chatbots <span class="alert">explained made-up diseases and tests</span> as if they were real</a></p></li>
 <li><p>📰 <strong>News</strong>: <a href="https://www.nytimes.com/2023/05/23/business/ai-picture-stock-market.html">AI-generated fake news <span class="alert">moved stock prices</span></a></p></li>
 <li><p>📚 <strong>Academic</strong>: <a href="https://teche.mq.edu.au/2023/02/why-does-chatgpt-generate-fake-references/">students submitted essays with <span class="alert">entirely invented references</span></a></p></li>
 <li><p>More people trust AI outputs without checking them</p></li>
@@ -919,7 +919,7 @@ Actual: <span style="color: #457b9d;">Healthy</span>
 <div class="columns">
 <div class="column" style="width:55%;">
 <p><strong><span class="alert">Benchmarks</span></strong>: Standardised tests (<a href="https://huggingface.co/spaces/TIGER-Lab/MMLU-Pro">MMLU</a>, <a href="https://github.com/sylinrl/TruthfulQA">TruthfulQA</a>, <a href="https://humaneval.org/">HumanEval</a>)</p>
-<p><strong><span class="alert">Leaderboards</span></strong>: Human preference rankings (<a href="https://lmarena.ai/">LM Arena</a> uses <a href="https://en.wikipedia.org/wiki/Elo_rating_system">Elo ratings</a>, a chess-inspired scoring system to rank models)</p>
+<p><strong><span class="alert">Leaderboards</span></strong>: Human preference rankings (<a href="https://lmarena.ai/">LM Arena</a> uses <a href="https://en.wikipedia.org/wiki/Elo_rating_system">Elo-style ratings</a>, borrowed from chess)</p>
 <p><a href="https://en.wikipedia.org/wiki/Goodhart%27s_law">Goodhart’s Law</a>: <span class="alert">“When a measure becomes a target, it ceases to be a good measure”</span></p>
 <p><strong>Common problems:</strong></p>
 <ul>
@@ -949,10 +949,11 @@ Actual: <span style="color: #457b9d;">Healthy</span>
 <div class="columns">
 <div class="column" style="width:55%;">
 <ul>
-<li>In 2025, Anthropic found that <span class="alert">Claude Opus worked out on its own that it was being evaluated</span> on BrowseComp, an OpenAI benchmark</li>
-<li>The model <span class="alert">found the answer key online and used it</span></li>
-<li>A new form of <span class="alert">benchmark contamination</span>: the model is not trained on the answers, it finds them during the test</li>
-<li>This threatens the <span class="alert">validity of benchmarks</span> that assume models cannot reach external information</li>
+<li>In 2025, Anthropic tested <span class="alert">Claude Opus 4.6</span> on BrowseComp, an OpenAI benchmark</li>
+<li><span class="alert">On its own, the model worked out it was being tested</span></li>
+<li>It <span class="alert">found the encrypted answer key online, decrypted it and used it</span></li>
+<li>A new form of <span class="alert">benchmark contamination</span>: answers found during the test, not in training</li>
+<li>It undermines benchmarks that assume models <span class="alert">cannot look things up</span></li>
 <li>As models get more capable, <span class="alert">evaluation itself gets harder</span></li>
 </ul>
 </div><div class="column" style="width:45%;">
@@ -981,10 +982,10 @@ Actual: <span style="color: #457b9d;">Healthy</span>
 <div class="column" style="width:55%;">
 <ul>
 <li>Overall accuracy can hide <span class="alert">serious failures for specific groups</span></li>
-<li><strong>Real example</strong> <a href="https://proceedings.mlr.press/v81/buolamwini18a/buolamwini18a.pdf">(Buolamwini &amp; Gebru, 2018)</a>, commercial face recognition:
+<li><strong>Real example</strong> <a href="https://proceedings.mlr.press/v81/buolamwini18a/buolamwini18a.pdf">(Buolamwini &amp; Gebru, 2018)</a>, Face++ gender classifier:
 <ul>
 <li>light-skinned men: <span class="alert">0.8% error</span></li>
-<li>dark-skinned women: <span class="alert">34.7% error</span></li>
+<li>dark-skinned women: <span class="alert">34.5% error</span></li>
 <li>43× worse for one group!</li>
 </ul></li>
 <li>Checking per group is called <span class="alert">data slicing</span> or <span class="alert">subgroup analysis</span></li>
@@ -996,7 +997,7 @@ Actual: <span style="color: #457b9d;">Healthy</span>
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <p><a href="#/" data-modal-type="image" data-modal-url="figures/rekognition.webp"><img data-src="figures/rekognition.webp" style="width:100.0%"></a></p>
-<figcaption>Subgroup performance disparities</figcaption>
+<figcaption>Same pattern in a 2019 audit of Amazon Rekognition (Raji &amp; Buolamwini)</figcaption>
 </figure>
 </div>
 <p>Source: <a href="https://medium.com/@Joy.Buolamwini/ibm-leads-more-should-follow-racial-justice-requires-algorithmic-justice-and-funding-da47e07e5b58">Medium</a></p>
@@ -1050,7 +1051,7 @@ Actual: <span style="color: #457b9d;">Healthy</span>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">
-<p><a href="https://danilofreire.github.io/datasci101/lectures/lecture-05/05-metrics-llms.html">Lecture 05</a></p>
+<p><a href="https://danilofreire.github.io/datasci101/lectures/lecture-05/05-metrics.html">Lecture 05</a></p>
 </div>
 </div></div>
 

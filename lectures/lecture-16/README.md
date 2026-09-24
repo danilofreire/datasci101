@@ -41,7 +41,7 @@ This lecture moves from writing a good prompt to configuring an assistant that a
 
 ## Resources
 
-* [Lecture slides (HTML)](16-setting-up-ai.html)
+* [Lecture slides (HTML)](https://danilofreire.github.io/datasci101/lectures/lecture-16/16-setting-up-ai.html)
 * [Lecture source (QMD)](16-setting-up-ai.qmd)
 * [Claude Code memory and CLAUDE.md](https://code.claude.com/docs/en/memory)
 * [AGENTS.md](https://agents.md/)

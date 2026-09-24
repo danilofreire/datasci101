@@ -29,5 +29,5 @@ This lecture covers the three main ways machines learn from data. We look at how
 
 ## Resources
 
-* [Lecture Slides (HTML)](04-learning.html)
+* [Lecture Slides (HTML)](https://danilofreire.github.io/datasci101/lectures/lecture-04/04-learning.html)
 * [Lecture Source (QMD)](04-learning.qmd)

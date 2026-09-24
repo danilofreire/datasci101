@@ -49,5 +49,5 @@ This lecture walks through the entire course in 50 minutes, covering one slide p
 
 ## Resources
 
-* [Lecture Slides (HTML)](26-revision.html)
+* [Lecture Slides (HTML)](https://danilofreire.github.io/datasci101/lectures/lecture-26/26-revision.html)
 * [Lecture Source (QMD)](26-revision.qmd)

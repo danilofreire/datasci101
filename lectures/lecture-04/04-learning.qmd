@@ -508,7 +508,7 @@ Source: [Wikipedia](https://en.wikipedia.org/wiki/Reinforcement_learning)
 | **Value** | Expected future reward from a state | How good is this position? |
 
 :::{style="font-size: 22px;"}
-> Fun fact: [Magnus Carlsen](https://en.wikipedia.org/wiki/Magnus_Carlsen) once said he ["can't beat his phone in chess"](https://www.firstpost.com/sports/chess/magnus-carlsen-on-playing-against-chess-computer-engine-difficulty-joe-rogan-podcast-13867015.html). RL really works! 😅
+> Fun fact: [Magnus Carlsen](https://en.wikipedia.org/wiki/Magnus_Carlsen) once said he ["can't beat his phone in chess"](https://www.firstpost.com/sports/chess/magnus-carlsen-on-playing-against-chess-computer-engine-difficulty-joe-rogan-podcast-13867015.html) 😅 With RL, [AlphaZero](https://en.wikipedia.org/wiki/AlphaZero) taught itself chess by playing against itself
 :::
 :::
 
@@ -520,10 +520,10 @@ Source: [Wikipedia](https://en.wikipedia.org/wiki/Reinforcement_learning)
 :::{.column width=55%}
 - [Exploration]{.alert}: try new actions to find better strategies
 - [Exploitation]{.alert}: use known good actions to maximise reward
-- Too much exploration wastes time on bad actions
-- Too much exploitation misses better strategies
+- Too much of either costs you: time wasted on bad actions, or better strategies missed
 - Restaurant choice: exploit your favourite, or explore a new one (might be better!)
-- To [balance both]{.alert}, a common approach is [ε-greedy](https://en.wikipedia.org/wiki/Epsilon-greedy), explore with probability ε, also called [multi-armed bandit](https://en.wikipedia.org/wiki/Multi-armed_bandit)
+- To [balance both]{.alert}: [ε-greedy](https://en.wikipedia.org/wiki/Epsilon-greedy) explores with probability ε, exploits otherwise
+- The classic version of this dilemma is the [multi-armed bandit](https://en.wikipedia.org/wiki/Multi-armed_bandit) problem
 :::
 
 :::{.column width=45%}
@@ -554,7 +554,7 @@ $$\text{New Score} = \text{Old Score} + \text{Small Correction}$$
 
 - [Policy]{.alert}: always pick the action with the highest score
 - [Cool example]{.alert}: (Poor) Albert learns to walk: <https://youtu.be/L_4BPjLBF4E?&t=137>
-- [Even better]{.alert}: [DeepMind's AlphaGo](https://deepmind.google/research/alphago/): <https://youtu.be/WXuK6gekU1Y>
+- [Beyond Q-learning]{.alert}: [DeepMind's AlphaGo](https://deepmind.google/research/alphago/) combined RL with tree search: <https://youtu.be/WXuK6gekU1Y>
 :::
 
 :::{.column width=45%}
@@ -577,10 +577,11 @@ Source: [Medium](https://medium.com/data-science/getting-started-with-reinforcem
 - [RLHF]{.alert}: [Reinforcement Learning from Human Feedback](https://openai.com/index/learning-from-human-preferences/)
 - [Key to ChatGPT's success!]{.alert}
 - Process:
-  1. Train a base LLM on text (supervised)
-  2. Collect human preferences on model outputs
-  3. Train a [reward model]{.alert} on those preferences
-  4. Use RL to optimise the LLM for that reward
+  1. Pretrain a base LLM to predict the next word (no human labels)
+  2. Fine-tune it on answers written by humans
+  3. Collect human preferences on model outputs
+  4. Train a [reward model]{.alert} on those preferences
+  5. Use RL to optimise the LLM for that reward
 - Why it works:
   - No formula can specify a "good response"
   - Humans find it easier to [compare]{.alert} responses

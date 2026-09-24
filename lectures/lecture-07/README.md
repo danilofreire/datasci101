@@ -22,18 +22,18 @@ This lecture explores how AI systems process visual and auditory information. We
 
 - **Shared Embedding Space**: Text, images, and audio are all converted to high-dimensional vectors (typically 4,096 numbers).
 - **CLIP Model**: OpenAI's system trained on 400 million image-text pairs to learn that "dog image" and "dog text" should be close in embedding space.
-- **Three-Part Architecture**: Modality encoder (Vision Transformer or Whisper) → Projection layer → LLM backbone (GPT, Gemini, Claude).
+- **Three-Part Architecture**: Modality encoder (Vision Transformer or Whisper) → Projection layer → LLM backbone. Open models like LLaVA use this design; GPT, Gemini and Claude don't publish theirs.
 - **Multimodal Understanding**: Once in embedding space, the LLM processes all modalities identically.
 
 ### 4. Societal Implications
 
 - **Deepfakes and Misinformation**: AI-generated fake videos (Zelenskyy, Taylor Swift) and voice clones used for fraud have already happened.
-- **Bias in Vision Systems**: Facial recognition performs differently across skin tones (Gender Shades study).
+- **Bias in Vision Systems**: Facial analysis performs differently across skin tones (Gender Shades study).
 - **Positive Applications**: Medical imaging, accessibility tools, language translation, and scientific discovery.
 
 ## Resources
 
-- [Lecture Slides (HTML)](07-multimodal.html)
+- [Lecture Slides (HTML)](https://danilofreire.github.io/datasci101/lectures/lecture-07/07-multimodal.html)
 - [Lecture Source (QMD)](07-multimodal.qmd)
 - [Teachable Machine](https://teachablemachine.withgoogle.com/)
 - [Whisper Demo (Hugging Face)](https://huggingface.co/spaces/openai/whisper)

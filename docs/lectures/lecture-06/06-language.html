@@ -404,7 +404,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <div style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; font-size: 20px;">
 <ul>
 <li>Handles <span class="alert">unknown words</span> gracefully</li>
-<li>Keeps vocabulary manageable (~50,000 tokens)</li>
+<li>Keeps vocabulary manageable (~50,000 to 200,000 tokens)</li>
 <li>Common words stay whole, rare words split sensibly</li>
 <li>Works across languages</li>
 </ul>
@@ -498,7 +498,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <li>Longer inputs need much more computing power and memory, so providers set a limit</li>
 </ul></li>
 <li>The limit covers <span class="alert">both your prompt and the response</span></li>
-<li>Output tokens usually cost <span class="alert">2-4x more</span> than input tokens!</li>
+<li>Output tokens usually cost <span class="alert">5-6x more</span> than input tokens!</li>
 </ul>
 <div style="text-align: center; margin-top: 20px; margin-bottom: 30px;">
 <table class="caption-top">
@@ -518,7 +518,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <td>8,192 or 128,000 tokens</td>
 </tr>
 <tr class="odd">
-<td>Gemini Pro / Claude / GPT-5</td>
+<td>Gemini Pro / Claude / GPT-5.5</td>
 <td>1,000,000+ tokens</td>
 </tr>
 </tbody>
@@ -527,9 +527,9 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <ul>
 <li>A 3,500-token prompt against a 4,096 limit leaves <span class="alert">596 tokens</span> for the response!</li>
 <li>Exceeding limits gives an <span class="alert">error</span> or truncated output</li>
-<li><span class="alert">Non-English languages use more tokens</span>
+<li><span class="alert">Non-English languages often use more tokens</span>
 <ul>
-<li>Chinese, Japanese, Korean: ~2-3x more tokens per concept. Higher costs and shorter effective context</li>
+<li>Higher costs and shorter effective context, though newer tokenisers narrow the gap</li>
 </ul></li>
 </ul>
 </div><div class="column" style="width:45%;">
@@ -542,7 +542,8 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <tr class="header">
 <th>Language</th>
 <th>Text</th>
-<th>Tokens</th>
+<th>GPT-3</th>
+<th>GPT-4o</th>
 </tr>
 </thead>
 <tbody>
@@ -550,21 +551,25 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <td>English</td>
 <td>“Hello”</td>
 <td>1</td>
+<td>1</td>
 </tr>
 <tr class="even">
 <td>Chinese</td>
 <td>“你好”</td>
 <td>4</td>
+<td>1</td>
 </tr>
 <tr class="odd">
 <td>Arabic</td>
 <td>“مرحبا”</td>
 <td>6</td>
+<td>2</td>
 </tr>
 <tr class="even">
 <td>Japanese</td>
 <td>“こんにちは”</td>
 <td>6</td>
+<td>1</td>
 </tr>
 </tbody>
 </table>
@@ -648,7 +653,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <div class="column" style="width:55%;">
 <ul>
 <li>Here are the embeddings for a few words</li>
-<li>The colours show numbers from -2 to +2, but the actual embeddings are 4,096-dimensional!</li>
+<li>Each row is one word’s 50 numbers, from blue (-2) to red (+2)</li>
 <li>See how “woman” and “girl” are similar, but “queen” is further away?</li>
 <li><span class="alert">We don’t know what each dimension codes for</span>, yet patterns still show</li>
 <li>In some places “king” and “queen” match each other and differ from all the rest</li>
@@ -660,6 +665,25 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <!-- Suggested image: Word embeddings illustration -->
 <p><a href="#/" data-modal-type="image" data-modal-url="figures/queen-woman-girl-embeddings.png"><img data-src="figures/queen-woman-girl-embeddings.png" style="width:100.0%"></a></p>
 <p>Source: <a href="https://jalammar.github.io/illustrated-word2vec/">Jay Alammar</a></p>
+</div>
+</div></div>
+</div>
+</section>
+<section id="how-big-are-real-embeddings" class="slide level2">
+<h2>How big are real embeddings?</h2>
+<h3 id="from-50-numbers-to-thousands">From 50 numbers to thousands</h3>
+<div style="margin-top: 30px; font-size: 24px;">
+<div class="columns">
+<div class="column" style="width:55%;">
+<ul>
+<li>GloVe (2014) stores each word as <span class="alert">50 numbers</span>, like the rows on the last slide</li>
+<li>LLMs store each token as <span class="alert">thousands of numbers</span>: 4,096 in Llama 3 8B, 12,288 in GPT-3</li>
+<li>More numbers leave room for <span class="alert">finer shades of meaning</span></li>
+<li>Nobody reads them one by one: we study the patterns instead</li>
+</ul>
+</div><div class="column" style="width:45%;">
+<div style="text-align: center;">
+<p><a href="#/" data-modal-type="image" data-modal-url="figures/embedding-scale.gif"><img data-src="figures/embedding-scale.gif" style="width:78.0%"></a></p>
 </div>
 </div></div>
 </div>
@@ -726,7 +750,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </ul></li>
 <li>GPT-3: <span class="alert">175 billion</span> parameters</li>
 <li>GPT-4: estimated <span class="alert">1+ trillion</span> parameters</li>
-<li>Each parameter is adjusted <span class="alert">thousands of times</span> during training</li>
+<li>Each GPT-3 parameter was adjusted <span class="alert">about 100,000 times</span> during training</li>
 <li>Training means finding the numbers that make predictions accurate</li>
 </ul>
 </div><div class="column" style="width:45%;">
@@ -790,7 +814,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <td>DeepSeek-V4-Pro (2026)</td>
 <td>1.6 trillion</td>
 <td>49 billion</td>
-<td>33 trillion tokens</td>
+<td>32+ trillion tokens</td>
 </tr>
 <tr class="even">
 <td>GPT-5, Claude, Gemini</td>
@@ -873,7 +897,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <ul>
 <li>The model learns by <span class="alert">predicting the next word</span>, and every error teaches it something</li>
 <li>Patterns emerge from massive repetition</li>
-<li>Training GPT-3 cost <span class="alert">~$3.5 million</span> in compute!</li>
+<li>Training GPT-3 cost <a href="https://lambda.ai/blog/demystifying-gpt-3"><span class="alert">~$4.6 million</span></a> in compute!</li>
 </ul>
 </div><div class="column" style="width:45%;">
 <div style="text-align: center;">
@@ -932,11 +956,11 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <li>low (0.1-0.3): focused, deterministic</li>
 <li>high (0.7-1.0): creative, varied</li>
 <li>0.0: always picks the most likely word</li>
-<li>(Google AI Studio extends the scale to 2.0)</li>
+<li>(OpenAI and Google AI Studio go up to 2.0)</li>
 </ul></li>
-<li><span class="alert">Top-p</span> (nucleus sampling): only consider words in the top p% probability
+<li><span class="alert">Top-p</span> (nucleus sampling): keep the fewest words whose probabilities add up to p
 <ul>
-<li>0.9: the top 90% of likely words</li>
+<li>0.9: the most likely words until they cover 90% (often just a handful)</li>
 </ul></li>
 <li><span class="alert">Top-k</span>: only consider the top k most likely words
 <ul>

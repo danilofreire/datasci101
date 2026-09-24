@@ -36,5 +36,5 @@ This session prepares students for Quiz 01, which covers Lectures 01 to 07. Inst
 
 ## Resources
 
-- [Lecture Slides (HTML)](08-review.html)
+- [Lecture Slides (HTML)](https://danilofreire.github.io/datasci101/lectures/lecture-08/08-review.html)
 - [Lecture Source (QMD)](08-review.qmd)

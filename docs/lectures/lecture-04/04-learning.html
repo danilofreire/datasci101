@@ -756,7 +756,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </table>
 <div style="font-size: 22px;">
 <blockquote>
-<p>Fun fact: <a href="https://en.wikipedia.org/wiki/Magnus_Carlsen">Magnus Carlsen</a> once said he <a href="https://www.firstpost.com/sports/chess/magnus-carlsen-on-playing-against-chess-computer-engine-difficulty-joe-rogan-podcast-13867015.html">“can’t beat his phone in chess”</a>. RL really works! 😅</p>
+<p>Fun fact: <a href="https://en.wikipedia.org/wiki/Magnus_Carlsen">Magnus Carlsen</a> once said he <a href="https://www.firstpost.com/sports/chess/magnus-carlsen-on-playing-against-chess-computer-engine-difficulty-joe-rogan-podcast-13867015.html">“can’t beat his phone in chess”</a> 😅 With RL, <a href="https://en.wikipedia.org/wiki/AlphaZero">AlphaZero</a> taught itself chess by playing against itself</p>
 </blockquote>
 </div>
 </div>
@@ -770,10 +770,10 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <ul>
 <li><span class="alert">Exploration</span>: try new actions to find better strategies</li>
 <li><span class="alert">Exploitation</span>: use known good actions to maximise reward</li>
-<li>Too much exploration wastes time on bad actions</li>
-<li>Too much exploitation misses better strategies</li>
+<li>Too much of either costs you: time wasted on bad actions, or better strategies missed</li>
 <li>Restaurant choice: exploit your favourite, or explore a new one (might be better!)</li>
-<li>To <span class="alert">balance both</span>, a common approach is <a href="https://en.wikipedia.org/wiki/Epsilon-greedy">ε-greedy</a>, explore with probability ε, also called <a href="https://en.wikipedia.org/wiki/Multi-armed_bandit">multi-armed bandit</a></li>
+<li>To <span class="alert">balance both</span>: <a href="https://en.wikipedia.org/wiki/Epsilon-greedy">ε-greedy</a> explores with probability ε, exploits otherwise</li>
+<li>The classic version of this dilemma is the <a href="https://en.wikipedia.org/wiki/Multi-armed_bandit">multi-armed bandit</a> problem</li>
 </ul>
 </div><div class="column" style="width:45%;">
 <div style="text-align: center;">
@@ -808,7 +808,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <ul>
 <li><span class="alert">Policy</span>: always pick the action with the highest score</li>
 <li><span class="alert">Cool example</span>: (Poor) Albert learns to walk: <a href="https://youtu.be/L_4BPjLBF4E?&amp;t=137" class="uri">https://youtu.be/L_4BPjLBF4E?&amp;t=137</a></li>
-<li><span class="alert">Even better</span>: <a href="https://deepmind.google/research/alphago/">DeepMind’s AlphaGo</a>: <a href="https://youtu.be/WXuK6gekU1Y" class="uri">https://youtu.be/WXuK6gekU1Y</a></li>
+<li><span class="alert">Beyond Q-learning</span>: <a href="https://deepmind.google/research/alphago/">DeepMind’s AlphaGo</a> combined RL with tree search: <a href="https://youtu.be/WXuK6gekU1Y" class="uri">https://youtu.be/WXuK6gekU1Y</a></li>
 </ul>
 </div><div class="column" style="width:45%;">
 <div style="text-align: center;">
@@ -829,7 +829,8 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <li><span class="alert">Key to ChatGPT’s success!</span></li>
 <li>Process:
 <ol type="1">
-<li>Train a base LLM on text (supervised)</li>
+<li>Pretrain a base LLM to predict the next word (no human labels)</li>
+<li>Fine-tune it on answers written by humans</li>
 <li>Collect human preferences on model outputs</li>
 <li>Train a <span class="alert">reward model</span> on those preferences</li>
 <li>Use RL to optimise the LLM for that reward</li>

@@ -38,7 +38,7 @@ This lecture explains Retrieval-Augmented Generation (RAG) in accessible terms f
 
 ## Resources
 
-* [Lecture Slides (HTML)](12-rag.html)
+* [Lecture Slides (HTML)](https://danilofreire.github.io/datasci101/lectures/lecture-12/12-rag.html)
 * [Lecture Source (QMD)](12-rag.qmd)
 * [NotebookLM](https://notebooklm.google.com/)
 * [ChatPDF](https://www.chatpdf.com/)

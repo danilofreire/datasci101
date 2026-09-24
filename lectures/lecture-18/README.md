@@ -32,7 +32,7 @@ This lecture surveys the emerging global landscape of AI governance, comparing a
 
 ## Resources
 
-* [Lecture slides (HTML)](18-regulation.html)
+* [Lecture slides (HTML)](https://danilofreire.github.io/datasci101/lectures/lecture-18/18-regulation.html)
 * [Lecture source (QMD)](18-regulation.qmd)
 * [EU AI Act text](https://www.europarl.europa.eu/topics/en/article/20230601STO93804/eu-ai-act-first-regulation-on-artificial-intelligence)
 * [OECD AI Policy Observatory](https://oecd.ai/)

@@ -37,8 +37,8 @@ This lecture covers the science and practice of effective prompting for large la
 
 ## Resources
 
-- [Lecture Slides (HTML)](10-prompting.html)
+- [Lecture Slides (HTML)](https://danilofreire.github.io/datasci101/lectures/lecture-10/10-prompting.html)
 - [Lecture Source (QMD)](10-prompting.qmd)
 - [Wei et al. (2022) Chain-of-Thought Paper](https://arxiv.org/abs/2201.11903)
 - [Prompting Guide](https://www.promptingguide.ai/)
-- [Google Gemini Prompting Guide (PDF)](https://services.google.com/fh/files/misc/gemini-for-google-workspace-prompting-guide-101.pdf)
+- [Google Gemini Prompting Guide (PDF)](https://services.google.com/fh/files/misc/gemini_for_workspace_prompt_guide_october_2024_digital_final.pdf)

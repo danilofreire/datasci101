@@ -88,7 +88,7 @@ Source: [DeepSet AI](https://www.deepset.ai/blog/the-beginners-guide-to-text-emb
 **Part 2: How Machines "Hear"**
 
 - Turning invisible sound waves into pictures
-- How Siri and Alexa understand speech
+- How machines understand speech
 :::
 
 :::{.column width=50%}
@@ -552,7 +552,7 @@ Try making different sounds and watch the patterns!
 :::
 :::
 
-## Whisper: How Siri and Alexa understand you
+## Whisper: How machines understand speech
 
 :::{style="margin-top: 30px; font-size: 20px;"}
 :::{.columns}
@@ -579,7 +579,7 @@ Try making different sounds and watch the patterns!
   - Decoder: generates text tokens
 - [Open source and free to use](https://github.com/openai/whisper)
 
-This powers much of what Siri, Alexa, and Google Assistant do
+Siri, Alexa and Google Assistant use their own systems, built on the same ideas
 
 :::{style="text-align: center;"}
 [![](figures/whisper-demo.webp){width="100%"}](#){data-modal-type="image" data-modal-url="figures/whisper-demo.webp"}
@@ -695,21 +695,29 @@ Text, images, and audio all become the same kind of numbers, so AI can understan
 :::
 
 ## The three-part architecture
-### How multimodal LLMs work
+### How open multimodal models work
 
 :::{style="margin-top: 30px; font-size: 22px;"}
 :::{.columns}
-:::{.column width=100%}
+:::{.column width=55%}
 :::{style="text-align: center;"}
-[![Multimodal LLM architecture: Encoder → Projector → LLM](figures/multimodal-embeddings.gif){width="40%"}](#){data-modal-type="image" data-modal-url="figures/multimodal-embeddings.gif"}
+[![](figures/multimodal-embeddings.gif){width="65%" fig-alt="Multimodal LLM architecture: Encoder → Projector → LLM"}](#){data-modal-type="image" data-modal-url="figures/multimodal-embeddings.gif"}
+:::
+:::
+
+:::{.column width=45%}
+:::{style="margin-top: 60px;"}
+- Open example: [LLaVA](https://llava-vl.github.io/)
+- [GPT, Gemini and Claude don't publish their designs]{.alert}
+- OpenAI and Google say theirs learn all modalities together
+:::
+:::
 :::
 
 :::{style="margin-top: 20px;"}
 1. **Modality Encoder**: Vision Transformer (images) or Whisper (audio), both [pre-trained specialists]{.alert}
 2. **Projection Layer**: Aligns encoder outputs to the LLM's embedding space, and is [often surprisingly simple]{.alert}
-3. **LLM Backbone**: The "brain" (GPT, Gemini, Claude), processing everything as tokens
-:::
-:::
+3. **LLM Backbone**: The "brain", processing everything as tokens
 :::
 :::
 

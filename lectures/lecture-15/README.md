@@ -32,7 +32,7 @@ This lecture covers what changes when a language model stops answering questions
 
 ## Resources
 
-* [Lecture Slides (HTML)](15-agents.html)
+* [Lecture Slides (HTML)](https://danilofreire.github.io/datasci101/lectures/lecture-15/15-agents.html)
 * [Lecture Source (QMD)](15-agents.qmd)
 * [Anthropic, Building effective agents](https://www.anthropic.com/engineering/building-effective-agents)
 * [Anthropic, Project Vend](https://www.anthropic.com/research/project-vend-1)

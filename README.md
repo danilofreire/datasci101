@@ -108,7 +108,6 @@ While this repository is primarily maintained by the course instructor, contribu
 
 - [Open an issue](https://github.com/danilofreire/datasci101/issues) to report problems
 - [Create a pull request](https://github.com/danilofreire/datasci101/pulls) with improvements
-- [Start a discussion](https://github.com/danilofreire/datasci101/discussions) about course topics
 
 ## License
 

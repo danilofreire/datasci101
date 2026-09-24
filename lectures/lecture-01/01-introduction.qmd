@@ -402,7 +402,7 @@ Source: [Artificial Intelligence Index Report (2025)](https://hai.stanford.edu/a
   - [False!]{.alert} Many AI systems are "black boxes": we don't know for sure how they reached their answers
 
 - [The order of words in a sentence affects how AI processes it]{.alert}
-  - [True!]{.alert} Attention mechanisms let models weigh the importance of different words
+  - [True!]{.alert} Models tag each word with its position in the sentence
 
 - [The same AI model can be fine-tuned for many different tasks]{.alert}
   - [True!]{.alert} This is one of the most powerful aspects of modern AI

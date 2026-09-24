@@ -31,7 +31,7 @@ This lecture shows non-technical undergraduates what happens behind the scenes w
 
 ## Resources
 
-* [Lecture Slides (HTML)](14-pipelines.html)
+* [Lecture Slides (HTML)](https://danilofreire.github.io/datasci101/lectures/lecture-14/14-pipelines.html)
 * [Lecture Source (QMD)](14-pipelines.qmd)
 * [Datasheets for Datasets (Gebru et al., 2018)](https://arxiv.org/abs/1803.09010)
 * [Model Cards for Model Reporting (Mitchell et al., 2019)](https://arxiv.org/abs/1810.03993)

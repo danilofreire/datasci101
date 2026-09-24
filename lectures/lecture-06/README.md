@@ -33,7 +33,7 @@ This lecture explores how Large Language Models process and understand human lan
 
 ## Resources
 
-* [Lecture Slides (HTML)](06-language.html)
+* [Lecture Slides (HTML)](https://danilofreire.github.io/datasci101/lectures/lecture-06/06-language.html)
 * [Lecture Source (QMD)](06-language.qmd)
 * [OpenAI Tokenizer](https://platform.openai.com/tokenizer)
 * [TensorFlow Embedding Projector](https://projector.tensorflow.org/)

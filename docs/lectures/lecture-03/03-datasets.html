@@ -308,14 +308,14 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </thead>
 <tbody>
 <tr class="odd">
-<td>Credit scoring</td>
-<td><a href="https://www.bbc.com/news/business-50365609">Data reflected historical gender-based income gaps</a></td>
-<td><span class="alert">Lower credit limits</span> for women with similar profiles</td>
+<td>Speech recognition</td>
+<td><a href="https://www.pnas.org/doi/10.1073/pnas.1915768117">Too little training audio from Black speakers</a></td>
+<td><span class="alert">Nearly twice the errors</span> for Black speakers (35% vs 19%)</td>
 </tr>
 <tr class="even">
-<td>Facial recognition</td>
+<td>Facial analysis</td>
 <td><a href="http://gendershades.org/">Training data mostly light-skinned faces</a></td>
-<td><span class="alert">Error rates 43x higher</span> for dark-skinned women</td>
+<td><span class="alert">43x more errors</span> for dark-skinned women than light-skinned men</td>
 </tr>
 <tr class="odd">
 <td>Criminal risk assessment</td>
@@ -482,7 +482,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <ul>
 <li>We want: how sick is this patient? Available data: healthcare spending</li>
 <li><span class="alert">Spending ≠ health needs</span>: systemic barriers meant less was spent on Black patients</li>
-<li>Algorithm learned “Black patients need less care” → <span class="alert">wrong!</span></li>
+<li>Race was never an input, yet Black patients had to be <span class="alert">sicker to get the same risk score</span></li>
 </ul></li>
 <li><span class="alert">Example 02, predicting expertise on social media</span>
 <ul>
@@ -862,15 +862,17 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <li>Low agreement → problem with the guidelines or the task</li>
 <li>Common metric: <a href="https://en.wikipedia.org/wiki/Cohen%27s_kappa">Cohen’s Kappa</a> (<a href="https://en.wikipedia.org/wiki/Fleiss%27_kappa">Fleiss’ Kappa</a> for more than two annotators)</li>
 </ul>
-<div style="text-align: center;">
-<p><strong>Cohen’s Kappa:</strong> <span class="math display">\[\kappa = \frac{p_o - p_e}{1 - p_e}\]</span></p>
-<div style="font-size: 17px; text-align: left;">
+<div class="columns">
+<div class="column" style="width:55%;">
+<p><span class="math display">\[\kappa = \frac{p_o - p_e}{1 - p_e}\]</span></p>
+<div style="font-size: 17px;">
 <ul>
 <li><span class="math inline">\(p_o\)</span> (observed agreement): share of items both annotators labelled the same way</li>
 <li><span class="math inline">\(p_e\)</span> (expected agreement): share they would agree on by chance, given how often each one uses each label</li>
-<li><a href="#/sec-appendix-kappa"><span class="button">Worked example</span></a></li>
 </ul>
 </div>
+</div><div class="column" style="width:43%;">
+<div style="font-size: 20px;">
 <table class="caption-top">
 <thead>
 <tr class="header">
@@ -880,28 +882,34 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </thead>
 <tbody>
 <tr class="odd">
-<td>&lt; 0.20</td>
-<td>Slight</td>
+<td>&lt; 0</td>
+<td>Poor</td>
 </tr>
 <tr class="even">
+<td>0.00–0.20</td>
+<td>Slight</td>
+</tr>
+<tr class="odd">
 <td>0.21–0.40</td>
 <td>Fair</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td>0.41–0.60</td>
 <td>Moderate</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td>0.61–0.80</td>
 <td>Substantial</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td>0.81–1.00</td>
 <td>Almost perfect</td>
 </tr>
 </tbody>
 </table>
+<p><a href="#/sec-appendix-kappa"><span class="button">Worked example</span></a></p>
 </div>
+</div></div>
 </div></div>
 </div>
 </section>

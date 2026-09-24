@@ -32,7 +32,7 @@ This lecture examines how AI transforms privacy challenges, surveys the legal fr
 
 ## Resources
 
-* [Lecture slides (HTML)](19-privacy.html)
+* [Lecture slides (HTML)](https://danilofreire.github.io/datasci101/lectures/lecture-19/19-privacy.html)
 * [Lecture source (QMD)](19-privacy.qmd)
 * [GDPR official text](https://gdpr-info.eu/)
 * [EFF Surveillance Self-Defense](https://ssd.eff.org/)

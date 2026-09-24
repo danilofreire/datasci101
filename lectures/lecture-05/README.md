@@ -28,11 +28,11 @@ This lecture explains how we measure if an AI model is actually working. We disc
 
 ### 5. Fairness and Subgroup Analysis
 
-* **When Averages Hide Failures**: Why a good overall accuracy can conceal much worse performance for a specific group (the Buolamwini & Gebru face-recognition result: 0.8% error for light-skinned men versus 34.7% for dark-skinned women).
+* **When Averages Hide Failures**: Why a good overall accuracy can conceal much worse performance for a specific group (the Buolamwini & Gebru gender-classification result: Face++ made 0.8% errors for light-skinned men versus 34.5% for dark-skinned women).
 * **Subgroup Analysis**: Checking a model group by group (also called data slicing), rather than trusting a single overall score.
 * **Proxies for Sensitive Features**: Why dropping a feature like skin tone does not remove bias, because other features correlate with it.
 
 ## Resources
 
-* [Lecture Slides (HTML)](05-metrics.html)
+* [Lecture Slides (HTML)](https://danilofreire.github.io/datasci101/lectures/lecture-05/05-metrics.html)
 * [Lecture Source (QMD)](05-metrics.qmd)

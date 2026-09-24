@@ -176,8 +176,8 @@ Source: [NASA](https://www.nasa.gov/centers-and-facilities/jpl/when-computers-we
 - **1936**: [Alan Turing](https://en.wikipedia.org/wiki/Alan_Turing) publishes "[On Computable Numbers, with an Application to the Entscheidungsproblem](https://www.cs.virginia.edu/~robins/Turing_Paper_1936.pdf)" (decision problem)
 - Introduces the [universal machine]{.alert}, which can compute anything computable
 - **1950**: publishes "[Computing Machinery and Intelligence](https://phil415.pbworks.com/f/TuringComputing.pdf)" in [Mind](https://en.wikipedia.org/wiki/Mind_(journal)) (philosophy journal)
+  - Asks ["Can machines think?"]{.alert}, then replaces it with a question he can test
   - Proposes the [Turing Test](https://en.wikipedia.org/wiki/Turing_test): can a machine fool a human into thinking it's human?
-  - Asks ["Can machines think?"]{.alert}, then reframes it as ["Can machines do what we (as thinking entities) can do?"]{.alert}
 - These ideas laid the [theoretical foundation]{.alert} for computing and AI
 - He suggested machines could [learn]{.alert}, not just follow fixed rules
 :::
@@ -224,7 +224,7 @@ Source: [Wikipedia - Turing Test](https://en.wikipedia.org/wiki/Turing_test)
 :::{.column width=55%}
 - **Summer 1956**: [a workshop at Dartmouth College](https://en.wikipedia.org/wiki/Dartmouth_workshop) marks the birth of AI as a field
 - Organised by [John McCarthy](https://en.wikipedia.org/wiki/John_McCarthy_(computer_scientist)), [Marvin Minsky](https://en.wikipedia.org/wiki/Marvin_Minsky), [Nathaniel Rochester](https://en.wikipedia.org/wiki/Nathaniel_Rochester_(computer_scientist)), and [Claude Shannon](https://en.wikipedia.org/wiki/Claude_Shannon)
-- First use of the term "[Artificial Intelligence]{.alert}"
+- The term "[Artificial Intelligence]{.alert}" was coined in the 1955 proposal for the workshop
 - The founding conjecture:
 
 > "Every aspect of learning or any other feature of intelligence can in principle be so precisely described that [a machine can be made to simulate it]{.alert}."
@@ -513,7 +513,7 @@ Source: [Medium](https://shanmugasundaram.in/llm-tokenizers-the-hidden-engine-be
 :::{.columns}
 :::{.column width=55%}
 - Each token becomes a [vector]{.alert} (a list of numbers)
-- GPT-2: each token → 768 numbers (nothing special about 768; models use different sizes)
+- GPT-2 small: each token → 768 numbers (other models use other sizes)
 - These vectors capture [meaning]{.alert}:
   - Similar words are close together
   - "king" - "man" + "woman" ≈ "queen"
@@ -597,16 +597,14 @@ Source: [Thomas Wiecki](https://twiecki.io/blog/2024/01/04/)
 :::{style="margin-top: 30px; font-size: 22px;"}
 :::{.columns}
 :::{.column width=55%}
-- "The cat sat on the ___"
-- Attention brings "cat" and "sat" to the guessing position
-- But nothing in the sentence says [what a cat sits on]{.alert}, so it must come from memory
-- That memory is the [feed-forward network](https://en.wikipedia.org/wiki/Feedforward_neural_network) (MLP)
+- "The cat sat on the \_\_\_": attention brings "cat" and "sat" to the blank
+- The sentence never says [what a cat sits on]{.alert}. The [feed-forward network](https://en.wikipedia.org/wiki/Feedforward_neural_network) (MLP) supplies it from memory
 - Attention [moves]{.alert} what is in the sentence. The network [adds]{.alert} what is not
-- The two make one [block]{.alert}: 12 in GPT-2, 96 in GPT-3, far more since
-- Each block [adds]{.alert} to the word rather than replacing it, so nothing is lost on the way up
-- Each round asks a better question than the last:
-  - Early blocks: what kind of word is this?
-  - Late blocks: what is this text about, and what comes next?
+- The two make one [block]{.alert}: 12 in GPT-2 small, 48 in full GPT-2, 96 in GPT-3
+- Each block [adds]{.alert} to the word rather than replacing it, so nothing is lost between blocks
+- Each block asks a better question than the last:
+  - Early: what kind of word is this?
+  - Late: what is this text about, and what comes next?
 :::
 
 :::{.column width=45%}
@@ -616,7 +614,7 @@ Source: [Thomas Wiecki](https://twiecki.io/blog/2024/01/04/)
 Source: [Mohamed Traore](https://www.researchgate.net/figure/Overall-Structure-of-Transformer-Encoder-Block_fig3_365101390)
 :::
 :::{style="font-size: 18px; margin-top: 15px;"}
-Also called a [multi-layer perceptron (MLP):](https://en.wikipedia.org/wiki/Multilayer_perceptron) Rosenblatt's perceptron from 1958, stacked in layers and trained by backpropagation. Two thirds of a model's weights live here, not in attention
+[Multi-layer perceptron (MLP)](https://en.wikipedia.org/wiki/Multilayer_perceptron): Rosenblatt's 1958 perceptron, stacked in layers and trained by backpropagation. Two thirds of the weights live here
 :::
 :::
 :::

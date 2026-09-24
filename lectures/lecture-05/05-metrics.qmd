@@ -9,7 +9,7 @@ author:
 format:
   clean-revealjs:
     self-contained: false
-    footer: "[Lecture 05](https://danilofreire.github.io/datasci101/lectures/lecture-05/05-metrics-llms.html)"
+    footer: "[Lecture 05](https://danilofreire.github.io/datasci101/lectures/lecture-05/05-metrics.html)"
     transition: slide
     transition-speed: default
     scrollable: true
@@ -279,7 +279,7 @@ Source: [Analytics Vidhya](https://www.analyticsvidhya.com/blog/2020/10/how-to-c
 
 - **MAE** (Mean Absolute Error): predict 10 pizzas, 12 arrive → off by 2. Predict 10, get 8 → off by 2. [MAE = 2 pizzas]{.alert}
 - **RMSE** (Root Mean Squared Error): off by 2 one day, off by 10 another. RMSE [punishes that 10 far more]{.alert}
-- **R²**: R² = 0.8 means the model [explains 80%]{.alert} of why scores differ, [20% stays unexplained]{.alert}
+- **R²**: R² = 0.8 means the model [explains 80%]{.alert} of the variation in scores, [20% stays unexplained]{.alert}
 :::
 :::
 
@@ -591,7 +591,7 @@ Source: [Nielsen Norman Group](https://www.nngroup.com/articles/ai-hallucination
 **Notable incidents (all real!):**
 
 - ⚖️ **Legal** (2023): [two lawyers were sanctioned for a brief citing [six non-existent cases]{.alert} from ChatGPT](https://www.theguardian.com/technology/2023/jun/23/two-us-lawyers-fined-submitting-fake-court-citations-chatgpt)
-- 🏥 **Medical**: [chatbots gave [dangerous health advice]{.alert} citing fabricated studies](https://www.mountsinai.org/about/newsroom/2025/ai-chatbots-can-run-with-medical-misinformation-study-finds-highlighting-the-need-for-stronger-safeguards)
+- 🏥 **Medical**: [chatbots [explained made-up diseases and tests]{.alert} as if they were real](https://www.mountsinai.org/about/newsroom/2025/ai-chatbots-can-run-with-medical-misinformation-study-finds-highlighting-the-need-for-stronger-safeguards)
 - 📰 **News**: [AI-generated fake news [moved stock prices]{.alert}](https://www.nytimes.com/2023/05/23/business/ai-picture-stock-market.html)
 - 📚 **Academic**: [students submitted essays with [entirely invented references]{.alert}](https://teche.mq.edu.au/2023/02/why-does-chatgpt-generate-fake-references/)
 
@@ -728,7 +728,7 @@ You find them before deployment
 :::{.column width=55%}
 **[Benchmarks]{.alert}**: Standardised tests ([MMLU](https://huggingface.co/spaces/TIGER-Lab/MMLU-Pro), [TruthfulQA](https://github.com/sylinrl/TruthfulQA), [HumanEval](https://humaneval.org/))
 
-**[Leaderboards]{.alert}**: Human preference rankings ([LM Arena](https://lmarena.ai/) uses [Elo ratings](https://en.wikipedia.org/wiki/Elo_rating_system), a chess-inspired scoring system to rank models)
+**[Leaderboards]{.alert}**: Human preference rankings ([LM Arena](https://lmarena.ai/) uses [Elo-style ratings](https://en.wikipedia.org/wiki/Elo_rating_system), borrowed from chess)
 
 [Goodhart's Law](https://en.wikipedia.org/wiki/Goodhart%27s_law): ["When a measure becomes a target, it ceases to be a good measure"]{.alert}
 
@@ -759,10 +759,11 @@ Source: [X.com](https://x.com/andrewlamb1111/status/1952386263450841233)
 :::{style="margin-top: 30px; font-size: 25px;"}
 :::{.columns}
 :::{.column width=55%}
-- In 2025, Anthropic found that [Claude Opus worked out on its own that it was being evaluated]{.alert} on BrowseComp, an OpenAI benchmark
-- The model [found the answer key online and used it]{.alert}
-- A new form of [benchmark contamination]{.alert}: the model is not trained on the answers, it finds them during the test
-- This threatens the [validity of benchmarks]{.alert} that assume models cannot reach external information
+- In 2025, Anthropic tested [Claude Opus 4.6]{.alert} on BrowseComp, an OpenAI benchmark
+- [On its own, the model worked out it was being tested]{.alert}
+- It [found the encrypted answer key online, decrypted it and used it]{.alert}
+- A new form of [benchmark contamination]{.alert}: answers found during the test, not in training
+- It undermines benchmarks that assume models [cannot look things up]{.alert}
 - As models get more capable, [evaluation itself gets harder]{.alert}
 :::
 
@@ -785,9 +786,9 @@ Source: [Anthropic Engineering](https://www.anthropic.com/engineering/eval-aware
 :::{.columns}
 :::{.column width=55%}
 - Overall accuracy can hide [serious failures for specific groups]{.alert}
-- **Real example** [(Buolamwini & Gebru, 2018)](https://proceedings.mlr.press/v81/buolamwini18a/buolamwini18a.pdf), commercial face recognition:
+- **Real example** [(Buolamwini & Gebru, 2018)](https://proceedings.mlr.press/v81/buolamwini18a/buolamwini18a.pdf), Face++ gender classifier:
   - light-skinned men: [0.8% error]{.alert}
-  - dark-skinned women: [34.7% error]{.alert}
+  - dark-skinned women: [34.5% error]{.alert}
   - 43× worse for one group!
 - Checking per group is called [data slicing]{.alert} or [subgroup analysis]{.alert}
 - Dropping sensitive features does not fix this, they [correlate with other features]{.alert}
@@ -796,7 +797,7 @@ Source: [Anthropic Engineering](https://www.anthropic.com/engineering/eval-aware
 
 :::{.column width=45%}
 :::{style="text-align: center;"}
-[![Subgroup performance disparities](figures/rekognition.webp){width="100%"}](#){data-modal-type="image" data-modal-url="figures/rekognition.webp"}
+[![Same pattern in a 2019 audit of Amazon Rekognition (Raji & Buolamwini)](figures/rekognition.webp){width="100%"}](#){data-modal-type="image" data-modal-url="figures/rekognition.webp"}
 
 Source: [Medium](https://medium.com/@Joy.Buolamwini/ibm-leads-more-should-follow-racial-justice-requires-algorithmic-justice-and-funding-da47e07e5b58)
 :::

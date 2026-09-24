@@ -24,5 +24,5 @@ This lecture introduces the course and provides a high-level overview of Artific
 
 ## Resources
 
-* [Lecture Slides (HTML)](01-introduction.html)
+* [Lecture Slides (HTML)](https://danilofreire.github.io/datasci101/lectures/lecture-01/01-introduction.html)
 * [Lecture Source (QMD)](01-introduction.qmd)

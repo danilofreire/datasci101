@@ -191,7 +191,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <p><strong>Part 2: How Machines “Hear”</strong></p>
 <ul>
 <li>Turning invisible sound waves into pictures</li>
-<li>How Siri and Alexa understand speech</li>
+<li>How machines understand speech</li>
 </ul>
 </div><div class="column" style="width:50%;">
 <p><strong>Part 3: The Big Picture</strong></p>
@@ -720,8 +720,8 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </div></div>
 </div>
 </section>
-<section id="whisper-how-siri-and-alexa-understand-you" class="slide level2 scrollable">
-<h2>Whisper: How Siri and Alexa understand you</h2>
+<section id="whisper-how-machines-understand-speech" class="slide level2 scrollable">
+<h2>Whisper: How machines understand speech</h2>
 <div style="margin-top: 30px; font-size: 20px;">
 <div class="columns">
 <div class="column" style="width:55%;">
@@ -749,7 +749,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </ul></li>
 <li><a href="https://github.com/openai/whisper">Open source and free to use</a></li>
 </ul>
-<p>This powers much of what Siri, Alexa, and Google Assistant do</p>
+<p>Siri, Alexa and Google Assistant use their own systems, built on the same ideas</p>
 <div style="text-align: center;">
 <p><a href="#/" data-modal-type="image" data-modal-url="figures/whisper-demo.webp"><img data-src="figures/whisper-demo.webp" style="width:100.0%"></a></p>
 <p>Source: <a href="https://www.samgalope.dev/2024/07/25/convert-wav-files-to-text-using-whisper-api/">Sam Galope (2024)</a></p>
@@ -872,26 +872,29 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </section>
 <section id="the-three-part-architecture" class="slide level2 scrollable">
 <h2>The three-part architecture</h2>
-<h3 id="how-multimodal-llms-work">How multimodal LLMs work</h3>
+<h3 id="how-open-multimodal-models-work">How open multimodal models work</h3>
 <div style="margin-top: 30px; font-size: 22px;">
 <div class="columns">
-<div class="column" style="width:100%;">
+<div class="column" style="width:55%;">
 <div style="text-align: center;">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><a href="#/" data-modal-type="image" data-modal-url="figures/multimodal-embeddings.gif"><img data-src="figures/multimodal-embeddings.gif" style="width:40.0%"></a></p>
-<figcaption>Multimodal LLM architecture: Encoder → Projector → LLM</figcaption>
-</figure>
+<p><a href="#/" data-modal-type="image" data-modal-url="figures/multimodal-embeddings.gif"><img data-src="figures/multimodal-embeddings.gif" style="width:65.0%" alt="Multimodal LLM architecture: Encoder → Projector → LLM"></a></p>
 </div>
+</div><div class="column" style="width:45%;">
+<div style="margin-top: 60px;">
+<ul>
+<li>Open example: <a href="https://llava-vl.github.io/">LLaVA</a></li>
+<li><span class="alert">GPT, Gemini and Claude don’t publish their designs</span></li>
+<li>OpenAI and Google say theirs learn all modalities together</li>
+</ul>
 </div>
+</div></div>
 <div style="margin-top: 20px;">
 <ol type="1">
 <li><strong>Modality Encoder</strong>: Vision Transformer (images) or Whisper (audio), both <span class="alert">pre-trained specialists</span></li>
 <li><strong>Projection Layer</strong>: Aligns encoder outputs to the LLM’s embedding space, and is <span class="alert">often surprisingly simple</span></li>
-<li><strong>LLM Backbone</strong>: The “brain” (GPT, Gemini, Claude), processing everything as tokens</li>
+<li><strong>LLM Backbone</strong>: The “brain”, processing everything as tokens</li>
 </ol>
 </div>
-</div></div>
 </div>
 </section></section>
 <section>

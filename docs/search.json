@@ -1600,7 +1600,7 @@
     "href": "lectures/lecture-06/06-language.html#why-use-tokens-instead-of-words",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Why use tokens instead of words?",
-    "text": "Why use tokens instead of words?\nA clever engineering choice\n\n\n\nThree approaches to breaking up text:\n\n\n\nMethod\nExample: “Evergreen”\nPros\nCons\n\n\n\n\nWord-based\n1 token\nIntuitive\nHuge vocabulary\n\n\nCharacter-based\n9 tokens\nTiny vocabulary\nLoses meaning\n\n\nSubword (BPE)\n2 tokens\nBest of both!\nLess intuitive\n\n\n\n\n\n\n\nModern LLMs use Byte Pair Encoding (BPE)\n\nStart with single characters (bytes) as tokens\nFind the pair that appears together most often in the training text, e.g. “u” + “n”\nMerge it into a new token (“un”) and repeat until the vocabulary is big enough\n\nCommon subwords become single tokens; rare words split into known pieces\nIt also saves space: “unbelievable”, “unhappy”, “undo” and “unknown” share the same “un”. The model stores “un” only once!\n\n\n\nWhy subwords win:\n\n\nHandles unknown words gracefully\nKeeps vocabulary manageable (~50,000 tokens)\nCommon words stay whole, rare words split sensibly\nWorks across languages\n\n\n\n\nSource: Hugging Face"
+    "text": "Why use tokens instead of words?\nA clever engineering choice\n\n\n\nThree approaches to breaking up text:\n\n\n\nMethod\nExample: “Evergreen”\nPros\nCons\n\n\n\n\nWord-based\n1 token\nIntuitive\nHuge vocabulary\n\n\nCharacter-based\n9 tokens\nTiny vocabulary\nLoses meaning\n\n\nSubword (BPE)\n2 tokens\nBest of both!\nLess intuitive\n\n\n\n\n\n\n\nModern LLMs use Byte Pair Encoding (BPE)\n\nStart with single characters (bytes) as tokens\nFind the pair that appears together most often in the training text, e.g. “u” + “n”\nMerge it into a new token (“un”) and repeat until the vocabulary is big enough\n\nCommon subwords become single tokens; rare words split into known pieces\nIt also saves space: “unbelievable”, “unhappy”, “undo” and “unknown” share the same “un”. The model stores “un” only once!\n\n\n\nWhy subwords win:\n\n\nHandles unknown words gracefully\nKeeps vocabulary manageable (~50,000 to 200,000 tokens)\nCommon words stay whole, rare words split sensibly\nWorks across languages\n\n\n\n\nSource: Hugging Face"
   },
   {
     "objectID": "lectures/lecture-06/06-language.html#tokenisation-in-action",
@@ -1614,7 +1614,7 @@
     "href": "lectures/lecture-06/06-language.html#token-limits-and-context-windows",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Token limits and context windows",
-    "text": "Token limits and context windows\nWhy your prompt has a maximum length\n\n\n\n\nEvery LLM has a context window: the maximum tokens it can process\n\nLonger inputs need much more computing power and memory, so providers set a limit\n\nThe limit covers both your prompt and the response\nOutput tokens usually cost 2-4x more than input tokens!\n\n\n\n\n\nModel\nContext Window\n\n\n\n\nGPT-3.5\n4,096 or 16,384 tokens\n\n\nGPT-4\n8,192 or 128,000 tokens\n\n\nGemini Pro / Claude / GPT-5\n1,000,000+ tokens\n\n\n\n\n\nA 3,500-token prompt against a 4,096 limit leaves 596 tokens for the response!\nExceeding limits gives an error or truncated output\nNon-English languages use more tokens\n\nChinese, Japanese, Korean: ~2-3x more tokens per concept. Higher costs and shorter effective context\n\n\n\n\n\nSource: Anthropic\nSame meaning, different tokens:\n\n\n\nLanguage\nText\nTokens\n\n\n\n\nEnglish\n“Hello”\n1\n\n\nChinese\n“你好”\n4\n\n\nArabic\n“مرحبا”\n6\n\n\nJapanese\n“こんにちは”\n6"
+    "text": "Token limits and context windows\nWhy your prompt has a maximum length\n\n\n\n\nEvery LLM has a context window: the maximum tokens it can process\n\nLonger inputs need much more computing power and memory, so providers set a limit\n\nThe limit covers both your prompt and the response\nOutput tokens usually cost 5-6x more than input tokens!\n\n\n\n\n\nModel\nContext Window\n\n\n\n\nGPT-3.5\n4,096 or 16,384 tokens\n\n\nGPT-4\n8,192 or 128,000 tokens\n\n\nGemini Pro / Claude / GPT-5.5\n1,000,000+ tokens\n\n\n\n\n\nA 3,500-token prompt against a 4,096 limit leaves 596 tokens for the response!\nExceeding limits gives an error or truncated output\nNon-English languages often use more tokens\n\nHigher costs and shorter effective context, though newer tokenisers narrow the gap\n\n\n\n\n\nSource: Anthropic\nSame meaning, different tokens:\n\n\n\nLanguage\nText\nGPT-3\nGPT-4o\n\n\n\n\nEnglish\n“Hello”\n1\n1\n\n\nChinese\n“你好”\n4\n1\n\n\nArabic\n“مرحبا”\n6\n2\n\n\nJapanese\n“こんにちは”\n6\n1"
   },
   {
     "objectID": "lectures/lecture-06/06-language.html#what-are-embeddings",
@@ -1635,7 +1635,7 @@
     "href": "lectures/lecture-06/06-language.html#word2vec-illustrated",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Word2vec illustrated",
-    "text": "Word2vec illustrated\nHow embeddings capture meaning\n\n\n\n\nHere are the embeddings for a few words\nThe colours show numbers from -2 to +2, but the actual embeddings are 4,096-dimensional!\nSee how “woman” and “girl” are similar, but “queen” is further away?\nWe don’t know what each dimension codes for, yet patterns still show\nIn some places “king” and “queen” match each other and differ from all the rest\nThe model has learned something about gender and royalty!\nNote that “water” has few connections to other words\n\n\n\n\n\nSource: Jay Alammar"
+    "text": "Word2vec illustrated\nHow embeddings capture meaning\n\n\n\n\nHere are the embeddings for a few words\nEach row is one word’s 50 numbers, from blue (-2) to red (+2)\nSee how “woman” and “girl” are similar, but “queen” is further away?\nWe don’t know what each dimension codes for, yet patterns still show\nIn some places “king” and “queen” match each other and differ from all the rest\nThe model has learned something about gender and royalty!\nNote that “water” has few connections to other words\n\n\n\n\n\nSource: Jay Alammar"
   },
   {
     "objectID": "lectures/lecture-06/06-language.html#embeddings-in-practice",
@@ -1649,14 +1649,14 @@
     "href": "lectures/lecture-06/06-language.html#what-is-a-parameter",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "What is a parameter?",
-    "text": "What is a parameter?\nWhat are these numbers, exactly?\n\n\n\n\nThink back to algebra: \\(y = 2x + 3\\)\nThe numbers 2 and 3 are parameters: they set the behaviour of the function\nIn an LLM, parameters are numbers that:\n\nget set during training\ncontrol how the model processes text\ndetermine what the model “knows”\n\nGPT-3: 175 billion parameters\nGPT-4: estimated 1+ trillion parameters\nEach parameter is adjusted thousands of times during training\nTraining means finding the numbers that make predictions accurate\n\n\n\n\n\nSource: Medium\n\nEach arrow represents parameters that are learned during training"
+    "text": "What is a parameter?\nWhat are these numbers, exactly?\n\n\n\n\nThink back to algebra: \\(y = 2x + 3\\)\nThe numbers 2 and 3 are parameters: they set the behaviour of the function\nIn an LLM, parameters are numbers that:\n\nget set during training\ncontrol how the model processes text\ndetermine what the model “knows”\n\nGPT-3: 175 billion parameters\nGPT-4: estimated 1+ trillion parameters\nEach GPT-3 parameter was adjusted about 100,000 times during training\nTraining means finding the numbers that make predictions accurate\n\n\n\n\n\nSource: Medium\n\nEach arrow represents parameters that are learned during training"
   },
   {
     "objectID": "lectures/lecture-06/06-language.html#how-many-parameters",
     "href": "lectures/lecture-06/06-language.html#how-many-parameters",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "How many parameters?",
-    "text": "How many parameters?\nThe scale of modern LLMs\n\n\n\n\n\n\n\n\n\n\n\nModel\nTotal parameters\nUsed per token\nTraining data\n\n\n\n\nGPT-2 (2019)\n1.5 billion\nAll\n40 GB text\n\n\nGPT-3 (2020)\n175 billion\nAll\n~300 billion tokens\n\n\nLlama 3.1 (2024)\n405 billion\nAll\n15 trillion tokens\n\n\nKimi K2 (2025)\n1 trillion\n32 billion\n15.5 trillion tokens\n\n\nDeepSeek-V4-Pro (2026)\n1.6 trillion\n49 billion\n33 trillion tokens\n\n\nGPT-5, Claude, Gemini\nUndisclosed\nUndisclosed\nUndisclosed\n\n\n\n\nTo put this in perspective:\n\n1.6 trillion parameters = 1,600,000,000,000 individual numbers\nCounting 1 per second would take ~50,000 years!\nMost new models use Mixture of Experts (MoE): many smaller “expert” networks\n\nEach token goes to only a few experts: DeepSeek-V4-Pro uses ~3% of its parameters per token\n\nTraining data grew ~100x since GPT-3"
+    "text": "How many parameters?\nThe scale of modern LLMs\n\n\n\n\n\n\n\n\n\n\n\nModel\nTotal parameters\nUsed per token\nTraining data\n\n\n\n\nGPT-2 (2019)\n1.5 billion\nAll\n40 GB text\n\n\nGPT-3 (2020)\n175 billion\nAll\n~300 billion tokens\n\n\nLlama 3.1 (2024)\n405 billion\nAll\n15 trillion tokens\n\n\nKimi K2 (2025)\n1 trillion\n32 billion\n15.5 trillion tokens\n\n\nDeepSeek-V4-Pro (2026)\n1.6 trillion\n49 billion\n32+ trillion tokens\n\n\nGPT-5, Claude, Gemini\nUndisclosed\nUndisclosed\nUndisclosed\n\n\n\n\nTo put this in perspective:\n\n1.6 trillion parameters = 1,600,000,000,000 individual numbers\nCounting 1 per second would take ~50,000 years!\nMost new models use Mixture of Experts (MoE): many smaller “expert” networks\n\nEach token goes to only a few experts: DeepSeek-V4-Pro uses ~3% of its parameters per token\n\nTraining data grew ~100x since GPT-3"
   },
   {
     "objectID": "lectures/lecture-06/06-language.html#the-three-types-of-parameters",
@@ -1670,7 +1670,7 @@
     "href": "lectures/lecture-06/06-language.html#training-finding-the-right-numbers",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Training: Finding the right numbers",
-    "text": "Training: Finding the right numbers\nHow parameters get their values\n\n\n\nThe training process:\n\nStart with random parameter values\nShow the model text: “The cat sat on the ___”\nModel predicts: “table” (wrong!)\nCalculate the error\nBackpropagation: adjust parameters to reduce the error\nRepeat billions of times\n\nIn short:\n\nThe model learns by predicting the next word, and every error teaches it something\nPatterns emerge from massive repetition\nTraining GPT-3 cost ~$3.5 million in compute!\n\n\n\n\n\nSource: Daniel McKee and Maghav Kumar\n\nParameters are adjusted step by step to minimise errors"
+    "text": "Training: Finding the right numbers\nHow parameters get their values\n\n\n\nThe training process:\n\nStart with random parameter values\nShow the model text: “The cat sat on the ___”\nModel predicts: “table” (wrong!)\nCalculate the error\nBackpropagation: adjust parameters to reduce the error\nRepeat billions of times\n\nIn short:\n\nThe model learns by predicting the next word, and every error teaches it something\nPatterns emerge from massive repetition\nTraining GPT-3 cost ~$4.6 million in compute!\n\n\n\n\n\nSource: Daniel McKee and Maghav Kumar\n\nParameters are adjusted step by step to minimise errors"
   },
   {
     "objectID": "lectures/lecture-06/06-language.html#model-size-vs.-capability",
@@ -1684,7 +1684,7 @@
     "href": "lectures/lecture-06/06-language.html#hyperparameters-the-creativity-dials",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Hyperparameters: The creativity dials",
-    "text": "Hyperparameters: The creativity dials\nTemperature, top-p, and top-k\n\n\n\nNot all parameters are learned. Hyperparameters are settings you control:\n\nTemperature: controls randomness\n\nlow (0.1-0.3): focused, deterministic\nhigh (0.7-1.0): creative, varied\n0.0: always picks the most likely word\n(Google AI Studio extends the scale to 2.0)\n\nTop-p (nucleus sampling): only consider words in the top p% probability\n\n0.9: the top 90% of likely words\n\nTop-k: only consider the top k most likely words\n\nk=50: choose from the 50 most likely words\n\n\n\n\nTemperature in action:\n\n\nSource: Medium"
+    "text": "Hyperparameters: The creativity dials\nTemperature, top-p, and top-k\n\n\n\nNot all parameters are learned. Hyperparameters are settings you control:\n\nTemperature: controls randomness\n\nlow (0.1-0.3): focused, deterministic\nhigh (0.7-1.0): creative, varied\n0.0: always picks the most likely word\n(OpenAI and Google AI Studio go up to 2.0)\n\nTop-p (nucleus sampling): keep the fewest words whose probabilities add up to p\n\n0.9: the most likely words until they cover 90% (often just a handful)\n\nTop-k: only consider the top k most likely words\n\nk=50: choose from the 50 most likely words\n\n\n\n\nTemperature in action:\n\n\nSource: Medium"
   },
   {
     "objectID": "lectures/lecture-06/06-language.html#the-full-picture",
@@ -1831,28 +1831,28 @@
     "href": "lectures/lecture-04/04-learning.html#key-concepts-in-rl",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Key concepts in RL",
-    "text": "Key concepts in RL\n\n\n\n\n\n\n\n\n\nConcept\nDefinition\nExample (Chess)\n\n\n\n\nAgent\nThe learner/decision-maker\nThe chess-playing AI\n\n\nEnvironment\nWhat the agent interacts with\nThe chess board and opponent\n\n\nState\nCurrent situation\nBoard position\n\n\nAction\nWhat the agent can do\nMove a piece\n\n\nReward\nFeedback signal\n+1 win, -1 lose, 0 otherwise\n\n\nPolicy\nStrategy: state → action\n“In this position, move queen”\n\n\nValue\nExpected future reward from a state\nHow good is this position?\n\n\n\n\n\nFun fact: Magnus Carlsen once said he “can’t beat his phone in chess”. RL really works! 😅"
+    "text": "Key concepts in RL\n\n\n\n\n\n\n\n\n\nConcept\nDefinition\nExample (Chess)\n\n\n\n\nAgent\nThe learner/decision-maker\nThe chess-playing AI\n\n\nEnvironment\nWhat the agent interacts with\nThe chess board and opponent\n\n\nState\nCurrent situation\nBoard position\n\n\nAction\nWhat the agent can do\nMove a piece\n\n\nReward\nFeedback signal\n+1 win, -1 lose, 0 otherwise\n\n\nPolicy\nStrategy: state → action\n“In this position, move queen”\n\n\nValue\nExpected future reward from a state\nHow good is this position?\n\n\n\n\n\nFun fact: Magnus Carlsen once said he “can’t beat his phone in chess” 😅 With RL, AlphaZero taught itself chess by playing against itself"
   },
   {
     "objectID": "lectures/lecture-04/04-learning.html#the-exploration-exploitation-trade-off",
     "href": "lectures/lecture-04/04-learning.html#the-exploration-exploitation-trade-off",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "The exploration-exploitation trade-off",
-    "text": "The exploration-exploitation trade-off\nShould you try something new or stick with what works?\n\n\n\n\nExploration: try new actions to find better strategies\nExploitation: use known good actions to maximise reward\nToo much exploration wastes time on bad actions\nToo much exploitation misses better strategies\nRestaurant choice: exploit your favourite, or explore a new one (might be better!)\nTo balance both, a common approach is ε-greedy, explore with probability ε, also called multi-armed bandit\n\n\n\n\n\n\nExploration vs exploitation\n\n\nSource: Lilian Weng"
+    "text": "The exploration-exploitation trade-off\nShould you try something new or stick with what works?\n\n\n\n\nExploration: try new actions to find better strategies\nExploitation: use known good actions to maximise reward\nToo much of either costs you: time wasted on bad actions, or better strategies missed\nRestaurant choice: exploit your favourite, or explore a new one (might be better!)\nTo balance both: ε-greedy explores with probability ε, exploits otherwise\nThe classic version of this dilemma is the multi-armed bandit problem\n\n\n\n\n\n\nExploration vs exploitation\n\n\nSource: Lilian Weng"
   },
   {
     "objectID": "lectures/lecture-04/04-learning.html#q-learning",
     "href": "lectures/lecture-04/04-learning.html#q-learning",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Q-learning",
-    "text": "Q-learning\nLearning action values\n\n\n\n\nQ-learning: learn which action is best in each situation\nKeep a score card: \\(Q(s, a)\\) = “How good is action \\(a\\) in state \\(s\\)?”\nThe agent learns by doing:\n\nTry an action, see the reward → “Go right… hit a wall, ouch!”\nUpdate the score → “Going right here is bad”\nRepeat thousands of times → “Eventually: always go left here!”\n\n\nThe update rule: \\[\\text{New Score} = \\text{Old Score} + \\text{Small Correction}\\]\n\nPolicy: always pick the action with the highest score\nCool example: (Poor) Albert learns to walk: https://youtu.be/L_4BPjLBF4E?&t=137\nEven better: DeepMind’s AlphaGo: https://youtu.be/WXuK6gekU1Y\n\n\n\n \nSource: Medium"
+    "text": "Q-learning\nLearning action values\n\n\n\n\nQ-learning: learn which action is best in each situation\nKeep a score card: \\(Q(s, a)\\) = “How good is action \\(a\\) in state \\(s\\)?”\nThe agent learns by doing:\n\nTry an action, see the reward → “Go right… hit a wall, ouch!”\nUpdate the score → “Going right here is bad”\nRepeat thousands of times → “Eventually: always go left here!”\n\n\nThe update rule: \\[\\text{New Score} = \\text{Old Score} + \\text{Small Correction}\\]\n\nPolicy: always pick the action with the highest score\nCool example: (Poor) Albert learns to walk: https://youtu.be/L_4BPjLBF4E?&t=137\nBeyond Q-learning: DeepMind’s AlphaGo combined RL with tree search: https://youtu.be/WXuK6gekU1Y\n\n\n\n \nSource: Medium"
   },
   {
     "objectID": "lectures/lecture-04/04-learning.html#rlhf-rl-for-language-models",
     "href": "lectures/lecture-04/04-learning.html#rlhf-rl-for-language-models",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "RLHF: RL for language models",
-    "text": "RLHF: RL for language models\nFrom AlphaGo to ChatGPT\n\n\n\n\nRLHF: Reinforcement Learning from Human Feedback\nKey to ChatGPT’s success!\nProcess:\n\nTrain a base LLM on text (supervised)\nCollect human preferences on model outputs\nTrain a reward model on those preferences\nUse RL to optimise the LLM for that reward\n\nWhy it works:\n\nNo formula can specify a “good response”\nHumans find it easier to compare responses\n\nMore here: https://openai.com/index/learning-from-human-preferences/\n\n\n\n\n\n\nRLHF pipeline\n\n\nSource: Simform"
+    "text": "RLHF: RL for language models\nFrom AlphaGo to ChatGPT\n\n\n\n\nRLHF: Reinforcement Learning from Human Feedback\nKey to ChatGPT’s success!\nProcess:\n\nPretrain a base LLM to predict the next word (no human labels)\nFine-tune it on answers written by humans\nCollect human preferences on model outputs\nTrain a reward model on those preferences\nUse RL to optimise the LLM for that reward\n\nWhy it works:\n\nNo formula can specify a “good response”\nHumans find it easier to compare responses\n\nMore here: https://openai.com/index/learning-from-human-preferences/\n\n\n\n\n\n\nRLHF pipeline\n\n\nSource: Simform"
   },
   {
     "objectID": "lectures/lecture-04/04-learning.html#rlhf",
@@ -1929,7 +1929,7 @@
     "href": "lectures/lecture-02/02-history.html#alan-turing-and-the-foundations-of-computing",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Alan Turing and the foundations of computing",
-    "text": "Alan Turing and the foundations of computing\nThe theoretical breakthrough\n\n\n\n\n1936: Alan Turing publishes “On Computable Numbers, with an Application to the Entscheidungsproblem” (decision problem)\nIntroduces the universal machine, which can compute anything computable\n1950: publishes “Computing Machinery and Intelligence” in Mind (philosophy journal)\n\nProposes the Turing Test: can a machine fool a human into thinking it’s human?\nAsks “Can machines think?”, then reframes it as “Can machines do what we (as thinking entities) can do?”\n\nThese ideas laid the theoretical foundation for computing and AI\nHe suggested machines could learn, not just follow fixed rules\n\n\n\n\n\n\nThe standard version of the Turing test\n\n\nSource: Wikipedia - Turing Test"
+    "text": "Alan Turing and the foundations of computing\nThe theoretical breakthrough\n\n\n\n\n1936: Alan Turing publishes “On Computable Numbers, with an Application to the Entscheidungsproblem” (decision problem)\nIntroduces the universal machine, which can compute anything computable\n1950: publishes “Computing Machinery and Intelligence” in Mind (philosophy journal)\n\nAsks “Can machines think?”, then replaces it with a question he can test\nProposes the Turing Test: can a machine fool a human into thinking it’s human?\n\nThese ideas laid the theoretical foundation for computing and AI\nHe suggested machines could learn, not just follow fixed rules\n\n\n\n\n\n\nThe standard version of the Turing test\n\n\nSource: Wikipedia - Turing Test"
   },
   {
     "objectID": "lectures/lecture-02/02-history.html#live-turing-test",
@@ -1943,7 +1943,7 @@
     "href": "lectures/lecture-02/02-history.html#the-dartmouth-conference-1956",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "The Dartmouth Conference (1956)",
-    "text": "The Dartmouth Conference (1956)\nWhere it all began\n\n\n\n\nSummer 1956: a workshop at Dartmouth College marks the birth of AI as a field\nOrganised by John McCarthy, Marvin Minsky, Nathaniel Rochester, and Claude Shannon\nFirst use of the term “Artificial Intelligence”\nThe founding conjecture:\n\n\n“Every aspect of learning or any other feature of intelligence can in principle be so precisely described that a machine can be made to simulate it.”\n\n\nAttendees included Herbert Simon and Allen Newell\nOptimism was high: many believed human-level AI was decades away\n\n\n\n\n\n\nThe Dartmouth workshop participants\n\n\nSource: IEEE Spectrum"
+    "text": "The Dartmouth Conference (1956)\nWhere it all began\n\n\n\n\nSummer 1956: a workshop at Dartmouth College marks the birth of AI as a field\nOrganised by John McCarthy, Marvin Minsky, Nathaniel Rochester, and Claude Shannon\nThe term “Artificial Intelligence” was coined in the 1955 proposal for the workshop\nThe founding conjecture:\n\n\n“Every aspect of learning or any other feature of intelligence can in principle be so precisely described that a machine can be made to simulate it.”\n\n\nAttendees included Herbert Simon and Allen Newell\nOptimism was high: many believed human-level AI was decades away\n\n\n\n\n\n\nThe Dartmouth workshop participants\n\n\nSource: IEEE Spectrum"
   },
   {
     "objectID": "lectures/lecture-02/02-history.html#symbolic-ai-and-expert-systems",
@@ -2013,7 +2013,7 @@
     "href": "lectures/lecture-02/02-history.html#step-2-embeddings",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Step 2: Embeddings",
-    "text": "Step 2: Embeddings\nWords as points in space\n\n\n\n\nEach token becomes a vector (a list of numbers)\nGPT-2: each token → 768 numbers (nothing special about 768; models use different sizes)\nThese vectors capture meaning:\n\nSimilar words are close together\n“king” - “man” + “woman” ≈ “queen”\n\nAlso add position information: word order matters (“Dog bites man” ≠ “Man bites dog”)\nEmbeddings start as random numbers. Every bad guess nudges them, and words used alike drift together\nNobody arranges them. Meaning is a side effect of predicting well\n\n\n\n\n\n\nWords plotted in 3-dimensional space. Embeddings can have hundreds or thousands of dimensions, too many for humans to visualise\n\n\nSource: Google Cloud"
+    "text": "Step 2: Embeddings\nWords as points in space\n\n\n\n\nEach token becomes a vector (a list of numbers)\nGPT-2 small: each token → 768 numbers (other models use other sizes)\nThese vectors capture meaning:\n\nSimilar words are close together\n“king” - “man” + “woman” ≈ “queen”\n\nAlso add position information: word order matters (“Dog bites man” ≠ “Man bites dog”)\nEmbeddings start as random numbers. Every bad guess nudges them, and words used alike drift together\nNobody arranges them. Meaning is a side effect of predicting well\n\n\n\n\n\n\nWords plotted in 3-dimensional space. Embeddings can have hundreds or thousands of dimensions, too many for humans to visualise\n\n\nSource: Google Cloud"
   },
   {
     "objectID": "lectures/lecture-02/02-history.html#step-3-self-attention",
@@ -2034,7 +2034,7 @@
     "href": "lectures/lecture-02/02-history.html#step-4-feed-forward-and-stacking",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Step 4: Feed-forward and stacking",
-    "text": "Step 4: Feed-forward and stacking\nWhere the model keeps what it knows\n\n\n\n\n“The cat sat on the ___”\nAttention brings “cat” and “sat” to the guessing position\nBut nothing in the sentence says what a cat sits on, so it must come from memory\nThat memory is the feed-forward network (MLP)\nAttention moves what is in the sentence. The network adds what is not\nThe two make one block: 12 in GPT-2, 96 in GPT-3, far more since\nEach block adds to the word rather than replacing it, so nothing is lost on the way up\nEach round asks a better question than the last:\n\nEarly blocks: what kind of word is this?\nLate blocks: what is this text about, and what comes next?\n\n\n\n\n\n\n\nOne transformer block\n\n\nSource: Mohamed Traore\n\n\nAlso called a multi-layer perceptron (MLP): Rosenblatt’s perceptron from 1958, stacked in layers and trained by backpropagation. Two thirds of a model’s weights live here, not in attention"
+    "text": "Step 4: Feed-forward and stacking\nWhere the model keeps what it knows\n\n\n\n\n“The cat sat on the ___”: attention brings “cat” and “sat” to the blank\nThe sentence never says what a cat sits on. The feed-forward network (MLP) supplies it from memory\nAttention moves what is in the sentence. The network adds what is not\nThe two make one block: 12 in GPT-2 small, 48 in full GPT-2, 96 in GPT-3\nEach block adds to the word rather than replacing it, so nothing is lost between blocks\nEach block asks a better question than the last:\n\nEarly: what kind of word is this?\nLate: what is this text about, and what comes next?\n\n\n\n\n\n\n\nOne transformer block\n\n\nSource: Mohamed Traore\n\n\nMulti-layer perceptron (MLP): Rosenblatt’s 1958 perceptron, stacked in layers and trained by backpropagation. Two thirds of the weights live here"
   },
   {
     "objectID": "lectures/lecture-02/02-history.html#step-5-predicting-the-next-token",
@@ -2377,7 +2377,7 @@
     "href": "lectures/lecture-01/01-introduction.html#true-or-false",
     "title": "Welcome to Introduction to AI Applications!",
     "section": "True or false?",
-    "text": "True or false?\n\n\n\n\nAI understands language like humans do\n\nFalse! AI predicts likely next tokens (what are they?)\n\nAI will replace all jobs\n\nProbably not. AI changes jobs more than it removes them\n\nAI hallucinations are easy to spot\n\nFalse! AI states wrong information confidently, and it is not always obvious\n\nWe can test AI systems by deliberately trying to trick them\n\nTrue! This is called adversarial testing or red-teaming\n\n\n\n\nAI systems that learn without any human labels exist\n\nTrue! This is unsupervised learning, and it finds hidden patterns automatically\n\nAI systems can explain why they made a particular decision\n\nFalse! Many AI systems are “black boxes”: we don’t know for sure how they reached their answers\n\nThe order of words in a sentence affects how AI processes it\n\nTrue! Attention mechanisms let models weigh the importance of different words\n\nThe same AI model can be fine-tuned for many different tasks\n\nTrue! This is one of the most powerful aspects of modern AI"
+    "text": "True or false?\n\n\n\n\nAI understands language like humans do\n\nFalse! AI predicts likely next tokens (what are they?)\n\nAI will replace all jobs\n\nProbably not. AI changes jobs more than it removes them\n\nAI hallucinations are easy to spot\n\nFalse! AI states wrong information confidently, and it is not always obvious\n\nWe can test AI systems by deliberately trying to trick them\n\nTrue! This is called adversarial testing or red-teaming\n\n\n\n\nAI systems that learn without any human labels exist\n\nTrue! This is unsupervised learning, and it finds hidden patterns automatically\n\nAI systems can explain why they made a particular decision\n\nFalse! Many AI systems are “black boxes”: we don’t know for sure how they reached their answers\n\nThe order of words in a sentence affects how AI processes it\n\nTrue! Models tag each word with its position in the sentence\n\nThe same AI model can be fine-tuned for many different tasks\n\nTrue! This is one of the most powerful aspects of modern AI"
   },
   {
     "objectID": "lectures/lecture-01/01-introduction.html#next-class",
@@ -2433,7 +2433,7 @@
     "href": "lectures/lecture-03/03-datasets.html#real-world-impact-of-data-quality",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Real-world impact of data quality",
-    "text": "Real-world impact of data quality\nWhen bad data causes harm\n\n\n\n\nCase\nWhat went wrong\nImpact\n\n\n\n\nCredit scoring\nData reflected historical gender-based income gaps\nLower credit limits for women with similar profiles\n\n\nFacial recognition\nTraining data mostly light-skinned faces\nError rates 43x higher for dark-skinned women\n\n\nCriminal risk assessment\nHistorical arrest data reflected biased policing\nPerpetuated racial disparities in sentencing\n\n\nHiring AI\nTrained on historical (male-dominated) hiring decisions\nPenalised female candidates\n\n\n\n\n\nIn all four cases the model learned exactly what the data taught it"
+    "text": "Real-world impact of data quality\nWhen bad data causes harm\n\n\n\n\nCase\nWhat went wrong\nImpact\n\n\n\n\nSpeech recognition\nToo little training audio from Black speakers\nNearly twice the errors for Black speakers (35% vs 19%)\n\n\nFacial analysis\nTraining data mostly light-skinned faces\n43x more errors for dark-skinned women than light-skinned men\n\n\nCriminal risk assessment\nHistorical arrest data reflected biased policing\nPerpetuated racial disparities in sentencing\n\n\nHiring AI\nTrained on historical (male-dominated) hiring decisions\nPenalised female candidates\n\n\n\n\n\nIn all four cases the model learned exactly what the data taught it"
   },
   {
     "objectID": "lectures/lecture-03/03-datasets.html#classification-and-regression-tasks",
@@ -2461,7 +2461,7 @@
     "href": "lectures/lecture-03/03-datasets.html#the-proxy-problem",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "The proxy problem",
-    "text": "The proxy problem\nWhen labels don’t measure what you care about\n\n\n\n\nWe often cannot measure what we want to predict, so we use proxy variables\nProxies can mislead\nExample 01, predicting “health needs”\n\nWe want: how sick is this patient? Available data: healthcare spending\nSpending ≠ health needs: systemic barriers meant less was spent on Black patients\nAlgorithm learned “Black patients need less care” → wrong!\n\nExample 02, predicting expertise on social media\n\nWe want: who is an expert? Available data: number of followers\nFollowers ≠ expertise: popularity can be gamed or unrelated to the field\n\n\n\n\n\n\n\nModel-centric vs. Data-centric AI\n\n\nSource: Andrej Karpathy\n\n\n\nAlways ask: Does this label actually measure what I care about?"
+    "text": "The proxy problem\nWhen labels don’t measure what you care about\n\n\n\n\nWe often cannot measure what we want to predict, so we use proxy variables\nProxies can mislead\nExample 01, predicting “health needs”\n\nWe want: how sick is this patient? Available data: healthcare spending\nSpending ≠ health needs: systemic barriers meant less was spent on Black patients\nRace was never an input, yet Black patients had to be sicker to get the same risk score\n\nExample 02, predicting expertise on social media\n\nWe want: who is an expert? Available data: number of followers\nFollowers ≠ expertise: popularity can be gamed or unrelated to the field\n\n\n\n\n\n\n\nModel-centric vs. Data-centric AI\n\n\nSource: Andrej Karpathy\n\n\n\nAlways ask: Does this label actually measure what I care about?"
   },
   {
     "objectID": "lectures/lecture-03/03-datasets.html#where-do-the-data-come-from",
@@ -2538,7 +2538,7 @@
     "href": "lectures/lecture-03/03-datasets.html#sec-agreement",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Multiple annotators and agreement",
-    "text": "Multiple annotators and agreement\nReducing individual errors\n\n\n\nWhy use multiple annotators:\n\nMultiple annotators → more reliable labels\nBenefits: catch errors, identify ambiguous cases, assess label quality, reduce biases\nTrade-off: more expensive\n\nAggregation strategies:\n\nMajority vote: most common label wins (limitations: ties, equal weighting)\nWeighted voting: trust reliable annotators more\nAdjudication: expert makes the final call\nKeep all labels: train on disagreement (for uncertainty research)\n\n\nMeasuring agreement (IAA):\n\nInter-annotator agreement: do annotators agree?\nHigh agreement → labels are reliable\nLow agreement → problem with the guidelines or the task\nCommon metric: Cohen’s Kappa (Fleiss’ Kappa for more than two annotators)\n\n\nCohen’s Kappa: \\[\\kappa = \\frac{p_o - p_e}{1 - p_e}\\]\n\n\n\\(p_o\\) (observed agreement): share of items both annotators labelled the same way\n\\(p_e\\) (expected agreement): share they would agree on by chance, given how often each one uses each label\nWorked example\n\n\n\n\n\nKappa\nInterpretation\n\n\n\n\n&lt; 0.20\nSlight\n\n\n0.21–0.40\nFair\n\n\n0.41–0.60\nModerate\n\n\n0.61–0.80\nSubstantial\n\n\n0.81–1.00\nAlmost perfect"
+    "text": "Multiple annotators and agreement\nReducing individual errors\n\n\n\nWhy use multiple annotators:\n\nMultiple annotators → more reliable labels\nBenefits: catch errors, identify ambiguous cases, assess label quality, reduce biases\nTrade-off: more expensive\n\nAggregation strategies:\n\nMajority vote: most common label wins (limitations: ties, equal weighting)\nWeighted voting: trust reliable annotators more\nAdjudication: expert makes the final call\nKeep all labels: train on disagreement (for uncertainty research)\n\n\nMeasuring agreement (IAA):\n\nInter-annotator agreement: do annotators agree?\nHigh agreement → labels are reliable\nLow agreement → problem with the guidelines or the task\nCommon metric: Cohen’s Kappa (Fleiss’ Kappa for more than two annotators)\n\n\n\n\\[\\kappa = \\frac{p_o - p_e}{1 - p_e}\\]\n\n\n\\(p_o\\) (observed agreement): share of items both annotators labelled the same way\n\\(p_e\\) (expected agreement): share they would agree on by chance, given how often each one uses each label\n\n\n\n\n\n\n\nKappa\nInterpretation\n\n\n\n\n&lt; 0\nPoor\n\n\n0.00–0.20\nSlight\n\n\n0.21–0.40\nFair\n\n\n0.41–0.60\nModerate\n\n\n0.61–0.80\nSubstantial\n\n\n0.81–1.00\nAlmost perfect\n\n\n\nWorked example"
   },
   {
     "objectID": "lectures/lecture-03/03-datasets.html#quality-control",
@@ -2629,7 +2629,7 @@
     "href": "lectures/lecture-05/05-metrics.html#regression-metrics",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Regression metrics",
-    "text": "Regression metrics\nWhen the target is continuous\n\n\nPredicting numbers needs different metrics:\n\n\n\n\n\n\n\n\n\nMetric\nFormula\nIntuition\n\n\n\n\nMAE\nMean of |actual - predicted|\nAverage error size, original units\n\n\nMSE\nMean of (actual - predicted)²\nAverage squared error, penalises big errors\n\n\nRMSE\n√MSE\nMSE in original units\n\n\nR²\n1 - (SS_res / SS_tot)\nVariance explained\n\n\n\n\nEasy examples:\n\nMAE (Mean Absolute Error): predict 10 pizzas, 12 arrive → off by 2. Predict 10, get 8 → off by 2. MAE = 2 pizzas\nRMSE (Root Mean Squared Error): off by 2 one day, off by 10 another. RMSE punishes that 10 far more\nR²: R² = 0.8 means the model explains 80% of why scores differ, 20% stays unexplained"
+    "text": "Regression metrics\nWhen the target is continuous\n\n\nPredicting numbers needs different metrics:\n\n\n\n\n\n\n\n\n\nMetric\nFormula\nIntuition\n\n\n\n\nMAE\nMean of |actual - predicted|\nAverage error size, original units\n\n\nMSE\nMean of (actual - predicted)²\nAverage squared error, penalises big errors\n\n\nRMSE\n√MSE\nMSE in original units\n\n\nR²\n1 - (SS_res / SS_tot)\nVariance explained\n\n\n\n\nEasy examples:\n\nMAE (Mean Absolute Error): predict 10 pizzas, 12 arrive → off by 2. Predict 10, get 8 → off by 2. MAE = 2 pizzas\nRMSE (Root Mean Squared Error): off by 2 one day, off by 10 another. RMSE punishes that 10 far more\nR²: R² = 0.8 means the model explains 80% of the variation in scores, 20% stays unexplained"
   },
   {
     "objectID": "lectures/lecture-05/05-metrics.html#what-is-overfitting",
@@ -2692,7 +2692,7 @@
     "href": "lectures/lecture-05/05-metrics.html#real-world-consequences",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Real-world consequences",
-    "text": "Real-world consequences\nWhy hallucinations matter\n\n\n\nNotable incidents (all real!):\n\n⚖️ Legal (2023): two lawyers were sanctioned for a brief citing six non-existent cases from ChatGPT\n🏥 Medical: chatbots gave dangerous health advice citing fabricated studies\n📰 News: AI-generated fake news moved stock prices\n📚 Academic: students submitted essays with entirely invented references\nMore people trust AI outputs without checking them\nNon-experts struggle to spot fabrications\nOrganisations face legal and reputational risks\n\n\n\nDiscussion question:\nHow would you check if an AI’s answer is correct?\n\nCheck primary sources?\nAsk another AI?\nTrust your intuition?\nRely on the AI company’s reputation?\n\n\n\n\nAlways check the sources yourself!\n\n\n\n🎬 Watch: IBM Explains AI Hallucinations (5 min)"
+    "text": "Real-world consequences\nWhy hallucinations matter\n\n\n\nNotable incidents (all real!):\n\n⚖️ Legal (2023): two lawyers were sanctioned for a brief citing six non-existent cases from ChatGPT\n🏥 Medical: chatbots explained made-up diseases and tests as if they were real\n📰 News: AI-generated fake news moved stock prices\n📚 Academic: students submitted essays with entirely invented references\nMore people trust AI outputs without checking them\nNon-experts struggle to spot fabrications\nOrganisations face legal and reputational risks\n\n\n\nDiscussion question:\nHow would you check if an AI’s answer is correct?\n\nCheck primary sources?\nAsk another AI?\nTrust your intuition?\nRely on the AI company’s reputation?\n\n\n\n\nAlways check the sources yourself!\n\n\n\n🎬 Watch: IBM Explains AI Hallucinations (5 min)"
   },
   {
     "objectID": "lectures/lecture-05/05-metrics.html#rag-retrieval-augmented-generation",
@@ -2713,21 +2713,21 @@
     "href": "lectures/lecture-05/05-metrics.html#benchmarks-leaderboards-and-their-limits",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Benchmarks, leaderboards, and their limits",
-    "text": "Benchmarks, leaderboards, and their limits\nComparing AI models…and when metrics fail\n\n\n\nBenchmarks: Standardised tests (MMLU, TruthfulQA, HumanEval)\nLeaderboards: Human preference rankings (LM Arena uses Elo ratings, a chess-inspired scoring system to rank models)\nGoodhart’s Law: “When a measure becomes a target, it ceases to be a good measure”\nCommon problems:\n\nBenchmark contamination: test data leaks into training\nTeaching to the test: optimising for quirks, not capability\nMetric saturation: “human-level” on benchmarks, fails in the real world\n\nWhat benchmarks miss: Robustness, safety, creativity, long-horizon reasoning\n\n\n\n\n\nGoodhart’s Law in action\n\n\nSource: X.com\nTry it yourself at lmarena.ai!"
+    "text": "Benchmarks, leaderboards, and their limits\nComparing AI models…and when metrics fail\n\n\n\nBenchmarks: Standardised tests (MMLU, TruthfulQA, HumanEval)\nLeaderboards: Human preference rankings (LM Arena uses Elo-style ratings, borrowed from chess)\nGoodhart’s Law: “When a measure becomes a target, it ceases to be a good measure”\nCommon problems:\n\nBenchmark contamination: test data leaks into training\nTeaching to the test: optimising for quirks, not capability\nMetric saturation: “human-level” on benchmarks, fails in the real world\n\nWhat benchmarks miss: Robustness, safety, creativity, long-horizon reasoning\n\n\n\n\n\nGoodhart’s Law in action\n\n\nSource: X.com\nTry it yourself at lmarena.ai!"
   },
   {
     "objectID": "lectures/lecture-05/05-metrics.html#benchmark-contamination-in-practice",
     "href": "lectures/lecture-05/05-metrics.html#benchmark-contamination-in-practice",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Benchmark contamination in practice",
-    "text": "Benchmark contamination in practice\nWhen the model finds the answer key\n\n\n\n\nIn 2025, Anthropic found that Claude Opus worked out on its own that it was being evaluated on BrowseComp, an OpenAI benchmark\nThe model found the answer key online and used it\nA new form of benchmark contamination: the model is not trained on the answers, it finds them during the test\nThis threatens the validity of benchmarks that assume models cannot reach external information\nAs models get more capable, evaluation itself gets harder\n\n\n\n\n\n\nClaude identifying a benchmark evaluation\n\n\nSource: Anthropic Engineering"
+    "text": "Benchmark contamination in practice\nWhen the model finds the answer key\n\n\n\n\nIn 2025, Anthropic tested Claude Opus 4.6 on BrowseComp, an OpenAI benchmark\nOn its own, the model worked out it was being tested\nIt found the encrypted answer key online, decrypted it and used it\nA new form of benchmark contamination: answers found during the test, not in training\nIt undermines benchmarks that assume models cannot look things up\nAs models get more capable, evaluation itself gets harder\n\n\n\n\n\n\nClaude identifying a benchmark evaluation\n\n\nSource: Anthropic Engineering"
   },
   {
     "objectID": "lectures/lecture-05/05-metrics.html#fairness-when-overall-accuracy-hides-problems",
     "href": "lectures/lecture-05/05-metrics.html#fairness-when-overall-accuracy-hides-problems",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Fairness: When overall accuracy hides problems",
-    "text": "Fairness: When overall accuracy hides problems\nThe disaggregation imperative\n\n\n\n\nOverall accuracy can hide serious failures for specific groups\nReal example (Buolamwini & Gebru, 2018), commercial face recognition:\n\nlight-skinned men: 0.8% error\ndark-skinned women: 34.7% error\n43× worse for one group!\n\nChecking per group is called data slicing or subgroup analysis\nDropping sensitive features does not fix this, they correlate with other features\nAlways evaluate per subgroup, never only overall\n\n\n\n\n\n\nSubgroup performance disparities\n\n\nSource: Medium"
+    "text": "Fairness: When overall accuracy hides problems\nThe disaggregation imperative\n\n\n\n\nOverall accuracy can hide serious failures for specific groups\nReal example (Buolamwini & Gebru, 2018), Face++ gender classifier:\n\nlight-skinned men: 0.8% error\ndark-skinned women: 34.5% error\n43× worse for one group!\n\nChecking per group is called data slicing or subgroup analysis\nDropping sensitive features does not fix this, they correlate with other features\nAlways evaluate per subgroup, never only overall\n\n\n\n\n\n\nSame pattern in a 2019 audit of Amazon Rekognition (Raji & Buolamwini)\n\n\nSource: Medium"
   },
   {
     "objectID": "lectures/lecture-05/05-metrics.html#main-takeaways",
@@ -2748,7 +2748,7 @@
     "href": "lectures/lecture-07/07-multimodal.html#lecture-overview",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Lecture overview",
-    "text": "Lecture overview\nToday’s agenda\n\n\n\nPart 1: How Machines “See”\n\nWhat computers actually see (just numbers!)\nHow AI learns to recognise objects\nActivity: train your own image classifier\n\nPart 2: How Machines “Hear”\n\nTurning invisible sound waves into pictures\nHow Siri and Alexa understand speech\n\n\nPart 3: The Big Picture\n\nEverything becomes the same kind of numbers\n\nPart 4: What This Means for Society\n\nCan you trust what you see and hear?\nDeepfakes, bias, and privacy\nClass discussion: where do we draw the line?"
+    "text": "Lecture overview\nToday’s agenda\n\n\n\nPart 1: How Machines “See”\n\nWhat computers actually see (just numbers!)\nHow AI learns to recognise objects\nActivity: train your own image classifier\n\nPart 2: How Machines “Hear”\n\nTurning invisible sound waves into pictures\nHow machines understand speech\n\n\nPart 3: The Big Picture\n\nEverything becomes the same kind of numbers\n\nPart 4: What This Means for Society\n\nCan you trust what you see and hear?\nDeepfakes, bias, and privacy\nClass discussion: where do we draw the line?"
   },
   {
     "objectID": "lectures/lecture-07/07-multimodal.html#tweet-of-the-day",
@@ -2881,7 +2881,7 @@
     "href": "lectures/lecture-07/07-multimodal.html#the-three-part-architecture",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "The three-part architecture",
-    "text": "The three-part architecture\nHow multimodal LLMs work\n\n\n\n\n\n\n\nMultimodal LLM architecture: Encoder → Projector → LLM\n\n\n\n\n\nModality Encoder: Vision Transformer (images) or Whisper (audio), both pre-trained specialists\nProjection Layer: Aligns encoder outputs to the LLM’s embedding space, and is often surprisingly simple\nLLM Backbone: The “brain” (GPT, Gemini, Claude), processing everything as tokens"
+    "text": "The three-part architecture\nHow open multimodal models work\n\n\n\n\n\n\n\n\n\nOpen example: LLaVA\nGPT, Gemini and Claude don’t publish their designs\nOpenAI and Google say theirs learn all modalities together\n\n\n\n\n\nModality Encoder: Vision Transformer (images) or Whisper (audio), both pre-trained specialists\nProjection Layer: Aligns encoder outputs to the LLM’s embedding space, and is often surprisingly simple\nLLM Backbone: The “brain”, processing everything as tokens"
   },
   {
     "objectID": "lectures/lecture-07/07-multimodal.html#training-multimodal-models",
@@ -4933,5 +4933,19 @@
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "AGENTS.md and Skills",
     "text": "AGENTS.md and Skills\nOne shared file, and folders for repeatable tasks\n\n\n\nAGENTS.md: one instruction file many coding tools read\n\nReleased Aug 2025 by OpenAI Codex; now ~two dozen tools (Cursor, Gemini CLI, Copilot, Zed), in 60,000+ projects\nClaude Code reads it too via @AGENTS.md; joined the Agentic AI Foundation (Dec 2025)\nClaude Code can read AGENTS.md, CLAUDE.md, or both\n\nSkills: a folder with a SKILL.md for one repeatable task\n\nProgressive disclosure: reads a short description first, loads the rest when a task matches\nPre-built skills run in the web app; writing your own needs a paid plan and code execution\n\n\n\n\nSource: agents.md\n\n\nAll of this needs software you install, often on a paid plan. Recognise it, do not memorise it. It will not be on the quiz because not every student can run it"
+  },
+  {
+    "objectID": "lectures/lecture-07/07-multimodal.html#whisper-how-machines-understand-speech",
+    "href": "lectures/lecture-07/07-multimodal.html#whisper-how-machines-understand-speech",
+    "title": "DATASCI 101: Introduction to AI Applications",
+    "section": "Whisper: How machines understand speech",
+    "text": "Whisper: How machines understand speech\n\n\n\nWhisper is OpenAI’s speech recognition system:\n\nTrained on 680,000 hours of audio from the internet\nUnderstands 99 languages\nHandles accents, background noise, and different speaking styles\n\nHow it works:\n\nSlice: Break audio into short windows (typically 25ms)\nFFT: Convert each window from waveform to frequencies (how much of each frequency is present)\nMel mapping: Apply mel scale to match human perception\nStack: Create 2D spectrogram from all windows\nProcess: Use Transformers, same as text and images\nContext: Use attention to predict the next tokens\n\n\n\nArchitecture: encoder-decoder Transformer\n\nEncoder: processes the mel spectrogram\nDecoder: generates text tokens\n\nOpen source and free to use\n\nSiri, Alexa and Google Assistant use their own systems, built on the same ideas\n\n\nSource: Sam Galope (2024)"
+  },
+  {
+    "objectID": "lectures/lecture-06/06-language.html#how-big-are-real-embeddings",
+    "href": "lectures/lecture-06/06-language.html#how-big-are-real-embeddings",
+    "title": "DATASCI 101: Introduction to AI Applications",
+    "section": "How big are real embeddings?",
+    "text": "How big are real embeddings?\nFrom 50 numbers to thousands\n\n\n\n\nGloVe (2014) stores each word as 50 numbers, like the rows on the last slide\nLLMs store each token as thousands of numbers: 4,096 in Llama 3 8B, 12,288 in GPT-3\nMore numbers leave room for finer shades of meaning\nNobody reads them one by one: we study the patterns instead"
   }
 ]

@@ -300,8 +300,8 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <li>Introduces the <span class="alert">universal machine</span>, which can compute anything computable</li>
 <li><strong>1950</strong>: publishes “<a href="https://phil415.pbworks.com/f/TuringComputing.pdf">Computing Machinery and Intelligence</a>” in <a href="https://en.wikipedia.org/wiki/Mind_(journal)">Mind</a> (philosophy journal)
 <ul>
+<li>Asks <span class="alert">“Can machines think?”</span>, then replaces it with a question he can test</li>
 <li>Proposes the <a href="https://en.wikipedia.org/wiki/Turing_test">Turing Test</a>: can a machine fool a human into thinking it’s human?</li>
-<li>Asks <span class="alert">“Can machines think?”</span>, then reframes it as <span class="alert">“Can machines do what we (as thinking entities) can do?”</span></li>
 </ul></li>
 <li>These ideas laid the <span class="alert">theoretical foundation</span> for computing and AI</li>
 <li>He suggested machines could <span class="alert">learn</span>, not just follow fixed rules</li>
@@ -363,7 +363,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <ul>
 <li><strong>Summer 1956</strong>: <a href="https://en.wikipedia.org/wiki/Dartmouth_workshop">a workshop at Dartmouth College</a> marks the birth of AI as a field</li>
 <li>Organised by <a href="https://en.wikipedia.org/wiki/John_McCarthy_(computer_scientist)">John McCarthy</a>, <a href="https://en.wikipedia.org/wiki/Marvin_Minsky">Marvin Minsky</a>, <a href="https://en.wikipedia.org/wiki/Nathaniel_Rochester_(computer_scientist)">Nathaniel Rochester</a>, and <a href="https://en.wikipedia.org/wiki/Claude_Shannon">Claude Shannon</a></li>
-<li>First use of the term “<span class="alert">Artificial Intelligence</span>”</li>
+<li>The term “<span class="alert">Artificial Intelligence</span>” was coined in the 1955 proposal for the workshop</li>
 <li>The founding conjecture:</li>
 </ul>
 <blockquote>
@@ -688,7 +688,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <div class="column" style="width:55%;">
 <ul>
 <li>Each token becomes a <span class="alert">vector</span> (a list of numbers)</li>
-<li>GPT-2: each token → 768 numbers (nothing special about 768; models use different sizes)</li>
+<li>GPT-2 small: each token → 768 numbers (other models use other sizes)</li>
 <li>These vectors capture <span class="alert">meaning</span>:
 <ul>
 <li>Similar words are close together</li>
@@ -779,17 +779,15 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <div class="columns">
 <div class="column" style="width:55%;">
 <ul>
-<li>“The cat sat on the ___”</li>
-<li>Attention brings “cat” and “sat” to the guessing position</li>
-<li>But nothing in the sentence says <span class="alert">what a cat sits on</span>, so it must come from memory</li>
-<li>That memory is the <a href="https://en.wikipedia.org/wiki/Feedforward_neural_network">feed-forward network</a> (MLP)</li>
+<li>“The cat sat on the ___”: attention brings “cat” and “sat” to the blank</li>
+<li>The sentence never says <span class="alert">what a cat sits on</span>. The <a href="https://en.wikipedia.org/wiki/Feedforward_neural_network">feed-forward network</a> (MLP) supplies it from memory</li>
 <li>Attention <span class="alert">moves</span> what is in the sentence. The network <span class="alert">adds</span> what is not</li>
-<li>The two make one <span class="alert">block</span>: 12 in GPT-2, 96 in GPT-3, far more since</li>
-<li>Each block <span class="alert">adds</span> to the word rather than replacing it, so nothing is lost on the way up</li>
-<li>Each round asks a better question than the last:
+<li>The two make one <span class="alert">block</span>: 12 in GPT-2 small, 48 in full GPT-2, 96 in GPT-3</li>
+<li>Each block <span class="alert">adds</span> to the word rather than replacing it, so nothing is lost between blocks</li>
+<li>Each block asks a better question than the last:
 <ul>
-<li>Early blocks: what kind of word is this?</li>
-<li>Late blocks: what is this text about, and what comes next?</li>
+<li>Early: what kind of word is this?</li>
+<li>Late: what is this text about, and what comes next?</li>
 </ul></li>
 </ul>
 </div><div class="column" style="width:45%;">
@@ -803,7 +801,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <p>Source: <a href="https://www.researchgate.net/figure/Overall-Structure-of-Transformer-Encoder-Block_fig3_365101390">Mohamed Traore</a></p>
 </div>
 <div style="font-size: 18px; margin-top: 15px;">
-<p>Also called a <a href="https://en.wikipedia.org/wiki/Multilayer_perceptron">multi-layer perceptron (MLP):</a> Rosenblatt’s perceptron from 1958, stacked in layers and trained by backpropagation. Two thirds of a model’s weights live here, not in attention</p>
+<p><a href="https://en.wikipedia.org/wiki/Multilayer_perceptron">Multi-layer perceptron (MLP)</a>: Rosenblatt’s 1958 perceptron, stacked in layers and trained by backpropagation. Two thirds of the weights live here</p>
 </div>
 </div></div>
 </div>

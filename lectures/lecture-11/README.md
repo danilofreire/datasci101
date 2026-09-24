@@ -30,7 +30,7 @@ This lecture explores one of the most important problems in AI: when LLMs confid
 
 ## Resources
 
-* [Lecture Slides (HTML)](11-hallucination.html)
+* [Lecture Slides (HTML)](https://danilofreire.github.io/datasci101/lectures/lecture-11/11-hallucination.html)
 * [Lecture Source (QMD)](11-hallucination.qmd)
 * [Survey on LLM Hallucination](https://arxiv.org/abs/2402.06647)
 * [Wikipedia: AI Hallucination](https://en.wikipedia.org/wiki/Hallucination_(artificial_intelligence))

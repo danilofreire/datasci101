@@ -281,7 +281,7 @@ Source: [OpenAI Tokenizer](https://platform.openai.com/tokenizer)
 
 :::{style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; font-size: 20px;"}
 - Handles [unknown words]{.alert} gracefully
-- Keeps vocabulary manageable (~50,000 tokens)
+- Keeps vocabulary manageable (~50,000 to 200,000 tokens)
 - Common words stay whole, rare words split sensibly
 - Works across languages
 :::
@@ -341,20 +341,20 @@ Source: [OpenAI Platform](https://platform.openai.com/tokenizer)
 - Every LLM has a [context window]{.alert}: the maximum tokens it can process
   - Longer inputs need much more computing power and memory, so providers set a limit
 - The limit covers [both your prompt and the response]{.alert}
-- Output tokens usually cost [2-4x more]{.alert} than input tokens!
+- Output tokens usually cost [5-6x more]{.alert} than input tokens!
 
 :::{style="text-align: center; margin-top: 20px; margin-bottom: 30px;"}
 | Model | Context Window |
 |-------|---------------|
 | GPT-3.5 | 4,096 or 16,384 tokens |
 | GPT-4 | 8,192 or 128,000 tokens |
-| Gemini Pro / Claude / GPT-5 | 1,000,000+ tokens |
+| Gemini Pro / Claude / GPT-5.5 | 1,000,000+ tokens |
 :::
 
 - A 3,500-token prompt against a 4,096 limit leaves [596 tokens]{.alert} for the response!
 - Exceeding limits gives an [error]{.alert} or truncated output
-- [Non-English languages use more tokens]{.alert}
-  - Chinese, Japanese, Korean: ~2-3x more tokens per concept. Higher costs and shorter effective context
+- [Non-English languages often use more tokens]{.alert}
+  - Higher costs and shorter effective context, though newer tokenisers narrow the gap
 :::
 
 :::{.column width=45%}
@@ -365,12 +365,12 @@ Source: [Anthropic](https://platform.claude.com/docs/en/build-with-claude/contex
 
 **Same meaning, different tokens:**
 
-| Language | Text | Tokens |
-|----------|------|--------|
-| English | "Hello" | 1 |
-| Chinese | "你好" | 4 |
-| Arabic | "مرحبا" | 6 |
-| Japanese | "こんにちは" | 6 |
+| Language | Text | GPT-3 | GPT-4o |
+|----------|------|-------|--------|
+| English | "Hello" | 1 | 1 |
+| Chinese | "你好" | 4 | 1 |
+| Arabic | "مرحبا" | 6 | 2 |
+| Japanese | "こんにちは" | 6 | 1 |
 :::
 :::
 :::
@@ -449,7 +449,7 @@ Source: [Chris McCormick](https://mccormickml.com/2016/04/19/word2vec-tutorial-t
 :::{.columns}
 :::{.column width=55%}
 - Here are the embeddings for a few words
-- The colours show numbers from -2 to +2, but the actual embeddings are 4,096-dimensional!
+- Each row is one word's 50 numbers, from blue (-2) to red (+2)
 - See how "woman" and "girl" are similar, but "queen" is further away?
 - [We don't know what each dimension codes for]{.alert}, yet patterns still show
 - In some places "king" and "queen" match each other and differ from all the rest
@@ -463,6 +463,26 @@ Source: [Chris McCormick](https://mccormickml.com/2016/04/19/word2vec-tutorial-t
 [![](figures/queen-woman-girl-embeddings.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/queen-woman-girl-embeddings.png"}
 
 Source: [Jay Alammar](https://jalammar.github.io/illustrated-word2vec/)
+:::
+:::
+:::
+:::
+
+## How big are real embeddings?
+### From 50 numbers to thousands
+
+:::{style="margin-top: 30px; font-size: 24px;"}
+:::{.columns}
+:::{.column width=55%}
+- GloVe (2014) stores each word as [50 numbers]{.alert}, like the rows on the last slide
+- LLMs store each token as [thousands of numbers]{.alert}: 4,096 in Llama 3 8B, 12,288 in GPT-3
+- More numbers leave room for [finer shades of meaning]{.alert}
+- Nobody reads them one by one: we study the patterns instead
+:::
+
+:::{.column width=45%}
+:::{style="text-align: center;"}
+[![](figures/embedding-scale.gif){width="78%"}](#){data-modal-type="image" data-modal-url="figures/embedding-scale.gif"}
 :::
 :::
 :::
@@ -529,7 +549,7 @@ Source: [Pinecone](https://www.pinecone.io/learn/bertopic/)
   - determine what the model "knows"
 - GPT-3: [175 billion]{.alert} parameters
 - GPT-4: estimated [1+ trillion]{.alert} parameters
-- Each parameter is adjusted [thousands of times]{.alert} during training
+- Each GPT-3 parameter was adjusted [about 100,000 times]{.alert} during training
 - Training means finding the numbers that make predictions accurate
 :::
 
@@ -559,7 +579,7 @@ Source: [Medium](https://catherinebreslin.medium.com/what-is-a-parameter-3d4b773
 | GPT-3 (2020) | 175 billion | All | ~300 billion tokens |
 | Llama 3.1 (2024) | 405 billion | All | 15 trillion tokens |
 | Kimi K2 (2025) | 1 trillion | 32 billion | 15.5 trillion tokens |
-| DeepSeek-V4-Pro (2026) | 1.6 trillion | 49 billion | 33 trillion tokens |
+| DeepSeek-V4-Pro (2026) | 1.6 trillion | 49 billion | 32+ trillion tokens |
 | GPT-5, Claude, Gemini | Undisclosed | Undisclosed | Undisclosed |
 
 :::{style="margin-top: 20px; font-size: 22px;"}
@@ -635,7 +655,7 @@ Source: [Medium](https://medium.com/ai-insights-cobet/no-more-floating-points-th
 
 - The model learns by [predicting the next word]{.alert}, and every error teaches it something
 - Patterns emerge from massive repetition
-- Training GPT-3 cost [~$3.5 million]{.alert} in compute!
+- Training GPT-3 cost [[~$4.6 million]{.alert}](https://lambda.ai/blog/demystifying-gpt-3) in compute!
 :::
 
 :::{.column width=45%}
@@ -700,10 +720,10 @@ Not all parameters are learned. [Hyperparameters]{.alert} are settings you contr
   - low (0.1-0.3): focused, deterministic
   - high (0.7-1.0): creative, varied
   - 0.0: always picks the most likely word
-  - (Google AI Studio extends the scale to 2.0)
+  - (OpenAI and Google AI Studio go up to 2.0)
 
-- [Top-p]{.alert} (nucleus sampling): only consider words in the top p% probability
-  - 0.9: the top 90% of likely words
+- [Top-p]{.alert} (nucleus sampling): keep the fewest words whose probabilities add up to p
+  - 0.9: the most likely words until they cover 90% (often just a handful)
 
 - [Top-k]{.alert}: only consider the top k most likely words
   - k=50: choose from the 50 most likely words

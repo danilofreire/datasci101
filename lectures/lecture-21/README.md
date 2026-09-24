@@ -30,7 +30,7 @@ This lecture examines what AI means for jobs and the economy, combining historic
 
 ## Resources
 
-* [Lecture slides (HTML)](21-labour.html)
+* [Lecture slides (HTML)](https://danilofreire.github.io/datasci101/lectures/lecture-21/21-labour.html)
 * [Lecture source (QMD)](21-labour.qmd)
 * [Acemoglu & Restrepo (2019) – Automation and new tasks](https://www.aeaweb.org/articles?id=10.1257/jep.33.2.3)
 * [WEF Future of Jobs Report 2025](https://www.weforum.org/reports/the-future-of-jobs-report-2025)

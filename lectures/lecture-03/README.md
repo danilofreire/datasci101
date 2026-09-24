@@ -8,7 +8,7 @@ This lecture focuses on the foundation of all AI: data. We explore why data qual
 
 * **Garbage In, Garbage Out**: AI models are only as good as the data used to train them.
 * **Data-centric AI**: The shift toward improving data quality rather than just tweaking model code.
-* **Real-world Impact**: How poor data leads to biased credit scoring, hiring, and facial recognition.
+* **Real-world Impact**: How poor data leads to biased speech recognition, hiring, and facial analysis.
 
 ### 2. Machine Learning Tasks
 
@@ -28,5 +28,5 @@ This lecture focuses on the foundation of all AI: data. We explore why data qual
 
 ## Resources
 
-* [Lecture Slides (HTML)](03-datasets.html)
+* [Lecture Slides (HTML)](https://danilofreire.github.io/datasci101/lectures/lecture-03/03-datasets.html)
 * [Lecture Source (QMD)](03-datasets.qmd)

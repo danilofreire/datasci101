@@ -20,7 +20,7 @@ This lecture provides a deep, critical exploration of AI bias for undergraduate 
 ### 3. Case Studies
 
 * **Hiring**: LLMs favour white male-associated names; Amazon penalised women
-* **Facial recognition**: 43x error rate difference between light-skinned men and dark-skinned women
+* **Facial analysis**: 43x error rate difference between light-skinned men and dark-skinned women
 * **Criminal justice (COMPAS)**: Black defendants twice as likely to be falsely flagged high-risk
 * **Healthcare**: Algorithms miss sick Black patients, AI fails on darker skin tones
 
@@ -32,7 +32,7 @@ This lecture provides a deep, critical exploration of AI bias for undergraduate 
 
 ## Resources
 
-* [Lecture Slides (HTML)](17-bias.html)
+* [Lecture Slides (HTML)](https://danilofreire.github.io/datasci101/lectures/lecture-17/17-bias.html)
 * [Lecture Source (QMD)](17-bias.qmd)
 * [Fairness and Machine Learning Book](https://fairmlbook.org/) (free)
 * [Gender Shades Project](http://gendershades.org/)

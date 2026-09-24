@@ -30,6 +30,6 @@ This lecture looks at the history of AI, from early thoughts and the Turing Test
 
 ## Resources
 
-* [Lecture Slides (HTML)](02-history.html)
+* [Lecture Slides (HTML)](https://danilofreire.github.io/datasci101/lectures/lecture-02/02-history.html)
 * [Lecture Source (QMD)](02-history.qmd)
 * [Transformer Explainer](https://poloclub.github.io/transformer-explainer/)
