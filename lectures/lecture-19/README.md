@@ -14,20 +14,21 @@ This lecture examines how AI transforms privacy challenges, surveys the legal fr
 
 * **GDPR principles**: Lawfulness, purpose limitation, data minimisation, accuracy, storage limitation, security, accountability.
 * **Individual rights**: Access, rectification, erasure, portability, objection, and protection from purely automated decisions.
-* **US approach**: Patchwork of sectoral laws (HIPAA, FERPA, COPPA) with states like California filling gaps.
+* **US approach**: Patchwork of sectoral laws (HIPAA, FERPA, COPPA); 23 states, led by California, have comprehensive privacy laws.
 * **Tensions with AI**: Purpose limitation vs model training, data minimisation vs big data, erasure vs trained models.
 
 ### 3. Technical approaches
 
 * **Differential privacy**: Adding calibrated noise to preserve aggregate patterns while protecting individuals.
 * **Federated learning**: Training models without centralising data by sharing model updates instead.
-* **Other techniques**: Homomorphic encryption, secure multi-party computation, synthetic data.
+* **Synthetic data**: Fake records that keep the real patterns, though generators can still leak training data.
 * **Limitations**: Technical fixes don't address the fundamental power imbalance in data collection.
 
 ### 4. Tensions and trade-offs
 
 * **Dual use**: The same AI systems can enable beneficial services or surveillance depending on governance.
-* **Utility vs privacy**: Real trade-off exists but is often overstated to justify excessive collection.
+* **Privacy washing**: Differential privacy with a large epsilon, or federated learning that still collects metadata, protects little.
+* **Clearview AI**: 3 billion scraped photos in 2020 (70+ billion today), fines across Europe, and an ACLU settlement under Illinois BIPA.
 * **Individual vs collective**: Privacy is collective, making individual opt-out insufficient for systemic change.
 
 ## Resources

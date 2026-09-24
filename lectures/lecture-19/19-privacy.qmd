@@ -53,15 +53,17 @@ if (!require("fontawesome", character.only = TRUE)) {
 
 :::{style="margin-top: 20px; font-size: 26px;"}
 :::{.columns}
-:::{.column width=50%}
-- [EU AI Act]{.alert}: the world's first comprehensive AI law, with risk tiers (banned, high-risk, limited, minimal)
+:::{.column width=58%}
+- [EU AI Act]{.alert}: first comprehensive AI law; banned, high, limited and minimal risk
+- Fines up to [7% of global turnover]{.alert}; high-risk rules delayed to December 2027
 - [US approach]{.alert}: sectoral regulation with state-level initiatives
-- [China]{.alert}: state control over content, innovation goals, and mandatory algorithm registration
+- A [2025 executive order]{.alert} lets federal lawyers challenge state AI laws
+- [China]{.alert}: content control, innovation goals, algorithm registration
 - [No global consensus yet, but convergence on key principles is likely]{.alert}
 - Today: how does AI intersect with [privacy]{.alert}?
 :::
 
-:::{.column width=50%}
+:::{.column width=42%}
 :::{style="text-align: center; margin-top: 30px;"}
 [![Oh, well 😅](figures/privacy-illustration.jpg){width="100%"}](#){data-modal-type="image" data-modal-url="figures/privacy-illustration.jpg"}
 :::
@@ -108,15 +110,15 @@ if (!require("fontawesome", character.only = TRUE)) {
 ## Meme of the day
 
 :::{style="text-align: center; margin-top: 30px;"}
-[![](figures/privacy-meme.png){width="55%"}](#){data-modal-type="image" data-modal-url="figures/privacy-meme.png"}
+[![](figures/privacy-meme.png){width="50%"}](#){data-modal-type="image" data-modal-url="figures/privacy-meme.png"}
 
-Source: [Caniphis](https://caniphish.com/blog/ai-memes)
+Source: [CanIPhish](https://caniphish.com/blog/ai-memes)
 :::
 
 ## Good news of the day
 
 :::{style="text-align: center; margin-top: 30px;"}
-[![](figures/ai-polarisation.png){width="65%"}](#){data-modal-type="image" data-modal-url="figures/ai-polarisation.png"}
+[![](figures/ai-polarisation.png){width="55%"}](#){data-modal-type="image" data-modal-url="figures/ai-polarisation.png"}
 
 Source: [Financial Times](https://www.ft.com/content/3880176e-d3ac-4311-9052-fdfeaed56a0e)
 :::
@@ -137,7 +139,7 @@ AI breaks privacy in ways older laws did not anticipate:
 
 **Inference capabilities:**
 
-- AI [predicts sensitive information]{.alert} from innocuous data: shopping reveals health, typing speed reveals mood, networks reveal politics
+- AI [predicts sensitive information]{.alert} from innocuous data: shopping → health, typing → mood, friends → politics
 - [Things you never disclosed can be inferred]{.alert}
 
 **Persistence:**
@@ -179,8 +181,8 @@ Source: [AI Multiple](https://research.aimultiple.com/data-collection-methods/)
 **Famous example: Target and pregnancy**
 
 - Target's algorithm spotted a pregnant teenager and posted baby coupons to her home
-- Her mother complained: her daughter was "only in high school"
-- Days later the father called back, apologising and confirming the pregnancy
+- Her father complained to the store: she was "still in high school"
+- Days later he apologised to the manager: she was pregnant
 - [The algorithm knew before her family did]{.alert} ([NYT](https://www.nytimes.com/2012/02/19/magazine/shopping-habits.html))
 :::
 
@@ -188,7 +190,7 @@ Source: [AI Multiple](https://research.aimultiple.com/data-collection-methods/)
 :::{style="text-align: center;"}
 [![](figures/target.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/target.png"}
 
-Source: [Time](https://techland.time.com/2012/02/17/how-target-knew-a-high-school-girl-was-pregnant-before-her-parents/)
+Source: [Time](https://web.archive.org/web/20130116004534/http://techland.time.com/2012/02/17/how-target-knew-a-high-school-girl-was-pregnant-before-her-parents/)
 
 :::{style="background: rgba(230, 57, 70, 0.1); padding: 15px; border-radius: 10px; font-size: 21px; margin-top: 15px;"}
 You can control what you share, but you [cannot control what can be inferred]{.alert} from it
@@ -211,7 +213,7 @@ You can control what you share, but you [cannot control what can be inferred]{.a
 
 **Demonstrated attacks:**
 
-- Researchers extracted [verbatim training data]{.alert} from GPT-2, including names, phone numbers and email addresses ([Carlini et al., 2021](https://arxiv.org/abs/2012.07805))
+- [Carlini et al. (2021)](https://arxiv.org/abs/2012.07805) extracted [verbatim training data]{.alert} from GPT-2: names, phone numbers, emails
 - Extraction attacks keep improving
 
 **The consent problem:**
@@ -273,29 +275,26 @@ Would you share your data if...
 
 ## GDPR fundamentals
 
-:::{style="margin-top: 30px; font-size: 23px;"}
+:::{style="margin-top: 10px; font-size: 23px;"}
 :::{.columns}
-:::{.column width=55%}
+:::{.column width=62%}
 The [General Data Protection Regulation]{.alert} ([2016/679](https://eur-lex.europa.eu/eli/reg/2016/679/oj/eng), effective 2018) is the EU's comprehensive privacy law.
 
 **Main principles:**
 
 1. [Lawfulness, fairness, transparency]{.alert}
-2. [Data minimisation]{.alert}: collect only what's necessary
-3. [Accuracy]{.alert}: keep data up to date
-4. [Storage limitation]{.alert}: don't keep it longer than needed
+2. [Purpose limitation]{.alert}: use data only for the stated purpose
+3. [Data minimisation]{.alert}: collect only what's necessary
+4. [Accuracy]{.alert} and [storage limitation]{.alert}: keep it correct, and no longer than needed
 5. [Integrity and confidentiality]{.alert}: protect data properly
 6. [Accountability]{.alert}: demonstrate compliance
 
-**Lawful bases for processing:**
+**Six lawful bases:** consent, contract, legal obligation, vital interests, public task and legitimate interests
 
-- Consent (freely given, specific, informed)
-- Legal obligation
-- Public interest
-- [Legitimate interests]{.alert}: the most contested, used to process without consent (fraud prevention, training AI models)
+- [Legitimate interests]{.alert} is the most contested: firms use it to skip consent, even for AI training
 :::
 
-:::{.column width=45%}
+:::{.column width=38%}
 :::{style="text-align: center;"}
 [![](figures/gdpr.jpg){width="100%"}](#){data-modal-type="image" data-modal-url="figures/gdpr.jpg"}
 
@@ -322,7 +321,7 @@ Like the EU AI Act, GDPR covers any organisation processing EU residents' data, 
 | **Portability** | Move data to another service |
 | **Restriction** | Limit processing |
 | **Object** | Stop certain processing |
-| **Not be profiled** | Reject automated decisions |
+| **Automated decisions** | Ask for a human in significant ones |
 
 **[Article 22](https://gdpr-info.eu/art-22-gdpr/): automated decisions**
 
@@ -335,7 +334,7 @@ Like the EU AI Act, GDPR covers any organisation processing EU residents' data, 
 :::{style="text-align: center;"}
 [![](figures/gdpr-02.jpg){width="100%"}](#){data-modal-type="image" data-modal-url="figures/gdpr-02.jpg"}
 
-Source: [EU GDPR Portal](https://gdpr.eu/what-is-gdpr/)
+Source: [GDPR.eu (Proton)](https://gdpr.eu/what-is-gdpr/)
 
 :::{style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; font-size: 18px; margin-top: 15px;"}
 **In practice**: [exercising these rights is often difficult]{.alert}. Companies hide the forms, respond slowly, or claim exemptions.
@@ -349,29 +348,22 @@ Source: [EU GDPR Portal](https://gdpr.eu/what-is-gdpr/)
 
 :::{style="margin-top: 30px; font-size: 24px;"}
 :::{.columns}
-:::{.column width=55%}
-**Purpose limitation vs model training:**
-
-- You gave data for one purpose. Can it train a model for another?
-- AI companies claim [legitimate interest]{.alert}
-
-**Data minimisation vs big data:**
-
-- AI works better with more data; GDPR says collect only what's necessary
-- What's "necessary" for a foundation model? Everything?
-
-**Right to explanation vs black boxes:**
-
-- You can ask why an AI decided about you
-- Many AI systems [can't explain themselves]{.alert}
-
-**Right to erasure vs model training:**
-
-- Can you demand removal from a trained model?
-- "Unlearning" is technically very difficult
+:::{.column width=60%}
+1. **Purpose limitation vs model training**
+   - You gave data for one purpose. Can it train a model for another?
+   - AI companies claim [legitimate interest]{.alert}
+2. **Data minimisation vs big data**
+   - AI works better with more data; GDPR says collect only what's necessary
+   - What's "necessary" for a foundation model? Everything?
+3. **Right to explanation vs black boxes**
+   - You can ask why an AI decided about you
+   - Many AI systems [can't explain themselves]{.alert}
+4. **Right to erasure vs model training**
+   - Can you demand removal from a trained model?
+   - "Unlearning" is technically very difficult
 :::
 
-:::{.column width=45%}
+:::{.column width=40%}
 :::{style="text-align: center;"}
 [![](figures/gdpr-ai.webp){width="100%"}](#){data-modal-type="image" data-modal-url="figures/gdpr-ai.webp"}
 
@@ -405,8 +397,8 @@ GDPR was written before the LLM era. [Applying 2018 law to 2026 technology]{.ale
 
 - [[California (CCPA/CPRA)](https://oag.ca.gov/privacy/ccpa)]{.alert}: most comprehensive, GDPR-like rights
 - [Virginia, Colorado, Connecticut]{.alert}: similar frameworks
-- [[Illinois BIPA](https://www.ilga.gov/legislation/ilcs/ilcs3.asp?ActID=3004)]{.alert}: biometric data, with private right of action
-- Many more states are following
+- [[Illinois BIPA](https://www.ilga.gov/legislation/ilcs/ilcs3.asp?ActID=3004&ChapterID=57)]{.alert}: biometric data, with private right of action
+- [23 states]{.alert} now have comprehensive privacy laws (Vermont in June 2026)
 :::
 
 :::{.column width=45%}
@@ -423,15 +415,15 @@ Source: [IAPP](https://iapp.org/resources/article/us-state-privacy-legislation-t
 
 :::{style="margin-top: 30px; font-size: 22px;"}
 :::{.columns}
-:::{.column width=55%}
+:::{.column width=60%}
 **Major fines (selected):**
 
 | Company | Fine | What they did wrong |
 |---------|------|---------------------|
-| [Meta (2023)](https://www.edpb.europa.eu/news/news/2023/12-billion-euro-fine-facebook-result-edpb-binding-decision_en) | [€1.2B]{.alert} | Transferred EU user data to US servers without adequate safeguards |
-| [Amazon (2021)](https://dataprivacymanager.net/luxembourg-dpa-issues-e746-million-gdpr-fine-to-amazon/) | €746M | Processed personal data for targeted ads without valid consent |
-| [Meta (2022)](https://www.dataprotection.ie/en/news-media/press-releases/data-protection-commission-announces-decision-instagram-inquiry) | €405M | Exposed children's accounts and contact info on Instagram |
-| [Google (2022)](https://www.cnil.fr/en/cookies-cnil-fines-google-total-150-million-euros-and-facebook-60-million-euros-non-compliance) | €150M | Made it harder to reject cookies than to accept them |
+| [Meta (2023)](https://www.edpb.europa.eu/news/news/2023/12-billion-euro-fine-facebook-result-edpb-binding-decision_en) | [€1.2B]{.alert} | Sent EU user data to the US without adequate safeguards |
+| [Amazon (2021)](https://dataprivacymanager.net/luxembourg-dpa-issues-e746-million-gdpr-fine-to-amazon/) | €746M | Targeted ads without valid consent ([fine annulled in 2026](https://ppc.land/luxembourg-court-annuls-amazons-eu746m-gdpr-fine-sends-case-back-to-regulator/), breach upheld) |
+| [Meta (2022)](https://www.dataprotection.ie/en/news-media/press-releases/data-protection-commission-announces-decision-instagram-inquiry) | €405M | Exposed children's contact details on Instagram |
+| [Google (2022)](https://www.cnil.fr/en/cookies-cnil-fines-google-total-150-million-euros-and-facebook-60-million-euros-non-compliance) | €150M | Made rejecting cookies harder than accepting them |
 | [TikTok (2023)](https://www.dataprotection.ie/en/news-media/press-releases/DPC-announces-345-million-euro-fine-of-TikTok) | €345M | Failed to protect children's privacy settings and data |
 
 **Patterns:**
@@ -439,17 +431,17 @@ Source: [IAPP](https://iapp.org/resources/article/us-state-privacy-legislation-t
 - Big tech companies are the primary targets
 - Regulators focus on data transfers, consent and children
 - Fines are [getting larger]{.alert}
-- Enforcement varies by country (Ireland is lax)
+- Enforcement varies by country; Ireland's regulator is often called slow
 :::
 
-:::{.column width=45%}
+:::{.column width=40%}
 :::{style="text-align: center;"}
 [![](figures/gdpr-fines.avif){width="80%"}](#){data-modal-type="image" data-modal-url="figures/gdpr-fines.avif"}
 
 Source: [Secureframe](https://secureframe.com/hub/gdpr/fines-and-penalties)
 
 :::{style="font-size: 18px; margin-top: 15px;"}
-€1.2 billion sounds big, but Meta made [~$135 billion in 2024]{.alert}. Is that a fine or a cost of doing business?
+€1.2 billion sounds big, but Meta made [~$135 billion in 2023]{.alert}. Is that a fine or a cost of doing business?
 :::
 :::
 :::
@@ -492,27 +484,26 @@ Source: [Flower AI](https://flower.ai/docs/framework/explanation-differential-pr
 
 ## Federated learning
 
-:::{style="margin-top: 30px; font-size: 23px;"}
+:::{style="margin-top: 15px; font-size: 23px;"}
 :::{.columns}
-:::{.column width=55%}
-[Federated learning]{.alert} trains AI models without centralising data ([McMahan et al., 2017](https://arxiv.org/abs/1602.05629)).
+:::{.column width=60%}
+[Federated learning]{.alert} trains models without pooling the data ([McMahan et al., 2017](https://arxiv.org/abs/1602.05629))
 
 **How it works:**
 
 1. A server sends the [same model]{.alert} to many devices
 2. Each device trains it on its [local data]{.alert}
-3. Each sends back only [what it learned]{.alert} (updated weights), not the data
-4. The server [averages]{.alert} the updates into a better model
-5. The improved model goes back to the devices
+3. Each sends back only [what it learned]{.alert} (weights), not the data
+4. The server [averages]{.alert} the updates and sends the better model back
 
 **Why it matters for privacy:**
 
-- Your raw data [never leaves your device]{.alert}: the server never sees your messages, photos or browsing history
-- Not perfect: updates can still [leak information]{.alert} about the training data
+- Your raw data [never leaves your device]{.alert}: the server sees only model updates
+- Not perfect: updates can still [leak information]{.alert}
 - Coordinating thousands of devices is complex
 :::
 
-:::{.column width=45%}
+:::{.column width=40%}
 :::{style="text-align: center;"}
 <!-- Suggested image: Federated learning diagram -->
 [![](figures/federated-learning.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/federated-learning.png"}
@@ -531,23 +522,23 @@ Source: [Wikipedia](https://en.wikipedia.org/wiki/Federated_learning)
 
 :::{style="margin-top: 30px; font-size: 24px;"}
 :::{.columns}
-:::{.column width=55%}
-[Synthetic data]{.alert} is data that looks real but isn't ([Jordon et al., 2022](https://proceedings.mlr.press/v133/jordon21a.html)).
+:::{.column width=58%}
+[Synthetic data]{.alert} is data that looks real but isn't ([Jordon et al., 2022](https://arxiv.org/abs/2205.03257)).
 
 **How it works:**
 
-- Train a generative model on real data so it learns the statistical patterns and correlations
+- Train a generative model to learn the real data's patterns
 - Generate [new, fake data points]{.alert} that look real
 - Train your AI on those instead
 
 **Privacy benefits and limitations:**
 
-- No real personal data in the pipeline, so [individuals can't be identified]{.alert}
-- You can share it freely for research and collaboration
+- Fewer direct links to real people, but generators can still [[leak training records](https://www.usenix.org/conference/usenixsecurity22/presentation/stadler)]{.alert}
+- Easier to share for research and collaboration
 - It may [not capture rare cases]{.alert} well
 :::
 
-:::{.column width=45%}
+:::{.column width=42%}
 :::{style="text-align: center;"}
 <!-- Suggested image: Synthetic data illustration -->
 [![](figures/synthetic-data.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/synthetic-data.png"}
@@ -571,7 +562,8 @@ Source: [GOV.UK](https://dataingovernment.blog.gov.uk/2020/08/20/synthetic-data-
 
 - Allow research on sensitive medical and financial data while protecting privacy
 - Give engineers concrete tools
-- Provide [mathematical guarantees]{.alert} (differential privacy) or [architectural separation]{.alert} (federated learning)
+- Differential privacy gives [mathematical guarantees]{.alert}
+- Federated learning keeps data [on the device]{.alert}
 
 **What they cannot do:**
 
@@ -601,17 +593,16 @@ Technical fixes work *within* the system, not on the system itself
 :::{style="margin-top: 30px; font-size: 22px;"}
 :::{.columns}
 :::{.column width=55%}
-- In January 2020 the [New York Times](https://www.nytimes.com/2020/01/18/technology/clearview-privacy-facial-recognition.html) revealed Clearview AI had secretly scraped [over 30 billion photos]{.alert} from Facebook, Instagram, LinkedIn and other platforms
-- It built a facial recognition database [without anyone's consent!]{.alert} People never knew their faces were in it
-- It sold access to over [2,400 US law enforcement agencies]{.alert} and many corporations
-- US police used it [nearly a million times]{.alert}
+- January 2020: the [NYT](https://www.nytimes.com/2020/01/18/technology/clearview-privacy-facial-recognition.html) revealed Clearview had scraped [3 billion photos]{.alert} from social media (70+ billion today)
+- It built a face search engine [without consent]{.alert}: people never knew they were in it
+- It sold access to [thousands of US police agencies]{.alert}, which ran [nearly a million searches](https://www.bbc.com/news/technology-65057011) by 2023
 
 **The legal fallout:**
 
-- The [ACLU sued](https://www.aclu.org/cases/aclu-v-clearview-ai) under [Illinois BIPA]{.alert} (2020). The 2022 settlement [permanently banned]{.alert} sales of the database to private companies nationwide
+- The [ACLU sued](https://www.aclu.org/cases/aclu-v-clearview-ai) under [Illinois BIPA]{.alert} (2020): a 2022 settlement [bans sales]{.alert} to most private companies
 - [France (CNIL)](https://www.cnil.fr/en/facial-recognition-20-million-euros-penalty-against-clearview-ai) and [Italy](https://www.edpb.europa.eu/news/national-news/2022/facial-recognition-italian-sa-fines-clearview-ai-eur-20-million_en): €20M fine each
 - [Netherlands](https://www.loc.gov/item/global-legal-monitor/2024-10-16/netherlands-face-recognition-company-clearview-ai-fined-for-violating-eus-general-data-protection-regulation/): €30.5M fine (2024)
-- UK, Australia, Canada: ordered to delete data
+- Australia and Canada: ordered to delete data; the UK case is still in court
 :::
 
 :::{.column width=45%}
@@ -621,7 +612,7 @@ Technical fixes work *within* the system, not on the system itself
 Source: [Library of Congress](https://www.loc.gov/item/global-legal-monitor/2024-10-16/netherlands-face-recognition-company-clearview-ai-fined-for-violating-eus-general-data-protection-regulation/)
 
 :::{style="background: rgba(230, 57, 70, 0.1); padding: 15px; border-radius: 10px; font-size: 21px; margin-top: 15px;"}
-Clearview said the service was only for law enforcement, but gave accounts to [anyone willing to pay]{.alert}, including investors' friends. The ACLU called it a ["perpetual police line-up"](https://www.aclu.org/press-releases/big-win-settlement-ensures-clearview-ai-complies-with-groundbreaking-illinois).
+Clearview said the service was only for law enforcement, but gave accounts to [retailers, banks and investors' friends]{.alert}. Critics call it a ["perpetual police line-up"](https://www.bbc.com/news/technology-65057011).
 :::
 :::
 :::
@@ -688,7 +679,7 @@ There's no right answer. The point is to [identify your own values]{.alert} and 
 
 - Review privacy settings and use [privacy-focused tools]{.alert} ([Signal](https://signal.org/), [DuckDuckGo](https://duckduckgo.com/), [Firefox](https://www.mozilla.org/firefox/))
 - Limit location sharing and use different email addresses for different services
-- Exercise your [GDPR](https://gdpr-info.eu/art-15-gdpr/)/[CCPA](https://oag.ca.gov/privacy/ccpa) rights (access, deletion requests) and be [skeptical of "personalisation"]{.alert}
+- Exercise your [GDPR](https://gdpr-info.eu/art-15-gdpr/)/[CCPA](https://oag.ca.gov/privacy/ccpa) rights (access, deletion requests) and be [sceptical of "personalisation"]{.alert}
 
 **Limitations of individual action:**
 
@@ -701,7 +692,7 @@ There's no right answer. The point is to [identify your own values]{.alert} and 
 
 - Support privacy legislation and demand transparency from companies
 - Support organisations fighting for privacy ([EFF](https://www.eff.org/), [EPIC](https://epic.org/), [noyb](https://noyb.eu/))
-- Choose services that respect privacy and vote for privacy-protecting candidates
+- Choose privacy-respecting services; vote for candidates who protect privacy
 
 :::{style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; font-size: 18px; margin-top: 15px;"}
 Using Signal instead of WhatsApp helps, but it won't change how insurers use your health data. That takes [legislation]{.alert}
@@ -746,4 +737,4 @@ Using Signal instead of WhatsApp helps, but it won't change how insurers use you
 :::
 :::
 
-# ... and that's all for today! {background-color="#1B3A6B"}
+# ... and that's all for today! 🎉 {background-color="#1B3A6B"}
