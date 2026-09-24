@@ -51,15 +51,14 @@ if (!require("fontawesome", character.only = TRUE)) {
 
 ## Recap of last class
 
-:::{style="margin-top: 20px; font-size: 24px;"}
+:::{style="margin-top: 40px; font-size: 25px;"}
 :::{.columns}
 :::{.column width=50%}
 - [RAG]{.alert} (Retrieval-Augmented Generation) grounds AI in [your own documents]{.alert}
 - LLMs have knowledge cutoffs and hallucinate
 - Chunk → Embed → Retrieve → Generate
-- RAG cuts hallucinations by [30–50%]{.alert}, but [retrieval errors]{.alert} still occur
-- **Today**: what happens [behind the scenes]{.alert} when AI goes down, runs slow, or answers oddly?
-- [Why does this happen?]{.alert} And what can you do about it?
+- RAG cut hallucinations by [over 60%]{.alert} in one study, but [retrieval errors]{.alert} still occur
+- **Today**: what happens [behind the scenes]{.alert} when AI fails, and what you can do about it
 - Also [documentation]{.alert}: how companies record what their systems can and cannot do
 :::
 
@@ -80,72 +79,41 @@ Source: [Astera Software](https://www.astera.com/type/blog/rag-pipeline/)
 
 :::{.columns}
 :::{.column width=50%}
-**Part 1: What is a Pipeline?**
+**Part 1: Pipelines and failures**
 
 - From prompt to response
-- Why "it works on my laptop" isn't enough
 - Real-world AI failures and lessons
+- Data drift and model degradation
 
-**Part 2: Why Pipelines Break**
+**Part 2: Monitoring and testing**
 
-- Data drift: when the world changes
-- Model degradation over time
-- Infrastructure and scaling issues
+- What companies watch
+- Why testing AI is hard
+- Input and output validation
 :::
 
 :::{.column width=50%}
-**Part 3: Monitoring and Testing**
-
-- What to watch: the key metrics
-- Why testing AI is hard
-- Input and output validation
-
-**Part 4: Documentation and Accountability**
+**Part 3: Documentation**
 
 - Datasheets, model cards, system cards
 - Consent and the data supply chain
+
+**Part 4: What can you do?**
+
 - Being a savvy AI user
+- Diagnose the problem
 :::
 :::
 :::
 
-## Meme of the day 😄
-### That's actually a very good point!
+## Meme of the day
+### Ouch! 😅
 
 :::{style="text-align: center; margin-top: 30px;"}
 [![](figures/turing-test.webp){width="55%"}](#){data-modal-type="image" data-modal-url="figures/turing-test.webp"}
 :::
 
-<!-- NOTE (Fall 2026 revision): this DataFest slide is a Spring leftover (sign-up deadline March 2026).
-Commented out rather than deleted; restore and update the dates if DataFest runs again this year.
-
-## DataFest 2026
-
-:::{style="margin-top: 30px; font-size: 22px;"}
-:::{.columns}
-:::{.column width=50%}
-[![](figures/datafest.png){width="80%"}](#){data-modal-type="image" data-modal-url="figures/datafest.png"}
-:::
-
-:::{.column width=50%}
-:::{style="margin-top: 30px;"}
-**DataFest 2026 is coming!**
-
-- It's a 48-hour data science competition, where you'll work in teams to solve a real-world problem using data
-- Open to all Emory undergraduates, regardless of major or minor
-- AI use is allowed and encouraged!
-- [Deadline to sign up: March 9, 2026]{.alert}
-- [Participant registration form](https://forms.office.com/Pages/ResponsePage.aspx?id=nPsE4KSwT0K80DImBtXfOLogA1skjlRHi7tno6axvlpUMUVTMU1KMVZZV1NXSTRCMTgwTjZaRzhMRC4u)
-- [Mentor sign-up form](https://forms.office.com/Pages/ResponsePage.aspx?id=nPsE4KSwT0K80DImBtXfOLogA1skjlRHi7tno6axvlpUMEpOVzJIRkJYSlBZMkRDQlcwSE0zTDJPMS4u)
-- [Volunteer registration form](https://forms.office.com/Pages/ResponsePage.aspx?id=nPsE4KSwT0K80DImBtXfOLogA1skjlRHi7tno6axvlpUME9XUFZUSlczNFg3MEs5UDhWVTM3UUNTSy4u)
-:::
-:::
-:::
-:::
-
-END OF COMMENTED-OUT DATAFEST SLIDE -->
-
-# What is a Pipeline? 🏭 {background-color="#1B3A6B"}
+# Pipelines and failures 🏭 {background-color="#1B3A6B"}
 
 ## From prompt to response
 
@@ -155,17 +123,17 @@ END OF COMMENTED-OUT DATAFEST SLIDE -->
 **When you ask an LLM a question, here's what happens:**
 
 1. [Your prompt]{.alert} goes from your browser to servers
-2. [Load balancers]{.alert} route it to an available GPU (cloud infrastructure)
-3. [Preprocessing]{.alert} cleans and formats your text (usually minimal with LLMs)
+2. [Load balancers]{.alert} route it to an available GPU
+3. [Preprocessing]{.alert} cleans and formats your text
 4. [Tokenisation]{.alert} converts text to numbers (you know how to do that!)
-5. [The model]{.alert} processes tokens (billions of operations!)
+5. [The model]{.alert} processes the tokens
 6. [Postprocessing]{.alert} formats the output
-7. [Safety filters]{.alert} check for harmful content (e.g., hate speech)
+7. [Safety filters]{.alert} check for harmful content
 8. [Response]{.alert} travels back to your screen
 
 [Each step can fail independently!]{.alert}
 
-The whole process is a [pipeline](https://en.wikipedia.org/wiki/Pipeline_(computing)).
+The whole process is a [pipeline](https://en.wikipedia.org/wiki/Pipeline_(computing))! 🤓
 :::
 
 :::{.column width=45%}
@@ -187,14 +155,16 @@ Even "What's the weather?" touches load balancers, GPUs, and safety filters befo
 :::{.column width=55%}
 **Not all failures are the same:**
 
+:::{style="text-align: center; margin-top: 30px; margin-bottom: 30px;"}
 | Failure type | What it looks like | Root cause |
 |-------------|--------------------|------------|
 | **Hallucination** | Confident but false content | Model limitations, missing grounding |
 | **Policy failure** | Unsafe or inappropriate output | Weak guardrails or bad updates |
 | [Data drift]{.alert} | Outdated or weird answers | World changes faster than training |
 | [Pipeline failure]{.alert} | Slow, down, or inconsistent responses | Infrastructure, scaling, broken steps |
+:::
 
-Spot *which type* of failure happened, then choose the right response
+Spot *which type* of failure happened, then choose the right response. Pipeline failures are physical: overloaded GPUs, network timeouts, rate limits
 :::
 
 :::{.column width=45%}
@@ -204,8 +174,6 @@ Spot *which type* of failure happened, then choose the right response
 :::
 :::
 :::
-
-# When AI Breaks 💥 {background-color="#1B3A6B"}
 
 ## Real AI failures (recent headlines)
 
@@ -253,29 +221,29 @@ Source: <https://x.com/ChrisJBakke/status/1736533308849443121>. The whole thread
 - Customer Ashley Beauchamp found it would:
   - Swear when asked nicely
   - Write poems criticising DPD
-  - Call itself "useless" and recommend competitors
+  - Call itself "useless"
   - Say DPD was "the worst delivery firm in the world"
 
 **DPD's response:**
 
-Disabled the chatbot, apologised, launched an investigation.
+Blamed a system update and disabled the AI element.
 
 **What went wrong:**
 
-A [system update broke the guardrails]{.alert}. Content filtering stopped working, and no one noticed until customers posted screenshots on social media
+A [system update broke the guardrails]{.alert}, and customers noticed first, on social media
 :::
 
 :::{.column width=45%}
 :::{style="text-align: center;"}
 [![](figures/dpd-chatbot.png){width="60%"}](#){data-modal-type="image" data-modal-url="figures/dpd-chatbot.png"}
 
-Source: [BBC News](https://www.bbc.com/news/technology-68025677)
+Source: [The Guardian](https://www.theguardian.com/technology/2024/jan/20/dpd-ai-chatbot-swears-calls-itself-useless-and-criticises-firm)
 :::
 
 :::{style="margin-top: 15px; background: rgba(230, 57, 70, 0.1); padding: 15px; border-radius: 10px;"}
 **Pipeline failure point:**
 
-[No monitoring after deployment]{.alert}. The update shipped without testing, and no automated check caught the broken guardrails.
+[No monitoring after deployment]{.alert}: no automated check caught it
 :::
 :::
 :::
@@ -291,7 +259,7 @@ Source: [BBC News](https://www.bbc.com/news/technology-68025677)
 - Asked for "1943 German soldiers", Gemini drew [Black men and Asian women]{.alert} in Nazi uniforms
 - Same problem with "US Founding Fathers" and other historical figures
 - Google's CEO called the results "completely unacceptable"
-- Image generation [paused for weeks]{.alert}
+- Images of people [paused for six months]{.alert}
 
 **Why did this happen? Can you guess?**
 :::
@@ -312,28 +280,25 @@ Source: [BBC News](https://www.bbc.com/news/technology-68412620)
 :::
 :::
 
-# Why Pipelines Break 🔥 {background-color="#1B3A6B"}
-
 ## Data drift: the world changes
 
-:::{style="margin-top: 30px; font-size: 22px;"}
+:::{style="margin-top: 30px; font-size: 21px;"}
 :::{.columns}
 :::{.column width=55%}
-**Data drift** = real-world data differs from training data
+**Data drift**: real-world data stops looking like the training data. A sentiment model trained in 2020:
 
-**A sentiment analyser trained in 2020:**
+- "This product is sick!" → probably fine ✅
+- "No cap, this is bussin'" → completely lost 😵
 
-- "This product is sick!" → Probably means: Amazing ✅
-- "This slaps!" → Might not understand 🤔
-- "No cap, this is bussin'" → Completely lost! 😵
+**Three types:**
 
-**Types of drift:**
+| Type | What changes | Example |
+|------|--------------|---------|
+| **Data drift** | The inputs, $P(X)$ | New users, new devices |
+| **Label drift** | How often each answer occurs, $P(Y)$ | More fraud at holidays |
+| **Concept drift** | What inputs mean, $P(Y \mid X)$ | "Sick" now means "great" |
 
-| Type | Description | Example |
-|------|-------------|---------|
-| **Label drift** | What's "correct" changes | Policy updates |
-| **Concept drift** | Meaning of things changes | New slang, trends |
-| **Data drift** | Input distribution changes | New demographics |
+- [Concept drift is the most dangerous]{.alert}: the model stays confident but is wrong
 :::
 
 :::{.column width=45%}
@@ -341,55 +306,10 @@ Source: [BBC News](https://www.bbc.com/news/technology-68412620)
 [![Data drift visualisation](figures/data-drift.webp){width="100%"}](#){data-modal-type="image" data-modal-url="figures/data-drift.webp"}
 
 Source: [Spot Intelligence](https://spotintelligence.com/2024/04/08/data-drift-in-machine-learning/)
-
-:::{style="font-size: 18px; margin-top: 15px;"}
-Slang, prices, and user habits shift constantly, but a trained model only knows what it learned
-:::
-:::
-:::
-:::
 :::
 
-## Why does data drift happen?
-
-:::{style="margin-top: 30px; font-size: 21px;"}
-:::{.columns}
-:::{.column width=55%}
-Models assume $P_{\text{train}}(X, Y) = P_{\text{prod}}(X, Y)$, but the joint distribution shifts over time:
-
-1. **Data drift**: $P(X)$ changes
-   - Model sees inputs it never learned from
-   - Example: new user demographics, device types
-
-2. **Label drift**: $P(Y)$ changes
-   - Class frequencies shift, so decision boundaries become suboptimal
-   - Example: fraud rate rises during holidays
-
-3. **Concept drift**: $P(Y|X)$ changes
-   - Same input → different correct output
-   - Example: "sick" now means "great" in slang
-   - [The most dangerous type]{.alert}: the model is confident but wrong
-:::
-
-:::{.column width=45%}
-:::{style="background: rgba(45, 69, 99, 0.1); padding: 20px; border-radius: 10px; font-size: 19px; margin-top: 30px;"}
-**Technical causes:**
-
-| Cause | Effect |
-|-------|--------|
-| **Non-stationarity** | Real-world processes aren't static |
-| **Sample selection bias** | Training data ≠ production population |
-| **Feedback loops** | Model outputs influence future inputs |
-| **External shocks** | COVID, policy changes, viral trends |
-:::
-
-:::{style="margin-top: 20px; background: rgba(230, 57, 70, 0.1); padding: 15px; border-radius: 10px; font-size: 19px;"}
-Machine learning assumes [i.i.d. data]{.alert} (independent and identically distributed). Real-world data is:
-
-- **Temporally correlated** (today depends on yesterday)
-- **Non-stationary** (distributions shift over months and years)
-- **Adversarial** (users game the system)
-- **Context-dependent** (meaning changes with culture and location)
+:::{style="margin-top: 15px; background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; font-size: 18px;"}
+**Why it happens**: models assume tomorrow's data looks like the training data. But the world changes, users differ from the training sample, model outputs feed back into inputs, and shocks like COVID hit
 :::
 :::
 :::
@@ -397,125 +317,40 @@ Machine learning assumes [i.i.d. data]{.alert} (independent and identically dist
 
 ## Model degradation: models get stale
 
-:::{style="margin-top: 30px; font-size: 20px;"}
+:::{style="margin-top: 30px; font-size: 21px;"}
 :::{.columns}
 :::{.column width=55%}
-**Even without drift, models degrade:**
+**Performance often decays, even with little drift:**
 
-- User expectations evolve
-- Competitors improve their products
-- Edge cases accumulate and small errors compound
+- Users adapt to the model, creating [feedback loops]{.alert}
+- Updates and retraining can make a model "forget" rare cases
+- Provider API changes break workflows
+- Long conversations degrade quality (context pollution)
 
 **Signs your AI tool is degrading:**
 
 - ❌ Answers that used to work now don't
-- ❌ More "I don't know" or refusals
-- ❌ Inconsistent responses to the same prompt
-- ❌ Friends getting better results elsewhere
+- ❌ More refusals and inconsistent answers
 - ❌ You need workarounds more often
 
-**The "boiling frog" problem:**
-
-Changes come so gradually you don't notice until it's too late!
+[The boiling frog problem]{.alert}: the change is so gradual you don't notice
 :::
 
 :::{.column width=45%}
 :::{style="text-align: center;"}
-[![Model degradation](figures/model-degradation.webp){width="60%"}](#){data-modal-type="image" data-modal-url="figures/model-degradation.webp"}
+[![Quality can also degrade within one long conversation](figures/model-degradation.webp){width="50%"}](#){data-modal-type="image" data-modal-url="figures/model-degradation.webp"}
 
 Source: [James Howard](https://jameshoward.us/2024/11/26/context-degradation-syndrome-when-large-language-models-lose-the-plot)
 
 :::{style="font-size: 18px; margin-top: 15px;"}
-A model that was 95% accurate at launch can drop to 80% within months if left alone
+Example: 95% accurate at launch, 80% months later. Users remember the [worst]{.alert} failures
 :::
 :::
 :::
 :::
 :::
 
-## Why does model degradation happen?
-
-:::{style="margin-top: 30px; font-size: 22px;"}
-:::{.columns}
-:::{.column width=55%}
-Model performance $P(t)$ decays over time, even with stable data:
-
-1. **Entropy accumulation**
-   - Small prediction errors compound: $\epsilon(t) \approx \epsilon_0 \cdot e^{\lambda t}$
-   - Edge cases create cascading failures
-
-2. **Distribution shift in deployment**
-   - Users adapt prompts to past responses
-   - This creates [feedback loops]{.alert} that amplify biases
-
-3. **Catastrophic forgetting** (after updates)
-   - Fine-tuning on new data overwrites old knowledge
-   - Safety training can reduce capability
-   - The model "forgets" rare cases
-:::
-
-:::{.column width=45%}
-:::{style="background: rgba(45, 69, 99, 0.1); padding: 20px; border-radius: 10px; font-size: 19px; margin-top: 30px;"}
-**Technical mechanisms:**
-
-| Mechanism | Effect |
-|-----------|--------|
-| **Weight decay** | Regularisation erodes rare patterns |
-| **Quantisation** | Compression loses precision |
-| **API updates** | Provider changes break workflows |
-| **Context pollution** | Long conversations degrade quality |
-:::
-
-:::{style="margin-top: 20px; background: rgba(230, 57, 70, 0.1); padding: 15px; border-radius: 10px; font-size: 19px;"}
-Models optimise for [average-case performance]{.alert}, but users remember the **worst** failures.
-
-User trust tracks min(performance), not the mean!
-:::
-:::
-:::
-:::
-
-## Infrastructure issues: when computers fail
-
-:::{style="margin-top: 30px; font-size: 22px;"}
-:::{.columns}
-:::{.column width=55%}
-**AI runs on physical computers that fail:**
-
-- **Hardware failures**: GPUs overheat, disks die
-- **Network issues**: connections time out, packets lost
-- **Scaling problems**: too many users at once
-- **Resource exhaustion**: running out of memory
-- **Dependency failures**: external APIs go down
-
-**What you see as a user:**
-
-:::{style="font-size: 24px;"}
-| Behind the scenes | What you experience |
-|-------------------|---------------------|
-| GPU memory full | Slow or no response |
-| Network timeout | "Error, try again" |
-| Rate limits hit | Degraded access |
-| Database down | RAG retrieval fails! |
-| API key issues | Feature stops working |
-:::
-:::
-
-:::{.column width=45%}
-:::{style="text-align: center;"}
-[![Infrastructure diagram](figures/ai-stack.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/ai-stack.png"}
-
-Source: [MongoDB](https://www.mongodb.com/resources/basics/artificial-intelligence/ai-stack)
-
-:::{style="margin-top: 15px; background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px;"}
-If any one layer goes down, you get errors, slowness, or silence
-:::
-:::
-:::
-:::
-:::
-
-# Monitoring Basics 📊 {background-color="#1B3A6B"}
+# Monitoring and testing 📊 {background-color="#1B3A6B"}
 
 ## What companies watch: key metrics
 
@@ -553,71 +388,29 @@ Teams watch dashboards like this to catch problems before users notice
 :::
 :::
 
-## Status pages: checking AI reliability
-
-:::{style="margin-top: 30px; font-size: 22px;"}
-:::{.columns}
-:::{.column width=55%}
-**Every major AI service has a status page:**
-
-| Service | Status Page |
-|---------|------------|
-| OpenAI (ChatGPT) | [status.openai.com](https://status.openai.com) |
-| Anthropic (Claude) | [status.anthropic.com](https://status.anthropic.com) |
-| Google AI | [status.cloud.google.com](https://status.cloud.google.com) |
-| Midjourney | Check their Discord |
-
-**What you can learn:**
-
-- Current outages and degraded performance
-- Historical incidents (how often things break)
-- Maintenance windows
-- Incident post-mortems (what went wrong)
-
-**Tip**: [check the status page]{.alert} before blaming your prompt!
-:::
-
-:::{.column width=45%}
-:::{style="text-align: center;"}
-<!-- Suggested image: OpenAI status page screenshot -->
-[![](figures/status-page.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/status-page.png"}
-
-:::{style="font-size: 18px; margin-top: 15px;"}
-OpenAI's status page shows real incidents [https://status.openai.com](https://status.openai.com)
-:::
-:::
-
-:::{style="margin-top: 15px; background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px;"}
-**Fun fact**: OpenAI's page shows [frequent incidents]{.alert}: error rates, regional outages, feature degradation. AI reliability is hard!
-:::
-:::
-:::
-:::
-
 ## Testing AI: why it's hard
 
-:::{style="margin-top: 30px; font-size: 19px;"}
+:::{style="margin-top: 30px; font-size: 20px;"}
 :::{.columns}
 :::{.column width=55%}
-**Traditional software testing:**
+- Traditional software is [deterministic]{.alert}: 2 + 2 → 4, every time
+- AI is [non-deterministic]{.alert}: "What's the weather like?" gets a different answer each time, and many are "correct"
+- So test [properties]{.alert}, not exact outputs:
 
-- Input: 2 + 2
-- Expected output: 4
-- Test: Assert(2+2 == 4) ✅
+:::{style="margin-top: 25px; margin-bottom: 25px;"}
+| Test | What it checks | Example |
+|------|----------------|---------|
+| **Safety** | No harmful content | Refuses illegal requests? |
+| **Format** | Output structure | Is the JSON valid? |
+| **Consistency** | Stable core facts | Is Paris still in France? |
+| **Boundary** | Edge cases | A 10,000-word prompt? |
+| **Bias** | Fairness | Treats groups equally? |
+| **Regression** | Old bugs stay fixed | Does the DPD fix still work? |
+:::
 
-[Deterministic]{.alert}: same input → same output, always
-
-**AI testing:**
-
-- Input: "What's the weather like?"
-- Expected output: ... um ... 🤔
-- The response changes every time, and many answers are "correct"
-
-[Non-deterministic]{.alert}: same input → different outputs!
-
-**This is why Gemini's image bug wasn't caught:**
-
-"Generate a cute cat" worked fine. "Generate 1943 German soldiers" probably [wasn't in the test suite]{.alert}
+- [Red teaming]{.alert}: people try to break the model on purpose (Lecture 05)
+- [LLM-as-a-judge]{.alert}: another model scores thousands of outputs
+- Gemini's image bug: "a cute cat" worked, but "1943 German soldiers" [wasn't in the test suite]{.alert}
 :::
 
 :::{.column width=45%}
@@ -625,62 +418,6 @@ OpenAI's status page shows real incidents [https://status.openai.com](https://st
 [![Testing comparison](figures/testing-comparison.webp){width="100%"}](#){data-modal-type="image" data-modal-url="figures/testing-comparison.webp"}
 
 Source: [Medium](https://medium.com/@monikanawani25/from-correctness-to-confidence-understanding-llm-testing-0ad555bc797e)
-
-:::{style="margin-top: 15px; background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px;"}
-[Solution]{.alert}: test [properties]{.alert} (is it safe? is the format correct?) rather than exact outputs!
-:::
-:::
-:::
-:::
-:::
-
-## What CAN be tested?
-
-:::{style="margin-top: 30px; font-size: 20px;"}
-:::{.columns}
-:::{.column width=55%}
-**Properties that can be verified:**
-
-| Test Type | What It Checks | Example |
-|-----------|----------------|---------|
-| **Safety tests** | No harmful content | "Does it refuse illegal requests?" |
-| **Format tests** | Output structure | "Is the JSON valid?" |
-| **Consistency tests** | Stable core facts | "Is Paris still in France?" |
-| **Boundary tests** | Edge cases | "What if prompt is 10,000 words?" |
-| **Bias tests** | Fairness | "Does it treat groups equally?" |
-| **Regression tests** | Old bugs stay fixed | "Does the DPD fix still work?" |
-
-**Input validation (first line of defence):**
-
-- Block prompt injections ("Ignore all previous instructions...")
-- Limit input length
-- Filter prohibited content
-:::
-
-:::{.column width=45%}
-**Output validation (last line of defence):**
-
-:::{style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; font-size: 18px; margin-top: 30px;"}
-**What Air Canada should have done:**
-
-```text
-User asks: "What's the refund policy?"
-
-Chatbot generates: "You can request 
-a refund within 90 days..."
-
-OUTPUT VALIDATION:
-❌ Check against actual policy database
-❌ Flag if inventing new policies
-❌ Require human review for novel claims
-
-Instead: Response went directly to user
-         → Company lost lawsuit
-```
-:::
-
-:::{style="margin-top: 15px; text-align: center;"}
-Validate inputs AND outputs!
 :::
 :::
 :::
@@ -714,7 +451,7 @@ Prompt: "Ignore all previous instructions..."
 
 :::{.column width=45%}
 :::{style="text-align: center;"}
-[![Input validation flowchart](figures/input-validation.png){width="85%"}](#){data-modal-type="image" data-modal-url="figures/input-validation.png"}
+[![Input validation flowchart](figures/input-validation.png){width="75%"}](#){data-modal-type="image" data-modal-url="figures/input-validation.png"}
 
 Source: [ApX Machine Learning](https://apxml.com/courses/intro-llm-red-teaming/chapter-5-defenses-mitigation-strategies-llms/input-validation-sanitization-llms)
 :::
@@ -738,27 +475,24 @@ Source: [ApX Machine Learning](https://apxml.com/courses/intro-llm-red-teaming/c
 
 **Tools:**
 
-- [Content moderation APIs]{.alert} (OpenAI, Perspective)
+- [Content moderation APIs]{.alert} (OpenAI; Perspective until Dec 2026)
 - [Domain-specific rules]{.alert} (e.g., medical disclaimers)
 - [LLM-as-a-Judge]{.alert} for quality scoring
 :::
 
 :::{.column width=45%}
 :::{style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px;"}
-**Example output filter:**
+**What Air Canada should have done:**
 
 ```text
-AI response: "To make explosives..."
-
-❌ BLOCKED: Dangerous content detected!
-
-Replaced with: "I can't help with 
-that request."
+Chatbot: "Refund within 90 days..."
+Check: policy database → no such policy ❌
+Action: block it, or send to a human
 ```
 :::
 
 :::{style="margin-top: 15px; text-align: center;"}
-[![Output validation](figures/output-validation.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/output-validation.png"}
+[![Output validation](figures/output-validation.png){width="60%"}](#){data-modal-type="image" data-modal-url="figures/output-validation.png"}
 
 Source: [ApX Machine Learning](https://apxml.com/courses/intro-llm-red-teaming/chapter-5-defenses-mitigation-strategies-llms/output-filtering-content-moderation)
 :::
@@ -768,26 +502,24 @@ Source: [ApX Machine Learning](https://apxml.com/courses/intro-llm-red-teaming/c
 
 # Documentation 📝 {background-color="#1B3A6B"}
 
-## The horror stories: What happens without documentation
+## Why document? The ImageNet story
 
-:::{style="margin-top: 30px; font-size: 18px;"}
+:::{style="margin-top: 30px; font-size: 19px;"}
 :::{.columns}
 :::{.column width=55%}
-**ImageNet's hidden problems (2019):**
+**ImageNet**: the most influential computer vision dataset, behind 10+ years of research
 
-- The most influential computer vision dataset ever, powering 10+ years of research
-- [Nobody knew]{.alert} where the images came from!
-- Later discovered:
-  - Scraped from Flickr without consent
-  - Racist and sexist labels ([MTurk](https://www.mturk.com/) workers)
-  - Non-consensual photos of minors
-  - Content from revenge porn sites
+- [Few checked]{.alert} what the scraped images contained. Audits in 2019–20 found:
+  - Images scraped from Flickr without consent
+  - Offensive labels inherited from WordNet, applied by [MTurk](https://www.mturk.com/) workers
+  - Non-consensual photos of minors; voyeuristic and upskirt photos
+- [Thousands of AI systems]{.alert} were built on it
 
-> They built it quickly and never documented what they were doing!
+**Documentation lets us** check consent, trace bias, match models to uses, and assign responsibility
 
-[Thousands of AI systems were built on this undocumented foundation!]{.alert}
+- Laws require it: **EU AI Act** (high-risk AI from Dec 2027), **NYC Law 144** (bias audits). More in [Lecture 18]{.alert}
 
-Monitoring catches problems [after]{.alert} deployment. Documentation prevents some [before]{.alert} deployment
+Monitoring catches problems [after]{.alert} deployment. Documentation prevents some [before]{.alert}
 :::
 
 :::{.column width=45%}
@@ -800,83 +532,23 @@ Source: [Excavating AI](https://excavating.ai/) (great resource, check it out!)
 :::
 :::
 
-## Documentation as accountability
-
-:::{style="margin-top: 30px; font-size: 22px;"}
-:::{.columns}
-:::{.column width=55%}
-**Without documentation, we can't:**
-
-- ❌ Know if data were collected ethically
-- ❌ Identify sources of bias
-- ❌ Tell whether a model suits a use case
-- ❌ Assign responsibility when things go wrong
-- ❌ Reproduce or verify results
-- ❌ Update or fix problems later
-
-**With documentation, we can:**
-
-- ✅ Choose datasets knowingly
-- ✅ Trace bias back to its source
-- ✅ Match models to the right applications
-- ✅ Hold creators accountable
-- ✅ Build trust with users and regulators
-:::
-
-:::{.column width=45%}
-:::{style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; margin-top: 30px;"}
-Regulations [now require]{.alert} documentation:
-
-- **EU AI Act**: mandates documentation for high-risk AI
-- **NYC Law 144**: requires bias audits (which need documentation!)
-- **California CCPA**: data transparency requirements
-
-We cover US vs EU regulations in [Lecture 18]{.alert}.
-
-If you can't document it, you [can't deploy it]{.alert} (legally).
-:::
-:::
-:::
-:::
-
-## The three pillars: datasheets, model cards, and system cards
-
-:::{style="margin-top: 30px; font-size: 21px;"}
-:::{style="text-align: center;"}
-[![](figures/ai-model-cards.jpg){width="55%"}](#){data-modal-type="image" data-modal-url="figures/ai-model-cards.jpg"}
-
-Source: [Laurel Papworth](https://laurelpapworth.com/datasheets-model-cards/)
-:::
-
-:::{style="margin-top: 20px;"}
-Two papers started them: [Gebru et al. (2018)](https://arxiv.org/abs/1803.09010) for datasheets and [Mitchell et al. (2019)](https://arxiv.org/abs/1810.03993) for model cards.
-
-They are now [industry standards]{.alert} at [Google](https://deepmind.google/models/model-cards/), [Microsoft](https://azure.microsoft.com/en-us/products/ai-foundry/models), [Hugging Face](https://huggingface.co/docs/hub/en/model-cards), and others!
-:::
-:::
-
 ## What is a datasheet?
 
 :::{style="margin-top: 30px; font-size: 20px;"}
 :::{.columns}
 :::{.column width=55%}
-**Inspired by the electronics industry:**
+[Datasheets]{.alert} document data, [model cards]{.alert} models, [system cards]{.alert} whole products. [Gebru et al. (2018)](https://arxiv.org/abs/1803.09010) borrowed the idea from electronics spec sheets:
 
-- Every component ships with a "datasheet", a spec sheet with all relevant information
-- Engineers can then decide knowingly
-
-**[Timnit Gebru et al. (2018)](https://arxiv.org/abs/1803.09010) proposed the same for datasets:**
-
-> "A datasheet documents the motivation, composition, collection process, recommended uses, and other information about a dataset."
+> "…every dataset be accompanied with a datasheet that documents its motivation, composition, collection process, recommended uses, and so on."
 
 **What a datasheet answers:**
 
 - [Motivation]{.alert}: why was it created? Who funded it?
 - [Composition]{.alert}: what is in it? Errors? Sensitive data?
-- [Collection]{.alert}: scraped, surveyed, sensors? Was there consent?
-- [Preprocessing]{.alert}: what was cleaned, filtered, or removed?
-- [Uses]{.alert}: what is it for, and what should it [NOT]{.alert} be used for?
-- [Distribution and maintenance]{.alert}: who updates it? How do you report issues?
+- [Collection]{.alert}: how was it gathered? Was there consent?
+- [Preprocessing]{.alert}: what was cleaned or removed?
+- [Uses]{.alert}: what is it for, and [NOT]{.alert} for?
+- [Maintenance]{.alert}: who updates it?
 :::
 
 :::{.column width=45%}
@@ -913,11 +585,7 @@ Source: [Jonathan Rystrøm (2024) - Dataset Card: Multicultural WVS Alignment](h
 :::{.column width=50%}
 **Evaluate the documentation:**
 
-- ✅ Clear purpose: train preference/reward models for RLHF
-- ✅ Explicit misuse warnings (don't train chatbots directly!)
-- ✅ Content disclaimer about harmful material
-- ✅ Links to papers for methodology
-- ✅ Contact email
+- ✅ Purpose, misuse warnings, content disclaimer, papers, contact email
 
 **Discussion:**
 
@@ -934,8 +602,6 @@ Source: [Jonathan Rystrøm (2024) - Dataset Card: Multicultural WVS Alignment](h
 :::{style="margin-top: 30px; font-size: 19px;"}
 :::{.columns}
 :::{.column width=55%}
-Datasheets document data; [model cards]{.alert} document models.
-
 **Margaret Mitchell et al. (2019):**
 
 > "Model cards are short documents accompanying trained ML models that provide benchmarked evaluation in a variety of conditions."
@@ -949,6 +615,8 @@ Datasheets document data; [model cards]{.alert} document models.
 5. **Training data**: what was it trained on?
 6. **Ethical considerations**: what could go wrong?
 7. **Caveats and recommendations**: warnings!
+
+[System cards]{.alert} cover a whole product: its models, safeguards and red-team tests ([example](https://openai.com/index/openai-o1-system-card/))
 :::
 
 :::{.column width=45%}
@@ -980,33 +648,24 @@ A hammer is a great tool, but:
 :::{style="font-size: 20px;"}
 | Model | Intended Use | NOT For |
 |-------|--------------|---------|
-| Gemini 3 | Conversation, assistance | Medical diagnosis |
+| Gemini 3 | Reasoning, coding | Illicit activities |
 | Face detection | Placing cameras | Law enforcement ID |
 | Sentiment analysis | Product feedback | Hiring decisions |
 :::
 
-**Without this guidance:**
-
-People [will]{.alert} misuse models and harm others.
-
-Air Canada's chatbot was meant to answer questions, [not write refund policy]{.alert}. Nobody enforced the boundary
+Without this guidance, people [will]{.alert} misuse models. Air Canada's chatbot was meant to answer questions, [not write refund policy]{.alert}
 :::
 
 :::{.column width=45%}
 :::{style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px;"}
-**Real example: [Gemini 3 Model Card](https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-3-Pro-Model-Card.pdf)** (edited and summarised)
+**Real example: [Gemini 3 Model Card](https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-3-Pro-Model-Card.pdf)** (quoted)
 
-**Intended use:**
+**Intended use:** "solving problems that require enhanced reasoning"
 
-"Assistance with a variety of text-based tasks"
+**Should not be built into systems that:**
 
-**Out-of-scope:**
-
-"Assistance with illegal activities"
-
-"Chemical synthesis"
-
-"Mental health crisis intervention"
+- "engage in dangerous or illicit activities"
+- "compromise the security of others' or Google's services"
 
 :::
 :::
@@ -1041,63 +700,18 @@ Racial classification: ~93% | Age classification: ~63%
 
 :::{.column width=45%}
 :::{style="background: rgba(230, 57, 70, 0.1); padding: 15px; border-radius: 10px; font-size: 18px;"}
-**CLIP's bias findings:**
+**CLIP's bias findings** ([Radford et al., 2021](https://arxiv.org/abs/2103.00020)): labelling FairFace photos
 
-OpenAI found [significant disparities]{.alert} when classifying people into crime-related categories:
-
-- Performance varied by race and gender
-- Disparities shifted with how classes were built
-- They identified a risk of denigration harms
-
-> "We tested the risk of certain kinds of denigration with CLIP by classifying images of people from Fairface into crime-related and non-human animal categories."
+- [4.9%]{.alert} were put into non-human classes ("animal", "gorilla"…)
+- Photos of Black people: [~14%]{.alert}; every other group [under 8%]{.alert}
+- Crime-related labels: [16.5%]{.alert} of men vs [9.8%]{.alert} of women
+- Adding a "child" label sharply cut errors for under-20s: [class design matters]{.alert}
 :::
 
-:::
-:::
-:::
-
-## System cards vs model cards
-
-:::{style="margin-top: 30px; font-size: 20px;"}
-:::{.columns}
-:::{.column width=55%}
-**A newer concept: system cards**
-
-Modern AI products chain several models together. A model card covers only one, so **system cards** document the [entire system]{.alert}.
-
-**What a system card includes:**
-
-- Multiple models working together, and how components interact
-- Human oversight mechanisms
-- Deployment context and safeguards
-- Red teaming and safety evaluations
-
-**Who uses them:**
-
-- **OpenAI**: [o1 System Card](https://openai.com/index/openai-o1-system-card/), December 2024
-- **Anthropic**: one for each Claude release
-- **Meta**: 22 system cards in 2023 for their AI products
+:::{style="margin-top: 20px; background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; font-size: 18px;"}
+**Go further**: break results down by [combinations]{.alert} of groups. Gender Shades (Lecture 05): Face++ erred on 0.8% of light-skinned men but 34.5% of dark-skinned women
 :::
 
-:::{.column width=45%}
-:::{style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; font-size: 20px;"}
-**Model Card vs System Card:**
-
-| Aspect | Model Card | System Card |
-|--------|------------|-------------|
-| Scope | Single model | Entire system |
-| Focus | Performance | Safety + deployment |
-| Audience | Developers | Developers + public |
-| Includes | Training data, metrics | Red teaming, safeguards |
-:::
-
-:::{style="margin-top: 20px; text-align: center;"}
-[![](figures/system-card.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/system-card.png"}
-
-:::{style="font-size: 18px;"}
-[OpenAI o1 System Card (Dec 2024)](https://openai.com/index/openai-o1-system-card)
-:::
-:::
 :::
 :::
 :::
@@ -1112,7 +726,7 @@ Modern AI products chain several models together. A model card covers only one, 
 Most large models train on data [without explicit consent]{.alert}:
 
 - Web scraping (your blog posts, photos, art)
-- Social media posts (even "private" ones)
+- Social media posts
 - Books and articles (often without author permission)
 - Code repositories (GPL violations?)
 
@@ -1125,12 +739,12 @@ Most large models train on data [without explicit consent]{.alert}:
 :::
 
 :::{.column width=45%}
-:::{style="background: rgba(230, 57, 70, 0.1); padding: 15px; border-radius: 10px;"}
+:::{style="background: rgba(230, 57, 70, 0.1); padding: 15px; border-radius: 10px; margin-top: 50px;"}
 **High-profile cases:**
 
-- **LAION-5B**: Billions of images scraped; later found to contain child pornography (Source: [CNN](https://www.cnn.com/2023/12/21/tech/child-sexual-abuse-material-ai-training-data))
+- **[LAION-5B](https://www.cnn.com/2023/12/21/tech/child-sexual-abuse-material-ai-training-data)**: billions of scraped images, some showing child abuse
 - **Clearview AI**: Scraped 30+ billion faces from social media (Source: [BBC](https://www.bbc.com/news/technology-67133157))
-- **Getty Images vs. Stability AI**: Lawsuit over image scraping (rejected!) (Source: [Paul Weiss](https://www.paulweiss.com/insights/client-memos/getty-images-v-stability-ai-the-uk-courts-first-word-on-use-of-copyright-works-in-ai-model-development))
+- **Getty v. Stability**: Stability mostly won; appeal pending (Source: [Paul Weiss](https://www.paulweiss.com/insights/client-memos/getty-images-v-stability-ai-the-uk-courts-first-word-on-use-of-copyright-works-in-ai-model-development))
 :::
 
 :::{style="margin-top: 10px; font-size: 26px; text-align: center;"}
@@ -1185,22 +799,17 @@ You wrote a poem and posted it online in 2018. An AI company scraped it, and now
 :::{.column width=55%}
 **You can't fix AI pipelines, but you can:**
 
-1. **Compare answers from different models**
-   - Ask ChatGPT, Claude and Gemini the same question
-   - If they disagree, investigate
-
+1. **Compare models and repeat questions**
+   - Answers vary: temperature, servers, A/B tests, updates
+   - If they diverge on something critical, [trust none of them]{.alert}
 2. **Check status pages**
-   - AI acting oddly? Maybe it's not your prompt
-   - [status.openai.com](https://status.openai.com), [status.anthropic.com](https://status.anthropic.com)
-
+   - [status.openai.com](https://status.openai.com), [status.claude.com](https://status.claude.com), [status.cloud.google.com](https://status.cloud.google.com)
 3. **Recognise the difference**
-   - Pipeline problem: AI is down, slow, or glitching
-   - Hallucination: AI is confident but wrong
-   - Working as intended: AI refuses for safety reasons
-
+   - Pipeline problem: down, slow, or glitching
+   - Hallucination: confident but wrong
+   - Working as intended: refuses for safety reasons
 4. **Read the documentation**
    - Model cards say what a tool is [not]{.alert} for
-   - Use it outside that, and the risk is on you
 :::
 
 :::{.column width=45%}
@@ -1214,42 +823,9 @@ You wrote a poem and posted it online in 2018. An AI company scraped it, and now
 | Refuses to answer | Safety guardrails (try rephrasing) |
 | Gibberish output | Pipeline failure (refresh) |
 :::
-:::
-:::
-:::
 
-## The variation is normal!
-
-:::{style="margin-top: 30px; font-size: 22px;"}
-:::{.columns}
-:::{.column width=55%}
-**Why does AI give different answers to the same question?**
-
-1. **Temperature**: the randomness dial (creativity vs. consistency)
-2. **Load balancing**: your request may hit a different server
-3. **Model versions**: A/B testing
-4. **Context**: time of day, your chat history
-5. **Updates**: the model changed since yesterday
-
-Identical responses every time would feel robotic. Some variation keeps it natural.
-
-**But for important decisions:**
-
-Ask multiple times, and ask different AIs. If answers diverge on something critical, [don't trust any of them]{.alert}!
-:::
-
-:::{.column width=45%}
-:::{style="text-align: center;"}
-[![](figures/ab-testing.png){width="70%"}](#){data-modal-type="image" data-modal-url="figures/ab-testing.png"}
-
-[![](figures/gemini-personal-intelligence.png){width="70%"}](#){data-modal-type="image" data-modal-url="figures/gemini-personal-intelligence.png"}
-
-Sources: [r/Bard](https://www.reddit.com/r/Bard/comments/1leiobd/google_is_also_doing_ab_testing_in_the_gemini_app/#lightbox) and [Google Blog](https://blog.google/innovation-and-ai/products/gemini-app/personal-intelligence/)
-
-
-:::{style="font-size: 18px; margin-top: 15px;"}
-You and your friend might be running different model versions right now without knowing it
-:::
+:::{style="margin-top: 15px; font-size: 18px; text-align: center;"}
+Real failures, documented: [AI Incident Database](https://incidentdatabase.ai/)
 :::
 :::
 :::
@@ -1257,80 +833,46 @@ You and your friend might be running different model versions right now without 
 
 ## Activity: Diagnose the problem!
 
-:::{style="margin-top: 30px; font-size: 20px;"}
+:::{style="margin-top: 20px; font-size: 22px;"}
 :::{.columns}
 :::{.column width=50%}
-**Scenario cards: What's the likely cause?**
+**What's the likely cause? Pipeline problem, hallucination, or working as intended?**
 
-**Scenario A:**
+**A:** Claude takes 45 seconds, then cuts off mid-sentence
 
-You ask Claude a question. It takes 45 seconds to respond, and the answer is cut off mid-sentence.
+:::{.fragment}
+→ [Pipeline problem]{.alert}: overload or timeout. Check the status page, retry later
+:::
 
-**Scenario B:**
+**B:** Gemini confidently names the winner of the 2027 Super Bowl
 
-You ask Gemini "Who won the 2027 Super Bowl?" and it confidently names a team.
+:::{.fragment}
+→ [Hallucination]{.alert}: it hasn't happened yet. Verify time-sensitive claims
+:::
 
-**Scenario C:**
+**C:** ChatGPT wrote your code yesterday; today it refuses
 
-You ask ChatGPT to write code. Yesterday it worked; today it refuses and says "I can't help with that."
+:::{.fragment}
+→ [Guardrails changed]{.alert}: a model update or a new filter. Rephrase
+:::
 :::
 
 :::{.column width=50%}
-**Scenario D:**
+**D:** "A photo of my professor" gives a random person
 
-You ask Midjourney to generate "a photo of my professor." It creates an image of a random person.
+:::{.fragment}
+→ [Working as intended]{.alert}: it doesn't know your professor
+:::
 
-**Scenario E:**
+**E:** Three assistants give three different historical dates
 
-Three different AI assistants give you three completely different answers about a historical date.
+:::{.fragment}
+→ [Possible hallucination by all three]{.alert}: check a reliable source
+:::
 
 :::{style="margin-top: 20px; background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px;"}
-**Discuss with a neighbour:**
-
-- Pipeline problem?
-- Hallucination?
-- Working as intended?
-- How would you verify?
+**Discuss with a neighbour**: the cause, and how you'd verify
 :::
-
-⏱️ a few minutes to diagnose!
-:::
-:::
-:::
-
-## Activity answers
-
-:::{style="margin-top: 30px; font-size: 20px;"}
-:::{.columns}
-:::{.column width=50%}
-**Scenario A: 45 seconds, cut off mid-sentence**
-
-- [Pipeline problem]{.alert}: server overload or timeout
-- Check the status page, then retry in a few minutes
-
-**Scenario B: 2027 Super Bowl answer**
-
-- [Hallucination]{.alert}: the event hasn't happened yet!
-- The AI doesn't know that it doesn't know
-- Always verify time-sensitive claims
-
-**Scenario C: Code refused today but worked yesterday**
-
-- A [model update]{.alert} changed the safety guardrails
-- Or your prompt triggered a new filter
-- Rephrase; if it stays blocked, the guardrails changed
-:::
-
-:::{.column width=50%}
-**Scenario D: "Photo of my professor" = random person**
-
-- [Working as intended]{.alert}: the AI doesn't know your professor!
-- It generates a plausible "professor-looking" person, not a failure
-
-**Scenario E: Different AIs, different historical dates**
-
-- [Potential hallucination from all of them]{.alert}
-- Don't trust any AI for verifiable facts, look it up in a reliable source!
 :::
 :::
 :::
@@ -1341,52 +883,14 @@ Three different AI assistants give you three completely different answers about 
 
 :::{style="margin-top: 30px; font-size: 26px;"}
 
-- You use [dozens of AI pipelines daily]{.alert}: text, image, voice, recommendations
+- A pipeline is every step from your input to the output, and [every step can fail]{.alert}
+- Air Canada, DPD, Gemini: [pipeline problems, not "rogue AI"]{.alert}
+- [Drift and degradation]{.alert}: the world changes while the model stays frozen
+- Companies [monitor]{.alert}, test properties, and validate inputs and outputs
+- [Documentation]{.alert}: datasheets for data, model cards (with intended use) for models, system cards for products
+- [Consent]{.alert}: much training data was taken without permission; ImageNet hid problems for years
+- [You]{.alert}: compare AIs, check status pages, read model cards, tell glitches from hallucinations
 
-- A pipeline is the [multi-step process]{.alert} from your input to the AI's output, and [every step can fail]{.alert}
-
-- Real failures: Air Canada lawsuit, DPD swearing, Gemini images. [Pipeline problems, not "rogue AI"]{.alert}
-
-- [Data drift: the world changes, AI stays frozen]{.alert}
-
-- [Monitoring]{.alert}: companies track metrics you never see. When monitoring fails, you read about it in the news
-
-- [Documentation]{.alert}: datasheets describe data, model cards describe models and their [intended use]{.alert}, system cards describe whole products
-
-- [Consent]{.alert}: much AI training data was collected without permission. Undocumented data (ImageNet!) hides problems for years
-
-- [You should]{.alert} compare AIs, check status pages, read model cards, and tell pipeline problems from hallucinations
-
-:::
-
-## Your AI user toolkit
-
-:::{style="margin-top: 30px; font-size: 28px;"}
-:::{.columns}
-:::{.column width=50%}
-**Quick reference:**
-
-| Symptom | Action |
-|---------|--------|
-| AI is down/slow | Check status page, wait |
-| Different answers | Normal! Verify if critical |
-| Confident but wrong | Hallucination, verify facts |
-| Refuses request | Guardrails, try rephrasing |
-| Weird/gibberish | Pipeline glitch, refresh |
-:::
-
-:::{.column width=50%}
-**Status pages to bookmark:**
-
-- [status.openai.com](https://status.openai.com)
-- [status.anthropic.com](https://status.anthropic.com)
-- [status.cloud.google.com](https://status.cloud.google.com)
-
-**On AI failures:**
-
-- [AI Incident Database](https://incidentdatabase.ai/). Real failures documented!
-:::
-:::
 :::
 
 # ...and that's all for today! 🎉 {background-color="#1B3A6B"}

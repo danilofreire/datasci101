@@ -223,16 +223,15 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </section>
 <section id="recap-of-last-class" class="slide level2">
 <h2>Recap of last class</h2>
-<div style="margin-top: 20px; font-size: 24px;">
+<div style="margin-top: 40px; font-size: 25px;">
 <div class="columns">
 <div class="column" style="width:50%;">
 <ul>
 <li><span class="alert">RAG</span> (Retrieval-Augmented Generation) grounds AI in <span class="alert">your own documents</span></li>
 <li>LLMs have knowledge cutoffs and hallucinate</li>
 <li>Chunk → Embed → Retrieve → Generate</li>
-<li>RAG cuts hallucinations by <span class="alert">30–50%</span>, but <span class="alert">retrieval errors</span> still occur</li>
-<li><strong>Today</strong>: what happens <span class="alert">behind the scenes</span> when AI goes down, runs slow, or answers oddly?</li>
-<li><span class="alert">Why does this happen?</span> And what can you do about it?</li>
+<li>RAG cut hallucinations by <span class="alert">over 60%</span> in one study, but <span class="alert">retrieval errors</span> still occur</li>
+<li><strong>Today</strong>: what happens <span class="alert">behind the scenes</span> when AI fails, and what you can do about it</li>
 <li>Also <span class="alert">documentation</span>: how companies record what their systems can and cannot do</li>
 </ul>
 </div><div class="column" style="width:50%;">
@@ -249,72 +248,42 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <div style="margin-top: 20px; font-size: 26px;">
 <div class="columns">
 <div class="column" style="width:50%;">
-<p><strong>Part 1: What is a Pipeline?</strong></p>
+<p><strong>Part 1: Pipelines and failures</strong></p>
 <ul>
 <li>From prompt to response</li>
-<li>Why “it works on my laptop” isn’t enough</li>
 <li>Real-world AI failures and lessons</li>
+<li>Data drift and model degradation</li>
 </ul>
-<p><strong>Part 2: Why Pipelines Break</strong></p>
+<p><strong>Part 2: Monitoring and testing</strong></p>
 <ul>
-<li>Data drift: when the world changes</li>
-<li>Model degradation over time</li>
-<li>Infrastructure and scaling issues</li>
-</ul>
-</div><div class="column" style="width:50%;">
-<p><strong>Part 3: Monitoring and Testing</strong></p>
-<ul>
-<li>What to watch: the key metrics</li>
+<li>What companies watch</li>
 <li>Why testing AI is hard</li>
 <li>Input and output validation</li>
 </ul>
-<p><strong>Part 4: Documentation and Accountability</strong></p>
+</div><div class="column" style="width:50%;">
+<p><strong>Part 3: Documentation</strong></p>
 <ul>
 <li>Datasheets, model cards, system cards</li>
 <li>Consent and the data supply chain</li>
+</ul>
+<p><strong>Part 4: What can you do?</strong></p>
+<ul>
 <li>Being a savvy AI user</li>
+<li>Diagnose the problem</li>
 </ul>
 </div></div>
 </div>
 </section>
 <section id="meme-of-the-day" class="slide level2">
-<h2>Meme of the day 😄</h2>
-<h3 id="thats-actually-a-very-good-point">That’s actually a very good point!</h3>
+<h2>Meme of the day</h2>
+<h3 id="ouch">Ouch! 😅</h3>
 <div style="text-align: center; margin-top: 30px;">
 <p><a href="#/" data-modal-type="image" data-modal-url="figures/turing-test.webp"><img data-src="figures/turing-test.webp" style="width:55.0%"></a></p>
 </div>
-<!-- NOTE (Fall 2026 revision): this DataFest slide is a Spring leftover (sign-up deadline March 2026).
-Commented out rather than deleted; restore and update the dates if DataFest runs again this year.
-
-## DataFest 2026
-
-:::{style="margin-top: 30px; font-size: 22px;"}
-:::{.columns}
-:::{.column width=50%}
-[![](figures/datafest.png){width="80%"}](#){data-modal-type="image" data-modal-url="figures/datafest.png"}
-:::
-
-:::{.column width=50%}
-:::{style="margin-top: 30px;"}
-**DataFest 2026 is coming!**
-
-- It's a 48-hour data science competition, where you'll work in teams to solve a real-world problem using data
-- Open to all Emory undergraduates, regardless of major or minor
-- AI use is allowed and encouraged!
-- [Deadline to sign up: March 9, 2026]{.alert}
-- [Participant registration form](https://forms.office.com/Pages/ResponsePage.aspx?id=nPsE4KSwT0K80DImBtXfOLogA1skjlRHi7tno6axvlpUMUVTMU1KMVZZV1NXSTRCMTgwTjZaRzhMRC4u)
-- [Mentor sign-up form](https://forms.office.com/Pages/ResponsePage.aspx?id=nPsE4KSwT0K80DImBtXfOLogA1skjlRHi7tno6axvlpUMEpOVzJIRkJYSlBZMkRDQlcwSE0zTDJPMS4u)
-- [Volunteer registration form](https://forms.office.com/Pages/ResponsePage.aspx?id=nPsE4KSwT0K80DImBtXfOLogA1skjlRHi7tno6axvlpUME9XUFZUSlczNFg3MEs5UDhWVTM3UUNTSy4u)
-:::
-:::
-:::
-:::
-
-END OF COMMENTED-OUT DATAFEST SLIDE -->
 </section></section>
 <section>
-<section id="what-is-a-pipeline" class="title-slide slide level1 center" data-background-color="#1B3A6B">
-<h1>What is a Pipeline? 🏭</h1>
+<section id="pipelines-and-failures" class="title-slide slide level1 center" data-background-color="#1B3A6B">
+<h1>Pipelines and failures 🏭</h1>
 
 </section>
 <section id="from-prompt-to-response" class="slide level2 scrollable">
@@ -325,16 +294,16 @@ END OF COMMENTED-OUT DATAFEST SLIDE -->
 <p><strong>When you ask an LLM a question, here’s what happens:</strong></p>
 <ol type="1">
 <li><span class="alert">Your prompt</span> goes from your browser to servers</li>
-<li><span class="alert">Load balancers</span> route it to an available GPU (cloud infrastructure)</li>
-<li><span class="alert">Preprocessing</span> cleans and formats your text (usually minimal with LLMs)</li>
+<li><span class="alert">Load balancers</span> route it to an available GPU</li>
+<li><span class="alert">Preprocessing</span> cleans and formats your text</li>
 <li><span class="alert">Tokenisation</span> converts text to numbers (you know how to do that!)</li>
-<li><span class="alert">The model</span> processes tokens (billions of operations!)</li>
+<li><span class="alert">The model</span> processes the tokens</li>
 <li><span class="alert">Postprocessing</span> formats the output</li>
-<li><span class="alert">Safety filters</span> check for harmful content (e.g., hate speech)</li>
+<li><span class="alert">Safety filters</span> check for harmful content</li>
 <li><span class="alert">Response</span> travels back to your screen</li>
 </ol>
 <p><span class="alert">Each step can fail independently!</span></p>
-<p>The whole process is a <a href="https://en.wikipedia.org/wiki/Pipeline_(computing)">pipeline</a>.</p>
+<p>The whole process is a <a href="https://en.wikipedia.org/wiki/Pipeline_(computing)">pipeline</a>! 🤓</p>
 </div><div class="column" style="width:45%;">
 <div style="text-align: center;">
 <div class="quarto-figure quarto-figure-center">
@@ -356,6 +325,7 @@ END OF COMMENTED-OUT DATAFEST SLIDE -->
 <div class="columns">
 <div class="column" style="width:55%;">
 <p><strong>Not all failures are the same:</strong></p>
+<div style="text-align: center; margin-top: 30px; margin-bottom: 30px;">
 <table class="caption-top">
 <colgroup>
 <col style="width: 28%">
@@ -392,18 +362,14 @@ END OF COMMENTED-OUT DATAFEST SLIDE -->
 </tr>
 </tbody>
 </table>
-<p>Spot <em>which type</em> of failure happened, then choose the right response</p>
+</div>
+<p>Spot <em>which type</em> of failure happened, then choose the right response. Pipeline failures are physical: overloaded GPUs, network timeouts, rate limits</p>
 </div><div class="column" style="width:45%;">
 <div style="text-align: center;">
 <p><a href="#/" data-modal-type="image" data-modal-url="figures/ai-failures.png"><img data-src="figures/ai-failures.png" style="width:100.0%"></a></p>
 </div>
 </div></div>
 </div>
-</section></section>
-<section>
-<section id="when-ai-breaks" class="title-slide slide level1 center" data-background-color="#1B3A6B">
-<h1>When AI Breaks 💥</h1>
-
 </section>
 <section id="real-ai-failures-recent-headlines" class="slide level2 scrollable">
 <h2>Real AI failures (recent headlines)</h2>
@@ -476,22 +442,22 @@ END OF COMMENTED-OUT DATAFEST SLIDE -->
 <ul>
 <li>Swear when asked nicely</li>
 <li>Write poems criticising DPD</li>
-<li>Call itself “useless” and recommend competitors</li>
+<li>Call itself “useless”</li>
 <li>Say DPD was “the worst delivery firm in the world”</li>
 </ul></li>
 </ul>
 <p><strong>DPD’s response:</strong></p>
-<p>Disabled the chatbot, apologised, launched an investigation.</p>
+<p>Blamed a system update and disabled the AI element.</p>
 <p><strong>What went wrong:</strong></p>
-<p>A <span class="alert">system update broke the guardrails</span>. Content filtering stopped working, and no one noticed until customers posted screenshots on social media</p>
+<p>A <span class="alert">system update broke the guardrails</span>, and customers noticed first, on social media</p>
 </div><div class="column" style="width:45%;">
 <div style="text-align: center;">
 <p><a href="#/" data-modal-type="image" data-modal-url="figures/dpd-chatbot.png"><img data-src="figures/dpd-chatbot.png" style="width:60.0%"></a></p>
-<p>Source: <a href="https://www.bbc.com/news/technology-68025677">BBC News</a></p>
+<p>Source: <a href="https://www.theguardian.com/technology/2024/jan/20/dpd-ai-chatbot-swears-calls-itself-useless-and-criticises-firm">The Guardian</a></p>
 </div>
 <div style="margin-top: 15px; background: rgba(230, 57, 70, 0.1); padding: 15px; border-radius: 10px;">
 <p><strong>Pipeline failure point:</strong></p>
-<p><span class="alert">No monitoring after deployment</span>. The update shipped without testing, and no automated check caught the broken guardrails.</p>
+<p><span class="alert">No monitoring after deployment</span>: no automated check caught it</p>
 </div>
 </div></div>
 </div>
@@ -506,7 +472,7 @@ END OF COMMENTED-OUT DATAFEST SLIDE -->
 <li>Asked for “1943 German soldiers”, Gemini drew <span class="alert">Black men and Asian women</span> in Nazi uniforms</li>
 <li>Same problem with “US Founding Fathers” and other historical figures</li>
 <li>Google’s CEO called the results “completely unacceptable”</li>
-<li>Image generation <span class="alert">paused for weeks</span></li>
+<li>Images of people <span class="alert">paused for six months</span></li>
 </ul>
 <p><strong>Why did this happen? Can you guess?</strong></p>
 </div><div class="column" style="width:45%;">
@@ -520,51 +486,52 @@ END OF COMMENTED-OUT DATAFEST SLIDE -->
 </div>
 </div></div>
 </div>
-</section></section>
-<section>
-<section id="why-pipelines-break" class="title-slide slide level1 center" data-background-color="#1B3A6B">
-<h1>Why Pipelines Break 🔥</h1>
-
 </section>
 <section id="data-drift-the-world-changes" class="slide level2">
 <h2>Data drift: the world changes</h2>
-<div style="margin-top: 30px; font-size: 22px;">
+<div style="margin-top: 30px; font-size: 21px;">
 <div class="columns">
 <div class="column" style="width:55%;">
-<p><strong>Data drift</strong> = real-world data differs from training data</p>
-<p><strong>A sentiment analyser trained in 2020:</strong></p>
+<p><strong>Data drift</strong>: real-world data stops looking like the training data. A sentiment model trained in 2020:</p>
 <ul>
-<li>“This product is sick!” → Probably means: Amazing ✅</li>
-<li>“This slaps!” → Might not understand 🤔</li>
-<li>“No cap, this is bussin’” → Completely lost! 😵</li>
+<li>“This product is sick!” → probably fine ✅</li>
+<li>“No cap, this is bussin’” → completely lost 😵</li>
 </ul>
-<p><strong>Types of drift:</strong></p>
+<p><strong>Three types:</strong></p>
 <table class="caption-top">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 48%">
+<col style="width: 31%">
+</colgroup>
 <thead>
 <tr class="header">
 <th>Type</th>
-<th>Description</th>
+<th>What changes</th>
 <th>Example</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><strong>Label drift</strong></td>
-<td>What’s “correct” changes</td>
-<td>Policy updates</td>
+<td><strong>Data drift</strong></td>
+<td>The inputs, <span class="math inline">\(P(X)\)</span></td>
+<td>New users, new devices</td>
 </tr>
 <tr class="even">
-<td><strong>Concept drift</strong></td>
-<td>Meaning of things changes</td>
-<td>New slang, trends</td>
+<td><strong>Label drift</strong></td>
+<td>How often each answer occurs, <span class="math inline">\(P(Y)\)</span></td>
+<td>More fraud at holidays</td>
 </tr>
 <tr class="odd">
-<td><strong>Data drift</strong></td>
-<td>Input distribution changes</td>
-<td>New demographics</td>
+<td><strong>Concept drift</strong></td>
+<td>What inputs mean, <span class="math inline">\(P(Y \mid X)\)</span></td>
+<td>“Sick” now means “great”</td>
 </tr>
 </tbody>
 </table>
+<ul>
+<li><span class="alert">Concept drift is the most dangerous</span>: the model stays confident but is wrong</li>
+</ul>
 </div><div class="column" style="width:45%;">
 <div style="text-align: center;">
 <div class="quarto-figure quarto-figure-center">
@@ -574,242 +541,51 @@ END OF COMMENTED-OUT DATAFEST SLIDE -->
 </figure>
 </div>
 <p>Source: <a href="https://spotintelligence.com/2024/04/08/data-drift-in-machine-learning/">Spot Intelligence</a></p>
-<div style="font-size: 18px; margin-top: 15px;">
-<p>Slang, prices, and user habits shift constantly, but a trained model only knows what it learned</p>
 </div>
-</div>
-</div></div>
-</div>
-</section>
-<section id="why-does-data-drift-happen" class="slide level2 scrollable">
-<h2>Why does data drift happen?</h2>
-<div style="margin-top: 30px; font-size: 21px;">
-<div class="columns">
-<div class="column" style="width:55%;">
-<p>Models assume <span class="math inline">\(P_{\text{train}}(X, Y) = P_{\text{prod}}(X, Y)\)</span>, but the joint distribution shifts over time:</p>
-<ol type="1">
-<li><strong>Data drift</strong>: <span class="math inline">\(P(X)\)</span> changes
-<ul>
-<li>Model sees inputs it never learned from</li>
-<li>Example: new user demographics, device types</li>
-</ul></li>
-<li><strong>Label drift</strong>: <span class="math inline">\(P(Y)\)</span> changes
-<ul>
-<li>Class frequencies shift, so decision boundaries become suboptimal</li>
-<li>Example: fraud rate rises during holidays</li>
-</ul></li>
-<li><strong>Concept drift</strong>: <span class="math inline">\(P(Y|X)\)</span> changes
-<ul>
-<li>Same input → different correct output</li>
-<li>Example: “sick” now means “great” in slang</li>
-<li><span class="alert">The most dangerous type</span>: the model is confident but wrong</li>
-</ul></li>
-</ol>
-</div><div class="column" style="width:45%;">
-<div style="background: rgba(45, 69, 99, 0.1); padding: 20px; border-radius: 10px; font-size: 19px; margin-top: 30px;">
-<p><strong>Technical causes:</strong></p>
-<table class="caption-top">
-<thead>
-<tr class="header">
-<th>Cause</th>
-<th>Effect</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>Non-stationarity</strong></td>
-<td>Real-world processes aren’t static</td>
-</tr>
-<tr class="even">
-<td><strong>Sample selection bias</strong></td>
-<td>Training data ≠ production population</td>
-</tr>
-<tr class="odd">
-<td><strong>Feedback loops</strong></td>
-<td>Model outputs influence future inputs</td>
-</tr>
-<tr class="even">
-<td><strong>External shocks</strong></td>
-<td>COVID, policy changes, viral trends</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div style="margin-top: 20px; background: rgba(230, 57, 70, 0.1); padding: 15px; border-radius: 10px; font-size: 19px;">
-<p>Machine learning assumes <span class="alert">i.i.d. data</span> (independent and identically distributed). Real-world data is:</p>
-<ul>
-<li><strong>Temporally correlated</strong> (today depends on yesterday)</li>
-<li><strong>Non-stationary</strong> (distributions shift over months and years)</li>
-<li><strong>Adversarial</strong> (users game the system)</li>
-<li><strong>Context-dependent</strong> (meaning changes with culture and location)</li>
-</ul>
+<div style="margin-top: 15px; background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; font-size: 18px;">
+<p><strong>Why it happens</strong>: models assume tomorrow’s data looks like the training data. But the world changes, users differ from the training sample, model outputs feed back into inputs, and shocks like COVID hit</p>
 </div>
 </div></div>
 </div>
 </section>
 <section id="model-degradation-models-get-stale" class="slide level2">
 <h2>Model degradation: models get stale</h2>
-<div style="margin-top: 30px; font-size: 20px;">
+<div style="margin-top: 30px; font-size: 21px;">
 <div class="columns">
 <div class="column" style="width:55%;">
-<p><strong>Even without drift, models degrade:</strong></p>
+<p><strong>Performance often decays, even with little drift:</strong></p>
 <ul>
-<li>User expectations evolve</li>
-<li>Competitors improve their products</li>
-<li>Edge cases accumulate and small errors compound</li>
+<li>Users adapt to the model, creating <span class="alert">feedback loops</span></li>
+<li>Updates and retraining can make a model “forget” rare cases</li>
+<li>Provider API changes break workflows</li>
+<li>Long conversations degrade quality (context pollution)</li>
 </ul>
 <p><strong>Signs your AI tool is degrading:</strong></p>
 <ul>
 <li>❌ Answers that used to work now don’t</li>
-<li>❌ More “I don’t know” or refusals</li>
-<li>❌ Inconsistent responses to the same prompt</li>
-<li>❌ Friends getting better results elsewhere</li>
+<li>❌ More refusals and inconsistent answers</li>
 <li>❌ You need workarounds more often</li>
 </ul>
-<p><strong>The “boiling frog” problem:</strong></p>
-<p>Changes come so gradually you don’t notice until it’s too late!</p>
+<p><span class="alert">The boiling frog problem</span>: the change is so gradual you don’t notice</p>
 </div><div class="column" style="width:45%;">
 <div style="text-align: center;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><a href="#/" data-modal-type="image" data-modal-url="figures/model-degradation.webp"><img data-src="figures/model-degradation.webp" style="width:60.0%"></a></p>
-<figcaption>Model degradation</figcaption>
+<p><a href="#/" data-modal-type="image" data-modal-url="figures/model-degradation.webp"><img data-src="figures/model-degradation.webp" style="width:50.0%"></a></p>
+<figcaption>Quality can also degrade within one long conversation</figcaption>
 </figure>
 </div>
 <p>Source: <a href="https://jameshoward.us/2024/11/26/context-degradation-syndrome-when-large-language-models-lose-the-plot">James Howard</a></p>
 <div style="font-size: 18px; margin-top: 15px;">
-<p>A model that was 95% accurate at launch can drop to 80% within months if left alone</p>
-</div>
-</div>
-</div></div>
-</div>
-</section>
-<section id="why-does-model-degradation-happen" class="slide level2 scrollable">
-<h2>Why does model degradation happen?</h2>
-<div style="margin-top: 30px; font-size: 22px;">
-<div class="columns">
-<div class="column" style="width:55%;">
-<p>Model performance <span class="math inline">\(P(t)\)</span> decays over time, even with stable data:</p>
-<ol type="1">
-<li><strong>Entropy accumulation</strong>
-<ul>
-<li>Small prediction errors compound: <span class="math inline">\(\epsilon(t) \approx \epsilon_0 \cdot e^{\lambda t}\)</span></li>
-<li>Edge cases create cascading failures</li>
-</ul></li>
-<li><strong>Distribution shift in deployment</strong>
-<ul>
-<li>Users adapt prompts to past responses</li>
-<li>This creates <span class="alert">feedback loops</span> that amplify biases</li>
-</ul></li>
-<li><strong>Catastrophic forgetting</strong> (after updates)
-<ul>
-<li>Fine-tuning on new data overwrites old knowledge</li>
-<li>Safety training can reduce capability</li>
-<li>The model “forgets” rare cases</li>
-</ul></li>
-</ol>
-</div><div class="column" style="width:45%;">
-<div style="background: rgba(45, 69, 99, 0.1); padding: 20px; border-radius: 10px; font-size: 19px; margin-top: 30px;">
-<p><strong>Technical mechanisms:</strong></p>
-<table class="caption-top">
-<thead>
-<tr class="header">
-<th>Mechanism</th>
-<th>Effect</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>Weight decay</strong></td>
-<td>Regularisation erodes rare patterns</td>
-</tr>
-<tr class="even">
-<td><strong>Quantisation</strong></td>
-<td>Compression loses precision</td>
-</tr>
-<tr class="odd">
-<td><strong>API updates</strong></td>
-<td>Provider changes break workflows</td>
-</tr>
-<tr class="even">
-<td><strong>Context pollution</strong></td>
-<td>Long conversations degrade quality</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div style="margin-top: 20px; background: rgba(230, 57, 70, 0.1); padding: 15px; border-radius: 10px; font-size: 19px;">
-<p>Models optimise for <span class="alert">average-case performance</span>, but users remember the <strong>worst</strong> failures.</p>
-<p>User trust tracks min(performance), not the mean!</p>
-</div>
-</div></div>
-</div>
-</section>
-<section id="infrastructure-issues-when-computers-fail" class="slide level2">
-<h2>Infrastructure issues: when computers fail</h2>
-<div style="margin-top: 30px; font-size: 22px;">
-<div class="columns">
-<div class="column" style="width:55%;">
-<p><strong>AI runs on physical computers that fail:</strong></p>
-<ul>
-<li><strong>Hardware failures</strong>: GPUs overheat, disks die</li>
-<li><strong>Network issues</strong>: connections time out, packets lost</li>
-<li><strong>Scaling problems</strong>: too many users at once</li>
-<li><strong>Resource exhaustion</strong>: running out of memory</li>
-<li><strong>Dependency failures</strong>: external APIs go down</li>
-</ul>
-<p><strong>What you see as a user:</strong></p>
-<div style="font-size: 24px;">
-<table class="caption-top">
-<thead>
-<tr class="header">
-<th>Behind the scenes</th>
-<th>What you experience</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>GPU memory full</td>
-<td>Slow or no response</td>
-</tr>
-<tr class="even">
-<td>Network timeout</td>
-<td>“Error, try again”</td>
-</tr>
-<tr class="odd">
-<td>Rate limits hit</td>
-<td>Degraded access</td>
-</tr>
-<tr class="even">
-<td>Database down</td>
-<td>RAG retrieval fails!</td>
-</tr>
-<tr class="odd">
-<td>API key issues</td>
-<td>Feature stops working</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div><div class="column" style="width:45%;">
-<div style="text-align: center;">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><a href="#/" data-modal-type="image" data-modal-url="figures/ai-stack.png"><img data-src="figures/ai-stack.png" style="width:100.0%"></a></p>
-<figcaption>Infrastructure diagram</figcaption>
-</figure>
-</div>
-<p>Source: <a href="https://www.mongodb.com/resources/basics/artificial-intelligence/ai-stack">MongoDB</a></p>
-<div style="margin-top: 15px; background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px;">
-<p>If any one layer goes down, you get errors, slowness, or silence</p>
+<p>Example: 95% accurate at launch, 80% months later. Users remember the <span class="alert">worst</span> failures</p>
 </div>
 </div>
 </div></div>
 </div>
 </section></section>
 <section>
-<section id="monitoring-basics" class="title-slide slide level1 center" data-background-color="#1B3A6B">
-<h1>Monitoring Basics 📊</h1>
+<section id="monitoring-and-testing" class="title-slide slide level1 center" data-background-color="#1B3A6B">
+<h1>Monitoring and testing 📊</h1>
 
 </section>
 <section id="what-companies-watch-key-metrics" class="slide level2">
@@ -891,81 +667,64 @@ END OF COMMENTED-OUT DATAFEST SLIDE -->
 </div></div>
 </div>
 </section>
-<section id="status-pages-checking-ai-reliability" class="slide level2">
-<h2>Status pages: checking AI reliability</h2>
-<div style="margin-top: 30px; font-size: 22px;">
+<section id="testing-ai-why-its-hard" class="slide level2">
+<h2>Testing AI: why it’s hard</h2>
+<div style="margin-top: 30px; font-size: 20px;">
 <div class="columns">
 <div class="column" style="width:55%;">
-<p><strong>Every major AI service has a status page:</strong></p>
+<ul>
+<li>Traditional software is <span class="alert">deterministic</span>: 2 + 2 → 4, every time</li>
+<li>AI is <span class="alert">non-deterministic</span>: “What’s the weather like?” gets a different answer each time, and many are “correct”</li>
+<li>So test <span class="alert">properties</span>, not exact outputs:</li>
+</ul>
+<div style="margin-top: 25px; margin-bottom: 25px;">
 <table class="caption-top">
 <thead>
 <tr class="header">
-<th>Service</th>
-<th>Status Page</th>
+<th>Test</th>
+<th>What it checks</th>
+<th>Example</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>OpenAI (ChatGPT)</td>
-<td><a href="https://status.openai.com">status.openai.com</a></td>
+<td><strong>Safety</strong></td>
+<td>No harmful content</td>
+<td>Refuses illegal requests?</td>
 </tr>
 <tr class="even">
-<td>Anthropic (Claude)</td>
-<td><a href="https://status.anthropic.com">status.anthropic.com</a></td>
+<td><strong>Format</strong></td>
+<td>Output structure</td>
+<td>Is the JSON valid?</td>
 </tr>
 <tr class="odd">
-<td>Google AI</td>
-<td><a href="https://status.cloud.google.com">status.cloud.google.com</a></td>
+<td><strong>Consistency</strong></td>
+<td>Stable core facts</td>
+<td>Is Paris still in France?</td>
 </tr>
 <tr class="even">
-<td>Midjourney</td>
-<td>Check their Discord</td>
+<td><strong>Boundary</strong></td>
+<td>Edge cases</td>
+<td>A 10,000-word prompt?</td>
+</tr>
+<tr class="odd">
+<td><strong>Bias</strong></td>
+<td>Fairness</td>
+<td>Treats groups equally?</td>
+</tr>
+<tr class="even">
+<td><strong>Regression</strong></td>
+<td>Old bugs stay fixed</td>
+<td>Does the DPD fix still work?</td>
 </tr>
 </tbody>
 </table>
-<p><strong>What you can learn:</strong></p>
+</div>
 <ul>
-<li>Current outages and degraded performance</li>
-<li>Historical incidents (how often things break)</li>
-<li>Maintenance windows</li>
-<li>Incident post-mortems (what went wrong)</li>
+<li><span class="alert">Red teaming</span>: people try to break the model on purpose (Lecture 05)</li>
+<li><span class="alert">LLM-as-a-judge</span>: another model scores thousands of outputs</li>
+<li>Gemini’s image bug: “a cute cat” worked, but “1943 German soldiers” <span class="alert">wasn’t in the test suite</span></li>
 </ul>
-<p><strong>Tip</strong>: <span class="alert">check the status page</span> before blaming your prompt!</p>
-</div><div class="column" style="width:45%;">
-<div style="text-align: center;">
-<!-- Suggested image: OpenAI status page screenshot -->
-<p><a href="#/" data-modal-type="image" data-modal-url="figures/status-page.png"><img data-src="figures/status-page.png" style="width:100.0%"></a></p>
-<div style="font-size: 18px; margin-top: 15px;">
-<p>OpenAI’s status page shows real incidents <a href="https://status.openai.com">https://status.openai.com</a></p>
-</div>
-</div>
-<div style="margin-top: 15px; background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px;">
-<p><strong>Fun fact</strong>: OpenAI’s page shows <span class="alert">frequent incidents</span>: error rates, regional outages, feature degradation. AI reliability is hard!</p>
-</div>
-</div></div>
-</div>
-</section>
-<section id="testing-ai-why-its-hard" class="slide level2">
-<h2>Testing AI: why it’s hard</h2>
-<div style="margin-top: 30px; font-size: 19px;">
-<div class="columns">
-<div class="column" style="width:55%;">
-<p><strong>Traditional software testing:</strong></p>
-<ul>
-<li>Input: 2 + 2</li>
-<li>Expected output: 4</li>
-<li>Test: Assert(2+2 == 4) ✅</li>
-</ul>
-<p><span class="alert">Deterministic</span>: same input → same output, always</p>
-<p><strong>AI testing:</strong></p>
-<ul>
-<li>Input: “What’s the weather like?”</li>
-<li>Expected output: … um … 🤔</li>
-<li>The response changes every time, and many answers are “correct”</li>
-</ul>
-<p><span class="alert">Non-deterministic</span>: same input → different outputs!</p>
-<p><strong>This is why Gemini’s image bug wasn’t caught:</strong></p>
-<p>“Generate a cute cat” worked fine. “Generate 1943 German soldiers” probably <span class="alert">wasn’t in the test suite</span></p>
 </div><div class="column" style="width:45%;">
 <div style="text-align: center;">
 <div class="quarto-figure quarto-figure-center">
@@ -975,90 +734,6 @@ END OF COMMENTED-OUT DATAFEST SLIDE -->
 </figure>
 </div>
 <p>Source: <a href="https://medium.com/@monikanawani25/from-correctness-to-confidence-understanding-llm-testing-0ad555bc797e">Medium</a></p>
-<div style="margin-top: 15px; background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px;">
-<p><span class="alert">Solution</span>: test <span class="alert">properties</span> (is it safe? is the format correct?) rather than exact outputs!</p>
-</div>
-</div>
-</div></div>
-</div>
-</section>
-<section id="what-can-be-tested" class="slide level2">
-<h2>What CAN be tested?</h2>
-<div style="margin-top: 30px; font-size: 20px;">
-<div class="columns">
-<div class="column" style="width:55%;">
-<p><strong>Properties that can be verified:</strong></p>
-<table class="caption-top">
-<colgroup>
-<col style="width: 30%">
-<col style="width: 44%">
-<col style="width: 25%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Test Type</th>
-<th>What It Checks</th>
-<th>Example</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>Safety tests</strong></td>
-<td>No harmful content</td>
-<td>“Does it refuse illegal requests?”</td>
-</tr>
-<tr class="even">
-<td><strong>Format tests</strong></td>
-<td>Output structure</td>
-<td>“Is the JSON valid?”</td>
-</tr>
-<tr class="odd">
-<td><strong>Consistency tests</strong></td>
-<td>Stable core facts</td>
-<td>“Is Paris still in France?”</td>
-</tr>
-<tr class="even">
-<td><strong>Boundary tests</strong></td>
-<td>Edge cases</td>
-<td>“What if prompt is 10,000 words?”</td>
-</tr>
-<tr class="odd">
-<td><strong>Bias tests</strong></td>
-<td>Fairness</td>
-<td>“Does it treat groups equally?”</td>
-</tr>
-<tr class="even">
-<td><strong>Regression tests</strong></td>
-<td>Old bugs stay fixed</td>
-<td>“Does the DPD fix still work?”</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Input validation (first line of defence):</strong></p>
-<ul>
-<li>Block prompt injections (“Ignore all previous instructions…”)</li>
-<li>Limit input length</li>
-<li>Filter prohibited content</li>
-</ul>
-</div><div class="column" style="width:45%;">
-<p><strong>Output validation (last line of defence):</strong></p>
-<div style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; font-size: 18px; margin-top: 30px;">
-<p><strong>What Air Canada should have done:</strong></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb1-1"><a></a>User asks: "What's the refund policy?"</span>
-<span id="cb1-2"><a></a></span>
-<span id="cb1-3"><a></a>Chatbot generates: "You can request </span>
-<span id="cb1-4"><a></a>a refund within 90 days..."</span>
-<span id="cb1-5"><a></a></span>
-<span id="cb1-6"><a></a>OUTPUT VALIDATION:</span>
-<span id="cb1-7"><a></a>❌ Check against actual policy database</span>
-<span id="cb1-8"><a></a>❌ Flag if inventing new policies</span>
-<span id="cb1-9"><a></a>❌ Require human review for novel claims</span>
-<span id="cb1-10"><a></a></span>
-<span id="cb1-11"><a></a>Instead: Response went directly to user</span>
-<span id="cb1-12"><a></a>         → Company lost lawsuit</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<div style="margin-top: 15px; text-align: center;">
-<p>Validate inputs AND outputs!</p>
 </div>
 </div></div>
 </div>
@@ -1078,16 +753,16 @@ END OF COMMENTED-OUT DATAFEST SLIDE -->
 </ul>
 <p><strong>Example:</strong></p>
 <div style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; font-size: 18px;">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb2-1"><a></a>Prompt: "Ignore all previous instructions..."</span>
-<span id="cb2-2"><a></a></span>
-<span id="cb2-3"><a></a>❌ BLOCKED: Prompt injection attempt detected!</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb1-1"><a></a>Prompt: "Ignore all previous instructions..."</span>
+<span id="cb1-2"><a></a></span>
+<span id="cb1-3"><a></a>❌ BLOCKED: Prompt injection attempt detected!</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p><span class="alert">Garbage in → garbage out still applies!</span></p>
 </div><div class="column" style="width:45%;">
 <div style="text-align: center;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><a href="#/" data-modal-type="image" data-modal-url="figures/input-validation.png"><img data-src="figures/input-validation.png" style="width:85.0%"></a></p>
+<p><a href="#/" data-modal-type="image" data-modal-url="figures/input-validation.png"><img data-src="figures/input-validation.png" style="width:75.0%"></a></p>
 <figcaption>Input validation flowchart</figcaption>
 </figure>
 </div>
@@ -1112,24 +787,21 @@ END OF COMMENTED-OUT DATAFEST SLIDE -->
 </ul>
 <p><strong>Tools:</strong></p>
 <ul>
-<li><span class="alert">Content moderation APIs</span> (OpenAI, Perspective)</li>
+<li><span class="alert">Content moderation APIs</span> (OpenAI; Perspective until Dec 2026)</li>
 <li><span class="alert">Domain-specific rules</span> (e.g., medical disclaimers)</li>
 <li><span class="alert">LLM-as-a-Judge</span> for quality scoring</li>
 </ul>
 </div><div class="column" style="width:45%;">
 <div style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px;">
-<p><strong>Example output filter:</strong></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb3-1"><a></a>AI response: "To make explosives..."</span>
-<span id="cb3-2"><a></a></span>
-<span id="cb3-3"><a></a>❌ BLOCKED: Dangerous content detected!</span>
-<span id="cb3-4"><a></a></span>
-<span id="cb3-5"><a></a>Replaced with: "I can't help with </span>
-<span id="cb3-6"><a></a>that request."</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>What Air Canada should have done:</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb2-1"><a></a>Chatbot: "Refund within 90 days..."</span>
+<span id="cb2-2"><a></a>Check: policy database → no such policy ❌</span>
+<span id="cb2-3"><a></a>Action: block it, or send to a human</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div style="margin-top: 15px; text-align: center;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><a href="#/" data-modal-type="image" data-modal-url="figures/output-validation.png"><img data-src="figures/output-validation.png" style="width:100.0%"></a></p>
+<p><a href="#/" data-modal-type="image" data-modal-url="figures/output-validation.png"><img data-src="figures/output-validation.png" style="width:60.0%"></a></p>
 <figcaption>Output validation</figcaption>
 </figure>
 </div>
@@ -1143,28 +815,26 @@ END OF COMMENTED-OUT DATAFEST SLIDE -->
 <h1>Documentation 📝</h1>
 
 </section>
-<section id="the-horror-stories-what-happens-without-documentation" class="slide level2">
-<h2>The horror stories: What happens without documentation</h2>
-<div style="margin-top: 30px; font-size: 18px;">
+<section id="why-document-the-imagenet-story" class="slide level2">
+<h2>Why document? The ImageNet story</h2>
+<div style="margin-top: 30px; font-size: 19px;">
 <div class="columns">
 <div class="column" style="width:55%;">
-<p><strong>ImageNet’s hidden problems (2019):</strong></p>
+<p><strong>ImageNet</strong>: the most influential computer vision dataset, behind 10+ years of research</p>
 <ul>
-<li>The most influential computer vision dataset ever, powering 10+ years of research</li>
-<li><span class="alert">Nobody knew</span> where the images came from!</li>
-<li>Later discovered:
+<li><span class="alert">Few checked</span> what the scraped images contained. Audits in 2019–20 found:
 <ul>
-<li>Scraped from Flickr without consent</li>
-<li>Racist and sexist labels (<a href="https://www.mturk.com/">MTurk</a> workers)</li>
-<li>Non-consensual photos of minors</li>
-<li>Content from revenge porn sites</li>
+<li>Images scraped from Flickr without consent</li>
+<li>Offensive labels inherited from WordNet, applied by <a href="https://www.mturk.com/">MTurk</a> workers</li>
+<li>Non-consensual photos of minors; voyeuristic and upskirt photos</li>
 </ul></li>
+<li><span class="alert">Thousands of AI systems</span> were built on it</li>
 </ul>
-<blockquote>
-<p>They built it quickly and never documented what they were doing!</p>
-</blockquote>
-<p><span class="alert">Thousands of AI systems were built on this undocumented foundation!</span></p>
-<p>Monitoring catches problems <span class="alert">after</span> deployment. Documentation prevents some <span class="alert">before</span> deployment</p>
+<p><strong>Documentation lets us</strong> check consent, trace bias, match models to uses, and assign responsibility</p>
+<ul>
+<li>Laws require it: <strong>EU AI Act</strong> (high-risk AI from Dec 2027), <strong>NYC Law 144</strong> (bias audits). More in <span class="alert">Lecture 18</span></li>
+</ul>
+<p>Monitoring catches problems <span class="alert">after</span> deployment. Documentation prevents some <span class="alert">before</span></p>
 </div><div class="column" style="width:45%;">
 <div style="text-align: center;">
 <div class="quarto-figure quarto-figure-center">
@@ -1178,77 +848,23 @@ END OF COMMENTED-OUT DATAFEST SLIDE -->
 </div></div>
 </div>
 </section>
-<section id="documentation-as-accountability" class="slide level2">
-<h2>Documentation as accountability</h2>
-<div style="margin-top: 30px; font-size: 22px;">
-<div class="columns">
-<div class="column" style="width:55%;">
-<p><strong>Without documentation, we can’t:</strong></p>
-<ul>
-<li>❌ Know if data were collected ethically</li>
-<li>❌ Identify sources of bias</li>
-<li>❌ Tell whether a model suits a use case</li>
-<li>❌ Assign responsibility when things go wrong</li>
-<li>❌ Reproduce or verify results</li>
-<li>❌ Update or fix problems later</li>
-</ul>
-<p><strong>With documentation, we can:</strong></p>
-<ul>
-<li>✅ Choose datasets knowingly</li>
-<li>✅ Trace bias back to its source</li>
-<li>✅ Match models to the right applications</li>
-<li>✅ Hold creators accountable</li>
-<li>✅ Build trust with users and regulators</li>
-</ul>
-</div><div class="column" style="width:45%;">
-<div style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; margin-top: 30px;">
-<p>Regulations <span class="alert">now require</span> documentation:</p>
-<ul>
-<li><strong>EU AI Act</strong>: mandates documentation for high-risk AI</li>
-<li><strong>NYC Law 144</strong>: requires bias audits (which need documentation!)</li>
-<li><strong>California CCPA</strong>: data transparency requirements</li>
-</ul>
-<p>We cover US vs EU regulations in <span class="alert">Lecture 18</span>.</p>
-<p>If you can’t document it, you <span class="alert">can’t deploy it</span> (legally).</p>
-</div>
-</div></div>
-</div>
-</section>
-<section id="the-three-pillars-datasheets-model-cards-and-system-cards" class="slide level2">
-<h2>The three pillars: datasheets, model cards, and system cards</h2>
-<div style="margin-top: 30px; font-size: 21px;">
-<div style="text-align: center;">
-<p><a href="#/" data-modal-type="image" data-modal-url="figures/ai-model-cards.jpg"><img data-src="figures/ai-model-cards.jpg" style="width:55.0%"></a></p>
-<p>Source: <a href="https://laurelpapworth.com/datasheets-model-cards/">Laurel Papworth</a></p>
-</div>
-<div style="margin-top: 20px;">
-<p>Two papers started them: <a href="https://arxiv.org/abs/1803.09010">Gebru et al.&nbsp;(2018)</a> for datasheets and <a href="https://arxiv.org/abs/1810.03993">Mitchell et al.&nbsp;(2019)</a> for model cards.</p>
-<p>They are now <span class="alert">industry standards</span> at <a href="https://deepmind.google/models/model-cards/">Google</a>, <a href="https://azure.microsoft.com/en-us/products/ai-foundry/models">Microsoft</a>, <a href="https://huggingface.co/docs/hub/en/model-cards">Hugging Face</a>, and others!</p>
-</div>
-</div>
-</section>
 <section id="what-is-a-datasheet" class="slide level2">
 <h2>What is a datasheet?</h2>
 <div style="margin-top: 30px; font-size: 20px;">
 <div class="columns">
 <div class="column" style="width:55%;">
-<p><strong>Inspired by the electronics industry:</strong></p>
-<ul>
-<li>Every component ships with a “datasheet”, a spec sheet with all relevant information</li>
-<li>Engineers can then decide knowingly</li>
-</ul>
-<p><strong><a href="https://arxiv.org/abs/1803.09010">Timnit Gebru et al.&nbsp;(2018)</a> proposed the same for datasets:</strong></p>
+<p><span class="alert">Datasheets</span> document data, <span class="alert">model cards</span> models, <span class="alert">system cards</span> whole products. <a href="https://arxiv.org/abs/1803.09010">Gebru et al.&nbsp;(2018)</a> borrowed the idea from electronics spec sheets:</p>
 <blockquote>
-<p>“A datasheet documents the motivation, composition, collection process, recommended uses, and other information about a dataset.”</p>
+<p>“…every dataset be accompanied with a datasheet that documents its motivation, composition, collection process, recommended uses, and so on.”</p>
 </blockquote>
 <p><strong>What a datasheet answers:</strong></p>
 <ul>
 <li><span class="alert">Motivation</span>: why was it created? Who funded it?</li>
 <li><span class="alert">Composition</span>: what is in it? Errors? Sensitive data?</li>
-<li><span class="alert">Collection</span>: scraped, surveyed, sensors? Was there consent?</li>
-<li><span class="alert">Preprocessing</span>: what was cleaned, filtered, or removed?</li>
-<li><span class="alert">Uses</span>: what is it for, and what should it <span class="alert">NOT</span> be used for?</li>
-<li><span class="alert">Distribution and maintenance</span>: who updates it? How do you report issues?</li>
+<li><span class="alert">Collection</span>: how was it gathered? Was there consent?</li>
+<li><span class="alert">Preprocessing</span>: what was cleaned or removed?</li>
+<li><span class="alert">Uses</span>: what is it for, and <span class="alert">NOT</span> for?</li>
+<li><span class="alert">Maintenance</span>: who updates it?</li>
 </ul>
 </div><div class="column" style="width:45%;">
 <div style="text-align: center;">
@@ -1286,11 +902,7 @@ END OF COMMENTED-OUT DATAFEST SLIDE -->
 </div><div class="column" style="width:50%;">
 <p><strong>Evaluate the documentation:</strong></p>
 <ul>
-<li>✅ Clear purpose: train preference/reward models for RLHF</li>
-<li>✅ Explicit misuse warnings (don’t train chatbots directly!)</li>
-<li>✅ Content disclaimer about harmful material</li>
-<li>✅ Links to papers for methodology</li>
-<li>✅ Contact email</li>
+<li>✅ Purpose, misuse warnings, content disclaimer, papers, contact email</li>
 </ul>
 <p><strong>Discussion:</strong></p>
 <ul>
@@ -1306,7 +918,6 @@ END OF COMMENTED-OUT DATAFEST SLIDE -->
 <div style="margin-top: 30px; font-size: 19px;">
 <div class="columns">
 <div class="column" style="width:55%;">
-<p>Datasheets document data; <span class="alert">model cards</span> document models.</p>
 <p><strong>Margaret Mitchell et al.&nbsp;(2019):</strong></p>
 <blockquote>
 <p>“Model cards are short documents accompanying trained ML models that provide benchmarked evaluation in a variety of conditions.”</p>
@@ -1321,6 +932,7 @@ END OF COMMENTED-OUT DATAFEST SLIDE -->
 <li><strong>Ethical considerations</strong>: what could go wrong?</li>
 <li><strong>Caveats and recommendations</strong>: warnings!</li>
 </ol>
+<p><span class="alert">System cards</span> cover a whole product: its models, safeguards and red-team tests (<a href="https://openai.com/index/openai-o1-system-card/">example</a>)</p>
 </div><div class="column" style="width:45%;">
 <div style="text-align: center;">
 <div class="quarto-figure quarto-figure-center">
@@ -1360,8 +972,8 @@ END OF COMMENTED-OUT DATAFEST SLIDE -->
 <tbody>
 <tr class="odd">
 <td>Gemini 3</td>
-<td>Conversation, assistance</td>
-<td>Medical diagnosis</td>
+<td>Reasoning, coding</td>
+<td>Illicit activities</td>
 </tr>
 <tr class="even">
 <td>Face detection</td>
@@ -1376,18 +988,16 @@ END OF COMMENTED-OUT DATAFEST SLIDE -->
 </tbody>
 </table>
 </div>
-<p><strong>Without this guidance:</strong></p>
-<p>People <span class="alert">will</span> misuse models and harm others.</p>
-<p>Air Canada’s chatbot was meant to answer questions, <span class="alert">not write refund policy</span>. Nobody enforced the boundary</p>
+<p>Without this guidance, people <span class="alert">will</span> misuse models. Air Canada’s chatbot was meant to answer questions, <span class="alert">not write refund policy</span></p>
 </div><div class="column" style="width:45%;">
 <div style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px;">
-<p><strong>Real example: <a href="https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-3-Pro-Model-Card.pdf">Gemini 3 Model Card</a></strong> (edited and summarised)</p>
-<p><strong>Intended use:</strong></p>
-<p>“Assistance with a variety of text-based tasks”</p>
-<p><strong>Out-of-scope:</strong></p>
-<p>“Assistance with illegal activities”</p>
-<p>“Chemical synthesis”</p>
-<p>“Mental health crisis intervention”</p>
+<p><strong>Real example: <a href="https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-3-Pro-Model-Card.pdf">Gemini 3 Model Card</a></strong> (quoted)</p>
+<p><strong>Intended use:</strong> “solving problems that require enhanced reasoning”</p>
+<p><strong>Should not be built into systems that:</strong></p>
+<ul>
+<li>“engage in dangerous or illicit activities”</li>
+<li>“compromise the security of others’ or Google’s services”</li>
+</ul>
 </div>
 </div></div>
 </div>
@@ -1431,80 +1041,16 @@ END OF COMMENTED-OUT DATAFEST SLIDE -->
 <p>Racial classification: ~93% | Age classification: ~63%</p>
 </div><div class="column" style="width:45%;">
 <div style="background: rgba(230, 57, 70, 0.1); padding: 15px; border-radius: 10px; font-size: 18px;">
-<p><strong>CLIP’s bias findings:</strong></p>
-<p>OpenAI found <span class="alert">significant disparities</span> when classifying people into crime-related categories:</p>
+<p><strong>CLIP’s bias findings</strong> (<a href="https://arxiv.org/abs/2103.00020">Radford et al., 2021</a>): labelling FairFace photos</p>
 <ul>
-<li>Performance varied by race and gender</li>
-<li>Disparities shifted with how classes were built</li>
-<li>They identified a risk of denigration harms</li>
+<li><span class="alert">4.9%</span> were put into non-human classes (“animal”, “gorilla”…)</li>
+<li>Photos of Black people: <span class="alert">~14%</span>; every other group <span class="alert">under 8%</span></li>
+<li>Crime-related labels: <span class="alert">16.5%</span> of men vs <span class="alert">9.8%</span> of women</li>
+<li>Adding a “child” label sharply cut errors for under-20s: <span class="alert">class design matters</span></li>
 </ul>
-<blockquote>
-<p>“We tested the risk of certain kinds of denigration with CLIP by classifying images of people from Fairface into crime-related and non-human animal categories.”</p>
-</blockquote>
 </div>
-</div></div>
-</div>
-</section>
-<section id="system-cards-vs-model-cards" class="slide level2">
-<h2>System cards vs model cards</h2>
-<div style="margin-top: 30px; font-size: 20px;">
-<div class="columns">
-<div class="column" style="width:55%;">
-<p><strong>A newer concept: system cards</strong></p>
-<p>Modern AI products chain several models together. A model card covers only one, so <strong>system cards</strong> document the <span class="alert">entire system</span>.</p>
-<p><strong>What a system card includes:</strong></p>
-<ul>
-<li>Multiple models working together, and how components interact</li>
-<li>Human oversight mechanisms</li>
-<li>Deployment context and safeguards</li>
-<li>Red teaming and safety evaluations</li>
-</ul>
-<p><strong>Who uses them:</strong></p>
-<ul>
-<li><strong>OpenAI</strong>: <a href="https://openai.com/index/openai-o1-system-card/">o1 System Card</a>, December 2024</li>
-<li><strong>Anthropic</strong>: one for each Claude release</li>
-<li><strong>Meta</strong>: 22 system cards in 2023 for their AI products</li>
-</ul>
-</div><div class="column" style="width:45%;">
-<div style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; font-size: 20px;">
-<p><strong>Model Card vs System Card:</strong></p>
-<table class="caption-top">
-<thead>
-<tr class="header">
-<th>Aspect</th>
-<th>Model Card</th>
-<th>System Card</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Scope</td>
-<td>Single model</td>
-<td>Entire system</td>
-</tr>
-<tr class="even">
-<td>Focus</td>
-<td>Performance</td>
-<td>Safety + deployment</td>
-</tr>
-<tr class="odd">
-<td>Audience</td>
-<td>Developers</td>
-<td>Developers + public</td>
-</tr>
-<tr class="even">
-<td>Includes</td>
-<td>Training data, metrics</td>
-<td>Red teaming, safeguards</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div style="margin-top: 20px; text-align: center;">
-<p><a href="#/" data-modal-type="image" data-modal-url="figures/system-card.png"><img data-src="figures/system-card.png" style="width:100.0%"></a></p>
-<div style="font-size: 18px;">
-<p><a href="https://openai.com/index/openai-o1-system-card">OpenAI o1 System Card (Dec 2024)</a></p>
-</div>
+<div style="margin-top: 20px; background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; font-size: 18px;">
+<p><strong>Go further</strong>: break results down by <span class="alert">combinations</span> of groups. Gender Shades (Lecture 05): Face++ erred on 0.8% of light-skinned men but 34.5% of dark-skinned women</p>
 </div>
 </div></div>
 </div>
@@ -1518,7 +1064,7 @@ END OF COMMENTED-OUT DATAFEST SLIDE -->
 <p>Most large models train on data <span class="alert">without explicit consent</span>:</p>
 <ul>
 <li>Web scraping (your blog posts, photos, art)</li>
-<li>Social media posts (even “private” ones)</li>
+<li>Social media posts</li>
 <li>Books and articles (often without author permission)</li>
 <li>Code repositories (GPL violations?)</li>
 </ul>
@@ -1530,12 +1076,12 @@ END OF COMMENTED-OUT DATAFEST SLIDE -->
 <li>That system now runs surveillance</li>
 </ul>
 </div><div class="column" style="width:45%;">
-<div style="background: rgba(230, 57, 70, 0.1); padding: 15px; border-radius: 10px;">
+<div style="background: rgba(230, 57, 70, 0.1); padding: 15px; border-radius: 10px; margin-top: 50px;">
 <p><strong>High-profile cases:</strong></p>
 <ul>
-<li><strong>LAION-5B</strong>: Billions of images scraped; later found to contain child pornography (Source: <a href="https://www.cnn.com/2023/12/21/tech/child-sexual-abuse-material-ai-training-data">CNN</a>)</li>
+<li><strong><a href="https://www.cnn.com/2023/12/21/tech/child-sexual-abuse-material-ai-training-data">LAION-5B</a></strong>: billions of scraped images, some showing child abuse</li>
 <li><strong>Clearview AI</strong>: Scraped 30+ billion faces from social media (Source: <a href="https://www.bbc.com/news/technology-67133157">BBC</a>)</li>
-<li><strong>Getty Images vs.&nbsp;Stability AI</strong>: Lawsuit over image scraping (rejected!) (Source: <a href="https://www.paulweiss.com/insights/client-memos/getty-images-v-stability-ai-the-uk-courts-first-word-on-use-of-copyright-works-in-ai-model-development">Paul Weiss</a>)</li>
+<li><strong>Getty v. Stability</strong>: Stability mostly won; appeal pending (Source: <a href="https://www.paulweiss.com/insights/client-memos/getty-images-v-stability-ai-the-uk-courts-first-word-on-use-of-copyright-works-in-ai-model-development">Paul Weiss</a>)</li>
 </ul>
 </div>
 <div style="margin-top: 10px; font-size: 26px; text-align: center;">
@@ -1583,26 +1129,24 @@ END OF COMMENTED-OUT DATAFEST SLIDE -->
 <div class="column" style="width:55%;">
 <p><strong>You can’t fix AI pipelines, but you can:</strong></p>
 <ol type="1">
-<li><strong>Compare answers from different models</strong>
+<li><strong>Compare models and repeat questions</strong>
 <ul>
-<li>Ask ChatGPT, Claude and Gemini the same question</li>
-<li>If they disagree, investigate</li>
+<li>Answers vary: temperature, servers, A/B tests, updates</li>
+<li>If they diverge on something critical, <span class="alert">trust none of them</span></li>
 </ul></li>
 <li><strong>Check status pages</strong>
 <ul>
-<li>AI acting oddly? Maybe it’s not your prompt</li>
-<li><a href="https://status.openai.com">status.openai.com</a>, <a href="https://status.anthropic.com">status.anthropic.com</a></li>
+<li><a href="https://status.openai.com">status.openai.com</a>, <a href="https://status.claude.com">status.claude.com</a>, <a href="https://status.cloud.google.com">status.cloud.google.com</a></li>
 </ul></li>
 <li><strong>Recognise the difference</strong>
 <ul>
-<li>Pipeline problem: AI is down, slow, or glitching</li>
-<li>Hallucination: AI is confident but wrong</li>
-<li>Working as intended: AI refuses for safety reasons</li>
+<li>Pipeline problem: down, slow, or glitching</li>
+<li>Hallucination: confident but wrong</li>
+<li>Working as intended: refuses for safety reasons</li>
 </ul></li>
 <li><strong>Read the documentation</strong>
 <ul>
 <li>Model cards say what a tool is <span class="alert">not</span> for</li>
-<li>Use it outside that, and the risk is on you</li>
 </ul></li>
 </ol>
 </div><div class="column" style="width:45%;">
@@ -1642,100 +1186,42 @@ END OF COMMENTED-OUT DATAFEST SLIDE -->
 </tbody>
 </table>
 </div>
-</div></div>
-</div>
-</section>
-<section id="the-variation-is-normal" class="slide level2 scrollable">
-<h2>The variation is normal!</h2>
-<div style="margin-top: 30px; font-size: 22px;">
-<div class="columns">
-<div class="column" style="width:55%;">
-<p><strong>Why does AI give different answers to the same question?</strong></p>
-<ol type="1">
-<li><strong>Temperature</strong>: the randomness dial (creativity vs.&nbsp;consistency)</li>
-<li><strong>Load balancing</strong>: your request may hit a different server</li>
-<li><strong>Model versions</strong>: A/B testing</li>
-<li><strong>Context</strong>: time of day, your chat history</li>
-<li><strong>Updates</strong>: the model changed since yesterday</li>
-</ol>
-<p>Identical responses every time would feel robotic. Some variation keeps it natural.</p>
-<p><strong>But for important decisions:</strong></p>
-<p>Ask multiple times, and ask different AIs. If answers diverge on something critical, <span class="alert">don’t trust any of them</span>!</p>
-</div><div class="column" style="width:45%;">
-<div style="text-align: center;">
-<p><a href="#/" data-modal-type="image" data-modal-url="figures/ab-testing.png"><img data-src="figures/ab-testing.png" style="width:70.0%"></a></p>
-<p><a href="#/" data-modal-type="image" data-modal-url="figures/gemini-personal-intelligence.png"><img data-src="figures/gemini-personal-intelligence.png" style="width:70.0%"></a></p>
-<p>Sources: <a href="https://www.reddit.com/r/Bard/comments/1leiobd/google_is_also_doing_ab_testing_in_the_gemini_app/#lightbox">r/Bard</a> and <a href="https://blog.google/innovation-and-ai/products/gemini-app/personal-intelligence/">Google Blog</a></p>
-<div style="font-size: 18px; margin-top: 15px;">
-<p>You and your friend might be running different model versions right now without knowing it</p>
-</div>
+<div style="margin-top: 15px; font-size: 18px; text-align: center;">
+<p>Real failures, documented: <a href="https://incidentdatabase.ai/">AI Incident Database</a></p>
 </div>
 </div></div>
 </div>
 </section>
 <section id="activity-diagnose-the-problem" class="slide level2">
 <h2>Activity: Diagnose the problem!</h2>
-<div style="margin-top: 30px; font-size: 20px;">
+<div style="margin-top: 20px; font-size: 22px;">
 <div class="columns">
 <div class="column" style="width:50%;">
-<p><strong>Scenario cards: What’s the likely cause?</strong></p>
-<p><strong>Scenario A:</strong></p>
-<p>You ask Claude a question. It takes 45 seconds to respond, and the answer is cut off mid-sentence.</p>
-<p><strong>Scenario B:</strong></p>
-<p>You ask Gemini “Who won the 2027 Super Bowl?” and it confidently names a team.</p>
-<p><strong>Scenario C:</strong></p>
-<p>You ask ChatGPT to write code. Yesterday it worked; today it refuses and says “I can’t help with that.”</p>
+<p><strong>What’s the likely cause? Pipeline problem, hallucination, or working as intended?</strong></p>
+<p><strong>A:</strong> Claude takes 45 seconds, then cuts off mid-sentence</p>
+<div class="fragment">
+<p>→ <span class="alert">Pipeline problem</span>: overload or timeout. Check the status page, retry later</p>
+</div>
+<p><strong>B:</strong> Gemini confidently names the winner of the 2027 Super Bowl</p>
+<div class="fragment">
+<p>→ <span class="alert">Hallucination</span>: it hasn’t happened yet. Verify time-sensitive claims</p>
+</div>
+<p><strong>C:</strong> ChatGPT wrote your code yesterday; today it refuses</p>
+<div class="fragment">
+<p>→ <span class="alert">Guardrails changed</span>: a model update or a new filter. Rephrase</p>
+</div>
 </div><div class="column" style="width:50%;">
-<p><strong>Scenario D:</strong></p>
-<p>You ask Midjourney to generate “a photo of my professor.” It creates an image of a random person.</p>
-<p><strong>Scenario E:</strong></p>
-<p>Three different AI assistants give you three completely different answers about a historical date.</p>
+<p><strong>D:</strong> “A photo of my professor” gives a random person</p>
+<div class="fragment">
+<p>→ <span class="alert">Working as intended</span>: it doesn’t know your professor</p>
+</div>
+<p><strong>E:</strong> Three assistants give three different historical dates</p>
+<div class="fragment">
+<p>→ <span class="alert">Possible hallucination by all three</span>: check a reliable source</p>
+</div>
 <div style="margin-top: 20px; background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px;">
-<p><strong>Discuss with a neighbour:</strong></p>
-<ul>
-<li>Pipeline problem?</li>
-<li>Hallucination?</li>
-<li>Working as intended?</li>
-<li>How would you verify?</li>
-</ul>
+<p><strong>Discuss with a neighbour</strong>: the cause, and how you’d verify</p>
 </div>
-<p>⏱️ a few minutes to diagnose!</p>
-</div></div>
-</div>
-</section>
-<section id="activity-answers" class="slide level2">
-<h2>Activity answers</h2>
-<div style="margin-top: 30px; font-size: 20px;">
-<div class="columns">
-<div class="column" style="width:50%;">
-<p><strong>Scenario A: 45 seconds, cut off mid-sentence</strong></p>
-<ul>
-<li><span class="alert">Pipeline problem</span>: server overload or timeout</li>
-<li>Check the status page, then retry in a few minutes</li>
-</ul>
-<p><strong>Scenario B: 2027 Super Bowl answer</strong></p>
-<ul>
-<li><span class="alert">Hallucination</span>: the event hasn’t happened yet!</li>
-<li>The AI doesn’t know that it doesn’t know</li>
-<li>Always verify time-sensitive claims</li>
-</ul>
-<p><strong>Scenario C: Code refused today but worked yesterday</strong></p>
-<ul>
-<li>A <span class="alert">model update</span> changed the safety guardrails</li>
-<li>Or your prompt triggered a new filter</li>
-<li>Rephrase; if it stays blocked, the guardrails changed</li>
-</ul>
-</div><div class="column" style="width:50%;">
-<p><strong>Scenario D: “Photo of my professor” = random person</strong></p>
-<ul>
-<li><span class="alert">Working as intended</span>: the AI doesn’t know your professor!</li>
-<li>It generates a plausible “professor-looking” person, not a failure</li>
-</ul>
-<p><strong>Scenario E: Different AIs, different historical dates</strong></p>
-<ul>
-<li><span class="alert">Potential hallucination from all of them</span></li>
-<li>Don’t trust any AI for verifiable facts, look it up in a reliable source!</li>
-</ul>
 </div></div>
 </div>
 </section></section>
@@ -1748,65 +1234,14 @@ END OF COMMENTED-OUT DATAFEST SLIDE -->
 <h2>Main takeaways</h2>
 <div style="margin-top: 30px; font-size: 26px;">
 <ul>
-<li><p>You use <span class="alert">dozens of AI pipelines daily</span>: text, image, voice, recommendations</p></li>
-<li><p>A pipeline is the <span class="alert">multi-step process</span> from your input to the AI’s output, and <span class="alert">every step can fail</span></p></li>
-<li><p>Real failures: Air Canada lawsuit, DPD swearing, Gemini images. <span class="alert">Pipeline problems, not “rogue AI”</span></p></li>
-<li><p><span class="alert">Data drift: the world changes, AI stays frozen</span></p></li>
-<li><p><span class="alert">Monitoring</span>: companies track metrics you never see. When monitoring fails, you read about it in the news</p></li>
-<li><p><span class="alert">Documentation</span>: datasheets describe data, model cards describe models and their <span class="alert">intended use</span>, system cards describe whole products</p></li>
-<li><p><span class="alert">Consent</span>: much AI training data was collected without permission. Undocumented data (ImageNet!) hides problems for years</p></li>
-<li><p><span class="alert">You should</span> compare AIs, check status pages, read model cards, and tell pipeline problems from hallucinations</p></li>
+<li>A pipeline is every step from your input to the output, and <span class="alert">every step can fail</span></li>
+<li>Air Canada, DPD, Gemini: <span class="alert">pipeline problems, not “rogue AI”</span></li>
+<li><span class="alert">Drift and degradation</span>: the world changes while the model stays frozen</li>
+<li>Companies <span class="alert">monitor</span>, test properties, and validate inputs and outputs</li>
+<li><span class="alert">Documentation</span>: datasheets for data, model cards (with intended use) for models, system cards for products</li>
+<li><span class="alert">Consent</span>: much training data was taken without permission; ImageNet hid problems for years</li>
+<li><span class="alert">You</span>: compare AIs, check status pages, read model cards, tell glitches from hallucinations</li>
 </ul>
-</div>
-</section>
-<section id="your-ai-user-toolkit" class="slide level2">
-<h2>Your AI user toolkit</h2>
-<div style="margin-top: 30px; font-size: 28px;">
-<div class="columns">
-<div class="column" style="width:50%;">
-<p><strong>Quick reference:</strong></p>
-<table class="caption-top">
-<thead>
-<tr class="header">
-<th>Symptom</th>
-<th>Action</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>AI is down/slow</td>
-<td>Check status page, wait</td>
-</tr>
-<tr class="even">
-<td>Different answers</td>
-<td>Normal! Verify if critical</td>
-</tr>
-<tr class="odd">
-<td>Confident but wrong</td>
-<td>Hallucination, verify facts</td>
-</tr>
-<tr class="even">
-<td>Refuses request</td>
-<td>Guardrails, try rephrasing</td>
-</tr>
-<tr class="odd">
-<td>Weird/gibberish</td>
-<td>Pipeline glitch, refresh</td>
-</tr>
-</tbody>
-</table>
-</div><div class="column" style="width:50%;">
-<p><strong>Status pages to bookmark:</strong></p>
-<ul>
-<li><a href="https://status.openai.com">status.openai.com</a></li>
-<li><a href="https://status.anthropic.com">status.anthropic.com</a></li>
-<li><a href="https://status.cloud.google.com">status.cloud.google.com</a></li>
-</ul>
-<p><strong>On AI failures:</strong></p>
-<ul>
-<li><a href="https://incidentdatabase.ai/">AI Incident Database</a>. Real failures documented!</li>
-</ul>
-</div></div>
 </div>
 </section></section>
 <section id="and-thats-all-for-today" class="title-slide slide level1 center" data-background-color="#1B3A6B">

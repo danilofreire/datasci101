@@ -977,35 +977,35 @@
     "href": "lectures/lecture-14/14-pipelines.html#recap-of-last-class",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Recap of last class",
-    "text": "Recap of last class\n\n\n\n\nRAG (Retrieval-Augmented Generation) grounds AI in your own documents\nLLMs have knowledge cutoffs and hallucinate\nChunk → Embed → Retrieve → Generate\nRAG cuts hallucinations by 30–50%, but retrieval errors still occur\nToday: what happens behind the scenes when AI goes down, runs slow, or answers oddly?\nWhy does this happen? And what can you do about it?\nAlso documentation: how companies record what their systems can and cannot do\n\n\n\n\nSource: Astera Software"
+    "text": "Recap of last class\n\n\n\n\nRAG (Retrieval-Augmented Generation) grounds AI in your own documents\nLLMs have knowledge cutoffs and hallucinate\nChunk → Embed → Retrieve → Generate\nRAG cut hallucinations by over 60% in one study, but retrieval errors still occur\nToday: what happens behind the scenes when AI fails, and what you can do about it\nAlso documentation: how companies record what their systems can and cannot do\n\n\n\n\nSource: Astera Software"
   },
   {
     "objectID": "lectures/lecture-14/14-pipelines.html#lecture-overview",
     "href": "lectures/lecture-14/14-pipelines.html#lecture-overview",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Lecture overview",
-    "text": "Lecture overview\nToday’s agenda\n\n\n\nPart 1: What is a Pipeline?\n\nFrom prompt to response\nWhy “it works on my laptop” isn’t enough\nReal-world AI failures and lessons\n\nPart 2: Why Pipelines Break\n\nData drift: when the world changes\nModel degradation over time\nInfrastructure and scaling issues\n\n\nPart 3: Monitoring and Testing\n\nWhat to watch: the key metrics\nWhy testing AI is hard\nInput and output validation\n\nPart 4: Documentation and Accountability\n\nDatasheets, model cards, system cards\nConsent and the data supply chain\nBeing a savvy AI user"
+    "text": "Lecture overview\nToday’s agenda\n\n\n\nPart 1: Pipelines and failures\n\nFrom prompt to response\nReal-world AI failures and lessons\nData drift and model degradation\n\nPart 2: Monitoring and testing\n\nWhat companies watch\nWhy testing AI is hard\nInput and output validation\n\n\nPart 3: Documentation\n\nDatasheets, model cards, system cards\nConsent and the data supply chain\n\nPart 4: What can you do?\n\nBeing a savvy AI user\nDiagnose the problem"
   },
   {
     "objectID": "lectures/lecture-14/14-pipelines.html#meme-of-the-day",
     "href": "lectures/lecture-14/14-pipelines.html#meme-of-the-day",
     "title": "DATASCI 101: Introduction to AI Applications",
-    "section": "Meme of the day 😄",
-    "text": "Meme of the day 😄\nThat’s actually a very good point!"
+    "section": "Meme of the day",
+    "text": "Meme of the day\nOuch! 😅"
   },
   {
     "objectID": "lectures/lecture-14/14-pipelines.html#from-prompt-to-response",
     "href": "lectures/lecture-14/14-pipelines.html#from-prompt-to-response",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "From prompt to response",
-    "text": "From prompt to response\n\n\n\nWhen you ask an LLM a question, here’s what happens:\n\nYour prompt goes from your browser to servers\nLoad balancers route it to an available GPU (cloud infrastructure)\nPreprocessing cleans and formats your text (usually minimal with LLMs)\nTokenisation converts text to numbers (you know how to do that!)\nThe model processes tokens (billions of operations!)\nPostprocessing formats the output\nSafety filters check for harmful content (e.g., hate speech)\nResponse travels back to your screen\n\nEach step can fail independently!\nThe whole process is a pipeline.\n\n\n\n\n\nThe AI pipeline\n\n\n\nEven “What’s the weather?” touches load balancers, GPUs, and safety filters before you see an answer"
+    "text": "From prompt to response\n\n\n\nWhen you ask an LLM a question, here’s what happens:\n\nYour prompt goes from your browser to servers\nLoad balancers route it to an available GPU\nPreprocessing cleans and formats your text\nTokenisation converts text to numbers (you know how to do that!)\nThe model processes the tokens\nPostprocessing formats the output\nSafety filters check for harmful content\nResponse travels back to your screen\n\nEach step can fail independently!\nThe whole process is a pipeline! 🤓\n\n\n\n\n\nThe AI pipeline\n\n\n\nEven “What’s the weather?” touches load balancers, GPUs, and safety filters before you see an answer"
   },
   {
     "objectID": "lectures/lecture-14/14-pipelines.html#failure-types-what-actually-goes-wrong",
     "href": "lectures/lecture-14/14-pipelines.html#failure-types-what-actually-goes-wrong",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Failure types: what actually goes wrong?",
-    "text": "Failure types: what actually goes wrong?\n\n\n\nNot all failures are the same:\n\n\n\n\n\n\n\n\nFailure type\nWhat it looks like\nRoot cause\n\n\n\n\nHallucination\nConfident but false content\nModel limitations, missing grounding\n\n\nPolicy failure\nUnsafe or inappropriate output\nWeak guardrails or bad updates\n\n\nData drift\nOutdated or weird answers\nWorld changes faster than training\n\n\nPipeline failure\nSlow, down, or inconsistent responses\nInfrastructure, scaling, broken steps\n\n\n\nSpot which type of failure happened, then choose the right response"
+    "text": "Failure types: what actually goes wrong?\n\n\n\nNot all failures are the same:\n\n\n\n\n\n\n\n\n\nFailure type\nWhat it looks like\nRoot cause\n\n\n\n\nHallucination\nConfident but false content\nModel limitations, missing grounding\n\n\nPolicy failure\nUnsafe or inappropriate output\nWeak guardrails or bad updates\n\n\nData drift\nOutdated or weird answers\nWorld changes faster than training\n\n\nPipeline failure\nSlow, down, or inconsistent responses\nInfrastructure, scaling, broken steps\n\n\n\n\nSpot which type of failure happened, then choose the right response. Pipeline failures are physical: overloaded GPUs, network timeouts, rate limits"
   },
   {
     "objectID": "lectures/lecture-14/14-pipelines.html#real-ai-failures-recent-headlines",
@@ -1019,21 +1019,21 @@
     "href": "lectures/lecture-14/14-pipelines.html#case-study-dpds-sweary-chatbot",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Case study: DPD’s sweary chatbot",
-    "text": "Case study: DPD’s sweary chatbot\n\n\n\nWhat happened (January 2024):\n\nDPD (UK delivery company) updated their AI chatbot\nCustomer Ashley Beauchamp found it would:\n\nSwear when asked nicely\nWrite poems criticising DPD\nCall itself “useless” and recommend competitors\nSay DPD was “the worst delivery firm in the world”\n\n\nDPD’s response:\nDisabled the chatbot, apologised, launched an investigation.\nWhat went wrong:\nA system update broke the guardrails. Content filtering stopped working, and no one noticed until customers posted screenshots on social media\n\n\n\nSource: BBC News\n\n\nPipeline failure point:\nNo monitoring after deployment. The update shipped without testing, and no automated check caught the broken guardrails."
+    "text": "Case study: DPD’s sweary chatbot\n\n\n\nWhat happened (January 2024):\n\nDPD (UK delivery company) updated their AI chatbot\nCustomer Ashley Beauchamp found it would:\n\nSwear when asked nicely\nWrite poems criticising DPD\nCall itself “useless”\nSay DPD was “the worst delivery firm in the world”\n\n\nDPD’s response:\nBlamed a system update and disabled the AI element.\nWhat went wrong:\nA system update broke the guardrails, and customers noticed first, on social media\n\n\n\nSource: The Guardian\n\n\nPipeline failure point:\nNo monitoring after deployment: no automated check caught it"
   },
   {
     "objectID": "lectures/lecture-14/14-pipelines.html#case-study-google-geminis-image-crisis",
     "href": "lectures/lecture-14/14-pipelines.html#case-study-google-geminis-image-crisis",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Case study: Google Gemini’s image crisis",
-    "text": "Case study: Google Gemini’s image crisis\n\n\n\nWhat happened (February 2024):\n\nAsked for “1943 German soldiers”, Gemini drew Black men and Asian women in Nazi uniforms\nSame problem with “US Founding Fathers” and other historical figures\nGoogle’s CEO called the results “completely unacceptable”\nImage generation paused for weeks\n\nWhy did this happen? Can you guess?\n\n\n\nSource: BBC News\n\n\nPipeline failure point:\nTesting didn’t catch edge cases"
+    "text": "Case study: Google Gemini’s image crisis\n\n\n\nWhat happened (February 2024):\n\nAsked for “1943 German soldiers”, Gemini drew Black men and Asian women in Nazi uniforms\nSame problem with “US Founding Fathers” and other historical figures\nGoogle’s CEO called the results “completely unacceptable”\nImages of people paused for six months\n\nWhy did this happen? Can you guess?\n\n\n\nSource: BBC News\n\n\nPipeline failure point:\nTesting didn’t catch edge cases"
   },
   {
     "objectID": "lectures/lecture-14/14-pipelines.html#data-drift-the-world-changes",
     "href": "lectures/lecture-14/14-pipelines.html#data-drift-the-world-changes",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Data drift: the world changes",
-    "text": "Data drift: the world changes\n\n\n\nData drift = real-world data differs from training data\nA sentiment analyser trained in 2020:\n\n“This product is sick!” → Probably means: Amazing ✅\n“This slaps!” → Might not understand 🤔\n“No cap, this is bussin’” → Completely lost! 😵\n\nTypes of drift:\n\n\n\nType\nDescription\nExample\n\n\n\n\nLabel drift\nWhat’s “correct” changes\nPolicy updates\n\n\nConcept drift\nMeaning of things changes\nNew slang, trends\n\n\nData drift\nInput distribution changes\nNew demographics\n\n\n\n\n\n\n\n\nData drift visualisation\n\n\nSource: Spot Intelligence\n\nSlang, prices, and user habits shift constantly, but a trained model only knows what it learned"
+    "text": "Data drift: the world changes\n\n\n\nData drift: real-world data stops looking like the training data. A sentiment model trained in 2020:\n\n“This product is sick!” → probably fine ✅\n“No cap, this is bussin’” → completely lost 😵\n\nThree types:\n\n\n\n\n\n\n\n\nType\nWhat changes\nExample\n\n\n\n\nData drift\nThe inputs, \\(P(X)\\)\nNew users, new devices\n\n\nLabel drift\nHow often each answer occurs, \\(P(Y)\\)\nMore fraud at holidays\n\n\nConcept drift\nWhat inputs mean, \\(P(Y \\mid X)\\)\n“Sick” now means “great”\n\n\n\n\nConcept drift is the most dangerous: the model stays confident but is wrong\n\n\n\n\n\n\nData drift visualisation\n\n\nSource: Spot Intelligence\n\n\nWhy it happens: models assume tomorrow’s data looks like the training data. But the world changes, users differ from the training sample, model outputs feed back into inputs, and shocks like COVID hit"
   },
   {
     "objectID": "lectures/lecture-14/14-pipelines.html#why-does-data-drift-happen",
@@ -1047,14 +1047,14 @@
     "href": "lectures/lecture-14/14-pipelines.html#model-degradation-models-get-stale",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Model degradation: models get stale",
-    "text": "Model degradation: models get stale\n\n\n\nEven without drift, models degrade:\n\nUser expectations evolve\nCompetitors improve their products\nEdge cases accumulate and small errors compound\n\nSigns your AI tool is degrading:\n\n❌ Answers that used to work now don’t\n❌ More “I don’t know” or refusals\n❌ Inconsistent responses to the same prompt\n❌ Friends getting better results elsewhere\n❌ You need workarounds more often\n\nThe “boiling frog” problem:\nChanges come so gradually you don’t notice until it’s too late!\n\n\n\n\n\nModel degradation\n\n\nSource: James Howard\n\nA model that was 95% accurate at launch can drop to 80% within months if left alone"
+    "text": "Model degradation: models get stale\n\n\n\nPerformance often decays, even with little drift:\n\nUsers adapt to the model, creating feedback loops\nUpdates and retraining can make a model “forget” rare cases\nProvider API changes break workflows\nLong conversations degrade quality (context pollution)\n\nSigns your AI tool is degrading:\n\n❌ Answers that used to work now don’t\n❌ More refusals and inconsistent answers\n❌ You need workarounds more often\n\nThe boiling frog problem: the change is so gradual you don’t notice\n\n\n\n\n\nQuality can also degrade within one long conversation\n\n\nSource: James Howard\n\nExample: 95% accurate at launch, 80% months later. Users remember the worst failures"
   },
   {
     "objectID": "lectures/lecture-14/14-pipelines.html#why-does-model-degradation-happen",
     "href": "lectures/lecture-14/14-pipelines.html#why-does-model-degradation-happen",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Why does model degradation happen?",
-    "text": "Why does model degradation happen?\n\n\n\nModel performance \\(P(t)\\) decays over time, even with stable data:\n\nEntropy accumulation\n\nSmall prediction errors compound: \\(\\epsilon(t) \\approx \\epsilon_0 \\cdot e^{\\lambda t}\\)\nEdge cases create cascading failures\n\nDistribution shift in deployment\n\nUsers adapt prompts to past responses\nThis creates feedback loops that amplify biases\n\nCatastrophic forgetting (after updates)\n\nFine-tuning on new data overwrites old knowledge\nSafety training can reduce capability\nThe model “forgets” rare cases\n\n\n\n\nTechnical mechanisms:\n\n\n\nMechanism\nEffect\n\n\n\n\nWeight decay\nRegularisation erodes rare patterns\n\n\nQuantisation\nCompression loses precision\n\n\nAPI updates\nProvider changes break workflows\n\n\nContext pollution\nLong conversations degrade quality\n\n\n\n\n\nModels optimise for average-case performance, but users remember the worst failures.\nUser trust tracks min(performance), not the mean!"
+    "text": "Why does model degradation happen?\n\n\n\nModel performance often decays over time, even with little drift:\n\nEntropy accumulation\n\nSmall prediction errors can compound\nEdge cases create cascading failures\n\nDistribution shift in deployment\n\nUsers adapt prompts to past responses\nThis creates feedback loops that amplify biases\n\nCatastrophic forgetting (after updates)\n\nFine-tuning on new data overwrites old knowledge\nSafety training can reduce capability\nThe model “forgets” rare cases\n\n\n\n\nTechnical mechanisms:\n\n\n\nMechanism\nEffect\n\n\n\n\nRetraining\nNew training can erode rare patterns\n\n\nQuantisation\nCompression loses precision\n\n\nAPI updates\nProvider changes break workflows\n\n\nContext pollution\nLong conversations degrade quality\n\n\n\n\n\nModels optimise for average-case performance, but users remember the worst failures.\nUser trust tracks min(performance), not the mean!"
   },
   {
     "objectID": "lectures/lecture-14/14-pipelines.html#infrastructure-issues-when-computers-fail",
@@ -1075,14 +1075,14 @@
     "href": "lectures/lecture-14/14-pipelines.html#status-pages-checking-ai-reliability",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Status pages: checking AI reliability",
-    "text": "Status pages: checking AI reliability\n\n\n\nEvery major AI service has a status page:\n\n\n\nService\nStatus Page\n\n\n\n\nOpenAI (ChatGPT)\nstatus.openai.com\n\n\nAnthropic (Claude)\nstatus.anthropic.com\n\n\nGoogle AI\nstatus.cloud.google.com\n\n\nMidjourney\nCheck their Discord\n\n\n\nWhat you can learn:\n\nCurrent outages and degraded performance\nHistorical incidents (how often things break)\nMaintenance windows\nIncident post-mortems (what went wrong)\n\nTip: check the status page before blaming your prompt!\n\n\n\n\n\nOpenAI’s status page shows real incidents https://status.openai.com\n\n\n\nFun fact: OpenAI’s page shows frequent incidents: error rates, regional outages, feature degradation. AI reliability is hard!"
+    "text": "Status pages: checking AI reliability\n\n\n\nEvery major AI service has a status page:\n\n\n\nService\nStatus Page\n\n\n\n\nOpenAI (ChatGPT)\nstatus.openai.com\n\n\nAnthropic (Claude)\nstatus.claude.com\n\n\nGoogle AI\nstatus.cloud.google.com\n\n\nMidjourney\nstatus.midjourney.com\n\n\n\nWhat you can learn:\n\nCurrent outages and degraded performance\nHistorical incidents (how often things break)\nMaintenance windows\nIncident post-mortems (what went wrong)\n\nTip: check the status page before blaming your prompt!\n\n\n\n\n\nOpenAI’s status page shows real incidents https://status.openai.com\n\n\n\nFun fact: OpenAI’s page shows frequent incidents: error rates, regional outages, feature degradation. AI reliability is hard!"
   },
   {
     "objectID": "lectures/lecture-14/14-pipelines.html#testing-ai-why-its-hard",
     "href": "lectures/lecture-14/14-pipelines.html#testing-ai-why-its-hard",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Testing AI: why it’s hard",
-    "text": "Testing AI: why it’s hard\n\n\n\nTraditional software testing:\n\nInput: 2 + 2\nExpected output: 4\nTest: Assert(2+2 == 4) ✅\n\nDeterministic: same input → same output, always\nAI testing:\n\nInput: “What’s the weather like?”\nExpected output: … um … 🤔\nThe response changes every time, and many answers are “correct”\n\nNon-deterministic: same input → different outputs!\nThis is why Gemini’s image bug wasn’t caught:\n“Generate a cute cat” worked fine. “Generate 1943 German soldiers” probably wasn’t in the test suite\n\n\n\n\n\nTesting comparison\n\n\nSource: Medium\n\nSolution: test properties (is it safe? is the format correct?) rather than exact outputs!"
+    "text": "Testing AI: why it’s hard\n\n\n\n\nTraditional software is deterministic: 2 + 2 → 4, every time\nAI is non-deterministic: “What’s the weather like?” gets a different answer each time, and many are “correct”\nSo test properties, not exact outputs:\n\n\n\n\n\nTest\nWhat it checks\nExample\n\n\n\n\nSafety\nNo harmful content\nRefuses illegal requests?\n\n\nFormat\nOutput structure\nIs the JSON valid?\n\n\nConsistency\nStable core facts\nIs Paris still in France?\n\n\nBoundary\nEdge cases\nA 10,000-word prompt?\n\n\nBias\nFairness\nTreats groups equally?\n\n\nRegression\nOld bugs stay fixed\nDoes the DPD fix still work?\n\n\n\n\n\nRed teaming: people try to break the model on purpose (Lecture 05)\nLLM-as-a-judge: another model scores thousands of outputs\nGemini’s image bug: “a cute cat” worked, but “1943 German soldiers” wasn’t in the test suite\n\n\n\n\n\n\nTesting comparison\n\n\nSource: Medium"
   },
   {
     "objectID": "lectures/lecture-14/14-pipelines.html#what-can-be-tested",
@@ -1103,21 +1103,21 @@
     "href": "lectures/lecture-14/14-pipelines.html#output-validation-last-line-of-defence",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Output validation: last line of defence",
-    "text": "Output validation: last line of defence\n\n\n\nCheck outputs BEFORE sending to users:\n\n✅ Safety: no harmful or offensive content\n✅ Accuracy: core facts should be verifiable\n✅ Consistency: shouldn’t contradict itself\n✅ Format: meets the expected structure\n✅ Length: not too short, not too long\n✅ Privacy: no personal data leakage\n\nTools:\n\nContent moderation APIs (OpenAI, Perspective)\nDomain-specific rules (e.g., medical disclaimers)\nLLM-as-a-Judge for quality scoring\n\n\n\nExample output filter:\nAI response: \"To make explosives...\"\n\n❌ BLOCKED: Dangerous content detected!\n\nReplaced with: \"I can't help with \nthat request.\"\n\n\n\n\n\nOutput validation\n\n\nSource: ApX Machine Learning"
+    "text": "Output validation: last line of defence\n\n\n\nCheck outputs BEFORE sending to users:\n\n✅ Safety: no harmful or offensive content\n✅ Accuracy: core facts should be verifiable\n✅ Consistency: shouldn’t contradict itself\n✅ Format: meets the expected structure\n✅ Length: not too short, not too long\n✅ Privacy: no personal data leakage\n\nTools:\n\nContent moderation APIs (OpenAI; Perspective until Dec 2026)\nDomain-specific rules (e.g., medical disclaimers)\nLLM-as-a-Judge for quality scoring\n\n\n\nWhat Air Canada should have done:\nChatbot: \"Refund within 90 days...\"\nCheck: policy database → no such policy ❌\nAction: block it, or send to a human\n\n\n\n\n\nOutput validation\n\n\nSource: ApX Machine Learning"
   },
   {
     "objectID": "lectures/lecture-14/14-pipelines.html#the-horror-stories-what-happens-without-documentation",
     "href": "lectures/lecture-14/14-pipelines.html#the-horror-stories-what-happens-without-documentation",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "The horror stories: What happens without documentation",
-    "text": "The horror stories: What happens without documentation\n\n\n\nImageNet’s hidden problems (2019):\n\nThe most influential computer vision dataset ever, powering 10+ years of research\nNobody knew where the images came from!\nLater discovered:\n\nScraped from Flickr without consent\nRacist and sexist labels (MTurk workers)\nNon-consensual photos of minors\nContent from revenge porn sites\n\n\n\nThey built it quickly and never documented what they were doing!\n\nThousands of AI systems were built on this undocumented foundation!\nMonitoring catches problems after deployment. Documentation prevents some before deployment\n\n\n\n\n\nImageNet analysis\n\n\nSource: Excavating AI (great resource, check it out!)"
+    "text": "The horror stories: What happens without documentation\n\n\n\nImageNet’s hidden problems (2019):\n\nThe most influential computer vision dataset ever, powering 10+ years of research\nFew checked what the scraped images contained\nLater discovered:\n\nScraped from Flickr without consent\nOffensive labels inherited from WordNet, applied by MTurk workers\nNon-consensual photos of minors\nVoyeuristic and upskirt photos\n\n\nThey built it fast and never documented what the images contained\nThousands of AI systems were built on this poorly documented foundation!\nMonitoring catches problems after deployment. Documentation prevents some before deployment\n\n\n\n\n\nImageNet analysis\n\n\nSource: Excavating AI (great resource, check it out!)"
   },
   {
     "objectID": "lectures/lecture-14/14-pipelines.html#documentation-as-accountability",
     "href": "lectures/lecture-14/14-pipelines.html#documentation-as-accountability",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Documentation as accountability",
-    "text": "Documentation as accountability\n\n\n\nWithout documentation, we can’t:\n\n❌ Know if data were collected ethically\n❌ Identify sources of bias\n❌ Tell whether a model suits a use case\n❌ Assign responsibility when things go wrong\n❌ Reproduce or verify results\n❌ Update or fix problems later\n\nWith documentation, we can:\n\n✅ Choose datasets knowingly\n✅ Trace bias back to its source\n✅ Match models to the right applications\n✅ Hold creators accountable\n✅ Build trust with users and regulators\n\n\n\nRegulations now require documentation:\n\nEU AI Act: mandates documentation for high-risk AI\nNYC Law 144: requires bias audits (which need documentation!)\nCalifornia CCPA: data transparency requirements\n\nWe cover US vs EU regulations in Lecture 18.\nIf you can’t document it, you can’t deploy it (legally)."
+    "text": "Documentation as accountability\n\n\n\nWithout documentation, we can’t:\n\n❌ Know if data were collected ethically\n❌ Identify sources of bias\n❌ Tell whether a model suits a use case\n❌ Assign responsibility when things go wrong\n❌ Reproduce or verify results\n❌ Update or fix problems later\n\nWith documentation, we can:\n\n✅ Choose datasets knowingly\n✅ Trace bias back to its source\n✅ Match models to the right applications\n✅ Hold creators accountable\n✅ Build trust with users and regulators\n\n\n\nRegulations now require documentation:\n\nEU AI Act: general-purpose models now, high-risk AI from Dec 2027\nNYC Law 144: requires bias audits (which need documentation!)\nCalifornia CCPA: data transparency requirements\n\nWe cover US vs EU regulations in Lecture 18.\nIn the EU, if you can’t document a high-risk system, you can’t deploy it."
   },
   {
     "objectID": "lectures/lecture-14/14-pipelines.html#the-three-pillars-datasheets-model-cards-and-system-cards",
@@ -1131,35 +1131,35 @@
     "href": "lectures/lecture-14/14-pipelines.html#what-is-a-datasheet",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "What is a datasheet?",
-    "text": "What is a datasheet?\n\n\n\nInspired by the electronics industry:\n\nEvery component ships with a “datasheet”, a spec sheet with all relevant information\nEngineers can then decide knowingly\n\nTimnit Gebru et al. (2018) proposed the same for datasets:\n\n“A datasheet documents the motivation, composition, collection process, recommended uses, and other information about a dataset.”\n\nWhat a datasheet answers:\n\nMotivation: why was it created? Who funded it?\nComposition: what is in it? Errors? Sensitive data?\nCollection: scraped, surveyed, sensors? Was there consent?\nPreprocessing: what was cleaned, filtered, or removed?\nUses: what is it for, and what should it NOT be used for?\nDistribution and maintenance: who updates it? How do you report issues?\n\n\n\n\n\n\nDatasheets paper\n\n\n\nSource: Jonathan Rystrøm (2024) - Dataset Card: Multicultural WVS Alignment"
+    "text": "What is a datasheet?\n\n\n\nDatasheets document data, model cards models, system cards whole products. Gebru et al. (2018) borrowed the idea from electronics spec sheets:\n\n“…every dataset be accompanied with a datasheet that documents its motivation, composition, collection process, recommended uses, and so on.”\n\nWhat a datasheet answers:\n\nMotivation: why was it created? Who funded it?\nComposition: what is in it? Errors? Sensitive data?\nCollection: how was it gathered? Was there consent?\nPreprocessing: what was cleaned or removed?\nUses: what is it for, and NOT for?\nMaintenance: who updates it?\n\n\n\n\n\n\nDatasheets paper\n\n\n\nSource: Jonathan Rystrøm (2024) - Dataset Card: Multicultural WVS Alignment"
   },
   {
     "objectID": "lectures/lecture-14/14-pipelines.html#activity-lets-read-a-real-datasheet",
     "href": "lectures/lecture-14/14-pipelines.html#activity-lets-read-a-real-datasheet",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Activity: Let’s read a real datasheet! 📖",
-    "text": "Activity: Let’s read a real datasheet! 📖\n\n\n\nRead Anthropic’s HH-RLHF Dataset Card:\n\nVisit Anthropic/hh-rlhf\nRead the Dataset Card carefully\nIt trains AI assistants to be helpful and harmless!\n\nQuestions to answer:\n\nWhat are the two types of data in this dataset?\nWhy does Anthropic warn against using this for supervised training of dialogue agents?\nWhat content warning does the dataset include?\nHow can you contact the authors with issues?\n\n\nEvaluate the documentation:\n\n✅ Clear purpose: train preference/reward models for RLHF\n✅ Explicit misuse warnings (don’t train chatbots directly!)\n✅ Content disclaimer about harmful material\n✅ Links to papers for methodology\n✅ Contact email\n\nDiscussion:\n\nWould you be comfortable using this dataset?\nWhat ethical responsibilities come with using harmful content for research?\n\n⏱️ 3 minutes to explore!"
+    "text": "Activity: Let’s read a real datasheet! 📖\n\n\n\nRead Anthropic’s HH-RLHF Dataset Card:\n\nVisit Anthropic/hh-rlhf\nRead the Dataset Card carefully\nIt trains AI assistants to be helpful and harmless!\n\nQuestions to answer:\n\nWhat are the two types of data in this dataset?\nWhy does Anthropic warn against using this for supervised training of dialogue agents?\nWhat content warning does the dataset include?\nHow can you contact the authors with issues?\n\n\nEvaluate the documentation:\n\n✅ Purpose, misuse warnings, content disclaimer, papers, contact email\n\nDiscussion:\n\nWould you be comfortable using this dataset?\nWhat ethical responsibilities come with using harmful content for research?\n\n⏱️ 3 minutes to explore!"
   },
   {
     "objectID": "lectures/lecture-14/14-pipelines.html#model-cards-the-user-manual-for-ai-models",
     "href": "lectures/lecture-14/14-pipelines.html#model-cards-the-user-manual-for-ai-models",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Model cards: The “user manual” for AI models",
-    "text": "Model cards: The “user manual” for AI models\n\n\n\nDatasheets document data; model cards document models.\nMargaret Mitchell et al. (2019):\n\n“Model cards are short documents accompanying trained ML models that provide benchmarked evaluation in a variety of conditions.”\n\nCore sections:\n\nModel details: what is this model?\nIntended use: what should it be used for?\nFactors: what affects performance?\nMetrics: how was it evaluated?\nTraining data: what was it trained on?\nEthical considerations: what could go wrong?\nCaveats and recommendations: warnings!\n\n\n\n\n\n\nModel cards paper\n\n\n\nSource: Mitchell et al. (2019)"
+    "text": "Model cards: The “user manual” for AI models\n\n\n\nMargaret Mitchell et al. (2019):\n\n“Model cards are short documents accompanying trained ML models that provide benchmarked evaluation in a variety of conditions.”\n\nCore sections:\n\nModel details: what is this model?\nIntended use: what should it be used for?\nFactors: what affects performance?\nMetrics: how was it evaluated?\nTraining data: what was it trained on?\nEthical considerations: what could go wrong?\nCaveats and recommendations: warnings!\n\nSystem cards cover a whole product: its models, safeguards and red-team tests (example)\n\n\n\n\n\nModel cards paper\n\n\n\nSource: Mitchell et al. (2019)"
   },
   {
     "objectID": "lectures/lecture-14/14-pipelines.html#intended-use-the-most-important-section",
     "href": "lectures/lecture-14/14-pipelines.html#intended-use-the-most-important-section",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Intended use: the most important section",
-    "text": "Intended use: the most important section\n\n\n\nWhy “intended use” matters:\nA hammer is a great tool, but:\n\n✅ Intended use: driving nails\n❌ NOT intended for: brain surgery\n\nModels need the same clarity:\n\n\n\n\nModel\nIntended Use\nNOT For\n\n\n\n\nGemini 3\nConversation, assistance\nMedical diagnosis\n\n\nFace detection\nPlacing cameras\nLaw enforcement ID\n\n\nSentiment analysis\nProduct feedback\nHiring decisions\n\n\n\n\nWithout this guidance:\nPeople will misuse models and harm others.\nAir Canada’s chatbot was meant to answer questions, not write refund policy. Nobody enforced the boundary\n\n\nReal example: Gemini 3 Model Card (edited and summarised)\nIntended use:\n“Assistance with a variety of text-based tasks”\nOut-of-scope:\n“Assistance with illegal activities”\n“Chemical synthesis”\n“Mental health crisis intervention”"
+    "text": "Intended use: the most important section\n\n\n\nWhy “intended use” matters:\nA hammer is a great tool, but:\n\n✅ Intended use: driving nails\n❌ NOT intended for: brain surgery\n\nModels need the same clarity:\n\n\n\n\nModel\nIntended Use\nNOT For\n\n\n\n\nGemini 3\nReasoning, coding\nIllicit activities\n\n\nFace detection\nPlacing cameras\nLaw enforcement ID\n\n\nSentiment analysis\nProduct feedback\nHiring decisions\n\n\n\n\nWithout this guidance, people will misuse models. Air Canada’s chatbot was meant to answer questions, not write refund policy\n\n\nReal example: Gemini 3 Model Card (quoted)\nIntended use: “solving problems that require enhanced reasoning”\nShould not be built into systems that:\n\n“engage in dangerous or illicit activities”\n“compromise the security of others’ or Google’s services”"
   },
   {
     "objectID": "lectures/lecture-14/14-pipelines.html#disaggregated-evaluation-breaking-it-down",
     "href": "lectures/lecture-14/14-pipelines.html#disaggregated-evaluation-breaking-it-down",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Disaggregated evaluation: breaking it down",
-    "text": "Disaggregated evaluation: breaking it down\n\n\n\nWhy overall accuracy isn’t enough:\n\nA model can be 90% accurate overall, yet 95% for Group A and 70% for Group B!\n\nDisaggregated evaluation = report performance separately per group.\nReal example: OpenAI CLIP Model Card (2021)\nGender classification accuracy on the FairFace dataset:\n\n\n\n\nRace Category\nGender Accuracy\n\n\n\n\nMiddle Eastern\n98.4% (highest)\n\n\nWhite\n96.5% (lowest)\n\n\nAll races\n&gt;96%\n\n\n\n\nRacial classification: ~93% | Age classification: ~63%\n\n\nCLIP’s bias findings:\nOpenAI found significant disparities when classifying people into crime-related categories:\n\nPerformance varied by race and gender\nDisparities shifted with how classes were built\nThey identified a risk of denigration harms\n\n\n“We tested the risk of certain kinds of denigration with CLIP by classifying images of people from Fairface into crime-related and non-human animal categories.”"
+    "text": "Disaggregated evaluation: breaking it down\n\n\n\nWhy overall accuracy isn’t enough:\n\nA model can be 90% accurate overall, yet 95% for Group A and 70% for Group B!\n\nDisaggregated evaluation = report performance separately per group.\nReal example: OpenAI CLIP Model Card (2021)\nGender classification accuracy on the FairFace dataset:\n\n\n\n\nRace Category\nGender Accuracy\n\n\n\n\nMiddle Eastern\n98.4% (highest)\n\n\nWhite\n96.5% (lowest)\n\n\nAll races\n&gt;96%\n\n\n\n\nRacial classification: ~93% | Age classification: ~63%\n\n\nCLIP’s bias findings (Radford et al., 2021): labelling FairFace photos\n\n4.9% were put into non-human classes (“animal”, “gorilla”…)\nPhotos of Black people: ~14%; every other group under 8%\nCrime-related labels: 16.5% of men vs 9.8% of women\nAdding a “child” label sharply cut errors for under-20s: class design matters\n\n\n\nGo further: break results down by combinations of groups. Gender Shades (Lecture 05): Face++ erred on 0.8% of light-skinned men but 34.5% of dark-skinned women"
   },
   {
     "objectID": "lectures/lecture-14/14-pipelines.html#system-cards-vs-model-cards",
@@ -1173,7 +1173,7 @@
     "href": "lectures/lecture-14/14-pipelines.html#consent-and-the-data-supply-chain",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Consent and the data supply chain",
-    "text": "Consent and the data supply chain\n\n\n\nThe uncomfortable truth about AI training data:\nMost large models train on data without explicit consent:\n\nWeb scraping (your blog posts, photos, art)\nSocial media posts (even “private” ones)\nBooks and articles (often without author permission)\nCode repositories (GPL violations?)\n\nThe consent problem:\n\nYou posted a photo to Instagram in 2015\nIt was scraped into a dataset\nThat dataset trained a facial recognition system\nThat system now runs surveillance\n\n\n\nHigh-profile cases:\n\nLAION-5B: Billions of images scraped; later found to contain child pornography (Source: CNN)\nClearview AI: Scraped 30+ billion faces from social media (Source: BBC)\nGetty Images vs. Stability AI: Lawsuit over image scraping (rejected!) (Source: Paul Weiss)\n\n\n\nDid you consent to this? 🤔"
+    "text": "Consent and the data supply chain\n\n\n\nThe uncomfortable truth about AI training data:\nMost large models train on data without explicit consent:\n\nWeb scraping (your blog posts, photos, art)\nSocial media posts\nBooks and articles (often without author permission)\nCode repositories (GPL violations?)\n\nThe consent problem:\n\nYou posted a photo to Instagram in 2015\nIt was scraped into a dataset\nThat dataset trained a facial recognition system\nThat system now runs surveillance\n\n\n\nHigh-profile cases:\n\nLAION-5B: billions of scraped images, some showing child abuse\nClearview AI: Scraped 30+ billion faces from social media (Source: BBC)\nGetty v. Stability: Stability mostly won; appeal pending (Source: Paul Weiss)\n\n\n\nDid you consent to this? 🤔"
   },
   {
     "objectID": "lectures/lecture-14/14-pipelines.html#discussion-who-owns-the-data",
@@ -1187,7 +1187,7 @@
     "href": "lectures/lecture-14/14-pipelines.html#being-a-savvy-ai-user",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Being a savvy AI user",
-    "text": "Being a savvy AI user\n\n\n\nYou can’t fix AI pipelines, but you can:\n\nCompare answers from different models\n\nAsk ChatGPT, Claude and Gemini the same question\nIf they disagree, investigate\n\nCheck status pages\n\nAI acting oddly? Maybe it’s not your prompt\nstatus.openai.com, status.anthropic.com\n\nRecognise the difference\n\nPipeline problem: AI is down, slow, or glitching\nHallucination: AI is confident but wrong\nWorking as intended: AI refuses for safety reasons\n\nRead the documentation\n\nModel cards say what a tool is not for\nUse it outside that, and the risk is on you\n\n\n\n\n\n\n\nSymptom\nLikely Cause\n\n\n\n\n“I’m at capacity”\nInfrastructure (wait and retry)\n\n\nSlow response\nHigh load or network\n\n\nDifferent answers to same Q\nNon-determinism (normal!)\n\n\nConfident but wrong\nHallucination (verify!)\n\n\nRefuses to answer\nSafety guardrails (try rephrasing)\n\n\nGibberish output\nPipeline failure (refresh)"
+    "text": "Being a savvy AI user\n\n\n\nYou can’t fix AI pipelines, but you can:\n\nCompare models and repeat questions\n\nAnswers vary: temperature, servers, A/B tests, updates\nIf they diverge on something critical, trust none of them\n\nCheck status pages\n\nstatus.openai.com, status.claude.com, status.cloud.google.com\n\nRecognise the difference\n\nPipeline problem: down, slow, or glitching\nHallucination: confident but wrong\nWorking as intended: refuses for safety reasons\n\nRead the documentation\n\nModel cards say what a tool is not for\n\n\n\n\n\n\n\nSymptom\nLikely Cause\n\n\n\n\n“I’m at capacity”\nInfrastructure (wait and retry)\n\n\nSlow response\nHigh load or network\n\n\nDifferent answers to same Q\nNon-determinism (normal!)\n\n\nConfident but wrong\nHallucination (verify!)\n\n\nRefuses to answer\nSafety guardrails (try rephrasing)\n\n\nGibberish output\nPipeline failure (refresh)\n\n\n\n\n\nReal failures, documented: AI Incident Database"
   },
   {
     "objectID": "lectures/lecture-14/14-pipelines.html#the-variation-is-normal",
@@ -1201,7 +1201,7 @@
     "href": "lectures/lecture-14/14-pipelines.html#activity-diagnose-the-problem",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Activity: Diagnose the problem!",
-    "text": "Activity: Diagnose the problem!\n\n\n\nScenario cards: What’s the likely cause?\nScenario A:\nYou ask Claude a question. It takes 45 seconds to respond, and the answer is cut off mid-sentence.\nScenario B:\nYou ask Gemini “Who won the 2027 Super Bowl?” and it confidently names a team.\nScenario C:\nYou ask ChatGPT to write code. Yesterday it worked; today it refuses and says “I can’t help with that.”\n\nScenario D:\nYou ask Midjourney to generate “a photo of my professor.” It creates an image of a random person.\nScenario E:\nThree different AI assistants give you three completely different answers about a historical date.\n\nDiscuss with a neighbour:\n\nPipeline problem?\nHallucination?\nWorking as intended?\nHow would you verify?\n\n\n⏱️ a few minutes to diagnose!"
+    "text": "Activity: Diagnose the problem!\n\n\n\nWhat’s the likely cause? Pipeline problem, hallucination, or working as intended?\nA: Claude takes 45 seconds, then cuts off mid-sentence\n\n→ Pipeline problem: overload or timeout. Check the status page, retry later\n\nB: Gemini confidently names the winner of the 2027 Super Bowl\n\n→ Hallucination: it hasn’t happened yet. Verify time-sensitive claims\n\nC: ChatGPT wrote your code yesterday; today it refuses\n\n→ Guardrails changed: a model update or a new filter. Rephrase\n\n\nD: “A photo of my professor” gives a random person\n\n→ Working as intended: it doesn’t know your professor\n\nE: Three assistants give three different historical dates\n\n→ Possible hallucination by all three: check a reliable source\n\n\nDiscuss with a neighbour: the cause, and how you’d verify"
   },
   {
     "objectID": "lectures/lecture-14/14-pipelines.html#activity-answers",
@@ -1215,14 +1215,14 @@
     "href": "lectures/lecture-14/14-pipelines.html#main-takeaways",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Main takeaways",
-    "text": "Main takeaways\n\n\nYou use dozens of AI pipelines daily: text, image, voice, recommendations\nA pipeline is the multi-step process from your input to the AI’s output, and every step can fail\nReal failures: Air Canada lawsuit, DPD swearing, Gemini images. Pipeline problems, not “rogue AI”\nData drift: the world changes, AI stays frozen\nMonitoring: companies track metrics you never see. When monitoring fails, you read about it in the news\nDocumentation: datasheets describe data, model cards describe models and their intended use, system cards describe whole products\nConsent: much AI training data was collected without permission. Undocumented data (ImageNet!) hides problems for years\nYou should compare AIs, check status pages, read model cards, and tell pipeline problems from hallucinations"
+    "text": "Main takeaways\n\n\nA pipeline is every step from your input to the output, and every step can fail\nAir Canada, DPD, Gemini: pipeline problems, not “rogue AI”\nDrift and degradation: the world changes while the model stays frozen\nCompanies monitor, test properties, and validate inputs and outputs\nDocumentation: datasheets for data, model cards (with intended use) for models, system cards for products\nConsent: much training data was taken without permission; ImageNet hid problems for years\nYou: compare AIs, check status pages, read model cards, tell glitches from hallucinations"
   },
   {
     "objectID": "lectures/lecture-14/14-pipelines.html#your-ai-user-toolkit",
     "href": "lectures/lecture-14/14-pipelines.html#your-ai-user-toolkit",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Your AI user toolkit",
-    "text": "Your AI user toolkit\n\n\n\nQuick reference:\n\n\n\nSymptom\nAction\n\n\n\n\nAI is down/slow\nCheck status page, wait\n\n\nDifferent answers\nNormal! Verify if critical\n\n\nConfident but wrong\nHallucination, verify facts\n\n\nRefuses request\nGuardrails, try rephrasing\n\n\nWeird/gibberish\nPipeline glitch, refresh\n\n\n\n\nStatus pages to bookmark:\n\nstatus.openai.com\nstatus.anthropic.com\nstatus.cloud.google.com\n\nOn AI failures:\n\nAI Incident Database. Real failures documented!"
+    "text": "Your AI user toolkit\n\n\n\nQuick reference:\n\n\n\nSymptom\nAction\n\n\n\n\nAI is down/slow\nCheck status page, wait\n\n\nDifferent answers\nNormal! Verify if critical\n\n\nConfident but wrong\nHallucination, verify facts\n\n\nRefuses request\nGuardrails, try rephrasing\n\n\nWeird/gibberish\nPipeline glitch, refresh\n\n\n\n\nStatus pages to bookmark:\n\nstatus.openai.com\nstatus.claude.com\nstatus.cloud.google.com\n\nOn AI failures:\n\nAI Incident Database. Real failures documented!"
   },
   {
     "objectID": "lectures/lecture-11/11-hallucination.html#recap-of-last-class",
@@ -1425,7 +1425,7 @@
     "href": "lectures/lecture-08/08-review.html#concept-2-dataset-and-labels",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Concept 2: dataset and labels",
-    "text": "Concept 2: dataset and labels\n\n\nLet’s pick someone new!\nWhat does it mean to “label” a dataset, and why is it usually the most expensive step?\nRoom poll: is the label easy, hard, or contested?\n\n“Is this email spam?”\n“Is this tweet toxic?”\n“Is this CT scan showing pneumonia?”\n“Is this résumé a good fit for the role?”\n\nConnect to: garbage in, garbage out"
+    "text": "Concept 2: dataset and labels\n\n\nLet’s pick someone new!\nWhat does it mean to “label” a dataset, and why is it often one of the most expensive steps?\nRoom poll: is the label easy, hard, or contested?\n\n“Is this email spam?”\n“Is this tweet toxic?”\n“Is this CT scan showing pneumonia?”\n“Is this résumé a good fit for the role?”\n\nConnect to: garbage in, garbage out"
   },
   {
     "objectID": "lectures/lecture-08/08-review.html#concept-3-the-three-learning-paradigms",
@@ -1453,7 +1453,7 @@
     "href": "lectures/lecture-08/08-review.html#concept-6-tokens-and-embeddings",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Concept 6: tokens and embeddings",
-    "text": "Concept 6: tokens and embeddings\n\n\nPair up with the person next to you. One minute. 🗣️\n\nOne of you explains tokenisation\nThe other explains embeddings\n\nThen I pick two pairs to share\nRapid-fire:\n\nWhy does ChatGPT charge by the token and not by the word?\nWhy does the order of words matter, even after embedding?\nWhat is a context window, and why does it cost so much to make it bigger?"
+    "text": "Concept 6: tokens and embeddings\n\n\nPair up with the person next to you. One minute. 🗣️\n\nOne of you explains tokenisation\nThe other explains embeddings\n\nThen I pick two pairs to share\nRapid-fire:\n\nWhy does OpenAI’s API charge by the token and not by the word?\nWhy does the order of words matter, even after embedding?\nWhat is a context window, and why does it cost so much to make it bigger?"
   },
   {
     "objectID": "lectures/lecture-08/08-review.html#concept-7-multimodal",
@@ -1467,7 +1467,7 @@
     "href": "lectures/lecture-08/08-review.html#the-setup",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "The setup",
-    "text": "The setup\n\nA startup, HealthScribe, sells an AI tool to hospitals. The tool listens to doctor-patient conversations and writes the clinical note.\n\nThe model is a fine-tuned LLM\nTraining data: 80,000 doctor-patient transcripts\n\nAll from one hospital network in California\nCollected between 2019 and 2024\n\nThe labels are the final clinical notes doctors wrote and signed off\nHealthScribe reports 92% agreement with doctor-written notes on a held-out test set\nThey now sell the product to hospitals across the country"
+    "text": "The setup\n\nA fictional startup, ClinicNote, sells an AI tool to hospitals. The tool listens to doctor-patient conversations and writes the clinical note.\n\nThe model is a fine-tuned LLM\nTraining data: 80,000 doctor-patient transcripts\n\nAll from one hospital network in California\nCollected between 2019 and 2024\n\nThe labels are the final clinical notes doctors wrote and signed off\nClinicNote reports 92% agreement with doctor-written notes on a held-out test set\nThey now sell the product to hospitals across the country"
   },
   {
     "objectID": "lectures/lecture-08/08-review.html#question-a-the-dataset",
@@ -1509,7 +1509,7 @@
     "href": "lectures/lecture-08/08-review.html#practice-question-1",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Practice question 1",
-    "text": "Practice question 1\n\nLecture 06 said a model never sees words, only tokens.\nSomeone asks a model how many times the letter r appears in “strawberry”. It answers two. They then ask it to spell “strawberry” one letter at a time, and it does so perfectly.\nYour task:\n\nOne answer is wrong, one is right. Explain how both come out of the same machinery\nThe model has seen the word millions of times. Explain why that alone would not teach it the spelling, and say what kind of text would"
+    "text": "Practice question 1\n\nLecture 06 said a model never sees words, only tokens.\nSomeone asks an older model how many times the letter r appears in “strawberry”. It answers two. They then ask it to spell “strawberry” one letter at a time, and it does so perfectly.\nYour task:\n\nOne answer is wrong, one is right. Explain how both come out of the same machinery\nThe model has seen the word millions of times. Explain why that alone would not teach it the spelling, and say what kind of text would"
   },
   {
     "objectID": "lectures/lecture-08/08-review.html#practice-question-2",
@@ -4876,14 +4876,14 @@
     "href": "lectures/lecture-08/08-review.html#question-b",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Question B",
-    "text": "Question B\n\n\nHealthScribe reports 92% agreement with doctor-written notes\nThe doctor writes something wrong and the model copies it. What does it score?\nIs the 8% spread evenly across patients?\nThe same doctor writes that note again a week later. Do the two versions agree 100%?"
+    "text": "Question B\n\n\nClinicNote reports 92% agreement with doctor-written notes\nThe doctor writes something wrong and the model copies it. What does it score?\nIs the 8% spread evenly across patients?\nThe same doctor writes that note again a week later. Do the two versions agree 100%?"
   },
   {
     "objectID": "lectures/lecture-08/08-review.html#question-c",
     "href": "lectures/lecture-08/08-review.html#question-c",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Question C",
-    "text": "Question C\n\n\nYour hospital is considering buying HealthScribe\nThe room votes by show of hands:\n\nYes, buy it\nNo, do not buy it\nBuy it, but with conditions\n\nOne defender of each position argues for 60 seconds\nThen: what evidence would change your mind?"
+    "text": "Question C\n\n\nYour hospital is considering buying ClinicNote\nThe room votes by show of hands:\n\nYes, buy it\nNo, do not buy it\nBuy it, but with conditions\n\nOne defender of each position argues for 60 seconds\nThen: what evidence would change your mind?"
   },
   {
     "objectID": "lectures/lecture-15/15-agents.html#the-rational-agent",
@@ -4961,5 +4961,12 @@
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Activity: Grounding with a file upload 📎",
     "text": "Activity: Grounding with a file upload 📎\n\n\n\nCompare: with vs. without your documents. Let’s do it together (or at home if Emory’s connection doesn’t allow us to! 😂)\nStep 1: Without documents\n\nOpen https://aistudio.google.com/ and start a new chat (Grounding with Google Search off)\nAsk: “What are the assignment deadlines for DATASCI 101 at Emory University?”\nGemini doesn’t know: it’s not in the training data\n\nStep 2: With your document\n\nStart another new chat\nClick the 📎 (attach) button and upload the course syllabus PDF\nAsk the same question: “What are the assignment deadlines?”\nCompare the answers\n\n\nWhat to observe:\n\n\n\nWithout Doc\nWith Doc\n\n\n\n\n“I don’t have access to…”\nSpecific dates from syllabus\n\n\nMay hallucinate generic answer\nGrounded in your document\n\n\nNo citations\nCan quote the source\n\n\n\n\nThis is grounding in action!\nGemini reads your whole file and generates its answer from it. With too many documents to fit, tools add a retrieval step: that is full RAG\nYou just grounded an LLM in your own document! 🎉"
+  },
+  {
+    "objectID": "lectures/lecture-14/14-pipelines.html#why-document-the-imagenet-story",
+    "href": "lectures/lecture-14/14-pipelines.html#why-document-the-imagenet-story",
+    "title": "DATASCI 101: Introduction to AI Applications",
+    "section": "Why document? The ImageNet story",
+    "text": "Why document? The ImageNet story\n\n\n\nImageNet: the most influential computer vision dataset, behind 10+ years of research\n\nFew checked what the scraped images contained. Audits in 2019–20 found:\n\nImages scraped from Flickr without consent\nOffensive labels inherited from WordNet, applied by MTurk workers\nNon-consensual photos of minors; voyeuristic and upskirt photos\n\nThousands of AI systems were built on it\n\nDocumentation lets us check consent, trace bias, match models to uses, and assign responsibility\n\nLaws require it: EU AI Act (high-risk AI from Dec 2027), NYC Law 144 (bias audits). More in Lecture 18\n\nMonitoring catches problems after deployment. Documentation prevents some before\n\n\n\n\n\nImageNet analysis\n\n\nSource: Excavating AI (great resource, check it out!)"
   }
 ]
