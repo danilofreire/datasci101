@@ -460,9 +460,9 @@ Source: [Chris McCormick](https://mccormickml.com/2016/04/19/word2vec-tutorial-t
 :::{.column width=45%}
 :::{style="text-align: center;"}
 <!-- Suggested image: Word embeddings illustration -->
-[![](figures/queen-woman-girl-embeddings.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/queen-woman-girl-embeddings.png"}
+[![](figures/word2vec-highlights.gif){width="100%"}](#){data-modal-type="image" data-modal-url="figures/word2vec-highlights.gif"}
 
-Source: [Jay Alammar](https://jalammar.github.io/illustrated-word2vec/)
+Data: [GloVe](https://nlp.stanford.edu/projects/glove/). Layout after [Jay Alammar](https://jalammar.github.io/illustrated-word2vec/)
 :::
 :::
 :::

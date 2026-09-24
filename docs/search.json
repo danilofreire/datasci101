@@ -1635,7 +1635,7 @@
     "href": "lectures/lecture-06/06-language.html#word2vec-illustrated",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Word2vec illustrated",
-    "text": "Word2vec illustrated\nHow embeddings capture meaning\n\n\n\n\nHere are the embeddings for a few words\nEach row is one word’s 50 numbers, from blue (-2) to red (+2)\nSee how “woman” and “girl” are similar, but “queen” is further away?\nWe don’t know what each dimension codes for, yet patterns still show\nIn some places “king” and “queen” match each other and differ from all the rest\nThe model has learned something about gender and royalty!\nNote that “water” has few connections to other words\n\n\n\n\n\nSource: Jay Alammar"
+    "text": "Word2vec illustrated\nHow embeddings capture meaning\n\n\n\n\nHere are the embeddings for a few words\nEach row is one word’s 50 numbers, from blue (-2) to red (+2)\nSee how “woman” and “girl” are similar, but “queen” is further away?\nWe don’t know what each dimension codes for, yet patterns still show\nIn some places “king” and “queen” match each other and differ from all the rest\nThe model has learned something about gender and royalty!\nNote that “water” has few connections to other words\n\n\n\n\n\nData: GloVe. Layout after Jay Alammar"
   },
   {
     "objectID": "lectures/lecture-06/06-language.html#embeddings-in-practice",
