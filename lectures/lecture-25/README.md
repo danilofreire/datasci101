@@ -7,12 +7,12 @@ This lecture addresses the longer-term challenges of ensuring AI systems remain 
 - **The Safety Landscape**: Near-term vs long-term concerns, why safety matters now, concrete problems in AI safety (safe exploration, side effects, reward hacking)
 - **The Alignment Problem**: Defining alignment, why it's hard (specification, Goodhart's law), current approaches (RLHF, Constitutional AI)
 - **Future Trajectories**: Where AI might be heading, expert disagreement, scenarios to consider, Stuart Russell's perspective
-- **What We Can Do**: Technical safety research, governance approaches, individual agency
+- **What We Can Do**: Technical safety research, informed citizens who scrutinise AI rules, individual agency
 
 ## Key Readings
 
 - Amodei et al. (2016). Concrete problems in AI safety. *arXiv*
-- Ngo et al. (2024). The alignment problem from a deep learning perspective. *arXiv*
+- Ngo et al. (2022; ICLR 2024). The alignment problem from a deep learning perspective. *arXiv*
 - Stuart Russell. 3 principles for creating safer AI. TED Talk
 
 ## Supplementary Resources

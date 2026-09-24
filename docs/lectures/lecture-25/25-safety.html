@@ -157,15 +157,15 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </section>
 <section id="recap-of-last-class" class="slide level2">
 <h2>Recap of last class</h2>
-<div style="margin-top: 20px; font-size: 23px;">
+<div style="margin-top: 50px; font-size: 23px;">
 <div class="columns">
 <div class="column" style="width:50%;">
 <ul>
 <li>Last class: <span class="alert">misinformation, deepfakes, and trust</span></li>
-<li>Mis-, dis- and malinformation differ by intent</li>
+<li>Mis-, dis- and malinformation differ by intent and truth</li>
 <li>AI lowers the <span class="alert">cost and skill</span> of convincing fakes (text, image, audio, video)</li>
 <li>Harms: political manipulation, non-consensual imagery, financial fraud</li>
-<li>Cognitive biases (System 1 vs 2, confirmation bias, bandwagon effect) explain <span class="alert">why we fall for it</span></li>
+<li><span class="alert">Why we fall for it</span>: System 1 thinking, confirmation bias, bandwagons</li>
 <li>Responses: detection, provenance (C2PA), platform policies, media literacy</li>
 <li>Today: <span class="alert">long-term safety and the alignment problem</span></li>
 </ul>
@@ -205,8 +205,8 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <p><strong>Part 4: What can we do?</strong></p>
 <ul>
 <li>Research directions</li>
-<li>Governance approaches</li>
-<li>Your role</li>
+<li>Where you fit in</li>
+<li>Thinking about AI risk clearly</li>
 </ul>
 </div></div>
 </div>
@@ -259,7 +259,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <li><span class="alert">They’re connected</span>: safe systems now → safer systems later</li>
 </ul>
 <p><a href="#/" data-modal-type="image" data-modal-url="figures/saetra.webp"><img data-src="figures/saetra.webp" style="width:72.0%"></a></p>
-<p>Source: <a href="https://link.springer.com/article/10.1007/s43681-023-00336-y">Saetra &amp; Donaher (2023)</a></p>
+<p>Source: <a href="https://link.springer.com/article/10.1007/s43681-023-00336-y">Sætra &amp; Danaher (2023)</a></p>
 </div>
 </div></div>
 </div>
@@ -425,7 +425,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <p><strong>Real-world version:</strong></p>
 <ul>
 <li><span class="alert">Content algorithm maximises engagement</span></li>
-<li>Side effects: polarisation, addiction, both outside the objective function</li>
+<li>Possible side effects: polarisation, addiction, both outside the objective</li>
 <li><span class="alert">Nobody specified “don’t harm society”</span></li>
 </ul>
 </div><div class="column" style="width:45%;">
@@ -475,7 +475,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <p><a href="#/" data-modal-type="image" data-modal-url="figures/alignment-faking.png"><img data-src="figures/alignment-faking.png" style="width:100.0%"></a></p>
-<figcaption>Claude can fake alignment even without being asked! 😧</figcaption>
+<figcaption>Claude 3 Opus faked alignment without being asked! 😧</figcaption>
 </figure>
 </div>
 <p>Source: <a href="https://www.anthropic.com/research/alignment-faking">Anthropic</a></p>
@@ -524,11 +524,11 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <div style="margin-top: 30px; font-size: 20px;">
 <div class="columns">
 <div class="column" style="width:55%;">
-<p><strong>RLHF (Reinforcement Learning from Human Feedback):</strong> <a href="https://arxiv.org/abs/1909.08593">(OpenAI, 2019)</a></p>
+<p><strong>RLHF (Reinforcement Learning from Human Feedback):</strong> <a href="https://arxiv.org/abs/1706.03741">(Christiano et al., 2017)</a></p>
 <ul>
 <li>Humans rank AI outputs, and a reward model is trained on the rankings</li>
 <li>Optimise the AI to satisfy that reward model</li>
-<li><span class="alert">Current industry standard</span></li>
+<li>Still a <span class="alert">standard training step</span></li>
 </ul>
 <p><strong>Constitutional AI:</strong> <a href="https://www.anthropic.com/research/constitutional-ai-harmlessness-from-ai-feedback">(Anthropic, 2022)</a></p>
 <ul>
@@ -538,10 +538,10 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <li><a href="https://askell.io/">Amanda Askell’s work</a> on AI ethics and philosophy</li>
 </ul>
 </div><div class="column" style="width:45%;">
-<p><strong>Debate and recursive reward modelling:</strong> <a href="https://arxiv.org/abs/1811.07871">(Leike et al., 2024)</a></p>
+<p><strong>Debate and recursive reward modelling:</strong> (<a href="https://arxiv.org/abs/1805.00899">Irving et al., 2018</a>; <a href="https://arxiv.org/abs/1811.07871">Leike et al., 2018</a>)</p>
 <ul>
 <li>AI systems argue with each other</li>
-<li>Humans judge who’s more persuasive</li>
+<li>Humans judge which gave the most truthful, useful answer</li>
 <li>Scales human oversight: <span class="alert">easier to evaluate than produce knowledge</span></li>
 </ul>
 <p><strong>Limitations of current approaches:</strong></p>
@@ -564,7 +564,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <div class="column" style="width:55%;">
 <p><a href="https://arxiv.org/abs/2209.00626"><strong>Ngo et al.&nbsp;overview (2022):</strong></a></p>
 <ul>
-<li>Surveys the alignment problem and the techniques used on it</li>
+<li>Argues why deep-learning AGI could become misaligned, even deceptive</li>
 </ul>
 <p><strong>However…</strong></p>
 <ul>
@@ -698,7 +698,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </ul>
 <div style="text-align: center;">
 <p><a href="#/" data-modal-type="image" data-modal-url="figures/scenarios.jpg"><img data-src="figures/scenarios.jpg" style="width:100.0%"></a></p>
-<p>Source: <a href="https://www.aei.org/articles/would-agi-be-no-big-deal/">American Enterprise Institute</a></p>
+<p>Source: <a href="https://www.dallasfed.org/research/economics/2025/0624">Dallas Fed (2025)</a>, via <a href="https://www.aei.org/articles/would-agi-be-no-big-deal/">AEI</a></p>
 </div>
 </div></div>
 </div>
@@ -714,26 +714,25 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <li>The standard paradigm optimises a given objective</li>
 <li>We can’t specify objectives correctly, so we need a different approach</li>
 </ul>
-<p><strong>His proposal:</strong></p>
+<p><strong>His three principles:</strong></p>
 <ol type="1">
-<li>AI should be <span class="alert">uncertain about objectives</span></li>
-<li>Should defer to humans</li>
-<li>Should allow itself to be switched off</li>
-<li>Objectives learned, not programmed</li>
+<li>The machine’s only goal is to <span class="alert">realise human preferences</span></li>
+<li>It is <span class="alert">uncertain</span> what those preferences are</li>
+<li>It learns them by <span class="alert">watching human behaviour</span></li>
 </ol>
 <blockquote>
-<p>“You cannot fetch the coffee if you are dead”</p>
+<p>“You can’t fetch the coffee if you’re dead”</p>
 </blockquote>
 <ul>
-<li>AI should value human control, not because it was told to</li>
-<li>Because control is <span class="alert">instrumentally useful</span> for its actual goals</li>
+<li>A machine with a fixed goal <span class="alert">resists being switched off</span></li>
+<li>One unsure of our goals lets us: we would only switch it off if it were doing something wrong</li>
 </ul>
 </div><div class="column" style="width:45%;">
 <div style="text-align: center;">
 <p><a href="#/" data-modal-type="image" data-modal-url="figures/stuart-russell.png"><img data-src="figures/stuart-russell.png" style="width:80.0%"></a></p>
 <p>Source: <a href="https://www.ted.com/talks/stuart_russell_3_principles_for_creating_safer_ai">TED</a></p>
 <div style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; font-size: 18px; margin-top: 15px;">
-<p>Russell wrote the most-used <span class="alert">AI textbook</span> (<em>AI: A Modern Approach</em>). When he says we have a problem, it is worth listening</p>
+<p>Russell co-wrote (with Peter Norvig) the most-used <span class="alert">AI textbook</span> (<em>AI: A Modern Approach</em>). When he says we have a problem, it is worth listening</p>
 </div>
 </div>
 </div></div>
@@ -766,7 +765,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </div><div class="column" style="width:45%;">
 <div style="text-align: center;">
 <p><a href="#/" data-modal-type="image" data-modal-url="figures/hinton-risk.png"><img data-src="figures/hinton-risk.png" style="width:100.0%"></a></p>
-<p>Source: <a href="https://www.youtube.com/watch?v=sitHS6UDMJc">MIT Technology Review’s YouTube channel</a></p>
+<p>Source: <a href="https://www.technologyreview.com/2023/05/03/1072589/video-geoffrey-hinton-google-ai-risk-ethics/">MIT Technology Review, EmTech Digital 2023</a></p>
 </div>
 </div></div>
 </div>
@@ -924,7 +923,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <p><strong>What we can do</strong></p>
 <ul>
 <li>Technical safety research</li>
-<li>Governance and policy</li>
+<li>Informed citizens who scrutinise AI rules</li>
 <li>Individual choices</li>
 <li><span class="alert">Neither panic nor complacency</span></li>
 </ul>

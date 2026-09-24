@@ -51,14 +51,14 @@ if (!require("fontawesome", character.only = TRUE)) {
 
 ## Recap of last class
 
-:::{style="margin-top: 20px; font-size: 23px;"}
+:::{style="margin-top: 50px; font-size: 23px;"}
 :::{.columns}
 :::{.column width=50%}
 - Last class: [misinformation, deepfakes, and trust]{.alert}
-- Mis-, dis- and malinformation differ by intent
+- Mis-, dis- and malinformation differ by intent and truth
 - AI lowers the [cost and skill]{.alert} of convincing fakes (text, image, audio, video)
 - Harms: political manipulation, non-consensual imagery, financial fraud
-- Cognitive biases (System 1 vs 2, confirmation bias, bandwagon effect) explain [why we fall for it]{.alert}
+- [Why we fall for it]{.alert}: System 1 thinking, confirmation bias, bandwagons
 - Responses: detection, provenance (C2PA), platform policies, media literacy
 - Today: [long-term safety and the alignment problem]{.alert}
 :::
@@ -103,8 +103,8 @@ Source: [Chris Ume](https://x.com/vfxchrisume)
 **Part 4: What can we do?**
 
 - Research directions
-- Governance approaches
-- Your role
+- Where you fit in
+- Thinking about AI risk clearly
 :::
 :::
 :::
@@ -157,7 +157,7 @@ Source: [CNBC](https://www.cnbc.com/2026/04/15/allbirds-bird-stock-shoes-ai.html
 
 [![](figures/saetra.webp){width="72%"}](#){data-modal-type="image" data-modal-url="figures/saetra.webp"}
 
-Source: [Saetra & Donaher (2023)](https://link.springer.com/article/10.1007/s43681-023-00336-y)
+Source: [Sætra & Danaher (2023)](https://link.springer.com/article/10.1007/s43681-023-00336-y)
 :::
 :::
 :::
@@ -287,7 +287,7 @@ How do you [specify "safe"]{.alert} without already knowing everything about the
 **Real-world version:**
 
 - [Content algorithm maximises engagement]{.alert}
-- Side effects: polarisation, addiction, both outside the objective function
+- Possible side effects: polarisation, addiction, both outside the objective
 - [Nobody specified "don't harm society"]{.alert}
 :::
 
@@ -328,7 +328,7 @@ Nobody told the engagement algorithm "don't polarise society". [If it isn't in t
 
 :::{.column width=45%}
 :::{style="text-align: center;"}
-[![Claude can fake alignment even without being asked! 😧](figures/alignment-faking.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/alignment-faking.png"}
+[![Claude 3 Opus faked alignment without being asked! 😧](figures/alignment-faking.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/alignment-faking.png"}
 
 Source: [Anthropic](https://www.anthropic.com/research/alignment-faking)
 :::
@@ -379,11 +379,11 @@ Source: [Anthropic](https://www.anthropic.com/research/alignment-faking)
 :::{style="margin-top: 30px; font-size: 20px;"}
 :::{.columns}
 :::{.column width=55%}
-**RLHF (Reinforcement Learning from Human Feedback):** [(OpenAI, 2019)](https://arxiv.org/abs/1909.08593)
+**RLHF (Reinforcement Learning from Human Feedback):** [(Christiano et al., 2017)](https://arxiv.org/abs/1706.03741)
 
 - Humans rank AI outputs, and a reward model is trained on the rankings
 - Optimise the AI to satisfy that reward model
-- [Current industry standard]{.alert}
+- Still a [standard training step]{.alert}
 
 **Constitutional AI:** [(Anthropic, 2022)](https://www.anthropic.com/research/constitutional-ai-harmlessness-from-ai-feedback)
 
@@ -394,10 +394,10 @@ Source: [Anthropic](https://www.anthropic.com/research/alignment-faking)
 :::
 
 :::{.column width=45%}
-**Debate and recursive reward modelling:**  [(Leike et al., 2024)](https://arxiv.org/abs/1811.07871)
+**Debate and recursive reward modelling:** ([Irving et al., 2018](https://arxiv.org/abs/1805.00899); [Leike et al., 2018](https://arxiv.org/abs/1811.07871))
 
 - AI systems argue with each other
-- Humans judge who's more persuasive
+- Humans judge which gave the most truthful, useful answer
 - Scales human oversight: [easier to evaluate than produce knowledge]{.alert}
 
 **Limitations of current approaches:**
@@ -421,7 +421,7 @@ These methods [work well enough for current systems]{.alert}. Whether they scale
 :::{.column width=55%}
 [**Ngo et al. overview (2022):**](https://arxiv.org/abs/2209.00626)
 
-- Surveys the alignment problem and the techniques used on it
+- Argues why deep-learning AGI could become misaligned, even deceptive
 
 **However...**
 
@@ -564,7 +564,7 @@ Nobody knows. [Uncertainty is high]{.alert}, so be sceptical of confident predic
 :::{style="text-align: center;"}
 [![](figures/scenarios.jpg){width="100%"}](#){data-modal-type="image" data-modal-url="figures/scenarios.jpg"}
 
-Source: [American Enterprise Institute](https://www.aei.org/articles/would-agi-be-no-big-deal/)
+Source: [Dallas Fed (2025)](https://www.dallasfed.org/research/economics/2025/0624), via [AEI](https://www.aei.org/articles/would-agi-be-no-big-deal/)
 
 :::
 :::
@@ -582,17 +582,16 @@ Source: [American Enterprise Institute](https://www.aei.org/articles/would-agi-b
 - The standard paradigm optimises a given objective
 - We can't specify objectives correctly, so we need a different approach
 
-**His proposal:**
+**His three principles:**
 
-1. AI should be [uncertain about objectives]{.alert}
-2. Should defer to humans
-3. Should allow itself to be switched off
-4. Objectives learned, not programmed
+1. The machine's only goal is to [realise human preferences]{.alert}
+2. It is [uncertain]{.alert} what those preferences are
+3. It learns them by [watching human behaviour]{.alert}
 
-> "You cannot fetch the coffee if you are dead"
+> "You can't fetch the coffee if you're dead"
 
-- AI should value human control, not because it was told to
-- Because control is [instrumentally useful]{.alert} for its actual goals
+- A machine with a fixed goal [resists being switched off]{.alert}
+- One unsure of our goals lets us: we would only switch it off if it were doing something wrong
 :::
 
 :::{.column width=45%}
@@ -602,7 +601,7 @@ Source: [American Enterprise Institute](https://www.aei.org/articles/would-agi-b
 Source: [TED](https://www.ted.com/talks/stuart_russell_3_principles_for_creating_safer_ai)
 
 :::{style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; font-size: 18px; margin-top: 15px;"}
-Russell wrote the most-used [AI textbook]{.alert} (*AI: A Modern Approach*). When he says we have a problem, it is worth listening
+Russell co-wrote (with Peter Norvig) the most-used [AI textbook]{.alert} (*AI: A Modern Approach*). When he says we have a problem, it is worth listening
 :::
 :::
 :::
@@ -638,7 +637,7 @@ Russell wrote the most-used [AI textbook]{.alert} (*AI: A Modern Approach*). Whe
 :::{style="text-align: center;"}
 [![](figures/hinton-risk.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/hinton-risk.png"}
 
-Source: [MIT Technology Review's YouTube channel](https://www.youtube.com/watch?v=sitHS6UDMJc)
+Source: [MIT Technology Review, EmTech Digital 2023](https://www.technologyreview.com/2023/05/03/1072589/video-geoffrey-hinton-google-ai-risk-ethics/)
 
 :::
 :::
@@ -783,7 +782,7 @@ Source: [r/OptimistsUnite](https://www.reddit.com/r/OptimistsUnite/comments/1ew5
 **What we can do**
 
 - Technical safety research
-- Governance and policy
+- Informed citizens who scrutinise AI rules
 - Individual choices
 - [Neither panic nor complacency]{.alert}
 
