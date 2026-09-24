@@ -81,7 +81,7 @@ Source: [Google Research](https://research.google/blog/deeper-insights-into-retr
 :::{.column width=50%}
 **Part 1: The Problem**
 
-- Quick recap: hallucinations (from Lecture 10)
+- Quick recap: hallucinations (from Lecture 11)
 - The knowledge cutoff issue
 - How RAG solves both problems
 
@@ -101,7 +101,7 @@ Source: [Google Research](https://research.google/blog/deeper-insights-into-retr
 
 **Part 4: No-Code Tools**
 
-- NotebookLM, Perplexity
+- Gemini Notebook (formerly NotebookLM) and file uploads
 - Build your own RAG system today! 🛠️
 :::
 :::
@@ -243,9 +243,9 @@ Text becomes [vectors]{.alert} (lists of numbers):
 
 | Model | Dimensions | Use Case |
 |-------|------------|----------|
-| OpenAI ada-002 | 1,536 | General purpose |
-| Google Gecko | 768 | Lightweight |
-| Cohere Embed v3 | 1,024 | Multilingual |
+| OpenAI text-embedding-3-small | 1,536 | General purpose |
+| Google Gemini Embedding | 768–3,072 | Adjustable size |
+| Cohere Embed v4 | 1,536 | Multilingual, text + images |
 :::
 
 :::{.column width=45%}
@@ -272,11 +272,11 @@ Similar sentences cluster together in embedding space
 - Denominator: normalises by their lengths (magnitude)
   - If $A = [0.8, 0.6]$, then $\|A\| = \sqrt{0.8^2 + 0.6^2} = 1$
 - Identical vectors = 1; orthogonal = 0; opposite = -1
-- In the word-count example the components are never negative, so scores fall between 0 and 1
+- Embedding components can be negative, so scores can drop below 0
 
 $$\text{similarity}(A, B) = \frac{A \cdot B}{\|A\| \times \|B\|}$$
 
-**Interpretation:**
+**Interpretation** (illustrative; varies by model):
 
 | Score | Meaning | Example |
 |-------|---------|----------|
@@ -291,15 +291,15 @@ $$\text{similarity}(A, B) = \frac{A \cdot B}{\|A\| \times \|B\|}$$
 
 - Compare the query embedding to all chunk embeddings
 - Return chunks with the [highest similarity scores]{.alert}
-- Typical threshold: retrieve if score > 0.7
+- Typical threshold: retrieve if score > 0.7 (depends on the model)
 
 :::{style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; font-size: 18px;"}
 **Mini-example (2D for simplicity):**
 
 ```text
 "I love dogs"  → [0.8, 0.6]
-"I adore puppies" → [0.75, 0.65]
-"The weather is nice" → [-0.3, 0.9]
+"I adore puppies" → [0.95, 0.45]
+"The weather is nice" → [-0.5, 0.87]
 ```
 
 Cosine similarity:
@@ -351,7 +351,7 @@ The search finds "puppies" when you ask about "dogs"!
 - Documents are [unstructured]{.alert}
 - Extract clean text while preserving meaningful structure
 
-**Good news:** NotebookLM and ChatGPT handle extraction automatically
+**Good news:** Gemini Notebook and ChatGPT handle extraction automatically
 :::
 
 :::{.column width=45%}
@@ -359,7 +359,7 @@ The search finds "puppies" when you ask about "dogs"!
 [![Document ingestion](figures/document-ingestion.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/document-ingestion.png"}
 
 :::{style="font-size: 18px; margin-top: 15px;"}
-Many document types → unified text
+An ingestion pipeline: collect, parse, chunk, embed, store. Source: [Microsoft (2024)](https://devblogs.microsoft.com/azure-sql/sql-vector-store-data-ingestion-and-retrieval-using-azure-logic-apps/)
 :::
 :::
 :::
@@ -373,7 +373,7 @@ Many document types → unified text
 :::{.column width=55%}
 **Why chunk?**
 
-- LLMs have [context window limits]{.alert} (4K–128K tokens), so a whole book won't fit in one prompt
+- LLMs have [context window limits]{.alert} (about 128K–1M tokens): a book fits, a library does not, and long prompts cost more
 - You need the [most relevant parts]{.alert}
 - Many chunking strategies exist, each with trade-offs. More [here](https://masteringllm.medium.com/11-chunking-strategies-for-rag-simplified-visualized-df0dbec8e373)
 
@@ -450,7 +450,7 @@ Source: [Mastering LLM](https://masteringllm.medium.com/11-chunking-strategies-f
 :::
 
 :::{style="margin-top: 10px; font-size: 16px;"}
-**Parameters**: top-k (3–10), threshold (0.7–1.0)
+**Parameters**: top-k (3–10), threshold (set per model)
 :::
 :::
 :::
@@ -536,9 +536,9 @@ Retrieved chunks become the LLM's "reference material"
 
 | Study | Finding |
 |-------|--------|
-| [Lewis et al. (2020)](https://arxiv.org/abs/2005.11401) | Original RAG paper: outperformed fine-tuned models on knowledge-intensive tasks |
-| [Shuster et al. (2021)](https://arxiv.org/abs/2104.07567) | RAG reduced hallucinations by [~30–50%]{.alert} in dialogue systems |
-| [Gao et al. (2024)](https://arxiv.org/abs/2312.10997) | Comprehensive survey: RAG approach dominant in production systems |
+| [Lewis et al. (2020)](https://arxiv.org/abs/2005.11401) | Original RAG paper: beat models without retrieval on knowledge-intensive tasks |
+| [Shuster et al. (2021)](https://arxiv.org/abs/2104.07567) | Retrieval cut hallucinated replies by [over 60%]{.alert} in dialogue systems |
+| [Gao et al. (2024)](https://arxiv.org/abs/2312.10997) | Survey: RAG is a promising fix for hallucination and outdated knowledge |
 | [Liu et al. (2023)](https://arxiv.org/abs/2307.03172) | "Lost in the middle": LLMs use beginning and end of context better than middle |
 
 **Hallucination rates comparison:**
@@ -549,7 +549,7 @@ Retrieved chunks become the LLM's "reference material"
 | LLM + RAG | [5–15%]{.alert} |
 | LLM + RAG + verification | 2–8% |
 
-*Rates vary by domain and implementation quality*
+*Illustrative ranges, not from one study: rates vary by domain and implementation*
 :::
 
 :::{.column width=45%}
@@ -583,7 +583,7 @@ Source: [Liu et al. (2023)](https://arxiv.org/abs/2307.03172)
 :::{.column width=55%}
 **Common failure modes:**
 
-| Failure Type | What Happens | Frequency |
+| Failure Type | What Happens | Rough frequency |
 |--------------|--------------|----------|
 | **Retrieval failure** | Wrong chunks retrieved | 15–25% of queries |
 | **Lost in the middle** | Relevant info in middle ignored | Common with many chunks |
@@ -603,11 +603,9 @@ Source: [Liu et al. (2023)](https://arxiv.org/abs/2307.03172)
 :::{style="background: rgba(230, 57, 70, 0.1); padding: 15px; border-radius: 10px;"}
 **Example: Retrieval failure**
 
-**Your document says:**
-> "The quarterly earnings call is scheduled for March 15th"
+**Your document says:** "The quarterly earnings call is scheduled for March 15th"
 
-**You ask:**
-> "When is the investor meeting?"
+**You ask:** "When is the investor meeting?"
 
 **Problem:** "investor meeting" ≠ "earnings call" in embedding space
 
@@ -678,31 +676,31 @@ Source: [Liu et al. (2023)](https://arxiv.org/abs/2307.03172)
 :::{style="text-align: center; font-size: 26px; margin-top: 30px;"}
 | Tool | Free? | Best For | Key Feature |
 |------|-------|----------|-------------|
-| [NotebookLM](https://notebooklm.google.com/) | ✅ Yes | Research, study notes | Multi-source synthesis |
-| [ChatGPT + Files](https://chat.openai.com/) | ✅ Free tier | General documents | Easy upload & chat |
+| [Gemini Notebook](https://notebook.google/) (ex-NotebookLM) | ✅ Yes | Research, study notes | Multi-source synthesis |
+| [ChatGPT + Files](https://chatgpt.com/) | ✅ Free tier | General documents | Easy upload & chat |
 | [Claude + Files](https://claude.ai/) | ✅ Free tier | Long documents | 200K token context |
 | [Google AI Studio](https://aistudio.google.com/) | ✅ Free tier | Experimentation | Gemini models |
 :::
 
 :::{style="margin-top: 40px; font-size: 22px;"}
-**All of these implement RAG internally:**
+**All of these ground answers in your files:**
 
-- You upload documents → (Retrieval source)
-- System finds relevant parts → (Augmented)
-- LLM generates answers → (Generation)
+- You upload documents → the knowledge source
+- Some tools [retrieve]{.alert} the relevant parts (Gemini Notebook, ChatGPT); others read the whole file if it fits (Claude, AI Studio)
+- The LLM generates answers from that text
 
 [No coding required, just upload and ask]{.alert}
 :::
 :::
 
-## NotebookLM: Your AI research assistant
+## Gemini Notebook: Your AI research assistant
 
 :::{style="margin-top: 30px; font-size: 20px;"}
 :::{.columns}
 :::{.column width=55%}
-**What is NotebookLM?**
+**What is Gemini Notebook?**
 
-- Free tool from Google
+- Free tool from Google, called NotebookLM until July 2026
 - Upload up to [50 sources]{.alert} (PDFs, docs, websites, YouTube) to build a personal knowledge base
 - The AI answers from [YOUR sources only]{.alert}
 
@@ -721,17 +719,17 @@ Source: [Liu et al. (2023)](https://arxiv.org/abs/2307.03172)
 
 :::{.column width=45%}
 :::{style="text-align: center; margin-top: 40px;"}
-[![NotebookLM interface](figures/notebooklm-screenshot.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/notebooklm-screenshot.png"}
+[![Gemini Notebook, September 2026](figures/gemini-notebook.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/gemini-notebook.png"}
 
 :::{style="font-size: 18px; margin-top: 10px;"}
-[notebooklm.google.com](https://notebooklm.google.com/)
+[notebook.google](https://notebook.google/)
 :::
 :::
 :::
 :::
 :::
 
-## Activity: File upload RAG 📎
+## Activity: Grounding with a file upload 📎
 
 :::{style="margin-top: 30px; font-size: 20px;"}
 :::{.columns}
@@ -740,7 +738,7 @@ Source: [Liu et al. (2023)](https://arxiv.org/abs/2307.03172)
 
 **Step 1: Without documents**
 
-1. Open <https://aistudio.google.com/> and start a [new chat]{.alert}
+1. Open <https://aistudio.google.com/> and start a [new chat]{.alert} (Grounding with Google Search off)
 2. Ask: "What are the assignment deadlines for DATASCI 101 at Emory University?"
 3. Gemini doesn't know: it's not in the training data
 
@@ -762,11 +760,11 @@ Source: [Liu et al. (2023)](https://arxiv.org/abs/2307.03172)
 | No citations | Can quote the source |
 
 :::{style="margin-top: 15px; background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px;"}
-**This is RAG in action!**
+**This is grounding in action!**
 
-The LLM [retrieves]{.alert} relevant parts of your file and uses them to [generate]{.alert} an accurate answer.
+Gemini reads your whole file and [generates]{.alert} its answer from it. With too many documents to fit, tools add a [retrieval]{.alert} step: that is full RAG
 
-You just built a RAG system! 🎉
+You just grounded an LLM in your own document! 🎉
 :::
 :::
 :::
@@ -782,8 +780,8 @@ You just built a RAG system! 🎉
 | Industry | Application | How RAG Helps | Example Company |
 |----------|-------------|---------------|----------------|
 | 🏢 **Customer Support** | AI chatbots | Answer questions from product docs | Intercom, Zendesk |
-| ⚖️ **Legal** | Research assistants | Search case law by meaning | Harvey AI, Casetext |
-| 🏥 **Healthcare** | Clinical support | Find relevant patient records, guidelines | Epic, Nuance |
+| ⚖️ **Legal** | Research assistants | Search case law by meaning | Harvey AI, Thomson Reuters |
+| 🏥 **Healthcare** | Clinical support | Find relevant patient records, guidelines | Epic, Microsoft |
 | 📚 **Education** | Personal tutors | Answer questions from course materials | Khan Academy, Duolingo |
 | 💼 **Finance** | Analyst tools | Search earnings reports, SEC filings | Bloomberg, Kensho |
 | 🔬 **Research** | Literature review | Find related papers, summarise findings | Elicit, Semantic Scholar |
@@ -813,11 +811,11 @@ In each case, users need answers grounded in [specific documents]{.alert}, with 
 
 - [The RAG pipeline]{.alert}: chunk → embed → store → retrieve → generate
 
-- [Research shows]{.alert}: RAG reduces hallucinations by 30–50%
+- [Research shows]{.alert}: retrieval cut hallucinations by over 60% in one study
 
 - [Watch out for]{.alert}: retrieval failures, lost-in-the-middle, outdated docs
 
-- [No-code tools]{.alert}: NotebookLM, ChatGPT with files, etc
+- [No-code tools]{.alert}: Gemini Notebook, ChatGPT with files, etc
 
 - [Always verify]{.alert}: RAG reduces errors but doesn't eliminate them
 :::
@@ -827,11 +825,11 @@ In each case, users need answers grounded in [specific documents]{.alert}, with 
 
 | Concept | Key Numbers |
 |---------|-------------|
-| Cosine similarity | 0.9+ = very similar |
+| Cosine similarity | 0.9+ = very similar (model-dependent) |
 | Chunk size | 256–1024 tokens |
 | Overlap | 10–20% |
 | Top-k retrieval | 3–10 chunks |
-| Hallucination reduction | 30–50% |
+| Hallucination reduction | 60%+ (one study) |
 
 :::{style="margin-top: 15px; font-size: 20px;"}
 Upload your docs, ask specific questions, and [always check citations]{.alert}

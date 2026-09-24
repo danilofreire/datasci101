@@ -255,7 +255,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <div class="column" style="width:50%;">
 <p><strong>Part 1: The Problem</strong></p>
 <ul>
-<li>Quick recap: hallucinations (from Lecture 10)</li>
+<li>Quick recap: hallucinations (from Lecture 11)</li>
 <li>The knowledge cutoff issue</li>
 <li>How RAG solves both problems</li>
 </ul>
@@ -274,7 +274,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </ul>
 <p><strong>Part 4: No-Code Tools</strong></p>
 <ul>
-<li>NotebookLM, Perplexity</li>
+<li>Gemini Notebook (formerly NotebookLM) and file uploads</li>
 <li>Build your own RAG system today! 🛠️</li>
 </ul>
 </div></div>
@@ -465,19 +465,19 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </thead>
 <tbody>
 <tr class="odd">
-<td>OpenAI ada-002</td>
+<td>OpenAI text-embedding-3-small</td>
 <td>1,536</td>
 <td>General purpose</td>
 </tr>
 <tr class="even">
-<td>Google Gecko</td>
-<td>768</td>
-<td>Lightweight</td>
+<td>Google Gemini Embedding</td>
+<td>768–3,072</td>
+<td>Adjustable size</td>
 </tr>
 <tr class="odd">
-<td>Cohere Embed v3</td>
-<td>1,024</td>
-<td>Multilingual</td>
+<td>Cohere Embed v4</td>
+<td>1,536</td>
+<td>Multilingual, text + images</td>
 </tr>
 </tbody>
 </table>
@@ -510,10 +510,10 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <li>If <span class="math inline">\(A = [0.8, 0.6]\)</span>, then <span class="math inline">\(\|A\| = \sqrt{0.8^2 + 0.6^2} = 1\)</span></li>
 </ul></li>
 <li>Identical vectors = 1; orthogonal = 0; opposite = -1</li>
-<li>In the word-count example the components are never negative, so scores fall between 0 and 1</li>
+<li>Embedding components can be negative, so scores can drop below 0</li>
 </ul>
 <p><span class="math display">\[\text{similarity}(A, B) = \frac{A \cdot B}{\|A\| \times \|B\|}\]</span></p>
-<p><strong>Interpretation:</strong></p>
+<p><strong>Interpretation</strong> (illustrative; varies by model):</p>
 <table class="caption-top">
 <thead>
 <tr class="header">
@@ -550,13 +550,13 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <ul>
 <li>Compare the query embedding to all chunk embeddings</li>
 <li>Return chunks with the <span class="alert">highest similarity scores</span></li>
-<li>Typical threshold: retrieve if score &gt; 0.7</li>
+<li>Typical threshold: retrieve if score &gt; 0.7 (depends on the model)</li>
 </ul>
 <div style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; font-size: 18px;">
 <p><strong>Mini-example (2D for simplicity):</strong></p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb1-1"><a></a>"I love dogs"  → [0.8, 0.6]</span>
-<span id="cb1-2"><a></a>"I adore puppies" → [0.75, 0.65]</span>
-<span id="cb1-3"><a></a>"The weather is nice" → [-0.3, 0.9]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb1-2"><a></a>"I adore puppies" → [0.95, 0.45]</span>
+<span id="cb1-3"><a></a>"The weather is nice" → [-0.5, 0.87]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Cosine similarity:</p>
 <ul>
 <li>“dogs” vs “puppies”: <strong>0.98</strong> ✅</li>
@@ -637,7 +637,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <li>Documents are <span class="alert">unstructured</span></li>
 <li>Extract clean text while preserving meaningful structure</li>
 </ul>
-<p><strong>Good news:</strong> NotebookLM and ChatGPT handle extraction automatically</p>
+<p><strong>Good news:</strong> Gemini Notebook and ChatGPT handle extraction automatically</p>
 </div><div class="column" style="width:45%;">
 <div style="text-align: center; margin-top: 40px;">
 <div class="quarto-figure quarto-figure-center">
@@ -647,7 +647,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </figure>
 </div>
 <div style="font-size: 18px; margin-top: 15px;">
-<p>Many document types → unified text</p>
+<p>An ingestion pipeline: collect, parse, chunk, embed, store. Source: <a href="https://devblogs.microsoft.com/azure-sql/sql-vector-store-data-ingestion-and-retrieval-using-azure-logic-apps/">Microsoft (2024)</a></p>
 </div>
 </div>
 </div></div>
@@ -660,7 +660,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <div class="column" style="width:55%;">
 <p><strong>Why chunk?</strong></p>
 <ul>
-<li>LLMs have <span class="alert">context window limits</span> (4K–128K tokens), so a whole book won’t fit in one prompt</li>
+<li>LLMs have <span class="alert">context window limits</span> (about 128K–1M tokens): a book fits, a library does not, and long prompts cost more</li>
 <li>You need the <span class="alert">most relevant parts</span></li>
 <li>Many chunking strategies exist, each with trade-offs. More <a href="https://masteringllm.medium.com/11-chunking-strategies-for-rag-simplified-visualized-df0dbec8e373">here</a></li>
 </ul>
@@ -818,7 +818,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </table>
 </div>
 <div style="margin-top: 10px; font-size: 16px;">
-<p><strong>Parameters</strong>: top-k (3–10), threshold (0.7–1.0)</p>
+<p><strong>Parameters</strong>: top-k (3–10), threshold (set per model)</p>
 </div>
 </div></div>
 </div>
@@ -964,15 +964,15 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <tbody>
 <tr class="odd">
 <td><a href="https://arxiv.org/abs/2005.11401">Lewis et al.&nbsp;(2020)</a></td>
-<td>Original RAG paper: outperformed fine-tuned models on knowledge-intensive tasks</td>
+<td>Original RAG paper: beat models without retrieval on knowledge-intensive tasks</td>
 </tr>
 <tr class="even">
 <td><a href="https://arxiv.org/abs/2104.07567">Shuster et al.&nbsp;(2021)</a></td>
-<td>RAG reduced hallucinations by <span class="alert">~30–50%</span> in dialogue systems</td>
+<td>Retrieval cut hallucinated replies by <span class="alert">over 60%</span> in dialogue systems</td>
 </tr>
 <tr class="odd">
 <td><a href="https://arxiv.org/abs/2312.10997">Gao et al.&nbsp;(2024)</a></td>
-<td>Comprehensive survey: RAG approach dominant in production systems</td>
+<td>Survey: RAG is a promising fix for hallucination and outdated knowledge</td>
 </tr>
 <tr class="even">
 <td><a href="https://arxiv.org/abs/2307.03172">Liu et al.&nbsp;(2023)</a></td>
@@ -1003,7 +1003,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </tr>
 </tbody>
 </table>
-<p><em>Rates vary by domain and implementation quality</em></p>
+<p><em>Illustrative ranges, not from one study: rates vary by domain and implementation</em></p>
 </div><div class="column" style="width:45%;">
 <div style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; font-size: 16px; margin-top: 40px;">
 <p><strong>The “Lost in the Middle” problem:</strong></p>
@@ -1048,7 +1048,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <tr class="header">
 <th>Failure Type</th>
 <th>What Happens</th>
-<th>Frequency</th>
+<th>Rough frequency</th>
 </tr>
 </thead>
 <tbody>
@@ -1089,8 +1089,8 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </div><div class="column" style="width:45%;">
 <div style="background: rgba(230, 57, 70, 0.1); padding: 15px; border-radius: 10px;">
 <p><strong>Example: Retrieval failure</strong></p>
-<p><strong>Your document says:</strong> &gt; “The quarterly earnings call is scheduled for March 15th”</p>
-<p><strong>You ask:</strong> &gt; “When is the investor meeting?”</p>
+<p><strong>Your document says:</strong> “The quarterly earnings call is scheduled for March 15th”</p>
+<p><strong>You ask:</strong> “When is the investor meeting?”</p>
 <p><strong>Problem:</strong> “investor meeting” ≠ “earnings call” in embedding space</p>
 <p><strong>Result:</strong> wrong chunks retrieved, wrong answer</p>
 </div>
@@ -1178,13 +1178,13 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </thead>
 <tbody>
 <tr class="odd">
-<td><a href="https://notebooklm.google.com/">NotebookLM</a></td>
+<td><a href="https://notebook.google/">Gemini Notebook</a> (ex-NotebookLM)</td>
 <td>✅ Yes</td>
 <td>Research, study notes</td>
 <td>Multi-source synthesis</td>
 </tr>
 <tr class="even">
-<td><a href="https://chat.openai.com/">ChatGPT + Files</a></td>
+<td><a href="https://chatgpt.com/">ChatGPT + Files</a></td>
 <td>✅ Free tier</td>
 <td>General documents</td>
 <td>Easy upload &amp; chat</td>
@@ -1205,24 +1205,24 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </table>
 </div>
 <div style="margin-top: 40px; font-size: 22px;">
-<p><strong>All of these implement RAG internally:</strong></p>
+<p><strong>All of these ground answers in your files:</strong></p>
 <ul>
-<li>You upload documents → (Retrieval source)</li>
-<li>System finds relevant parts → (Augmented)</li>
-<li>LLM generates answers → (Generation)</li>
+<li>You upload documents → the knowledge source</li>
+<li>Some tools <span class="alert">retrieve</span> the relevant parts (Gemini Notebook, ChatGPT); others read the whole file if it fits (Claude, AI Studio)</li>
+<li>The LLM generates answers from that text</li>
 </ul>
 <p><span class="alert">No coding required, just upload and ask</span></p>
 </div>
 </div>
 </section>
-<section id="notebooklm-your-ai-research-assistant" class="slide level2">
-<h2>NotebookLM: Your AI research assistant</h2>
+<section id="gemini-notebook-your-ai-research-assistant" class="slide level2">
+<h2>Gemini Notebook: Your AI research assistant</h2>
 <div style="margin-top: 30px; font-size: 20px;">
 <div class="columns">
 <div class="column" style="width:55%;">
-<p><strong>What is NotebookLM?</strong></p>
+<p><strong>What is Gemini Notebook?</strong></p>
 <ul>
-<li>Free tool from Google</li>
+<li>Free tool from Google, called NotebookLM until July 2026</li>
 <li>Upload up to <span class="alert">50 sources</span> (PDFs, docs, websites, YouTube) to build a personal knowledge base</li>
 <li>The AI answers from <span class="alert">YOUR sources only</span></li>
 </ul>
@@ -1262,26 +1262,26 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <div style="text-align: center; margin-top: 40px;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><a href="#/" data-modal-type="image" data-modal-url="figures/notebooklm-screenshot.png"><img data-src="figures/notebooklm-screenshot.png" style="width:100.0%"></a></p>
-<figcaption>NotebookLM interface</figcaption>
+<p><a href="#/" data-modal-type="image" data-modal-url="figures/gemini-notebook.png"><img data-src="figures/gemini-notebook.png" style="width:100.0%"></a></p>
+<figcaption>Gemini Notebook, September 2026</figcaption>
 </figure>
 </div>
 <div style="font-size: 18px; margin-top: 10px;">
-<p><a href="https://notebooklm.google.com/">notebooklm.google.com</a></p>
+<p><a href="https://notebook.google/">notebook.google</a></p>
 </div>
 </div>
 </div></div>
 </div>
 </section>
-<section id="activity-file-upload-rag" class="slide level2 scrollable">
-<h2>Activity: File upload RAG 📎</h2>
+<section id="activity-grounding-with-a-file-upload" class="slide level2 scrollable">
+<h2>Activity: Grounding with a file upload 📎</h2>
 <div style="margin-top: 30px; font-size: 20px;">
 <div class="columns">
 <div class="column" style="width:50%;">
 <p><strong>Compare: with vs.&nbsp;without your documents. Let’s do it together (or at home if Emory’s connection doesn’t allow us to! 😂)</strong></p>
 <p><strong>Step 1: Without documents</strong></p>
 <ol type="1">
-<li>Open <a href="https://aistudio.google.com/" class="uri">https://aistudio.google.com/</a> and start a <span class="alert">new chat</span></li>
+<li>Open <a href="https://aistudio.google.com/" class="uri">https://aistudio.google.com/</a> and start a <span class="alert">new chat</span> (Grounding with Google Search off)</li>
 <li>Ask: “What are the assignment deadlines for DATASCI 101 at Emory University?”</li>
 <li>Gemini doesn’t know: it’s not in the training data</li>
 </ol>
@@ -1317,9 +1317,9 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </tbody>
 </table>
 <div style="margin-top: 15px; background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px;">
-<p><strong>This is RAG in action!</strong></p>
-<p>The LLM <span class="alert">retrieves</span> relevant parts of your file and uses them to <span class="alert">generate</span> an accurate answer.</p>
-<p>You just built a RAG system! 🎉</p>
+<p><strong>This is grounding in action!</strong></p>
+<p>Gemini reads your whole file and <span class="alert">generates</span> its answer from it. With too many documents to fit, tools add a <span class="alert">retrieval</span> step: that is full RAG</p>
+<p>You just grounded an LLM in your own document! 🎉</p>
 </div>
 </div></div>
 </div>
@@ -1360,13 +1360,13 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <td>⚖️ <strong>Legal</strong></td>
 <td>Research assistants</td>
 <td>Search case law by meaning</td>
-<td>Harvey AI, Casetext</td>
+<td>Harvey AI, Thomson Reuters</td>
 </tr>
 <tr class="odd">
 <td>🏥 <strong>Healthcare</strong></td>
 <td>Clinical support</td>
 <td>Find relevant patient records, guidelines</td>
-<td>Epic, Nuance</td>
+<td>Epic, Microsoft</td>
 </tr>
 <tr class="even">
 <td>📚 <strong>Education</strong></td>
@@ -1416,9 +1416,9 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <li><p><span class="alert">The problem</span>: LLMs hallucinate and lack access to private or current information</p></li>
 <li><p><span class="alert">Semantic search</span>: find by meaning using embeddings and cosine similarity</p></li>
 <li><p><span class="alert">The RAG pipeline</span>: chunk → embed → store → retrieve → generate</p></li>
-<li><p><span class="alert">Research shows</span>: RAG reduces hallucinations by 30–50%</p></li>
+<li><p><span class="alert">Research shows</span>: retrieval cut hallucinations by over 60% in one study</p></li>
 <li><p><span class="alert">Watch out for</span>: retrieval failures, lost-in-the-middle, outdated docs</p></li>
-<li><p><span class="alert">No-code tools</span>: NotebookLM, ChatGPT with files, etc</p></li>
+<li><p><span class="alert">No-code tools</span>: Gemini Notebook, ChatGPT with files, etc</p></li>
 <li><p><span class="alert">Always verify</span>: RAG reduces errors but doesn’t eliminate them</p></li>
 </ul>
 </div><div class="column" style="width:45%;">
@@ -1433,7 +1433,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <tbody>
 <tr class="odd">
 <td>Cosine similarity</td>
-<td>0.9+ = very similar</td>
+<td>0.9+ = very similar (model-dependent)</td>
 </tr>
 <tr class="even">
 <td>Chunk size</td>
@@ -1449,7 +1449,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </tr>
 <tr class="odd">
 <td>Hallucination reduction</td>
-<td>30–50%</td>
+<td>60%+ (one study)</td>
 </tr>
 </tbody>
 </table>
