@@ -5,20 +5,21 @@ This lecture examines the threat that AI-generated synthetic media poses to info
 ## Topics Covered
 
 - **The Misinformation Landscape**: Definitions (misinformation, disinformation, malinformation), how AI changes scale and speed, attention economy dynamics
-- **Deepfake Technology**: Technical foundations (GANs, autoencoders, diffusion models), current capabilities in video, audio, and image synthesis
+- **Deepfake Technology**: Technical foundations (face-swapping, face synthesis, voice cloning), current capabilities in video, audio, and image synthesis
 - **Real-World Harms**: Political manipulation, non-consensual intimate imagery, financial fraud, the "liar's dividend" and trust erosion
+- **Why We Fall for It**: System 1 thinking, confirmation bias, the bandwagon effect and the "in the know" feeling
 - **Response Strategies**: Technical detection, content provenance (C2PA), platform policies, legal frameworks, media literacy education
 
 ## Key Readings
 
-- RAND Corporation. Deepfakes: A primer
+- Helmus, T. (2022). Artificial Intelligence, Deepfakes, and Disinformation: A Primer. RAND
 - Chesney, R. & Citron, D. (2019). Deepfakes and the new disinformation war. *Foreign Affairs*
 
 ## Supplementary Resources
 
 - Vosoughi et al. (2018). The spread of true and false news online. *Science*
 - Paris & Donovan (2019). Deepfakes and cheap fakes. Data & Society
-- C2PA Content Authenticity Initiative
+- C2PA (Coalition for Content Provenance and Authenticity)
 
 ## Learning Objectives
 
@@ -26,4 +27,4 @@ After this lecture, students should be able to:
 1. Distinguish between different types of information disorder
 2. Understand how deepfake technology works at a conceptual level
 3. Evaluate the relative effectiveness of different response strategies
-4. Apply media literacy principles to verify online content
+4. Explain why people fall for false content, and which defences (accuracy nudges, inoculation videos) help

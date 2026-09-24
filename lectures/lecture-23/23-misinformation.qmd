@@ -51,12 +51,12 @@ if (!require("fontawesome", character.only = TRUE)) {
 
 ## Recap of last class
 
-:::{style="margin-top: 20px; font-size: 24px;"}
+:::{style="margin-top: 50px; font-size: 24px;"}
 :::{.columns}
 :::{.column width=50%}
 - [AI and wellbeing]{.alert}: attention, mental health, environment
 - Algorithms optimise [engagement, not wellbeing]{.alert}
-- Filter bubbles look overstated, anxiety and sleep effects don't
+- Filter bubbles look overstated; mental health effects are debated
 - AI mental-health tools: [short-term promise]{.alert}, thin long-term evidence
 - Training is a one-off cost; [inference at scale]{.alert} keeps growing
 - [Incentive structures beat intentions]{.alert}
@@ -206,14 +206,14 @@ The "Protocols of the Elders of Zion" (1903) was fabricated and fuelled hatred f
 **[Vosoughi et al. (2018)](https://www.science.org/doi/10.1126/science.aap9559):**
 
 - Analysed 126,000 stories on Twitter
-- False stories were [6x more likely]{.alert} to be retweeted, reached more people and spread faster
+- False stories were [70% more likely]{.alert} to be retweeted and reached 1,500 people 6x faster
 :::
 
 :::{.column width=45%}
 :::{style="text-align: center;"}
 [![](figures/misinfo-spread.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/misinfo-spread.png"}
 
-Source: [NYU School of Engineering](https://engineering.nyu.edu/news/fake-news-gets-more-engagement-facebook-only-if-its-right-wing)
+Source: [NYU School of Engineering](https://engineering.nyu.edu/news/fake-news-gets-more-engagement-facebook-only-if-its-right-wing) (a Facebook study)
 
 :::{style="background: rgba(230, 57, 70, 0.1); padding: 15px; border-radius: 10px; font-size: 18px; margin-top: 15px;"}
 Platform incentives [work against truth]{.alert}. Not a bug, a feature of ad-supported media
@@ -233,8 +233,8 @@ Platform incentives [work against truth]{.alert}. Not a bug, a feature of ad-sup
 **Technical definition:**
 
 - Synthetic media made with [deep learning](https://en.wikipedia.org/wiki/Deep_learning)
-- Usually [face-swapping]{.alert} or [face synthesis]{.alert}. [DeepFaceLab](https://github.com/iperov/DeepFaceLab) is the most used open-source tool
-- Also [voice cloning](https://www.technologyreview.com/2024/05/16/1092596/how-fake-voices-are-stealing-millions/)
+- Usually [face-swapping]{.alert} or [face synthesis]{.alert}. [DeepFaceLab](https://github.com/iperov/DeepFaceLab) was long the most used open-source tool
+- Also [voice cloning](https://www.nbcnews.com/tech/security/ai-voice-cloning-software-flimsy-guardrails-report-finds-rcna195131)
 - [Named after a Reddit user, "deepfakes" (2017)](https://mitsloan.mit.edu/ideas-made-to-matter/deepfakes-explained)
 
 **How they work:**
@@ -255,7 +255,7 @@ Platform incentives [work against truth]{.alert}. Not a bug, a feature of ad-sup
 [![](figures/encoder-decoder.webp){width="100%"}](#){data-modal-type="image" data-modal-url="figures/encoder-decoder.webp"}
 
 :::{style="font-size: 18px; margin-top: 15px;"}
-Technical detail: [Tolosana et al. (2020)](https://arxiv.org/abs/2004.11138)
+Technical detail: [Tolosana et al. (2020)](https://arxiv.org/abs/2001.00179)
 :::
 :::
 :::
@@ -282,16 +282,16 @@ Technical detail: [Tolosana et al. (2020)](https://arxiv.org/abs/2004.11138)
 
 **Non-consensual intimate imagery:**
 
-- 96% of deepfakes online ([Sensity/Deeptrace, 2019](https://sensity.ai/reports/)); [Home Security Heroes](https://www.securityhero.io/state-of-deepfakes/) put it at 98% in 2024
+- 96% of deepfakes online ([Sensity/Deeptrace, 2019](https://sensity.ai/reports/)); [Home Security Heroes](https://www.securityhero.io/state-of-deepfakes/) put it at 98% in 2023
 - [Women overwhelmingly targeted]{.alert}: a tool for harassment and extortion
-- Legal response is lagging
+- Laws are catching up: since May 2026 US platforms must remove them [within 48 hours](https://www.ftc.gov/news-events/news/press-releases/2026/05/ftc-begins-enforcing-take-it-down-act)
 :::
 
 :::{.column width=45%}
 :::{style="text-align: center;"}
 [![](figures/deepfake-examples.png){width="80%"}](#){data-modal-type="image" data-modal-url="figures/deepfake-examples.png"}
 
-Source: [NPR](https://www.npr.org/2022/03/16/1087062648/deepfake-video-zelenskyy-experts-war-manipulation-ukraine-russia)
+Source: Mikael Thalen on X; story: [NPR](https://www.npr.org/2022/03/16/1087062648/deepfake-video-zelenskyy-experts-war-manipulation-ukraine-russia)
 
 :::{style="font-size: 18px; margin-top: 15px;"}
 The first big audit ([Sensity, 2019](https://sensity.ai/reports/)) found almost all deepfakes were pornographic, and almost all targeted women
@@ -317,11 +317,11 @@ The first big audit ([Sensity, 2019](https://sensity.ai/reports/)) found almost 
 - "That video of me is a deepfake!"
 - [Truth becomes contested terrain]{.alert}
 
-**RAND's threat assessment:**
+**RAND's four risks:**
 
-- Near-term: targeted harassment, fraud
-- Medium-term: election manipulation
-- Long-term: erosion of shared reality
+- Manipulated elections and deeper social divisions
+- Lower trust in institutions
+- Undermined journalism (the liar's dividend)
 :::
 
 :::{.column width=45%}
@@ -352,7 +352,7 @@ Label every deepfake tomorrow and the damage stands: people now [doubt real vide
 
 **What the empirical work has found since:**
 
-- [Vaccari & Chadwick (2020)](https://journals.sagepub.com/doi/10.1177/2056305120903408): UK survey (N=2,005). Deepfakes leave people [uncertain]{.alert} rather than deceived, and lower trust in news
+- [Vaccari & Chadwick (2020)](https://journals.sagepub.com/doi/10.1177/2056305120903408): UK survey (N=2,005): deepfakes leave people [uncertain]{.alert}, not deceived, and trust news less
 - [Schiff, Schiff & Bueno (2024)](https://www.cambridge.org/core/journals/american-political-science-review/article/liars-dividend-can-politicians-claim-misinformation-to-evade-accountability/687FEE54DBD7ED0C96D72B26606AA073): five experiments, 15,000 Americans
 - False "deepfake!" claims help politicians dodge scandals, but mostly over [text, not video]{.alert}
 :::
@@ -456,12 +456,12 @@ Source: [Soroka et al. (2019)](https://www.pnas.org/doi/abs/10.1073/pnas.1908369
 
 - We seek evidence that [confirms what we already believe]{.alert} and dismiss what contradicts it
 - This isn't laziness; it's how brains manage information overload
-- [Nickerson (1998)](https://doi.org/10.1037/1089-2680.2.2.175) called it the most pervasive bias in human reasoning
+- [Nickerson (1998)](https://doi.org/10.1037/1089-2680.2.2.175) called it "ubiquitous", a top candidate for reasoning's worst flaw
 
 **How it works with deepfakes:**
 
 - [Who said it?]{.alert} We believe a trusted source even when fake, and doubt a distrusted one even when real
-- [Taber & Lodge (2006)](https://doi.org/10.1111/j.1540-5907.2006.00214.x): people argue back when corrected, sometimes [hardening]{.alert} their position
+- [Taber & Lodge (2006)](https://doi.org/10.1111/j.1540-5907.2006.00214.x): people argue against opposing evidence, and strong partisans [polarise]{.alert}
 - Corrections feel like an attack on identity, even when they aren't
 :::
 
@@ -486,7 +486,7 @@ Confirmation bias is not about intelligence. Educated people are sometimes [bett
 
 - People will deny [what their own eyes tell them]{.alert} if enough others disagree
 - About 75% of participants conformed at least once on an obvious task
-- [Bond & Smith (1996)](https://psycnet.apa.org/record/1996-01401-006) replicated Asch across 17 countries, weaker in individualistic cultures
+- [Bond & Smith (1996)](https://psycnet.apa.org/record/1996-01401-006) pooled 133 Asch studies in 17 countries: weaker in individualistic cultures
 
 **On social media, numbers are social proof:**
 
@@ -571,7 +571,7 @@ We share what confirms our views and makes us look informed. The truth can wait,
 - Detectors can be fooled, and [adversarial training]{.alert} improves generators
 - Real-time detection is difficult
 - Scale: millions of images, few moderators
-- [Groh et al. (2022)](https://www.pnas.org/doi/10.1073/pnas.2110013119): on 5,000 deepfakes, people and detectors made [different mistakes]{.alert}. Combining them beat either alone
+- [Groh et al. (2022)](https://www.pnas.org/doi/10.1073/pnas.2110013119): 15,016 people and a detector made [different mistakes]{.alert}; together they did best
 :::
 
 :::{.column width=45%}
@@ -593,7 +593,7 @@ Source: [Kumar et al. (2025)](https://www.sciencedirect.com/science/article/abs/
 
 - Instead of catching fakes afterwards, [verify the real thing at the source]{.alert}
 - The [C2PA standard](https://c2pa.org/) signs a photo at capture, then logs every edit
-- Backed by Adobe, Microsoft, the BBC and the New York Times
+- Backed by Adobe, Microsoft, Google, OpenAI, Meta, Amazon and the BBC
 - Viewers check the chain back to source, and unsigned content looks suspect
 :::
 
@@ -604,7 +604,7 @@ Source: [Kumar et al. (2025)](https://www.sciencedirect.com/science/article/abs/
 - Legacy content has no provenance to attach
 - Signatures can be stripped, and screenshots wash them out
 - Tracks creation, but [doesn't prevent it]{.alert}
-- Ties every image to a device and identity, raising privacy concerns
+- Can tie images to a device or identity, raising privacy concerns
 :::
 :::
 :::
@@ -619,12 +619,13 @@ Source: [Kumar et al. (2025)](https://www.sciencedirect.com/science/article/abs/
 - [YouTube](https://support.google.com/youtube/answer/14328491) requires creators to label realistic AI-generated content
 - [Meta](https://about.fb.com/news/2024/04/metas-approach-to-labeling-ai-generated-content-and-manipulated-media/) tags AI-generated images and video using C2PA
 - [TikTok](https://newsroom.tiktok.com/en-us/partnering-with-our-industry-to-advance-ai-transparency-and-literacy) requires disclosure
-- X has [rolled back](https://www.theguardian.com/technology/2023/sep/26/x-twitter-disinformation-rate-rises-elon-musk) most of its 2020 synthetic-media rules
+- X relies on Community Notes and added ["manipulated media" labels](https://petapixel.com/2026/01/29/elon-musk-announces-mainipulated-media-label-on-x-images/) in 2026
+- Meta [ended US fact-checking](https://about.fb.com/news/2025/01/meta-more-speech-fewer-mistakes/) in 2025 and moved to Community Notes
 
 **What happens when platforms remove content:**
 
 - Content moves to less moderated platforms, and removal can deepen distrust
-- [Bak-Coleman et al. (2021)](https://www.pnas.org/doi/10.1073/pnas.2025764118): platforms are a [planetary-scale behavioural system]{.alert} needing climate-science discipline
+- [Bak-Coleman et al. (2021)](https://www.pnas.org/doi/10.1073/pnas.2025764118): platforms are a [planetary-scale system]{.alert}, to study like the climate
 - Piecewise content rules cannot fix system-level effects
 :::
 
@@ -645,9 +646,9 @@ Source: [Vice - YouTube](https://youtu.be/cHGbWn6iwHw)
 :::{.column width=55%}
 **Emerging legislation:**
 
-- **US**: [Texas SB 751](https://capitol.texas.gov/tlodocs/86R/billtext/html/SB00751F.htm) and similar [state laws](https://natlawreview.com/article/texas-did-it-first-texas-was-first-enact-state-legislation-use-deep-fakes-elections) target election deepfakes
-- **EU**: [AI Act Article 50](https://artificialintelligenceact.eu/article/50/) requires deepfake disclosure
-- **UK**: [Online Safety Act](https://www.gov.uk/government/news/government-crackdown-on-explicit-deepfakes), with a 2025 amendment criminalising non-consensual sexual deepfakes
+- **US**: [TAKE IT DOWN Act](https://www.ftc.gov/news-events/news/press-releases/2026/05/ftc-begins-enforcing-take-it-down-act) (2025) for sexual deepfakes; [Texas](https://capitol.texas.gov/tlodocs/86R/billtext/html/SB00751F.htm) and [other states](https://natlawreview.com/article/texas-did-it-first-texas-was-first-enact-state-legislation-use-deep-fakes-elections) for election ones
+- **EU**: [AI Act Article 50](https://artificialintelligenceact.eu/article/50/) requires deepfake disclosure (since August 2026)
+- **UK**: the [Online Safety Act](https://www.gov.uk/government/news/government-crackdown-on-explicit-deepfakes) (2023) made sharing sexual deepfakes a crime; [a 2025 Act](https://www.legislation.gov.uk/ukpga/2025/18/section/138) added creating them
 - **China**: [Deep Synthesis Provisions (2023)](https://www.loc.gov/item/global-legal-monitor/2023-04-25/china-provisions-on-deep-synthesis-technology-enter-into-effect/) require disclosure of AI-generated content
 
 **Challenges:**
@@ -667,7 +668,7 @@ Source: [Columbia Journal of Law and Arts](https://journals.library.columbia.edu
 **Where the legal scholarship lands:**
 
 - [Chesney & Citron (2019)](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3213954): [no single legal tool fits]{.alert}
-- Defamation is too slow, criminal law too narrow, and [Section 230](https://www.eff.org/issues/cda230) shields platforms too broadly
+- Defamation is slow, criminal law narrow, and [Section 230](https://www.eff.org/issues/cda230) shields platforms
 :::
 :::
 :::
@@ -678,9 +679,9 @@ Source: [Columbia Journal of Law and Arts](https://journals.library.columbia.edu
 :::{style="margin-top: 30px; font-size: 28px;"}
 **What the evidence says works:**
 
-- [Pennycook & Rand (2021)](https://www.nature.com/articles/s41586-021-03344-2): a small [accuracy nudge]{.alert} before sharing improves the quality of news people pass along
+- [Pennycook et al. (2021)](https://www.nature.com/articles/s41586-021-03344-2): a small [accuracy nudge]{.alert} before sharing improves the quality of news people pass along
 - [Roozenbeek et al. (2022)](https://www.science.org/doi/10.1126/sciadv.abo6254): [inoculation]{.alert} videos teaching manipulation tactics, with measurable effects across 22,632 YouTube users
-- [Guess et al. (2020)](https://www.pnas.org/doi/10.1073/pnas.1920498117): media literacy tips improved discernment of false news by [26.5% in the US]{.alert} and 17.5% in India
+- [Guess et al. (2020)](https://www.pnas.org/doi/10.1073/pnas.1920498117): media literacy tips improved discernment of false news by [26.5% in the US]{.alert} and 17.5% in an online Indian sample
 - Effects are real but often [short-lived](https://onlinelibrary.wiley.com/doi/10.1111/jasp.13049) (Capewell et al., 2024). None scales to billions alone
 :::
 
