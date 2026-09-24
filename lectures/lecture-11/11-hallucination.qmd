@@ -148,7 +148,7 @@ There's often [no signal]{.alert}: the AI sounds as confident as when it's corre
 [![Hallucination example](figures/europe.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/europe.png"}
 
 :::{style="font-size: 18px; margin-top: 15px;"}
-The AI sounds confident, but is completely wrong
+Right at first, then confidently wrong once the user pushes back
 :::
 :::
 :::
@@ -173,8 +173,8 @@ The AI sounds confident, but is completely wrong
 
 - Plausibility ≠ truth
 - No fact-checking mechanism
-- No internet access during generation (unless designed to)
-- No way to say "I genuinely don't know"
+- No internet access unless the tool adds it
+- Training rewards guessing over "I don't know" ([Kalai et al., 2025](https://arxiv.org/abs/2509.04664))
 - LLMs are optimised [to sound right, not to *be* right]{.alert}
 :::
 
@@ -204,7 +204,7 @@ Source: [Medium](https://guyernest.medium.com/learn-the-intuition-behind-llm-hal
 - Model doesn't know → "I don't know" feels unhelpful → [it makes something up]{.alert}
 - User pushes back → model drops its correct answer to agree
 - Leading question → model confirms the false premise
-- [Geng et al (2025)](https://arxiv.org/abs/2511.01805): GPT-5 changed its answers [up to 55% of the time]{.alert} after 10 rounds of discussion
+- [Geng et al. (2025)](https://arxiv.org/abs/2511.01805): GPT-5's stated beliefs on moral and safety topics shifted [55%]{.alert} after 10 rounds of debate
 :::
 
 :::{.column width=45%}
@@ -212,7 +212,7 @@ Source: [Medium](https://guyernest.medium.com/learn-the-intuition-behind-llm-hal
 [![Sycophancy in LLMs](figures/sycophancy2.webp){width="70%"}](#){data-modal-type="image" data-modal-url="figures/sycophancy2.webp"}
 [![Sycophancy in LLMs](figures/sycophancy.jpg){width="70%"}](#){data-modal-type="image" data-modal-url="figures/sycophancy.jpg"}
 
-Source: [Zvi Mowshovitz (2025)](https://thezvi.substack.com/p/gpt-4o-is-an-absurd-sycophant)
+Source: [Zvi Mowshowitz (2025)](https://thezvi.substack.com/p/gpt-4o-is-an-absurd-sycophant)
 :::
 :::
 :::
@@ -252,13 +252,15 @@ The model might:
 2. Know 1987 election patterns in Europe ✓
 3. [Invent specific parties, candidates, results]{.alert} ✗
 
-It sounds plausible because it is *statistically consistent* with European elections, but it is all fabricated
+Plausible, because it is *statistically consistent* with European elections, but fabricated
+
+:::{.fragment}
+**Twist**: [there was no 1987 election]{.alert} (Liechtenstein voted in 1986 and 1989). Newer models often say so. But insist ("I'm 100% sure") and Qwen replies: ["the Progressive Citizens' Party (FBP) won in 1987"]{.alert}
+:::
 :::
 
 :::{style="margin-top: 15px; font-size: 18px;"}
-**Rule of thumb:**
-
-The more [obscure or specific]{.alert} your question, the higher the hallucination risk. Models are most reliable on topics with abundant, consistent training data
+**Rule of thumb**: the more [obscure or specific]{.alert} the question, the higher the hallucination risk. Models do best on topics with abundant, consistent training data
 :::
 :::
 :::
@@ -280,15 +282,15 @@ The more [obscure or specific]{.alert} your question, the higher the hallucinati
 | **Obscure history** | Very High | Sparse data → interpolation |
 | **Citations** | Very High | Specific strings rarely memorised |
 
-- GPT-4: [~29% of common references]{.alert} ([Chelli et al. (2024)](https://www.jmir.org/2024/1/e53164))
-- But [~58% on legal questions]{.alert} ([Dahl et al. (2024)](https://dho.stanford.edu/wp-content/uploads/Hallucinations_JLA.pdf))
+- GPT-4 made up [~29% of references]{.alert} for medical reviews ([Chelli et al. (2024)](https://www.jmir.org/2024/1/e53164))
+- It hallucinated on [~58% of legal questions]{.alert} ([Dahl et al. (2024)](https://dho.stanford.edu/wp-content/uploads/Hallucinations_JLA.pdf))
 :::
 
 :::{.column width=45%}
 :::{style="text-align: center;"}
-[![Hallucination rates vary by domain. Higher is better](figures/hallucination-rates.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/hallucination-rates.png"}
+[![Answer quality by domain and model: similarity to the correct answer. Higher is better](figures/hallucination-rates.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/hallucination-rates.png"}
 
-Source: [Chakraborty et al (2025)](https://www.nature.com/articles/s41598-025-15203-5#Tab3)
+Source: [Chakraborty et al (2025)](https://www.nature.com/articles/s41598-025-15203-5)
 :::
 :::
 :::
@@ -358,7 +360,7 @@ Source: [CNN](https://www.cnn.com/2023/05/27/business/chat-gpt-avianca-mata-lawy
 :::
 
 :::{style="margin-top: 15px; background: rgba(230, 57, 70, 0.1); padding: 15px; border-radius: 10px;"}
-[Warning]{.alert}: asking AI "Is this true?" usually just confirms its own hallucinations
+[Warning]{.alert}: asking AI "Is this true?" often just confirms its own hallucinations
 :::
 :::
 :::
@@ -380,9 +382,8 @@ Source: [CNN](https://www.cnn.com/2023/05/27/business/chat-gpt-avianca-mata-lawy
 
 **A 2024 study found:**
 
-- ChatGPT gave incorrect medical advice 51% of the time
-- Many errors could cause [serious patient harm]{.alert}
-- The model couldn't identify its own errors
+- ChatGPT-3.5 got the diagnosis wrong in [51% of 150 case challenges]{.alert}
+- Weak spots: [misread lab values]{.alert}, unreadable images, nuanced cases, hallucinations
 - Source: [Hadi et al. (2024)](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0307383)
 :::
 
@@ -565,22 +566,13 @@ Before worrying about hallucinations, ask whether you need the AI to be factual
 :::{.column width=50%}
 **Does AI know when it's wrong?**
 
-Ask <https://chat.qwen.ai/c/guest> (fast model) these questions and request a [confidence rating (1-10)]{.alert} for each answer. [Qwen](https://chat.qwen.ai/) lets you turn off web access
+Ask <https://chat.qwen.ai/c/guest> (fast model; close the sign-in window to chat as a guest) each question and request a [confidence rating (1-10)]{.alert}. [Qwen](https://chat.qwen.ai/) lets you turn off web access
 
-1. "What day of the week was January 14, 1642?" Confidence?"
-  - Tuesday (I checked on Google Calendar!)
-
-2. "Spell Inconstitucionalissimamente backwards. Confidence?"
-  - etnemamissilanoicutitsnocnI (well, me!)
-
-3. "Name the third person to walk on the Moon. Confidence?"
-  - Charles "Pete" Conrad Jr (Wikipedia)
-
-4. "What is the exact population of Tuvalu as of 2024? Confidence?"
-  - 9,646 (World Bank estimate)
-
-5. "Who is the current mayor of Reykjavik, Iceland? Confidence?"
-  - Heiða Björg Hilmisdóttir
+1. "What day of the week was January 14, 1642?" → Tuesday (Google Calendar)
+2. "Spell Inconstitucionalissimamente backwards" → etnemamissilanoicutitsnocnI (checked by hand)
+3. "Name the third person to walk on the Moon" → Charles "Pete" Conrad Jr (Wikipedia)
+4. "What is the exact population of Tuvalu as of 2024?" → 9,646 (World Bank)
+5. "Who is the current mayor of Reykjavik, Iceland?" → Hildur Björnsdóttir (since June 2026)
 
 **Then verify each answer**
 :::
@@ -637,7 +629,7 @@ Ask <https://chat.qwen.ai/c/guest> (fast model) these questions and request a [c
 
 :::{.column width=45%}
 :::{style="text-align: center;"}
-[![Specific claim, impressive detail, completely wrong! The answer is the Hubble telescope](figures/spotting-hallucinations.avif){width="100%"}](#){data-modal-type="image" data-modal-url="figures/spotting-hallucinations.avif"}
+[![Specific claim, impressive detail, completely wrong! The first exoplanet photo came from ESO's Very Large Telescope (2004)](figures/spotting-hallucinations.avif){width="100%"}](#){data-modal-type="image" data-modal-url="figures/spotting-hallucinations.avif"}
 
 :::{style="font-size: 18px; margin-top: 15px;"}
 Impressive-sounding detail is often the first sign something is made up

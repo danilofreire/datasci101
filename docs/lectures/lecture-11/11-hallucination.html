@@ -321,7 +321,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </figure>
 </div>
 <div style="font-size: 18px; margin-top: 15px;">
-<p>The AI sounds confident, but is completely wrong</p>
+<p>Right at first, then confidently wrong once the user pushes back</p>
 </div>
 </div>
 </div></div>
@@ -344,8 +344,8 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <ul>
 <li>Plausibility ≠ truth</li>
 <li>No fact-checking mechanism</li>
-<li>No internet access during generation (unless designed to)</li>
-<li>No way to say “I genuinely don’t know”</li>
+<li>No internet access unless the tool adds it</li>
+<li>Training rewards guessing over “I don’t know” (<a href="https://arxiv.org/abs/2509.04664">Kalai et al., 2025</a>)</li>
 <li>LLMs are optimised <span class="alert">to sound right, not to <em>be</em> right</span></li>
 </ul>
 </div><div class="column" style="width:45%;">
@@ -376,12 +376,12 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <li>Model doesn’t know → “I don’t know” feels unhelpful → <span class="alert">it makes something up</span></li>
 <li>User pushes back → model drops its correct answer to agree</li>
 <li>Leading question → model confirms the false premise</li>
-<li><a href="https://arxiv.org/abs/2511.01805">Geng et al (2025)</a>: GPT-5 changed its answers <span class="alert">up to 55% of the time</span> after 10 rounds of discussion</li>
+<li><a href="https://arxiv.org/abs/2511.01805">Geng et al.&nbsp;(2025)</a>: GPT-5’s stated beliefs on moral and safety topics shifted <span class="alert">55%</span> after 10 rounds of debate</li>
 </ul>
 </div><div class="column" style="width:45%;">
 <div style="text-align: center;">
 <p><a href="#/" data-modal-type="image" data-modal-url="figures/sycophancy2.webp"><img data-src="figures/sycophancy2.webp" style="width:70.0%" alt="Sycophancy in LLMs"></a> <a href="#/" data-modal-type="image" data-modal-url="figures/sycophancy.jpg"><img data-src="figures/sycophancy.jpg" style="width:70.0%" alt="Sycophancy in LLMs"></a></p>
-<p>Source: <a href="https://thezvi.substack.com/p/gpt-4o-is-an-absurd-sycophant">Zvi Mowshovitz (2025)</a></p>
+<p>Source: <a href="https://thezvi.substack.com/p/gpt-4o-is-an-absurd-sycophant">Zvi Mowshowitz (2025)</a></p>
 </div>
 </div></div>
 </div>
@@ -439,11 +439,13 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <li>Know 1987 election patterns in Europe ✓</li>
 <li><span class="alert">Invent specific parties, candidates, results</span> ✗</li>
 </ol>
-<p>It sounds plausible because it is <em>statistically consistent</em> with European elections, but it is all fabricated</p>
+<p>Plausible, because it is <em>statistically consistent</em> with European elections, but fabricated</p>
+<div class="fragment">
+<p><strong>Twist</strong>: <span class="alert">there was no 1987 election</span> (Liechtenstein voted in 1986 and 1989). Newer models often say so. But insist (“I’m 100% sure”) and Qwen replies: <span class="alert">“the Progressive Citizens’ Party (FBP) won in 1987”</span></p>
+</div>
 </div>
 <div style="margin-top: 15px; font-size: 18px;">
-<p><strong>Rule of thumb:</strong></p>
-<p>The more <span class="alert">obscure or specific</span> your question, the higher the hallucination risk. Models are most reliable on topics with abundant, consistent training data</p>
+<p><strong>Rule of thumb</strong>: the more <span class="alert">obscure or specific</span> the question, the higher the hallucination risk. Models do best on topics with abundant, consistent training data</p>
 </div>
 </div></div>
 </div>
@@ -496,18 +498,18 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </tbody>
 </table>
 <ul>
-<li>GPT-4: <span class="alert">~29% of common references</span> (<a href="https://www.jmir.org/2024/1/e53164">Chelli et al.&nbsp;(2024)</a>)</li>
-<li>But <span class="alert">~58% on legal questions</span> (<a href="https://dho.stanford.edu/wp-content/uploads/Hallucinations_JLA.pdf">Dahl et al.&nbsp;(2024)</a>)</li>
+<li>GPT-4 made up <span class="alert">~29% of references</span> for medical reviews (<a href="https://www.jmir.org/2024/1/e53164">Chelli et al.&nbsp;(2024)</a>)</li>
+<li>It hallucinated on <span class="alert">~58% of legal questions</span> (<a href="https://dho.stanford.edu/wp-content/uploads/Hallucinations_JLA.pdf">Dahl et al.&nbsp;(2024)</a>)</li>
 </ul>
 </div><div class="column" style="width:45%;">
 <div style="text-align: center;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <p><a href="#/" data-modal-type="image" data-modal-url="figures/hallucination-rates.png"><img data-src="figures/hallucination-rates.png" style="width:100.0%"></a></p>
-<figcaption>Hallucination rates vary by domain. Higher is better</figcaption>
+<figcaption>Answer quality by domain and model: similarity to the correct answer. Higher is better</figcaption>
 </figure>
 </div>
-<p>Source: <a href="https://www.nature.com/articles/s41598-025-15203-5#Tab3">Chakraborty et al (2025)</a></p>
+<p>Source: <a href="https://www.nature.com/articles/s41598-025-15203-5">Chakraborty et al (2025)</a></p>
 </div>
 </div></div>
 </div>
@@ -617,7 +619,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </div>
 </div>
 <div style="margin-top: 15px; background: rgba(230, 57, 70, 0.1); padding: 15px; border-radius: 10px;">
-<p><span class="alert">Warning</span>: asking AI “Is this true?” usually just confirms its own hallucinations</p>
+<p><span class="alert">Warning</span>: asking AI “Is this true?” often just confirms its own hallucinations</p>
 </div>
 </div></div>
 </div>
@@ -637,9 +639,8 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </ul>
 <p><strong>A 2024 study found:</strong></p>
 <ul>
-<li>ChatGPT gave incorrect medical advice 51% of the time</li>
-<li>Many errors could cause <span class="alert">serious patient harm</span></li>
-<li>The model couldn’t identify its own errors</li>
+<li>ChatGPT-3.5 got the diagnosis wrong in <span class="alert">51% of 150 case challenges</span></li>
+<li>Weak spots: <span class="alert">misread lab values</span>, unreadable images, nuanced cases, hallucinations</li>
 <li>Source: <a href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0307383">Hadi et al.&nbsp;(2024)</a></li>
 </ul>
 </div><div class="column" style="width:45%;">
@@ -815,37 +816,14 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <div class="columns">
 <div class="column" style="width:50%;">
 <p><strong>Does AI know when it’s wrong?</strong></p>
-<p>Ask <a href="https://chat.qwen.ai/c/guest" class="uri">https://chat.qwen.ai/c/guest</a> (fast model) these questions and request a <span class="alert">confidence rating (1-10)</span> for each answer. <a href="https://chat.qwen.ai/">Qwen</a> lets you turn off web access</p>
+<p>Ask <a href="https://chat.qwen.ai/c/guest" class="uri">https://chat.qwen.ai/c/guest</a> (fast model; close the sign-in window to chat as a guest) each question and request a <span class="alert">confidence rating (1-10)</span>. <a href="https://chat.qwen.ai/">Qwen</a> lets you turn off web access</p>
 <ol type="1">
-<li>“What day of the week was January 14, 1642?” Confidence?”</li>
+<li>“What day of the week was January 14, 1642?” → Tuesday (Google Calendar)</li>
+<li>“Spell Inconstitucionalissimamente backwards” → etnemamissilanoicutitsnocnI (checked by hand)</li>
+<li>“Name the third person to walk on the Moon” → Charles “Pete” Conrad Jr (Wikipedia)</li>
+<li>“What is the exact population of Tuvalu as of 2024?” → 9,646 (World Bank)</li>
+<li>“Who is the current mayor of Reykjavik, Iceland?” → Hildur Björnsdóttir (since June 2026)</li>
 </ol>
-<ul>
-<li>Tuesday (I checked on Google Calendar!)</li>
-</ul>
-<ol start="2" type="1">
-<li>“Spell Inconstitucionalissimamente backwards. Confidence?”</li>
-</ol>
-<ul>
-<li>etnemamissilanoicutitsnocnI (well, me!)</li>
-</ul>
-<ol start="3" type="1">
-<li>“Name the third person to walk on the Moon. Confidence?”</li>
-</ol>
-<ul>
-<li>Charles “Pete” Conrad Jr (Wikipedia)</li>
-</ul>
-<ol start="4" type="1">
-<li>“What is the exact population of Tuvalu as of 2024? Confidence?”</li>
-</ol>
-<ul>
-<li>9,646 (World Bank estimate)</li>
-</ul>
-<ol start="5" type="1">
-<li>“Who is the current mayor of Reykjavik, Iceland? Confidence?”</li>
-</ol>
-<ul>
-<li>Heiða Björg Hilmisdóttir</li>
-</ul>
 <p><strong>Then verify each answer</strong></p>
 </div><div class="column" style="width:50%;">
 <p><strong>What to observe:</strong></p>
@@ -952,7 +930,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <p><a href="#/" data-modal-type="image" data-modal-url="figures/spotting-hallucinations.avif"><img data-src="figures/spotting-hallucinations.avif" style="width:100.0%"></a></p>
-<figcaption>Specific claim, impressive detail, completely wrong! The answer is the Hubble telescope</figcaption>
+<figcaption>Specific claim, impressive detail, completely wrong! The first exoplanet photo came from ESO’s Very Large Telescope (2004)</figcaption>
 </figure>
 </div>
 <div style="font-size: 18px; margin-top: 15px;">
