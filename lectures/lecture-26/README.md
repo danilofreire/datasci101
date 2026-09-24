@@ -1,13 +1,13 @@
 # Lecture 26: Course Revision
 
-This lecture walks through the entire course in 50 minutes, covering one slide per lecture. The goal is to help students see how the ideas connect across modules and to consolidate the material before the final quiz.
+This lecture walks through the entire course in 50 minutes, one short slide per lecture. The goal is to help students see how the ideas connect across modules before Quiz 05 (Lectures 23 and 25) and the final project.
 
 ## Main ideas
 
 ### 1. Module 0: Orientation (Lectures 1-2)
 
-* LLMs predict the next token, not the truth. Current AI is narrow, not general.
-* The history from symbolic AI through transformers to ChatGPT.
+* LLMs predict the next token, not the truth. Today's AI is strong on some tasks and brittle on others.
+* The history from rule-based AI through transformers to ChatGPT.
 
 ### 2. Module 1: How AI systems are designed (Lectures 3-5)
 
@@ -17,31 +17,32 @@ This lecture walks through the entire course in 50 minutes, covering one slide p
 
 ### 3. Module 2: Language and perception (Lectures 6-7, 10)
 
-* Tokens, embeddings (the universal language of AI), and context windows.
-* Images, audio, and text all become vectors. CLIP unifies modalities.
-* Prompting techniques (PTCF, few-shot, chain-of-thought), agents, and prompt injection.
+* Tokens, embeddings and context windows.
+* Images, audio and text all become vectors. CLIP puts images and text in one space.
+* Prompting techniques (PTCF, few-shot, chain-of-thought), ReAct agents and prompt injection.
 
-### 4. Module 3: Retrieval, generation, and pipelines (Lectures 11-12, 14)
+### 4. Module 3: Retrieval, generation, pipelines and agents (Lectures 11-12, 14-16)
 
-* Hallucinations and the creativity-accuracy trade-off. RAG as the structural fix.
-* The AI pipeline, three kinds of drift, and real-world chatbot failures.
+* Hallucinations and sycophancy. RAG as a fix.
+* The AI pipeline, three kinds of drift, and documentation as accountability.
+* AI agents, and setting up AI: four layers of context, memory and connectors.
 
-### 5. Module 4: Data ethics and bias (Lectures 15-17)
+### 5. Module 4: Data ethics and bias (Lecture 17)
 
-* Documentation as accountability: datasheets, model cards, disaggregated evaluation.
 * Six types of bias, feedback loops, and the impossibility theorem.
-* The Optum case as the course's central example of the proxy problem.
+* A US health algorithm that used costs as a proxy for need.
 
-### 6. Module 5: Policy, governance, and social impact (Lectures 18-19, 21-22)
+### 6. Module 5: Policy, governance and social impact (Lectures 18-19, 21)
 
-* The EU AI Act, GDPR, the Brussels Effect.
-* Privacy, inference, and the privacy paradox.
-* AI and labour markets, the attention economy, Jevons Paradox.
+* The EU AI Act, GDPR and the Brussels Effect.
+* Privacy, inference and the privacy paradox.
+* AI and labour markets: tasks, not jobs.
 
-### 7. Module 6: Applications, limits, and the future (Lectures 23, 25)
+### 7. Module 6: Applications, limits and projects (Lectures 22-23, 25)
 
-* Misinformation, deepfakes, the authenticity crisis, and media literacy.
-* The alignment problem, five safety problems, and Constitutional AI.
+* The attention economy, AI therapy and AI's energy use.
+* Misinformation, deepfakes and the liar's dividend.
+* The alignment problem, five safety problems, and current approaches.
 
 ### 8. Six threads
 

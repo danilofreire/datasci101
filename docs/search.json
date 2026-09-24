@@ -4,7 +4,7 @@
     "href": "lectures/lecture-26/26-revision.html#the-whole-course-in-50-minutes",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "The whole course in 50 minutes",
-    "text": "The whole course in 50 minutes\n\n\n\n\nLast class: long-term safety and alignment\nToday: course revision, one slide per lecture\nThe goal is to see how everything connects\nThe link boxes show where the same idea appears in different lectures\n\n\n\n\n\nModule\nTopic\n\n\n\n\n0\nOrientation\n\n\n1\nHow AI systems are designed\n\n\n2\nLanguage and perception\n\n\n3\nRetrieval, generation, pipelines, agents\n\n\n4\nData ethics and bias\n\n\n5\nPolicy, governance, social impact\n\n\n6\nApplications, limits, and the future"
+    "text": "The whole course in 50 minutes\n\n\n\n\nLast class: safety and alignment\nToday: the whole course, one slide per lecture\nLink boxes show where an idea comes back\n\n\n\n\n\nModule\nTopic\n\n\n\n\n0\nOrientation\n\n\n1\nHow AI systems are designed\n\n\n2\nLanguage and perception\n\n\n3\nRetrieval, generation, pipelines and agents\n\n\n4\nData ethics and bias\n\n\n5\nPolicy, governance and social impact\n\n\n6\nApplications, limits and projects"
   },
   {
     "objectID": "lectures/lecture-26/26-revision.html#a-quick-favour",
@@ -18,84 +18,84 @@
     "href": "lectures/lecture-26/26-revision.html#what-ai-is-and-how-we-got-here-lectures-1-2",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "What AI is and how we got here (Lectures 1-2)",
-    "text": "What AI is and how we got here (Lectures 1-2)\n\n\n\n\nCurrent AI is all narrow AI: good at one thing, bad at everything else\nLLMs predict the next token, they do not understand language. This one fact explains hallucinations, creativity, and sycophancy\nThe history: symbolic AI (rules, 1950s-80s), AI winters, backpropagation (1986), transformers (2017), ChatGPT (2022)\nChatGPT’s edge was instruction tuning + RLHF, not scale alone\nThe hype cycle keeps repeating, so read today’s headlines with care\n\n\n Next-token prediction explains hallucinations and creativity (L11) and sycophancy (L25). RLHF comes back in Lectures 4 and 25.\n\n\n\n\nThe transformer architecture (2017)"
+    "text": "What AI is and how we got here (Lectures 1-2)\n\n\n\n\nToday’s AI is not general: strong on some tasks, brittle on others\nLLMs predict the next token; they don’t understand language as we do\nHistory: rules (1950s-80s), AI winters, backpropagation (1986), transformers (2017)\nChatGPT’s edge: instruction tuning and RLHF, not scale alone\n\n\n Next-token prediction explains hallucinations (L11). RLHF returns in Lectures 4 and 25.\n\n\n\n\nThe transformer architecture (2017)"
   },
   {
     "objectID": "lectures/lecture-26/26-revision.html#data-labels-and-the-proxy-problem-lecture-3",
     "href": "lectures/lecture-26/26-revision.html#data-labels-and-the-proxy-problem-lecture-3",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Data, labels, and the proxy problem (Lecture 3)",
-    "text": "Data, labels, and the proxy problem (Lecture 3)\n\n\n\n\nData quality beats algorithm complexity. Garbage in, garbage out\nLabels often measure a proxy: healthcare spending stands in for health needs and encodes racial bias\nSelection bias: a systematic gap between training data and the real world, very hard to fix later\nCohen’s Kappa: do annotators agree beyond chance? (&gt; 0.61 = substantial agreement)\n\n\n The proxy problem is the most recurring idea in this course: Goodhart’s Law (L5), measurement bias and the Optum case (L17), engagement metrics (L22).\n\n\n\n\nData-centric vs model-centric AI (Karpathy, 2018)"
+    "text": "Data, labels, and the proxy problem (Lecture 3)\n\n\n\n\nData quality beats algorithm complexity: garbage in, garbage out\nLabels often measure a proxy: healthcare spending standing in for health needs\nSelection bias: training data that miss part of the real world\nCohen’s kappa: agreement beyond chance; 0.61-0.80 is substantial\n\n\n The proxy problem returns as Goodhart’s Law (L5), measurement bias (L17) and engagement (L22).\n\n\n\n\nData-centric vs model-centric AI (Karpathy, 2018)"
   },
   {
     "objectID": "lectures/lecture-26/26-revision.html#learning-paradigms-and-rlhf-lecture-4",
     "href": "lectures/lecture-26/26-revision.html#learning-paradigms-and-rlhf-lecture-4",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Learning paradigms and RLHF (Lecture 4)",
-    "text": "Learning paradigms and RLHF (Lecture 4)\n\n\n\n\n\n\n\nParadigm\nHow it learns\nExample\n\n\n\n\nSupervised\nLabelled pairs\nSpam filter\n\n\nUnsupervised\nFinds patterns\nCustomer segments\n\n\nReinforcement\nTrial and error\nAlphaGo, RLHF\n\n\n\n\n\nBias-variance trade-off: too simple (underfitting) vs too complex (memorises noise). Aim for the middle\nRLHF: humans rank outputs, a reward model learns those rankings, RL optimises the LLM. This is how ChatGPT became useful\nRisk: reward hacking, the model games the objective instead of doing what you want\n\n\n\n\nThe bias-variance trade-off"
+    "text": "Learning paradigms and RLHF (Lecture 4)\n\n\n\n\n\n\n\nParadigm\nHow it learns\nExample\n\n\n\n\nSupervised\nLabelled pairs\nSpam filter\n\n\nUnsupervised\nFinds patterns\nCustomer segments\n\n\nReinforcement\nTrial and error\nAlphaGo, RLHF\n\n\n\n\n\nBias-variance: too simple underfits, too complex memorises noise\nRLHF: a reward model learns human rankings, then RL tunes the LLM to it\nReward hacking: the model games the objective, not what you meant\n\n\n\n\nThe bias-variance trade-off"
   },
   {
     "objectID": "lectures/lecture-26/26-revision.html#metrics-and-goodharts-law-lecture-5",
     "href": "lectures/lecture-26/26-revision.html#metrics-and-goodharts-law-lecture-5",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Metrics and Goodhart’s Law (Lecture 5)",
-    "text": "Metrics and Goodhart’s Law (Lecture 5)\n\n\n\n\nAccuracy paradox: for a disease affecting 1 in 1,000, predicting “healthy” for everyone gives 99.9% accuracy and catches zero cases\nPrecision: of those you flagged, how many were right? Recall: of the real positives, how many did you catch? You cannot maximise both\nK-fold cross-validation: train on some splits, test on others, and catch overfitting\nGoodhart’s Law: “When a measure becomes a target, it ceases to be a good measure”\nAlways do subgroup analysis: aggregate numbers hide big gaps\n\n\n Goodhart’s Law returns in RLHF (L4), the Optum case (L17), and engagement metrics (L22). Subgroup analysis is formalised as disaggregated evaluation in Lecture 14.\n\n\n\n\nThe confusion matrix: TP, TN, FP, FN"
+    "text": "Metrics and Goodhart’s Law (Lecture 5)\n\n\n\n\nAccuracy paradox: with 1 case in 1,000, “always healthy” scores 99.9%\nPrecision: flags that were right. Recall: real cases you caught\nCross-validation catches overfitting; subgroup analysis catches hidden gaps\nGoodhart’s Law: “When a measure becomes a target, it ceases to be a good measure”\n\n\n Goodhart returns in engagement (L22) and alignment (L25). Subgroup analysis becomes disaggregated evaluation (L14).\n\n\n\n\nThe confusion matrix: TP, TN, FP, FN"
   },
   {
     "objectID": "lectures/lecture-26/26-revision.html#tokens-embeddings-and-context-lecture-6",
     "href": "lectures/lecture-26/26-revision.html#tokens-embeddings-and-context-lecture-6",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Tokens, embeddings, and context (Lecture 6)",
-    "text": "Tokens, embeddings, and context (Lecture 6)\n\n\n\n\nTokens: the basic unit of LLM processing (~100 tokens ≈ 75 English words), built with BPE (Byte Pair Encoding)\nNon-English languages usually need more tokens per concept, so they cost more and fill the context window faster\nEmbeddings: each token becomes a high-dimensional vector, and similar meanings sit close together\nContext windows: the token limit for prompt + response. Go over it and the model starts forgetting\nParameters (learned by the model) vs hyperparameters (set by you): temperature controls randomness (low = safe, high = creative)\n\n\n Embeddings come back in Lecture 7 (images as vectors), Lecture 12 (RAG/cosine similarity), and Lecture 23 (deepfake detection).\n\n\n\n\nking - man + woman ≈ queen"
+    "text": "Tokens, embeddings, and context (Lecture 6)\n\n\n\n\nTokens: ~100 tokens ≈ 75 English words; other languages need more\nEmbeddings: each token becomes a vector; similar meanings sit close\nContext window: go over the limit and you get an error or a cut-off answer\nTemperature: a setting you choose; low = predictable, high = creative\n\n\n Embeddings return for images (L7) and for RAG search (L12).\n\n\n\n\nking - man + woman ≈ queen"
   },
   {
     "objectID": "lectures/lecture-26/26-revision.html#how-machines-see-and-hear-lecture-7",
     "href": "lectures/lecture-26/26-revision.html#how-machines-see-and-hear-lecture-7",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "How machines see and hear (Lecture 7)",
-    "text": "How machines see and hear (Lecture 7)\n\n\n\n\nImages = grids of pixels (RGB, each 0-255). CNNs learn a hierarchy: edges, textures, parts, objects\nVision Transformers (ViT): treat image patches as tokens, same architecture as text transformers\nCLIP: one embedding space for images and text, trained on 400M image-text pairs. Powers DALL-E and multimodal LLMs\nSound = spectrograms (2D images of vibrations). Whisper: 680,000 hours, 99 languages\nText, images, and audio all become embeddings. In vector space the model cannot tell the modality apart\n\n\n Same embedding idea as Lecture 6, applied to images and audio. Same vision tech powers medical imaging and deepfakes (L23). Regulating dual-use models: Lecture 18.\n\n\n\n\nCLIP: images and text in one shared space"
+    "text": "How machines see and hear (Lecture 7)\n\n\n\n\nImages are pixel grids; CNNs learn edges, then parts, then objects\nVision transformers treat image patches like text tokens\nCLIP: images and text in one space, from 400M image-text pairs\nSound becomes spectrograms; Whisper: 680,000 hours, 99 languages\n\n\n The same embedding idea as L6. The same vision models power deepfakes (L23).\n\n\n\n\nCLIP: images and text in one shared space"
   },
   {
     "objectID": "lectures/lecture-26/26-revision.html#prompting-techniques-lecture-10",
     "href": "lectures/lecture-26/26-revision.html#prompting-techniques-lecture-10",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Prompting techniques (Lecture 10)",
-    "text": "Prompting techniques (Lecture 10)\n\n\n\n\nPTCF framework: Persona, Task, Context, Format. Specific prompts beat vague ones\nSystem prompts: hidden developer instructions. Same model, very different behaviour\nZero/one/few-shot: no examples, one example, or 2-5 examples showing patterns\nChain-of-thought (CoT): “Let’s think step by step” nearly tripled accuracy on reasoning tasks (17.7% to 58.1%)\nAgents: the ReAct pattern (Reason + Act, Observe, Repeat). They use tools, browse, and write code\nPrompt injection: malicious input hijacks the agent’s instructions\n\n\n CoT reduces hallucinations (L11). Prompt injection came back in the chatbot failures (L14), AI agents (L15), and in why we need regulation (L18).\n\n\n\n\nChain-of-thought prompting"
+    "text": "Prompting techniques (Lecture 10)\n\n\n\n\nPTCF: Persona, Task, Context, Format. Specific beats vague\nSystem prompts set hidden rules; few-shot prompts show 3-5 examples\nChain-of-thought: worked examples tripled PaLM’s maths score (17.9% to 56.9%)\nReAct agents reason and use tools; prompt injection hijacks them\n\n\n Agents return in L15; prompt injection in L14, L15 and L16.\n\n\n\n\nChain-of-thought prompting"
   },
   {
     "objectID": "lectures/lecture-26/26-revision.html#hallucinations-and-creativity-lecture-11",
     "href": "lectures/lecture-26/26-revision.html#hallucinations-and-creativity-lecture-11",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Hallucinations and creativity (Lecture 11)",
-    "text": "Hallucinations and creativity (Lecture 11)\n\n\n\n\nLLMs optimise for P(next word | context), not P(statement is true). They have no internal fact-checker\nSycophancy: GPT-4o changed correct answers up to 55% of the time after pushback\nTypes of hallucination: factual errors, fabrication, citation hallucination (worst kind?), logical contradictions\nCreativity-accuracy trade-off: high temperature = creative but risky. One mechanism produces both hallucinations and creative writing\nRed flags: very specific numbers, precise citations, zero hedging, answers that feel too perfect\n\n\n Root cause: next-token prediction (L1-2). Fix: RAG (L12). Sycophancy connects to the alignment problem (L25).\n\n\n\n\nSame mechanism, different outcomes"
+    "text": "Hallucinations and creativity (Lecture 11)\n\n\n\n\nLLMs optimise for plausible, not true: there is no fact-checker inside\nSycophancy: trained to please, models cave when you push back\nRed flags: very specific numbers, precise citations, zero hedging\nMaking things up helps in fiction and hurts with facts: timing is the problem\n\n\n Root cause: next-token prediction (L1-2). One fix: RAG (L12).\n\n\n\n\nSame mechanism, different outcomes"
   },
   {
     "objectID": "lectures/lecture-26/26-revision.html#rag-and-semantic-search-lecture-12",
     "href": "lectures/lecture-26/26-revision.html#rag-and-semantic-search-lecture-12",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "RAG and semantic search (Lecture 12)",
-    "text": "RAG and semantic search (Lecture 12)\n\n\n\n\nRAG: give an LLM real, verified documents at query time, like an open-book exam\nCuts hallucinations by 30-50% without retraining the model\nThe pipeline: chunk documents (~512 tokens), embed them, store in a vector database. At query time, embed the question, retrieve the top-k similar chunks, inject them into the prompt\nCosine similarity: the angle between vectors. 0.9+ = very similar, &lt; 0.4 = unrelated. “Budget airfare” matches “cheap flights”\nLost in the Middle: LLMs attend to the start and end of context and ignore the middle\n\n\n Uses embeddings (L6) to fix hallucinations (L11). But if the documents are biased, the retrieval will be too (L17).\n\n\n\n\nThe RAG pipeline"
+    "text": "RAG and semantic search (Lecture 12)\n\n\n\n\nRAG: hand the model real documents at question time, an open-book exam\nRetrieval cut hallucinated replies by over 60% in one study\nChunk, embed and store documents; retrieve the closest chunks per question\nCosine similarity: “budget airfare” matches “cheap flights”\nLost in the middle: models miss facts buried mid-context\n\n\n Uses embeddings (L6) against hallucinations (L11). Projects in L16 are RAG without code.\n\n\n\n\nThe RAG pipeline"
   },
   {
     "objectID": "lectures/lecture-26/26-revision.html#pipelines-and-what-can-go-wrong-lecture-14",
     "href": "lectures/lecture-26/26-revision.html#pipelines-and-what-can-go-wrong-lecture-14",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Pipelines and what can go wrong (Lecture 14)",
-    "text": "Pipelines and what can go wrong (Lecture 14)\n\n\n\n\nThe AI pipeline: prompt, preprocessing, inference, postprocessing, safety filtering, response. Every step can fail\nDrift: data drift (inputs change), label drift (outcomes change), concept drift (the relationship changes; worst kind, the model is confident but wrong)\nReal failures: Air Canada chatbot (invented a refund policy, company held liable), DPD chatbot (swore at customers), Chevy (sold a car for $1)\nAI is non-deterministic, so test properties (safety, format, consistency), not exact outputs\nInput validation blocks prompt injection; output filtering catches harmful content\n\n\n Concept drift relates to bias (L17): the world changes, the model doesn’t. The chatbot failures set legal precedents that motivated regulation (L18).\n\n\n\n\nThe AI application stack"
+    "text": "Pipelines and what can go wrong (Lecture 14)\n\n\n\n\nEvery step can fail: input, model, safety filters, output\nData, label and concept drift; concept drift is the most dangerous\nAir Canada lost its case over a chatbot’s invented refund policy\nTest properties (safety, format, consistency), not exact outputs\n\n\n Drift is why models need watching after launch: the world changes, the model doesn’t.\n\n\n\n\nThe AI application stack"
   },
   {
     "objectID": "lectures/lecture-26/26-revision.html#documentation-as-accountability-lecture-14",
     "href": "lectures/lecture-26/26-revision.html#documentation-as-accountability-lecture-14",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Documentation as accountability (Lecture 14)",
-    "text": "Documentation as accountability (Lecture 14)\n\n\n\n\nDatasheets for Datasets (Gebru et al., 2018): motivation, composition, collection, uses. Without them you cannot spot bias or reproduce results\nModel Cards (Mitchell et al., 2019): intended use, metrics, ethical considerations, and what the model is not for\nSystem Cards: the whole system, not one model. Red teaming, oversight, how components interact\nDisaggregated evaluation: report metrics by subgroup. A model at 90% overall can be 95% for Group A and 70% for Group B\nMost AI training data is collected without explicit consent\n\n\n Disaggregated evaluation is how the Optum bias was found (L17). The EU AI Act (L18) now requires this documentation for high-risk systems.\n\n\n\n\nDatasheets: the “nutrition label” for datasets"
+    "text": "Documentation as accountability (Lecture 14)\n\n\n\n\nDatasheets (Gebru et al., 2018): where data came from and what it is for\nModel cards (Mitchell et al., 2019): intended use, and what it is not for\nDisaggregated evaluation: 90% overall can hide 70% for one group\nMost training data is collected without explicit consent\n\n\n The EU AI Act will require this documentation for high-risk systems from December 2027 (L18).\n\n\n\n\nDatasheets: the “nutrition label” for datasets"
   },
   {
     "objectID": "lectures/lecture-26/26-revision.html#ai-agents-lecture-15",
     "href": "lectures/lecture-26/26-revision.html#ai-agents-lecture-15",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "AI agents (Lecture 15)",
-    "text": "AI agents (Lecture 15)\n\n\n\n\nAn agent = a model + tools + a loop + a goal. Chatbots answer, agents act (search, browse, run code, send, pay)\nReliability multiplies away: 95% accuracy per step is only ~36% over 20 steps\nPrompt injection turns dangerous with tools: the lethal trifecta is private data + untrusted content + external communication\nReal failures: Replit’s agent deleted a production database, Anthropic’s Claudius ran a shop at a loss. Instructions are not guardrails\nDelegate by the credit card test: reversibility × stakes. Demand approvals, sandboxes, action logs, and limits\n\n\n Agents extend the ReAct idea from prompting (L10) and RAG (L12). Their failures are pipeline failures (L14) with higher stakes. Goals taken literally previews alignment (L25).\n\n\n\nThe one-sentence version:\nA chatbot with a bad goal writes a bad essay\nAn agent with a bad goal does bad things efficiently"
+    "text": "AI agents (Lecture 15)\n\n\n\n\nAn agent = model + tools + loop + goal. Chatbots answer; agents act\nErrors multiply: 95% per step is ~36% over 20 steps\nLethal trifecta: private data + untrusted content + a way to send data out\nReplit’s agent deleted a live database: instructions are not guardrails\nCredit card test: delegate by reversibility × stakes; demand approvals and logs\n\n\n Agents extend ReAct (L10). Goals taken literally preview alignment (L25).\n\n\n\nThe one-sentence version:\nA chatbot with a bad goal writes a bad essay\nAn agent with a bad goal does bad things efficiently"
   },
   {
     "objectID": "lectures/lecture-26/26-revision.html#where-bias-comes-from-lecture-16",
@@ -116,14 +116,14 @@
     "href": "lectures/lecture-26/26-revision.html#ai-regulation-around-the-world-lecture-18",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "AI regulation around the world (Lecture 18)",
-    "text": "AI regulation around the world (Lecture 18)\n\n\n\n\nWhy regulate? Information asymmetry (users cannot evaluate AI), externalities (deepfakes harm non-users), collective action problems (race to the bottom on safety)\nEU AI Act (August 2024): four risk tiers\n\n\n\n\n\nTier\nExamples\n\n\n\n\nProhibited\nSocial scoring, real-time biometric ID\n\n\nHigh-risk\nEmployment, credit, law enforcement\n\n\nLimited\nChatbots (must disclose they are AI)\n\n\nMinimal\nSpam filters, game AI\n\n\n\n\n\nUS: sectoral approach, no comprehensive federal law\nChina: regulates commercial AI, exempts state use\nBrussels Effect: EU rules may become the global default, as with the General Data Protection Regulation (GDPR)\n\n\n “High-risk” = the systems from Lectures 16-17. The Act requires documentation from Lecture 14. Brussels Effect connects to GDPR (L19).\n\n\n\n\nThe EU AI Act: world’s first binding AI law"
+    "text": "AI regulation around the world (Lecture 18)\n\n\n\n\nWhy regulate: information asymmetry, externalities, races to the bottom\nEU AI Act: four risk tiers, fines up to 7% of global turnover\n\n\n\n\n\n\n\n\n\nTier\nExamples\n\n\n\n\nProhibited\nSocial scoring, real-time police face ID in public\n\n\nHigh-risk\nEmployment, credit, law enforcement\n\n\nLimited\nChatbots (must disclose they are AI)\n\n\nMinimal\nSpam filters, game AI\n\n\n\n\n\nHigh-risk rules start December 2027, after the 2026 Digital Omnibus\nUS: no federal law; China: rules for companies, not the state\n\n\n High-risk systems are the hiring and credit cases from L17. GDPR (L19) is the Brussels Effect in practice.\n\n\n\n\nThe EU AI Act: the first comprehensive AI law"
   },
   {
     "objectID": "lectures/lecture-26/26-revision.html#privacy-and-data-protection-lecture-19",
     "href": "lectures/lecture-26/26-revision.html#privacy-and-data-protection-lecture-19",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Privacy and data protection (Lecture 19)",
-    "text": "Privacy and data protection (Lecture 19)\n\n\n\n\nAI makes privacy harder through scale (collection is cheap), inference (AI predicts sensitive things from harmless data), and persistence (data never goes away)\nYou control what you share, but not what can be inferred from it\nLLMs can memorise and regurgitate personal information from training data\nGDPR (2018): rights to access, erasure, portability, objection. Article 22: right not to be subject to purely automated decisions\nDifferential privacy (adds noise), federated learning (trains locally) and synthetic data help at the margins, but do not solve collection\nPrivacy paradox: people say they care about privacy and accept all cookies anyway\n\n\n Inference = the proxy problem (L3) applied to personal data. GDPR is the Brussels Effect (L18) in practice. Consent ties to Lecture 14.\n\n\n\n\n\n\nClearview AI: scraped billions of faces without consent"
+    "text": "Privacy and data protection (Lecture 19)\n\n\n\n\nAI strains privacy through scale, inference and persistence\nYou control what you share, not what can be inferred from it\nGDPR: access, erasure, portability; Article 22 limits fully automated decisions\nPrivacy tech helps, but doesn’t stop collection\nPrivacy paradox: we say we care, then accept all cookies\n\n\n Inference is the proxy problem (L3) applied to people. 23 US states now have privacy laws.\n\n\n\n\nClearview AI: 3 billion scraped photos in 2020, 70+ billion today"
   },
   {
     "objectID": "lectures/lecture-26/26-revision.html#labour-markets-and-wellbeing-lectures-21-22",
@@ -137,28 +137,28 @@
     "href": "lectures/lecture-26/26-revision.html#misinformation-and-deepfakes-lecture-23",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Misinformation and deepfakes (Lecture 23)",
-    "text": "Misinformation and deepfakes (Lecture 23)\n\n\n\n\nMisinformation (false, no intent), disinformation (false, deliberate), malinformation (true, used to harm)\nDeepfakes: AI-generated media of real people, used for political manipulation, financial fraud, and non-consensual intimate imagery\nThe authenticity crisis: when anything could be fake, people dismiss real evidence too\nWe fall for it because of System 1 (fast, intuitive) thinking, confirmation bias, and the bandwagon effect\nResponses: detection tools, content provenance (C2PA), platform policies, legal frameworks, media literacy\nNo single tool works alone. Media literacy is the most reliable individual defence\n\n\n Powered by vision models (L7), detected via embeddings (L6), regulated by the EU AI Act (L18).\n\n\n\n\nThe misinformation spectrum"
+    "text": "Misinformation and deepfakes (Lecture 23)\n\n\n\n\nMis- (false, no intent), dis- (false, deliberate), malinformation (true, used to harm)\nDeepfakes: fraud, election manipulation, non-consensual imagery\nLiar’s dividend: when anything could be fake, real evidence gets dismissed\nWe fall for it: System 1 thinking, confirmation bias, bandwagons\nNo single fix: detection, provenance, platforms, laws, literacy. Layer them\n\n\n Deepfakes use vision models (L7); the EU AI Act requires labels (L18).\n\n\n\n\nThe misinformation spectrum"
   },
   {
     "objectID": "lectures/lecture-26/26-revision.html#safety-alignment-and-the-future-lecture-25",
     "href": "lectures/lecture-26/26-revision.html#safety-alignment-and-the-future-lecture-25",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Safety, alignment, and the future (Lecture 25)",
-    "text": "Safety, alignment, and the future (Lecture 25)\n\n\n\n\nFive safety problems (Amodei et al., 2016): safe exploration, side effects, reward hacking, scalable oversight, distributional shift\nThe alignment problem: getting AI to do what we want, not what we literally asked for. The King Midas problem\nWhy it is hard: the specification problem (you cannot write down everything you care about), Goodhart’s Law, and disagreement about values\nCurrent approaches: RLHF, Constitutional AI (Anthropic), debate. None is a complete solution\nStuart Russell’s proposal: AI should be uncertain about objectives and defer to humans\nNeither panic nor complacency. Serious researchers disagree genuinely, so take evidence over vibes\n\n\n Ties together RLHF (L4), Goodhart’s Law (L5), bias (L17), agents acting on goals (L15), and regulation (L18). This is the question the whole course builds toward."
+    "text": "Safety, alignment, and the future (Lecture 25)\n\n\n\n\nFive concrete problems (Amodei et al., 2016), from side effects to reward hacking\nAlignment: getting what we want, not what we literally asked (King Midas)\nHard because of specification, Goodhart’s Law and value disagreement\nRLHF, Constitutional AI and debate help; none is complete\nRussell: machines should be uncertain about our goals and learn them from us\n\n\n Ties together RLHF (L4), Goodhart (L5), bias (L17) and agents (L15). Neither panic nor complacency."
   },
   {
     "objectID": "lectures/lecture-26/26-revision.html#ideas-that-run-through-the-whole-course",
     "href": "lectures/lecture-26/26-revision.html#ideas-that-run-through-the-whole-course",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Ideas that run through the whole course",
-    "text": "Ideas that run through the whole course\n\n\n\n\nNext-token prediction is the basis of everything\n\nLLMs predict the next word, not the truth, which explains hallucinations, creativity, and sycophancy (Lectures 1, 2, 6, 11)\n\nThe proxy problem is pervasive\n\nLabels, metrics, objectives, and engagement are all proxies. Optimising a proxy corrupts it (Lectures 3, 5, 16, 17, 22)\n\nEmbeddings are the universal language\n\nText, images, and audio all become vectors. RAG, semantic search, CLIP, and multimodal AI rely on this (Lectures 6, 7, 12)\n\n\nBias can enter at every stage\n\nData, labels, training, evaluation, deployment. Feedback loops make it self-reinforcing, and the impossibility theorem makes fairness a values choice (Lectures 3, 14, 16, 17)\n\nDocumentation is accountability\n\nDatasheets, model cards, system cards. Disaggregated evaluation reveals hidden gaps (Lectures 14, 16, 17)\n\nRegulation is catching up\n\nEU AI Act, GDPR, the Brussels Effect. Market failures justify intervention (Lectures 18, 19)\n\nIf you understand these six threads, you understand the course!"
+    "text": "Ideas that run through the whole course\n\n\n\n\nNext-token prediction is the basis\nLLMs predict the next word, not the truth (L1, 2, 6, 11)\nThe proxy problem is everywhere\nOptimise a proxy and it stops measuring what you care about (L3, 5, 17, 22)\nEmbeddings are the common language\nText, images and audio all become vectors (L6, 7, 12)\n\n\n\nBias can enter at every stage\nFairness is a values choice, not a technical fix (L3, 14, 17)\nDocumentation is accountability\nDatasheets, model cards and disaggregated evaluation (L14, 17)\nRegulation is catching up\nEU AI Act, GDPR and US state laws (L18, 19)"
   },
   {
     "objectID": "lectures/lecture-26/26-revision.html#what-we-covered-this-semester",
     "href": "lectures/lecture-26/26-revision.html#what-we-covered-this-semester",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "What we covered this semester",
-    "text": "What we covered this semester\n\n\n\nHow AI works: next-token prediction, transformers, embeddings, three learning paradigms, metrics and their limits\nHow AI handles information: tokens, prompting (PTCF, CoT), hallucinations, RAG, agents, pipelines and drift\nEthics and bias: bias at every stage, the impossibility theorem, the Optum case, documentation as accountability\n\nPolicy and society: EU AI Act, GDPR, the privacy paradox, labour markets, the attention economy, environmental costs\nSafety and the future: concrete safety problems, the alignment problem, multiple plausible futures\n\nYou now have the vocabulary to read AI claims critically and ask the right questions about data, bias, and harms. Good luck on the quiz! 🍀"
+    "text": "What we covered this semester\n\n\n\nHow AI works\n\nLLMs predict the next token, not the truth\nText, images and sound all become embeddings\nMetrics mislead: accuracy paradox, Goodhart’s Law\n\nUsing AI well\n\nPrompting: PTCF, examples, chain-of-thought\nRAG grounds answers; agents multiply errors\nSetups: instructions, knowledge, memory, tools\n\nEthics and bias\n\nBias enters at every stage, often through proxies\nNo model meets every fairness criterion\nDatasheets and model cards for accountability\n\n\nPolicy and society\n\nEU AI Act risk tiers; a US state patchwork\nPrivacy: what AI infers, not only what you share\nJobs: tasks, not jobs; young workers hit first\nWellbeing: attention, AI therapy, energy use\n\nSafety and the future\n\nDeepfakes and the liar’s dividend\nAlignment: what we want, not what we asked\n\n\nYou can now read AI claims critically. Good luck on Quiz 05 and your projects! 🍀"
   },
   {
     "objectID": "lectures/lecture-23/23-misinformation.html#recap-of-last-class",
@@ -4638,7 +4638,7 @@
     "href": "lectures/lecture-26/26-revision.html#where-bias-comes-from-lecture-17",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Where bias comes from (Lecture 17)",
-    "text": "Where bias comes from (Lecture 17)\n\n\n\n\nAI does not invent bias. It picks up patterns from human data and applies them at scale\nBias enters at every stage: historical (past discrimination baked in), representation (who is missing from the data), measurement (proxy variables), aggregation (ignoring group differences), evaluation (unrepresentative benchmarks), deployment (wrong context)\nFeedback loops: predictions shape future training data. Predictive policing gives more patrols, more arrests, more patrols\nImpossibility theorem: with different base rates across groups, you cannot have calibration, equal false positive rates, and equal false negative rates at once. Fairness is a values choice, not a technical fix\n\n\n Measurement bias = the proxy problem (L3). Textbook example: Optum. Feedback loops relate to concept drift (L14). The impossibility theorem connects to alignment (L25).\n\n\n\n\nBias at every stage"
+    "text": "Where bias comes from (Lecture 17)\n\n\n\n\nAI does not invent bias: it learns it from human data and scales it\nSix types: historical, representation, measurement, aggregation, evaluation, deployment\nA US health algorithm predicted costs, not need, so it underrated sick Black patients\nFeedback loops: predictions shape the next round of data\nImpossibility theorem: with different base rates, no model meets every fairness test\n\n\n Measurement bias is the proxy problem (L3). Picking a fairness definition is a values choice.\n\n\n\n\nBias at every stage"
   },
   {
     "objectID": "lectures/lecture-15/15-agents.html#an-old-idea-the-rational-agent",
@@ -5017,5 +5017,26 @@
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Risks",
     "text": "Risks\n\n\n\nDocumented, not hypothetical:\n\nDependency. Replika’s 2023 feature change left users reporting grief like a lost relationship\nData privacy. Chatbot data is rarely protected like clinical notes\nHarmful responses. LLMs showed stigma and mishandled crises (Moore et al., 2025)\nNo crisis escalation. A chatbot cannot call an ambulance\nRegulatory gap. Most are apps, not medical devices; a few states (Illinois) ban AI therapy\n\n\nBut also consider:\n\nHuman therapy isn’t fully private either: notes, supervision, insurance coding\nWeigh harmful responses against no care at all, the norm in poorer countries\nAI may give governments and employers an excuse to avoid funding real care\n\n\nBeing cautious about AI therapy doesn’t mean defending the status quo. The status quo is also harmful"
+  },
+  {
+    "objectID": "lectures/lecture-26/26-revision.html#setting-up-ai-lecture-16",
+    "href": "lectures/lecture-26/26-revision.html#setting-up-ai-lecture-16",
+    "title": "DATASCI 101: Introduction to AI Applications",
+    "section": "Setting up AI (Lecture 16)",
+    "text": "Setting up AI (Lecture 16)\n\n\n\n\nA prompt is one request; a setup survives the tab closing\nFour layers: instructions and knowledge you write; memory and tools fill themselves\nKeep rules few and first: top models follow only 68% of 500 (IFScale)\nMemory is on by default: read it, edit it, use incognito\nConnectors: least access, read-only by default, confirm every write\n\n\n Instructions are prompting (L10) made permanent. Connectors turn a chatbot into an agent (L15).\n\n\n\n\nAnthropic’s augmented LLM"
+  },
+  {
+    "objectID": "lectures/lecture-26/26-revision.html#labour-markets-lecture-21",
+    "href": "lectures/lecture-26/26-revision.html#labour-markets-lecture-21",
+    "title": "DATASCI 101: Introduction to AI Applications",
+    "section": "Labour markets (Lecture 21)",
+    "text": "Labour markets (Lecture 21)\n\n\n\n\nEarlier automation hit physical tasks; AI targets cognitive work\nThink tasks, not jobs: most jobs mix both kinds\nNovices gain most: customer support agents became 15% more productive\nYoung workers in AI-exposed jobs are 19% below their peers; overall earnings, no effect yet\nMost economists are uncertain; policy can steer AI toward augmentation\n\n\n Augmentation or replacement is a policy choice, like the rules in L18.\n\n\n\n\nSix waves of innovation; AI is the latest"
+  },
+  {
+    "objectID": "lectures/lecture-26/26-revision.html#ai-and-wellbeing-lecture-22",
+    "href": "lectures/lecture-26/26-revision.html#ai-and-wellbeing-lecture-22",
+    "title": "DATASCI 101: Introduction to AI Applications",
+    "section": "AI and wellbeing (Lecture 22)",
+    "text": "AI and wellbeing (Lecture 22)\n\n\n\n\nAttention economy: algorithms optimise engagement, not wellbeing\nFilter bubbles look overstated; mental health effects are debated\nAI therapy: a huge treatment gap, short-term promise, thin long-term evidence\nAI uses ~0.2-0.3% of world electricity, growing fast; efficiency invites more use\n\n\n Engagement is Goodhart’s Law (L5): the proxy replaces what we care about.\n\n\n\n\nYour attention is the product"
   }
 ]

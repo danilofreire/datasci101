@@ -157,16 +157,15 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </section>
 <section id="the-whole-course-in-50-minutes" class="slide level2">
 <h2>The whole course in 50 minutes</h2>
-<div style="margin-top: 20px; font-size: 24px;">
+<div style="margin-top: 50px; font-size: 24px;">
 <div class="columns">
 <div class="column" style="width:50%;">
 <ul>
-<li>Last class: <span class="alert">long-term safety and alignment</span></li>
-<li>Today: <span class="alert">course revision</span>, one slide per lecture</li>
-<li>The goal is to see how everything connects</li>
-<li>The link boxes show where the same idea appears in different lectures</li>
+<li>Last class: <span class="alert">safety and alignment</span></li>
+<li>Today: <span class="alert">the whole course</span>, one slide per lecture</li>
+<li>Link boxes show where an idea comes back</li>
 </ul>
-<div style="text-align: center;">
+<div style="text-align: center; margin-top: 30px; margin-bottom: 30px;">
 <table class="caption-top">
 <thead>
 <tr class="header">
@@ -189,7 +188,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </tr>
 <tr class="even">
 <td>3</td>
-<td>Retrieval, generation, pipelines, agents</td>
+<td>Retrieval, generation, pipelines and agents</td>
 </tr>
 <tr class="odd">
 <td>4</td>
@@ -197,11 +196,11 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </tr>
 <tr class="even">
 <td>5</td>
-<td>Policy, governance, social impact</td>
+<td>Policy, governance and social impact</td>
 </tr>
 <tr class="odd">
 <td>6</td>
-<td>Applications, limits, and the future</td>
+<td>Applications, limits and projects</td>
 </tr>
 </tbody>
 </table>
@@ -233,21 +232,20 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </section>
 <section id="what-ai-is-and-how-we-got-here-lectures-1-2" class="slide level2">
 <h2>What AI is and how we got here (Lectures 1-2)</h2>
-<div style="margin-top: 30px; font-size: 24px;">
+<div style="margin-top: 50px; font-size: 24px;">
 <div class="columns">
 <div class="column" style="width:55%;">
 <ul>
-<li>Current AI is all <span class="alert">narrow AI</span>: good at one thing, bad at everything else</li>
-<li>LLMs <span class="alert">predict the next token</span>, they do not understand language. This one fact explains hallucinations, creativity, and sycophancy</li>
-<li>The history: <span class="alert">symbolic AI</span> (rules, 1950s-80s), AI winters, <span class="alert">backpropagation</span> (1986), <span class="alert">transformers</span> (2017), ChatGPT (2022)</li>
-<li>ChatGPT’s edge was <span class="alert">instruction tuning + RLHF</span>, not scale alone</li>
-<li>The hype cycle keeps repeating, so read today’s headlines with care</li>
+<li>Today’s AI is <span class="alert">not general</span>: strong on some tasks, brittle on others</li>
+<li>LLMs <span class="alert">predict the next token</span>; they don’t understand language as we do</li>
+<li>History: <span class="alert">rules</span> (1950s-80s), AI winters, <span class="alert">backpropagation</span> (1986), <span class="alert">transformers</span> (2017)</li>
+<li>ChatGPT’s edge: <span class="alert">instruction tuning and RLHF</span>, not scale alone</li>
 </ul>
-<div style="margin-top: 10px; background: rgba(45, 69, 99, 0.1); padding: 12px; border-radius: 10px; font-size: 17px;">
-<p><svg aria-hidden="true" role="img" viewbox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"></path></svg> Next-token prediction explains hallucinations and creativity (L11) and sycophancy (L25). RLHF comes back in Lectures 4 and 25.</p>
+<div style="margin-top: 15px; background: rgba(45, 69, 99, 0.1); padding: 12px; border-radius: 10px; font-size: 17px;">
+<p><svg aria-hidden="true" role="img" viewbox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"></path></svg> Next-token prediction explains hallucinations (L11). RLHF returns in Lectures 4 and 25.</p>
 </div>
 </div><div class="column" style="width:45%;">
-<div style="text-align: center; margin-top: -30px;">
+<div style="text-align: center;">
 <p><a href="#/" data-modal-type="image" data-modal-url="figures/attention.webp"><img data-src="figures/attention.webp" style="width:70.0%"></a></p>
 <p>The transformer architecture (2017)</p>
 </div>
@@ -261,17 +259,17 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </section>
 <section id="data-labels-and-the-proxy-problem-lecture-3" class="slide level2">
 <h2>Data, labels, and the proxy problem (Lecture 3)</h2>
-<div style="margin-top: 30px; font-size: 25px;">
+<div style="margin-top: 50px; font-size: 26px;">
 <div class="columns">
 <div class="column" style="width:55%;">
 <ul>
-<li><span class="alert">Data quality beats algorithm complexity</span>. Garbage in, garbage out</li>
-<li>Labels often measure a <span class="alert">proxy</span>: healthcare spending stands in for health needs and encodes racial bias</li>
-<li><span class="alert">Selection bias</span>: a systematic gap between training data and the real world, very hard to fix later</li>
-<li><span class="alert">Cohen’s Kappa</span>: do annotators agree beyond chance? (&gt; 0.61 = substantial agreement)</li>
+<li><span class="alert">Data quality beats algorithm complexity</span>: garbage in, garbage out</li>
+<li>Labels often measure a <span class="alert">proxy</span>: healthcare spending standing in for health needs</li>
+<li><span class="alert">Selection bias</span>: training data that miss part of the real world</li>
+<li><span class="alert">Cohen’s kappa</span>: agreement beyond chance; 0.61-0.80 is substantial</li>
 </ul>
-<div style="margin-top: 10px; background: rgba(45, 69, 99, 0.1); padding: 12px; border-radius: 10px; font-size: 17px;">
-<p><svg aria-hidden="true" role="img" viewbox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"></path></svg> The proxy problem is the most recurring idea in this course: Goodhart’s Law (L5), measurement bias and the Optum case (L17), engagement metrics (L22).</p>
+<div style="margin-top: 15px; background: rgba(45, 69, 99, 0.1); padding: 12px; border-radius: 10px; font-size: 17px;">
+<p><svg aria-hidden="true" role="img" viewbox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"></path></svg> The proxy problem returns as Goodhart’s Law (L5), measurement bias (L17) and engagement (L22).</p>
 </div>
 </div><div class="column" style="width:45%;">
 <div style="text-align: center;">
@@ -283,10 +281,10 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </section>
 <section id="learning-paradigms-and-rlhf-lecture-4" class="slide level2">
 <h2>Learning paradigms and RLHF (Lecture 4)</h2>
-<div style="margin-top: 30px; font-size: 23px;">
+<div style="margin-top: 50px; font-size: 24px;">
 <div class="columns">
 <div class="column" style="width:55%;">
-<div style="text-align: center; margin-top: 30px; margin-bottom: 20px;">
+<div style="text-align: center; margin-bottom: 50px; margin-top: 20px; font-size: 26px;">
 <table class="caption-top">
 <thead>
 <tr class="header">
@@ -315,13 +313,13 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </table>
 </div>
 <ul>
-<li><span class="alert">Bias-variance trade-off</span>: too simple (underfitting) vs too complex (memorises noise). Aim for the middle</li>
-<li><span class="alert">RLHF</span>: humans rank outputs, a reward model learns those rankings, RL optimises the LLM. This is how ChatGPT became useful</li>
-<li>Risk: <span class="alert">reward hacking</span>, the model games the objective instead of doing what you want</li>
+<li><span class="alert">Bias-variance</span>: too simple underfits, too complex memorises noise</li>
+<li><span class="alert">RLHF</span>: a reward model learns human rankings, then RL tunes the LLM to it</li>
+<li><span class="alert">Reward hacking</span>: the model games the objective, not what you meant</li>
 </ul>
 </div><div class="column" style="width:45%;">
 <div style="margin-top: 15px; text-align: center;">
-<p><a href="#/" data-modal-type="image" data-modal-url="figures/bias-variance.gif"><img data-src="figures/bias-variance.gif" style="width:85.0%"></a></p>
+<p><a href="#/" data-modal-type="image" data-modal-url="figures/bias-variance.gif"><img data-src="figures/bias-variance.gif" style="width:75.0%"></a></p>
 <p>The bias-variance trade-off</p>
 </div>
 </div></div>
@@ -329,22 +327,21 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </section>
 <section id="metrics-and-goodharts-law-lecture-5" class="slide level2">
 <h2>Metrics and Goodhart’s Law (Lecture 5)</h2>
-<div style="margin-top: 30px; font-size: 22px;">
+<div style="margin-top: 50px; font-size: 24px;">
 <div class="columns">
 <div class="column" style="width:55%;">
 <ul>
-<li><span class="alert">Accuracy paradox</span>: for a disease affecting 1 in 1,000, predicting “healthy” for everyone gives 99.9% accuracy and catches zero cases</li>
-<li><span class="alert">Precision</span>: of those you flagged, how many were right? <span class="alert">Recall</span>: of the real positives, how many did you catch? You cannot maximise both</li>
-<li><span class="alert">K-fold cross-validation</span>: train on some splits, test on others, and catch overfitting</li>
+<li><span class="alert">Accuracy paradox</span>: with 1 case in 1,000, “always healthy” scores 99.9%</li>
+<li><span class="alert">Precision</span>: flags that were right. <span class="alert">Recall</span>: real cases you caught</li>
+<li><span class="alert">Cross-validation</span> catches overfitting; <span class="alert">subgroup analysis</span> catches hidden gaps</li>
 <li><span class="alert">Goodhart’s Law</span>: “When a measure becomes a target, it ceases to be a good measure”</li>
-<li>Always do <span class="alert">subgroup analysis</span>: aggregate numbers hide big gaps</li>
 </ul>
-<div style="margin-top: 10px; background: rgba(45, 69, 99, 0.1); padding: 12px; border-radius: 10px; font-size: 17px;">
-<p><svg aria-hidden="true" role="img" viewbox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"></path></svg> Goodhart’s Law returns in RLHF (L4), the Optum case (L17), and engagement metrics (L22). Subgroup analysis is formalised as disaggregated evaluation in Lecture 14.</p>
+<div style="margin-top: 15px; background: rgba(45, 69, 99, 0.1); padding: 12px; border-radius: 10px; font-size: 17px;">
+<p><svg aria-hidden="true" role="img" viewbox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"></path></svg> Goodhart returns in engagement (L22) and alignment (L25). Subgroup analysis becomes disaggregated evaluation (L14).</p>
 </div>
 </div><div class="column" style="width:45%;">
-<div style="text-align: center; margin-top: -40px;">
-<p><a href="#/" data-modal-type="image" data-modal-url="figures/confusion-matrix.gif"><img data-src="figures/confusion-matrix.gif" style="width:70.0%"></a></p>
+<div style="text-align: center; margin-top: -20px;">
+<p><a href="#/" data-modal-type="image" data-modal-url="figures/confusion-matrix.gif"><img data-src="figures/confusion-matrix.gif" style="width:60.0%"></a></p>
 <p>The confusion matrix: TP, TN, FP, FN</p>
 </div>
 </div></div>
@@ -357,18 +354,17 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </section>
 <section id="tokens-embeddings-and-context-lecture-6" class="slide level2">
 <h2>Tokens, embeddings, and context (Lecture 6)</h2>
-<div style="margin-top: 30px; font-size: 22px;">
+<div style="margin-top: 50px; font-size: 26px;">
 <div class="columns">
 <div class="column" style="width:55%;">
 <ul>
-<li><span class="alert">Tokens</span>: the basic unit of LLM processing (~100 tokens ≈ 75 English words), built with <span class="alert">BPE</span> (Byte Pair Encoding)</li>
-<li>Non-English languages usually need more tokens per concept, so they cost more and fill the context window faster</li>
-<li><span class="alert">Embeddings</span>: each token becomes a high-dimensional vector, and similar meanings sit close together</li>
-<li><span class="alert">Context windows</span>: the token limit for prompt + response. Go over it and the model starts forgetting</li>
-<li><span class="alert">Parameters</span> (learned by the model) vs <span class="alert">hyperparameters</span> (set by you): <span class="alert">temperature</span> controls randomness (low = safe, high = creative)</li>
+<li><span class="alert">Tokens</span>: ~100 tokens ≈ 75 English words; other languages need more</li>
+<li><span class="alert">Embeddings</span>: each token becomes a vector; similar meanings sit close</li>
+<li><span class="alert">Context window</span>: go over the limit and you get an error or a cut-off answer</li>
+<li><span class="alert">Temperature</span>: a setting you choose; low = predictable, high = creative</li>
 </ul>
-<div style="margin-top: 10px; background: rgba(45, 69, 99, 0.1); padding: 12px; border-radius: 10px; font-size: 17px;">
-<p><svg aria-hidden="true" role="img" viewbox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"></path></svg> Embeddings come back in Lecture 7 (images as vectors), Lecture 12 (RAG/cosine similarity), and Lecture 23 (deepfake detection).</p>
+<div style="margin-top: 15px; background: rgba(45, 69, 99, 0.1); padding: 12px; border-radius: 10px; font-size: 17px;">
+<p><svg aria-hidden="true" role="img" viewbox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"></path></svg> Embeddings return for images (L7) and for RAG search (L12).</p>
 </div>
 </div><div class="column" style="width:45%;">
 <div style="text-align: center;">
@@ -380,18 +376,17 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </section>
 <section id="how-machines-see-and-hear-lecture-7" class="slide level2">
 <h2>How machines see and hear (Lecture 7)</h2>
-<div style="margin-top: 30px; font-size: 22px;">
+<div style="margin-top: 50px; font-size: 26px;">
 <div class="columns">
 <div class="column" style="width:55%;">
 <ul>
-<li>Images = grids of pixels (RGB, each 0-255). <span class="alert">CNNs</span> learn a hierarchy: edges, textures, parts, objects</li>
-<li><span class="alert">Vision Transformers (ViT)</span>: treat image patches as tokens, same architecture as text transformers</li>
-<li><span class="alert">CLIP</span>: one embedding space for images and text, trained on 400M image-text pairs. Powers DALL-E and multimodal LLMs</li>
-<li>Sound = spectrograms (2D images of vibrations). <span class="alert">Whisper</span>: 680,000 hours, 99 languages</li>
-<li>Text, images, and audio all become <span class="alert">embeddings</span>. In vector space the model cannot tell the modality apart</li>
+<li>Images are pixel grids; <span class="alert">CNNs</span> learn edges, then parts, then objects</li>
+<li><span class="alert">Vision transformers</span> treat image patches like text tokens</li>
+<li><span class="alert">CLIP</span>: images and text in one space, from 400M image-text pairs</li>
+<li>Sound becomes <span class="alert">spectrograms</span>; <span class="alert">Whisper</span>: 680,000 hours, 99 languages</li>
 </ul>
-<div style="margin-top: 10px; background: rgba(45, 69, 99, 0.1); padding: 12px; border-radius: 10px; font-size: 17px;">
-<p><svg aria-hidden="true" role="img" viewbox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"></path></svg> Same embedding idea as Lecture 6, applied to images and audio. Same vision tech powers medical imaging and deepfakes (L23). Regulating dual-use models: Lecture 18.</p>
+<div style="margin-top: 15px; background: rgba(45, 69, 99, 0.1); padding: 12px; border-radius: 10px; font-size: 17px;">
+<p><svg aria-hidden="true" role="img" viewbox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"></path></svg> The same embedding idea as L6. The same vision models power deepfakes (L23).</p>
 </div>
 </div><div class="column" style="width:45%;">
 <div style="text-align: center;">
@@ -403,19 +398,17 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </section>
 <section id="prompting-techniques-lecture-10" class="slide level2">
 <h2>Prompting techniques (Lecture 10)</h2>
-<div style="margin-top: 30px; font-size: 22px;">
+<div style="margin-top: 50px; font-size: 26px;">
 <div class="columns">
 <div class="column" style="width:55%;">
 <ul>
-<li><span class="alert">PTCF framework</span>: Persona, Task, Context, Format. Specific prompts beat vague ones</li>
-<li><span class="alert">System prompts</span>: hidden developer instructions. Same model, very different behaviour</li>
-<li><span class="alert">Zero/one/few-shot</span>: no examples, one example, or 2-5 examples showing patterns</li>
-<li><span class="alert">Chain-of-thought (CoT)</span>: “Let’s think step by step” nearly tripled accuracy on reasoning tasks (17.7% to 58.1%)</li>
-<li><span class="alert">Agents</span>: the ReAct pattern (Reason + Act, Observe, Repeat). They use tools, browse, and write code</li>
-<li><span class="alert">Prompt injection</span>: malicious input hijacks the agent’s instructions</li>
+<li><span class="alert">PTCF</span>: Persona, Task, Context, Format. Specific beats vague</li>
+<li><span class="alert">System prompts</span> set hidden rules; <span class="alert">few-shot</span> prompts show 3-5 examples</li>
+<li><span class="alert">Chain-of-thought</span>: worked examples tripled PaLM’s maths score (17.9% to 56.9%)</li>
+<li><span class="alert">ReAct agents</span> reason and use tools; <span class="alert">prompt injection</span> hijacks them</li>
 </ul>
-<div style="margin-top: 10px; background: rgba(45, 69, 99, 0.1); padding: 12px; border-radius: 10px; font-size: 17px;">
-<p><svg aria-hidden="true" role="img" viewbox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"></path></svg> CoT reduces hallucinations (L11). Prompt injection came back in the chatbot failures (L14), AI agents (L15), and in why we need regulation (L18).</p>
+<div style="margin-top: 15px; background: rgba(45, 69, 99, 0.1); padding: 12px; border-radius: 10px; font-size: 17px;">
+<p><svg aria-hidden="true" role="img" viewbox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"></path></svg> Agents return in L15; prompt injection in L14, L15 and L16.</p>
 </div>
 </div><div class="column" style="width:45%;">
 <div style="text-align: center;">
@@ -427,23 +420,22 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </section></section>
 <section>
 <section id="module-3-retrieval-generation-pipelines-and-agents" class="title-slide slide level1 center" data-background-color="#1B3A6B">
-<h1>Module 3: Retrieval, generation, pipelines, and agents 🔍</h1>
+<h1>Module 3: Retrieval, generation, pipelines and agents 🔍</h1>
 
 </section>
 <section id="hallucinations-and-creativity-lecture-11" class="slide level2">
 <h2>Hallucinations and creativity (Lecture 11)</h2>
-<div style="margin-top: 30px; font-size: 22px;">
+<div style="margin-top: 50px; font-size: 26px;">
 <div class="columns">
 <div class="column" style="width:55%;">
 <ul>
-<li>LLMs optimise for <span class="alert">P(next word | context)</span>, not P(statement is true). They have no internal fact-checker</li>
-<li><span class="alert">Sycophancy</span>: GPT-4o changed correct answers up to 55% of the time after pushback</li>
-<li>Types of hallucination: factual errors, fabrication, <span class="alert">citation hallucination</span> (worst kind?), logical contradictions</li>
-<li><span class="alert">Creativity-accuracy trade-off</span>: high temperature = creative but risky. One mechanism produces both hallucinations and creative writing</li>
-<li>Red flags: very specific numbers, precise citations, zero hedging, answers that feel too perfect</li>
+<li>LLMs optimise for <span class="alert">plausible, not true</span>: there is no fact-checker inside</li>
+<li><span class="alert">Sycophancy</span>: trained to please, models cave when you push back</li>
+<li>Red flags: very specific numbers, precise citations, <span class="alert">zero hedging</span></li>
+<li>Making things up helps in fiction and hurts with facts: <span class="alert">timing</span> is the problem</li>
 </ul>
-<div style="margin-top: 10px; background: rgba(45, 69, 99, 0.1); padding: 12px; border-radius: 10px; font-size: 17px;">
-<p><svg aria-hidden="true" role="img" viewbox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"></path></svg> Root cause: next-token prediction (L1-2). Fix: RAG (L12). Sycophancy connects to the alignment problem (L25).</p>
+<div style="margin-top: 15px; background: rgba(45, 69, 99, 0.1); padding: 12px; border-radius: 10px; font-size: 17px;">
+<p><svg aria-hidden="true" role="img" viewbox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"></path></svg> Root cause: next-token prediction (L1-2). One fix: RAG (L12).</p>
 </div>
 </div><div class="column" style="width:45%;">
 <div style="text-align: center;">
@@ -455,18 +447,18 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </section>
 <section id="rag-and-semantic-search-lecture-12" class="slide level2">
 <h2>RAG and semantic search (Lecture 12)</h2>
-<div style="margin-top: 30px; font-size: 22px;">
+<div style="margin-top: 50px; font-size: 26px;">
 <div class="columns">
 <div class="column" style="width:55%;">
 <ul>
-<li><span class="alert">RAG</span>: give an LLM real, verified documents at query time, like an <span class="alert">open-book exam</span></li>
-<li>Cuts hallucinations by 30-50% without retraining the model</li>
-<li>The pipeline: chunk documents (~512 tokens), embed them, store in a <span class="alert">vector database</span>. At query time, embed the question, retrieve the top-k similar chunks, inject them into the prompt</li>
-<li><span class="alert">Cosine similarity</span>: the angle between vectors. 0.9+ = very similar, &lt; 0.4 = unrelated. “Budget airfare” matches “cheap flights”</li>
-<li><span class="alert">Lost in the Middle</span>: LLMs attend to the start and end of context and ignore the middle</li>
+<li><span class="alert">RAG</span>: hand the model real documents at question time, an <span class="alert">open-book exam</span></li>
+<li>Retrieval cut hallucinated replies by <span class="alert">over 60%</span> in one study</li>
+<li>Chunk, embed and store documents; retrieve the <span class="alert">closest chunks</span> per question</li>
+<li><span class="alert">Cosine similarity</span>: “budget airfare” matches “cheap flights”</li>
+<li><span class="alert">Lost in the middle</span>: models miss facts buried mid-context</li>
 </ul>
-<div style="margin-top: 10px; background: rgba(45, 69, 99, 0.1); padding: 12px; border-radius: 10px; font-size: 17px;">
-<p><svg aria-hidden="true" role="img" viewbox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"></path></svg> Uses embeddings (L6) to fix hallucinations (L11). But if the documents are biased, the retrieval will be too (L17).</p>
+<div style="margin-top: 15px; background: rgba(45, 69, 99, 0.1); padding: 12px; border-radius: 10px; font-size: 17px;">
+<p><svg aria-hidden="true" role="img" viewbox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"></path></svg> Uses embeddings (L6) against hallucinations (L11). Projects in L16 are RAG without code.</p>
 </div>
 </div><div class="column" style="width:45%;">
 <div style="text-align: center;">
@@ -478,18 +470,17 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </section>
 <section id="pipelines-and-what-can-go-wrong-lecture-14" class="slide level2">
 <h2>Pipelines and what can go wrong (Lecture 14)</h2>
-<div style="margin-top: 30px; font-size: 22px;">
+<div style="margin-top: 50px; font-size: 26px;">
 <div class="columns">
 <div class="column" style="width:55%;">
 <ul>
-<li>The AI pipeline: prompt, preprocessing, inference, postprocessing, safety filtering, response. <span class="alert">Every step can fail</span></li>
-<li>Drift: <span class="alert">data drift</span> (inputs change), <span class="alert">label drift</span> (outcomes change), <span class="alert">concept drift</span> (the relationship changes; worst kind, the model is confident but wrong)</li>
-<li>Real failures: Air Canada chatbot (invented a refund policy, company held liable), DPD chatbot (swore at customers), Chevy (sold a car for $1)</li>
-<li>AI is non-deterministic, so test <span class="alert">properties</span> (safety, format, consistency), not exact outputs</li>
-<li><span class="alert">Input validation</span> blocks prompt injection; <span class="alert">output filtering</span> catches harmful content</li>
+<li><span class="alert">Every step can fail</span>: input, model, safety filters, output</li>
+<li><span class="alert">Data</span>, <span class="alert">label</span> and <span class="alert">concept</span> drift; concept drift is the most dangerous</li>
+<li>Air Canada <span class="alert">lost its case</span> over a chatbot’s invented refund policy</li>
+<li>Test <span class="alert">properties</span> (safety, format, consistency), not exact outputs</li>
 </ul>
-<div style="margin-top: 10px; background: rgba(45, 69, 99, 0.1); padding: 12px; border-radius: 10px; font-size: 17px;">
-<p><svg aria-hidden="true" role="img" viewbox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"></path></svg> Concept drift relates to bias (L17): the world changes, the model doesn’t. The chatbot failures set legal precedents that motivated regulation (L18).</p>
+<div style="margin-top: 15px; background: rgba(45, 69, 99, 0.1); padding: 12px; border-radius: 10px; font-size: 17px;">
+<p><svg aria-hidden="true" role="img" viewbox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"></path></svg> Drift is why models need watching after launch: the world changes, the model doesn’t.</p>
 </div>
 </div><div class="column" style="width:45%;">
 <div style="text-align: center;">
@@ -501,18 +492,17 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </section>
 <section id="documentation-as-accountability-lecture-14" class="slide level2">
 <h2>Documentation as accountability (Lecture 14)</h2>
-<div style="margin-top: 30px; font-size: 22px;">
+<div style="margin-top: 50px; font-size: 26px;">
 <div class="columns">
 <div class="column" style="width:55%;">
 <ul>
-<li><span class="alert">Datasheets for Datasets</span> (Gebru et al., 2018): motivation, composition, collection, uses. Without them you cannot spot bias or reproduce results</li>
-<li><span class="alert">Model Cards</span> (Mitchell et al., 2019): intended use, metrics, ethical considerations, and what the model is <span class="alert">not</span> for</li>
-<li><span class="alert">System Cards</span>: the whole system, not one model. Red teaming, oversight, how components interact</li>
-<li><span class="alert">Disaggregated evaluation</span>: report metrics by subgroup. A model at 90% overall can be 95% for Group A and 70% for Group B</li>
-<li>Most AI training data is collected <span class="alert">without explicit consent</span></li>
+<li><span class="alert">Datasheets</span> (Gebru et al., 2018): where data came from and what it is for</li>
+<li><span class="alert">Model cards</span> (Mitchell et al., 2019): intended use, and what it is <span class="alert">not</span> for</li>
+<li><span class="alert">Disaggregated evaluation</span>: 90% overall can hide 70% for one group</li>
+<li>Most training data is collected <span class="alert">without explicit consent</span></li>
 </ul>
-<div style="margin-top: 10px; background: rgba(45, 69, 99, 0.1); padding: 12px; border-radius: 10px; font-size: 17px;">
-<p><svg aria-hidden="true" role="img" viewbox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"></path></svg> Disaggregated evaluation is how the Optum bias was found (L17). The EU AI Act (L18) now requires this documentation for high-risk systems.</p>
+<div style="margin-top: 15px; background: rgba(45, 69, 99, 0.1); padding: 12px; border-radius: 10px; font-size: 17px;">
+<p><svg aria-hidden="true" role="img" viewbox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"></path></svg> The EU AI Act will require this documentation for high-risk systems from December 2027 (L18).</p>
 </div>
 </div><div class="column" style="width:45%;">
 <div style="text-align: center;">
@@ -524,24 +514,47 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </section>
 <section id="ai-agents-lecture-15" class="slide level2">
 <h2>AI agents (Lecture 15)</h2>
-<div style="margin-top: 30px; font-size: 22px;">
+<div style="margin-top: 50px; font-size: 26px;">
 <div class="columns">
 <div class="column" style="width:55%;">
 <ul>
-<li>An <span class="alert">agent</span> = a model + <span class="alert">tools</span> + a <span class="alert">loop</span> + a goal. Chatbots answer, agents <span class="alert">act</span> (search, browse, run code, send, pay)</li>
-<li>Reliability <span class="alert">multiplies away</span>: 95% accuracy per step is only ~36% over 20 steps</li>
-<li><span class="alert">Prompt injection</span> turns dangerous with tools: the <span class="alert">lethal trifecta</span> is private data + untrusted content + external communication</li>
-<li>Real failures: Replit’s agent deleted a production database, Anthropic’s Claudius ran a shop at a loss. <span class="alert">Instructions are not guardrails</span></li>
-<li>Delegate by the <span class="alert">credit card test</span>: reversibility × stakes. Demand approvals, sandboxes, action logs, and limits</li>
+<li>An <span class="alert">agent</span> = model + tools + loop + goal. Chatbots answer; agents <span class="alert">act</span></li>
+<li>Errors multiply: <span class="alert">95% per step</span> is ~36% over 20 steps</li>
+<li><span class="alert">Lethal trifecta</span>: private data + untrusted content + a way to send data out</li>
+<li>Replit’s agent deleted a live database: <span class="alert">instructions are not guardrails</span></li>
+<li><span class="alert">Credit card test</span>: delegate by reversibility × stakes; demand approvals and logs</li>
 </ul>
-<div style="margin-top: 10px; background: rgba(45, 69, 99, 0.1); padding: 12px; border-radius: 10px; font-size: 17px;">
-<p><svg aria-hidden="true" role="img" viewbox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"></path></svg> Agents extend the ReAct idea from prompting (L10) and RAG (L12). Their failures are pipeline failures (L14) with higher stakes. Goals taken literally previews alignment (L25).</p>
+<div style="margin-top: 15px; background: rgba(45, 69, 99, 0.1); padding: 12px; border-radius: 10px; font-size: 17px;">
+<p><svg aria-hidden="true" role="img" viewbox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"></path></svg> Agents extend ReAct (L10). Goals taken literally preview alignment (L25).</p>
 </div>
 </div><div class="column" style="width:45%;">
-<div style="background: rgba(45, 69, 99, 0.1); padding: 20px; border-radius: 10px; font-size: 19px; margin-top: 30px;">
+<div style="background: rgba(45, 69, 99, 0.1); padding: 20px; border-radius: 10px; font-size: 22px; margin-top: 30px;">
 <p><strong>The one-sentence version:</strong></p>
 <p>A chatbot with a bad goal writes a bad essay</p>
 <p>An agent with a bad goal <span class="alert">does bad things efficiently</span></p>
+</div>
+</div></div>
+</div>
+</section>
+<section id="setting-up-ai-lecture-16" class="slide level2">
+<h2>Setting up AI (Lecture 16)</h2>
+<div style="margin-top: 50px; font-size: 26px;">
+<div class="columns">
+<div class="column" style="width:55%;">
+<ul>
+<li>A prompt is one request; a <span class="alert">setup</span> survives the tab closing</li>
+<li><span class="alert">Four layers</span>: instructions and knowledge you write; memory and tools fill themselves</li>
+<li>Keep rules <span class="alert">few and first</span>: top models follow only 68% of 500 (IFScale)</li>
+<li>Memory is on by default: read it, edit it, use <span class="alert">incognito</span></li>
+<li>Connectors: <span class="alert">least access</span>, read-only by default, confirm every write</li>
+</ul>
+<div style="margin-top: 15px; background: rgba(45, 69, 99, 0.1); padding: 12px; border-radius: 10px; font-size: 17px;">
+<p><svg aria-hidden="true" role="img" viewbox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"></path></svg> Instructions are prompting (L10) made permanent. Connectors turn a chatbot into an agent (L15).</p>
+</div>
+</div><div class="column" style="width:45%;">
+<div style="text-align: center;">
+<p><a href="#/" data-modal-type="image" data-modal-url="figures/augmented-llm.png"><img data-src="figures/augmented-llm.png" style="width:90.0%"></a></p>
+<p>Anthropic’s augmented LLM</p>
 </div>
 </div></div>
 </div>
@@ -553,68 +566,47 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </section>
 <section id="where-bias-comes-from-lecture-17" class="slide level2">
 <h2>Where bias comes from (Lecture 17)</h2>
-<div style="margin-top: 30px; font-size: 22px;">
+<div style="margin-top: 50px; font-size: 23px;">
 <div class="columns">
 <div class="column" style="width:55%;">
 <ul>
-<li>AI <span class="alert">does not invent bias</span>. It picks up patterns from human data and applies them at scale</li>
-<li>Bias enters at every stage: <span class="alert">historical</span> (past discrimination baked in), <span class="alert">representation</span> (who is missing from the data), <span class="alert">measurement</span> (proxy variables), <span class="alert">aggregation</span> (ignoring group differences), <span class="alert">evaluation</span> (unrepresentative benchmarks), <span class="alert">deployment</span> (wrong context)</li>
-<li><span class="alert">Feedback loops</span>: predictions shape future training data. Predictive policing gives more patrols, more arrests, more patrols</li>
-<li><span class="alert">Impossibility theorem</span>: with different base rates across groups, you cannot have calibration, equal false positive rates, and equal false negative rates at once. Fairness is a <span class="alert">values choice</span>, not a technical fix</li>
+<li>AI <span class="alert">does not invent bias</span>: it learns it from human data and scales it</li>
+<li><span class="alert">Six types</span>: historical, representation, measurement, aggregation, evaluation, deployment</li>
+<li>A <a href="https://www.science.org/doi/10.1126/science.aax2342">US health algorithm</a> predicted <span class="alert">costs, not need</span>, so it underrated sick Black patients</li>
+<li><span class="alert">Feedback loops</span>: predictions shape the next round of data</li>
+<li><span class="alert">Impossibility theorem</span>: with different base rates, no model meets every fairness test</li>
 </ul>
-<div style="margin-top: 10px; background: rgba(45, 69, 99, 0.1); padding: 12px; border-radius: 10px; font-size: 17px;">
-<p><svg aria-hidden="true" role="img" viewbox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"></path></svg> Measurement bias = the proxy problem (L3). Textbook example: Optum. Feedback loops relate to concept drift (L14). The impossibility theorem connects to alignment (L25).</p>
+<div style="margin-top: 15px; background: rgba(45, 69, 99, 0.1); padding: 12px; border-radius: 10px; font-size: 17px;">
+<p><svg aria-hidden="true" role="img" viewbox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"></path></svg> Measurement bias is the proxy problem (L3). Picking a fairness definition is a values choice.</p>
 </div>
 </div><div class="column" style="width:45%;">
 <div style="text-align: center;">
-<p><a href="#/" data-modal-type="image" data-modal-url="figures/bias-lifecycle.png"><img data-src="figures/bias-lifecycle.png" style="width:85.0%"></a></p>
+<p><a href="#/" data-modal-type="image" data-modal-url="figures/bias-lifecycle.png"><img data-src="figures/bias-lifecycle.png" style="width:90.0%"></a></p>
 <p>Bias at every stage</p>
-<div style="margin-top: 10px;">
-<p><a href="#/" data-modal-type="image" data-modal-url="figures/impossibility-theorem.png"><img data-src="figures/impossibility-theorem.png" style="width:85.0%"></a></p>
-</div>
-</div>
-</div></div>
-</div>
-</section>
-<section id="the-optum-case-and-proxy-variables-lecture-17" class="slide level2">
-<h2>The Optum case and proxy variables (Lecture 17)</h2>
-<div style="margin-top: 30px; font-size: 22px;">
-<div class="columns">
-<div class="column" style="width:55%;">
-<ul>
-<li>The Optum algorithm used <span class="alert">healthcare costs</span> as a proxy for patient needs</li>
-<li>Black patients spend less even when equally sick, because of access barriers and income inequality</li>
-<li>At the same risk score, Black patients had <span class="alert">26.3% more chronic conditions</span></li>
-<li>Race was never an input. <span class="alert">Costs carried racial information</span> because the healthcare system was unequal</li>
-<li>The fix: predict health outcomes instead of costs, cutting bias by ~84%</li>
-</ul>
-<div style="margin-top: 10px; background: rgba(45, 69, 99, 0.1); padding: 12px; border-radius: 10px; font-size: 17px;">
-<p><svg aria-hidden="true" role="img" viewbox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"></path></svg> Ties together the proxy problem (L3), measurement bias (L17), and Goodhart’s Law (L5). The bias was invisible until disaggregated evaluation (L14).</p>
-</div>
-</div><div class="column" style="width:45%;">
-<div style="text-align: center;">
-<p><a href="#/" data-modal-type="image" data-modal-url="figures/algorithm-fix.png"><img data-src="figures/algorithm-fix.png" style="width:100.0%"></a></p>
-<p>Obermeyer et al.&nbsp;(2019): changing the target variable fixed the bias</p>
 </div>
 </div></div>
 </div>
 </section></section>
 <section>
 <section id="module-5-policy-governance-and-social-impact" class="title-slide slide level1 center" data-background-color="#1B3A6B">
-<h1>Module 5: Policy, governance, and social impact 🏛️</h1>
+<h1>Module 5: Policy, governance and social impact 🏛️</h1>
 
 </section>
 <section id="ai-regulation-around-the-world-lecture-18" class="slide level2">
 <h2>AI regulation around the world (Lecture 18)</h2>
-<div style="margin-top: 30px; font-size: 21px;">
+<div style="margin-top: 30px; font-size: 22px;">
 <div class="columns">
 <div class="column" style="width:55%;">
 <ul>
-<li>Why regulate? <span class="alert">Information asymmetry</span> (users cannot evaluate AI), <span class="alert">externalities</span> (deepfakes harm non-users), <span class="alert">collective action problems</span> (race to the bottom on safety)</li>
-<li><span class="alert">EU AI Act</span> (August 2024): four risk tiers</li>
+<li>Why regulate: <span class="alert">information asymmetry</span>, <span class="alert">externalities</span>, races to the bottom</li>
+<li><span class="alert">EU AI Act</span>: four risk tiers, fines up to <span class="alert">7% of global turnover</span></li>
 </ul>
 <div style="text-align: center;">
 <table class="caption-top">
+<colgroup>
+<col style="width: 40%">
+<col style="width: 60%">
+</colgroup>
 <thead>
 <tr class="header">
 <th>Tier</th>
@@ -624,7 +616,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <tbody>
 <tr class="odd">
 <td><span class="alert">Prohibited</span></td>
-<td>Social scoring, real-time biometric ID</td>
+<td>Social scoring, real-time police face ID in public</td>
 </tr>
 <tr class="even">
 <td><span class="alert">High-risk</span></td>
@@ -642,102 +634,107 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </table>
 </div>
 <ul>
-<li>US: sectoral approach, <span class="alert">no comprehensive federal law</span></li>
-<li>China: regulates commercial AI, <span class="alert">exempts state use</span></li>
-<li><span class="alert">Brussels Effect</span>: EU rules may become the global default, as with the General Data Protection Regulation (GDPR)</li>
+<li>High-risk rules start <span class="alert">December 2027</span>, after the 2026 Digital Omnibus</li>
+<li>US: <span class="alert">no federal law</span>; China: rules for companies, <span class="alert">not the state</span></li>
 </ul>
-<div style="margin-top: 10px; background: rgba(45, 69, 99, 0.1); padding: 12px; border-radius: 10px; font-size: 17px;">
-<p><svg aria-hidden="true" role="img" viewbox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"></path></svg> “High-risk” = the systems from Lectures 16-17. The Act requires documentation from Lecture 14. Brussels Effect connects to GDPR (L19).</p>
+<div style="margin-top: 15px; background: rgba(45, 69, 99, 0.1); padding: 12px; border-radius: 10px; font-size: 17px;">
+<p><svg aria-hidden="true" role="img" viewbox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"></path></svg> High-risk systems are the hiring and credit cases from L17. GDPR (L19) is the Brussels Effect in practice.</p>
 </div>
 </div><div class="column" style="width:45%;">
 <div style="text-align: center;">
 <p><a href="#/" data-modal-type="image" data-modal-url="figures/eu-ai-act.png"><img data-src="figures/eu-ai-act.png" style="width:100.0%"></a></p>
-<p>The EU AI Act: world’s first binding AI law</p>
+<p>The EU AI Act: the first comprehensive AI law</p>
 </div>
 </div></div>
 </div>
 </section>
 <section id="privacy-and-data-protection-lecture-19" class="slide level2">
 <h2>Privacy and data protection (Lecture 19)</h2>
-<div style="margin-top: 30px; font-size: 21px;">
+<div style="margin-top: 50px; font-size: 26px;">
 <div class="columns">
 <div class="column" style="width:55%;">
 <ul>
-<li>AI makes privacy harder through <span class="alert">scale</span> (collection is cheap), <span class="alert">inference</span> (AI predicts sensitive things from harmless data), and <span class="alert">persistence</span> (data never goes away)</li>
-<li>You control what you share, but <span class="alert">not what can be inferred</span> from it</li>
-<li>LLMs can <span class="alert">memorise and regurgitate</span> personal information from training data</li>
-<li><span class="alert">GDPR</span> (2018): rights to access, erasure, portability, objection. <span class="alert">Article 22</span>: right not to be subject to purely automated decisions</li>
-<li><span class="alert">Differential privacy</span> (adds noise), <span class="alert">federated learning</span> (trains locally) and <span class="alert">synthetic data</span> help at the margins, but do not solve collection</li>
-<li><span class="alert">Privacy paradox</span>: people say they care about privacy and accept all cookies anyway</li>
+<li>AI strains privacy through <span class="alert">scale</span>, <span class="alert">inference</span> and <span class="alert">persistence</span></li>
+<li>You control what you share, <span class="alert">not what can be inferred</span> from it</li>
+<li><span class="alert">GDPR</span>: access, erasure, portability; <span class="alert">Article 22</span> limits fully automated decisions</li>
+<li>Privacy tech helps, but <span class="alert">doesn’t stop collection</span></li>
+<li><span class="alert">Privacy paradox</span>: we say we care, then accept all cookies</li>
 </ul>
-<div style="margin-top: 10px; background: rgba(45, 69, 99, 0.1); padding: 12px; border-radius: 10px; font-size: 17px;">
-<p><svg aria-hidden="true" role="img" viewbox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"></path></svg> Inference = the proxy problem (L3) applied to personal data. GDPR is the Brussels Effect (L18) in practice. Consent ties to Lecture 14.</p>
+<div style="margin-top: 15px; background: rgba(45, 69, 99, 0.1); padding: 12px; border-radius: 10px; font-size: 17px;">
+<p><svg aria-hidden="true" role="img" viewbox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"></path></svg> Inference is the proxy problem (L3) applied to people. 23 US states now have privacy laws.</p>
 </div>
 </div><div class="column" style="width:45%;">
 <div style="text-align: center;">
-<p><a href="#/" data-modal-type="image" data-modal-url="figures/gdpr.jpg"><img data-src="figures/gdpr.jpg" style="width:70.0%"></a></p>
-<div style="margin-top: 10px;">
-<p><a href="#/" data-modal-type="image" data-modal-url="figures/clearview-ai.png"><img data-src="figures/clearview-ai.png" style="width:70.0%"></a></p>
-<p>Clearview AI: scraped billions of faces without consent</p>
-</div>
+<p><a href="#/" data-modal-type="image" data-modal-url="figures/clearview-ai.png"><img data-src="figures/clearview-ai.png" style="width:85.0%"></a></p>
+<p>Clearview AI: 3 billion scraped photos in 2020, 70+ billion today</p>
 </div>
 </div></div>
 </div>
 </section>
-<section id="labour-markets-and-wellbeing-lectures-21-22" class="slide level2">
-<h2>Labour markets and wellbeing (Lectures 21-22)</h2>
-<div style="margin-top: 30px; font-size: 21px;">
+<section id="labour-markets-lecture-21" class="slide level2">
+<h2>Labour markets (Lecture 21)</h2>
+<div style="margin-top: 50px; font-size: 26px;">
 <div class="columns">
 <div class="column" style="width:55%;">
-<p><strong>Lecture 21: Labour</strong></p>
 <ul>
-<li>Previous automation targeted physical tasks, <span class="alert">AI targets cognitive work</span></li>
-<li>Think <span class="alert">tasks, not jobs</span>: most jobs mix automatable and non-automatable tasks</li>
-<li>AI hits <span class="alert">white-collar, entry-level work first</span></li>
-<li>AI <span class="alert">compresses the skill distribution</span>: novices gain more than experts</li>
-<li>Augmentation vs <span class="alert">replacement</span> (Acemoglu): policy can shift the balance</li>
+<li>Earlier automation hit physical tasks; <span class="alert">AI targets cognitive work</span></li>
+<li>Think <span class="alert">tasks, not jobs</span>: most jobs mix both kinds</li>
+<li>Novices gain most: customer support agents became <span class="alert">15% more productive</span></li>
+<li>Young workers in AI-exposed jobs are <span class="alert">19% below</span> their peers; overall earnings, <span class="alert">no effect yet</span></li>
+<li>Most economists are <span class="alert">uncertain</span>; policy can steer AI toward augmentation</li>
 </ul>
-<p><strong>Lecture 22: Wellbeing</strong></p>
-<ul>
-<li><span class="alert">Attention economy</span>: algorithms optimise for engagement, not wellbeing</li>
-<li>Filter bubbles and polarisation are <span class="alert">probably overstated</span>; effects on body image and sleep are real</li>
-<li><span class="alert">Jevons Paradox</span>: more efficient AI brings more usage, not less environmental cost</li>
-</ul>
-<div style="margin-top: 10px; background: rgba(45, 69, 99, 0.1); padding: 12px; border-radius: 10px; font-size: 17px;">
-<p><svg aria-hidden="true" role="img" viewbox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"></path></svg> Attention economy = Goodhart’s Law (L5) in action: engagement is the proxy, wellbeing is what we care about. Skill compression relates to bias-variance (L4).</p>
+<div style="margin-top: 15px; background: rgba(45, 69, 99, 0.1); padding: 12px; border-radius: 10px; font-size: 17px;">
+<p><svg aria-hidden="true" role="img" viewbox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"></path></svg> Augmentation or replacement is a policy choice, like the rules in L18.</p>
 </div>
 </div><div class="column" style="width:45%;">
 <div style="text-align: center;">
 <p><a href="#/" data-modal-type="image" data-modal-url="figures/automation-waves.jpg"><img data-src="figures/automation-waves.jpg" style="width:90.0%"></a></p>
-<p>This wave is different: cognitive tasks</p>
-<div style="margin-top: 10px;">
-<p><a href="#/" data-modal-type="image" data-modal-url="figures/valuable-skills.png"><img data-src="figures/valuable-skills.png" style="width:90.0%"></a></p>
-<p>What remains hard to automate</p>
-</div>
+<p>Six waves of innovation; AI is the latest</p>
 </div>
 </div></div>
 </div>
 </section></section>
 <section>
-<section id="module-6-applications-limits-and-the-future" class="title-slide slide level1 center" data-background-color="#1B3A6B">
-<h1>Module 6: Applications, limits, and the future 🔮</h1>
+<section id="module-6-applications-limits-and-projects" class="title-slide slide level1 center" data-background-color="#1B3A6B">
+<h1>Module 6: Applications, limits and projects 🔮</h1>
 
 </section>
-<section id="misinformation-and-deepfakes-lecture-23" class="slide level2">
-<h2>Misinformation and deepfakes (Lecture 23)</h2>
-<div style="margin-top: 30px; font-size: 22px;">
+<section id="ai-and-wellbeing-lecture-22" class="slide level2">
+<h2>AI and wellbeing (Lecture 22)</h2>
+<div style="margin-top: 50px; font-size: 26px;">
 <div class="columns">
 <div class="column" style="width:55%;">
 <ul>
-<li><span class="alert">Misinformation</span> (false, no intent), <span class="alert">disinformation</span> (false, deliberate), <span class="alert">malinformation</span> (true, used to harm)</li>
-<li><span class="alert">Deepfakes</span>: AI-generated media of real people, used for political manipulation, financial fraud, and non-consensual intimate imagery</li>
-<li><span class="alert">The authenticity crisis</span>: when anything could be fake, people dismiss real evidence too</li>
-<li>We fall for it because of <span class="alert">System 1</span> (fast, intuitive) thinking, confirmation bias, and the bandwagon effect</li>
-<li>Responses: detection tools, <span class="alert">content provenance (C2PA)</span>, platform policies, legal frameworks, <span class="alert">media literacy</span></li>
-<li>No single tool works alone. <span class="alert">Media literacy</span> is the most reliable individual defence</li>
+<li><span class="alert">Attention economy</span>: algorithms optimise engagement, not wellbeing</li>
+<li>Filter bubbles look <span class="alert">overstated</span>; mental health effects are <span class="alert">debated</span></li>
+<li>AI therapy: a huge treatment gap, <span class="alert">short-term promise</span>, thin long-term evidence</li>
+<li>AI uses ~0.2-0.3% of world electricity, <span class="alert">growing fast</span>; efficiency invites more use</li>
 </ul>
-<div style="margin-top: 10px; background: rgba(45, 69, 99, 0.1); padding: 12px; border-radius: 10px; font-size: 17px;">
-<p><svg aria-hidden="true" role="img" viewbox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"></path></svg> Powered by vision models (L7), detected via embeddings (L6), regulated by the EU AI Act (L18).</p>
+<div style="margin-top: 15px; background: rgba(45, 69, 99, 0.1); padding: 12px; border-radius: 10px; font-size: 17px;">
+<p><svg aria-hidden="true" role="img" viewbox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"></path></svg> Engagement is Goodhart’s Law (L5): the proxy replaces what we care about.</p>
+</div>
+</div><div class="column" style="width:45%;">
+<div style="text-align: center;">
+<p><a href="#/" data-modal-type="image" data-modal-url="figures/attention-economy.png"><img data-src="figures/attention-economy.png" style="width:100.0%"></a></p>
+<p>Your attention is the product</p>
+</div>
+</div></div>
+</div>
+</section>
+<section id="misinformation-and-deepfakes-lecture-23" class="slide level2">
+<h2>Misinformation and deepfakes (Lecture 23)</h2>
+<div style="margin-top: 50px; font-size: 26px;">
+<div class="columns">
+<div class="column" style="width:55%;">
+<ul>
+<li><span class="alert">Mis-</span> (false, no intent), <span class="alert">dis-</span> (false, deliberate), <span class="alert">malinformation</span> (true, used to harm)</li>
+<li>Deepfakes: fraud, election manipulation, <span class="alert">non-consensual imagery</span></li>
+<li><span class="alert">Liar’s dividend</span>: when anything could be fake, real evidence gets dismissed</li>
+<li>We fall for it: <span class="alert">System 1</span> thinking, confirmation bias, bandwagons</li>
+<li>No single fix: detection, provenance, platforms, laws, literacy. <span class="alert">Layer them</span></li>
+</ul>
+<div style="margin-top: 15px; background: rgba(45, 69, 99, 0.1); padding: 12px; border-radius: 10px; font-size: 17px;">
+<p><svg aria-hidden="true" role="img" viewbox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"></path></svg> Deepfakes use vision models (L7); the EU AI Act requires labels (L18).</p>
 </div>
 </div><div class="column" style="width:45%;">
 <div style="text-align: center;">
@@ -749,19 +746,18 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </section>
 <section id="safety-alignment-and-the-future-lecture-25" class="slide level2">
 <h2>Safety, alignment, and the future (Lecture 25)</h2>
-<div style="margin-top: 30px; font-size: 22px;">
+<div style="margin-top: 50px; font-size: 26px;">
 <div class="columns">
 <div class="column" style="width:55%;">
 <ul>
-<li>Five safety problems (Amodei et al., 2016): <span class="alert">safe exploration</span>, <span class="alert">side effects</span>, <span class="alert">reward hacking</span>, <span class="alert">scalable oversight</span>, <span class="alert">distributional shift</span></li>
-<li>The <span class="alert">alignment problem</span>: getting AI to do what we want, not what we literally asked for. The King Midas problem</li>
-<li>Why it is hard: the <span class="alert">specification problem</span> (you cannot write down everything you care about), <span class="alert">Goodhart’s Law</span>, and disagreement about values</li>
-<li>Current approaches: <span class="alert">RLHF</span>, <span class="alert">Constitutional AI</span> (Anthropic), debate. None is a complete solution</li>
-<li>Stuart Russell’s proposal: AI should be <span class="alert">uncertain about objectives</span> and defer to humans</li>
-<li><span class="alert">Neither panic nor complacency</span>. Serious researchers disagree genuinely, so take evidence over vibes</li>
+<li>Five concrete problems (Amodei et al., 2016), from <span class="alert">side effects</span> to <span class="alert">reward hacking</span></li>
+<li><span class="alert">Alignment</span>: getting what we want, not what we literally asked (King Midas)</li>
+<li>Hard because of <span class="alert">specification</span>, Goodhart’s Law and value disagreement</li>
+<li>RLHF, Constitutional AI and debate help; <span class="alert">none is complete</span></li>
+<li>Russell: machines should be <span class="alert">uncertain about our goals</span> and learn them from us</li>
 </ul>
-<div style="margin-top: 10px; background: rgba(45, 69, 99, 0.1); padding: 12px; border-radius: 10px; font-size: 17px;">
-<p><svg aria-hidden="true" role="img" viewbox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"></path></svg> Ties together RLHF (L4), Goodhart’s Law (L5), bias (L17), agents acting on goals (L15), and regulation (L18). This is the question the whole course builds toward.</p>
+<div style="margin-top: 15px; background: rgba(45, 69, 99, 0.1); padding: 12px; border-radius: 10px; font-size: 17px;">
+<p><svg aria-hidden="true" role="img" viewbox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"></path></svg> Ties together RLHF (L4), Goodhart (L5), bias (L17) and agents (L15). Neither panic nor complacency.</p>
 </div>
 </div><div class="column" style="width:45%;">
 <div style="text-align: center;">
@@ -772,63 +768,77 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </section></section>
 <section>
 <section id="six-threads" class="title-slide slide level1 center" data-background-color="#1B3A6B">
-<h1>Six threads 🔄</h1>
+<h1>Six threads</h1>
 
 </section>
 <section id="ideas-that-run-through-the-whole-course" class="slide level2 scrollable">
 <h2>Ideas that run through the whole course</h2>
-<div style="margin-top: 30px; font-size: 20px;">
+<div style="margin-top: 50px; font-size: 26px;">
 <div class="columns">
 <div class="column" style="width:50%;">
 <ol type="1">
-<li><span class="alert">Next-token prediction is the basis of everything</span></li>
+<li><p><span class="alert">Next-token prediction is the basis</span></p>
+<p>LLMs predict the next word, not the truth (L1, 2, 6, 11)</p></li>
+<li><p><span class="alert">The proxy problem is everywhere</span></p>
+<p>Optimise a proxy and it stops measuring what you care about (L3, 5, 17, 22)</p></li>
+<li><p><span class="alert">Embeddings are the common language</span></p>
+<p>Text, images and audio all become vectors (L6, 7, 12)</p></li>
 </ol>
-<p>LLMs predict the next word, not the truth, which explains hallucinations, creativity, and sycophancy (Lectures 1, 2, 6, 11)</p>
-<ol start="2" type="1">
-<li><span class="alert">The proxy problem is pervasive</span></li>
-</ol>
-<p>Labels, metrics, objectives, and engagement are all proxies. Optimising a proxy corrupts it (Lectures 3, 5, 16, 17, 22)</p>
-<ol start="3" type="1">
-<li><span class="alert">Embeddings are the universal language</span></li>
-</ol>
-<p>Text, images, and audio all become vectors. RAG, semantic search, CLIP, and multimodal AI rely on this (Lectures 6, 7, 12)</p>
 </div><div class="column" style="width:50%;">
 <ol start="4" type="1">
-<li><span class="alert">Bias can enter at every stage</span></li>
+<li><p><span class="alert">Bias can enter at every stage</span></p>
+<p>Fairness is a values choice, not a technical fix (L3, 14, 17)</p></li>
+<li><p><span class="alert">Documentation is accountability</span></p>
+<p>Datasheets, model cards and disaggregated evaluation (L14, 17)</p></li>
+<li><p><span class="alert">Regulation is catching up</span></p>
+<p>EU AI Act, GDPR and US state laws (L18, 19)</p></li>
 </ol>
-<p>Data, labels, training, evaluation, deployment. Feedback loops make it self-reinforcing, and the impossibility theorem makes fairness a values choice (Lectures 3, 14, 16, 17)</p>
-<ol start="5" type="1">
-<li><span class="alert">Documentation is accountability</span></li>
-</ol>
-<p>Datasheets, model cards, system cards. Disaggregated evaluation reveals hidden gaps (Lectures 14, 16, 17)</p>
-<ol start="6" type="1">
-<li><span class="alert">Regulation is catching up</span></li>
-</ol>
-<p>EU AI Act, GDPR, the Brussels Effect. Market failures justify intervention (Lectures 18, 19)</p>
-<div style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; font-size: 18px; margin-top: 15px;">
-<p>If you understand these six threads, you understand the course!</p>
-</div>
 </div></div>
 </div>
 </section></section>
 <section>
-<section id="summary" class="title-slide slide level1 center" data-background-color="#1B3A6B">
-<h1>Summary 📝</h1>
+<section id="final-summary" class="title-slide slide level1 center" data-background-color="#1B3A6B">
+<h1>Final Summary 🤓</h1>
 
 </section>
 <section id="what-we-covered-this-semester" class="slide level2">
 <h2>What we covered this semester</h2>
-<div style="margin-top: 30px; font-size: 28px;">
+<div style="margin-top: 20px; font-size: 20px;">
 <div class="columns">
-<div class="column" style="width:55%;">
-<p><span class="alert">How AI works</span>: next-token prediction, transformers, embeddings, three learning paradigms, metrics and their limits</p>
-<p><span class="alert">How AI handles information</span>: tokens, prompting (PTCF, CoT), hallucinations, RAG, agents, pipelines and drift</p>
-<p><span class="alert">Ethics and bias</span>: bias at every stage, the impossibility theorem, the Optum case, documentation as accountability</p>
-</div><div class="column" style="width:45%;">
-<p><span class="alert">Policy and society</span>: EU AI Act, GDPR, the privacy paradox, labour markets, the attention economy, environmental costs</p>
-<p><span class="alert">Safety and the future</span>: concrete safety problems, the alignment problem, multiple plausible futures</p>
-<div style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; margin-top: 15px; font-size: 18px;">
-<p>You now have the vocabulary to <span class="alert">read AI claims critically</span> and ask the right questions about data, bias, and harms. Good luck on the quiz! 🍀</p>
+<div class="column" style="width:50%;">
+<p><strong>How AI works</strong></p>
+<ul>
+<li>LLMs predict the <span class="alert">next token</span>, not the truth</li>
+<li>Text, images and sound all become <span class="alert">embeddings</span></li>
+<li>Metrics mislead: accuracy paradox, <span class="alert">Goodhart’s Law</span></li>
+</ul>
+<p><strong>Using AI well</strong></p>
+<ul>
+<li>Prompting: PTCF, examples, <span class="alert">chain-of-thought</span></li>
+<li>RAG grounds answers; <span class="alert">agents</span> multiply errors</li>
+<li>Setups: instructions, knowledge, <span class="alert">memory</span>, tools</li>
+</ul>
+<p><strong>Ethics and bias</strong></p>
+<ul>
+<li>Bias enters at <span class="alert">every stage</span>, often through proxies</li>
+<li>No model meets <span class="alert">every fairness criterion</span></li>
+<li><span class="alert">Datasheets and model cards</span> for accountability</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><strong>Policy and society</strong></p>
+<ul>
+<li>EU AI Act <span class="alert">risk tiers</span>; a US state patchwork</li>
+<li>Privacy: what AI <span class="alert">infers</span>, not only what you share</li>
+<li>Jobs: <span class="alert">tasks, not jobs</span>; young workers hit first</li>
+<li>Wellbeing: attention, AI therapy, <span class="alert">energy use</span></li>
+</ul>
+<p><strong>Safety and the future</strong></p>
+<ul>
+<li>Deepfakes and the <span class="alert">liar’s dividend</span></li>
+<li>Alignment: what we want, <span class="alert">not what we asked</span></li>
+</ul>
+<div style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; margin-top: 20px; font-size: 20px;">
+<p>You can now <span class="alert">read AI claims critically</span>. Good luck on Quiz 05 and your projects! 🍀</p>
 </div>
 </div></div>
 </div>
