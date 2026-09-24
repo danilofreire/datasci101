@@ -16,19 +16,20 @@ This lecture surveys the emerging global landscape of AI governance, comparing a
 * **High-risk requirements**: Conformity assessments, risk management, data governance, human oversight, logging.
 * **General-Purpose AI rules**: Special obligations for foundation models, stricter for "systemic risk" models.
 * **Enforcement**: Fines up to €35 million or 7% global turnover.
+* **Timeline**: Bans apply since 2025; the 2026 Digital Omnibus delays high-risk rules to December 2027.
 
 ### 3. The US approach
 
 * **Sectoral regulation**: Different agencies (FDA, SEC, EEOC) regulate AI in their domains.
 * **Executive action**: Biden's 2023 EO on AI safety, Trump's 2025 AI Action Plan with different priorities.
-* **State initiatives**: Colorado, California, Illinois, and NYC filling federal gaps with local laws.
+* **State initiatives**: Colorado, California, Illinois, and NYC filling federal gaps with local laws; a December 2025 executive order pushes back against them.
 * **Philosophy**: Innovation-first compared to EU's precautionary approach.
 
 ### 4. Global landscape
 
 * **China**: Multiple regulations focused on content control and registration, but state use largely unrestricted.
-* **Other jurisdictions**: UK's pro-innovation guidance, Canada's stalled AIDA, Japan's light-touch approach.
-* **International coordination**: OECD AI Principles, G7 Hiroshima Process, UN Advisory Body, but no global consensus.
+* **Other jurisdictions**: UK's pro-innovation guidance, Canada's AIDA (died in 2025), Japan's light-touch approach.
+* **International coordination**: OECD AI Principles, G7 Hiroshima Process, UN Scientific Panel on AI, but no global consensus.
 
 ## Resources
 

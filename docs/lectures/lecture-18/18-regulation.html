@@ -157,18 +157,18 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </section>
 <section id="recap-of-last-class" class="slide level2">
 <h2>Recap of last class</h2>
-<div style="margin-top: 20px; font-size: 24px;">
+<div style="margin-top: 50px; font-size: 26px;">
 <div class="columns">
-<div class="column" style="width:50%;">
+<div class="column" style="width:58%;">
 <ul>
 <li>Last time: <span class="alert">bias</span> in AI systems, and who pays for it</li>
 <li>Robert Williams, Detroit 2020: a facial recognition match, <span class="alert">30 hours in a cell</span></li>
-<li>Six types: historical, representation, measurement, aggregation, evaluation, deployment</li>
+<li>Six types: historical, representation, measurement, aggregation, evaluation and deployment</li>
 <li>Delete race from the data and the <span class="alert">proxies</span> do the work: ZIP code, test scores</li>
 <li>The <span class="alert">impossibility theorem</span>: no model satisfies every fairness criterion at once</li>
 <li>Today: fairness is a <span class="alert">values question</span>, so how are governments responding?</li>
 </ul>
-</div><div class="column" style="width:50%;">
+</div><div class="column" style="width:42%;">
 <div style="text-align: center; margin-top: 30px;">
 <p><a href="#/" data-modal-type="image" data-modal-url="figures/ai-regulation-map.png"><img data-src="figures/ai-regulation-map.png" style="width:100.0%"></a></p>
 <p>Source: <a href="https://oecd.ai/en/dashboards/overview">OECD AI Policy Observatory</a></p>
@@ -234,7 +234,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <li>How accurate is this hiring algorithm? Nobody knows</li>
 <li>Is this chatbot hallucinating? Hard to tell</li>
 </ul></li>
-<li><span class="alert">Externalities</span>: harms fall on people who never chose the system, like deepfakes of people who never consented</li>
+<li><span class="alert">Externalities</span>: harms fall on people who never chose the system, like deepfake victims</li>
 <li><span class="alert">Collective action problems</span>: company A deploys unsafe AI, company B must follow or lose market share</li>
 </ul>
 <p><strong>Rights and dignity:</strong></p>
@@ -247,7 +247,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <div style="text-align: center;">
 <p><a href="#/" data-modal-type="image" data-modal-url="figures/market-failure.jpg"><img data-src="figures/market-failure.jpg" style="width:100.0%"></a></p>
 <div style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; font-size: 18px; margin-top: 15px;">
-<p>“Move fast and break things” maybe works for social media features. It’s <span class="alert">less appealing when the things being broken</span> are people’s careers (or even lifes)!</p>
+<p>“Move fast and break things” maybe works for social media features. It’s <span class="alert">less appealing when the things being broken</span> are people’s careers (or even lives)!</p>
 </div>
 </div>
 </div></div>
@@ -350,29 +350,27 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <h2>The world’s first comprehensive AI law</h2>
 <div style="margin-top: 30px; font-size: 18px;">
 <div class="columns">
-<div class="column" style="width:55%;">
+<div class="column" style="width:58%;">
 <p><strong>Timeline:</strong></p>
 <ul>
 <li>April 2021: European Commission proposal</li>
-<li>December 2023: Political agreement</li>
-<li>March 2024: European Parliament approval</li>
+<li>December 2023: deal struck; March 2024: Parliament vote</li>
 <li>August 2024: Entry into force</li>
-<li>2025-2027: Phased implementation</li>
+<li>2025: Bans (February) and General Purpose AI rules (August) apply</li>
+<li>July 2026: <span class="alert">Digital Omnibus</span> delays high-risk rules to December 2027 (August 2028 for products)</li>
 </ul>
 <p><strong>Scope:</strong></p>
 <ul>
-<li>Applies to AI systems <span class="alert">placed on the EU market</span></li>
+<li><span class="alert">Extraterritorial reach</span>: any AI sold in the EU, wherever it was built</li>
 <li>Covers providers, deployers, importers, distributors</li>
-<li><span class="alert">Extraterritorial reach</span>: sell to the EU, you must comply</li>
-<li>The EU market is large, so <span class="alert">most companies comply globally to avoid fragmentation</span></li>
+<li>The EU market is large, so many companies may <span class="alert">apply EU rules worldwide</span></li>
 </ul>
 <p><strong>Approach:</strong></p>
 <ul>
 <li><span class="alert">Risk-based</span>: rules depend on potential harm</li>
-<li>Horizontal: applies across all sectors</li>
-<li>Technology-neutral: names no specific techniques</li>
+<li>Horizontal and technology-neutral: all sectors, no named techniques</li>
 </ul>
-</div><div class="column" style="width:45%;">
+</div><div class="column" style="width:42%;">
 <div style="text-align: center;">
 <p><a href="#/" data-modal-type="image" data-modal-url="figures/eu-ai-act.png"><img data-src="figures/eu-ai-act.png" style="width:100.0%"></a></p>
 <p>Source: <a href="https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai">European Commission</a></p>
@@ -387,10 +385,11 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <div class="column" style="width:55%;">
 <p><strong>Unacceptable risk (banned):</strong></p>
 <ul>
-<li>Government social scoring</li>
-<li>Real-time public biometric ID (with exceptions)</li>
+<li>Social scoring, public or private</li>
+<li>Real-time face ID in public by police (with exceptions)</li>
 <li>Emotion recognition at work and school</li>
 <li>Predictive policing by profiling alone</li>
+<li>From December 2026: <span class="alert">nudifier apps</span> and AI child abuse imagery</li>
 </ul>
 <p><strong>High risk (strict requirements):</strong></p>
 <ul>
@@ -444,7 +443,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <div style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; font-size: 22px; margin-top: 30px;">
 <p><strong>Data governance:</strong></p>
 <ul>
-<li>Training data must be <span class="alert">relevant, representative, free of errors</span></li>
+<li>Training data: <span class="alert">relevant, representative, as error-free as possible</span></li>
 <li>Must be examined for biases</li>
 <li>Must <span class="alert">demonstrate compliance</span></li>
 </ul>
@@ -468,7 +467,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <ul>
 <li>Maintain technical documentation</li>
 <li>Provide information to downstream deployers</li>
-<li>Comply with copyright law (or demonstrate exceptions)</li>
+<li>Respect copyright, including creators’ opt-outs</li>
 <li>Publish training content summaries</li>
 </ul>
 <p><strong>“Systemic risk” GPAI (more powerful models) must also:</strong></p>
@@ -492,7 +491,8 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <div class="columns">
 <div class="column" style="width:55%;">
 <ul>
-<li>Release weights under a free licence and you are generally <span class="alert">exempt from most GPAI transparency requirements</span></li>
+<li>Release weights under a free licence and you skip the <span class="alert">documentation duties</span></li>
+<li>You must still respect copyright and publish a training summary</li>
 <li>Models of <span class="alert">systemic risk</span> (over 10<sup>25</sup> FLOPs) still face the stricter tier</li>
 <li>Open models allow <span class="alert">independent scrutiny</span>, a partial substitute for regulatory oversight</li>
 <li>Supports European open-source research</li>
@@ -506,7 +506,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <div style="text-align: center; margin-top: 30px;">
 <p><a href="#/" data-modal-type="image" data-modal-url="figures/mistral.webp"><img data-src="figures/mistral.webp" style="width:80.0%"></a></p>
 <div style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; font-size: 21px; margin-top: 15px;">
-<p><strong>Example:</strong> <a href="https://mistral.ai/">Mistral</a> is a French open-source AI company. Its larger models (like Mistral Large) are trained above the systemic risk threshold, so they still face the stricter GPAI rules. Its smaller open-licence models would be largely exempt.</p>
+<p><strong>Example:</strong> <a href="https://mistral.ai/">Mistral</a> is a French AI company that releases many open models. <a href="https://epoch.ai/data-insights/models-over-1e25-flop">Epoch AI</a> estimates its largest (like Mistral Large) passed the systemic-risk threshold, so they face the stricter rules. Its smaller open models would be largely exempt.</p>
 </div>
 </div>
 </div></div>
@@ -536,7 +536,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </tr>
 <tr class="odd">
 <td>Incorrect information</td>
-<td>€7.5M or 1.5% global turnover</td>
+<td>€7.5M or 1% global turnover</td>
 </tr>
 </tbody>
 </table>
@@ -555,7 +555,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </div><div class="column" style="width:45%;">
 <div style="text-align: center;">
 <p><a href="#/" data-modal-type="image" data-modal-url="figures/eu-ai-fines.png"><img data-src="figures/eu-ai-fines.png" style="width:70.0%"></a></p>
-<p>Source: <a href="https://www.bbc.com/news/articles/crl95eg33k1o">BBC News</a></p>
+<p>Source: <a href="https://www.bbc.com/news/articles/crl95eg33k1o">BBC News</a> (a competition probe, not an AI Act case)</p>
 <div style="font-size: 18px; margin-top: 15px;">
 <p>For a company like Google (2024 revenue ~$350B), a 7% fine would be <span class="alert">~$24.5 billion</span>. That gets attention.</p>
 </div>
@@ -612,7 +612,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </div>
 <div class="fragment">
 <ul>
-<li><span class="alert">High risk</span> – biometric + border control</li>
+<li><span class="alert">Depends</span>: scanning crowds is high risk; a 1:1 passport check is not</li>
 </ul>
 </div>
 </div><div class="column" style="width:50%;">
@@ -638,12 +638,12 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <p><strong>Sectoral approach:</strong></p>
 <ul>
 <li><a href="https://www.fda.gov/medical-devices/software-medical-device-samd/artificial-intelligence-software-medical-device">Food and Drug Administration (FDA)</a> regulates medical devices</li>
-<li><a href="https://www.sec.gov/ai">Securities and Exchange Commission (SEC)</a> oversees lending/trading</li>
+<li><a href="https://www.sec.gov/ai">Securities and Exchange Commission (SEC)</a> oversees securities markets</li>
 <li><a href="https://www.eeoc.gov/newsroom/eeoc-launches-initiative-artificial-intelligence-and-algorithmic-fairness">Equal Employment Opportunity Commission (EEOC)</a> applies discrimination law</li>
 </ul>
 <p><strong>Recent developments:</strong></p>
 <ul>
-<li><strong>October 2023</strong>: Biden’s <a href="https://bidenwhitehouse.archives.gov/briefing-room/presidential-actions/2023/02/16/executive-order-on-further-advancing-racial-equity-and-support-for-underserved-communities-through-the-federal-government/">Executive Order on AI</a></li>
+<li><strong>October 2023</strong>: Biden’s <a href="https://bidenwhitehouse.archives.gov/briefing-room/presidential-actions/2023/10/30/executive-order-on-the-safe-secure-and-trustworthy-development-and-use-of-artificial-intelligence/">Executive Order on AI</a></li>
 <li><strong>July 2025</strong>: Trump’s <a href="https://www.whitehouse.gov/wp-content/uploads/2025/07/Americas-AI-Action-Plan.pdf">America’s AI Action Plan</a></li>
 <li>State-level initiatives (<a href="https://leg.colorado.gov/bills/sb24-205">Colorado</a>, <a href="https://leginfo.legislature.ca.gov/">California</a>, <a href="https://www.ilga.gov/legislation/ilcs/ilcs3.asp?ActID=4015&amp;ChapterID=68">Illinois</a>)</li>
 </ul>
@@ -676,19 +676,19 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <p><strong>Focus on national security:</strong></p>
 <ul>
 <li>Report <span class="alert">large training runs</span></li>
-<li>Export controls on AI chips</li>
+<li>Cloud providers must report foreign customers</li>
 <li>Protect critical infrastructure</li>
 </ul>
 <p><strong>Limitations:</strong></p>
 <ul>
-<li>The next president can <span class="alert">reverse</span> an executive order (and did!)</li>
+<li>The next president can <span class="alert">reverse</span> it (and did!)</li>
 <li>Many provisions are <span class="alert">voluntary</span> or guidance</li>
 <li>Congress hasn’t passed comprehensive legislation</li>
 </ul>
 </div><div class="column" style="width:45%;">
 <div style="text-align: center;">
 <p><a href="#/" data-modal-type="image" data-modal-url="figures/biden-ai-eo.webp"><img data-src="figures/biden-ai-eo.webp" style="width:100.0%"></a></p>
-<p>Source: <a href="https://www.congress.gov/crs-product/R47843">Congress.gov (2023)</a></p>
+<p>Biden’s AI meeting, June 2023. Summary: <a href="https://www.congress.gov/crs-product/R47843">Congress.gov</a></p>
 </div>
 </div></div>
 </div>
@@ -705,7 +705,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <li>Focus on <span class="alert">national security applications</span></li>
 <li>Energy infrastructure for AI data centres</li>
 <li>Streamlined permitting for AI facilities</li>
-<li><a href="https://www.whitehouse.gov/wp-content/uploads/2026/03/03.20.26-National-Policy-Framework-for-Artificial-Intelligence-Legislative-Recommendations.pdf">Suggested framework</a> for Congress to consider (March 2026)</li>
+<li><a href="https://www.whitehouse.gov/wp-content/uploads/2026/03/03.20.26-National-Policy-Framework-for-Artificial-Intelligence-Legislative-Recommendations.pdf">March 2026 framework</a>: asks Congress to <span class="alert">pre-empt</span> state AI laws</li>
 </ul>
 <p><strong>Changes from Biden era:</strong></p>
 <ul>
@@ -733,32 +733,28 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <h2>State-level action</h2>
 <div style="margin-top: 30px; font-size: 20px;">
 <div class="columns">
-<div class="column" style="width:55%;">
+<div class="column" style="width:60%;">
 <p>With limited federal action, states are filling gaps:</p>
 <p><strong><a href="https://leg.colorado.gov/bills/sb24-205">Colorado AI Act (2024)</a>:</strong></p>
 <ul>
-<li>First comprehensive state AI law</li>
-<li>Requires <span class="alert">impact assessments</span> for high-risk systems</li>
-<li>Requires disclosure to consumers</li>
+<li>First comprehensive state AI law, with <span class="alert">impact assessments</span></li>
+<li><a href="https://leg.colorado.gov/bills/sb26-189">Replaced in May 2026</a> by a narrower law: notices, explanations, human review (from 2027)</li>
 </ul>
-<p><strong>California (various bills):</strong></p>
+<p><strong>California:</strong></p>
 <ul>
-<li>Multiple bills on deepfakes, employment AI</li>
+<li><a href="https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=202520260SB53">SB 53 (2025)</a>: frontier AI developers must publish safety plans and report incidents</li>
 <li>Often sets <span class="alert">national trends</span></li>
 </ul>
-<p><strong><a href="https://www.ilga.gov/legislation/ilcs/ilcs3.asp?ActID=4015&amp;ChapterID=68">Illinois</a>:</strong></p>
+<p><strong>Illinois and New York City:</strong></p>
 <ul>
-<li>AI Video Interview Act: Must disclose AI in hiring</li>
+<li><a href="https://www.ilga.gov/legislation/ilcs/ilcs3.asp?ActID=4015&amp;ChapterID=68">Illinois</a>: AI Video Interview Act, must disclose AI in hiring</li>
+<li><a href="https://www.nyc.gov/site/dca/about/automated-employment-decision-tools.page">New York City</a>: first US jurisdiction to require <a href="https://rules.cityofnewyork.us/rule/automated-employment-decision-tools-updated/">bias audits for hiring AI</a></li>
 </ul>
-<p><strong><a href="https://www.nyc.gov/site/dca/about/automated-employment-decision-tools.page">New York City</a>:</strong></p>
-<ul>
-<li>First US jurisdiction to require <a href="https://rules.cityofnewyork.us/rule/automated-employment-decision-tools-updated/">bias audits for hiring AI</a></li>
-</ul>
-</div><div class="column" style="width:45%;">
+</div><div class="column" style="width:40%;">
 <div style="text-align: center;">
-<p><a href="#/" data-modal-type="image" data-modal-url="figures/state-ai-laws.png"><img data-src="figures/state-ai-laws.png" style="width:60.0%"></a></p>
+<p><a href="#/" data-modal-type="image" data-modal-url="figures/state-ai-laws.png"><img data-src="figures/state-ai-laws.png" style="width:70.0%"></a></p>
 <div style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; font-size: 18px; margin-top: 15px;">
-<p>Companies operating nationally face a <span class="alert">patchwork</span> of state requirements. Many prefer federal law just for consistency.</p>
+<p><a href="https://www.federalregister.gov/documents/2025/12/16/2025-23092/ensuring-a-national-policy-framework-for-artificial-intelligence">Executive Order 14365</a> (December 2025) tells the Justice Department to challenge state AI laws. Companies want one federal rule, not a <span class="alert">patchwork</span>.</p>
 </div>
 </div>
 </div></div>
@@ -814,12 +810,12 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <ul>
 <li><a href="https://www.gov.uk/government/publications/ai-regulation-a-pro-innovation-approach">“Pro-innovation” approach</a>: sector regulators apply existing frameworks</li>
 <li>No comprehensive AI law (yet)</li>
-<li><a href="https://www.aisi.gov.uk/">AI Safety Institute</a> for frontier model evaluation</li>
+<li><a href="https://www.aisi.gov.uk/">AI Security Institute</a> (renamed in 2025) tests frontier models</li>
 </ul>
 <p><strong>Canada:</strong></p>
 <ul>
 <li><a href="https://ised-isde.canada.ca/site/innovation-better-canada/en/artificial-intelligence-and-data-act">AIDA (Artificial Intelligence and Data Act)</a> <a href="https://www.mcinnescooper.com/publications/the-demise-of-the-artificial-intelligence-and-data-act-aida-5-key-lessons/">died in parliament</a> in January 2025</li>
-<li>Now pursues AI governance through privacy legislation</li>
+<li>No AI law since; Canada named its first AI minister in May 2025</li>
 </ul>
 <p><strong>Brazil:</strong></p>
 <ul>
@@ -845,8 +841,8 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <td>International norms</td>
 </tr>
 <tr class="odd">
-<td><a href="https://www.un.org/ai-advisory-body">UN AI Advisory Body</a></td>
-<td>Global governance</td>
+<td><a href="https://www.un.org/independent-international-scientific-panel-ai/en">UN Scientific Panel on AI</a></td>
+<td>Global evidence, dialogue</td>
 </tr>
 <tr class="even">
 <td><a href="https://www.coe.int/en/web/artificial-intelligence/the-framework-convention-on-artificial-intelligence">Council of Europe AI Convention</a></td>
@@ -903,7 +899,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </tr>
 <tr class="odd">
 <td><strong>Enforcement</strong></td>
-<td>Dedicated AI Office</td>
+<td>AI Office + national bodies</td>
 <td>Existing agencies</td>
 <td>Cyberspace Admin</td>
 <td>Sector regulators</td>
@@ -918,9 +914,9 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <tr class="odd">
 <td><strong>GPAI rules</strong></td>
 <td>Yes, tiered</td>
-<td>Voluntary</td>
+<td>Voluntary (federal)</td>
 <td>Yes, content-focused</td>
-<td>AI Safety Institute</td>
+<td>AI Security Institute</td>
 </tr>
 <tr class="even">
 <td><strong>Extraterritorial</strong></td>
@@ -932,7 +928,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </tbody>
 </table>
 <div style="margin-top: 20px;">
-<p>The EU is the only jurisdiction that has passed a <span class="alert">comprehensive, binding law</span>. If your company sells AI in both the EU and the US, you will need two separate compliance strategies.</p>
+<p>The EU passed the first <span class="alert">comprehensive, binding law</span>; South Korea’s and Vietnam’s took effect in 2026. If your company sells AI in both the EU and the US, you will need two separate compliance strategies.</p>
 </div>
 </div></div>
 </div>
