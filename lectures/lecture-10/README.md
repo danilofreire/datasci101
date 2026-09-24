@@ -18,7 +18,7 @@ This lecture covers the science and practice of effective prompting for large la
 
 ### 3. Chain-of-Thought Reasoning
 
-- **Wei et al. (2022)**: Adding "Let's think step by step" improved maths accuracy from 17.7% to 58.1% on GSM8K.
+- **Wei et al. (2022)**: Eight worked examples with the reasoning written out raised PaLM 540B's maths accuracy (GSM8K) from 17.9% to 56.9%.
 - **Why It Works**: Generating intermediate steps externalises reasoning, allowing the model to check its work.
 - **Self-Consistency**: Running multiple reasoning paths and taking the majority answer increases reliability.
 - **When to Skip**: CoT can hurt simple tasks where intuition outperforms analysis.

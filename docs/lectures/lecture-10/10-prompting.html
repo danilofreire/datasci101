@@ -233,7 +233,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <li><span class="alert">The same transformer architecture</span> processes text, images, and audio</li>
 <li>We trained an image classifier with Teachable Machine</li>
 <li><span class="alert">Today</span>: how do we communicate with these models?</li>
-<li>The same model gives wildly different results depending on <span class="alert">how you phrase your request</span></li>
+<li>Same model, <span class="alert">different phrasing</span>, wildly different results</li>
 </ul>
 </div><div class="column" style="width:50%;">
 <div style="text-align: center; margin-top: -30px;">
@@ -351,7 +351,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <div style="margin-top: 30px; font-size: 20px;">
 <div class="columns">
 <div class="column" style="width:55%;">
-<p>From Google’s <a href="https://services.google.com/fh/files/misc/gemini-for-google-workspace-prompting-guide-101.pdf">Gemini for Workspace Prompting Guide</a>:</p>
+<p>From Google’s <a href="https://services.google.com/fh/files/misc/gemini_for_workspace_prompt_guide_october_2024_digital_final.pdf">Gemini for Workspace Prompting Guide</a>:</p>
 <table class="caption-top">
 <colgroup>
 <col style="width: 28%">
@@ -388,18 +388,17 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </tr>
 </tbody>
 </table>
-<p><strong>Order matters</strong>: Persona → Task → Context → Format</p>
-<p>It works because it <span class="alert">mirrors how training data is structured</span>: documents have authors (persona), purposes (task), backgrounds (context), and conventions (format)</p>
+<p><strong>You don’t need all four</strong>, says Google, but always include the <span class="alert">task</span>: a verb or command is “the most important component of a prompt”</p>
 </div><div class="column" style="width:45%;">
 <div style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; font-size: 18px; margin-top: 30px;">
 <p><strong>PTCF example prompt:</strong></p>
 <p><strong>Persona</strong>: “You are an experienced equity research analyst at a major investment bank.”</p>
 <p><strong>Task</strong>: “Analyse the following earnings report and identify the three most significant findings.”</p>
-<p><strong>Context</strong>: “This is Tesla’s Q4 2025 report. The market expected $2.1B revenue and missed.”</p>
+<p><strong>Context</strong>: “This is Tesla’s Q4 2025 report. Revenue fell 3% year on year to $24.9B.”</p>
 <p><strong>Format</strong>: “Present each finding as: [Finding]: [One sentence explanation]. [Impact rating: High/Medium/Low]”</p>
 </div>
 <div style="font-size: 18px; margin-top: 15px; text-align: center;">
-<p>Source: <a href="https://services.google.com/fh/files/misc/gemini-for-google-workspace-prompting-guide-101.pdf">Google Gemini Prompting Guide</a></p>
+<p>Source: <a href="https://services.google.com/fh/files/misc/gemini_for_workspace_prompt_guide_october_2024_digital_final.pdf">Google Gemini Prompting Guide</a></p>
 </div>
 </div></div>
 </div>
@@ -444,7 +443,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </table>
 <p><strong>For prompting tasks:</strong></p>
 <ul>
-<li><strong>Factual extraction</strong>: Temperature 0.0-0.2 (deterministic)</li>
+<li><strong>Factual extraction</strong>: Temperature 0.0-0.2 (near-deterministic)</li>
 <li><strong>Creative writing</strong>: Temperature 0.7-1.0 (varied)</li>
 <li><strong>Classification</strong>: Temperature 0.0 (consistent labels)</li>
 <li>ChatGPT and Gemini <span class="alert">have no temperature slider</span>. Use <a href="https://ai.google/studio">Google AI Studio</a> or <a href="https://platform.openai.com/playground">OpenAI’s playground</a> instead</li>
@@ -458,7 +457,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </div>
 </div>
 <div style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; font-size: 18px; margin-top: 15px;">
-<p><strong>Pro tip</strong>: when debugging prompts, set temperature to 0 first. Removing randomness isolates the prompt as the cause</p>
+<p><strong>Pro tip</strong>: when debugging prompts, lower the temperature first to isolate the prompt as the cause. <strong>But</strong> Google advises keeping Gemini 3 at 1.0, and newer Claude models lock it</p>
 </div>
 </div></div>
 </div>
@@ -508,7 +507,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <div style="margin-top: 30px; font-size: 18px;">
 <div class="columns">
 <div class="column" style="width:55%;">
-<p>ChatGPT and Claude carry <span class="alert">hidden text you never see</span> that shapes every response: the <strong>system prompt</strong>.</p>
+<p>ChatGPT and Claude carry <span class="alert">hidden text you usually don’t see</span> that shapes every response: the <strong>system prompt</strong>.</p>
 <p><strong>The hierarchy of prompts:</strong></p>
 <ol type="1">
 <li><strong>System prompt</strong>: set by the company. Establishes behaviour, personality, and constraints</li>
@@ -548,7 +547,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <div style="margin-top: 30px; font-size: 18px;">
 <div class="columns">
 <div class="column" style="width:50%;">
-<p><strong>Claude’s system prompt</strong> (partial, via Anthropic’s documentation):</p>
+<p><strong>Claude 3.5 Sonnet’s system prompt, 2024</strong> (partial, published by Anthropic):</p>
 <blockquote>
 <p>“The assistant is Claude, created by Anthropic. The current date is [date]. Claude’s knowledge base was last updated in April 2024 and it answers user questions about events prior to and after April 2024 the way a highly informed individual from April 2024 would if they were talking to someone from [date]. […] Claude cannot open URLs, links, or videos. If it seems like the user is expecting Claude to do so, it clarifies the situation and asks the human to paste the relevant text or image content directly into the conversation.”</p>
 </blockquote>
@@ -568,7 +567,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <p><strong>Knowledge grounding:</strong> “Base your answers only on the provided documents. If information is not in the documents, say so…”</p>
 </div>
 <div style="font-size: 16px; margin-top: 15px;">
-<p>Source: <a href="https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering">Anthropic Documentation</a></p>
+<p>Source: <a href="https://platform.claude.com/docs/en/release-notes/system-prompts">Anthropic system prompt release notes</a></p>
 <p>More here: <a href="https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools" class="uri">https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools</a></p>
 </div>
 </div></div>
@@ -624,7 +623,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <p><strong>One-shot</strong>: one example to establish the pattern</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb3-1"><a></a>Review: "Best pizza I've ever had!" → Positive</span>
 <span id="cb3-2"><a></a>Review: "The food was cold and the service was slow." → ?</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p><strong>Few-shot</strong>: 2-5 examples to show the pattern</p>
+<p><strong>Few-shot</strong>: a handful of examples (Anthropic suggests 3–5)</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb4-1"><a></a>"Best pizza I've ever had!" → Positive</span>
 <span id="cb4-2"><a></a>"Terrible experience, never again" → Negative</span>
 <span id="cb4-3"><a></a>"It was okay, nothing special" → Neutral</span>
@@ -668,7 +667,6 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <div style="margin-top: 30px; font-size: 21px;">
 <div class="columns">
 <div class="column" style="width:55%;">
-<p>Few-shot prompting is not always better.</p>
 <p><strong>Examples help when:</strong></p>
 <ul>
 <li>The task has <span class="alert">implicit conventions</span> (e.g., JSON output format)</li>
@@ -679,14 +677,10 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <p><strong>Examples can hurt when:</strong></p>
 <ul>
 <li>They contain <span class="alert">biases or errors</span> the model will copy</li>
-<li>They are too similar (the model over-fits to surface patterns)</li>
+<li>They are too similar, so the model copies surface patterns</li>
 <li>The task is <span class="alert">simple enough</span> that examples add noise</li>
-<li>They consume <span class="alert">context window</span> that could hold useful content</li>
+<li>They take up <span class="alert">context window</span> space you need</li>
 </ul>
-<p><strong>Key insight from <a href="https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering">Anthropic’s documentation</a>:</strong></p>
-<blockquote>
-<p>“The best examples are <span class="alert">representative of the hardest cases</span>, not the average cases.”</p>
-</blockquote>
 </div><div class="column" style="width:45%;">
 <div style="text-align: center;">
 <p><strong>Bad examples (too easy):</strong></p>
@@ -703,6 +697,12 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <span id="cb6-8"><a></a> nothing more" → Neutral</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div style="font-size: 18px; margin-top: 15px;">
 <p>Edge cases teach the model your <span class="alert">decision boundaries</span></p>
+</div>
+<div style="text-align: left; font-size: 18px;">
+<p><strong>Key insight from <a href="https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices">Anthropic’s documentation</a>:</strong></p>
+<blockquote>
+<p>“Diverse: Cover <span class="alert">edge cases</span> and vary enough that Claude doesn’t pick up unintended patterns.”</p>
+</blockquote>
 </div>
 </div>
 </div></div>
@@ -799,8 +799,8 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <div style="margin-top: 30px; font-size: 20px;">
 <div class="columns">
 <div class="column" style="width:55%;">
-<p>In January 2022, <a href="https://arxiv.org/abs/2201.11903">Wei et al.</a> showed that asking models to display their reasoning <span class="alert">improves accuracy by a wide margin</span> on complex tasks.</p>
-<p><strong>The experiment:</strong></p>
+<p>In January 2022, <a href="https://arxiv.org/abs/2201.11903">Wei et al.</a> showed that worked examples with the reasoning written out <span class="alert">improve accuracy by a wide margin</span> on complex tasks.</p>
+<p><strong>The experiment (PaLM 540B):</strong></p>
 <table class="caption-top">
 <thead>
 <tr class="header">
@@ -812,24 +812,24 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <tbody>
 <tr class="odd">
 <td>GSM8K (maths)</td>
-<td>17.7%</td>
-<td><strong>58.1%</strong></td>
+<td>17.9%</td>
+<td><strong>56.9%</strong></td>
 </tr>
 <tr class="even">
 <td>SVAMP (word problems)</td>
-<td>63.1%</td>
-<td><strong>85.2%</strong></td>
+<td>69.4%</td>
+<td><strong>79.0%</strong></td>
 </tr>
 <tr class="odd">
 <td>ASDiv (arithmetic)</td>
-<td>71.3%</td>
-<td><strong>91.3%</strong></td>
+<td>72.1%</td>
+<td><strong>73.9%</strong></td>
 </tr>
 </tbody>
 </table>
-<p><span class="alert">Accuracy nearly tripled on grade-school maths</span> just by adding “Let’s think step by step.”</p>
+<p><span class="alert">Accuracy more than tripled on grade-school maths</span> with just eight worked examples.</p>
 <p><strong>Why does this work?</strong></p>
-<p>The model cannot do multi-step reasoning in a single forward pass. Intermediate steps <span class="alert">externalise the reasoning</span>, so the model can “check its work” as it goes</p>
+<p>Each written step gives the model <span class="alert">more computation</span> and breaks the problem into easier pieces, so it can “check its work” as it goes</p>
 </div><div class="column" style="width:45%;">
 <div style="text-align: center;">
 <p><a href="#/" data-modal-type="image" data-modal-url="figures/chain-of-thought.png"><img data-src="figures/chain-of-thought.png" style="width:100.0%"></a></p>
@@ -857,7 +857,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <p><strong>With zero-shot CoT:</strong></p>
 <blockquote>
 <p>Q: If a store sells 3 apples for $2, how much do 12 apples cost? Let’s think step by step.</p>
-<p>A: First, I need to find the price per apple. 3 apples cost $2, so 1 apple costs $2/3 = $0.67. For 12 apples: 12 × $0.67 = $8. The answer is $8.</p>
+<p>A: First, I need to find how many groups of 3 apples there are. 12 ÷ 3 = 4 groups. Each group costs $2, so 4 × $2 = $8. The answer is $8.</p>
 </blockquote>
 <p><strong>The phrase activates a “reasoning mode”</strong> learned from training data where step-by-step explanations precede correct answers.</p>
 <div style="background: rgba(230, 57, 70, 0.1); padding: 15px; border-radius: 10px; font-size: 16px;">
@@ -874,23 +874,27 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <section id="self-consistency-multiple-reasoning-paths" class="slide level2">
 <h2>Self-consistency: Multiple reasoning paths</h2>
 <div style="margin-top: 30px; font-size: 18px;">
+<div class="columns">
+<div class="column" style="width:55%;">
 <p><a href="https://arxiv.org/abs/2203.11171">Wang et al.&nbsp;(2022)</a> introduced <strong>self-consistency</strong>: generate multiple reasoning chains and <span class="alert">take the majority answer</span>.</p>
 <p><strong>The intuition</strong>: wrong paths make different mistakes, but correct paths converge on the same answer.</p>
 <p><strong>Example:</strong></p>
 <blockquote>
 <p>Question: “Is 17 × 23 = 391?”</p>
 </blockquote>
-<p><strong>Path 1</strong>: 17 × 23 = 17 × 20 + 17 × 3 = 340 + 51 = 391 ✓</p>
-<p><strong>Path 2</strong>: 17 × 23 = 20 × 23 - 3 × 23 = 460 - 69 = 391 ✓</p>
-<p><strong>Path 3</strong>: 17 × 23 = 15 × 23 + 2 × 23 = 345 + 46 = 391 ✓</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb9-1"><a></a>Path 1: 17 × 20 + 17 × 3 = 340 + 51 = 391 ✓</span>
+<span id="cb9-2"><a></a>Path 2: 20 × 23 - 3 × 23 = 460 - 69 = 391 ✓</span>
+<span id="cb9-3"><a></a>Path 3: 15 × 23 + 2 × 23 = 345 + 46 = 391 ✓</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>All paths agree → high confidence the answer is correct.</p>
 <p><strong>Implementation</strong>: run the same prompt 3-5 times with temperature &gt; 0, then vote. It costs more but is more reliable for important decisions.</p>
+</div><div class="column" style="width:45%;">
 <div style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; font-size: 18px; margin-top: 15px;">
 <p><strong>When CoT helps vs.&nbsp;hurts:</strong></p>
 <p>✅ Multi-step reasoning, maths, planning</p>
 <p>❌ Simple factual recall, sentiment, style</p>
 <p><strong>Rule of thumb</strong>: use CoT for problems where <span class="alert">you’d write out your work</span>. Skip it for instant-answer problems</p>
 </div>
+</div></div>
 </div>
 </section>
 <section id="thinking-models-cot-built-in" class="slide level2">
@@ -898,7 +902,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <div style="margin-top: 30px; font-size: 19px;">
 <div class="columns">
 <div class="column" style="width:55%;">
-<p><a href="https://openai.com/o1/">OpenAI’s o1</a> and <a href="https://github.com/deepseek-ai/DeepSeek-R1">DeepSeek-R1</a> have <strong>Chain-of-Thought reasoning built into the model itself</strong>.</p>
+<p><a href="https://openai.com/o1/">OpenAI’s o1</a> (2024) and <a href="https://github.com/deepseek-ai/DeepSeek-R1">DeepSeek-R1</a> (2025) pioneered <strong>Chain-of-Thought reasoning built into the model itself</strong>. Today GPT-5, Claude and Gemini all have a thinking mode.</p>
 <p><strong>How they differ from standard LLMs:</strong></p>
 <ul>
 <li>They generate <span class="alert">internal reasoning traces</span> before answering, with no “let’s think step by step” needed</li>
@@ -938,18 +942,18 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <p><strong>LLM Agent loop:</strong></p>
 <p>You ask → Model reasons → Uses tools → Observes results → Repeats → Eventually responds</p>
 <p><strong>The ReAct pattern</strong> (<a href="https://arxiv.org/abs/2210.03629">Yao et al., 2022</a>):</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb9-1"><a></a>User: What was AAPL's price when iPhone 15 was announced?</span>
-<span id="cb9-2"><a></a></span>
-<span id="cb9-3"><a></a>Thought: I need two things: (1) date, (2) stock price.</span>
-<span id="cb9-4"><a></a></span>
-<span id="cb9-5"><a></a>Action: search("iPhone 15 announcement")</span>
-<span id="cb9-6"><a></a>Observation: September 12, 2023</span>
-<span id="cb9-7"><a></a></span>
-<span id="cb9-8"><a></a>Action: get_stock_price("AAPL", "2023-09-12")</span>
-<span id="cb9-9"><a></a>Observation: $176.30</span>
-<span id="cb9-10"><a></a></span>
-<span id="cb9-11"><a></a>Final Answer: $176.30</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p><strong>Why this matters</strong>: without the “Thought” steps, the model answers in one shot and gets the date or the price wrong</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb10-1"><a></a>User: What was AAPL's price when iPhone 15 was announced?</span>
+<span id="cb10-2"><a></a></span>
+<span id="cb10-3"><a></a>Thought: I need two things: (1) date, (2) stock price.</span>
+<span id="cb10-4"><a></a></span>
+<span id="cb10-5"><a></a>Action: search("iPhone 15 announcement")</span>
+<span id="cb10-6"><a></a>Observation: September 12, 2023</span>
+<span id="cb10-7"><a></a></span>
+<span id="cb10-8"><a></a>Action: get_stock_price("AAPL", "2023-09-12")</span>
+<span id="cb10-9"><a></a>Observation: $176.30</span>
+<span id="cb10-10"><a></a></span>
+<span id="cb10-11"><a></a>Final Answer: $176.30</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>Why this matters</strong>: without the “Thought” steps, the model answers in one shot and can get the date or price wrong</p>
 </div><div class="column" style="width:45%;">
 <p><strong>Examples of AI agents:</strong></p>
 <table class="caption-top">
@@ -965,17 +969,17 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <td>Multi-step web research</td>
 </tr>
 <tr class="even">
-<td><a href="https://cursor.sh/">Cursor</a></td>
+<td><a href="https://cursor.com/">Cursor</a></td>
 <td>Writes/edits code autonomously</td>
 </tr>
 <tr class="odd">
-<td><a href="https://www.cognition-labs.com/">Devin</a></td>
+<td><a href="https://cognition.ai/">Devin</a></td>
 <td>“AI software engineer”</td>
 </tr>
 </tbody>
 </table>
 <div style="text-align: center; margin-top: 15px;">
-<p><a href="#/" data-modal-type="image" data-modal-url="figures/agents.webp"><img data-src="figures/agents.webp" style="width:60.0%"></a></p>
+<p><a href="#/" data-modal-type="image" data-modal-url="figures/agents.webp"><img data-src="figures/agents.webp" style="width:50.0%"></a></p>
 <p>Source: <a href="https://www.gwi.com/blog/ai-agent-vs-ai-assistant">GWI</a></p>
 </div>
 </div></div>
@@ -1002,15 +1006,15 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <li>How do you audit what an agent did?</li>
 <li><span class="alert">Agents can be manipulated via prompt injection</span></li>
 </ul>
-<p><a href="https://www.gartner.com/en/topics/ai-agents">Gartner predicts</a> that by 2028, 15% of day-to-day work decisions will be made autonomously by AI agents</p>
+<p><a href="https://www.gartner.com/en/newsroom/press-releases/2025-06-25-gartner-predicts-over-40-percent-of-agentic-ai-projects-will-be-canceled-by-end-of-2027">Gartner predicts</a> that by 2028, at least 15% of day-to-day work decisions will be made autonomously by AI agents</p>
 </div><div class="column" style="width:45%;">
 <p><strong>Common effects of prompt injection attacks:</strong></p>
 <ul>
-<li><strong>Prompt leaks</strong>: hackers trick LLMs into revealing system prompts</li>
-<li><strong>Remote code execution</strong>: attackers run malicious programs through LLM plugins</li>
-<li><strong>Data theft</strong>: LLMs are tricked into sharing private user information</li>
-<li><strong>Misinformation campaigns</strong>: malicious prompts skew search results</li>
-<li><strong>Malware transmission</strong>: prompts spread through AI assistants, forwarding malicious content</li>
+<li><strong>Prompt leaks</strong>: revealing the hidden system prompt</li>
+<li><strong>Remote code execution</strong>: running malicious programs via plugins</li>
+<li><strong>Data theft</strong>: leaking private user information</li>
+<li><strong>Misinformation</strong>: malicious prompts skew search results</li>
+<li><strong>Malware</strong>: assistants forward malicious content to others</li>
 </ul>
 <div style="background: rgba(230, 57, 70, 0.15); padding: 15px; border-radius: 10px; font-size: 18px;">
 <p><strong>Prompt injection example:</strong></p>
@@ -1048,7 +1052,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <p><strong>Fix</strong>: “Summarise in EXACTLY 3 bullet points. Prioritise the most important facts.”</p>
 </div>
 </div><div class="column" style="width:50%;">
-<p><strong>The jagged intelligence problem</strong> (<a href="https://www.nber.org/papers/w34712">Gans, 2024</a>):</p>
+<p><strong>The jagged intelligence problem</strong> (<a href="https://www.nber.org/papers/w34712">Gans, 2026</a>):</p>
 <p>Even <span class="alert">perfect prompts sometimes fail</span>.</p>
 <ul>
 <li>LLMs perform unevenly across similar tasks</li>
@@ -1074,7 +1078,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <ul>
 <li><p><strong>Prompt engineering is empirical</strong>: there is no universal “best prompt”. Test on your own data and adjust.</p></li>
 <li><p><strong>The PTCF framework</strong>: Persona → Task → Context → Format gives structure to every prompt.</p></li>
-<li><p><strong>Chain-of-Thought reasoning</strong>: “Think step by step” can improve accuracy by 40%+ on complex problems (Wei et al., 2022).</p></li>
+<li><p><strong>Chain-of-Thought reasoning</strong>: showing the steps more than tripled accuracy on maths problems (Wei et al., 2022).</p></li>
 <li><p><strong>System prompts shape behaviour</strong>: the hidden instructions behind every AI product define personality, capabilities, and constraints.</p></li>
 <li><p><strong>Agents take actions</strong>: the shift from chat to tool use brings new capabilities and new risks.</p></li>
 <li><p><strong>Jagged intelligence</strong>: LLMs fail unpredictably. Always verify critical outputs</p></li>

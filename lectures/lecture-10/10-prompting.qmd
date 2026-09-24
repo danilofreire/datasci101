@@ -60,7 +60,7 @@ if (!require("fontawesome", character.only = TRUE)) {
 - [The same transformer architecture]{.alert} processes text, images, and audio
 - We trained an image classifier with Teachable Machine
 - [Today]{.alert}: how do we communicate with these models?
-- The same model gives wildly different results depending on [how you phrase your request]{.alert}
+- Same model, [different phrasing]{.alert}, wildly different results
 :::
 
 :::{.column width=50%}
@@ -194,7 +194,7 @@ A vague prompt leaves too many likely continuations; a specific one narrows the 
 :::{style="margin-top: 30px; font-size: 20px;"}
 :::{.columns}
 :::{.column width=55%}
-From Google's [Gemini for Workspace Prompting Guide](https://services.google.com/fh/files/misc/gemini-for-google-workspace-prompting-guide-101.pdf):
+From Google's [Gemini for Workspace Prompting Guide](https://services.google.com/fh/files/misc/gemini_for_workspace_prompt_guide_october_2024_digital_final.pdf):
 
 | Element | What It Does | Example |
 |---------|--------------|---------|
@@ -203,9 +203,7 @@ From Google's [Gemini for Workspace Prompting Guide](https://services.google.com
 | **C**ontext | What background is relevant? | "The company is a semiconductor manufacturer..." |
 | **F**ormat | How should output be structured? | "Use bullet points, max 200 words..." |
 
-**Order matters**: Persona → Task → Context → Format
-
-It works because it [mirrors how training data is structured]{.alert}: documents have authors (persona), purposes (task), backgrounds (context), and conventions (format)
+**You don't need all four**, says Google, but always include the [task]{.alert}: a verb or command is "the most important component of a prompt"
 :::
 
 :::{.column width=45%}
@@ -216,13 +214,13 @@ It works because it [mirrors how training data is structured]{.alert}: documents
 
 **Task**: "Analyse the following earnings report and identify the three most significant findings."
 
-**Context**: "This is Tesla's Q4 2025 report. The market expected $2.1B revenue and missed."
+**Context**: "This is Tesla's Q4 2025 report. Revenue fell 3% year on year to $24.9B."
 
 **Format**: "Present each finding as: [Finding]: [One sentence explanation]. [Impact rating: High/Medium/Low]"
 :::
 
 :::{style="font-size: 18px; margin-top: 15px; text-align: center;"}
-Source: [Google Gemini Prompting Guide](https://services.google.com/fh/files/misc/gemini-for-google-workspace-prompting-guide-101.pdf)
+Source: [Google Gemini Prompting Guide](https://services.google.com/fh/files/misc/gemini_for_workspace_prompt_guide_october_2024_digital_final.pdf)
 :::
 :::
 :::
@@ -244,7 +242,7 @@ From [Lecture 06](https://danilofreire.github.io/datasci101/lectures/lecture-06/
 
 **For prompting tasks:**
 
-- **Factual extraction**: Temperature 0.0-0.2 (deterministic)
+- **Factual extraction**: Temperature 0.0-0.2 (near-deterministic)
 - **Creative writing**: Temperature 0.7-1.0 (varied)
 - **Classification**: Temperature 0.0 (consistent labels)
 - ChatGPT and Gemini [have no temperature slider]{.alert}. Use [Google AI Studio](https://ai.google/studio) or [OpenAI's playground](https://platform.openai.com/playground) instead
@@ -261,7 +259,7 @@ Source: Lecture 06 / [Medium](https://medium.com/@nigelgebodh/why-does-my-llm-ha
 :::
 
 :::{style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; font-size: 18px; margin-top: 15px;"}
-**Pro tip**: when debugging prompts, set temperature to 0 first. Removing randomness isolates the prompt as the cause
+**Pro tip**: when debugging prompts, lower the temperature first to isolate the prompt as the cause. **But** Google advises keeping Gemini 3 at 1.0, and newer Claude models lock it
 :::
 :::
 :::
@@ -315,7 +313,7 @@ Let's rewrite it with PTCF for a specific use case!
 :::{style="margin-top: 30px; font-size: 18px;"}
 :::{.columns}
 :::{.column width=55%}
-ChatGPT and Claude carry [hidden text you never see]{.alert} that shapes every response: the **system prompt**.
+ChatGPT and Claude carry [hidden text you usually don't see]{.alert} that shapes every response: the **system prompt**.
 
 **The hierarchy of prompts:**
 
@@ -364,7 +362,7 @@ messages = [
 :::{style="margin-top: 30px; font-size: 18px;"}
 :::{.columns}
 :::{.column width=50%}
-**Claude's system prompt** (partial, via Anthropic's documentation):
+**Claude 3.5 Sonnet's system prompt, 2024** (partial, published by Anthropic):
 
 > "The assistant is Claude, created by Anthropic. The current date is [date]. Claude's knowledge base was last updated in April 2024 and it answers user questions about events prior to and after April 2024 the way a highly informed individual from April 2024 would if they were talking to someone from [date]. [...] Claude cannot open URLs, links, or videos. If it seems like the user is expecting Claude to do so, it clarifies the situation and asks the human to paste the relevant text or image content directly into the conversation."
 
@@ -396,7 +394,7 @@ messages = [
 :::
 
 :::{style="font-size: 16px; margin-top: 15px;"}
-Source: [Anthropic Documentation](https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering)
+Source: [Anthropic system prompt release notes](https://platform.claude.com/docs/en/release-notes/system-prompts)
 
 More here: <https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools>
 :::
@@ -463,7 +461,7 @@ Review: "Best pizza I've ever had!" → Positive
 Review: "The food was cold and the service was slow." → ?
 ```
 
-**Few-shot**: 2-5 examples to show the pattern
+**Few-shot**: a handful of examples (Anthropic suggests 3–5)
 
 ```text
 "Best pizza I've ever had!" → Positive
@@ -500,8 +498,6 @@ Source: [Brown et al (2020)](https://arxiv.org/abs/2005.14165)
 :::{style="margin-top: 30px; font-size: 21px;"}
 :::{.columns}
 :::{.column width=55%}
-Few-shot prompting is not always better.
-
 **Examples help when:**
 
 - The task has [implicit conventions]{.alert} (e.g., JSON output format)
@@ -512,13 +508,9 @@ Few-shot prompting is not always better.
 **Examples can hurt when:**
 
 - They contain [biases or errors]{.alert} the model will copy
-- They are too similar (the model over-fits to surface patterns)
+- They are too similar, so the model copies surface patterns
 - The task is [simple enough]{.alert} that examples add noise
-- They consume [context window]{.alert} that could hold useful content
-
-**Key insight from [Anthropic's documentation](https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering):**
-
-> "The best examples are [representative of the hardest cases]{.alert}, not the average cases."
+- They take up [context window]{.alert} space you need
 :::
 
 :::{.column width=45%}
@@ -545,6 +537,12 @@ Few-shot prompting is not always better.
 
 :::{style="font-size: 18px; margin-top: 15px;"}
 Edge cases teach the model your [decision boundaries]{.alert}
+:::
+
+:::{style="text-align: left; font-size: 18px;"}
+**Key insight from [Anthropic's documentation](https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices):**
+
+> "Diverse: Cover [edge cases]{.alert} and vary enough that Claude doesn't pick up unintended patterns."
 :::
 :::
 :::
@@ -623,21 +621,21 @@ With a fixed schema, you can feed LLM output straight into your code
 :::{style="margin-top: 30px; font-size: 20px;"}
 :::{.columns}
 :::{.column width=55%}
-In January 2022, [Wei et al.](https://arxiv.org/abs/2201.11903) showed that asking models to display their reasoning [improves accuracy by a wide margin]{.alert} on complex tasks.
+In January 2022, [Wei et al.](https://arxiv.org/abs/2201.11903) showed that worked examples with the reasoning written out [improve accuracy by a wide margin]{.alert} on complex tasks.
 
-**The experiment:**
+**The experiment (PaLM 540B):**
 
 | Task | Standard prompting | Chain-of-Thought |
 |------|-------------------|------------------|
-| GSM8K (maths) | 17.7% | **58.1%** |
-| SVAMP (word problems) | 63.1% | **85.2%** |
-| ASDiv (arithmetic) | 71.3% | **91.3%** |
+| GSM8K (maths) | 17.9% | **56.9%** |
+| SVAMP (word problems) | 69.4% | **79.0%** |
+| ASDiv (arithmetic) | 72.1% | **73.9%** |
 
-[Accuracy nearly tripled on grade-school maths]{.alert} just by adding "Let's think step by step."
+[Accuracy more than tripled on grade-school maths]{.alert} with just eight worked examples.
 
 **Why does this work?**
 
-The model cannot do multi-step reasoning in a single forward pass. Intermediate steps [externalise the reasoning]{.alert}, so the model can "check its work" as it goes
+Each written step gives the model [more computation]{.alert} and breaks the problem into easier pieces, so it can "check its work" as it goes
 :::
 
 :::{.column width=45%}
@@ -675,7 +673,7 @@ Source: [Wei et al. (2022)](https://arxiv.org/abs/2201.11903). Chain-of-Thought 
 
 > Q: If a store sells 3 apples for $2, how much do 12 apples cost? Let's think step by step.
 >
-> A: First, I need to find the price per apple. 3 apples cost $2, so 1 apple costs $2/3 = $0.67. For 12 apples: 12 × $0.67 = $8. The answer is $8.
+> A: First, I need to find how many groups of 3 apples there are. 12 ÷ 3 = 4 groups. Each group costs $2, so 4 × $2 = $8. The answer is $8.
 
 **The phrase activates a "reasoning mode"** learned from training data where step-by-step explanations precede correct answers.
 
@@ -694,6 +692,8 @@ Source: [Wei et al. (2022)](https://arxiv.org/abs/2201.11903). Chain-of-Thought 
 ## Self-consistency: Multiple reasoning paths
 
 :::{style="margin-top: 30px; font-size: 18px;"}
+:::{.columns}
+:::{.column width=55%}
 [Wang et al. (2022)](https://arxiv.org/abs/2203.11171) introduced **self-consistency**: generate multiple reasoning chains and [take the majority answer]{.alert}.
 
 **The intuition**: wrong paths make different mistakes, but correct paths converge on the same answer.
@@ -702,16 +702,18 @@ Source: [Wei et al. (2022)](https://arxiv.org/abs/2201.11903). Chain-of-Thought 
 
 > Question: "Is 17 × 23 = 391?"
 
-**Path 1**: 17 × 23 = 17 × 20 + 17 × 3 = 340 + 51 = 391 ✓
-
-**Path 2**: 17 × 23 = 20 × 23 - 3 × 23 = 460 - 69 = 391 ✓
-
-**Path 3**: 17 × 23 = 15 × 23 + 2 × 23 = 345 + 46 = 391 ✓
+```text
+Path 1: 17 × 20 + 17 × 3 = 340 + 51 = 391 ✓
+Path 2: 20 × 23 - 3 × 23 = 460 - 69 = 391 ✓
+Path 3: 15 × 23 + 2 × 23 = 345 + 46 = 391 ✓
+```
 
 All paths agree → high confidence the answer is correct.
 
 **Implementation**: run the same prompt 3-5 times with temperature > 0, then vote. It costs more but is more reliable for important decisions.
+:::
 
+:::{.column width=45%}
 :::{style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; font-size: 18px; margin-top: 15px;"}
 **When CoT helps vs. hurts:**
 
@@ -722,13 +724,15 @@ All paths agree → high confidence the answer is correct.
 **Rule of thumb**: use CoT for problems where [you'd write out your work]{.alert}. Skip it for instant-answer problems
 :::
 :::
+:::
+:::
 
 ## "Thinking" models: CoT built in
 
 :::{style="margin-top: 30px; font-size: 19px;"}
 :::{.columns}
 :::{.column width=55%}
-[OpenAI's o1](https://openai.com/o1/) and [DeepSeek-R1](https://github.com/deepseek-ai/DeepSeek-R1) have **Chain-of-Thought reasoning built into the model itself**.
+[OpenAI's o1](https://openai.com/o1/) (2024) and [DeepSeek-R1](https://github.com/deepseek-ai/DeepSeek-R1) (2025) pioneered **Chain-of-Thought reasoning built into the model itself**. Today GPT-5, Claude and Gemini all have a thinking mode.
 
 **How they differ from standard LLMs:**
 
@@ -788,7 +792,7 @@ Observation: $176.30
 Final Answer: $176.30
 ```
 
-**Why this matters**: without the "Thought" steps, the model answers in one shot and gets the date or the price wrong
+**Why this matters**: without the "Thought" steps, the model answers in one shot and can get the date or price wrong
 :::
 
 :::{.column width=45%}
@@ -797,11 +801,11 @@ Final Answer: $176.30
 | Agent | What It Does |
 |-------|--------------|
 | [Gemini Deep Research](https://blog.google/products/gemini/google-gemini-deep-research/) | Multi-step web research |
-| [Cursor](https://cursor.sh/) | Writes/edits code autonomously |
-| [Devin](https://www.cognition-labs.com/) | "AI software engineer" |
+| [Cursor](https://cursor.com/) | Writes/edits code autonomously |
+| [Devin](https://cognition.ai/) | "AI software engineer" |
 
 :::{style="text-align: center; margin-top: 15px;"}
-[![](figures/agents.webp){width="60%"}](#){data-modal-type="image" data-modal-url="figures/agents.webp"}
+[![](figures/agents.webp){width="50%"}](#){data-modal-type="image" data-modal-url="figures/agents.webp"}
 
 Source: [GWI](https://www.gwi.com/blog/ai-agent-vs-ai-assistant)
 :::
@@ -831,18 +835,18 @@ Agents are powerful but [make mistakes that compound]{.alert}:
 - How do you audit what an agent did?
 - [Agents can be manipulated via prompt injection]{.alert}
 
-[Gartner predicts](https://www.gartner.com/en/topics/ai-agents) that by 2028, 15% of day-to-day work decisions will be made autonomously by AI agents
+[Gartner predicts](https://www.gartner.com/en/newsroom/press-releases/2025-06-25-gartner-predicts-over-40-percent-of-agentic-ai-projects-will-be-canceled-by-end-of-2027) that by 2028, at least 15% of day-to-day work decisions will be made autonomously by AI agents
 :::
  
 :::{.column width=45%}
 
 **Common effects of prompt injection attacks:**
  
-- **Prompt leaks**: hackers trick LLMs into revealing system prompts
-- **Remote code execution**: attackers run malicious programs through LLM plugins
-- **Data theft**: LLMs are tricked into sharing private user information
-- **Misinformation campaigns**: malicious prompts skew search results
-- **Malware transmission**: prompts spread through AI assistants, forwarding malicious content
+- **Prompt leaks**: revealing the hidden system prompt
+- **Remote code execution**: running malicious programs via plugins
+- **Data theft**: leaking private user information
+- **Misinformation**: malicious prompts skew search results
+- **Malware**: assistants forward malicious content to others
 
 :::{style="background: rgba(230, 57, 70, 0.15); padding: 15px; border-radius: 10px; font-size: 18px;"}
 **Prompt injection example:**
@@ -883,7 +887,7 @@ An AI agent that summarises emails reads this:
 :::
 
 :::{.column width=50%}
-**The jagged intelligence problem** ([Gans, 2024](https://www.nber.org/papers/w34712)):
+**The jagged intelligence problem** ([Gans, 2026](https://www.nber.org/papers/w34712)):
 
 Even [perfect prompts sometimes fail]{.alert}.
 
@@ -912,7 +916,7 @@ Build a mental [reliability map]{.alert} by testing lots of prompts and tracking
 
 - **The PTCF framework**: Persona → Task → Context → Format gives structure to every prompt.
 
-- **Chain-of-Thought reasoning**: "Think step by step" can improve accuracy by 40%+ on complex problems (Wei et al., 2022).
+- **Chain-of-Thought reasoning**: showing the steps more than tripled accuracy on maths problems (Wei et al., 2022).
 
 - **System prompts shape behaviour**: the hidden instructions behind every AI product define personality, capabilities, and constraints.
 
