@@ -7,13 +7,13 @@ This lecture explores how AI systems process visual and auditory information. We
 ### 1. How Machines "See" Images
 
 - **Pixels as Numbers**: Digital images are grids of pixels, where each pixel contains three values (Red, Green, Blue) from 0-255.
-- **Convolutional Neural Networks (CNNs)**: AI learns to recognise objects through a hierarchy of features—from simple edges to complex shapes to whole objects.
+- **Convolutional Neural Networks (CNNs)**: AI learns to recognise objects through a hierarchy of features, from simple edges to complex shapes to whole objects.
 - **Feature Hierarchies**: Early layers detect edges and colours; later layers combine these into textures, parts, and finally complete objects.
 - **Vision Transformers (ViT)**: A 2020 innovation that treats image patches like tokens, allowing Transformers (the same architecture used in LLMs) to process images.
 
 ### 2. How Machines "Hear" Audio
 
-- **Sound as Vibrations**: Audio is converted to waveforms, then transformed into spectrograms—visual representations of sound.
+- **Sound as Vibrations**: Audio is converted to waveforms, then transformed into spectrograms (visual representations of sound).
 - **Spectrograms**: These "pictures of sound" show pitch on the vertical axis, time on the horizontal axis, and loudness as colour.
 - **Whisper**: OpenAI's speech recognition system trained on 680,000 hours of audio across 99 languages.
 - **Unified Processing**: Once audio is a spectrogram, the same CNN and Transformer architectures used for images can process it.
@@ -27,9 +27,8 @@ This lecture explores how AI systems process visual and auditory information. We
 
 ### 4. Societal Implications
 
-- **Deepfakes and Misinformation**: AI-generated fake videos (Zelenskyy, Taylor Swift) and voice clones used for fraud have already happened.
-- **Bias in Vision Systems**: Facial analysis performs differently across skin tones (Gender Shades study).
-- **Positive Applications**: Medical imaging, accessibility tools, language translation, and scientific discovery.
+- **Where to Draw the Line**: Should AI-generated voices and images need watermarks, disclosure, consent or none of these, and how would you enforce it?
+- **AI Music**: Suno writes full songs from a text prompt, raising questions of ownership and copying.
 
 ## Resources
 

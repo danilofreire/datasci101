@@ -1,6 +1,6 @@
 # Lecture 14: When AI Systems Fail: Pipelines, Monitoring, and Documentation
 
-This lecture shows non-technical undergraduates what happens behind the scenes when they use AI, why systems break, and how companies try to catch failures before users do. It combines the pipeline and monitoring material with documentation (datasheets, model cards, and system cards) as the accountability layer.
+This lecture shows non-technical undergraduates what happens behind the scenes when they use AI, why systems break, and how companies try to catch failures before users do. It combines the pipeline and monitoring material with documentation (datasheets and model cards, with a line on system cards) as the accountability layer.
 
 ## Main ideas
 
@@ -11,9 +11,9 @@ This lecture shows non-technical undergraduates what happens behind the scenes w
 
 ### 2. Why pipelines break
 
-* **Data drift**: the world changes faster than training data (slang, prices, demographics).
+* **Data drift**: inputs, answer rates or meanings shift (data, label and concept drift); concept drift is the most dangerous.
 * **Model degradation**: models get stale even without drift; the "boiling frog" problem.
-* **Infrastructure**: GPUs, networks, and scaling issues behind "I'm at capacity".
+* **Failure types**: hallucination, policy, drift or pipeline; each needs a different response.
 
 ### 3. Monitoring and testing
 
@@ -23,11 +23,15 @@ This lecture shows non-technical undergraduates what happens behind the scenes w
 
 ### 4. Documentation and accountability
 
-* **The ImageNet horror story**: what happens when nobody documents the data.
-* **Datasheets** (Gebru et al., 2018), **model cards** (Mitchell et al., 2019), and **system cards**: what each covers and why intended use is the most important section.
+* **Why document**: few checked ImageNet's scraped, non-consensual images, yet thousands of AI systems were built on it.
+* **Datasheets** (Gebru et al., 2018) and **model cards** (Mitchell et al., 2019), plus **system cards** for whole products: what each covers and why intended use matters most.
 * **Disaggregated evaluation**: overall accuracy hides subgroup gaps (OpenAI's CLIP model card).
 * **Consent and the data supply chain**: LAION-5B, Clearview AI, and the "who owns the data?" debate.
 * **Activity**: read Anthropic's HH-RLHF dataset card on Hugging Face.
+
+### 5. What you can do
+
+* **Being a savvy AI user**: compare models, check status pages, read model cards, and diagnose five failures in the activity.
 
 ## Resources
 

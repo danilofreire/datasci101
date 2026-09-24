@@ -6,7 +6,7 @@ This lecture explains Retrieval-Augmented Generation (RAG) in accessible terms f
 
 ### 1. The Problem RAG Solves
 
-* **Knowledge cutoff**: LLMs only know what was in their training data—nothing recent or private.
+* **Knowledge cutoff**: LLMs only know what was in their training data: nothing recent or private.
 * **Hallucinations**: AI confidently states false information because it predicts plausible text, not verified facts.
 * **The solution**: Give AI access to your documents at query time.
 
@@ -14,7 +14,7 @@ This lecture explains Retrieval-Augmented Generation (RAG) in accessible terms f
 
 * **Keyword search**: Finds exact word matches only.
 * **Semantic search**: Finds documents by meaning using embeddings.
-* **Why it matters**: "cheap flights" can find "budget airfare"—same meaning, different words.
+* **Why it matters**: "cheap flights" can find "budget airfare" (same meaning, different words).
 
 ### 3. The RAG Pipeline
 
@@ -23,6 +23,7 @@ This lecture explains Retrieval-Augmented Generation (RAG) in accessible terms f
 * **Store**: Save in a vector database.
 * **Retrieve**: Find chunks similar to the user's question.
 * **Generate**: LLM answers using retrieved context.
+* **RAG vs. prompting vs. fine-tuning**: Retrieval cut hallucinated replies by over 60% (Shuster et al., 2021); put key chunks first or last (Liu et al., 2023).
 
 ### 4. No-Code RAG Tools
 

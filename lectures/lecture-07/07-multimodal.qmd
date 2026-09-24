@@ -98,8 +98,6 @@ Source: [DeepSet AI](https://www.deepset.ai/blog/the-beginners-guide-to-text-emb
 
 **Part 4: What This Means for Society**
 
-- Can you trust what you see and hear?
-- Deepfakes, bias, and privacy
 - Class discussion: where do we draw the line?
 :::
 :::
@@ -759,7 +757,7 @@ Should AI-generated content require...
 
 - **Hands-on**: you trained your own AI with Teachable Machine
 
-- **Critical thinking**: deepfakes, bias, and privacy are [real concerns]{.alert} we must address
+- **Critical thinking**: should AI voices and images need [watermarks, disclosure or consent]{.alert}?
 :::
 
 # ... and that's all for today! 🎉 {background-color="#1B3A6B"}

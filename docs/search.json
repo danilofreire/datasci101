@@ -319,7 +319,7 @@
     "href": "lectures/lecture-21/21-labour.html#recap-of-last-class",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Recap of last class",
-    "text": "Recap of last class\n\n\n\n\nAI challenges privacy and data protection: collection at scale plus inference of sensitive data\nGDPR (EU): rights of access, erasure, portability\nUS: patchwork of sectoral laws (healthcare, finance) and state laws (CCPA in California)\nDifferential privacy, federated learning, synthetic data help, but have trade-offs\nCollection is the core problem: the same data enables benefits and surveillance\nToday: what does AI mean for jobs and the economy?\n\n\n\n\nSource: X.com"
+    "text": "Recap of last class\n\n\n\n\nAI strains privacy: collection at scale plus inference of sensitive data\nGDPR (EU): rights of access, erasure, portability\nUS: patchwork of sectoral laws (healthcare, finance) plus 23 state privacy laws\nDifferential privacy, federated learning, synthetic data help, but have trade-offs\nCollection is the core problem: the same data enables benefits and surveillance\nToday: what does AI mean for jobs and the economy?\n\n\n\n\nSource: X.com"
   },
   {
     "objectID": "lectures/lecture-21/21-labour.html#lecture-overview",
@@ -347,7 +347,7 @@
     "href": "lectures/lecture-21/21-labour.html#this-isnt-the-first-time",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "This isn’t the first time",
-    "text": "This isn’t the first time\n\n\n\nHistorical fears of technological unemployment:\n\n\n\nEra\nTechnology\nFear\nOutcome\n\n\n\n\n1810s\nPower looms\nLuddites destroy machines\nTextile jobs changed but grew\n\n\n1930s\nMechanisation\nKeynes: “technological unemployment”\nPost-war prosperity\n\n\n1960s\nMainframes\nJFK warns of job losses\nService sector expansion\n\n\n1990s\nPersonal computers\nEnd of clerical work\nNew jobs created\n\n\n2010s\nRobots\nManufacturing decline\nMixed results\n\n\n\nThe pattern so far:\n\nTechnology destroys some jobs and creates others\nThe net effect has been positive over time\nThe adjustment periods are painful\n\n\n\n\n\n\nRage against the machine: the Luddites\n\n\nSource: Current Affairs\n\nEvery wave of automation sparked fears of mass unemployment. So far, those fears haven’t materialised. But past performance doesn’t guarantee future results! 😅"
+    "text": "This isn’t the first time\n\n\n\nHistorical fears of technological unemployment:\n\n\n\nEra\nTechnology\nFear\nOutcome\n\n\n\n\n1810s\nPower looms\nLuddites destroy machines\nTextile jobs changed but grew\n\n\n1930s\nMechanisation\nKeynes: “technological unemployment”\nPost-war prosperity\n\n\n1960s\nMainframes\nJFK warns of job losses\nService sector expansion\n\n\n1990s\nPersonal computers\nEnd of clerical work\nNew jobs created\n\n\n2010s\nRobots\nManufacturing decline\nLocal job and wage losses\n\n\n\nThe pattern so far:\n\nTechnology destroys some jobs and creates others\nThe net effect has been positive over time\nThe adjustment periods are painful\n\n\n\n\n\n\nRage against the machine: the Luddites\n\n\nSource: Current Affairs\n\nEvery wave of automation sparked fears of mass unemployment. So far, those fears haven’t materialised. But past performance doesn’t guarantee future results! 😅"
   },
   {
     "objectID": "lectures/lecture-21/21-labour.html#why-this-time-might-be-different",
@@ -375,28 +375,28 @@
     "href": "lectures/lecture-21/21-labour.html#what-are-people-using-ai-for",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "What are people using AI for?",
-    "text": "What are people using AI for?\n\n\n\nOpenAI’s research on ChatGPT use (2025):\n\n\n\nCategory\nJul 2024\nJun 2025\n\n\n\n\nPractical Guidance\n~29%\n~29%\n\n\nWriting\n~36%\n~24%\n\n\nSeeking Information\n~14%\n~24%\n\n\nTechnical Help\n~12%\n~5%\n\n\nMultimedia\n~2%\n~7%\n\n\n\nAmong work-related messages only (Jun 2025): Writing ~40%, Practical Guidance ~24%, Technical Help ~10%.\nWhat this tells us:\n\nOnly 27% of use is work-related, 73% is personal\nWriting’s share fell as people found other uses\nTechnical help moved to coding tools (Copilot, Codex) outside ChatGPT\n\n\n\n\nSource: OpenAI (2025)"
+    "text": "What are people using AI for?\n\n\n\nOpenAI’s research on ChatGPT use (2025):\n\n\n\nCategory\nJul 2024\nJun 2025\n\n\n\n\nPractical Guidance\n~29%\n~29%\n\n\nWriting\n~36%\n~24%\n\n\nSeeking Information\n~14%\n~24%\n\n\nTechnical Help\n~12%\n~5%\n\n\nMultimedia\n~2%\n~7%\n\n\n\nAmong work-related messages only (Jun 2025): Writing ~40%, Practical Guidance ~24%, Technical Help ~10%.\nWhat this tells us:\n\nOnly 27% of use is work-related, 73% is personal\nWriting’s share fell as people found other uses\nTechnical help may have moved to coding tools (Copilot, Codex)\n\n\n\n\nSource: OpenAI (2025)"
   },
   {
     "objectID": "lectures/lecture-21/21-labour.html#productivity-effects-early-evidence",
     "href": "lectures/lecture-21/21-labour.html#productivity-effects-early-evidence",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Productivity effects: early evidence",
-    "text": "Productivity effects: early evidence\n\n\n\nStudies finding positive effects:\n\nCustomer service (Brynjolfsson et al., 2025): 14% productivity increase, biggest gains for novice workers\nProgrammers (GitHub, 2022): 55% faster task completion with Copilot\nConsultants (BCG study, 2023): 40% better performance on applicable tasks\nWriters (Noy & Zhang, 2023): 40% faster, 18% better quality\n\nImportant caveats:\n\nMost studies are short-term, so long-term effects stay unclear\nOften sponsored by AI companies\nLab settings differ from real work\n\n\nThe pattern emerging:\n\nAI compresses the skill distribution: novices improve more than experts\nExperts sometimes do worse with AI\nBenefits concentrated in specific tasks\n\n\n\n\nSource: Boston Consulting Group (2023)"
+    "text": "Productivity effects: early evidence\n\n\n\nStudies finding positive effects:\n\nCustomer service (Brynjolfsson et al., 2025): 15% productivity increase, biggest gains for novice workers\nProgrammers (GitHub, 2022): 55% faster task completion with Copilot\nConsultants (BCG study, 2023): 40% better performance on applicable tasks\nWriters (Noy & Zhang, 2023): 40% faster, 18% better quality\n\nImportant caveats:\n\nMost studies are short-term, so long-term effects stay unclear\nOften sponsored by AI companies\nLab settings differ from real work\n\n\nThe pattern emerging:\n\nAI compresses the skill distribution: novices improve more than experts\nExperts sometimes do worse with AI\nBenefits concentrated in specific tasks\n\n\n\n\nSource: Boston Consulting Group (2023)"
   },
   {
     "objectID": "lectures/lecture-21/21-labour.html#the-graduate-job-drought",
     "href": "lectures/lecture-21/21-labour.html#the-graduate-job-drought",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "The graduate job drought",
-    "text": "The graduate job drought\n\n\n\nWhat the data shows (2024-2026):\n\nEntry-level job postings down significantly (Rest of World; IEEE Spectrum)\nBrynjolfsson et al. (2025): 13% employment decline for workers aged 22-25 in AI-exposed jobs (mainly in tech, finance, consulting)\n\nFinancial Times reporting (2026):\n\nGraduate hiring at lowest level in a decade\nTech companies leading the pullback\nLaw and consulting firms reducing trainee intakes\n\nThe logic (from the employer’s side):\n\nJunior employees used to do the tasks AI now handles\nAI doesn’t need healthcare, holidays, or mentoring\n\n\n\n\n\n\nKeep in mind that this is UK data.\n\n\nSource: Financial Times (2026)\n\nThis matters for you personally: if companies replace junior roles with AI, where do you get your first job?"
+    "text": "The graduate job drought\n\n\n\nWhat the data shows (2024-2026):\n\nEntry-level job postings down significantly (Rest of World; IEEE Spectrum)\nBrynjolfsson et al. (2026): 22-25 year-olds in AI-exposed jobs are 19% below less-exposed peers\n\nFinancial Times reporting (2026):\n\nUK graduate vacancies at a 10-year low\nTech companies leading the pullback\nLaw and consulting firms reducing trainee intakes\n\nThe logic (from the employer’s side):\n\nJunior employees used to do the tasks AI now handles\nAI doesn’t need healthcare, holidays, or mentoring\n\n\n\n\n\n\nKeep in mind that this is UK data.\n\n\nSource: Financial Times (2026)\n\nThis matters for you personally: if companies replace junior roles with AI, where do you get your first job?"
   },
   {
     "objectID": "lectures/lecture-21/21-labour.html#but-the-aggregate-numbers-are-confusing",
     "href": "lectures/lecture-21/21-labour.html#but-the-aggregate-numbers-are-confusing",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "But the aggregate numbers are confusing",
-    "text": "But the aggregate numbers are confusing\n\n\n\nWhat we’re not seeing (yet):\n\nMass unemployment\nDramatic productivity surge\nClear sectoral collapse\n\nWhat we are seeing:\n\nSlower hiring rather than mass firing\nSome sectors growing, others shrinking\nGeographic concentration of effects\nRising inequality\n\nWhy the disconnect?\n\nAdoption takes time (most firms are still experimenting)\nMany tasks don’t work well with current AI\nRegulations, contracts, and organisational inertia slow everything down\n\n\n\n\nSource: The Economist"
+    "text": "But the aggregate numbers are confusing\n\n\n\nWhat we’re not seeing (yet):\n\nMass unemployment\nDramatic productivity surge\nClear sectoral collapse\n\nWhat we are seeing:\n\nSlower hiring rather than mass firing\nSome sectors growing, others shrinking\nGeographic concentration of effects\nYoung workers hit first; experienced workers show no gap\n\nWhy the disconnect?\n\nAdoption takes time (most firms are still experimenting)\nMany tasks don’t work well with current AI\nRegulations, contracts, and organisational inertia slow everything down\n\n\n\n\nSource: The Economist"
   },
   {
     "objectID": "lectures/lecture-21/21-labour.html#the-optimistic-view",
@@ -417,7 +417,7 @@
     "href": "lectures/lecture-21/21-labour.html#what-economists-actually-think",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "What economists actually think",
-    "text": "What economists actually think\n\n\n\nSurvey results (IGM Forum, 2024):\n\nLarge majority: AI will significantly change labour markets, direction uncertain\nMost expect some job displacement, but not mass unemployment\nStrong agreement: inequality likely to increase\n\nAcemoglu (2025) framework:\n\nAI can augment workers or replace them by automating their tasks\nCurrent AI is biased toward replacement\nPolicy could shift it toward augmentation\n\nJones (2026) summary:\n\nHistorical precedent supports optimism\nBut speed and scope are unprecedented\nTransition will be rough even if outcome is good\n\n\n\n\n\nSource: Noah Smith\n\nNobody knows. Anyone who claims certainty is selling something. The range of possible outcomes is very wide."
+    "text": "What economists actually think\n\n\n\nEconomist polls (Clark Center, 2023 and 2026):\n\nMost are uncertain whether AI will raise inequality (10 agree, 19 uncertain, 3 disagree)\nFew expect a big rise in unemployment (5 agree, 25 uncertain, 11 disagree)\nMost expect less certain returns to education (27 of 41 agree)\n\nMIT economists:\n\nAcemoglu (2025): AI adds at most ~0.7% to productivity over 10 years\nAcemoglu, Autor & Johnson (2023): AI can augment or replace workers; today it leans to replacement, and policy could shift it\n\nJones (2026), now at Anthropic:\n\nThe economy is only as fast as its weakest links: tasks AI cannot yet do\nBig gains may take decades, which gives workers time to adjust\n\n\n\n\n\nSource: Noah Smith\n\nNobody knows. Anyone who claims certainty is selling something. The range of possible outcomes is very wide."
   },
   {
     "objectID": "lectures/lecture-21/21-labour.html#discussion-your-predictions",
@@ -445,7 +445,7 @@
     "href": "lectures/lecture-21/21-labour.html#the-graduate-market-in-2026",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "The graduate market in 2026",
-    "text": "The graduate market in 2026\n\n\n\nThe tough reality:\n\nEntry-level hiring is down and competition is intense\nTraditional paths are narrowing\n“Just get a degree” isn’t enough\n\nWhat might help:\n\nShow you can actually use AI tools, not just talk about them\nBuild applied projects people can see (a portfolio beats a transcript)\nGet internship or work experience while you can\nPick up skills outside your major\nBuild a network (still a human activity!)\nBe open to non-traditional paths\n\n\n\nThe job market shifted while you were in university. That is unsettling, and I won’t pretend otherwise. Learning to work with AI won’t fix everything, but ignoring it is worse.\n\n\n\nSource: Fortune"
+    "text": "The graduate market in 2026\n\n\n\nThe tough reality:\n\nEntry-level hiring is down in AI-exposed jobs and competition is intense\nTraditional paths are narrowing\n“Just get a degree” isn’t enough\n\nWhat might help:\n\nShow you can actually use AI tools, not just talk about them\nBuild applied projects people can see (a portfolio beats a transcript)\nGet internship or work experience while you can\nPick up skills outside your major\nBuild a network (still a human activity!)\nBe open to non-traditional paths\n\n\n\nThe job market shifted while you were in university. That is unsettling, and I won’t pretend otherwise. Learning to work with AI won’t fix everything, but ignoring it is worse.\n\n\n\nSource: Fortune"
   },
   {
     "objectID": "lectures/lecture-21/21-labour.html#what-would-you-advise",
@@ -1236,7 +1236,7 @@
     "href": "lectures/lecture-11/11-hallucination.html#lecture-overview",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Lecture overview",
-    "text": "Lecture overview\nToday’s agenda\n\n\n\nPart 1: What Are Hallucinations?\n\nWhen AI confidently lies\nWhy this happens (it’s not a bug!)\nTypes of hallucinations\n\nPart 2: Real-World Failures\n\nLawyers and fake citations\nMedical misinformation\nAcademic integrity issues\n\n\nPart 3: Creativity vs. Accuracy\n\nThe creativity-accuracy tradeoff\nTemperature and randomness\nWhen hallucinations are… useful?\n\nPart 4: Detection and Prevention\n\nSpotting hallucinations\nPrompting techniques that help\nPreview: RAG as a solution"
+    "text": "Lecture overview\nToday’s agenda\n\n\n\nPart 1: What Are Hallucinations?\n\nWhen AI confidently lies\nWhy this happens (it’s not a bug!)\nTypes of hallucinations\n\nPart 2: Real-World Failures\n\nLawyers and fake citations\nMedical misinformation\nAcademic integrity issues\n\n\nPart 3: Creativity vs. Accuracy\n\nThe creativity-accuracy tradeoff\nWhen hallucinations are… useful?\n\nPart 4: Detection and Prevention\n\nSpotting hallucinations\nPrompting techniques that help\nPreview: RAG as a solution"
   },
   {
     "objectID": "lectures/lecture-11/11-hallucination.html#meme-of-the-day",
@@ -1383,7 +1383,7 @@
     "href": "lectures/lecture-11/11-hallucination.html#main-takeaways",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Main takeaways",
-    "text": "Main takeaways\n\n\nHallucinations: AI confidently states false information\nWhy it happens: LLMs predict plausible, not true\nTemperature: the creativity-accuracy dial\nReal failures: lawyers, doctors, academics affected\nDetection: verify specific claims, check citations\nPrevention: careful prompting helps but doesn’t eliminate"
+    "text": "Main takeaways\n\n\nHallucinations: AI confidently states false information\nWhy it happens: LLMs predict plausible, not true\nWrong time: making things up helps in fiction, hurts with facts\nReal failures: lawyers, doctors, academics affected\nDetection: verify specific claims, check citations\nPrevention: careful prompting helps but doesn’t eliminate"
   },
   {
     "objectID": "lectures/lecture-11/11-hallucination.html#your-anti-hallucination-toolkit",
@@ -1551,7 +1551,7 @@
     "href": "lectures/lecture-06/06-language.html#lecture-overview",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Lecture overview",
-    "text": "Lecture overview\nToday’s agenda\n\n\n\nPart 1: How LLMs “See” Text\n\nThe translation problem: Text to numbers\nThe processing pipeline\n\nPart 2: Tokens and Tokenisation\n\nWhat tokens are (hint: not always words!)\nTokenisation methods and quirks\nToken limits and API costs\n\n\nPart 3: Embeddings\n\nWords as vectors in space\nSemantic similarity and the king-queen example in detail\n\nPart 4: Parameters\n\nWhat are the billions of parameters?\nEmbeddings, weights, and biases\nTemperature and creativity dials"
+    "text": "Lecture overview\nToday’s agenda\n\n\n\nPart 1: How LLMs “See” Text\n\nThe translation problem: Text to numbers\nThe processing pipeline\n\nPart 2: Tokens and Tokenisation\n\nWhat tokens are (hint: not always words!)\nTokenisation methods and quirks\nToken limits and API costs\n\n\nPart 3: Embeddings\n\nWords as vectors in space\nSemantic similarity and the king-queen example\n\nPart 4: Parameters\n\nWhat are the billions of parameters?\nEmbeddings, weights, and biases\nTemperature and creativity dials"
   },
   {
     "objectID": "lectures/lecture-06/06-language.html#meme-of-the-day",
@@ -2748,7 +2748,7 @@
     "href": "lectures/lecture-07/07-multimodal.html#lecture-overview",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Lecture overview",
-    "text": "Lecture overview\nToday’s agenda\n\n\n\nPart 1: How Machines “See”\n\nWhat computers actually see (just numbers!)\nHow AI learns to recognise objects\nActivity: train your own image classifier\n\nPart 2: How Machines “Hear”\n\nTurning invisible sound waves into pictures\nHow machines understand speech\n\n\nPart 3: The Big Picture\n\nEverything becomes the same kind of numbers\n\nPart 4: What This Means for Society\n\nCan you trust what you see and hear?\nDeepfakes, bias, and privacy\nClass discussion: where do we draw the line?"
+    "text": "Lecture overview\nToday’s agenda\n\n\n\nPart 1: How Machines “See”\n\nWhat computers actually see (just numbers!)\nHow AI learns to recognise objects\nActivity: train your own image classifier\n\nPart 2: How Machines “Hear”\n\nTurning invisible sound waves into pictures\nHow machines understand speech\n\n\nPart 3: The Big Picture\n\nEverything becomes the same kind of numbers\n\nPart 4: What This Means for Society\n\nClass discussion: where do we draw the line?"
   },
   {
     "objectID": "lectures/lecture-07/07-multimodal.html#tweet-of-the-day",
@@ -2902,7 +2902,7 @@
     "href": "lectures/lecture-07/07-multimodal.html#main-takeaways",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Main takeaways",
-    "text": "Main takeaways\n\n\nImages = grids of numbers: AI spots patterns, from edges to objects\nSound = pictures of vibrations: turn audio into spectrograms, then use image AI\nThe big insight: text, images, and audio all become embeddings\nMultimodal AI: ChatGPT, Claude, and Gemini see images because everything speaks the same mathematical “language”\nHands-on: you trained your own AI with Teachable Machine\nCritical thinking: deepfakes, bias, and privacy are real concerns we must address"
+    "text": "Main takeaways\n\n\nImages = grids of numbers: AI spots patterns, from edges to objects\nSound = pictures of vibrations: turn audio into spectrograms, then use image AI\nThe big insight: text, images, and audio all become embeddings\nMultimodal AI: ChatGPT, Claude, and Gemini see images because everything speaks the same mathematical “language”\nHands-on: you trained your own AI with Teachable Machine\nCritical thinking: should AI voices and images need watermarks, disclosure or consent?"
   },
   {
     "objectID": "lectures/lecture-10/10-prompting.html#recap-of-last-class",
@@ -2916,7 +2916,7 @@
     "href": "lectures/lecture-10/10-prompting.html#lecture-overview",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Lecture overview",
-    "text": "Lecture overview\nWhat we will cover today\n\n\n\nPart 1: How to talk to AI\n\nThe PTCF framework (Persona-Task-Context-Format)\nTemperature and sampling parameters (recap from Lecture 06)\n\nPart 2: System Prompts and Personas\n\nThe hidden instructions behind every chatbot\nSkills and agent files for storing prompts\n\nPart 3: Fundamental Techniques\n\nZero-shot, one-shot, and few-shot prompting\nWhen examples help and when they hurt\n\n\nPart 4: Chain-of-Thought Reasoning\n\nThe research behind “think step by step”\n“Thinking” models (o1, DeepSeek-R1)\n\nPart 5: AI Agents\n\nThe ReAct framework: Reasoning + Acting\nSafety concerns and prompt injection"
+    "text": "Lecture overview\nWhat we will cover today\n\n\n\nPart 1: How to talk to AI\n\nThe PTCF framework (Persona-Task-Context-Format)\nTemperature and sampling parameters (recap from Lecture 06)\n\nPart 2: System Prompts and Personas\n\nThe hidden instructions behind every chatbot\nMeta-prompting: asking the AI to fix your prompt\n\nPart 3: Fundamental Techniques\n\nZero-shot, one-shot, and few-shot prompting\nWhen examples help and when they hurt\n\n\nPart 4: Chain-of-Thought Reasoning\n\nThe research behind “think step by step”\n“Thinking” models (o1, DeepSeek-R1)\n\nPart 5: AI Agents\n\nThe ReAct framework: Reasoning + Acting\nSafety concerns and prompt injection"
   },
   {
     "objectID": "lectures/lecture-10/10-prompting.html#tweet-of-the-day",
@@ -3070,7 +3070,7 @@
     "href": "lectures/lecture-12/12-rag.html#lecture-overview",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Lecture overview",
-    "text": "Lecture overview\nToday’s agenda\n\n\n\nPart 1: The Problem\n\nQuick recap: hallucinations (from Lecture 11)\nThe knowledge cutoff issue\nHow RAG solves both problems\n\nPart 2: Semantic Search\n\nFinding by meaning, not just keywords\nQuick embeddings recap\nWhy this matters for RAG\n\n\nPart 3: The RAG Pipeline\n\nHow documents become searchable\nChunking, embedding, retrieving\nFrom question to grounded answer\n\nPart 4: No-Code Tools\n\nGemini Notebook (formerly NotebookLM) and file uploads\nBuild your own RAG system today! 🛠️"
+    "text": "Lecture overview\nToday’s agenda\n\n\n\nPart 1: The Problem\n\nQuick recap: hallucinations and knowledge cutoffs (from Lecture 11)\nHow RAG solves both problems\n\nPart 2: Semantic Search\n\nFinding by meaning, not just keywords\nQuick embeddings recap\nWhy this matters for RAG\n\n\nPart 3: The RAG Pipeline\n\nHow documents become searchable\nChunking, embedding, retrieving\nFrom question to grounded answer\n\nPart 4: No-Code Tools\n\nGemini Notebook (formerly NotebookLM) and file uploads\nBuild your own RAG system today! 🛠️"
   },
   {
     "objectID": "lectures/lecture-12/12-rag.html#meme-of-the-day",
@@ -3700,7 +3700,7 @@
     "href": "lectures/lecture-19/19-privacy.html#recap-of-last-class",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Recap of last class",
-    "text": "Recap of last class\n\n\n\n\nEU AI Act: the world’s first comprehensive AI law, with risk tiers (banned, high-risk, limited, minimal)\nUS approach: sectoral regulation with state-level initiatives\nChina: state control over content, innovation goals, and mandatory algorithm registration\nNo global consensus yet, but convergence on key principles is likely\nToday: how does AI intersect with privacy?\n\n\n\n\n\n\nOh, well 😅"
+    "text": "Recap of last class\n\n\n\n\nEU AI Act: first comprehensive AI law; banned, high, limited and minimal risk\nFines up to 7% of global turnover; high-risk rules delayed to December 2027\nUS approach: sectoral regulation with state-level initiatives\nA 2025 executive order lets federal lawyers challenge state AI laws\nChina: content control, innovation goals, algorithm registration\nNo global consensus yet, but convergence on key principles is likely\nToday: how does AI intersect with privacy?\n\n\n\n\n\n\nOh, well 😅"
   },
   {
     "objectID": "lectures/lecture-19/19-privacy.html#lecture-overview",
@@ -3714,7 +3714,7 @@
     "href": "lectures/lecture-19/19-privacy.html#meme-of-the-day",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Meme of the day",
-    "text": "Meme of the day\n\n\nSource: Caniphis"
+    "text": "Meme of the day\n\n\nSource: CanIPhish"
   },
   {
     "objectID": "lectures/lecture-19/19-privacy.html#good-news-of-the-day",
@@ -3728,21 +3728,21 @@
     "href": "lectures/lecture-19/19-privacy.html#why-ai-makes-privacy-harder",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Why AI makes privacy harder",
-    "text": "Why AI makes privacy harder\n\n\n\nAI breaks privacy in ways older laws did not anticipate:\nScale of collection:\n\nOld surveillance was limited by staffing; AI collection runs around the clock at almost no cost\nEvery interaction becomes “data exhaust”, a byproduct of normal use\n\nInference capabilities:\n\nAI predicts sensitive information from innocuous data: shopping reveals health, typing speed reveals mood, networks reveal politics\nThings you never disclosed can be inferred\n\nPersistence:\n\nData doesn’t decay: models trained today affect you forever, and decisions follow you across contexts\n“Right to be forgotten” is technically hard\n\n\n\n\nSource: AI Multiple\n\n“If you’re not paying for the product, you are the product.” This understates it! Even when you pay, your data is often the real product!"
+    "text": "Why AI makes privacy harder\n\n\n\nAI breaks privacy in ways older laws did not anticipate:\nScale of collection:\n\nOld surveillance was limited by staffing; AI collection runs around the clock at almost no cost\nEvery interaction becomes “data exhaust”, a byproduct of normal use\n\nInference capabilities:\n\nAI predicts sensitive information from innocuous data: shopping → health, typing → mood, friends → politics\nThings you never disclosed can be inferred\n\nPersistence:\n\nData doesn’t decay: models trained today affect you forever, and decisions follow you across contexts\n“Right to be forgotten” is technically hard\n\n\n\n\nSource: AI Multiple\n\n“If you’re not paying for the product, you are the product.” This understates it! Even when you pay, your data is often the real product!"
   },
   {
     "objectID": "lectures/lecture-19/19-privacy.html#what-can-be-inferred-from-your-data",
     "href": "lectures/lecture-19/19-privacy.html#what-can-be-inferred-from-your-data",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "What can be inferred from your data?",
-    "text": "What can be inferred from your data?\n\n\n\nResearch has shown AI can predict:\n\n\n\nData source\nWhat can be inferred\n\n\n\n\nFacebook likes\nPolitical views, sexuality, personality\n\n\nSmartphone sensors\nDepression, anxiety, Parkinson’s\n\n\nTyping patterns\nAge, gender, emotional state\n\n\nPurchase history\nPregnancy, health conditions\n\n\nLocation data\nHome address, workplace, religion\n\n\nVoice recordings\nEmotional state, health, age\n\n\n\nFamous example: Target and pregnancy\n\nTarget’s algorithm spotted a pregnant teenager and posted baby coupons to her home\nHer mother complained: her daughter was “only in high school”\nDays later the father called back, apologising and confirming the pregnancy\nThe algorithm knew before her family did (NYT)\n\n\n\n\nSource: Time\n\nYou can control what you share, but you cannot control what can be inferred from it"
+    "text": "What can be inferred from your data?\n\n\n\nResearch has shown AI can predict:\n\n\n\nData source\nWhat can be inferred\n\n\n\n\nFacebook likes\nPolitical views, sexuality, personality\n\n\nSmartphone sensors\nDepression, anxiety, Parkinson’s\n\n\nTyping patterns\nAge, gender, emotional state\n\n\nPurchase history\nPregnancy, health conditions\n\n\nLocation data\nHome address, workplace, religion\n\n\nVoice recordings\nEmotional state, health, age\n\n\n\nFamous example: Target and pregnancy\n\nTarget’s algorithm spotted a pregnant teenager and posted baby coupons to her home\nHer father complained to the store: she was “still in high school”\nDays later he apologised to the manager: she was pregnant\nThe algorithm knew before her family did (NYT)\n\n\n\n\nSource: Time\n\nYou can control what you share, but you cannot control what can be inferred from it"
   },
   {
     "objectID": "lectures/lecture-19/19-privacy.html#training-data-and-privacy",
     "href": "lectures/lecture-19/19-privacy.html#training-data-and-privacy",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Training data and privacy",
-    "text": "Training data and privacy\n\n\n\nLLMs have a training data problem:\n\nTrained on internet-scale data, which includes personal information\nModels can memorise and regurgitate training data\nYour name, address, phone number might be in there!\n\nDemonstrated attacks:\n\nResearchers extracted verbatim training data from GPT-2, including names, phone numbers and email addresses (Carlini et al., 2021)\nExtraction attacks keep improving\n\nThe consent problem:\n\nMost people don’t know what’s in training sets\n“Publicly available” ≠ “consented to AI training”\n\n\n\n\nSource: The Hacker News\n\nWhen you ask an LLM about yourself, it might actually know things from training data you never shared with it directly"
+    "text": "Training data and privacy\n\n\n\nLLMs have a training data problem:\n\nTrained on internet-scale data, which includes personal information\nModels can memorise and regurgitate training data\nYour name, address, phone number might be in there!\n\nDemonstrated attacks:\n\nCarlini et al. (2021) extracted verbatim training data from GPT-2: names, phone numbers, emails\nExtraction attacks keep improving\n\nThe consent problem:\n\nMost people don’t know what’s in training sets\n“Publicly available” ≠ “consented to AI training”\n\n\n\n\nSource: The Hacker News\n\nWhen you ask an LLM about yourself, it might actually know things from training data you never shared with it directly"
   },
   {
     "objectID": "lectures/lecture-19/19-privacy.html#discussion-would-you-share",
@@ -3756,35 +3756,35 @@
     "href": "lectures/lecture-19/19-privacy.html#gdpr-fundamentals",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "GDPR fundamentals",
-    "text": "GDPR fundamentals\n\n\n\nThe General Data Protection Regulation (2016/679, effective 2018) is the EU’s comprehensive privacy law.\nMain principles:\n\nLawfulness, fairness, transparency\nData minimisation: collect only what’s necessary\nAccuracy: keep data up to date\nStorage limitation: don’t keep it longer than needed\nIntegrity and confidentiality: protect data properly\nAccountability: demonstrate compliance\n\nLawful bases for processing:\n\nConsent (freely given, specific, informed)\nLegal obligation\nPublic interest\nLegitimate interests: the most contested, used to process without consent (fraud prevention, training AI models)\n\n\n\n\n\nLike the EU AI Act, GDPR covers any organisation processing EU residents’ data, wherever it is located. A US startup with European users must comply with no office in the EU."
+    "text": "GDPR fundamentals\n\n\n\nThe General Data Protection Regulation (2016/679, effective 2018) is the EU’s comprehensive privacy law.\nMain principles:\n\nLawfulness, fairness, transparency\nPurpose limitation: use data only for the stated purpose\nData minimisation: collect only what’s necessary\nAccuracy and storage limitation: keep it correct, and no longer than needed\nIntegrity and confidentiality: protect data properly\nAccountability: demonstrate compliance\n\nSix lawful bases: consent, contract, legal obligation, vital interests, public task and legitimate interests\n\nLegitimate interests is the most contested: firms use it to skip consent, even for AI training\n\n\n\n\n\nLike the EU AI Act, GDPR covers any organisation processing EU residents’ data, wherever it is located. A US startup with European users must comply with no office in the EU."
   },
   {
     "objectID": "lectures/lecture-19/19-privacy.html#individual-rights-under-gdpr",
     "href": "lectures/lecture-19/19-privacy.html#individual-rights-under-gdpr",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Individual rights under GDPR",
-    "text": "Individual rights under GDPR\n\n\n\nYou have the right to:\n\n\n\nRight\nWhat it means\n\n\n\n\nAccess\nGet a copy of your data\n\n\nRectification\nCorrect inaccurate data\n\n\nErasure\n“Right to be forgotten”\n\n\nPortability\nMove data to another service\n\n\nRestriction\nLimit processing\n\n\nObject\nStop certain processing\n\n\nNot be profiled\nReject automated decisions\n\n\n\nArticle 22: automated decisions\n\nYou have the right not to be subject to purely automated decisions\nConsequential decisions need human involvement\nExceptions exist for contracts and explicit consent\n\n\n\n\nSource: EU GDPR Portal\n\nIn practice: exercising these rights is often difficult. Companies hide the forms, respond slowly, or claim exemptions."
+    "text": "Individual rights under GDPR\n\n\n\nYou have the right to:\n\n\n\nRight\nWhat it means\n\n\n\n\nAccess\nGet a copy of your data\n\n\nRectification\nCorrect inaccurate data\n\n\nErasure\n“Right to be forgotten”\n\n\nPortability\nMove data to another service\n\n\nRestriction\nLimit processing\n\n\nObject\nStop certain processing\n\n\nAutomated decisions\nAsk for a human in significant ones\n\n\n\nArticle 22: automated decisions\n\nYou have the right not to be subject to purely automated decisions\nConsequential decisions need human involvement\nExceptions exist for contracts and explicit consent\n\n\n\n\nSource: GDPR.eu (Proton)\n\nIn practice: exercising these rights is often difficult. Companies hide the forms, respond slowly, or claim exemptions."
   },
   {
     "objectID": "lectures/lecture-19/19-privacy.html#gdpr-and-ai-tensions",
     "href": "lectures/lecture-19/19-privacy.html#gdpr-and-ai-tensions",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "GDPR and AI tensions",
-    "text": "GDPR and AI tensions\n\n\n\nPurpose limitation vs model training:\n\nYou gave data for one purpose. Can it train a model for another?\nAI companies claim legitimate interest\n\nData minimisation vs big data:\n\nAI works better with more data; GDPR says collect only what’s necessary\nWhat’s “necessary” for a foundation model? Everything?\n\nRight to explanation vs black boxes:\n\nYou can ask why an AI decided about you\nMany AI systems can’t explain themselves\n\nRight to erasure vs model training:\n\nCan you demand removal from a trained model?\n“Unlearning” is technically very difficult\n\n\n\n\nSource: CertPro\n\nGDPR was written before the LLM era. Applying 2018 law to 2026 technology creates interpretation challenges"
+    "text": "GDPR and AI tensions\n\n\n\n\nPurpose limitation vs model training\n\nYou gave data for one purpose. Can it train a model for another?\nAI companies claim legitimate interest\n\nData minimisation vs big data\n\nAI works better with more data; GDPR says collect only what’s necessary\nWhat’s “necessary” for a foundation model? Everything?\n\nRight to explanation vs black boxes\n\nYou can ask why an AI decided about you\nMany AI systems can’t explain themselves\n\nRight to erasure vs model training\n\nCan you demand removal from a trained model?\n“Unlearning” is technically very difficult\n\n\n\n\n\nSource: CertPro\n\nGDPR was written before the LLM era. Applying 2018 law to 2026 technology creates interpretation challenges"
   },
   {
     "objectID": "lectures/lecture-19/19-privacy.html#us-privacy-landscape",
     "href": "lectures/lecture-19/19-privacy.html#us-privacy-landscape",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "US privacy landscape",
-    "text": "US privacy landscape\n\n\n\nNo comprehensive federal privacy law. Instead, a patchwork of sector-specific rules:\n\n\n\nLaw\nScope\nProtects\n\n\n\n\nHIPAA\nHealthcare data\nPatient medical records\n\n\nFERPA\nEducation records\nStudent academic data\n\n\nCOPPA\nChildren’s data\nUnder-13 online activity\n\n\nGLBA\nFinancial data\nBank and loan records\n\n\nFCRA\nCredit reporting\nCredit scores and history\n\n\nECPA\nElectronic comms\nEmails, calls, stored data\n\n\n\nState laws filling the gap:\n\nCalifornia (CCPA/CPRA): most comprehensive, GDPR-like rights\nVirginia, Colorado, Connecticut: similar frameworks\nIllinois BIPA: biometric data, with private right of action\nMany more states are following\n\n\n\n\nSource: IAPP"
+    "text": "US privacy landscape\n\n\n\nNo comprehensive federal privacy law. Instead, a patchwork of sector-specific rules:\n\n\n\nLaw\nScope\nProtects\n\n\n\n\nHIPAA\nHealthcare data\nPatient medical records\n\n\nFERPA\nEducation records\nStudent academic data\n\n\nCOPPA\nChildren’s data\nUnder-13 online activity\n\n\nGLBA\nFinancial data\nBank and loan records\n\n\nFCRA\nCredit reporting\nCredit scores and history\n\n\nECPA\nElectronic comms\nEmails, calls, stored data\n\n\n\nState laws filling the gap:\n\nCalifornia (CCPA/CPRA): most comprehensive, GDPR-like rights\nVirginia, Colorado, Connecticut: similar frameworks\nIllinois BIPA: biometric data, with private right of action\n23 states now have comprehensive privacy laws (Vermont in June 2026)\n\n\n\n\nSource: IAPP"
   },
   {
     "objectID": "lectures/lecture-19/19-privacy.html#gdpr-enforcement",
     "href": "lectures/lecture-19/19-privacy.html#gdpr-enforcement",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "GDPR enforcement",
-    "text": "GDPR enforcement\n\n\n\nMajor fines (selected):\n\n\n\nCompany\nFine\nWhat they did wrong\n\n\n\n\nMeta (2023)\n€1.2B\nTransferred EU user data to US servers without adequate safeguards\n\n\nAmazon (2021)\n€746M\nProcessed personal data for targeted ads without valid consent\n\n\nMeta (2022)\n€405M\nExposed children’s accounts and contact info on Instagram\n\n\nGoogle (2022)\n€150M\nMade it harder to reject cookies than to accept them\n\n\nTikTok (2023)\n€345M\nFailed to protect children’s privacy settings and data\n\n\n\nPatterns:\n\nBig tech companies are the primary targets\nRegulators focus on data transfers, consent and children\nFines are getting larger\nEnforcement varies by country (Ireland is lax)\n\n\n\n\nSource: Secureframe\n\n€1.2 billion sounds big, but Meta made ~$135 billion in 2024. Is that a fine or a cost of doing business?"
+    "text": "GDPR enforcement\n\n\n\nMajor fines (selected):\n\n\n\nCompany\nFine\nWhat they did wrong\n\n\n\n\nMeta (2023)\n€1.2B\nSent EU user data to the US without adequate safeguards\n\n\nAmazon (2021)\n€746M\nTargeted ads without valid consent (fine annulled in 2026, breach upheld)\n\n\nMeta (2022)\n€405M\nExposed children’s contact details on Instagram\n\n\nGoogle (2022)\n€150M\nMade rejecting cookies harder than accepting them\n\n\nTikTok (2023)\n€345M\nFailed to protect children’s privacy settings and data\n\n\n\nPatterns:\n\nBig tech companies are the primary targets\nRegulators focus on data transfers, consent and children\nFines are getting larger\nEnforcement varies by country; Ireland’s regulator is often called slow\n\n\n\n\nSource: Secureframe\n\n€1.2 billion sounds big, but Meta made ~$135 billion in 2023. Is that a fine or a cost of doing business?"
   },
   {
     "objectID": "lectures/lecture-19/19-privacy.html#differential-privacy",
@@ -3798,28 +3798,28 @@
     "href": "lectures/lecture-19/19-privacy.html#federated-learning",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Federated learning",
-    "text": "Federated learning\n\n\n\nFederated learning trains AI models without centralising data (McMahan et al., 2017).\nHow it works:\n\nA server sends the same model to many devices\nEach device trains it on its local data\nEach sends back only what it learned (updated weights), not the data\nThe server averages the updates into a better model\nThe improved model goes back to the devices\n\nWhy it matters for privacy:\n\nYour raw data never leaves your device: the server never sees your messages, photos or browsing history\nNot perfect: updates can still leak information about the training data\nCoordinating thousands of devices is complex\n\n\n\n\n\nSource: Wikipedia\n\nExample: Google’s Gboard improves predictions this way. Your typing stays on your phone; only model improvements are shared"
+    "text": "Federated learning\n\n\n\nFederated learning trains models without pooling the data (McMahan et al., 2017)\nHow it works:\n\nA server sends the same model to many devices\nEach device trains it on its local data\nEach sends back only what it learned (weights), not the data\nThe server averages the updates and sends the better model back\n\nWhy it matters for privacy:\n\nYour raw data never leaves your device: the server sees only model updates\nNot perfect: updates can still leak information\nCoordinating thousands of devices is complex\n\n\n\n\n\nSource: Wikipedia\n\nExample: Google’s Gboard improves predictions this way. Your typing stays on your phone; only model improvements are shared"
   },
   {
     "objectID": "lectures/lecture-19/19-privacy.html#synthetic-data-for-privacy",
     "href": "lectures/lecture-19/19-privacy.html#synthetic-data-for-privacy",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Synthetic data for privacy",
-    "text": "Synthetic data for privacy\n\n\n\nSynthetic data is data that looks real but isn’t (Jordon et al., 2022).\nHow it works:\n\nTrain a generative model on real data so it learns the statistical patterns and correlations\nGenerate new, fake data points that look real\nTrain your AI on those instead\n\nPrivacy benefits and limitations:\n\nNo real personal data in the pipeline, so individuals can’t be identified\nYou can share it freely for research and collaboration\nIt may not capture rare cases well\n\n\n\n\n\nSource: GOV.UK\n\nReal-world use: healthcare bodies use synthetic patient data for research; banks test fraud detection on synthetic transactions"
+    "text": "Synthetic data for privacy\n\n\n\nSynthetic data is data that looks real but isn’t (Jordon et al., 2022).\nHow it works:\n\nTrain a generative model to learn the real data’s patterns\nGenerate new, fake data points that look real\nTrain your AI on those instead\n\nPrivacy benefits and limitations:\n\nFewer direct links to real people, but generators can still leak training records\nEasier to share for research and collaboration\nIt may not capture rare cases well\n\n\n\n\n\nSource: GOV.UK\n\nReal-world use: healthcare bodies use synthetic patient data for research; banks test fraud detection on synthetic transactions"
   },
   {
     "objectID": "lectures/lecture-19/19-privacy.html#do-these-techniques-actually-help",
     "href": "lectures/lecture-19/19-privacy.html#do-these-techniques-actually-help",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Do these techniques actually help?",
-    "text": "Do these techniques actually help?\n\n\n\nWhat they can do:\n\nAllow research on sensitive medical and financial data while protecting privacy\nGive engineers concrete tools\nProvide mathematical guarantees (differential privacy) or architectural separation (federated learning)\n\nWhat they cannot do:\n\nStop companies collecting data in the first place\nFix the power imbalance between users and platforms\nMake users understand how their data are used\n\n\nHowever…\nThe best protection is not collecting data at all. But AI companies have the opposite incentive: more data = better models = more profit\nTechnical fixes work within the system, not on the system itself\n\nWatch out for “privacy washing”: companies announce differential privacy with large epsilon values (weak privacy), or federated learning that still collects metadata"
+    "text": "Do these techniques actually help?\n\n\n\nWhat they can do:\n\nAllow research on sensitive medical and financial data while protecting privacy\nGive engineers concrete tools\nDifferential privacy gives mathematical guarantees\nFederated learning keeps data on the device\n\nWhat they cannot do:\n\nStop companies collecting data in the first place\nFix the power imbalance between users and platforms\nMake users understand how their data are used\n\n\nHowever…\nThe best protection is not collecting data at all. But AI companies have the opposite incentive: more data = better models = more profit\nTechnical fixes work within the system, not on the system itself\n\nWatch out for “privacy washing”: companies announce differential privacy with large epsilon values (weak privacy), or federated learning that still collects metadata"
   },
   {
     "objectID": "lectures/lecture-19/19-privacy.html#case-study-clearview-ai",
     "href": "lectures/lecture-19/19-privacy.html#case-study-clearview-ai",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Case study: Clearview AI",
-    "text": "Case study: Clearview AI\n\n\n\n\nIn January 2020 the New York Times revealed Clearview AI had secretly scraped over 30 billion photos from Facebook, Instagram, LinkedIn and other platforms\nIt built a facial recognition database without anyone’s consent! People never knew their faces were in it\nIt sold access to over 2,400 US law enforcement agencies and many corporations\nUS police used it nearly a million times\n\nThe legal fallout:\n\nThe ACLU sued under Illinois BIPA (2020). The 2022 settlement permanently banned sales of the database to private companies nationwide\nFrance (CNIL) and Italy: €20M fine each\nNetherlands: €30.5M fine (2024)\nUK, Australia, Canada: ordered to delete data\n\n\n\n\nSource: Library of Congress\n\nClearview said the service was only for law enforcement, but gave accounts to anyone willing to pay, including investors’ friends. The ACLU called it a “perpetual police line-up”."
+    "text": "Case study: Clearview AI\n\n\n\n\nJanuary 2020: the NYT revealed Clearview had scraped 3 billion photos from social media (70+ billion today)\nIt built a face search engine without consent: people never knew they were in it\nIt sold access to thousands of US police agencies, which ran nearly a million searches by 2023\n\nThe legal fallout:\n\nThe ACLU sued under Illinois BIPA (2020): a 2022 settlement bans sales to most private companies\nFrance (CNIL) and Italy: €20M fine each\nNetherlands: €30.5M fine (2024)\nAustralia and Canada: ordered to delete data; the UK case is still in court\n\n\n\n\nSource: Library of Congress\n\nClearview said the service was only for law enforcement, but gave accounts to retailers, banks and investors’ friends. Critics call it a “perpetual police line-up”."
   },
   {
     "objectID": "lectures/lecture-19/19-privacy.html#quick-quiz-whats-wrong-and-how-would-you-fix-it",
@@ -3840,7 +3840,7 @@
     "href": "lectures/lecture-19/19-privacy.html#what-can-you-do",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "What can you do?",
-    "text": "What can you do?\n\n\n\nIndividual actions:\n\nReview privacy settings and use privacy-focused tools (Signal, DuckDuckGo, Firefox)\nLimit location sharing and use different email addresses for different services\nExercise your GDPR/CCPA rights (access, deletion requests) and be skeptical of “personalisation”\n\nLimitations of individual action:\n\nOpting out often means losing service. Privacy is collective\nYour data can be inferred from others’ data, and power imbalance is structural\n\n\nCollective action:\n\nSupport privacy legislation and demand transparency from companies\nSupport organisations fighting for privacy (EFF, EPIC, noyb)\nChoose services that respect privacy and vote for privacy-protecting candidates\n\n\nUsing Signal instead of WhatsApp helps, but it won’t change how insurers use your health data. That takes legislation"
+    "text": "What can you do?\n\n\n\nIndividual actions:\n\nReview privacy settings and use privacy-focused tools (Signal, DuckDuckGo, Firefox)\nLimit location sharing and use different email addresses for different services\nExercise your GDPR/CCPA rights (access, deletion requests) and be sceptical of “personalisation”\n\nLimitations of individual action:\n\nOpting out often means losing service. Privacy is collective\nYour data can be inferred from others’ data, and power imbalance is structural\n\n\nCollective action:\n\nSupport privacy legislation and demand transparency from companies\nSupport organisations fighting for privacy (EFF, EPIC, noyb)\nChoose privacy-respecting services; vote for candidates who protect privacy\n\n\nUsing Signal instead of WhatsApp helps, but it won’t change how insurers use your health data. That takes legislation"
   },
   {
     "objectID": "lectures/lecture-19/19-privacy.html#main-takeaways",
@@ -4302,7 +4302,7 @@
     "href": "lectures/lecture-16/16-setting-up-ai.html#lecture-overview",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Lecture overview",
-    "text": "Lecture overview\nToday’s agenda\n\n\n\nPart 1: From prompts to setups\n\nOne prompt vs a reusable setup\nThe four layers of context\nInstructions, memory and Projects\n\nPart 2: Instruction files for agents\n\nClaude Code and CLAUDE.md\nAGENTS.md and Skills\nSpotting which layer went wrong\n\n\nPart 3: Connectors and MCP\n\nWhat MCP is\nConnectors on the free plan\nFinance as the worked example\nPrompt injection through a connector\n\nPart 4: Beyond Claude\n\nThe same buttons in ChatGPT\nBuilding your own setup"
+    "text": "Lecture overview\nToday’s agenda\n\n\n\nPart 1: From prompts to setups\n\nOne prompt vs a reusable setup\nThe four layers of context\nInstructions and memory\n\nPart 2: Instruction files for agents\n\nClaude Code and CLAUDE.md\nAGENTS.md and Skills\nSpotting which layer went wrong\n\n\nPart 3: Connectors and MCP\n\nWhat MCP is\nConnectors on the free plan\nFinance as the worked example\nPrompt injection through a connector\n\nPart 4: Beyond Claude\n\nThe same buttons in ChatGPT\nBuilding your own setup"
   },
   {
     "objectID": "lectures/lecture-16/16-setting-up-ai.html#tweet-of-the-day",
@@ -4687,7 +4687,7 @@
     "href": "lectures/lecture-21/21-labour.html#what-careful-estimates-show",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "What careful estimates show",
-    "text": "What careful estimates show\n\n\n\nHumlum & Vestergaard (2026):\n\n25,000 Danish workers, 7,000 workplaces\nSurveys linked to government payroll records, not self-reports\nDifference-in-differences: adopters vs non-adopters, before vs after ChatGPT\nNo effect on earnings or hours after two years, ruling out anything above 2%\nAdopters do save time, around 3% of hours\n\n\n\nSource: Humlum & Vestergaard (2026)\n\n\nYale Budget Lab tracker:\n\nShare of US workers in low, middle and high AI-exposure occupations\nMonthly CPS data, updated to July 2026\nThe three lines are flat since 2023\n\n\n\nSource: The Budget Lab at Yale (2026)"
+    "text": "What careful estimates show\n\n\n\nHumlum & Vestergaard (2026):\n\n25,000 Danish workers, 7,000 workplaces\nSurveys linked to government payroll records, not self-reports\nDifference-in-differences: adopters vs non-adopters, before vs after ChatGPT\nNo effect on earnings or hours after two years, ruling out anything above 2%\nAdopters do save time, around 3% of hours\n\n\n\nSource: Humlum & Vestergaard (2026)\n\n\nYale Budget Lab tracker:\n\nShare of US workers in low, middle and high AI-exposure occupations\nMonthly CPS data, updated to August 2026\nThe three lines are flat since 2023\n\n\n\nSource: The Budget Lab at Yale (2026)"
   },
   {
     "objectID": "lectures/lecture-16/16-setting-up-ai.html#instructions",
@@ -5003,5 +5003,12 @@
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Fairness tradeoffs",
     "text": "Fairness tradeoffs\n\n\n\n\nAccuracy vs fairness\n\nEqual accuracy across groups may cost overall accuracy. Who pays?\n\nIndividual vs group fairness\n\nIdentical treatment can produce unequal group outcomes\nEqual group treatment can disadvantage qualified individuals\n\nTransparency vs gaming\n\nReveal the algorithm and people game it; hide it and no one is accountable\n\nShort term vs long term\n\nCurrent data repeats past inequality; correcting for it may cost accuracy today\n\n\n\n\nDifferent stakeholders want different things:\n\nAffected communities: equalise outcomes\nCompanies: maximise accuracy\nRegulators: ensure process fairness\nCourts: protect individual rights\n\nWho gets to decide which tradeoff to make?"
+  },
+  {
+    "objectID": "lectures/lecture-10/10-prompting.html#meta-prompting",
+    "href": "lectures/lecture-10/10-prompting.html#meta-prompting",
+    "title": "DATASCI 101: Introduction to AI Applications",
+    "section": "Meta-prompting",
+    "text": "Meta-prompting\n\n\n\nMeta-prompting is asking the AI to help you craft better prompts.\nExamples:\n\n“I want to analyse quarterly earnings reports. What questions should I ask you to get the most useful analysis? What information should I provide?”\n\n\n“Here’s my prompt for summarising research papers. What’s unclear or ambiguous about it? How would you rewrite it?”\n\n\n“I’m building a prompt for customer sentiment classification. What edge cases should my examples cover?”\n\n\nWhy this works:\nThe model processed millions of instruction-response pairs during training, so it can often tell you what your prompt is missing.\nAsk the AI what it needs from you\n\nUseful meta-prompting questions:\n\n“What information would help you answer this better?”\n“What assumptions are you making about this task?”\n“What could go wrong with your response?”\n“How would you rate your confidence in this answer, and why?”\n“What would I need to ask differently to get [X] instead?”"
   }
 ]

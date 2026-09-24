@@ -1,6 +1,6 @@
 # Lecture 15: AI Agents: When Models Start Doing Things
 
-This lecture covers what changes when a language model stops answering questions and starts taking actions. We define an agent as a model with tools, a loop and a goal, then look at how research, memory and multi-agent teams work in practice. The second half is about failure: errors that compound over long tasks, prompt injection that turns into real actions, and two documented cases where agents caused expensive damage.
+This lecture covers what changes when a language model stops answering questions and starts taking actions. We define an agent as a model with tools, a loop and a goal, then look at how research, memory and multi-agent teams work in practice. The second half is about failure: errors that compound over long tasks, prompt injection that turns into real actions, and two documented cases, a deleted production database (later restored) and a shop run at a loss.
 
 ## Main Ideas
 
@@ -10,12 +10,15 @@ This lecture covers what changes when a language model stops answering questions
 * **The loop**: goal, plan, act, observe, repeat, and the model decides when to stop.
 * **Tools**: search, browsers, code execution, files, email, payments. The model asks, software does.
 * **ReAct** (Yao et al., 2022): a thought, an action, an observation, repeated until the model stops.
+* **The autonomy dial**: chatbot, workflow, supervised agent or autonomous agent; most products in 2026 are supervised agents.
+* **METR time horizons** (Kwa et al., 2025): the task length agents finish half the time has doubled every ~7 months since 2019, maybe every 4 to 5 since 2024.
 
 ### 2. How Agents Work
 
 * **Research with initiative**: RAG retrieves once, an agent chooses what to search next.
 * **Memory**: scratchpads, summaries and sub-tasks work around the context window.
 * **Teams**: an orchestrator splits work between workers, and coordination becomes a new failure mode (Cemri et al., 2025).
+* **Appendix**: be the orchestrator with three fresh chats, then Anthropic's five workflow patterns.
 
 ### 3. When Agents Go Wrong
 
@@ -27,7 +30,7 @@ This lecture covers what changes when a language model stops answering questions
 
 * **The credit card test**: reversibility times stakes decides what you hand over.
 * **Guardrails**: permissions, sandboxes, action logs, undo and spending limits.
-* **Goals taken literally**: Goodhart's law and specification gaming, the proxy problem from lecture 03 with hands.
+* **Goals taken literally**: specification gaming (Krakovna et al., 2020), the proxy problem from lecture 03 now with actions.
 * **Automation bias**: Parasuraman and Riley (1997) and Skitka et al. (1999) on over-reliance on systems that are usually right.
 
 ## Resources

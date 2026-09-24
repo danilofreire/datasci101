@@ -98,7 +98,7 @@ Source: [r/ProgrammerHumor](https://www.reddit.com/r/ProgrammerHumor/comments/se
 **Part 3: Embeddings**
 
 - Words as vectors in space
-- Semantic similarity and the king-queen example in detail
+- Semantic similarity and the king-queen example
 
 **Part 4: Parameters**
 

@@ -8,7 +8,7 @@ This lecture looks at the history of AI, from early thoughts and the Turing Test
 
 * **Ancient Origins**: Human interest in artificial life and the first mechanical calculators.
 * **Alan Turing**: The Turing Test and the idea of a machine that can do what a thinking entity does.
-* **The Start of AI**: The 1956 Dartmouth conference where the field was officially named.
+* **The Start of AI**: The 1956 Dartmouth workshop that launched the field; the name "artificial intelligence" was coined in its 1955 proposal.
 
 ### 2. Rules, Knowledge, and Winters
 
@@ -19,14 +19,15 @@ This lecture looks at the history of AI, from early thoughts and the Turing Test
 ### 3. The Power of Data
 
 * **Neural Networks**: Systems that learn patterns from examples, inspired by the brain.
-* **Big Data**: Why lots of simple data can beat complex manual code.
+* **Big Data**: Why simple models with lots of data beat complex models with less data.
 * **ImageNet (2012)**: The breakthrough where deep learning became the standard for computer vision.
 
 ### 4. Transformers and ChatGPT
 
+* **Inside a Transformer**: Tokenise, embed, attend, stack, then predict the next token.
 * **Self-Attention**: The core technology that lets models focus on all parts of a sentence.
-* **Scaling**: How making models larger leads to more intelligence.
-* **ChatGPT**: Making models useful through human feedback and instruction tuning.
+* **Scaling**: How bigger models and more data brought new abilities, and whether scaling has limits.
+* **ChatGPT**: Making models useful through instruction tuning, human feedback and safety training.
 
 ## Resources
 

@@ -98,7 +98,6 @@ Source: [Nielsen Norman Group](https://www.nngroup.com/articles/ai-hallucination
 **Part 3: Creativity vs. Accuracy**
 
 - The creativity-accuracy tradeoff
-- Temperature and randomness
 - When hallucinations are... useful?
 
 **Part 4: Detection and Prevention**
@@ -894,7 +893,7 @@ Source: [Towards AI](https://pub.towardsai.net/what-is-rag-a-clear-and-simple-ex
 
 - [Why it happens]{.alert}: LLMs predict plausible, not true
 
-- [Temperature]{.alert}: the creativity-accuracy dial
+- [Wrong time]{.alert}: making things up helps in fiction, hurts with facts
 
 - [Real failures]{.alert}: lawyers, doctors, academics affected
 

@@ -1,6 +1,6 @@
 # Lecture 16: Setting up AI: Instructions, Memory and Connectors
 
-This lecture moves from writing a good prompt to configuring an assistant that already knows who you are. Students learn the four layers of context (instructions, knowledge, memory, tools), how many rules a model can actually follow, how the same layers become files in agent tools such as CLAUDE.md, AGENTS.md and SKILL.md, and how connectors and MCP give a model live access to real systems. Finance supplies the worked example, prompt injection through connectors supplies the warning, and every button covered is available on the free plans. The deck ends with a homework slide: a twenty-minute setup students build at home, not in class.
+This lecture moves from writing a good prompt to configuring an assistant that already knows who you are. Students learn the four layers of context (instructions, knowledge, memory, tools), how many rules a model can actually follow, how the same layers become files in agent tools such as CLAUDE.md, AGENTS.md and SKILL.md, and how connectors and MCP give a model live access to real systems. Finance supplies the worked example, prompt injection through connectors supplies the warning, and most buttons covered work on the free plans; Claude Code and ChatGPT's Developer Mode do not. The deck ends with a homework slide: a twenty-minute setup students build at home, not in class.
 
 ## Main ideas
 
@@ -9,7 +9,7 @@ This lecture moves from writing a good prompt to configuring an assistant that a
 * **Why one prompt is not enough**: a model has no state between chats, so each one starts from the weights plus whatever is in the context window (Lecture 10). A setup is a standing instruction the tool applies to every chat.
 * **The four layers of context**: instructions and knowledge you write; memory and tools that fill up on their own. The idea traces back to Karpathy's "LLM OS" talk (Nov 2023), MemGPT (Packer et al., 2023) and Anthropic's augmented LLM (Dec 2024).
 * **Instructions**: Settings > Instructions for Claude applies to every chat, project instructions to one project, both on all plans including Free. Zheng et al. (2024) tested 162 personas on 2,410 questions and found "You are an expert" improves nothing; Sclar et al. (2024) found up to 76 accuracy points between formats of the same prompt.
-* **How many rules a model follows**: SysBench (Qin et al., 2024) puts GPT-4o at 87% of single constraints and 54% session consistency; ComplexBench shows failures grow when constraints combine; "Lost in the middle" (Liu et al., 2024) shows middle-of-context facts are missed; Anthropic's own docs recommend under 200 lines.
+* **How many rules a model follows**: IFScale (Jaroslawicz et al., 2025) finds the best models follow only 68% of 500 instructions, and favour the earliest ones; "Lost in the middle" (Liu et al., 2024) shows middle-of-context facts are missed; Anthropic's own docs recommend under 200 lines.
 * **Memory**: on by default for Free, Pro and Max (Free from 2 March 2026). Park et al. (2023) is the research ancestor. MINJA (Dong et al., 2025) poisoned an agent's memory through ordinary questions with 98% success. Health, finances and other people stay out; incognito chats are not saved, read no memory and are kept 30 days.
 * **Projects**: instructions, knowledge files and project memory in one place, five on Free. The uploaded files are the RAG from Lecture 12 (Lewis et al., 2020), and paid plans add a RAG mode with about 10x the file capacity and the same retrieval failure mode.
 
@@ -52,7 +52,7 @@ This lecture moves from writing a good prompt to configuring an assistant that a
 * [Building effective agents (Anthropic, 2024)](https://www.anthropic.com/research/building-effective-agents)
 * [Zheng et al. (2024). When "a helpful assistant" is not really helpful](https://aclanthology.org/2024.findings-emnlp.888/)
 * [Sclar et al. (2024). Quantifying language model sensitivity to prompt formatting](https://arxiv.org/abs/2310.11324)
-* [Qin et al. (2024). SysBench: system message following](https://arxiv.org/abs/2408.10943)
+* [Jaroslawicz et al. (2025). How many instructions can LLMs follow at once? (IFScale)](https://arxiv.org/abs/2507.11538)
 * [Liu et al. (2024). Lost in the middle](https://arxiv.org/abs/2307.03172)
 * [Park et al. (2023). Generative agents](https://arxiv.org/abs/2304.03442)
 * [Dong et al. (2025). MINJA: memory injection attacks](https://arxiv.org/abs/2503.03704)

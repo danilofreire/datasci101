@@ -8,13 +8,15 @@ This lecture explores one of the most important problems in AI: when LLMs confid
 
 * **Definition**: When AI generates plausible but factually incorrect content with high confidence
 * **Types**: Factual, fabrication, citation, logical, temporal, entity hallucinations
-* **Why they happen**: LLMs predict plausibility, not truth—they have no fact-checking mechanism
+* **Why they happen**: LLMs predict plausibility, not truth; they have no fact-checking mechanism
+* **Sycophancy**: Models drop correct answers to agree with you; GPT-5's stated beliefs on moral and safety topics shifted 55% after 10 rounds of debate (Geng et al., 2025)
 
 ### 2. Creativity vs. Accuracy
 
 * **The tradeoff**: The same mechanism that enables creativity also causes hallucinations
-* **Temperature**: Controls randomness (low = precise, high = creative)
+* **Right time, wrong time**: Making things up helps in fiction and brainstorming; it is a problem only when you need facts
 * **When hallucinations are useful**: Creative writing, brainstorming, role-playing
+* **Activity**: Ask Qwen five questions with a 1-10 confidence rating, then verify each answer
 
 ### 3. Real-World Failures
 

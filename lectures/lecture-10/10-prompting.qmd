@@ -88,7 +88,7 @@ Source: [r/ProgrammerHumor](https://www.reddit.com/r/ProgrammerHumor/comments/1d
 **Part 2: System Prompts and Personas**
 
 - The hidden instructions behind every chatbot
-- Skills and agent files for storing prompts
+- Meta-prompting: asking the AI to fix your prompt
 
 **Part 3: Fundamental Techniques**
 
@@ -402,7 +402,7 @@ More here: <https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools>
 :::
 :::
 
-## Meta-prompting and storing prompts
+## Meta-prompting
 
 :::{style="margin-top: 30px; font-size: 20px;"}
 :::{.columns}

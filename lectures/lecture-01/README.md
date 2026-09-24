@@ -20,7 +20,7 @@ This lecture introduces the course and provides a high-level overview of Artific
 
 * **Daily Impacts**: How AI already drives recommendations, healthcare, and finance.
 * **The Hype Cycle**: Distinguishing between what AI can actually do and what is just marketing.
-* **Core Challenges**: Introduction to bias, hallucinations, and why AI systems sometimes fail.
+* **Core Challenges**: Hallucinations, black-box decisions, and training data that miss some groups.
 
 ## Resources
 

@@ -6,9 +6,10 @@ This lecture covers the science and practice of effective prompting for large la
 
 ### 1. The Science of Prompting
 
-- **PTCF Framework**: Google's structured approach—Persona, Task, Context, Format—for crafting effective prompts.
+- **PTCF Framework**: Google's structured approach (Persona, Task, Context, Format) for crafting effective prompts.
 - **Token-Level Understanding**: LLMs predict the next token based on statistical patterns. Your prompt sets the context for what patterns get activated.
 - **Explicit Constraints**: Vague prompts get vague answers. Specifying edge cases and output formats prevents ambiguity.
+- **Jagged Intelligence**: Models fail unevenly on near-identical tasks (Gans, 2026), so verify critical outputs.
 
 ### 2. Fundamental Techniques
 
@@ -22,12 +23,13 @@ This lecture covers the science and practice of effective prompting for large la
 - **Why It Works**: Generating intermediate steps externalises reasoning, allowing the model to check its work.
 - **Self-Consistency**: Running multiple reasoning paths and taking the majority answer increases reliability.
 - **When to Skip**: CoT can hurt simple tasks where intuition outperforms analysis.
+- **Thinking Models**: o1 (2024) and DeepSeek-R1 (2025) build chain-of-thought into the model, so keep prompts simpler.
 
 ### 4. System Prompts and Personas
 
 - **Hidden Instructions**: Every commercial AI has a system prompt defining identity, capabilities, and constraints.
 - **Persona Effects**: Different personas emphasise different information and make different assumptions.
-- **Meta-Prompting**: Asking the AI to help improve your prompts leverages its implicit knowledge of what works.
+- **Meta-Prompting**: Asking the AI to help improve your prompts draws on its implicit knowledge of what works.
 
 ### 5. AI Agents and Tool Use
 

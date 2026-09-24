@@ -85,7 +85,7 @@ Source: [Anthropic](https://www.anthropic.com/research/building-effective-agents
 
 - One prompt vs a reusable setup
 - The four layers of context
-- Instructions, memory and Projects
+- Instructions and memory
 
 **Part 2: Instruction files for agents**
 

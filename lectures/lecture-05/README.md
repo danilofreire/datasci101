@@ -6,15 +6,17 @@ This lecture explains how we measure if an AI model is actually working. We disc
 
 ### 1. Traditional Metrics
 
-* **The Accuracy Paradox**: Why a 99% accurate model can still be useless if it misses rare but important cases.
+* **The Accuracy Paradox**: Why a 99.9% accurate model can still be useless if it misses rare but important cases.
 * **Precision and Recall**: Balancing the cost of false alarms versus the cost of missing a target.
-* **Confusion Matrix**: A fundamental table used to track every type of error a model makes.
+* **Confusion Matrix**: A table used to track every type of error a model makes.
+* **Validation**: Train, validation and test splits and K-fold cross-validation expose overfitting.
 
 ### 2. Evaluating Language Models (LLMs)
 
 * **New Challenges**: Why counting word overlaps isn't enough to judge if a model is helpful or true.
 * **Perplexity**: A metric that measures how well a model predicts the next word in a sentence.
 * **LLM-as-a-Judge**: Using powerful models to grade the quality and safety of other AI responses.
+* **Benchmarks**: Contamination, Goodhart's Law and a model that found BrowseComp's answer key online show why scores mislead.
 
 ### 3. Hallucinations and RAG
 
@@ -24,7 +26,7 @@ This lecture explains how we measure if an AI model is actually working. We disc
 ### 4. Red Teaming
 
 * **Adversarial Testing**: Deliberately trying to trick or "jailbreak" an AI to find its weaknesses before users do.
-* **Safety First**: Proactively identifying bias and harmful outputs to make models more robust.
+* **Safety First**: Finding bias, jailbreaks and harmful outputs before deployment, not after.
 
 ### 5. Fairness and Subgroup Analysis
 

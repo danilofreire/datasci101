@@ -19,7 +19,7 @@ This lecture explores how Large Language Models process and understand human lan
 
 ### 3. Embeddings
 
-* **Words as Vectors**: Embeddings convert tokens into high-dimensional vectors (typically 4,096 numbers).
+* **Words as Vectors**: Embeddings convert tokens into high-dimensional vectors (typically 768 to 4,096 numbers; 12,288 in GPT-3).
 * **Semantic Similarity**: Similar words have similar vectors; "cat" is closer to "dog" than to "aeroplane."
 * **Vector Arithmetic**: The famous king − man + woman ≈ queen example.
 * **Modern Embeddings**: From Word2Vec to contextual embeddings in transformers.

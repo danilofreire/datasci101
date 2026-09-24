@@ -14,16 +14,17 @@ This lecture focuses on the foundation of all AI: data. We explore why data qual
 
 * **Classification and Regression**: Predicting categories (like spam) versus predicting numbers (like house prices).
 * **The Proxy Problem**: Why using "spending" to measure "health needs" can lead to incorrect and biased results.
-* **Defining Classes**: Challenges in setting clear boundaries for labels like "harmful content."
+* **Defining Classes**: Challenges in setting clear boundaries for labels like "spam" or "offensive".
 
 ### 3. Sourcing and Bias
 
+* **Data Sources**: Databases, public datasets, scraping, surveys, sensors and synthetic data, each with trade-offs.
 * **Selection Bias**: When your data doesn't represent the real world, leading to errors that are hard to fix.
 * **Mitigation**: Strategies to identify and reduce bias before and after data collection.
 
 ### 4. The Human Side of Data
 
-* **Annotation**: The process of humans labeling data and why they often disagree.
+* **Annotation**: The process of humans labelling data and why they often disagree.
 * **Quality Control**: Using multiple annotators and metrics like Cohen's Kappa to ensure labels are reliable.
 
 ## Resources

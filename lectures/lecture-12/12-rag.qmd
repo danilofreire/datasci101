@@ -81,8 +81,7 @@ Source: [Google Research](https://research.google/blog/deeper-insights-into-retr
 :::{.column width=50%}
 **Part 1: The Problem**
 
-- Quick recap: hallucinations (from Lecture 11)
-- The knowledge cutoff issue
+- Quick recap: hallucinations and knowledge cutoffs (from Lecture 11)
 - How RAG solves both problems
 
 **Part 2: Semantic Search**
