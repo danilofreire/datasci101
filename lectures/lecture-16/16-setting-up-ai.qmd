@@ -160,7 +160,7 @@ Source: [Andrej Karpathy on X](https://x.com/karpathy/status/1886192184808149383
 :::{.column width=55%}
 1. [Optional proposal]{.alert} (12 November): one page, not graded. Early feedback on your domain and plan
 
-2. [Final report]{.alert} (8 December): about 5 pages. Domain overview, tool evaluation, proposed application
+2. [Final report]{.alert} (8 December): 5–10 pages. Domain overview, tool evaluation, proposed application
 
 3. [Infographic]{.alert} (8 December): one-page PDF for a general audience
 
@@ -247,11 +247,11 @@ Source: [Anthropic - Claude Code Docs](https://code.claude.com/docs/en/memory)
 :::{.columns}
 :::{.column width=55%}
 - Lecture 10 showed the company's hidden text above your message; now you write your own
-  - [Settings > Profile]{.alert}: every chat
+  - [Settings > Instructions for Claude]{.alert}: every chat
   - [Project instructions]{.alert}: one project, Free included
 - [Zheng et al. (2024)](https://aclanthology.org/2024.findings-emnlp.888/): ["you are an expert" changes nothing]{.alert}, so write constraints
 - [Sclar et al. (2024)](https://arxiv.org/abs/2310.11324): reformatting one prompt shifts accuracy up to [76 points]{.alert}
-- Rules do not scale ([SysBench](https://arxiv.org/abs/2408.10943)): near zero by 80 rules, so keep them few and first or last
+- Rules do not scale ([IFScale, 2025](https://arxiv.org/abs/2507.11538)): the best models follow 68% of 500, the early ones most. Keep them few and first
 - Name five things: role, audience, format, refusals, first question
 :::
 
@@ -276,7 +276,7 @@ Source: [Anthropic Help Centre](https://support.claude.com/en/articles/9519177-h
 :::{.columns}
 :::{.column width=55%}
 - [Park et al. (2023)](https://arxiv.org/abs/2304.03442) gave 25 agents a [memory stream]{.alert}: a diary scored by recency, importance and relevance
-- Both do it: [ChatGPT since 2024](https://openai.com/index/memory-and-new-controls-for-chatgpt/), [Claude Free since 2026](https://www.anthropic.com/news/memory), and [on by default]{.alert}
+- Both do it: [ChatGPT since 2024](https://openai.com/index/memory-and-new-controls-for-chatgpt/), [Claude Free since 2026](https://support.claude.com/en/articles/11817273-use-claude-s-chat-search-and-memory-to-build-on-previous-context), and [on by default]{.alert}
 - It saves things unasked: your degree, city, job, the projects you return to
 - Memory spans [every chat in your account]{.alert}; a Project keeps its own, separate memory
 - The same question can get [different answers]{.alert} in two accounts, because the memory differs
@@ -290,7 +290,7 @@ Source: [Anthropic Help Centre](https://support.claude.com/en/articles/9519177-h
 Source: [Anthropic Help Centre](https://support.claude.com/en/articles/11817273-use-claude-s-chat-search-and-memory-to-build-on-previous-context)
 :::
 
-- Import and export move memory between accounts (experimental)
+- Import and export move memory between Claude and other AI services (experimental)
 :::
 :::
 :::
@@ -357,7 +357,7 @@ You help me analyse the meta-analysis data in R.
 - Only if you install [Claude Code](https://claude.com/product/claude-code) on your computer: [the web app never reads this file, and there is no Claude Code on Free]{.alert}. Sorry about that 🙁
 - It reads a plain `CLAUDE.md` at the start of every session, the same parts you would put in Project instructions:
   - [Role]{.alert}, [orientation]{.alert}, [house style]{.alert}, [hard limits]{.alert}, [approval points]{.alert}
-- The file keeps growing: [Chakrabarti (2026)](https://arxiv.org/abs/2608.11095) saw these grow [226%]{.alert}, five rules added per commit and almost none removed
+- The file keeps growing: [Chakrabarti (2026)](https://arxiv.org/abs/2608.11095) saw these grow [226%]{.alert}, about five net rules per commit, old ones rarely deleted
 - Lecture 15's Replit lesson holds: this file is text, and [text is not a permission system]{.alert}
 :::
 :::
@@ -372,14 +372,14 @@ You help me analyse the meta-analysis data in R.
 :::{.column width=55%}
 **[AGENTS.md](https://agents.md/):** one instruction file many coding tools read
 
-- Released Aug 2025 by OpenAI Codex; now ~two dozen tools (Cursor, Gemini CLI, Copilot, Zed), in [60,000+]{.alert} projects
-- Claude Code reads it too via `@AGENTS.md`; joined the [Agentic AI Foundation](https://www.linuxfoundation.org/press/linux-foundation-announces-the-formation-of-the-agentic-ai-foundation) (Dec 2025)
+- Released Aug 2025 by OpenAI Codex, Google, Cursor and others; now ~two dozen tools (Cursor, Gemini CLI, Copilot, Zed), in [60,000+]{.alert} projects
+- Claude Code reads it natively; joined the [Agentic AI Foundation](https://www.linuxfoundation.org/press/linux-foundation-announces-the-formation-of-the-agentic-ai-foundation) (Dec 2025)
 - Claude Code can read `AGENTS.md`, `CLAUDE.md`, or both
 
 **[Skills](https://www.anthropic.com/engineering/equipping-agents-for-the-real-world-with-agent-skills):** a folder with a `SKILL.md` for one repeatable task
 
 - [Progressive disclosure]{.alert}: reads a short description first, loads the rest when a task matches
-- Pre-built skills run in the web app; writing your own needs a [paid plan]{.alert} and code execution
+- Pre-built skills run in the web app; Free users can [upload their own]{.alert} too (turn on code execution first)
 :::
 
 :::{.column width=45%}
@@ -390,7 +390,7 @@ Source: [agents.md](https://agents.md/)
 :::
 
 :::{style="background: rgba(45, 69, 99, 0.1); padding: 12px; border-radius: 10px; font-size: 19px; margin-top: 12px;"}
-All of this needs software you install, often on a paid plan. Recognise it, do not memorise it. [It will not be on the quiz]{.alert} because not every student can run it
+AGENTS.md and CLAUDE.md need software you install. Recognise them, do not memorise them. [They will not be on the quiz]{.alert} because not every student can run them
 :::
 :::
 :::
@@ -566,7 +566,7 @@ Source: [Claude connectors](https://claude.com/connectors)
   - [FinGPT (Yang et al., 2023)](https://arxiv.org/abs/2306.06031): a LoRA adapter for about [$300]{.alert} a run
   - In medicine, [Med-PaLM 2 (Singhal et al., 2023)](https://arxiv.org/abs/2305.09617) scored [86.5%]{.alert} on licensing questions
 - [Route two, connect]{.alert}: instructions, documents, a connector to the filings, updating the moment the source does
-- [Li et al. (2023)](https://arxiv.org/abs/2311.10723) surveyed both: fine-tuned models beat GPT-4 on classification, GPT-class win on numerical reasoning, and [no model predicts stocks reliably]{.alert}
+- [Li et al. (2023)](https://arxiv.org/abs/2311.10723) surveyed both: fine-tuned models beat GPT-4 on [classification]{.alert}, but match or trail it on generative tasks
 - Most teams take route two, because their bottleneck is data access
 :::
 
@@ -599,7 +599,7 @@ Source: [arXiv 2303.17564](https://arxiv.org/abs/2303.17564)
 :::{.column width=45%}
 **Three rules before you click authorise:**
 
-- [Least access]{.alert}: one folder or repository, never the whole account
+- [Least access]{.alert}: only the connectors you need, switched off when done
 - [Read-only by default]{.alert}: turn writing on for the task, then off
 - [Confirm every write]{.alert}: send, post, pay, delete
 
@@ -624,12 +624,12 @@ Assume anything a connector fetches carries [instructions aimed at your assistan
 | Instructions | Custom instructions, [1,500 characters]{.alert} |
 | Knowledge | Projects (5 files on Free) |
 | Memory | A [lightweight version]{.alert} since June 2025 |
-| Skills | GPTs: usable on Free, building needs Plus |
+| Skills | GPTs: usable on Free, being retired for Plugins |
 | Tools | Custom MCP connectors need Developer Mode |
 :::
 
 - Plus raised the instruction cap to 5,000 characters on 15 July 2026
-- [Developer Mode](https://help.openai.com/en/articles/12584461-developer-mode-and-mcp-apps-in-chatgpt) is Plus and above, so the tools layer is where the plans differ most
+- [Developer Mode](https://developers.openai.com/api/docs/guides/developer-mode) is Plus and above, so the tools layer is where the plans differ most
 - Temporary chat is the incognito equivalent
 - The limits change often, so check the help page before you quote a number
 :::
@@ -659,7 +659,7 @@ Source: [OpenAI Help Centre](https://help.openai.com/en/articles/8096356-chatgpt
 
 - [Memory]{.alert} is on by default and fills on its own, so read it and use incognito
 
-- [Rules]{.alert}: few, and first or last (SysBench, Lost in the middle)
+- [Rules]{.alert}: few, and first (IFScale, Lost in the middle)
 
 - [For agents]{.alert}, instructions become a file: CLAUDE.md, AGENTS.md, SKILL.md
 
@@ -676,7 +676,7 @@ Source: [OpenAI Help Centre](https://help.openai.com/en/articles/8096356-chatgpt
 ## Your setup, step by step
 ### Homework, not for class: twenty minutes on the free plan
 
-:::{style="margin-top: 30px; font-size: 22px;"}
+:::{style="margin-top: 30px; font-size: 20px;"}
 :::{.columns}
 :::{.column width=55%}
 Do this tonight; we will not do it in class.
@@ -686,7 +686,7 @@ Do this tonight; we will not do it in class.
 3. Upload [two files]{.alert}: the syllabus and this week's slides
 4. Open [Settings > Memory]{.alert} and read every line as a stranger would
 5. Delete [one memory]{.alert} you would not want on a screen behind you
-6. Add [one connector]{.alert}, read-only, pointing at a single folder
+6. Add [one connector]{.alert} and switch off its write tools
 7. Test it with [three questions]{.alert} you already asked last week
 8. Write down [one thing it got wrong]{.alert}, and which layer caused it
 
@@ -698,12 +698,10 @@ Do this tonight; we will not do it in class.
 :::{style="text-align: center;"}
 [![](figures/claude-memory-import.png){width="85%"}](#){data-modal-type="image" data-modal-url="figures/claude-memory-import.png"}
 
-Source: [Importing and exporting memory, Anthropic Help Centre](https://support.claude.com/en/articles/11960358-import-and-export-your-memory-from-claude)
+Source: [Importing and exporting memory, Anthropic Help Centre](https://support.claude.com/en/articles/12123587-import-and-export-your-memory-from-claude)
 :::
 
-:::{.fragment}
 > Do steps 4 and 5 even if you do nothing else this week
-:::
 :::
 :::
 :::

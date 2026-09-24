@@ -8,14 +8,14 @@ This lecture moves from writing a good prompt to configuring an assistant that a
 
 * **Why one prompt is not enough**: a model has no state between chats, so each one starts from the weights plus whatever is in the context window (Lecture 10). A setup is a standing instruction the tool applies to every chat.
 * **The four layers of context**: instructions and knowledge you write; memory and tools that fill up on their own. The idea traces back to Karpathy's "LLM OS" talk (Nov 2023), MemGPT (Packer et al., 2023) and Anthropic's augmented LLM (Dec 2024).
-* **Instructions**: Settings > Profile applies to every chat, project instructions to one project, both on all plans including Free. Zheng et al. (2024) tested 162 personas on 2,410 questions and found "You are an expert" improves nothing; Sclar et al. (2024) found up to 76 accuracy points between formats of the same prompt.
+* **Instructions**: Settings > Instructions for Claude applies to every chat, project instructions to one project, both on all plans including Free. Zheng et al. (2024) tested 162 personas on 2,410 questions and found "You are an expert" improves nothing; Sclar et al. (2024) found up to 76 accuracy points between formats of the same prompt.
 * **How many rules a model follows**: SysBench (Qin et al., 2024) puts GPT-4o at 87% of single constraints and 54% session consistency; ComplexBench shows failures grow when constraints combine; "Lost in the middle" (Liu et al., 2024) shows middle-of-context facts are missed; Anthropic's own docs recommend under 200 lines.
 * **Memory**: on by default for Free, Pro and Max (Free from 2 March 2026). Park et al. (2023) is the research ancestor. MINJA (Dong et al., 2025) poisoned an agent's memory through ordinary questions with 98% success. Health, finances and other people stay out; incognito chats are not saved, read no memory and are kept 30 days.
-* **Projects**: instructions, knowledge files and project memory in one place, five on Free. The uploaded files are the RAG from Lecture 12 (Lewis et al., 2020), with about 10x the file capacity in RAG mode and the same retrieval failure mode.
+* **Projects**: instructions, knowledge files and project memory in one place, five on Free. The uploaded files are the RAG from Lecture 12 (Lewis et al., 2020), and paid plans add a RAG mode with about 10x the file capacity and the same retrieval failure mode.
 
 ### 2. Instruction files for agents
 
-* **Claude Code and CLAUDE.md**: launched 24 February 2025; the file is read at the start of every session, arrives as a user message after the system prompt, and has four scopes (managed policy, machine, project, local). `@path` imports and a `.claude/rules/` folder split a long file.
+* **Claude Code and CLAUDE.md**: launched 24 February 2025; the file is read at the start of every session, arrives as a user message after the system prompt, and has four scopes (managed policy, user, project, local). `@path` imports and a `.claude/rules/` folder split a long file.
 * **A real CLAUDE.md**: role, house style, hard limits, approval points. Chakrabarti (2026) finds these files grew 226% across 1,867 repositories; Galster et al. (2026) find a plain instruction file is usually the only mechanism in 2,853 repositories.
 * **AGENTS.md**: released August 2025 by OpenAI Codex with Amp, Google Jules, Cursor and Factory; no schema, read by about two dozen tools, used in more than 60,000 open-source projects, contributed to the Agentic AI Foundation on 9 December 2025. Sun et al. (2026) read 12,110 Cursor rules files and found security almost absent.
 * **Skills**: launched 16 October 2025, on the Free plan; a folder with a SKILL.md plus optional scripts, loaded by progressive disclosure; open standard at agentskills.io since 18 December 2025.
@@ -33,7 +33,7 @@ This lecture moves from writing a good prompt to configuring an assistant that a
 
 ### 4. Beyond Claude
 
-* **The same buttons in ChatGPT**: custom instructions capped at 1,500 characters on Free (5,000 on Plus since 15 July 2026), Projects, lightweight memory since June 2025, GPTs you can use but not build, and custom MCP connectors behind Developer Mode from Plus upwards. Temporary chat is the incognito equivalent.
+* **The same buttons in ChatGPT**: custom instructions capped at 1,500 characters on Free (5,000 on Plus since 15 July 2026), Projects, lightweight memory since June 2025, GPTs you can use but not build (and which OpenAI is retiring for Plugins), and custom MCP connectors behind Developer Mode from Plus upwards. Temporary chat is the incognito equivalent.
 
 ### Homework
 
