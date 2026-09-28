@@ -274,6 +274,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <ul>
 <li>The ReAct framework: Reasoning + Acting</li>
 <li>Safety concerns and prompt injection</li>
+<li>We will discuss agents in detail in <a href="https://danilofreire.github.io/datasci101/lectures/lecture-15/15-agents.html">Lecture 15</a></li>
 </ul>
 </div></div>
 </div>
@@ -282,6 +283,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <h2>Tweet of the day 😄</h2>
 <div style="text-align: center; margin-top: 30px;">
 <p><a href="#/" data-modal-type="image" data-modal-url="figures/tweet-of-the-day.jpg"><img data-src="figures/tweet-of-the-day.jpg" style="width:55.0%"></a></p>
+<p><a href="https://en.wikipedia.org/wiki/Dead_Internet_theory" class="uri">https://en.wikipedia.org/wiki/Dead_Internet_theory</a></p>
 </div>
 </section></section>
 <section>
@@ -350,8 +352,9 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <h3 id="googles-structured-approach-to-prompting">Google’s structured approach to prompting</h3>
 <div style="margin-top: 30px; font-size: 20px;">
 <div class="columns">
-<div class="column" style="width:55%;">
+<div class="column" style="width:62%;">
 <p>From Google’s <a href="https://services.google.com/fh/files/misc/gemini_for_workspace_prompt_guide_october_2024_digital_final.pdf">Gemini for Workspace Prompting Guide</a>:</p>
+<div style="font-size: 1.25em;">
 <table class="caption-top">
 <colgroup>
 <col style="width: 28%">
@@ -367,29 +370,30 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </thead>
 <tbody>
 <tr class="odd">
-<td><strong>P</strong>ersona</td>
+<td><span class="alert"><strong>P</strong>ersona</span></td>
 <td>Who should the AI act as?</td>
 <td>“You are a financial analyst…”</td>
 </tr>
 <tr class="even">
-<td><strong>T</strong>ask</td>
+<td><span class="alert"><strong>T</strong>ask</span></td>
 <td>What do you want done?</td>
 <td>“Summarise the quarterly earnings…”</td>
 </tr>
 <tr class="odd">
-<td><strong>C</strong>ontext</td>
+<td><span class="alert"><strong>C</strong>ontext</span></td>
 <td>What background is relevant?</td>
 <td>“The company is a semiconductor manufacturer…”</td>
 </tr>
 <tr class="even">
-<td><strong>F</strong>ormat</td>
+<td><span class="alert"><strong>F</strong>ormat</span></td>
 <td>How should output be structured?</td>
 <td>“Use bullet points, max 200 words…”</td>
 </tr>
 </tbody>
 </table>
+</div>
 <p><strong>You don’t need all four</strong>, says Google, but always include the <span class="alert">task</span>: a verb or command is “the most important component of a prompt”</p>
-</div><div class="column" style="width:45%;">
+</div><div class="column" style="width:38%;">
 <div style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; font-size: 18px; margin-top: 30px;">
 <p><strong>PTCF example prompt:</strong></p>
 <p><strong>Persona</strong>: “You are an experienced equity research analyst at a major investment bank.”</p>
@@ -410,6 +414,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <div class="columns">
 <div class="column" style="width:55%;">
 <p>From <a href="https://danilofreire.github.io/datasci101/lectures/lecture-06/06-language.html">Lecture 06</a>: <strong>hyperparameters</strong> are settings <span class="alert">you control</span> that affect model behaviour:</p>
+<div style="font-size: 1.25em;">
 <table class="caption-top">
 <colgroup>
 <col style="width: 26%">
@@ -425,22 +430,23 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </thead>
 <tbody>
 <tr class="odd">
-<td><strong>Temperature</strong></td>
+<td><span class="alert"><strong>Temperature</strong></span></td>
 <td>Controls randomness</td>
 <td>0.0-1.0 (higher = more random)</td>
 </tr>
 <tr class="even">
-<td><strong>Top-p</strong></td>
+<td><span class="alert"><strong>Top-p</strong></span></td>
 <td>Nucleus sampling</td>
 <td>0.9 = consider top 90% probability mass</td>
 </tr>
 <tr class="odd">
-<td><strong>Top-k</strong></td>
+<td><span class="alert"><strong>Top-k</strong></span></td>
 <td>Limit vocabulary</td>
 <td>50 = choose from 50 most likely tokens</td>
 </tr>
 </tbody>
 </table>
+</div>
 <p><strong>For prompting tasks:</strong></p>
 <ul>
 <li><strong>Factual extraction</strong>: Temperature 0.0-0.2 (near-deterministic)</li>
@@ -563,11 +569,11 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <p><strong>Role definition:</strong> “You are an experienced [role] who specialises in [domain]…”</p>
 <p><strong>Output constraints:</strong> “Always respond in JSON format. Never include explanations outside the JSON block…”</p>
 <p><strong>Safety guardrails:</strong> “If asked to [dangerous thing], politely decline and explain why…”</p>
-<p><strong>Personality:</strong> “Be concise but thorough. Use British English. Avoid corporate jargon…”</p>
+<p><strong>Personality:</strong> “Be concise but thorough. Avoid corporate jargon…”</p>
 <p><strong>Knowledge grounding:</strong> “Base your answers only on the provided documents. If information is not in the documents, say so…”</p>
 </div>
 <div style="font-size: 16px; margin-top: 15px;">
-<p>Source: <a href="https://platform.claude.com/docs/en/release-notes/system-prompts">Anthropic system prompt release notes</a></p>
+<p>Source: <a href="https://platform.claude.com/docs/en/release-notes/system-prompts">Anthropic system prompt release notes</a>. Anthropic publishes its Claude system prompts, and they are worth a look! 🙂</p>
 <p>More here: <a href="https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools" class="uri">https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools</a></p>
 </div>
 </div></div>
@@ -877,7 +883,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <div class="columns">
 <div class="column" style="width:55%;">
 <p><a href="https://arxiv.org/abs/2203.11171">Wang et al.&nbsp;(2022)</a> introduced <strong>self-consistency</strong>: generate multiple reasoning chains and <span class="alert">take the majority answer</span>.</p>
-<p><strong>The intuition</strong>: wrong paths make different mistakes, but correct paths converge on the same answer.</p>
+<p>Wrong paths make different mistakes, but <span class="alert">correct paths converge on the same answer</span>.</p>
 <p><strong>Example:</strong></p>
 <blockquote>
 <p>Question: “Is 17 × 23 = 391?”</p>
@@ -902,7 +908,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <div style="margin-top: 30px; font-size: 19px;">
 <div class="columns">
 <div class="column" style="width:55%;">
-<p><a href="https://openai.com/o1/">OpenAI’s o1</a> (2024) and <a href="https://github.com/deepseek-ai/DeepSeek-R1">DeepSeek-R1</a> (2025) pioneered <strong>Chain-of-Thought reasoning built into the model itself</strong>. Today GPT-5, Claude and Gemini all have a thinking mode.</p>
+<p><a href="https://openai.com/o1/">OpenAI’s o1</a> (2024) and <a href="https://github.com/deepseek-ai/DeepSeek-R1">DeepSeek-R1</a> (2025) pioneered <strong>Chain-of-Thought reasoning built into the model itself</strong>. Today ChatGPT, Claude and Gemini all have a thinking mode.</p>
 <p><strong>How they differ from standard LLMs:</strong></p>
 <ul>
 <li>They generate <span class="alert">internal reasoning traces</span> before answering, with no “let’s think step by step” needed</li>
@@ -914,6 +920,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <li>CoT prompts become <span class="alert">less necessary</span></li>
 <li><span class="alert">PTCF still matters</span>: persona, task, context, format</li>
 <li><span class="alert">Simplify your prompts</span>: complex reasoning instructions <span class="alert">interfere</span> with the model’s native reasoning</li>
+<li>Reasoning is <span class="alert">half of an agent</span>. Next, we add tools</li>
 </ul>
 </div><div class="column" style="width:45%;">
 <div style="text-align: center;">
@@ -953,7 +960,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <span id="cb10-9"><a></a>Observation: $176.30</span>
 <span id="cb10-10"><a></a></span>
 <span id="cb10-11"><a></a>Final Answer: $176.30</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p><strong>Why this matters</strong>: without the “Thought” steps, the model answers in one shot and can get the date or price wrong</p>
+<p>The “Thought” steps are <span class="alert">chain-of-thought</span>, so ReAct is reasoning plus tools. Without them, the model answers in one shot and can get the date or price wrong</p>
 </div><div class="column" style="width:45%;">
 <p><strong>Examples of AI agents:</strong></p>
 <table class="caption-top">
@@ -993,28 +1000,29 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <p>Agents are powerful but <span class="alert">make mistakes that compound</span>:</p>
 <p><strong>Current limitations:</strong></p>
 <ul>
-<li><strong>Error propagation</strong>: one wrong step derails the whole task</li>
-<li><strong>Looping</strong>: agents get stuck repeating failed actions</li>
-<li><strong>Overconfidence</strong>: they take irreversible actions without checking</li>
-<li><strong>Context limits</strong>: long tasks exceed context windows</li>
-<li><strong>Cost</strong>: multi-step tasks run up large API bills</li>
+<li>One wrong step derails the whole task</li>
+<li>They loop on failed actions</li>
+<li>They take irreversible actions without checking</li>
+<li>Long tasks exceed context windows</li>
+<li>Multi-step runs get expensive</li>
 </ul>
 <p><strong>Safety concerns:</strong></p>
 <ul>
-<li>Who is responsible when an agent makes a mistake?</li>
-<li>What happens if an agent can reach your email or calendar?</li>
-<li>How do you audit what an agent did?</li>
+<li>Who is responsible for an agent’s mistake?</li>
+<li>What if it can reach your email or calendar?</li>
+<li>How do you audit what it did?</li>
 <li><span class="alert">Agents can be manipulated via prompt injection</span></li>
 </ul>
 <p><a href="https://www.gartner.com/en/newsroom/press-releases/2025-06-25-gartner-predicts-over-40-percent-of-agentic-ai-projects-will-be-canceled-by-end-of-2027">Gartner predicts</a> that by 2028, at least 15% of day-to-day work decisions will be made autonomously by AI agents</p>
+<p><a href="https://danilofreire.github.io/datasci101/lectures/lecture-15/15-agents.html">Lecture 15</a> returns to these risks with real cases</p>
 </div><div class="column" style="width:45%;">
 <p><strong>Common effects of prompt injection attacks:</strong></p>
 <ul>
-<li><strong>Prompt leaks</strong>: revealing the hidden system prompt</li>
-<li><strong>Remote code execution</strong>: running malicious programs via plugins</li>
-<li><strong>Data theft</strong>: leaking private user information</li>
-<li><strong>Misinformation</strong>: malicious prompts skew search results</li>
-<li><strong>Malware</strong>: assistants forward malicious content to others</li>
+<li>The hidden <span class="alert">system prompt</span> leaks</li>
+<li>Plugins run malicious programs</li>
+<li>Private user data is stolen</li>
+<li>Search results are skewed</li>
+<li>Assistants forward malicious content</li>
 </ul>
 <div style="background: rgba(230, 57, 70, 0.15); padding: 15px; border-radius: 10px; font-size: 18px;">
 <p><strong>Prompt injection example:</strong></p>
@@ -1076,12 +1084,12 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <h2>Main takeaways</h2>
 <div style="margin-top: 30px; font-size: 26px;">
 <ul>
-<li><p><strong>Prompt engineering is empirical</strong>: there is no universal “best prompt”. Test on your own data and adjust.</p></li>
-<li><p><strong>The PTCF framework</strong>: Persona → Task → Context → Format gives structure to every prompt.</p></li>
-<li><p><strong>Chain-of-Thought reasoning</strong>: showing the steps more than tripled accuracy on maths problems (Wei et al., 2022).</p></li>
-<li><p><strong>System prompts shape behaviour</strong>: the hidden instructions behind every AI product define personality, capabilities, and constraints.</p></li>
-<li><p><strong>Agents take actions</strong>: the shift from chat to tool use brings new capabilities and new risks.</p></li>
-<li><p><strong>Jagged intelligence</strong>: LLMs fail unpredictably. Always verify critical outputs</p></li>
+<li><p>There is no universal “best prompt”, so <span class="alert">test on your own data</span> and adjust</p></li>
+<li><p>The <span class="alert">PTCF framework</span> (Persona → Task → Context → Format) gives every prompt a structure</p></li>
+<li><p>Showing the steps (<span class="alert">chain-of-thought</span>) more than tripled accuracy on maths problems (Wei et al., 2022)</p></li>
+<li><p>The hidden <span class="alert">system prompt</span> behind every AI product sets its personality, capabilities and constraints</p></li>
+<li><p><span class="alert">Agents</span> act through tools (ReAct is chain-of-thought plus tools), with new capabilities and new risks. Lecture 15 goes deeper</p></li>
+<li><p>LLMs fail unpredictably (<span class="alert">jagged intelligence</span>), so always verify critical outputs</p></li>
 </ul>
 </div>
 </section></section>
