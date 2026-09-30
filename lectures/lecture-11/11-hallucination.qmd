@@ -91,7 +91,6 @@ Source: [Nielsen Norman Group](https://www.nngroup.com/articles/ai-hallucination
 
 - Lawyers and fake citations
 - Medical misinformation
-- Academic integrity issues
 :::
 
 :::{.column width=50%}
@@ -128,16 +127,16 @@ Source: [X.com](https://x.com/wirespeed_/status/1962508239817589147)
 
 > When an AI system generates content that is [plausible but factually incorrect]{.alert}, presented with high confidence.
 
-**Key characteristics:**
+**Main characteristics:**
 
-- ✅ Sounds completely reasonable
-- ✅ Uses proper grammar and tone
-- ✅ Fits the context of conversation
-- ❌ Contains fabricated information
-- ❌ May invent citations, facts, or events
-- ❌ AI doesn't "know" it's lying
+- Sounds completely reasonable
+- Uses proper grammar and tone
+- Fits the context of conversation
+- Contains fabricated information
+- May invent citations, facts, or events
+- AI doesn't "know" it's lying
 
-**The tricky part:**
+**Why it is hard to spot:**
 
 There's often [no signal]{.alert}: the AI sounds as confident as when it's correct
 :::
@@ -159,7 +158,7 @@ Right at first, then confidently wrong once the user pushes back
 :::{style="margin-top: 30px; font-size: 22px;"}
 :::{.columns}
 :::{.column width=55%}
-[It's not a bug, it's how LLMs work!]{.alert}
+[Hallucination is a side effect of how LLMs work]{.alert}
 
 **LLMs predict the next word**
 
@@ -168,7 +167,7 @@ Right at first, then confidently wrong once the user pushes back
 - Output: "Lyon" (lower probability)
 - Output: "Atlantis" (still some probability!)
 
-**The problem:**
+**You probably already know what the problem is:**
 
 - Plausibility ≠ truth
 - No fact-checking mechanism
@@ -187,7 +186,7 @@ Source: [Medium](https://guyernest.medium.com/learn-the-intuition-behind-llm-hal
 :::
 :::
 
-## The sycophancy problem 🙇
+## The sycophancy problem
 
 :::{style="margin-top: 30px; font-size: 20px;"}
 :::{.columns}
@@ -217,22 +216,25 @@ Source: [Zvi Mowshowitz (2025)](https://thezvi.substack.com/p/gpt-4o-is-an-absur
 :::
 :::
 
-## Training data problems 📚
+## Training data problems
 
 :::{style="margin-top: 30px; font-size: 19px;"}
 :::{.columns}
 :::{.column width=55%}
-**Garbage in, hallucination out!** (remember lecture 03 about data?)
+**Garbage in, hallucination out!** (remember [lecture 03 about data](https://danilofreire.github.io/datasci101/lectures/lecture-03/03-datasets.html)?)
 
 LLMs learn from [trillions of tokens]{.alert} scraped from the internet:
 
+::: {style="font-size: 1.25em;"}
 | Problem | What Happens |
 |---------|--------------|
-| **Conflicting sources** | Wikipedia says X, a blog says Y → model learns both as "plausible" |
-| **Outdated information** | Training data has a cutoff → model treats old facts as current |
-| **Rare topics** | Few examples → model "interpolates" (often wrongly) |
-| **Errors in sources** | Mistakes on the internet become mistakes in the model |
-| **Fictional content** | Novels, fan fiction, speculation all look like "text" to the model |
+| [Conflicting sources]{.alert} | Wikipedia says X, a blog says Y → model learns both as "plausible" |
+| [Outdated information]{.alert} | Training data has a cutoff → model treats old facts as current |
+| [Rare topics]{.alert} | Few examples → model "interpolates" (often wrongly) |
+| [Errors in sources]{.alert} | Mistakes on the internet become mistakes in the model |
+| [Fictional content]{.alert} | Novels, fan fiction, speculation all look like "text" to the model |
+
+:::
 
 **The interpolation problem:**
 
@@ -249,37 +251,64 @@ The model might:
 
 1. Know Liechtenstein has elections ✓
 2. Know 1987 election patterns in Europe ✓
-3. [Invent specific parties, candidates, results]{.alert} ✗
+3. [Invent parties, candidates, results]{.alert} ✗
 
-Plausible, because it is *statistically consistent* with European elections, but fabricated
-
-:::{.fragment}
-**Twist**: [there was no 1987 election]{.alert} (Liechtenstein voted in 1986 and 1989). Newer models often say so. But insist ("I'm 100% sure") and Qwen replies: ["the Progressive Citizens' Party (FBP) won in 1987"]{.alert}
-:::
+**Twist**: [there was no 1987 election]{.alert} (Liechtenstein voted in 1986 and 1989). Next slide: two Qwen versions
 :::
 
 :::{style="margin-top: 15px; font-size: 18px;"}
-**Rule of thumb**: the more [obscure or specific]{.alert} the question, the higher the hallucination risk. Models do best on topics with abundant, consistent training data
+**Rule of thumb**: the more [obscure or specific]{.alert} the question, the higher the hallucination risk. Models do best on topics with abundant training data
 :::
 :::
 :::
 :::
 
-## Hallucination rates by domain 📊
+## Testing it: Qwen 3.5 vs Qwen 3.7
+
+:::{style="margin-top: 30px; font-size: 20px;"}
+:::{.columns}
+:::{.column width=50%}
+:::{style="text-align: center;"}
+**Qwen 3.5** invents a date, a winner and seat counts
+
+[![](figures/qwen35-liechtenstein.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/qwen35-liechtenstein.png"}
+:::
+:::
+
+:::{.column width=50%}
+:::{style="text-align: center;"}
+**Qwen 3.7** says it does not know, even when pushed
+
+[![](figures/qwen37-liechtenstein.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/qwen37-liechtenstein.png"}
+:::
+:::
+:::
+
+:::{style="font-size: 16px; text-align: center;"}
+Qwen 3.7 held firm through five more pushbacks. Chats: [3.5](https://chat.qwen.ai/s/347f6c8f-a926-43c0-b71d-31e801e8902e?fev=0.3.12), [3.7](https://chat.qwen.ai/s/b78efc3b-7384-4b7d-8bc7-7a318a02b21d?fev=0.3.12)
+:::
+:::
+
+## Hallucination rates by domain
 
 :::{style="margin-top: 30px; font-size: 22px;"}
 :::{.columns}
 :::{.column width=55%}
 **Hallucination rates vary dramatically by topic:**
 
+::: {style="margin: 25px 0;"}
 | Domain | Hallucination Risk | Why? |
 |--------|-------------------|------|
-| **Common knowledge** | Low | Abundant, consistent training data |
-| **Coding** | Low-Medium | Syntax is verifiable; patterns are clear |
-| **Recent events** | High | Beyond training cutoff |
-| **Medical/Legal** | High | Requires precision; errors are costly |
-| **Obscure history** | Very High | Sparse data → interpolation |
-| **Citations** | Very High | Specific strings rarely memorised |
+| [Common knowledge]{.alert} | Low | Abundant training data |
+| [Coding]{.alert} | Low-Medium | Syntax is verifiable; patterns are clear |
+| [Recent events]{.alert} | High | Beyond training cutoff |
+| [Medical/Legal]{.alert} | High | Requires precision; errors are costly |
+| [Obscure history]{.alert} | Very High | Sparse data → interpolation |
+| [Citations]{.alert} | Very High | Specific strings rarely memorised |
+
+: {tbl-colwidths="[26,18,56]"}
+
+:::
 
 - GPT-4 made up [~29% of references]{.alert} for medical reviews ([Chelli et al. (2024)](https://www.jmir.org/2024/1/e53164))
 - It hallucinated on [~58% of legal questions]{.alert} ([Dahl et al. (2024)](https://dho.stanford.edu/wp-content/uploads/Hallucinations_JLA.pdf))
@@ -300,14 +329,16 @@ Source: [Chakraborty et al (2025)](https://www.nature.com/articles/s41598-025-15
 :::{style="margin-top: 30px; font-size: 22px;"}
 :::{.columns}
 :::{.column width=55%}
+The list is not exhaustive, and the categories are somewhat arbitrary:
+
 | Type | Description | Example |
 |------|-------------|---------|
-| **Factual** | Wrong facts | "Einstein was born in France" |
-| **Fabrication** | Invented information | Made-up statistics, fake quotes |
-| **Citation** | Non-existent sources | "According to Smith (2023)..." (doesn't exist) |
-| **Logical** | Contradicts itself | "It's 5pm now... earlier today at 7pm..." |
-| **Temporal** | Wrong timelines | Mixing up historical dates |
-| **Entity** | Confusing people/things | Attributing quotes to wrong person |
+| [Factual]{.alert} | Wrong facts | "Einstein was born in France" |
+| [Fabrication]{.alert} | Invented information | Made-up statistics, fake quotes |
+| [Citation]{.alert} | Non-existent sources | "According to Smith (2023)..." (doesn't exist) |
+| [Logical]{.alert} | Contradicts itself | "It's 5pm now... earlier today at 7pm..." |
+| [Temporal]{.alert} | Wrong timelines | Mixing up historical dates |
+| [Entity]{.alert} | Confusing people/things | Attributing quotes to wrong person |
 
 :::{style="margin-top: 15px;"}
 **What do you think is the most dangerous type?**
@@ -343,7 +374,7 @@ Citation hallucinations are the hardest to catch because they look so specific
 - They sounded completely plausible
 - The judge sanctioned both attorneys
 
-**The wake-up call:**
+**How he checked:**
 
 > "Is Varghese a real case?" Schwartz asked the chatbot.
 > "Yes," ChatGPT doubled down, "it is a real case."
@@ -400,46 +431,6 @@ Source: [The New York Times (2025)](https://www.nytimes.com/2025/11/16/briefing/
 :::
 :::
 
-## Academic integrity issues
-
-:::{style="margin-top: 30px; font-size: 22px;"}
-:::{.columns}
-:::{.column width=55%}
-**Fake citations are a major problem**
-
-**For students:**
-
-- AI invents realistic paper titles and author names
-- It fabricates journals and conferences
-- Very hard to detect without checking
-
-**For academia more broadly:**
-
-- AI-generated papers being submitted
-- Fake peer reviews
-- Fabricated data
-- "Paper mills" using AI
-:::
-
-:::{.column width=45%}
-:::{style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; margin-top: 30px;"}
-**How to avoid this:**
-
-1. Never trust AI citations
-2. Verify EVERY reference in academic databases (Google Scholar, PubMed)
-3. Look up authors and journals
-
-**Red flags:**
-
-- Citation format is slightly off
-- Can't find paper anywhere
-- Author has no other publications
-- Journal name doesn't exist
-:::
-:::
-:::
-:::
-
 ## Discussion: who is responsible? 🤔
 
 :::{style="margin-top: 30px; font-size: 24px;"}
@@ -492,14 +483,7 @@ The same mechanism that causes hallucinations also enables [creativity]{.alert}
 
 **The spectrum:**
 
-```text
-←—————————————————————————————→
-BORING                     CREATIVE
-but accurate           but risky
-
-"I don't know"         New ideas!
-Refuses often          Sometimes wrong
-```
+[![](figures/creativity-spectrum.svg){width="100%"}](#){data-modal-type="image" data-modal-url="figures/creativity-spectrum.svg"}
 
 **Different tasks need different points on this spectrum**
 :::
@@ -550,54 +534,24 @@ Source: [Medium](https://uxdesign.cc/the-case-for-ai-hallucination-a79688338a14)
 More here: [The Case for AI Hallucination](https://uxdesign.cc/the-case-for-ai-hallucination-a79688338a14)
 :::
 :::
-
-:::{style="margin-top: 15px; background: rgba(230, 57, 70, 0.1); padding: 15px; border-radius: 10px;"}
-Before worrying about hallucinations, ask whether you need the AI to be factual 
-:::
 :::
 :::
 :::
 
-## Activity: confidence calibration test 📊
+## Activity: confidence calibration test
 
-:::{style="margin-top: 30px; font-size: 20px;"}
-:::{.columns}
-:::{.column width=50%}
-**Does AI know when it's wrong?**
+:::{style="margin-top: 30px; font-size: 22px;"}
+Open <https://chat.qwen.ai/c/guest> (close the sign-in window to chat as a guest) and ask each question below
 
-Ask <https://chat.qwen.ai/c/guest> (fast model; close the sign-in window to chat as a guest) each question and request a [confidence rating (1-10)]{.alert}. [Qwen](https://chat.qwen.ai/) lets you turn off web access
+With a Qwen account, switch on [Model Comparison]{.alert} in the model selector (top of the screen) to test Qwen 3.5 and Qwen 3.7 side by side
 
-1. "What day of the week was January 14, 1642?" → Tuesday (Google Calendar)
-2. "Spell Inconstitucionalissimamente backwards" → etnemamissilanoicutitsnocnI (checked by hand)
-3. "Name the third person to walk on the Moon" → Charles "Pete" Conrad Jr (Wikipedia)
-4. "What is the exact population of Tuvalu as of 2024?" → 9,646 (World Bank)
-5. "Who is the current mayor of Reykjavik, Iceland?" → Hildur Björnsdóttir (since June 2026)
+1. "How many words are in the preamble of the US Constitution? Don't search, answer from memory, and give a confidence rating (1-10)" → 52 (paste it into a word counter)
+2. "What is the 50th decimal digit of pi? Don't search, answer from memory, and give a confidence rating (1-10)" → 0 (any pi digits table)
+3. "Who wrote the 2025 paper *Why Language Models Hallucinate*? Don't search, answer from memory, and give a confidence rating (1-10)" → Kalai, Nachum, Vempala, Zhang ([arXiv](https://arxiv.org/abs/2509.04664))
+4. "What is the exact population of Tuvalu as of 2024? Don't search, answer from memory, and give a confidence rating (1-10)" → 9,646 (World Bank)
+5. "Who is the current mayor of Reykjavik, Iceland? Don't search, answer from memory, and give a confidence rating (1-10)" → Hildur Björnsdóttir (since June 2026)
 
-**Then verify each answer**
-:::
-
-:::{.column width=50%}
-**What to observe:**
-
-:::{style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px;"}
-| Question | AI Confidence | Actually Correct? |
-|----------|---------------|-------------------|
-| Day of the week | ? / 10 | ✓ or ✗ |
-| Spell backwards | ? / 10 | ✓ or ✗ |
-| Third moonwalker | ? / 10 | ✓ or ✗ |
-| Tuvalu population | ? / 10 | ✓ or ✗ |
-| Reykjavik mayor | ? / 10 | ✓ or ✗ |
-:::
-
-:::{style="margin-top: 15px;"}
-**Discussion:**
-
-- Is confidence correlated with accuracy?
-- Any high-confidence wrong answers?
-- [Can you trust AI's self-assessment?]{.alert}
-:::
-:::
-:::
+**Then verify each answer and compare it with the confidence rating**
 :::
 
 # Detection and prevention 🛡️ {background-color="#1B3A6B"}
@@ -609,21 +563,21 @@ Ask <https://chat.qwen.ai/c/guest> (fast model; close the sign-in window to chat
 :::{.column width=55%}
 **Red flags to watch for:**
 
-| Warning Sign | Example |
+| Warning sign | Example |
 |--------------|---------|
 | Very specific numbers | "73.2% of studies show..." |
 | Precise citations | "Smith et al. (2022), p. 47" |
 | Obscure details | Historical minutiae |
 | Too-perfect answers | Exactly what you wanted |
-| Confident tone | No hedging or uncertainty |
+| Confident tone | No hedging |
 
 **Verification strategies:**
 
-1. **Google the claim**: does it appear elsewhere?
-2. **Check citations**: do they exist?
-3. **Ask for sources**: then verify them
-4. **Cross-reference**: use multiple sources
-5. **Trust your expertise**: if something seems off, it might be
+1. Google the claim
+2. Check that the citations exist
+3. Ask for sources, then verify them
+4. Cross-reference several sources
+5. Trust your expertise
 :::
 
 :::{.column width=45%}
@@ -633,10 +587,6 @@ Ask <https://chat.qwen.ai/c/guest> (fast model; close the sign-in window to chat
 :::{style="font-size: 18px; margin-top: 15px;"}
 Impressive-sounding detail is often the first sign something is made up
 :::
-:::
-
-:::{style="margin-top: 15px; background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px;"}
-A precise percentage or page number is exactly when to double-check!
 :::
 :::
 :::
@@ -651,11 +601,11 @@ A precise percentage or page number is exactly when to double-check!
 
 | Technique | What to Add to Your Prompt |
 |-----------|---------------------------|
-| **Ask for uncertainty** | "If you're not sure, say so. Don't guess." |
-| **Request sources** | "Only cite sources you're certain exist." |
-| **Chain-of-thought** | "Think step by step. Show your reasoning." |
-| **Confidence levels** | "Rate your confidence 1-10 for each claim." |
-| **Output constraints** | "Be precise and factual. Avoid speculation." |
+| [Ask for uncertainty]{.alert} | "If you're not sure, say so. Don't guess." |
+| [Request sources]{.alert} | "Only cite sources you're certain exist." |
+| [Chain-of-thought]{.alert} | "Think step by step. Show your reasoning." |
+| [Confidence levels]{.alert} | "Rate your confidence 1-10 for each claim." |
+| [Output constraints]{.alert} | "Be precise and factual. Avoid speculation." |
 
 :::{style="margin-top: 15px;"}
 **Does this eliminate hallucinations?**
@@ -665,7 +615,7 @@ A precise percentage or page number is exactly when to double-check!
 :::
 
 :::{.column width=45%}
-:::{style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; font-size: 18px;"}
+:::{style="background: rgba(45, 69, 99, 0.1); margin-top: 30px; padding: 15px; border-radius: 10px; font-size: 18px;"}
 **Basic anti-hallucination prompt:**
 
 ```text
@@ -701,21 +651,21 @@ The [**PTCF framework**](https://danilofreire.github.io/datasci101/lectures/lect
 
 | Element | Anti-Hallucination Version |
 |---------|---------------------------|
-| **P**ersona | "You are a careful fact-checker who never guesses" |
-| **T**ask | "Verify and summarise only confirmed facts" |
-| **C**ontext | "Base answers ONLY on the provided text" |
-| **F**ormat | "Use [Verified], [Uncertain], or [Unknown] tags" |
+| [**P**ersona]{.alert} | "You are a careful fact-checker who never guesses" |
+| [**T**ask]{.alert} | "Verify and summarise only confirmed facts" |
+| [**C**ontext]{.alert} | "Base answers ONLY on the provided text" |
+| [**F**ormat]{.alert} | "Use [Verified], [Uncertain], or [Unknown] tags" |
 
 **Why PTCF helps:**
 
-- **Persona** activates [cautious, precise patterns]{.alert} from training
+- **Persona** activates [more precise patterns]{.alert} from training
 - **Task** constrains scope, leaving no room for invention
 - **Context** grounds answers in [real information]{.alert}
 - **Format** forces explicit uncertainty signals
 :::
 
 :::{.column width=45%}
-:::{style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; font-size: 16px;"}
+:::{style="background: rgba(45, 69, 99, 0.1); margin-top: 30px; padding: 15px; border-radius: 10px; font-size: 16px;"}
 **PTCF anti-hallucination template:**
 
 ```text
@@ -747,56 +697,48 @@ QUESTION: [your question]
 :::
 :::
 
-## Meta-prompting: Let AI improve your prompts
+## Meta-prompting against hallucinations
 
-:::{style="margin-top: 30px; font-size: 19px;"}
+:::{style="margin-top: 30px; font-size: 20px;"}
 :::{.columns}
 :::{.column width=55%}
-**Meta-prompting** means [asking AI to help you write better prompts]{.alert}
+Last class: [asking the AI to improve your prompt]{.alert}. Now we aim it at one risk, invented facts
 
-**Why it works:**
+**Three uses:**
 
-- The model has seen millions of prompts in training
-- It knows which phrasings activate careful vs. creative modes
-- It can spot ambiguities you might miss
+1. **Before**: ask where your prompt invites it to guess
+2. **During**: ask what facts or sources it needs from you
+3. **After**: ask it to list each claim and flag what to verify
 
-**When to use it:**
+**Limits:**
 
-- You're getting unreliable outputs
-- You're not sure what constraints to add
-- You want to catch edge cases
-- You need prompts for high-stakes tasks
-
-:::{style="margin-top: 15px; background: rgba(230, 57, 70, 0.1); padding: 15px; border-radius: 10px;"}
-You are asking the model "how should I talk to you so you don't make things up?"
-:::
+- Self-ratings are imperfect (you will test this in the activity)
+- Verify in a [fresh chat]{.alert}, so the model does not just defend its first answer
 :::
 
 :::{.column width=45%}
-:::{style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; font-size: 16px;"}
-**Meta-prompting example:**
+:::{style="background: rgba(45, 69, 99, 0.1); margin-top: 30px; padding: 15px; border-radius: 10px; font-size: 16px;"}
+**Before: audit the prompt**
 
 ```text
-I'm building a prompt to ask 
-you about historical events.
+Here is my prompt: [paste it]
 
-I'm worried about hallucinations.
-You might invent dates, names,
-or events that didn't happen.
+Where could it make you guess
+or invent facts? Rewrite it to
+reduce that risk.
+```
 
-Help me write a prompt that:
-1. Minimises hallucination risk
-2. Makes you flag uncertainty
-3. Prevents invented citations
+**After: audit the answer**
 
-What constraints should I add? 
-What phrasing reduces the 
-chance you'll make things up?
+```text
+List every factual claim in
+your answer. Rate each 1-10 and
+mark the ones I should verify.
 ```
 :::
 
 :::{style="margin-top: 15px; font-size: 18px;"}
-**Try it!** Ask ChatGPT or Claude to critique your prompts. The suggestions are often [better than what you'd write on your own]{.alert}
+**Chain-of-verification** ([Dhuliawala et al., 2024](https://arxiv.org/abs/2309.11495)): draft, write check questions, answer them separately, then revise. It [reduced hallucinations]{.alert} in the authors' tests
 :::
 :::
 :::
@@ -852,8 +794,6 @@ Anything after the cutoff date is a blind spot, and the model won't tell you tha
 :::{.column width=55%}
 **RAG = [R]{.alert}etrieval-[A]{.alert}ugmented [G]{.alert}eneration**
 
-**The core idea:**
-
 1. You ask a question
 2. [Search your documents]{.alert} for relevant information
 3. Give that information to the LLM
@@ -889,43 +829,40 @@ Source: [Towards AI](https://pub.towardsai.net/what-is-rag-a-clear-and-simple-ex
 
 :::{style="margin-top: 30px; font-size: 32px;"}
 
-- [Hallucinations]{.alert}: AI confidently states false information
+- [Hallucinations]{.alert} are false answers that sound plausible
 
-- [Why it happens]{.alert}: LLMs predict plausible, not true
+- LLMs predict [likely words, not true ones]{.alert}
 
-- [Wrong time]{.alert}: making things up helps in fiction, hurts with facts
+- Making things up helps in fiction, not with facts
 
-- [Real failures]{.alert}: lawyers, doctors, academics affected
+- Fake citations got [two lawyers sanctioned]{.alert}
 
-- [Detection]{.alert}: verify specific claims, check citations
+- Check [specific claims]{.alert} and every citation
 
-- [Prevention]{.alert}: careful prompting helps but doesn't eliminate
+- Better prompts help, but [never eliminate]{.alert} the risk
 
 :::
 
-## Your anti-hallucination toolkit
+## What to check, and when
 
-:::{style="margin-top: 30px; font-size: 25px;"}
+:::{style="margin-top: 30px; font-size: 24px;"}
 :::{.columns}
-:::{.column width=50%}
-**Always do:**
+:::{.column width=55%}
+::: {style="font-size: 1.25em; margin-top: 20px;"}
+| You are using AI for | What to do |
+|----------------------|------------|
+| [Numbers, dates, names]{.alert} | Search each one in a second source |
+| [Citations]{.alert} | Find the paper on Google Scholar |
+| [Recent events]{.alert} | Use a tool with web search |
+| [Medical or legal questions]{.alert} | Ask a professional |
+| [Brainstorming and drafts]{.alert} | Edit freely; errors matter less |
 
-- ✅ Verify specific facts
-- ✅ Check every citation
-- ✅ Cross-reference with trusted sources
-- ✅ Distrust a confident tone
-- ✅ Ask AI to admit uncertainty
-
-**Never do:**
-
-- ❌ Trust AI for critical decisions alone
-- ❌ Submit AI citations without checking
-- ❌ Assume confident = correct
-- ❌ Skip verification for "obvious" answers
+:::
 :::
 
-:::{.column width=50%}
-**Prompting tips:**
+:::{.column width=45%}
+:::{style="background: rgba(45, 69, 99, 0.1); margin-top: 20px; padding: 15px; border-radius: 10px; font-size: 20px;"}
+**Three lines to add to a prompt**
 
 ```text
 "If you're not sure, say so"
@@ -933,11 +870,10 @@ Source: [Towards AI](https://pub.towardsai.net/what-is-rag-a-clear-and-simple-ex
 "Only cite sources that exist"
 
 "Rate your confidence 1-10"
-
-"Show your reasoning step by step"
 ```
 
-For creative tasks, you can skip most of these. Let the model run wild 😄
+These lines reduce hallucinations, but you still need to check the answer
+:::
 :::
 :::
 :::

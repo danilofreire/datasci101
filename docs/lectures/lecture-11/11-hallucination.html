@@ -262,7 +262,6 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <ul>
 <li>Lawyers and fake citations</li>
 <li>Medical misinformation</li>
-<li>Academic integrity issues</li>
 </ul>
 </div><div class="column" style="width:50%;">
 <p><strong>Part 3: Creativity vs.&nbsp;Accuracy</strong></p>
@@ -300,16 +299,16 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <blockquote>
 <p>When an AI system generates content that is <span class="alert">plausible but factually incorrect</span>, presented with high confidence.</p>
 </blockquote>
-<p><strong>Key characteristics:</strong></p>
+<p><strong>Main characteristics:</strong></p>
 <ul>
-<li>✅ Sounds completely reasonable</li>
-<li>✅ Uses proper grammar and tone</li>
-<li>✅ Fits the context of conversation</li>
-<li>❌ Contains fabricated information</li>
-<li>❌ May invent citations, facts, or events</li>
-<li>❌ AI doesn’t “know” it’s lying</li>
+<li>Sounds completely reasonable</li>
+<li>Uses proper grammar and tone</li>
+<li>Fits the context of conversation</li>
+<li>Contains fabricated information</li>
+<li>May invent citations, facts, or events</li>
+<li>AI doesn’t “know” it’s lying</li>
 </ul>
-<p><strong>The tricky part:</strong></p>
+<p><strong>Why it is hard to spot:</strong></p>
 <p>There’s often <span class="alert">no signal</span>: the AI sounds as confident as when it’s correct</p>
 </div><div class="column" style="width:45%;">
 <div style="text-align: center;">
@@ -331,7 +330,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <div style="margin-top: 30px; font-size: 22px;">
 <div class="columns">
 <div class="column" style="width:55%;">
-<p><span class="alert">It’s not a bug, it’s how LLMs work!</span></p>
+<p><span class="alert">Hallucination is a side effect of how LLMs work</span></p>
 <p><strong>LLMs predict the next word</strong></p>
 <ul>
 <li>Input: “The capital of France is”</li>
@@ -339,7 +338,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <li>Output: “Lyon” (lower probability)</li>
 <li>Output: “Atlantis” (still some probability!)</li>
 </ul>
-<p><strong>The problem:</strong></p>
+<p><strong>You probably already know what the problem is:</strong></p>
 <ul>
 <li>Plausibility ≠ truth</li>
 <li>No fact-checking mechanism</li>
@@ -361,7 +360,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </div>
 </section>
 <section id="the-sycophancy-problem" class="slide level2">
-<h2>The sycophancy problem 🙇</h2>
+<h2>The sycophancy problem</h2>
 <div style="margin-top: 30px; font-size: 20px;">
 <div class="columns">
 <div class="column" style="width:55%;">
@@ -386,12 +385,13 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </div>
 </section>
 <section id="training-data-problems" class="slide level2 scrollable">
-<h2>Training data problems 📚</h2>
+<h2>Training data problems</h2>
 <div style="margin-top: 30px; font-size: 19px;">
 <div class="columns">
 <div class="column" style="width:55%;">
-<p><strong>Garbage in, hallucination out!</strong> (remember lecture 03 about data?)</p>
+<p><strong>Garbage in, hallucination out!</strong> (remember <a href="https://danilofreire.github.io/datasci101/lectures/lecture-03/03-datasets.html">lecture 03 about data</a>?)</p>
 <p>LLMs learn from <span class="alert">trillions of tokens</span> scraped from the internet:</p>
+<div style="font-size: 1.25em;">
 <table class="caption-top">
 <colgroup>
 <col style="width: 39%">
@@ -405,27 +405,28 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </thead>
 <tbody>
 <tr class="odd">
-<td><strong>Conflicting sources</strong></td>
+<td><span class="alert">Conflicting sources</span></td>
 <td>Wikipedia says X, a blog says Y → model learns both as “plausible”</td>
 </tr>
 <tr class="even">
-<td><strong>Outdated information</strong></td>
+<td><span class="alert">Outdated information</span></td>
 <td>Training data has a cutoff → model treats old facts as current</td>
 </tr>
 <tr class="odd">
-<td><strong>Rare topics</strong></td>
+<td><span class="alert">Rare topics</span></td>
 <td>Few examples → model “interpolates” (often wrongly)</td>
 </tr>
 <tr class="even">
-<td><strong>Errors in sources</strong></td>
+<td><span class="alert">Errors in sources</span></td>
 <td>Mistakes on the internet become mistakes in the model</td>
 </tr>
 <tr class="odd">
-<td><strong>Fictional content</strong></td>
+<td><span class="alert">Fictional content</span></td>
 <td>Novels, fan fiction, speculation all look like “text” to the model</td>
 </tr>
 </tbody>
 </table>
+</div>
 <p><strong>The interpolation problem:</strong></p>
 <p>For rare topics, the model <span class="alert">fills in gaps</span> with patterns from similar-but-different topics. That is where confident nonsense comes from</p>
 </div><div class="column" style="width:45%;">
@@ -436,26 +437,49 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <ol type="1">
 <li>Know Liechtenstein has elections ✓</li>
 <li>Know 1987 election patterns in Europe ✓</li>
-<li><span class="alert">Invent specific parties, candidates, results</span> ✗</li>
+<li><span class="alert">Invent parties, candidates, results</span> ✗</li>
 </ol>
-<p>Plausible, because it is <em>statistically consistent</em> with European elections, but fabricated</p>
-<div class="fragment">
-<p><strong>Twist</strong>: <span class="alert">there was no 1987 election</span> (Liechtenstein voted in 1986 and 1989). Newer models often say so. But insist (“I’m 100% sure”) and Qwen replies: <span class="alert">“the Progressive Citizens’ Party (FBP) won in 1987”</span></p>
-</div>
+<p><strong>Twist</strong>: <span class="alert">there was no 1987 election</span> (Liechtenstein voted in 1986 and 1989). Next slide: two Qwen versions</p>
 </div>
 <div style="margin-top: 15px; font-size: 18px;">
-<p><strong>Rule of thumb</strong>: the more <span class="alert">obscure or specific</span> the question, the higher the hallucination risk. Models do best on topics with abundant, consistent training data</p>
+<p><strong>Rule of thumb</strong>: the more <span class="alert">obscure or specific</span> the question, the higher the hallucination risk. Models do best on topics with abundant training data</p>
 </div>
 </div></div>
 </div>
 </section>
+<section id="testing-it-qwen-3.5-vs-qwen-3.7" class="slide level2">
+<h2>Testing it: Qwen 3.5 vs Qwen 3.7</h2>
+<div style="margin-top: 30px; font-size: 20px;">
+<div class="columns">
+<div class="column" style="width:50%;">
+<div style="text-align: center;">
+<p><strong>Qwen 3.5</strong> invents a date, a winner and seat counts</p>
+<p><a href="#/" data-modal-type="image" data-modal-url="figures/qwen35-liechtenstein.png"><img data-src="figures/qwen35-liechtenstein.png" style="width:100.0%"></a></p>
+</div>
+</div><div class="column" style="width:50%;">
+<div style="text-align: center;">
+<p><strong>Qwen 3.7</strong> says it does not know, even when pushed</p>
+<p><a href="#/" data-modal-type="image" data-modal-url="figures/qwen37-liechtenstein.png"><img data-src="figures/qwen37-liechtenstein.png" style="width:100.0%"></a></p>
+</div>
+</div></div>
+<div style="font-size: 16px; text-align: center;">
+<p>Qwen 3.7 held firm through five more pushbacks. Chats: <a href="https://chat.qwen.ai/s/347f6c8f-a926-43c0-b71d-31e801e8902e?fev=0.3.12">3.5</a>, <a href="https://chat.qwen.ai/s/b78efc3b-7384-4b7d-8bc7-7a318a02b21d?fev=0.3.12">3.7</a></p>
+</div>
+</div>
+</section>
 <section id="hallucination-rates-by-domain" class="slide level2">
-<h2>Hallucination rates by domain 📊</h2>
+<h2>Hallucination rates by domain</h2>
 <div style="margin-top: 30px; font-size: 22px;">
 <div class="columns">
 <div class="column" style="width:55%;">
 <p><strong>Hallucination rates vary dramatically by topic:</strong></p>
+<div style="margin: 25px 0;">
 <table class="caption-top">
+<colgroup>
+<col style="width: 26%">
+<col style="width: 18%">
+<col style="width: 56%">
+</colgroup>
 <thead>
 <tr class="header">
 <th>Domain</th>
@@ -465,37 +489,38 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </thead>
 <tbody>
 <tr class="odd">
-<td><strong>Common knowledge</strong></td>
+<td><span class="alert">Common knowledge</span></td>
 <td>Low</td>
-<td>Abundant, consistent training data</td>
+<td>Abundant training data</td>
 </tr>
 <tr class="even">
-<td><strong>Coding</strong></td>
+<td><span class="alert">Coding</span></td>
 <td>Low-Medium</td>
 <td>Syntax is verifiable; patterns are clear</td>
 </tr>
 <tr class="odd">
-<td><strong>Recent events</strong></td>
+<td><span class="alert">Recent events</span></td>
 <td>High</td>
 <td>Beyond training cutoff</td>
 </tr>
 <tr class="even">
-<td><strong>Medical/Legal</strong></td>
+<td><span class="alert">Medical/Legal</span></td>
 <td>High</td>
 <td>Requires precision; errors are costly</td>
 </tr>
 <tr class="odd">
-<td><strong>Obscure history</strong></td>
+<td><span class="alert">Obscure history</span></td>
 <td>Very High</td>
 <td>Sparse data → interpolation</td>
 </tr>
 <tr class="even">
-<td><strong>Citations</strong></td>
+<td><span class="alert">Citations</span></td>
 <td>Very High</td>
 <td>Specific strings rarely memorised</td>
 </tr>
 </tbody>
 </table>
+</div>
 <ul>
 <li>GPT-4 made up <span class="alert">~29% of references</span> for medical reviews (<a href="https://www.jmir.org/2024/1/e53164">Chelli et al.&nbsp;(2024)</a>)</li>
 <li>It hallucinated on <span class="alert">~58% of legal questions</span> (<a href="https://dho.stanford.edu/wp-content/uploads/Hallucinations_JLA.pdf">Dahl et al.&nbsp;(2024)</a>)</li>
@@ -518,6 +543,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <div style="margin-top: 30px; font-size: 22px;">
 <div class="columns">
 <div class="column" style="width:55%;">
+<p>The list is not exhaustive, and the categories are somewhat arbitrary:</p>
 <table class="caption-top">
 <colgroup>
 <col style="width: 21%">
@@ -533,32 +559,32 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </thead>
 <tbody>
 <tr class="odd">
-<td><strong>Factual</strong></td>
+<td><span class="alert">Factual</span></td>
 <td>Wrong facts</td>
 <td>“Einstein was born in France”</td>
 </tr>
 <tr class="even">
-<td><strong>Fabrication</strong></td>
+<td><span class="alert">Fabrication</span></td>
 <td>Invented information</td>
 <td>Made-up statistics, fake quotes</td>
 </tr>
 <tr class="odd">
-<td><strong>Citation</strong></td>
+<td><span class="alert">Citation</span></td>
 <td>Non-existent sources</td>
 <td>“According to Smith (2023)…” (doesn’t exist)</td>
 </tr>
 <tr class="even">
-<td><strong>Logical</strong></td>
+<td><span class="alert">Logical</span></td>
 <td>Contradicts itself</td>
 <td>“It’s 5pm now… earlier today at 7pm…”</td>
 </tr>
 <tr class="odd">
-<td><strong>Temporal</strong></td>
+<td><span class="alert">Temporal</span></td>
 <td>Wrong timelines</td>
 <td>Mixing up historical dates</td>
 </tr>
 <tr class="even">
-<td><strong>Entity</strong></td>
+<td><span class="alert">Entity</span></td>
 <td>Confusing people/things</td>
 <td>Attributing quotes to wrong person</td>
 </tr>
@@ -601,7 +627,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <li>They sounded completely plausible</li>
 <li>The judge sanctioned both attorneys</li>
 </ul>
-<p><strong>The wake-up call:</strong></p>
+<p><strong>How he checked:</strong></p>
 <blockquote>
 <p>“Is Varghese a real case?” Schwartz asked the chatbot. “Yes,” ChatGPT doubled down, “it is a real case.”</p>
 </blockquote>
@@ -660,44 +686,6 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </div></div>
 </div>
 </section>
-<section id="academic-integrity-issues" class="slide level2 scrollable">
-<h2>Academic integrity issues</h2>
-<div style="margin-top: 30px; font-size: 22px;">
-<div class="columns">
-<div class="column" style="width:55%;">
-<p><strong>Fake citations are a major problem</strong></p>
-<p><strong>For students:</strong></p>
-<ul>
-<li>AI invents realistic paper titles and author names</li>
-<li>It fabricates journals and conferences</li>
-<li>Very hard to detect without checking</li>
-</ul>
-<p><strong>For academia more broadly:</strong></p>
-<ul>
-<li>AI-generated papers being submitted</li>
-<li>Fake peer reviews</li>
-<li>Fabricated data</li>
-<li>“Paper mills” using AI</li>
-</ul>
-</div><div class="column" style="width:45%;">
-<div style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; margin-top: 30px;">
-<p><strong>How to avoid this:</strong></p>
-<ol type="1">
-<li>Never trust AI citations</li>
-<li>Verify EVERY reference in academic databases (Google Scholar, PubMed)</li>
-<li>Look up authors and journals</li>
-</ol>
-<p><strong>Red flags:</strong></p>
-<ul>
-<li>Citation format is slightly off</li>
-<li>Can’t find paper anywhere</li>
-<li>Author has no other publications</li>
-<li>Journal name doesn’t exist</li>
-</ul>
-</div>
-</div></div>
-</div>
-</section>
 <section id="discussion-who-is-responsible" class="slide level2">
 <h2>Discussion: who is responsible? 🤔</h2>
 <div style="margin-top: 30px; font-size: 24px;">
@@ -742,12 +730,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <li><span class="alert">You can’t have unlimited creativity with perfect accuracy</span></li>
 </ul>
 <p><strong>The spectrum:</strong></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb1-1"><a></a>←—————————————————————————————→</span>
-<span id="cb1-2"><a></a>BORING                     CREATIVE</span>
-<span id="cb1-3"><a></a>but accurate           but risky</span>
-<span id="cb1-4"><a></a></span>
-<span id="cb1-5"><a></a>"I don't know"         New ideas!</span>
-<span id="cb1-6"><a></a>Refuses often          Sometimes wrong</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><a href="#/" data-modal-type="image" data-modal-url="figures/creativity-spectrum.svg"><img data-src="figures/creativity-spectrum.svg" style="width:100.0%"></a></p>
 <p><strong>Different tasks need different points on this spectrum</strong></p>
 </div><div class="column" style="width:45%;">
 <div style="text-align: center;">
@@ -803,76 +786,22 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <p>More here: <a href="https://uxdesign.cc/the-case-for-ai-hallucination-a79688338a14">The Case for AI Hallucination</a></p>
 </div>
 </div>
-<div style="margin-top: 15px; background: rgba(230, 57, 70, 0.1); padding: 15px; border-radius: 10px;">
-<p>Before worrying about hallucinations, ask whether you need the AI to be factual</p>
-</div>
 </div></div>
 </div>
 </section>
 <section id="activity-confidence-calibration-test" class="slide level2 scrollable">
-<h2>Activity: confidence calibration test 📊</h2>
-<div style="margin-top: 30px; font-size: 20px;">
-<div class="columns">
-<div class="column" style="width:50%;">
-<p><strong>Does AI know when it’s wrong?</strong></p>
-<p>Ask <a href="https://chat.qwen.ai/c/guest" class="uri">https://chat.qwen.ai/c/guest</a> (fast model; close the sign-in window to chat as a guest) each question and request a <span class="alert">confidence rating (1-10)</span>. <a href="https://chat.qwen.ai/">Qwen</a> lets you turn off web access</p>
+<h2>Activity: confidence calibration test</h2>
+<div style="margin-top: 30px; font-size: 22px;">
+<p>Open <a href="https://chat.qwen.ai/c/guest" class="uri">https://chat.qwen.ai/c/guest</a> (close the sign-in window to chat as a guest) and ask each question below</p>
+<p>With a Qwen account, switch on <span class="alert">Model Comparison</span> in the model selector (top of the screen) to test Qwen 3.5 and Qwen 3.7 side by side</p>
 <ol type="1">
-<li>“What day of the week was January 14, 1642?” → Tuesday (Google Calendar)</li>
-<li>“Spell Inconstitucionalissimamente backwards” → etnemamissilanoicutitsnocnI (checked by hand)</li>
-<li>“Name the third person to walk on the Moon” → Charles “Pete” Conrad Jr (Wikipedia)</li>
-<li>“What is the exact population of Tuvalu as of 2024?” → 9,646 (World Bank)</li>
-<li>“Who is the current mayor of Reykjavik, Iceland?” → Hildur Björnsdóttir (since June 2026)</li>
+<li>“How many words are in the preamble of the US Constitution? Don’t search, answer from memory, and give a confidence rating (1-10)” → 52 (paste it into a word counter)</li>
+<li>“What is the 50th decimal digit of pi? Don’t search, answer from memory, and give a confidence rating (1-10)” → 0 (any pi digits table)</li>
+<li>“Who wrote the 2025 paper <em>Why Language Models Hallucinate</em>? Don’t search, answer from memory, and give a confidence rating (1-10)” → Kalai, Nachum, Vempala, Zhang (<a href="https://arxiv.org/abs/2509.04664">arXiv</a>)</li>
+<li>“What is the exact population of Tuvalu as of 2024? Don’t search, answer from memory, and give a confidence rating (1-10)” → 9,646 (World Bank)</li>
+<li>“Who is the current mayor of Reykjavik, Iceland? Don’t search, answer from memory, and give a confidence rating (1-10)” → Hildur Björnsdóttir (since June 2026)</li>
 </ol>
-<p><strong>Then verify each answer</strong></p>
-</div><div class="column" style="width:50%;">
-<p><strong>What to observe:</strong></p>
-<div style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px;">
-<table class="caption-top">
-<thead>
-<tr class="header">
-<th>Question</th>
-<th>AI Confidence</th>
-<th>Actually Correct?</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Day of the week</td>
-<td>? / 10</td>
-<td>✓ or ✗</td>
-</tr>
-<tr class="even">
-<td>Spell backwards</td>
-<td>? / 10</td>
-<td>✓ or ✗</td>
-</tr>
-<tr class="odd">
-<td>Third moonwalker</td>
-<td>? / 10</td>
-<td>✓ or ✗</td>
-</tr>
-<tr class="even">
-<td>Tuvalu population</td>
-<td>? / 10</td>
-<td>✓ or ✗</td>
-</tr>
-<tr class="odd">
-<td>Reykjavik mayor</td>
-<td>? / 10</td>
-<td>✓ or ✗</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div style="margin-top: 15px;">
-<p><strong>Discussion:</strong></p>
-<ul>
-<li>Is confidence correlated with accuracy?</li>
-<li>Any high-confidence wrong answers?</li>
-<li><span class="alert">Can you trust AI’s self-assessment?</span></li>
-</ul>
-</div>
-</div></div>
+<p><strong>Then verify each answer and compare it with the confidence rating</strong></p>
 </div>
 </section></section>
 <section>
@@ -889,7 +818,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <table class="caption-top">
 <thead>
 <tr class="header">
-<th>Warning Sign</th>
+<th>Warning sign</th>
 <th>Example</th>
 </tr>
 </thead>
@@ -912,17 +841,17 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </tr>
 <tr class="odd">
 <td>Confident tone</td>
-<td>No hedging or uncertainty</td>
+<td>No hedging</td>
 </tr>
 </tbody>
 </table>
 <p><strong>Verification strategies:</strong></p>
 <ol type="1">
-<li><strong>Google the claim</strong>: does it appear elsewhere?</li>
-<li><strong>Check citations</strong>: do they exist?</li>
-<li><strong>Ask for sources</strong>: then verify them</li>
-<li><strong>Cross-reference</strong>: use multiple sources</li>
-<li><strong>Trust your expertise</strong>: if something seems off, it might be</li>
+<li>Google the claim</li>
+<li>Check that the citations exist</li>
+<li>Ask for sources, then verify them</li>
+<li>Cross-reference several sources</li>
+<li>Trust your expertise</li>
 </ol>
 </div><div class="column" style="width:45%;">
 <div style="text-align: center;">
@@ -935,9 +864,6 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <div style="font-size: 18px; margin-top: 15px;">
 <p>Impressive-sounding detail is often the first sign something is made up</p>
 </div>
-</div>
-<div style="margin-top: 15px; background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px;">
-<p>A precise percentage or page number is exactly when to double-check!</p>
 </div>
 </div></div>
 </div>
@@ -961,23 +887,23 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </thead>
 <tbody>
 <tr class="odd">
-<td><strong>Ask for uncertainty</strong></td>
+<td><span class="alert">Ask for uncertainty</span></td>
 <td>“If you’re not sure, say so. Don’t guess.”</td>
 </tr>
 <tr class="even">
-<td><strong>Request sources</strong></td>
+<td><span class="alert">Request sources</span></td>
 <td>“Only cite sources you’re certain exist.”</td>
 </tr>
 <tr class="odd">
-<td><strong>Chain-of-thought</strong></td>
+<td><span class="alert">Chain-of-thought</span></td>
 <td>“Think step by step. Show your reasoning.”</td>
 </tr>
 <tr class="even">
-<td><strong>Confidence levels</strong></td>
+<td><span class="alert">Confidence levels</span></td>
 <td>“Rate your confidence 1-10 for each claim.”</td>
 </tr>
 <tr class="odd">
-<td><strong>Output constraints</strong></td>
+<td><span class="alert">Output constraints</span></td>
 <td>“Be precise and factual. Avoid speculation.”</td>
 </tr>
 </tbody>
@@ -987,21 +913,21 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <p><span class="alert">No!</span> But combining several of them in one prompt works better than any single trick</p>
 </div>
 </div><div class="column" style="width:45%;">
-<div style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; font-size: 18px;">
+<div style="background: rgba(45, 69, 99, 0.1); margin-top: 30px; padding: 15px; border-radius: 10px; font-size: 18px;">
 <p><strong>Basic anti-hallucination prompt:</strong></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb2-1"><a></a>Answer my question factually. </span>
-<span id="cb2-2"><a></a></span>
-<span id="cb2-3"><a></a>Rules:</span>
-<span id="cb2-4"><a></a>- Only state things you're </span>
-<span id="cb2-5"><a></a>  confident about</span>
-<span id="cb2-6"><a></a>- Say "I'm not sure" when </span>
-<span id="cb2-7"><a></a>  uncertain</span>
-<span id="cb2-8"><a></a>- Don't invent citations</span>
-<span id="cb2-9"><a></a>- If you don't know, admit it</span>
-<span id="cb2-10"><a></a>- Show your reasoning step </span>
-<span id="cb2-11"><a></a>  by step</span>
-<span id="cb2-12"><a></a></span>
-<span id="cb2-13"><a></a>Question: [your question]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb1-1"><a></a>Answer my question factually. </span>
+<span id="cb1-2"><a></a></span>
+<span id="cb1-3"><a></a>Rules:</span>
+<span id="cb1-4"><a></a>- Only state things you're </span>
+<span id="cb1-5"><a></a>  confident about</span>
+<span id="cb1-6"><a></a>- Say "I'm not sure" when </span>
+<span id="cb1-7"><a></a>  uncertain</span>
+<span id="cb1-8"><a></a>- Don't invent citations</span>
+<span id="cb1-9"><a></a>- If you don't know, admit it</span>
+<span id="cb1-10"><a></a>- Show your reasoning step </span>
+<span id="cb1-11"><a></a>  by step</span>
+<span id="cb1-12"><a></a></span>
+<span id="cb1-13"><a></a>Question: [your question]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div style="margin-top: 15px; font-size: 18px;">
 <p><strong>Next slides</strong>: <span class="alert">richer templates</span> using PTCF and meta-prompting from lecture 10</p>
@@ -1016,6 +942,10 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <div class="column" style="width:55%;">
 <p>The <a href="https://danilofreire.github.io/datasci101/lectures/lecture-10/10-prompting.html"><strong>PTCF framework</strong></a> from last class:</p>
 <table class="caption-top">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 75%">
+</colgroup>
 <thead>
 <tr class="header">
 <th>Element</th>
@@ -1024,102 +954,91 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </thead>
 <tbody>
 <tr class="odd">
-<td><strong>P</strong>ersona</td>
+<td><span class="alert"><strong>P</strong>ersona</span></td>
 <td>“You are a careful fact-checker who never guesses”</td>
 </tr>
 <tr class="even">
-<td><strong>T</strong>ask</td>
+<td><span class="alert"><strong>T</strong>ask</span></td>
 <td>“Verify and summarise only confirmed facts”</td>
 </tr>
 <tr class="odd">
-<td><strong>C</strong>ontext</td>
+<td><span class="alert"><strong>C</strong>ontext</span></td>
 <td>“Base answers ONLY on the provided text”</td>
 </tr>
 <tr class="even">
-<td><strong>F</strong>ormat</td>
+<td><span class="alert"><strong>F</strong>ormat</span></td>
 <td>“Use [Verified], [Uncertain], or [Unknown] tags”</td>
 </tr>
 </tbody>
 </table>
 <p><strong>Why PTCF helps:</strong></p>
 <ul>
-<li><strong>Persona</strong> activates <span class="alert">cautious, precise patterns</span> from training</li>
+<li><strong>Persona</strong> activates <span class="alert">more precise patterns</span> from training</li>
 <li><strong>Task</strong> constrains scope, leaving no room for invention</li>
 <li><strong>Context</strong> grounds answers in <span class="alert">real information</span></li>
 <li><strong>Format</strong> forces explicit uncertainty signals</li>
 </ul>
 </div><div class="column" style="width:45%;">
-<div style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; font-size: 16px;">
+<div style="background: rgba(45, 69, 99, 0.1); margin-top: 30px; padding: 15px; border-radius: 10px; font-size: 16px;">
 <p><strong>PTCF anti-hallucination template:</strong></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb3-1"><a></a>PERSONA: You are a research </span>
-<span id="cb3-2"><a></a>assistant who prioritises </span>
-<span id="cb3-3"><a></a>accuracy over completeness. </span>
-<span id="cb3-4"><a></a>Never guess or fabricate.</span>
-<span id="cb3-5"><a></a></span>
-<span id="cb3-6"><a></a>TASK: Answer the following </span>
-<span id="cb3-7"><a></a>question using ONLY information </span>
-<span id="cb3-8"><a></a>you are highly confident about.</span>
-<span id="cb3-9"><a></a></span>
-<span id="cb3-10"><a></a>CONTEXT: This is for an academic </span>
-<span id="cb3-11"><a></a>paper. Incorrect information </span>
-<span id="cb3-12"><a></a>could damage my credibility.</span>
-<span id="cb3-13"><a></a></span>
-<span id="cb3-14"><a></a>FORMAT: </span>
-<span id="cb3-15"><a></a>- Start each fact with [Verified] </span>
-<span id="cb3-16"><a></a>  or [Uncertain]</span>
-<span id="cb3-17"><a></a>- If you don't know, say </span>
-<span id="cb3-18"><a></a>  "I don't have reliable </span>
-<span id="cb3-19"><a></a>  information on this"</span>
-<span id="cb3-20"><a></a>- Never invent citations</span>
-<span id="cb3-21"><a></a></span>
-<span id="cb3-22"><a></a>QUESTION: [your question]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb2-1"><a></a>PERSONA: You are a research </span>
+<span id="cb2-2"><a></a>assistant who prioritises </span>
+<span id="cb2-3"><a></a>accuracy over completeness. </span>
+<span id="cb2-4"><a></a>Never guess or fabricate.</span>
+<span id="cb2-5"><a></a></span>
+<span id="cb2-6"><a></a>TASK: Answer the following </span>
+<span id="cb2-7"><a></a>question using ONLY information </span>
+<span id="cb2-8"><a></a>you are highly confident about.</span>
+<span id="cb2-9"><a></a></span>
+<span id="cb2-10"><a></a>CONTEXT: This is for an academic </span>
+<span id="cb2-11"><a></a>paper. Incorrect information </span>
+<span id="cb2-12"><a></a>could damage my credibility.</span>
+<span id="cb2-13"><a></a></span>
+<span id="cb2-14"><a></a>FORMAT: </span>
+<span id="cb2-15"><a></a>- Start each fact with [Verified] </span>
+<span id="cb2-16"><a></a>  or [Uncertain]</span>
+<span id="cb2-17"><a></a>- If you don't know, say </span>
+<span id="cb2-18"><a></a>  "I don't have reliable </span>
+<span id="cb2-19"><a></a>  information on this"</span>
+<span id="cb2-20"><a></a>- Never invent citations</span>
+<span id="cb2-21"><a></a></span>
+<span id="cb2-22"><a></a>QUESTION: [your question]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div></div>
 </div>
 </section>
-<section id="meta-prompting-let-ai-improve-your-prompts" class="slide level2">
-<h2>Meta-prompting: Let AI improve your prompts</h2>
-<div style="margin-top: 30px; font-size: 19px;">
+<section id="meta-prompting-against-hallucinations" class="slide level2 scrollable">
+<h2>Meta-prompting against hallucinations</h2>
+<div style="margin-top: 30px; font-size: 20px;">
 <div class="columns">
 <div class="column" style="width:55%;">
-<p><strong>Meta-prompting</strong> means <span class="alert">asking AI to help you write better prompts</span></p>
-<p><strong>Why it works:</strong></p>
+<p>Last class: <span class="alert">asking the AI to improve your prompt</span>. Now we aim it at one risk, invented facts</p>
+<p><strong>Three uses:</strong></p>
+<ol type="1">
+<li><strong>Before</strong>: ask where your prompt invites it to guess</li>
+<li><strong>During</strong>: ask what facts or sources it needs from you</li>
+<li><strong>After</strong>: ask it to list each claim and flag what to verify</li>
+</ol>
+<p><strong>Limits:</strong></p>
 <ul>
-<li>The model has seen millions of prompts in training</li>
-<li>It knows which phrasings activate careful vs.&nbsp;creative modes</li>
-<li>It can spot ambiguities you might miss</li>
+<li>Self-ratings are imperfect (you will test this in the activity)</li>
+<li>Verify in a <span class="alert">fresh chat</span>, so the model does not just defend its first answer</li>
 </ul>
-<p><strong>When to use it:</strong></p>
-<ul>
-<li>You’re getting unreliable outputs</li>
-<li>You’re not sure what constraints to add</li>
-<li>You want to catch edge cases</li>
-<li>You need prompts for high-stakes tasks</li>
-</ul>
-<div style="margin-top: 15px; background: rgba(230, 57, 70, 0.1); padding: 15px; border-radius: 10px;">
-<p>You are asking the model “how should I talk to you so you don’t make things up?”</p>
-</div>
 </div><div class="column" style="width:45%;">
-<div style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; font-size: 16px;">
-<p><strong>Meta-prompting example:</strong></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb4-1"><a></a>I'm building a prompt to ask </span>
-<span id="cb4-2"><a></a>you about historical events.</span>
-<span id="cb4-3"><a></a></span>
-<span id="cb4-4"><a></a>I'm worried about hallucinations.</span>
-<span id="cb4-5"><a></a>You might invent dates, names,</span>
-<span id="cb4-6"><a></a>or events that didn't happen.</span>
-<span id="cb4-7"><a></a></span>
-<span id="cb4-8"><a></a>Help me write a prompt that:</span>
-<span id="cb4-9"><a></a>1. Minimises hallucination risk</span>
-<span id="cb4-10"><a></a>2. Makes you flag uncertainty</span>
-<span id="cb4-11"><a></a>3. Prevents invented citations</span>
-<span id="cb4-12"><a></a></span>
-<span id="cb4-13"><a></a>What constraints should I add? </span>
-<span id="cb4-14"><a></a>What phrasing reduces the </span>
-<span id="cb4-15"><a></a>chance you'll make things up?</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div style="background: rgba(45, 69, 99, 0.1); margin-top: 30px; padding: 15px; border-radius: 10px; font-size: 16px;">
+<p><strong>Before: audit the prompt</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb3-1"><a></a>Here is my prompt: [paste it]</span>
+<span id="cb3-2"><a></a></span>
+<span id="cb3-3"><a></a>Where could it make you guess</span>
+<span id="cb3-4"><a></a>or invent facts? Rewrite it to</span>
+<span id="cb3-5"><a></a>reduce that risk.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>After: audit the answer</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb4-1"><a></a>List every factual claim in</span>
+<span id="cb4-2"><a></a>your answer. Rate each 1-10 and</span>
+<span id="cb4-3"><a></a>mark the ones I should verify.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div style="margin-top: 15px; font-size: 18px;">
-<p><strong>Try it!</strong> Ask ChatGPT or Claude to critique your prompts. The suggestions are often <span class="alert">better than what you’d write on your own</span></p>
+<p><strong>Chain-of-verification</strong> (<a href="https://arxiv.org/abs/2309.11495">Dhuliawala et al., 2024</a>): draft, write check questions, answer them separately, then revise. It <span class="alert">reduced hallucinations</span> in the authors’ tests</p>
 </div>
 </div></div>
 </div>
@@ -1189,7 +1108,6 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <div class="columns">
 <div class="column" style="width:55%;">
 <p><strong>RAG = <span class="alert">R</span>etrieval-<span class="alert">A</span>ugmented <span class="alert">G</span>eneration</strong></p>
-<p><strong>The core idea:</strong></p>
 <ol type="1">
 <li>You ask a question</li>
 <li><span class="alert">Search your documents</span> for relevant information</li>
@@ -1228,45 +1146,62 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <h2>Main takeaways</h2>
 <div style="margin-top: 30px; font-size: 32px;">
 <ul>
-<li><p><span class="alert">Hallucinations</span>: AI confidently states false information</p></li>
-<li><p><span class="alert">Why it happens</span>: LLMs predict plausible, not true</p></li>
-<li><p><span class="alert">Wrong time</span>: making things up helps in fiction, hurts with facts</p></li>
-<li><p><span class="alert">Real failures</span>: lawyers, doctors, academics affected</p></li>
-<li><p><span class="alert">Detection</span>: verify specific claims, check citations</p></li>
-<li><p><span class="alert">Prevention</span>: careful prompting helps but doesn’t eliminate</p></li>
+<li><p><span class="alert">Hallucinations</span> are false answers that sound plausible</p></li>
+<li><p>LLMs predict <span class="alert">likely words, not true ones</span></p></li>
+<li><p>Making things up helps in fiction, not with facts</p></li>
+<li><p>Fake citations got <span class="alert">two lawyers sanctioned</span></p></li>
+<li><p>Check <span class="alert">specific claims</span> and every citation</p></li>
+<li><p>Better prompts help, but <span class="alert">never eliminate</span> the risk</p></li>
 </ul>
 </div>
 </section>
-<section id="your-anti-hallucination-toolkit" class="slide level2">
-<h2>Your anti-hallucination toolkit</h2>
-<div style="margin-top: 30px; font-size: 25px;">
+<section id="what-to-check-and-when" class="slide level2">
+<h2>What to check, and when</h2>
+<div style="margin-top: 30px; font-size: 24px;">
 <div class="columns">
-<div class="column" style="width:50%;">
-<p><strong>Always do:</strong></p>
-<ul>
-<li>✅ Verify specific facts</li>
-<li>✅ Check every citation</li>
-<li>✅ Cross-reference with trusted sources</li>
-<li>✅ Distrust a confident tone</li>
-<li>✅ Ask AI to admit uncertainty</li>
-</ul>
-<p><strong>Never do:</strong></p>
-<ul>
-<li>❌ Trust AI for critical decisions alone</li>
-<li>❌ Submit AI citations without checking</li>
-<li>❌ Assume confident = correct</li>
-<li>❌ Skip verification for “obvious” answers</li>
-</ul>
-</div><div class="column" style="width:50%;">
-<p><strong>Prompting tips:</strong></p>
+<div class="column" style="width:55%;">
+<div style="font-size: 1.25em; margin-top: 20px;">
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>You are using AI for</th>
+<th>What to do</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="alert">Numbers, dates, names</span></td>
+<td>Search each one in a second source</td>
+</tr>
+<tr class="even">
+<td><span class="alert">Citations</span></td>
+<td>Find the paper on Google Scholar</td>
+</tr>
+<tr class="odd">
+<td><span class="alert">Recent events</span></td>
+<td>Use a tool with web search</td>
+</tr>
+<tr class="even">
+<td><span class="alert">Medical or legal questions</span></td>
+<td>Ask a professional</td>
+</tr>
+<tr class="odd">
+<td><span class="alert">Brainstorming and drafts</span></td>
+<td>Edit freely; errors matter less</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div><div class="column" style="width:45%;">
+<div style="background: rgba(45, 69, 99, 0.1); margin-top: 20px; padding: 15px; border-radius: 10px; font-size: 20px;">
+<p><strong>Three lines to add to a prompt</strong></p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb5-1"><a></a>"If you're not sure, say so"</span>
 <span id="cb5-2"><a></a></span>
 <span id="cb5-3"><a></a>"Only cite sources that exist"</span>
 <span id="cb5-4"><a></a></span>
-<span id="cb5-5"><a></a>"Rate your confidence 1-10"</span>
-<span id="cb5-6"><a></a></span>
-<span id="cb5-7"><a></a>"Show your reasoning step by step"</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>For creative tasks, you can skip most of these. Let the model run wild 😄</p>
+<span id="cb5-5"><a></a>"Rate your confidence 1-10"</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>These lines reduce hallucinations, but you still need to check the answer</p>
+</div>
 </div></div>
 </div>
 </section></section>

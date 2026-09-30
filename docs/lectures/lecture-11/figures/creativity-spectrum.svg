@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 340" font-family="Helvetica, Arial, sans-serif">
+  <defs>
+    <linearGradient id="g" x1="0" x2="1" y1="0" y2="0">
+      <stop offset="0" stop-color="#1B3A6B"/>
+      <stop offset="0.5" stop-color="#7A5C8E"/>
+      <stop offset="1" stop-color="#C0392B"/>
+    </linearGradient>
+  </defs>
+
+  <!-- bar -->
+  <rect x="40" y="135" width="820" height="26" rx="13" fill="url(#g)"/>
+  <circle cx="53" cy="148" r="13" fill="#1B3A6B"/>
+  <circle cx="847" cy="148" r="13" fill="#C0392B"/>
+
+  <!-- end markers -->
+  <circle cx="53" cy="148" r="6" fill="#fff"/>
+  <circle cx="847" cy="148" r="6" fill="#fff"/>
+
+  <!-- left block -->
+  <text x="40" y="75" font-size="44" font-weight="700" fill="#1B3A6B">Boring</text>
+  <text x="40" y="108" font-size="24" fill="#1B3A6B" opacity="0.8">but accurate</text>
+
+  <rect x="40" y="195" width="340" height="95" rx="12" fill="#1B3A6B" opacity="0.08"/>
+  <text x="62" y="236" font-size="26" font-style="italic" fill="#1B3A6B">"I don't know"</text>
+  <text x="62" y="272" font-size="22" fill="#444">Refuses often</text>
+
+  <!-- right block -->
+  <text x="860" y="75" font-size="44" font-weight="700" fill="#C0392B" text-anchor="end">Creative</text>
+  <text x="860" y="108" font-size="24" fill="#C0392B" opacity="0.85" text-anchor="end">but risky</text>
+
+  <rect x="520" y="195" width="340" height="95" rx="12" fill="#C0392B" opacity="0.08"/>
+  <text x="542" y="236" font-size="26" font-style="italic" fill="#C0392B">New ideas!</text>
+  <text x="542" y="272" font-size="22" fill="#444">Sometimes wrong</text>
+
+  <!-- connectors -->
+  <line x1="53" y1="165" x2="53" y2="195" stroke="#1B3A6B" stroke-width="2" stroke-dasharray="4 4" opacity="0.5"/>
+  <line x1="847" y1="165" x2="847" y2="195" stroke="#C0392B" stroke-width="2" stroke-dasharray="4 4" opacity="0.5"/>
+</svg>

@@ -1236,7 +1236,7 @@
     "href": "lectures/lecture-11/11-hallucination.html#lecture-overview",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Lecture overview",
-    "text": "Lecture overview\nToday’s agenda\n\n\n\nPart 1: What Are Hallucinations?\n\nWhen AI confidently lies\nWhy this happens (it’s not a bug!)\nTypes of hallucinations\n\nPart 2: Real-World Failures\n\nLawyers and fake citations\nMedical misinformation\nAcademic integrity issues\n\n\nPart 3: Creativity vs. Accuracy\n\nThe creativity-accuracy tradeoff\nWhen hallucinations are… useful?\n\nPart 4: Detection and Prevention\n\nSpotting hallucinations\nPrompting techniques that help\nPreview: RAG as a solution"
+    "text": "Lecture overview\nToday’s agenda\n\n\n\nPart 1: What Are Hallucinations?\n\nWhen AI confidently lies\nWhy this happens (it’s not a bug!)\nTypes of hallucinations\n\nPart 2: Real-World Failures\n\nLawyers and fake citations\nMedical misinformation\n\n\nPart 3: Creativity vs. Accuracy\n\nThe creativity-accuracy tradeoff\nWhen hallucinations are… useful?\n\nPart 4: Detection and Prevention\n\nSpotting hallucinations\nPrompting techniques that help\nPreview: RAG as a solution"
   },
   {
     "objectID": "lectures/lecture-11/11-hallucination.html#meme-of-the-day",
@@ -1250,49 +1250,49 @@
     "href": "lectures/lecture-11/11-hallucination.html#when-ai-confidently-makes-things-up",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "When AI confidently makes things up",
-    "text": "When AI confidently makes things up\n\n\n\nWhat is an AI hallucination?\n\nWhen an AI system generates content that is plausible but factually incorrect, presented with high confidence.\n\nKey characteristics:\n\n✅ Sounds completely reasonable\n✅ Uses proper grammar and tone\n✅ Fits the context of conversation\n❌ Contains fabricated information\n❌ May invent citations, facts, or events\n❌ AI doesn’t “know” it’s lying\n\nThe tricky part:\nThere’s often no signal: the AI sounds as confident as when it’s correct\n\n\n\n\n\nHallucination example\n\n\n\nRight at first, then confidently wrong once the user pushes back"
+    "text": "When AI confidently makes things up\n\n\n\nWhat is an AI hallucination?\n\nWhen an AI system generates content that is plausible but factually incorrect, presented with high confidence.\n\nMain characteristics:\n\nSounds completely reasonable\nUses proper grammar and tone\nFits the context of conversation\nContains fabricated information\nMay invent citations, facts, or events\nAI doesn’t “know” it’s lying\n\nWhy it is hard to spot:\nThere’s often no signal: the AI sounds as confident as when it’s correct\n\n\n\n\n\nHallucination example\n\n\n\nRight at first, then confidently wrong once the user pushes back"
   },
   {
     "objectID": "lectures/lecture-11/11-hallucination.html#why-do-llms-hallucinate",
     "href": "lectures/lecture-11/11-hallucination.html#why-do-llms-hallucinate",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Why do LLMs hallucinate?",
-    "text": "Why do LLMs hallucinate?\n\n\n\nIt’s not a bug, it’s how LLMs work!\nLLMs predict the next word\n\nInput: “The capital of France is”\nOutput: “Paris” (high probability)\nOutput: “Lyon” (lower probability)\nOutput: “Atlantis” (still some probability!)\n\nThe problem:\n\nPlausibility ≠ truth\nNo fact-checking mechanism\nNo internet access unless the tool adds it\nTraining rewards guessing over “I don’t know” (Kalai et al., 2025)\nLLMs are optimised to sound right, not to be right\n\n\n\n\n\n\nWhy hallucinations happen\n\n\nSource: Medium"
+    "text": "Why do LLMs hallucinate?\n\n\n\nHallucination is a side effect of how LLMs work\nLLMs predict the next word\n\nInput: “The capital of France is”\nOutput: “Paris” (high probability)\nOutput: “Lyon” (lower probability)\nOutput: “Atlantis” (still some probability!)\n\nYou probably already know what the problem is:\n\nPlausibility ≠ truth\nNo fact-checking mechanism\nNo internet access unless the tool adds it\nTraining rewards guessing over “I don’t know” (Kalai et al., 2025)\nLLMs are optimised to sound right, not to be right\n\n\n\n\n\n\nWhy hallucinations happen\n\n\nSource: Medium"
   },
   {
     "objectID": "lectures/lecture-11/11-hallucination.html#the-sycophancy-problem",
     "href": "lectures/lecture-11/11-hallucination.html#the-sycophancy-problem",
     "title": "DATASCI 101: Introduction to AI Applications",
-    "section": "The sycophancy problem 🙇",
-    "text": "The sycophancy problem 🙇\n\n\n\nLLMs are trained to be helpful…sometimes too helpful!\nWhat is sycophancy?\n\nThe tendency to give users the answer they seem to want, rather than the accurate answer.\n\nHow this causes hallucinations:\n\nModel doesn’t know → “I don’t know” feels unhelpful → it makes something up\nUser pushes back → model drops its correct answer to agree\nLeading question → model confirms the false premise\nGeng et al. (2025): GPT-5’s stated beliefs on moral and safety topics shifted 55% after 10 rounds of debate\n\n\n\n \nSource: Zvi Mowshowitz (2025)"
+    "section": "The sycophancy problem",
+    "text": "The sycophancy problem\n\n\n\nLLMs are trained to be helpful…sometimes too helpful!\nWhat is sycophancy?\n\nThe tendency to give users the answer they seem to want, rather than the accurate answer.\n\nHow this causes hallucinations:\n\nModel doesn’t know → “I don’t know” feels unhelpful → it makes something up\nUser pushes back → model drops its correct answer to agree\nLeading question → model confirms the false premise\nGeng et al. (2025): GPT-5’s stated beliefs on moral and safety topics shifted 55% after 10 rounds of debate\n\n\n\n \nSource: Zvi Mowshowitz (2025)"
   },
   {
     "objectID": "lectures/lecture-11/11-hallucination.html#training-data-problems",
     "href": "lectures/lecture-11/11-hallucination.html#training-data-problems",
     "title": "DATASCI 101: Introduction to AI Applications",
-    "section": "Training data problems 📚",
-    "text": "Training data problems 📚\n\n\n\nGarbage in, hallucination out! (remember lecture 03 about data?)\nLLMs learn from trillions of tokens scraped from the internet:\n\n\n\n\n\n\n\nProblem\nWhat Happens\n\n\n\n\nConflicting sources\nWikipedia says X, a blog says Y → model learns both as “plausible”\n\n\nOutdated information\nTraining data has a cutoff → model treats old facts as current\n\n\nRare topics\nFew examples → model “interpolates” (often wrongly)\n\n\nErrors in sources\nMistakes on the internet become mistakes in the model\n\n\nFictional content\nNovels, fan fiction, speculation all look like “text” to the model\n\n\n\nThe interpolation problem:\nFor rare topics, the model fills in gaps with patterns from similar-but-different topics. That is where confident nonsense comes from\n\n\nExample: Rare topic hallucination\nQ: “Tell me about the 1987 Liechtenstein general election.”\nThe model might:\n\nKnow Liechtenstein has elections ✓\nKnow 1987 election patterns in Europe ✓\nInvent specific parties, candidates, results ✗\n\nPlausible, because it is statistically consistent with European elections, but fabricated\n\nTwist: there was no 1987 election (Liechtenstein voted in 1986 and 1989). Newer models often say so. But insist (“I’m 100% sure”) and Qwen replies: “the Progressive Citizens’ Party (FBP) won in 1987”\n\n\n\nRule of thumb: the more obscure or specific the question, the higher the hallucination risk. Models do best on topics with abundant, consistent training data"
+    "section": "Training data problems",
+    "text": "Training data problems\n\n\n\nGarbage in, hallucination out! (remember lecture 03 about data?)\nLLMs learn from trillions of tokens scraped from the internet:\n\n\n\n\n\n\n\n\nProblem\nWhat Happens\n\n\n\n\nConflicting sources\nWikipedia says X, a blog says Y → model learns both as “plausible”\n\n\nOutdated information\nTraining data has a cutoff → model treats old facts as current\n\n\nRare topics\nFew examples → model “interpolates” (often wrongly)\n\n\nErrors in sources\nMistakes on the internet become mistakes in the model\n\n\nFictional content\nNovels, fan fiction, speculation all look like “text” to the model\n\n\n\n\nThe interpolation problem:\nFor rare topics, the model fills in gaps with patterns from similar-but-different topics. That is where confident nonsense comes from\n\n\nExample: Rare topic hallucination\nQ: “Tell me about the 1987 Liechtenstein general election.”\nThe model might:\n\nKnow Liechtenstein has elections ✓\nKnow 1987 election patterns in Europe ✓\nInvent parties, candidates, results ✗\n\nTwist: there was no 1987 election (Liechtenstein voted in 1986 and 1989). Next slide: two Qwen versions\n\n\nRule of thumb: the more obscure or specific the question, the higher the hallucination risk. Models do best on topics with abundant training data"
   },
   {
     "objectID": "lectures/lecture-11/11-hallucination.html#hallucination-rates-by-domain",
     "href": "lectures/lecture-11/11-hallucination.html#hallucination-rates-by-domain",
     "title": "DATASCI 101: Introduction to AI Applications",
-    "section": "Hallucination rates by domain 📊",
-    "text": "Hallucination rates by domain 📊\n\n\n\nHallucination rates vary dramatically by topic:\n\n\n\nDomain\nHallucination Risk\nWhy?\n\n\n\n\nCommon knowledge\nLow\nAbundant, consistent training data\n\n\nCoding\nLow-Medium\nSyntax is verifiable; patterns are clear\n\n\nRecent events\nHigh\nBeyond training cutoff\n\n\nMedical/Legal\nHigh\nRequires precision; errors are costly\n\n\nObscure history\nVery High\nSparse data → interpolation\n\n\nCitations\nVery High\nSpecific strings rarely memorised\n\n\n\n\nGPT-4 made up ~29% of references for medical reviews (Chelli et al. (2024))\nIt hallucinated on ~58% of legal questions (Dahl et al. (2024))\n\n\n\n\n\n\nAnswer quality by domain and model: similarity to the correct answer. Higher is better\n\n\nSource: Chakraborty et al (2025)"
+    "section": "Hallucination rates by domain",
+    "text": "Hallucination rates by domain\n\n\n\nHallucination rates vary dramatically by topic:\n\n\n\n\n\n\n\n\n\nDomain\nHallucination Risk\nWhy?\n\n\n\n\nCommon knowledge\nLow\nAbundant training data\n\n\nCoding\nLow-Medium\nSyntax is verifiable; patterns are clear\n\n\nRecent events\nHigh\nBeyond training cutoff\n\n\nMedical/Legal\nHigh\nRequires precision; errors are costly\n\n\nObscure history\nVery High\nSparse data → interpolation\n\n\nCitations\nVery High\nSpecific strings rarely memorised\n\n\n\n\n\nGPT-4 made up ~29% of references for medical reviews (Chelli et al. (2024))\nIt hallucinated on ~58% of legal questions (Dahl et al. (2024))\n\n\n\n\n\n\nAnswer quality by domain and model: similarity to the correct answer. Higher is better\n\n\nSource: Chakraborty et al (2025)"
   },
   {
     "objectID": "lectures/lecture-11/11-hallucination.html#types-of-hallucinations",
     "href": "lectures/lecture-11/11-hallucination.html#types-of-hallucinations",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Types of hallucinations",
-    "text": "Types of hallucinations\n\n\n\n\n\n\n\n\n\n\n\nType\nDescription\nExample\n\n\n\n\nFactual\nWrong facts\n“Einstein was born in France”\n\n\nFabrication\nInvented information\nMade-up statistics, fake quotes\n\n\nCitation\nNon-existent sources\n“According to Smith (2023)…” (doesn’t exist)\n\n\nLogical\nContradicts itself\n“It’s 5pm now… earlier today at 7pm…”\n\n\nTemporal\nWrong timelines\nMixing up historical dates\n\n\nEntity\nConfusing people/things\nAttributing quotes to wrong person\n\n\n\n\nWhat do you think is the most dangerous type?\n\n\n\n\n\n\nTypes of hallucinations\n\n\nSource: The Cloud Girl Blog\n\nCitation hallucinations are the hardest to catch because they look so specific"
+    "text": "Types of hallucinations\n\n\n\nThe list is not exhaustive, and the categories are somewhat arbitrary:\n\n\n\n\n\n\n\n\nType\nDescription\nExample\n\n\n\n\nFactual\nWrong facts\n“Einstein was born in France”\n\n\nFabrication\nInvented information\nMade-up statistics, fake quotes\n\n\nCitation\nNon-existent sources\n“According to Smith (2023)…” (doesn’t exist)\n\n\nLogical\nContradicts itself\n“It’s 5pm now… earlier today at 7pm…”\n\n\nTemporal\nWrong timelines\nMixing up historical dates\n\n\nEntity\nConfusing people/things\nAttributing quotes to wrong person\n\n\n\n\nWhat do you think is the most dangerous type?\n\n\n\n\n\n\nTypes of hallucinations\n\n\nSource: The Cloud Girl Blog\n\nCitation hallucinations are the hardest to catch because they look so specific"
   },
   {
     "objectID": "lectures/lecture-11/11-hallucination.html#the-lawyer-who-trusted-chatgpt",
     "href": "lectures/lecture-11/11-hallucination.html#the-lawyer-who-trusted-chatgpt",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "The lawyer who trusted ChatGPT",
-    "text": "The lawyer who trusted ChatGPT\n\n\n\nMata v. Avianca Airlines (2023)\n\nLawyer Steven Schwartz used ChatGPT for legal research\nHe filed a brief citing 6 cases that didn’t exist\nChatGPT invented the case names, citations and quotes\nThey sounded completely plausible\nThe judge sanctioned both attorneys\n\nThe wake-up call:\n\n“Is Varghese a real case?” Schwartz asked the chatbot. “Yes,” ChatGPT doubled down, “it is a real case.”\n\n\n\n\n\n\nLawyer ChatGPT case\n\n\n\nSource: CNN\n\n\n\nWarning: asking AI “Is this true?” often just confirms its own hallucinations"
+    "text": "The lawyer who trusted ChatGPT\n\n\n\nMata v. Avianca Airlines (2023)\n\nLawyer Steven Schwartz used ChatGPT for legal research\nHe filed a brief citing 6 cases that didn’t exist\nChatGPT invented the case names, citations and quotes\nThey sounded completely plausible\nThe judge sanctioned both attorneys\n\nHow he checked:\n\n“Is Varghese a real case?” Schwartz asked the chatbot. “Yes,” ChatGPT doubled down, “it is a real case.”\n\n\n\n\n\n\nLawyer ChatGPT case\n\n\n\nSource: CNN\n\n\n\nWarning: asking AI “Is this true?” often just confirms its own hallucinations"
   },
   {
     "objectID": "lectures/lecture-11/11-hallucination.html#medical-misinformation",
@@ -1320,28 +1320,28 @@
     "href": "lectures/lecture-11/11-hallucination.html#the-creativity-accuracy-tradeoff",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "The creativity-accuracy tradeoff",
-    "text": "The creativity-accuracy tradeoff\n\n\n\nThe same mechanism that causes hallucinations also enables creativity\n\nA very “safe” AI only says things it is 100% sure of\nA creative AI takes risks and combines ideas in new ways\nYou can’t have unlimited creativity with perfect accuracy\n\nThe spectrum:\n←—————————————————————————————→\nBORING                     CREATIVE\nbut accurate           but risky\n\n\"I don't know\"         New ideas!\nRefuses often          Sometimes wrong\nDifferent tasks need different points on this spectrum\n\n\n\n\n\nCreativity-accuracy tradeoff\n\n\nSource: Kevin Kelly (2024)\n\nYou’d want a creative AI for brainstorming, but a cautious one for tax advice"
+    "text": "The creativity-accuracy tradeoff\n\n\n\nThe same mechanism that causes hallucinations also enables creativity\n\nA very “safe” AI only says things it is 100% sure of\nA creative AI takes risks and combines ideas in new ways\nYou can’t have unlimited creativity with perfect accuracy\n\nThe spectrum:\n\nDifferent tasks need different points on this spectrum\n\n\n\n\n\nCreativity-accuracy tradeoff\n\n\nSource: Kevin Kelly (2024)\n\nYou’d want a creative AI for brainstorming, but a cautious one for tax advice"
   },
   {
     "objectID": "lectures/lecture-11/11-hallucination.html#when-hallucinations-are-useful",
     "href": "lectures/lecture-11/11-hallucination.html#when-hallucinations-are-useful",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "When hallucinations are… useful? 🤔",
-    "text": "When hallucinations are… useful? 🤔\n\n\n\nControversial take: hallucinations can be great, too!\n\nCreative writing\n\nWe WANT invented characters, plots and dialogue: hallucinating is the job\n\nBrainstorming\n\nNovel combinations of ideas and “what if…” scenarios\n\nRole-playing games\n\nImprovising characters and worlds on the fly\n\nArt and design\n\nImagining things that don’t exist, creating impossible visuals\n\n\nThe problem isn’t hallucination per se, it’s hallucination at the wrong time\n\n\n\n\n\nSometimes we want the AI to make things up!\n\n\nSource: Medium\n\nMore here: The Case for AI Hallucination\n\n\n\nBefore worrying about hallucinations, ask whether you need the AI to be factual"
+    "text": "When hallucinations are… useful? 🤔\n\n\n\nControversial take: hallucinations can be great, too!\n\nCreative writing\n\nWe WANT invented characters, plots and dialogue: hallucinating is the job\n\nBrainstorming\n\nNovel combinations of ideas and “what if…” scenarios\n\nRole-playing games\n\nImprovising characters and worlds on the fly\n\nArt and design\n\nImagining things that don’t exist, creating impossible visuals\n\n\nThe problem isn’t hallucination per se, it’s hallucination at the wrong time\n\n\n\n\n\nSometimes we want the AI to make things up!\n\n\nSource: Medium\n\nMore here: The Case for AI Hallucination"
   },
   {
     "objectID": "lectures/lecture-11/11-hallucination.html#activity-confidence-calibration-test",
     "href": "lectures/lecture-11/11-hallucination.html#activity-confidence-calibration-test",
     "title": "DATASCI 101: Introduction to AI Applications",
-    "section": "Activity: confidence calibration test 📊",
-    "text": "Activity: confidence calibration test 📊\n\n\n\nDoes AI know when it’s wrong?\nAsk https://chat.qwen.ai/c/guest (fast model; close the sign-in window to chat as a guest) each question and request a confidence rating (1-10). Qwen lets you turn off web access\n\n“What day of the week was January 14, 1642?” → Tuesday (Google Calendar)\n“Spell Inconstitucionalissimamente backwards” → etnemamissilanoicutitsnocnI (checked by hand)\n“Name the third person to walk on the Moon” → Charles “Pete” Conrad Jr (Wikipedia)\n“What is the exact population of Tuvalu as of 2024?” → 9,646 (World Bank)\n“Who is the current mayor of Reykjavik, Iceland?” → Hildur Björnsdóttir (since June 2026)\n\nThen verify each answer\n\nWhat to observe:\n\n\n\n\nQuestion\nAI Confidence\nActually Correct?\n\n\n\n\nDay of the week\n? / 10\n✓ or ✗\n\n\nSpell backwards\n? / 10\n✓ or ✗\n\n\nThird moonwalker\n? / 10\n✓ or ✗\n\n\nTuvalu population\n? / 10\n✓ or ✗\n\n\nReykjavik mayor\n? / 10\n✓ or ✗\n\n\n\n\n\nDiscussion:\n\nIs confidence correlated with accuracy?\nAny high-confidence wrong answers?\nCan you trust AI’s self-assessment?"
+    "section": "Activity: confidence calibration test",
+    "text": "Activity: confidence calibration test\n\nOpen https://chat.qwen.ai/c/guest (close the sign-in window to chat as a guest) and ask each question below\nWith a Qwen account, switch on Model Comparison in the model selector (top of the screen) to test Qwen 3.5 and Qwen 3.7 side by side\n\n“How many words are in the preamble of the US Constitution? Don’t search, answer from memory, and give a confidence rating (1-10)” → 52 (paste it into a word counter)\n“What is the 50th decimal digit of pi? Don’t search, answer from memory, and give a confidence rating (1-10)” → 0 (any pi digits table)\n“Who wrote the 2025 paper Why Language Models Hallucinate? Don’t search, answer from memory, and give a confidence rating (1-10)” → Kalai, Nachum, Vempala, Zhang (arXiv)\n“What is the exact population of Tuvalu as of 2024? Don’t search, answer from memory, and give a confidence rating (1-10)” → 9,646 (World Bank)\n“Who is the current mayor of Reykjavik, Iceland? Don’t search, answer from memory, and give a confidence rating (1-10)” → Hildur Björnsdóttir (since June 2026)\n\nThen verify each answer and compare it with the confidence rating"
   },
   {
     "objectID": "lectures/lecture-11/11-hallucination.html#how-to-spot-hallucinations",
     "href": "lectures/lecture-11/11-hallucination.html#how-to-spot-hallucinations",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "How to spot hallucinations",
-    "text": "How to spot hallucinations\n\n\n\nRed flags to watch for:\n\n\n\nWarning Sign\nExample\n\n\n\n\nVery specific numbers\n“73.2% of studies show…”\n\n\nPrecise citations\n“Smith et al. (2022), p. 47”\n\n\nObscure details\nHistorical minutiae\n\n\nToo-perfect answers\nExactly what you wanted\n\n\nConfident tone\nNo hedging or uncertainty\n\n\n\nVerification strategies:\n\nGoogle the claim: does it appear elsewhere?\nCheck citations: do they exist?\nAsk for sources: then verify them\nCross-reference: use multiple sources\nTrust your expertise: if something seems off, it might be\n\n\n\n\n\n\nSpecific claim, impressive detail, completely wrong! The first exoplanet photo came from ESO’s Very Large Telescope (2004)\n\n\n\nImpressive-sounding detail is often the first sign something is made up\n\n\n\nA precise percentage or page number is exactly when to double-check!"
+    "text": "How to spot hallucinations\n\n\n\nRed flags to watch for:\n\n\n\nWarning sign\nExample\n\n\n\n\nVery specific numbers\n“73.2% of studies show…”\n\n\nPrecise citations\n“Smith et al. (2022), p. 47”\n\n\nObscure details\nHistorical minutiae\n\n\nToo-perfect answers\nExactly what you wanted\n\n\nConfident tone\nNo hedging\n\n\n\nVerification strategies:\n\nGoogle the claim\nCheck that the citations exist\nAsk for sources, then verify them\nCross-reference several sources\nTrust your expertise\n\n\n\n\n\n\nSpecific claim, impressive detail, completely wrong! The first exoplanet photo came from ESO’s Very Large Telescope (2004)\n\n\n\nImpressive-sounding detail is often the first sign something is made up"
   },
   {
     "objectID": "lectures/lecture-11/11-hallucination.html#prompting-techniques-that-help",
@@ -1355,7 +1355,7 @@
     "href": "lectures/lecture-11/11-hallucination.html#using-ptcf-to-reduce-hallucinations",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Using PTCF to reduce hallucinations",
-    "text": "Using PTCF to reduce hallucinations\n\n\n\nThe PTCF framework from last class:\n\n\n\nElement\nAnti-Hallucination Version\n\n\n\n\nPersona\n“You are a careful fact-checker who never guesses”\n\n\nTask\n“Verify and summarise only confirmed facts”\n\n\nContext\n“Base answers ONLY on the provided text”\n\n\nFormat\n“Use [Verified], [Uncertain], or [Unknown] tags”\n\n\n\nWhy PTCF helps:\n\nPersona activates cautious, precise patterns from training\nTask constrains scope, leaving no room for invention\nContext grounds answers in real information\nFormat forces explicit uncertainty signals\n\n\n\nPTCF anti-hallucination template:\nPERSONA: You are a research \nassistant who prioritises \naccuracy over completeness. \nNever guess or fabricate.\n\nTASK: Answer the following \nquestion using ONLY information \nyou are highly confident about.\n\nCONTEXT: This is for an academic \npaper. Incorrect information \ncould damage my credibility.\n\nFORMAT: \n- Start each fact with [Verified] \n  or [Uncertain]\n- If you don't know, say \n  \"I don't have reliable \n  information on this\"\n- Never invent citations\n\nQUESTION: [your question]"
+    "text": "Using PTCF to reduce hallucinations\n\n\n\nThe PTCF framework from last class:\n\n\n\n\n\n\n\nElement\nAnti-Hallucination Version\n\n\n\n\nPersona\n“You are a careful fact-checker who never guesses”\n\n\nTask\n“Verify and summarise only confirmed facts”\n\n\nContext\n“Base answers ONLY on the provided text”\n\n\nFormat\n“Use [Verified], [Uncertain], or [Unknown] tags”\n\n\n\nWhy PTCF helps:\n\nPersona activates more precise patterns from training\nTask constrains scope, leaving no room for invention\nContext grounds answers in real information\nFormat forces explicit uncertainty signals\n\n\n\nPTCF anti-hallucination template:\nPERSONA: You are a research \nassistant who prioritises \naccuracy over completeness. \nNever guess or fabricate.\n\nTASK: Answer the following \nquestion using ONLY information \nyou are highly confident about.\n\nCONTEXT: This is for an academic \npaper. Incorrect information \ncould damage my credibility.\n\nFORMAT: \n- Start each fact with [Verified] \n  or [Uncertain]\n- If you don't know, say \n  \"I don't have reliable \n  information on this\"\n- Never invent citations\n\nQUESTION: [your question]"
   },
   {
     "objectID": "lectures/lecture-11/11-hallucination.html#meta-prompting-let-ai-improve-your-prompts",
@@ -1376,14 +1376,14 @@
     "href": "lectures/lecture-11/11-hallucination.html#preview-rag-as-a-solution",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Preview: RAG as a solution",
-    "text": "Preview: RAG as a solution\n\n\n\nRAG = Retrieval-Augmented Generation\nThe core idea:\n\nYou ask a question\nSearch your documents for relevant information\nGive that information to the LLM\nThe LLM answers using your data\n\nWhy this reduces hallucinations:\n\nAnswers are grounded in real documents\nThe AI can cite sources, so you can verify\nLess need to make things up\n\nNext class: RAG in depth\n\n\n\n\n\nRAG preview\n\n\nSource: Towards AI\n\n\nTeaser: Tools like NotebookLM, ChatPDF, and Perplexity all use RAG!"
+    "text": "Preview: RAG as a solution\n\n\n\nRAG = Retrieval-Augmented Generation\n\nYou ask a question\nSearch your documents for relevant information\nGive that information to the LLM\nThe LLM answers using your data\n\nWhy this reduces hallucinations:\n\nAnswers are grounded in real documents\nThe AI can cite sources, so you can verify\nLess need to make things up\n\nNext class: RAG in depth\n\n\n\n\n\nRAG preview\n\n\nSource: Towards AI\n\n\nTeaser: Tools like NotebookLM, ChatPDF, and Perplexity all use RAG!"
   },
   {
     "objectID": "lectures/lecture-11/11-hallucination.html#main-takeaways",
     "href": "lectures/lecture-11/11-hallucination.html#main-takeaways",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Main takeaways",
-    "text": "Main takeaways\n\n\nHallucinations: AI confidently states false information\nWhy it happens: LLMs predict plausible, not true\nWrong time: making things up helps in fiction, hurts with facts\nReal failures: lawyers, doctors, academics affected\nDetection: verify specific claims, check citations\nPrevention: careful prompting helps but doesn’t eliminate"
+    "text": "Main takeaways\n\n\nHallucinations are false answers that sound plausible\nLLMs predict likely words, not true ones\nMaking things up helps in fiction, not with facts\nFake citations got two lawyers sanctioned\nCheck specific claims and every citation\nBetter prompts help, but never eliminate the risk"
   },
   {
     "objectID": "lectures/lecture-11/11-hallucination.html#your-anti-hallucination-toolkit",
@@ -5038,5 +5038,26 @@
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "AI and wellbeing (Lecture 22)",
     "text": "AI and wellbeing (Lecture 22)\n\n\n\n\nAttention economy: algorithms optimise engagement, not wellbeing\nFilter bubbles look overstated; mental health effects are debated\nAI therapy: a huge treatment gap, short-term promise, thin long-term evidence\nAI uses ~0.2-0.3% of world electricity, growing fast; efficiency invites more use\n\n\n Engagement is Goodhart’s Law (L5): the proxy replaces what we care about.\n\n\n\n\nYour attention is the product"
+  },
+  {
+    "objectID": "lectures/lecture-11/11-hallucination.html#testing-it-qwen-3.5-vs-qwen-3.7",
+    "href": "lectures/lecture-11/11-hallucination.html#testing-it-qwen-3.5-vs-qwen-3.7",
+    "title": "DATASCI 101: Introduction to AI Applications",
+    "section": "Testing it: Qwen 3.5 vs Qwen 3.7",
+    "text": "Testing it: Qwen 3.5 vs Qwen 3.7\n\n\n\n\nQwen 3.5 invents a date, a winner and seat counts\n\n\n\n\nQwen 3.7 says it does not know, even when pushed\n\n\n\n\nQwen 3.7 held firm through five more pushbacks. Chats: 3.5, 3.7"
+  },
+  {
+    "objectID": "lectures/lecture-11/11-hallucination.html#meta-prompting-against-hallucinations",
+    "href": "lectures/lecture-11/11-hallucination.html#meta-prompting-against-hallucinations",
+    "title": "DATASCI 101: Introduction to AI Applications",
+    "section": "Meta-prompting against hallucinations",
+    "text": "Meta-prompting against hallucinations\n\n\n\nLast class: asking the AI to improve your prompt. Now we aim it at one risk, invented facts\nThree uses:\n\nBefore: ask where your prompt invites it to guess\nDuring: ask what facts or sources it needs from you\nAfter: ask it to list each claim and flag what to verify\n\nLimits:\n\nSelf-ratings are imperfect (you will test this in the activity)\nVerify in a fresh chat, so the model does not just defend its first answer\n\n\n\nBefore: audit the prompt\nHere is my prompt: [paste it]\n\nWhere could it make you guess\nor invent facts? Rewrite it to\nreduce that risk.\nAfter: audit the answer\nList every factual claim in\nyour answer. Rate each 1-10 and\nmark the ones I should verify.\n\n\nChain-of-verification (Dhuliawala et al., 2024): draft, write check questions, answer them separately, then revise. It reduced hallucinations in the authors’ tests"
+  },
+  {
+    "objectID": "lectures/lecture-11/11-hallucination.html#what-to-check-and-when",
+    "href": "lectures/lecture-11/11-hallucination.html#what-to-check-and-when",
+    "title": "DATASCI 101: Introduction to AI Applications",
+    "section": "What to check, and when",
+    "text": "What to check, and when\n\n\n\n\n\n\n\nYou are using AI for\nWhat to do\n\n\n\n\nNumbers, dates, names\nSearch each one in a second source\n\n\nCitations\nFind the paper on Google Scholar\n\n\nRecent events\nUse a tool with web search\n\n\nMedical or legal questions\nAsk a professional\n\n\nBrainstorming and drafts\nEdit freely; errors matter less\n\n\n\n\n\n\nThree lines to add to a prompt\n\"If you're not sure, say so\"\n\n\"Only cite sources that exist\"\n\n\"Rate your confidence 1-10\"\nThese lines reduce hallucinations, but you still need to check the answer"
   }
 ]
