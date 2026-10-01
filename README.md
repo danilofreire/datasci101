@@ -109,6 +109,15 @@ While this repository is primarily maintained by the course instructor, contribu
 - [Open an issue](https://github.com/danilofreire/datasci101/issues) to report problems
 - [Create a pull request](https://github.com/danilofreire/datasci101/pulls) with improvements
 
+## Maintainer note: student data guard
+
+This repository is public, so student work and grades must never be committed here. A pre-commit hook in `.githooks/` blocks grading folders (`by_student/`, `grading/`, `evidence/` and similar) and any file containing a student id from a local list kept outside the repo. A GitHub Actions check repeats the path check on every push. To enable the hook in a clone:
+
+```bash
+git config core.hooksPath .githooks
+.githooks/update-student-ids.sh ~/Documents/github/emory-answer-keys
+```
+
 ## License
 
 This course material is shared under [the MIT License](https://github.com/danilofreire/datasci101/blob/main/LICENSE.md). You are free to use, modify, and distribute the materials with appropriate attribution.

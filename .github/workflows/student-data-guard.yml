@@ -1,0 +1,41 @@
+name: Student data guard
+
+# Backstop for the local pre-commit hook in .githooks/. Fails if grading
+# files or student work appear anywhere in the repository. The student-id
+# check runs only if the optional STUDENT_IDS secret is set (one id per
+# line); ids are never stored in the repository itself.
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  guard:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check paths
+        run: |
+          pattern='(^|/)(by_student|grading|evidence|comments|submissions|converted)/|(^|/)(meta\.json|grades\.csv|canvas-upload\.csv|to-grade\.txt|ta-calibration\.md)$'
+          if git ls-files | grep -E "$pattern"; then
+            echo "::error::Grading files or student work found in the public course repo"
+            exit 1
+          fi
+
+      - name: Check student ids
+        env:
+          STUDENT_IDS: ${{ secrets.STUDENT_IDS }}
+        run: |
+          if [ -z "$STUDENT_IDS" ]; then
+            echo "STUDENT_IDS secret not set; skipping the id check"
+            exit 0
+          fi
+          printf '%s\n' "$STUDENT_IDS" | grep -E '^[0-9]+$' > /tmp/ids.txt || true
+          if git ls-files -z | xargs -0 grep -lwFf /tmp/ids.txt 2>/dev/null; then
+            echo "::error::Files above contain a student id"
+            exit 1
+          fi

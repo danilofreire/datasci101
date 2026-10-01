@@ -1,0 +1,49 @@
+#!/usr/bin/env bash
+# Student data guard (pre-commit).
+# Blocks commits that would put student work or grading files into this
+# public course repository. Enable once per clone with:
+#   git config core.hooksPath .githooks
+#
+# Two checks:
+# 1. Paths: grading folders and files that only exist in the private
+#    emory-answer-keys repo (by_student/, grading/, evidence/, meta.json ...)
+# 2. Student ids: if the local id list exists, any staged file that contains
+#    one of those ids is blocked. The list lives OUTSIDE this repo, so no ids
+#    are ever published. Build it with .githooks/update-student-ids.sh.
+
+set -euo pipefail
+
+ID_LIST="${DATASCI101_STUDENT_IDS:-$HOME/.config/datasci101/student-ids.txt}"
+PATH_PATTERN='(^|/)(by_student|grading|evidence|comments|submissions|converted)/|(^|/)(meta\.json|grades\.csv|canvas-upload\.csv|to-grade\.txt|ta-calibration\.md)$'
+
+staged=$(git diff --cached --name-only --diff-filter=ACMR)
+[ -z "$staged" ] && exit 0
+
+blocked=0
+
+bad_paths=$(printf '%s\n' "$staged" | grep -E "$PATH_PATTERN" || true)
+if [ -n "$bad_paths" ]; then
+    echo "Student data guard: these paths look like grading files or student work:" >&2
+    printf '  %s\n' $bad_paths >&2
+    blocked=1
+fi
+
+if [ -s "$ID_LIST" ]; then
+    while IFS= read -r f; do
+        # Check the staged version of each file, not the working copy
+        if git show ":$f" 2>/dev/null | grep -qwFf "$ID_LIST"; then
+            echo "Student data guard: $f contains a student id from $ID_LIST" >&2
+            blocked=1
+        fi
+    done <<< "$staged"
+else
+    echo "Student data guard: no id list at $ID_LIST, so only paths were checked." >&2
+    echo "  Build it with: .githooks/update-student-ids.sh ~/Documents/github/emory-answer-keys" >&2
+fi
+
+if [ "$blocked" -ne 0 ]; then
+    echo "" >&2
+    echo "Commit blocked. Student work and grades belong in the private emory-answer-keys repo only." >&2
+    echo "If this is a false alarm, check carefully, then commit with --no-verify." >&2
+    exit 1
+fi
