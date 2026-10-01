@@ -789,9 +789,9 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </div></div>
 </div>
 </section>
-<section id="activity-confidence-calibration-test" class="slide level2 scrollable">
+<section id="sec:activity" class="slide level2 scrollable">
 <h2>Activity: confidence calibration test</h2>
-<div style="margin-top: 30px; font-size: 22px;">
+<div style="margin-top: 20px; font-size: 20px;">
 <p>Open <a href="https://chat.qwen.ai/c/guest" class="uri">https://chat.qwen.ai/c/guest</a> (close the sign-in window to chat as a guest) and ask each question below</p>
 <p>With a Qwen account, switch on <span class="alert">Model Comparison</span> in the model selector (top of the screen) to test Qwen 3.5 and Qwen 3.7 side by side</p>
 <ol type="1">
@@ -802,6 +802,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <li>“Who is the current mayor of Reykjavik, Iceland? Don’t search, answer from memory, and give a confidence rating (1-10)” → Hildur Björnsdóttir (since June 2026)</li>
 </ol>
 <p><strong>Then verify each answer and compare it with the confidence rating</strong></p>
+<p><a href="#/sec:appendix"><span class="button">Qwen results</span></a></p>
 </div>
 </section></section>
 <section>
@@ -1208,8 +1209,107 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <section id="and-thats-all-for-today" class="title-slide slide level1 center" data-background-color="#1B3A6B">
 <h1>…and that’s all for today! 🎉</h1>
 
+</section>
+
+<section>
+<section id="appendix" class="title-slide slide level1 center" data-background-color="#1B3A6B">
+<h1>Appendix</h1>
 
 </section>
+<section id="sec:appendix" class="slide level2">
+<h2>Activity results: Qwen 3.7 vs Qwen 3.5</h2>
+<div style="margin-top: 30px; font-size: 20px;">
+<div style="font-size: 1.2em;">
+<table class="caption-top" style="width:100%;">
+<colgroup>
+<col style="width: 21%">
+<col style="width: 34%">
+<col style="width: 21%">
+<col style="width: 21%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Question</th>
+<th>Correct answer</th>
+<th>Qwen 3.7</th>
+<th>Qwen 3.5</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="alert">1. Preamble words</span></td>
+<td>52</td>
+<td>52 (8/10)</td>
+<td>52 (10/10)</td>
+</tr>
+<tr class="even">
+<td><span class="alert">2. 50th digit of pi</span></td>
+<td>0</td>
+<td>1 (4/10)</td>
+<td>0 after correcting itself (7/10)</td>
+</tr>
+<tr class="odd">
+<td><span class="alert">3. <em>Why Language Models Hallucinate</em></span></td>
+<td>Kalai et al.</td>
+<td>Guessed other names (2/10)</td>
+<td>“Cannot identify” (2/10)</td>
+</tr>
+<tr class="even">
+<td><span class="alert">4. Tuvalu, 2024</span></td>
+<td>9,646</td>
+<td>~11,300 (6/10)</td>
+<td>~11,300 to 11,500 (6/10)</td>
+</tr>
+<tr class="odd">
+<td><span class="alert">5. Reykjavik mayor</span></td>
+<td>Hildur Björnsdóttir</td>
+<td>Eyglo Harðardóttir (5/10)</td>
+<td>Dagur B. Eggertsson (8/10)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>One run per question, same chat, Model Comparison mode. Answers vary between runs</p>
+<p><a href="#/sec:activity"><span class="button">Back to activity</span></a></p>
+</div>
+</section>
+<section id="question-1-preamble-words" class="slide level2">
+<h2>Question 1: preamble words</h2>
+<div style="text-align: center; font-size: 20px;">
+<p><a href="#/" data-modal-type="image" data-modal-url="figures/qwen-q1.jpg"><img data-src="figures/qwen-q1.jpg" height="440"></a></p>
+<p>Both models answer 52, the correct count</p>
+</div>
+</section>
+<section id="question-2-50th-digit-of-pi" class="slide level2">
+<h2>Question 2: 50th digit of pi</h2>
+<div style="text-align: center; font-size: 20px;">
+<p><a href="#/" data-modal-type="image" data-modal-url="figures/qwen-q2.jpg"><img data-src="figures/qwen-q2.jpg" height="440"></a></p>
+<p>Qwen 3.7 says 1 (confidence 4/10). Qwen 3.5 starts with 9, then corrects itself to 0 (7/10)</p>
+</div>
+</section>
+<section id="question-3-the-2025-paper" class="slide level2">
+<h2>Question 3: the 2025 paper</h2>
+<div style="text-align: center; font-size: 20px;">
+<p><a href="#/" data-modal-type="image" data-modal-url="figures/qwen-q3.jpg"><img data-src="figures/qwen-q3.jpg" height="440"></a></p>
+<p>Neither model names the authors. Both give a confidence of 2/10, and Qwen 3.7 guesses several wrong names</p>
+</div>
+</section>
+<section id="question-4-population-of-tuvalu" class="slide level2">
+<h2>Question 4: population of Tuvalu</h2>
+<div style="text-align: center; font-size: 20px;">
+<p><a href="#/" data-modal-type="image" data-modal-url="figures/qwen-q4.jpg"><img data-src="figures/qwen-q4.jpg" height="440"></a></p>
+<p>Both give about 11,300 (6/10). The World Bank figure for 2024 is 9,646</p>
+</div>
+</section>
+<section id="question-5-mayor-of-reykjavik" class="slide level2">
+<h2>Question 5: mayor of Reykjavik</h2>
+<div style="text-align: center; font-size: 20px;">
+<p><a href="#/" data-modal-type="image" data-modal-url="figures/qwen-q5.jpg"><img data-src="figures/qwen-q5.jpg" height="440"></a></p>
+<p>Both are wrong. Qwen 3.5 is more confident (8/10) than Qwen 3.7 (5/10)</p>
+</div>
+
+
+</section></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">

@@ -538,9 +538,9 @@ More here: [The Case for AI Hallucination](https://uxdesign.cc/the-case-for-ai-h
 :::
 :::
 
-## Activity: confidence calibration test
+## Activity: confidence calibration test {#sec:activity}
 
-:::{style="margin-top: 30px; font-size: 22px;"}
+:::{style="margin-top: 20px; font-size: 20px;"}
 Open <https://chat.qwen.ai/c/guest> (close the sign-in window to chat as a guest) and ask each question below
 
 With a Qwen account, switch on [Model Comparison]{.alert} in the model selector (top of the screen) to test Qwen 3.5 and Qwen 3.7 side by side
@@ -552,6 +552,8 @@ With a Qwen account, switch on [Model Comparison]{.alert} in the model selector 
 5. "Who is the current mayor of Reykjavik, Iceland? Don't search, answer from memory, and give a confidence rating (1-10)" → Hildur Björnsdóttir (since June 2026)
 
 **Then verify each answer and compare it with the confidence rating**
+
+[[Qwen results]{.button}](#sec:appendix)
 :::
 
 # Detection and prevention 🛡️ {background-color="#1B3A6B"}
@@ -879,3 +881,64 @@ These lines reduce hallucinations, but you still need to check the answer
 :::
 
 # ...and that's all for today! 🎉 {background-color="#1B3A6B"}
+
+# Appendix {background-color="#1B3A6B"}
+
+## Activity results: Qwen 3.7 vs Qwen 3.5 {#sec:appendix}
+
+:::{style="margin-top: 30px; font-size: 20px;"}
+::: {style="font-size: 1.2em;"}
+| Question | Correct answer | Qwen 3.7 | Qwen 3.5 |
+|----------|----------------|----------|----------|
+| [1. Preamble words]{.alert} | 52 | 52 (8/10) | 52 (10/10) |
+| [2. 50th digit of pi]{.alert} | 0 | 1 (4/10) | 0 after correcting itself (7/10) |
+| [3. *Why Language Models Hallucinate*]{.alert} | Kalai et al. | Guessed other names (2/10) | "Cannot identify" (2/10) |
+| [4. Tuvalu, 2024]{.alert} | 9,646 | ~11,300 (6/10) | ~11,300 to 11,500 (6/10) |
+| [5. Reykjavik mayor]{.alert} | Hildur Björnsdóttir | Eyglo Harðardóttir (5/10) | Dagur B. Eggertsson (8/10) |
+
+:::
+
+One run per question, same chat, Model Comparison mode. Answers vary between runs
+
+[[Back to activity]{.button}](#sec:activity)
+:::
+
+## Question 1: preamble words
+
+:::{style="text-align: center; font-size: 20px;"}
+[![](figures/qwen-q1.jpg){height="440px"}](#){data-modal-type="image" data-modal-url="figures/qwen-q1.jpg"}
+
+Both models answer 52, the correct count
+:::
+
+## Question 2: 50th digit of pi
+
+:::{style="text-align: center; font-size: 20px;"}
+[![](figures/qwen-q2.jpg){height="440px"}](#){data-modal-type="image" data-modal-url="figures/qwen-q2.jpg"}
+
+Qwen 3.7 says 1 (confidence 4/10). Qwen 3.5 starts with 9, then corrects itself to 0 (7/10)
+:::
+
+## Question 3: the 2025 paper
+
+:::{style="text-align: center; font-size: 20px;"}
+[![](figures/qwen-q3.jpg){height="440px"}](#){data-modal-type="image" data-modal-url="figures/qwen-q3.jpg"}
+
+Neither model names the authors. Both give a confidence of 2/10, and Qwen 3.7 guesses several wrong names
+:::
+
+## Question 4: population of Tuvalu
+
+:::{style="text-align: center; font-size: 20px;"}
+[![](figures/qwen-q4.jpg){height="440px"}](#){data-modal-type="image" data-modal-url="figures/qwen-q4.jpg"}
+
+Both give about 11,300 (6/10). The World Bank figure for 2024 is 9,646
+:::
+
+## Question 5: mayor of Reykjavik
+
+:::{style="text-align: center; font-size: 20px;"}
+[![](figures/qwen-q5.jpg){height="440px"}](#){data-modal-type="image" data-modal-url="figures/qwen-q5.jpg"}
+
+Both are wrong. Qwen 3.5 is more confident (8/10) than Qwen 3.7 (5/10)
+:::

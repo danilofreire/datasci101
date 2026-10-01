@@ -5059,5 +5059,61 @@
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "What to check, and when",
     "text": "What to check, and when\n\n\n\n\n\n\n\nYou are using AI for\nWhat to do\n\n\n\n\nNumbers, dates, names\nSearch each one in a second source\n\n\nCitations\nFind the paper on Google Scholar\n\n\nRecent events\nUse a tool with web search\n\n\nMedical or legal questions\nAsk a professional\n\n\nBrainstorming and drafts\nEdit freely; errors matter less\n\n\n\n\n\n\nThree lines to add to a prompt\n\"If you're not sure, say so\"\n\n\"Only cite sources that exist\"\n\n\"Rate your confidence 1-10\"\nThese lines reduce hallucinations, but you still need to check the answer"
+  },
+  {
+    "objectID": "lectures/lecture-11/11-hallucination.html#activity-results-qwen-3.7-vs-qwen-3.5",
+    "href": "lectures/lecture-11/11-hallucination.html#activity-results-qwen-3.7-vs-qwen-3.5",
+    "title": "DATASCI 101: Introduction to AI Applications",
+    "section": "Activity results: Qwen 3.7 vs Qwen 3.5",
+    "text": "Activity results: Qwen 3.7 vs Qwen 3.5\n\n\n\n\n\n\n\n\n\n\n\nQuestion\nCorrect answer\nQwen 3.7\nQwen 3.5\n\n\n\n\n1. Preamble words\n52\n52 (8/10)\n52 (10/10)\n\n\n2. 50th digit of pi\n0\n1 (4/10)\n0 after correcting itself (7/10)\n\n\n3. Why Language Models Hallucinate\nKalai et al.\nGuessed other names (2/10)\n“Cannot identify” (2/10)\n\n\n4. Tuvalu, 2024\n9,646\n~11,300 (6/10)\n~11,300 to 11,500 (6/10)\n\n\n5. Reykjavik mayor\nHildur Björnsdóttir\nEyglo Harðardóttir (5/10)\nDagur B. Eggertsson (8/10)\n\n\n\n\nOne run per question, same chat, Model Comparison mode. Answers vary between runs"
+  },
+  {
+    "objectID": "lectures/lecture-11/11-hallucination.html#question-1-preamble-words",
+    "href": "lectures/lecture-11/11-hallucination.html#question-1-preamble-words",
+    "title": "DATASCI 101: Introduction to AI Applications",
+    "section": "Question 1: preamble words",
+    "text": "Question 1: preamble words\n\n\nBoth models answer 52, the correct count"
+  },
+  {
+    "objectID": "lectures/lecture-11/11-hallucination.html#question-2-50th-digit-of-pi",
+    "href": "lectures/lecture-11/11-hallucination.html#question-2-50th-digit-of-pi",
+    "title": "DATASCI 101: Introduction to AI Applications",
+    "section": "Question 2: 50th digit of pi",
+    "text": "Question 2: 50th digit of pi\n\n\nQwen 3.7 says 1 (confidence 4/10). Qwen 3.5 starts with 9, then corrects itself to 0 (7/10)"
+  },
+  {
+    "objectID": "lectures/lecture-11/11-hallucination.html#question-3-the-2025-paper",
+    "href": "lectures/lecture-11/11-hallucination.html#question-3-the-2025-paper",
+    "title": "DATASCI 101: Introduction to AI Applications",
+    "section": "Question 3: the 2025 paper",
+    "text": "Question 3: the 2025 paper\n\n\nNeither model names the authors. Both give a confidence of 2/10, and Qwen 3.7 guesses several wrong names"
+  },
+  {
+    "objectID": "lectures/lecture-11/11-hallucination.html#question-4-population-of-tuvalu",
+    "href": "lectures/lecture-11/11-hallucination.html#question-4-population-of-tuvalu",
+    "title": "DATASCI 101: Introduction to AI Applications",
+    "section": "Question 4: population of Tuvalu",
+    "text": "Question 4: population of Tuvalu\n\n\nBoth give about 11,300 (6/10). The World Bank figure for 2024 is 9,646"
+  },
+  {
+    "objectID": "lectures/lecture-11/11-hallucination.html#question-5-mayor-of-reykjavik",
+    "href": "lectures/lecture-11/11-hallucination.html#question-5-mayor-of-reykjavik",
+    "title": "DATASCI 101: Introduction to AI Applications",
+    "section": "Question 5: mayor of Reykjavik",
+    "text": "Question 5: mayor of Reykjavik\n\n\nBoth are wrong. Qwen 3.5 is more confident (8/10) than Qwen 3.7 (5/10)"
+  },
+  {
+    "objectID": "lectures/lecture-11/11-hallucination.html#sec:activity",
+    "href": "lectures/lecture-11/11-hallucination.html#sec:activity",
+    "title": "DATASCI 101: Introduction to AI Applications",
+    "section": "Activity: confidence calibration test",
+    "text": "Activity: confidence calibration test\n\nOpen https://chat.qwen.ai/c/guest (close the sign-in window to chat as a guest) and ask each question below\nWith a Qwen account, switch on Model Comparison in the model selector (top of the screen) to test Qwen 3.5 and Qwen 3.7 side by side\n\n“How many words are in the preamble of the US Constitution? Don’t search, answer from memory, and give a confidence rating (1-10)” → 52 (paste it into a word counter)\n“What is the 50th decimal digit of pi? Don’t search, answer from memory, and give a confidence rating (1-10)” → 0 (any pi digits table)\n“Who wrote the 2025 paper Why Language Models Hallucinate? Don’t search, answer from memory, and give a confidence rating (1-10)” → Kalai, Nachum, Vempala, Zhang (arXiv)\n“What is the exact population of Tuvalu as of 2024? Don’t search, answer from memory, and give a confidence rating (1-10)” → 9,646 (World Bank)\n“Who is the current mayor of Reykjavik, Iceland? Don’t search, answer from memory, and give a confidence rating (1-10)” → Hildur Björnsdóttir (since June 2026)\n\nThen verify each answer and compare it with the confidence rating\nQwen results"
+  },
+  {
+    "objectID": "lectures/lecture-11/11-hallucination.html#sec:appendix",
+    "href": "lectures/lecture-11/11-hallucination.html#sec:appendix",
+    "title": "DATASCI 101: Introduction to AI Applications",
+    "section": "Activity results: Qwen 3.7 vs Qwen 3.5",
+    "text": "Activity results: Qwen 3.7 vs Qwen 3.5\n\n\n\n\n\n\n\n\n\n\n\nQuestion\nCorrect answer\nQwen 3.7\nQwen 3.5\n\n\n\n\n1. Preamble words\n52\n52 (8/10)\n52 (10/10)\n\n\n2. 50th digit of pi\n0\n1 (4/10)\n0 after correcting itself (7/10)\n\n\n3. Why Language Models Hallucinate\nKalai et al.\nGuessed other names (2/10)\n“Cannot identify” (2/10)\n\n\n4. Tuvalu, 2024\n9,646\n~11,300 (6/10)\n~11,300 to 11,500 (6/10)\n\n\n5. Reykjavik mayor\nHildur Björnsdóttir\nEyglo Harðardóttir (5/10)\nDagur B. Eggertsson (8/10)\n\n\n\n\nOne run per question, same chat, Model Comparison mode. Answers vary between runs\nBack to activity"
   }
 ]
