@@ -201,7 +201,7 @@ Models write in a recognisable house style. Lecture 10 showed that examples in a
 
 ### Question 5: Real-world failures
 
-Lecture 11 presented three categories of real-world hallucination failures: **legal** (fake case citations), **medical** (wrong drug advice; Hadi et al. 2024 found 51% of medical answers incorrect) and **academic** (fabricated sources).
+Lecture 11 discussed real-world hallucination failures: **legal** (fake case citations), **medical** (wrong medical advice; ChatGPT-3.5 got the diagnosis wrong in 51% of 150 clinical cases in Hadi et al. 2024) and **academic** (fabricated sources).
 
 **Your task:**
 
