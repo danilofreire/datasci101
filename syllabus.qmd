@@ -322,6 +322,8 @@ Suggested readings:
 Further readings:
 
 - Mastering LLM (2024). [11 chunking strategies for RAG — simplified & visualized](https://masteringllm.medium.com/11-chunking-strategies-for-rag-simplified-visualized-df0dbec8e373). Nice explanation of chunking strategies.
+- Willison, S. (2023). [Embeddings: what they are and why they matter](https://simonwillison.net/2023/Oct/23/embeddings/). A clear, beginner-friendly tour of embeddings and semantic search.
+- Anthropic (2024). [Introducing contextual retrieval](https://www.anthropic.com/news/contextual-retrieval). Technical, but shows how companies reduce retrieval failures.
 
 ### October 8, 2026:
 
