@@ -317,7 +317,7 @@ Suggested readings:
 
 - Amazon Web Services (2025). [What is retrieval-augmented generation (RAG)?](https://aws.amazon.com/what-is/retrieval-augmented-generation/) Beginners' guide to RAG.
 - Slack (2025). [Semantic search explained: how it works, and why it matters.](https://slack.com/blog/productivity/semantic-search-explained-how-it-works-and-why-it-matters) Good explainer.
-- RAG Playground. [Interactive RAG pipeline visualisation](https://ragplay.vercel.app/experiment) Hands-on tool for text splitting, embeddings and semantic search. We use it in class.
+- RAG Playground (2026). [Interactive RAG pipeline visualisation](https://ragplay.vercel.app/experiment). Hands-on tool for text splitting, embeddings and semantic search. We use it in class.
 
 Further readings:
 
