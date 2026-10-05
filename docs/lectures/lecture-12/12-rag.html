@@ -253,27 +253,27 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <div style="margin-top: 20px; font-size: 26px;">
 <div class="columns">
 <div class="column" style="width:50%;">
-<p><strong>Part 1: The Problem</strong></p>
+<p><strong>Part 1: The problem</strong></p>
 <ul>
 <li>Quick recap: hallucinations and knowledge cutoffs (from Lecture 11)</li>
 <li>How RAG solves both problems</li>
 </ul>
-<p><strong>Part 2: Semantic Search</strong></p>
+<p><strong>Part 2: Semantic search</strong></p>
 <ul>
 <li>Finding by meaning, not just keywords</li>
 <li>Quick embeddings recap</li>
 <li>Why this matters for RAG</li>
 </ul>
 </div><div class="column" style="width:50%;">
-<p><strong>Part 3: The RAG Pipeline</strong></p>
+<p><strong>Part 3: The RAG pipeline</strong></p>
 <ul>
 <li>How documents become searchable</li>
 <li>Chunking, embedding, retrieving</li>
 <li>From question to grounded answer</li>
 </ul>
-<p><strong>Part 4: No-Code Tools</strong></p>
+<p><strong>Part 4: No-code tools</strong></p>
 <ul>
-<li>Gemini Notebook (formerly NotebookLM) and file uploads</li>
+<li>Gemini Notebook (formerly NotebookLM) and a pipeline playground</li>
 <li>Build your own RAG system today! 🛠️</li>
 </ul>
 </div></div>
@@ -287,7 +287,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </div>
 </section>
 <section id="quick-recap-hallucinations" class="slide level2">
-<h2>Quick recap: Hallucinations 🤥</h2>
+<h2>Quick recap: Hallucinations</h2>
 <div style="margin-top: 30px; font-size: 23px;">
 <div class="columns">
 <div class="column" style="width:55%;">
@@ -299,7 +299,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <li>Fabricated answers sound <span class="alert">just as convincing</span> as accurate ones</li>
 </ul>
 <div style="margin-top: 20px; background: rgba(230, 57, 70, 0.1); padding: 15px; border-radius: 10px;">
-<p><strong>The main question for today:</strong></p>
+<p><strong>Today’s topic:</strong></p>
 <p>What if we could give the LLM <span class="alert">access to real, verified information</span> when answering?</p>
 </div>
 </div><div class="column" style="width:45%;">
@@ -313,13 +313,12 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </div></div>
 </div>
 </section>
-<section id="the-solution-give-ai-access-to-real-information" class="slide level2 scrollable">
-<h2>The solution: Give AI access to real information!</h2>
+<section id="give-ai-access-to-real-information" class="slide level2 scrollable">
+<h2>Give AI access to real information!</h2>
 <div style="margin-top: 30px; font-size: 23px;">
 <div class="columns">
 <div class="column" style="width:55%;">
 <p><strong>RAG = <span class="alert">R</span>etrieval-<span class="alert">A</span>ugmented <span class="alert">G</span>eneration</strong></p>
-<p><strong>The main idea:</strong></p>
 <ol type="1">
 <li>You ask a question</li>
 <li><span class="alert">Search your documents</span> for relevant information</li>
@@ -349,7 +348,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </section></section>
 <section>
 <section id="semantic-search" class="title-slide slide level1 center" data-background-color="#1B3A6B">
-<h1>Semantic Search 🔍</h1>
+<h1>Semantic search 🔍</h1>
 
 </section>
 <section id="traditional-search-vs.-semantic-search" class="slide level2">
@@ -426,6 +425,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <div class="column" style="width:55%;">
 <p><strong>From Lecture 06:</strong></p>
 <p>Text becomes <span class="alert">vectors</span> (lists of numbers):</p>
+<div style="text-align: center;">
 <table class="caption-top">
 <thead>
 <tr class="header">
@@ -448,12 +448,14 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </tr>
 </tbody>
 </table>
+</div>
 <p><strong>Key properties:</strong></p>
 <ul>
 <li>Similar meanings → <span class="alert">similar vectors</span></li>
 <li>“king” and “queen” are close in vector space; “king” and “apple” are far apart</li>
 <li>Modern embedding models produce <span class="alert">768 to 3,072 dimensions</span></li>
 </ul>
+<div style="text-align: center;">
 <table class="caption-top">
 <thead>
 <tr class="header">
@@ -480,6 +482,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </tr>
 </tbody>
 </table>
+</div>
 </div><div class="column" style="width:45%;">
 <div style="text-align: center;">
 <div class="quarto-figure quarto-figure-center">
@@ -502,17 +505,18 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <div class="column" style="width:55%;">
 <p><strong>How do we measure if two vectors are similar?</strong></p>
 <ul>
-<li><span class="alert">Cosine similarity</span> measures the angle between vectors</li>
-<li>Numerator: the dot product (multiply corresponding components and add them up; how much they point the same way)</li>
-<li>Denominator: normalises by their lengths (magnitude)
+<li><span class="alert">Cosine similarity</span> measures the angle between two vectors</li>
+<li>Numerator: dot product (multiply matching components, then add)</li>
+<li>Denominator: the vectors’ lengths, so size does not matter
 <ul>
 <li>If <span class="math inline">\(A = [0.8, 0.6]\)</span>, then <span class="math inline">\(\|A\| = \sqrt{0.8^2 + 0.6^2} = 1\)</span></li>
 </ul></li>
-<li>Identical vectors = 1; orthogonal = 0; opposite = -1</li>
-<li>Embedding components can be negative, so scores can drop below 0</li>
+<li>Identical = 1; orthogonal = 0; opposite = -1</li>
+<li>Components can be negative, so scores can fall below 0</li>
 </ul>
 <p><span class="math display">\[\text{similarity}(A, B) = \frac{A \cdot B}{\|A\| \times \|B\|}\]</span></p>
 <p><strong>Interpretation</strong> (illustrative; varies by model):</p>
+<div style="text-align: center;">
 <table class="caption-top">
 <thead>
 <tr class="header">
@@ -544,6 +548,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </tr>
 </tbody>
 </table>
+</div>
 </div><div class="column" style="width:45%;">
 <p><strong>In RAG systems:</strong></p>
 <ul>
@@ -568,7 +573,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </section></section>
 <section>
 <section id="the-rag-pipeline" class="title-slide slide level1 center" data-background-color="#1B3A6B">
-<h1>The RAG Pipeline 🔄</h1>
+<h1>The RAG pipeline 🔄</h1>
 
 </section>
 <section id="how-rag-works" class="slide level2">
@@ -595,6 +600,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <div class="columns">
 <div class="column" style="width:55%;">
 <p><strong>What can you ingest?</strong></p>
+<div style="text-align: center; font-size: 24px;">
 <table class="caption-top">
 <thead>
 <tr class="header">
@@ -631,7 +637,8 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </tr>
 </tbody>
 </table>
-<p><strong>The challenge:</strong></p>
+</div>
+<p><strong>Why parsing is hard:</strong></p>
 <ul>
 <li>Documents are <span class="alert">unstructured</span></li>
 <li>Extract clean text while preserving meaningful structure</li>
@@ -700,6 +707,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </div>
 </div><div class="column" style="width:45%;">
 <p><strong>Chunk size trade-offs:</strong></p>
+<div style="text-align: center;">
 <table class="caption-top">
 <thead>
 <tr class="header">
@@ -726,6 +734,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </tr>
 </tbody>
 </table>
+</div>
 <div style="text-align: center; margin-top: 15px;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -748,6 +757,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <li>Each chunk → embedding model → vector</li>
 <li>Use the same embedding model for queries later</li>
 </ul>
+<div style="text-align: center;">
 <table class="caption-top">
 <thead>
 <tr class="header">
@@ -774,6 +784,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </tr>
 </tbody>
 </table>
+</div>
 <p><strong>Why vector databases?</strong></p>
 <ul>
 <li>Traditional databases: <span class="alert">exact match</span></li>
@@ -859,7 +870,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </section></section>
 <section>
 <section id="rag-vs.-alternatives" class="title-slide slide level1 center" data-background-color="#1B3A6B">
-<h1>RAG vs.&nbsp;Alternatives 🔄</h1>
+<h1>RAG vs.&nbsp;alternatives 🔄</h1>
 
 </section>
 <section id="rag-vs.-fine-tuning-vs.-prompting" class="slide level2">
@@ -1002,7 +1013,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </tr>
 </tbody>
 </table>
-<p><em>Illustrative ranges, not from one study: rates vary by domain and implementation</em></p>
+<p><em>Rates vary by domain and implementation</em></p>
 </div><div class="column" style="width:45%;">
 <div style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; font-size: 16px; margin-top: 40px;">
 <p><strong>The “Lost in the Middle” problem:</strong></p>
@@ -1028,7 +1039,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </section></section>
 <section>
 <section id="rag-failure-modes" class="title-slide slide level1 center" data-background-color="#1B3A6B">
-<h1>RAG Failure Modes ⚠️</h1>
+<h1>RAG failure modes ⚠️</h1>
 
 </section>
 <section id="when-rag-goes-wrong" class="slide level2">
@@ -1047,32 +1058,32 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <tr class="header">
 <th>Failure Type</th>
 <th>What Happens</th>
-<th>Rough frequency</th>
+<th>Rough frequency (illustrative)</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><strong>Retrieval failure</strong></td>
+<td><span class="alert">Retrieval failure</span></td>
 <td>Wrong chunks retrieved</td>
 <td>15–25% of queries</td>
 </tr>
 <tr class="even">
-<td><strong>Lost in the middle</strong></td>
+<td><span class="alert">Lost in the middle</span></td>
 <td>Relevant info in middle ignored</td>
 <td>Common with many chunks</td>
 </tr>
 <tr class="odd">
-<td><strong>Context overflow</strong></td>
+<td><span class="alert">Context overflow</span></td>
 <td>Too much text, truncated</td>
 <td>Depends on doc size</td>
 </tr>
 <tr class="even">
-<td><strong>Outdated docs</strong></td>
+<td><span class="alert">Outdated docs</span></td>
 <td>Stale information retrieved</td>
 <td>Depends on maintenance</td>
 </tr>
 <tr class="odd">
-<td><strong>Extraction errors</strong></td>
+<td><span class="alert">Extraction errors</span></td>
 <td>PDF tables/images parsed incorrectly</td>
 <td>10–30% of complex docs</td>
 </tr>
@@ -1088,9 +1099,9 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </div><div class="column" style="width:45%;">
 <div style="background: rgba(230, 57, 70, 0.1); padding: 15px; border-radius: 10px;">
 <p><strong>Example: Retrieval failure</strong></p>
-<p><strong>Your document says:</strong> “The quarterly earnings call is scheduled for March 15th”</p>
-<p><strong>You ask:</strong> “When is the investor meeting?”</p>
-<p><strong>Problem:</strong> “investor meeting” ≠ “earnings call” in embedding space</p>
+<p><strong>Your document says:</strong> “Project Falcon launches on 15 March”</p>
+<p><strong>You ask:</strong> “When does the new mobile app launch?”</p>
+<p><strong>Problem:</strong> nothing in the text tells the model that “Falcon” is the mobile app</p>
 <p><strong>Result:</strong> wrong chunks retrieved, wrong answer</p>
 </div>
 <div style="margin-top: 15px; background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px;">
@@ -1159,7 +1170,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </section></section>
 <section>
 <section id="no-code-rag-tools" class="title-slide slide level1 center" data-background-color="#1B3A6B">
-<h1>No-Code RAG Tools 🛠️</h1>
+<h1>No-code RAG tools 🛠️</h1>
 
 </section>
 <section id="tools-you-can-use-today" class="slide level2">
@@ -1226,6 +1237,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <li>The AI answers from <span class="alert">YOUR sources only</span></li>
 </ul>
 <p><strong>Features:</strong></p>
+<div style="text-align: center;">
 <table class="caption-top">
 <thead>
 <tr class="header">
@@ -1256,6 +1268,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </tr>
 </tbody>
 </table>
+</div>
 <p><strong>Best for:</strong> Research projects, exam prep, literature reviews, understanding complex reports</p>
 </div><div class="column" style="width:45%;">
 <div style="text-align: center; margin-top: 40px;">
@@ -1272,60 +1285,45 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </div></div>
 </div>
 </section>
-<section id="activity-grounding-with-a-file-upload" class="slide level2 scrollable">
-<h2>Activity: Grounding with a file upload 📎</h2>
-<div style="margin-top: 30px; font-size: 20px;">
+<section id="activity-watch-rag-work" class="slide level2">
+<h2>Activity: watch RAG work 🔬</h2>
+<div style="margin-top: 20px; font-size: 20px;">
 <div class="columns">
-<div class="column" style="width:50%;">
-<p><strong>Compare: with vs.&nbsp;without your documents. Let’s do it together (or at home if Emory’s connection doesn’t allow us to! 😂)</strong></p>
-<p><strong>Step 1: Without documents</strong></p>
-<ol type="1">
-<li>Open <a href="https://aistudio.google.com/" class="uri">https://aistudio.google.com/</a> and start a <span class="alert">new chat</span> (Grounding with Google Search off)</li>
-<li>Ask: “What are the assignment deadlines for DATASCI 101 at Emory University?”</li>
-<li>Gemini doesn’t know: it’s not in the training data</li>
-</ol>
-<p><strong>Step 2: With your document</strong></p>
-<ol type="1">
-<li>Start another <span class="alert">new chat</span></li>
-<li>Click the 📎 (attach) button and upload the course syllabus PDF</li>
-<li>Ask the same question: “What are the assignment deadlines?”</li>
-<li>Compare the answers</li>
-</ol>
-</div><div class="column" style="width:50%;">
-<p><strong>What to observe:</strong></p>
-<table class="caption-top">
-<thead>
-<tr class="header">
-<th>Without Doc</th>
-<th>With Doc</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>“I don’t have access to…”</td>
-<td>Specific dates from syllabus</td>
-</tr>
-<tr class="even">
-<td>May hallucinate generic answer</td>
-<td><span class="alert">Grounded</span> in your document</td>
-</tr>
-<tr class="odd">
-<td>No citations</td>
-<td>Can quote the source</td>
-</tr>
-</tbody>
-</table>
-<div style="margin-top: 15px; background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px;">
-<p><strong>This is grounding in action!</strong></p>
-<p>Gemini reads your whole file and <span class="alert">generates</span> its answer from it. With too many documents to fit, tools add a <span class="alert">retrieval</span> step: that is full RAG</p>
-<p>You just grounded an LLM in your own document! 🎉</p>
+<div class="column" style="width:55%;">
+<p>Open the playground and work through three tabs:</p>
+<p><strong>1. Text splitting</strong></p>
+<ul>
+<li>Chunk size 100, then 1000: how many chunks?</li>
+<li>Which size suits this text?</li>
+</ul>
+<p><strong>2. Semantic search</strong></p>
+<ul>
+<li>Ask about the weaknesses of AI. Which chunks win?</li>
+<li>Ask “Who won the 2026 World Cup?” Does it say “I don’t know”?</li>
+</ul>
+<p><strong>3. Context generation</strong></p>
+<ul>
+<li>Ask “What is an LLM?” and press Generate Response</li>
+<li>Read the prompt. Is the answer in the retrieved text?</li>
+</ul>
+</div><div class="column" style="width:45%;">
+<div style="text-align: center; margin-top: 10px;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><a href="#/" data-modal-type="image" data-modal-url="figures/ragplay-semantic-search.jpg"><img data-src="figures/ragplay-semantic-search.jpg" style="width:100.0%"></a></p>
+<figcaption>RAG Playground, semantic search tab</figcaption>
+</figure>
+</div>
+<div style="font-size: 20px; margin-top: 10px;">
+<p><a href="https://ragplay.vercel.app/experiment" class="uri">https://ragplay.vercel.app/experiment</a></p>
+</div>
 </div>
 </div></div>
 </div>
 </section></section>
 <section>
 <section id="real-world-applications" class="title-slide slide level1 center" data-background-color="#1B3A6B">
-<h1>Real-World Applications 🌍</h1>
+<h1>Real-world applications 🌍</h1>
 
 </section>
 <section id="rag-is-everywhere" class="slide level2">
@@ -1412,13 +1410,13 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <div class="columns">
 <div class="column" style="width:55%;">
 <ul>
-<li><p><span class="alert">The problem</span>: LLMs hallucinate and lack access to private or current information</p></li>
-<li><p><span class="alert">Semantic search</span>: find by meaning using embeddings and cosine similarity</p></li>
-<li><p><span class="alert">The RAG pipeline</span>: chunk → embed → store → retrieve → generate</p></li>
-<li><p><span class="alert">Research shows</span>: retrieval cut hallucinations by over 60% in one study</p></li>
-<li><p><span class="alert">Watch out for</span>: retrieval failures, lost-in-the-middle, outdated docs</p></li>
-<li><p><span class="alert">No-code tools</span>: Gemini Notebook, ChatGPT with files, etc</p></li>
-<li><p><span class="alert">Always verify</span>: RAG reduces errors but doesn’t eliminate them</p></li>
+<li><p>LLMs <span class="alert">hallucinate</span> and cannot see your private documents</p></li>
+<li><p><span class="alert">Semantic search</span> finds text by meaning, using embeddings</p></li>
+<li><p>RAG <span class="alert">chunks</span>, <span class="alert">embeds</span>, <span class="alert">retrieves</span> and <span class="alert">generates</span></p></li>
+<li><p>One study: retrieval cut hallucinated replies by over 60%</p></li>
+<li><p>Retrieval can fail, and old documents give old answers</p></li>
+<li><p>Gemini Notebook and ChatGPT with files need no code</p></li>
+<li><p>RAG reduces errors but does not remove them, so <span class="alert">check the citations</span></p></li>
 </ul>
 </div><div class="column" style="width:45%;">
 <p><strong>Quick reference:</strong></p>

@@ -79,12 +79,12 @@ Source: [Google Research](https://research.google/blog/deeper-insights-into-retr
 
 :::{.columns}
 :::{.column width=50%}
-**Part 1: The Problem**
+**Part 1: The problem**
 
 - Quick recap: hallucinations and knowledge cutoffs (from Lecture 11)
 - How RAG solves both problems
 
-**Part 2: Semantic Search**
+**Part 2: Semantic search**
 
 - Finding by meaning, not just keywords
 - Quick embeddings recap
@@ -92,15 +92,15 @@ Source: [Google Research](https://research.google/blog/deeper-insights-into-retr
 :::
 
 :::{.column width=50%}
-**Part 3: The RAG Pipeline**
+**Part 3: The RAG pipeline**
 
 - How documents become searchable
 - Chunking, embedding, retrieving
 - From question to grounded answer
 
-**Part 4: No-Code Tools**
+**Part 4: No-code tools**
 
-- Gemini Notebook (formerly NotebookLM) and file uploads
+- Gemini Notebook (formerly NotebookLM) and a pipeline playground
 - Build your own RAG system today! 🛠️
 :::
 :::
@@ -114,7 +114,7 @@ Source: [Google Research](https://research.google/blog/deeper-insights-into-retr
 Source: [Bhavishya Pandit](https://bhavishyapandit9.substack.com/p/multimodal-retrieval-augmented-generation)
 :::
 
-## Quick recap: Hallucinations 🤥
+## Quick recap: Hallucinations
 
 :::{style="margin-top: 30px; font-size: 23px;"}
 :::{.columns}
@@ -126,7 +126,7 @@ Source: [Bhavishya Pandit](https://bhavishyapandit9.substack.com/p/multimodal-re
 - Fabricated answers sound [just as convincing]{.alert} as accurate ones
 
 :::{style="margin-top: 20px; background: rgba(230, 57, 70, 0.1); padding: 15px; border-radius: 10px;"}
-**The main question for today:**
+**Today's topic:**
 
 What if we could give the LLM [access to real, verified information]{.alert} when answering?
 :::
@@ -146,14 +146,12 @@ Source: [Iguazio](https://www.iguazio.com/glossary/llm-hallucination/)
 :::
 :::
 
-## The solution: Give AI access to real information!
+## Give AI access to real information!
 
 :::{style="margin-top: 30px; font-size: 23px;"}
 :::{.columns}
 :::{.column width=55%}
 **RAG = [R]{.alert}etrieval-[A]{.alert}ugmented [G]{.alert}eneration**
-
-**The main idea:**
 
 1. You ask a question
 2. [Search your documents]{.alert} for relevant information
@@ -180,7 +178,7 @@ Source: [AWS](https://aws.amazon.com/what-is/retrieval-augmented-generation/)
 :::
 :::
 
-# Semantic Search 🔍 {background-color="#1B3A6B"}
+# Semantic search 🔍 {background-color="#1B3A6B"}
 
 ## Traditional search vs. semantic search
 
@@ -228,11 +226,13 @@ Source: [AWS](https://aws.amazon.com/what-is/retrieval-augmented-generation/)
 
 Text becomes [vectors]{.alert} (lists of numbers):
 
+:::{style="text-align: center;"}
 | Text | Vector (simplified) |
 |------|--------------------|
 | "king" | [0.82, 0.15, -0.43, ...] |
 | "queen" | [0.79, 0.18, -0.41, ...] |
 | "apple" | [-0.12, 0.67, 0.23, ...] |
+:::
 
 **Key properties:**
 
@@ -240,11 +240,13 @@ Text becomes [vectors]{.alert} (lists of numbers):
 - "king" and "queen" are close in vector space; "king" and "apple" are far apart
 - Modern embedding models produce [768 to 3,072 dimensions]{.alert}
 
+:::{style="text-align: center;"}
 | Model | Dimensions | Use Case |
 |-------|------------|----------|
 | OpenAI text-embedding-3-small | 1,536 | General purpose |
 | Google Gemini Embedding | 768–3,072 | Adjustable size |
 | Cohere Embed v4 | 1,536 | Multilingual, text + images |
+:::
 :::
 
 :::{.column width=45%}
@@ -266,23 +268,25 @@ Similar sentences cluster together in embedding space
 :::{.column width=55%}
 **How do we measure if two vectors are similar?**
 
-- [Cosine similarity]{.alert} measures the angle between vectors
-- Numerator: the dot product (multiply corresponding components and add them up; how much they point the same way)
-- Denominator: normalises by their lengths (magnitude)
+- [Cosine similarity]{.alert} measures the angle between two vectors
+- Numerator: dot product (multiply matching components, then add)
+- Denominator: the vectors' lengths, so size does not matter
   - If $A = [0.8, 0.6]$, then $\|A\| = \sqrt{0.8^2 + 0.6^2} = 1$
-- Identical vectors = 1; orthogonal = 0; opposite = -1
-- Embedding components can be negative, so scores can drop below 0
+- Identical = 1; orthogonal = 0; opposite = -1
+- Components can be negative, so scores can fall below 0
 
 $$\text{similarity}(A, B) = \frac{A \cdot B}{\|A\| \times \|B\|}$$
 
 **Interpretation** (illustrative; varies by model):
 
+:::{style="text-align: center;"}
 | Score | Meaning | Example |
 |-------|---------|----------|
 | 0.9–1.0 | Very similar | "car" vs "automobile" |
 | 0.7–0.9 | Related | "car" vs "truck" |
 | 0.4–0.7 | Loosely related | "car" vs "road" |
 | 0.0–0.4 | Unrelated | "car" vs "banana" |
+:::
 :::
 
 :::{.column width=45%}
@@ -312,7 +316,7 @@ The search finds "puppies" when you ask about "dogs"!
 :::
 :::
 
-# The RAG Pipeline 🔄 {background-color="#1B3A6B"}
+# The RAG pipeline 🔄 {background-color="#1B3A6B"}
 
 ## How RAG works
 
@@ -337,6 +341,7 @@ The search finds "puppies" when you ask about "dogs"!
 :::{.column width=55%}
 **What can you ingest?**
 
+:::{style="text-align: center; font-size: 24px;"}
 | Format | Examples | Challenges |
 |--------|----------|------------|
 | **PDF** | Papers, reports | Tables, columns, headers |
@@ -344,8 +349,9 @@ The search finds "puppies" when you ask about "dogs"!
 | **Web pages** | Articles, docs | Navigation, ads |
 | **Code** | .py, .js files | Comments vs. code |
 | **Transcripts** | Meeting notes | Speaker identification |
+:::
 
-**The challenge:**
+**Why parsing is hard:**
 
 - Documents are [unstructured]{.alert}
 - Extract clean text while preserving meaningful structure
@@ -392,11 +398,13 @@ An ingestion pipeline: collect, parse, chunk, embed, store. Source: [Microsoft (
 :::{.column width=45%}
 **Chunk size trade-offs:**
 
+:::{style="text-align: center;"}
 | Size | Pros | Cons |
 |------|------|------|
 | **Small (256)** | Precise retrieval | Loses context |
 | **Medium (512)** | Balanced | Good default |
 | **Large (1024)** | Rich context | May dilute relevance |
+:::
 
 :::{style="text-align: center; margin-top: 15px;"}
 [![Chunking visualisation](figures/chunking-diagram.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/chunking-diagram.png"}
@@ -417,11 +425,13 @@ Source: [Mastering LLM](https://masteringllm.medium.com/11-chunking-strategies-f
 - Each chunk → embedding model → vector
 - Use the same embedding model for queries later
 
+:::{style="text-align: center;"}
 | Database | Type | Speed (1M vectors) |
 |----------|------|-------------------|
 | [Pinecone](https://pinecone.io/) | Cloud | ~50ms queries |
 | [Chroma](https://www.trychroma.com/) | Local/Cloud | ~100ms queries |
 | [FAISS](https://github.com/facebookresearch/faiss) | Local | ~10ms queries |
+:::
 
 **Why vector databases?**
 
@@ -493,7 +503,7 @@ Retrieved chunks become the LLM's "reference material"
 :::
 :::
 
-# RAG vs. Alternatives 🔄 {background-color="#1B3A6B"}
+# RAG vs. alternatives 🔄 {background-color="#1B3A6B"}
 
 ## RAG vs. fine-tuning vs. prompting
 
@@ -548,7 +558,7 @@ Retrieved chunks become the LLM's "reference material"
 | LLM + RAG | [5–15%]{.alert} |
 | LLM + RAG + verification | 2–8% |
 
-*Illustrative ranges, not from one study: rates vary by domain and implementation*
+*Rates vary by domain and implementation*
 :::
 
 :::{.column width=45%}
@@ -573,7 +583,7 @@ Source: [Liu et al. (2023)](https://arxiv.org/abs/2307.03172)
 :::
 :::
 
-# RAG Failure Modes ⚠️ {background-color="#1B3A6B"}
+# RAG failure modes ⚠️ {background-color="#1B3A6B"}
 
 ## When RAG goes wrong
 
@@ -582,13 +592,13 @@ Source: [Liu et al. (2023)](https://arxiv.org/abs/2307.03172)
 :::{.column width=55%}
 **Common failure modes:**
 
-| Failure Type | What Happens | Rough frequency |
+| Failure Type | What Happens | Rough frequency (illustrative) |
 |--------------|--------------|----------|
-| **Retrieval failure** | Wrong chunks retrieved | 15–25% of queries |
-| **Lost in the middle** | Relevant info in middle ignored | Common with many chunks |
-| **Context overflow** | Too much text, truncated | Depends on doc size |
-| **Outdated docs** | Stale information retrieved | Depends on maintenance |
-| **Extraction errors** | PDF tables/images parsed incorrectly | 10–30% of complex docs |
+| [Retrieval failure]{.alert} | Wrong chunks retrieved | 15–25% of queries |
+| [Lost in the middle]{.alert} | Relevant info in middle ignored | Common with many chunks |
+| [Context overflow]{.alert} | Too much text, truncated | Depends on doc size |
+| [Outdated docs]{.alert} | Stale information retrieved | Depends on maintenance |
+| [Extraction errors]{.alert} | PDF tables/images parsed incorrectly | 10–30% of complex docs |
 
 **Retrieval failures happen when:**
 
@@ -602,11 +612,11 @@ Source: [Liu et al. (2023)](https://arxiv.org/abs/2307.03172)
 :::{style="background: rgba(230, 57, 70, 0.1); padding: 15px; border-radius: 10px;"}
 **Example: Retrieval failure**
 
-**Your document says:** "The quarterly earnings call is scheduled for March 15th"
+**Your document says:** "Project Falcon launches on 15 March"
 
-**You ask:** "When is the investor meeting?"
+**You ask:** "When does the new mobile app launch?"
 
-**Problem:** "investor meeting" ≠ "earnings call" in embedding space
+**Problem:** nothing in the text tells the model that "Falcon" is the mobile app
 
 **Result:** wrong chunks retrieved, wrong answer
 :::
@@ -667,7 +677,7 @@ Source: [Liu et al. (2023)](https://arxiv.org/abs/2307.03172)
 :::
 :::
 
-# No-Code RAG Tools 🛠️ {background-color="#1B3A6B"}
+# No-code RAG tools 🛠️ {background-color="#1B3A6B"}
 
 ## Tools you can use today!
 
@@ -705,6 +715,7 @@ Source: [Liu et al. (2023)](https://arxiv.org/abs/2307.03172)
 
 **Features:**
 
+:::{style="text-align: center;"}
 | Feature | What It Does |
 |---------|-------------|
 | **Source grounding** | Only answers from your docs |
@@ -712,6 +723,7 @@ Source: [Liu et al. (2023)](https://arxiv.org/abs/2307.03172)
 | **Audio Overview** | Generates podcast-style summary |
 | **Study guides** | Creates questions & summaries |
 | **Cross-referencing** | Finds connections between sources |
+:::
 
 **Best for:** Research projects, exam prep, literature reviews, understanding complex reports
 :::
@@ -728,48 +740,42 @@ Source: [Liu et al. (2023)](https://arxiv.org/abs/2307.03172)
 :::
 :::
 
-## Activity: Grounding with a file upload 📎
+## Activity: watch RAG work 🔬
 
-:::{style="margin-top: 30px; font-size: 20px;"}
+:::{style="margin-top: 20px; font-size: 20px;"}
 :::{.columns}
-:::{.column width=50%}
-**Compare: with vs. without your documents. Let's do it together (or at home if Emory's connection doesn't allow us to! 😂)**
+:::{.column width=55%}
+Open the playground and work through three tabs:
 
-**Step 1: Without documents**
+**1. Text splitting**
 
-1. Open <https://aistudio.google.com/> and start a [new chat]{.alert} (Grounding with Google Search off)
-2. Ask: "What are the assignment deadlines for DATASCI 101 at Emory University?"
-3. Gemini doesn't know: it's not in the training data
+- Chunk size 100, then 1000: how many chunks?
+- Which size suits this text?
 
-**Step 2: With your document**
+**2. Semantic search**
 
-1. Start another [new chat]{.alert}
-2. Click the 📎 (attach) button and upload the course syllabus PDF
-3. Ask the same question: "What are the assignment deadlines?"
-4. Compare the answers
+- Ask about the weaknesses of AI. Which chunks win?
+- Ask "Who won the 2026 World Cup?" Does it say "I don't know"?
+
+**3. Context generation**
+
+- Ask "What is an LLM?" and press Generate Response
+- Read the prompt. Is the answer in the retrieved text?
 :::
 
-:::{.column width=50%}
-**What to observe:**
+:::{.column width=45%}
+:::{style="text-align: center; margin-top: 10px;"}
+[![RAG Playground, semantic search tab](figures/ragplay-semantic-search.jpg){width="100%"}](#){data-modal-type="image" data-modal-url="figures/ragplay-semantic-search.jpg"}
 
-| Without Doc | With Doc |
-|-------------|----------|
-| "I don't have access to..." | Specific dates from syllabus |
-| May hallucinate generic answer | [Grounded]{.alert} in your document |
-| No citations | Can quote the source |
-
-:::{style="margin-top: 15px; background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px;"}
-**This is grounding in action!**
-
-Gemini reads your whole file and [generates]{.alert} its answer from it. With too many documents to fit, tools add a [retrieval]{.alert} step: that is full RAG
-
-You just grounded an LLM in your own document! 🎉
+:::{style="font-size: 20px; margin-top: 10px;"}
+<https://ragplay.vercel.app/experiment>
+:::
 :::
 :::
 :::
 :::
 
-# Real-World Applications 🌍 {background-color="#1B3A6B"}
+# Real-world applications 🌍 {background-color="#1B3A6B"}
 
 ## RAG is everywhere!
 
@@ -804,19 +810,19 @@ In each case, users need answers grounded in [specific documents]{.alert}, with 
 :::{style="margin-top: 30px; font-size: 26px;"}
 :::{.columns}
 :::{.column width=55%}
-- [The problem]{.alert}: LLMs hallucinate and lack access to private or current information
+- LLMs [hallucinate]{.alert} and cannot see your private documents
 
-- [Semantic search]{.alert}: find by meaning using embeddings and cosine similarity
+- [Semantic search]{.alert} finds text by meaning, using embeddings
 
-- [The RAG pipeline]{.alert}: chunk → embed → store → retrieve → generate
+- RAG [chunks]{.alert}, [embeds]{.alert}, [retrieves]{.alert} and [generates]{.alert}
 
-- [Research shows]{.alert}: retrieval cut hallucinations by over 60% in one study
+- One study: retrieval cut hallucinated replies by over 60%
 
-- [Watch out for]{.alert}: retrieval failures, lost-in-the-middle, outdated docs
+- Retrieval can fail, and old documents give old answers
 
-- [No-code tools]{.alert}: Gemini Notebook, ChatGPT with files, etc
+- Gemini Notebook and ChatGPT with files need no code
 
-- [Always verify]{.alert}: RAG reduces errors but doesn't eliminate them
+- RAG reduces errors but does not remove them, so [check the citations]{.alert}
 :::
 
 :::{.column width=45%}

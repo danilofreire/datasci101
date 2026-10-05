@@ -28,7 +28,7 @@ This lecture explains Retrieval-Augmented Generation (RAG) in accessible terms f
 ### 4. No-Code RAG Tools
 
 * **Gemini Notebook** (formerly NotebookLM): Google's free AI research assistant.
-* **File uploads**: ChatGPT, Claude and Google AI Studio can answer from your documents.
+* **RAG Playground**: a free website that shows text splitting, semantic search and context generation step by step.
 
 ### 5. When RAG Fails
 
@@ -41,4 +41,4 @@ This lecture explains Retrieval-Augmented Generation (RAG) in accessible terms f
 * [Lecture Slides (HTML)](https://danilofreire.github.io/datasci101/lectures/lecture-12/12-rag.html)
 * [Lecture Source (QMD)](12-rag.qmd)
 * [Gemini Notebook](https://notebook.google/)
-* [Google AI Studio](https://aistudio.google.com/)
+* [RAG Playground](https://ragplay.vercel.app/experiment)
