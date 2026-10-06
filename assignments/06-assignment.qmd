@@ -24,7 +24,7 @@ This assignment covers material from **Lecture 14**: Building Reliable Pipelines
 
 ---
 
-### Question 1: The DPD chatbot post-mortem
+### Question 1
 
 In January 2024, a customer called Ashley Beauchamp found that the customer service chatbot of DPD, a UK delivery company, would swear at customers, write poems criticising DPD, and call itself "useless". The screenshots went viral. DPD disabled the AI part of the chatbot and blamed an error that occurred after a system update. Nobody at the company noticed until customers started posting screenshots online.
 
@@ -48,7 +48,7 @@ In January 2024, a customer called Ashley Beauchamp found that the customer serv
 
 ---
 
-### Question 2: Drift after COVID
+### Question 2
 
 Imagine a restaurant recommendation app trained on reviews and ratings from 2017 to 2019. It learns which restaurants people like from cuisine type, price range, location and review sentiment. Then COVID arrives in 2020.
 
@@ -80,7 +80,7 @@ Lecture 14 described three types of drift:
 
 ---
 
-### Question 3: Output validation and the Air Canada chatbot
+### Question 3
 
 In November 2022, Air Canada's customer service chatbot told a grieving customer he could book a full-fare flight and then apply for a bereavement discount within 90 days. That policy did not exist: the chatbot invented it. The customer booked the flight, was denied the discount, and took Air Canada to a tribunal. In February 2024, the tribunal ruled against Air Canada and ordered it to refund the difference.
 
@@ -106,7 +106,7 @@ The model made a mistake, but the bigger failure was that its response went stra
 
 ---
 
-### Question 4: The Google Gemini image crisis
+### Question 4
 
 In February 2024, users asked Google's Gemini to generate images of "1943 German soldiers". Gemini produced images of Black men and Asian women in Nazi uniforms. Similar problems appeared with prompts such as "US Founding Fathers" and other historical figures. Google's CEO called the results "completely unacceptable", and Google stopped Gemini from generating images of people for about six months.
 
@@ -128,7 +128,7 @@ In February 2024, users asked Google's Gemini to generate images of "1943 German
 
 ---
 
-### Question 5: Consent and the data supply chain
+### Question 5
 
 You posted photos of yourself on Instagram in 2020. In 2024, you find out they were scraped into a training dataset for a facial recognition system that police departments now use. Nobody asked you, and you did not know.
 
@@ -152,7 +152,7 @@ This has happened in real life. Clearview AI scraped over 30 billion faces from 
 
 ---
 
-### Bonus question: The model card bluff
+### Bonus question
 
 Lecture 14 introduced **model cards**: short documents that say what a model is for, how it was evaluated and where it fails. Below is a model card for **MediScreen**, an AI system that reads chest X-rays and flags possible pneumonia for radiologists to review. The vendor's marketing team wrote it.
 
