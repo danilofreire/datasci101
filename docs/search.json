@@ -5129,5 +5129,12 @@
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Activity: watch RAG work 🔬",
     "text": "Activity: watch RAG work 🔬\n\n\n\nOpen the playground and work through three tabs:\n1. Text splitting\n\nChunk size 100, then 1000: how many chunks?\nWhich size suits this text?\n\n2. Semantic search\n\nAsk about the weaknesses of AI. Which chunks win?\nAsk “Who won the 2026 World Cup?” Does it say “I don’t know”?\n\n3. Context generation\n\nAsk “What is an LLM?” and press Generate Response\nRead the prompt. Is the answer in the retrieved text?\n\n\n\n\n\n\nRAG Playground, semantic search tab\n\n\n\nhttps://ragplay.vercel.app/experiment"
+  },
+  {
+    "objectID": "lectures/lecture-12/12-rag.html#graph-of-the-day",
+    "href": "lectures/lecture-12/12-rag.html#graph-of-the-day",
+    "title": "DATASCI 101: Introduction to AI Applications",
+    "section": "Graph of the day",
+    "text": "Graph of the day\n\n\nSource: SemiAnalysis"
   }
 ]

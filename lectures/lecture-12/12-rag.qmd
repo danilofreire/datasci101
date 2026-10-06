@@ -106,6 +106,14 @@ Source: [Google Research](https://research.google/blog/deeper-insights-into-retr
 :::
 :::
 
+## Graph of the day
+
+:::{style="text-align: center; margin-top: 24px;"}
+[![](figures/graph-of-the-day.png){width="75%"}](#){data-modal-type="image" data-modal-url="figures/graph-of-the-day.png"}
+
+Source: [SemiAnalysis](https://newsletter.semianalysis.com/p/anthropic-subscriptions-offer-5x)
+:::
+
 ## Meme of the day 😄
 
 :::{style="text-align: center; margin-top: 24px;"}
