@@ -329,13 +329,13 @@ Further readings:
 
 - Lecture 13: **Quiz 02**. This quiz covers Lectures 10-12.
 - **Assignment 05 due (5%).**
-- [**Assignment 06**](https://github.com/danilofreire/datasci101/blob/main/assignments).
 
 ### October 13, 2026: Fall Break (No Classes)
 
 ### October 15, 2026:
 
 - Lecture 14: [When AI systems fail: pipelines, monitoring, and documentation](https://danilofreire.github.io/datasci101/lectures/lecture-14/14-pipelines.html).
+- [**Assignment 06**](https://github.com/danilofreire/datasci101/blob/main/assignments).
 
 Suggested readings:
 
