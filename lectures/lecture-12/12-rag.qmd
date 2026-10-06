@@ -276,7 +276,7 @@ Similar sentences cluster together in embedding space
 :::{.column width=55%}
 **How do we measure if two vectors are similar?**
 
-- [Cosine similarity]{.alert} measures the angle between two vectors
+- [Cosine similarity](https://en.wikipedia.org/wiki/Cosine_similarity) measures the angle between two vectors
 - Numerator: dot product (multiply matching components, then add)
 - Denominator: the vectors' lengths, so size does not matter
   - If $A = [0.8, 0.6]$, then $\|A\| = \sqrt{0.8^2 + 0.6^2} = 1$
