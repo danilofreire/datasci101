@@ -560,13 +560,17 @@ Retrieved chunks become the LLM's "reference material"
 
 **Hallucination rates comparison:**
 
+:::{style="display: flex; justify-content: center; font-size: 24px;"}
 | Setting | Hallucination Rate |
 |---------|-------------------|
 | Base LLM (no RAG) | 15–40% |
 | LLM + RAG | [5–15%]{.alert} |
 | LLM + RAG + verification | 2–8% |
+:::
 
+:::{style="text-align: center;"}
 *Rates vary by domain and implementation*
+:::
 :::
 
 :::{.column width=45%}
@@ -792,13 +796,13 @@ Open the playground and work through three tabs:
 :::{.column width=100%}
 | Industry | Application | How RAG Helps | Example Company |
 |----------|-------------|---------------|----------------|
-| 🏢 **Customer Support** | AI chatbots | Answer questions from product docs | Intercom, Zendesk |
-| ⚖️ **Legal** | Research assistants | Search case law by meaning | Harvey AI, Thomson Reuters |
-| 🏥 **Healthcare** | Clinical support | Find relevant patient records, guidelines | Epic, Microsoft |
-| 📚 **Education** | Personal tutors | Answer questions from course materials | Khan Academy, Duolingo |
-| 💼 **Finance** | Analyst tools | Search earnings reports, SEC filings | Bloomberg, Kensho |
-| 🔬 **Research** | Literature review | Find related papers, summarise findings | Elicit, Semantic Scholar |
-| 💻 **Developer Tools** | Documentation QA | Answer questions from codebases | GitHub Copilot, Cursor |
+| [Customer Support]{.alert} | AI chatbots | Answer questions from product docs | Intercom, Zendesk |
+| [Legal]{.alert} | Research assistants | Search case law by meaning | Harvey AI, Thomson Reuters |
+| [Healthcare]{.alert} | Clinical support | Find relevant patient records, guidelines | Epic, Microsoft |
+| [Education]{.alert} | Personal tutors | Answer questions from course materials | Khan Academy, Duolingo |
+| [Finance]{.alert} | Analyst tools | Search earnings reports, SEC filings | Bloomberg, Kensho |
+| [Research]{.alert} | Literature review | Find related papers, summarise findings | Elicit, Semantic Scholar |
+| [Developer Tools]{.alert} | Documentation QA | Answer questions from codebases | GitHub Copilot, Cursor |
 
 :::{style="margin-top: 15px; font-size: 20px;"}
 In each case, users need answers grounded in [specific documents]{.alert}, with a citation for where the answer came from
