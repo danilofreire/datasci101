@@ -1,5 +1,5 @@
 ---
-title: "Assignment 08: AI in Healthcare, Finance, and Global Regulation"
+title: "Assignment 08: Bias and AI Regulation"
 subtitle: "DATASCI 101: Introduction to AI Applications"
 author: "Emory University"
 format:
@@ -10,7 +10,7 @@ format:
 
 ## Instructions
 
-This assignment covers material from **Lecture 17**: AI in Finance and Healthcare — Opportunities and Biases, and **Lecture 18**: AI Regulation and Standards Around the World.
+This assignment covers material from **Lecture 17**: Types of Bias and How They Arise, and **Lecture 18**: AI Regulation and Standards Around the World.
 
 **Guidelines:**
 
@@ -24,22 +24,32 @@ This assignment covers material from **Lecture 17**: AI in Finance and Healthcar
 
 ---
 
-### Question 1: Clinical Notes Describe Patients Differently by Race
+### Question 1
 
-Research has found that doctors write about patients differently depending on the patient's race and gender. Studies by Sun et al. (2022) and Beach et al. (2021) showed that clinical notes are more likely to use words like "non-compliant," "refuses," or "aggressive" for Black patients, and words like "pleasant," "cooperative," or "well-appearing" for white patients, even when the patients' actual behaviour and conditions were similar.
+Lecture 17 showed that a neutral-looking variable can stand in for a protected one. ZIP codes are the classic case: housing discrimination makes them correlate with race.
 
-Lecture 17 discussed how LLMs are now used to read and summarise clinical notes in systems like Epic's MyChart. These models learn from thousands of real clinical notes.
+A bank uses these ten variables to predict whether an applicant will repay a loan:
+
+| # | Variable | Description |
+|---|----------|-------------|
+| 1 | `age` | Applicant's age in years |
+| 2 | `income` | Annual income in USD |
+| 3 | `zip_code` | 5-digit ZIP code of home address |
+| 4 | `credit_score` | FICO score (300-850) |
+| 5 | `years_at_job` | Time in current job |
+| 6 | `num_dependents` | Number of people the applicant supports |
+| 7 | `university_name` | University attended (or "none") |
+| 8 | `first_name` | Applicant's first name |
+| 9 | `commute_distance` | Miles from home to work |
+| 10 | `savings_balance` | Savings account balance in USD |
 
 **Your task:**
 
-1. Suppose an LLM is trained on 100,000 clinical notes containing these language patterns. The model is then used to summarise patient records for doctors. Give **2 specific examples** of how the biased language patterns in the training data could affect the model's summaries. For each example, describe: what the model might write, and how a doctor reading the summary could be misled.
+1. Find three variables that could act as proxies for race, gender, religion or national origin. Leave out `age`, which is itself protected. For each, say what it could stand in for and why.
 
-2. In Assignment 07, we discussed proxy variables in structured data (like ZIP codes encoding race in a spreadsheet). Clinical notes are **unstructured text**, that is, the bias is embedded in word choice, tone, and framing, not in a column you can remove. In 3–4 sentences, explain why this makes bias in clinical notes harder to detect and harder to fix than bias in structured data.
+2. For each of your three, should the bank keep it, remove it, or replace it with something less detailed? Give one reason, and say what the bank loses by your choice.
 
-3. Propose **one technical intervention** and **one organisational intervention** a hospital could adopt to reduce this problem. For each intervention:
-   - Describe specifically what it would do
-   - Explain how it would help
-   - Identify one limitation or way it could fail
+3. The bank's data team says: *"We removed race and gender from the dataset, so our model cannot discriminate."* In 3-4 sentences, explain why this is wrong.
 
 ---
 
@@ -53,19 +63,27 @@ Lecture 17 discussed how LLMs are now used to read and summarise clinical notes 
 
 ---
 
-### Question 2: Can LLMs Move Markets?
+### Question 2
 
-Lecture 17 described how LLMs can be used for **sentiment-based trading**: reading financial news, classifying it as positive or negative, and generating buy/sell signals. The lecture introduced the **Financial PhraseBank** dataset (sentences labelled by finance professionals as positive, negative, or neutral) and showed that finance-specific models like BloombergGPT outperform general-purpose LLMs at this task.
+**FirstRound** is an AI tool that screens CVs for entry-level software jobs and ranks applicants for recruiters. The vendor asked a chatbot to write the fairness audit summary below.
 
-This creates a new kind of market risk. If many hedge funds use similar LLMs trained on the same data, reading the same news, they could all reach the same conclusion at the same time.
+> **Fairness audit summary: FirstRound v3**
+>
+> **Training data:** 12 years of CVs received by our client, with the hiring decision for each. The data is an accurate record of who was hired, so the model has learned fair hiring standards.
+>
+> **Coverage:** The model learned from more than 200,000 CVs, 94% of them from graduates of US universities. With a dataset this large, it can assess applicants from any background equally well.
+>
+> **Performance:** The model agrees with human recruiters 85% of the time overall. This shows it works equally well for all groups of applicants.
+>
+> **Fairness criteria:** FirstRound is calibrated and has equal false positive rates and equal false negative rates for men and women, although the two groups have different base rates in our data.
+>
+> **Human oversight:** A recruiter reviews the ranked list before interview invitations go out, and rejected applicants can ask for a human review.
 
 **Your task:**
 
-1. In 3–4 sentences, explain how a sentiment trading pipeline works, from data collection through to analysis and trading output.
+1. Four of the five sections make a claim that Lecture 17 contradicts. For each of the four, explain in 1-2 sentences what is wrong and name the idea from the lecture that shows it.
 
-2. Suppose 20 hedge funds all deploy similar LLM-based sentiment tools. A major tech company releases an ambiguous earnings report. Identify **2 specific risks** that arise when many firms use similar models to interpret the same information at the same time. For each risk, explain the mechanism (what happens step by step) and who is harmed.
-
-3. A regulator proposes: *"Any firm using AI-generated signals for trading must disclose the model architecture and training data to the securities commission."* In 3–4 sentences, evaluate this proposal. Would disclosure actually reduce the risks you identified in part 2? What would firms argue against it?
+2. Rewrite the **Performance** section in 2-3 sentences so that a buyer could trust it. You may invent the numbers.
 
 ---
 
@@ -79,23 +97,20 @@ This creates a new kind of market risk. If many hedge funds use similar LLMs tra
 
 ---
 
-### Question 3: Domain-Specific vs General-Purpose LLMs in Finance
+### Question 3
 
-Lecture 17 introduced several finance-specific LLMs:
+Lecture 17 gave two views on whether AI bias can be fixed:
 
-- **BloombergGPT**: Trained on 363 billion tokens of financial data plus 345 billion tokens of general text. Outperforms general models on financial sentiment analysis and classification.
-- **FinGPT**: Open-source, fine-tunes LLaMA using LoRA. Costs under $300 per training run.
-- **GPT-4** (general-purpose): Wins on numerical reasoning tasks because its pre-training included more mathematical content.
+- Optimists: *"A biased algorithm can be retrained. A biased hiring manager is harder to fix."*
+- Sceptics: *"You can't fix a discriminatory housing market by tweaking a credit-scoring model."*
 
-The lecture also noted a key finding: **for stock prediction, no model is reliable**, that is, traditional models like ARIMA and LSTM are still more practical.
+Amazon's hiring tool penalised CVs containing the word "women's". Engineers made it ignore those terms, but could not be sure it would not find other ways to rank women lower ([Reuters](https://www.reuters.com/article/world/insight-amazon-scraps-secret-ai-recruiting-tool-that-showed-bias-against-women-idUSKCN1MK0AG/)). Amazon scrapped the tool.
 
 **Your task:**
 
-1. A small fintech startup wants to build a customer-facing financial chatbot that answers questions about investment products and explains fees. They have two options: use GPT-4 via API (lower setup cost, higher per-query cost) or fine-tune FinGPT on their own product documentation (higher setup cost, lower per-query cost). List **3 factors** the startup should consider when choosing between these options. For each factor, explain which option it favours and why.
+1. Give the strongest point each side could make about this case, in 2-3 sentences each.
 
-2. BloombergGPT was trained on a massive amount of financial text. But more specialised training data can actually make a model **worse** at certain tasks. In 3–4 sentences, explain why. Think about what a model might lose when it becomes highly specialised. (Hint: consider tasks that require general knowledge, common-sense reasoning, or handling questions outside finance.)
-
-3. The lecture stated that "for stock prediction, no model is reliable." In 3–4 sentences, explain why stock prediction is fundamentally harder than sentiment classification, even when you use the same model and the same data. Consider: what makes a prediction task "hard" versus what makes a classification task (positive/negative/neutral) more tractable?
+2. Without the tool, human recruiters decide. Is that fairer to applicants? Take a position in 3-4 sentences, using the lecture's comparison of human and AI evaluators.
 
 ---
 
@@ -109,23 +124,21 @@ The lecture also noted a key finding: **for stock prediction, no model is reliab
 
 ---
 
-### Question 4: The EU AI Act Risk Pyramid Has a Grey Zone
+### Question 4
 
-The EU AI Act classifies AI systems into four tiers: **Prohibited** (banned outright), **High Risk** (strict requirements), **Limited Risk** (transparency obligations), and **Minimal Risk** (no requirements). In Lecture 18, the examples were clear-cut: a spam filter is minimal risk, a hiring algorithm is high risk, and government social scoring is prohibited.
+The EU AI Act sorts AI systems into four tiers: prohibited (banned), high risk (strict requirements), limited risk (transparency obligations) and minimal risk (no requirements). The examples in Lecture 18 were clear-cut: a spam filter is minimal risk, a hiring algorithm is high risk, and government social scoring is prohibited. Many real systems are harder to place.
 
-But many real systems don't fit neatly into one category.
-
-**Here is the scenario:** A university deploys an AI system that reads students' essays and flags those it suspects were written by AI. Flagged essays go to a professor, who reviews them before deciding on any academic integrity action. The student is not told their essay was flagged unless the professor decides to pursue the case.
+A university uses an AI system that reads students' essays and flags those it suspects were written by AI. Flagged essays go to a professor, who reviews them before deciding on any academic integrity action. Students are told about a flag only if the professor pursues the case.
 
 **Your task:**
 
-1. **Argue that this system is high risk.** Consider: the system affects educational access and academic standing. A false positive (flagging a human-written essay as AI-generated) could lead to disciplinary proceedings. Write 3–4 sentences making the strongest case for high-risk classification.
+1. Argue that this system is high risk. Think about what a false positive (a human-written essay flagged as AI) could mean for a student. Write 3-4 sentences.
 
-2. **Now argue that it is limited risk.** Consider: the system is a detection tool, not a decision-maker. A human professor reviews every flagged case before any action is taken. Write 3–4 sentences making the strongest case for limited-risk classification.
+2. Now argue that it is limited risk. Think about who makes the final decision. Write 3-4 sentences.
 
-3. Which classification do you find more convincing? In your answer (4–5 sentences), address **both** of these questions:
-   - Does the presence of a human reviewer actually make the system less risky, or does it just shift responsibility?
-   - What matters more for classification: the technology itself, or the consequences of how it is used?
+3. Which classification do you find more convincing? In 4-5 sentences, address both questions:
+   - Does the human reviewer make the system less risky, or only shift responsibility?
+   - What matters more for classification: the technology, or the consequences of how it is used?
 
 ---
 
@@ -139,22 +152,22 @@ But many real systems don't fit neatly into one category.
 
 ---
 
-### Question 5: Biden vs Trump on AI Governance
+### Question 5
 
-Lecture 18 described two competing approaches to AI governance in the United States:
+Lecture 18 described two approaches to AI governance in the United States:
 
-- **Biden's Executive Order (October 2023)**: Required developers of powerful AI to share safety test results with the government. Established standards for red-teaming. Created guidelines for watermarking AI-generated content. Focused on safety, accountability, and government oversight.
-- **Trump's America's AI Action Plan (July 2025)**: Prioritised American AI dominance over global competitors. Reduced regulatory barriers to development. Emphasised competition with China. Favoured voluntary industry commitments over government mandates.
+- Biden's Executive Order (October 2023) required developers of powerful AI to share safety test results with the government. It also set standards for red-teaming and guidelines for watermarking AI-generated content. Its focus was safety, accountability and government oversight.
+- Trump's America's AI Action Plan (July 2025) put American AI dominance first. It reduced regulatory barriers, stressed competition with China, and favoured voluntary industry commitments over mandates.
 
 **Your task:**
 
-1. For **each approach**, identify **2 specific groups** that benefit and **2 specific groups** that are potentially harmed. Be precise — don't just write "companies" or "the public." Name the type of company, the type of worker, or the type of consumer you mean.
+1. For each approach, name two groups that benefit and two that could be harmed. "Companies" or "the public" is too vague: name the type of company, worker or consumer.
 
-2. Biden's EO required developers to share safety test results with the government. Trump's plan made compliance largely voluntary. Answer both parts:
-   - Under which approach is a **harmful AI system** more likely to reach the market without being caught? Explain why in 2–3 sentences.
-   - Under which approach is a **beneficial AI system** more likely to be delayed or never built? Explain why in 2–3 sentences.
+2. Biden's order required developers to share safety test results. Trump's plan made compliance largely voluntary.
+   - Under which approach is a harmful AI system more likely to reach the market unnoticed? Explain in 2-3 sentences.
+   - Under which approach is a beneficial AI system more likely to be delayed or never built? Explain in 2-3 sentences.
 
-3. A critic of Biden's approach says: *"Regulation kills innovation."* A critic of Trump's approach says: *"Self-regulation is no regulation."* In 3–4 sentences, evaluate whether **either** critique is fair. You must engage with both — don't dismiss one to defend the other.
+3. A critic of Biden's approach says: *"Regulation kills innovation."* A critic of Trump's approach says: *"Self-regulation is no regulation."* Is each critique fair? Answer for both in 3-4 sentences.
 
 ---
 
@@ -168,17 +181,17 @@ Lecture 18 described two competing approaches to AI governance in the United Sta
 
 ---
 
-### Bonus Question: The "Innovation-First" Gamble
+### Bonus question
 
-Lecture 18 explained that the US and UK both adopt "innovation-first" approaches to AI regulation, while the EU takes a more precautionary, risk-based approach. The lecture quoted: *"'Move fast and break things' is less appealing when the things being broken are people's lives."*
+Robert Williams appears in both lectures. In 2020, Detroit police ran grainy shop footage through facial recognition, which matched it to his driving licence photo. The match was wrong, and he spent 30 hours in a cell.
+
+Suppose the EU AI Act applied in full to this case.
 
 **Your task:**
 
-1. Describe **1 specific scenario** (drawing from Lectures 16 and 17) where an innovation-first approach leads to **better outcomes** for society than the EU's precautionary approach. Be concrete: name the technology, the domain, and who benefits.
+1. Which tier of the risk pyramid would this use of facial recognition fall into? Explain in 2-3 sentences. Read the banned tier carefully before you answer.
 
-2. Describe **1 specific scenario** where an innovation-first approach leads to **worse outcomes**. Again, be concrete.
-
-3. Pick **one domain** from Lectures 16 and 17 (healthcare, finance, hiring, law enforcement, or education) where "move fast and break things" is most dangerous. In 4–5 sentences, propose a specific policy that tries to encourage innovation in that domain while still protecting people from harm. Don't just say "balance innovation and safety" — describe what the policy would require in practice.
+2. Name two high-risk requirements from Lecture 18 that could have prevented the arrest, and the type of bias from Lecture 17 that each one addresses. Write 3-4 sentences.
 
 ---
 
