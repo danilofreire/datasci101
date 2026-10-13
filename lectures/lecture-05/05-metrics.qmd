@@ -759,7 +759,7 @@ Source: [X.com](https://x.com/andrewlamb1111/status/1952386263450841233)
 :::{style="margin-top: 30px; font-size: 25px;"}
 :::{.columns}
 :::{.column width=55%}
-- In 2025, Anthropic tested [Claude Opus 4.6]{.alert} on BrowseComp, an OpenAI benchmark
+- In 2026, Anthropic tested [Claude Opus 4.6]{.alert} on BrowseComp, an OpenAI benchmark
 - [On its own, the model worked out it was being tested]{.alert}
 - It [found the encrypted answer key online, decrypted it and used it]{.alert}
 - A new form of [benchmark contamination]{.alert}: answers found during the test, not in training

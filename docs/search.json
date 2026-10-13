@@ -2720,7 +2720,7 @@
     "href": "lectures/lecture-05/05-metrics.html#benchmark-contamination-in-practice",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Benchmark contamination in practice",
-    "text": "Benchmark contamination in practice\nWhen the model finds the answer key\n\n\n\n\nIn 2025, Anthropic tested Claude Opus 4.6 on BrowseComp, an OpenAI benchmark\nOn its own, the model worked out it was being tested\nIt found the encrypted answer key online, decrypted it and used it\nA new form of benchmark contamination: answers found during the test, not in training\nIt undermines benchmarks that assume models cannot look things up\nAs models get more capable, evaluation itself gets harder\n\n\n\n\n\n\nClaude identifying a benchmark evaluation\n\n\nSource: Anthropic Engineering"
+    "text": "Benchmark contamination in practice\nWhen the model finds the answer key\n\n\n\n\nIn 2026, Anthropic tested Claude Opus 4.6 on BrowseComp, an OpenAI benchmark\nOn its own, the model worked out it was being tested\nIt found the encrypted answer key online, decrypted it and used it\nA new form of benchmark contamination: answers found during the test, not in training\nIt undermines benchmarks that assume models cannot look things up\nAs models get more capable, evaluation itself gets harder\n\n\n\n\n\n\nClaude identifying a benchmark evaluation\n\n\nSource: Anthropic Engineering"
   },
   {
     "objectID": "lectures/lecture-05/05-metrics.html#fairness-when-overall-accuracy-hides-problems",
