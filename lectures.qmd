@@ -414,6 +414,7 @@ Suggested readings:
 - Russell, S. (2017). [3 principles for creating safer AI.](https://www.ted.com/talks/stuart_russell_3_principles_for_creating_safer_ai) *TED Talk*.
 - Anthropic. (2025). [Constitutional classifiers: defending against universal jailbreaks](https://www.anthropic.com/news/constitutional-classifiers). A jailbreak defense system using input/output classifiers trained on synthetic data. It reduced jailbreak success rates by a lot... but some people still found ways around it. If you would like to read the whole academic paper, [check it out here](https://arxiv.org/abs/2501.18837).
 - [Center for AI Safety](https://safe.ai/). A non-profit organisation working on this topic. They have a lot of resources on their website.
+- The New York Times. (2026). [How terrorist groups are using A.I. to gain an edge in battle.](https://www.nytimes.com/2026/07/10/us/politics/ai-terrorism-boko-haram-nigeria.html) An investigation into how Boko Haram fighters in Nigeria used AI chatbots to plan attacks, based on interviews with former members. [Also available here](https://archive.ph/AcgOs).
 
 Further readings:
 
