@@ -66,7 +66,7 @@ Bank of America is hiring summer analysts for 2027, with positions in Atlanta. T
 
 **Analysis:**
 
-- Report the two scores out of six. For each check that Letter 1 failed, say which PTCF element supplied it in Letter 2
+- Report the two scores: Letter 1 out of five, Letter 2 out of six. Count a **"no"** in the "not true" row as a pass. For each check that Letter 1 failed, say which PTCF element supplied it in Letter 2
 - Did either letter invent something about you (a project, a skill, an award)? Quote it. This is hallucination in a document you would sign
 - Which sentence of Letter 2 would you rewrite before sending it, and why?
 
@@ -135,7 +135,7 @@ Meta-prompting means asking the model to improve your prompt (Lecture 10). This 
 1. Open a new chat. Paste the task description above, then write: *"Improve this prompt so it gets a better result for the task above. Return only the improved prompt, in under 120 words."* Then paste V0. Record the result as V1.
 2. In the same chat, write: *"Improve this prompt further. Return only the improved prompt, in under 120 words."* Paste V1. Record the result as V2.
 3. Check V1 and V2 against the task description. If a version dropped the audience, the length, or the real example, add it back by hand and say so.
-4. Open **three new chats**. In the first, send V0 on its own, with nothing else: this is what the model gets when you skip the details. In the second, send V1 followed by the task description. In the third, send V2 followed by the task description. Copy the first 150 words of each output.
+4. Open **three new chats**. In the first, send V0 on its own, with nothing else: this is what the model gets when you skip the details. In the second, send V1 followed by the task description. In the third, send V2 followed by the task description. Copy the first 150 words of each output, and note each output's total word count.
 
 **Report:**
 
