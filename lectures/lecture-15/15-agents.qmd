@@ -133,35 +133,35 @@ Source: [Noah Topper on X](https://x.com/NoahTopper/status/2081966112691089472)
 
 ## Chatbots answer, agents act
 
-:::{style="margin-top: 50px; font-size: 19px;"}
+:::{style="margin-top: 50px; font-size: 22px;"}
 :::{.columns}
 :::{.column width=55%}
 :::{style="text-align: center; margin-top: 30px; margin-bottom: 30px; font-size: 24px;"}
 | You say | A chatbot gives you | An agent does |
 |---|---|---|
-| "Find me a cheap flight to São Paulo" | A list of tips and websites | Searches, compares fares, holds a seat |
-| "Summarise this paper" | A summary of what you pasted | Finds the paper and summarises it |
-| "Cancel my order" | The returns policy | Looks up the order and cancels it |
+| ["Find me a cheap flight to São Paulo"]{.alert} | A list of tips and websites | Searches, compares fares, holds a seat |
+| ["Summarise this paper"]{.alert} | A summary of what you pasted | Finds the paper and summarises it |
+| ["Cancel my order"]{.alert} | The returns policy | Looks up the order and cancels it |
 :::
 
 **A working definition:**
 
-- An [agent]{.alert} is a model that uses [tools]{.alert} in a [loop]{.alert} to reach a [goal]{.alert}, with little supervision 🤖
-- The idea is much older than ChatGPT (more in a minute)
-
-**A question for you:**
-
-- Amazon's ["Buy for me"](https://www.aboutamazon.com/news/retail/amazon-shopping-app-buy-for-me-brands) buys things for you on other brands' sites. Would you give an AI your [credit card]{.alert}?
+- An [agent]{.alert} is a model that uses [tools]{.alert} in a [loop]{.alert} to reach a [goal]{.alert}, with little supervision ([Willison, 2025](https://simonwillison.net/2025/Sep/18/agents/)) 🤖
+- The idea is much older than ChatGPT! (more in a minute)
+- When a chatbot gets it wrong, you read a bad answer
+- But when an agent gets it wrong, [it has already happened!]{.alert}
 :::
 
 :::{.column width=45%}
 :::{style="text-align: center;"}
 [![](figures/credit-card-agent.png){width="90%"}](#){data-modal-type="image" data-modal-url="figures/credit-card-agent.png"}
 
-Source: [About Amazon, "Buy for me"](https://www.aboutamazon.com/news/retail/amazon-shopping-app-buy-for-me-brands)
+Source: [About Amazon](https://www.aboutamazon.com/news/retail/amazon-shopping-app-buy-for-me-brands)
 
 :::{style="font-size: 18px; margin-top: 10px;"}
-The model is probably clever enough. But would you trust it with your money?
+**A question for you:**
+
+Amazon's ["Buy for me"](https://www.aboutamazon.com/news/retail/amazon-shopping-app-buy-for-me-brands) buys things for you on other brands' sites. Would you give an AI your [credit card]{.alert}?
 :::
 :::
 :::
@@ -239,7 +239,7 @@ You know the [vocabulary]{.alert} from lecture 04: agent, environment, state, ac
 :::{style="margin-top: 15px; font-size: 24px;"}
 :::{.columns}
 :::{.column width=45%}
-**[Yao et al. (2022)](https://arxiv.org/abs/2210.03629), ReAct:**
+**[Yao et al. (2022)](https://arxiv.org/abs/2210.03629), ReAct (Reasoning + Acting):**
 
 - Each step has a [thought]{.alert}, an [action]{.alert} and an [observation]{.alert}
 - [Chain-of-thought](https://danilofreire.github.io/datasci101/lectures/lecture-10/10-prompting.html) with tool calls in between
@@ -261,23 +261,48 @@ Reasoning only (1b): confident but wrong. Acting only (1c): no plan. ReAct (1d):
 :::
 :::
 
-:::{style="margin-top: 0px;"}
-```{mermaid}
-%%{init: {'theme': 'base', 'themeVariables': {'fontSize': '13px'}}}%%
-flowchart LR
-    A[Goal] --> B[Plan]
-    B --> C[Act: call a tool]
-    C --> D[Observe result]
-    D --> E{Done?}
-    E -->|No| B
-    E -->|Yes| F[Stop and report]
-    style E fill:#f9f,stroke:#333,stroke-width:2px
-    style F fill:#90EE90,stroke:#333,stroke-width:2px
+:::{style="margin-top: 10px; text-align: center;"}
+```{=html}
+<svg viewBox="0 0 1060 120" width="85%" role="img" aria-label="Agent loop: goal, plan, act by calling a tool, observe the result, check if done; if not, back to plan; if yes, stop and report" style="font-family: inherit;">
+  <defs>
+    <marker id="agent-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#1B3A6B"/>
+    </marker>
+  </defs>
+  <g stroke="#1B3A6B" stroke-width="2" fill="rgba(27,58,107,0.08)">
+    <rect x="0" y="12" width="100" height="46" rx="8"/>
+    <rect x="140" y="12" width="120" height="46" rx="8"/>
+    <rect x="300" y="12" width="180" height="46" rx="8"/>
+    <rect x="520" y="12" width="170" height="46" rx="8"/>
+    <polygon points="785,0 845,35 785,70 725,35" fill="#F3E3F7"/>
+    <rect x="885" y="12" width="170" height="46" rx="8" fill="#DDF2DD"/>
+  </g>
+  <g stroke="#1B3A6B" stroke-width="2" fill="none" marker-end="url(#agent-arrow)">
+    <line x1="100" y1="35" x2="138" y2="35"/>
+    <line x1="260" y1="35" x2="298" y2="35"/>
+    <line x1="480" y1="35" x2="518" y2="35"/>
+    <line x1="690" y1="35" x2="723" y2="35"/>
+    <line x1="845" y1="35" x2="883" y2="35"/>
+    <polyline points="785,70 785,105 200,105 200,60"/>
+  </g>
+  <g font-size="19" fill="#1B3A6B" text-anchor="middle" dominant-baseline="central">
+    <text x="50" y="35">Goal</text>
+    <text x="200" y="35">Plan</text>
+    <text x="390" y="35">Act: call a tool</text>
+    <text x="605" y="35">Observe result</text>
+    <text x="785" y="35">Done?</text>
+    <text x="970" y="35">Stop and report</text>
+  </g>
+  <g font-size="16" fill="#1B3A6B" font-style="italic" dominant-baseline="central">
+    <text x="853" y="20">Yes</text>
+    <text x="795" y="90">No: try again</text>
+  </g>
+</svg>
 ```
 :::
 :::
 
-## Tool calling, step by step
+## Tool calling
 
 :::{style="margin-top: 20px; font-size: 22px;"}
 :::{.columns}
@@ -290,7 +315,7 @@ flowchart LR
 
 **What counts as a tool?**
 
-- Anything with an API: web search, browser, code, files, email, payments
+- Anything with an [Application Programming Interface (API)](https://en.wikipedia.org/wiki/Application_programming_interface): web search, browser, code, files, email, payments
 - [Anthropic (2024)](https://www.anthropic.com/engineering/building-effective-agents): an [augmented LLM]{.alert} is a model plus retrieval, tools and memory
 - The model never touches anything itself: it [asks]{.alert}, the software [does]{.alert} it
 :::
@@ -343,28 +368,29 @@ Model asks:  search("direct flights ATL to BOS")
 Source: [GitHub, "Meet the new coding agent"](https://github.blog/news-insights/product-news/github-copilot-meet-the-new-coding-agent/)
 
 :::{style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; font-size: 18px; margin-top: 10px;"}
-Most products in 2026 sit in row three. The case studies later show [row four]{.alert}
+Most products in 2026 are supervised agents. The case studies later show [autonomous agents]{.alert}
 :::
 :::
 :::
 :::
 :::
 
-## How good are they, really?
+## How good are they?
 
-:::{style="margin-top: 20px; font-size: 22px;"}
+:::{style="margin-top: 20px; font-size: 20px;"}
 :::{.columns}
 :::{.column width=55%}
-**Three benchmarks you will see quoted:**
+**Some benchmarks you will see quoted:**
 
 - [SWE-bench](https://arxiv.org/abs/2310.06770) (Jimenez et al., 2024): real GitHub issues to fix
-- [Opus 4.5](https://www.anthropic.com/news/claude-opus-4-5) scored 80.9% (Nov 2025); the test was later dropped as contaminated
+- Models scoring ~75% on it got only [23%]{.alert} on the harder [SWE-bench Pro](https://labs.scale.com/leaderboard/swe_bench_pro_public) (2025)
 - [GAIA](https://arxiv.org/abs/2311.12983) (Mialon et al., 2023): assistant questions humans get ~92% right
 - [τ-bench](https://arxiv.org/abs/2406.12045) (Yao et al., 2024): customer service under written rules
 
 **[METR](https://arxiv.org/abs/2503.14499) (Kwa et al., 2025): how [long]{.alert} a task can an agent finish, in human time?**
 
-- The [50% horizon]{.alert} has doubled every [~7 months]{.alert} since 2019, maybe every 4–5 since 2024
+- The [50% horizon]{.alert} has doubled every [~7 months]{.alert} since 2019, and every ~4 since 2023
+- [Early 2026](https://metr.org/time-horizons): about [12 hours]{.alert} (Claude Opus 4.6), up from ~1 hour a year before
 - But 50% reliability means [half the runs fail]{.alert}
 :::
 
@@ -373,10 +399,6 @@ Most products in 2026 sit in row three. The case studies later show [row four]{.
 [![](figures/metr-horizon.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/metr-horizon.png"}
 
 Source: [METR](https://metr.org/blog/2025-03-19-measuring-ai-ability-to-complete-long-tasks/)
-
-:::{style="font-size: 18px; margin-top: 10px;"}
-At [80% reliability]{.alert} the horizon is four to six times shorter. Claude 3.7: about 15 minutes, not 50
-:::
 :::
 :::
 :::
@@ -422,9 +444,9 @@ After a long run, an agent's memory is often a [summary of a summary]{.alert}, a
 :::
 :::
 
-## Teams of agents
+## Teams of agents {#sec-teams-of-agents}
 
-:::{style="margin-top: 20px; font-size: 22px;"}
+:::{style="margin-top: 20px; font-size: 20px;"}
 :::{.columns}
 :::{.column width=55%}
 **Orchestrator and workers ([Anthropic, 2024](https://www.anthropic.com/engineering/building-effective-agents)):**
@@ -437,9 +459,9 @@ After a long run, an agent's memory is often a [summary of a summary]{.alert}, a
 **Pros and cons ([Anthropic, 2025](https://www.anthropic.com/engineering/built-multi-agent-research-system)):**
 
 - [90.2%]{.alert} better than one Opus 4 agent on a research test, but [~15×]{.alert} the tokens of a chat
-- Good for work that splits into independent parts; poor for tightly linked work, like most coding
+- Good for work that splits into independent parts
 
-**How teams fail ([Cemri et al., 2025](https://arxiv.org/abs/2503.13657)):** 1,600+ traces, [14 failure modes]{.alert}
+**How teams fail ([Cemri et al., 2025](https://arxiv.org/abs/2503.13657)):** 
 
 - Workers talk past each other; one worker's hallucination can become a "fact"
 :::
@@ -472,10 +494,12 @@ More agents cover more ground, but add [coordination risk]{.alert}. They do not 
 :::{style="margin-top: 10px;"}
 ```{r}
 #| label: fig-error-decay
+#| fig-cap: "The longer the task, the less likely every step succeeds"
+#| fig-align: center
 #| echo: false
 #| cache: false
 #| fig-width: 7
-#| fig-height: 4
+#| fig-height: 5
 #| message: false
 library(ggplot2)
 
@@ -500,6 +524,10 @@ ggplot(decay, aes(x = steps, y = prob, colour = accuracy)) +
   theme_minimal(base_size = 16) +
   theme(legend.position = "bottom")
 ```
+
+```{=html}
+<style>#fig-error-decay figcaption { text-align: center !important; }</style>
+```
 :::
 :::
 
@@ -507,7 +535,7 @@ ggplot(decay, aes(x = steps, y = prob, colour = accuracy)) +
 **The maths:**
 
 - [95% right]{.alert} per step sounds great, but the task needs [every]{.alert} step right
-- Over 20 steps: only [36%]{.alert} success ($0.95^{20}$); below half after just 14 steps
+- Over 20 steps: only [~36%]{.alert} success ($0.95^{20}$); below 50% after just 14 steps
 - At 90% per step: 12% after 20 steps. Even 99% ends at 82%
 
 **In practice it is worse!** 😅
@@ -515,9 +543,7 @@ ggplot(decay, aes(x = steps, y = prob, colour = accuracy)) +
 - A wrong step [feeds the next]{.alert}: it searches the wrong city, then compares hotels there
 - The agent rarely notices, and often [reports success]{.alert} anyway
 - [Kwa et al. (2025)](https://arxiv.org/abs/2503.14499): at 80% reliability, horizons are 4–6× shorter
-- [Lecture 05](https://danilofreire.github.io/datasci101/lectures/lecture-05/05-metrics.html): accurate per step ≠ accurate per task
-
-**The fix:** fewer steps, and checks between them (tests, a human gate)
+- [Fewer steps, and checks between them]{.alert} (tests, a human gate)
 :::
 :::
 :::
@@ -534,9 +560,8 @@ ggplot(decay, aes(x = steps, y = prob, colour = accuracy)) +
 
 **Why is this so hard to fix?**
 
-- In an agent, a bad instruction becomes an [action]{.alert}, not just text
-- It can hide anywhere: a webpage, a PDF, a calendar invite
-- Following instructions is what the model was trained for: [no simple patch]{.alert}
+- In an agent, a bad instruction becomes an [action]{.alert}
+- It can hide anywhere: a webpage, a PDF, etc
 
 **The [lethal trifecta]{.alert} ([Willison, 2025](https://simonwillison.net/2025/Jun/16/the-lethal-trifecta/)):** private data + untrusted content + a way to send data out. Remove one and the attack fails
 :::
@@ -564,7 +589,7 @@ Next lecture: [connectors]{.alert} can give an assistant all three at once, and 
 
 - [Jason Lemkin]{.alert} spent days building an app with [Replit](https://replit.com/)'s coding agent
 - He declared a [code freeze]{.alert}; the agent deleted the [production database]{.alert} anyway
-- CEO Amjad Masad apologised, added dev/prod separation, pointed to one-click restore
+- Replit's CEO apologised, added dev/prod separation, pointed to one-click restore
 
 **What we can learn from it:**
 
@@ -590,10 +615,10 @@ Source: [Jason Lemkin on X](https://x.com/jasonlk/status/1946069562723897802)
 :::{.column width=55%}
 **The setup ([Anthropic, 2025](https://www.anthropic.com/research/project-vend-1)):**
 
-- March–April 2025: Anthropic and [Andon Labs]{.alert} let Claude ("Claudius") run the office shop
+- March–April 2025: Anthropic let Claude ("Claudius") run the office shop
 - Goal: make money, [don't go bankrupt]{.alert}. After a month, the shop was worth [less than at the start]{.alert}
 
-**What went wrong:**
+**What happened:**
 
 - Stocked [tungsten cubes]{.alert} (a staff joke) and sold them at a loss
 - Gave discounts and free items to anyone who asked nicely
@@ -606,10 +631,6 @@ Source: [Jason Lemkin on X](https://x.com/jasonlk/status/1946069562723897802)
 [![](figures/project-vend-chart.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/project-vend-chart.png"}
 
 Source: [Anthropic, "Project Vend"](https://www.anthropic.com/research/project-vend-1)
-
-:::{style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; font-size: 18px; margin-top: 10px;"}
-A human manager would be fired in week one. And these were the [friendliest customers]{.alert} it will ever have!
-:::
 :::
 :::
 :::
@@ -622,9 +643,9 @@ A human manager would be fired in week one. And these were the [friendliest cust
 :::{.column width=55%}
 **Claudius finally made money:**
 
-- Phase 2 (reported Dec 2025): Sonnet 4.0, then 4.5, plus a CRM, inventory tools and payment links
+- Phase 2 (reported Dec 2025): Sonnet 4.5, plus inventory tools and payment links
 - As "Vendings and Stuff" it made a [profit]{.alert}: ~$2,650 revenue (target $15,000)
-- A CEO agent, ["Seymour Cash"]{.alert} (😂), supervised it
+- A CEO agent, ["Seymour Cash"]{.alert} (😂), supervised Claudius
 
 **New problems:**
 
@@ -648,13 +669,13 @@ Source: [Anthropic, "Project Vend"](https://www.anthropic.com/research/project-v
 :::{style="margin-top: 15px; font-size: 23px;"}
 :::{.columns}
 :::{.column width=55%}
-**What human factors research found long before LLMs:**
+**What researchers found long before LLMs:**
 
 - [Parasuraman & Riley (1997)](https://doi.org/10.1518/001872097778543886) called it [misuse]{.alert}: relying too much on automation that is usually right
 - [Skitka et al. (1999)](https://doi.org/10.1006/ijhc.1999.0252), flight simulator: with an automated aid, students missed [41%]{.alert} of unflagged events; without it, [3%]{.alert}
 - The aid changed [what people bothered to check]{.alert}
 
-**With agents, it goes like this:**
+**With agents:**
 
 - Day 1: you read every action before you approve it
 - Day 30: you click "approve" without reading
@@ -707,7 +728,7 @@ Friends, watch out for what you click!
 Source: [Replit Docs](https://docs.replit.com/core-concepts/agent/checkpoints-and-rollbacks)
 
 :::{style="background: rgba(230, 57, 70, 0.1); padding: 15px; border-radius: 10px; font-size: 21px; margin-top: 10px;"}
-Replit was high stakes with [no gate]{.alert}; only a rollback saved it. Claudius was low stakes, so it was fine to let it fail
+Replit was high stakes with [no gate]{.alert}. Claudius was low stakes, so it was fine to let it fail
 :::
 :::
 :::
@@ -716,22 +737,23 @@ Replit was high stakes with [no gate]{.alert}; only a rollback saved it. Claudiu
 
 ## Goals taken literally
 
-:::{style="margin-top: 20px; font-size: 21px;"}
+:::{style="margin-top: 20px; font-size: 20px;"}
 :::{.columns}
 :::{.column width=55%}
 **What you say vs what you mean:**
 
-- A goal never carries all your intentions: the [proxy problem](https://danilofreire.github.io/datasci101/lectures/lecture-03/03-datasets.html) and [metric gaming](https://danilofreire.github.io/datasci101/lectures/lecture-05/05-metrics.html) again, now with actions
+- The agent works towards what you [wrote]{.alert}, not what you [meant]{.alert}
+- The [proxy problem](https://danilofreire.github.io/datasci101/lectures/lecture-03/03-datasets.html) and [metric gaming](https://danilofreire.github.io/datasci101/lectures/lecture-05/05-metrics.html) again, now with actions
 
 **[Specification gaming](https://deepmind.google/discover/blog/specification-gaming-the-flip-side-of-ai-ingenuity/) (Krakovna et al., 2020):**
 
-- A Lego agent rewarded for the height of the red block's bottom face [flipped the block over]{.alert} instead of stacking it
+- A robot was rewarded for lifting the bottom of a red Lego block. It [flipped the block over]{.alert} instead of stacking it
 
-**The same thing with language:**
+**Language agents do it too:**
 
-- "Make my test pass" → the agent deletes the test
-- "Get me a booking today" → a terrible booking still counts
-- Good habit: write the goal, then ask what the [laziest]{.alert} way to meet it would be
+- [Claude 3.7 Sonnet](https://www.anthropic.com/claude-3-7-sonnet-system-card) sometimes [hard-coded the answers]{.alert} to make failing tests pass
+- Told to beat a chess engine, [o1-preview](https://arxiv.org/abs/2502.13295) [edited the board file]{.alert} so the engine resigned
+- Before you hand over a goal, ask: what is the [laziest]{.alert} way to meet it?
 :::
 
 :::{.column width=45%}
@@ -739,10 +761,6 @@ Replit was high stakes with [no gate]{.alert}; only a rollback saved it. Claudiu
 [![](figures/specification-gaming.gif){width="50%"}](#){data-modal-type="image" data-modal-url="figures/specification-gaming.gif"}
 
 Source: [Google DeepMind](https://deepmind.google/discover/blog/specification-gaming-the-flip-side-of-ai-ingenuity/)
-
-:::{style="margin-top: 10px; font-size: 19px;"}
-A chatbot with a bad goal writes a bad essay. An agent can do real damage, fast. More in [lecture 25](https://danilofreire.github.io/datasci101/lectures/lecture-25/25-safety.html)
-:::
 :::
 :::
 :::
@@ -753,14 +771,14 @@ A chatbot with a bad goal writes a bad essay. An agent can do real damage, fast.
 :::{style="margin-top: 20px; font-size: 22px;"}
 :::{.columns}
 :::{.column width=55%}
-**The instruction:**
+**Instruction:**
 
 ```text
 "Book me the cheapest direct flight from Atlanta
 to New York on 20 November. Budget: $200"
 ```
 
-**The action log:**
+**Action log:**
 
 1. Searched the web for "cheap flights Atlanta New York"
 2. Opened a blog post: "Top 10 cheap NYC flights (2023 edition)"
@@ -774,7 +792,6 @@ to New York on 20 November. Budget: $200"
 **With the person next to you:**
 
 - How many mistakes can you find?
-- Is each one a [retrieval]{.alert}, [reasoning]{.alert} or [guardrail]{.alert} problem?
 - Which single guardrail would have stopped most of the damage?
 - The agent said it succeeded. What does this tell you about self-reports?
 :::
@@ -788,7 +805,7 @@ to New York on 20 November. Budget: $200"
 :::{.column width=50%}
 **Mistakes found:**
 
-1. [Step 2]{.alert}: used prices from a 2023 blog post (stale retrieval)
+1. [Step 2]{.alert}: used prices from a 2023 blog post
 2. [Step 4]{.alert}: picked a one-stop flight when you asked for direct
 3. [Step 5]{.alert}: booked 2 November instead of 20 November
 4. [Step 5]{.alert}: chose non-refundable without asking you
@@ -798,10 +815,10 @@ to New York on 20 November. Budget: $200"
 :::{.column width=50%}
 **Possible fixes:**
 
-- My pick: [human approval before payment]{.alert}. That one gate catches mistakes 2, 3 and 4
+- My pick: [human approval before payment]{.alert}
 - Second place: [refundable by default]{.alert}, so the mistake can be undone
-- We can only see these mistakes because there is an action log. Ask for logs!
-- Most steps look fine; the problem only shows up when you [audit the whole chain]{.alert}
+- We can only see these mistakes because there is an action log
+- The problem only shows up when you [audit the whole chain]{.alert}
 :::
 :::
 :::
@@ -864,25 +881,29 @@ to New York on 20 November. Budget: $200"
 :::{style="margin-top: 20px; font-size: 21px;"}
 :::{.columns}
 :::{.column width=55%}
-**No special tools, just several chats (free accounts work):**
+**All you need is a few chats (free accounts work):**
 
 1. [Orchestrator chat]{.alert}: "Split this into 3 sub-questions I can research separately: *Should Emory allow AI in first-year writing courses?*"
-2. For each sub-question, write a worker task with an [objective]{.alert}, an [output format]{.alert}, the [sources]{.alert} to use and [what to leave out]{.alert}
-3. [Worker chats]{.alert}: paste each task into a [new chat]{.alert}, so each starts fresh
-4. Back in the orchestrator chat: paste the three answers and ask for one report that [flags where the workers disagree]{.alert}
+2. Turn each sub-question into a worker task: [objective]{.alert}, [output format]{.alert}, [sources]{.alert}, [what to leave out]{.alert}
+3. [Worker chats]{.alert}: paste each task into a new chat, so each starts fresh
+4. Back in the orchestrator chat: paste the three answers and ask for one report that [flags disagreements]{.alert}
 
-**What you just did:** you kept each context short, and you checked each worker before merging, which the automatic version skips
+**What you did:** kept each context short and checked each worker before merging. Automatic orchestrators skip that check
 :::
 
 :::{.column width=45%}
 **Afterwards, ask yourself:**
 
-- Did two workers repeat the same work, or leave a gap?
+- Did two workers overlap, or leave a gap?
 - Where did they disagree, and who was right?
-- Which worker's claim would you check first, and why?
+- Which claim would you check first, and why?
 
 :::{style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; font-size: 18px; margin-top: 20px;"}
-**Built-in research agents:** ChatGPT and Gemini offer Deep Research a few times a month on free accounts. Claude Research needs Pro
+**Built-in research agents:** ChatGPT and Gemini give free accounts a few Deep Research runs a month. Claude Research needs Pro
+:::
+
+:::{style="margin-top: 15px; font-size: 18px;"}
+[[Back to "Teams of agents"]{.button}](#sec-teams-of-agents)
 :::
 :::
 :::
@@ -896,12 +917,15 @@ to New York on 20 November. Budget: $200"
 **Five patterns, from fixed to flexible ([Anthropic, 2024](https://www.anthropic.com/engineering/building-effective-agents)):**
 
 - [Prompt chaining]{.alert}: each step feeds the next
-- [Routing]{.alert}: each input goes to the right specialist
-- [Parallelisation]{.alert}: run parts at once, or run the same task several times and vote
-- [Orchestrator-workers]{.alert}: a central model "dynamically breaks down tasks, delegates them to worker LLMs, and synthesizes their results"
+- [Routing]{.alert}: send each input to the right specialist
+- [Parallelisation]{.alert}: run parts at once, or run one task several times and vote
+- [Orchestrator-workers]{.alert}: one model splits the task, hands out the parts and merges the results
 - [Evaluator-optimiser]{.alert}: one model drafts, another critiques
 
-**Every worker task needs ([Anthropic, 2025](https://www.anthropic.com/engineering/built-multi-agent-research-system)):** an objective, an output format, the tools and sources to use, and clear boundaries. Without them, "agents duplicate work, leave gaps, or fail to find necessary information"
+**Worker tasks ([Anthropic, 2025](https://www.anthropic.com/engineering/built-multi-agent-research-system)):**
+
+- Each needs an objective, an output format, tools and sources, and boundaries
+- Without them, "agents duplicate work, leave gaps, or fail to find necessary information"
 :::
 
 :::{.column width=45%}
@@ -913,9 +937,9 @@ to New York on 20 November. Budget: $200"
 | Direct comparison | 2–4 workers, 10–15 calls each |
 | Complex research | 10+ workers |
 
-**Cost:** a single agent uses ~4× the tokens of a chat; a team ~15×
+**Cost:** one agent uses ~4× the tokens of a chat; a team ~15×
 
-**Saved workers:** in Claude Code, each [subagent]{.alert} is a file in `.claude/agents/` with its own context window ([docs](https://code.claude.com/docs/en/sub-agents)). It needs installed software, so it is [not on the quiz]{.alert}
+**Saved workers:** Claude Code keeps each [subagent]{.alert} in `.claude/agents/`, with its own context window ([docs](https://code.claude.com/docs/en/sub-agents)). It needs installed software, so it is [not on the quiz]{.alert}
 :::
 :::
 :::

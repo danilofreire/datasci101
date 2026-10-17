@@ -192,9 +192,6 @@
       margin-right: 0; 
     }
   </style>
-  <script src="../../site_libs/quarto-diagram/mermaid.min.js"></script>
-  <script src="../../site_libs/quarto-diagram/mermaid-init.js"></script>
-  <link href="../../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 </head>
 <body class="quarto-light">
   <div class="reveal">
@@ -297,7 +294,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </section>
 <section id="chatbots-answer-agents-act" class="slide level2">
 <h2>Chatbots answer, agents act</h2>
-<div style="margin-top: 50px; font-size: 19px;">
+<div style="margin-top: 50px; font-size: 22px;">
 <div class="columns">
 <div class="column" style="width:55%;">
 <div style="text-align: center; margin-top: 30px; margin-bottom: 30px; font-size: 24px;">
@@ -316,17 +313,17 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </thead>
 <tbody>
 <tr class="odd">
-<td>“Find me a cheap flight to São Paulo”</td>
+<td><span class="alert">“Find me a cheap flight to São Paulo”</span></td>
 <td>A list of tips and websites</td>
 <td>Searches, compares fares, holds a seat</td>
 </tr>
 <tr class="even">
-<td>“Summarise this paper”</td>
+<td><span class="alert">“Summarise this paper”</span></td>
 <td>A summary of what you pasted</td>
 <td>Finds the paper and summarises it</td>
 </tr>
 <tr class="odd">
-<td>“Cancel my order”</td>
+<td><span class="alert">“Cancel my order”</span></td>
 <td>The returns policy</td>
 <td>Looks up the order and cancels it</td>
 </tr>
@@ -335,19 +332,18 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </div>
 <p><strong>A working definition:</strong></p>
 <ul>
-<li>An <span class="alert">agent</span> is a model that uses <span class="alert">tools</span> in a <span class="alert">loop</span> to reach a <span class="alert">goal</span>, with little supervision 🤖</li>
-<li>The idea is much older than ChatGPT (more in a minute)</li>
-</ul>
-<p><strong>A question for you:</strong></p>
-<ul>
-<li>Amazon’s <a href="https://www.aboutamazon.com/news/retail/amazon-shopping-app-buy-for-me-brands">“Buy for me”</a> buys things for you on other brands’ sites. Would you give an AI your <span class="alert">credit card</span>?</li>
+<li>An <span class="alert">agent</span> is a model that uses <span class="alert">tools</span> in a <span class="alert">loop</span> to reach a <span class="alert">goal</span>, with little supervision (<a href="https://simonwillison.net/2025/Sep/18/agents/">Willison, 2025</a>) 🤖</li>
+<li>The idea is much older than ChatGPT! (more in a minute)</li>
+<li>When a chatbot gets it wrong, you read a bad answer</li>
+<li>But when an agent gets it wrong, <span class="alert">it has already happened!</span></li>
 </ul>
 </div><div class="column" style="width:45%;">
 <div style="text-align: center;">
 <p><a href="#/" data-modal-type="image" data-modal-url="figures/credit-card-agent.png"><img data-src="figures/credit-card-agent.png" style="width:90.0%"></a></p>
-<p>Source: <a href="https://www.aboutamazon.com/news/retail/amazon-shopping-app-buy-for-me-brands">About Amazon, “Buy for me”</a></p>
+<p>Source: <a href="https://www.aboutamazon.com/news/retail/amazon-shopping-app-buy-for-me-brands">About Amazon</a></p>
 <div style="font-size: 18px; margin-top: 10px;">
-<p>The model is probably clever enough. But would you trust it with your money?</p>
+<p><strong>A question for you:</strong></p>
+<p>Amazon’s <a href="https://www.aboutamazon.com/news/retail/amazon-shopping-app-buy-for-me-brands">“Buy for me”</a> buys things for you on other brands’ sites. Would you give an AI your <span class="alert">credit card</span>?</p>
 </div>
 </div>
 </div></div>
@@ -448,7 +444,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <div style="margin-top: 15px; font-size: 24px;">
 <div class="columns">
 <div class="column" style="width:45%;">
-<p><strong><a href="https://arxiv.org/abs/2210.03629">Yao et al.&nbsp;(2022)</a>, ReAct:</strong></p>
+<p><strong><a href="https://arxiv.org/abs/2210.03629">Yao et al.&nbsp;(2022)</a>, ReAct (Reasoning + Acting):</strong></p>
 <ul>
 <li>Each step has a <span class="alert">thought</span>, an <span class="alert">action</span> and an <span class="alert">observation</span></li>
 <li><a href="https://danilofreire.github.io/datasci101/lectures/lecture-10/10-prompting.html">Chain-of-thought</a> with tool calls in between</li>
@@ -465,33 +461,47 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </div>
 </div>
 </div></div>
-<div style="margin-top: 0px;">
-<div class="cell" data-reveal="true" data-layout-align="default">
-<div class="cell-output-display">
-<div>
-<p></p><figure class=""><p></p>
-<div>
-<pre class="mermaid mermaid-js">%%{init: {'theme': 'base', 'themeVariables': {'fontSize': '13px'}}}%%
-flowchart LR
-    A[Goal] --&gt; B[Plan]
-    B --&gt; C[Act: call a tool]
-    C --&gt; D[Observe result]
-    D --&gt; E{Done?}
-    E --&gt;|No| B
-    E --&gt;|Yes| F[Stop and report]
-    style E fill:#f9f,stroke:#333,stroke-width:2px
-    style F fill:#90EE90,stroke:#333,stroke-width:2px
-</pre>
-</div>
-<p></p></figure><p></p>
-</div>
-</div>
-</div>
+<div style="margin-top: 10px; text-align: center;">
+<svg viewbox="0 0 1060 120" width="85%" role="img" aria-label="Agent loop: goal, plan, act by calling a tool, observe the result, check if done; if not, back to plan; if yes, stop and report" style="font-family: inherit;">
+  <defs>
+    <marker id="agent-arrow" viewbox="0 0 10 10" refx="9" refy="5" markerwidth="7" markerheight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#1B3A6B"></path>
+    </marker>
+  </defs>
+  <g stroke="#1B3A6B" stroke-width="2" fill="rgba(27,58,107,0.08)">
+    <rect x="0" y="12" width="100" height="46" rx="8"></rect>
+    <rect x="140" y="12" width="120" height="46" rx="8"></rect>
+    <rect x="300" y="12" width="180" height="46" rx="8"></rect>
+    <rect x="520" y="12" width="170" height="46" rx="8"></rect>
+    <polygon points="785,0 845,35 785,70 725,35" fill="#F3E3F7"></polygon>
+    <rect x="885" y="12" width="170" height="46" rx="8" fill="#DDF2DD"></rect>
+  </g>
+  <g stroke="#1B3A6B" stroke-width="2" fill="none" marker-end="url(#agent-arrow)">
+    <line x1="100" y1="35" x2="138" y2="35"></line>
+    <line x1="260" y1="35" x2="298" y2="35"></line>
+    <line x1="480" y1="35" x2="518" y2="35"></line>
+    <line x1="690" y1="35" x2="723" y2="35"></line>
+    <line x1="845" y1="35" x2="883" y2="35"></line>
+    <polyline points="785,70 785,105 200,105 200,60"></polyline>
+  </g>
+  <g font-size="19" fill="#1B3A6B" text-anchor="middle" dominant-baseline="central">
+    <text x="50" y="35">Goal</text>
+    <text x="200" y="35">Plan</text>
+    <text x="390" y="35">Act: call a tool</text>
+    <text x="605" y="35">Observe result</text>
+    <text x="785" y="35">Done?</text>
+    <text x="970" y="35">Stop and report</text>
+  </g>
+  <g font-size="16" fill="#1B3A6B" font-style="italic" dominant-baseline="central">
+    <text x="853" y="20">Yes</text>
+    <text x="795" y="90">No: try again</text>
+  </g>
+</svg>
 </div>
 </div>
 </section>
-<section id="tool-calling-step-by-step" class="slide level2">
-<h2>Tool calling, step by step</h2>
+<section id="tool-calling" class="slide level2">
+<h2>Tool calling</h2>
 <div style="margin-top: 20px; font-size: 22px;">
 <div class="columns">
 <div class="column" style="width:55%;">
@@ -503,7 +513,7 @@ flowchart LR
 </ul>
 <p><strong>What counts as a tool?</strong></p>
 <ul>
-<li>Anything with an API: web search, browser, code, files, email, payments</li>
+<li>Anything with an <a href="https://en.wikipedia.org/wiki/Application_programming_interface">Application Programming Interface (API)</a>: web search, browser, code, files, email, payments</li>
 <li><a href="https://www.anthropic.com/engineering/building-effective-agents">Anthropic (2024)</a>: an <span class="alert">augmented LLM</span> is a model plus retrieval, tools and memory</li>
 <li>The model never touches anything itself: it <span class="alert">asks</span>, the software <span class="alert">does</span> it</li>
 </ul>
@@ -577,36 +587,34 @@ flowchart LR
 <p><a href="#/" data-modal-type="image" data-modal-url="figures/coding-agent.png"><img data-src="figures/coding-agent.png" style="width:100.0%"></a></p>
 <p>Source: <a href="https://github.blog/news-insights/product-news/github-copilot-meet-the-new-coding-agent/">GitHub, “Meet the new coding agent”</a></p>
 <div style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; font-size: 18px; margin-top: 10px;">
-<p>Most products in 2026 sit in row three. The case studies later show <span class="alert">row four</span></p>
+<p>Most products in 2026 are supervised agents. The case studies later show <span class="alert">autonomous agents</span></p>
 </div>
 </div>
 </div></div>
 </div>
 </section>
-<section id="how-good-are-they-really" class="slide level2">
-<h2>How good are they, really?</h2>
-<div style="margin-top: 20px; font-size: 22px;">
+<section id="how-good-are-they" class="slide level2">
+<h2>How good are they?</h2>
+<div style="margin-top: 20px; font-size: 20px;">
 <div class="columns">
 <div class="column" style="width:55%;">
-<p><strong>Three benchmarks you will see quoted:</strong></p>
+<p><strong>Some benchmarks you will see quoted:</strong></p>
 <ul>
 <li><a href="https://arxiv.org/abs/2310.06770">SWE-bench</a> (Jimenez et al., 2024): real GitHub issues to fix</li>
-<li><a href="https://www.anthropic.com/news/claude-opus-4-5">Opus 4.5</a> scored 80.9% (Nov 2025); the test was later dropped as contaminated</li>
+<li>Models scoring ~75% on it got only <span class="alert">23%</span> on the harder <a href="https://labs.scale.com/leaderboard/swe_bench_pro_public">SWE-bench Pro</a> (2025)</li>
 <li><a href="https://arxiv.org/abs/2311.12983">GAIA</a> (Mialon et al., 2023): assistant questions humans get ~92% right</li>
 <li><a href="https://arxiv.org/abs/2406.12045">τ-bench</a> (Yao et al., 2024): customer service under written rules</li>
 </ul>
 <p><strong><a href="https://arxiv.org/abs/2503.14499">METR</a> (Kwa et al., 2025): how <span class="alert">long</span> a task can an agent finish, in human time?</strong></p>
 <ul>
-<li>The <span class="alert">50% horizon</span> has doubled every <span class="alert">~7 months</span> since 2019, maybe every 4–5 since 2024</li>
+<li>The <span class="alert">50% horizon</span> has doubled every <span class="alert">~7 months</span> since 2019, and every ~4 since 2023</li>
+<li><a href="https://metr.org/time-horizons">Early 2026</a>: about <span class="alert">12 hours</span> (Claude Opus 4.6), up from ~1 hour a year before</li>
 <li>But 50% reliability means <span class="alert">half the runs fail</span></li>
 </ul>
 </div><div class="column" style="width:45%;">
 <div style="text-align: center;">
 <p><a href="#/" data-modal-type="image" data-modal-url="figures/metr-horizon.png"><img data-src="figures/metr-horizon.png" style="width:100.0%"></a></p>
 <p>Source: <a href="https://metr.org/blog/2025-03-19-measuring-ai-ability-to-complete-long-tasks/">METR</a></p>
-<div style="font-size: 18px; margin-top: 10px;">
-<p>At <span class="alert">80% reliability</span> the horizon is four to six times shorter. Claude 3.7: about 15 minutes, not 50</p>
-</div>
 </div>
 </div></div>
 </div>
@@ -669,9 +677,9 @@ flowchart LR
 </div></div>
 </div>
 </section>
-<section id="teams-of-agents" class="slide level2">
+<section id="sec-teams-of-agents" class="slide level2">
 <h2>Teams of agents</h2>
-<div style="margin-top: 20px; font-size: 22px;">
+<div style="margin-top: 20px; font-size: 20px;">
 <div class="columns">
 <div class="column" style="width:55%;">
 <p><strong>Orchestrator and workers (<a href="https://www.anthropic.com/engineering/building-effective-agents">Anthropic, 2024</a>):</strong></p>
@@ -684,9 +692,9 @@ flowchart LR
 <p><strong>Pros and cons (<a href="https://www.anthropic.com/engineering/built-multi-agent-research-system">Anthropic, 2025</a>):</strong></p>
 <ul>
 <li><span class="alert">90.2%</span> better than one Opus 4 agent on a research test, but <span class="alert">~15×</span> the tokens of a chat</li>
-<li>Good for work that splits into independent parts; poor for tightly linked work, like most coding</li>
+<li>Good for work that splits into independent parts</li>
 </ul>
-<p><strong>How teams fail (<a href="https://arxiv.org/abs/2503.13657">Cemri et al., 2025</a>):</strong> 1,600+ traces, <span class="alert">14 failure modes</span></p>
+<p><strong>How teams fail (<a href="https://arxiv.org/abs/2503.13657">Cemri et al., 2025</a>):</strong></p>
 <ul>
 <li>Workers talk past each other; one worker’s hallucination can become a “fact”</li>
 </ul>
@@ -717,24 +725,25 @@ flowchart LR
 <div style="margin-top: 10px;">
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div id="fig-error-decay" class="quarto-float quarto-figure quarto-figure-center" data-fig-align="center" width="2100">
+<div id="fig-error-decay" class="quarto-float quarto-figure quarto-figure-center" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig">
 <div aria-describedby="fig-error-decay-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img data-src="15-agents_files/figure-revealjs/fig-error-decay-1.png" id="fig-error-decay" class="quarto-figure quarto-figure-center" width="2100">
+<img data-src="15-agents_files/figure-revealjs/fig-error-decay-1.png" class="quarto-figure quarto-figure-center" width="2100">
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-error-decay-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-error-decay-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: The longer the task, the less likely every step succeeds
 </figcaption>
 </figure>
 </div>
 </div>
 </div>
+<style>#fig-error-decay figcaption { text-align: center !important; }</style>
 </div>
 </div><div class="column" style="width:45%;">
 <p><strong>The maths:</strong></p>
 <ul>
 <li><span class="alert">95% right</span> per step sounds great, but the task needs <span class="alert">every</span> step right</li>
-<li>Over 20 steps: only <span class="alert">36%</span> success (<span class="math inline">\(0.95^{20}\)</span>); below half after just 14 steps</li>
+<li>Over 20 steps: only <span class="alert">~36%</span> success (<span class="math inline">\(0.95^{20}\)</span>); below 50% after just 14 steps</li>
 <li>At 90% per step: 12% after 20 steps. Even 99% ends at 82%</li>
 </ul>
 <p><strong>In practice it is worse!</strong> 😅</p>
@@ -742,9 +751,8 @@ Figure&nbsp;1
 <li>A wrong step <span class="alert">feeds the next</span>: it searches the wrong city, then compares hotels there</li>
 <li>The agent rarely notices, and often <span class="alert">reports success</span> anyway</li>
 <li><a href="https://arxiv.org/abs/2503.14499">Kwa et al.&nbsp;(2025)</a>: at 80% reliability, horizons are 4–6× shorter</li>
-<li><a href="https://danilofreire.github.io/datasci101/lectures/lecture-05/05-metrics.html">Lecture 05</a>: accurate per step ≠ accurate per task</li>
+<li><span class="alert">Fewer steps, and checks between them</span> (tests, a human gate)</li>
 </ul>
-<p><strong>The fix:</strong> fewer steps, and checks between them (tests, a human gate)</p>
 </div></div>
 </div>
 </section>
@@ -760,9 +768,8 @@ Figure&nbsp;1
 </ul>
 <p><strong>Why is this so hard to fix?</strong></p>
 <ul>
-<li>In an agent, a bad instruction becomes an <span class="alert">action</span>, not just text</li>
-<li>It can hide anywhere: a webpage, a PDF, a calendar invite</li>
-<li>Following instructions is what the model was trained for: <span class="alert">no simple patch</span></li>
+<li>In an agent, a bad instruction becomes an <span class="alert">action</span></li>
+<li>It can hide anywhere: a webpage, a PDF, etc</li>
 </ul>
 <p><strong>The <span class="alert">lethal trifecta</span> (<a href="https://simonwillison.net/2025/Jun/16/the-lethal-trifecta/">Willison, 2025</a>):</strong> private data + untrusted content + a way to send data out. Remove one and the attack fails</p>
 </div><div class="column" style="width:45%;">
@@ -785,7 +792,7 @@ Figure&nbsp;1
 <ul>
 <li><span class="alert">Jason Lemkin</span> spent days building an app with <a href="https://replit.com/">Replit</a>’s coding agent</li>
 <li>He declared a <span class="alert">code freeze</span>; the agent deleted the <span class="alert">production database</span> anyway</li>
-<li>CEO Amjad Masad apologised, added dev/prod separation, pointed to one-click restore</li>
+<li>Replit’s CEO apologised, added dev/prod separation, pointed to one-click restore</li>
 </ul>
 <p><strong>What we can learn from it:</strong></p>
 <ul>
@@ -808,10 +815,10 @@ Figure&nbsp;1
 <div class="column" style="width:55%;">
 <p><strong>The setup (<a href="https://www.anthropic.com/research/project-vend-1">Anthropic, 2025</a>):</strong></p>
 <ul>
-<li>March–April 2025: Anthropic and <span class="alert">Andon Labs</span> let Claude (“Claudius”) run the office shop</li>
+<li>March–April 2025: Anthropic let Claude (“Claudius”) run the office shop</li>
 <li>Goal: make money, <span class="alert">don’t go bankrupt</span>. After a month, the shop was worth <span class="alert">less than at the start</span></li>
 </ul>
-<p><strong>What went wrong:</strong></p>
+<p><strong>What happened:</strong></p>
 <ul>
 <li>Stocked <span class="alert">tungsten cubes</span> (a staff joke) and sold them at a loss</li>
 <li>Gave discounts and free items to anyone who asked nicely</li>
@@ -822,9 +829,6 @@ Figure&nbsp;1
 <div style="text-align: center;">
 <p><a href="#/" data-modal-type="image" data-modal-url="figures/project-vend-chart.png"><img data-src="figures/project-vend-chart.png" style="width:100.0%"></a></p>
 <p>Source: <a href="https://www.anthropic.com/research/project-vend-1">Anthropic, “Project Vend”</a></p>
-<div style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; font-size: 18px; margin-top: 10px;">
-<p>A human manager would be fired in week one. And these were the <span class="alert">friendliest customers</span> it will ever have!</p>
-</div>
 </div>
 </div></div>
 </div>
@@ -836,9 +840,9 @@ Figure&nbsp;1
 <div class="column" style="width:55%;">
 <p><strong>Claudius finally made money:</strong></p>
 <ul>
-<li>Phase 2 (reported Dec 2025): Sonnet 4.0, then 4.5, plus a CRM, inventory tools and payment links</li>
+<li>Phase 2 (reported Dec 2025): Sonnet 4.5, plus inventory tools and payment links</li>
 <li>As “Vendings and Stuff” it made a <span class="alert">profit</span>: ~$2,650 revenue (target $15,000)</li>
-<li>A CEO agent, <span class="alert">“Seymour Cash”</span> (😂), supervised it</li>
+<li>A CEO agent, <span class="alert">“Seymour Cash”</span> (😂), supervised Claudius</li>
 </ul>
 <p><strong>New problems:</strong></p>
 <ul>
@@ -859,13 +863,13 @@ Figure&nbsp;1
 <div style="margin-top: 15px; font-size: 23px;">
 <div class="columns">
 <div class="column" style="width:55%;">
-<p><strong>What human factors research found long before LLMs:</strong></p>
+<p><strong>What researchers found long before LLMs:</strong></p>
 <ul>
 <li><a href="https://doi.org/10.1518/001872097778543886">Parasuraman &amp; Riley (1997)</a> called it <span class="alert">misuse</span>: relying too much on automation that is usually right</li>
 <li><a href="https://doi.org/10.1006/ijhc.1999.0252">Skitka et al.&nbsp;(1999)</a>, flight simulator: with an automated aid, students missed <span class="alert">41%</span> of unflagged events; without it, <span class="alert">3%</span></li>
 <li>The aid changed <span class="alert">what people bothered to check</span></li>
 </ul>
-<p><strong>With agents, it goes like this:</strong></p>
+<p><strong>With agents:</strong></p>
 <ul>
 <li>Day 1: you read every action before you approve it</li>
 <li>Day 30: you click “approve” without reading</li>
@@ -933,7 +937,7 @@ Figure&nbsp;1
 <p><a href="#/" data-modal-type="image" data-modal-url="figures/replit-rollback.png"><img data-src="figures/replit-rollback.png" style="width:40.0%"></a></p>
 <p>Source: <a href="https://docs.replit.com/core-concepts/agent/checkpoints-and-rollbacks">Replit Docs</a></p>
 <div style="background: rgba(230, 57, 70, 0.1); padding: 15px; border-radius: 10px; font-size: 21px; margin-top: 10px;">
-<p>Replit was high stakes with <span class="alert">no gate</span>; only a rollback saved it. Claudius was low stakes, so it was fine to let it fail</p>
+<p>Replit was high stakes with <span class="alert">no gate</span>. Claudius was low stakes, so it was fine to let it fail</p>
 </div>
 </div>
 </div></div>
@@ -941,30 +945,28 @@ Figure&nbsp;1
 </section>
 <section id="goals-taken-literally" class="slide level2">
 <h2>Goals taken literally</h2>
-<div style="margin-top: 20px; font-size: 21px;">
+<div style="margin-top: 20px; font-size: 20px;">
 <div class="columns">
 <div class="column" style="width:55%;">
 <p><strong>What you say vs what you mean:</strong></p>
 <ul>
-<li>A goal never carries all your intentions: the <a href="https://danilofreire.github.io/datasci101/lectures/lecture-03/03-datasets.html">proxy problem</a> and <a href="https://danilofreire.github.io/datasci101/lectures/lecture-05/05-metrics.html">metric gaming</a> again, now with actions</li>
+<li>The agent works towards what you <span class="alert">wrote</span>, not what you <span class="alert">meant</span></li>
+<li>The <a href="https://danilofreire.github.io/datasci101/lectures/lecture-03/03-datasets.html">proxy problem</a> and <a href="https://danilofreire.github.io/datasci101/lectures/lecture-05/05-metrics.html">metric gaming</a> again, now with actions</li>
 </ul>
 <p><strong><a href="https://deepmind.google/discover/blog/specification-gaming-the-flip-side-of-ai-ingenuity/">Specification gaming</a> (Krakovna et al., 2020):</strong></p>
 <ul>
-<li>A Lego agent rewarded for the height of the red block’s bottom face <span class="alert">flipped the block over</span> instead of stacking it</li>
+<li>A robot was rewarded for lifting the bottom of a red Lego block. It <span class="alert">flipped the block over</span> instead of stacking it</li>
 </ul>
-<p><strong>The same thing with language:</strong></p>
+<p><strong>Language agents do it too:</strong></p>
 <ul>
-<li>“Make my test pass” → the agent deletes the test</li>
-<li>“Get me a booking today” → a terrible booking still counts</li>
-<li>Good habit: write the goal, then ask what the <span class="alert">laziest</span> way to meet it would be</li>
+<li><a href="https://www.anthropic.com/claude-3-7-sonnet-system-card">Claude 3.7 Sonnet</a> sometimes <span class="alert">hard-coded the answers</span> to make failing tests pass</li>
+<li>Told to beat a chess engine, <a href="https://arxiv.org/abs/2502.13295">o1-preview</a> <span class="alert">edited the board file</span> so the engine resigned</li>
+<li>Before you hand over a goal, ask: what is the <span class="alert">laziest</span> way to meet it?</li>
 </ul>
 </div><div class="column" style="width:45%;">
 <div style="text-align: center;">
 <p><a href="#/" data-modal-type="image" data-modal-url="figures/specification-gaming.gif"><img data-src="figures/specification-gaming.gif" style="width:50.0%"></a></p>
 <p>Source: <a href="https://deepmind.google/discover/blog/specification-gaming-the-flip-side-of-ai-ingenuity/">Google DeepMind</a></p>
-<div style="margin-top: 10px; font-size: 19px;">
-<p>A chatbot with a bad goal writes a bad essay. An agent can do real damage, fast. More in <a href="https://danilofreire.github.io/datasci101/lectures/lecture-25/25-safety.html">lecture 25</a></p>
-</div>
 </div>
 </div></div>
 </div>
@@ -974,10 +976,10 @@ Figure&nbsp;1
 <div style="margin-top: 20px; font-size: 22px;">
 <div class="columns">
 <div class="column" style="width:55%;">
-<p><strong>The instruction:</strong></p>
+<p><strong>Instruction:</strong></p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb2-1"><a></a>"Book me the cheapest direct flight from Atlanta</span>
 <span id="cb2-2"><a></a>to New York on 20 November. Budget: $200"</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p><strong>The action log:</strong></p>
+<p><strong>Action log:</strong></p>
 <ol type="1">
 <li>Searched the web for “cheap flights Atlanta New York”</li>
 <li>Opened a blog post: “Top 10 cheap NYC flights (2023 edition)”</li>
@@ -990,7 +992,6 @@ Figure&nbsp;1
 <p><strong>With the person next to you:</strong></p>
 <ul>
 <li>How many mistakes can you find?</li>
-<li>Is each one a <span class="alert">retrieval</span>, <span class="alert">reasoning</span> or <span class="alert">guardrail</span> problem?</li>
 <li>Which single guardrail would have stopped most of the damage?</li>
 <li>The agent said it succeeded. What does this tell you about self-reports?</li>
 </ul>
@@ -1004,7 +1005,7 @@ Figure&nbsp;1
 <div class="column" style="width:50%;">
 <p><strong>Mistakes found:</strong></p>
 <ol type="1">
-<li><span class="alert">Step 2</span>: used prices from a 2023 blog post (stale retrieval)</li>
+<li><span class="alert">Step 2</span>: used prices from a 2023 blog post</li>
 <li><span class="alert">Step 4</span>: picked a one-stop flight when you asked for direct</li>
 <li><span class="alert">Step 5</span>: booked 2 November instead of 20 November</li>
 <li><span class="alert">Step 5</span>: chose non-refundable without asking you</li>
@@ -1013,10 +1014,10 @@ Figure&nbsp;1
 </div><div class="column" style="width:50%;">
 <p><strong>Possible fixes:</strong></p>
 <ul>
-<li>My pick: <span class="alert">human approval before payment</span>. That one gate catches mistakes 2, 3 and 4</li>
+<li>My pick: <span class="alert">human approval before payment</span></li>
 <li>Second place: <span class="alert">refundable by default</span>, so the mistake can be undone</li>
-<li>We can only see these mistakes because there is an action log. Ask for logs!</li>
-<li>Most steps look fine; the problem only shows up when you <span class="alert">audit the whole chain</span></li>
+<li>We can only see these mistakes because there is an action log</li>
+<li>The problem only shows up when you <span class="alert">audit the whole chain</span></li>
 </ul>
 </div></div>
 </div>
@@ -1085,23 +1086,26 @@ Figure&nbsp;1
 <div style="margin-top: 20px; font-size: 21px;">
 <div class="columns">
 <div class="column" style="width:55%;">
-<p><strong>No special tools, just several chats (free accounts work):</strong></p>
+<p><strong>All you need is a few chats (free accounts work):</strong></p>
 <ol type="1">
 <li><span class="alert">Orchestrator chat</span>: “Split this into 3 sub-questions I can research separately: <em>Should Emory allow AI in first-year writing courses?</em>”</li>
-<li>For each sub-question, write a worker task with an <span class="alert">objective</span>, an <span class="alert">output format</span>, the <span class="alert">sources</span> to use and <span class="alert">what to leave out</span></li>
-<li><span class="alert">Worker chats</span>: paste each task into a <span class="alert">new chat</span>, so each starts fresh</li>
-<li>Back in the orchestrator chat: paste the three answers and ask for one report that <span class="alert">flags where the workers disagree</span></li>
+<li>Turn each sub-question into a worker task: <span class="alert">objective</span>, <span class="alert">output format</span>, <span class="alert">sources</span>, <span class="alert">what to leave out</span></li>
+<li><span class="alert">Worker chats</span>: paste each task into a new chat, so each starts fresh</li>
+<li>Back in the orchestrator chat: paste the three answers and ask for one report that <span class="alert">flags disagreements</span></li>
 </ol>
-<p><strong>What you just did:</strong> you kept each context short, and you checked each worker before merging, which the automatic version skips</p>
+<p><strong>What you did:</strong> kept each context short and checked each worker before merging. Automatic orchestrators skip that check</p>
 </div><div class="column" style="width:45%;">
 <p><strong>Afterwards, ask yourself:</strong></p>
 <ul>
-<li>Did two workers repeat the same work, or leave a gap?</li>
+<li>Did two workers overlap, or leave a gap?</li>
 <li>Where did they disagree, and who was right?</li>
-<li>Which worker’s claim would you check first, and why?</li>
+<li>Which claim would you check first, and why?</li>
 </ul>
 <div style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; font-size: 18px; margin-top: 20px;">
-<p><strong>Built-in research agents:</strong> ChatGPT and Gemini offer Deep Research a few times a month on free accounts. Claude Research needs Pro</p>
+<p><strong>Built-in research agents:</strong> ChatGPT and Gemini give free accounts a few Deep Research runs a month. Claude Research needs Pro</p>
+</div>
+<div style="margin-top: 15px; font-size: 18px;">
+<p><a href="#/sec-teams-of-agents"><span class="button">Back to “Teams of agents”</span></a></p>
 </div>
 </div></div>
 </div>
@@ -1114,12 +1118,16 @@ Figure&nbsp;1
 <p><strong>Five patterns, from fixed to flexible (<a href="https://www.anthropic.com/engineering/building-effective-agents">Anthropic, 2024</a>):</strong></p>
 <ul>
 <li><span class="alert">Prompt chaining</span>: each step feeds the next</li>
-<li><span class="alert">Routing</span>: each input goes to the right specialist</li>
-<li><span class="alert">Parallelisation</span>: run parts at once, or run the same task several times and vote</li>
-<li><span class="alert">Orchestrator-workers</span>: a central model “dynamically breaks down tasks, delegates them to worker LLMs, and synthesizes their results”</li>
+<li><span class="alert">Routing</span>: send each input to the right specialist</li>
+<li><span class="alert">Parallelisation</span>: run parts at once, or run one task several times and vote</li>
+<li><span class="alert">Orchestrator-workers</span>: one model splits the task, hands out the parts and merges the results</li>
 <li><span class="alert">Evaluator-optimiser</span>: one model drafts, another critiques</li>
 </ul>
-<p><strong>Every worker task needs (<a href="https://www.anthropic.com/engineering/built-multi-agent-research-system">Anthropic, 2025</a>):</strong> an objective, an output format, the tools and sources to use, and clear boundaries. Without them, “agents duplicate work, leave gaps, or fail to find necessary information”</p>
+<p><strong>Worker tasks (<a href="https://www.anthropic.com/engineering/built-multi-agent-research-system">Anthropic, 2025</a>):</strong></p>
+<ul>
+<li>Each needs an objective, an output format, tools and sources, and boundaries</li>
+<li>Without them, “agents duplicate work, leave gaps, or fail to find necessary information”</li>
+</ul>
 </div><div class="column" style="width:45%;">
 <p><strong>How many workers? (Anthropic’s research agent)</strong></p>
 <table class="caption-top">
@@ -1144,8 +1152,8 @@ Figure&nbsp;1
 </tr>
 </tbody>
 </table>
-<p><strong>Cost:</strong> a single agent uses ~4× the tokens of a chat; a team ~15×</p>
-<p><strong>Saved workers:</strong> in Claude Code, each <span class="alert">subagent</span> is a file in <code>.claude/agents/</code> with its own context window (<a href="https://code.claude.com/docs/en/sub-agents">docs</a>). It needs installed software, so it is <span class="alert">not on the quiz</span></p>
+<p><strong>Cost:</strong> one agent uses ~4× the tokens of a chat; a team ~15×</p>
+<p><strong>Saved workers:</strong> Claude Code keeps each <span class="alert">subagent</span> in <code>.claude/agents/</code>, with its own context window (<a href="https://code.claude.com/docs/en/sub-agents">docs</a>). It needs installed software, so it is <span class="alert">not on the quiz</span></p>
 </div></div>
 </div>
 
