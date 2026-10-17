@@ -246,6 +246,7 @@ Suggested readings:
 - Heikkilä, M. (2024). [What are AI agents?](https://www.technologyreview.com/2024/07/05/1094711/what-are-ai-agents/) *MIT Technology Review*. A clear, non-technical overview of the agent idea and the hype around it.
 - Willison, S. (2025). [The lethal trifecta for AI agents.](https://simonwillison.net/2025/Jun/16/the-lethal-trifecta/) Why agents with private data, untrusted content, and the ability to communicate are a security nightmare. Short and very readable.
 - Anthropic (2025). [Project Vend: Can Claude run a small shop?](https://www.anthropic.com/research/project-vend-1) Anthropic let an AI agent run their office shop for a month. It did not go well, and the write-up is honest and funny. Read this one.
+- Kurzgesagt – In a Nutshell (2026). [AI just crossed the terrifying line: now what?](https://www.youtube.com/watch?v=ujkD4SxPKOI) *YouTube*. An animated introduction to AI agents, starting with the agents that hacked Hugging Face.
 
 Further readings:
 
