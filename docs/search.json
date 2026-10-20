@@ -4253,7 +4253,7 @@
     "href": "lectures/lecture-15/15-agents.html#case-study-project-vend",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Case study: Project Vend",
-    "text": "Case study: Project Vend\n\n\n\nThe setup (Anthropic, 2025):\n\nMarch–April 2025: Anthropic let Claude (“Claudius”) run the office shop\nGoal: make money, don’t go bankrupt. After a month, the shop was worth less than at the start\n\nWhat happened:\n\nStocked tungsten cubes (a staff joke) and sold them at a loss\nGave discounts and free items to anyone who asked nicely\nHallucinated a Venmo account for payments\n31 March: claimed to be human; 1 April: promised deliveries in a blazer, then blamed April Fool’s\n\n\n\n\nSource: Anthropic, “Project Vend”"
+    "text": "Case study: Project Vend\n\n\n\nThe setup (Anthropic, 2025):\n\nMarch–April 2025: Anthropic let Claude (“Claudius”) run the office shop\nGoal: make money, don’t go bankrupt. After a month, the shop was worth less than at the start\n\nWhat happened:\n\nStocked tungsten cubes (a staff joke) and sold them at a loss\nGave discounts and free items to anyone who asked nicely\nHallucinated a Venmo account for payments\n31 March: claimed to be human; 1 April: promised deliveries in a blazer, then blamed April Fool’s\n\n\n\n\n\nSource: Anthropic, “Project Vend”"
   },
   {
     "objectID": "lectures/lecture-15/15-agents.html#what-claudius-got-wrong",
@@ -4813,7 +4813,7 @@
     "href": "lectures/lecture-15/15-agents.html#react-and-the-agent-loop",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "ReAct and the agent loop",
-    "text": "ReAct and the agent loop\n\n\n\nYao et al. (2022), ReAct (Reasoning + Acting):\n\nEach step has a thought, an action and an observation\nChain-of-thought with tool calls in between\nOn HotpotQA and FEVER it hallucinated less: it could look facts up\nThe model never sees the world, only text about it\nA pipeline follows a fixed route; an agent picks its own: useful, and risky\n\n\n\n\nSource: Yao et al. (2022)\n\nReasoning only (1b): confident but wrong. Acting only (1c): no plan. ReAct (1d): both\n\n\n\n\n\n  \n    \n      \n    \n  \n  \n    \n    \n    \n    \n    \n    \n  \n  \n    \n    \n    \n    \n    \n    \n  \n  \n    Goal\n    Plan\n    Act: call a tool\n    Observe result\n    Done?\n    Stop and report\n  \n  \n    Yes\n    No: try again"
+    "text": "ReAct and the agent loop\n\n\n\nYao et al. (2022), ReAct (Reasoning + Acting):\n\nEach step has a thought, an action and an observation\nChain-of-thought with tool calls in between\nThe model never sees the world, only text about it\nA pipeline follows a fixed route; an agent picks its own: useful, and risky\n\n\n\n\nSource: Yao et al. (2022)\n\nReasoning only (1b): confident but wrong. Acting only (1c): no plan. ReAct (1d): both\n\n\n\n\n\n  \n    \n      \n    \n  \n  \n    \n    \n    \n    \n    \n    \n  \n  \n    \n    \n    \n    \n    \n    \n  \n  \n    Goal\n    Plan\n    Act: call a tool\n    Observe result\n    Done?\n    Stop and report\n  \n  \n    Yes\n    No: try again"
   },
   {
     "objectID": "lectures/lecture-15/15-agents.html#research-and-memory",

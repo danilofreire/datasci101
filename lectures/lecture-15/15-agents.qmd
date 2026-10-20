@@ -243,7 +243,6 @@ You know the [vocabulary]{.alert} from lecture 04: agent, environment, state, ac
 
 - Each step has a [thought]{.alert}, an [action]{.alert} and an [observation]{.alert}
 - [Chain-of-thought](https://danilofreire.github.io/datasci101/lectures/lecture-10/10-prompting.html) with tool calls in between
-- On HotpotQA and FEVER it hallucinated less: it could look facts up
 - The model never sees the world, only [text about it]{.alert}
 - A [pipeline](https://danilofreire.github.io/datasci101/lectures/lecture-14/14-pipelines.html) follows a fixed route; an agent picks its own: [useful, and risky]{.alert}
 :::
@@ -261,7 +260,7 @@ Reasoning only (1b): confident but wrong. Acting only (1c): no plan. ReAct (1d):
 :::
 :::
 
-:::{style="margin-top: 10px; text-align: center;"}
+:::{style="margin-top: 40px; text-align: center;"}
 ```{=html}
 <svg viewBox="0 0 1060 120" width="85%" role="img" aria-label="Agent loop: goal, plan, act by calling a tool, observe the result, check if done; if not, back to plan; if yes, stop and report" style="font-family: inherit;">
   <defs>
@@ -630,6 +629,8 @@ Source: [Jason Lemkin on X](https://x.com/jasonlk/status/1946069562723897802)
 :::{style="text-align: center;"}
 [![](figures/project-vend-chart.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/project-vend-chart.png"}
 
+[![](figures/project-vend-blazer.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/project-vend-blazer.png"}
+
 Source: [Anthropic, "Project Vend"](https://www.anthropic.com/research/project-vend-1)
 :::
 :::
@@ -656,7 +657,7 @@ Source: [Anthropic, "Project Vend"](https://www.anthropic.com/research/project-v
 
 :::{.column width=45%}
 :::{style="text-align: center;"}
-[![](figures/project-vend-shop.jpg){width="42%"}](#){data-modal-type="image" data-modal-url="figures/project-vend-shop.jpg"}
+[![](figures/project-vend-shop.jpg){width="70%"}](#){data-modal-type="image" data-modal-url="figures/project-vend-shop.jpg"}
 
 Source: [Anthropic, "Project Vend"](https://www.anthropic.com/research/project-vend-1)
 :::
@@ -758,7 +759,7 @@ Replit was high stakes with [no gate]{.alert}. Claudius was low stakes, so it wa
 
 :::{.column width=45%}
 :::{style="text-align: center;"}
-[![](figures/specification-gaming.gif){width="50%"}](#){data-modal-type="image" data-modal-url="figures/specification-gaming.gif"}
+[![](figures/specification-gaming.gif){width="100%"}](#){data-modal-type="image" data-modal-url="figures/specification-gaming.gif"}
 
 Source: [Google DeepMind](https://deepmind.google/discover/blog/specification-gaming-the-flip-side-of-ai-ingenuity/)
 :::
