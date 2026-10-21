@@ -296,8 +296,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <div class="columns">
 <div class="column" style="width:55%;">
 <ul>
-<li>Groups of <span class="alert">4-5 students</span>, one real-world domain each</li>
-<li>Choose one of seven:
+<li>Groups of <span class="alert">4-5 students</span>, one domain per group:
 <ul>
 <li><span class="alert">Healthcare</span> (diagnosis, treatment, patient care)</li>
 <li><span class="alert">Education</span> (tutoring, assessment, feedback)</li>
@@ -312,49 +311,46 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </ul>
 </div><div class="column" style="width:45%;">
 <ul>
-<li>You <span class="alert">test existing AI tools</span> in your domain
-<ul>
-<li>Try them, break them, probe their limits</li>
-</ul></li>
-<li>Then you <span class="alert">design a new application</span> for a gap you found</li>
-<li>Three questions to answer:
+<li><span class="alert">Test</span> existing AI tools in your domain until they break</li>
+<li><span class="alert">Design</span> a new application for a gap you found</li>
+<li>Answer three questions:
 <ul>
 <li>What works?</li>
 <li>What fails?</li>
 <li>What would you build differently?</li>
 </ul></li>
-<li>We grade the <span class="alert">thinking</span>: what you tested, what you found, what you would build</li>
+<li>We grade your <span class="alert">thinking</span></li>
 </ul>
 </div></div>
 </div>
 </section>
 <section id="deliverables-and-timeline" class="slide level2 scrollable">
 <h2>Deliverables and timeline</h2>
-<h3 id="three-dates-to-write-down">Three dates to write down</h3>
 <div style="margin-top: 30px; font-size: 24px;">
 <div class="columns">
 <div class="column" style="width:55%;">
+<p><strong>What you hand in:</strong></p>
 <ol type="1">
-<li><p><span class="alert">Optional proposal</span> (12 November): one page, not graded. Early feedback on your domain and plan</p></li>
-<li><p><span class="alert">Final report</span> (8 December): 5–10 pages. Domain overview, tool evaluation, proposed application</p></li>
-<li><p><span class="alert">Infographic</span> (8 December): one-page PDF for a general audience</p></li>
+<li><span class="alert">Proposal</span> (optional, not graded): one page, for early feedback</li>
+<li><span class="alert">Report</span>: 8-12 pages on the domain, the tools you tested and your proposed application</li>
+<li><span class="alert">Infographic</span>: a one-page PDF for a general audience</li>
 </ol>
-<p>A <span class="alert">bonus appendix</span> with prompts, code or extended analysis is recommended, not required</p>
+<ul>
+<li><span class="alert">Bonus appendix</span> (recommended, not required): prompts, code or extended analysis</li>
+</ul>
 </div><div class="column" style="width:45%;">
-<div style="margin-top: -20px;">
-<p><strong>Important dates:</strong></p>
+<p><strong>When:</strong></p>
 <ul>
 <li><span class="alert">3 November</span>: group list due
 <ul>
 <li>No group? You will be assigned to one at random</li>
 </ul></li>
-<li><span class="alert">12 November</span>: optional proposal</li>
+<li><span class="alert">12 November</span>: proposal</li>
 <li><span class="alert">8 December</span>: report and infographic</li>
 </ul>
 <blockquote>
 <p>Talk to your classmates this week. If you need help finding a group, come and ask me 😉</p>
 </blockquote>
-</div>
 </div></div>
 </div>
 </section></section>
@@ -365,16 +361,14 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </section>
 <section id="why-one-prompt-is-not-enough" class="slide level2">
 <h2>Why one prompt is not enough</h2>
-<h3 id="you-have-all-done-this">You have all done this</h3>
+<h3 id="every-new-chat-starts-from-zero">Every new chat starts from zero</h3>
 <div style="margin-top: 30px; font-size: 24px;">
 <div class="columns">
 <div class="column" style="width:55%;">
 <ul>
-<li>You explain the assignment, the style, the course, <span class="alert">again</span></li>
-<li>You paste the same syllabus into every new chat</li>
-<li>The model has <span class="alert">no state</span> between chats</li>
-<li>Each chat starts from the weights plus the context window (Lecture 10)</li>
-<li>The fix is a <span class="alert">setup</span>: a standing instruction the tool applies to every chat</li>
+<li>In every new chat, you give the model the same background <span class="alert">again</span></li>
+<li>The model itself <span class="alert">remembers nothing</span>: each chat starts from its training plus what you type (Lecture 10)</li>
+<li>A <span class="alert">setup</span> fixes this: instructions you write once, and the tool adds them to every chat</li>
 </ul>
 <div style="text-align: center; margin-top: 20px; font-size: 24px;">
 <table class="caption-top">
@@ -419,17 +413,17 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <div style="font-size: 26px;">
 <table class="caption-top">
 <colgroup>
-<col style="width: 14%">
-<col style="width: 31%">
-<col style="width: 31%">
-<col style="width: 22%">
+<col style="width: 12%">
+<col style="width: 26%">
+<col style="width: 26%">
+<col style="width: 33%">
 </colgroup>
 <thead>
 <tr class="header">
 <th>Layer</th>
 <th>Who writes it</th>
 <th>What it holds</th>
-<th>In Claude</th>
+<th>In Claude/ChatGPT</th>
 </tr>
 </thead>
 <tbody>
@@ -443,13 +437,13 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <td><span class="alert">Knowledge</span></td>
 <td>You</td>
 <td>Files it searches</td>
-<td>Project knowledge</td>
+<td>Project files</td>
 </tr>
 <tr class="odd">
 <td><span class="alert">Memory</span></td>
 <td>The tool</td>
 <td>What it saved from past chats</td>
-<td>Settings &gt; Memory</td>
+<td>Memory settings</td>
 </tr>
 <tr class="even">
 <td><span class="alert">Tools</span></td>
@@ -465,9 +459,9 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <li><a href="https://www.youtube.com/watch?v=zjkBMFhNj_g">Karpathy’s “LLM OS” talk (Nov 2023)</a> treats the context window as RAM</li>
 <li><a href="https://arxiv.org/abs/2310.08560">Packer et al.&nbsp;(2023)</a>, MemGPT: pages information in and out of that window</li>
 <li>Anthropic’s <a href="https://www.anthropic.com/research/building-effective-agents">“Building effective agents” (Dec 2024)</a> calls this the <span class="alert">augmented LLM</span></li>
-<li>You write layers 1 and 2, and layers 3 and 4 fill up on their own</li>
-<li>Read the two you did not write once a month</li>
-<li>A <span class="alert">Project</span> bundles the first three layers in one place (five on the Free plan)</li>
+<li>You write instructions and knowledge; the tool fills in memory and tools</li>
+<li>Once a month, check what memory has saved and which connectors are on</li>
+<li>A <span class="alert">Project</span> bundles the first three layers in one place, in both Claude and ChatGPT</li>
 </ul>
 </div>
 </section>
@@ -478,15 +472,17 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <div class="columns">
 <div class="column" style="width:55%;">
 <ul>
-<li>Lecture 10 showed the company’s hidden text above your message; now you write your own
+<li>Lecture 10 showed the company’s hidden prompt; now you <span class="alert">write your own</span>
 <ul>
-<li><span class="alert">Settings &gt; Instructions for Claude</span>: every chat</li>
-<li><span class="alert">Project instructions</span>: one project, Free included</li>
+<li><span class="alert">Account instructions</span>: every chat</li>
+<li><span class="alert">Project instructions</span>: one project</li>
+<li>Both are free in Claude and ChatGPT</li>
 </ul></li>
-<li><a href="https://aclanthology.org/2024.findings-emnlp.888/">Zheng et al.&nbsp;(2024)</a>: <span class="alert">“you are an expert” changes nothing</span>, so write constraints</li>
-<li><a href="https://arxiv.org/abs/2310.11324">Sclar et al.&nbsp;(2024)</a>: reformatting one prompt shifts accuracy up to <span class="alert">76 points</span></li>
-<li>Rules do not scale (<a href="https://arxiv.org/abs/2507.11538">IFScale, 2025</a>): the best models follow 68% of 500, the early ones most. Keep them few and first</li>
-<li>Name five things: role, audience, format, refusals, first question</li>
+<li><span class="alert">“You are an expert” changes nothing</span>; write constraints instead (<a href="https://aclanthology.org/2024.findings-emnlp.888/">Zheng et al., 2024</a>)</li>
+<li>Reformatting one prompt can shift accuracy by up to <span class="alert">76 points</span> (<a href="https://arxiv.org/abs/2310.11324">Sclar et al., 2024</a>)</li>
+<li>The best models follow only <span class="alert">68% of 500 rules</span>, the earliest most (<a href="https://arxiv.org/abs/2507.11538">IFScale, 2025</a>)</li>
+<li>So keep rules few, and put the important ones first</li>
+<li>Cover five things: role, audience, format, refusals, first question</li>
 </ul>
 </div><div class="column" style="width:45%;">
 <div style="text-align: center; margin-top: -30px;">
@@ -503,7 +499,6 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </section>
 <section id="memory" class="slide level2">
 <h2>Memory</h2>
-<h3 id="on-by-default-and-it-fills-up-on-its-own">On by default, and it fills up on its own</h3>
 <div style="margin-top: 30px; font-size: 24px;">
 <div class="columns">
 <div class="column" style="width:55%;">
@@ -528,7 +523,6 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </section>
 <section id="what-should-never-sit-in-memory" class="slide level2">
 <h2>What should never sit in memory</h2>
-<h3 id="the-risks-grow-with-time">The risks grow with time</h3>
 <div style="margin-top: 30px; font-size: 24px;">
 <div class="columns">
 <div class="column" style="width:55%;">
@@ -591,7 +585,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <ul>
 <li><span class="alert">Role</span>, <span class="alert">orientation</span>, <span class="alert">house style</span>, <span class="alert">hard limits</span>, <span class="alert">approval points</span></li>
 </ul></li>
-<li>The file keeps growing: <a href="https://arxiv.org/abs/2608.11095">Chakrabarti (2026)</a> saw these grow <span class="alert">226%</span>, about five net rules per commit, old ones rarely deleted</li>
+<li>The file keeps growing: <a href="https://arxiv.org/abs/2608.11095">Chakrabarti (2026)</a> saw these grow <span class="alert">226%</span> over time, with old rules rarely deleted</li>
 <li>Lecture 15’s Replit lesson holds: this file is text, and <span class="alert">text is not a permission system</span></li>
 </ul>
 </div>
@@ -600,7 +594,6 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </section>
 <section id="agents.md-and-skills" class="slide level2">
 <h2>AGENTS.md and Skills</h2>
-<h3 id="one-shared-file-and-folders-for-repeatable-tasks">One shared file, and folders for repeatable tasks</h3>
 <div style="margin-top: 25px; font-size: 22px;">
 <div class="columns">
 <div class="column" style="width:55%;">
@@ -626,9 +619,9 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </div></div>
 </div>
 </section>
-<section id="the-same-four-layers-different-buttons" class="slide level2">
-<h2>The same four layers, different buttons</h2>
-<h3 id="which-layer-is-the-problem-in">Which layer is the problem in?</h3>
+<section id="chat-apps-and-agent-tools" class="slide level2">
+<h2>Chat apps and agent tools</h2>
+<h3 id="finding-which-layer-went-wrong">Finding which layer went wrong</h3>
 <div style="margin-top: 30px; font-size: 24px;">
 <div class="columns">
 <div class="column" style="width:50%;">
@@ -669,55 +662,54 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </table>
 </div>
 <ul>
-<li>Every product ships its own names for these six rows</li>
-<li>Skills sit in both columns because they are the same folder</li>
-<li>The left column is the <span class="alert">web app</span> you use; the right is <span class="alert">developer tools</span></li>
+<li>Each product names these rows differently</li>
+<li>Skills are the same folder in both columns</li>
+<li>Left: the <span class="alert">web app</span> you use; right: <span class="alert">developer tools</span></li>
 </ul>
 </div><div class="column" style="width:50%;">
 <p><strong>Diagnose before you retype:</strong></p>
 <ul>
-<li>Keeps forgetting your format: <span class="alert">instructions</span></li>
-<li>Keeps inventing figures: <span class="alert">knowledge</span> (documents or files the model can read)</li>
-<li>Cannot see the file: <span class="alert">tools</span></li>
-<li>Remembers what you never told it today: <span class="alert">memory</span></li>
-<li>Follows rule one and ignores rule twelve: too many instructions</li>
+<li>Forgets your format: <span class="alert">instructions</span></li>
+<li>Invents figures: <span class="alert">knowledge</span></li>
+<li>Cannot see a file: <span class="alert">tools</span></li>
+<li>Knows something you never said today: <span class="alert">memory</span></li>
+<li>Ignores later rules: <span class="alert">too many instructions</span></li>
 </ul>
 </div></div>
 </div>
 </section>
-<section id="activity-write-the-setup" class="slide level2 scrollable">
-<h2>Activity: write the setup</h2>
-<h3 id="in-pairs-ten-lines-at-most">In pairs, ten lines at most</h3>
+<section id="activity-build-a-setup-together" class="slide level2 scrollable">
+<h2>Activity: build a setup together</h2>
+<h3 id="call-out-your-answers-and-i-will-type-them-in">Call out your answers and I will type them in</h3>
 <div style="margin-top: 30px; font-size: 24px;">
 <div class="columns">
 <div class="column" style="width:55%;">
-<p>Write the project instructions for an assistant that helps you revise for the <span class="alert">DATASCI 101 quizzes</span> using only the course slides. Cover four things:</p>
+<p>An assistant that helps you revise for the <span class="alert">DATASCI 101 quizzes</span>, using only the course slides. What should its instructions say?</p>
 <ol type="1">
-<li><span class="alert">Role</span>: what is this assistant for, in one sentence?</li>
-<li><span class="alert">Never</span>: what must it refuse to do, even if you ask?</li>
+<li><span class="alert">Role</span>: what is it for?</li>
+<li><span class="alert">Never</span>: what must it refuse, even if you ask?</li>
 <li><span class="alert">Format</span>: how should its answers look?</li>
-<li><span class="alert">First question</span>: what should it ask you before answering anything?</li>
+<li><span class="alert">First question</span>: what should it ask before answering?</li>
 </ol>
-<p>Then decide two more:</p>
+<p>Then:</p>
 <ul>
-<li>Which two files would you upload as knowledge?</li>
+<li>Which two files should it read?</li>
 <li>What must never reach its memory?</li>
 </ul>
 </div><div class="column" style="width:45%;">
-<p>A hint on the “never” line:</p>
+<p>A hint on the “never” rule:</p>
 <ul>
-<li>A good “never” rule <span class="alert">changes what the model does</span></li>
+<li>A good rule <span class="alert">changes what the model does</span></li>
 <li>“Never be rude” does nothing: it was not going to be rude</li>
-<li>“Never give me the answer before I have tried” works better!</li>
-<li>Quick test: delete the rule, would anything change? If not, cut it</li>
+<li>“Never give me the answer before I have tried” works</li>
+<li>Test: delete the rule. If nothing changes, cut it</li>
 </ul>
-<p>⏱️ 5 minutes!</p>
 </div></div>
 </div>
 </section>
-<section id="one-version-that-works" class="slide level2">
-<h2>One version that works</h2>
-<h3 id="and-two-ways-it-goes-wrong">And two ways it goes wrong</h3>
+<section id="a-sample-setup" class="slide level2">
+<h2>A sample setup</h2>
+<h3 id="compare-it-with-what-we-discussed">Compare it with what we discussed</h3>
 <div style="margin-top: 30px; font-size: 19px;">
 <div class="columns">
 <div class="column" style="width:50%;">
@@ -762,12 +754,12 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <div class="columns">
 <div class="column" style="width:55%;">
 <ul>
-<li>A junior analyst wastes the morning <span class="alert">moving data by hand</span>: pasting filings, summaries and answers between apps</li>
-<li>Before 2025, every app needed custom code for every model: 50 apps by 5 models is <span class="alert">250 integrations</span></li>
-<li>MCP fixes that like Microsoft’s <a href="https://microsoft.github.io/language-server-protocol/">Language Server Protocol</a> did for code editors: describe your tools once, any model can call them</li>
-<li>The analogy is a <span class="alert">USB-C port</span>: one plug, any device (Lecture 15’s tool calling, tools from outside)</li>
-<li><a href="https://www.anthropic.com/news/model-context-protocol">Anthropic released it (Nov 2024)</a>, <a href="https://techcrunch.com/2025/03/26/openai-adopts-rival-anthropics-standard-for-connecting-ai-models-to-data/">OpenAI adopted it (Mar 2025)</a>, now <span class="alert">10,000+ servers</span></li>
-<li>Every Claude connector is an MCP server with a friendlier name</li>
+<li>A junior analyst spends the morning <span class="alert">pasting data by hand</span> between apps</li>
+<li>With MCP (<a href="https://modelcontextprotocol.io/">Model Context Protocol</a>), an app describes its tools once and any model can call them (like Microsoft’s <a href="https://microsoft.github.io/language-server-protocol/">LSP</a> for code editors)</li>
+<li>Think of a <span class="alert">USB-C port</span>: the same plug works with any device</li>
+<li>It is Lecture 15’s tool calling, with tools from other apps</li>
+<li>Released by <a href="https://www.anthropic.com/news/model-context-protocol">Anthropic (Nov 2024)</a>, adopted by <a href="https://techcrunch.com/2025/03/26/openai-adopts-rival-anthropics-standard-for-connecting-ai-models-to-data/">OpenAI (Mar 2025)</a>, now <span class="alert">10,000+ servers</span></li>
+<li>The connectors in Claude and ChatGPT are mostly MCP servers with friendlier names</li>
 </ul>
 </div><div class="column" style="width:45%;">
 <div style="text-align: center;">
@@ -787,8 +779,8 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <li>The <a href="https://support.claude.com/en/articles/11176164-use-connectors-to-extend-claude-s-capabilities">connector directory</a> is open to all users, including Free</li>
 <li>Free accounts can add <span class="alert">one custom</span> <a href="https://support.claude.com/en/articles/11175166-get-started-with-custom-connectors-using-remote-mcp">remote MCP connector</a></li>
 <li>You authorise each connector separately, and you can revoke it</li>
-<li>A connector is Lecture 12’s RAG with a live plug, and it inherits the failure modes</li>
-<li>A citation shows the model retrieved something, not that it checked it</li>
+<li>A connector works like Lecture 12’s RAG, but with live data from your accounts</li>
+<li>A citation shows where the model looked, not that its answer is right</li>
 </ul>
 <table class="caption-top">
 <thead>
@@ -825,20 +817,20 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </section>
 <section id="two-routes-for-a-finance-team" class="slide level2">
 <h2>Two routes for a finance team</h2>
-<h3 id="train-a-model-or-connect-one">Train a model, or connect one</h3>
+<h3 id="should-a-team-train-its-own-model">Should a team train its own model?</h3>
 <div style="margin-top: 30px; font-size: 22px;">
 <div class="columns">
 <div class="column" style="width:55%;">
 <ul>
-<li><span class="alert">Route one, train</span>:
+<li><span class="alert">Train</span> a specialist model:
 <ul>
-<li><a href="https://arxiv.org/abs/2303.17564">BloombergGPT (Wu et al., 2023)</a>: 50B parameters, 363B finance + 345B general tokens, frozen the day training stopped</li>
-<li><a href="https://arxiv.org/abs/2306.06031">FinGPT (Yang et al., 2023)</a>: a LoRA adapter for about <span class="alert">$300</span> a run</li>
-<li>In medicine, <a href="https://arxiv.org/abs/2305.09617">Med-PaLM 2 (Singhal et al., 2023)</a> scored <span class="alert">86.5%</span> on licensing questions</li>
+<li><a href="https://arxiv.org/abs/2303.17564">BloombergGPT</a>: 50B parameters, 363B finance and 345B general tokens, frozen once training ends</li>
+<li><a href="https://arxiv.org/abs/2306.06031">FinGPT</a>: a LoRA fine-tune for about <span class="alert">$300</span> a run</li>
+<li><a href="https://arxiv.org/abs/2305.09617">Med-PaLM 2</a>: <span class="alert">86.5%</span> on medical licensing questions</li>
 </ul></li>
-<li><span class="alert">Route two, connect</span>: instructions, documents, a connector to the filings, updating the moment the source does</li>
-<li><a href="https://arxiv.org/abs/2311.10723">Li et al.&nbsp;(2023)</a> surveyed both: fine-tuned models beat GPT-4 on <span class="alert">classification</span>, but match or trail it on generative tasks</li>
-<li>Most teams take route two, because their bottleneck is data access</li>
+<li><span class="alert">Connect</span> a general model: instructions, documents and a connector to the filings, always up to date</li>
+<li>Fine-tuned models win at <span class="alert">classification</span> but match or trail GPT-4 at generating text (<a href="https://arxiv.org/abs/2311.10723">Li et al., 2023</a>)</li>
+<li>Most teams connect, because their problem is getting the data</li>
 </ul>
 </div><div class="column" style="width:45%;">
 <div style="text-align: center;">
@@ -850,25 +842,16 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </section>
 <section id="attacks-through-connectors" class="slide level2">
 <h2>Attacks through connectors</h2>
-<h3 id="the-trifecta-hidden-in-what-the-agent-reads">The trifecta, hidden in what the agent reads</h3>
+<h3 id="hidden-instructions-in-what-the-assistant-reads">Hidden instructions in what the assistant reads</h3>
 <div style="margin-top: 30px; font-size: 21px;">
 <div class="columns">
 <div class="column" style="width:55%;">
 <ul>
-<li><a href="https://simonwillison.net/2025/Sep/19/notion-lethal-trifecta/">A shared document (Notion, Sept 2025)</a>: hidden white-on-white text gave the assistant secret orders
-<ul>
-<li>It collected private notes and sent them to a stranger</li>
-</ul></li>
-<li><a href="https://www.safebreach.com/blog/invitation-is-all-you-need-hacking-gemini/">Gemini (SafeBreach, Aug 2025)</a>: a calendar invite title hid instructions
-<ul>
-<li>Gemini then controlled smart-home devices and leaked email</li>
-</ul></li>
-<li>No password stolen: the attacker just writes a document and waits</li>
-<li>This is <span class="alert">indirect prompt injection</span> (<a href="https://arxiv.org/abs/2302.12173">Greshake et al., 2023</a>)
-<ul>
-<li>The poison rides in on content the agent reads</li>
-</ul></li>
-<li>All three ingredients again: private data, untrusted content, a way out</li>
+<li><a href="https://simonwillison.net/2025/Sep/19/notion-lethal-trifecta/">Notion (Sept 2025)</a>: white-on-white text in a shared document told the assistant to send private notes to a stranger, and it did</li>
+<li><a href="https://www.safebreach.com/blog/invitation-is-all-you-need-hacking-gemini/">Gemini (SafeBreach, Aug 2025)</a>: instructions hidden in a calendar invite made Gemini control smart-home devices and leak email</li>
+<li>The attacker stole no password; they wrote a document and waited</li>
+<li>This is <span class="alert">indirect prompt injection</span>: the attack arrives inside content the assistant reads (<a href="https://arxiv.org/abs/2302.12173">Greshake et al., 2023</a>)</li>
+<li>It is the lethal trifecta again: private data, untrusted content and a way out</li>
 </ul>
 </div><div class="column" style="width:45%;">
 <p><strong>Three rules before you click authorise:</strong></p>
@@ -888,9 +871,9 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <h1>Beyond Claude</h1>
 
 </section>
-<section id="the-same-buttons-in-chatgpt" class="slide level2">
-<h2>The same buttons in ChatGPT</h2>
-<h3 id="different-limits-same-four-layers">Different limits, same four layers</h3>
+<section id="setting-up-chatgpt" class="slide level2">
+<h2>Setting up ChatGPT</h2>
+<h3 id="how-the-four-layers-look-on-the-free-plan">How the four layers look on the free plan</h3>
 <div style="margin-top: 30px; font-size: 23px;">
 <div class="columns">
 <div class="column" style="width:58%;">
@@ -971,34 +954,21 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </section>
 <section id="your-setup-step-by-step" class="slide level2 scrollable">
 <h2>Your setup, step by step</h2>
-<h3 id="homework-not-for-class-twenty-minutes-on-the-free-plan">Homework, not for class: twenty minutes on the free plan</h3>
-<div style="margin-top: 30px; font-size: 20px;">
-<div class="columns">
-<div class="column" style="width:55%;">
-<p>Do this tonight; we will not do it in class.</p>
+<h3 id="homework-for-tonight-about-twenty-minutes">Homework for tonight, about twenty minutes</h3>
+<div style="margin-top: 30px; font-size: 24px;">
 <ol type="1">
-<li>Create a <span class="alert">Project</span> called “DATASCI 101” (Free allows five)</li>
+<li>Create a <span class="alert">Project</span> called “DATASCI 101” in Claude or ChatGPT (the free plan is fine)</li>
 <li>Write <span class="alert">ten lines</span> of instructions: role, audience, format, refusals, first question</li>
 <li>Upload <span class="alert">two files</span>: the syllabus and this week’s slides</li>
-<li>Open <span class="alert">Settings &gt; Memory</span> and read every line as a stranger would</li>
+<li>Open the <span class="alert">memory settings</span> and read every line as a stranger would</li>
 <li>Delete <span class="alert">one memory</span> you would not want on a screen behind you</li>
-<li>Add <span class="alert">one connector</span> and switch off its write tools</li>
-<li>Test it with <span class="alert">three questions</span> you already asked last week</li>
-<li>Write down <span class="alert">one thing it got wrong</span>, and which layer caused it</li>
+<li>Optional: add <span class="alert">one connector</span> and switch off its write access</li>
+<li>Ask <span class="alert">three questions</span> you asked last week. If the answers have not changed, your instructions are too vague</li>
+<li>Note <span class="alert">one thing it got wrong</span> and which layer caused it</li>
 </ol>
-<ul>
-<li>Did the three answers change? If not, your instructions were too vague</li>
-<li>Go back to step 2 and add a rule that costs you something</li>
-</ul>
-</div><div class="column" style="width:45%;">
-<div style="text-align: center;">
-<p><a href="#/" data-modal-type="image" data-modal-url="figures/claude-memory-import.png"><img data-src="figures/claude-memory-import.png" style="width:85.0%"></a></p>
-<p>Source: <a href="https://support.claude.com/en/articles/12123587-import-and-export-your-memory-from-claude">Importing and exporting memory, Anthropic Help Centre</a></p>
-</div>
-<blockquote>
+<div style="background: rgba(45, 69, 99, 0.1); padding: 12px; border-radius: 10px; margin-top: 20px;">
 <p>Do steps 4 and 5 even if you do nothing else this week</p>
-</blockquote>
-</div></div>
+</div>
 </div>
 </section></section>
 <section id="and-thats-all-for-today" class="title-slide slide level1 center" data-background-color="#1B3A6B">
