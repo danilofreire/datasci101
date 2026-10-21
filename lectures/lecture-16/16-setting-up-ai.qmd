@@ -161,7 +161,8 @@ Source: [Andrej Karpathy on X](https://x.com/karpathy/status/1886192184808149383
 2. [Report]{.alert}: 8-12 pages on the domain, the tools you tested and your proposed application
 3. [Infographic]{.alert}: a one-page PDF for a general audience
 
-- [Bonus appendix]{.alert} (recommended, not required): prompts, code or extended analysis
+- [Appendix]{.alert} (recommended, not graded): your prompts, outputs and extra screenshots
+- [Bonus]{.alert}: build a simple prototype for up to 1 extra point
 :::
 
 :::{.column width=45%}

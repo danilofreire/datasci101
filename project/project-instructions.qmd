@@ -31,125 +31,149 @@ editor:
 
 # Overview
 
-In this project, you will work in groups of 4-5 to explore how AI is being used in a real-world domain and propose your own AI application. You will start by testing 2-3 existing AI tools in your chosen domain to see what they do well and where they fall short. Then, drawing on what you found, you will design a new AI application for a specific problem, with a plan for how it would work and what could go wrong.
+In groups of 4-5, you will study how AI is used in one real-world domain. First, you will test 2-3 existing AI tools in that domain and record what they do well and where they fail. Then you will use what you found to design a new AI application for a specific problem: what it does, how it works and what could go wrong.
 
-No programming is required. The project is about thinking clearly about AI systems: what they do, how they fail, and how to build them responsibly.
+No programming is required. We grade how clearly you think about AI systems: what they do, how they fail and how to build them responsibly.
 
 # Choosing a domain
 
-Pick one domain from the list below. Each domain includes a few example use cases to get you started, but you are free to focus on any specific problem within your chosen domain.
+Pick one domain from the table below. The examples are starting points; you can focus on any specific problem within your domain.
 
-1. **Healthcare**: symptom checking, mental health chatbots, medical image interpretation
-2. **Education**: AI tutoring systems, automated grading, personalised learning platforms
-3. **Finance**: credit scoring, fraud detection, robo-advisors
-4. **Law**: contract review, legal research assistants, case-outcome prediction
-5. **Creative industries**: AI-generated art, music, or writing; content moderation systems
-6. **Scientific research**: literature search and summarisation, protein-structure prediction, experiment design
-7. **Customer service**: support chatbots, ticket routing and triage, sentiment analysis of feedback
+\singlespacing
 
-Domain selection is first-come-first-served. Multiple groups can work in the same domain, but each group must address a different use case. If a domain becomes too crowded, I may ask latecomers to pick another one. Please feel free to email me if you have questions about which domain or use case to choose.
+| Domain | Example use cases |
+|------|----------------------|
+| Healthcare | Symptom checking, mental health chatbots, medical image interpretation |
+| Education | AI tutoring, automated grading, personalised learning platforms |
+| Finance | Credit scoring, fraud detection, robo-advisors |
+| Law | Contract review, legal research assistants, case-outcome prediction |
+| Creative industries | AI-generated art, music or writing; content moderation |
+| Scientific research | Literature search and summarisation, protein-structure prediction, experiment design |
+| Customer service | Support chatbots, ticket routing and triage, sentiment analysis of feedback |
+
+\doublespacing
+
+Name your domain and use case when you submit your group list on 3 November. Domains are first come, first served. Several groups can share a domain, but each group must address a different use case. If a domain gets crowded, we may ask later groups to pick another. Email us if you are unsure which domain or use case to choose.
 
 # Timeline
 
 | Date | What happens |
 |------|-------------|
-| **October 27** (Lecture 17) | Project instructions released |
-| **November 3** | Deadline to form your group |
-| **November 5** | Students without a group are assigned randomly |
-| **November 12** | Optional proposal due on Canvas |
-| **November 12-19** | Feedback on proposals |
-| **December 8** | Final report and infographic due at 11:59 PM on Canvas |
+| 27 October (lecture 17) | Project instructions released |
+| 3 November | Group list due by email, with your domain and use case |
+| 5 November | Students without a group are assigned to one at random |
+| 12 November | Optional proposal due on Canvas |
+| 12-19 November | We send feedback on proposals |
+| 8 December | Report and infographic due on Canvas by 11:59 PM |
 
 # Group formation
 
-You have until **November 3** to form a group of 4-5 students. If you have not joined a group by then, I will assign you to one randomly on November 5. If your group was formed by random assignment, I particularly encourage you to submit the optional proposal so you can get early feedback and start coordinating.
+Form a group of 4-5 students by 3 November. One member emails the group list, domain and use case to [danilo.freire@emory.edu](mailto:danilo.freire@emory.edu). If you are not in a group by then, we will assign you to one at random on 5 November.
+
+We especially recommend the optional proposal for randomly assigned groups. It gets you early feedback and a reason to start working together.
 
 # Deliverables
 
-## Project proposal (optional, strongly recommended)
+## Proposal (optional, not graded)
 
-**Due: November 12 on Canvas. Not graded.**
+Due 12 November on Canvas. Submit one page with three short paragraphs that answer these questions:
 
-Submit a one-page document with three paragraphs:
+1. Which domain and use case did you choose, and why does the problem matter?
+2. Which 2-3 AI tools will you test, and why these?
+3. What application do you plan to design? What would it do, and who would use it?
 
-1. **Domain and use case.** Which domain did you choose? What specific problem are you addressing, and why does it matter?
-2. **Existing tools.** Which 2-3 AI tools do you plan to test? Why did you pick these?
-3. **Proposed application.** Give a brief sketch of the AI application you intend to design. What would it do? Who would use it?
-
-I will read each proposal and give you written feedback so you can adjust course before investing time in the full report.
+We will send you written feedback, so you can change course before you write the full report.
 
 ## Final submission (graded)
 
-**Due: December 8 at 11:59 PM on Canvas.**
-
-You will submit two items: a report and an infographic.
+Due 8 December by 11:59 PM on Canvas. You submit two files: a report and an infographic.
 
 ### Report
 
-Write a report of between 5 and 10 pages, not including appendices. Submit it as a PDF or Word document. The report should have five sections:
+Write 8-12 pages of text and submit them as a PDF or Word document. Screenshots, figures, references and appendices do not count towards the limit. Each screenshot needs a sentence explaining what it shows and why it matters.
 
-**1. Introduction.** Describe the problem you are addressing and explain why AI is relevant to it. A reader unfamiliar with your domain should be able to follow along.
+The report has five sections.
 
-**2. Landscape review.** Test 2-3 existing AI tools that are relevant to your domain. For each tool, describe what it does, show how you tested it (include screenshots or sample prompts and outputs), and discuss what it does well and where it falls short. Be specific: "The chatbot gave an incorrect answer when asked about X" is more useful than "The chatbot sometimes makes mistakes."
+#### 1. Introduction {-}
 
-**3. Proposed application.** Based on what you learned from testing existing tools, design your own AI application. Describe:
+Describe the problem and explain why AI is relevant to it. A reader who does not know your domain should be able to follow.
 
-- What the application would do
-- Who would use it and in what context
+#### 2. Landscape review {-}
+
+Test 2-3 existing AI tools in your domain. For each tool:
+
+- Describe what it does
+- Show how you tested it, with screenshots or sample prompts and outputs
+- Discuss what it does well and where it falls short
+
+Be specific. "The chatbot gave a wrong answer when asked about X" tells us more than "The chatbot sometimes makes mistakes".
+
+#### 3. Proposed application {-}
+
+Use what you learned from testing to design your own AI application. Describe:
+
+- What it would do
+- Who would use it, and in what context
 - What data it would need
-- How it would work at a high level (you do not need to write code; a simple diagram or description of the workflow is enough)
+- How it would work. No code is needed; a simple diagram or a description of the workflow is enough
 
-**4. Harms assessment.** Identify at least three things that could go wrong with your proposed application. Think about bias, privacy, reliability, and misuse. For each risk, explain how you would reduce or prevent it. Draw on what you have learned in class about AI ethics and safety.
+#### 4. Harms assessment {-}
 
-**5. Conclusion.** Summarise your main findings and reflect on what you learned from the project. What surprised you? What would you do differently with more time?
+Identify at least three things that could go wrong with your application, such as bias, privacy, reliability or misuse. For each risk, explain how you would prevent or reduce it. Use what you learned in class about AI ethics and safety.
+
+#### 5. Conclusion {-}
+
+Summarise your main findings. What surprised you? What would you do differently with more time?
 
 ### Infographic
 
-Create a one-page visual summary of your project. It should cover three things: the problem, your proposed solution, and the main risks. You can use any tool you like (Canva, PowerPoint, Google Slides, etc.). Submit it as a PDF.
+Make a one-page PDF that summarises the problem, your proposed application and its main risks. Use any tool you like, such as Canva, PowerPoint or Google Slides. Someone who has not read your report should understand it.
 
-The infographic should make sense on its own to someone who has not read your report.
+### Appendix (recommended, not graded)
 
-## Optional: "Build it" appendix (bonus)
+Add an appendix with the material behind your report: the prompts you used, the full outputs, extra screenshots and any extended analysis. It does not count towards the page limit, and it lets us check the evidence for your landscape review.
 
-If your group wants to go further, you can build a simple working prototype using no-code tools. For example:
+## Bonus: build a prototype (optional)
 
-- Create a custom GPT or Claude Project with instructions tailored to your use case
-- Build a basic chatbot with a no-code platform (Poe, Coze, or similar)
-- Set up a simple retrieval-augmented generation (RAG) workflow using a visual tool
-- Design a prompt chain that solves a multi-step task in your domain
+Build a simple working prototype with no-code tools. For example:
 
-Document what you built with screenshots and a brief explanation of how it works. This appendix does not count toward the page limit.
+- A custom GPT, Claude Project or Gemini Gem with instructions for your use case
+- A basic chatbot on a no-code platform such as Poe or Coze
+- A simple retrieval-augmented generation (RAG) workflow in a visual tool
+- A prompt chain that solves a multi-step task in your domain
 
-**Bonus points:** up to 1 extra point. A working prototype with clear documentation earns 1 point; a partial attempt or one with minimal documentation earns 0.5.
+Document it in a separate appendix, with screenshots and a short explanation of how it works. It does not count towards the page limit.
+
+A working prototype with clear documentation earns 1 bonus point. A partial attempt, or one with little documentation, earns 0.5.
 
 # Grading rubric
 
-The project is graded on a scale of 0-10, plus up to 1 bonus point.
+The project is graded out of 10, plus up to 1 bonus point.
 
 \singlespacing
 
-\renewcommand{\arraystretch}{1.2}
-\footnotesize
+\renewcommand{\arraystretch}{1.3}
+\small
 
-\begin{tabular}{|>{\raggedright\arraybackslash}p{9cm}|>{\centering\arraybackslash}p{2.5cm}|>{\centering\arraybackslash}p{2cm}|}
+\begin{tabular}{|>{\raggedright\arraybackslash}p{3.2cm}|>{\raggedright\arraybackslash}p{11cm}|>{\centering\arraybackslash}p{1.3cm}|}
 \hline
-\textbf{Component} & \textbf{What I look for} & \textbf{Points} \\
+\textbf{Component} & \textbf{What we look for} & \textbf{Points} \\
 \hline
-\textbf{Introduction} & Clear problem statement; explains why AI matters here & 1 \\
+Introduction & A clear problem statement that explains why AI matters here & 1 \\
 \hline
-\textbf{Landscape review} & Thorough testing of 2-3 tools; specific observations with evidence (screenshots, examples); fair comparison & 2 \\
+Landscape review & Thorough testing of 2-3 tools; specific observations backed by screenshots or examples; a fair comparison & 2 \\
 \hline
-\textbf{Proposed application} & Realistic and well thought-out design; clear description of users, data needs, and workflow; original thinking & 3 \\
+Proposed application & A realistic design; clear users, data needs and workflow; original thinking & 3 \\
 \hline
-\textbf{Harms assessment} & Identifies genuine risks (not generic ones); proposes concrete, realistic mitigations & 2 \\
+Harms assessment & Risks specific to your application, not generic ones; concrete, realistic mitigations & 2 \\
 \hline
-\textbf{Infographic} & Visually clear; accurate; communicates the key points to a general audience & 1 \\
+Infographic & Clear, accurate and easy for a general audience to follow & 1 \\
 \hline
-\textbf{Writing quality} & Well-organised; clear prose; proper citations; the conclusion ties the report together & 1 \\
+Writing quality & Well organised; clear prose; proper citations; a conclusion that ties the report together & 1 \\
 \hline
 \textbf{Total} & & \textbf{10} \\
 \hline
-\textbf{Bonus: technical stretch} & Working prototype with clear documentation (1 pt) or partial attempt (0.5 pt) & \textbf{+1} \\
+Bonus: prototype & A working prototype with clear documentation (1 point) or a partial attempt (0.5 points) & \textbf{+1} \\
 \hline
 \end{tabular}
 
@@ -158,21 +182,21 @@ The project is graded on a scale of 0-10, plus up to 1 bonus point.
 
 # Tips
 
-- **Be specific.** "This tool is biased" is too vague. "When we tested the credit-scoring tool with identical applications but different names, it gave the one with a typically white-sounding name a 15\% higher score" is much better.
-- **Use what you learned in class.** The lectures on bias, documentation, hallucination, and harms assessment are all directly relevant to this project.
-- **Divide the work early.** With 4-5 people and about six weeks, you have plenty of time if you start early. You do not have plenty of time if everyone waits until the last week.
-- **The proposal is optional but worth doing.** It takes an hour to write and saves you from going down the wrong path.
-- **The infographic is not an afterthought.** A good infographic shows that you truly understand your project. Design it with care.
+- Be specific. "This tool is biased" is too vague. "Given identical applications with different names, the credit-scoring tool scored the one with a typically white-sounding name 15% higher" is much better
+- Use the lectures on bias, documentation, hallucination and harms assessment. All four apply directly to this project
+- Divide the work early. Six weeks is plenty of time for a group that starts early, and not enough if everyone waits until the last week
+- Write the proposal. It takes about an hour and can save you from going down the wrong path
+- Design the infographic with care. A good one shows that you understand your project
 
 # AI use policy
 
-You may use AI tools (ChatGPT, Claude, Gemini, etc.) to help with brainstorming, drafting, or editing. However:
+You may use AI tools such as ChatGPT, Claude or Gemini to brainstorm, draft or edit. These rules apply:
 
-- You must declare all AI use in your submission
+- Declare all AI use in your submission
 - You are responsible for the accuracy of everything in your report
-- Copy-pasting AI outputs without editing or verification is not acceptable
-- The Emory Honour Code applies
+- Do not paste AI output without editing and checking it
+- The Emory Honor Code applies
 
 # Questions?
 
-If anything is unclear, please email me at [danilo.freire@emory.edu](mailto:danilo.freire@emory.edu) or ask during office hours.
+If anything is unclear, email [danilo.freire@emory.edu](mailto:danilo.freire@emory.edu) or come to office hours.
