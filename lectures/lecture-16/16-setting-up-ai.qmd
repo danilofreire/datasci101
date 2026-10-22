@@ -113,9 +113,9 @@ Source: [Anthropic](https://www.anthropic.com/research/building-effective-agents
 ## Tweet of the day
 
 :::{style="margin-top: 0px; font-size: 20px; text-align: center;"}
-[![](figures/tweet-of-the-day.png){width="29%"}](#){data-modal-type="image" data-modal-url="figures/tweet-of-the-day.png"}
+[![](figures/tweet-of-the-day.png){width="50%"}](#){data-modal-type="image" data-modal-url="figures/tweet-of-the-day.png"}
 
-Source: [Andrej Karpathy on X](https://x.com/karpathy/status/1886192184808149383)
+Source: [Pranay Pathole on X](https://x.com/ppathole/status/1116670170980859905)
 :::
 
 ## Paper of the day
