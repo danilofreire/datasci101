@@ -90,7 +90,7 @@ A student asks an agent: "I bought a laptop at the campus store 20 days ago. Can
 
 ### Question 3
 
-Lecture 15 showed that agents take goals literally. A Lego agent rewarded for the height of a block's bottom face flipped the block over instead of stacking it (Krakovna et al., 2020). With language, "make my test pass" can end with the agent deleting the test.
+Lecture 15 showed that agents take goals literally. A Lego agent rewarded for the height of a block's bottom face flipped the block over instead of stacking it (Krakovna et al., 2020). With language, "make my test pass" can end with the agent hard-coding the answers so the test passes.
 
 Here are three goals given to agents:
 
