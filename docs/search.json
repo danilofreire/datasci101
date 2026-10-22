@@ -5185,5 +5185,12 @@
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Setting up ChatGPT",
     "text": "Setting up ChatGPT\nHow the four layers look on the free plan\n\n\n\n\n\n\n\nLayer\nChatGPT on the free plan\n\n\n\n\nInstructions\nCustom instructions, 1,500 characters\n\n\nKnowledge\nProjects (5 files on Free)\n\n\nMemory\nA lightweight version since June 2025\n\n\nSkills\nGPTs: usable on Free, being retired for Plugins\n\n\nTools\nCustom MCP connectors need Developer Mode\n\n\n\n\n\nPlus raised the instruction cap to 5,000 characters on 15 July 2026\nDeveloper Mode is Plus and above, so the tools layer is where the plans differ most\nTemporary chat is the incognito equivalent\nThe limits change often, so check the help page before you quote a number\n\n\n\n\nSource: OpenAI Help Centre\n\n\nWrite the setup once, then copy it into whichever tool you use\nThe four layers are the same in every tool; the caps and button names differ"
+  },
+  {
+    "objectID": "lectures/lecture-16/16-setting-up-ai.html#paper-of-the-day",
+    "href": "lectures/lecture-16/16-setting-up-ai.html#paper-of-the-day",
+    "title": "DATASCI 101: Introduction to AI Applications",
+    "section": "Paper of the day",
+    "text": "Paper of the day\n\n\n\n\n\n\n\n\n\n\n\n\nSource: arXiv"
   }
 ]

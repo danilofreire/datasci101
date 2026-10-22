@@ -118,6 +118,28 @@ Source: [Anthropic](https://www.anthropic.com/research/building-effective-agents
 Source: [Andrej Karpathy on X](https://x.com/karpathy/status/1886192184808149383)
 :::
 
+## Paper of the day
+
+:::{style="margin-top: 10px;"}
+:::{.columns}
+:::{.column width="50%"}
+:::{style="text-align: center;"}
+[![](figures/japan-paper.png){height="480px"}](#){data-modal-type="image" data-modal-url="figures/japan-paper.png"}
+:::
+:::
+
+:::{.column width="50%"}
+:::{style="text-align: center;"}
+[![](figures/japan-paper-thread.png){height="480px"}](#){data-modal-type="image" data-modal-url="figures/japan-paper-thread.png"}
+:::
+:::
+:::
+
+:::{style="text-align: center; font-size: 18px;"}
+Source: [arXiv](https://arxiv.org/abs/2604.21751)
+:::
+:::
+
 # Group project {background-color="#1B3A6B"}
 
 ## Group project
