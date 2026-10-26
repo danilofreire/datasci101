@@ -50,17 +50,18 @@ if (!require("fontawesome", character.only = TRUE)) {
 # Welcome back! ⚖️ {background-color="#1B3A6B"}
 
 ## Recap of last class
-### From setup to bias
 
-:::{style="margin-top: 20px; font-size: 25px;"}
+:::{style="margin-top: 50px; font-size: 25px;"}
 :::{.columns}
 :::{.column width=50%}
-- Last time: the four [layers of context]{.alert}: instructions, knowledge, memory, tools
-- A prompt is one request; a [setup]{.alert} survives the tab closing
-- For agents the instructions become a file: [CLAUDE.md]{.alert}, AGENTS.md, SKILL.md
-- Memory accumulates on its own, so read it, edit it, use [incognito]{.alert}
-- [MCP]{.alert} and connectors: least access, read-only by default, confirm every write
-- **Today**: [types of bias]{.alert}, how they arise, and whose values AI encodes
+- Four [layers of context]{.alert}: instructions, knowledge, memory, tools
+- A [setup]{.alert} outlives a single prompt
+- Agents read files like [CLAUDE.md]{.alert}, AGENTS.md, SKILL.md
+- Memory grows on its own: check it, edit it, or go [incognito]{.alert}
+- Keep health, finances and other people out of memory
+- Give [MCP]{.alert} connectors minimal, read-only access; approve every write
+- [Prompt injection]{.alert}: hidden instructions in what a connector reads
+- Today: [types of bias]{.alert}, where they come from, whose values AI reflects
 :::
 
 :::{.column width=50%}
@@ -187,7 +188,7 @@ Source: [ACLU](https://www.aclumich.org/news/i-was-wrongfully-arrested-because-f
 
 > A system that produces [systematically unfair outcomes]{.alert} for certain groups of people.
 
-But who defines "unfair"? That's the hard part.
+But who defines "unfair"?
 :::
 
 :::{.column width=45%}
@@ -261,24 +262,16 @@ You're applying to university. Choose who evaluates your application:
 :::{style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; margin-top: 30px;"}
 **Which do you choose, and why?**
 
-Think about:
-
-- Does it matter that you [can't argue]{.alert} with an algorithm?
-- Is consistent bias fairer than unpredictable bias?
-- Would your answer change if you knew [which group]{.alert} the bias disadvantaged?
-- What would you want to know before choosing?
+- Does it matter that you [can't argue]{.alert} with it?
+- Is consistent bias fairer than random bias?
+- Does it depend on [which group]{.alert} loses?
+- What would you need to know first?
 :::
-
-:::{style="margin-top: 20px; background: rgba(230, 57, 70, 0.1); padding: 15px; border-radius: 10px;"}
-Neither option is safe. Which [risk]{.alert} would you rather take, and what does that say about what we value?
-:::
-
-⏱️ 2 minutes
 :::
 :::
 :::
 
-## Why this matters
+## How this affects you
 
 :::{style="margin-top: 30px; font-size: 21px;"}
 :::{.columns}
@@ -587,7 +580,7 @@ Source: [SpotCrime](https://blog.spotcrime.com/2011/06/savanna-ga-heat-map.html)
 :::
 :::
 
-## Activity: spot the bias!
+## Activity: spot the bias! {#sec-spot-bias}
 
 :::{style="margin-top: 30px; font-size: 22px;"}
 **Scenario: University admissions**
@@ -599,14 +592,14 @@ An AI recommends admissions based on SAT scores, high school GPA, and extracurri
 - What proxies are being used?
 
 :::{style="margin-top: 20px; background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; width: fit-content;"}
-**Discuss one scenario with a neighbour:**
-
 1. Identify at least 2 types of bias
 2. Propose how you might mitigate them
 3. What tradeoffs would you face?
 :::
 
-⏱️ 2 minutes
+:::{style="margin-top: 15px; font-size: 18px;"}
+[[Possible answers]{.button}](#sec-appendix-spot-bias)
+:::
 :::
 
 # The hard questions {background-color="#1B3A6B"}
@@ -619,11 +612,11 @@ An AI recommends admissions based on SAT scores, high school GPA, and extracurri
 :::{.column width=55%}
 **Three fairness criteria (simplified):**
 
-1. **Calibration**: among those given the same score, outcomes should be similar across groups
+1. [Calibration]{.alert}: among those given the same score, outcomes should be similar across groups
 
-2. **Equal false positive rates**: equal rates of being wrongly flagged across groups
+2. [Equal false positive rates]{.alert}: equal rates of being wrongly flagged across groups
 
-3. **Equal false negative rates**: equal rates of being wrongly missed across groups
+3. [Equal false negative rates]{.alert}: equal rates of being wrongly missed across groups
 
 **The impossibility theorem:**
 
@@ -631,7 +624,7 @@ An AI recommends admissions based on SAT scores, high school GPA, and extracurri
 
 If Group A reoffends at 40% and Group B at 20%, you must choose which type of error to equalise
 
-[There is no mathematically "fair" solution.]{.alert}
+[There is no mathematically "fair" solution]{.alert}
 :::
 
 :::{.column width=45%}
@@ -644,7 +637,7 @@ Source: [Fairness and Machine Learning Book (p. 100)](https://fairmlbook.org/)
 :::
 
 :::{style="margin-top: 15px; background: rgba(230, 57, 70, 0.1); padding: 15px; border-radius: 10px;"}
-No algorithm can tell you which errors matter more. That is a [political and moral question]{.alert}.
+No algorithm can tell you which errors matter more. That is a [political and moral question]{.alert}
 :::
 :::
 :::
@@ -658,10 +651,10 @@ No algorithm can tell you which errors matter more. That is a [political and mor
 :::{style="margin-top: 40px; margin-bottom: 40px; font-size: 32px;"}
 | Definition | Prioritises | Drawback |
 |------------|-------------|----------|
-| **Equal treatment** | Consistency | Ignores context |
-| **Equal outcomes** | Equity | May require discrimination |
-| **Equal error rates** | Group parity | May sacrifice accuracy |
-| **Calibration** | Individual accuracy | Hides disparity |
+| [Equal treatment]{.alert} | Consistency | Ignores context |
+| [Equal outcomes]{.alert} | Equity | May require discrimination |
+| [Equal error rates]{.alert} | Group parity | May sacrifice accuracy |
+| [Calibration]{.alert} | Individual accuracy | Hides disparity |
 :::
 
 :::{style="margin-top: 40px;"}
@@ -755,3 +748,47 @@ Who gets to decide which tradeoff to make?
 :::
 
 # ...and that's all for today! {background-color="#1B3A6B"}
+
+# Appendix {background-color="#1B3A6B"}
+
+## Spot the bias: possible answers {#sec-appendix-spot-bias}
+
+:::{style="margin-top: 20px; font-size: 20px;"}
+:::{.columns}
+:::{.column width=50%}
+**Types of bias**
+
+- [Historical]{.alert}: trained on past admits, it copies past preferences
+- [Measurement]{.alert}: SAT also measures access to test prep
+- [Aggregation]{.alert}: a 3.8 GPA means different things at different schools
+- [Representation]{.alert}: few past applicants from rural or first-generation backgrounds, so less accurate for them
+- [Feedback loop]{.alert}: this year's admits become next year's training data
+
+**Proxies and who loses**
+
+- SAT tracks family income; GPA tracks school funding
+- Extracurriculars track free time and money
+- Students who work or care for family lose out
+:::
+
+:::{.column width=50%}
+**Ways to reduce it**
+
+- Compare each score with the applicant's own school
+- Count jobs and caregiving as activities
+- Audit admit rates by group every year
+- Send borderline cases to a human reader
+
+**Tradeoffs**
+
+- Context adjustments can lower the class's average SAT
+- Fairness definitions conflict (impossibility theorem)
+- Human review is slower and brings back human bias
+- Auditing by group means collecting sensitive data
+
+:::{style="margin-top: 15px; font-size: 18px;"}
+[[Back to the activity]{.button}](#sec-spot-bias)
+:::
+:::
+:::
+:::

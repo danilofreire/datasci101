@@ -157,17 +157,18 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </section>
 <section id="recap-of-last-class" class="slide level2">
 <h2>Recap of last class</h2>
-<h3 id="from-setup-to-bias">From setup to bias</h3>
-<div style="margin-top: 20px; font-size: 25px;">
+<div style="margin-top: 50px; font-size: 25px;">
 <div class="columns">
 <div class="column" style="width:50%;">
 <ul>
-<li>Last time: the four <span class="alert">layers of context</span>: instructions, knowledge, memory, tools</li>
-<li>A prompt is one request; a <span class="alert">setup</span> survives the tab closing</li>
-<li>For agents the instructions become a file: <span class="alert">CLAUDE.md</span>, AGENTS.md, SKILL.md</li>
-<li>Memory accumulates on its own, so read it, edit it, use <span class="alert">incognito</span></li>
-<li><span class="alert">MCP</span> and connectors: least access, read-only by default, confirm every write</li>
-<li><strong>Today</strong>: <span class="alert">types of bias</span>, how they arise, and whose values AI encodes</li>
+<li>Four <span class="alert">layers of context</span>: instructions, knowledge, memory, tools</li>
+<li>A <span class="alert">setup</span> outlives a single prompt</li>
+<li>Agents read files like <span class="alert">CLAUDE.md</span>, AGENTS.md, SKILL.md</li>
+<li>Memory grows on its own: check it, edit it, or go <span class="alert">incognito</span></li>
+<li>Keep health, finances and other people out of memory</li>
+<li>Give <span class="alert">MCP</span> connectors minimal, read-only access; approve every write</li>
+<li><span class="alert">Prompt injection</span>: hidden instructions in what a connector reads</li>
+<li>Today: <span class="alert">types of bias</span>, where they come from, whose values AI reflects</li>
 </ul>
 </div><div class="column" style="width:50%;">
 <div style="text-align: center; margin-top: -10px;">
@@ -323,7 +324,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <blockquote>
 <p>A system that produces <span class="alert">systematically unfair outcomes</span> for certain groups of people.</p>
 </blockquote>
-<p>But who defines “unfair”? That’s the hard part.</p>
+<p>But who defines “unfair”?</p>
 </div><div class="column" style="width:45%;">
 <div style="text-align: center; margin-top: 30px;">
 <div class="quarto-figure quarto-figure-center">
@@ -398,23 +399,18 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </div><div class="column" style="width:50%;">
 <div style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; margin-top: 30px;">
 <p><strong>Which do you choose, and why?</strong></p>
-<p>Think about:</p>
 <ul>
-<li>Does it matter that you <span class="alert">can’t argue</span> with an algorithm?</li>
-<li>Is consistent bias fairer than unpredictable bias?</li>
-<li>Would your answer change if you knew <span class="alert">which group</span> the bias disadvantaged?</li>
-<li>What would you want to know before choosing?</li>
+<li>Does it matter that you <span class="alert">can’t argue</span> with it?</li>
+<li>Is consistent bias fairer than random bias?</li>
+<li>Does it depend on <span class="alert">which group</span> loses?</li>
+<li>What would you need to know first?</li>
 </ul>
 </div>
-<div style="margin-top: 20px; background: rgba(230, 57, 70, 0.1); padding: 15px; border-radius: 10px;">
-<p>Neither option is safe. Which <span class="alert">risk</span> would you rather take, and what does that say about what we value?</p>
-</div>
-<p>⏱️ 2 minutes</p>
 </div></div>
 </div>
 </section>
-<section id="why-this-matters" class="slide level2">
-<h2>Why this matters</h2>
+<section id="how-this-affects-you" class="slide level2">
+<h2>How this affects you</h2>
 <div style="margin-top: 30px; font-size: 21px;">
 <div class="columns">
 <div class="column" style="width:55%;">
@@ -835,7 +831,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </div></div>
 </div>
 </section>
-<section id="activity-spot-the-bias" class="slide level2 scrollable">
+<section id="sec-spot-bias" class="slide level2 scrollable">
 <h2>Activity: spot the bias!</h2>
 <div style="margin-top: 30px; font-size: 22px;">
 <p><strong>Scenario: University admissions</strong></p>
@@ -846,14 +842,15 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <li>What proxies are being used?</li>
 </ul>
 <div style="margin-top: 20px; background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; width: fit-content;">
-<p><strong>Discuss one scenario with a neighbour:</strong></p>
 <ol type="1">
 <li>Identify at least 2 types of bias</li>
 <li>Propose how you might mitigate them</li>
 <li>What tradeoffs would you face?</li>
 </ol>
 </div>
-<p>⏱️ 2 minutes</p>
+<div style="margin-top: 15px; font-size: 18px;">
+<p><a href="#/sec-appendix-spot-bias"><span class="button">Possible answers</span></a></p>
+</div>
 </div>
 </section></section>
 <section>
@@ -869,16 +866,16 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <div class="column" style="width:55%;">
 <p><strong>Three fairness criteria (simplified):</strong></p>
 <ol type="1">
-<li><p><strong>Calibration</strong>: among those given the same score, outcomes should be similar across groups</p></li>
-<li><p><strong>Equal false positive rates</strong>: equal rates of being wrongly flagged across groups</p></li>
-<li><p><strong>Equal false negative rates</strong>: equal rates of being wrongly missed across groups</p></li>
+<li><p><span class="alert">Calibration</span>: among those given the same score, outcomes should be similar across groups</p></li>
+<li><p><span class="alert">Equal false positive rates</span>: equal rates of being wrongly flagged across groups</p></li>
+<li><p><span class="alert">Equal false negative rates</span>: equal rates of being wrongly missed across groups</p></li>
 </ol>
 <p><strong>The impossibility theorem:</strong></p>
 <blockquote>
 <p>If base rates differ between groups, you <span class="alert">cannot satisfy all three</span> simultaneously</p>
 </blockquote>
 <p>If Group A reoffends at 40% and Group B at 20%, you must choose which type of error to equalise</p>
-<p><span class="alert">There is no mathematically “fair” solution.</span></p>
+<p><span class="alert">There is no mathematically “fair” solution</span></p>
 </div><div class="column" style="width:45%;">
 <div style="text-align: center;">
 <div class="quarto-figure quarto-figure-center">
@@ -892,7 +889,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </div>
 </div>
 <div style="margin-top: 15px; background: rgba(230, 57, 70, 0.1); padding: 15px; border-radius: 10px;">
-<p>No algorithm can tell you which errors matter more. That is a <span class="alert">political and moral question</span>.</p>
+<p>No algorithm can tell you which errors matter more. That is a <span class="alert">political and moral question</span></p>
 </div>
 </div></div>
 </div>
@@ -912,22 +909,22 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </thead>
 <tbody>
 <tr class="odd">
-<td><strong>Equal treatment</strong></td>
+<td><span class="alert">Equal treatment</span></td>
 <td>Consistency</td>
 <td>Ignores context</td>
 </tr>
 <tr class="even">
-<td><strong>Equal outcomes</strong></td>
+<td><span class="alert">Equal outcomes</span></td>
 <td>Equity</td>
 <td>May require discrimination</td>
 </tr>
 <tr class="odd">
-<td><strong>Equal error rates</strong></td>
+<td><span class="alert">Equal error rates</span></td>
 <td>Group parity</td>
 <td>May sacrifice accuracy</td>
 </tr>
 <tr class="even">
-<td><strong>Calibration</strong></td>
+<td><span class="alert">Calibration</span></td>
 <td>Individual accuracy</td>
 <td>Hides disparity</td>
 </tr>
@@ -1036,8 +1033,55 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <section id="and-thats-all-for-today" class="title-slide slide level1 center" data-background-color="#1B3A6B">
 <h1>…and that’s all for today!</h1>
 
+</section>
+
+<section>
+<section id="appendix" class="title-slide slide level1 center" data-background-color="#1B3A6B">
+<h1>Appendix</h1>
 
 </section>
+<section id="sec-appendix-spot-bias" class="slide level2">
+<h2>Spot the bias: possible answers</h2>
+<div style="margin-top: 20px; font-size: 20px;">
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Types of bias</strong></p>
+<ul>
+<li><span class="alert">Historical</span>: trained on past admits, it copies past preferences</li>
+<li><span class="alert">Measurement</span>: SAT also measures access to test prep</li>
+<li><span class="alert">Aggregation</span>: a 3.8 GPA means different things at different schools</li>
+<li><span class="alert">Representation</span>: few past applicants from rural or first-generation backgrounds, so less accurate for them</li>
+<li><span class="alert">Feedback loop</span>: this year’s admits become next year’s training data</li>
+</ul>
+<p><strong>Proxies and who loses</strong></p>
+<ul>
+<li>SAT tracks family income; GPA tracks school funding</li>
+<li>Extracurriculars track free time and money</li>
+<li>Students who work or care for family lose out</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><strong>Ways to reduce it</strong></p>
+<ul>
+<li>Compare each score with the applicant’s own school</li>
+<li>Count jobs and caregiving as activities</li>
+<li>Audit admit rates by group every year</li>
+<li>Send borderline cases to a human reader</li>
+</ul>
+<p><strong>Tradeoffs</strong></p>
+<ul>
+<li>Context adjustments can lower the class’s average SAT</li>
+<li>Fairness definitions conflict (impossibility theorem)</li>
+<li>Human review is slower and brings back human bias</li>
+<li>Auditing by group means collecting sensitive data</li>
+</ul>
+<div style="margin-top: 15px; font-size: 18px;">
+<p><a href="#/sec-spot-bias"><span class="button">Back to the activity</span></a></p>
+</div>
+</div></div>
+</div>
+
+
+</section></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">

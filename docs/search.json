@@ -4463,7 +4463,7 @@
     "href": "lectures/lecture-17/17-bias.html#recap-of-last-class",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Recap of last class",
-    "text": "Recap of last class\nFrom setup to bias\n\n\n\n\nLast time: the four layers of context: instructions, knowledge, memory, tools\nA prompt is one request; a setup survives the tab closing\nFor agents the instructions become a file: CLAUDE.md, AGENTS.md, SKILL.md\nMemory accumulates on its own, so read it, edit it, use incognito\nMCP and connectors: least access, read-only by default, confirm every write\nToday: types of bias, how they arise, and whose values AI encodes\n\n\n\n\nSource: Anthropic"
+    "text": "Recap of last class\n\n\n\n\nFour layers of context: instructions, knowledge, memory, tools\nA setup outlives a single prompt\nAgents read files like CLAUDE.md, AGENTS.md, SKILL.md\nMemory grows on its own: check it, edit it, or go incognito\nKeep health, finances and other people out of memory\nGive MCP connectors minimal, read-only access; approve every write\nPrompt injection: hidden instructions in what a connector reads\nToday: types of bias, where they come from, whose values AI reflects\n\n\n\n\nSource: Anthropic"
   },
   {
     "objectID": "lectures/lecture-17/17-bias.html#lecture-overview",
@@ -4498,7 +4498,7 @@
     "href": "lectures/lecture-17/17-bias.html#defining-bias-its-complicated",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Defining bias: it’s complicated",
-    "text": "Defining bias: it’s complicated\n\n\n\n“Bias” means different things:\n\n\n\n\n\n\n\n\nContext\nMeaning\nExample\n\n\n\n\nStatistical\nSystematic deviation\nBiased estimator under/overestimates\n\n\nCognitive\nMental shortcuts\nConfirmation bias\n\n\nCultural\nLearned assumptions\n“Doctors are male”\n\n\nAlgorithmic\nSystematic unfairness\nDifferent error rates by group\n\n\nHistorical\nPast inequalities\nRedlining-era loan data\n\n\n\nIn AI, bias typically means:\n\nA system that produces systematically unfair outcomes for certain groups of people.\n\nBut who defines “unfair”? That’s the hard part.\n\n\n\n\n\nTypes of bias\n\n\n\nSource: National Institute of Standards and Technology"
+    "text": "Defining bias: it’s complicated\n\n\n\n“Bias” means different things:\n\n\n\n\n\n\n\n\nContext\nMeaning\nExample\n\n\n\n\nStatistical\nSystematic deviation\nBiased estimator under/overestimates\n\n\nCognitive\nMental shortcuts\nConfirmation bias\n\n\nCultural\nLearned assumptions\n“Doctors are male”\n\n\nAlgorithmic\nSystematic unfairness\nDifferent error rates by group\n\n\nHistorical\nPast inequalities\nRedlining-era loan data\n\n\n\nIn AI, bias typically means:\n\nA system that produces systematically unfair outcomes for certain groups of people.\n\nBut who defines “unfair”?\n\n\n\n\n\nTypes of bias\n\n\n\nSource: National Institute of Standards and Technology"
   },
   {
     "objectID": "lectures/lecture-17/17-bias.html#the-mirror-problem-ai-reflects-us",
@@ -4512,7 +4512,7 @@
     "href": "lectures/lecture-17/17-bias.html#discussion-pick-your-risk",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Discussion: pick your risk",
-    "text": "Discussion: pick your risk\n\n\n\nYou’re applying to university. Choose who evaluates your application:\nOption A: A human admissions officer\n\nMight favour applicants who remind them of themselves\nCould be swayed by mood, time of day, or fatigue\nYou can appeal and read social cues\nBias is inconsistent and unpredictable\n\nOption B: An AI admissions tool\n\nMight penalise your ZIP code, name, or school\nApplies the same criteria to everyone, every time\nYou cannot argue with it or explain context\nBias is systematic and invisible\n\n\n\nWhich do you choose, and why?\nThink about:\n\nDoes it matter that you can’t argue with an algorithm?\nIs consistent bias fairer than unpredictable bias?\nWould your answer change if you knew which group the bias disadvantaged?\nWhat would you want to know before choosing?\n\n\n\nNeither option is safe. Which risk would you rather take, and what does that say about what we value?\n\n⏱️ 2 minutes"
+    "text": "Discussion: pick your risk\n\n\n\nYou’re applying to university. Choose who evaluates your application:\nOption A: A human admissions officer\n\nMight favour applicants who remind them of themselves\nCould be swayed by mood, time of day, or fatigue\nYou can appeal and read social cues\nBias is inconsistent and unpredictable\n\nOption B: An AI admissions tool\n\nMight penalise your ZIP code, name, or school\nApplies the same criteria to everyone, every time\nYou cannot argue with it or explain context\nBias is systematic and invisible\n\n\n\nWhich do you choose, and why?\n\nDoes it matter that you can’t argue with it?\nIs consistent bias fairer than random bias?\nDoes it depend on which group loses?\nWhat would you need to know first?"
   },
   {
     "objectID": "lectures/lecture-17/17-bias.html#why-this-matters",
@@ -4589,14 +4589,14 @@
     "href": "lectures/lecture-17/17-bias.html#activity-spot-the-bias",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Activity: spot the bias!",
-    "text": "Activity: spot the bias!\n\nScenario: University admissions\nAn AI recommends admissions based on SAT scores, high school GPA, and extracurriculars\n\nWhat types of bias might this contain?\nWho might be disadvantaged?\nWhat proxies are being used?\n\n\nDiscuss one scenario with a neighbour:\n\nIdentify at least 2 types of bias\nPropose how you might mitigate them\nWhat tradeoffs would you face?\n\n\n⏱️ 2 minutes"
+    "text": "Activity: spot the bias!\n\nScenario: University admissions\nAn AI recommends admissions based on SAT scores, high school GPA, and extracurriculars\n\nWhat types of bias might this contain?\nWho might be disadvantaged?\nWhat proxies are being used?\n\n\n\nIdentify at least 2 types of bias\nPropose how you might mitigate them\nWhat tradeoffs would you face?"
   },
   {
     "objectID": "lectures/lecture-17/17-bias.html#the-impossibility-theorem",
     "href": "lectures/lecture-17/17-bias.html#the-impossibility-theorem",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "The impossibility theorem",
-    "text": "The impossibility theorem\nYou can’t have it all\n\n\n\nThree fairness criteria (simplified):\n\nCalibration: among those given the same score, outcomes should be similar across groups\nEqual false positive rates: equal rates of being wrongly flagged across groups\nEqual false negative rates: equal rates of being wrongly missed across groups\n\nThe impossibility theorem:\n\nIf base rates differ between groups, you cannot satisfy all three simultaneously\n\nIf Group A reoffends at 40% and Group B at 20%, you must choose which type of error to equalise\nThere is no mathematically “fair” solution.\n\n\n\n\n\nImpossibility theorem\n\n\n\nSource: Fairness and Machine Learning Book (p. 100)\n\n\n\nNo algorithm can tell you which errors matter more. That is a political and moral question."
+    "text": "The impossibility theorem\nYou can’t have it all\n\n\n\nThree fairness criteria (simplified):\n\nCalibration: among those given the same score, outcomes should be similar across groups\nEqual false positive rates: equal rates of being wrongly flagged across groups\nEqual false negative rates: equal rates of being wrongly missed across groups\n\nThe impossibility theorem:\n\nIf base rates differ between groups, you cannot satisfy all three simultaneously\n\nIf Group A reoffends at 40% and Group B at 20%, you must choose which type of error to equalise\nThere is no mathematically “fair” solution\n\n\n\n\n\nImpossibility theorem\n\n\n\nSource: Fairness and Machine Learning Book (p. 100)\n\n\n\nNo algorithm can tell you which errors matter more. That is a political and moral question"
   },
   {
     "objectID": "lectures/lecture-17/17-bias.html#who-defines-fair",
@@ -5192,5 +5192,33 @@
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Paper of the day",
     "text": "Paper of the day\n\n\n\n\n\n\n\n\n\n\n\n\nSource: arXiv"
+  },
+  {
+    "objectID": "lectures/lecture-17/17-bias.html#ai-already-makes-high-stakes-decisions",
+    "href": "lectures/lecture-17/17-bias.html#ai-already-makes-high-stakes-decisions",
+    "title": "DATASCI 101: Introduction to AI Applications",
+    "section": "AI already makes high-stakes decisions",
+    "text": "AI already makes high-stakes decisions\n\n\n\nAI systems are making decisions about:\n\n\n\n\n\n\n\n\nDomain\nDecision\nAffected\n\n\n\n\nEmployment\nWho gets hired, promoted, fired\nMillions of applicants\n\n\nFinance\nWho gets loans, credit, insurance\nBillions globally\n\n\nHealthcare\nWho gets treatment, care priority\nLife and death\n\n\nCriminal justice\nBail, sentencing, parole\nFreedom and families\n\n\nEducation\nAdmissions, resources, grading\nFuture opportunities\n\n\n\nThe scale problem:\n\nAlgorithms decide faster than humans can review\nOne biased system can affect millions of people\nErrors compound: a bad decision today feeds worse data into tomorrow’s model\n\n\n\nA few real cases:\n\n2018: Amazon’s hiring AI penalised women\n2019: Healthcare algorithm deprioritised Black patients\n2020: Robert Williams arrested due to facial recognition\n2023: NYC starts enforcing AI hiring audit law\n2024: EU AI Act classifies high-risk AI systems"
+  },
+  {
+    "objectID": "lectures/lecture-17/17-bias.html#how-this-affects-you",
+    "href": "lectures/lecture-17/17-bias.html#how-this-affects-you",
+    "title": "DATASCI 101: Introduction to AI Applications",
+    "section": "How this affects you",
+    "text": "How this affects you\n\n\n\nAI systems are making decisions about:\n\n\n\n\n\n\n\n\nDomain\nDecision\nAffected\n\n\n\n\nEmployment\nWho gets hired, promoted, fired\nMillions of applicants\n\n\nFinance\nWho gets loans, credit, insurance\nBillions globally\n\n\nHealthcare\nWho gets treatment, care priority\nLife and death\n\n\nCriminal justice\nBail, sentencing, parole\nFreedom and families\n\n\nEducation\nAdmissions, resources, grading\nFuture opportunities\n\n\n\nThe scale problem:\n\nAlgorithms decide faster than humans can review\nOne biased system can affect millions of people\nErrors compound: a bad decision today feeds worse data into tomorrow’s model\n\n\n\nA few real cases:\n\n2018: Amazon’s hiring AI penalised women\n2019: Healthcare algorithm deprioritised Black patients\n2020: Robert Williams arrested due to facial recognition\n2023: NYC starts enforcing AI hiring audit law\n2024: EU AI Act classifies high-risk AI systems"
+  },
+  {
+    "objectID": "lectures/lecture-17/17-bias.html#sec-spot-bias",
+    "href": "lectures/lecture-17/17-bias.html#sec-spot-bias",
+    "title": "DATASCI 101: Introduction to AI Applications",
+    "section": "Activity: spot the bias!",
+    "text": "Activity: spot the bias!\n\nScenario: University admissions\nAn AI recommends admissions based on SAT scores, high school GPA, and extracurriculars\n\nWhat types of bias might this contain?\nWho might be disadvantaged?\nWhat proxies are being used?\n\n\n\nIdentify at least 2 types of bias\nPropose how you might mitigate them\nWhat tradeoffs would you face?\n\n\n\nPossible answers"
+  },
+  {
+    "objectID": "lectures/lecture-17/17-bias.html#sec-appendix-spot-bias",
+    "href": "lectures/lecture-17/17-bias.html#sec-appendix-spot-bias",
+    "title": "DATASCI 101: Introduction to AI Applications",
+    "section": "Spot the bias: possible answers",
+    "text": "Spot the bias: possible answers\n\n\n\nTypes of bias\n\nHistorical: trained on past admits, it copies past preferences\nMeasurement: SAT also measures access to test prep\nAggregation: a 3.8 GPA means different things at different schools\nRepresentation: few past applicants from rural or first-generation backgrounds, so less accurate for them\nFeedback loop: this year’s admits become next year’s training data\n\nProxies and who loses\n\nSAT tracks family income; GPA tracks school funding\nExtracurriculars track free time and money\nStudents who work or care for family lose out\n\n\nWays to reduce it\n\nCompare each score with the applicant’s own school\nCount jobs and caregiving as activities\nAudit admit rates by group every year\nSend borderline cases to a human reader\n\nTradeoffs\n\nContext adjustments can lower the class’s average SAT\nFairness definitions conflict (impossibility theorem)\nHuman review is slower and brings back human bias\nAuditing by group means collecting sensitive data\n\n\nBack to the activity"
   }
 ]
