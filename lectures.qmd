@@ -256,7 +256,7 @@ Further readings:
 ### October 22, 2026:
 
 - Lecture 16: [Setting up AI: instructions, memory and connectors](https://danilofreire.github.io/datasci101/lectures/lecture-16/16-setting-up-ai.html).
-- [Kahoot Quiz](https://play.kahoot.it/v2/?quizId=4862869d-eec7-467b-8f6b-f8fcb7d01301&hostId=05eb977d-4f8a-440e-9e45-95212b29d103)
+- [Kahoot Quiz](https://play.kahoot.it/v2/?quizId=9c25b0fe-41fe-4ad0-8e9c-dd0fe68fa480&hostId=05eb977d-4f8a-440e-9e45-95212b29d103)
 - **Assignment 06 due (5%).**
 - [**Assignment 07**](https://github.com/danilofreire/datasci101/blob/main/assignments).
 
@@ -279,7 +279,7 @@ Further readings:
 ### October 27, 2026:
 
 - Lecture 17: [Types of bias and how they arise](https://danilofreire.github.io/datasci101/lectures/lecture-17/17-bias.html).
-- [Kahoot Quiz](https://play.kahoot.it/v2/?quizId=9c25b0fe-41fe-4ad0-8e9c-dd0fe68fa480&hostId=05eb977d-4f8a-440e-9e45-95212b29d103)
+- [Kahoot Quiz](https://play.kahoot.it/v2/?quizId=b917688e-1437-4a7a-8c98-e306e31de6e4&hostId=05eb977d-4f8a-440e-9e45-95212b29d103)
 - No assignment this week.
 - [Instructions for the final project (PDF)](https://github.com/danilofreire/datasci101/blob/main/project/project-instructions.pdf). Groups must be finalised by November 3. Optional proposal due November 12; final report and infographic due December 8.
 
