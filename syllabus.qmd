@@ -418,7 +418,7 @@ Further readings:
 ### October 29, 2026:
 
 - Lecture 18: [AI regulation and standards around the world](https://danilofreire.github.io/datasci101/lectures/lecture-18/18-regulation.html).
-- [Kahoot Quiz](https://play.kahoot.it/v2/?quizId=b917688e-1437-4a7a-8c98-e306e31de6e4&hostId=05eb977d-4f8a-440e-9e45-95212b29d103)
+- [Kahoot Quiz](https://play.kahoot.it/v2/?quizId=4862869d-eec7-467b-8f6b-f8fcb7d01301&hostId=05eb977d-4f8a-440e-9e45-95212b29d103)
 - **Assignment 07 due (5%).**
 
 Suggested readings:
