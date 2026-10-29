@@ -28,7 +28,7 @@ This lecture surveys the emerging global landscape of AI governance, comparing a
 ### 4. Global landscape
 
 * **China**: Multiple regulations focused on content control and registration, but state use largely unrestricted.
-* **Other jurisdictions**: UK's pro-innovation guidance, Canada's AIDA (died in 2025), Japan's light-touch approach.
+* **Other jurisdictions**: UK's pro-innovation guidance, Canada's AIDA (died in 2025), Brazil's bill in the Chamber of Deputies.
 * **International coordination**: OECD AI Principles, G7 Hiroshima Process, UN Scientific Panel on AI, but no global consensus.
 
 ## Resources

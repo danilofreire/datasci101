@@ -59,7 +59,7 @@ if (!require("fontawesome", character.only = TRUE)) {
 - Six types: historical, representation, measurement, aggregation, evaluation and deployment
 - Delete race from the data and the [proxies]{.alert} do the work: ZIP code, test scores
 - The [impossibility theorem]{.alert}: no model satisfies every fairness criterion at once
-- Today: fairness is a [values question]{.alert}, so how are governments responding?
+- Today: fairness is a values question, so [how are governments responding?]{.alert}
 :::
 
 :::{.column width=42%}
@@ -190,11 +190,11 @@ Source: [X.com](https://x.com/pascal_bornet/status/1892786338015171026)
 :::{.column width=100%}
 | Approach | Philosophy | Example |
 |----------|------------|---------|
-| **Precautionary** | Prove safety before deployment | EU AI Act's prohibited uses |
-| **Innovation-first** | Regulate only after harms emerge | Early US approach to internet |
-| **Risk-based** | Stricter rules for higher-risk uses | EU AI Act's tiered system |
-| **Sectoral** | Different rules for different industries | US healthcare vs finance AI |
-| **Self-regulation** | Industry develops own standards | Many current AI ethics guidelines |
+| [**Precautionary**]{.alert} | Prove safety before deployment | EU AI Act's prohibited uses |
+| [**Innovation-first**]{.alert} | Regulate only after harms emerge | Early US approach to internet |
+| [**Risk-based**]{.alert} | Stricter rules for higher-risk uses | EU AI Act's tiered system |
+| [**Sectoral**]{.alert} | Different rules for different industries | US healthcare vs finance AI |
+| [**Self-regulation**]{.alert} | Industry develops own standards | Many current AI ethics guidelines |
 
 :::{style="margin-top: 20px;"}
 [No single approach dominates]{.alert}
@@ -221,11 +221,11 @@ Source: [X.com](https://x.com/pascal_bornet/status/1892786338015171026)
 - December 2023: deal struck; March 2024: Parliament vote
 - August 2024: Entry into force
 - 2025: Bans (February) and General Purpose AI rules (August) apply
-- July 2026: [Digital Omnibus]{.alert} delays high-risk rules to December 2027 (August 2028 for products)
+- July 2026: [Digital Omnibus](https://www.europarl.europa.eu/thinktank/es/document/EPRS_BRI(2026)782651){.alert} delays high-risk rules to December 2027 (August 2028 for products)
 
 **Scope:**
 
-- [Extraterritorial reach]{.alert}: any AI sold in the EU, wherever it was built
+- [Extraterritorial reach](https://www.morganlewis.com/pubs/2024/07/the-eu-artificial-intelligence-act-is-here-with-extraterritorial-reach){.alert}: any AI sold in the EU, wherever it was built
 - Covers providers, deployers, importers, distributors
 - The EU market is large, so many companies may [apply EU rules worldwide]{.alert}
 
@@ -303,25 +303,21 @@ Source: [European Commission](https://digital-strategy.ec.europa.eu/en/policies/
 - [Accuracy, robustness, cybersecurity]{.alert}
 - Register in [EU database]{.alert}; report serious incidents
 
-**For deployers (users of high-risk AI):**
+**Deployers (users):**
 
-- Follow the instructions and ensure human oversight
-- Monitor for issues and inform affected individuals
+- Follow instructions and monitor issues
 :::
 
 :::{.column width=45%}
 :::{style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; font-size: 22px; margin-top: 30px;"}
 **Data governance:**
 
-- Training data: [relevant, representative, as error-free as possible]{.alert}
-- Must be examined for biases
+- Training data: [relevant, representative, as error-free as possible]{.alert}; must be checked for biases
 - Must [demonstrate compliance]{.alert}
 
 **Transparency:**
 
-- Clear information on capabilities and limitations
-- Instructions for use
-- Contact details for oversight
+- Clear information on capabilities and limitations, instructions for use, and contact details for oversight
 :::
 :::
 :::
@@ -337,7 +333,7 @@ The Act sets special rules for [foundation models]{.alert} like GPT-5, Claude, a
 **All GPAI providers must:**
 
 - Maintain technical documentation
-- Provide information to downstream deployers
+- Share information with companies that use the model
 - Respect copyright, including creators' opt-outs
 - Publish training content summaries
 
@@ -364,24 +360,24 @@ Source: [European Commission](https://digital-strategy.ec.europa.eu/en/policies/
 :::{style="margin-top: 30px; font-size: 23px;"}
 :::{.columns}
 :::{.column width=55%}
-- Release weights under a free licence and you skip the [documentation duties]{.alert}
-- You must still respect copyright and publish a training summary
-- Models of [systemic risk]{.alert} (over 10^25^ FLOPs) still face the stricter tier
-- Open models allow [independent scrutiny]{.alert}, a partial substitute for regulatory oversight
+- Free-licence open weights skip the [documentation duties]{.alert}
+- Copyright rules and the training summary still apply
+- [Systemic-risk]{.alert} models (trained with big computing power) face the stricter tier
+- Open models allow [independent scrutiny]{.alert}, a partial substitute for oversight
 - Supports European open-source research
 
 **Criticism:**
 
-- A potential [loophole]{.alert}: open models can still cause harm once third parties deploy them
-- The deployer bears responsibility, but small deployers may lack resources to comply
+- A [loophole]{.alert}: open models can still cause harm once third parties deploy them
+- Deployers are responsible, but small ones may lack the resources
 :::
 
 :::{.column width=45%}
 :::{style="text-align: center; margin-top: 30px;"}
 [![](figures/mistral.webp){width="80%"}](#){data-modal-type="image" data-modal-url="figures/mistral.webp"}
 
-:::{style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; font-size: 21px; margin-top: 15px;"}
-**Example:** [Mistral](https://mistral.ai/) is a French AI company that releases many open models. [Epoch AI](https://epoch.ai/data-insights/models-over-1e25-flop) estimates its largest (like Mistral Large) passed the systemic-risk threshold, so they face the stricter rules. Its smaller open models would be largely exempt.
+:::{style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; font-size: 21px; margin-top: 15px; text-align: left;"}
+**Example:** [Mistral](https://mistral.ai/), a French AI company, releases many open models. [Epoch AI](https://epoch.ai/data-insights/models-over-1e25-flop) estimates its largest (like Mistral Large 2) pass the systemic-risk threshold, so they face the stricter rules. Smaller ones are largely exempt
 :::
 :::
 :::
@@ -409,9 +405,8 @@ Source: [European Commission](https://digital-strategy.ec.europa.eu/en/policies/
 **Enforcement:**
 
 - National [market surveillance authorities]{.alert}
-- New [AI Office]{.alert} at EU level for GPAI
+- New [AI Office](https://digital-strategy.ec.europa.eu/en/policies/ai-office){.alert} at EU level for GPAI
 - Complaints mechanism for affected individuals
-- Regulatory sandboxes for testing
 :::
 
 :::{.column width=45%}
@@ -433,8 +428,8 @@ For a company like Google (2024 revenue ~$350B), a 7% fine would be [~$24.5 bill
 :::{style="margin-top: 30px; font-size: 19px;"}
 **Quick reference for the four risk levels:**
 
-- [Prohibited]{.alert}: uses that threaten fundamental rights
-- [High risk]{.alert}: affects safety or fundamental rights in specific domains
+- [Prohibited]{.alert}: banned outright
+- [High risk]{.alert}: allowed, but with strict requirements
 - [Limited risk]{.alert}: interacts with people directly, so users must be told they are dealing with AI
 - [Minimal risk]{.alert}: low-stakes uses with no specific requirements
 
@@ -462,7 +457,7 @@ For a company like Google (2024 revenue ~$350B), a 7% fine would be [~$24.5 bill
 4. Facial recognition at airport security
 :::
 :::{.fragment}
-   - [Depends]{.alert}: scanning crowds is high risk; a 1:1 passport check is not
+   - [Depends]{.alert}: scanning crowds is high risk; a passport check is not
 :::
 :::
 
@@ -535,7 +530,7 @@ Source: [Law.com](https://www.law.com/legaltechnews/2023/11/01/white-houses-ai-e
 **Limitations:**
 
 - The next president can [reverse]{.alert} it (and did!)
-- Many provisions are [voluntary]{.alert} or guidance
+- Some provisions are [voluntary]{.alert} or guidance
 - Congress hasn't passed comprehensive legislation
 :::
 
@@ -557,18 +552,16 @@ Biden's AI meeting, June 2023. Summary: [Congress.gov](https://www.congress.gov/
 **Priorities:**
 
 - [American AI dominance]{.alert} over global competitors
-- Reduce regulatory barriers to development
+- Fewer regulatory barriers
 - Focus on [national security applications]{.alert}
-- Energy infrastructure for AI data centres
-- Streamlined permitting for AI facilities
+- Energy and faster permitting for AI data centres
 - [March 2026 framework](https://www.whitehouse.gov/wp-content/uploads/2026/03/03.20.26-National-Policy-Framework-for-Artificial-Intelligence-Legislative-Recommendations.pdf): asks Congress to [pre-empt]{.alert} state AI laws
 
 **Changes from Biden era:**
 
 - Less emphasis on AI safety requirements
 - More focus on [competition with China]{.alert}
-- Voluntary industry commitments over mandates
-- Concern about "overregulation" slowing innovation
+- Voluntary commitments over mandates, to avoid "overregulation"
 :::
 
 :::{.column width=45%}
@@ -577,7 +570,6 @@ Biden's AI meeting, June 2023. Summary: [Congress.gov](https://www.congress.gov/
 - US-EU [regulatory divergence]{.alert} may increase
 - Companies face different rules in different markets
 - "Race to the bottom" concerns
-- Debate continues about appropriate balance
 
 :::{style="text-align: center;"}
 [![](figures/ai-competition.avif){width="80%"}](#){data-modal-type="image" data-modal-url="figures/ai-competition.avif"}
@@ -597,12 +589,12 @@ With limited federal action, states are filling gaps:
 
 **[Colorado AI Act (2024)](https://leg.colorado.gov/bills/sb24-205):**
 
-- First comprehensive state AI law, with [impact assessments]{.alert}
+- First comprehensive state AI law
 - [Replaced in May 2026](https://leg.colorado.gov/bills/sb26-189) by a narrower law: notices, explanations, human review (from 2027)
 
 **California:**
 
-- [SB 53 (2025)](https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=202520260SB53): frontier AI developers must publish safety plans and report incidents
+- [Senate Bill 53 (2025)](https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=202520260SB53): frontier AI developers must publish safety plans and report incidents
 - Often sets [national trends]{.alert}
 
 **Illinois and New York City:**
@@ -615,7 +607,7 @@ With limited federal action, states are filling gaps:
 :::{style="text-align: center;"}
 [![](figures/state-ai-laws.png){width="70%"}](#){data-modal-type="image" data-modal-url="figures/state-ai-laws.png"}
 
-:::{style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; font-size: 18px; margin-top: 15px;"}
+:::{style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; font-size: 18px; margin-top: 15px; text-align: left;"}
 [Executive Order 14365](https://www.federalregister.gov/documents/2025/12/16/2025-23092/ensuring-a-national-policy-framework-for-artificial-intelligence) (December 2025) tells the Justice Department to challenge state AI laws. Companies want one federal rule, not a [patchwork]{.alert}.
 :::
 :::
@@ -627,7 +619,7 @@ With limited federal action, states are filling gaps:
 
 ## China's AI governance
 
-:::{style="margin-top: 30px; font-size: 17px;"}
+:::{style="margin-top: 30px; font-size: 20px;"}
 :::{.columns}
 :::{.column width=55%}
 China has been [very active]{.alert} on AI regulation:
@@ -636,17 +628,16 @@ China has been [very active]{.alert} on AI regulation:
 
 - [Content control]{.alert}: AI must uphold "socialist values"
 - [Registration]{.alert} for public-facing AI
-- Three targeted regulations form the core "trio":
-  - [Algorithm Recommendation Provisions (2022)](https://digichina.stanford.edu/work/translation-internet-information-service-algorithmic-recommendation-management-provisions-effective-march-1-2022/): transparency and control over recommendation systems
-  - [Deep Synthesis Provisions (2023)](https://www.chinalawtranslate.com/en/deep-synthesis/): labelling requirements for synthetic content
-  - [Generative AI Measures (2023)](https://www.chinalawtranslate.com/en/generative-ai-interim/): first binding rules for generative AI worldwide
-- [Amended Cybersecurity Law (2026)](https://iclg.com/practice-areas/cybersecurity-laws-and-regulations/01-generative-ai-and-cyber-risk-in-china) brings AI into national law for the first time
+- Three core regulations (the "trio"):
+  - [Algorithm Recommendation Provisions (2022)](https://digichina.stanford.edu/work/translation-internet-information-service-algorithmic-recommendation-management-provisions-effective-march-1-2022/)
+  - [Deep Synthesis Provisions (2023)](https://www.chinalawtranslate.com/en/deep-synthesis/)
+  - [Generative AI Measures (2023)](https://www.chinalawtranslate.com/en/generative-ai-interim/): first binding generative AI rules worldwide
+- [Amended Cybersecurity Law (2026)](https://iclg.com/practice-areas/cybersecurity-laws-and-regulations/01-generative-ai-and-cyber-risk-in-china): first AI provisions in national law (January 2026)
 
 **Contradictions:**
 
 - Regulates facial recognition but [deploys it extensively]{.alert}
 - Restricts AI manipulation but uses AI for surveillance
-- Rules for companies, [exceptions for government]{.alert}
 - Innovation priorities clash with content control
 :::
 
@@ -678,12 +669,12 @@ China's approach: regulate [commercial AI carefully]{.alert}, but [state use is 
 **Canada:**
 
 - [AIDA (Artificial Intelligence and Data Act)](https://ised-isde.canada.ca/site/innovation-better-canada/en/artificial-intelligence-and-data-act) [died in parliament](https://www.mcinnescooper.com/publications/the-demise-of-the-artificial-intelligence-and-data-act-aida-5-key-lessons/) in January 2025
-- No AI law since; Canada named its first AI minister in May 2025
+- No AI law since
 
 **Brazil:**
 
 - [Comprehensive AI bill (PL 2338/2023)](https://artificialintelligenceact.com/brazil-ai-act/) passed the Senate, now in the Chamber of Deputies
-- Influenced by EU approach; rights-based framework
+- Influenced by EU approach
 :::
 
 :::{.column width=45%}
@@ -698,7 +689,7 @@ China's approach: regulate [commercial AI carefully]{.alert}, but [state use is 
 | [ISO/IEC 42001](https://www.iso.org/standard/42001) | Technical standards |
 
 :::{style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; font-size: 18px; margin-top: 15px;"}
-No global consensus on AI governance. The "Brussels Effect" (EU rules becoming global standards) may apply, as with GDPR.
+[No global consensus on AI governance.]{.alert} The "Brussels Effect" (EU rules becoming global standards) may apply, as with GDPR.
 :::
 :::
 :::
@@ -706,26 +697,22 @@ No global consensus on AI governance. The "Brussels Effect" (EU rules becoming g
 
 ## Comparing approaches
 
-:::{style="margin-top: 30px; font-size: 22px;"}
+:::{style="margin-top: 60px; font-size: 22px;"}
 :::{.columns}
 :::{.column width=100%}
 | Aspect | EU | US | China | UK |
 |--------|----|----|-------|-------|
-| **Framework** | Comprehensive law | Sectoral | Multiple regulations | Guidance + sectors |
-| **Philosophy** | Risk-based, precautionary | Innovation-first | State control + innovation | Pro-innovation |
-| **Enforcement** | AI Office + national bodies | Existing agencies | Cyberspace Admin | Sector regulators |
-| **Prohibited uses** | Social scoring, some biometrics | Few explicit bans | Political content | Minimal |
-| **GPAI rules** | Yes, tiered | Voluntary (federal) | Yes, content-focused | AI Security Institute |
-| **Extraterritorial** | Yes | Limited | Yes | No |
-
-:::{style="margin-top: 20px;"}
-The EU passed the first [comprehensive, binding law]{.alert}; South Korea's and Vietnam's took effect in 2026. If your company sells AI in both the EU and the US, you will need two separate compliance strategies.
-:::
+| [Framework]{.alert} | Comprehensive law | Sectoral | Multiple regulations | Guidance + sectors |
+| [Philosophy]{.alert} | Risk-based, precautionary | Innovation-first | State control + innovation | Pro-innovation |
+| [Enforcement]{.alert} | AI Office + national bodies | Existing agencies | Cyberspace Admin | Sector regulators |
+| [Prohibited uses]{.alert} | Social scoring, some biometrics | Few explicit bans | Political content | Minimal |
+| [GPAI rules]{.alert} | Yes, tiered | Voluntary (federal) | Yes, content-focused | None (AISI tests models) |
+| [Extraterritorial]{.alert} | Yes | Limited | Yes | No |
 :::
 :::
 :::
 
-# What this means for practitioners {background-color="#1B3A6B"}
+# What this means for users {background-color="#1B3A6B"}
 
 ## Practical implications
 
@@ -773,18 +760,16 @@ Companies that document their data and build in oversight now will have less to 
 - More jurisdictions will regulate AI
 - [Convergence]{.alert} likely around high-risk categories
 - Interoperability challenges will persist
-- Technical standards will matter more
 
-**Open questions:**
+**Open question:**
 
 - Can regulation keep pace with technology?
-- What about [AI systems that don't fit categories]{.alert}?
 
 **What we do know:**
 
 - Every major economy is working on AI rules
 - Companies that sell globally will face multiple regimes
-- The EU's rules will likely shape other countries, as GDPR did for data protection
+- The EU's rules will likely shape other countries
 :::
 
 :::{.column width=45%}
@@ -806,20 +791,17 @@ Source: [LinkedIn](https://www.linkedin.com/posts/senkorasic_stealing-this-meme-
 :::{.column width=55%}
 **Why regulate?**
 
-- Market failures: information asymmetry, externalities
-- Rights protection and human dignity
+- Market failures (information asymmetry, externalities) and rights protection
 
 **EU AI Act**
 
-- World's first comprehensive AI law
-- Four risk tiers, strict rules for high-risk systems
-- Fines up to 7% of global turnover
+- First comprehensive AI law, with four risk tiers
+- Strict rules for high-risk systems; fines up to 7% of global turnover
 
 **US approach**
 
-- Sectoral rules, no comprehensive law
-- States filling the gaps
-- Innovation-first philosophy
+- Innovation-first and sectoral, with no comprehensive law
+- States fill the gaps
 :::
 
 :::{.column width=45%}
@@ -827,16 +809,16 @@ Source: [LinkedIn](https://www.linkedin.com/posts/senkorasic_stealing-this-meme-
 
 - No international consensus
 - EU likely to set de facto global standards
-- China extensive but contradictory
+- China: extensive but contradictory
 
 **For practitioners**
 
-- Know your use case classification
+- Know your use case's risk class
 - Build compliance in from the start
-- Document everything and plan for human oversight
+- Document everything; plan for human oversight
 
 :::{style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; margin-top: 15px; font-size: 18px;"}
-How do you hold someone accountable for a decision made by a machine? Every framework we covered today is trying to answer that!
+How do you hold someone accountable for a decision made by a machine? Every framework we covered tries to answer it!
 :::
 :::
 :::
