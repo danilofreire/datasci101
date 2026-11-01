@@ -47,7 +47,7 @@ By the end of term, you should be able to:
 
 - **Lectures:** Tuesdays and Thursdays, 2:30-3:20pm.
 - **Location:** [White Hall, Room 206](https://maps.app.goo.gl/gynyTUkKqJ7meGjm8).
-- **Instructor:** Danilo Freire ([danilo.freire@emory.edu](mailto:danilo.freire@emory.edu)). Office hours by appointment; please email me to arrange a time.
+- **Instructor:** Danilo Freire ([danilo.freire@emory.edu](mailto:danilo.freire@emory.edu)). Office hours by appointment. Please email me to arrange a time.
 - **Materials:** Lecture notes, tutorials, and assignment templates are on [the course GitHub repository](https://github.com/danilofreire/datasci101). Students must check the repository often for updates.
 
 # Prerequisites and software
@@ -92,9 +92,9 @@ There is no single textbook. Instead, we read short papers, essays and tutorials
 
 # Assessments
 
-- **Problem sets (10) — 50%**. Short conceptual and practical tasks. Submit Jupyter notebooks (`.ipynb`), Word documents, or PDFs. Late submissions incur a 10% penalty per day unless authorised in advance. Collaboration for discussion is allowed but answers must be written independently; list collaborators on submission.  
+- **Problem sets (10) — 50%**. Short conceptual and practical tasks. Submit Jupyter notebooks (`.ipynb`), Word documents, or PDFs. Late submissions incur a 10% penalty per day unless authorised in advance. Collaboration for discussion is allowed but answers must be written independently. List your collaborators when you submit.  
 
-- **In-class quizzes (5) — 30%**. Each quiz occupies a full lecture (50 minutes). Questions are handed out on paper in class; you type your answers in a Word document or PDF and upload the file to Canvas by the end of the session. Quizzes are open notes and open web, and you may consult AI tools if you disclose which ones you used. They are individual assessments: discussion with other students is not permitted. Questions refer to specific material covered in class, and your reasoning is what is graded.
+- **In-class quizzes (5) — 30%**. Each quiz occupies a full lecture (50 minutes). Questions are handed out on paper in class. You type your answers in a Word document or PDF and upload the file to Canvas by the end of the session. Quizzes are open notes and open web, and you may consult AI tools if you disclose which ones you used. They are individual assessments: discussion with other students is not permitted. Questions refer to specific material covered in class, and your reasoning is what is graded.
 
 - **Final group project — 20%**. Groups of 4–5 choose one of seven domains (healthcare, education, finance, law, creative industries, scientific research, or customer service), test existing AI tools in that domain, and design a new AI application. Deliverables: an optional one-page proposal (not graded), a final report of 8–12 pages, and a one-page infographic. No programming is required. [Detailed instructions (PDF)](https://github.com/danilofreire/datasci101/blob/main/project/project-instructions.pdf).
 
@@ -399,7 +399,7 @@ Further readings:
 - Lecture 17: [Types of bias and how they arise](https://danilofreire.github.io/datasci101/lectures/lecture-17/17-bias.html).
 - [Kahoot Quiz](https://play.kahoot.it/v2/?quizId=b917688e-1437-4a7a-8c98-e306e31de6e4&hostId=05eb977d-4f8a-440e-9e45-95212b29d103)
 - No assignment this week.
-- [Instructions for the final project (PDF)](https://github.com/danilofreire/datasci101/blob/main/project/project-instructions.pdf). Groups must be finalised by November 3. Optional proposal due November 12; final report and infographic due December 8.
+- [Instructions for the final project (PDF)](https://github.com/danilofreire/datasci101/blob/main/project/project-instructions.pdf). Groups must be finalised by November 3. Optional proposal due November 12. Final report and infographic due December 8.
 
 Suggested readings:
 

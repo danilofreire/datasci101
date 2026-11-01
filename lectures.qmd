@@ -281,7 +281,7 @@ Further readings:
 - Lecture 17: [Types of bias and how they arise](https://danilofreire.github.io/datasci101/lectures/lecture-17/17-bias.html).
 - [Kahoot Quiz](https://play.kahoot.it/v2/?quizId=b917688e-1437-4a7a-8c98-e306e31de6e4&hostId=05eb977d-4f8a-440e-9e45-95212b29d103)
 - No assignment this week.
-- [Instructions for the final project (PDF)](https://github.com/danilofreire/datasci101/blob/main/project/project-instructions.pdf). Groups must be finalised by November 3. Optional proposal due November 12; final report and infographic due December 8.
+- [Instructions for the final project (PDF)](https://github.com/danilofreire/datasci101/blob/main/project/project-instructions.pdf). Groups must be finalised by November 3. Optional proposal due November 12. Final report and infographic due December 8.
 
 Suggested readings:
 
