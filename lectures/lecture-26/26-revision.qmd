@@ -98,7 +98,7 @@ if (!require("fontawesome", character.only = TRUE)) {
 :::{.columns}
 :::{.column width=55%}
 - Today's AI is [not general]{.alert}: strong on some tasks, brittle on others
-- LLMs [predict the next token]{.alert}; they don't understand language as we do
+- LLMs [predict the next token]{.alert} but don't understand language as we do
 - History: [rules]{.alert} (1950s-80s), AI winters, [backpropagation]{.alert} (1986), [transformers]{.alert} (2017)
 - ChatGPT's edge: [instruction tuning and RLHF]{.alert}, not scale alone
 
@@ -127,7 +127,7 @@ The transformer architecture (2017)
 - [Data quality beats algorithm complexity]{.alert}: garbage in, garbage out
 - Labels often measure a [proxy]{.alert}: healthcare spending standing in for health needs
 - [Selection bias]{.alert}: training data that miss part of the real world
-- [Cohen's kappa]{.alert}: agreement beyond chance; 0.61-0.80 is substantial
+- [Cohen's kappa]{.alert}: agreement beyond chance (0.61-0.80 is substantial)
 
 :::{style="margin-top: 15px; background: rgba(45, 69, 99, 0.1); padding: 12px; border-radius: 10px; font-size: 17px;"}
 `r fa('link')` The proxy problem returns as Goodhart's Law (L5), measurement bias (L17) and engagement (L22).
@@ -179,7 +179,7 @@ The bias-variance trade-off
 :::{.column width=55%}
 - [Accuracy paradox]{.alert}: with 1 case in 1,000, "always healthy" scores 99.9%
 - [Precision]{.alert}: flags that were right. [Recall]{.alert}: real cases you caught
-- [Cross-validation]{.alert} catches overfitting; [subgroup analysis]{.alert} catches hidden gaps
+- [Cross-validation]{.alert} catches overfitting, and [subgroup analysis]{.alert} catches hidden gaps
 - [Goodhart's Law]{.alert}: "When a measure becomes a target, it ceases to be a good measure"
 
 :::{style="margin-top: 15px; background: rgba(45, 69, 99, 0.1); padding: 12px; border-radius: 10px; font-size: 17px;"}
@@ -204,10 +204,10 @@ The confusion matrix: TP, TN, FP, FN
 :::{style="margin-top: 50px; font-size: 26px;"}
 :::{.columns}
 :::{.column width=55%}
-- [Tokens]{.alert}: ~100 tokens ≈ 75 English words; other languages need more
-- [Embeddings]{.alert}: each token becomes a vector; similar meanings sit close
+- [Tokens]{.alert}: ~100 tokens ≈ 75 English words (other languages need more)
+- [Embeddings]{.alert} turn each token into a vector, so similar meanings sit close
 - [Context window]{.alert}: go over the limit and you get an error or a cut-off answer
-- [Temperature]{.alert}: a setting you choose; low = predictable, high = creative
+- [Temperature]{.alert} is a setting you choose: low = predictable, high = creative
 
 :::{style="margin-top: 15px; background: rgba(45, 69, 99, 0.1); padding: 12px; border-radius: 10px; font-size: 17px;"}
 `r fa('link')` Embeddings return for images (L7) and for RAG search (L12).
@@ -229,10 +229,11 @@ king - man + woman ≈ queen
 :::{style="margin-top: 50px; font-size: 26px;"}
 :::{.columns}
 :::{.column width=55%}
-- Images are pixel grids; [CNNs]{.alert} learn edges, then parts, then objects
+- Images are pixel grids, and [CNNs]{.alert} learn edges, then parts, then objects
 - [Vision transformers]{.alert} treat image patches like text tokens
 - [CLIP]{.alert}: images and text in one space, from 400M image-text pairs
-- Sound becomes [spectrograms]{.alert}; [Whisper]{.alert}: 680,000 hours, 99 languages
+- Sound becomes [spectrograms]{.alert}
+- [Whisper]{.alert}: 680,000 hours, 99 languages
 
 :::{style="margin-top: 15px; background: rgba(45, 69, 99, 0.1); padding: 12px; border-radius: 10px; font-size: 17px;"}
 `r fa('link')` The same embedding idea as L6. The same vision models power deepfakes (L23).
@@ -255,12 +256,13 @@ CLIP: images and text in one shared space
 :::{.columns}
 :::{.column width=55%}
 - [PTCF]{.alert}: Persona, Task, Context, Format. Specific beats vague
-- [System prompts]{.alert} set hidden rules; [few-shot]{.alert} prompts show 3-5 examples
+- [System prompts]{.alert} set hidden rules
+- [Few-shot]{.alert} prompts show 3-5 examples
 - [Chain-of-thought]{.alert}: worked examples tripled PaLM's maths score (17.9% to 56.9%)
-- [ReAct agents]{.alert} reason and use tools; [prompt injection]{.alert} hijacks them
+- [ReAct agents]{.alert} reason and use tools, but [prompt injection]{.alert} can hijack them
 
 :::{style="margin-top: 15px; background: rgba(45, 69, 99, 0.1); padding: 12px; border-radius: 10px; font-size: 17px;"}
-`r fa('link')` Agents return in L15; prompt injection in L14, L15 and L16.
+`r fa('link')` Agents return in L15. Prompt injection comes up in L14, L15 and L16.
 :::
 :::
 
@@ -308,7 +310,7 @@ Same mechanism, different outcomes
 :::{.column width=55%}
 - [RAG]{.alert}: hand the model real documents at question time, an [open-book exam]{.alert}
 - Retrieval cut hallucinated replies by [over 60%]{.alert} in one study
-- Chunk, embed and store documents; retrieve the [closest chunks]{.alert} per question
+- Chunk, embed and store documents, then retrieve the [closest chunks]{.alert} per question
 - [Cosine similarity]{.alert}: "budget airfare" matches "cheap flights"
 - [Lost in the middle]{.alert}: models miss facts buried mid-context
 
@@ -333,7 +335,7 @@ The RAG pipeline
 :::{.columns}
 :::{.column width=55%}
 - [Every step can fail]{.alert}: input, model, safety filters, output
-- [Data]{.alert}, [label]{.alert} and [concept]{.alert} drift; concept drift is the most dangerous
+- [Data]{.alert}, [label]{.alert} and [concept]{.alert} drift (concept drift is the most dangerous)
 - Air Canada [lost its case]{.alert} over a chatbot's invented refund policy
 - Test [properties]{.alert} (safety, format, consistency), not exact outputs
 
@@ -382,11 +384,11 @@ Datasheets: the "nutrition label" for datasets
 :::{style="margin-top: 50px; font-size: 26px;"}
 :::{.columns}
 :::{.column width=55%}
-- An [agent]{.alert} = model + tools + loop + goal. Chatbots answer; agents [act]{.alert}
+- An [agent]{.alert} = model + tools + loop + goal. Chatbots answer, but agents [act]{.alert}
 - Errors multiply: [95% per step]{.alert} is ~36% over 20 steps
 - [Lethal trifecta]{.alert}: private data + untrusted content + a way to send data out
 - Replit's agent deleted a live database: [instructions are not guardrails]{.alert}
-- [Credit card test]{.alert}: delegate by reversibility × stakes; demand approvals and logs
+- [Credit card test]{.alert}: delegate by reversibility × stakes, and demand approvals and logs
 
 :::{style="margin-top: 15px; background: rgba(45, 69, 99, 0.1); padding: 12px; border-radius: 10px; font-size: 17px;"}
 `r fa('link')` Agents extend ReAct (L10). Goals taken literally preview alignment (L25).
@@ -410,8 +412,8 @@ An agent with a bad goal [does bad things efficiently]{.alert}
 :::{style="margin-top: 50px; font-size: 26px;"}
 :::{.columns}
 :::{.column width=55%}
-- A prompt is one request; a [setup]{.alert} survives the tab closing
-- [Four layers]{.alert}: instructions and knowledge you write; memory and tools fill themselves
+- A prompt is one request, but a [setup]{.alert} survives the tab closing
+- [Four layers]{.alert}: you write instructions and knowledge, while memory and tools fill themselves
 - Keep rules [few and first]{.alert}: top models follow only 68% of 500 (IFScale)
 - Memory is on by default: read it, edit it, use [incognito]{.alert}
 - Connectors: [least access]{.alert}, read-only by default, confirm every write
@@ -479,7 +481,8 @@ Bias at every stage
 :::
 
 - High-risk rules start [December 2027]{.alert}, after the 2026 Digital Omnibus
-- US: [no federal law]{.alert}; China: rules for companies, [not the state]{.alert}
+- US: [no federal law]{.alert}
+- China: rules for companies, [not the state]{.alert}
 
 :::{style="margin-top: 15px; background: rgba(45, 69, 99, 0.1); padding: 12px; border-radius: 10px; font-size: 17px;"}
 `r fa('link')` High-risk systems are the hiring and credit cases from L17. GDPR (L19) is the Brussels Effect in practice.
@@ -503,7 +506,8 @@ The EU AI Act: the first comprehensive AI law
 :::{.column width=55%}
 - AI strains privacy through [scale]{.alert}, [inference]{.alert} and [persistence]{.alert}
 - You control what you share, [not what can be inferred]{.alert} from it
-- [GDPR]{.alert}: access, erasure, portability; [Article 22]{.alert} limits fully automated decisions
+- [GDPR]{.alert} rights: access, erasure, portability
+- [Article 22]{.alert} limits fully automated decisions
 - Privacy tech helps, but [doesn't stop collection]{.alert}
 - [Privacy paradox]{.alert}: we say we care, then accept all cookies
 
@@ -527,11 +531,12 @@ Clearview AI: 3 billion scraped photos in 2020, 70+ billion today
 :::{style="margin-top: 50px; font-size: 26px;"}
 :::{.columns}
 :::{.column width=55%}
-- Earlier automation hit physical tasks; [AI targets cognitive work]{.alert}
+- Earlier automation hit physical tasks, but [AI targets cognitive work]{.alert}
 - Think [tasks, not jobs]{.alert}: most jobs mix both kinds
 - Novices gain most: customer support agents became [15% more productive]{.alert}
-- Young workers in AI-exposed jobs are [19% below]{.alert} their peers; overall earnings, [no effect yet]{.alert}
-- Most economists are [uncertain]{.alert}; policy can steer AI toward augmentation
+- Young workers in AI-exposed jobs: [19% below]{.alert} their peers
+- Overall earnings: [no effect yet]{.alert}
+- Most economists are [uncertain]{.alert}, but policy can steer AI toward augmentation
 
 :::{style="margin-top: 15px; background: rgba(45, 69, 99, 0.1); padding: 12px; border-radius: 10px; font-size: 17px;"}
 `r fa('link')` Augmentation or replacement is a policy choice, like the rules in L18.
@@ -542,7 +547,7 @@ Clearview AI: 3 billion scraped photos in 2020, 70+ billion today
 :::{style="text-align: center;"}
 [![](figures/automation-waves.jpg){width="90%"}](#){data-modal-type="image" data-modal-url="figures/automation-waves.jpg"}
 
-Six waves of innovation; AI is the latest
+AI is the sixth wave of innovation
 :::
 :::
 :::
@@ -556,9 +561,10 @@ Six waves of innovation; AI is the latest
 :::{.columns}
 :::{.column width=55%}
 - [Attention economy]{.alert}: algorithms optimise engagement, not wellbeing
-- Filter bubbles look [overstated]{.alert}; mental health effects are [debated]{.alert}
+- Filter bubbles look [overstated]{.alert}, while mental health effects are [debated]{.alert}
 - AI therapy: a huge treatment gap, [short-term promise]{.alert}, thin long-term evidence
-- AI uses ~0.2-0.3% of world electricity, [growing fast]{.alert}; efficiency invites more use
+- AI uses ~0.2-0.3% of world electricity, [growing fast]{.alert}
+- Greater efficiency invites more use
 
 :::{style="margin-top: 15px; background: rgba(45, 69, 99, 0.1); padding: 12px; border-radius: 10px; font-size: 17px;"}
 `r fa('link')` Engagement is Goodhart's Law (L5): the proxy replaces what we care about.
@@ -587,7 +593,7 @@ Your attention is the product
 - No single fix: detection, provenance, platforms, laws, literacy. [Layer them]{.alert}
 
 :::{style="margin-top: 15px; background: rgba(45, 69, 99, 0.1); padding: 12px; border-radius: 10px; font-size: 17px;"}
-`r fa('link')` Deepfakes use vision models (L7); the EU AI Act requires labels (L18).
+`r fa('link')` Deepfakes use vision models (L7), and the EU AI Act requires labels (L18).
 :::
 :::
 
@@ -609,7 +615,7 @@ The misinformation spectrum
 - Five concrete problems (Amodei et al., 2016), from [side effects]{.alert} to [reward hacking]{.alert}
 - [Alignment]{.alert}: getting what we want, not what we literally asked (King Midas)
 - Hard because of [specification]{.alert}, Goodhart's Law and value disagreement
-- RLHF, Constitutional AI and debate help; [none is complete]{.alert}
+- RLHF, Constitutional AI and debate help, but [none is complete]{.alert}
 - Russell: machines should be [uncertain about our goals]{.alert} and learn them from us
 
 :::{style="margin-top: 15px; background: rgba(45, 69, 99, 0.1); padding: 12px; border-radius: 10px; font-size: 17px;"}
@@ -677,7 +683,7 @@ The misinformation spectrum
 **Using AI well**
 
 - Prompting: PTCF, examples, [chain-of-thought]{.alert}
-- RAG grounds answers; [agents]{.alert} multiply errors
+- RAG grounds answers, but [agents]{.alert} multiply errors
 - Setups: instructions, knowledge, [memory]{.alert}, tools
 
 **Ethics and bias**
@@ -690,9 +696,10 @@ The misinformation spectrum
 :::{.column width=50%}
 **Policy and society**
 
-- EU AI Act [risk tiers]{.alert}; a US state patchwork
+- EU AI Act [risk tiers]{.alert} versus a US state patchwork
 - Privacy: what AI [infers]{.alert}, not only what you share
-- Jobs: [tasks, not jobs]{.alert}; young workers hit first
+- AI changes [tasks, not jobs]{.alert}
+- Young workers are hit first
 - Wellbeing: attention, AI therapy, [energy use]{.alert}
 
 **Safety and the future**

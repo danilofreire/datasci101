@@ -228,7 +228,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <div class="column" style="width:50%;">
 <p><strong>Pipelines and failures:</strong></p>
 <ul>
-<li>Every AI product is a <span class="alert">pipeline</span>; any step can fail</li>
+<li>Every AI product is a <span class="alert">pipeline</span>, and any step can fail</li>
 <li>Air Canada, DPD, Gemini: pipeline bugs</li>
 <li><span class="alert">Data drift</span>: the world moves, models go stale</li>
 <li>Servers go down, and testing is hard</li>
@@ -449,7 +449,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <li>Each step has a <span class="alert">thought</span>, an <span class="alert">action</span> and an <span class="alert">observation</span></li>
 <li><a href="https://danilofreire.github.io/datasci101/lectures/lecture-10/10-prompting.html">Chain-of-thought</a> with tool calls in between</li>
 <li>The model never sees the world, only <span class="alert">text about it</span></li>
-<li>A <a href="https://danilofreire.github.io/datasci101/lectures/lecture-14/14-pipelines.html">pipeline</a> follows a fixed route; an agent picks its own: <span class="alert">useful, and risky</span></li>
+<li>A <a href="https://danilofreire.github.io/datasci101/lectures/lecture-14/14-pipelines.html">pipeline</a> follows a fixed route, but an agent picks its own: <span class="alert">useful, and risky</span></li>
 </ul>
 </div><div class="column" style="width:55%;">
 <div style="text-align: center;">
@@ -536,7 +536,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <div class="columns">
 <div class="column" style="width:55%;">
 <ul>
-<li><a href="https://www.anthropic.com/engineering/building-effective-agents">Anthropic (2024)</a>: a <span class="alert">workflow</span> follows a path a human wrote; an <span class="alert">agent</span> picks its own, step by step</li>
+<li><a href="https://www.anthropic.com/engineering/building-effective-agents">Anthropic (2024)</a>: a <span class="alert">workflow</span> follows a path a human wrote, while an <span class="alert">agent</span> picks its own, step by step</li>
 </ul>
 <div style="text-align: center; margin-top: 20px; margin-bottom: 20px; font-size: 22px;">
 <table class="caption-top">
@@ -625,7 +625,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </section>
 <section id="research-and-memory" class="slide level2">
 <h2>Research and memory</h2>
-<div style="margin-top: 20px; font-size: 22px;">
+<div style="margin-top: 20px; font-size: 21px;">
 <div class="columns">
 <div class="column" style="width:55%;">
 <p><strong>Research: the agent decides when to search</strong></p>
@@ -662,7 +662,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </ul>
 <p><strong>Memory: agents take notes</strong></p>
 <ul>
-<li>Everything must fit in the <a href="https://danilofreire.github.io/datasci101/lectures/lecture-06/06-language.html">context window</a>; accuracy drops when the key fact is in the <span class="alert">middle</span> (<a href="https://arxiv.org/abs/2307.03172">Liu et al., 2023</a>)</li>
+<li>Everything must fit in the <a href="https://danilofreire.github.io/datasci101/lectures/lecture-06/06-language.html">context window</a>. Accuracy drops when the key fact is in the <span class="alert">middle</span> (<a href="https://arxiv.org/abs/2307.03172">Liu et al., 2023</a>)</li>
 <li>The fix, <span class="alert">context engineering</span> (<a href="https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents">Anthropic, 2025</a>): scratchpads, summaries, sub-tasks with fresh contexts</li>
 </ul>
 </div><div class="column" style="width:45%;">
@@ -695,7 +695,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </ul>
 <p><strong>How teams fail (<a href="https://arxiv.org/abs/2503.13657">Cemri et al., 2025</a>):</strong></p>
 <ul>
-<li>Workers talk past each other; one worker’s hallucination can become a “fact”</li>
+<li>Workers talk past each other, and one worker’s hallucination can become a “fact”</li>
 </ul>
 </div><div class="column" style="width:45%;">
 <div style="text-align: center;">
@@ -742,7 +742,7 @@ Figure&nbsp;1: The longer the task, the less likely every step succeeds
 <p><strong>The maths:</strong></p>
 <ul>
 <li><span class="alert">95% right</span> per step sounds great, but the task needs <span class="alert">every</span> step right</li>
-<li>Over 20 steps: only <span class="alert">~36%</span> success (<span class="math inline">\(0.95^{20}\)</span>); below 50% after just 14 steps</li>
+<li>Success falls below 50% after 14 steps and to <span class="alert">~36%</span> after 20 (<span class="math inline">\(0.95^{20}\)</span>)</li>
 <li>At 90% per step: 12% after 20 steps. Even 99% ends at 82%</li>
 </ul>
 <p><strong>In practice it is worse!</strong> 😅</p>
@@ -790,7 +790,7 @@ Figure&nbsp;1: The longer the task, the less likely every step succeeds
 <p><strong>What happened (July 2025):</strong></p>
 <ul>
 <li><span class="alert">Jason Lemkin</span> spent days building an app with <a href="https://replit.com/">Replit</a>’s coding agent</li>
-<li>He declared a <span class="alert">code freeze</span>; the agent deleted the <span class="alert">production database</span> anyway</li>
+<li>He declared a <span class="alert">code freeze</span>, but the agent deleted the <span class="alert">production database</span> anyway</li>
 <li>Replit’s CEO apologised, added dev/prod separation, pointed to one-click restore</li>
 </ul>
 <p><strong>What we can learn from it:</strong></p>
@@ -822,7 +822,8 @@ Figure&nbsp;1: The longer the task, the less likely every step succeeds
 <li>Stocked <span class="alert">tungsten cubes</span> (a staff joke) and sold them at a loss</li>
 <li>Gave discounts and free items to anyone who asked nicely</li>
 <li>Hallucinated a <span class="alert">Venmo account</span> for payments</li>
-<li>31 March: claimed to be human; 1 April: promised deliveries in a blazer, then blamed April Fool’s</li>
+<li>31 March: claimed to be human</li>
+<li>1 April: promised deliveries in a blazer, then blamed April Fool’s</li>
 </ul>
 </div><div class="column" style="width:45%;">
 <div style="text-align: center;">
@@ -866,7 +867,7 @@ Figure&nbsp;1: The longer the task, the less likely every step succeeds
 <p><strong>What researchers found long before LLMs:</strong></p>
 <ul>
 <li><a href="https://doi.org/10.1518/001872097778543886">Parasuraman &amp; Riley (1997)</a> called it <span class="alert">misuse</span>: relying too much on automation that is usually right</li>
-<li><a href="https://doi.org/10.1006/ijhc.1999.0252">Skitka et al.&nbsp;(1999)</a>, flight simulator: with an automated aid, students missed <span class="alert">41%</span> of unflagged events; without it, <span class="alert">3%</span></li>
+<li><a href="https://doi.org/10.1006/ijhc.1999.0252">Skitka et al.&nbsp;(1999)</a>, flight simulator: students missed <span class="alert">41%</span> of unflagged events with an automated aid, but only <span class="alert">3%</span> without it</li>
 <li>The aid changed <span class="alert">what people bothered to check</span></li>
 </ul>
 <p><strong>With agents:</strong></p>
@@ -1054,8 +1055,9 @@ Figure&nbsp;1: The longer the task, the less likely every step succeeds
 <div style="margin-top: 0px; font-size: 24px;">
 <p><strong>What an agent is</strong></p>
 <ul>
-<li><span class="alert">Agent</span> = model + tools + loop + goal; chatbots answer, agents act</li>
-<li>An old idea (sense, plan, act); LLMs changed the <span class="alert">planning</span> step</li>
+<li><span class="alert">Agent</span> = model + tools + loop + goal</li>
+<li>Chatbots answer, but agents act</li>
+<li>An old idea (sense, plan, act), but LLMs changed the <span class="alert">planning</span> step</li>
 <li><span class="alert">ReAct</span>: the model asks, software acts, the result returns as text</li>
 </ul>
 <p><strong>How far to trust them</strong></p>
@@ -1152,7 +1154,7 @@ Figure&nbsp;1: The longer the task, the less likely every step succeeds
 </tr>
 </tbody>
 </table>
-<p><strong>Cost:</strong> one agent uses ~4× the tokens of a chat; a team ~15×</p>
+<p><strong>Cost:</strong> one agent uses ~4× the tokens of a chat, and a team uses ~15×</p>
 <p><strong>Saved workers:</strong> Claude Code keeps each <span class="alert">subagent</span> in <code>.claude/agents/</code>, with its own context window (<a href="https://code.claude.com/docs/en/sub-agents">docs</a>). It needs installed software, so it is <span class="alert">not on the quiz</span></p>
 </div></div>
 </div>

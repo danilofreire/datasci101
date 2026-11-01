@@ -61,7 +61,7 @@ if (!require("fontawesome", character.only = TRUE)) {
 - [US]{.alert}: sectoral rules plus state laws
 - A [2025 executive order]{.alert} targets state AI laws
 - [China]{.alert}: censorship, innovation, algorithm registry
-- [No global consensus; principles likely to converge]{.alert}
+- [No global consensus, but principles may converge]{.alert}
 - Today: how does AI intersect with [privacy]{.alert}?
 :::
 
@@ -136,7 +136,7 @@ Older privacy laws did not anticipate these problems:
 
 **Scale of collection:**
 
-- Old surveillance needed staff; AI runs [24/7, almost for free]{.alert}
+- Unlike staffed surveillance, AI runs [24/7, almost for free]{.alert}
 - Every click, scroll and location ping becomes data
 
 **Inference capabilities:**
@@ -365,7 +365,7 @@ Source: [GDPR.eu (Proton)](https://gdpr.eu/what-is-gdpr/)
    - Can data given for X train a model for Y?
    - AI companies claim [legitimate interest]{.alert}
 2. **Data minimisation vs big data**
-   - AI wants more data; GDPR wants the minimum
+   - AI wants more data than GDPR allows
    - What's "necessary" for an LLM? Everything?
 3. **Right to explanation vs black boxes**
    - You can ask why an AI decided about you
@@ -382,7 +382,7 @@ Source: [GDPR.eu (Proton)](https://gdpr.eu/what-is-gdpr/)
 Source: [CertPro](https://certpro.com/ai-and-gdpr/)
 
 :::{style="font-size: 21px; margin-top: 15px;"}
-GDPR predates LLMs; [applying 2018 law to 2026 technology]{.alert} raises open questions
+GDPR predates LLMs, so [applying 2018 law to 2026 technology]{.alert} raises open questions
 :::
 :::
 :::
@@ -411,7 +411,7 @@ GDPR predates LLMs; [applying 2018 law to 2026 technology]{.alert} raises open q
 
 - [[California (CCPA/CPRA)](https://oag.ca.gov/privacy/ccpa)]{.alert}: closest to GDPR
 - [[Virginia](https://law.lis.virginia.gov/vacodefull/title59.1/chapter53/), [Colorado](https://coag.gov/resources/colorado-privacy-act/), [Connecticut](https://portal.ct.gov/ag/sections/privacy/the-connecticut-data-privacy-act)]{.alert}: similar frameworks
-- [[Illinois BIPA](https://www.ilga.gov/legislation/ilcs/ilcs3.asp?ActID=3004&ChapterID=57)]{.alert}: biometric data; individuals can sue
+- [[Illinois BIPA](https://www.ilga.gov/legislation/ilcs/ilcs3.asp?ActID=3004&ChapterID=57)]{.alert}: individuals can sue over biometric data
 - [[23 states](https://natlawreview.com/article/vermont-makes-23-states-comprehensive-data-privacy-laws)]{.alert} have such laws ([Vermont](https://legislature.vermont.gov/bill/status/2026/S.71) joined June 2026)
 :::
 
@@ -445,7 +445,7 @@ Source: [IAPP](https://iapp.org/resources/article/us-state-privacy-legislation-t
 - Big tech is the main target
 - Regulators focus on data transfers, consent and children
 - Fines are [getting larger]{.alert}
-- Enforcement varies; critics call Ireland's regulator slow
+- Enforcement varies, and critics call Ireland's regulator slow
 :::
 
 :::{.column width=40%}
@@ -739,7 +739,7 @@ Signal over WhatsApp helps, but only [legislation]{.alert} changes how insurers 
 
 ## Main takeaways
 
-:::{style="margin-top: 30px; font-size: 24px;"}
+:::{style="margin-top: 30px; font-size: 23px;"}
 :::{.columns}
 :::{.column width=55%}
 **AI and privacy**
@@ -750,7 +750,8 @@ Signal over WhatsApp helps, but only [legislation]{.alert} changes how insurers 
 
 **Legal frameworks**
 
-- GDPR: comprehensive and rights-based; US: sectoral patchwork
+- GDPR: comprehensive and rights-based
+- US: a sectoral patchwork
 - AI development and data protection [pull against each other]{.alert}
 
 **Technical approaches**

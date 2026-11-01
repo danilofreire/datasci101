@@ -699,7 +699,7 @@ People who understand the technology are often [absent from policy debates]{.ale
 
 - Scrutinise AI regulation proposals: what problem does this solve, and [does it actually address it]{.alert}?
 - Vote, comment on public consultations, write to representatives
-- Most AI coverage confuses hype with capability; [you can do better]{.alert} 😉
+- Most AI coverage confuses hype with capability, but [you can do better]{.alert} 😉
 
 **If you work with AI or data:**
 

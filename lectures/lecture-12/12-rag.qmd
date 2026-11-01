@@ -215,7 +215,7 @@ Source: [AWS](https://aws.amazon.com/what-is/retrieval-augmented-generation/)
 :::{.column width=45%}
 **Why does this matter for RAG?**
 
-- Users ask in [natural language]{.alert}; your documents use [different terminology]{.alert}
+- Users ask in [natural language]{.alert}, but your documents use [different terminology]{.alert}
 - Semantic search bridges this gap
 
 :::{style="text-align: center; margin-top: 15px;"}
@@ -245,7 +245,7 @@ Text becomes [vectors]{.alert} (lists of numbers):
 **Key properties:**
 
 - Similar meanings → [similar vectors]{.alert}
-- "king" and "queen" are close in vector space; "king" and "apple" are far apart
+- "king" and "queen" are close in vector space, while "king" and "apple" are far apart
 - Modern embedding models produce [768 to 3,072 dimensions]{.alert}
 
 :::{style="text-align: center;"}
@@ -280,12 +280,12 @@ Similar sentences cluster together in embedding space
 - Numerator: dot product (multiply matching components, then add)
 - Denominator: the vectors' lengths, so size does not matter
   - If $A = [0.8, 0.6]$, then $\|A\| = \sqrt{0.8^2 + 0.6^2} = 1$
-- Identical = 1; orthogonal = 0; opposite = -1
+- Identical = 1, orthogonal = 0, opposite = -1
 - Components can be negative, so scores can fall below 0
 
 $$\text{similarity}(A, B) = \frac{A \cdot B}{\|A\| \times \|B\|}$$
 
-**Interpretation** (illustrative; varies by model):
+**Interpretation** (illustrative, varies by model):
 
 :::{style="text-align: center;"}
 | Score | Meaning | Example |
@@ -653,7 +653,8 @@ Source: [Liu et al. (2023)](https://arxiv.org/abs/2307.03172)
 **For document preparation:**
 
 1. **Clean your documents**
-   - Remove headers, footers, page numbers; fix OCR errors in scanned PDFs
+   - Remove headers, footers and page numbers
+   - Fix OCR errors in scanned PDFs
 
 2. **Use descriptive headings**
    - Helps chunking and retrieval: "Q4 2024 Revenue" > "Section 3.2"
@@ -707,7 +708,7 @@ Source: [Liu et al. (2023)](https://arxiv.org/abs/2307.03172)
 **All of these ground answers in your files:**
 
 - You upload documents → the knowledge source
-- Some tools [retrieve]{.alert} the relevant parts (Gemini Notebook, ChatGPT); others read the whole file if it fits (Claude, AI Studio)
+- Some tools [retrieve]{.alert} the relevant parts (Gemini Notebook, ChatGPT), while others read the whole file if it fits (Claude, AI Studio)
 - The LLM generates answers from that text
 
 [No coding required, just upload and ask]{.alert}

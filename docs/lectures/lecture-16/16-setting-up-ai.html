@@ -428,8 +428,8 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <section id="the-four-layers-of-context" class="slide level2">
 <h2>The four layers of context</h2>
 <h3 id="where-an-answer-actually-comes-from">Where an answer actually comes from</h3>
-<div style="margin-top: 30px; font-size: 24px;">
-<div style="font-size: 26px;">
+<div style="margin-top: 30px; font-size: 23px;">
+<div style="font-size: 25px;">
 <table class="caption-top">
 <colgroup>
 <col style="width: 12%">
@@ -478,7 +478,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <li><a href="https://www.youtube.com/watch?v=zjkBMFhNj_g">Karpathy’s “LLM OS” talk (Nov 2023)</a> treats the context window as RAM</li>
 <li><a href="https://arxiv.org/abs/2310.08560">Packer et al.&nbsp;(2023)</a>, MemGPT: pages information in and out of that window</li>
 <li>Anthropic’s <a href="https://www.anthropic.com/research/building-effective-agents">“Building effective agents” (Dec 2024)</a> calls this the <span class="alert">augmented LLM</span></li>
-<li>You write instructions and knowledge; the tool fills in memory and tools</li>
+<li>You write instructions and knowledge, while the tool fills in memory and tools</li>
 <li>Once a month, check what memory has saved and which connectors are on</li>
 <li>A <span class="alert">Project</span> bundles the first three layers in one place, in both Claude and ChatGPT</li>
 </ul>
@@ -491,13 +491,13 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <div class="columns">
 <div class="column" style="width:55%;">
 <ul>
-<li>Lecture 10 showed the company’s hidden prompt; now you <span class="alert">write your own</span>
+<li>Lecture 10 showed the company’s hidden prompt, and now you <span class="alert">write your own</span>
 <ul>
 <li><span class="alert">Account instructions</span>: every chat</li>
 <li><span class="alert">Project instructions</span>: one project</li>
 <li>Both are free in Claude and ChatGPT</li>
 </ul></li>
-<li><span class="alert">“You are an expert” changes nothing</span>; write constraints instead (<a href="https://aclanthology.org/2024.findings-emnlp.888/">Zheng et al., 2024</a>)</li>
+<li><span class="alert">“You are an expert” changes nothing</span>, so write constraints instead (<a href="https://aclanthology.org/2024.findings-emnlp.888/">Zheng et al., 2024</a>)</li>
 <li>Reformatting one prompt can shift accuracy by up to <span class="alert">76 points</span> (<a href="https://arxiv.org/abs/2310.11324">Sclar et al., 2024</a>)</li>
 <li>The best models follow only <span class="alert">68% of 500 rules</span>, the earliest most (<a href="https://arxiv.org/abs/2507.11538">IFScale, 2025</a>)</li>
 <li>So keep rules few, and put the important ones first</li>
@@ -525,7 +525,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <li><a href="https://arxiv.org/abs/2304.03442">Park et al.&nbsp;(2023)</a> gave 25 agents a <span class="alert">memory stream</span>: a diary scored by recency, importance and relevance</li>
 <li>Both do it: <a href="https://openai.com/index/memory-and-new-controls-for-chatgpt/">ChatGPT since 2024</a>, <a href="https://support.claude.com/en/articles/11817273-use-claude-s-chat-search-and-memory-to-build-on-previous-context">Claude Free since 2026</a>, and <span class="alert">on by default</span></li>
 <li>It saves things unasked: your degree, city, job, the projects you return to</li>
-<li>Memory spans <span class="alert">every chat in your account</span>; a Project keeps its own, separate memory</li>
+<li>Memory spans <span class="alert">every chat in your account</span>, but a Project keeps its own, separate memory</li>
 <li>The same question can get <span class="alert">different answers</span> in two accounts, because the memory differs</li>
 <li><span class="alert">Settings &gt; Memory</span> lets you read, edit and delete each line</li>
 </ul>
@@ -618,14 +618,16 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <div class="column" style="width:55%;">
 <p><strong><a href="https://agents.md/">AGENTS.md</a>:</strong> one instruction file many coding tools read</p>
 <ul>
-<li>Released Aug 2025 by OpenAI Codex, Google, Cursor and others; now ~two dozen tools (Cursor, Gemini CLI, Copilot, Zed), in <span class="alert">60,000+</span> projects</li>
-<li>Claude Code reads it natively; joined the <a href="https://www.linuxfoundation.org/press/linux-foundation-announces-the-formation-of-the-agentic-ai-foundation">Agentic AI Foundation</a> (Dec 2025)</li>
+<li>Released Aug 2025 by OpenAI Codex, Google, Cursor and others</li>
+<li>Now in ~two dozen tools (Cursor, Gemini CLI, Copilot, Zed) and <span class="alert">60,000+</span> projects</li>
+<li>Claude Code reads it natively</li>
+<li>AGENTS.md joined the <a href="https://www.linuxfoundation.org/press/linux-foundation-announces-the-formation-of-the-agentic-ai-foundation">Agentic AI Foundation</a> (Dec 2025)</li>
 <li>Claude Code can read <code>AGENTS.md</code>, <code>CLAUDE.md</code>, or both</li>
 </ul>
 <p><strong><a href="https://www.anthropic.com/engineering/equipping-agents-for-the-real-world-with-agent-skills">Skills</a>:</strong> a folder with a <code>SKILL.md</code> for one repeatable task</p>
 <ul>
 <li><span class="alert">Progressive disclosure</span>: reads a short description first, loads the rest when a task matches</li>
-<li>Pre-built skills run in the web app; Free users can <span class="alert">upload their own</span> too (turn on code execution first)</li>
+<li>Pre-built skills run in the web app, and Free users can <span class="alert">upload their own</span> too (turn on code execution first)</li>
 </ul>
 </div><div class="column" style="width:45%;">
 <div style="text-align: center;">
@@ -683,7 +685,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <ul>
 <li>Each product names these rows differently</li>
 <li>Skills are the same folder in both columns</li>
-<li>Left: the <span class="alert">web app</span> you use; right: <span class="alert">developer tools</span></li>
+<li>The <span class="alert">web app</span> you use (left) and <span class="alert">developer tools</span> (right)</li>
 </ul>
 </div><div class="column" style="width:50%;">
 <p><strong>Diagnose before you retype:</strong></p>
@@ -868,7 +870,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <ul>
 <li><a href="https://simonwillison.net/2025/Sep/19/notion-lethal-trifecta/">Notion (Sept 2025)</a>: white-on-white text in a shared document told the assistant to send private notes to a stranger, and it did</li>
 <li><a href="https://www.safebreach.com/blog/invitation-is-all-you-need-hacking-gemini/">Gemini (SafeBreach, Aug 2025)</a>: instructions hidden in a calendar invite made Gemini control smart-home devices and leak email</li>
-<li>The attacker stole no password; they wrote a document and waited</li>
+<li>Instead of stealing a password, the attacker wrote a document and waited</li>
 <li>This is <span class="alert">indirect prompt injection</span>: the attack arrives inside content the assistant reads (<a href="https://arxiv.org/abs/2302.12173">Greshake et al., 2023</a>)</li>
 <li>It is the lethal trifecta again: private data, untrusted content and a way out</li>
 </ul>
@@ -941,7 +943,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </div>
 <ul>
 <li>Write the setup once, then copy it into whichever tool you use</li>
-<li>The four layers are the same in every tool; the caps and button names differ</li>
+<li>Every tool has the same four layers, but caps and button names differ</li>
 </ul>
 </div></div>
 </div>

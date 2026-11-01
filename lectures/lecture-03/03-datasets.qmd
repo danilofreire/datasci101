@@ -197,7 +197,7 @@ Source: [xkcd](https://xkcd.com/1838/)
 [Classification: Predicting categories]{.alert}
 
 - Assign inputs to discrete categories
-- Examples: Email → Spam/Not Spam; Image → Cat/Dog/Bird; Text → Positive/Negative/Neutral
+- Examples: Email → Spam/Not Spam, Image → Cat/Dog/Bird, Text → Positive/Negative/Neutral
 - [Binary]{.alert}: two classes. [Multi-class]{.alert}: many classes, one per input
 - [Multi-label]{.alert}: several labels per input
 - [How do you define the classes?]{.alert}
@@ -211,7 +211,7 @@ Source: [xkcd](https://xkcd.com/1838/)
 [Regression: Predicting continuous values]{.alert}
 
 - Predict a continuous numerical value
-- Examples: Features → House price; Patient data → Hospital stay length; Weather data → Temperature
+- Examples: Features → House price, Patient data → Hospital stay length, Weather data → Temperature
 - Choosing the target variable is [a design decision]{.alert}
 - Different targets give very different models
 

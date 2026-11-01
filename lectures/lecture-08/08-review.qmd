@@ -70,7 +70,7 @@ if (!require("fontawesome", character.only = TRUE)) {
 - [Submission:]{.alert} one Word or PDF file, uploaded to Canvas
 - [Allowed:]{.alert} laptops, notes, lecture slides, web search
 - [AI assistants:]{.alert} use them sparingly, only when a question needs one
-- [Honour code:]{.alert} write your own answers; if you used an AI, say which one
+- [Honour code:]{.alert} write your own answers, and if you used an AI, say which one
 - [What is graded:]{.alert} your reasoning, not the polish of your AI's prose
 - Your job is to [spot problems]{.alert}, [judge trade-offs]{.alert}, and
   [write something useful]{.alert}, better than the AI can
@@ -92,7 +92,7 @@ Source: <https://xkcd.com/2228/>
 - I name [a few concepts]{.alert} from one of the seven lectures
 - One of you explains it in [your own words]{.alert} (about 30 seconds)
 - The rest of us [push back, add nuance, or correct]{.alert}
-- Wrong answers are useful; silence is not 😉
+- Wrong answers are useful, but silence is not 😉
 :::
 
 ## Concept 1: hallucination

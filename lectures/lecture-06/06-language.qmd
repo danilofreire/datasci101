@@ -271,7 +271,7 @@ Source: [OpenAI Tokenizer](https://platform.openai.com/tokenizer)
   - Start with single characters (bytes) as tokens
   - Find the pair that appears together most often in the training text, e.g. "u" + "n"
   - Merge it into a new token ("un") and repeat until the vocabulary is big enough
-- [Common subwords become single tokens;]{.alert} rare words split into known pieces
+- [Common subwords become single tokens]{.alert}, while rare words split into known pieces
 - It also saves space: "unbelievable", "unhappy", "undo" and "unknown" share the same "un". [The model stores "un" only once!]{.alert}
 :::
 
@@ -869,9 +869,10 @@ Source: [Microsoft Education](https://www.microsoft.com/en-us/education/blog/202
 
 :::{style="margin-top: 30px; font-size: 28px;"}
 
-- LLMs don't read text; they process [tokens]{.alert}, numerical representations of text chunks
+- LLMs don't read text but process [tokens]{.alert}, numerical representations of text chunks
 
-- [Tokenisation]{.alert} breaks text into pieces; ~100 tokens ≈ 75 words; affects cost and limits
+- [Tokenisation]{.alert} breaks text into pieces (~100 tokens ≈ 75 words)
+- Token counts affect cost and limits
 
 - [Embeddings]{.alert} convert tokens to vectors, capturing meaning in ~4,096 dimensions
 

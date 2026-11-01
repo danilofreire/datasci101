@@ -416,7 +416,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </div><div class="column" style="width:45%;">
 <p><strong>Why does this matter for RAG?</strong></p>
 <ul>
-<li>Users ask in <span class="alert">natural language</span>; your documents use <span class="alert">different terminology</span></li>
+<li>Users ask in <span class="alert">natural language</span>, but your documents use <span class="alert">different terminology</span></li>
 <li>Semantic search bridges this gap</li>
 </ul>
 <div style="text-align: center; margin-top: 15px;">
@@ -459,7 +459,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <p><strong>Key properties:</strong></p>
 <ul>
 <li>Similar meanings → <span class="alert">similar vectors</span></li>
-<li>“king” and “queen” are close in vector space; “king” and “apple” are far apart</li>
+<li>“king” and “queen” are close in vector space, while “king” and “apple” are far apart</li>
 <li>Modern embedding models produce <span class="alert">768 to 3,072 dimensions</span></li>
 </ul>
 <div style="text-align: center;">
@@ -518,11 +518,11 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <ul>
 <li>If <span class="math inline">\(A = [0.8, 0.6]\)</span>, then <span class="math inline">\(\|A\| = \sqrt{0.8^2 + 0.6^2} = 1\)</span></li>
 </ul></li>
-<li>Identical = 1; orthogonal = 0; opposite = -1</li>
+<li>Identical = 1, orthogonal = 0, opposite = -1</li>
 <li>Components can be negative, so scores can fall below 0</li>
 </ul>
 <p><span class="math display">\[\text{similarity}(A, B) = \frac{A \cdot B}{\|A\| \times \|B\|}\]</span></p>
-<p><strong>Interpretation</strong> (illustrative; varies by model):</p>
+<p><strong>Interpretation</strong> (illustrative, varies by model):</p>
 <div style="text-align: center;">
 <table class="caption-top">
 <thead>
@@ -1136,7 +1136,8 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <ol type="1">
 <li><strong>Clean your documents</strong>
 <ul>
-<li>Remove headers, footers, page numbers; fix OCR errors in scanned PDFs</li>
+<li>Remove headers, footers and page numbers</li>
+<li>Fix OCR errors in scanned PDFs</li>
 </ul></li>
 <li><strong>Use descriptive headings</strong>
 <ul>
@@ -1229,7 +1230,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <p><strong>All of these ground answers in your files:</strong></p>
 <ul>
 <li>You upload documents → the knowledge source</li>
-<li>Some tools <span class="alert">retrieve</span> the relevant parts (Gemini Notebook, ChatGPT); others read the whole file if it fits (Claude, AI Studio)</li>
+<li>Some tools <span class="alert">retrieve</span> the relevant parts (Gemini Notebook, ChatGPT), while others read the whole file if it fits (Claude, AI Studio)</li>
 <li>The LLM generates answers from that text</li>
 </ul>
 <p><span class="alert">No coding required, just upload and ask</span></p>

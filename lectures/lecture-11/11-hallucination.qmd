@@ -300,9 +300,9 @@ Qwen 3.7 held firm through five more pushbacks. Chats: [3.5](https://chat.qwen.a
 | Domain | Hallucination Risk | Why? |
 |--------|-------------------|------|
 | [Common knowledge]{.alert} | Low | Abundant training data |
-| [Coding]{.alert} | Low-Medium | Syntax is verifiable; patterns are clear |
+| [Coding]{.alert} | Low-Medium | Verifiable syntax, clear patterns |
 | [Recent events]{.alert} | High | Beyond training cutoff |
-| [Medical/Legal]{.alert} | High | Requires precision; errors are costly |
+| [Medical/Legal]{.alert} | High | Needs precision, errors are costly |
 | [Obscure history]{.alert} | Very High | Sparse data → interpolation |
 | [Citations]{.alert} | Very High | Specific strings rarely memorised |
 
@@ -857,7 +857,7 @@ Source: [Towards AI](https://pub.towardsai.net/what-is-rag-a-clear-and-simple-ex
 | [Citations]{.alert} | Find the paper on Google Scholar |
 | [Recent events]{.alert} | Use a tool with web search |
 | [Medical or legal questions]{.alert} | Ask a professional |
-| [Brainstorming and drafts]{.alert} | Edit freely; errors matter less |
+| [Brainstorming and drafts]{.alert} | Edit freely: errors matter less |
 
 :::
 :::

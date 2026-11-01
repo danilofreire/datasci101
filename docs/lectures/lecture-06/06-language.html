@@ -395,7 +395,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <li>Find the pair that appears together most often in the training text, e.g.&nbsp;“u” + “n”</li>
 <li>Merge it into a new token (“un”) and repeat until the vocabulary is big enough</li>
 </ul></li>
-<li><span class="alert">Common subwords become single tokens;</span> rare words split into known pieces</li>
+<li><span class="alert">Common subwords become single tokens</span>, while rare words split into known pieces</li>
 <li>It also saves space: “unbelievable”, “unhappy”, “undo” and “unknown” share the same “un”. <span class="alert">The model stores “un” only once!</span></li>
 </ul>
 </div><div class="column" style="width:45%;">
@@ -1119,8 +1119,9 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <h2>Main takeaways</h2>
 <div style="margin-top: 30px; font-size: 28px;">
 <ul>
-<li><p>LLMs don’t read text; they process <span class="alert">tokens</span>, numerical representations of text chunks</p></li>
-<li><p><span class="alert">Tokenisation</span> breaks text into pieces; ~100 tokens ≈ 75 words; affects cost and limits</p></li>
+<li><p>LLMs don’t read text but process <span class="alert">tokens</span>, numerical representations of text chunks</p></li>
+<li><p><span class="alert">Tokenisation</span> breaks text into pieces (~100 tokens ≈ 75 words)</p></li>
+<li><p>Token counts affect cost and limits</p></li>
 <li><p><span class="alert">Embeddings</span> convert tokens to vectors, capturing meaning in ~4,096 dimensions</p></li>
 <li><p>The famous <span class="alert">king − man + woman ≈ queen</span> shows embeddings encode semantic relationships</p></li>
 <li><p><span class="alert">Parameters</span> (billions of them!) are the numbers learned during training</p></li>

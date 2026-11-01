@@ -242,7 +242,7 @@ Source: [Wikipedia](https://en.wikipedia.org/wiki/Logistic_function)
 :::{.columns}
 :::{.column width=55%}
 - [Decision trees]{.alert}: learn a hierarchy of yes/no questions
-- Each node splits the data on a feature; leaves hold the predictions
+- Each node splits the data on a feature, and leaves hold the predictions
 - Easy to interpret: "If income > $50k AND age > 30, then approve loan"
 - Capture [non-linear relationships]{.alert}
 - Prone to [overfitting]{.alert} (memorising training data)

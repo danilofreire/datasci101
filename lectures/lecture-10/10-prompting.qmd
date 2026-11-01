@@ -173,7 +173,7 @@ You want to analyse the sentiment of financial news. Which prompt will give clea
 **This has implications:**
 
 - The model is [continuing your text]{.alert}, not "answering questions"
-- [Vague prompts activate broad, generic patterns]{.alert}; specific prompts activate [narrow, relevant ones]{.alert}
+- [Vague prompts activate broad, generic patterns]{.alert}, while specific prompts activate [narrow, relevant ones]{.alert}
 - The model has no goals or understanding. It produces statistically likely continuations
 
 [A specific prompt narrows the model's options, so you get what you need]{.alert}
@@ -185,7 +185,7 @@ You want to analyse the sentiment of financial news. Which prompt will give clea
 
 [![](figures/llm-prediction.webp){width="90%"}](#){data-modal-type="image" data-modal-url="figures/llm-prediction.webp"}
 
-A vague prompt leaves too many likely continuations; a specific one narrows the field
+A vague prompt leaves too many likely continuations, but a specific one narrows the field
 :::
 :::
 :::

@@ -56,9 +56,9 @@ if (!require("fontawesome", character.only = TRUE)) {
 :::{.column width=50%}
 - [AI and wellbeing]{.alert}: attention, mental health, environment
 - Algorithms optimise [engagement, not wellbeing]{.alert}
-- Filter bubbles look overstated; mental health effects are debated
+- Filter bubbles look overstated, while mental health effects are debated
 - AI mental-health tools: [short-term promise]{.alert}, thin long-term evidence
-- Training is a one-off cost; [inference at scale]{.alert} keeps growing
+- Training is a one-off cost, but [inference at scale]{.alert} keeps growing
 - [Incentive structures beat intentions]{.alert}
 - Today: [what happens when AI is used to deceive?]{.alert}
 :::
@@ -282,7 +282,7 @@ Technical detail: [Tolosana et al. (2020)](https://arxiv.org/abs/2001.00179)
 
 **Non-consensual intimate imagery:**
 
-- 96% of deepfakes online ([Sensity/Deeptrace, 2019](https://sensity.ai/reports/)); [Home Security Heroes](https://www.securityhero.io/state-of-deepfakes/) put it at 98% in 2023
+- 96% of deepfakes online ([Sensity/Deeptrace, 2019](https://sensity.ai/reports/)), and [Home Security Heroes](https://www.securityhero.io/state-of-deepfakes/) put it at 98% in 2023
 - [Women overwhelmingly targeted]{.alert}: a tool for harassment and extortion
 - Laws are catching up: since May 2026 US platforms must remove them [within 48 hours](https://www.ftc.gov/news-events/news/press-releases/2026/05/ftc-begins-enforcing-take-it-down-act)
 :::
@@ -291,7 +291,7 @@ Technical detail: [Tolosana et al. (2020)](https://arxiv.org/abs/2001.00179)
 :::{style="text-align: center;"}
 [![](figures/deepfake-examples.png){width="80%"}](#){data-modal-type="image" data-modal-url="figures/deepfake-examples.png"}
 
-Source: Mikael Thalen on X; story: [NPR](https://www.npr.org/2022/03/16/1087062648/deepfake-video-zelenskyy-experts-war-manipulation-ukraine-russia)
+Source: Mikael Thalen on X (story: [NPR](https://www.npr.org/2022/03/16/1087062648/deepfake-video-zelenskyy-experts-war-manipulation-ukraine-russia))
 
 :::{style="font-size: 18px; margin-top: 15px;"}
 The first big audit ([Sensity, 2019](https://sensity.ai/reports/)) found almost all deepfakes were pornographic, and almost all targeted women
@@ -455,7 +455,7 @@ Source: [Soroka et al. (2019)](https://www.pnas.org/doi/abs/10.1073/pnas.1908369
 **What it is:**
 
 - We seek evidence that [confirms what we already believe]{.alert} and dismiss what contradicts it
-- This isn't laziness; it's how brains manage information overload
+- This isn't laziness: it's how brains manage information overload
 - [Nickerson (1998)](https://doi.org/10.1037/1089-2680.2.2.175) called it "ubiquitous", a top candidate for reasoning's worst flaw
 
 **How it works with deepfakes:**
@@ -571,7 +571,7 @@ We share what confirms our views and makes us look informed. The truth can wait,
 - Detectors can be fooled, and [adversarial training]{.alert} improves generators
 - Real-time detection is difficult
 - Scale: millions of images, few moderators
-- [Groh et al. (2022)](https://www.pnas.org/doi/10.1073/pnas.2110013119): 15,016 people and a detector made [different mistakes]{.alert}; together they did best
+- [Groh et al. (2022)](https://www.pnas.org/doi/10.1073/pnas.2110013119): 15,016 people and a detector made [different mistakes]{.alert}, so together they did best
 :::
 
 :::{.column width=45%}
@@ -646,9 +646,9 @@ Source: [Vice - YouTube](https://youtu.be/cHGbWn6iwHw)
 :::{.column width=55%}
 **Emerging legislation:**
 
-- **US**: [TAKE IT DOWN Act](https://www.ftc.gov/news-events/news/press-releases/2026/05/ftc-begins-enforcing-take-it-down-act) (2025) for sexual deepfakes; [Texas](https://capitol.texas.gov/tlodocs/86R/billtext/html/SB00751F.htm) and [other states](https://natlawreview.com/article/texas-did-it-first-texas-was-first-enact-state-legislation-use-deep-fakes-elections) for election ones
+- **US**: [TAKE IT DOWN Act](https://www.ftc.gov/news-events/news/press-releases/2026/05/ftc-begins-enforcing-take-it-down-act) (2025) for sexual deepfakes, and [Texas](https://capitol.texas.gov/tlodocs/86R/billtext/html/SB00751F.htm) and [other states](https://natlawreview.com/article/texas-did-it-first-texas-was-first-enact-state-legislation-use-deep-fakes-elections) for election ones
 - **EU**: [AI Act Article 50](https://artificialintelligenceact.eu/article/50/) requires deepfake disclosure (since August 2026)
-- **UK**: the [Online Safety Act](https://www.gov.uk/government/news/government-crackdown-on-explicit-deepfakes) (2023) made sharing sexual deepfakes a crime; [a 2025 Act](https://www.legislation.gov.uk/ukpga/2025/18/section/138) added creating them
+- **UK**: sharing sexual deepfakes is a crime ([Online Safety Act](https://www.gov.uk/government/news/government-crackdown-on-explicit-deepfakes), 2023), and so is creating them ([2025](https://www.legislation.gov.uk/ukpga/2025/18/section/138))
 - **China**: [Deep Synthesis Provisions (2023)](https://www.loc.gov/item/global-legal-monitor/2023-04-25/china-provisions-on-deep-synthesis-technology-enter-into-effect/) require disclosure of AI-generated content
 
 **Challenges:**
@@ -712,8 +712,10 @@ Source: [Columbia Journal of Law and Arts](https://journals.library.columbia.edu
 
 **Responses**
 
-- Detection is necessary but insufficient; provenance is promising but years away
-- Law is slow and jurisdictional; literacy helps but doesn't scale
+- Detection is necessary but insufficient
+- Provenance is promising but years away
+- Law is slow and jurisdictional
+- Literacy helps but doesn't scale
 - No single fix. [Layering defences]{.alert} is the best we have
 :::
 :::

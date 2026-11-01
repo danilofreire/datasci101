@@ -240,7 +240,7 @@ Companies answer to shareholders, not users. When engagement and wellbeing confl
 - [Orben & Przybylski (2019)](https://www.nature.com/articles/s41562-018-0506-1): screen time explains [at most 0.4%]{.alert} of the variance in adolescent wellbeing
 - Haidt's evidence is mostly correlational: teen depression rose [as smartphones spread]{.alert}
 - [Candice Odgers (2024, *Nature*)](https://www.nature.com/articles/d41586-024-00902-2): the evidence does not support his causal story
-- Most associations are [small]{.alert} ([1](https://academic.oup.com/jcmc/article/29/1/zmad055/7595758?login=false&guestAccessKey=)); heavy or problematic use shows stronger links ([2](https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2834349), [3](https://mental.jmir.org/2022/4/e33450/))
+- Most associations are [small]{.alert} ([1](https://academic.oup.com/jcmc/article/29/1/zmad055/7595758?login=false&guestAccessKey=)), but heavy or problematic use shows stronger links ([2](https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2834349), [3](https://mental.jmir.org/2022/4/e33450/))
 - Individual experiences are real. The [population-level]{.alert} effect is small
 :::
 
@@ -306,7 +306,7 @@ Genuine concern or good PR? Probably [a bit of both]{.alert}. The test is whethe
 - Since March 2022, Chinese users can [legally turn off recommendation algorithms]{.alert}
 - The [Algorithmic Recommendation Provisions](https://www.chinalawtranslate.com/en/algorithms/) make every app offer a non-personalised feed
 - Douyin, Baidu, Taobao and WeChat added [one-tap opt-out]{.alert} buttons
-- Chinese users [dislike the algorithm but rarely quit it](https://journals.sagepub.com/doi/10.1177/20594364231209354); effects of opting out are still being studied
+- Chinese users [dislike the algorithm but rarely quit it](https://journals.sagepub.com/doi/10.1177/20594364231209354), and the effects of opting out are still being studied
 - The [EU Digital Services Act](https://dsa-observatory.eu/2024/11/22/the-regulation-of-recommender-systems-under-the-dsa-a-transition-from-default-to-multiple-and-dynamic-controls/) (Article 38) now makes very large platforms offer a non-profiling feed
 - China mandates algorithmic transparency and keeps [state censorship]{.alert}. Both are true
 :::
@@ -378,7 +378,7 @@ Source: [WHO Mental Health Atlas (2024)](https://www.who.int/publications/i/item
 :::{style="margin-top: 30px; font-size: 23px;"}
 :::{.columns}
 :::{.column width=55%}
-- [**Woebot**](https://mental.jmir.org/2017/2/e19) (2017-2025): scripted CBT chatbot, ~1.5M users; [closed in 2025](https://www.statnews.com/2025/07/02/woebot-therapy-chatbot-shuts-down-founder-says-ai-moving-faster-than-regulators/)
+- [**Woebot**](https://mental.jmir.org/2017/2/e19) (2017-2025): scripted CBT chatbot, ~1.5M users, [closed in 2025](https://www.statnews.com/2025/07/02/woebot-therapy-chatbot-shuts-down-founder-says-ai-moving-faster-than-regulators/)
 - [**Wysa**](https://www.wysa.com/nhs-talking-therapies): same model, used in [31 NHS talking-therapy services](https://blogs.wysa.io/blog/company-news/nhs-tackles-mental-health-crisis-with-ai)
 - [**Replika**](https://replika.com/): not therapy, an "AI companion". People form [real emotional attachments]{.alert} (risks shortly)
 - [Habicht et al. (2025, *JMIR*)](https://www.jmir.org/2025/1/e60435), an observational NHS study: generative AI alongside group therapy
@@ -446,7 +446,7 @@ Documented, not hypothetical:
 - **Data privacy.** Chatbot data is rarely protected like clinical notes
 - **Harmful responses.** LLMs showed [stigma]{.alert} and mishandled crises ([Moore et al., 2025](https://arxiv.org/abs/2504.18412))
 - **No crisis escalation.** A chatbot cannot call an ambulance
-- **Regulatory gap.** Most are apps, not medical devices; a few states ([Illinois](https://idfpr.illinois.gov/news/2025/gov-pritzker-signs-state-leg-prohibiting-ai-therapy-in-il.html)) ban AI therapy
+- **Regulatory gap.** Most are apps, not medical devices, and a few states ([Illinois](https://idfpr.illinois.gov/news/2025/gov-pritzker-signs-state-leg-prohibiting-ai-therapy-in-il.html)) ban AI therapy
 :::
 
 :::{.column width=45%}
@@ -554,7 +554,7 @@ The technology moves faster than the evidence, the regulation and the training. 
   - 120 cars driven for a year
   - The annual footprint of ~35 Americans
 - GPT-4? Undisclosed, and outside estimates vary widely
-- [Training is a one-off]{.alert}; inference (billions of queries) is ongoing and probably [dwarfs training]{.alert}
+- [Training is a one-off]{.alert}, but inference (billions of queries) is ongoing and probably [dwarfs training]{.alert}
 - [Microsoft's emissions](https://www.itpro.com/infrastructure/data-centres/microsofts-ai-fueled-data-center-rush-caused-carbon-emissions-to-surge-by-29-in-2023-and-now-the-tech-giant-could-miss-critical-sustainability-targets) rose 29% between 2020 and 2023, partly from AI
 - [Google (2026)](https://sustainability.google/google-2026-environmental-report/): emissions up [81% since 2019]{.alert}, driven by AI data centres
 :::
@@ -579,7 +579,7 @@ Training is a [one-off]{.alert}. Inference is the number that grows with adoptio
 :::{.columns}
 :::{.column width=55%}
 - [Li et al. (2023)](https://arxiv.org/abs/2304.03271): training GPT-3 used ~[700,000 litres]{.alert} of cooling water
-- GPT-3: ~500ml per 10-50 responses; Google reports [0.26ml per Gemini prompt](https://arxiv.org/abs/2508.15734)
+- GPT-3: ~500ml per 10-50 responses, while Google reports [0.26ml per Gemini prompt](https://arxiv.org/abs/2508.15734)
 - A [political flashpoint]{.alert}: 70% of Americans would oppose a local data centre ([Gallup, 2026](https://news.gallup.com/poll/709772/americans-oppose-data-centers-area.aspx))
 - Overall, [probably overstated]{.alert}: [627m gallons a day](https://www.axios.com/2026/06/25/water-energy-ai-flashpoint), less than US golf courses
 - About [75%]{.alert} of a data centre's water footprint comes from generating its electricity, not on-site cooling
@@ -686,7 +686,7 @@ Net impact? [Unclear]{.alert}. The evidence isn't there yet
 
 :::{style="margin-top: 30px; font-size: 30px;"}
 
-- [Attention economy]{.alert}: systems optimise engagement, not wellbeing. Filter bubble fears look overstated; mental health effects are debated
+- [Attention economy]{.alert}: systems optimise engagement, not wellbeing. Filter bubble fears look overstated, while mental health effects are debated
 
 - [Mental health]{.alert}: a huge treatment gap, short-term promise, thin long-term evidence. Augmentation over replacement
 

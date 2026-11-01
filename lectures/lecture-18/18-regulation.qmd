@@ -218,7 +218,8 @@ Source: [X.com](https://x.com/pascal_bornet/status/1892786338015171026)
 **Timeline:**
 
 - April 2021: European Commission proposal
-- December 2023: deal struck; March 2024: Parliament vote
+- December 2023: deal struck
+- March 2024: Parliament vote
 - August 2024: Entry into force
 - 2025: Bans (February) and General Purpose AI rules (August) apply
 - July 2026: [Digital Omnibus](https://www.europarl.europa.eu/thinktank/es/document/EPRS_BRI(2026)782651){.alert} delays high-risk rules to December 2027 (August 2028 for products)
@@ -301,7 +302,8 @@ Source: [European Commission](https://digital-strategy.ec.europa.eu/en/policies/
 
 - [Human oversight]{.alert} capability
 - [Accuracy, robustness, cybersecurity]{.alert}
-- Register in [EU database]{.alert}; report serious incidents
+- Register in the [EU database]{.alert}
+- Report serious incidents
 
 **Deployers (users):**
 
@@ -312,7 +314,7 @@ Source: [European Commission](https://digital-strategy.ec.europa.eu/en/policies/
 :::{style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; font-size: 22px; margin-top: 30px;"}
 **Data governance:**
 
-- Training data: [relevant, representative, as error-free as possible]{.alert}; must be checked for biases
+- Training data: [relevant, representative, as error-free as possible]{.alert}, and checked for biases
 - Must [demonstrate compliance]{.alert}
 
 **Transparency:**
@@ -457,7 +459,7 @@ For a company like Google (2024 revenue ~$350B), a 7% fine would be [~$24.5 bill
 4. Facial recognition at airport security
 :::
 :::{.fragment}
-   - [Depends]{.alert}: scanning crowds is high risk; a passport check is not
+   - [Depends]{.alert}: scanning crowds is high risk, but a passport check is not
 :::
 :::
 
@@ -796,7 +798,7 @@ Source: [LinkedIn](https://www.linkedin.com/posts/senkorasic_stealing-this-meme-
 **EU AI Act**
 
 - First comprehensive AI law, with four risk tiers
-- Strict rules for high-risk systems; fines up to 7% of global turnover
+- Strict rules for high-risk systems, with fines up to 7% of global turnover
 
 **US approach**
 
@@ -815,7 +817,7 @@ Source: [LinkedIn](https://www.linkedin.com/posts/senkorasic_stealing-this-meme-
 
 - Know your use case's risk class
 - Build compliance in from the start
-- Document everything; plan for human oversight
+- Document everything and plan for human oversight
 
 :::{style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; margin-top: 15px; font-size: 18px;"}
 How do you hold someone accountable for a decision made by a machine? Every framework we covered tries to answer it!

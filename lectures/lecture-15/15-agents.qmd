@@ -62,7 +62,7 @@ if (!require("fontawesome", character.only = TRUE)) {
 :::{.column width=50%}
 **Pipelines and failures:**
 
-- Every AI product is a [pipeline]{.alert}; any step can fail
+- Every AI product is a [pipeline]{.alert}, and any step can fail
 - Air Canada, DPD, Gemini: pipeline bugs
 - [Data drift]{.alert}: the world moves, models go stale
 - Servers go down, and testing is hard
@@ -244,7 +244,7 @@ You know the [vocabulary]{.alert} from lecture 04: agent, environment, state, ac
 - Each step has a [thought]{.alert}, an [action]{.alert} and an [observation]{.alert}
 - [Chain-of-thought](https://danilofreire.github.io/datasci101/lectures/lecture-10/10-prompting.html) with tool calls in between
 - The model never sees the world, only [text about it]{.alert}
-- A [pipeline](https://danilofreire.github.io/datasci101/lectures/lecture-14/14-pipelines.html) follows a fixed route; an agent picks its own: [useful, and risky]{.alert}
+- A [pipeline](https://danilofreire.github.io/datasci101/lectures/lecture-14/14-pipelines.html) follows a fixed route, but an agent picks its own: [useful, and risky]{.alert}
 :::
 
 :::{.column width=55%}
@@ -343,7 +343,7 @@ Model asks:  search("direct flights ATL to BOS")
 :::{style="margin-top: 30px; font-size: 22px;"}
 :::{.columns}
 :::{.column width=55%}
-- [Anthropic (2024)](https://www.anthropic.com/engineering/building-effective-agents): a [workflow]{.alert} follows a path a human wrote; an [agent]{.alert} picks its own, step by step
+- [Anthropic (2024)](https://www.anthropic.com/engineering/building-effective-agents): a [workflow]{.alert} follows a path a human wrote, while an [agent]{.alert} picks its own, step by step
 
 :::{style="text-align: center; margin-top: 20px; margin-bottom: 20px; font-size: 22px;"}
 | | Who picks the steps | Who approves | Example |
@@ -407,7 +407,7 @@ Source: [METR](https://metr.org/blog/2025-03-19-measuring-ai-ability-to-complete
 
 ## Research and memory
 
-:::{style="margin-top: 20px; font-size: 22px;"}
+:::{style="margin-top: 20px; font-size: 21px;"}
 :::{.columns}
 :::{.column width=55%}
 **Research: the agent decides when to search**
@@ -425,7 +425,7 @@ Source: [METR](https://metr.org/blog/2025-03-19-measuring-ai-ability-to-complete
 
 **Memory: agents take notes**
 
-- Everything must fit in the [context window](https://danilofreire.github.io/datasci101/lectures/lecture-06/06-language.html); accuracy drops when the key fact is in the [middle]{.alert} ([Liu et al., 2023](https://arxiv.org/abs/2307.03172))
+- Everything must fit in the [context window](https://danilofreire.github.io/datasci101/lectures/lecture-06/06-language.html). Accuracy drops when the key fact is in the [middle]{.alert} ([Liu et al., 2023](https://arxiv.org/abs/2307.03172))
 - The fix, [context engineering]{.alert} ([Anthropic, 2025](https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents)): scratchpads, summaries, sub-tasks with fresh contexts
 :::
 
@@ -462,7 +462,7 @@ After a long run, an agent's memory is often a [summary of a summary]{.alert}, a
 
 **How teams fail ([Cemri et al., 2025](https://arxiv.org/abs/2503.13657)):** 
 
-- Workers talk past each other; one worker's hallucination can become a "fact"
+- Workers talk past each other, and one worker's hallucination can become a "fact"
 :::
 
 :::{.column width=45%}
@@ -534,7 +534,7 @@ ggplot(decay, aes(x = steps, y = prob, colour = accuracy)) +
 **The maths:**
 
 - [95% right]{.alert} per step sounds great, but the task needs [every]{.alert} step right
-- Over 20 steps: only [~36%]{.alert} success ($0.95^{20}$); below 50% after just 14 steps
+- Success falls below 50% after 14 steps and to [~36%]{.alert} after 20 ($0.95^{20}$)
 - At 90% per step: 12% after 20 steps. Even 99% ends at 82%
 
 **In practice it is worse!** 😅
@@ -587,7 +587,7 @@ Next lecture: [connectors]{.alert} can give an assistant all three at once, and 
 **What happened (July 2025):**
 
 - [Jason Lemkin]{.alert} spent days building an app with [Replit](https://replit.com/)'s coding agent
-- He declared a [code freeze]{.alert}; the agent deleted the [production database]{.alert} anyway
+- He declared a [code freeze]{.alert}, but the agent deleted the [production database]{.alert} anyway
 - Replit's CEO apologised, added dev/prod separation, pointed to one-click restore
 
 **What we can learn from it:**
@@ -622,7 +622,8 @@ Source: [Jason Lemkin on X](https://x.com/jasonlk/status/1946069562723897802)
 - Stocked [tungsten cubes]{.alert} (a staff joke) and sold them at a loss
 - Gave discounts and free items to anyone who asked nicely
 - Hallucinated a [Venmo account]{.alert} for payments
-- 31 March: claimed to be human; 1 April: promised deliveries in a blazer, then blamed April Fool's
+- 31 March: claimed to be human
+- 1 April: promised deliveries in a blazer, then blamed April Fool's
 :::
 
 :::{.column width=45%}
@@ -673,7 +674,7 @@ Source: [Anthropic, "Project Vend"](https://www.anthropic.com/research/project-v
 **What researchers found long before LLMs:**
 
 - [Parasuraman & Riley (1997)](https://doi.org/10.1518/001872097778543886) called it [misuse]{.alert}: relying too much on automation that is usually right
-- [Skitka et al. (1999)](https://doi.org/10.1006/ijhc.1999.0252), flight simulator: with an automated aid, students missed [41%]{.alert} of unflagged events; without it, [3%]{.alert}
+- [Skitka et al. (1999)](https://doi.org/10.1006/ijhc.1999.0252), flight simulator: students missed [41%]{.alert} of unflagged events with an automated aid, but only [3%]{.alert} without it
 - The aid changed [what people bothered to check]{.alert}
 
 **With agents:**
@@ -856,8 +857,9 @@ to New York on 20 November. Budget: $200"
 
 **What an agent is**
 
-- [Agent]{.alert} = model + tools + loop + goal; chatbots answer, agents act
-- An old idea (sense, plan, act); LLMs changed the [planning]{.alert} step
+- [Agent]{.alert} = model + tools + loop + goal
+- Chatbots answer, but agents act
+- An old idea (sense, plan, act), but LLMs changed the [planning]{.alert} step
 - [ReAct]{.alert}: the model asks, software acts, the result returns as text
 
 **How far to trust them**
@@ -938,7 +940,7 @@ to New York on 20 November. Budget: $200"
 | Direct comparison | 2–4 workers, 10–15 calls each |
 | Complex research | 10+ workers |
 
-**Cost:** one agent uses ~4× the tokens of a chat; a team ~15×
+**Cost:** one agent uses ~4× the tokens of a chat, and a team uses ~15×
 
 **Saved workers:** Claude Code keeps each [subagent]{.alert} in `.claude/agents/`, with its own context window ([docs](https://code.claude.com/docs/en/sub-agents)). It needs installed software, so it is [not on the quiz]{.alert}
 :::

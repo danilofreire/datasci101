@@ -235,9 +235,9 @@ Source: [Anthropic - Claude Code Docs](https://code.claude.com/docs/en/memory)
 ## The four layers of context
 ### Where an answer actually comes from
 
-:::{style="margin-top: 30px; font-size: 24px;"}
+:::{style="margin-top: 30px; font-size: 23px;"}
 
-:::{style="font-size: 26px;"}
+:::{style="font-size: 25px;"}
 | Layer | Who writes it | What it holds | In Claude/ChatGPT |
 |-------|---------------|---------------|-------------------|
 | [Instructions]{.alert} | You | Standing rules | Settings, project instructions |
@@ -251,7 +251,7 @@ Source: [Anthropic - Claude Code Docs](https://code.claude.com/docs/en/memory)
 - [Karpathy's "LLM OS" talk (Nov 2023)](https://www.youtube.com/watch?v=zjkBMFhNj_g) treats the context window as RAM
 - [Packer et al. (2023)](https://arxiv.org/abs/2310.08560), MemGPT: pages information in and out of that window
 - Anthropic's ["Building effective agents" (Dec 2024)](https://www.anthropic.com/research/building-effective-agents) calls this the [augmented LLM]{.alert}
-- You write instructions and knowledge; the tool fills in memory and tools
+- You write instructions and knowledge, while the tool fills in memory and tools
 - Once a month, check what memory has saved and which connectors are on
 - A [Project]{.alert} bundles the first three layers in one place, in both Claude and ChatGPT
 :::
@@ -262,11 +262,11 @@ Source: [Anthropic - Claude Code Docs](https://code.claude.com/docs/en/memory)
 :::{style="margin-top: 30px; font-size: 23px;"}
 :::{.columns}
 :::{.column width=55%}
-- Lecture 10 showed the company's hidden prompt; now you [write your own]{.alert}
+- Lecture 10 showed the company's hidden prompt, and now you [write your own]{.alert}
   - [Account instructions]{.alert}: every chat
   - [Project instructions]{.alert}: one project
   - Both are free in Claude and ChatGPT
-- ["You are an expert" changes nothing]{.alert}; write constraints instead ([Zheng et al., 2024](https://aclanthology.org/2024.findings-emnlp.888/))
+- ["You are an expert" changes nothing]{.alert}, so write constraints instead ([Zheng et al., 2024](https://aclanthology.org/2024.findings-emnlp.888/))
 - Reformatting one prompt can shift accuracy by up to [76 points]{.alert} ([Sclar et al., 2024](https://arxiv.org/abs/2310.11324))
 - The best models follow only [68% of 500 rules]{.alert}, the earliest most ([IFScale, 2025](https://arxiv.org/abs/2507.11538))
 - So keep rules few, and put the important ones first
@@ -295,7 +295,7 @@ Source: [Anthropic Help Centre](https://support.claude.com/en/articles/9519177-h
 - [Park et al. (2023)](https://arxiv.org/abs/2304.03442) gave 25 agents a [memory stream]{.alert}: a diary scored by recency, importance and relevance
 - Both do it: [ChatGPT since 2024](https://openai.com/index/memory-and-new-controls-for-chatgpt/), [Claude Free since 2026](https://support.claude.com/en/articles/11817273-use-claude-s-chat-search-and-memory-to-build-on-previous-context), and [on by default]{.alert}
 - It saves things unasked: your degree, city, job, the projects you return to
-- Memory spans [every chat in your account]{.alert}; a Project keeps its own, separate memory
+- Memory spans [every chat in your account]{.alert}, but a Project keeps its own, separate memory
 - The same question can get [different answers]{.alert} in two accounts, because the memory differs
 - [Settings > Memory]{.alert} lets you read, edit and delete each line
 :::
@@ -387,14 +387,16 @@ You help me analyse the meta-analysis data in R.
 :::{.column width=55%}
 **[AGENTS.md](https://agents.md/):** one instruction file many coding tools read
 
-- Released Aug 2025 by OpenAI Codex, Google, Cursor and others; now ~two dozen tools (Cursor, Gemini CLI, Copilot, Zed), in [60,000+]{.alert} projects
-- Claude Code reads it natively; joined the [Agentic AI Foundation](https://www.linuxfoundation.org/press/linux-foundation-announces-the-formation-of-the-agentic-ai-foundation) (Dec 2025)
+- Released Aug 2025 by OpenAI Codex, Google, Cursor and others
+- Now in ~two dozen tools (Cursor, Gemini CLI, Copilot, Zed) and [60,000+]{.alert} projects
+- Claude Code reads it natively
+- AGENTS.md joined the [Agentic AI Foundation](https://www.linuxfoundation.org/press/linux-foundation-announces-the-formation-of-the-agentic-ai-foundation) (Dec 2025)
 - Claude Code can read `AGENTS.md`, `CLAUDE.md`, or both
 
 **[Skills](https://www.anthropic.com/engineering/equipping-agents-for-the-real-world-with-agent-skills):** a folder with a `SKILL.md` for one repeatable task
 
 - [Progressive disclosure]{.alert}: reads a short description first, loads the rest when a task matches
-- Pre-built skills run in the web app; Free users can [upload their own]{.alert} too (turn on code execution first)
+- Pre-built skills run in the web app, and Free users can [upload their own]{.alert} too (turn on code execution first)
 :::
 
 :::{.column width=45%}
@@ -430,7 +432,7 @@ AGENTS.md and CLAUDE.md need software you install. Recognise them, do not memori
 
 - Each product names these rows differently
 - Skills are the same folder in both columns
-- Left: the [web app]{.alert} you use; right: [developer tools]{.alert}
+- The [web app]{.alert} you use (left) and [developer tools]{.alert} (right)
 :::
 
 :::{.column width=50%}
@@ -601,7 +603,7 @@ Source: [arXiv 2303.17564](https://arxiv.org/abs/2303.17564)
 :::{.column width=55%}
 - [Notion (Sept 2025)](https://simonwillison.net/2025/Sep/19/notion-lethal-trifecta/): white-on-white text in a shared document told the assistant to send private notes to a stranger, and it did
 - [Gemini (SafeBreach, Aug 2025)](https://www.safebreach.com/blog/invitation-is-all-you-need-hacking-gemini/): instructions hidden in a calendar invite made Gemini control smart-home devices and leak email
-- The attacker stole no password; they wrote a document and waited
+- Instead of stealing a password, the attacker wrote a document and waited
 - This is [indirect prompt injection]{.alert}: the attack arrives inside content the assistant reads ([Greshake et al., 2023](https://arxiv.org/abs/2302.12173))
 - It is the lethal trifecta again: private data, untrusted content and a way out
 :::
@@ -652,7 +654,7 @@ Source: [OpenAI Help Centre](https://help.openai.com/en/articles/8096356-chatgpt
 :::
 
 - Write the setup once, then copy it into whichever tool you use
-- The four layers are the same in every tool; the caps and button names differ
+- Every tool has the same four layers, but caps and button names differ
 :::
 :::
 :::

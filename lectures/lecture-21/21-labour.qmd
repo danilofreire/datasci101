@@ -394,7 +394,7 @@ This matters for you personally: if companies replace junior roles with AI, [whe
 - [Slower hiring]{.alert} rather than mass firing
 - Some sectors growing, others shrinking
 - Geographic concentration of effects
-- [Young workers]{.alert} hit first; experienced workers show no gap
+- [Young workers]{.alert} are hit first, but not experienced ones
 
 **Why the disconnect?**
 
@@ -537,7 +537,7 @@ Source: [Fortune](https://fortune.com/2025/09/06/godfather-of-ai-geoffrey-hinton
 **MIT economists:**
 
 - [Acemoglu (2025)](https://economics.mit.edu/sites/default/files/2024-04/The%20Simple%20Macroeconomics%20of%20AI.pdf): AI adds at most [~0.7% to productivity]{.alert} over 10 years
-- [Acemoglu, Autor & Johnson (2023)](https://shapingwork.mit.edu/research/can-we-have-pro-worker-ai/): AI can [augment]{.alert} or [replace]{.alert} workers; today it leans to replacement, and policy could shift it
+- [Acemoglu, Autor & Johnson (2023)](https://shapingwork.mit.edu/research/can-we-have-pro-worker-ai/): AI can [augment]{.alert} or [replace]{.alert} workers. Today it leans to replacement, and policy could shift it
 
 **[Jones (2026)](https://web.stanford.edu/~chadj/AIandEconomicFuture.pdf), now at Anthropic:**
 
