@@ -157,16 +157,18 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </section>
 <section id="recap-of-last-class" class="slide level2">
 <h2>Recap of last class</h2>
-<div style="margin-top: 20px; font-size: 26px;">
+<div style="margin-top: 20px; font-size: 24px;">
 <div class="columns">
 <div class="column" style="width:58%;">
 <ul>
-<li><span class="alert">EU AI Act</span>: first comprehensive AI law; banned, high, limited and minimal risk</li>
-<li>Fines up to <span class="alert">7% of global turnover</span>; high-risk rules delayed to December 2027</li>
-<li><span class="alert">US approach</span>: sectoral regulation with state-level initiatives</li>
-<li>A <span class="alert">2025 executive order</span> lets federal lawyers challenge state AI laws</li>
-<li><span class="alert">China</span>: content control, innovation goals, algorithm registration</li>
-<li><span class="alert">No global consensus yet, but convergence on key principles is likely</span></li>
+<li><span class="alert">EU AI Act</span>: first comprehensive AI law</li>
+<li>Risk tiers: banned, high, limited, minimal</li>
+<li>Fines up to <span class="alert">7% of global turnover</span></li>
+<li>High-risk rules delayed to December 2027</li>
+<li><span class="alert">US</span>: sectoral rules plus state laws</li>
+<li>A <span class="alert">2025 executive order</span> targets state AI laws</li>
+<li><span class="alert">China</span>: censorship, innovation, algorithm registry</li>
+<li><span class="alert">No global consensus; principles likely to converge</span></li>
 <li>Today: how does AI intersect with <span class="alert">privacy</span>?</li>
 </ul>
 </div><div class="column" style="width:42%;">
@@ -187,26 +189,26 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <div style="margin-top: 20px; font-size: 26px;">
 <div class="columns">
 <div class="column" style="width:50%;">
-<p><strong>Part 1: Privacy in the AI age</strong></p>
+<p><span class="alert">Part 1: Privacy in the AI age</span></p>
 <ul>
 <li>Why AI makes privacy harder</li>
 <li>Data collection at unprecedented scale</li>
-<li>Inference and prediction of sensitive attributes</li>
+<li>Inferring sensitive traits</li>
 </ul>
-<p><strong>Part 2: Legal frameworks</strong></p>
+<p><span class="alert">Part 2: Legal frameworks</span></p>
 <ul>
 <li>GDPR and data protection principles</li>
 <li>Rights of individuals</li>
 <li>US privacy landscape</li>
 </ul>
 </div><div class="column" style="width:50%;">
-<p><strong>Part 3: Technical approaches</strong></p>
+<p><span class="alert">Part 3: Technical approaches</span></p>
 <ul>
 <li>Differential privacy</li>
 <li>Federated learning</li>
-<li>Privacy-preserving machine learning (synthetic data)</li>
+<li>Synthetic data</li>
 </ul>
-<p><strong>Part 4: Challenges and tensions</strong></p>
+<p><span class="alert">Part 4: Challenges and tensions</span></p>
 <ul>
 <li>Case study: Clearview AI</li>
 <li>Discussion: where’s your line on privacy?</li>
@@ -239,20 +241,22 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <div style="margin-top: 30px; font-size: 20px;">
 <div class="columns">
 <div class="column" style="width:55%;">
-<p>AI breaks privacy in ways older laws did not anticipate:</p>
+<p>Older privacy laws did not anticipate these problems:</p>
 <p><strong>Scale of collection:</strong></p>
 <ul>
-<li>Old surveillance was limited by staffing; AI collection runs <span class="alert">around the clock at almost no cost</span></li>
-<li>Every interaction becomes “data exhaust”, a byproduct of normal use</li>
+<li>Old surveillance needed staff; AI runs <span class="alert">24/7, almost for free</span></li>
+<li>Every click, scroll and location ping becomes data</li>
 </ul>
 <p><strong>Inference capabilities:</strong></p>
 <ul>
-<li>AI <span class="alert">predicts sensitive information</span> from innocuous data: shopping → health, typing → mood, friends → politics</li>
-<li><span class="alert">Things you never disclosed can be inferred</span></li>
+<li>AI <span class="alert">predicts sensitive traits</span> from harmless data</li>
+<li>Shopping → health, typing → mood, friends → politics</li>
+<li><span class="alert">It infers what you never disclosed</span></li>
 </ul>
 <p><strong>Persistence:</strong></p>
 <ul>
-<li><span class="alert">Data doesn’t decay</span>: models trained today affect you forever, and decisions follow you across contexts</li>
+<li><span class="alert">Data doesn’t decay</span>: today’s models affect you forever</li>
+<li>Decisions follow you across contexts</li>
 <li><span class="alert">“Right to be forgotten” is technically hard</span></li>
 </ul>
 </div><div class="column" style="width:45%;">
@@ -260,7 +264,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <p><a href="#/" data-modal-type="image" data-modal-url="figures/data-collection.png"><img data-src="figures/data-collection.png" style="width:100.0%"></a></p>
 <p>Source: <a href="https://research.aimultiple.com/data-collection-methods/">AI Multiple</a></p>
 <div style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; font-size: 21px; margin-top: 15px;">
-<p>“If you’re not paying for the product, you are the product.” This understates it! <span class="alert">Even when you pay</span>, your data is often the real product!</p>
+<p>“If you’re not paying for the product, you are the product.” <span class="alert">Even paying customers</span> are often the product</p>
 </div>
 </div>
 </div></div>
@@ -271,46 +275,48 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <div style="margin-top: 30px; font-size: 22px;">
 <div class="columns">
 <div class="column" style="width:55%;">
-<p><strong>Research has shown AI can predict:</strong></p>
+<p><strong>Research shows AI can predict:</strong></p>
+<div style="font-size: 26px;">
 <table class="caption-top">
 <thead>
 <tr class="header">
 <th>Data source</th>
-<th>What can be inferred</th>
+<th>Inferred</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Facebook likes</td>
+<td><span class="alert">Facebook likes</span></td>
 <td>Political views, sexuality, personality</td>
 </tr>
 <tr class="even">
-<td>Smartphone sensors</td>
+<td><span class="alert">Smartphone sensors</span></td>
 <td>Depression, anxiety, Parkinson’s</td>
 </tr>
 <tr class="odd">
-<td>Typing patterns</td>
+<td><span class="alert">Typing patterns</span></td>
 <td>Age, gender, emotional state</td>
 </tr>
 <tr class="even">
-<td>Purchase history</td>
+<td><span class="alert">Purchase history</span></td>
 <td>Pregnancy, health conditions</td>
 </tr>
 <tr class="odd">
-<td>Location data</td>
+<td><span class="alert">Location data</span></td>
 <td>Home address, workplace, religion</td>
 </tr>
 <tr class="even">
-<td>Voice recordings</td>
+<td><span class="alert">Voice recordings</span></td>
 <td>Emotional state, health, age</td>
 </tr>
 </tbody>
 </table>
-<p><strong>Famous example: Target and pregnancy</strong></p>
+</div>
+<p><strong>Example: Target and pregnancy</strong></p>
 <ul>
-<li>Target’s algorithm spotted a pregnant teenager and posted baby coupons to her home</li>
-<li>Her father complained to the store: she was “still in high school”</li>
-<li>Days later he apologised to the manager: she was pregnant</li>
+<li>Target mailed baby coupons to a pregnant teen</li>
+<li>Her father complained: she was “still in high school”</li>
+<li>Days later, he apologised: she was pregnant</li>
 <li><span class="alert">The algorithm knew before her family did</span> (<a href="https://www.nytimes.com/2012/02/19/magazine/shopping-habits.html">NYT</a>)</li>
 </ul>
 </div><div class="column" style="width:45%;">
@@ -329,15 +335,16 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <div style="margin-top: 30px; font-size: 21px;">
 <div class="columns">
 <div class="column" style="width:55%;">
-<p><strong>LLMs have a training data problem:</strong></p>
+<p><strong>The training data problem:</strong></p>
 <ul>
-<li>Trained on internet-scale data, which includes <span class="alert">personal information</span></li>
+<li>Web-scale data includes <span class="alert">personal information</span></li>
 <li>Models can <span class="alert">memorise and regurgitate</span> training data</li>
-<li>Your name, address, phone number might be in there!</li>
+<li>Your name, address or phone number may be in there</li>
 </ul>
 <p><strong>Demonstrated attacks:</strong></p>
 <ul>
-<li><a href="https://arxiv.org/abs/2012.07805">Carlini et al.&nbsp;(2021)</a> extracted <span class="alert">verbatim training data</span> from GPT-2: names, phone numbers, emails</li>
+<li><a href="https://arxiv.org/abs/2012.07805">Carlini et al.&nbsp;(2021)</a> pulled <span class="alert">verbatim data</span> from GPT-2</li>
+<li>Leaked: names, phone numbers, emails</li>
 <li>Extraction attacks keep improving</li>
 </ul>
 <p><strong>The consent problem:</strong></p>
@@ -350,7 +357,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <p><a href="#/" data-modal-type="image" data-modal-url="figures/training-data.png"><img data-src="figures/training-data.png" style="width:100.0%"></a></p>
 <p>Source: <a href="https://thehackernews.com/2025/02/12000-api-keys-and-passwords-found-in.html">The Hacker News</a></p>
 <div style="font-size: 18px; margin-top: 15px;">
-<p>When you ask an LLM about yourself, it might <span class="alert">actually know things</span> from training data you never shared with it directly</p>
+<p>An LLM may <span class="alert">know things about you</span> that you never told it</p>
 </div>
 </div>
 </div></div>
@@ -358,32 +365,31 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </section>
 <section id="discussion-would-you-share" class="slide level2 scrollable">
 <h2>Discussion: would you share?</h2>
-<div style="margin-top: 30px; font-size: 25px;">
+<div style="margin-top: 30px; font-size: 24px;">
 <div class="columns">
-<div class="column" style="width:50%;">
+<div class="column" style="width:62%;">
 <p><strong>Quick poll (raise your hand):</strong></p>
 <p>Would you share your data if…</p>
 <ol type="1">
-<li>A health app predicts disease risk but <span class="alert">sells data to insurers</span>?</li>
-<li>A smart home device improves comfort but <span class="alert">records all conversations</span>?</li>
-<li>A job search site personalises results but <span class="alert">shares with employers</span>?</li>
-<li>A social app connects you with friends but <span class="alert">builds a profile for advertisers</span>?</li>
-<li>An AI tutor helps you learn but <span class="alert">reports to your school</span>?</li>
+<li class="fragment">A health app predicts disease but <span class="alert">sells data to insurers</span>?</li>
+<li class="fragment">A smart speaker helps but <span class="alert">records all conversations</span>?</li>
+<li class="fragment">A job site tailors results but <span class="alert">shares with employers</span>?</li>
+<li class="fragment">A social app connects friends but <span class="alert">profiles you for ads</span>?</li>
+<li class="fragment">An AI tutor helps you learn but <span class="alert">reports to your school</span>?</li>
 </ol>
-</div><div class="column" style="width:50%;">
+</div><div class="column" style="width:38%;">
 <div class="fragment">
-<p><strong>The usual pattern:</strong></p>
+<p><strong><a href="https://www.sciencedirect.com/science/article/pii/S0736585317302022">The privacy paradox</a>:</strong></p>
 <ul>
-<li>People say they care about privacy but don’t <span class="alert">act</span> like it</li>
-<li>This is the <a href="https://www.sciencedirect.com/science/article/pii/S0736585317302022">privacy paradox</a></li>
+<li>People value privacy but <span class="alert">share anyway</span></li>
 </ul>
 <p><strong>Why?</strong></p>
 <ul>
-<li>Benefits are immediate; harms are distant and abstract</li>
+<li>Benefits come now, but harms come later</li>
 <li>Default settings favour sharing</li>
 <li>Terms of service are unreadable</li>
-<li>“Everyone does it” normalisation</li>
-<li><span class="alert">We’re not good at probabilistic thinking</span></li>
+<li>“Everyone does it”</li>
+<li><span class="alert">We’re bad at judging risk</span></li>
 </ul>
 </div>
 </div></div>
@@ -396,28 +402,30 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </section>
 <section id="gdpr-fundamentals" class="slide level2 scrollable">
 <h2>GDPR fundamentals</h2>
-<div style="margin-top: 10px; font-size: 23px;">
+<div style="margin-top: 10px; font-size: 22px;">
 <div class="columns">
 <div class="column" style="width:62%;">
-<p>The <span class="alert">General Data Protection Regulation</span> (<a href="https://eur-lex.europa.eu/eli/reg/2016/679/oj/eng">2016/679</a>, effective 2018) is the EU’s comprehensive privacy law.</p>
+<p>The <span class="alert">General Data Protection Regulation</span> (<a href="https://eur-lex.europa.eu/eli/reg/2016/679/oj/eng">2016/679</a>, in force since 2018) is the EU’s comprehensive privacy law</p>
 <p><strong>Main principles:</strong></p>
 <ol type="1">
 <li><span class="alert">Lawfulness, fairness, transparency</span></li>
 <li><span class="alert">Purpose limitation</span>: use data only for the stated purpose</li>
 <li><span class="alert">Data minimisation</span>: collect only what’s necessary</li>
-<li><span class="alert">Accuracy</span> and <span class="alert">storage limitation</span>: keep it correct, and no longer than needed</li>
+<li><span class="alert">Accuracy</span>: keep data correct</li>
+<li><span class="alert">Storage limitation</span>: delete it when no longer needed</li>
 <li><span class="alert">Integrity and confidentiality</span>: protect data properly</li>
 <li><span class="alert">Accountability</span>: demonstrate compliance</li>
 </ol>
 <p><strong>Six lawful bases:</strong> consent, contract, legal obligation, vital interests, public task and legitimate interests</p>
 <ul>
-<li><span class="alert">Legitimate interests</span> is the most contested: firms use it to skip consent, even for AI training</li>
+<li><span class="alert">Legitimate interests</span> is the most contested basis</li>
+<li>Firms use it to skip consent, even for AI training</li>
 </ul>
 </div><div class="column" style="width:38%;">
 <div style="text-align: center;">
 <p><a href="#/" data-modal-type="image" data-modal-url="figures/gdpr.jpg"><img data-src="figures/gdpr.jpg" style="width:100.0%"></a></p>
 <div style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; font-size: 21px; margin-top: 15px;">
-<p>Like the EU AI Act, GDPR covers any organisation processing EU residents’ data, <span class="alert">wherever it is located</span>. A US startup with European users must comply with no office in the EU.</p>
+<p>Like the EU AI Act, GDPR covers anyone processing EU residents’ data, <span class="alert">wherever they are</span>. A US startup with EU users must comply</p>
 </div>
 </div>
 </div></div>
@@ -429,6 +437,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <div class="columns">
 <div class="column" style="width:55%;">
 <p><strong>You have the right to:</strong></p>
+<div style="font-size: 26px;">
 <table class="caption-top">
 <thead>
 <tr class="header">
@@ -438,47 +447,48 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </thead>
 <tbody>
 <tr class="odd">
-<td><strong>Access</strong></td>
+<td><span class="alert">Access</span></td>
 <td>Get a copy of your data</td>
 </tr>
 <tr class="even">
-<td><strong>Rectification</strong></td>
+<td><span class="alert">Rectification</span></td>
 <td>Correct inaccurate data</td>
 </tr>
 <tr class="odd">
-<td><strong>Erasure</strong></td>
+<td><span class="alert">Erasure</span></td>
 <td>“Right to be forgotten”</td>
 </tr>
 <tr class="even">
-<td><strong>Portability</strong></td>
+<td><span class="alert">Portability</span></td>
 <td>Move data to another service</td>
 </tr>
 <tr class="odd">
-<td><strong>Restriction</strong></td>
+<td><span class="alert">Restriction</span></td>
 <td>Limit processing</td>
 </tr>
 <tr class="even">
-<td><strong>Object</strong></td>
+<td><span class="alert">Object</span></td>
 <td>Stop certain processing</td>
 </tr>
 <tr class="odd">
-<td><strong>Automated decisions</strong></td>
+<td><span class="alert">Automated decisions</span></td>
 <td>Ask for a human in significant ones</td>
 </tr>
 </tbody>
 </table>
+</div>
 <p><strong><a href="https://gdpr-info.eu/art-22-gdpr/">Article 22</a>: automated decisions</strong></p>
 <ul>
-<li>You have the right <span class="alert">not to be subject</span> to purely automated decisions</li>
+<li>Right <span class="alert">not to be subject</span> to purely automated decisions</li>
 <li>Consequential decisions need <span class="alert">human involvement</span></li>
-<li>Exceptions exist for contracts and explicit consent</li>
+<li>Exceptions: contracts and explicit consent</li>
 </ul>
 </div><div class="column" style="width:45%;">
 <div style="text-align: center;">
 <p><a href="#/" data-modal-type="image" data-modal-url="figures/gdpr-02.jpg"><img data-src="figures/gdpr-02.jpg" style="width:100.0%"></a></p>
 <p>Source: <a href="https://gdpr.eu/what-is-gdpr/">GDPR.eu (Proton)</a></p>
 <div style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; font-size: 18px; margin-top: 15px;">
-<p><strong>In practice</strong>: <span class="alert">exercising these rights is often difficult</span>. Companies hide the forms, respond slowly, or claim exemptions.</p>
+<p><strong>In practice</strong>, <span class="alert">these rights are hard to use</span>: firms hide forms, reply slowly or claim exemptions</p>
 </div>
 </div>
 </div></div>
@@ -492,13 +502,13 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <ol type="1">
 <li><strong>Purpose limitation vs model training</strong>
 <ul>
-<li>You gave data for one purpose. Can it train a model for another?</li>
+<li>Can data given for X train a model for Y?</li>
 <li>AI companies claim <span class="alert">legitimate interest</span></li>
 </ul></li>
 <li><strong>Data minimisation vs big data</strong>
 <ul>
-<li>AI works better with more data; GDPR says collect only what’s necessary</li>
-<li>What’s “necessary” for a foundation model? Everything?</li>
+<li>AI wants more data; GDPR wants the minimum</li>
+<li>What’s “necessary” for an LLM? Everything?</li>
 </ul></li>
 <li><strong>Right to explanation vs black boxes</strong>
 <ul>
@@ -508,7 +518,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <li><strong>Right to erasure vs model training</strong>
 <ul>
 <li>Can you demand removal from a trained model?</li>
-<li>“Unlearning” is technically very difficult</li>
+<li>“Unlearning” is technically hard</li>
 </ul></li>
 </ol>
 </div><div class="column" style="width:40%;">
@@ -516,7 +526,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <p><a href="#/" data-modal-type="image" data-modal-url="figures/gdpr-ai.webp"><img data-src="figures/gdpr-ai.webp" style="width:100.0%"></a></p>
 <p>Source: <a href="https://certpro.com/ai-and-gdpr/">CertPro</a></p>
 <div style="font-size: 21px; margin-top: 15px;">
-<p>GDPR was written before the LLM era. <span class="alert">Applying 2018 law to 2026 technology</span> creates interpretation challenges</p>
+<p>GDPR predates LLMs; <span class="alert">applying 2018 law to 2026 technology</span> raises open questions</p>
 </div>
 </div>
 </div></div>
@@ -527,7 +537,8 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <div style="margin-top: 30px; font-size: 20px;">
 <div class="columns">
 <div class="column" style="width:55%;">
-<p><strong>No comprehensive federal privacy law</strong>. Instead, a <span class="alert">patchwork</span> of sector-specific rules:</p>
+<p><strong>No comprehensive federal law</strong>, just a <span class="alert">patchwork</span> of sector rules:</p>
+<div style="font-size: 25px;">
 <table class="caption-top">
 <thead>
 <tr class="header">
@@ -569,12 +580,13 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </tr>
 </tbody>
 </table>
-<p><strong>State laws filling the gap:</strong></p>
+</div>
+<p><strong>States fill the gap:</strong></p>
 <ul>
-<li><span class="alert"><a href="https://oag.ca.gov/privacy/ccpa">California (CCPA/CPRA)</a></span>: most comprehensive, GDPR-like rights</li>
-<li><span class="alert">Virginia, Colorado, Connecticut</span>: similar frameworks</li>
-<li><span class="alert"><a href="https://www.ilga.gov/legislation/ilcs/ilcs3.asp?ActID=3004&amp;ChapterID=57">Illinois BIPA</a></span>: biometric data, with private right of action</li>
-<li><span class="alert">23 states</span> now have comprehensive privacy laws (Vermont in June 2026)</li>
+<li><span class="alert"><a href="https://oag.ca.gov/privacy/ccpa">California (CCPA/CPRA)</a></span>: closest to GDPR</li>
+<li><span class="alert"><a href="https://law.lis.virginia.gov/vacodefull/title59.1/chapter53/">Virginia</a>, <a href="https://coag.gov/resources/colorado-privacy-act/">Colorado</a>, <a href="https://portal.ct.gov/ag/sections/privacy/the-connecticut-data-privacy-act">Connecticut</a></span>: similar frameworks</li>
+<li><span class="alert"><a href="https://www.ilga.gov/legislation/ilcs/ilcs3.asp?ActID=3004&amp;ChapterID=57">Illinois BIPA</a></span>: biometric data; individuals can sue</li>
+<li><span class="alert"><a href="https://natlawreview.com/article/vermont-makes-23-states-comprehensive-data-privacy-laws">23 states</a></span> have such laws (<a href="https://legislature.vermont.gov/bill/status/2026/S.71">Vermont</a> joined June 2026)</li>
 </ul>
 </div><div class="column" style="width:45%;">
 <div style="text-align: center;">
@@ -589,20 +601,20 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <div style="margin-top: 30px; font-size: 22px;">
 <div class="columns">
 <div class="column" style="width:60%;">
-<p><strong>Major fines (selected):</strong></p>
+<p><strong>Selected major fines:</strong></p>
 <table class="caption-top">
 <thead>
 <tr class="header">
 <th>Company</th>
 <th>Fine</th>
-<th>What they did wrong</th>
+<th>Violation</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td><a href="https://www.edpb.europa.eu/news/news/2023/12-billion-euro-fine-facebook-result-edpb-binding-decision_en">Meta (2023)</a></td>
 <td><span class="alert">€1.2B</span></td>
-<td>Sent EU user data to the US without adequate safeguards</td>
+<td>Sent EU data to the US without adequate safeguards</td>
 </tr>
 <tr class="even">
 <td><a href="https://dataprivacymanager.net/luxembourg-dpa-issues-e746-million-gdpr-fine-to-amazon/">Amazon (2021)</a></td>
@@ -622,23 +634,23 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <tr class="odd">
 <td><a href="https://www.dataprotection.ie/en/news-media/press-releases/DPC-announces-345-million-euro-fine-of-TikTok">TikTok (2023)</a></td>
 <td>€345M</td>
-<td>Failed to protect children’s privacy settings and data</td>
+<td>Failed to protect children’s data and settings</td>
 </tr>
 </tbody>
 </table>
 <p><strong>Patterns:</strong></p>
 <ul>
-<li>Big tech companies are the primary targets</li>
+<li>Big tech is the main target</li>
 <li>Regulators focus on data transfers, consent and children</li>
 <li>Fines are <span class="alert">getting larger</span></li>
-<li>Enforcement varies by country; Ireland’s regulator is often called slow</li>
+<li>Enforcement varies; critics call Ireland’s regulator slow</li>
 </ul>
 </div><div class="column" style="width:40%;">
 <div style="text-align: center;">
 <p><a href="#/" data-modal-type="image" data-modal-url="figures/gdpr-fines.avif"><img data-src="figures/gdpr-fines.avif" style="width:80.0%"></a></p>
 <p>Source: <a href="https://secureframe.com/hub/gdpr/fines-and-penalties">Secureframe</a></p>
 <div style="font-size: 18px; margin-top: 15px;">
-<p>€1.2 billion sounds big, but Meta made <span class="alert">~$135 billion in 2023</span>. Is that a fine or a cost of doing business?</p>
+<p>Meta made <span class="alert">~$135 billion in 2023</span>. Is €1.2B a fine or a cost of doing business?</p>
 </div>
 </div>
 </div></div>
@@ -654,24 +666,25 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <div style="margin-top: 30px; font-size: 22px;">
 <div class="columns">
 <div class="column" style="width:55%;">
-<p><span class="alert">Differential privacy</span> is a mathematical framework for privacy-preserving data analysis (<a href="https://www.cis.upenn.edu/~aaroth/Papers/privacybook.pdf">Dwork &amp; Roth, 2014</a>).</p>
+<p><span class="alert">Differential privacy</span> adds random noise to results, so no one can tell if <span class="alert">you</span> are in the data (<a href="https://www.cis.upenn.edu/~aaroth/Papers/privacybook.pdf">Dwork &amp; Roth, 2014</a>)</p>
 <ul>
-<li>Add calibrated <span class="alert">random noise</span> to query results before releasing them</li>
-<li>“How many people here have diabetes?” The true answer is 137; the system returns 134 or 141</li>
-<li>Individual records stay hidden; aggregate patterns stay visible</li>
+<li>“How many patients have diabetes?” True answer: 137</li>
+<li>Released: 134 or 141, close enough for research</li>
+<li>Patterns stay visible, but individuals stay hidden</li>
 </ul>
-<p><strong>Formal guarantee:</strong></p>
+<p><span class="alert">Epsilon (ε)</span> is set by the data owner before release:</p>
 <ul>
-<li>The output is <span class="alert">nearly the same</span> whether or not any single individual is in the dataset</li>
-<li><span class="alert">Epsilon (ε)</span> measures privacy loss: small ε means strong privacy and noisier results, large ε the reverse</li>
-<li>This is provable, not just a promise</li>
+<li>ε limits how much <span class="alert">one person</span> can change a result</li>
+<li>Small ε (below 1): more noise, strong privacy</li>
+<li>Large ε (around 10): less noise, weak privacy</li>
+<li>Small ε: no one can tell if the count is 136 or 137</li>
 </ul>
 </div><div class="column" style="width:45%;">
 <div style="text-align: center;">
 <p><a href="#/" data-modal-type="image" data-modal-url="figures/dp-intro.png"><img data-src="figures/dp-intro.png" style="width:100.0%"></a></p>
 <p>Source: <a href="https://flower.ai/docs/framework/explanation-differential-privacy.html">Flower AI</a></p>
 <div style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; font-size: 21px; margin-top: 15px;">
-<p><strong>Real-world use</strong>: Apple for emoji suggestions, Google for Chrome usage stats, the US Census for 2020 data</p>
+<p><strong>Used by</strong>: <a href="https://machinelearning.apple.com/research/learning-with-privacy-at-scale">Apple</a> (emoji suggestions), <a href="https://research.google/pubs/rappor-randomized-aggregatable-privacy-preserving-ordinal-response/">Google</a> (Chrome stats), <a href="https://www.census.gov/newsroom/press-releases/2021/2020-census-key-parameters.html">US Census</a> (2020, ε = 19.61)</p>
 </div>
 </div>
 </div></div>
@@ -687,14 +700,14 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <ol type="1">
 <li>A server sends the <span class="alert">same model</span> to many devices</li>
 <li>Each device trains it on its <span class="alert">local data</span></li>
-<li>Each sends back only <span class="alert">what it learned</span> (weights), not the data</li>
-<li>The server <span class="alert">averages</span> the updates and sends the better model back</li>
+<li>Each returns only <span class="alert">what it learned</span> (weights)</li>
+<li>The server <span class="alert">averages</span> updates and repeats</li>
 </ol>
-<p><strong>Why it matters for privacy:</strong></p>
+<p><strong>Privacy gains and limits:</strong></p>
 <ul>
-<li>Your raw data <span class="alert">never leaves your device</span>: the server sees only model updates</li>
-<li>Not perfect: updates can still <span class="alert">leak information</span></li>
-<li>Coordinating thousands of devices is complex</li>
+<li>Raw data <span class="alert">never leaves your device</span></li>
+<li>Updates can still <span class="alert">leak information</span></li>
+<li>Coordinating thousands of devices is hard</li>
 </ul>
 </div><div class="column" style="width:40%;">
 <div style="text-align: center;">
@@ -702,7 +715,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <p><a href="#/" data-modal-type="image" data-modal-url="figures/federated-learning.png"><img data-src="figures/federated-learning.png" style="width:100.0%"></a></p>
 <p>Source: <a href="https://en.wikipedia.org/wiki/Federated_learning">Wikipedia</a></p>
 <div style="font-size: 21px; margin-top: 15px;">
-<p><strong>Example</strong>: Google’s Gboard improves predictions this way. Your typing stays on your phone; only model improvements are shared</p>
+<p><strong>Example</strong>: Google’s phone keyboard (<a href="https://research.google/blog/federated-learning-collaborative-machine-learning-without-centralized-training-data/">Gboard</a>) learns from your typing, but your texts stay on your phone</p>
 </div>
 </div>
 </div></div>
@@ -713,18 +726,19 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <div style="margin-top: 30px; font-size: 24px;">
 <div class="columns">
 <div class="column" style="width:58%;">
-<p><span class="alert">Synthetic data</span> is data that looks real but isn’t (<a href="https://arxiv.org/abs/2205.03257">Jordon et al., 2022</a>).</p>
+<p><span class="alert">Synthetic data</span> looks real but isn’t (<a href="https://arxiv.org/abs/2205.03257">Jordon et al., 2022</a>)</p>
 <p><strong>How it works:</strong></p>
 <ul>
-<li>Train a generative model to learn the real data’s patterns</li>
-<li>Generate <span class="alert">new, fake data points</span> that look real</li>
-<li>Train your AI on those instead</li>
+<li>Train a generative model on real data</li>
+<li>Generate <span class="alert">new, fake records</span></li>
+<li>Train your AI on the fakes</li>
 </ul>
-<p><strong>Privacy benefits and limitations:</strong></p>
+<p><strong>Benefits and limits:</strong></p>
 <ul>
-<li>Fewer direct links to real people, but generators can still <span class="alert"><a href="https://www.usenix.org/conference/usenixsecurity22/presentation/stadler">leak training records</a></span></li>
-<li>Easier to share for research and collaboration</li>
-<li>It may <span class="alert">not capture rare cases</span> well</li>
+<li>Fewer direct links to real people</li>
+<li>But generators can still <span class="alert"><a href="https://www.usenix.org/conference/usenixsecurity22/presentation/stadler">leak training records</a></span></li>
+<li>Easier to share for research</li>
+<li>May <span class="alert">miss rare cases</span></li>
 </ul>
 </div><div class="column" style="width:42%;">
 <div style="text-align: center;">
@@ -732,7 +746,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <p><a href="#/" data-modal-type="image" data-modal-url="figures/synthetic-data.png"><img data-src="figures/synthetic-data.png" style="width:100.0%"></a></p>
 <p>Source: <a href="https://dataingovernment.blog.gov.uk/2020/08/20/synthetic-data-unlocking-the-power-of-data-and-skills-for-machine-learning/">GOV.UK</a></p>
 <div style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; font-size: 21px; margin-top: 15px;">
-<p><strong>Real-world use</strong>: healthcare bodies use synthetic patient data for research; banks test fraud detection on synthetic transactions</p>
+<p><strong>Used by</strong>: health researchers (<a href="https://digital.nhs.uk/services/artificial-data">fake patient records</a>), banks (<a href="https://www.jpmorgan.com/technology/artificial-intelligence/initiatives/synthetic-data">fraud detection tests</a>)</p>
 </div>
 </div>
 </div></div>
@@ -740,28 +754,31 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </section>
 <section id="do-these-techniques-actually-help" class="slide level2">
 <h2>Do these techniques actually help?</h2>
-<div style="margin-top: 30px; font-size: 24px;">
+<div style="margin-top: 30px; font-size: 22px;">
 <div class="columns">
 <div class="column" style="width:50%;">
 <p><strong>What they can do:</strong></p>
 <ul>
-<li>Allow research on sensitive medical and financial data while protecting privacy</li>
+<li>Allow research on sensitive health data</li>
 <li>Give engineers concrete tools</li>
-<li>Differential privacy gives <span class="alert">mathematical guarantees</span></li>
+<li>Differential privacy is <span class="alert">provable</span></li>
 <li>Federated learning keeps data <span class="alert">on the device</span></li>
 </ul>
 <p><strong>What they cannot do:</strong></p>
 <ul>
-<li>Stop companies collecting data in the first place</li>
-<li>Fix the <span class="alert">power imbalance</span> between users and platforms</li>
-<li>Make users understand how their data are used</li>
+<li>Stop data collection in the first place</li>
+<li>Fix the <span class="alert">power imbalance</span> with platforms</li>
+<li>Make users understand data use</li>
 </ul>
 </div><div class="column" style="width:50%;">
-<p><strong>However…</strong></p>
-<p>The best protection is <span class="alert">not collecting data at all</span>. But AI companies have the opposite incentive: more data = better models = more profit</p>
-<p>Technical fixes work <em>within</em> the system, not on the system itself</p>
+<p><strong>However:</strong></p>
+<ul>
+<li>The best protection is <span class="alert">not collecting data</span></li>
+<li>AI firms’ logic: more data = more profit</li>
+<li>Technical fixes work <em>within</em> the system, not on it</li>
+</ul>
 <div style="background: rgba(230, 57, 70, 0.1); padding: 15px; border-radius: 10px; font-size: 21px; margin-top: 15px;">
-<p><strong>Watch out for “privacy washing”</strong>: companies announce differential privacy with <span class="alert">large epsilon values</span> (weak privacy), or federated learning that still collects metadata</p>
+<p><strong>Beware “privacy washing”</strong>: differential privacy with <span class="alert">large ε</span> (weak privacy), or federated learning that still collects metadata</p>
 </div>
 </div></div>
 </div>
@@ -777,40 +794,47 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <div class="columns">
 <div class="column" style="width:55%;">
 <ul>
-<li>January 2020: the <a href="https://www.nytimes.com/2020/01/18/technology/clearview-privacy-facial-recognition.html">NYT</a> revealed Clearview had scraped <span class="alert">3 billion photos</span> from social media (70+ billion today)</li>
-<li>It built a face search engine <span class="alert">without consent</span>: people never knew they were in it</li>
-<li>It sold access to <span class="alert">thousands of US police agencies</span>, which ran <a href="https://www.bbc.com/news/technology-65057011">nearly a million searches</a> by 2023</li>
+<li>Jan 2020: the <a href="https://www.nytimes.com/2020/01/18/technology/clearview-privacy-facial-recognition.html">NYT</a> exposed <span class="alert">3 billion scraped photos</span></li>
+<li>Clearview now has over 70 billion social media photos</li>
+<li>It built a face search engine <span class="alert">without consent or notice</span></li>
+<li>Sold to <span class="alert">thousands of US police agencies</span></li>
+<li>Police ran <a href="https://www.bbc.com/news/technology-65057011">~1M searches</a> by 2023</li>
 </ul>
-<p><strong>The legal fallout:</strong></p>
+<p><strong>Legal fallout:</strong></p>
 <ul>
-<li>The <a href="https://www.aclu.org/cases/aclu-v-clearview-ai">ACLU sued</a> under <span class="alert">Illinois BIPA</span> (2020): a 2022 settlement <span class="alert">bans sales</span> to most private companies</li>
+<li>The <a href="https://www.aclu.org/cases/aclu-v-clearview-ai">ACLU sued</a> under <span class="alert">Illinois BIPA</span> (2020)</li>
+<li>2022 settlement <span class="alert">bans sales</span> to most private firms</li>
 <li><a href="https://www.cnil.fr/en/facial-recognition-20-million-euros-penalty-against-clearview-ai">France (CNIL)</a> and <a href="https://www.edpb.europa.eu/news/national-news/2022/facial-recognition-italian-sa-fines-clearview-ai-eur-20-million_en">Italy</a>: €20M fine each</li>
 <li><a href="https://www.loc.gov/item/global-legal-monitor/2024-10-16/netherlands-face-recognition-company-clearview-ai-fined-for-violating-eus-general-data-protection-regulation/">Netherlands</a>: €30.5M fine (2024)</li>
-<li>Australia and Canada: ordered to delete data; the UK case is still in court</li>
+<li>Australia, Canada: ordered to delete data</li>
+<li>UK: still in court</li>
 </ul>
 </div><div class="column" style="width:45%;">
 <div style="text-align: center;">
 <p><a href="#/" data-modal-type="image" data-modal-url="figures/clearview-ai.png"><img data-src="figures/clearview-ai.png" style="width:100.0%"></a></p>
 <p>Source: <a href="https://www.loc.gov/item/global-legal-monitor/2024-10-16/netherlands-face-recognition-company-clearview-ai-fined-for-violating-eus-general-data-protection-regulation/">Library of Congress</a></p>
 <div style="background: rgba(230, 57, 70, 0.1); padding: 15px; border-radius: 10px; font-size: 21px; margin-top: 15px;">
-<p>Clearview said the service was only for law enforcement, but gave accounts to <span class="alert">retailers, banks and investors’ friends</span>. Critics call it a <a href="https://www.bbc.com/news/technology-65057011">“perpetual police line-up”</a>.</p>
+<p>Sold as police-only, but accounts went to <span class="alert">retailers, banks and investors’ friends</span>. Critics call it a <a href="https://www.bbc.com/news/technology-65057011">“perpetual police line-up”</a></p>
 </div>
 </div>
 </div></div>
 </div>
 </section>
-<section id="quick-quiz-whats-wrong-and-how-would-you-fix-it" class="slide level2 scrollable">
+<section id="sec-privacy-quiz" class="slide level2 scrollable">
 <h2>Quick quiz: what’s wrong and how would you fix it?</h2>
 <div style="margin-top: 100px; font-size: 28px;">
 <ol type="1">
 <li class="fragment"><p>A social media company uses your messages to train an AI without telling you</p></li>
-<li class="fragment"><p>A shopping app collects your exact location every 30 seconds, even when not in use</p></li>
+<li class="fragment"><p>A shopping app logs your location every 30 seconds, even when closed</p></li>
 <li class="fragment"><p>A company keeps customer data “just in case” with no deletion policy</p></li>
 <li class="fragment"><p>An AI hiring tool rejects candidates without any human review</p></li>
 </ol>
+<div style="margin-top: 40px; font-size: 18px;">
+<p><a href="#/sec-appendix-privacy-quiz"><span class="button">Possible answers</span></a></p>
+</div>
 </div>
 </section>
-<section id="wheres-your-line" class="slide level2 scrollable">
+<section id="sec-wheres-your-line" class="slide level2 scrollable">
 <h2>Where’s your line?</h2>
 <div style="margin-top: 30px; font-size: 22px;">
 <div class="columns">
@@ -831,15 +855,18 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <li>Connection with others like you</li>
 </ul>
 </div><div class="column" style="width:50%;">
-<p><strong>Let’s discuss together:</strong></p>
+<p><strong>Discuss:</strong></p>
 <ol type="1">
 <li>Would you use this app?</li>
 <li>What would make you change your mind?</li>
 <li>What data would be “too much”?</li>
-<li>Does it matter who runs it (tech company, hospital, government)?</li>
+<li>Does it matter if a firm, hospital or state runs it?</li>
 </ol>
 <div style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; font-size: 18px; margin-top: 15px;">
-<p>There’s no right answer. The point is to <span class="alert">identify your own values</span> and understand what trade-offs you’re willing to make</p>
+<p>No right answer: <span class="alert">identify your own values</span> and the trade-offs you’ll accept</p>
+</div>
+<div style="margin-top: 15px; font-size: 18px;">
+<p><a href="#/sec-appendix-wheres-your-line"><span class="button">Points to raise</span></a></p>
 </div>
 </div></div>
 </div>
@@ -851,24 +878,30 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <div class="column" style="width:55%;">
 <p><strong>Individual actions:</strong></p>
 <ul>
-<li>Review privacy settings and use <span class="alert">privacy-focused tools</span> (<a href="https://signal.org/">Signal</a>, <a href="https://duckduckgo.com/">DuckDuckGo</a>, <a href="https://www.mozilla.org/firefox/">Firefox</a>)</li>
-<li>Limit location sharing and use different email addresses for different services</li>
-<li>Exercise your <a href="https://gdpr-info.eu/art-15-gdpr/">GDPR</a>/<a href="https://oag.ca.gov/privacy/ccpa">CCPA</a> rights (access, deletion requests) and be <span class="alert">sceptical of “personalisation”</span></li>
+<li>Review your privacy settings</li>
+<li>Use <span class="alert">privacy tools</span> (<a href="https://signal.org/">Signal</a>, <a href="https://duckduckgo.com/">DuckDuckGo</a>, <a href="https://www.mozilla.org/firefox/">Firefox</a>)</li>
+<li>Limit location sharing</li>
+<li>Use a different email for each service</li>
+<li>Use your <a href="https://gdpr-info.eu/art-15-gdpr/">GDPR</a>/<a href="https://oag.ca.gov/privacy/ccpa">CCPA</a> rights (access, deletion)</li>
+<li>Be <span class="alert">sceptical of “personalisation”</span></li>
 </ul>
-<p><strong>Limitations of individual action:</strong></p>
+<p><strong>Limits of individual action:</strong></p>
 <ul>
-<li>Opting out often means losing service. Privacy is <span class="alert">collective</span></li>
-<li>Your data can be inferred from others’ data, and power imbalance is structural</li>
+<li>Opting out often means losing the service</li>
+<li>Privacy is <span class="alert">collective</span>: others’ data reveals yours</li>
+<li>The power imbalance is structural</li>
 </ul>
 </div><div class="column" style="width:45%;">
 <p><strong>Collective action:</strong></p>
 <ul>
-<li>Support privacy legislation and demand transparency from companies</li>
-<li>Support organisations fighting for privacy (<a href="https://www.eff.org/">EFF</a>, <a href="https://epic.org/">EPIC</a>, <a href="https://noyb.eu/">noyb</a>)</li>
-<li>Choose privacy-respecting services; vote for candidates who protect privacy</li>
+<li>Back privacy laws</li>
+<li>Demand transparency from companies</li>
+<li>Support <a href="https://www.eff.org/">EFF</a>, <a href="https://epic.org/">EPIC</a> or <a href="https://noyb.eu/">noyb</a></li>
+<li>Choose privacy-respecting services</li>
+<li>Vote for pro-privacy candidates</li>
 </ul>
 <div style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; font-size: 18px; margin-top: 15px;">
-<p>Using Signal instead of WhatsApp helps, but it won’t change how insurers use your health data. That takes <span class="alert">legislation</span></p>
+<p>Signal over WhatsApp helps, but only <span class="alert">legislation</span> changes how insurers use your health data</p>
 </div>
 </div></div>
 </div>
@@ -914,8 +947,85 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <section id="and-thats-all-for-today" class="title-slide slide level1 center" data-background-color="#1B3A6B">
 <h1>… and that’s all for today! 🎉</h1>
 
+</section>
+
+<section>
+<section id="appendix" class="title-slide slide level1 center" data-background-color="#1B3A6B">
+<h1>Appendix</h1>
 
 </section>
+<section id="sec-appendix-privacy-quiz" class="slide level2">
+<h2>Quick quiz: possible answers</h2>
+<div style="margin-top: 20px; font-size: 22px;">
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>1. Messages used to train AI</strong></p>
+<ul>
+<li>Breaks <span class="alert">transparency</span> and <span class="alert">purpose limitation</span></li>
+<li>Fix: tell users and ask for opt-in consent</li>
+</ul>
+<p><strong>2. Location every 30 seconds</strong></p>
+<ul>
+<li>Breaks <span class="alert">data minimisation</span></li>
+<li>Fix: track only while the app is open</li>
+<li>Use approximate location where possible</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><strong>3. Data kept “just in case”</strong></p>
+<ul>
+<li>Breaks <span class="alert">storage limitation</span></li>
+<li>Old data adds breach risk for no benefit</li>
+<li>Fix: set retention periods, then delete</li>
+</ul>
+<p><strong>4. Hiring tool with no human review</strong></p>
+<ul>
+<li>Breaks <span class="alert">GDPR Article 22</span> on automated decisions</li>
+<li>Fix: a human reviews every rejection</li>
+<li>Candidates can ask why and contest it</li>
+</ul>
+</div></div>
+<div style="margin-top: 15px; font-size: 18px;">
+<p><a href="#/sec-privacy-quiz"><span class="button">Back to the quiz</span></a></p>
+</div>
+</div>
+</section>
+<section id="sec-appendix-wheres-your-line" class="slide level2">
+<h2>Where’s your line: points to raise</h2>
+<div style="margin-top: 20px; font-size: 22px;">
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>1. Would you use it?</strong></p>
+<ul>
+<li>The app is free, so your data likely pays for it</li>
+<li><span class="alert">Insurer discounts</span> can turn into higher premiums</li>
+</ul>
+<p><strong>2. What would change your mind?</strong></p>
+<ul>
+<li>Data stays on your phone</li>
+<li>No sale to third parties</li>
+<li>Easy deletion when you quit</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><strong>3. What is “too much”?</strong></p>
+<ul>
+<li>Location, diet and sleep <span class="alert">reveal health conditions</span></li>
+<li>Social data exposes your friends too</li>
+</ul>
+<p><strong>4. Who runs it?</strong></p>
+<ul>
+<li>Tech firm: ads and data sales</li>
+<li>Hospital: <span class="alert">HIPAA</span> applies</li>
+<li>Most health apps fall <span class="alert">outside HIPAA</span></li>
+<li>Government: hard to opt out</li>
+</ul>
+</div></div>
+<div style="margin-top: 15px; font-size: 18px;">
+<p><a href="#/sec-wheres-your-line"><span class="button">Back to the discussion</span></a></p>
+</div>
+</div>
+
+
+</section></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">

@@ -3700,14 +3700,14 @@
     "href": "lectures/lecture-19/19-privacy.html#recap-of-last-class",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Recap of last class",
-    "text": "Recap of last class\n\n\n\n\nEU AI Act: first comprehensive AI law; banned, high, limited and minimal risk\nFines up to 7% of global turnover; high-risk rules delayed to December 2027\nUS approach: sectoral regulation with state-level initiatives\nA 2025 executive order lets federal lawyers challenge state AI laws\nChina: content control, innovation goals, algorithm registration\nNo global consensus yet, but convergence on key principles is likely\nToday: how does AI intersect with privacy?\n\n\n\n\n\n\nOh, well 😅"
+    "text": "Recap of last class\n\n\n\n\nEU AI Act: first comprehensive AI law\nRisk tiers: banned, high, limited, minimal\nFines up to 7% of global turnover\nHigh-risk rules delayed to December 2027\nUS: sectoral rules plus state laws\nA 2025 executive order targets state AI laws\nChina: censorship, innovation, algorithm registry\nNo global consensus; principles likely to converge\nToday: how does AI intersect with privacy?\n\n\n\n\n\n\nOh, well 😅"
   },
   {
     "objectID": "lectures/lecture-19/19-privacy.html#lecture-overview",
     "href": "lectures/lecture-19/19-privacy.html#lecture-overview",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Lecture overview",
-    "text": "Lecture overview\nWhat we will cover today\n\n\n\nPart 1: Privacy in the AI age\n\nWhy AI makes privacy harder\nData collection at unprecedented scale\nInference and prediction of sensitive attributes\n\nPart 2: Legal frameworks\n\nGDPR and data protection principles\nRights of individuals\nUS privacy landscape\n\n\nPart 3: Technical approaches\n\nDifferential privacy\nFederated learning\nPrivacy-preserving machine learning (synthetic data)\n\nPart 4: Challenges and tensions\n\nCase study: Clearview AI\nDiscussion: where’s your line on privacy?\nWhat can you do?"
+    "text": "Lecture overview\nWhat we will cover today\n\n\n\nPart 1: Privacy in the AI age\n\nWhy AI makes privacy harder\nData collection at unprecedented scale\nInferring sensitive traits\n\nPart 2: Legal frameworks\n\nGDPR and data protection principles\nRights of individuals\nUS privacy landscape\n\n\nPart 3: Technical approaches\n\nDifferential privacy\nFederated learning\nSynthetic data\n\nPart 4: Challenges and tensions\n\nCase study: Clearview AI\nDiscussion: where’s your line on privacy?\nWhat can you do?"
   },
   {
     "objectID": "lectures/lecture-19/19-privacy.html#meme-of-the-day",
@@ -3728,119 +3728,119 @@
     "href": "lectures/lecture-19/19-privacy.html#why-ai-makes-privacy-harder",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Why AI makes privacy harder",
-    "text": "Why AI makes privacy harder\n\n\n\nAI breaks privacy in ways older laws did not anticipate:\nScale of collection:\n\nOld surveillance was limited by staffing; AI collection runs around the clock at almost no cost\nEvery interaction becomes “data exhaust”, a byproduct of normal use\n\nInference capabilities:\n\nAI predicts sensitive information from innocuous data: shopping → health, typing → mood, friends → politics\nThings you never disclosed can be inferred\n\nPersistence:\n\nData doesn’t decay: models trained today affect you forever, and decisions follow you across contexts\n“Right to be forgotten” is technically hard\n\n\n\n\nSource: AI Multiple\n\n“If you’re not paying for the product, you are the product.” This understates it! Even when you pay, your data is often the real product!"
+    "text": "Why AI makes privacy harder\n\n\n\nOlder privacy laws did not anticipate these problems:\nScale of collection:\n\nOld surveillance needed staff; AI runs 24/7, almost for free\nEvery click, scroll and location ping becomes data\n\nInference capabilities:\n\nAI predicts sensitive traits from harmless data\nShopping → health, typing → mood, friends → politics\nIt infers what you never disclosed\n\nPersistence:\n\nData doesn’t decay: today’s models affect you forever\nDecisions follow you across contexts\n“Right to be forgotten” is technically hard\n\n\n\n\nSource: AI Multiple\n\n“If you’re not paying for the product, you are the product.” Even paying customers are often the product"
   },
   {
     "objectID": "lectures/lecture-19/19-privacy.html#what-can-be-inferred-from-your-data",
     "href": "lectures/lecture-19/19-privacy.html#what-can-be-inferred-from-your-data",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "What can be inferred from your data?",
-    "text": "What can be inferred from your data?\n\n\n\nResearch has shown AI can predict:\n\n\n\nData source\nWhat can be inferred\n\n\n\n\nFacebook likes\nPolitical views, sexuality, personality\n\n\nSmartphone sensors\nDepression, anxiety, Parkinson’s\n\n\nTyping patterns\nAge, gender, emotional state\n\n\nPurchase history\nPregnancy, health conditions\n\n\nLocation data\nHome address, workplace, religion\n\n\nVoice recordings\nEmotional state, health, age\n\n\n\nFamous example: Target and pregnancy\n\nTarget’s algorithm spotted a pregnant teenager and posted baby coupons to her home\nHer father complained to the store: she was “still in high school”\nDays later he apologised to the manager: she was pregnant\nThe algorithm knew before her family did (NYT)\n\n\n\n\nSource: Time\n\nYou can control what you share, but you cannot control what can be inferred from it"
+    "text": "What can be inferred from your data?\n\n\n\nResearch shows AI can predict:\n\n\n\n\nData source\nInferred\n\n\n\n\nFacebook likes\nPolitical views, sexuality, personality\n\n\nSmartphone sensors\nDepression, anxiety, Parkinson’s\n\n\nTyping patterns\nAge, gender, emotional state\n\n\nPurchase history\nPregnancy, health conditions\n\n\nLocation data\nHome address, workplace, religion\n\n\nVoice recordings\nEmotional state, health, age\n\n\n\n\nExample: Target and pregnancy\n\nTarget mailed baby coupons to a pregnant teen\nHer father complained: she was “still in high school”\nDays later, he apologised: she was pregnant\nThe algorithm knew before her family did (NYT)\n\n\n\n\nSource: Time\n\nYou can control what you share, but you cannot control what can be inferred from it"
   },
   {
     "objectID": "lectures/lecture-19/19-privacy.html#training-data-and-privacy",
     "href": "lectures/lecture-19/19-privacy.html#training-data-and-privacy",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Training data and privacy",
-    "text": "Training data and privacy\n\n\n\nLLMs have a training data problem:\n\nTrained on internet-scale data, which includes personal information\nModels can memorise and regurgitate training data\nYour name, address, phone number might be in there!\n\nDemonstrated attacks:\n\nCarlini et al. (2021) extracted verbatim training data from GPT-2: names, phone numbers, emails\nExtraction attacks keep improving\n\nThe consent problem:\n\nMost people don’t know what’s in training sets\n“Publicly available” ≠ “consented to AI training”\n\n\n\n\nSource: The Hacker News\n\nWhen you ask an LLM about yourself, it might actually know things from training data you never shared with it directly"
+    "text": "Training data and privacy\n\n\n\nThe training data problem:\n\nWeb-scale data includes personal information\nModels can memorise and regurgitate training data\nYour name, address or phone number may be in there\n\nDemonstrated attacks:\n\nCarlini et al. (2021) pulled verbatim data from GPT-2\nLeaked: names, phone numbers, emails\nExtraction attacks keep improving\n\nThe consent problem:\n\nMost people don’t know what’s in training sets\n“Publicly available” ≠ “consented to AI training”\n\n\n\n\nSource: The Hacker News\n\nAn LLM may know things about you that you never told it"
   },
   {
     "objectID": "lectures/lecture-19/19-privacy.html#discussion-would-you-share",
     "href": "lectures/lecture-19/19-privacy.html#discussion-would-you-share",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Discussion: would you share?",
-    "text": "Discussion: would you share?\n\n\n\nQuick poll (raise your hand):\nWould you share your data if…\n\nA health app predicts disease risk but sells data to insurers?\nA smart home device improves comfort but records all conversations?\nA job search site personalises results but shares with employers?\nA social app connects you with friends but builds a profile for advertisers?\nAn AI tutor helps you learn but reports to your school?\n\n\n\nThe usual pattern:\n\nPeople say they care about privacy but don’t act like it\nThis is the privacy paradox\n\nWhy?\n\nBenefits are immediate; harms are distant and abstract\nDefault settings favour sharing\nTerms of service are unreadable\n“Everyone does it” normalisation\nWe’re not good at probabilistic thinking"
+    "text": "Discussion: would you share?\n\n\n\nQuick poll (raise your hand):\nWould you share your data if…\n\nA health app predicts disease but sells data to insurers?\nA smart speaker helps but records all conversations?\nA job site tailors results but shares with employers?\nA social app connects friends but profiles you for ads?\nAn AI tutor helps you learn but reports to your school?\n\n\n\nThe privacy paradox:\n\nPeople value privacy but share anyway\n\nWhy?\n\nBenefits come now, but harms come later\nDefault settings favour sharing\nTerms of service are unreadable\n“Everyone does it”\nWe’re bad at judging risk"
   },
   {
     "objectID": "lectures/lecture-19/19-privacy.html#gdpr-fundamentals",
     "href": "lectures/lecture-19/19-privacy.html#gdpr-fundamentals",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "GDPR fundamentals",
-    "text": "GDPR fundamentals\n\n\n\nThe General Data Protection Regulation (2016/679, effective 2018) is the EU’s comprehensive privacy law.\nMain principles:\n\nLawfulness, fairness, transparency\nPurpose limitation: use data only for the stated purpose\nData minimisation: collect only what’s necessary\nAccuracy and storage limitation: keep it correct, and no longer than needed\nIntegrity and confidentiality: protect data properly\nAccountability: demonstrate compliance\n\nSix lawful bases: consent, contract, legal obligation, vital interests, public task and legitimate interests\n\nLegitimate interests is the most contested: firms use it to skip consent, even for AI training\n\n\n\n\n\nLike the EU AI Act, GDPR covers any organisation processing EU residents’ data, wherever it is located. A US startup with European users must comply with no office in the EU."
+    "text": "GDPR fundamentals\n\n\n\nThe General Data Protection Regulation (2016/679, in force since 2018) is the EU’s comprehensive privacy law\nMain principles:\n\nLawfulness, fairness, transparency\nPurpose limitation: use data only for the stated purpose\nData minimisation: collect only what’s necessary\nAccuracy: keep data correct\nStorage limitation: delete it when no longer needed\nIntegrity and confidentiality: protect data properly\nAccountability: demonstrate compliance\n\nSix lawful bases: consent, contract, legal obligation, vital interests, public task and legitimate interests\n\nLegitimate interests is the most contested basis\nFirms use it to skip consent, even for AI training\n\n\n\n\n\nLike the EU AI Act, GDPR covers anyone processing EU residents’ data, wherever they are. A US startup with EU users must comply"
   },
   {
     "objectID": "lectures/lecture-19/19-privacy.html#individual-rights-under-gdpr",
     "href": "lectures/lecture-19/19-privacy.html#individual-rights-under-gdpr",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Individual rights under GDPR",
-    "text": "Individual rights under GDPR\n\n\n\nYou have the right to:\n\n\n\nRight\nWhat it means\n\n\n\n\nAccess\nGet a copy of your data\n\n\nRectification\nCorrect inaccurate data\n\n\nErasure\n“Right to be forgotten”\n\n\nPortability\nMove data to another service\n\n\nRestriction\nLimit processing\n\n\nObject\nStop certain processing\n\n\nAutomated decisions\nAsk for a human in significant ones\n\n\n\nArticle 22: automated decisions\n\nYou have the right not to be subject to purely automated decisions\nConsequential decisions need human involvement\nExceptions exist for contracts and explicit consent\n\n\n\n\nSource: GDPR.eu (Proton)\n\nIn practice: exercising these rights is often difficult. Companies hide the forms, respond slowly, or claim exemptions."
+    "text": "Individual rights under GDPR\n\n\n\nYou have the right to:\n\n\n\n\nRight\nWhat it means\n\n\n\n\nAccess\nGet a copy of your data\n\n\nRectification\nCorrect inaccurate data\n\n\nErasure\n“Right to be forgotten”\n\n\nPortability\nMove data to another service\n\n\nRestriction\nLimit processing\n\n\nObject\nStop certain processing\n\n\nAutomated decisions\nAsk for a human in significant ones\n\n\n\n\nArticle 22: automated decisions\n\nRight not to be subject to purely automated decisions\nConsequential decisions need human involvement\nExceptions: contracts and explicit consent\n\n\n\n\nSource: GDPR.eu (Proton)\n\nIn practice, these rights are hard to use: firms hide forms, reply slowly or claim exemptions"
   },
   {
     "objectID": "lectures/lecture-19/19-privacy.html#gdpr-and-ai-tensions",
     "href": "lectures/lecture-19/19-privacy.html#gdpr-and-ai-tensions",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "GDPR and AI tensions",
-    "text": "GDPR and AI tensions\n\n\n\n\nPurpose limitation vs model training\n\nYou gave data for one purpose. Can it train a model for another?\nAI companies claim legitimate interest\n\nData minimisation vs big data\n\nAI works better with more data; GDPR says collect only what’s necessary\nWhat’s “necessary” for a foundation model? Everything?\n\nRight to explanation vs black boxes\n\nYou can ask why an AI decided about you\nMany AI systems can’t explain themselves\n\nRight to erasure vs model training\n\nCan you demand removal from a trained model?\n“Unlearning” is technically very difficult\n\n\n\n\n\nSource: CertPro\n\nGDPR was written before the LLM era. Applying 2018 law to 2026 technology creates interpretation challenges"
+    "text": "GDPR and AI tensions\n\n\n\n\nPurpose limitation vs model training\n\nCan data given for X train a model for Y?\nAI companies claim legitimate interest\n\nData minimisation vs big data\n\nAI wants more data; GDPR wants the minimum\nWhat’s “necessary” for an LLM? Everything?\n\nRight to explanation vs black boxes\n\nYou can ask why an AI decided about you\nMany AI systems can’t explain themselves\n\nRight to erasure vs model training\n\nCan you demand removal from a trained model?\n“Unlearning” is technically hard\n\n\n\n\n\nSource: CertPro\n\nGDPR predates LLMs; applying 2018 law to 2026 technology raises open questions"
   },
   {
     "objectID": "lectures/lecture-19/19-privacy.html#us-privacy-landscape",
     "href": "lectures/lecture-19/19-privacy.html#us-privacy-landscape",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "US privacy landscape",
-    "text": "US privacy landscape\n\n\n\nNo comprehensive federal privacy law. Instead, a patchwork of sector-specific rules:\n\n\n\nLaw\nScope\nProtects\n\n\n\n\nHIPAA\nHealthcare data\nPatient medical records\n\n\nFERPA\nEducation records\nStudent academic data\n\n\nCOPPA\nChildren’s data\nUnder-13 online activity\n\n\nGLBA\nFinancial data\nBank and loan records\n\n\nFCRA\nCredit reporting\nCredit scores and history\n\n\nECPA\nElectronic comms\nEmails, calls, stored data\n\n\n\nState laws filling the gap:\n\nCalifornia (CCPA/CPRA): most comprehensive, GDPR-like rights\nVirginia, Colorado, Connecticut: similar frameworks\nIllinois BIPA: biometric data, with private right of action\n23 states now have comprehensive privacy laws (Vermont in June 2026)\n\n\n\n\nSource: IAPP"
+    "text": "US privacy landscape\n\n\n\nNo comprehensive federal law, just a patchwork of sector rules:\n\n\n\n\nLaw\nScope\nProtects\n\n\n\n\nHIPAA\nHealthcare data\nPatient medical records\n\n\nFERPA\nEducation records\nStudent academic data\n\n\nCOPPA\nChildren’s data\nUnder-13 online activity\n\n\nGLBA\nFinancial data\nBank and loan records\n\n\nFCRA\nCredit reporting\nCredit scores and history\n\n\nECPA\nElectronic comms\nEmails, calls, stored data\n\n\n\n\nStates fill the gap:\n\nCalifornia (CCPA/CPRA): closest to GDPR\nVirginia, Colorado, Connecticut: similar frameworks\nIllinois BIPA: biometric data; individuals can sue\n23 states have such laws (Vermont joined June 2026)\n\n\n\n\nSource: IAPP"
   },
   {
     "objectID": "lectures/lecture-19/19-privacy.html#gdpr-enforcement",
     "href": "lectures/lecture-19/19-privacy.html#gdpr-enforcement",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "GDPR enforcement",
-    "text": "GDPR enforcement\n\n\n\nMajor fines (selected):\n\n\n\nCompany\nFine\nWhat they did wrong\n\n\n\n\nMeta (2023)\n€1.2B\nSent EU user data to the US without adequate safeguards\n\n\nAmazon (2021)\n€746M\nTargeted ads without valid consent (fine annulled in 2026, breach upheld)\n\n\nMeta (2022)\n€405M\nExposed children’s contact details on Instagram\n\n\nGoogle (2022)\n€150M\nMade rejecting cookies harder than accepting them\n\n\nTikTok (2023)\n€345M\nFailed to protect children’s privacy settings and data\n\n\n\nPatterns:\n\nBig tech companies are the primary targets\nRegulators focus on data transfers, consent and children\nFines are getting larger\nEnforcement varies by country; Ireland’s regulator is often called slow\n\n\n\n\nSource: Secureframe\n\n€1.2 billion sounds big, but Meta made ~$135 billion in 2023. Is that a fine or a cost of doing business?"
+    "text": "GDPR enforcement\n\n\n\nSelected major fines:\n\n\n\nCompany\nFine\nViolation\n\n\n\n\nMeta (2023)\n€1.2B\nSent EU data to the US without adequate safeguards\n\n\nAmazon (2021)\n€746M\nTargeted ads without valid consent (fine annulled in 2026, breach upheld)\n\n\nMeta (2022)\n€405M\nExposed children’s contact details on Instagram\n\n\nGoogle (2022)\n€150M\nMade rejecting cookies harder than accepting them\n\n\nTikTok (2023)\n€345M\nFailed to protect children’s data and settings\n\n\n\nPatterns:\n\nBig tech is the main target\nRegulators focus on data transfers, consent and children\nFines are getting larger\nEnforcement varies; critics call Ireland’s regulator slow\n\n\n\n\nSource: Secureframe\n\nMeta made ~$135 billion in 2023. Is €1.2B a fine or a cost of doing business?"
   },
   {
     "objectID": "lectures/lecture-19/19-privacy.html#differential-privacy",
     "href": "lectures/lecture-19/19-privacy.html#differential-privacy",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Differential privacy",
-    "text": "Differential privacy\n\n\n\nDifferential privacy is a mathematical framework for privacy-preserving data analysis (Dwork & Roth, 2014).\n\nAdd calibrated random noise to query results before releasing them\n“How many people here have diabetes?” The true answer is 137; the system returns 134 or 141\nIndividual records stay hidden; aggregate patterns stay visible\n\nFormal guarantee:\n\nThe output is nearly the same whether or not any single individual is in the dataset\nEpsilon (ε) measures privacy loss: small ε means strong privacy and noisier results, large ε the reverse\nThis is provable, not just a promise\n\n\n\n\nSource: Flower AI\n\nReal-world use: Apple for emoji suggestions, Google for Chrome usage stats, the US Census for 2020 data"
+    "text": "Differential privacy\n\n\n\nDifferential privacy adds random noise to results, so no one can tell if you are in the data (Dwork & Roth, 2014)\n\n“How many patients have diabetes?” True answer: 137\nReleased: 134 or 141, close enough for research\nPatterns stay visible, but individuals stay hidden\n\nEpsilon (ε) is set by the data owner before release:\n\nε limits how much one person can change a result\nSmall ε (below 1): more noise, strong privacy\nLarge ε (around 10): less noise, weak privacy\nSmall ε: no one can tell if the count is 136 or 137\n\n\n\n\nSource: Flower AI\n\nUsed by: Apple (emoji suggestions), Google (Chrome stats), US Census (2020, ε = 19.61)"
   },
   {
     "objectID": "lectures/lecture-19/19-privacy.html#federated-learning",
     "href": "lectures/lecture-19/19-privacy.html#federated-learning",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Federated learning",
-    "text": "Federated learning\n\n\n\nFederated learning trains models without pooling the data (McMahan et al., 2017)\nHow it works:\n\nA server sends the same model to many devices\nEach device trains it on its local data\nEach sends back only what it learned (weights), not the data\nThe server averages the updates and sends the better model back\n\nWhy it matters for privacy:\n\nYour raw data never leaves your device: the server sees only model updates\nNot perfect: updates can still leak information\nCoordinating thousands of devices is complex\n\n\n\n\n\nSource: Wikipedia\n\nExample: Google’s Gboard improves predictions this way. Your typing stays on your phone; only model improvements are shared"
+    "text": "Federated learning\n\n\n\nFederated learning trains models without pooling the data (McMahan et al., 2017)\nHow it works:\n\nA server sends the same model to many devices\nEach device trains it on its local data\nEach returns only what it learned (weights)\nThe server averages updates and repeats\n\nPrivacy gains and limits:\n\nRaw data never leaves your device\nUpdates can still leak information\nCoordinating thousands of devices is hard\n\n\n\n\n\nSource: Wikipedia\n\nExample: Google’s phone keyboard (Gboard) learns from your typing, but your texts stay on your phone"
   },
   {
     "objectID": "lectures/lecture-19/19-privacy.html#synthetic-data-for-privacy",
     "href": "lectures/lecture-19/19-privacy.html#synthetic-data-for-privacy",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Synthetic data for privacy",
-    "text": "Synthetic data for privacy\n\n\n\nSynthetic data is data that looks real but isn’t (Jordon et al., 2022).\nHow it works:\n\nTrain a generative model to learn the real data’s patterns\nGenerate new, fake data points that look real\nTrain your AI on those instead\n\nPrivacy benefits and limitations:\n\nFewer direct links to real people, but generators can still leak training records\nEasier to share for research and collaboration\nIt may not capture rare cases well\n\n\n\n\n\nSource: GOV.UK\n\nReal-world use: healthcare bodies use synthetic patient data for research; banks test fraud detection on synthetic transactions"
+    "text": "Synthetic data for privacy\n\n\n\nSynthetic data looks real but isn’t (Jordon et al., 2022)\nHow it works:\n\nTrain a generative model on real data\nGenerate new, fake records\nTrain your AI on the fakes\n\nBenefits and limits:\n\nFewer direct links to real people\nBut generators can still leak training records\nEasier to share for research\nMay miss rare cases\n\n\n\n\n\nSource: GOV.UK\n\nUsed by: health researchers (fake patient records), banks (fraud detection tests)"
   },
   {
     "objectID": "lectures/lecture-19/19-privacy.html#do-these-techniques-actually-help",
     "href": "lectures/lecture-19/19-privacy.html#do-these-techniques-actually-help",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Do these techniques actually help?",
-    "text": "Do these techniques actually help?\n\n\n\nWhat they can do:\n\nAllow research on sensitive medical and financial data while protecting privacy\nGive engineers concrete tools\nDifferential privacy gives mathematical guarantees\nFederated learning keeps data on the device\n\nWhat they cannot do:\n\nStop companies collecting data in the first place\nFix the power imbalance between users and platforms\nMake users understand how their data are used\n\n\nHowever…\nThe best protection is not collecting data at all. But AI companies have the opposite incentive: more data = better models = more profit\nTechnical fixes work within the system, not on the system itself\n\nWatch out for “privacy washing”: companies announce differential privacy with large epsilon values (weak privacy), or federated learning that still collects metadata"
+    "text": "Do these techniques actually help?\n\n\n\nWhat they can do:\n\nAllow research on sensitive health data\nGive engineers concrete tools\nDifferential privacy is provable\nFederated learning keeps data on the device\n\nWhat they cannot do:\n\nStop data collection in the first place\nFix the power imbalance with platforms\nMake users understand data use\n\n\nHowever:\n\nThe best protection is not collecting data\nAI firms’ logic: more data = more profit\nTechnical fixes work within the system, not on it\n\n\nBeware “privacy washing”: differential privacy with large ε (weak privacy), or federated learning that still collects metadata"
   },
   {
     "objectID": "lectures/lecture-19/19-privacy.html#case-study-clearview-ai",
     "href": "lectures/lecture-19/19-privacy.html#case-study-clearview-ai",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Case study: Clearview AI",
-    "text": "Case study: Clearview AI\n\n\n\n\nJanuary 2020: the NYT revealed Clearview had scraped 3 billion photos from social media (70+ billion today)\nIt built a face search engine without consent: people never knew they were in it\nIt sold access to thousands of US police agencies, which ran nearly a million searches by 2023\n\nThe legal fallout:\n\nThe ACLU sued under Illinois BIPA (2020): a 2022 settlement bans sales to most private companies\nFrance (CNIL) and Italy: €20M fine each\nNetherlands: €30.5M fine (2024)\nAustralia and Canada: ordered to delete data; the UK case is still in court\n\n\n\n\nSource: Library of Congress\n\nClearview said the service was only for law enforcement, but gave accounts to retailers, banks and investors’ friends. Critics call it a “perpetual police line-up”."
+    "text": "Case study: Clearview AI\n\n\n\n\nJan 2020: the NYT exposed 3 billion scraped photos\nClearview now has over 70 billion social media photos\nIt built a face search engine without consent or notice\nSold to thousands of US police agencies\nPolice ran ~1M searches by 2023\n\nLegal fallout:\n\nThe ACLU sued under Illinois BIPA (2020)\n2022 settlement bans sales to most private firms\nFrance (CNIL) and Italy: €20M fine each\nNetherlands: €30.5M fine (2024)\nAustralia, Canada: ordered to delete data\nUK: still in court\n\n\n\n\nSource: Library of Congress\n\nSold as police-only, but accounts went to retailers, banks and investors’ friends. Critics call it a “perpetual police line-up”"
   },
   {
     "objectID": "lectures/lecture-19/19-privacy.html#quick-quiz-whats-wrong-and-how-would-you-fix-it",
     "href": "lectures/lecture-19/19-privacy.html#quick-quiz-whats-wrong-and-how-would-you-fix-it",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Quick quiz: what’s wrong and how would you fix it?",
-    "text": "Quick quiz: what’s wrong and how would you fix it?\n\n\nA social media company uses your messages to train an AI without telling you\nA shopping app collects your exact location every 30 seconds, even when not in use\nA company keeps customer data “just in case” with no deletion policy\nAn AI hiring tool rejects candidates without any human review"
+    "text": "Quick quiz: what’s wrong and how would you fix it?\n\n\nA social media company uses your messages to train an AI without telling you\nA shopping app logs your location every 30 seconds, even when closed\nA company keeps customer data “just in case” with no deletion policy\nAn AI hiring tool rejects candidates without any human review"
   },
   {
     "objectID": "lectures/lecture-19/19-privacy.html#wheres-your-line",
     "href": "lectures/lecture-19/19-privacy.html#wheres-your-line",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Where’s your line?",
-    "text": "Where’s your line?\n\n\n\nScenario:\nA new app offers free health monitoring. It tracks:\n\nYour heart rate and sleep\nYour location and activity\nWhat you eat and drink\nYour social interactions\n\nIn exchange, it provides:\n\nPersonalised health advice\nEarly warning of health issues\nDiscounts from health insurers\nConnection with others like you\n\n\nLet’s discuss together:\n\nWould you use this app?\nWhat would make you change your mind?\nWhat data would be “too much”?\nDoes it matter who runs it (tech company, hospital, government)?\n\n\nThere’s no right answer. The point is to identify your own values and understand what trade-offs you’re willing to make"
+    "text": "Where’s your line?\n\n\n\nScenario:\nA new app offers free health monitoring. It tracks:\n\nYour heart rate and sleep\nYour location and activity\nWhat you eat and drink\nYour social interactions\n\nIn exchange, it provides:\n\nPersonalised health advice\nEarly warning of health issues\nDiscounts from health insurers\nConnection with others like you\n\n\nDiscuss:\n\nWould you use this app?\nWhat would make you change your mind?\nWhat data would be “too much”?\nDoes it matter if a firm, hospital or state runs it?\n\n\nNo right answer: identify your own values and the trade-offs you’ll accept"
   },
   {
     "objectID": "lectures/lecture-19/19-privacy.html#what-can-you-do",
     "href": "lectures/lecture-19/19-privacy.html#what-can-you-do",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "What can you do?",
-    "text": "What can you do?\n\n\n\nIndividual actions:\n\nReview privacy settings and use privacy-focused tools (Signal, DuckDuckGo, Firefox)\nLimit location sharing and use different email addresses for different services\nExercise your GDPR/CCPA rights (access, deletion requests) and be sceptical of “personalisation”\n\nLimitations of individual action:\n\nOpting out often means losing service. Privacy is collective\nYour data can be inferred from others’ data, and power imbalance is structural\n\n\nCollective action:\n\nSupport privacy legislation and demand transparency from companies\nSupport organisations fighting for privacy (EFF, EPIC, noyb)\nChoose privacy-respecting services; vote for candidates who protect privacy\n\n\nUsing Signal instead of WhatsApp helps, but it won’t change how insurers use your health data. That takes legislation"
+    "text": "What can you do?\n\n\n\nIndividual actions:\n\nReview your privacy settings\nUse privacy tools (Signal, DuckDuckGo, Firefox)\nLimit location sharing\nUse a different email for each service\nUse your GDPR/CCPA rights (access, deletion)\nBe sceptical of “personalisation”\n\nLimits of individual action:\n\nOpting out often means losing the service\nPrivacy is collective: others’ data reveals yours\nThe power imbalance is structural\n\n\nCollective action:\n\nBack privacy laws\nDemand transparency from companies\nSupport EFF, EPIC or noyb\nChoose privacy-respecting services\nVote for pro-privacy candidates\n\n\nSignal over WhatsApp helps, but only legislation changes how insurers use your health data"
   },
   {
     "objectID": "lectures/lecture-19/19-privacy.html#main-takeaways",
@@ -5220,5 +5220,33 @@
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Spot the bias: possible answers",
     "text": "Spot the bias: possible answers\n\n\n\nTypes of bias\n\nHistorical: trained on past admits, it copies past preferences\nMeasurement: SAT also measures access to test prep\nAggregation: a 3.8 GPA means different things at different schools\nRepresentation: few past applicants from rural or first-generation backgrounds, so less accurate for them\nFeedback loop: this year’s admits become next year’s training data\n\nProxies and who loses\n\nSAT tracks family income; GPA tracks school funding\nExtracurriculars track free time and money\nStudents who work or care for family lose out\n\n\nWays to reduce it\n\nCompare each score with the applicant’s own school\nCount jobs and caregiving as activities\nAudit admit rates by group every year\nSend borderline cases to a human reader\n\nTradeoffs\n\nContext adjustments can lower the class’s average SAT\nFairness definitions conflict (impossibility theorem)\nHuman review is slower and brings back human bias\nAuditing by group means collecting sensitive data\n\n\nBack to the activity"
+  },
+  {
+    "objectID": "lectures/lecture-19/19-privacy.html#sec-privacy-quiz",
+    "href": "lectures/lecture-19/19-privacy.html#sec-privacy-quiz",
+    "title": "DATASCI 101: Introduction to AI Applications",
+    "section": "Quick quiz: what’s wrong and how would you fix it?",
+    "text": "Quick quiz: what’s wrong and how would you fix it?\n\n\nA social media company uses your messages to train an AI without telling you\nA shopping app logs your location every 30 seconds, even when closed\nA company keeps customer data “just in case” with no deletion policy\nAn AI hiring tool rejects candidates without any human review\n\n\nPossible answers"
+  },
+  {
+    "objectID": "lectures/lecture-19/19-privacy.html#sec-appendix-privacy-quiz",
+    "href": "lectures/lecture-19/19-privacy.html#sec-appendix-privacy-quiz",
+    "title": "DATASCI 101: Introduction to AI Applications",
+    "section": "Quick quiz: possible answers",
+    "text": "Quick quiz: possible answers\n\n\n\n1. Messages used to train AI\n\nBreaks transparency and purpose limitation\nFix: tell users and ask for opt-in consent\n\n2. Location every 30 seconds\n\nBreaks data minimisation\nFix: track only while the app is open\nUse approximate location where possible\n\n\n3. Data kept “just in case”\n\nBreaks storage limitation\nOld data adds breach risk for no benefit\nFix: set retention periods, then delete\n\n4. Hiring tool with no human review\n\nBreaks GDPR Article 22 on automated decisions\nFix: a human reviews every rejection\nCandidates can ask why and contest it\n\n\n\nBack to the quiz"
+  },
+  {
+    "objectID": "lectures/lecture-19/19-privacy.html#sec-wheres-your-line",
+    "href": "lectures/lecture-19/19-privacy.html#sec-wheres-your-line",
+    "title": "DATASCI 101: Introduction to AI Applications",
+    "section": "Where’s your line?",
+    "text": "Where’s your line?\n\n\n\nScenario:\nA new app offers free health monitoring. It tracks:\n\nYour heart rate and sleep\nYour location and activity\nWhat you eat and drink\nYour social interactions\n\nIn exchange, it provides:\n\nPersonalised health advice\nEarly warning of health issues\nDiscounts from health insurers\nConnection with others like you\n\n\nDiscuss:\n\nWould you use this app?\nWhat would make you change your mind?\nWhat data would be “too much”?\nDoes it matter if a firm, hospital or state runs it?\n\n\nNo right answer: identify your own values and the trade-offs you’ll accept\n\n\nPoints to raise"
+  },
+  {
+    "objectID": "lectures/lecture-19/19-privacy.html#sec-appendix-wheres-your-line",
+    "href": "lectures/lecture-19/19-privacy.html#sec-appendix-wheres-your-line",
+    "title": "DATASCI 101: Introduction to AI Applications",
+    "section": "Where’s your line: points to raise",
+    "text": "Where’s your line: points to raise\n\n\n\n1. Would you use it?\n\nThe app is free, so your data likely pays for it\nInsurer discounts can turn into higher premiums\n\n2. What would change your mind?\n\nData stays on your phone\nNo sale to third parties\nEasy deletion when you quit\n\n\n3. What is “too much”?\n\nLocation, diet and sleep reveal health conditions\nSocial data exposes your friends too\n\n4. Who runs it?\n\nTech firm: ads and data sales\nHospital: HIPAA applies\nMost health apps fall outside HIPAA\nGovernment: hard to opt out\n\n\n\nBack to the discussion"
   }
 ]
