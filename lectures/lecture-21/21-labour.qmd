@@ -51,14 +51,14 @@ if (!require("fontawesome", character.only = TRUE)) {
 
 ## Recap of last class
 
-:::{style="margin-top: 50px; font-size: 25px;"}
+:::{style="margin-top: 40px; font-size: 25px;"}
 :::{.columns}
 :::{.column width=50%}
-- AI strains [privacy]{.alert}: collection at scale plus [inference of sensitive data]{.alert}
+- AI strains [privacy]{.alert} by collecting data at scale and [inferring sensitive traits]{.alert}
 - [GDPR]{.alert} (EU): rights of access, erasure, portability
 - US: [patchwork of sectoral laws]{.alert} (healthcare, finance) plus 23 state privacy laws
 - [Differential privacy, federated learning, synthetic data]{.alert} help, but have trade-offs
-- [Collection is the core problem]{.alert}: the same data enables benefits and surveillance
+- Once data is collected, it can help people or [track them]{.alert}
 - Today: [what does AI mean for jobs and the economy?]{.alert}
 :::
 
@@ -75,17 +75,17 @@ Source: [X.com](https://x.com/johnkoetsier/status/1603234885791285248)
 ## Lecture overview
 ### What we will cover today
 
-:::{style="margin-top: 20px; font-size: 24px;"}
+:::{style="margin-top: 40px; font-size: 24px;"}
 
 :::{.columns}
 :::{.column width=50%}
-**Part 1: The automation question**
+[Part 1: The automation question]{.alert}
 
 - Historical perspective on technology and jobs
 - Why "this time might be different"
 - Task-based framework for thinking about AI
 
-**Part 2: Current evidence**
+[Part 2: Current evidence]{.alert}
 
 - What are people using AI for?
 - Productivity effects
@@ -93,13 +93,13 @@ Source: [X.com](https://x.com/johnkoetsier/status/1603234885791285248)
 :::
 
 :::{.column width=50%}
-**Part 3: Economic scenarios**
+[Part 3: Economic scenarios]{.alert}
 
 - Optimistic views: augmentation and new tasks
 - Pessimistic views: displacement and polarisation
 - What economists actually think
 
-**Part 4: What does this mean for you?**
+[Part 4: What does this mean for you?]{.alert}
 
 - Skills that may remain valuable
 - Adapting to an AI-influenced economy
@@ -110,7 +110,7 @@ Source: [X.com](https://x.com/johnkoetsier/status/1603234885791285248)
 
 ## Meme of the day 😄
 
-:::{style="text-align: center; margin-top: 30px;"}
+:::{style="text-align: center; margin-top: 40px;"}
 [![](figures/ai-jobs-meme.webp){width="40%"}](#){data-modal-type="image" data-modal-url="figures/ai-jobs-meme.webp"}
 
 Source: [r/ProgrammerHumor](https://www.reddit.com/r/ProgrammerHumor/comments/11wozfs/finally_thanks_ai_s/)
@@ -120,24 +120,22 @@ Source: [r/ProgrammerHumor](https://www.reddit.com/r/ProgrammerHumor/comments/11
 
 ## This isn't the first time
 
-:::{style="margin-top: 30px; font-size: 20px;"}
+:::{style="margin-top: 40px; font-size: 20px;"}
 :::{.columns}
 :::{.column width=55%}
 **Historical fears of technological unemployment:**
 
 | Era | Technology | Fear | Outcome |
 |-----|------------|------|---------|
-| 1810s | Power looms | [Luddites destroy machines](https://www.smithsonianmag.com/history/what-the-luddites-really-fought-against-264412/) | [Textile jobs changed but grew](https://www.history.com/articles/who-were-the-luddites) |
-| 1930s | Mechanisation | [Keynes: "technological unemployment"](http://www.econ.yale.edu/smith/econ116a/keynes1.pdf) | [Post-war prosperity](https://www.project-syndicate.org/commentary/what-keynes-famous-1930-essay-got-right-and-wrong-by-kaushik-basu-2024-02) |
+| 1810s | Power looms | [Luddites destroy machines](https://www.smithsonianmag.com/history/what-the-luddites-really-fought-against-264412/) | [Textile jobs changed but grew](https://www.imf.org/external/pubs/ft/fandd/2015/03/bessen.htm) |
+| 1930s | Mechanisation | [Keynes: "technological unemployment"](http://www.econ.yale.edu/smith/econ116a/keynes1.pdf) | [Post-war prosperity](https://en.wikipedia.org/wiki/Post%E2%80%93World_War_II_economic_expansion) |
 | 1960s | Mainframes | [JFK warns of job losses](https://www.jfklibrary.org/archives/other-resources/john-f-kennedy-speeches/grand-rapids-mi-19600607) | [Service sector expansion](https://conversableeconomist.com/2014/12/01/automation-and-job-loss-the-fears-of-1964/) |
-| 1990s | Personal computers | [End of clerical work](https://www.technologyreview.com/2024/01/27/1087041/technological-unemployment-elon-musk-jobs-ai/) | [New jobs created](https://www.aeaweb.org/articles?id=10.1257/jep.33.2.3) |
-| 2010s | Robots | [Manufacturing decline](https://news.mit.edu/2020/how-many-jobs-robots-replace-0504) | [Local job and wage losses](https://www.nber.org/papers/w23285) |
-
-**The pattern so far:**
+| 1990s | Personal computers | [Rifkin's *The End of Work* (1995)](https://en.wikipedia.org/wiki/The_End_of_Work) | [New jobs created](https://www.aeaweb.org/articles?id=10.1257/jep.33.2.3) |
+| 2010s | Robots | [Manufacturing decline](https://www.technologyreview.com/2024/01/27/1087041/technological-unemployment-elon-musk-jobs-ai/) | [Local job and wage losses](https://www.nber.org/papers/w23285) |
 
 - Technology destroys some jobs and creates others
 - The net effect has been [positive]{.alert} over time
-- The adjustment periods are painful
+- However, the adjustment periods are painful
 :::
 
 :::{.column width=45%}
@@ -147,7 +145,7 @@ Source: [r/ProgrammerHumor](https://www.reddit.com/r/ProgrammerHumor/comments/11
 Source: [Current Affairs](https://www.currentaffairs.org/news/2021/06/the-luddites-were-right)
 
 :::{style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; font-size: 18px; margin-top: 15px;"}
-Every wave of automation sparked fears of mass unemployment. [So far, those fears haven't materialised]{.alert}. But past performance doesn't guarantee future results! 😅
+[So far, fears of mass unemployment haven't materialised]{.alert}. But past performance doesn't guarantee future results! 😅
 :::
 :::
 :::
@@ -156,7 +154,7 @@ Every wave of automation sparked fears of mass unemployment. [So far, those fear
 
 ## Why this time might be different
 
-:::{style="margin-top: 30px; font-size: 19px;"}
+:::{style="margin-top: 40px; font-size: 19px;"}
 :::{.columns}
 :::{.column width=55%}
 **Previous automation:**
@@ -167,9 +165,9 @@ Every wave of automation sparked fears of mass unemployment. [So far, those fear
 **AI is different:**
 
 - Targets [cognitive tasks]{.alert} too
-- General-purpose: the same model writes essays, analyses data, and generates images
-- Improving [very rapidly]{.alert}
-- "Computers can't do intellectual work" and "computers can't be creative" [both look shaky now]{.alert}
+- One model writes essays, analyses data and makes images
+- Improves [fast]{.alert}
+- Intellectual and creative work [no longer looks safe]{.alert}
 
 **Counter-argument:**
 
@@ -185,7 +183,7 @@ Every wave of automation sparked fears of mass unemployment. [So far, those fear
 Source: [Edelson Institute](https://www.visualcapitalist.com/the-history-of-innovation-cycles/)
 
 :::{style="font-size: 18px; margin-top: 15px;"}
-AI will change work. Everyone agrees on that much. The real unknowns are [how fast]{.alert} it happens and [who pays the price]{.alert} while the rest of us adjust.
+AI will change work. We don't know [how fast]{.alert}, or [who pays the price]{.alert} while the rest of us adjust
 :::
 :::
 :::
@@ -194,16 +192,17 @@ AI will change work. Everyone agrees on that much. The real unknowns are [how fa
 
 ## Tasks vs jobs
 
-:::{style="margin-top: 30px; font-size: 20px;"}
+:::{style="margin-top: 40px; font-size: 20px;"}
 :::{.columns}
 :::{.column width=55%}
-**A more useful framework ([Acemoglu & Restrepo, 2019](https://www.aeaweb.org/articles?id=10.1257/jep.33.2.3); [HBR explainer](https://hbr.org/2024/05/ai-is-making-economists-rethink-the-story-of-automation)):**
+**Task-based view ([Acemoglu & Restrepo, 2019](https://www.aeaweb.org/articles?id=10.1257/jep.33.2.3); [HBR explainer](https://hbr.org/2024/05/ai-is-making-economists-rethink-the-story-of-automation)):**
 
 - Think about [tasks]{.alert} being automated, not [jobs]{.alert} being replaced
-- Most jobs contain many tasks, and [AI might automate some but not all]{.alert}
+- Most jobs bundle many tasks, and [AI may automate only some]{.alert}
 
 **Example: Lawyer**
 
+:::{style="display: flex; justify-content: center; font-size: 26px;"}
 | Task | AI capability |
 |------|---------------|
 | Document review | [High]{.alert} |
@@ -214,13 +213,14 @@ AI will change work. Everyone agrees on that much. The real unknowns are [how fa
 | Negotiation | Low |
 | Judgment calls | Low |
 :::
+:::
 
 :::{.column width=45%}
-**The effect:**
+**What changes for lawyers:**
 
 - AI handles the grunt work, so firms need fewer lawyers per case
 - The role shifts toward [higher-value tasks]{.alert} (counselling clients, arguing in court)
-- The lawyer doesn't disappear, but firms hire fewer of them. [What happens to the rest?]{.alert}
+- The job survives. [What happens to the lawyers firms don't hire?]{.alert}
 
 :::{style="text-align: center;"}
 [![](figures/economist-ai-labour.png){width="55%"}](#){data-modal-type="image" data-modal-url="figures/economist-ai-labour.png"}
@@ -233,7 +233,7 @@ Source: [The Economist](https://www.economist.com/finance-and-economics/2025/05/
 
 ## Which tasks are most exposed?
 
-:::{style="margin-top: 30px; font-size: 20px;"}
+:::{style="margin-top: 40px; font-size: 20px;"}
 :::{.columns}
 :::{.column width=55%}
 **High exposure to AI:**
@@ -245,15 +245,16 @@ Source: [The Economist](https://www.economist.com/finance-and-economics/2025/05/
 
 **Lower exposure (for now):**
 
-- Physical work in unpredictable settings (construction, plumbing)
-- Jobs needing your physical presence (nursing, firefighting)
-- Real-time judgment in new situations (emergency medicine, crisis management)
-- Work built on deep personal relationships (therapy, social work)
+- Unpredictable physical work (construction, plumbing)
+- In-person work (nursing, firefighting)
+- Real-time judgment (emergency medicine, crisis management)
+- Close personal relationships (therapy, social work)
 :::
 
 :::{.column width=45%}
-**Exposure by occupation:** (AI exposure rises with wages, but there are exceptions)
+**Exposure by occupation** (it rises with wages, with exceptions):
 
+:::{style="display: flex; justify-content: center; font-size: 26px;"}
 | Occupation | Exposure |
 |------------|----------|
 | Telemarketers | Very high |
@@ -264,6 +265,7 @@ Source: [The Economist](https://www.economist.com/finance-and-economics/2025/05/
 | Nurses | Medium-low |
 | Electricians | Low |
 | Plumbers | Low |
+:::
 
 Sources: [Frey & Osborne (2017)](https://www.oxfordmartin.ox.ac.uk/publications/the-future-of-employment); [Eloundou et al. (2023)](https://arxiv.org/abs/2303.10130); [IMF (2024)](https://www.imf.org/en/blogs/articles/2024/01/14/ai-will-transform-the-global-economy-lets-make-sure-it-benefits-humanity)
 :::
@@ -274,11 +276,12 @@ Sources: [Frey & Osborne (2017)](https://www.oxfordmartin.ox.ac.uk/publications/
 
 ## What are people using AI for?
 
-:::{style="margin-top: 30px; font-size: 20px;"}
+:::{style="margin-top: 40px; font-size: 20px;"}
 :::{.columns}
 :::{.column width=55%}
 **[OpenAI's research on ChatGPT use (2025)](https://www.nber.org/system/files/working_papers/w34255/w34255.pdf):**
 
+:::{style="display: flex; justify-content: center; font-size: 26px;"}
 | Category | Jul 2024 | Jun 2025 |
 |----------|----------|----------|
 | Practical Guidance | ~29% | ~29% |
@@ -286,10 +289,9 @@ Sources: [Frey & Osborne (2017)](https://www.oxfordmartin.ox.ac.uk/publications/
 | Seeking Information | ~14% | ~24% |
 | Technical Help | ~12% | ~5% |
 | Multimedia | ~2% | ~7% |
+:::
 
 **Among work-related messages only** (Jun 2025): Writing ~40%, Practical Guidance ~24%, Technical Help ~10%.
-
-**What this tells us:**
 
 - Only [27% of use is work-related]{.alert}, 73% is personal
 - Writing's share fell as people found other uses
@@ -308,17 +310,17 @@ Source: [OpenAI (2025)](https://openai.com/index/how-people-are-using-chatgpt/)
 
 ## Productivity effects: early evidence
 
-:::{style="margin-top: 30px; font-size: 20px;"}
+:::{style="margin-top: 40px; font-size: 20px;"}
 :::{.columns}
 :::{.column width=55%}
 **Studies finding positive effects:**
 
-- **Customer service [(Brynjolfsson et al., 2025)](https://academic.oup.com/qje/article/140/2/889/7990658)**: 15% productivity increase, biggest gains for [novice workers]{.alert}
-- **Programmers [(GitHub, 2022)](https://github.blog/news-insights/research/research-quantifying-github-copilots-impact-on-developer-productivity-and-happiness/)**: 55% faster task completion with Copilot
-- **Consultants [(BCG study, 2023)](https://www.bcg.com/publications/2023/how-people-create-and-destroy-value-with-gen-ai)**: 40% better performance on applicable tasks
-- **Writers [(Noy & Zhang, 2023)](https://www.science.org/doi/10.1126/science.adh2586)**: 40% faster, 18% better quality
+- Customer service [(Brynjolfsson et al., 2025)](https://academic.oup.com/qje/article/140/2/889/7990658): 15% more productive, most for [novices]{.alert}
+- Programmers [(GitHub, 2022)](https://github.blog/news-insights/research/research-quantifying-github-copilots-impact-on-developer-productivity-and-happiness/): 55% faster with Copilot
+- Consultants [(BCG, 2023)](https://www.bcg.com/publications/2023/how-people-create-and-destroy-value-with-gen-ai): 40% better on tasks AI handles well
+- Writers [(Noy & Zhang, 2023)](https://www.science.org/doi/10.1126/science.adh2586): 40% faster, 18% better quality
 
-**Important caveats:**
+**Caveats:**
 
 - Most studies are [short-term]{.alert}, so long-term effects stay unclear
 - Often sponsored by AI companies
@@ -326,14 +328,13 @@ Source: [OpenAI (2025)](https://openai.com/index/how-people-are-using-chatgpt/)
 :::
 
 :::{.column width=45%}
-**The pattern emerging:**
+**Across studies:**
 
-- AI [compresses the skill distribution]{.alert}: novices improve more than experts
+- [Novices gain more]{.alert} than experts, so skill gaps narrow
 - Experts sometimes do worse with AI
 - Benefits concentrated in [specific tasks]{.alert}
 
 :::{style="text-align: center; margin-top: 15px;"}
-<!-- Suggested image: Productivity gains chart -->
 [![](figures/productivity-gains.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/productivity-gains.png"}
 
 Source: [Boston Consulting Group (2023)](https://www.bcg.com/publications/2023/how-people-create-and-destroy-value-with-gen-ai)
@@ -344,7 +345,7 @@ Source: [Boston Consulting Group (2023)](https://www.bcg.com/publications/2023/h
 
 ## The graduate job drought
 
-:::{style="margin-top: 30px; font-size: 21px;"}
+:::{style="margin-top: 40px; font-size: 21px;"}
 :::{.columns}
 :::{.column width=55%}
 **What the data shows (2024-2026):**
@@ -354,13 +355,13 @@ Source: [Boston Consulting Group (2023)](https://www.bcg.com/publications/2023/h
 
 **[Financial Times reporting (2026)](https://www.ft.com/content/c89496b1-bc8d-425e-b86b-ec89402410e4):**
 
-- UK graduate vacancies at a 10-year low
+- UK graduate vacancies at their lowest outside the pandemic
 - Tech companies leading the pullback
-- Law and consulting firms reducing trainee intakes
+- Law and consulting firms cutting trainee places
 
-**The logic (from the employer's side):**
+**Why employers cut junior roles:**
 
-- Junior employees used to do the tasks AI now handles
+- AI now does tasks juniors used to do
 - AI doesn't need healthcare, holidays, or mentoring
 :::
 
@@ -371,7 +372,7 @@ Source: [Boston Consulting Group (2023)](https://www.bcg.com/publications/2023/h
 Source: [Financial Times (2026)](https://www.ft.com/content/c89496b1-bc8d-425e-b86b-ec89402410e4)
 
 :::{style="background: rgba(230, 57, 70, 0.1); padding: 15px; border-radius: 10px; font-size: 18px; margin-top: 15px;"}
-This matters for you personally: if companies replace junior roles with AI, [where do you get your first job?]{.alert}
+If companies replace junior roles with AI, [where do you get your first job?]{.alert}
 :::
 :::
 :::
@@ -380,7 +381,7 @@ This matters for you personally: if companies replace junior roles with AI, [whe
 
 ## But the aggregate numbers are confusing
 
-:::{style="margin-top: 30px; font-size: 20px;"}
+:::{style="margin-top: 40px; font-size: 20px;"}
 :::{.columns}
 :::{.column width=55%}
 **What we're not seeing (yet):**
@@ -393,14 +394,14 @@ This matters for you personally: if companies replace junior roles with AI, [whe
 
 - [Slower hiring]{.alert} rather than mass firing
 - Some sectors growing, others shrinking
-- Geographic concentration of effects
-- [Young workers]{.alert} are hit first, but not experienced ones
+- Effects concentrated in some regions
+- [Young workers]{.alert} are hit, experienced ones much less
 
 **Why the disconnect?**
 
 - Adoption takes time (most firms are still experimenting)
-- Many tasks don't work well with current AI
-- Regulations, contracts, and organisational inertia slow everything down
+- Current AI handles many tasks poorly
+- Regulation, contracts and inertia slow adoption
 :::
 
 :::{.column width=45%}
@@ -424,8 +425,8 @@ Source: [The Economist](https://www.economist.com/business/2025/12/14/job-apocal
 - 25,000 Danish workers, 7,000 workplaces
 - Surveys linked to [government payroll records]{.alert}, not self-reports
 - Difference-in-differences: adopters vs non-adopters, before vs after ChatGPT
-- [No effect on earnings or hours]{.alert} after two years, ruling out anything above 2%
-- Adopters do save time, around 3% of hours
+- [No effect on earnings or hours]{.alert} after two years (rules out effects above 2%)
+- Adopters save about 3% of their hours
 
 :::{style="text-align: center;"}
 [![](figures/humlum-did.png){width="62%"}](#){data-modal-type="image" data-modal-url="figures/humlum-did.png"}
@@ -438,7 +439,7 @@ Source: [Humlum & Vestergaard (2026)](https://www.nber.org/papers/w33777)
 **[Yale Budget Lab tracker](https://budgetlab.yale.edu/research/tracking-impact-ai-labor-market):**
 
 - Share of US workers in low, middle and high AI-exposure occupations
-- Monthly CPS data, updated to August 2026
+- Monthly CPS data, updated to September 2026
 - The three lines are [flat since 2023]{.alert}
 
 :::{style="text-align: center;"}
@@ -454,21 +455,21 @@ Source: [The Budget Lab at Yale (2026)](https://budgetlab.yale.edu/research/trac
 
 ## The optimistic view
 
-:::{style="margin-top: 30px; font-size: 19px;"}
+:::{style="margin-top: 40px; font-size: 19px;"}
 :::{.columns}
 :::{.column width=55%}
 **Augmentation, not replacement:**
 
-- AI makes workers [more productive]{.alert}: one person does what five did before
-- Demand expands to absorb the extra capacity
-- Net effect: more output, same or more jobs
+- AI makes workers [more productive]{.alert}
+- Demand grows to absorb the extra output
+- More output, with as many jobs or more
 
 **New tasks emerge:**
 
 - AI creates [new kinds of work]{.alert}: prompt engineering, AI training, oversight
 - Jobs we can't imagine yet, like social media manager in 1990
 
-**Historical pattern continues:**
+**Past waves suggest:**
 
 - Technology has always created more jobs than it destroyed
 - Higher productivity → higher incomes → more demand
@@ -488,7 +489,7 @@ Source: [Michael R. Strain](https://nationalaffairs.com/publications/detail/the-
 
 ## The pessimistic view
 
-:::{style="margin-top: 30px; font-size: 21px;"}
+:::{style="margin-top: 40px; font-size: 21px;"}
 :::{.columns}
 :::{.column width=55%}
 **Displacement dominates:**
@@ -501,7 +502,7 @@ Source: [Michael R. Strain](https://nationalaffairs.com/publications/detail/the-
 
 - High-skill jobs pay more
 - Low-skill service jobs persist (hard to automate)
-- Middle gets [hollowed out]{.alert}, so inequality rises sharply
+- The middle is [hollowed out]{.alert}, so inequality rises sharply
 
 **Power dynamics:**
 
@@ -516,7 +517,7 @@ Source: [Michael R. Strain](https://nationalaffairs.com/publications/detail/the-
 Source: [Fortune](https://fortune.com/2025/09/06/godfather-of-ai-geoffrey-hinton-massive-unemployment-soaring-profits-capitalist-system/)
 
 :::{style="background: rgba(230, 57, 70, 0.1); padding: 15px; border-radius: 10px; font-size: 18px; margin-top: 15px;"}
-**Pessimist's argument**: "The horse population never recovered from the automobile. [What if humans are the horses?]{.alert}"
+Pessimists note that the horse population never recovered from the car. [What if we are the horses?]{.alert}
 :::
 :::
 :::
@@ -525,7 +526,7 @@ Source: [Fortune](https://fortune.com/2025/09/06/godfather-of-ai-geoffrey-hinton
 
 ## What economists actually think
 
-:::{style="margin-top: 30px; font-size: 19px;"}
+:::{style="margin-top: 40px; font-size: 19px;"}
 :::{.columns}
 :::{.column width=55%}
 **Economist polls ([Clark Center, 2023](https://kentclarkcenter.org/surveys/ai-and-the-labor-market/) and [2026](https://kentclarkcenter.org/surveys/ai-work-and-education/)):**
@@ -537,23 +538,22 @@ Source: [Fortune](https://fortune.com/2025/09/06/godfather-of-ai-geoffrey-hinton
 **MIT economists:**
 
 - [Acemoglu (2025)](https://economics.mit.edu/sites/default/files/2024-04/The%20Simple%20Macroeconomics%20of%20AI.pdf): AI adds at most [~0.7% to productivity]{.alert} over 10 years
-- [Acemoglu, Autor & Johnson (2023)](https://shapingwork.mit.edu/research/can-we-have-pro-worker-ai/): AI can [augment]{.alert} or [replace]{.alert} workers. Today it leans to replacement, and policy could shift it
+- [Acemoglu, Autor & Johnson (2023)](https://shapingwork.mit.edu/research/can-we-have-pro-worker-ai/): AI can [augment]{.alert} or [replace]{.alert} workers. It leans to replacement now, but policy can shift it
 
 **[Jones (2026)](https://web.stanford.edu/~chadj/AIandEconomicFuture.pdf), now at Anthropic:**
 
-- The economy is only as fast as its [weakest links]{.alert}: tasks AI cannot yet do
-- Big gains may take [decades]{.alert}, which gives workers time to adjust
+- Growth is held back by [weakest links]{.alert}, the tasks AI can't do yet
+- Big gains may take [decades]{.alert}, giving workers time to adjust
 :::
 
 :::{.column width=45%}
 :::{style="text-align: center;"}
-<!-- Suggested image: Economist survey or Acemoglu diagram -->
 [![](figures/dont-know.png){width="60%"}](#){data-modal-type="image" data-modal-url="figures/dont-know.png"}
 
 Source: [Noah Smith](https://www.noahpinion.blog/p/stop-pretending-you-know-what-ai)
 
 :::{style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; font-size: 18px; margin-top: 15px;"}
-[Nobody knows.]{.alert} Anyone who claims certainty is [selling something]{.alert}. The range of possible outcomes is very wide.
+[Nobody knows.]{.alert} Anyone who claims certainty is [selling something]{.alert}. The range of possible outcomes is very wide
 :::
 :::
 :::
@@ -562,18 +562,18 @@ Source: [Noah Smith](https://www.noahpinion.blog/p/stop-pretending-you-know-what
 
 ## Discussion: your predictions
 
-:::{style="margin-top: 30px; font-size: 25px;"}
+:::{style="margin-top: 40px; font-size: 25px;"}
 :::{.columns}
 :::{.column width=50%}
 **Quick exercise:**
 
-Think about a job you might want after graduation.
+Think about a job you might want after graduation
 
 1. List 3-4 main tasks in that job
-2. For each task: Could AI do this?
+2. For each task, could AI do it?
    - Now?
+   - In 1 year?
    - In 5 years?
-   - In 10 years?
 3. What tasks would remain human?
 4. How might the job change rather than disappear?
 :::
@@ -593,7 +593,7 @@ Think about a job you might want after graduation.
 
 ## Skills that may remain valuable
 
-:::{style="margin-top: 30px; font-size: 20px;"}
+:::{style="margin-top: 40px; font-size: 20px;"}
 :::{.columns}
 :::{.column width=55%}
 **Human-centric skills ([Deming, 2017](https://academic.oup.com/qje/article-abstract/132/4/1593/3861633)):**
@@ -604,8 +604,8 @@ Think about a job you might want after graduation.
 
 **Knowing how to work with AI ([WEF Future of Jobs Report, 2025](https://www.weforum.org/publications/the-future-of-jobs-report-2025/)):**
 
-- Knowing when to use it and when not to
-- [Evaluating AI outputs]{.alert} with a critical eye
+- When to use it, and when not to
+- [Checking AI outputs]{.alert} critically
 - Asking the right questions (garbage in, garbage out)
 
 **Domain expertise ([McKinsey, 2025](https://www.mckinsey.com/mgi/our-research/agents-robots-and-us-skill-partnerships-in-the-age-of-ai)):**
@@ -622,7 +622,7 @@ Think about a job you might want after graduation.
 Source: [Harvard Business School](https://www.library.hbs.edu/working-knowledge/why-soft-skills-still-matter-in-the-age-of-ai)
 
 :::{style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; font-size: 18px; margin-top: 15px;"}
-The irony: ["soft skills"]{.alert}, the ones people used to dismiss as fluffy, may turn out to be the hardest to automate.
+["Soft skills"]{.alert}, once dismissed as fluffy, may be the hardest to automate
 :::
 :::
 :::
@@ -631,25 +631,25 @@ The irony: ["soft skills"]{.alert}, the ones people used to dismiss as fluffy, m
 
 ## Adapting to an AI-influenced economy
 
-:::{style="margin-top: 30px; font-size: 19px;"}
+:::{style="margin-top: 40px; font-size: 19px;"}
 :::{.columns}
 :::{.column width=55%}
 **Be AI-literate:**
 
 - Understand what AI can and can't do
-- Use the tools well and tell AI hype from reality
+- Use the tools well and spot the hype
 - [This course is a start!]{.alert} 🤓
 
 **Build skills that complement AI:**
 
-- If AI does X, learn to do Y (what AI makes possible but can't do alone)
+- Learn what AI makes possible but can't do alone
 - Focus on [orchestration]{.alert}: directing, checking, and combining AI outputs
 - [Learning how to learn]{.alert} matters more than any single skill
 - Don't over-specialise too early
 
-**Maintain perspective:**
+**Keep perspective:**
 
-- Your career will span 40+ years. AI in 2066 will be very different from AI today
+- Your career will last 40+ years, and AI in 2066 will look very different
 - [Adaptability]{.alert} beats any specific prediction
 :::
 
@@ -667,28 +667,27 @@ The irony: ["soft skills"]{.alert}, the ones people used to dismiss as fluffy, m
 
 ## The graduate market in 2026
 
-:::{style="margin-top: 30px; font-size: 21px;"}
+:::{style="margin-top: 40px; font-size: 21px;"}
 :::{.columns}
 :::{.column width=55%}
-**The tough reality:**
-
-- Entry-level hiring is down in [AI-exposed jobs]{.alert} and competition is intense
+- Entry-level hiring is down in [AI-exposed jobs]{.alert}
+- Competition is intense
 - Traditional paths are narrowing
 - "Just get a degree" isn't enough
 
-**What might help:**
+**How to prepare:**
 
-- Show you can actually use AI tools, not just talk about them
+- Show you can use AI tools in practice
 - Build [applied projects]{.alert} people can see (a portfolio beats a transcript)
-- Get internship or work experience while you can
+- Get internships or work experience while you can
 - Pick up skills outside your major
 - [Build a network]{.alert} (still a human activity!)
 - Be open to non-traditional paths
 :::
 
 :::{.column width=45%}
-:::{style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; font-size: 20px;"}
-The job market [shifted while you were in university]{.alert}. That is unsettling, and I won't pretend otherwise. Learning to [work with AI]{.alert} won't fix everything, but ignoring it is worse.
+:::{style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; font-size: 20px; margin-top: 40px;"}
+The job market [changed while you were in university]{.alert}, and that is hard. Learning to [work with AI]{.alert} helps, even if it doesn't solve everything
 :::
 
 :::{style="text-align: center; margin-top: 15px;"}
@@ -702,7 +701,7 @@ Source: [Fortune](https://fortune.com/2025/08/26/billionaire-mark-cuban-gen-z-jo
 
 ## What would you advise?
 
-:::{style="margin-top: 30px; font-size: 24px;"}
+:::{style="margin-top: 40px; font-size: 24px;"}
 :::{.columns}
 :::{.column width=50%}
 **Scenario:**
@@ -718,7 +717,7 @@ Your younger sibling is about to start university. They ask:
 :::
 
 :::{.column width=50%}
-**Some thoughts to consider:**
+**Points to discuss:**
 
 - The value of education beyond job training
 - The danger of chasing "hot" fields
@@ -732,20 +731,22 @@ Your younger sibling is about to start university. They ask:
 
 ## Main takeaways
 
-:::{style="margin-top: 30px; font-size: 22px;"}
+:::{style="margin-top: 40px; font-size: 22px;"}
 :::{.columns}
 :::{.column width=55%}
 **What we know**
 
-- Technology has disrupted labour before, with a positive net effect over time
-- What is new is the exposure of [cognitive tasks]{.alert}
+- Past automation was [net positive]{.alert} over time
+- AI exposes [cognitive tasks]{.alert} too
 - Productivity gains are real but task-specific
-- Careful estimates find [no aggregate effect]{.alert} on earnings or hours yet
-- [Entry-level hiring]{.alert} is where the strain shows
+- No [aggregate effect]{.alert} on earnings or hours yet
+- [Entry-level hiring]{.alert} takes the first hit
 
 **What we don't know**
 
-- Whether this ends in augmentation or displacement, how long the transition takes, and who pays for it
+- Augmentation or displacement?
+- How long the transition takes
+- Who pays for it
 :::
 
 :::{.column width=45%}

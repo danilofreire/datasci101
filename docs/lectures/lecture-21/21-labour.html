@@ -157,15 +157,15 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </section>
 <section id="recap-of-last-class" class="slide level2">
 <h2>Recap of last class</h2>
-<div style="margin-top: 50px; font-size: 25px;">
+<div style="margin-top: 40px; font-size: 25px;">
 <div class="columns">
 <div class="column" style="width:50%;">
 <ul>
-<li>AI strains <span class="alert">privacy</span>: collection at scale plus <span class="alert">inference of sensitive data</span></li>
+<li>AI strains <span class="alert">privacy</span> by collecting data at scale and <span class="alert">inferring sensitive traits</span></li>
 <li><span class="alert">GDPR</span> (EU): rights of access, erasure, portability</li>
 <li>US: <span class="alert">patchwork of sectoral laws</span> (healthcare, finance) plus 23 state privacy laws</li>
 <li><span class="alert">Differential privacy, federated learning, synthetic data</span> help, but have trade-offs</li>
-<li><span class="alert">Collection is the core problem</span>: the same data enables benefits and surveillance</li>
+<li>Once data is collected, it can help people or <span class="alert">track them</span></li>
 <li>Today: <span class="alert">what does AI mean for jobs and the economy?</span></li>
 </ul>
 </div><div class="column" style="width:50%;">
@@ -179,29 +179,29 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <section id="lecture-overview" class="slide level2">
 <h2>Lecture overview</h2>
 <h3 id="what-we-will-cover-today">What we will cover today</h3>
-<div style="margin-top: 20px; font-size: 24px;">
+<div style="margin-top: 40px; font-size: 24px;">
 <div class="columns">
 <div class="column" style="width:50%;">
-<p><strong>Part 1: The automation question</strong></p>
+<p><span class="alert">Part 1: The automation question</span></p>
 <ul>
 <li>Historical perspective on technology and jobs</li>
 <li>Why “this time might be different”</li>
 <li>Task-based framework for thinking about AI</li>
 </ul>
-<p><strong>Part 2: Current evidence</strong></p>
+<p><span class="alert">Part 2: Current evidence</span></p>
 <ul>
 <li>What are people using AI for?</li>
 <li>Productivity effects</li>
 <li>Early job market signals</li>
 </ul>
 </div><div class="column" style="width:50%;">
-<p><strong>Part 3: Economic scenarios</strong></p>
+<p><span class="alert">Part 3: Economic scenarios</span></p>
 <ul>
 <li>Optimistic views: augmentation and new tasks</li>
 <li>Pessimistic views: displacement and polarisation</li>
 <li>What economists actually think</li>
 </ul>
-<p><strong>Part 4: What does this mean for you?</strong></p>
+<p><span class="alert">Part 4: What does this mean for you?</span></p>
 <ul>
 <li>Skills that may remain valuable</li>
 <li>Adapting to an AI-influenced economy</li>
@@ -212,7 +212,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </section>
 <section id="meme-of-the-day" class="slide level2">
 <h2>Meme of the day 😄</h2>
-<div style="text-align: center; margin-top: 30px;">
+<div style="text-align: center; margin-top: 40px;">
 <p><a href="#/" data-modal-type="image" data-modal-url="figures/ai-jobs-meme.webp"><img data-src="figures/ai-jobs-meme.webp" style="width:40.0%"></a></p>
 <p>Source: <a href="https://www.reddit.com/r/ProgrammerHumor/comments/11wozfs/finally_thanks_ai_s/">r/ProgrammerHumor</a></p>
 </div>
@@ -224,7 +224,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </section>
 <section id="this-isnt-the-first-time" class="slide level2">
 <h2>This isn’t the first time</h2>
-<div style="margin-top: 30px; font-size: 20px;">
+<div style="margin-top: 40px; font-size: 20px;">
 <div class="columns">
 <div class="column" style="width:55%;">
 <p><strong>Historical fears of technological unemployment:</strong></p>
@@ -242,13 +242,13 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <td>1810s</td>
 <td>Power looms</td>
 <td><a href="https://www.smithsonianmag.com/history/what-the-luddites-really-fought-against-264412/">Luddites destroy machines</a></td>
-<td><a href="https://www.history.com/articles/who-were-the-luddites">Textile jobs changed but grew</a></td>
+<td><a href="https://www.imf.org/external/pubs/ft/fandd/2015/03/bessen.htm">Textile jobs changed but grew</a></td>
 </tr>
 <tr class="even">
 <td>1930s</td>
 <td>Mechanisation</td>
 <td><a href="http://www.econ.yale.edu/smith/econ116a/keynes1.pdf">Keynes: “technological unemployment”</a></td>
-<td><a href="https://www.project-syndicate.org/commentary/what-keynes-famous-1930-essay-got-right-and-wrong-by-kaushik-basu-2024-02">Post-war prosperity</a></td>
+<td><a href="https://en.wikipedia.org/wiki/Post%E2%80%93World_War_II_economic_expansion">Post-war prosperity</a></td>
 </tr>
 <tr class="odd">
 <td>1960s</td>
@@ -259,22 +259,21 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <tr class="even">
 <td>1990s</td>
 <td>Personal computers</td>
-<td><a href="https://www.technologyreview.com/2024/01/27/1087041/technological-unemployment-elon-musk-jobs-ai/">End of clerical work</a></td>
+<td><a href="https://en.wikipedia.org/wiki/The_End_of_Work">Rifkin’s <em>The End of Work</em> (1995)</a></td>
 <td><a href="https://www.aeaweb.org/articles?id=10.1257/jep.33.2.3">New jobs created</a></td>
 </tr>
 <tr class="odd">
 <td>2010s</td>
 <td>Robots</td>
-<td><a href="https://news.mit.edu/2020/how-many-jobs-robots-replace-0504">Manufacturing decline</a></td>
+<td><a href="https://www.technologyreview.com/2024/01/27/1087041/technological-unemployment-elon-musk-jobs-ai/">Manufacturing decline</a></td>
 <td><a href="https://www.nber.org/papers/w23285">Local job and wage losses</a></td>
 </tr>
 </tbody>
 </table>
-<p><strong>The pattern so far:</strong></p>
 <ul>
 <li>Technology destroys some jobs and creates others</li>
 <li>The net effect has been <span class="alert">positive</span> over time</li>
-<li>The adjustment periods are painful</li>
+<li>However, the adjustment periods are painful</li>
 </ul>
 </div><div class="column" style="width:45%;">
 <div style="text-align: center; margin-top: 30px;">
@@ -286,7 +285,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </div>
 <p>Source: <a href="https://www.currentaffairs.org/news/2021/06/the-luddites-were-right">Current Affairs</a></p>
 <div style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; font-size: 18px; margin-top: 15px;">
-<p>Every wave of automation sparked fears of mass unemployment. <span class="alert">So far, those fears haven’t materialised</span>. But past performance doesn’t guarantee future results! 😅</p>
+<p><span class="alert">So far, fears of mass unemployment haven’t materialised</span>. But past performance doesn’t guarantee future results! 😅</p>
 </div>
 </div>
 </div></div>
@@ -294,7 +293,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </section>
 <section id="why-this-time-might-be-different" class="slide level2">
 <h2>Why this time might be different</h2>
-<div style="margin-top: 30px; font-size: 19px;">
+<div style="margin-top: 40px; font-size: 19px;">
 <div class="columns">
 <div class="column" style="width:55%;">
 <p><strong>Previous automation:</strong></p>
@@ -305,9 +304,9 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <p><strong>AI is different:</strong></p>
 <ul>
 <li>Targets <span class="alert">cognitive tasks</span> too</li>
-<li>General-purpose: the same model writes essays, analyses data, and generates images</li>
-<li>Improving <span class="alert">very rapidly</span></li>
-<li>“Computers can’t do intellectual work” and “computers can’t be creative” <span class="alert">both look shaky now</span></li>
+<li>One model writes essays, analyses data and makes images</li>
+<li>Improves <span class="alert">fast</span></li>
+<li>Intellectual and creative work <span class="alert">no longer looks safe</span></li>
 </ul>
 <p><strong>Counter-argument:</strong></p>
 <ul>
@@ -320,7 +319,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <p><a href="#/" data-modal-type="image" data-modal-url="figures/automation-waves.jpg"><img data-src="figures/automation-waves.jpg" style="width:100.0%"></a></p>
 <p>Source: <a href="https://www.visualcapitalist.com/the-history-of-innovation-cycles/">Edelson Institute</a></p>
 <div style="font-size: 18px; margin-top: 15px;">
-<p>AI will change work. Everyone agrees on that much. The real unknowns are <span class="alert">how fast</span> it happens and <span class="alert">who pays the price</span> while the rest of us adjust.</p>
+<p>AI will change work. We don’t know <span class="alert">how fast</span>, or <span class="alert">who pays the price</span> while the rest of us adjust</p>
 </div>
 </div>
 </div></div>
@@ -328,15 +327,16 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </section>
 <section id="tasks-vs-jobs" class="slide level2">
 <h2>Tasks vs jobs</h2>
-<div style="margin-top: 30px; font-size: 20px;">
+<div style="margin-top: 40px; font-size: 20px;">
 <div class="columns">
 <div class="column" style="width:55%;">
-<p><strong>A more useful framework (<a href="https://www.aeaweb.org/articles?id=10.1257/jep.33.2.3">Acemoglu &amp; Restrepo, 2019</a>; <a href="https://hbr.org/2024/05/ai-is-making-economists-rethink-the-story-of-automation">HBR explainer</a>):</strong></p>
+<p><strong>Task-based view (<a href="https://www.aeaweb.org/articles?id=10.1257/jep.33.2.3">Acemoglu &amp; Restrepo, 2019</a>; <a href="https://hbr.org/2024/05/ai-is-making-economists-rethink-the-story-of-automation">HBR explainer</a>):</strong></p>
 <ul>
 <li>Think about <span class="alert">tasks</span> being automated, not <span class="alert">jobs</span> being replaced</li>
-<li>Most jobs contain many tasks, and <span class="alert">AI might automate some but not all</span></li>
+<li>Most jobs bundle many tasks, and <span class="alert">AI may automate only some</span></li>
 </ul>
 <p><strong>Example: Lawyer</strong></p>
+<div style="display: flex; justify-content: center; font-size: 26px;">
 <table class="caption-top">
 <thead>
 <tr class="header">
@@ -375,12 +375,13 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </tr>
 </tbody>
 </table>
+</div>
 </div><div class="column" style="width:45%;">
-<p><strong>The effect:</strong></p>
+<p><strong>What changes for lawyers:</strong></p>
 <ul>
 <li>AI handles the grunt work, so firms need fewer lawyers per case</li>
 <li>The role shifts toward <span class="alert">higher-value tasks</span> (counselling clients, arguing in court)</li>
-<li>The lawyer doesn’t disappear, but firms hire fewer of them. <span class="alert">What happens to the rest?</span></li>
+<li>The job survives. <span class="alert">What happens to the lawyers firms don’t hire?</span></li>
 </ul>
 <div style="text-align: center;">
 <p><a href="#/" data-modal-type="image" data-modal-url="figures/economist-ai-labour.png"><img data-src="figures/economist-ai-labour.png" style="width:55.0%"></a></p>
@@ -391,7 +392,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </section>
 <section id="which-tasks-are-most-exposed" class="slide level2">
 <h2>Which tasks are most exposed?</h2>
-<div style="margin-top: 30px; font-size: 20px;">
+<div style="margin-top: 40px; font-size: 20px;">
 <div class="columns">
 <div class="column" style="width:55%;">
 <p><strong>High exposure to AI:</strong></p>
@@ -403,13 +404,14 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </ul>
 <p><strong>Lower exposure (for now):</strong></p>
 <ul>
-<li>Physical work in unpredictable settings (construction, plumbing)</li>
-<li>Jobs needing your physical presence (nursing, firefighting)</li>
-<li>Real-time judgment in new situations (emergency medicine, crisis management)</li>
-<li>Work built on deep personal relationships (therapy, social work)</li>
+<li>Unpredictable physical work (construction, plumbing)</li>
+<li>In-person work (nursing, firefighting)</li>
+<li>Real-time judgment (emergency medicine, crisis management)</li>
+<li>Close personal relationships (therapy, social work)</li>
 </ul>
 </div><div class="column" style="width:45%;">
-<p><strong>Exposure by occupation:</strong> (AI exposure rises with wages, but there are exceptions)</p>
+<p><strong>Exposure by occupation</strong> (it rises with wages, with exceptions):</p>
+<div style="display: flex; justify-content: center; font-size: 26px;">
 <table class="caption-top">
 <thead>
 <tr class="header">
@@ -452,6 +454,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </tr>
 </tbody>
 </table>
+</div>
 <p>Sources: <a href="https://www.oxfordmartin.ox.ac.uk/publications/the-future-of-employment">Frey &amp; Osborne (2017)</a>; <a href="https://arxiv.org/abs/2303.10130">Eloundou et al.&nbsp;(2023)</a>; <a href="https://www.imf.org/en/blogs/articles/2024/01/14/ai-will-transform-the-global-economy-lets-make-sure-it-benefits-humanity">IMF (2024)</a></p>
 </div></div>
 </div>
@@ -463,10 +466,11 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </section>
 <section id="what-are-people-using-ai-for" class="slide level2">
 <h2>What are people using AI for?</h2>
-<div style="margin-top: 30px; font-size: 20px;">
+<div style="margin-top: 40px; font-size: 20px;">
 <div class="columns">
 <div class="column" style="width:55%;">
 <p><strong><a href="https://www.nber.org/system/files/working_papers/w34255/w34255.pdf">OpenAI’s research on ChatGPT use (2025)</a>:</strong></p>
+<div style="display: flex; justify-content: center; font-size: 26px;">
 <table class="caption-top">
 <thead>
 <tr class="header">
@@ -503,8 +507,8 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </tr>
 </tbody>
 </table>
+</div>
 <p><strong>Among work-related messages only</strong> (Jun 2025): Writing ~40%, Practical Guidance ~24%, Technical Help ~10%.</p>
-<p><strong>What this tells us:</strong></p>
 <ul>
 <li>Only <span class="alert">27% of use is work-related</span>, 73% is personal</li>
 <li>Writing’s share fell as people found other uses</li>
@@ -520,31 +524,30 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </section>
 <section id="productivity-effects-early-evidence" class="slide level2">
 <h2>Productivity effects: early evidence</h2>
-<div style="margin-top: 30px; font-size: 20px;">
+<div style="margin-top: 40px; font-size: 20px;">
 <div class="columns">
 <div class="column" style="width:55%;">
 <p><strong>Studies finding positive effects:</strong></p>
 <ul>
-<li><strong>Customer service <a href="https://academic.oup.com/qje/article/140/2/889/7990658">(Brynjolfsson et al., 2025)</a></strong>: 15% productivity increase, biggest gains for <span class="alert">novice workers</span></li>
-<li><strong>Programmers <a href="https://github.blog/news-insights/research/research-quantifying-github-copilots-impact-on-developer-productivity-and-happiness/">(GitHub, 2022)</a></strong>: 55% faster task completion with Copilot</li>
-<li><strong>Consultants <a href="https://www.bcg.com/publications/2023/how-people-create-and-destroy-value-with-gen-ai">(BCG study, 2023)</a></strong>: 40% better performance on applicable tasks</li>
-<li><strong>Writers <a href="https://www.science.org/doi/10.1126/science.adh2586">(Noy &amp; Zhang, 2023)</a></strong>: 40% faster, 18% better quality</li>
+<li>Customer service <a href="https://academic.oup.com/qje/article/140/2/889/7990658">(Brynjolfsson et al., 2025)</a>: 15% more productive, most for <span class="alert">novices</span></li>
+<li>Programmers <a href="https://github.blog/news-insights/research/research-quantifying-github-copilots-impact-on-developer-productivity-and-happiness/">(GitHub, 2022)</a>: 55% faster with Copilot</li>
+<li>Consultants <a href="https://www.bcg.com/publications/2023/how-people-create-and-destroy-value-with-gen-ai">(BCG, 2023)</a>: 40% better on tasks AI handles well</li>
+<li>Writers <a href="https://www.science.org/doi/10.1126/science.adh2586">(Noy &amp; Zhang, 2023)</a>: 40% faster, 18% better quality</li>
 </ul>
-<p><strong>Important caveats:</strong></p>
+<p><strong>Caveats:</strong></p>
 <ul>
 <li>Most studies are <span class="alert">short-term</span>, so long-term effects stay unclear</li>
 <li>Often sponsored by AI companies</li>
 <li>Lab settings differ from real work</li>
 </ul>
 </div><div class="column" style="width:45%;">
-<p><strong>The pattern emerging:</strong></p>
+<p><strong>Across studies:</strong></p>
 <ul>
-<li>AI <span class="alert">compresses the skill distribution</span>: novices improve more than experts</li>
+<li><span class="alert">Novices gain more</span> than experts, so skill gaps narrow</li>
 <li>Experts sometimes do worse with AI</li>
 <li>Benefits concentrated in <span class="alert">specific tasks</span></li>
 </ul>
 <div style="text-align: center; margin-top: 15px;">
-<!-- Suggested image: Productivity gains chart -->
 <p><a href="#/" data-modal-type="image" data-modal-url="figures/productivity-gains.png"><img data-src="figures/productivity-gains.png" style="width:100.0%"></a></p>
 <p>Source: <a href="https://www.bcg.com/publications/2023/how-people-create-and-destroy-value-with-gen-ai">Boston Consulting Group (2023)</a></p>
 </div>
@@ -553,7 +556,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </section>
 <section id="the-graduate-job-drought" class="slide level2">
 <h2>The graduate job drought</h2>
-<div style="margin-top: 30px; font-size: 21px;">
+<div style="margin-top: 40px; font-size: 21px;">
 <div class="columns">
 <div class="column" style="width:55%;">
 <p><strong>What the data shows (2024-2026):</strong></p>
@@ -563,13 +566,13 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </ul>
 <p><strong><a href="https://www.ft.com/content/c89496b1-bc8d-425e-b86b-ec89402410e4">Financial Times reporting (2026)</a>:</strong></p>
 <ul>
-<li>UK graduate vacancies at a 10-year low</li>
+<li>UK graduate vacancies at their lowest outside the pandemic</li>
 <li>Tech companies leading the pullback</li>
-<li>Law and consulting firms reducing trainee intakes</li>
+<li>Law and consulting firms cutting trainee places</li>
 </ul>
-<p><strong>The logic (from the employer’s side):</strong></p>
+<p><strong>Why employers cut junior roles:</strong></p>
 <ul>
-<li>Junior employees used to do the tasks AI now handles</li>
+<li>AI now does tasks juniors used to do</li>
 <li>AI doesn’t need healthcare, holidays, or mentoring</li>
 </ul>
 </div><div class="column" style="width:45%;">
@@ -582,7 +585,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </div>
 <p>Source: <a href="https://www.ft.com/content/c89496b1-bc8d-425e-b86b-ec89402410e4">Financial Times (2026)</a></p>
 <div style="background: rgba(230, 57, 70, 0.1); padding: 15px; border-radius: 10px; font-size: 18px; margin-top: 15px;">
-<p>This matters for you personally: if companies replace junior roles with AI, <span class="alert">where do you get your first job?</span></p>
+<p>If companies replace junior roles with AI, <span class="alert">where do you get your first job?</span></p>
 </div>
 </div>
 </div></div>
@@ -590,7 +593,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </section>
 <section id="but-the-aggregate-numbers-are-confusing" class="slide level2">
 <h2>But the aggregate numbers are confusing</h2>
-<div style="margin-top: 30px; font-size: 20px;">
+<div style="margin-top: 40px; font-size: 20px;">
 <div class="columns">
 <div class="column" style="width:55%;">
 <p><strong>What we’re not seeing (yet):</strong></p>
@@ -603,14 +606,14 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <ul>
 <li><span class="alert">Slower hiring</span> rather than mass firing</li>
 <li>Some sectors growing, others shrinking</li>
-<li>Geographic concentration of effects</li>
-<li><span class="alert">Young workers</span> are hit first, but not experienced ones</li>
+<li>Effects concentrated in some regions</li>
+<li><span class="alert">Young workers</span> are hit, experienced ones much less</li>
 </ul>
 <p><strong>Why the disconnect?</strong></p>
 <ul>
 <li>Adoption takes time (most firms are still experimenting)</li>
-<li>Many tasks don’t work well with current AI</li>
-<li>Regulations, contracts, and organisational inertia slow everything down</li>
+<li>Current AI handles many tasks poorly</li>
+<li>Regulation, contracts and inertia slow adoption</li>
 </ul>
 </div><div class="column" style="width:45%;">
 <div style="text-align: center;">
@@ -630,8 +633,8 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <li>25,000 Danish workers, 7,000 workplaces</li>
 <li>Surveys linked to <span class="alert">government payroll records</span>, not self-reports</li>
 <li>Difference-in-differences: adopters vs non-adopters, before vs after ChatGPT</li>
-<li><span class="alert">No effect on earnings or hours</span> after two years, ruling out anything above 2%</li>
-<li>Adopters do save time, around 3% of hours</li>
+<li><span class="alert">No effect on earnings or hours</span> after two years (rules out effects above 2%)</li>
+<li>Adopters save about 3% of their hours</li>
 </ul>
 <div style="text-align: center;">
 <p><a href="#/" data-modal-type="image" data-modal-url="figures/humlum-did.png"><img data-src="figures/humlum-did.png" style="width:62.0%"></a></p>
@@ -641,7 +644,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <p><strong><a href="https://budgetlab.yale.edu/research/tracking-impact-ai-labor-market">Yale Budget Lab tracker</a>:</strong></p>
 <ul>
 <li>Share of US workers in low, middle and high AI-exposure occupations</li>
-<li>Monthly CPS data, updated to August 2026</li>
+<li>Monthly CPS data, updated to September 2026</li>
 <li>The three lines are <span class="alert">flat since 2023</span></li>
 </ul>
 <div style="text-align: center;">
@@ -658,21 +661,21 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </section>
 <section id="the-optimistic-view" class="slide level2">
 <h2>The optimistic view</h2>
-<div style="margin-top: 30px; font-size: 19px;">
+<div style="margin-top: 40px; font-size: 19px;">
 <div class="columns">
 <div class="column" style="width:55%;">
 <p><strong>Augmentation, not replacement:</strong></p>
 <ul>
-<li>AI makes workers <span class="alert">more productive</span>: one person does what five did before</li>
-<li>Demand expands to absorb the extra capacity</li>
-<li>Net effect: more output, same or more jobs</li>
+<li>AI makes workers <span class="alert">more productive</span></li>
+<li>Demand grows to absorb the extra output</li>
+<li>More output, with as many jobs or more</li>
 </ul>
 <p><strong>New tasks emerge:</strong></p>
 <ul>
 <li>AI creates <span class="alert">new kinds of work</span>: prompt engineering, AI training, oversight</li>
 <li>Jobs we can’t imagine yet, like social media manager in 1990</li>
 </ul>
-<p><strong>Historical pattern continues:</strong></p>
+<p><strong>Past waves suggest:</strong></p>
 <ul>
 <li>Technology has always created more jobs than it destroyed</li>
 <li>Higher productivity → higher incomes → more demand</li>
@@ -688,7 +691,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </section>
 <section id="the-pessimistic-view" class="slide level2">
 <h2>The pessimistic view</h2>
-<div style="margin-top: 30px; font-size: 21px;">
+<div style="margin-top: 40px; font-size: 21px;">
 <div class="columns">
 <div class="column" style="width:55%;">
 <p><strong>Displacement dominates:</strong></p>
@@ -701,7 +704,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <ul>
 <li>High-skill jobs pay more</li>
 <li>Low-skill service jobs persist (hard to automate)</li>
-<li>Middle gets <span class="alert">hollowed out</span>, so inequality rises sharply</li>
+<li>The middle is <span class="alert">hollowed out</span>, so inequality rises sharply</li>
 </ul>
 <p><strong>Power dynamics:</strong></p>
 <ul>
@@ -713,7 +716,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <p><a href="#/" data-modal-type="image" data-modal-url="figures/pessimistic-future-02.png"><img data-src="figures/pessimistic-future-02.png" style="width:100.0%"></a></p>
 <p>Source: <a href="https://fortune.com/2025/09/06/godfather-of-ai-geoffrey-hinton-massive-unemployment-soaring-profits-capitalist-system/">Fortune</a></p>
 <div style="background: rgba(230, 57, 70, 0.1); padding: 15px; border-radius: 10px; font-size: 18px; margin-top: 15px;">
-<p><strong>Pessimist’s argument</strong>: “The horse population never recovered from the automobile. <span class="alert">What if humans are the horses?</span>”</p>
+<p>Pessimists note that the horse population never recovered from the car. <span class="alert">What if we are the horses?</span></p>
 </div>
 </div>
 </div></div>
@@ -721,7 +724,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </section>
 <section id="what-economists-actually-think" class="slide level2">
 <h2>What economists actually think</h2>
-<div style="margin-top: 30px; font-size: 19px;">
+<div style="margin-top: 40px; font-size: 19px;">
 <div class="columns">
 <div class="column" style="width:55%;">
 <p><strong>Economist polls (<a href="https://kentclarkcenter.org/surveys/ai-and-the-labor-market/">Clark Center, 2023</a> and <a href="https://kentclarkcenter.org/surveys/ai-work-and-education/">2026</a>):</strong></p>
@@ -733,20 +736,19 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <p><strong>MIT economists:</strong></p>
 <ul>
 <li><a href="https://economics.mit.edu/sites/default/files/2024-04/The%20Simple%20Macroeconomics%20of%20AI.pdf">Acemoglu (2025)</a>: AI adds at most <span class="alert">~0.7% to productivity</span> over 10 years</li>
-<li><a href="https://shapingwork.mit.edu/research/can-we-have-pro-worker-ai/">Acemoglu, Autor &amp; Johnson (2023)</a>: AI can <span class="alert">augment</span> or <span class="alert">replace</span> workers. Today it leans to replacement, and policy could shift it</li>
+<li><a href="https://shapingwork.mit.edu/research/can-we-have-pro-worker-ai/">Acemoglu, Autor &amp; Johnson (2023)</a>: AI can <span class="alert">augment</span> or <span class="alert">replace</span> workers. It leans to replacement now, but policy can shift it</li>
 </ul>
 <p><strong><a href="https://web.stanford.edu/~chadj/AIandEconomicFuture.pdf">Jones (2026)</a>, now at Anthropic:</strong></p>
 <ul>
-<li>The economy is only as fast as its <span class="alert">weakest links</span>: tasks AI cannot yet do</li>
-<li>Big gains may take <span class="alert">decades</span>, which gives workers time to adjust</li>
+<li>Growth is held back by <span class="alert">weakest links</span>, the tasks AI can’t do yet</li>
+<li>Big gains may take <span class="alert">decades</span>, giving workers time to adjust</li>
 </ul>
 </div><div class="column" style="width:45%;">
 <div style="text-align: center;">
-<!-- Suggested image: Economist survey or Acemoglu diagram -->
 <p><a href="#/" data-modal-type="image" data-modal-url="figures/dont-know.png"><img data-src="figures/dont-know.png" style="width:60.0%"></a></p>
 <p>Source: <a href="https://www.noahpinion.blog/p/stop-pretending-you-know-what-ai">Noah Smith</a></p>
 <div style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; font-size: 18px; margin-top: 15px;">
-<p><span class="alert">Nobody knows.</span> Anyone who claims certainty is <span class="alert">selling something</span>. The range of possible outcomes is very wide.</p>
+<p><span class="alert">Nobody knows.</span> Anyone who claims certainty is <span class="alert">selling something</span>. The range of possible outcomes is very wide</p>
 </div>
 </div>
 </div></div>
@@ -754,18 +756,18 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </section>
 <section id="discussion-your-predictions" class="slide level2 scrollable">
 <h2>Discussion: your predictions</h2>
-<div style="margin-top: 30px; font-size: 25px;">
+<div style="margin-top: 40px; font-size: 25px;">
 <div class="columns">
 <div class="column" style="width:50%;">
 <p><strong>Quick exercise:</strong></p>
-<p>Think about a job you might want after graduation.</p>
+<p>Think about a job you might want after graduation</p>
 <ol type="1">
 <li>List 3-4 main tasks in that job</li>
-<li>For each task: Could AI do this?
+<li>For each task, could AI do it?
 <ul>
 <li>Now?</li>
+<li>In 1 year?</li>
 <li>In 5 years?</li>
-<li>In 10 years?</li>
 </ul></li>
 <li>What tasks would remain human?</li>
 <li>How might the job change rather than disappear?</li>
@@ -788,7 +790,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </section>
 <section id="skills-that-may-remain-valuable" class="slide level2">
 <h2>Skills that may remain valuable</h2>
-<div style="margin-top: 30px; font-size: 20px;">
+<div style="margin-top: 40px; font-size: 20px;">
 <div class="columns">
 <div class="column" style="width:55%;">
 <p><strong>Human-centric skills (<a href="https://academic.oup.com/qje/article-abstract/132/4/1593/3861633">Deming, 2017</a>):</strong></p>
@@ -799,8 +801,8 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </ul>
 <p><strong>Knowing how to work with AI (<a href="https://www.weforum.org/publications/the-future-of-jobs-report-2025/">WEF Future of Jobs Report, 2025</a>):</strong></p>
 <ul>
-<li>Knowing when to use it and when not to</li>
-<li><span class="alert">Evaluating AI outputs</span> with a critical eye</li>
+<li>When to use it, and when not to</li>
+<li><span class="alert">Checking AI outputs</span> critically</li>
 <li>Asking the right questions (garbage in, garbage out)</li>
 </ul>
 <p><strong>Domain expertise (<a href="https://www.mckinsey.com/mgi/our-research/agents-robots-and-us-skill-partnerships-in-the-age-of-ai">McKinsey, 2025</a>):</strong></p>
@@ -814,7 +816,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <p><a href="#/" data-modal-type="image" data-modal-url="figures/valuable-skills.png"><img data-src="figures/valuable-skills.png" style="width:100.0%"></a></p>
 <p>Source: <a href="https://www.library.hbs.edu/working-knowledge/why-soft-skills-still-matter-in-the-age-of-ai">Harvard Business School</a></p>
 <div style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; font-size: 18px; margin-top: 15px;">
-<p>The irony: <span class="alert">“soft skills”</span>, the ones people used to dismiss as fluffy, may turn out to be the hardest to automate.</p>
+<p><span class="alert">“Soft skills”</span>, once dismissed as fluffy, may be the hardest to automate</p>
 </div>
 </div>
 </div></div>
@@ -822,25 +824,25 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </section>
 <section id="adapting-to-an-ai-influenced-economy" class="slide level2">
 <h2>Adapting to an AI-influenced economy</h2>
-<div style="margin-top: 30px; font-size: 19px;">
+<div style="margin-top: 40px; font-size: 19px;">
 <div class="columns">
 <div class="column" style="width:55%;">
 <p><strong>Be AI-literate:</strong></p>
 <ul>
 <li>Understand what AI can and can’t do</li>
-<li>Use the tools well and tell AI hype from reality</li>
+<li>Use the tools well and spot the hype</li>
 <li><span class="alert">This course is a start!</span> 🤓</li>
 </ul>
 <p><strong>Build skills that complement AI:</strong></p>
 <ul>
-<li>If AI does X, learn to do Y (what AI makes possible but can’t do alone)</li>
+<li>Learn what AI makes possible but can’t do alone</li>
 <li>Focus on <span class="alert">orchestration</span>: directing, checking, and combining AI outputs</li>
 <li><span class="alert">Learning how to learn</span> matters more than any single skill</li>
 <li>Don’t over-specialise too early</li>
 </ul>
-<p><strong>Maintain perspective:</strong></p>
+<p><strong>Keep perspective:</strong></p>
 <ul>
-<li>Your career will span 40+ years. AI in 2066 will be very different from AI today</li>
+<li>Your career will last 40+ years, and AI in 2066 will look very different</li>
 <li><span class="alert">Adaptability</span> beats any specific prediction</li>
 </ul>
 </div><div class="column" style="width:45%;">
@@ -855,27 +857,27 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </section>
 <section id="the-graduate-market-in-2026" class="slide level2">
 <h2>The graduate market in 2026</h2>
-<div style="margin-top: 30px; font-size: 21px;">
+<div style="margin-top: 40px; font-size: 21px;">
 <div class="columns">
 <div class="column" style="width:55%;">
-<p><strong>The tough reality:</strong></p>
 <ul>
-<li>Entry-level hiring is down in <span class="alert">AI-exposed jobs</span> and competition is intense</li>
+<li>Entry-level hiring is down in <span class="alert">AI-exposed jobs</span></li>
+<li>Competition is intense</li>
 <li>Traditional paths are narrowing</li>
 <li>“Just get a degree” isn’t enough</li>
 </ul>
-<p><strong>What might help:</strong></p>
+<p><strong>How to prepare:</strong></p>
 <ul>
-<li>Show you can actually use AI tools, not just talk about them</li>
+<li>Show you can use AI tools in practice</li>
 <li>Build <span class="alert">applied projects</span> people can see (a portfolio beats a transcript)</li>
-<li>Get internship or work experience while you can</li>
+<li>Get internships or work experience while you can</li>
 <li>Pick up skills outside your major</li>
 <li><span class="alert">Build a network</span> (still a human activity!)</li>
 <li>Be open to non-traditional paths</li>
 </ul>
 </div><div class="column" style="width:45%;">
-<div style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; font-size: 20px;">
-<p>The job market <span class="alert">shifted while you were in university</span>. That is unsettling, and I won’t pretend otherwise. Learning to <span class="alert">work with AI</span> won’t fix everything, but ignoring it is worse.</p>
+<div style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; font-size: 20px; margin-top: 40px;">
+<p>The job market <span class="alert">changed while you were in university</span>, and that is hard. Learning to <span class="alert">work with AI</span> helps, even if it doesn’t solve everything</p>
 </div>
 <div style="text-align: center; margin-top: 15px;">
 <p><a href="#/" data-modal-type="image" data-modal-url="figures/mark-cuban.png"><img data-src="figures/mark-cuban.png" style="width:80.0%"></a></p>
@@ -886,7 +888,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </section>
 <section id="what-would-you-advise" class="slide level2">
 <h2>What would you advise?</h2>
-<div style="margin-top: 30px; font-size: 24px;">
+<div style="margin-top: 40px; font-size: 24px;">
 <div class="columns">
 <div class="column" style="width:50%;">
 <p><strong>Scenario:</strong></p>
@@ -901,7 +903,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <li>How would you address their anxiety?</li>
 </ul>
 </div><div class="column" style="width:50%;">
-<p><strong>Some thoughts to consider:</strong></p>
+<p><strong>Points to discuss:</strong></p>
 <ul>
 <li>The value of education beyond job training</li>
 <li>The danger of chasing “hot” fields</li>
@@ -918,20 +920,22 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </section>
 <section id="main-takeaways" class="slide level2">
 <h2>Main takeaways</h2>
-<div style="margin-top: 30px; font-size: 22px;">
+<div style="margin-top: 40px; font-size: 22px;">
 <div class="columns">
 <div class="column" style="width:55%;">
 <p><strong>What we know</strong></p>
 <ul>
-<li>Technology has disrupted labour before, with a positive net effect over time</li>
-<li>What is new is the exposure of <span class="alert">cognitive tasks</span></li>
+<li>Past automation was <span class="alert">net positive</span> over time</li>
+<li>AI exposes <span class="alert">cognitive tasks</span> too</li>
 <li>Productivity gains are real but task-specific</li>
-<li>Careful estimates find <span class="alert">no aggregate effect</span> on earnings or hours yet</li>
-<li><span class="alert">Entry-level hiring</span> is where the strain shows</li>
+<li>No <span class="alert">aggregate effect</span> on earnings or hours yet</li>
+<li><span class="alert">Entry-level hiring</span> takes the first hit</li>
 </ul>
 <p><strong>What we don’t know</strong></p>
 <ul>
-<li>Whether this ends in augmentation or displacement, how long the transition takes, and who pays for it</li>
+<li>Augmentation or displacement?</li>
+<li>How long the transition takes</li>
+<li>Who pays for it</li>
 </ul>
 </div><div class="column" style="width:45%;">
 <p><strong>For your career</strong></p>
