@@ -165,7 +165,7 @@
     "href": "lectures/lecture-23/23-misinformation.html#recap-of-last-class",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Recap of last class",
-    "text": "Recap of last class\n\n\n\n\nAI and wellbeing: attention, mental health, environment\nAlgorithms optimise engagement, not wellbeing\nFilter bubbles look overstated, while mental health effects are debated\nAI mental-health tools: short-term promise, thin long-term evidence\nTraining is a one-off cost, but inference at scale keeps growing\nIncentive structures beat intentions\nToday: what happens when AI is used to deceive?\n\n\n\n\n\n\nPope Francis in Balenciaga! 😂"
+    "text": "Recap of last class\n\n\n\n\nLast class: AI and wellbeing\nAlgorithms optimise engagement, not wellbeing\nFilter bubbles look overstated, while mental health effects are debated\nAI therapy helps short term, little data beyond\nTraining is a one-off cost, but inference at scale keeps growing\nPlatforms follow incentives, not stated intentions\nToday: what happens when AI is used to deceive?\n\n\n\n\n\n\nPope Francis in Balenciaga! 😂"
   },
   {
     "objectID": "lectures/lecture-23/23-misinformation.html#lecture-overview",
@@ -186,42 +186,42 @@
     "href": "lectures/lecture-23/23-misinformation.html#three-kinds-of-false-content",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Three kinds of false content",
-    "text": "Three kinds of false content\n\n\n\nThe trichotomy (Wardle & Derakhshan, 2017, Council of Europe):\n\n\n\n\n\n\n\nTerm\nDefinition\n\n\n\n\nMisinformation\nFalse information spread without intent to deceive\n\n\nDisinformation\nFalse information spread deliberately to deceive\n\n\nMalinformation\nTrue information shared to cause harm\n\n\n\nA broader concept: synthetic media (content created or manipulated by AI)\nWhy the distinction matters:\n\nIntent shapes the response\nDifferent actors, different motivations\nLegal treatment varies by category\n\nThe old problem:\n\nMisinformation is ancient. Technology changes scale and speed\n\n\n\n\nSource: CUNY Library\n\nA grandmother sharing a bad health tip and a state disinformation campaign need different responses. Intent matters"
+    "text": "Three kinds of false content\n\n\n\n\n\n\n\n\n\n\n\nTerm\nDefinition\n\n\n\n\nMisinformation\nFalse information spread without intent to deceive\n\n\nDisinformation\nFalse information spread deliberately to deceive\n\n\nMalinformation\nTrue information shared to cause harm\n\n\n\n\nSource: Wardle & Derakhshan (2017), Council of Europe\nSynthetic media: content created or manipulated by AI\nResponses differ by type:\n\nActors and motives differ\nThe law treats each differently\n\n\n\n\nSource: CUNY Library\n\nA grandmother sharing a bad health tip and a state disinformation campaign need different responses"
   },
   {
     "objectID": "lectures/lecture-23/23-misinformation.html#why-ai-changes-things",
     "href": "lectures/lecture-23/23-misinformation.html#why-ai-changes-things",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Why AI changes things",
-    "text": "Why AI changes things\n\n\n\nBefore generative AI:\n\nFake images required Photoshop skills\nFake videos needed studios, fake audio needed voice actors\nProduction was expensive and slow, and detection often possible\n\nAfter generative AI:\n\nAnyone can make convincing fakes at near-zero cost\nQuality improves rapidly, so detection gets harder\n\nThe scale problem:\n\nThousands of fake articles in minutes, targeted at specific audiences\nHuman moderators can’t keep up (Lazer et al., 2018)\n\n\n\n\nSource: Encyclopedia Britannica\n\nThe “Protocols of the Elders of Zion” (1903) was fabricated and fuelled hatred for a century. Now anyone can produce the same in minutes"
+    "text": "Why AI changes things\n\n\n\nBefore generative AI:\n\nFakes needed Photoshop skills, studios or voice actors\nProduction was expensive and slow, and detection often possible\n\nAfter generative AI:\n\nAnyone can make convincing fakes at near-zero cost\nBetter quality makes detection harder\nThousands of fake articles in minutes, targeted at specific audiences\nHuman moderators can’t keep up\n\n\n\n\nSource: Encyclopedia Britannica\n\nThe “Protocols of the Elders of Zion” (1903) was fabricated and fuelled hatred for a century. A chatbot can draft something similar in minutes"
   },
   {
     "objectID": "lectures/lecture-23/23-misinformation.html#the-attention-economy-revisited",
     "href": "lectures/lecture-23/23-misinformation.html#the-attention-economy-revisited",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "The attention economy revisited",
-    "text": "The attention economy revisited\n\n\n\nHow platforms amplify misinformation:\n\nEngagement = revenue, and outrage drives engagement\nFalse information is often more engaging\nAlgorithms optimise for clicks, not truth\n\nThe correction problem:\n\nLies spread faster than corrections\nFalse stories reach millions, corrections reach thousands\nEven debunked claims persist in memory\n\nVosoughi et al. (2018):\n\nAnalysed 126,000 stories on Twitter\nFalse stories were 70% more likely to be retweeted and reached 1,500 people 6x faster\n\n\n\n\nSource: NYU School of Engineering (a Facebook study)\n\nPlatform incentives work against truth. Not a bug, a feature of ad-supported media"
+    "text": "The attention economy revisited\n\n\n\nHow platforms amplify misinformation:\n\nEngagement = revenue, and outrage drives engagement\nFalse information is often more engaging\n\nCorrections:\n\nLies spread faster than corrections\nCorrections reach far fewer people than the original\nEven debunked claims persist in memory\n\nVosoughi et al. (2018):\n\nAnalysed 126,000 stories on Twitter\nFalse stories were 70% more likely to be retweeted\nThey reached 1,500 people 6x faster\n\n\n\n\nSource: NYU School of Engineering (a Facebook study)\n\nPlatform incentives work against truth"
   },
   {
     "objectID": "lectures/lecture-23/23-misinformation.html#what-are-deepfakes",
     "href": "lectures/lecture-23/23-misinformation.html#what-are-deepfakes",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "What are deepfakes?",
-    "text": "What are deepfakes?\n\n\n\nTechnical definition:\n\nSynthetic media made with deep learning\nUsually face-swapping or face synthesis. DeepFaceLab was long the most used open-source tool\nAlso voice cloning\nNamed after a Reddit user, “deepfakes” (2017)\n\nHow they work:\n\nCollect training data (images/video of the target)\nTrain a neural network to generate the target’s face\nApply it to a source video or image\nRefine to reduce artefacts\n\nMain techniques:\n\nDiffusion models: newest and highest quality\nVoice synthesis: similar principles for audio\n\n\n\n\n\nTechnical detail: Tolosana et al. (2020)"
+    "text": "What are deepfakes?\n\n\n\nTechnical definition:\n\nSynthetic media made with deep learning\nUsually face-swapping or face synthesis\nDeepFaceLab was the main open-source tool until 2024\nAlso voice cloning\nNamed after the Reddit user “deepfakes” (2017)\n\nHow they work:\n\nCollect images or video of the target\nTrain a neural network to generate the target’s face\nApply it to a source video or image\nRefine to reduce artefacts\n\nMain techniques:\n\nDiffusion models: newest and highest quality\nVoice synthesis: similar principles for audio\n\n\n\n\n\nTechnical detail: Tolosana et al. (2020)"
   },
   {
     "objectID": "lectures/lecture-23/23-misinformation.html#real-world-examples",
     "href": "lectures/lecture-23/23-misinformation.html#real-world-examples",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Real-world examples",
-    "text": "Real-world examples\n\n\n\nPolitical deepfakes:\n\n\n\nExample\nImpact\n\n\n\n\nObama PSA (2018)\nBuzzFeed/Jordan Peele demonstration\n\n\nZelensky surrender video\nAttempted wartime deception\n\n\nIndian election audio\nAI voice clones of politicians\n\n\n\nFinancial fraud:\n\nCEO voice clone authorised £200K transfer\nEstimated $25 million scam in Hong Kong (2024)\n\nNon-consensual intimate imagery:\n\n96% of deepfakes online (Sensity/Deeptrace, 2019), and Home Security Heroes put it at 98% in 2023\nWomen overwhelmingly targeted: a tool for harassment and extortion\nLaws are catching up: since May 2026 US platforms must remove them within 48 hours\n\n\n\n\nSource: Mikael Thalen on X (story: NPR)\n\nThe first big audit (Sensity, 2019) found almost all deepfakes were pornographic, and almost all targeted women"
+    "text": "Real-world examples\n\n\n\nPolitical deepfakes:\n\n\n\n\nExample\nImpact\n\n\n\n\nObama PSA (2018)\nBuzzFeed/Jordan Peele demonstration\n\n\nZelensky surrender video\nAttempted wartime deception\n\n\nIndian election audio\nAI voice clones of politicians\n\n\n\n\nFinancial fraud:\n\nCEO voice clone authorised £200K transfer\n$25 million scam in Hong Kong (2024)\n\nNon-consensual intimate imagery:\n\n96% of deepfakes online (Sensity/Deeptrace, 2019)\n98% in 2023 (Home Security Heroes)\nWomen overwhelmingly targeted, for harassment and extortion\nSince May 2026, US platforms must remove them within 48 hours\n\n\n\n\nSource: Mikael Thalen on X (story: NPR)\n\nNearly all deepfakes in Sensity’s 2019 audit were porn of women"
   },
   {
     "objectID": "lectures/lecture-23/23-misinformation.html#rands-primer-on-deepfakes",
     "href": "lectures/lecture-23/23-misinformation.html#rands-primer-on-deepfakes",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "RAND’s primer on deepfakes",
-    "text": "RAND’s primer on deepfakes\n\n\n\n\nDeepfakes are one tool among many\n“Cheap fakes” often work just as well (Paris & Donovan, 2019 coined the term)\nContext matters more than technical quality\nSocial vulnerability enables technical attacks\n\nThe liar’s dividend:\n\nWhen anything could be fake, real evidence can be dismissed as fake\n“That video of me is a deepfake!”\nTruth becomes contested terrain\n\nRAND’s four risks:\n\nManipulated elections and deeper social divisions\nLower trust in institutions\nUndermined journalism (the liar’s dividend)\n\n\n\n\nSource: RAND Corporation\n\nLabel every deepfake tomorrow and the damage stands: people now doubt real video too"
+    "text": "RAND’s primer on deepfakes\n\n\n\n\nDeepfakes are one tool among many\n“Cheap fakes” often work just as well (Paris & Donovan, 2019 coined the term)\nContext matters more than technical quality\nAttacks exploit social divisions\n\nThe liar’s dividend:\n\nReal evidence can be dismissed as fake\n“That video of me is a deepfake!”\n\nRAND’s four risks:\n\nManipulated elections\nDeeper social divisions\nLower trust in institutions\nUndermined journalism (the liar’s dividend)\n\n\n\n\nSource: RAND Corporation\n\nPeople now doubt real video too"
   },
   {
     "objectID": "lectures/lecture-23/23-misinformation.html#the-authenticity-crisis",
@@ -235,84 +235,84 @@
     "href": "lectures/lecture-23/23-misinformation.html#discussion-what-would-convince-you",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Discussion: what would convince you?",
-    "text": "Discussion: what would convince you?\n\nScenario:\nA video emerges of a political candidate you support saying something terrible. The candidate claims it’s a deepfake.\n\nHow would you decide if it’s real?\nWhat evidence would convince you either way?\nDoes your political alignment affect your judgment?\nWhat if experts disagree?"
+    "text": "Discussion: what would convince you?\n\nA video shows a candidate you support saying something terrible. They say it’s a deepfake\n\nHow would you decide if it’s real?\nWhat evidence would convince you either way?\nDoes your political alignment affect your judgement?\nWhat if experts disagree?"
   },
   {
     "objectID": "lectures/lecture-23/23-misinformation.html#are-we-hard-wired-for-fake-news",
     "href": "lectures/lecture-23/23-misinformation.html#are-we-hard-wired-for-fake-news",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Are we hard-wired for fake news?",
-    "text": "Are we hard-wired for fake news?\n\n\n\nThe evolutionary angle:\n\nOur brains evolved for small groups and immediate threats\nNovelty once meant survival-relevant information. We still react to surprising claims that way\nFalse news is almost by definition more novel than truth\n\nWhy outrage spreads:\n\nThreat detection is fast and automatic\nEmotionally charged content bypasses careful evaluation\nFear and disgust trigger sharing\nWe evolved to warn the group, not to fact-check first\n\n\n\n\nSource: Soroka et al. (2019)"
+    "text": "Are we hard-wired for fake news?\n\n\n\nEvolution:\n\nOur brains evolved for small groups and immediate threats\nNovelty once meant survival-relevant information\nWe still react to surprising claims that way\nFalse news is usually more novel than truth (Vosoughi et al., 2018)\n\nWhy outrage spreads:\n\nThreat detection is fast and automatic\nEmotion bypasses careful evaluation\nFear and disgust trigger sharing\nWe evolved to warn the group before checking facts\n\n\n\n\nSource: Soroka et al. (2019)"
   },
   {
     "objectID": "lectures/lecture-23/23-misinformation.html#system-1-vs-system-2",
     "href": "lectures/lecture-23/23-misinformation.html#system-1-vs-system-2",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "System 1 vs System 2",
-    "text": "System 1 vs System 2\n\n\n\nKahneman’s (2011) dual-process theory:\n\n\n\n\n\nSystem 1\nSystem 2\n\n\n\n\nSpeed\nFast, automatic\nSlow, deliberate\n\n\nEffort\nEffortless\nRequires concentration\n\n\nMode\nIntuitive, emotional\nAnalytical, logical\n\n\nDefault?\nYes\nOnly when triggered\n\n\n\n\nSocial media is a System 1 environment:\n\nInfinite scroll rewards quick reactions: see a video, react, share, move on\nSystem 2 never kicks in unless something jolts you\nDeepfakes are designed to feel real at System 1 speed\n\nThe problem:\n\nCatching a fake requires System 2, but outrage and fear suppress it\nPennycook & Rand (2019): higher cognitive reflection scores predict spotting fake news, regardless of party"
+    "text": "System 1 vs System 2\n\n\n\nKahneman’s (2011) dual-process theory:\n\n\n\n\n\nSystem 1\nSystem 2\n\n\n\n\nSpeed\nFast, automatic\nSlow, deliberate\n\n\nEffort\nEffortless\nRequires concentration\n\n\nMode\nIntuitive, emotional\nAnalytical, logical\n\n\nDefault?\nYes\nOnly when triggered\n\n\n\n\nSocial media is a System 1 environment:\n\nInfinite scroll rewards quick reactions\nSystem 2 kicks in only when something jolts you\nDeepfakes are designed to feel real at System 1 speed\n\nCatching fakes:\n\nSpotting a fake needs System 2\nOutrage and fear suppress it\nPennycook & Rand (2019): people who reflect more spot more fake news, whatever their party"
   },
   {
     "objectID": "lectures/lecture-23/23-misinformation.html#confirmation-bias",
     "href": "lectures/lecture-23/23-misinformation.html#confirmation-bias",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Confirmation bias",
-    "text": "Confirmation bias\n\n\n\nWhat it is:\n\nWe seek evidence that confirms what we already believe and dismiss what contradicts it\nThis isn’t laziness: it’s how brains manage information overload\nNickerson (1998) called it “ubiquitous”, a top candidate for reasoning’s worst flaw\n\nHow it works with deepfakes:\n\nWho said it? We believe a trusted source even when fake, and doubt a distrusted one even when real\nTaber & Lodge (2006): people argue against opposing evidence, and strong partisans polarise\nCorrections feel like an attack on identity, even when they aren’t\n\n\n\n\n\nConfirmation bias is not about intelligence. Educated people are sometimes better at rationalising bad evidence"
+    "text": "Confirmation bias\n\n\n\n\nWe seek evidence that confirms what we already believe\nWe dismiss what contradicts it\nIt’s how brains manage information overload\nNickerson (1998) called it “ubiquitous”, a top candidate for reasoning’s worst flaw\n\nWith deepfakes:\n\nWe believe a trusted source even when it’s fake\nWe doubt a distrusted source even when it’s real\nTaber & Lodge (2006): people argue against opposing evidence\nStrong partisans polarise further\nCorrections feel like an attack on identity\n\n\n\n\n\nEducated people are sometimes better at rationalising bad evidence"
   },
   {
     "objectID": "lectures/lecture-23/23-misinformation.html#the-bandwagon-effect",
     "href": "lectures/lecture-23/23-misinformation.html#the-bandwagon-effect",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "The bandwagon effect",
-    "text": "The bandwagon effect\n\n\n\nWhat Asch (1956) showed in the 1950s:\n\nPeople will deny what their own eyes tell them if enough others disagree\nAbout 75% of participants conformed at least once on an obvious task\nBond & Smith (1996) pooled 133 Asch studies in 17 countries: weaker in individualistic cultures\n\nOn social media, numbers are social proof:\n\nA video with 2 million views “must be real”\nWe outsource our judgment to the crowd\n\nHow this helps deepfakes spread:\n\nEarly shares snowball, each adding perceived legitimacy\nBy the time fact-checkers respond, millions have seen it\nTaking it down can increase belief (“they’re hiding something”)\n\n\n\n\n\nAsch used lines on a card. The same psychology now runs on deepfakes shared millions of times"
+    "text": "The bandwagon effect\n\n\n\nAsch (1956):\n\nPeople deny what their own eyes tell them if enough others disagree\nAbout 75% conformed at least once on an obvious task\nBond & Smith (1996): 133 studies in 17 countries\nConformity is weaker in individualistic cultures\n\nOn social media, numbers are social proof:\n\nA video with 2 million views “must be real”\nWe outsource our judgement to the crowd\n\nWith deepfakes:\n\nEach early share adds perceived legitimacy\nBy the time fact-checkers respond, millions have seen it\nTaking it down can feed “they’re hiding something” stories"
   },
   {
     "objectID": "lectures/lecture-23/23-misinformation.html#the-in-the-know-feeling",
     "href": "lectures/lecture-23/23-misinformation.html#the-in-the-know-feeling",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "The “in the know” feeling",
-    "text": "The “in the know” feeling\n\n\n\nSharing as social currency:\n\nBreaking news makes you feel like an insider\n“Did you see this?!” buys status, and being first gets the attention\n\nWhy this matters:\n\nCreates a race to share before verifying\nGabielkov et al. (2016): 59% of links shared on Twitter were never clicked\n\nCombined with the other biases:\n\nConfirmation bias picks what we share (things we agree with)\nThe bandwagon effect picks when (once it’s already popular)\nThe “in the know” feeling picks how fast (immediately, no checking)\n\n\n\n\nSource: Adam Grant\n\nWe share what confirms our views and makes us look informed. The truth can wait, the dopamine hit can’t"
+    "text": "The “in the know” feeling\n\n\n\nSharing as social currency:\n\nBreaking news makes you feel like an insider\nBeing first buys status and attention\n\nSharing before checking:\n\nPeople race to share before verifying\nGabielkov et al. (2016): 59% of news links shared on Twitter were never clicked\n\nHow the biases combine:\n\nConfirmation bias picks what we share (things we agree with)\nThe bandwagon effect picks when (once it’s already popular)\nThe “in the know” feeling picks how fast (immediately)\n\n\n\n\nSource: Adam Grant"
   },
   {
     "objectID": "lectures/lecture-23/23-misinformation.html#technical-detection",
     "href": "lectures/lecture-23/23-misinformation.html#technical-detection",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Technical detection",
-    "text": "Technical detection\n\n\n\nDetection approaches:\n\n\n\n\nMethod\nHow it works\n\n\n\n\nArtefact detection\nUnnatural blinking, lighting\n\n\nBiological signals\nPulse, micro-expressions\n\n\nSource forensics\nCompression artefacts, metadata\n\n\nAI vs AI\nTrain detectors on known fakes\n\n\n\n\nWhy it’s hard:\n\nDetectors can be fooled, and adversarial training improves generators\nReal-time detection is difficult\nScale: millions of images, few moderators\nGroh et al. (2022): 15,016 people and a detector made different mistakes, so together they did best\n\n\n\n\nSource: Kumar et al. (2025)"
+    "text": "Technical detection\n\n\n\nDetection approaches:\n\n\n\n\nMethod\nHow it works\n\n\n\n\nArtefact detection\nUnnatural blinking, lighting\n\n\nBiological signals\nPulse, micro-expressions\n\n\nSource forensics\nCompression artefacts, metadata\n\n\nAI vs AI\nTrain detectors on known fakes\n\n\n\n\nLimits:\n\nDetectors can be fooled\nAdversarial training improves generators\nReal-time detection is difficult\nToo many images for too few moderators\nGroh et al. (2022): 15,016 people and a detector made different mistakes, so together they did best\n\n\n\n\nSource: Kumar et al. (2025)"
   },
   {
     "objectID": "lectures/lecture-23/23-misinformation.html#content-provenance",
     "href": "lectures/lecture-23/23-misinformation.html#content-provenance",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Content provenance",
-    "text": "Content provenance\n\n\n\nA new idea:\n\nInstead of catching fakes afterwards, verify the real thing at the source\nThe C2PA standard signs a photo at capture, then logs every edit\nBacked by Adobe, Microsoft, Google, OpenAI, Meta, Amazon and the BBC\nViewers check the chain back to source, and unsigned content looks suspect\n\n\nWhy it isn’t a fix on its own:\n\nNeeds near-universal adoption to be useful at all\nLegacy content has no provenance to attach\nSignatures can be stripped, and screenshots wash them out\nTracks creation, but doesn’t prevent it\nCan tie images to a device or identity, raising privacy concerns"
+    "text": "Content provenance\n\n\n\nA new idea:\n\nVerify real content at the source instead of hunting fakes\nThe C2PA standard signs a photo at capture and logs every edit\nBacked by Adobe, Microsoft, Google, OpenAI, Meta, Amazon and the BBC\nViewers can trace content back to its source\nUnsigned content looks suspect\n\n\nLimits:\n\nNeeds near-universal adoption\nOld content has no provenance\nSignatures can be stripped\nScreenshots remove them\nTracks creation but doesn’t prevent it\nCan tie images to a device or person, a privacy risk"
   },
   {
     "objectID": "lectures/lecture-23/23-misinformation.html#platform-policies",
     "href": "lectures/lecture-23/23-misinformation.html#platform-policies",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Platform policies",
-    "text": "Platform policies\n\n\n\nWhat platforms actually do:\n\nYouTube requires creators to label realistic AI-generated content\nMeta tags AI-generated images and video using C2PA\nTikTok requires disclosure\nX relies on Community Notes and added “manipulated media” labels in 2026\nMeta ended US fact-checking in 2025 and moved to Community Notes\n\nWhat happens when platforms remove content:\n\nContent moves to less moderated platforms, and removal can deepen distrust\nBak-Coleman et al. (2021): platforms are a planetary-scale system, to study like the climate\nPiecewise content rules cannot fix system-level effects\n\n\n\n\nSource: Vice - YouTube"
+    "text": "Platform policies\n\n\n\nPlatform rules:\n\nYouTube requires labels on realistic AI content\nMeta tags AI images and video using C2PA\nTikTok requires disclosure\nX relies on Community Notes\nMusk announced an edited-image warning in January 2026\nMeta ended US fact-checking in 2025 for Community Notes\n\nAfter removal:\n\nContent moves to less moderated platforms\nRemoval can deepen distrust\nBak-Coleman et al. (2021): platforms are a planetary-scale system, to study like the climate\nCase-by-case rules can’t fix system-level effects\n\n\n\n\nSource: Vice - YouTube"
   },
   {
     "objectID": "lectures/lecture-23/23-misinformation.html#legal-frameworks",
     "href": "lectures/lecture-23/23-misinformation.html#legal-frameworks",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Legal frameworks",
-    "text": "Legal frameworks\n\n\n\nEmerging legislation:\n\nUS: TAKE IT DOWN Act (2025) for sexual deepfakes, and Texas and other states for election ones\nEU: AI Act Article 50 requires deepfake disclosure (since August 2026)\nUK: sharing sexual deepfakes is a crime (Online Safety Act, 2023), and so is creating them (2025)\nChina: Deep Synthesis Provisions (2023) require disclosure of AI-generated content\n\nChallenges:\n\nJurisdictional: creators can be anywhere\nEnforcement: finding perpetrators is hard\nDefinition: what counts as a “deepfake”?\nSpeech: satire, art, legitimate uses\n\n\n\n\nSource: Columbia Journal of Law and Arts\nWhere the legal scholarship lands:\n\nChesney & Citron (2019): no single legal tool fits\nDefamation is slow, criminal law narrow, and Section 230 shields platforms"
+    "text": "Legal frameworks\n\n\n\nNew laws:\n\nUS: TAKE IT DOWN Act (2025) covers sexual deepfakes\nTexas and other states regulate election deepfakes\nEU: AI Act Article 50 requires deepfake disclosure since August 2026\nUK: sharing sexual deepfakes is a crime (2023), and creating them too (2025)\nChina: Deep Synthesis Provisions (2023) require AI content labels\n\nChallenges:\n\nJurisdictional: creators can be anywhere\nEnforcement: finding perpetrators is hard\nDefinition: what counts as a “deepfake”?\nSpeech: satire, art, legitimate uses\n\n\n\n\nSource: Columbia Journal of Law and Arts\nLegal scholarship:\n\nChesney & Citron (2019): no single legal tool fits\nDefamation suits are slow\nCriminal law is narrow\nSection 230 shields platforms"
   },
   {
     "objectID": "lectures/lecture-23/23-misinformation.html#media-literacy",
     "href": "lectures/lecture-23/23-misinformation.html#media-literacy",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Media literacy",
-    "text": "Media literacy\n\nWhat the evidence says works:\n\nPennycook et al. (2021): a small accuracy nudge before sharing improves the quality of news people pass along\nRoozenbeek et al. (2022): inoculation videos teaching manipulation tactics, with measurable effects across 22,632 YouTube users\nGuess et al. (2020): media literacy tips improved discernment of false news by 26.5% in the US and 17.5% in an online Indian sample\nEffects are real but often short-lived (Capewell et al., 2024). None scales to billions alone"
+    "text": "Media literacy\n\nWhat works:\n\nPennycook et al. (2021): an accuracy nudge before sharing improves the quality of news people pass along\nRoozenbeek et al. (2022): inoculation videos on manipulation tactics worked for 22,632 YouTube users\nGuess et al. (2020): literacy tips raised false-news discernment by 26.5% in the US and 17.5% in an online Indian sample\nEffects are often short-lived (Capewell et al., 2024)\nPlatforms would have to run these for billions of users"
   },
   {
     "objectID": "lectures/lecture-23/23-misinformation.html#main-takeaways",
     "href": "lectures/lecture-23/23-misinformation.html#main-takeaways",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Main takeaways",
-    "text": "Main takeaways\n\n\n\nMisinformation and AI\n\nMisinformation is old. AI changes scale and speed\nPlatform incentives reward engagement, not truth\n\nDeepfakes\n\nQuality is improving fast: fraud, political manipulation, and NCII above all\nThe liar’s dividend lets anyone dismiss real evidence\n\n\nWhy we fall for it\n\nNovelty and outrage travel on System 1, before System 2 wakes\nConfirmation bias is the vulnerability no patch can fix\nBandwagon and “in the know” decide when and how fast we share\n\nResponses\n\nDetection is necessary but insufficient\nProvenance is promising but years away\nLaw is slow and jurisdictional\nLiteracy helps but doesn’t scale\nNo single fix. Layering defences is the best we have"
+    "text": "Main takeaways\n\n\n\nMisinformation and AI\n\nAI makes fakes cheap and fast to produce\nPlatforms reward engagement over truth\n\nDeepfakes\n\nQuality improves fast\nUsed for fraud, political manipulation and sexual images\nThe liar’s dividend lets anyone dismiss real evidence\n\n\nWhy we fall for it\n\nNovelty and outrage trigger System 1 before System 2\nConfirmation bias shapes what we believe and share\nThe bandwagon effect and the “in the know” feeling speed up sharing\n\nResponses\n\nDetectors can be fooled\nProvenance needs near-universal adoption\nLaws are slow and stop at borders\nLiteracy effects fade fast\nWe need several defences at once"
   },
   {
     "objectID": "lectures/lecture-21/21-labour.html#recap-of-last-class",
@@ -5297,5 +5297,12 @@
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "AI’s footprint in context",
     "text": "AI’s footprint in context\n\n\n\nCurrent estimates (IEA, 2025):\n\n\n\n\nSector\nShare\n\n\n\n\nAviation\n~2.5% of global CO₂\n\n\nAll data centres\n~1–1.5% of electricity\n\n\nAI specifically\n~0.2–0.3% of electricity\n\n\n\n\n\nAI’s footprint is smaller than aviation’s or steel’s\nAI servers’ power use may grow ~30% a year (data centres: ~15%)\nIEA: data centres could double to ~945 TWh by 2030, about Japan’s total\nJevons paradox: efficiency raises use, cancelling the gains\nGemini’s energy per prompt fell 33x in a year, but queries multiplied\n\n\n\n\n\n\nAdding between one Sweden and one Germany by 2026\n\n\nSource: IEA (2024)\n\n\nAI’s share is small today but growing fast"
+  },
+  {
+    "objectID": "lectures/lecture-23/23-misinformation.html#do-deepfakes-erode-trust",
+    "href": "lectures/lecture-23/23-misinformation.html#do-deepfakes-erode-trust",
+    "title": "DATASCI 101: Introduction to AI Applications",
+    "section": "Do deepfakes erode trust?",
+    "text": "Do deepfakes erode trust?\n\n\n\nChesney & Citron (2019):\n\nDeepfakes threaten public knowledge, beyond privacy and fraud\nPoliticians can deny anything caught on camera\nPeople retreat into views they already hold\n\nLater studies:\n\nVaccari & Chadwick (2020): UK, N=2,005. Viewers end up uncertain, not deceived, and trust social media news less\nSchiff, Schiff & Bueno (2024): five experiments, 15,000 Americans. “Deepfake!” claims help politicians dodge text scandals, not video\n\n\n\n\nSource: Chesney & Citron (2019)"
   }
 ]

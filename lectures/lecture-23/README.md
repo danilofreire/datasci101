@@ -4,9 +4,9 @@ This lecture examines the threat that AI-generated synthetic media poses to info
 
 ## Topics Covered
 
-- **The Misinformation Landscape**: Definitions (misinformation, disinformation, malinformation), how AI changes scale and speed, attention economy dynamics
+- **Misinformation and AI**: Definitions (misinformation, disinformation, malinformation), how AI changes scale and speed, attention economy dynamics
 - **Deepfake Technology**: Technical foundations (face-swapping, face synthesis, voice cloning), current capabilities in video, audio, and image synthesis
-- **Real-World Harms**: Political manipulation, non-consensual intimate imagery, financial fraud, the "liar's dividend" and trust erosion
+- **Real-World Examples**: Political manipulation, non-consensual intimate imagery, financial fraud, the "liar's dividend" and trust erosion
 - **Why We Fall for It**: System 1 thinking, confirmation bias, the bandwagon effect and the "in the know" feeling
 - **Response Strategies**: Technical detection, content provenance (C2PA), platform policies, legal frameworks, media literacy education
 
