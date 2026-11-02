@@ -5,9 +5,9 @@ This lecture explores how AI affects our wellbeing in three areas: the attention
 ## Topics Covered
 
 - **The Attention Economy**: How recommendation algorithms work, filter bubbles, engagement vs wellbeing, and what the data says about teens and screens
-- **AI and Mental Healthcare**: The treatment gap, AI as a therapeutic tool, what the research shows, and what LLMs cannot do
-- **AI and the Environment**: The energy and water costs of training and inference, the footprint in context, and AI as a climate tool
-- **Design Responses**: What companies are doing, China's algorithm regulations, and designing for wellbeing
+- **AI and Mental Healthcare**: Who gets mental health care, AI as a therapeutic tool, what the research shows, and what LLMs can and cannot do
+- **AI and the Environment**: The energy and water costs of training and inference, AI's footprint in context, and AI as a climate tool
+- **Design Responses**: What platforms are changing, China's algorithm regulations, and designing for wellbeing
 
 ## Key Readings
 
