@@ -4022,14 +4022,14 @@
     "href": "lectures/lecture-25/25-safety.html#recap-of-last-class",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Recap of last class",
-    "text": "Recap of last class\n\n\n\n\nLast class: misinformation, deepfakes, and trust\nMis-, dis- and malinformation differ by intent and truth\nAI lowers the cost and skill of convincing fakes (text, image, audio, video)\nHarms: political manipulation, non-consensual imagery, financial fraud\nWhy we fall for it: System 1 thinking, confirmation bias, bandwagons\nResponses: detection, provenance (C2PA), platform policies, media literacy\nToday: long-term safety and the alignment problem\n\n\n\n\nSource: Chris Ume"
+    "text": "Recap of last class\n\n\n\n\nLast class: misinformation and deepfakes\nAI makes fakes cheap and fast\nFalse stories spread 6x faster than true ones\nDeepfakes drive fraud, political manipulation and sexual abuse\nThe liar’s dividend lets anyone dismiss real evidence\nBiases make us share before checking\nToday: long-term safety and alignment\n\n\n\n\nSource: Chris Ume, via VICE"
   },
   {
     "objectID": "lectures/lecture-25/25-safety.html#lecture-overview",
     "href": "lectures/lecture-25/25-safety.html#lecture-overview",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Lecture overview",
-    "text": "Lecture overview\nWhat we will cover today\n\n\n\nPart 1: AI safety\n\nNear-term vs long-term concerns\nWhy safety matters now\nConcrete problems in AI safety\n\nPart 2: The alignment problem\n\nWhat is alignment?\nWhy it’s hard\nCurrent approaches\n\n\nPart 3: Future trajectories\n\nWhere is AI heading?\nExpert disagreement\nScenarios to consider\n\nPart 4: What can we do?\n\nResearch directions\nWhere you fit in\nThinking about AI risk clearly"
+    "text": "Lecture overview\nWhat we will cover today\n\n\n\nPart 1: AI safety\n\nNear-term vs long-term concerns\nWhy safety matters now\nConcrete problems in AI safety\n\nPart 2: The alignment problem\n\nWhat is alignment?\nWhy it’s hard\nCurrent approaches\n\n\nPart 3: Future trajectories\n\nWhere is AI heading?\nScenarios to consider\nStuart Russell’s perspective\nExistential risk: the debate\n\nPart 4: What can we do?\n\nResearch directions\nWhere you fit in\nThinking about AI risk clearly"
   },
   {
     "objectID": "lectures/lecture-25/25-safety.html#meme-of-the-day",
@@ -4050,56 +4050,56 @@
     "href": "lectures/lecture-25/25-safety.html#near-term-vs-long-term-concerns",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Near-term vs long-term concerns",
-    "text": "Near-term vs long-term concerns\n\n\n\nNear-term safety concerns:\n\nBias and discrimination (already happening)\nPrivacy violations\nJob displacement\nMisinformation (covered last lecture)\nSecurity vulnerabilities\n\nLong-term safety concerns:\n\nAlignment: AI pursuing wrong goals\nLoss of human control\nConcentration of power\nExistential risk (controversial)\n\n\n\n\nSome argue long-term concerns distract from near-term harms\nOthers argue a near-term focus misses the bigger picture\n“Black Swan” events\nThey’re connected: safe systems now → safer systems later\n\n\nSource: Sætra & Danaher (2023)"
+    "text": "Near-term vs long-term concerns\n\n\n\nNear-term:\n\nBias and discrimination (already happening)\nPrivacy violations\nJob displacement\nMisinformation (last lecture)\nSecurity vulnerabilities\n\nLong-term:\n\nAlignment: AI pursuing wrong goals\nLoss of human control\nConcentration of power\nExistential risk (controversial)\n\n\n\n\nSome argue long-term concerns distract from near-term harms\nOthers argue a near-term focus misses the bigger picture\nRare “Black Swan” events can matter most\nSafe systems now make safer systems later\n\n\nSource: Sætra & Danaher (2023)"
   },
   {
     "objectID": "lectures/lecture-25/25-safety.html#why-think-about-long-term-safety-now",
     "href": "lectures/lecture-25/25-safety.html#why-think-about-long-term-safety-now",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Why think about long-term safety now?",
-    "text": "Why think about long-term safety now?\n\n\n\n\nAI capabilities advance faster than expected\nSafety research takes time, and safety is hard to retrofit later\nBetter to be prepared\n\nHistorical analogies:\n\n\n\n\nTechnology\nSafety lag\n\n\n\n\nNuclear\nDeveloped first, safety after\n\n\nInternet\nSecurity an afterthought\n\n\nSocial media\nHarms discovered in deployment\n\n\nBiotech\nOngoing debate\n\n\n\n\n\nWe’re still early enough to shape development\nSafety research is growing, but still a fraction of capabilities spending\nAnthropic, DeepMind and OpenAI now have dedicated safety teams\n\n\n\n\nSource: Center for AI Safety"
+    "text": "Why think about long-term safety now?\n\n\n\n\nAI capabilities advance faster than expected\nSafety research takes time\nSafety is hard to retrofit\n\nHistorical analogies:\n\n\n\n\nTechnology\nSafety lag\n\n\n\n\nNuclear\nDeveloped first, safety after\n\n\nInternet\nSecurity an afterthought\n\n\nSocial media\nHarms discovered in deployment\n\n\nBiotech\nOngoing debate\n\n\n\n\n\nWe’re still early enough to shape development\nSafety spending is a fraction of capabilities spending\nAnthropic and Google DeepMind have dedicated safety teams\nOpenAI disbanded its Superalignment team in 2024\n\n\n\n\nSource: Center for AI Safety"
   },
   {
     "objectID": "lectures/lecture-25/25-safety.html#concrete-problems-in-ai-safety",
     "href": "lectures/lecture-25/25-safety.html#concrete-problems-in-ai-safety",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Concrete problems in AI safety",
-    "text": "Concrete problems in AI safety\n\n\n\nAmodei et al. (2016) identified five big challenges:\n\n\n\n\n\n\n\n\nProblem\nDescription\n\n\n\n\nSafe exploration\nHow to learn without dangerous actions\n\n\nAvoiding negative side effects\nDon’t break things achieving goals\n\n\nAvoiding reward hacking\nDon’t game the objective\n\n\nScalable oversight\nHow to supervise complex systems\n\n\nRobustness to distributional shift\nHandle novel situations safely\n\n\n\n\nWhy these matter:\n\nNot speculative: already happening in deployed systems\nThey scale with capability, and are unsolved even for current AI\n\n\n\n\nSource: Brian Christian"
+    "text": "Concrete problems in AI safety\n\n\n\nAmodei et al. (2016) list five open problems:\n\n\n\n\n\n\n\n\nProblem\nDescription\n\n\n\n\nSafe exploration\nHow to learn without dangerous actions\n\n\nAvoiding negative side effects\nDon’t break things achieving goals\n\n\nAvoiding reward hacking\nDon’t game the objective\n\n\nScalable oversight\nHow to supervise complex systems\n\n\nRobustness to distributional shift\nHandle novel situations safely\n\n\n\n\n\nAlready happening in deployed systems\nHarder to solve as AI gets more capable\nUnsolved even for current AI\n\n\n\n\nSource: Brian Christian"
   },
   {
     "objectID": "lectures/lecture-25/25-safety.html#safe-exploration",
     "href": "lectures/lecture-25/25-safety.html#safe-exploration",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Safe exploration",
-    "text": "Safe exploration\n\n\n\n\nLearning requires trying new things\nSome actions are irreversible\n“Explore safely” is hard to specify\n\nExamples:\n\nRobot learning to walk: don’t break yourself\nSelf-driving: don’t explore by crashing\nFinancial AI: don’t bankrupt the company\nMedical AI: don’t kill patients while learning\n\nCurrent approaches:\n\nSimulation: learn in low-risk environments first\nConservative policies: keep actions within a safe region\nHuman oversight: ask before novel actions\nReward shaping: penalise dangerous states\n\n\n\n\nSource: The Wall Street Journal\n\nHow do you specify “safe” without already knowing everything about the domain?"
+    "text": "Safe exploration\n\n\n\n\nLearning requires trying new things\nSome actions are irreversible\n“Explore safely” is hard to specify\n\nExamples:\n\nRobot learning to walk: don’t break yourself\nSelf-driving: don’t explore by crashing\nFinancial AI: don’t bankrupt the company\nMedical AI: don’t kill patients while learning\n\nCurrent approaches:\n\nTrain in simulation first\nKeep actions within a safe region (conservative policies)\nAsk a human before novel actions\nPenalise dangerous states (reward shaping)\n\n\n\n\nSource: The Wall Street Journal\n\nHow do you specify “safe” without already knowing everything about the domain?"
   },
   {
     "objectID": "lectures/lecture-25/25-safety.html#negative-side-effects",
     "href": "lectures/lecture-25/25-safety.html#negative-side-effects",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Negative side effects",
-    "text": "Negative side effects\n\n\n\n\nAI optimises the specified objective and ignores everything else\nUnintended consequences sit outside the objective\n“You didn’t say not to…”\n\nClassic example (thought experiment):\n\nRobot tasked with fetching coffee\nKnocks over obstacles and harms humans in its path\nTechnically: coffee fetched ✓\n\nReal-world version:\n\nContent algorithm maximises engagement\nPossible side effects: polarisation, addiction, both outside the objective\nNobody specified “don’t harm society”\n\n\n\n\n\n\nPolitical polarisation is real, but sometimes not designed\n\n\n\n\nNobody told the engagement algorithm “don’t polarise society”. If it isn’t in the objective, the system won’t care about it"
+    "text": "Negative side effects\n\n\n\n\nAI optimises the specified objective and ignores everything else\nUnintended consequences sit outside the objective\n“You didn’t say not to…”\n\nClassic example (Amodei et al., 2016):\n\nRobot tasked with cleaning a room\nKnocks over a vase on the way\nTechnically: room cleaned ✓\n\nReal-world example:\n\nContent algorithm maximises engagement\nPossible side effects: polarisation and addiction\nNobody specified “don’t harm society”\n\n\n\n\nSource: Persily & Tucker (2020)"
   },
   {
     "objectID": "lectures/lecture-25/25-safety.html#what-is-alignment",
     "href": "lectures/lecture-25/25-safety.html#what-is-alignment",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "What is alignment?",
-    "text": "What is alignment?\n\n\n\n\nAlignment: AI systems that do what we want\nPursue the goals we actually intend, not just the stated objective\nBehave safely even when we can’t supervise\n\nWhy the word “alignment”:\n\nAI goals aligned with human values, not orthogonal or opposed\nNot pursuing random objectives\nNot satisfying the letter while violating the spirit\n\nWhy it’s hard:\n\nHard to specify what we want, and context matters enormously\nHumans disagree about values\nOur stated preferences aren’t always our true preferences\n\n\n\n\n\n\nClaude 3 Opus faked alignment without being asked! 😧\n\n\nSource: Anthropic"
+    "text": "What is alignment?\n\n\n\n\nAlignment: AI systems that do what we want\nThey pursue the goals we intend, not only the stated ones\nThey behave safely even when we can’t supervise\n\nAlignment means:\n\nAI goals point the same way as human values\nAI follows the spirit of a request, not just the letter\n\nObstacles:\n\nHard to specify what we want\nContext changes what we want\nHumans disagree about values\nOur stated preferences aren’t always our true ones\n\n\n\n\n\n\nClaude 3 Opus faked alignment without being asked! 😧\n\n\nSource: Anthropic"
   },
   {
     "objectID": "lectures/lecture-25/25-safety.html#alignment-is-hard",
     "href": "lectures/lecture-25/25-safety.html#alignment-is-hard",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Alignment is hard!",
-    "text": "Alignment is hard!\n\n\n\nSpecification problem:\n\nCan’t write down everything we care about, and edge cases are infinite\nValues are context-dependent\nHumans can’t articulate their own values perfectly\n\nGoodhart’s Law: (remember this!)\n\n“When a measure becomes a target…”\n“…it ceases to be a good measure”\nOptimise metric ≠ achieve goal\n\nExamples:\n\nClick rates → clickbait\nEngagement → addiction\nGDP → environmental destruction\n\n\nThe King Midas problem: (Russell, 2014)\n\nGets exactly what he asked for, not what he wanted\nLiteral interpretation of wishes\nCommon AI failure mode"
+    "text": "Alignment is hard!\n\n\n\nSpecification problem:\n\nCan’t write down everything we care about, and edge cases are infinite\nValues are context-dependent\nHumans can’t articulate their own values perfectly\n\nGoodhart’s Law: (remember this!)\n\n“When a measure becomes a target…”\n“…it ceases to be a good measure”\nOptimise metric ≠ achieve goal\n\nExamples:\n\nClick rates → clickbait\nEngagement → addiction\nGDP → environmental destruction\n\n\nThe King Midas problem: (Russell, 2014)\n\nMidas wished that everything he touched turned to gold, including his food\nLiteral interpretation of wishes\nCommon AI failure mode"
   },
   {
     "objectID": "lectures/lecture-25/25-safety.html#current-alignment-approaches",
     "href": "lectures/lecture-25/25-safety.html#current-alignment-approaches",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Current alignment approaches",
-    "text": "Current alignment approaches\n\n\n\nRLHF (Reinforcement Learning from Human Feedback): (Christiano et al., 2017)\n\nHumans rank AI outputs, and a reward model is trained on the rankings\nOptimise the AI to satisfy that reward model\nStill a standard training step\n\nConstitutional AI: (Anthropic, 2022)\n\nAI critiques its own outputs against a set of principles (“constitution”)\nIteratively improves\nReduces the need for human labelling\nAmanda Askell’s work on AI ethics and philosophy\n\n\nDebate and recursive reward modelling: (Irving et al., 2018; Leike et al., 2018)\n\nAI systems argue with each other\nHumans judge which gave the most truthful, useful answer\nScales human oversight: easier to evaluate than produce knowledge\n\nLimitations of current approaches:\n\nRLHF: can learn to game evaluators\nHuman feedback: expensive and biased\nPrinciples: you still have to specify them right\nNone are complete solutions\n\n\nThese methods work well enough for current systems. Whether they scale to more capable AI is unknown"
+    "text": "Current alignment approaches\n\n\n\nRLHF (human feedback, Christiano et al., 2017):\n\nHumans rank AI outputs\nA reward model learns from the rankings\nThe AI is tuned to satisfy that model\nStill a standard training step\n\nConstitutional AI (Anthropic, 2022):\n\nAI critiques its outputs against written principles (a “constitution”)\nIt revises them over several rounds\nNeeds less human labelling\nAmanda Askell’s work on AI ethics and philosophy\n\n\nDebate and recursive reward modelling (Irving et al., 2018; Leike et al., 2018):\n\nAI systems argue with each other\nHumans judge which answer is most truthful and useful\nJudging is easier than producing answers, so oversight scales\n\nLimits:\n\nRLHF models can learn to game evaluators\nHuman feedback is expensive and biased\nPrinciples still have to be written well\nNone is a complete solution"
   },
   {
     "objectID": "lectures/lecture-25/25-safety.html#the-alignment-survey",
@@ -4113,63 +4113,63 @@
     "href": "lectures/lecture-25/25-safety.html#discussion-whose-values",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Discussion: whose values?",
-    "text": "Discussion: whose values?\n\n\n\nThe values problem:\nIf we align AI to human values…\n\nWhose human values?\nDevelopers? Users? Affected parties?\nMajority? Consensus? Universal?\nPresent generation? Future?\n\nLet’s discuss:\n\nShould AI reflect your values or “universal” values?\nWhat happens when values conflict?\nWho should decide?\nIs this a technical or political question?\n\n\n\nSome perspectives:\n\nLibertarian: Each user controls their AI\nDemocratic: Majority decides\nRights-based: Some things off-limits regardless\nTechnocratic: Experts decide\nPluralist: Multiple systems for different contexts\n\n\n“Whose values?” is a political question. No amount of engineering can avoid it. That is what makes alignment so difficult"
+    "text": "Discussion: whose values?\n\n\n\nIf we align AI to human values…\n\nWhose human values?\nDevelopers? Users? Affected parties?\nMajority? Consensus? Universal?\nPresent generation? Future?\n\nLet’s discuss:\n\nShould AI reflect your values or “universal” values?\nWhat happens when values conflict?\nWho should decide?\nIs this a technical or political question?\n\n\n\nSome perspectives:\n\nLibertarian: each user controls their AI\nDemocratic: majority decides\nRights-based: some things are off-limits regardless\nTechnocratic: experts decide\nPluralist: different systems for different contexts\n\n\n“Whose values?” is a political question, and engineering cannot settle it"
   },
   {
     "objectID": "lectures/lecture-25/25-safety.html#where-is-ai-heading",
     "href": "lectures/lecture-25/25-safety.html#where-is-ai-heading",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Where is AI heading?",
-    "text": "Where is AI heading?\n\n\n\nCurrent trends:\n\nModels getting larger and more capable\nMore general-purpose systems\nMultimodal capabilities\n\nUncertainties:\n\nWill scaling continue to work?\nWhen do we hit diminishing returns?\nWhat capabilities emerge unexpectedly?\nHow fast is too fast?\n\nExpert disagreement:\n\nWide variation in predictions: timelines differ by decades\nSome expect AGI soon, others never\nConfidence often exceeds evidence\n\n\n\n\nSource: Our World in Data\n\nNobody knows. Uncertainty is high, so be sceptical of confident predictions"
+    "text": "Where is AI heading?\n\n\n\nCurrent trends:\n\nModels keep getting larger and more capable\nMore general-purpose systems\nMultimodal capabilities\n\nUncertainties:\n\nWill scaling continue to work?\nWhen do we hit diminishing returns?\nWhat capabilities emerge unexpectedly?\nHow fast is too fast?\n\nExpert disagreement:\n\nTimelines differ by decades\nSome expect AGI soon, others never\nConfidence often exceeds evidence\n\n\n\n\nSource: Our World in Data\n\nBe sceptical of confident predictions"
   },
   {
     "objectID": "lectures/lecture-25/25-safety.html#scenarios-to-consider",
     "href": "lectures/lecture-25/25-safety.html#scenarios-to-consider",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Scenarios to consider",
-    "text": "Scenarios to consider\n\n\n\nScenario 1: Gradual improvement\n\nAI gets better slowly\nHumans and society adjust incrementally\nMost likely?\n\nScenario 2: Capability jumps\n\nSudden breakthroughs with unexpected capabilities\nRapid deployment\nLess time to adapt\n\nScenario 3: Plateau\n\nCurrent approaches hit limits and progress slows dramatically\nDifferent paradigms needed\nAlso possible\n\n\nScenario 4: Transformative AI\n\nSystems vastly more capable than humans\nFundamental changes to economy, society\nEither very good or very bad\nUncertain timeline\n\n\n\nSource: Dallas Fed (2025), via AEI"
+    "text": "Scenarios to consider\n\n\n\nScenario 1: Gradual improvement\n\nAI gets better slowly\nSociety adjusts step by step\nMost likely?\n\nScenario 2: Capability jumps\n\nSudden breakthroughs with unexpected capabilities\nRapid deployment\nLess time to adapt\n\nScenario 3: Plateau\n\nCurrent approaches hit limits\nProgress slows sharply\nNew methods needed\n\n\nScenario 4: Transformative AI\n\nSystems vastly more capable than humans\nReshapes the economy and society\nEither very good or very bad\nUncertain timeline\n\n\n\nSource: Dallas Fed (2025), via AEI\n\nDallas Fed scenarios: trend, AI boost, benign singularity, extinction"
   },
   {
     "objectID": "lectures/lecture-25/25-safety.html#stuart-russells-perspective",
     "href": "lectures/lecture-25/25-safety.html#stuart-russells-perspective",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Stuart Russell’s perspective",
-    "text": "Stuart Russell’s perspective\n\n\n\nRussell’s argument (TED talk):\n\nWe’re building systems whose objectives we don’t fully control\nThe standard paradigm optimises a given objective\nWe can’t specify objectives correctly, so we need a different approach\n\nHis three principles:\n\nThe machine’s only goal is to realise human preferences\nIt is uncertain what those preferences are\nIt learns them by watching human behaviour\n\n\n“You can’t fetch the coffee if you’re dead”\n\n\nA machine with a fixed goal resists being switched off\nOne unsure of our goals lets us: we would only switch it off if it were doing something wrong\n\n\n\n\nSource: TED\n\nRussell co-wrote (with Peter Norvig) the most-used AI textbook (AI: A Modern Approach). When he says we have a problem, it is worth listening"
+    "text": "Stuart Russell’s perspective\n\n\n\nRussell’s argument (TED talk, 2017):\n\nWe build systems whose objectives we don’t fully control\nStandard AI optimises a fixed objective\nWe can’t specify objectives correctly\nSo we need a different approach\n\nHis three principles (Human Compatible, 2019):\n\nThe machine’s only goal is to realise human preferences\nIt is uncertain what those preferences are\nIt learns them by watching human behaviour\n\n\n“You can’t fetch the coffee if you’re dead”\n\n\nA machine with a fixed goal resists being switched off\nA machine unsure of our goals lets us switch it off\nWe would only do so if it were doing something wrong\n\n\n\n\nSource: TED\n\nRussell co-wrote the most-used AI textbook, AI: A Modern Approach, with Peter Norvig"
   },
   {
     "objectID": "lectures/lecture-25/25-safety.html#existential-risk-the-debate",
     "href": "lectures/lecture-25/25-safety.html#existential-risk-the-debate",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Existential risk: the debate",
-    "text": "Existential risk: the debate\n\n\n\nThose who worry:\n\nAI could become uncontrollable, and misaligned powerful AI = catastrophe\nEven a small probability × huge harm = important\n“We might not get a second chance”\nHinton, Bengio, Russell, many others\n\nThose who are sceptical:\n\nSpeculative, and distracts from real present harms\n“Sci-fi thinking”, not grounded\nWe control the off switch\nCapabilities are overstated\n\nThe actual state of debate:\n\nSerious researchers on both sides\nUncertainty and disagreement are genuine\n\n\n\n\nSource: MIT Technology Review, EmTech Digital 2023"
+    "text": "Existential risk: the debate\n\n\n\nThose who worry:\n\nAI could become uncontrollable\nMisaligned powerful AI = catastrophe\nEven a small probability × huge harm = important\n“We might not get a second chance”\nHinton, Bengio, Russell and many others\n\nThose who are sceptical:\n\nThe risk is speculative\nIt distracts from real present harms\n“Sci-fi thinking”, not grounded\nWe control the off switch\nCapabilities are overstated\n\nOverall:\n\nSerious researchers hold both views\nNo one has decisive evidence yet\n\n\n\n\nSource: MIT Technology Review, EmTech Digital 2023"
   },
   {
     "objectID": "lectures/lecture-25/25-safety.html#research-directions",
     "href": "lectures/lecture-25/25-safety.html#research-directions",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Research directions",
-    "text": "Research directions\n\n\n\nTechnical safety research:\n\n\n\n\nArea\nGoal\n\n\n\n\nInterpretability\nUnderstand AI internals\n\n\nRobustness\nResist adversarial inputs\n\n\nAlignment\nEnsure AI pursues intended goals\n\n\nOversight\nScale human supervision\n\n\nHonesty\nAI that doesn’t deceive\n\n\n\n\nGrowing field:\n\nAnthropic, OpenAI, DeepMind safety teams, academic labs\nStill small relative to capabilities\n\nCareer opportunity:\n\nHigh-impact work with a talent shortage\nMany paths in technical and non-technical roles\n\n\n\n\nSource: The Wall Street Journal (2026)\n\nInterested? Look into 80,000 Hours, AI safety bootcamps and safety-focused labs"
+    "text": "Research directions\n\n\n\nTechnical safety research:\n\n\n\n\nArea\nGoal\n\n\n\n\nInterpretability\nUnderstand AI internals\n\n\nRobustness\nResist adversarial inputs\n\n\nAlignment\nEnsure AI pursues intended goals\n\n\nOversight\nScale human supervision\n\n\nHonesty\nAI that doesn’t deceive\n\n\n\n\nGrowing field:\n\nSafety teams at Anthropic and Google DeepMind, plus academic labs\nStill small next to capabilities work\n\nCareers:\n\nHigh-impact work with a talent shortage\nTechnical and non-technical roles\n\n\n\n\nSource: The Wall Street Journal (2026)\n\nInterested? Look into 80,000 Hours, AI safety bootcamps and safety-focused labs"
   },
   {
     "objectID": "lectures/lecture-25/25-safety.html#where-you-fit-in",
     "href": "lectures/lecture-25/25-safety.html#where-you-fit-in",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Where you fit in",
-    "text": "Where you fit in\n\n\n\nPeople who understand the technology are often absent from policy debates. That is a problem!\nAs citizens:\n\nScrutinise AI regulation proposals: what problem does this solve, and does it actually address it?\nVote, comment on public consultations, write to representatives\nMost AI coverage confuses hype with capability, but you can do better 😉\n\nIf you work with AI or data:\n\nAsk what happens when your system fails or is misused\nKnow what data you train on and who it affects\nTalk to people outside your field about how they experience AI\n\n\n\n\nSource: MIT Sloan Review (2024)"
+    "text": "Where you fit in\n\n\n\nPeople who understand AI are often absent from policy debates. That is a problem!\nAs citizens:\n\nAsk of any AI rule: what problem does it solve, and does it solve it?\nVote, comment on public consultations, write to representatives\nMost AI coverage confuses hype with capability\nYou can do better 😉\n\nIf you work with AI or data:\n\nAsk what happens when your system fails or is misused\nKnow what data you train on and who it affects\nTalk to people outside your field about how they experience AI\n\n\n\n\nSource: MIT Sloan Review (2024)"
   },
   {
     "objectID": "lectures/lecture-25/25-safety.html#thinking-about-ai-risk-clearly",
     "href": "lectures/lecture-25/25-safety.html#thinking-about-ai-risk-clearly",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Thinking about AI risk clearly",
-    "text": "Thinking about AI risk clearly\n\n\n\nCommon mistakes:\n\nDismissing concerns because current AI seems harmless (ignores rapid capability gains)\nCatastrophising based on scenarios with no evidence\nConflating “possible” with “probable”\n\nA more useful framework:\n\nSeparate near-term harms from speculative long-term risks\nAsk: what evidence would change my mind?\nExperts genuinely disagree, and that is okay! Certainty is the red flag\n\nWhat history suggests:\n\nTechnology risks are real but rarely follow worst-case predictions\nThe biggest harms come from problems we did not anticipate\n\n\n\n\nSource: r/OptimistsUnite"
+    "text": "Thinking about AI risk clearly\n\n\n\nCommon mistakes:\n\nDismissing concerns because current AI seems harmless\nThis ignores how fast capabilities grow\nCatastrophising from scenarios with no evidence\nConfusing “possible” with “probable”\n\nBetter habits:\n\nSeparate near-term harms from speculative long-term risks\nAsk: what evidence would change my mind?\nExperts genuinely disagree, and that is okay!\nBe wary of certainty\n\nFrom history:\n\nTechnology risks rarely follow worst-case predictions\nThe biggest harms come from problems we did not anticipate\n\n\n\n\nSource: r/OptimistsUnite"
   },
   {
     "objectID": "lectures/lecture-25/25-safety.html#main-takeaways",
     "href": "lectures/lecture-25/25-safety.html#main-takeaways",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Main takeaways",
-    "text": "Main takeaways\n\n\n\nAI safety\n\nNear-term and long-term concerns both matter\nConcrete problems: safe exploration, side effects, reward hacking\nUncertainty is a reason to act now\n\nAlignment\n\nGetting AI to do what we actually want\nHard because of specification, Goodhart’s law and value disagreement\nCurrent approaches: RLHF, Constitutional AI\nMajor open problems remain\n\n\nFuture trajectories\n\nGenuine uncertainty about where AI is heading\nExpert disagreement is real\nPlan for multiple futures\n\nWhat we can do\n\nTechnical safety research\nInformed citizens who scrutinise AI rules\nIndividual choices\nNeither panic nor complacency\n\n\nThe future of AI is not determined. Choices about alignment, oversight and governance will shape it"
+    "text": "Main takeaways\n\n\n\nAI safety\n\nSafe systems now make safer systems later\nConcrete problems: safe exploration, side effects, reward hacking\nUncertainty is a reason to act now\n\nAlignment\n\nGetting AI to do what we want\nHard because of specification, Goodhart’s law and value disagreement\nMain methods: RLHF, Constitutional AI, debate\nNone is a complete solution\n\n\nFuture trajectories\n\nNobody knows where AI is heading\nExpert timelines differ by decades\nPlan for multiple futures\n\nWhat we can do\n\nTechnical safety research\nScrutinise AI rules as citizens\nAsk how your own systems can fail\n\n\nChoices about alignment, oversight and governance will shape AI’s future"
   },
   {
     "objectID": "lectures/lecture-12/12-rag.html#activity-qwen-file-upload-rag",
@@ -5304,5 +5304,12 @@
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Do deepfakes erode trust?",
     "text": "Do deepfakes erode trust?\n\n\n\nChesney & Citron (2019):\n\nDeepfakes threaten public knowledge, beyond privacy and fraud\nPoliticians can deny anything caught on camera\nPeople retreat into views they already hold\n\nLater studies:\n\nVaccari & Chadwick (2020): UK, N=2,005. Viewers end up uncertain, not deceived, and trust social media news less\nSchiff, Schiff & Bueno (2024): five experiments, 15,000 Americans. “Deepfake!” claims help politicians dodge text scandals, not video\n\n\n\n\nSource: Chesney & Citron (2019)"
+  },
+  {
+    "objectID": "lectures/lecture-25/25-safety.html#alignment-in-deep-learning",
+    "href": "lectures/lecture-25/25-safety.html#alignment-in-deep-learning",
+    "title": "DATASCI 101: Introduction to AI Applications",
+    "section": "Alignment in deep learning",
+    "text": "Alignment in deep learning\n\n\n\nNgo, Chan & Mindermann (ICLR 2024):\n\nDeep-learning AGI could become misaligned, even deceptive\n\nStatus:\n\nUnsolved, and an active research area\nNeeds several approaches at once\nUnclear whether current methods scale\nTheory is still thin\n\nOpen questions:\n\nWill RLHF scale?\nCan we detect deceptive alignment?\nHow do we handle value disagreement?\nWhat’s the role of interpretability?\nWhen is good enough “good enough”?\n\n\n\n\nSource: Ngo et al. (2024)"
   }
 ]

@@ -4,7 +4,7 @@ This lecture addresses the longer-term challenges of ensuring AI systems remain 
 
 ## Topics Covered
 
-- **The Safety Landscape**: Near-term vs long-term concerns, why safety matters now, concrete problems in AI safety (safe exploration, side effects, reward hacking)
+- **AI Safety**: Near-term vs long-term concerns, why safety matters now, concrete problems in AI safety (safe exploration, side effects, reward hacking)
 - **The Alignment Problem**: Defining alignment, why it's hard (specification, Goodhart's law), current approaches (RLHF, Constitutional AI)
 - **Future Trajectories**: Where AI might be heading, expert disagreement, scenarios to consider, Stuart Russell's perspective
 - **What We Can Do**: Technical safety research, informed citizens who scrutinise AI rules, individual agency

@@ -157,22 +157,22 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </section>
 <section id="recap-of-last-class" class="slide level2">
 <h2>Recap of last class</h2>
-<div style="margin-top: 50px; font-size: 23px;">
+<div style="margin-top: 40px; font-size: 26px;">
 <div class="columns">
 <div class="column" style="width:50%;">
 <ul>
-<li>Last class: <span class="alert">misinformation, deepfakes, and trust</span></li>
-<li>Mis-, dis- and malinformation differ by intent and truth</li>
-<li>AI lowers the <span class="alert">cost and skill</span> of convincing fakes (text, image, audio, video)</li>
-<li>Harms: political manipulation, non-consensual imagery, financial fraud</li>
-<li><span class="alert">Why we fall for it</span>: System 1 thinking, confirmation bias, bandwagons</li>
-<li>Responses: detection, provenance (C2PA), platform policies, media literacy</li>
-<li>Today: <span class="alert">long-term safety and the alignment problem</span></li>
+<li>Last class: <span class="alert">misinformation and deepfakes</span></li>
+<li>AI makes fakes <span class="alert">cheap and fast</span></li>
+<li>False stories spread 6x faster than true ones</li>
+<li>Deepfakes drive fraud, political manipulation and sexual abuse</li>
+<li>The <span class="alert">liar’s dividend</span> lets anyone dismiss real evidence</li>
+<li>Biases make us share before checking</li>
+<li>Today: <span class="alert">long-term safety and alignment</span></li>
 </ul>
 </div><div class="column" style="width:50%;">
 <div style="text-align: center; margin-top: -30px;">
 <p><a href="#/" data-modal-type="image" data-modal-url="figures/cruise.gif"><img data-src="figures/cruise.gif" style="width:100.0%"></a></p>
-<p>Source: <a href="https://x.com/vfxchrisume">Chris Ume</a></p>
+<p>Source: <a href="https://x.com/vfxchrisume">Chris Ume</a>, via VICE</p>
 </div>
 </div></div>
 </div>
@@ -180,29 +180,30 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <section id="lecture-overview" class="slide level2">
 <h2>Lecture overview</h2>
 <h3 id="what-we-will-cover-today">What we will cover today</h3>
-<div style="margin-top: 20px; font-size: 24px;">
+<div style="margin-top: 40px; font-size: 24px;">
 <div class="columns">
 <div class="column" style="width:50%;">
-<p><strong>Part 1: AI safety</strong></p>
+<p><span class="alert">Part 1: AI safety</span></p>
 <ul>
 <li>Near-term vs long-term concerns</li>
 <li>Why safety matters now</li>
 <li>Concrete problems in AI safety</li>
 </ul>
-<p><strong>Part 2: The alignment problem</strong></p>
+<p><span class="alert">Part 2: The alignment problem</span></p>
 <ul>
 <li>What is alignment?</li>
 <li>Why it’s hard</li>
 <li>Current approaches</li>
 </ul>
 </div><div class="column" style="width:50%;">
-<p><strong>Part 3: Future trajectories</strong></p>
+<p><span class="alert">Part 3: Future trajectories</span></p>
 <ul>
 <li>Where is AI heading?</li>
-<li>Expert disagreement</li>
 <li>Scenarios to consider</li>
+<li>Stuart Russell’s perspective</li>
+<li>Existential risk: the debate</li>
 </ul>
-<p><strong>Part 4: What can we do?</strong></p>
+<p><span class="alert">Part 4: What can we do?</span></p>
 <ul>
 <li>Research directions</li>
 <li>Where you fit in</li>
@@ -221,7 +222,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <section id="funny-news-of-the-day" class="slide level2">
 <h2>Funny news of the day!</h2>
 <div style="text-align: center; margin-top: 30px; font-size: 20px;">
-<p><a href="#/" data-modal-type="image" data-modal-url="figures/allbirds.png"><img data-src="figures/allbirds.png" style="width:95.0%"></a></p>
+<p><a href="#/" data-modal-type="image" data-modal-url="figures/allbirds.png"><img data-src="figures/allbirds.png" style="width:92.0%"></a></p>
 <p>Source: <a href="https://www.cnbc.com/2026/04/15/allbirds-bird-stock-shoes-ai.html">CNBC</a></p>
 </div>
 </section></section>
@@ -232,18 +233,18 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </section>
 <section id="near-term-vs-long-term-concerns" class="slide level2">
 <h2>Near-term vs long-term concerns</h2>
-<div style="margin-top: 30px; font-size: 21px;">
+<div style="margin-top: 40px; font-size: 21px;">
 <div class="columns">
 <div class="column" style="width:55%;">
-<p><strong>Near-term safety concerns:</strong></p>
+<p><strong>Near-term:</strong></p>
 <ul>
 <li><span class="alert">Bias and discrimination</span> (already happening)</li>
 <li>Privacy violations</li>
 <li>Job displacement</li>
-<li>Misinformation (covered last lecture)</li>
+<li>Misinformation (last lecture)</li>
 <li>Security vulnerabilities</li>
 </ul>
-<p><strong>Long-term safety concerns:</strong></p>
+<p><strong>Long-term:</strong></p>
 <ul>
 <li><span class="alert">Alignment</span>: AI pursuing wrong goals</li>
 <li>Loss of human control</li>
@@ -255,8 +256,8 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <ul>
 <li>Some argue long-term concerns <span class="alert">distract</span> from near-term harms</li>
 <li>Others argue a near-term focus <span class="alert">misses</span> the bigger picture</li>
-<li><a href="https://en.wikipedia.org/wiki/Black_swan_theory">“Black Swan”</a> events</li>
-<li><span class="alert">They’re connected</span>: safe systems now → safer systems later</li>
+<li>Rare <a href="https://en.wikipedia.org/wiki/Black_swan_theory">“Black Swan”</a> events can matter most</li>
+<li>Safe systems now make <span class="alert">safer systems later</span></li>
 </ul>
 <p><a href="#/" data-modal-type="image" data-modal-url="figures/saetra.webp"><img data-src="figures/saetra.webp" style="width:72.0%"></a></p>
 <p>Source: <a href="https://link.springer.com/article/10.1007/s43681-023-00336-y">Sætra &amp; Danaher (2023)</a></p>
@@ -266,16 +267,16 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </section>
 <section id="why-think-about-long-term-safety-now" class="slide level2">
 <h2>Why think about long-term safety now?</h2>
-<div style="margin-top: 30px; font-size: 21px;">
+<div style="margin-top: 40px; font-size: 21px;">
 <div class="columns">
 <div class="column" style="width:55%;">
 <ul>
 <li>AI capabilities advance <span class="alert">faster than expected</span></li>
-<li>Safety research takes time, and safety is hard to retrofit later</li>
-<li><span class="alert">Better to be prepared</span></li>
+<li>Safety research takes time</li>
+<li>Safety is hard to retrofit</li>
 </ul>
 <p><strong>Historical analogies:</strong></p>
-<div style="text-align: center; margin-bottom: 40px; margin-top: 20px;">
+<div style="display: flex; justify-content: center; font-size: 24px; margin-bottom: 15px; margin-top: 20px;">
 <table class="caption-top">
 <thead>
 <tr class="header">
@@ -285,19 +286,19 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </thead>
 <tbody>
 <tr class="odd">
-<td>Nuclear</td>
+<td><span class="alert">Nuclear</span></td>
 <td>Developed first, safety after</td>
 </tr>
 <tr class="even">
-<td>Internet</td>
+<td><span class="alert">Internet</span></td>
 <td>Security an afterthought</td>
 </tr>
 <tr class="odd">
-<td>Social media</td>
+<td><span class="alert">Social media</span></td>
 <td>Harms discovered in deployment</td>
 </tr>
 <tr class="even">
-<td>Biotech</td>
+<td><span class="alert">Biotech</span></td>
 <td>Ongoing debate</td>
 </tr>
 </tbody>
@@ -305,8 +306,9 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </div>
 <ul>
 <li>We’re still <span class="alert">early enough</span> to shape development</li>
-<li>Safety research is growing, but still a fraction of capabilities spending</li>
-<li>Anthropic, DeepMind and OpenAI now have dedicated safety teams</li>
+<li>Safety spending is a fraction of capabilities spending</li>
+<li><a href="https://alignment.anthropic.com/">Anthropic</a> and <a href="https://www.alignmentforum.org/posts/wqz5CRzqWkvzoatBG/agi-safety-and-alignment-google-deepmind-is-hiring">Google DeepMind</a> have dedicated safety teams</li>
+<li>OpenAI <a href="https://www.cnbc.com/2024/05/17/openai-superalignment-sutskever-leike.html">disbanded its Superalignment team</a> in 2024</li>
 </ul>
 </div><div class="column" style="width:45%;">
 <div style="text-align: center;">
@@ -318,11 +320,11 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </section>
 <section id="concrete-problems-in-ai-safety" class="slide level2">
 <h2>Concrete problems in AI safety</h2>
-<div style="margin-top: 30px; font-size: 22px;">
+<div style="margin-top: 40px; font-size: 22px;">
 <div class="columns">
-<div class="column" style="width:55%;">
-<p><a href="https://arxiv.org/abs/1606.06565">Amodei et al.&nbsp;(2016) identified five big challenges:</a></p>
-<div style="text-align: center;">
+<div class="column" style="width:60%;">
+<p><a href="https://arxiv.org/abs/1606.06565">Amodei et al.&nbsp;(2016)</a> list five open problems:</p>
+<div style="display: flex; justify-content: center; font-size: 25px; margin-bottom: 20px;">
 <table class="caption-top">
 <colgroup>
 <col style="width: 40%">
@@ -358,12 +360,12 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </tbody>
 </table>
 </div>
-<p><strong>Why these matter:</strong></p>
 <ul>
-<li>Not speculative: <span class="alert">already happening in deployed systems</span></li>
-<li>They scale with capability, and are unsolved even for current AI</li>
+<li><span class="alert">Already happening</span> in deployed systems</li>
+<li>Harder to solve as AI gets more capable</li>
+<li>Unsolved even for current AI</li>
 </ul>
-</div><div class="column" style="width:45%;">
+</div><div class="column" style="width:40%;">
 <div style="text-align: center;">
 <p><a href="#/" data-modal-type="image" data-modal-url="figures/alignment-problem.jpg"><img data-src="figures/alignment-problem.jpg" style="width:70.0%"></a></p>
 <p>Source: <a href="https://brianchristian.org/the-alignment-problem/">Brian Christian</a></p>
@@ -373,7 +375,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </section>
 <section id="safe-exploration" class="slide level2">
 <h2>Safe exploration</h2>
-<div style="margin-top: 30px; font-size: 21px;">
+<div style="margin-top: 40px; font-size: 21px;">
 <div class="columns">
 <div class="column" style="width:55%;">
 <ul>
@@ -390,10 +392,10 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </ul>
 <p><strong>Current approaches:</strong></p>
 <ul>
-<li><span class="alert">Simulation</span>: learn in low-risk environments first</li>
-<li>Conservative policies: keep actions within a safe region</li>
-<li>Human oversight: ask before novel actions</li>
-<li>Reward shaping: penalise dangerous states</li>
+<li>Train in <span class="alert">simulation</span> first</li>
+<li>Keep actions within a safe region (conservative policies)</li>
+<li>Ask a human before novel actions</li>
+<li>Penalise dangerous states (reward shaping)</li>
 </ul>
 </div><div class="column" style="width:45%;">
 <div style="text-align: center;">
@@ -408,7 +410,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </section>
 <section id="negative-side-effects" class="slide level2">
 <h2>Negative side effects</h2>
-<div style="margin-top: 30px; font-size: 21px;">
+<div style="margin-top: 40px; font-size: 23px;">
 <div class="columns">
 <div class="column" style="width:55%;">
 <ul>
@@ -416,29 +418,22 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <li><span class="alert">Unintended consequences</span> sit outside the objective</li>
 <li>“You didn’t say not to…”</li>
 </ul>
-<p><strong>Classic example (thought experiment):</strong></p>
+<p><strong>Classic example (<a href="https://arxiv.org/abs/1606.06565">Amodei et al., 2016</a>):</strong></p>
 <ul>
-<li><span class="alert">Robot tasked with fetching coffee</span></li>
-<li>Knocks over obstacles and harms humans in its path</li>
-<li>Technically: coffee fetched ✓</li>
+<li><span class="alert">Robot tasked with cleaning a room</span></li>
+<li>Knocks over a vase on the way</li>
+<li>Technically: room cleaned ✓</li>
 </ul>
-<p><strong>Real-world version:</strong></p>
+<p><strong>Real-world example:</strong></p>
 <ul>
 <li><span class="alert">Content algorithm maximises engagement</span></li>
-<li>Possible side effects: polarisation, addiction, both outside the objective</li>
+<li>Possible side effects: polarisation and addiction</li>
 <li><span class="alert">Nobody specified “don’t harm society”</span></li>
 </ul>
 </div><div class="column" style="width:45%;">
 <div style="text-align: center;">
-<div class="quarto-figure quarto-figure-center">
-<figure>
 <p><a href="#/" data-modal-type="image" data-modal-url="figures/social-media-democracy.png"><img data-src="figures/social-media-democracy.png" style="width:60.0%"></a></p>
-<figcaption>Political polarisation is real, but sometimes not designed</figcaption>
-</figure>
-</div>
-</div>
-<div style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; font-size: 18px; margin-top: 15px;">
-<p>Nobody told the engagement algorithm “don’t polarise society”. <span class="alert">If it isn’t in the objective, the system won’t care about it</span></p>
+<p>Source: <a href="https://www.cambridge.org/core/books/social-media-and-democracy/E79E2BBF03C18C3A56A5CC393698F117">Persily &amp; Tucker (2020)</a></p>
 </div>
 </div></div>
 </div>
@@ -450,25 +445,25 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </section>
 <section id="what-is-alignment" class="slide level2">
 <h2>What is alignment?</h2>
-<div style="margin-top: 30px; font-size: 20px;">
+<div style="margin-top: 40px; font-size: 22px;">
 <div class="columns">
 <div class="column" style="width:55%;">
 <ul>
 <li>Alignment: AI systems that <span class="alert">do what we want</span></li>
-<li>Pursue the goals we actually intend, not just the stated objective</li>
-<li>Behave safely even when we can’t supervise</li>
+<li>They pursue the goals we intend, not only the stated ones</li>
+<li>They behave safely even when we can’t supervise</li>
 </ul>
-<p><strong>Why the word “alignment”:</strong></p>
+<p><strong>Alignment means:</strong></p>
 <ul>
-<li>AI goals <span class="alert">aligned with</span> human values, not orthogonal or opposed</li>
-<li>Not pursuing random objectives</li>
-<li>Not satisfying the letter while violating the spirit</li>
+<li>AI goals <span class="alert">point the same way</span> as human values</li>
+<li>AI follows the spirit of a request, not just the letter</li>
 </ul>
-<p><strong>Why it’s hard:</strong></p>
+<p><strong>Obstacles:</strong></p>
 <ul>
-<li><span class="alert">Hard to specify</span> what we want, and context matters enormously</li>
+<li><span class="alert">Hard to specify</span> what we want</li>
+<li>Context changes what we want</li>
 <li>Humans disagree about values</li>
-<li>Our stated preferences aren’t always our true preferences</li>
+<li>Our stated preferences aren’t always our true ones</li>
 </ul>
 </div><div class="column" style="width:45%;">
 <div style="text-align: center;">
@@ -485,7 +480,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </section>
 <section id="alignment-is-hard" class="slide level2">
 <h2>Alignment is hard!</h2>
-<div style="margin-top: 30px; font-size: 21px;">
+<div style="margin-top: 20px; font-size: 20px;">
 <div class="columns">
 <div class="column" style="width:55%;">
 <p><strong>Specification problem:</strong></p>
@@ -509,7 +504,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </div><div class="column" style="width:45%;">
 <p><strong>The King Midas problem:</strong> <a href="https://www.edge.org/conversation/the-myth-of-ai#26015">(Russell, 2014)</a></p>
 <ul>
-<li>Gets exactly what he asked for, <span class="alert">not what he wanted</span></li>
+<li>Midas wished that <span class="alert">everything he touched turned to gold</span>, including his food</li>
 <li>Literal interpretation of wishes</li>
 <li>Common AI failure mode</li>
 </ul>
@@ -521,56 +516,55 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </section>
 <section id="current-alignment-approaches" class="slide level2">
 <h2>Current alignment approaches</h2>
-<div style="margin-top: 30px; font-size: 20px;">
+<div style="margin-top: 40px; font-size: 22px;">
 <div class="columns">
 <div class="column" style="width:55%;">
-<p><strong>RLHF (Reinforcement Learning from Human Feedback):</strong> <a href="https://arxiv.org/abs/1706.03741">(Christiano et al., 2017)</a></p>
+<p><strong>RLHF</strong> (human feedback, <a href="https://arxiv.org/abs/1706.03741">Christiano et al., 2017</a>):</p>
 <ul>
-<li>Humans rank AI outputs, and a reward model is trained on the rankings</li>
-<li>Optimise the AI to satisfy that reward model</li>
+<li>Humans rank AI outputs</li>
+<li>A reward model learns from the rankings</li>
+<li>The AI is tuned to satisfy that model</li>
 <li>Still a <span class="alert">standard training step</span></li>
 </ul>
-<p><strong>Constitutional AI:</strong> <a href="https://www.anthropic.com/research/constitutional-ai-harmlessness-from-ai-feedback">(Anthropic, 2022)</a></p>
+<p><strong>Constitutional AI</strong> (<a href="https://www.anthropic.com/research/constitutional-ai-harmlessness-from-ai-feedback">Anthropic, 2022</a>):</p>
 <ul>
-<li>AI critiques its own outputs against a <span class="alert">set of principles (“constitution”)</span></li>
-<li>Iteratively improves</li>
-<li>Reduces the need for human labelling</li>
+<li>AI critiques its outputs against <span class="alert">written principles</span> (a “constitution”)</li>
+<li>It revises them over several rounds</li>
+<li>Needs less human labelling</li>
 <li><a href="https://askell.io/">Amanda Askell’s work</a> on AI ethics and philosophy</li>
 </ul>
 </div><div class="column" style="width:45%;">
-<p><strong>Debate and recursive reward modelling:</strong> (<a href="https://arxiv.org/abs/1805.00899">Irving et al., 2018</a>; <a href="https://arxiv.org/abs/1811.07871">Leike et al., 2018</a>)</p>
+<p><strong>Debate and recursive reward modelling</strong> (<a href="https://arxiv.org/abs/1805.00899">Irving et al., 2018</a>; <a href="https://arxiv.org/abs/1811.07871">Leike et al., 2018</a>):</p>
 <ul>
 <li>AI systems argue with each other</li>
-<li>Humans judge which gave the most truthful, useful answer</li>
-<li>Scales human oversight: <span class="alert">easier to evaluate than produce knowledge</span></li>
+<li>Humans judge which answer is most truthful and useful</li>
+<li>Judging is <span class="alert">easier than producing</span> answers, so oversight scales</li>
 </ul>
-<p><strong>Limitations of current approaches:</strong></p>
+<p><strong>Limits:</strong></p>
 <ul>
-<li>RLHF: can learn to <span class="alert">game evaluators</span></li>
-<li>Human feedback: expensive and biased</li>
-<li>Principles: you still have to specify them right</li>
-<li><span class="alert">None are complete solutions</span></li>
+<li>RLHF models can learn to <span class="alert">game evaluators</span></li>
+<li>Human feedback is expensive and biased</li>
+<li>Principles still have to be written well</li>
+<li><span class="alert">None is a complete solution</span></li>
 </ul>
-<div style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; font-size: 18px; margin-top: 15px;">
-<p>These methods <span class="alert">work well enough for current systems</span>. Whether they scale to more capable AI is unknown</p>
-</div>
 </div></div>
 </div>
 </section>
-<section id="the-alignment-survey" class="slide level2 scrollable">
-<h2>The alignment survey</h2>
-<div style="margin-top: 30px; font-size: 19px;">
+<section id="alignment-in-deep-learning" class="slide level2 scrollable">
+<h2>Alignment in deep learning</h2>
+<div style="margin-top: 40px; font-size: 20px;">
 <div class="columns">
 <div class="column" style="width:55%;">
-<p><a href="https://arxiv.org/abs/2209.00626"><strong>Ngo et al.&nbsp;overview (2022):</strong></a></p>
+<p><strong><a href="https://arxiv.org/abs/2209.00626">Ngo, Chan &amp; Mindermann (ICLR 2024)</a>:</strong></p>
 <ul>
-<li>Argues why deep-learning AGI could become misaligned, even deceptive</li>
+<li>Deep-learning AGI could become <span class="alert">misaligned</span>, even deceptive</li>
 </ul>
-<p><strong>However…</strong></p>
+<p><strong>Status:</strong></p>
 <ul>
-<li><span class="alert">Not a solved problem</span>: an active research area needing multiple approaches</li>
-<li>Uncertainty about scaling</li>
-<li>Theoretical foundations lacking</li>
+<li><span class="alert">Unsolved</span>, and an active research area</li>
+<li>Needs several approaches at once</li>
+<li>Unclear whether current methods scale</li>
+<li>Theory is still thin</li>
 </ul>
 <p><strong>Open questions:</strong></p>
 <ol type="1">
@@ -583,17 +577,16 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </div><div class="column" style="width:45%;">
 <div style="margin-top: 30px; font-size: 17px; text-align: center;">
 <p><a href="#/" data-modal-type="image" data-modal-url="figures/ngo-et-al.png"><img data-src="figures/ngo-et-al.png" style="width:100.0%"></a></p>
-<p>Source: <a href="https://arxiv.org/abs/2209.00626">Ngo et al.&nbsp;(2022)</a></p>
+<p>Source: <a href="https://arxiv.org/abs/2209.00626">Ngo et al.&nbsp;(2024)</a></p>
 </div>
 </div></div>
 </div>
 </section>
 <section id="discussion-whose-values" class="slide level2 scrollable">
 <h2>Discussion: whose values?</h2>
-<div style="margin-top: 30px; font-size: 22px;">
+<div style="margin-top: 40px; font-size: 22px;">
 <div class="columns">
 <div class="column" style="width:50%;">
-<p><strong>The values problem:</strong></p>
 <p>If we align AI to human values…</p>
 <ul>
 <li><span class="alert">Whose</span> human values?</li>
@@ -612,14 +605,14 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <div class="fragment">
 <p><strong>Some perspectives:</strong></p>
 <ul>
-<li><strong>Libertarian</strong>: Each user controls their AI</li>
-<li><strong>Democratic</strong>: Majority decides</li>
-<li><strong>Rights-based</strong>: Some things off-limits regardless</li>
-<li><strong>Technocratic</strong>: Experts decide</li>
-<li><strong><span class="alert">Pluralist</span></strong>: Multiple systems for different contexts</li>
+<li><span class="alert">Libertarian</span>: each user controls their AI</li>
+<li><span class="alert">Democratic</span>: majority decides</li>
+<li><span class="alert">Rights-based</span>: some things are off-limits regardless</li>
+<li><span class="alert">Technocratic</span>: experts decide</li>
+<li><span class="alert">Pluralist</span>: different systems for different contexts</li>
 </ul>
 <div style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; font-size: 18px; margin-top: 15px;">
-<p>“Whose values?” is a political question. No amount of engineering can avoid it. That is what makes alignment <span class="alert">so difficult</span></p>
+<p>“Whose values?” is a <span class="alert">political question</span>, and engineering cannot settle it</p>
 </div>
 </div>
 </div></div>
@@ -632,12 +625,12 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </section>
 <section id="where-is-ai-heading" class="slide level2">
 <h2>Where is AI heading?</h2>
-<div style="margin-top: 30px; font-size: 21px;">
+<div style="margin-top: 40px; font-size: 21px;">
 <div class="columns">
 <div class="column" style="width:55%;">
 <p><strong>Current trends:</strong></p>
 <ul>
-<li>Models getting <span class="alert">larger and more capable</span></li>
+<li>Models keep getting <span class="alert">larger and more capable</span></li>
 <li>More general-purpose systems</li>
 <li>Multimodal capabilities</li>
 </ul>
@@ -650,7 +643,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </ul>
 <p><strong>Expert disagreement:</strong></p>
 <ul>
-<li><span class="alert">Wide variation</span> in predictions: timelines differ by decades</li>
+<li>Timelines differ by <span class="alert">decades</span></li>
 <li>Some expect AGI soon, others never</li>
 <li>Confidence often exceeds evidence</li>
 </ul>
@@ -659,7 +652,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <p><a href="#/" data-modal-type="image" data-modal-url="figures/ai-trajectory.avif"><img data-src="figures/ai-trajectory.avif" style="width:100.0%"></a></p>
 <p>Source: <a href="https://ourworldindata.org/brief-history-of-ai">Our World in Data</a></p>
 <div style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; font-size: 18px; margin-top: 15px;">
-<p>Nobody knows. <span class="alert">Uncertainty is high</span>, so be sceptical of confident predictions</p>
+<p>Be sceptical of <span class="alert">confident predictions</span></p>
 </div>
 </div>
 </div></div>
@@ -673,7 +666,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <p><strong>Scenario 1: Gradual improvement</strong></p>
 <ul>
 <li><span class="alert">AI gets better slowly</span></li>
-<li>Humans and society adjust incrementally</li>
+<li>Society adjusts step by step</li>
 <li><span class="alert">Most likely?</span></li>
 </ul>
 <p><strong>Scenario 2: Capability jumps</strong></p>
@@ -684,37 +677,41 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </ul>
 <p><strong>Scenario 3: Plateau</strong></p>
 <ul>
-<li><span class="alert">Current approaches hit limits</span> and progress slows dramatically</li>
-<li>Different paradigms needed</li>
-<li><span class="alert">Also possible</span></li>
+<li><span class="alert">Current approaches hit limits</span></li>
+<li>Progress slows sharply</li>
+<li>New methods needed</li>
 </ul>
 </div><div class="column" style="width:45%;">
 <p><strong>Scenario 4: Transformative AI</strong></p>
 <ul>
 <li><span class="alert">Systems vastly more capable than humans</span></li>
-<li>Fundamental changes to economy, society</li>
+<li>Reshapes the economy and society</li>
 <li>Either very good or very bad</li>
 <li>Uncertain timeline</li>
 </ul>
 <div style="text-align: center;">
-<p><a href="#/" data-modal-type="image" data-modal-url="figures/scenarios.jpg"><img data-src="figures/scenarios.jpg" style="width:100.0%"></a></p>
+<p><a href="#/" data-modal-type="image" data-modal-url="figures/scenarios.jpg"><img data-src="figures/scenarios.jpg" style="width:85.0%"></a></p>
 <p>Source: <a href="https://www.dallasfed.org/research/economics/2025/0624">Dallas Fed (2025)</a>, via <a href="https://www.aei.org/articles/would-agi-be-no-big-deal/">AEI</a></p>
+<div style="font-size: 16px;">
+<p>Dallas Fed scenarios: trend, AI boost, benign singularity, extinction</p>
+</div>
 </div>
 </div></div>
 </div>
 </section>
 <section id="stuart-russells-perspective" class="slide level2 scrollable">
 <h2>Stuart Russell’s perspective</h2>
-<div style="margin-top: 30px; font-size: 18px;">
+<div style="margin-top: 40px; font-size: 19px;">
 <div class="columns">
 <div class="column" style="width:55%;">
-<p><strong>Russell’s argument (TED talk):</strong></p>
+<p><strong>Russell’s argument (<a href="https://www.ted.com/talks/stuart_russell_3_principles_for_creating_safer_ai">TED talk</a>, 2017):</strong></p>
 <ul>
-<li>We’re building systems whose <span class="alert">objectives we don’t fully control</span></li>
-<li>The standard paradigm optimises a given objective</li>
-<li>We can’t specify objectives correctly, so we need a different approach</li>
+<li>We build systems whose <span class="alert">objectives we don’t fully control</span></li>
+<li>Standard AI optimises a fixed objective</li>
+<li>We can’t specify objectives correctly</li>
+<li>So we need a different approach</li>
 </ul>
-<p><strong>His three principles:</strong></p>
+<p><strong>His three principles (<em>Human Compatible</em>, 2019):</strong></p>
 <ol type="1">
 <li>The machine’s only goal is to <span class="alert">realise human preferences</span></li>
 <li>It is <span class="alert">uncertain</span> what those preferences are</li>
@@ -725,14 +722,15 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </blockquote>
 <ul>
 <li>A machine with a fixed goal <span class="alert">resists being switched off</span></li>
-<li>One unsure of our goals lets us: we would only switch it off if it were doing something wrong</li>
+<li>A machine unsure of our goals lets us switch it off</li>
+<li>We would only do so if it were doing something wrong</li>
 </ul>
 </div><div class="column" style="width:45%;">
 <div style="text-align: center;">
 <p><a href="#/" data-modal-type="image" data-modal-url="figures/stuart-russell.png"><img data-src="figures/stuart-russell.png" style="width:80.0%"></a></p>
 <p>Source: <a href="https://www.ted.com/talks/stuart_russell_3_principles_for_creating_safer_ai">TED</a></p>
 <div style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; font-size: 18px; margin-top: 15px;">
-<p>Russell co-wrote (with Peter Norvig) the most-used <span class="alert">AI textbook</span> (<em>AI: A Modern Approach</em>). When he says we have a problem, it is worth listening</p>
+<p>Russell co-wrote the most-used <span class="alert">AI textbook</span>, <em>AI: A Modern Approach</em>, with Peter Norvig</p>
 </div>
 </div>
 </div></div>
@@ -740,27 +738,29 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </section>
 <section id="existential-risk-the-debate" class="slide level2">
 <h2>Existential risk: the debate</h2>
-<div style="margin-top: 30px; font-size: 20px;">
+<div style="margin-top: 30px; font-size: 19px;">
 <div class="columns">
 <div class="column" style="width:55%;">
 <p><strong>Those who worry:</strong></p>
 <ul>
-<li>AI could become <span class="alert">uncontrollable</span>, and misaligned powerful AI = catastrophe</li>
+<li>AI could become <span class="alert">uncontrollable</span></li>
+<li>Misaligned powerful AI = catastrophe</li>
 <li>Even a small probability × huge harm = important</li>
 <li>“We might not get a second chance”</li>
-<li>Hinton, Bengio, Russell, many others</li>
+<li>Hinton, Bengio, Russell and many others</li>
 </ul>
 <p><strong>Those who are sceptical:</strong></p>
 <ul>
-<li>Speculative, and distracts from <span class="alert">real present harms</span></li>
+<li>The risk is speculative</li>
+<li>It distracts from <span class="alert">real present harms</span></li>
 <li>“Sci-fi thinking”, not grounded</li>
 <li>We control the off switch</li>
 <li>Capabilities are overstated</li>
 </ul>
-<p><strong>The actual state of debate:</strong></p>
+<p><strong>Overall:</strong></p>
 <ul>
-<li><span class="alert">Serious researchers on both sides</span></li>
-<li>Uncertainty and disagreement are genuine</li>
+<li><span class="alert">Serious researchers</span> hold both views</li>
+<li>No one has decisive evidence yet</li>
 </ul>
 </div><div class="column" style="width:45%;">
 <div style="text-align: center;">
@@ -777,11 +777,11 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </section>
 <section id="research-directions" class="slide level2">
 <h2>Research directions</h2>
-<div style="margin-top: 30px; font-size: 21px;">
+<div style="margin-top: 40px; font-size: 21px;">
 <div class="columns">
 <div class="column" style="width:55%;">
 <p><strong>Technical safety research:</strong></p>
-<div style="text-align: center;">
+<div style="display: flex; justify-content: center; font-size: 23px;">
 <table class="caption-top">
 <thead>
 <tr class="header">
@@ -795,19 +795,19 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <td>Understand AI internals</td>
 </tr>
 <tr class="even">
-<td>Robustness</td>
+<td><span class="alert">Robustness</span></td>
 <td>Resist adversarial inputs</td>
 </tr>
 <tr class="odd">
-<td>Alignment</td>
+<td><span class="alert">Alignment</span></td>
 <td>Ensure AI pursues intended goals</td>
 </tr>
 <tr class="even">
-<td>Oversight</td>
+<td><span class="alert">Oversight</span></td>
 <td>Scale human supervision</td>
 </tr>
 <tr class="odd">
-<td>Honesty</td>
+<td><span class="alert">Honesty</span></td>
 <td>AI that doesn’t deceive</td>
 </tr>
 </tbody>
@@ -815,13 +815,13 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </div>
 <p><strong>Growing field:</strong></p>
 <ul>
-<li>Anthropic, OpenAI, DeepMind safety teams, academic labs</li>
-<li>Still <span class="alert">small relative to capabilities</span></li>
+<li>Safety teams at Anthropic and Google DeepMind, plus academic labs</li>
+<li>Still <span class="alert">small next to capabilities work</span></li>
 </ul>
-<p><strong>Career opportunity:</strong></p>
+<p><strong>Careers:</strong></p>
 <ul>
 <li>High-impact work with a talent shortage</li>
-<li>Many paths in technical and non-technical roles</li>
+<li>Technical and non-technical roles</li>
 </ul>
 </div><div class="column" style="width:45%;">
 <div style="text-align: center;">
@@ -836,15 +836,16 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </section>
 <section id="where-you-fit-in" class="slide level2">
 <h2>Where you fit in</h2>
-<div style="margin-top: 30px; font-size: 21px;">
+<div style="margin-top: 40px; font-size: 21px;">
 <div class="columns">
 <div class="column" style="width:55%;">
-<p>People who understand the technology are often <span class="alert">absent from policy debates</span>. That is a problem!</p>
+<p>People who understand AI are often <span class="alert">absent from policy debates</span>. That is a problem!</p>
 <p><strong>As citizens:</strong></p>
 <ul>
-<li>Scrutinise AI regulation proposals: what problem does this solve, and <span class="alert">does it actually address it</span>?</li>
+<li>Ask of any AI rule: what problem does it solve, and <span class="alert">does it solve it</span>?</li>
 <li>Vote, comment on public consultations, write to representatives</li>
-<li>Most AI coverage confuses hype with capability, but <span class="alert">you can do better</span> 😉</li>
+<li>Most AI coverage confuses hype with capability</li>
+<li><span class="alert">You can do better</span> 😉</li>
 </ul>
 <p><strong>If you work with AI or data:</strong></p>
 <ul>
@@ -862,24 +863,26 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </section>
 <section id="thinking-about-ai-risk-clearly" class="slide level2">
 <h2>Thinking about AI risk clearly</h2>
-<div style="margin-top: 30px; font-size: 20px;">
+<div style="margin-top: 40px; font-size: 20px;">
 <div class="columns">
 <div class="column" style="width:55%;">
 <p><strong>Common mistakes:</strong></p>
 <ul>
-<li><span class="alert">Dismissing concerns</span> because current AI seems harmless (ignores rapid capability gains)</li>
-<li><span class="alert">Catastrophising</span> based on scenarios with no evidence</li>
-<li>Conflating “possible” with “probable”</li>
+<li><span class="alert">Dismissing concerns</span> because current AI seems harmless</li>
+<li>This ignores how fast capabilities grow</li>
+<li><span class="alert">Catastrophising</span> from scenarios with no evidence</li>
+<li>Confusing “possible” with “probable”</li>
 </ul>
-<p><strong>A more useful framework:</strong></p>
+<p><strong>Better habits:</strong></p>
 <ul>
 <li>Separate <span class="alert">near-term harms</span> from speculative long-term risks</li>
 <li>Ask: what evidence would change my mind?</li>
-<li>Experts <span class="alert">genuinely disagree</span>, and that is okay! Certainty is the red flag</li>
+<li>Experts <span class="alert">genuinely disagree</span>, and that is okay!</li>
+<li>Be wary of certainty</li>
 </ul>
-<p><strong>What history suggests:</strong></p>
+<p><strong>From history:</strong></p>
 <ul>
-<li>Technology risks are real but rarely follow worst-case predictions</li>
+<li>Technology risks rarely follow worst-case predictions</li>
 <li>The biggest harms come from <span class="alert">problems we did not anticipate</span></li>
 </ul>
 </div><div class="column" style="width:45%;">
@@ -897,38 +900,37 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </section>
 <section id="main-takeaways" class="slide level2">
 <h2>Main takeaways</h2>
-<div style="margin-top: 30px; font-size: 21px;">
+<div style="margin-top: 40px; font-size: 21px;">
 <div class="columns">
 <div class="column" style="width:55%;">
-<p><strong>AI safety</strong></p>
+<p><span class="alert">AI safety</span></p>
 <ul>
-<li>Near-term and long-term concerns both matter</li>
+<li>Safe systems now make safer systems later</li>
 <li>Concrete problems: safe exploration, side effects, reward hacking</li>
 <li>Uncertainty is a reason to act now</li>
 </ul>
-<p><strong>Alignment</strong></p>
+<p><span class="alert">Alignment</span></p>
 <ul>
-<li>Getting AI to do what we actually want</li>
+<li>Getting AI to do what we want</li>
 <li>Hard because of specification, Goodhart’s law and value disagreement</li>
-<li>Current approaches: RLHF, Constitutional AI</li>
-<li>Major open problems remain</li>
+<li>Main methods: RLHF, Constitutional AI, debate</li>
+<li>None is a complete solution</li>
 </ul>
 </div><div class="column" style="width:45%;">
-<p><strong>Future trajectories</strong></p>
+<p><span class="alert">Future trajectories</span></p>
 <ul>
-<li>Genuine uncertainty about where AI is heading</li>
-<li>Expert disagreement is real</li>
+<li>Nobody knows where AI is heading</li>
+<li>Expert timelines differ by decades</li>
 <li>Plan for multiple futures</li>
 </ul>
-<p><strong>What we can do</strong></p>
+<p><span class="alert">What we can do</span></p>
 <ul>
 <li>Technical safety research</li>
-<li>Informed citizens who scrutinise AI rules</li>
-<li>Individual choices</li>
-<li><span class="alert">Neither panic nor complacency</span></li>
+<li>Scrutinise AI rules as citizens</li>
+<li>Ask how your own systems can fail</li>
 </ul>
 <div style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; margin-top: 15px; font-size: 18px;">
-<p>The future of AI is <span class="alert">not determined</span>. Choices about alignment, oversight and governance will shape it</p>
+<p>Choices about alignment, oversight and governance <span class="alert">will shape AI’s future</span></p>
 </div>
 </div></div>
 </div>

@@ -51,23 +51,23 @@ if (!require("fontawesome", character.only = TRUE)) {
 
 ## Recap of last class
 
-:::{style="margin-top: 50px; font-size: 23px;"}
+:::{style="margin-top: 40px; font-size: 26px;"}
 :::{.columns}
 :::{.column width=50%}
-- Last class: [misinformation, deepfakes, and trust]{.alert}
-- Mis-, dis- and malinformation differ by intent and truth
-- AI lowers the [cost and skill]{.alert} of convincing fakes (text, image, audio, video)
-- Harms: political manipulation, non-consensual imagery, financial fraud
-- [Why we fall for it]{.alert}: System 1 thinking, confirmation bias, bandwagons
-- Responses: detection, provenance (C2PA), platform policies, media literacy
-- Today: [long-term safety and the alignment problem]{.alert}
+- Last class: [misinformation and deepfakes]{.alert}
+- AI makes fakes [cheap and fast]{.alert}
+- False stories spread 6x faster than true ones
+- Deepfakes drive fraud, political manipulation and sexual abuse
+- The [liar's dividend]{.alert} lets anyone dismiss real evidence
+- Biases make us share before checking
+- Today: [long-term safety and alignment]{.alert}
 :::
 
 :::{.column width=50%}
 :::{style="text-align: center; margin-top: -30px;"}
 [![](figures/cruise.gif){width="100%"}](#){data-modal-type="image" data-modal-url="figures/cruise.gif"}
 
-Source: [Chris Ume](https://x.com/vfxchrisume)
+Source: [Chris Ume](https://x.com/vfxchrisume), via VICE
 :::
 :::
 :::
@@ -76,17 +76,17 @@ Source: [Chris Ume](https://x.com/vfxchrisume)
 ## Lecture overview
 ### What we will cover today
 
-:::{style="margin-top: 20px; font-size: 24px;"}
+:::{style="margin-top: 40px; font-size: 24px;"}
 
 :::{.columns}
 :::{.column width=50%}
-**Part 1: AI safety**
+[Part 1: AI safety]{.alert}
 
 - Near-term vs long-term concerns
 - Why safety matters now
 - Concrete problems in AI safety
 
-**Part 2: The alignment problem**
+[Part 2: The alignment problem]{.alert}
 
 - What is alignment?
 - Why it's hard
@@ -94,13 +94,14 @@ Source: [Chris Ume](https://x.com/vfxchrisume)
 :::
 
 :::{.column width=50%}
-**Part 3: Future trajectories**
+[Part 3: Future trajectories]{.alert}
 
 - Where is AI heading?
-- Expert disagreement
 - Scenarios to consider
+- Stuart Russell's perspective
+- Existential risk: the debate
 
-**Part 4: What can we do?**
+[Part 4: What can we do?]{.alert}
 
 - Research directions
 - Where you fit in
@@ -120,7 +121,7 @@ Source: [Cheezburger](https://cheezburger.com/20659973/20-memes-if-youre-feeling
 ## Funny news of the day!
 
 :::{style="text-align: center; margin-top: 30px; font-size: 20px;"}
-[![](figures/allbirds.png){width="95%"}](#){data-modal-type="image" data-modal-url="figures/allbirds.png"}
+[![](figures/allbirds.png){width="92%"}](#){data-modal-type="image" data-modal-url="figures/allbirds.png"}
 
 Source: [CNBC](https://www.cnbc.com/2026/04/15/allbirds-bird-stock-shoes-ai.html)
 :::
@@ -129,18 +130,18 @@ Source: [CNBC](https://www.cnbc.com/2026/04/15/allbirds-bird-stock-shoes-ai.html
 
 ## Near-term vs long-term concerns
 
-:::{style="margin-top: 30px; font-size: 21px;"}
+:::{style="margin-top: 40px; font-size: 21px;"}
 :::{.columns}
 :::{.column width=55%}
-**Near-term safety concerns:**
+**Near-term:**
 
 - [Bias and discrimination]{.alert} (already happening)
 - Privacy violations
 - Job displacement
-- Misinformation (covered last lecture)
+- Misinformation (last lecture)
 - Security vulnerabilities
 
-**Long-term safety concerns:**
+**Long-term:**
 
 - [Alignment]{.alert}: AI pursuing wrong goals
 - Loss of human control
@@ -152,8 +153,8 @@ Source: [CNBC](https://www.cnbc.com/2026/04/15/allbirds-bird-stock-shoes-ai.html
 :::{style="text-align: center;"}
 - Some argue long-term concerns [distract]{.alert} from near-term harms
 - Others argue a near-term focus [misses]{.alert} the bigger picture
-- ["Black Swan"](https://en.wikipedia.org/wiki/Black_swan_theory) events
-- [They're connected]{.alert}: safe systems now → safer systems later
+- Rare ["Black Swan"](https://en.wikipedia.org/wiki/Black_swan_theory) events can matter most
+- Safe systems now make [safer systems later]{.alert}
 
 [![](figures/saetra.webp){width="72%"}](#){data-modal-type="image" data-modal-url="figures/saetra.webp"}
 
@@ -165,27 +166,28 @@ Source: [Sætra & Danaher (2023)](https://link.springer.com/article/10.1007/s436
 
 ## Why think about long-term safety now?
 
-:::{style="margin-top: 30px; font-size: 21px;"}
+:::{style="margin-top: 40px; font-size: 21px;"}
 :::{.columns}
 :::{.column width=55%}
 - AI capabilities advance [faster than expected]{.alert}
-- Safety research takes time, and safety is hard to retrofit later
-- [Better to be prepared]{.alert}
+- Safety research takes time
+- Safety is hard to retrofit
 
 **Historical analogies:**
 
-:::{style="text-align: center; margin-bottom: 40px; margin-top: 20px;"}
+:::{style="display: flex; justify-content: center; font-size: 24px; margin-bottom: 15px; margin-top: 20px;"}
 | Technology | Safety lag |
 |------------|------------|
-| Nuclear | Developed first, safety after |
-| Internet | Security an afterthought |
-| Social media | Harms discovered in deployment |
-| Biotech | Ongoing debate |
+| [Nuclear]{.alert} | Developed first, safety after |
+| [Internet]{.alert} | Security an afterthought |
+| [Social media]{.alert} | Harms discovered in deployment |
+| [Biotech]{.alert} | Ongoing debate |
 :::
 
 - We're still [early enough]{.alert} to shape development
-- Safety research is growing, but still a fraction of capabilities spending
-- Anthropic, DeepMind and OpenAI now have dedicated safety teams
+- Safety spending is a fraction of capabilities spending
+- [Anthropic](https://alignment.anthropic.com/) and [Google DeepMind](https://www.alignmentforum.org/posts/wqz5CRzqWkvzoatBG/agi-safety-and-alignment-google-deepmind-is-hiring) have dedicated safety teams
+- OpenAI [disbanded its Superalignment team](https://www.cnbc.com/2024/05/17/openai-superalignment-sutskever-leike.html) in 2024
 :::
 
 :::{.column width=45%}
@@ -200,12 +202,12 @@ Source: [Center for AI Safety](https://aistatement.com/#open-letter)
 
 ## Concrete problems in AI safety
 
-:::{style="margin-top: 30px; font-size: 22px;"}
+:::{style="margin-top: 40px; font-size: 22px;"}
 :::{.columns}
-:::{.column width=55%}
-[Amodei et al. (2016) identified five big challenges:](https://arxiv.org/abs/1606.06565)
+:::{.column width=60%}
+[Amodei et al. (2016)](https://arxiv.org/abs/1606.06565) list five open problems:
 
-:::{style="text-align: center;"}
+:::{style="display: flex; justify-content: center; font-size: 25px; margin-bottom: 20px;"}
 | Problem | Description |
 |---------|-------------|
 | [Safe exploration]{.alert} | How to learn without dangerous actions |
@@ -215,13 +217,12 @@ Source: [Center for AI Safety](https://aistatement.com/#open-letter)
 | [Robustness to distributional shift]{.alert} | Handle novel situations safely |
 :::
 
-**Why these matter:**
-
-- Not speculative: [already happening in deployed systems]{.alert}
-- They scale with capability, and are unsolved even for current AI
+- [Already happening]{.alert} in deployed systems
+- Harder to solve as AI gets more capable
+- Unsolved even for current AI
 :::
 
-:::{.column width=45%}
+:::{.column width=40%}
 :::{style="text-align: center;"}
 [![](figures/alignment-problem.jpg){width="70%"}](#){data-modal-type="image" data-modal-url="figures/alignment-problem.jpg"}
 
@@ -233,7 +234,7 @@ Source: [Brian Christian](https://brianchristian.org/the-alignment-problem/)
 
 ## Safe exploration
 
-:::{style="margin-top: 30px; font-size: 21px;"}
+:::{style="margin-top: 40px; font-size: 21px;"}
 :::{.columns}
 :::{.column width=55%}
 - [Learning requires trying new things]{.alert}
@@ -249,10 +250,10 @@ Source: [Brian Christian](https://brianchristian.org/the-alignment-problem/)
 
 **Current approaches:**
 
-- [Simulation]{.alert}: learn in low-risk environments first
-- Conservative policies: keep actions within a safe region
-- Human oversight: ask before novel actions
-- Reward shaping: penalise dangerous states
+- Train in [simulation]{.alert} first
+- Keep actions within a safe region (conservative policies)
+- Ask a human before novel actions
+- Penalise dangerous states (reward shaping)
 :::
 
 :::{.column width=45%}
@@ -271,32 +272,31 @@ How do you [specify "safe"]{.alert} without already knowing everything about the
 
 ## Negative side effects
 
-:::{style="margin-top: 30px; font-size: 21px;"}
+:::{style="margin-top: 40px; font-size: 23px;"}
 :::{.columns}
 :::{.column width=55%}
 - AI [optimises the specified objective]{.alert} and ignores everything else
 - [Unintended consequences]{.alert} sit outside the objective
 - "You didn't say not to..."
 
-**Classic example (thought experiment):**
+**Classic example ([Amodei et al., 2016](https://arxiv.org/abs/1606.06565)):**
 
-- [Robot tasked with fetching coffee]{.alert}
-- Knocks over obstacles and harms humans in its path
-- Technically: coffee fetched ✓
+- [Robot tasked with cleaning a room]{.alert}
+- Knocks over a vase on the way
+- Technically: room cleaned ✓
 
-**Real-world version:**
+**Real-world example:**
 
 - [Content algorithm maximises engagement]{.alert}
-- Possible side effects: polarisation, addiction, both outside the objective
+- Possible side effects: polarisation and addiction
 - [Nobody specified "don't harm society"]{.alert}
 :::
 
 :::{.column width=45%}
 :::{style="text-align: center;"}
-[![Political polarisation is real, but sometimes not designed](figures/social-media-democracy.png){width="60%"}](#){data-modal-type="image" data-modal-url="figures/social-media-democracy.png"}
-:::
-:::{style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; font-size: 18px; margin-top: 15px;"}
-Nobody told the engagement algorithm "don't polarise society". [If it isn't in the objective, the system won't care about it]{.alert}
+[![](figures/social-media-democracy.png){width="60%"}](#){data-modal-type="image" data-modal-url="figures/social-media-democracy.png"}
+
+Source: [Persily & Tucker (2020)](https://www.cambridge.org/core/books/social-media-and-democracy/E79E2BBF03C18C3A56A5CC393698F117)
 :::
 :::
 :::
@@ -306,24 +306,24 @@ Nobody told the engagement algorithm "don't polarise society". [If it isn't in t
 
 ## What is alignment?
 
-:::{style="margin-top: 30px; font-size: 20px;"}
+:::{style="margin-top: 40px; font-size: 22px;"}
 :::{.columns}
 :::{.column width=55%}
 - Alignment: AI systems that [do what we want]{.alert}
-- Pursue the goals we actually intend, not just the stated objective
-- Behave safely even when we can't supervise
+- They pursue the goals we intend, not only the stated ones
+- They behave safely even when we can't supervise
 
-**Why the word "alignment":**
+**Alignment means:**
 
-- AI goals [aligned with]{.alert} human values, not orthogonal or opposed
-- Not pursuing random objectives
-- Not satisfying the letter while violating the spirit
+- AI goals [point the same way]{.alert} as human values
+- AI follows the spirit of a request, not just the letter
 
-**Why it's hard:**
+**Obstacles:**
 
-- [Hard to specify]{.alert} what we want, and context matters enormously
+- [Hard to specify]{.alert} what we want
+- Context changes what we want
 - Humans disagree about values
-- Our stated preferences aren't always our true preferences
+- Our stated preferences aren't always our true ones
 :::
 
 :::{.column width=45%}
@@ -338,7 +338,7 @@ Source: [Anthropic](https://www.anthropic.com/research/alignment-faking)
 
 ## Alignment is hard!
 
-:::{style="margin-top: 30px; font-size: 21px;"}
+:::{style="margin-top: 20px; font-size: 20px;"}
 :::{.columns}
 :::{.column width=55%}
 **Specification problem:**
@@ -363,7 +363,7 @@ Source: [Anthropic](https://www.anthropic.com/research/alignment-faking)
 :::{.column width=45%}
 **The King Midas problem:** [(Russell, 2014)](https://www.edge.org/conversation/the-myth-of-ai#26015)
 
-- Gets exactly what he asked for, [not what he wanted]{.alert}
+- Midas wished that [everything he touched turned to gold]{.alert}, including his food
 - Literal interpretation of wishes
 - Common AI failure mode
 
@@ -376,58 +376,56 @@ Source: [Anthropic](https://www.anthropic.com/research/alignment-faking)
 
 ## Current alignment approaches
 
-:::{style="margin-top: 30px; font-size: 20px;"}
+:::{style="margin-top: 40px; font-size: 22px;"}
 :::{.columns}
 :::{.column width=55%}
-**RLHF (Reinforcement Learning from Human Feedback):** [(Christiano et al., 2017)](https://arxiv.org/abs/1706.03741)
+**RLHF** (human feedback, [Christiano et al., 2017](https://arxiv.org/abs/1706.03741)):
 
-- Humans rank AI outputs, and a reward model is trained on the rankings
-- Optimise the AI to satisfy that reward model
+- Humans rank AI outputs
+- A reward model learns from the rankings
+- The AI is tuned to satisfy that model
 - Still a [standard training step]{.alert}
 
-**Constitutional AI:** [(Anthropic, 2022)](https://www.anthropic.com/research/constitutional-ai-harmlessness-from-ai-feedback)
+**Constitutional AI** ([Anthropic, 2022](https://www.anthropic.com/research/constitutional-ai-harmlessness-from-ai-feedback)):
 
-- AI critiques its own outputs against a [set of principles ("constitution")]{.alert}
-- Iteratively improves
-- Reduces the need for human labelling
+- AI critiques its outputs against [written principles]{.alert} (a "constitution")
+- It revises them over several rounds
+- Needs less human labelling
 - [Amanda Askell's work](https://askell.io/) on AI ethics and philosophy
 :::
 
 :::{.column width=45%}
-**Debate and recursive reward modelling:** ([Irving et al., 2018](https://arxiv.org/abs/1805.00899); [Leike et al., 2018](https://arxiv.org/abs/1811.07871))
+**Debate and recursive reward modelling** ([Irving et al., 2018](https://arxiv.org/abs/1805.00899); [Leike et al., 2018](https://arxiv.org/abs/1811.07871)):
 
 - AI systems argue with each other
-- Humans judge which gave the most truthful, useful answer
-- Scales human oversight: [easier to evaluate than produce knowledge]{.alert}
+- Humans judge which answer is most truthful and useful
+- Judging is [easier than producing]{.alert} answers, so oversight scales
 
-**Limitations of current approaches:**
+**Limits:**
 
-- RLHF: can learn to [game evaluators]{.alert}
-- Human feedback: expensive and biased
-- Principles: you still have to specify them right
-- [None are complete solutions]{.alert}
-
-:::{style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; font-size: 18px; margin-top: 15px;"}
-These methods [work well enough for current systems]{.alert}. Whether they scale to more capable AI is unknown
-:::
+- RLHF models can learn to [game evaluators]{.alert}
+- Human feedback is expensive and biased
+- Principles still have to be written well
+- [None is a complete solution]{.alert}
 :::
 :::
 :::
 
-## The alignment survey
+## Alignment in deep learning
 
-:::{style="margin-top: 30px; font-size: 19px;"}
+:::{style="margin-top: 40px; font-size: 20px;"}
 :::{.columns}
 :::{.column width=55%}
-[**Ngo et al. overview (2022):**](https://arxiv.org/abs/2209.00626)
+**[Ngo, Chan & Mindermann (ICLR 2024)](https://arxiv.org/abs/2209.00626):**
 
-- Argues why deep-learning AGI could become misaligned, even deceptive
+- Deep-learning AGI could become [misaligned]{.alert}, even deceptive
 
-**However...**
+**Status:**
 
-- [Not a solved problem]{.alert}: an active research area needing multiple approaches
-- Uncertainty about scaling
-- Theoretical foundations lacking
+- [Unsolved]{.alert}, and an active research area
+- Needs several approaches at once
+- Unclear whether current methods scale
+- Theory is still thin
 
 **Open questions:**
 
@@ -442,7 +440,7 @@ These methods [work well enough for current systems]{.alert}. Whether they scale
 :::{style="margin-top: 30px; font-size: 17px; text-align: center;"}
 [![](figures/ngo-et-al.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/ngo-et-al.png"}
 
-Source: [Ngo et al. (2022)](https://arxiv.org/abs/2209.00626)
+Source: [Ngo et al. (2024)](https://arxiv.org/abs/2209.00626)
 :::
 :::
 :::
@@ -450,11 +448,9 @@ Source: [Ngo et al. (2022)](https://arxiv.org/abs/2209.00626)
 
 ## Discussion: whose values?
 
-:::{style="margin-top: 30px; font-size: 22px;"}
+:::{style="margin-top: 40px; font-size: 22px;"}
 :::{.columns}
 :::{.column width=50%}
-**The values problem:**
-
 If we align AI to human values...
 
 - [Whose]{.alert} human values?
@@ -474,14 +470,14 @@ If we align AI to human values...
 :::{.fragment}
 **Some perspectives:**
 
-- **Libertarian**: Each user controls their AI
-- **Democratic**: Majority decides
-- **Rights-based**: Some things off-limits regardless
-- **Technocratic**: Experts decide
-- **[Pluralist]{.alert}**: Multiple systems for different contexts
+- [Libertarian]{.alert}: each user controls their AI
+- [Democratic]{.alert}: majority decides
+- [Rights-based]{.alert}: some things are off-limits regardless
+- [Technocratic]{.alert}: experts decide
+- [Pluralist]{.alert}: different systems for different contexts
 
 :::{style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; font-size: 18px; margin-top: 15px;"}
-"Whose values?" is a political question. No amount of engineering can avoid it. That is what makes alignment [so difficult]{.alert}
+"Whose values?" is a [political question]{.alert}, and engineering cannot settle it
 :::
 :::
 :::
@@ -492,12 +488,12 @@ If we align AI to human values...
 
 ## Where is AI heading?
 
-:::{style="margin-top: 30px; font-size: 21px;"}
+:::{style="margin-top: 40px; font-size: 21px;"}
 :::{.columns}
 :::{.column width=55%}
 **Current trends:**
 
-- Models getting [larger and more capable]{.alert}
+- Models keep getting [larger and more capable]{.alert}
 - More general-purpose systems
 - Multimodal capabilities
 
@@ -510,7 +506,7 @@ If we align AI to human values...
 
 **Expert disagreement:**
 
-- [Wide variation]{.alert} in predictions: timelines differ by decades
+- Timelines differ by [decades]{.alert}
 - Some expect AGI soon, others never
 - Confidence often exceeds evidence
 :::
@@ -522,7 +518,7 @@ If we align AI to human values...
 Source: [Our World in Data](https://ourworldindata.org/brief-history-of-ai)
 
 :::{style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; font-size: 18px; margin-top: 15px;"}
-Nobody knows. [Uncertainty is high]{.alert}, so be sceptical of confident predictions
+Be sceptical of [confident predictions]{.alert}
 :::
 :::
 :::
@@ -537,7 +533,7 @@ Nobody knows. [Uncertainty is high]{.alert}, so be sceptical of confident predic
 **Scenario 1: Gradual improvement**
 
 - [AI gets better slowly]{.alert}
-- Humans and society adjust incrementally
+- Society adjusts step by step
 - [Most likely?]{.alert}
 
 **Scenario 2: Capability jumps**
@@ -548,23 +544,27 @@ Nobody knows. [Uncertainty is high]{.alert}, so be sceptical of confident predic
 
 **Scenario 3: Plateau**
 
-- [Current approaches hit limits]{.alert} and progress slows dramatically
-- Different paradigms needed
-- [Also possible]{.alert}
+- [Current approaches hit limits]{.alert}
+- Progress slows sharply
+- New methods needed
 :::
 
 :::{.column width=45%}
 **Scenario 4: Transformative AI**
 
 - [Systems vastly more capable than humans]{.alert}
-- Fundamental changes to economy, society
+- Reshapes the economy and society
 - Either very good or very bad
 - Uncertain timeline
 
 :::{style="text-align: center;"}
-[![](figures/scenarios.jpg){width="100%"}](#){data-modal-type="image" data-modal-url="figures/scenarios.jpg"}
+[![](figures/scenarios.jpg){width="85%"}](#){data-modal-type="image" data-modal-url="figures/scenarios.jpg"}
 
 Source: [Dallas Fed (2025)](https://www.dallasfed.org/research/economics/2025/0624), via [AEI](https://www.aei.org/articles/would-agi-be-no-big-deal/)
+
+:::{style="font-size: 16px;"}
+Dallas Fed scenarios: trend, AI boost, benign singularity, extinction
+:::
 
 :::
 :::
@@ -573,16 +573,17 @@ Source: [Dallas Fed (2025)](https://www.dallasfed.org/research/economics/2025/06
 
 ## Stuart Russell's perspective
 
-:::{style="margin-top: 30px; font-size: 18px;"}
+:::{style="margin-top: 40px; font-size: 19px;"}
 :::{.columns}
 :::{.column width=55%}
-**Russell's argument (TED talk):**
+**Russell's argument ([TED talk](https://www.ted.com/talks/stuart_russell_3_principles_for_creating_safer_ai), 2017):**
 
-- We're building systems whose [objectives we don't fully control]{.alert}
-- The standard paradigm optimises a given objective
-- We can't specify objectives correctly, so we need a different approach
+- We build systems whose [objectives we don't fully control]{.alert}
+- Standard AI optimises a fixed objective
+- We can't specify objectives correctly
+- So we need a different approach
 
-**His three principles:**
+**His three principles (*Human Compatible*, 2019):**
 
 1. The machine's only goal is to [realise human preferences]{.alert}
 2. It is [uncertain]{.alert} what those preferences are
@@ -591,7 +592,8 @@ Source: [Dallas Fed (2025)](https://www.dallasfed.org/research/economics/2025/06
 > "You can't fetch the coffee if you're dead"
 
 - A machine with a fixed goal [resists being switched off]{.alert}
-- One unsure of our goals lets us: we would only switch it off if it were doing something wrong
+- A machine unsure of our goals lets us switch it off
+- We would only do so if it were doing something wrong
 :::
 
 :::{.column width=45%}
@@ -601,7 +603,7 @@ Source: [Dallas Fed (2025)](https://www.dallasfed.org/research/economics/2025/06
 Source: [TED](https://www.ted.com/talks/stuart_russell_3_principles_for_creating_safer_ai)
 
 :::{style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; font-size: 18px; margin-top: 15px;"}
-Russell co-wrote (with Peter Norvig) the most-used [AI textbook]{.alert} (*AI: A Modern Approach*). When he says we have a problem, it is worth listening
+Russell co-wrote the most-used [AI textbook]{.alert}, *AI: A Modern Approach*, with Peter Norvig
 :::
 :::
 :::
@@ -610,27 +612,29 @@ Russell co-wrote (with Peter Norvig) the most-used [AI textbook]{.alert} (*AI: A
 
 ## Existential risk: the debate
 
-:::{style="margin-top: 30px; font-size: 20px;"}
+:::{style="margin-top: 30px; font-size: 19px;"}
 :::{.columns}
 :::{.column width=55%}
 **Those who worry:**
 
-- AI could become [uncontrollable]{.alert}, and misaligned powerful AI = catastrophe
+- AI could become [uncontrollable]{.alert}
+- Misaligned powerful AI = catastrophe
 - Even a small probability × huge harm = important
 - "We might not get a second chance"
-- Hinton, Bengio, Russell, many others
+- Hinton, Bengio, Russell and many others
 
 **Those who are sceptical:**
 
-- Speculative, and distracts from [real present harms]{.alert}
+- The risk is speculative
+- It distracts from [real present harms]{.alert}
 - "Sci-fi thinking", not grounded
 - We control the off switch
 - Capabilities are overstated
 
-**The actual state of debate:**
+**Overall:**
 
-- [Serious researchers on both sides]{.alert}
-- Uncertainty and disagreement are genuine
+- [Serious researchers]{.alert} hold both views
+- No one has decisive evidence yet
 :::
 
 :::{.column width=45%}
@@ -648,30 +652,30 @@ Source: [MIT Technology Review, EmTech Digital 2023](https://www.technologyrevie
 
 ## Research directions
 
-:::{style="margin-top: 30px; font-size: 21px;"}
+:::{style="margin-top: 40px; font-size: 21px;"}
 :::{.columns}
 :::{.column width=55%}
 **Technical safety research:**
 
-:::{style="text-align: center;"}
+:::{style="display: flex; justify-content: center; font-size: 23px;"}
 | Area | Goal |
 |------|------|
 | [Interpretability]{.alert} | Understand AI internals |
-| Robustness | Resist adversarial inputs |
-| Alignment | Ensure AI pursues intended goals |
-| Oversight | Scale human supervision |
-| Honesty | AI that doesn't deceive |
+| [Robustness]{.alert} | Resist adversarial inputs |
+| [Alignment]{.alert} | Ensure AI pursues intended goals |
+| [Oversight]{.alert} | Scale human supervision |
+| [Honesty]{.alert} | AI that doesn't deceive |
 :::
 
 **Growing field:**
 
-- Anthropic, OpenAI, DeepMind safety teams, academic labs
-- Still [small relative to capabilities]{.alert}
+- Safety teams at Anthropic and Google DeepMind, plus academic labs
+- Still [small next to capabilities work]{.alert}
 
-**Career opportunity:**
+**Careers:**
 
 - High-impact work with a talent shortage
-- Many paths in technical and non-technical roles
+- Technical and non-technical roles
 :::
 
 :::{.column width=45%}
@@ -690,16 +694,17 @@ Interested? Look into [80,000 Hours](https://80000hours.org/), AI safety bootcam
 
 ## Where you fit in
 
-:::{style="margin-top: 30px; font-size: 21px;"}
+:::{style="margin-top: 40px; font-size: 21px;"}
 :::{.columns}
 :::{.column width=55%}
-People who understand the technology are often [absent from policy debates]{.alert}. That is a problem!
+People who understand AI are often [absent from policy debates]{.alert}. That is a problem!
 
 **As citizens:**
 
-- Scrutinise AI regulation proposals: what problem does this solve, and [does it actually address it]{.alert}?
+- Ask of any AI rule: what problem does it solve, and [does it solve it]{.alert}?
 - Vote, comment on public consultations, write to representatives
-- Most AI coverage confuses hype with capability, but [you can do better]{.alert} 😉
+- Most AI coverage confuses hype with capability
+- [You can do better]{.alert} 😉
 
 **If you work with AI or data:**
 
@@ -720,24 +725,26 @@ Source: [MIT Sloan Review (2024)](https://sloanreview.mit.edu/article/how-ai-ske
 
 ## Thinking about AI risk clearly
 
-:::{style="margin-top: 30px; font-size: 20px;"}
+:::{style="margin-top: 40px; font-size: 20px;"}
 :::{.columns}
 :::{.column width=55%}
 **Common mistakes:**
 
-- [Dismissing concerns]{.alert} because current AI seems harmless (ignores rapid capability gains)
-- [Catastrophising]{.alert} based on scenarios with no evidence
-- Conflating "possible" with "probable"
+- [Dismissing concerns]{.alert} because current AI seems harmless
+- This ignores how fast capabilities grow
+- [Catastrophising]{.alert} from scenarios with no evidence
+- Confusing "possible" with "probable"
 
-**A more useful framework:**
+**Better habits:**
 
 - Separate [near-term harms]{.alert} from speculative long-term risks
 - Ask: what evidence would change my mind?
-- Experts [genuinely disagree]{.alert}, and that is okay! Certainty is the red flag
+- Experts [genuinely disagree]{.alert}, and that is okay!
+- Be wary of certainty
 
-**What history suggests:**
+**From history:**
 
-- Technology risks are real but rarely follow worst-case predictions
+- Technology risks rarely follow worst-case predictions
 - The biggest harms come from [problems we did not anticipate]{.alert}
 :::
 
@@ -755,39 +762,38 @@ Source: [r/OptimistsUnite](https://www.reddit.com/r/OptimistsUnite/comments/1ew5
 
 ## Main takeaways
 
-:::{style="margin-top: 30px; font-size: 21px;"}
+:::{style="margin-top: 40px; font-size: 21px;"}
 :::{.columns}
 :::{.column width=55%}
-**AI safety**
+[AI safety]{.alert}
 
-- Near-term and long-term concerns both matter
+- Safe systems now make safer systems later
 - Concrete problems: safe exploration, side effects, reward hacking
 - Uncertainty is a reason to act now
 
-**Alignment**
+[Alignment]{.alert}
 
-- Getting AI to do what we actually want
+- Getting AI to do what we want
 - Hard because of specification, Goodhart's law and value disagreement
-- Current approaches: RLHF, Constitutional AI
-- Major open problems remain
+- Main methods: RLHF, Constitutional AI, debate
+- None is a complete solution
 :::
 
 :::{.column width=45%}
-**Future trajectories**
+[Future trajectories]{.alert}
 
-- Genuine uncertainty about where AI is heading
-- Expert disagreement is real
+- Nobody knows where AI is heading
+- Expert timelines differ by decades
 - Plan for multiple futures
 
-**What we can do**
+[What we can do]{.alert}
 
 - Technical safety research
-- Informed citizens who scrutinise AI rules
-- Individual choices
-- [Neither panic nor complacency]{.alert}
+- Scrutinise AI rules as citizens
+- Ask how your own systems can fail
 
 :::{style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; margin-top: 15px; font-size: 18px;"}
-The future of AI is [not determined]{.alert}. Choices about alignment, oversight and governance will shape it
+Choices about alignment, oversight and governance [will shape AI's future]{.alert}
 :::
 :::
 :::
