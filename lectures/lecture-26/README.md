@@ -44,10 +44,6 @@ This lecture walks through the entire course in 50 minutes, one short slide per 
 * Misinformation, deepfakes and the liar's dividend.
 * The alignment problem, five safety problems, and current approaches.
 
-### 8. Six threads
-
-* Next-token prediction, the proxy problem, embeddings, bias at every stage, documentation as accountability, regulation catching up.
-
 ## Resources
 
 * [Lecture Slides (HTML)](https://danilofreire.github.io/datasci101/lectures/lecture-26/26-revision.html)
