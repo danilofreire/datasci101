@@ -14,7 +14,7 @@ This lecture examines what AI means for jobs and the economy, combining historic
 
 * **Usage patterns**: 73% of ChatGPT messages are not work-related (June 2025); practical guidance, information and writing lead.
 * **Productivity effects**: Early studies show gains, particularly for novice workers, but these are task-specific and short-term.
-* **Job market signals**: 22-25 year-olds in AI-exposed jobs are 19% below less-exposed peers (Brynjolfsson et al., 2026), yet careful aggregate estimates find no effect on earnings or hours.
+* **Job market signals**: employment of 22-25 year-olds in AI-exposed jobs is 19% below the trend of less-exposed peers (Brynjolfsson et al., 2026), yet careful aggregate estimates find no effect on earnings or hours.
 
 ### 3. Economic scenarios
 
