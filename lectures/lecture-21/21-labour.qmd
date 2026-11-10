@@ -55,7 +55,7 @@ if (!require("fontawesome", character.only = TRUE)) {
 :::{.columns}
 :::{.column width=50%}
 - AI collects data at scale and [infers sensitive traits]{.alert}
-- [GDPR]{.alert} (EU): rights of access, erasure, portability
+- [EU data law (GDPR)]{.alert}: rights of access, erasure, portability
 - US: [sectoral laws]{.alert} (health, finance) plus 23 state privacy laws
 - [Differential privacy, federated learning, synthetic data]{.alert} help, with trade-offs
 - Collected data can help people or [track them]{.alert}
@@ -125,6 +125,7 @@ Source: [r/ProgrammerHumor](https://www.reddit.com/r/ProgrammerHumor/comments/11
 :::{.column width=55%}
 **Historical fears of technological unemployment:**
 
+:::{style="margin-top: 30px; margin-bottom: 30px;"}
 | Era | Technology | Fear | Outcome |
 |-----|------------|------|---------|
 | 1810s | Power looms | [Luddites destroy machines](https://www.smithsonianmag.com/history/what-the-luddites-really-fought-against-264412/) | [Factory jobs grew, weavers' wages collapsed](https://shapingwork.mit.edu/research/research-insight-what-can-the-early-industrial-revolution-teach-us-about-technology-and-work-in-the-age-of-ai/) |
@@ -132,6 +133,7 @@ Source: [r/ProgrammerHumor](https://www.reddit.com/r/ProgrammerHumor/comments/11
 | 1960s | Mainframes | [JFK warns of job losses](https://www.jfklibrary.org/archives/other-resources/john-f-kennedy-speeches/grand-rapids-mi-19600607) | [Service sector expansion](https://conversableeconomist.com/2014/12/01/automation-and-job-loss-the-fears-of-1964/) |
 | 1990s | Personal computers | [Rifkin's *The End of Work* (1995)](https://en.wikipedia.org/wiki/The_End_of_Work) | [New jobs created](https://www.aeaweb.org/articles?id=10.1257/jep.33.2.3) |
 | 2010s | Robots | [Manufacturing decline](https://www.technologyreview.com/2024/01/27/1087041/technological-unemployment-elon-musk-jobs-ai/) | [Local job and wage losses](https://www.nber.org/papers/w23285) |
+:::
 
 - Technology destroys some jobs and creates others
 - The net effect has been [positive]{.alert} over time, but adjustment is painful
@@ -236,9 +238,9 @@ Source: [The Economist](https://www.economist.com/finance-and-economics/2025/05/
 :::{.column width=55%}
 **High exposure to AI:**
 
+- Translation and summarisation
 - Content generation (text, code, images)
 - Data analysis and pattern recognition
-- Translation and summarisation
 - Customer service (text-based)
 
 **Lower exposure (for now):**
@@ -279,7 +281,7 @@ Source: [Eloundou et al. (2023)](https://arxiv.org/abs/2303.10130)
 :::{.column width=55%}
 **[OpenAI's research on ChatGPT use (2025)](https://www.nber.org/system/files/working_papers/w34255/w34255.pdf):**
 
-:::{style="display: flex; justify-content: center; font-size: 26px;"}
+:::{style="display: flex; justify-content: center; font-size: 26px; margin-top: 30px; margin-bottom: 30px;"}
 | Category | Jul 2024 | Jun 2025 |
 |----------|----------|----------|
 | Practical Guidance | ~29% | ~29% |
