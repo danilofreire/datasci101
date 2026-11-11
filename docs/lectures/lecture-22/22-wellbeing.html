@@ -227,11 +227,13 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <div class="columns">
 <div class="column" style="width:50%;">
 <ul>
-<li>AI targets <span class="alert">cognitive tasks</span>, not just physical ones</li>
-<li>Automation displaces <span class="alert">tasks, not whole jobs</span> (Acemoglu &amp; Restrepo)</li>
-<li>Careful estimates find <span class="alert">no effect on earnings or hours</span> so far</li>
-<li><span class="alert">Young workers</span> in AI-exposed jobs take the first hit</li>
-<li>Today: how AI affects <span class="alert">attention, mental health and the environment</span></li>
+<li>Past automation was <span class="alert">net positive</span></li>
+<li>AI now reaches <span class="alert">cognitive tasks</span></li>
+<li>Jobs are bundles of <span class="alert">tasks</span> (Acemoglu &amp; Restrepo)</li>
+<li><span class="alert">Novices</span> gain most (+15% in customer service)</li>
+<li><span class="alert">No effect</span> on earnings or hours yet</li>
+<li><span class="alert">Young workers</span> are hit first</li>
+<li>Today: <span class="alert">attention, mental health, environment</span></li>
 </ul>
 </div><div class="column" style="width:50%;">
 <div style="text-align: center; margin-top: -30px;">
@@ -249,34 +251,34 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <div class="column" style="width:50%;">
 <p><span class="alert">Part 1: The attention economy</span></p>
 <ul>
-<li>“Your attention is the product”</li>
-<li>How recommendation algorithms work</li>
+<li>Recommendation algorithms and engagement</li>
 <li>Filter bubbles and teen screen time</li>
-<li>What platforms are changing</li>
+<li>What platforms and China are changing</li>
 </ul>
 <p><span class="alert">Part 2: AI and mental health</span></p>
 <ul>
 <li>Who gets mental health care?</li>
-<li>Chatbots in therapy and the evidence</li>
-<li>Risks and hard limits</li>
+<li>Therapy chatbots and the evidence</li>
+<li>Risks and limits</li>
 <li>Augmentation, not replacement</li>
 </ul>
 </div><div class="column" style="width:50%;">
 <p><span class="alert">Part 3: AI and the environment</span></p>
 <ul>
 <li>Energy and water costs</li>
-<li>Footprint in context</li>
+<li>AI’s footprint in context</li>
 <li>AI as a climate tool</li>
 </ul>
 <p>We will pause for discussion after each part</p>
-<p>There are no right answers to the questions I put on screen. I’m curious what you think!</p>
+<p>There are no right answers. I’m curious what you think!</p>
 </div></div>
 </div>
 </section>
 <section id="sad-meme-of-the-day" class="slide level2">
 <h2>(Sad) meme of the day</h2>
 <div style="text-align: center; margin-top: 30px;">
-<p><a href="#/" data-modal-type="image" data-modal-url="figures/meme-of-the-day.jpg"><img data-src="figures/meme-of-the-day.jpg" style="width:33.0%"></a></p>
+<p><a href="#/" data-modal-type="image" data-modal-url="figures/meme-of-the-day.jpg"><img data-src="figures/meme-of-the-day.jpg" style="width:32.0%"></a></p>
+<p>Source: <a href="https://x.com/philosophymeme0/status/1998237387634381049"><span class="citation" data-cites="philosophymeme0">@philosophymeme0</span> on X</a></p>
 </div>
 </section></section>
 <section>
@@ -303,22 +305,22 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <p>Source: <a href="https://www.theatlantic.com/technology/archive/2021/06/how-memes-become-money/619189/">The Atlantic</a></p>
 </div>
 <div style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; font-size: 20px; margin-top: 15px;">
-<p>Does the <span class="alert">incentive structure produce good outcomes</span> regardless of intent?</p>
+<p>Do these <span class="alert">incentives lead to good outcomes</span>, whatever companies intend?</p>
 </div>
 </div></div>
 </div>
 </section>
-<section id="how-recommendation-algorithms-work" class="slide level2 scrollable">
-<h2>How recommendation algorithms work</h2>
+<section id="recommendation-algorithms" class="slide level2 scrollable">
+<h2>Recommendation algorithms</h2>
 <div style="margin-top: 40px; font-size: 23px;">
 <div class="columns">
 <div class="column" style="width:55%;">
 <ol type="1">
-<li>You watch, like, or share something</li>
-<li>It builds an embedding of “you” from your behaviour (<a href="https://danilofreire.github.io/datasci101/lectures.html#module-2-language-and-perception">lecture 06</a>)</li>
-<li>It compares your vector to <span class="alert">what similar users watched next</span></li>
-<li>It recommends what they watched</li>
-<li>You watch, the embedding updates, and the loop repeats</li>
+<li>You watch, like or share a video</li>
+<li>The platform turns your behaviour into an embedding (<a href="https://danilofreire.github.io/datasci101/lectures.html#module-2-language-and-perception">lecture 06</a>)</li>
+<li>It finds users with similar embeddings</li>
+<li>It shows you <span class="alert">what they watched next</span></li>
+<li>Your embedding updates, and the loop repeats</li>
 </ol>
 <ul>
 <li><span class="alert">Engagement</span> = watch time, clicks, shares</li>
@@ -329,12 +331,9 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <div style="text-align: center; margin-top: -40px;">
 <p><a href="#/" data-modal-type="image" data-modal-url="figures/recommendation-loop.webp"><img data-src="figures/recommendation-loop.webp" style="width:100.0%"></a></p>
 <p>Source: <a href="https://datasciencedojo.com/blog/social-media-recommendation-system/">Data Science Dojo</a></p>
-<div style="font-size: 20px; margin-top: 10px;">
-<p>Every swipe teaches the algorithm something about you</p>
-</div>
 </div>
 <div style="background: rgba(230, 57, 70, 0.1); padding: 15px; border-radius: 10px; font-size: 20px; margin-top: 15px;">
-<p>These systems have <span class="alert">no concept of “healthy” consumption</span>. They optimise the objective they are given</p>
+<p>The algorithm optimises the goal it is given. It has <span class="alert">no concept of “healthy” use</span></p>
 </div>
 </div></div>
 </div>
@@ -346,18 +345,15 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <div class="column" style="width:55%;">
 <ul>
 <li><a href="https://www.ted.com/talks/eli_pariser_beware_online_filter_bubbles">Eli Pariser</a> coined “filter bubble” in 2010: feeds that only confirm your views</li>
-<li>Two large experiments suggest it is <span class="alert">probably overstated</span></li>
-<li><a href="https://www.nature.com/articles/s41586-023-06297-w">Nyhan et al.&nbsp;(2023, <em>Nature</em>)</a>: cutting like-minded Facebook content <span class="alert">barely changed</span> polarisation</li>
-<li><a href="https://www.science.org/doi/10.1126/science.abp9364">Guess et al.&nbsp;(2023, <em>Science</em>)</a>: a chronological feed made <span class="alert">little difference</span> to attitudes</li>
-<li>Effects beyond polarisation (anxiety, body image, sleep) are <span class="alert">still debated</span></li>
+<li>Two large 2023 experiments find it <span class="alert">probably overstated</span></li>
+<li><a href="https://www.nature.com/articles/s41586-023-06297-w">Nyhan et al.&nbsp;(<em>Nature</em>)</a>: cutting like-minded Facebook content <span class="alert">barely changed</span> polarisation</li>
+<li><a href="https://www.science.org/doi/10.1126/science.abp9364">Guess et al.&nbsp;(<em>Science</em>)</a>: a chronological feed made <span class="alert">little difference</span> to attitudes</li>
+<li>Effects on anxiety, body image and sleep are <span class="alert">still debated</span></li>
 </ul>
 </div><div class="column" style="width:45%;">
 <div style="text-align: center;">
 <p><a href="#/" data-modal-type="image" data-modal-url="figures/filter-bubble.png"><img data-src="figures/filter-bubble.png" style="width:100.0%"></a></p>
 <p>Source: <a href="https://www.ted.com/talks/eli_pariser_beware_online_filter_bubbles">Eli Pariser (2011)</a></p>
-</div>
-<div style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; font-size: 20px; margin-top: 15px;">
-<p>Good news on polarisation. Mental health is <span class="alert">a separate, contested question</span></p>
 </div>
 </div></div>
 </div>
@@ -369,11 +365,10 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <div class="column" style="width:55%;">
 <ul>
 <li>YouTube <a href="https://blog.youtube/inside-youtube/on-youtubes-recommendation-system/">moved</a> from clicks (2011) to watch time (2012), then added satisfaction surveys</li>
-<li>Outrage spreads: each moral-emotional word raised retweets <span class="alert">~20%</span> (<a href="https://www.pnas.org/doi/10.1073/pnas.1618923114">Brady et al., 2017, <em>PNAS</em></a>)</li>
-<li>Algorithms learn this and show more of it</li>
-<li><a href="https://www.wsj.com/articles/facebook-knows-instagram-is-toxic-for-teen-girls-company-documents-show-11631620739">Facebook’s own research (2021, <em>WSJ</em>)</a>: Instagram made <span class="alert">body image worse for teenage girls</span></li>
-<li>Facebook kept the feature. Fixing it would have cost engagement</li>
-<li>Revenue and user wellbeing <span class="alert">point in opposite directions</span></li>
+<li>Each moral-emotional word raised retweets <span class="alert">~20%</span> (<a href="https://www.pnas.org/doi/10.1073/pnas.1618923114">Brady et al., 2017</a>)</li>
+<li>Algorithms learn this and show more <span class="alert">outrage</span></li>
+<li><a href="https://www.wsj.com/articles/facebook-knows-instagram-is-toxic-for-teen-girls-company-documents-show-11631620739">Facebook’s own research (2021)</a>: Instagram made <span class="alert">body image worse for teenage girls</span></li>
+<li>Facebook played down the findings. Hiding likes became <a href="https://fairplayforkids.org/research-on-instagram-and-teens-summaries-from-the-facebook-files/">opt-in only</a></li>
 </ul>
 </div><div class="column" style="width:45%;">
 <div style="text-align: center;">
@@ -381,28 +376,28 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <p>Source: <a href="https://www.wsj.com/articles/facebook-knows-instagram-is-toxic-for-teen-girls-company-documents-show-11631620739">Wall Street Journal</a></p>
 </div>
 <div style="background: rgba(230, 57, 70, 0.1); padding: 15px; border-radius: 10px; font-size: 20px; margin-top: 15px;">
-<p>Companies answer to shareholders. When engagement and wellbeing conflict, <span class="alert">engagement wins</span></p>
+<p>Companies answer to shareholders, so when engagement and wellbeing conflict, <span class="alert">engagement wins</span></p>
 </div>
 </div></div>
 </div>
 </section>
-<section id="teens-and-screens-what-the-data-says" class="slide level2">
-<h2>Teens and screens: what the data says</h2>
+<section id="teens-and-screens" class="slide level2">
+<h2>Teens and screens</h2>
 <div style="margin-top: 30px; font-size: 24px;">
 <div class="columns">
 <div class="column" style="width:55%;">
 <ul>
-<li>Jonathan Haidt, <a href="https://www.anxiousgeneration.com/"><em>The Anxious Generation</em></a> (2024): smartphones and social media are <span class="alert">rewiring childhood</span></li>
-<li><a href="https://www.nature.com/articles/s41562-018-0506-1">Orben &amp; Przybylski (2019)</a>: screen time explains <span class="alert">at most 0.4%</span> of the variance in adolescent wellbeing</li>
-<li>Haidt’s evidence is mostly correlational: teen depression rose <span class="alert">as smartphones spread</span></li>
-<li><a href="https://www.nature.com/articles/d41586-024-00902-2">Candice Odgers (2024, <em>Nature</em>)</a>: the evidence does not support his causal story</li>
+<li>Haidt, <a href="https://www.anxiousgeneration.com/"><em>The Anxious Generation</em></a> (2024): smartphones and social media are <span class="alert">rewiring childhood</span></li>
+<li>His evidence is mostly correlational: teen depression rose <span class="alert">as smartphones spread</span></li>
+<li><a href="https://www.nature.com/articles/d41586-024-00902-2">Odgers (2024, <em>Nature</em>)</a>: the evidence does not support his causal story</li>
+<li>Screen time explains <span class="alert">at most 0.4%</span> of variance in teen wellbeing (<a href="https://www.nature.com/articles/s41562-018-0506-1">Orben &amp; Przybylski, 2019</a>)</li>
 <li>Most associations are <span class="alert">small</span> (<a href="https://academic.oup.com/jcmc/article/29/1/zmad055/7595758?login=false&amp;guestAccessKey=">Godard &amp; Holtzman, 2024</a>)</li>
 <li>Heavy, problematic or rising use shows stronger links (<a href="https://mental.jmir.org/2022/4/e33450/">Shannon et al., 2022</a>; <a href="https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2834349">Nagata et al., 2025</a>)</li>
-<li>Individual experiences are real. The <span class="alert">population-level</span> effect is small</li>
+<li>Some teens are harmed, even if the average effect is small</li>
 </ul>
 </div><div class="column" style="width:45%;">
 <div style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; margin-top: 15px;">
-<p><strong>How large is the effect?</strong></p>
+<p><strong>Effect sizes:</strong></p>
 <table class="caption-top">
 <thead>
 <tr class="header">
@@ -429,7 +424,6 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </tr>
 </tbody>
 </table>
-<p>Small effects still matter at population scale, but <span class="alert">other factors matter more</span></p>
 </div>
 </div></div>
 </div>
@@ -477,11 +471,12 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </tbody>
 </table>
 </div>
-<div style="margin-top: 30px;">
+<div style="margin-top: 20px;">
 
 </div>
 <ul>
-<li>Most are opt-in or reach a minority of users. The ad model is unchanged</li>
+<li>Most are opt-in or reach few users</li>
+<li>The <span class="alert">ad model</span> is unchanged</li>
 <li>They also help companies look responsible to regulators</li>
 <li><a href="https://pubmed.ncbi.nlm.nih.gov/37721985/">US Surgeon General</a>: <span class="alert">youth mental health advisory</span> (2023), then a <a href="https://www.cnn.com/2024/06/17/media/surgeon-general-social-media-apps-warning-label/">call for warning labels</a> (2024)</li>
 </ul>
@@ -491,19 +486,18 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <p>Source: <a href="https://www.theverge.com/news/841036/facebook-redesign-instagram-photos-feed-algorithm">The Verge</a></p>
 </div>
 <div style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; font-size: 20px; margin-top: 15px;">
-<p>Probably <span class="alert">both concern and PR</span>. We’ll know if these changes survive once regulators look away</p>
+<p>Will these changes survive once <span class="alert">regulators look away</span>?</p>
 </div>
 </div></div>
 </div>
 </section>
-<section id="chinas-experiment-opting-out-of-the-algorithm" class="slide level2">
-<h2>China’s experiment: opting out of the algorithm</h2>
+<section id="china-opting-out-of-the-algorithm" class="slide level2">
+<h2>China: opting out of the algorithm</h2>
 <div style="margin-top: 40px; font-size: 22px;">
 <div class="columns">
 <div class="column" style="width:55%;">
 <ul>
-<li>Since March 2022, Chinese users can <span class="alert">legally turn off recommendation algorithms</span></li>
-<li>The <a href="https://www.chinalawtranslate.com/en/algorithms/">Algorithmic Recommendation Provisions</a> make every app offer a non-personalised feed</li>
+<li>Since March 2022, the <a href="https://www.chinalawtranslate.com/en/algorithms/">Algorithmic Recommendation Provisions</a> let Chinese users <span class="alert">turn off personalised feeds</span></li>
 <li>Douyin, Baidu, Taobao and WeChat added <span class="alert">opt-out</span> switches</li>
 <li>Chinese users <a href="https://journals.sagepub.com/doi/10.1177/20594364231209354">dislike the algorithm but rarely quit it</a></li>
 <li>The <a href="https://dsa-observatory.eu/2024/11/22/the-regulation-of-recommender-systems-under-the-dsa-a-transition-from-default-to-multiple-and-dynamic-controls/">EU Digital Services Act</a> (Article 38) now makes very large platforms offer a non-profiling feed</li>
@@ -514,14 +508,10 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <p><strong>What the regulation requires:</strong></p>
 <ul>
 <li>Users must be told <span class="alert">they are being profiled</span></li>
-<li>An opt-out from personalised recommendations</li>
 <li>Algorithms must not exploit addictive behaviours</li>
 <li>Platforms must label AI-generated content</li>
 <li>Special protections for minors</li>
 </ul>
-</div>
-<div style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; font-size: 20px; margin-top: 15px;">
-<p>A real test of what happens when users can <span class="alert">choose</span> their feed. Results are still coming in</p>
 </div>
 </div></div>
 </div>
@@ -530,7 +520,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <h2>Discussion: designing for wellbeing</h2>
 <div style="margin-top: 40px; font-size: 26px;">
 <div style="background: rgba(45, 69, 99, 0.1); padding: 25px; border-radius: 10px;">
-<p><strong>If you were designing a recommendation algorithm and your bonus depended on <span class="alert">user wellbeing</span> instead of watch time, what would you change?</strong></p>
+<p><strong>You design a recommendation algorithm, and your bonus depends on <span class="alert">user wellbeing</span>, not watch time. What would you change?</strong></p>
 <ul>
 <li>What metric would you optimise for? How would you measure “wellbeing”?</li>
 <li>Would your platform still be profitable?</li>
@@ -552,13 +542,13 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <ul>
 <li>WHO: <span class="alert">75%</span> of people with mental illness in low- and middle-income countries get <em>no treatment</em></li>
 <li><a href="https://www.who.int/data/gho/indicator-metadata-registry/imr-details/2954">~0.1 psychiatrists per 100,000</a> in low-income countries</li>
-<li>Even in wealthy countries:
+<li>In the US:
 <ul>
-<li>US wait for a first psychiatric visit: <a href="https://pubmed.ncbi.nlm.nih.gov/37290263/">median 67 days</a> (five states), longer if rural</li>
-<li>A session costs <a href="https://www.simplepractice.com/blog/average-therapy-session-rate-by-state/">$120-230 on average</a>, depending on the state</li>
-<li>Stigma stops many from seeking the care that exists</li>
+<li>First psychiatric visit: <a href="https://pubmed.ncbi.nlm.nih.gov/37290263/">median 67 days</a> (five states), longer if rural</li>
+<li><a href="https://www.simplepractice.com/blog/average-therapy-session-rate-by-state/">$120-230 per session</a>, depending on the state</li>
 </ul></li>
-<li>When the alternative is <span class="alert">no care at all</span>, AI tools look different</li>
+<li>Stigma stops many from seeking care</li>
+<li>For many people, the alternative to AI is <span class="alert">no care at all</span></li>
 </ul>
 </div><div class="column" style="width:45%;">
 <div style="text-align: center;">
@@ -570,9 +560,6 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </div>
 <p>Source: <a href="https://www.who.int/publications/i/item/9789240114487">WHO Mental Health Atlas (2024)</a></p>
 </div>
-<div style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; font-size: 20px; margin-top: 15px;">
-<p>“Better than nothing” is a low bar, but for millions it is <span class="alert">the only option</span></p>
-</div>
 </div></div>
 </div>
 </section>
@@ -582,12 +569,12 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <div class="columns">
 <div class="column" style="width:55%;">
 <ul>
-<li><a href="https://mental.jmir.org/2017/2/e19">Woebot</a> (2017-2025): scripted CBT chatbot, ~1.5M users, <a href="https://www.statnews.com/2025/07/02/woebot-therapy-chatbot-shuts-down-founder-says-ai-moving-faster-than-regulators/">closed in 2025</a></li>
-<li><a href="https://www.wysa.com/nhs-talking-therapies">Wysa</a>: same model, used in <a href="https://blogs.wysa.io/blog/company-news/nhs-tackles-mental-health-crisis-with-ai">31 NHS talking-therapy services</a></li>
-<li><a href="https://replika.com/">Replika</a>: an “AI companion”, not therapy. Users form <span class="alert">real emotional attachments</span> (risks shortly)</li>
-<li><a href="https://www.jmir.org/2025/1/e60435">Habicht et al.&nbsp;(2025, <em>JMIR</em>)</a>, an observational NHS study: generative AI alongside group therapy</li>
-<li>Clinical outcomes and patient engagement both improved</li>
-<li>But AI was <span class="alert">supplementing human therapists</span>, not replacing them</li>
+<li><a href="https://mental.jmir.org/2017/2/e19">Woebot</a>: scripted CBT chatbot, ~1.5M users, <a href="https://www.statnews.com/2025/07/02/woebot-therapy-chatbot-shuts-down-founder-says-ai-moving-faster-than-regulators/">closed in 2025</a></li>
+<li><a href="https://www.wysa.com/nhs-talking-therapies">Wysa</a>: a similar chatbot, used in <a href="https://blogs.wysa.io/blog/company-news/nhs-tackles-mental-health-crisis-with-ai">31 NHS talking-therapy services</a></li>
+<li><a href="https://replika.com/">Replika</a>: an “AI companion”, not therapy. Users form <span class="alert">real emotional attachments</span></li>
+<li><a href="https://www.jmir.org/2025/1/e60435">Habicht et al.&nbsp;(2025)</a>: generative AI alongside NHS group therapy (observational)</li>
+<li>Outcomes and engagement improved, but AI <span class="alert">supplemented therapists</span> rather than replacing them</li>
+<li>Several authors work for the app’s maker</li>
 </ul>
 </div><div class="column" style="width:45%;">
 <div style="text-align: center;">
@@ -604,11 +591,10 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <div class="column" style="width:55%;">
 <ul>
 <li><a href="https://www.science.org/doi/10.1126/science.adz9193">Opel and Breakspear (<em>Science</em>, 2026)</a>: AI “may reduce care inequities <span class="alert">when deployed responsibly</span>”</li>
-<li>Both “may” and “responsibly” are big caveats</li>
+<li>Note the “may” and the “responsibly”</li>
 <li>Small RCTs show short-term relief for mild-to-moderate anxiety and depression</li>
-<li>Very few studies run past 8-12 weeks, and dropout is high</li>
+<li>Few studies run past 8-12 weeks, and dropout is high</li>
 <li><span class="alert">Publication bias</span>: positive results get published, negative ones mostly don’t</li>
-<li>The evidence is <span class="alert">much thinner</span> than the marketing</li>
 </ul>
 </div><div class="column" style="width:45%;">
 <div style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; margin-top: 15px;">
@@ -658,18 +644,16 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <li>Chatbot data is rarely protected like clinical notes</li>
 <li>LLMs showed <span class="alert">stigma</span> and mishandled crises (<a href="https://arxiv.org/abs/2504.18412">Moore et al., 2025</a>)</li>
 <li>A chatbot cannot call an ambulance</li>
-<li>Most are apps, not medical devices. A few states (<a href="https://idfpr.illinois.gov/news/2025/gov-pritzker-signs-state-leg-prohibiting-ai-therapy-in-il.html">Illinois</a>) ban AI therapy</li>
+<li>Most are apps, not medical devices</li>
+<li>A few states, such as <a href="https://idfpr.illinois.gov/news/2025/gov-pritzker-signs-state-leg-prohibiting-ai-therapy-in-il.html">Illinois</a>, ban AI therapy</li>
 </ul>
 </div><div class="column" style="width:45%;">
 <p><strong>Compared with human care:</strong></p>
 <ul>
-<li>Human therapy isn’t fully private either: notes, supervision, insurance coding</li>
+<li>Human therapy isn’t fully private either (notes, supervision, insurance coding)</li>
 <li>Weigh harmful responses against <span class="alert">no care at all</span>, the norm in poorer countries</li>
 <li>AI may <span class="alert">give governments and employers an excuse</span> to avoid funding real care</li>
 </ul>
-<div style="background: rgba(230, 57, 70, 0.1); padding: 15px; border-radius: 10px; font-size: 20px; margin-top: 15px;">
-<p><span class="alert">The status quo also harms people</span></p>
-</div>
 </div></div>
 </div>
 </section>
@@ -684,17 +668,16 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <li>Verify what you tell them, as a therapist does over months</li>
 <li>Provide legally enforceable confidentiality</li>
 <li>Diagnose or prescribe medication</li>
-<li>Read body language, tone or facial expression</li>
+<li>Read body language or facial expression</li>
 </ul>
 </div><div class="column" style="width:50%;">
 <p><strong>LLMs can:</strong></p>
 <ul>
-<li>Be available at 3am</li>
-<li>Be patient, never judge, never tire</li>
+<li>Respond 24/7, without judgement</li>
+<li>Stay patient for as long as you need</li>
 <li>Explain anxiety, depression and coping strategies</li>
 <li>Scale to millions at near-zero marginal cost</li>
 </ul>
-<p>Chatbots and therapists have <span class="alert">different strengths</span></p>
 </div></div>
 </div>
 </section>
@@ -715,15 +698,14 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <p>Credible use cases:</p>
 <ul>
 <li><span class="alert">First contact</span>: triage with less stigma, then referral to professionals</li>
-<li><span class="alert">Between-session support</span>: coping strategies and mood tracking (the Habicht et al.&nbsp;model)</li>
-<li><span class="alert">Stepped care</span>: AI for mild symptoms, humans for moderate-to-severe</li>
-<li><span class="alert">Admin</span>: notes, scheduling and finding services, to free therapist time</li>
-<li><a href="https://openai.com/index/strengthening-chatgpt-responses-in-sensitive-conversations/">OpenAI added crisis signposting</a> to ChatGPT in 2025: people <span class="alert">already use it this way</span></li>
+<li>Support between sessions with coping strategies and mood tracking, as in Habicht et al.</li>
+<li>AI takes on <span class="alert">admin</span> (notes, scheduling, finding services) to free therapist time</li>
+<li><a href="https://openai.com/index/strengthening-chatgpt-responses-in-sensitive-conversations/">OpenAI expanded crisis signposting</a> in ChatGPT in 2025: people <span class="alert">already use it this way</span></li>
 <li><span class="alert">Who decides what “responsible” looks like?</span></li>
 </ul>
 </div><div class="column" style="width:45%;">
 <div style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; margin-top: 30px;">
-<p><strong>Stepped care in practice:</strong></p>
+<p><strong>Stepped care:</strong></p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb1-1"><a></a>Mild symptoms</span>
 <span id="cb1-2"><a></a>  → AI triage + self-help tools</span>
 <span id="cb1-3"><a></a></span>
@@ -760,17 +742,14 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <li>The annual footprint of ~35 Americans</li>
 </ul></li>
 <li>GPT-4’s footprint is undisclosed, and outside estimates vary widely</li>
-<li>Inference (billions of queries) probably <span class="alert">dwarfs training</span></li>
+<li>Inference (billions of queries) probably <span class="alert">dwarfs training</span>, and it grows with adoption</li>
 <li><a href="https://www.itpro.com/infrastructure/data-centres/microsofts-ai-fueled-data-center-rush-caused-carbon-emissions-to-surge-by-29-in-2023-and-now-the-tech-giant-could-miss-critical-sustainability-targets">Microsoft’s emissions</a> rose 29% between 2020 and 2023, partly from AI</li>
-<li><a href="https://sustainability.google/google-2026-environmental-report/">Google (2026)</a>: emissions up <span class="alert">81% since 2019</span>, driven by AI data centres</li>
+<li><a href="https://trellis.net/article/googles-ai-expansion-weighs-heavily-on-climate-goals/">Google (2026)</a>: emissions up <span class="alert">over 80% since 2019</span>, driven by AI data centres</li>
 </ul>
 </div><div class="column" style="width:45%;">
 <div style="text-align: center;">
 <p><a href="#/" data-modal-type="image" data-modal-url="figures/ai-energy-cost.png"><img data-src="figures/ai-energy-cost.png" style="width:100.0%"></a></p>
 <p>Source: <a href="https://arxiv.org/abs/2104.10350">Patterson et al.&nbsp;(2021)</a></p>
-</div>
-<div style="background: rgba(230, 57, 70, 0.1); padding: 15px; border-radius: 10px; font-size: 20px; margin-top: 15px;">
-<p>Training is a <span class="alert">one-off</span>. Inference is the number that grows with adoption</p>
 </div>
 </div></div>
 </div>
@@ -783,10 +762,10 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <ul>
 <li><a href="https://arxiv.org/abs/2304.03271">Li et al.&nbsp;(2023)</a>: training GPT-3 used ~<span class="alert">700,000 litres</span> of cooling water</li>
 <li>GPT-3: ~500ml per 10-50 responses, while Google reports <a href="https://arxiv.org/abs/2508.15734">0.26ml per Gemini prompt</a></li>
-<li><span class="alert">70% of Americans</span> would oppose a local data centre (<a href="https://news.gallup.com/poll/709772/americans-oppose-data-centers-area.aspx">Gallup, 2026</a>)</li>
 <li>US data centres use <a href="https://www.axios.com/2026/06/25/water-energy-ai-flashpoint">627m gallons a day</a>, <span class="alert">less than US golf courses</span></li>
-<li>About <span class="alert">75%</span> of a data centre’s water footprint comes from generating its electricity, not on-site cooling</li>
+<li>Most of the water (<span class="alert">~90%</span>) is used to generate the electricity, not for on-site cooling (<a href="https://eta-publications.lbl.gov/sites/default/files/2024-12/us_data_center_energy_usage_report_lbnl-2001637.pdf">LBNL, 2024</a>)</li>
 <li>Clusters in Phoenix, Las Vegas and Santiago, Chile sit in <span class="alert">water-stressed</span> regions</li>
+<li><span class="alert">71% of Americans</span> would oppose a local AI data centre (<a href="https://news.gallup.com/poll/709772/americans-oppose-data-centers-area.aspx">Gallup, 2026</a>)</li>
 </ul>
 </div><div class="column" style="width:45%;">
 <div style="text-align: center;">
@@ -794,7 +773,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <p>Source: <a href="https://www.axios.com/2026/06/25/water-energy-ai-flashpoint">Axios (2026)</a></p>
 </div>
 <div style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; font-size: 19px; margin-top: 15px;">
-<p>Aggregate figures hide local impacts, such as how much water a data centre takes <span class="alert">from its region</span></p>
+<p>National totals hide <span class="alert">local water stress</span></p>
 </div>
 </div></div>
 </div>
@@ -804,50 +783,57 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <div style="margin-top: 40px; font-size: 22px;">
 <div class="columns">
 <div class="column" style="width:55%;">
-<p>Current estimates (IEA, 2025):</p>
-<div style="display: flex; justify-content: center; font-size: 26px;">
+<ul>
+<li>Data centres use ~1.5% of the world’s electricity, AI ~0.2–0.3%</li>
+<li>AI servers’ power use may grow <span class="alert">~30% a year</span> (data centres: ~15%)</li>
+<li><a href="https://www.iea.org/reports/energy-and-ai/energy-demand-from-ai">IEA</a>: data centres could double to ~945 TWh by 2030, about Japan’s total</li>
+<li><a href="https://en.wikipedia.org/wiki/Jevons_paradox">Jevons paradox</a>: efficiency can raise use enough to <span class="alert">cancel the gains</span></li>
+<li>Gemini’s energy per prompt fell 33x in a year, but queries <span class="alert">multiplied</span></li>
+</ul>
+</div><div class="column" style="width:45%;">
+<div style="margin-top: -20px; font-size: 20px;">
+<p>Share of global energy-related CO₂ (<a href="https://www.iea.org/reports/energy-and-ai/ai-and-climate-change">IEA</a>):</p>
+<div style="display: flex; justify-content: center; font-size: 24px;">
 <table class="caption-top">
 <thead>
 <tr class="header">
 <th>Sector</th>
-<th>Share</th>
+<th>Share of CO₂</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Aviation</td>
-<td>~2.5% of global CO₂</td>
+<td>Steel</td>
+<td>~7%</td>
 </tr>
 <tr class="even">
-<td>All data centres</td>
-<td>~1–1.5% of electricity</td>
+<td>Cement</td>
+<td>~6%</td>
 </tr>
 <tr class="odd">
-<td>AI specifically</td>
-<td>~0.2–0.3% of electricity</td>
+<td>Aviation</td>
+<td>~2.5%</td>
+</tr>
+<tr class="even">
+<td>Shipping</td>
+<td>~2%</td>
+</tr>
+<tr class="odd">
+<td>Data centres</td>
+<td>~0.5%</td>
 </tr>
 </tbody>
 </table>
 </div>
-<ul>
-<li>AI’s footprint is <span class="alert">smaller than aviation’s or steel’s</span></li>
-<li>AI servers’ power use may grow <span class="alert">~30% a year</span> (data centres: ~15%)</li>
-<li><a href="https://www.iea.org/reports/energy-and-ai/energy-demand-from-ai">IEA</a>: data centres could double to ~945 TWh by 2030, about Japan’s total</li>
-<li><a href="https://en.wikipedia.org/wiki/Jevons_paradox">Jevons paradox</a>: efficiency raises use, cancelling the gains</li>
-<li>Gemini’s energy per prompt fell 33x in a year, but queries <span class="alert">multiplied</span></li>
-</ul>
-</div><div class="column" style="width:45%;">
-<div style="text-align: center; margin-top: 30px;">
+</div>
+<div style="text-align: center; margin-top: 0px;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><a href="#/" data-modal-type="image" data-modal-url="figures/ai-footprint-context.png"><img data-src="figures/ai-footprint-context.png" style="width:100.0%"></a></p>
+<p><a href="#/" data-modal-type="image" data-modal-url="figures/ai-footprint-context.png"><img data-src="figures/ai-footprint-context.png" style="width:90.0%"></a></p>
 <figcaption>Adding between one Sweden and one Germany by 2026</figcaption>
 </figure>
 </div>
 <p>Source: <a href="https://www.iea.org/reports/electricity-2024">IEA (2024)</a></p>
-</div>
-<div style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; font-size: 20px; margin-top: 15px;">
-<p>AI’s share is small today but <span class="alert">growing fast</span></p>
 </div>
 </div></div>
 </div>
@@ -859,20 +845,17 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <div class="column" style="width:55%;">
 <p>AI may also cut emissions:</p>
 <ul>
-<li><a href="https://deepmind.google/discover/blog/graphcast-ai-model-for-faster-and-more-accurate-global-weather-forecasting/">GraphCast</a> (DeepMind, 2023): better 10-day forecasts for renewable grids</li>
+<li><a href="https://deepmind.google/discover/blog/graphcast-ai-model-for-faster-and-more-accurate-global-weather-forecasting/">GraphCast</a> (DeepMind, 2023): better 10-day weather forecasts, useful for renewable energy</li>
 <li>Wind output predicted 36 hours ahead is worth ~20% more (<a href="https://deepmind.google/discover/blog/machine-learning-can-boost-the-value-of-wind-energy/">DeepMind, 2019</a>)</li>
 <li>Better wildfire detection and spread modelling (<a href="https://cdnsciencepub.com/doi/10.1139/er-2020-0019">Jain et al., 2020</a>)</li>
-<li><a href="https://deepmind.google/discover/blog/deepmind-ai-reduces-google-data-centre-cooling-bill-by-40/">DeepMind’s system</a> cut data centre cooling energy by <span class="alert">up to 40%</span></li>
+<li><a href="https://deepmind.google/discover/blog/deepmind-ai-reduces-google-data-centre-cooling-bill-by-40/">DeepMind’s system</a> cut data centre cooling energy by <span class="alert">up to 40%</span> (2016)</li>
 <li><a href="https://dl.acm.org/doi/10.1145/3485128">Rolnick et al.&nbsp;(2022)</a>: dozens of ML applications, from agriculture to carbon capture</li>
-<li>These benefits are <span class="alert">not guaranteed</span></li>
+<li>The benefits are <span class="alert">not guaranteed</span>, so the net impact is unclear</li>
 </ul>
 </div><div class="column" style="width:45%;">
 <div style="text-align: center;">
 <p><a href="#/" data-modal-type="image" data-modal-url="figures/climate-ai.png"><img data-src="figures/climate-ai.png" style="width:50.0%"></a></p>
 <p>Source: <a href="https://dl.acm.org/doi/10.1145/3485128">Rolnick et al.&nbsp;(2022)</a></p>
-</div>
-<div style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; font-size: 20px; margin-top: 15px;">
-<p>The net impact is <span class="alert">unclear</span></p>
 </div>
 </div></div>
 </div>
@@ -899,11 +882,14 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <h2>Main takeaways</h2>
 <div style="margin-top: 40px; font-size: 30px;">
 <ul>
-<li><p><span class="alert">Attention economy</span>: feeds optimise engagement. Filter bubbles look overstated, mental health effects are debated</p></li>
-<li><p><span class="alert">Mental health</span>: a huge treatment gap. Short-term promise, little long-term evidence</p></li>
-<li><p><span class="alert">Environment</span>: inference matters more than training. AI may cut emissions elsewhere, net impact unclear</p></li>
-<li><p><span class="alert">Across all three</span>: the business model rarely rewards wellbeing</p></li>
-<li><p><span class="alert">No tidy answers</span>: you will face these trade-offs throughout your career</p></li>
+<li>Feeds optimise <span class="alert">engagement</span>, not wellbeing</li>
+<li><span class="alert">Filter bubbles</span> look overstated</li>
+<li>Screen time effects on teens are <span class="alert">small on average</span> and still debated</li>
+<li>Chatbots could narrow a huge <span class="alert">treatment gap</span>, but long-term evidence is thin</li>
+<li><span class="alert">Inference</span> drives AI’s energy use more than training</li>
+<li>Data centres emit ~0.5% of global CO₂, but demand is <span class="alert">growing fast</span></li>
+<li>AI may cut emissions elsewhere, so the net impact is unclear</li>
+<li>Across all three topics, the <span class="alert">business model</span> rarely rewards wellbeing</li>
 </ul>
 </div>
 </section></section>

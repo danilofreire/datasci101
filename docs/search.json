@@ -3854,28 +3854,28 @@
     "href": "lectures/lecture-22/22-wellbeing.html#recap-of-last-class",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Recap of last class",
-    "text": "Recap of last class\n\n\n\n\nAI targets cognitive tasks, not just physical ones\nAutomation displaces tasks, not whole jobs (Acemoglu & Restrepo)\nCareful estimates find no effect on earnings or hours so far\nYoung workers in AI-exposed jobs take the first hit\nToday: how AI affects attention, mental health and the environment\n\n\n\n\nSource: China Daily"
+    "text": "Recap of last class\n\n\n\n\nPast automation was net positive\nAI now reaches cognitive tasks\nJobs are bundles of tasks (Acemoglu & Restrepo)\nNovices gain most (+15% in customer service)\nNo effect on earnings or hours yet\nYoung workers are hit first\nToday: attention, mental health, environment\n\n\n\n\nSource: China Daily"
   },
   {
     "objectID": "lectures/lecture-22/22-wellbeing.html#lecture-overview",
     "href": "lectures/lecture-22/22-wellbeing.html#lecture-overview",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Lecture overview",
-    "text": "Lecture overview\nToday’s agenda\n\n\n\nPart 1: The attention economy\n\n“Your attention is the product”\nHow recommendation algorithms work\nFilter bubbles and teen screen time\nWhat platforms are changing\n\nPart 2: AI and mental health\n\nWho gets mental health care?\nChatbots in therapy and the evidence\nRisks and hard limits\nAugmentation, not replacement\n\n\nPart 3: AI and the environment\n\nEnergy and water costs\nFootprint in context\nAI as a climate tool\n\nWe will pause for discussion after each part\nThere are no right answers to the questions I put on screen. I’m curious what you think!"
+    "text": "Lecture overview\nToday’s agenda\n\n\n\nPart 1: The attention economy\n\nRecommendation algorithms and engagement\nFilter bubbles and teen screen time\nWhat platforms and China are changing\n\nPart 2: AI and mental health\n\nWho gets mental health care?\nTherapy chatbots and the evidence\nRisks and limits\nAugmentation, not replacement\n\n\nPart 3: AI and the environment\n\nEnergy and water costs\nAI’s footprint in context\nAI as a climate tool\n\nWe will pause for discussion after each part\nThere are no right answers. I’m curious what you think!"
   },
   {
     "objectID": "lectures/lecture-22/22-wellbeing.html#sad-meme-of-the-day",
     "href": "lectures/lecture-22/22-wellbeing.html#sad-meme-of-the-day",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "(Sad) meme of the day",
-    "text": "(Sad) meme of the day"
+    "text": "(Sad) meme of the day\n\n\nSource: @philosophymeme0 on X"
   },
   {
     "objectID": "lectures/lecture-22/22-wellbeing.html#what-is-the-attention-economy",
     "href": "lectures/lecture-22/22-wellbeing.html#what-is-the-attention-economy",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "What is the attention economy?",
-    "text": "What is the attention economy?\n\n\n\n\nHerbert Simon (1971): information-rich environments create attention-poor ones\nYour time is the scarce resource (Becker, 1965)\nPlatforms sell your attention to advertisers, as TV and newspapers did\nTristan Harris (ex-Google): “the race to the bottom of the brainstem”\nAlgorithms maximise engagement, not truth or wellbeing\nThe Attention Merchants (Wu, 2016) traces this from 19th-century papers to social media\n\n\n\n\nSource: The Atlantic\n\n\nDoes the incentive structure produce good outcomes regardless of intent?"
+    "text": "What is the attention economy?\n\n\n\n\nHerbert Simon (1971): information-rich environments create attention-poor ones\nYour time is the scarce resource (Becker, 1965)\nPlatforms sell your attention to advertisers, as TV and newspapers did\nTristan Harris (ex-Google): “the race to the bottom of the brainstem”\nAlgorithms maximise engagement, not truth or wellbeing\nThe Attention Merchants (Wu, 2016) traces this from 19th-century papers to social media\n\n\n\n\nSource: The Atlantic\n\n\nDo these incentives lead to good outcomes, whatever companies intend?"
   },
   {
     "objectID": "lectures/lecture-22/22-wellbeing.html#how-recommendation-algorithms-work",
@@ -3889,14 +3889,14 @@
     "href": "lectures/lecture-22/22-wellbeing.html#filter-bubbles-real-or-exaggerated",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Filter bubbles: real or exaggerated?",
-    "text": "Filter bubbles: real or exaggerated?\n\n\n\n\nEli Pariser coined “filter bubble” in 2010: feeds that only confirm your views\nTwo large experiments suggest it is probably overstated\nNyhan et al. (2023, Nature): cutting like-minded Facebook content barely changed polarisation\nGuess et al. (2023, Science): a chronological feed made little difference to attitudes\nEffects beyond polarisation (anxiety, body image, sleep) are still debated\n\n\n\n\nSource: Eli Pariser (2011)\n\n\nGood news on polarisation. Mental health is a separate, contested question"
+    "text": "Filter bubbles: real or exaggerated?\n\n\n\n\nEli Pariser coined “filter bubble” in 2010: feeds that only confirm your views\nTwo large 2023 experiments find it probably overstated\nNyhan et al. (Nature): cutting like-minded Facebook content barely changed polarisation\nGuess et al. (Science): a chronological feed made little difference to attitudes\nEffects on anxiety, body image and sleep are still debated\n\n\n\n\nSource: Eli Pariser (2011)"
   },
   {
     "objectID": "lectures/lecture-22/22-wellbeing.html#engagement-vs-wellbeing",
     "href": "lectures/lecture-22/22-wellbeing.html#engagement-vs-wellbeing",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Engagement vs wellbeing",
-    "text": "Engagement vs wellbeing\n\n\n\n\nYouTube moved from clicks (2011) to watch time (2012), then added satisfaction surveys\nOutrage spreads: each moral-emotional word raised retweets ~20% (Brady et al., 2017, PNAS)\nAlgorithms learn this and show more of it\nFacebook’s own research (2021, WSJ): Instagram made body image worse for teenage girls\nFacebook kept the feature. Fixing it would have cost engagement\nRevenue and user wellbeing point in opposite directions\n\n\n\n\nSource: Wall Street Journal\n\n\nCompanies answer to shareholders. When engagement and wellbeing conflict, engagement wins"
+    "text": "Engagement vs wellbeing\n\n\n\n\nYouTube moved from clicks (2011) to watch time (2012), then added satisfaction surveys\nEach moral-emotional word raised retweets ~20% (Brady et al., 2017)\nAlgorithms learn this and show more outrage\nFacebook’s own research (2021): Instagram made body image worse for teenage girls\nFacebook played down the findings. Hiding likes became opt-in only\n\n\n\n\nSource: Wall Street Journal\n\n\nCompanies answer to shareholders, so when engagement and wellbeing conflict, engagement wins"
   },
   {
     "objectID": "lectures/lecture-22/22-wellbeing.html#teens-and-screens-what-the-data-says",
@@ -3924,7 +3924,7 @@
     "href": "lectures/lecture-22/22-wellbeing.html#discussion-designing-for-wellbeing",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Discussion: designing for wellbeing",
-    "text": "Discussion: designing for wellbeing\n\n\nIf you were designing a recommendation algorithm and your bonus depended on user wellbeing instead of watch time, what would you change?\n\nWhat metric would you optimise for? How would you measure “wellbeing”?\nWould your platform still be profitable?\nWould users stay, or move to a competitor with more dopamine hits?"
+    "text": "Discussion: designing for wellbeing\n\n\nYou design a recommendation algorithm, and your bonus depends on user wellbeing, not watch time. What would you change?\n\nWhat metric would you optimise for? How would you measure “wellbeing”?\nWould your platform still be profitable?\nWould users stay, or move to a competitor with more dopamine hits?"
   },
   {
     "objectID": "lectures/lecture-22/22-wellbeing.html#the-treatment-gap",
@@ -3938,14 +3938,14 @@
     "href": "lectures/lecture-22/22-wellbeing.html#ai-as-a-therapeutic-tool",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "AI as a therapeutic tool",
-    "text": "AI as a therapeutic tool\n\n\n\n\nWoebot (2017-2025): scripted CBT chatbot, ~1.5M users, closed in 2025\nWysa: same model, used in 31 NHS talking-therapy services\nReplika: an “AI companion”, not therapy. Users form real emotional attachments (risks shortly)\nHabicht et al. (2025, JMIR), an observational NHS study: generative AI alongside group therapy\nClinical outcomes and patient engagement both improved\nBut AI was supplementing human therapists, not replacing them\n\n\n\n\nSource: Habicht et al. (2025)"
+    "text": "AI as a therapeutic tool\n\n\n\n\nWoebot: scripted CBT chatbot, ~1.5M users, closed in 2025\nWysa: a similar chatbot, used in 31 NHS talking-therapy services\nReplika: an “AI companion”, not therapy. Users form real emotional attachments\nHabicht et al. (2025): generative AI alongside NHS group therapy (observational)\nOutcomes and engagement improved, but AI supplemented therapists rather than replacing them\nSeveral authors work for the app’s maker\n\n\n\n\nSource: Habicht et al. (2025)"
   },
   {
     "objectID": "lectures/lecture-22/22-wellbeing.html#what-the-research-shows",
     "href": "lectures/lecture-22/22-wellbeing.html#what-the-research-shows",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "What the research shows",
-    "text": "What the research shows\n\n\n\n\nOpel and Breakspear (Science, 2026): AI “may reduce care inequities when deployed responsibly”\nBoth “may” and “responsibly” are big caveats\nSmall RCTs show short-term relief for mild-to-moderate anxiety and depression\nVery few studies run past 8-12 weeks, and dropout is high\nPublication bias: positive results get published, negative ones mostly don’t\nThe evidence is much thinner than the marketing\n\n\n\nEvidence by level:\n\n\n\nLevel\nStatus\n\n\n\n\nLong-term RCTs\nAlmost none\n\n\nShort-term RCTs\nMixed, small samples\n\n\nObservational\nPositive signals\n\n\nUser self-reports\nGenerally positive\n\n\nMarketing claims\nVery positive"
+    "text": "What the research shows\n\n\n\n\nOpel and Breakspear (Science, 2026): AI “may reduce care inequities when deployed responsibly”\nNote the “may” and the “responsibly”\nSmall RCTs show short-term relief for mild-to-moderate anxiety and depression\nFew studies run past 8-12 weeks, and dropout is high\nPublication bias: positive results get published, negative ones mostly don’t\n\n\n\nEvidence by level:\n\n\n\nLevel\nStatus\n\n\n\n\nLong-term RCTs\nAlmost none\n\n\nShort-term RCTs\nMixed, small samples\n\n\nObservational\nPositive signals\n\n\nUser self-reports\nGenerally positive\n\n\nMarketing claims\nVery positive"
   },
   {
     "objectID": "lectures/lecture-22/22-wellbeing.html#the-risks",
@@ -3973,14 +3973,14 @@
     "href": "lectures/lecture-22/22-wellbeing.html#augmentation-not-replacement",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Augmentation, not replacement",
-    "text": "Augmentation, not replacement\n\n\n\nCredible use cases:\n\nFirst contact: triage with less stigma, then referral to professionals\nBetween-session support: coping strategies and mood tracking (the Habicht et al. model)\nStepped care: AI for mild symptoms, humans for moderate-to-severe\nAdmin: notes, scheduling and finding services, to free therapist time\nOpenAI added crisis signposting to ChatGPT in 2025: people already use it this way\nWho decides what “responsible” looks like?\n\n\n\nStepped care in practice:\nMild symptoms\n  → AI triage + self-help tools\n\nModerate symptoms\n  → AI support +\n    case management referral\n\nSevere symptoms\n  → Human professional care,\n    AI for admin support only\n\n\nThe technology moves faster than the evidence, the regulation and the training"
+    "text": "Augmentation, not replacement\n\n\n\nCredible use cases:\n\nFirst contact: triage with less stigma, then referral to professionals\nSupport between sessions with coping strategies and mood tracking, as in Habicht et al.\nAI takes on admin (notes, scheduling, finding services) to free therapist time\nOpenAI expanded crisis signposting in ChatGPT in 2025: people already use it this way\nWho decides what “responsible” looks like?\n\n\n\nStepped care:\nMild symptoms\n  → AI triage + self-help tools\n\nModerate symptoms\n  → AI support +\n    case management referral\n\nSevere symptoms\n  → Human professional care,\n    AI for admin support only\n\n\nThe technology moves faster than the evidence, the regulation and the training"
   },
   {
     "objectID": "lectures/lecture-22/22-wellbeing.html#the-energy-cost-of-training-ai",
     "href": "lectures/lecture-22/22-wellbeing.html#the-energy-cost-of-training-ai",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "The energy cost of training AI",
-    "text": "The energy cost of training AI\n\n\n\n\nTraining uses a lot of energy, and companies rarely disclose it\nPatterson et al. (2021): training GPT-3 produced ~552 tonnes of CO₂:\n\n368 return flights London-New York\n120 cars driven for a year\nThe annual footprint of ~35 Americans\n\nGPT-4’s footprint is undisclosed, and outside estimates vary widely\nInference (billions of queries) probably dwarfs training\nMicrosoft’s emissions rose 29% between 2020 and 2023, partly from AI\nGoogle (2026): emissions up 81% since 2019, driven by AI data centres\n\n\n\n\nSource: Patterson et al. (2021)\n\n\nTraining is a one-off. Inference is the number that grows with adoption"
+    "text": "The energy cost of training AI\n\n\n\n\nTraining uses a lot of energy, and companies rarely disclose it\nPatterson et al. (2021): training GPT-3 produced ~552 tonnes of CO₂:\n\n368 return flights London-New York\n120 cars driven for a year\nThe annual footprint of ~35 Americans\n\nGPT-4’s footprint is undisclosed, and outside estimates vary widely\nInference (billions of queries) probably dwarfs training, and it grows with adoption\nMicrosoft’s emissions rose 29% between 2020 and 2023, partly from AI\nGoogle (2026): emissions up over 80% since 2019, driven by AI data centres\n\n\n\n\nSource: Patterson et al. (2021)"
   },
   {
     "objectID": "lectures/lecture-22/22-wellbeing.html#water-hardware-and-hidden-costs",
@@ -4001,7 +4001,7 @@
     "href": "lectures/lecture-22/22-wellbeing.html#ai-as-a-climate-tool",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "AI as a climate tool",
-    "text": "AI as a climate tool\n\n\n\nAI may also cut emissions:\n\nGraphCast (DeepMind, 2023): better 10-day forecasts for renewable grids\nWind output predicted 36 hours ahead is worth ~20% more (DeepMind, 2019)\nBetter wildfire detection and spread modelling (Jain et al., 2020)\nDeepMind’s system cut data centre cooling energy by up to 40%\nRolnick et al. (2022): dozens of ML applications, from agriculture to carbon capture\nThese benefits are not guaranteed\n\n\n\n\nSource: Rolnick et al. (2022)\n\n\nThe net impact is unclear"
+    "text": "AI as a climate tool\n\n\n\nAI may also cut emissions:\n\nGraphCast (DeepMind, 2023): better 10-day weather forecasts, useful for renewable energy\nWind output predicted 36 hours ahead is worth ~20% more (DeepMind, 2019)\nBetter wildfire detection and spread modelling (Jain et al., 2020)\nDeepMind’s system cut data centre cooling energy by up to 40% (2016)\nRolnick et al. (2022): dozens of ML applications, from agriculture to carbon capture\nThe benefits are not guaranteed, so the net impact is unclear\n\n\n\n\nSource: Rolnick et al. (2022)"
   },
   {
     "objectID": "lectures/lecture-22/22-wellbeing.html#discussion-the-environmental-trade-off",
@@ -4015,7 +4015,7 @@
     "href": "lectures/lecture-22/22-wellbeing.html#main-takeaways",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Main takeaways",
-    "text": "Main takeaways\n\n\nAttention economy: feeds optimise engagement. Filter bubbles look overstated, mental health effects are debated\nMental health: a huge treatment gap. Short-term promise, little long-term evidence\nEnvironment: inference matters more than training. AI may cut emissions elsewhere, net impact unclear\nAcross all three: the business model rarely rewards wellbeing\nNo tidy answers: you will face these trade-offs throughout your career"
+    "text": "Main takeaways\n\n\nFeeds optimise engagement, not wellbeing\nFilter bubbles look overstated\nScreen time effects on teens are small on average and still debated\nChatbots could narrow a huge treatment gap, but long-term evidence is thin\nInference drives AI’s energy use more than training\nData centres emit ~0.5% of global CO₂, but demand is growing fast\nAI may cut emissions elsewhere, so the net impact is unclear\nAcross all three topics, the business model rarely rewards wellbeing"
   },
   {
     "objectID": "lectures/lecture-25/25-safety.html#recap-of-last-class",
@@ -5016,7 +5016,7 @@
     "href": "lectures/lecture-22/22-wellbeing.html#risks",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Risks",
-    "text": "Risks\n\n\n\nDocumented risks:\n\nUsers grieved like a lost relationship after Replika’s 2023 feature change\nChatbot data is rarely protected like clinical notes\nLLMs showed stigma and mishandled crises (Moore et al., 2025)\nA chatbot cannot call an ambulance\nMost are apps, not medical devices. A few states (Illinois) ban AI therapy\n\n\nCompared with human care:\n\nHuman therapy isn’t fully private either: notes, supervision, insurance coding\nWeigh harmful responses against no care at all, the norm in poorer countries\nAI may give governments and employers an excuse to avoid funding real care\n\n\nThe status quo also harms people"
+    "text": "Risks\n\n\n\nDocumented risks:\n\nUsers grieved like a lost relationship after Replika’s 2023 feature change\nChatbot data is rarely protected like clinical notes\nLLMs showed stigma and mishandled crises (Moore et al., 2025)\nA chatbot cannot call an ambulance\nMost are apps, not medical devices\nA few states, such as Illinois, ban AI therapy\n\n\nCompared with human care:\n\nHuman therapy isn’t fully private either (notes, supervision, insurance coding)\nWeigh harmful responses against no care at all, the norm in poorer countries\nAI may give governments and employers an excuse to avoid funding real care"
   },
   {
     "objectID": "lectures/lecture-26/26-revision.html#setting-up-ai-lecture-16",
@@ -5268,35 +5268,35 @@
     "href": "lectures/lecture-22/22-wellbeing.html#what-platforms-are-changing",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "What platforms are changing",
-    "text": "What platforms are changing\n\n\n\n\n\n\n\n\n\n\n\n\nPlatform\nChange\nScope\n\n\n\n\nInstagram\n“Snooze suggested posts”\nOpt-in\n\n\nTikTok\n60-min daily limit for under-18\nBypassable\n\n\nYouTube\n“Take a break” / “Bedtime” reminders\nDefault-on for 13-17\n\n\nMeta\nTeen Accounts with safer defaults\nUnder-18\n\n\n\n\n\n\n\n\nMost are opt-in or reach a minority of users. The ad model is unchanged\nThey also help companies look responsible to regulators\nUS Surgeon General: youth mental health advisory (2023), then a call for warning labels (2024)\n\n\n\n\nSource: The Verge\n\n\nProbably both concern and PR. We’ll know if these changes survive once regulators look away"
+    "text": "What platforms are changing\n\n\n\n\n\n\n\n\n\n\n\n\nPlatform\nChange\nScope\n\n\n\n\nInstagram\n“Snooze suggested posts”\nOpt-in\n\n\nTikTok\n60-min daily limit for under-18\nBypassable\n\n\nYouTube\n“Take a break” / “Bedtime” reminders\nDefault-on for 13-17\n\n\nMeta\nTeen Accounts with safer defaults\nUnder-18\n\n\n\n\n\n\n\n\nMost are opt-in or reach few users\nThe ad model is unchanged\nThey also help companies look responsible to regulators\nUS Surgeon General: youth mental health advisory (2023), then a call for warning labels (2024)\n\n\n\n\nSource: The Verge\n\n\nWill these changes survive once regulators look away?"
   },
   {
     "objectID": "lectures/lecture-22/22-wellbeing.html#who-gets-mental-health-care",
     "href": "lectures/lecture-22/22-wellbeing.html#who-gets-mental-health-care",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Who gets mental health care?",
-    "text": "Who gets mental health care?\n\n\n\n\nWHO: 75% of people with mental illness in low- and middle-income countries get no treatment\n~0.1 psychiatrists per 100,000 in low-income countries\nEven in wealthy countries:\n\nUS wait for a first psychiatric visit: median 67 days (five states), longer if rural\nA session costs $120-230 on average, depending on the state\nStigma stops many from seeking the care that exists\n\nWhen the alternative is no care at all, AI tools look different\n\n\n\n\n\n\nSuicide-prevention programmes by country income (WHO)\n\n\nSource: WHO Mental Health Atlas (2024)\n\n\n“Better than nothing” is a low bar, but for millions it is the only option"
+    "text": "Who gets mental health care?\n\n\n\n\nWHO: 75% of people with mental illness in low- and middle-income countries get no treatment\n~0.1 psychiatrists per 100,000 in low-income countries\nIn the US:\n\nFirst psychiatric visit: median 67 days (five states), longer if rural\n$120-230 per session, depending on the state\n\nStigma stops many from seeking care\nFor many people, the alternative to AI is no care at all\n\n\n\n\n\n\nSuicide-prevention programmes by country income (WHO)\n\n\nSource: WHO Mental Health Atlas (2024)"
   },
   {
     "objectID": "lectures/lecture-22/22-wellbeing.html#what-llms-can-and-cannot-do",
     "href": "lectures/lecture-22/22-wellbeing.html#what-llms-can-and-cannot-do",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "What LLMs can and cannot do",
-    "text": "What LLMs can and cannot do\n\n\n\nLLMs cannot:\n\nKeep reliable long-term memory of your care\nVerify what you tell them, as a therapist does over months\nProvide legally enforceable confidentiality\nDiagnose or prescribe medication\nRead body language, tone or facial expression\n\n\nLLMs can:\n\nBe available at 3am\nBe patient, never judge, never tire\nExplain anxiety, depression and coping strategies\nScale to millions at near-zero marginal cost\n\nChatbots and therapists have different strengths"
+    "text": "What LLMs can and cannot do\n\n\n\nLLMs cannot:\n\nKeep reliable long-term memory of your care\nVerify what you tell them, as a therapist does over months\nProvide legally enforceable confidentiality\nDiagnose or prescribe medication\nRead body language or facial expression\n\n\nLLMs can:\n\nRespond 24/7, without judgement\nStay patient for as long as you need\nExplain anxiety, depression and coping strategies\nScale to millions at near-zero marginal cost"
   },
   {
     "objectID": "lectures/lecture-22/22-wellbeing.html#ai-and-water",
     "href": "lectures/lecture-22/22-wellbeing.html#ai-and-water",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "AI and water",
-    "text": "AI and water\n\n\n\n\nLi et al. (2023): training GPT-3 used ~700,000 litres of cooling water\nGPT-3: ~500ml per 10-50 responses, while Google reports 0.26ml per Gemini prompt\n70% of Americans would oppose a local data centre (Gallup, 2026)\nUS data centres use 627m gallons a day, less than US golf courses\nAbout 75% of a data centre’s water footprint comes from generating its electricity, not on-site cooling\nClusters in Phoenix, Las Vegas and Santiago, Chile sit in water-stressed regions\n\n\n\n\nSource: Axios (2026)\n\n\nAggregate figures hide local impacts, such as how much water a data centre takes from its region"
+    "text": "AI and water\n\n\n\n\nLi et al. (2023): training GPT-3 used ~700,000 litres of cooling water\nGPT-3: ~500ml per 10-50 responses, while Google reports 0.26ml per Gemini prompt\nUS data centres use 627m gallons a day, less than US golf courses\nMost of the water (~90%) is used to generate the electricity, not for on-site cooling (LBNL, 2024)\nClusters in Phoenix, Las Vegas and Santiago, Chile sit in water-stressed regions\n71% of Americans would oppose a local AI data centre (Gallup, 2026)\n\n\n\n\nSource: Axios (2026)\n\n\nNational totals hide local water stress"
   },
   {
     "objectID": "lectures/lecture-22/22-wellbeing.html#ais-footprint-in-context",
     "href": "lectures/lecture-22/22-wellbeing.html#ais-footprint-in-context",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "AI’s footprint in context",
-    "text": "AI’s footprint in context\n\n\n\nCurrent estimates (IEA, 2025):\n\n\n\n\nSector\nShare\n\n\n\n\nAviation\n~2.5% of global CO₂\n\n\nAll data centres\n~1–1.5% of electricity\n\n\nAI specifically\n~0.2–0.3% of electricity\n\n\n\n\n\nAI’s footprint is smaller than aviation’s or steel’s\nAI servers’ power use may grow ~30% a year (data centres: ~15%)\nIEA: data centres could double to ~945 TWh by 2030, about Japan’s total\nJevons paradox: efficiency raises use, cancelling the gains\nGemini’s energy per prompt fell 33x in a year, but queries multiplied\n\n\n\n\n\n\nAdding between one Sweden and one Germany by 2026\n\n\nSource: IEA (2024)\n\n\nAI’s share is small today but growing fast"
+    "text": "AI’s footprint in context\n\n\n\n\nData centres use ~1.5% of the world’s electricity, AI ~0.2–0.3%\nAI servers’ power use may grow ~30% a year (data centres: ~15%)\nIEA: data centres could double to ~945 TWh by 2030, about Japan’s total\nJevons paradox: efficiency can raise use enough to cancel the gains\nGemini’s energy per prompt fell 33x in a year, but queries multiplied\n\n\n\nShare of global energy-related CO₂ (IEA):\n\n\n\n\nSector\nShare of CO₂\n\n\n\n\nSteel\n~7%\n\n\nCement\n~6%\n\n\nAviation\n~2.5%\n\n\nShipping\n~2%\n\n\nData centres\n~0.5%\n\n\n\n\n\n\n\n\n\nAdding between one Sweden and one Germany by 2026\n\n\nSource: IEA (2024)"
   },
   {
     "objectID": "lectures/lecture-23/23-misinformation.html#do-deepfakes-erode-trust",
@@ -5325,5 +5325,26 @@
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "What economists think",
     "text": "What economists think\n\n\n\nEconomist polls (Clark Center, 2023 and 2026):\n\nMost are uncertain whether AI will raise inequality (10 agree, 19 uncertain, 3 disagree)\nFew expect a big rise in unemployment (5 agree, 25 uncertain, 11 disagree)\nMost expect less certain returns to education (27 of 41 agree)\n\nMIT economists:\n\nAcemoglu (2025): AI adds at most ~0.7% to productivity over 10 years\nAcemoglu, Autor & Johnson (2023): AI now leans to replacing workers rather than augmenting them, but policy can shift it\n\nJones (2026), on leave at Anthropic:\n\nGrowth is held back by weakest links: tasks AI can’t do yet\nBig gains may take decades, giving workers time to adjust\n\n\n\n\nSource: Noah Smith\n\nNobody knows. Anyone who claims certainty is selling something. The range of possible outcomes is very wide"
+  },
+  {
+    "objectID": "lectures/lecture-22/22-wellbeing.html#recommendation-algorithms",
+    "href": "lectures/lecture-22/22-wellbeing.html#recommendation-algorithms",
+    "title": "DATASCI 101: Introduction to AI Applications",
+    "section": "Recommendation algorithms",
+    "text": "Recommendation algorithms\n\n\n\n\nYou watch, like or share a video\nThe platform turns your behaviour into an embedding (lecture 06)\nIt finds users with similar embeddings\nIt shows you what they watched next\nYour embedding updates, and the loop repeats\n\n\nEngagement = watch time, clicks, shares\nTikTok learned bots’ interests in under 2 hours from how long they lingered (WSJ, 2021)\nYouTube autoplay chains videos by design\n\n\n\n\nSource: Data Science Dojo\n\n\nThe algorithm optimises the goal it is given. It has no concept of “healthy” use"
+  },
+  {
+    "objectID": "lectures/lecture-22/22-wellbeing.html#teens-and-screens",
+    "href": "lectures/lecture-22/22-wellbeing.html#teens-and-screens",
+    "title": "DATASCI 101: Introduction to AI Applications",
+    "section": "Teens and screens",
+    "text": "Teens and screens\n\n\n\n\nHaidt, The Anxious Generation (2024): smartphones and social media are rewiring childhood\nHis evidence is mostly correlational: teen depression rose as smartphones spread\nOdgers (2024, Nature): the evidence does not support his causal story\nScreen time explains at most 0.4% of variance in teen wellbeing (Orben & Przybylski, 2019)\nMost associations are small (Godard & Holtzman, 2024)\nHeavy, problematic or rising use shows stronger links (Shannon et al., 2022; Nagata et al., 2025)\nSome teens are harmed, even if the average effect is small\n\n\n\nEffect sizes:\n\n\n\nFactor\nAssociation with wellbeing\n\n\n\n\nScreen time\n~0.4% of variance\n\n\nWearing glasses\n~1.5x screen time (one dataset)\n\n\nGetting enough sleep\n1.7x to 44x screen time\n\n\nEating breakfast\n2.4x to 31x screen time"
+  },
+  {
+    "objectID": "lectures/lecture-22/22-wellbeing.html#china-opting-out-of-the-algorithm",
+    "href": "lectures/lecture-22/22-wellbeing.html#china-opting-out-of-the-algorithm",
+    "title": "DATASCI 101: Introduction to AI Applications",
+    "section": "China: opting out of the algorithm",
+    "text": "China: opting out of the algorithm\n\n\n\n\nSince March 2022, the Algorithmic Recommendation Provisions let Chinese users turn off personalised feeds\nDouyin, Baidu, Taobao and WeChat added opt-out switches\nChinese users dislike the algorithm but rarely quit it\nThe EU Digital Services Act (Article 38) now makes very large platforms offer a non-profiling feed\nChina mandates algorithmic transparency while keeping state censorship\n\n\n\nWhat the regulation requires:\n\nUsers must be told they are being profiled\nAlgorithms must not exploit addictive behaviours\nPlatforms must label AI-generated content\nSpecial protections for minors"
   }
 ]
