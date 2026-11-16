@@ -193,14 +193,14 @@
     "href": "lectures/lecture-23/23-misinformation.html#why-ai-changes-things",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Why AI changes things",
-    "text": "Why AI changes things\n\n\n\nBefore generative AI:\n\nFakes needed Photoshop skills, studios or voice actors\nThey were expensive and slow, and often detectable\n\nAfter:\n\nAnyone can make convincing fakes at near-zero cost\nBetter fakes are harder to detect\nThousands of fake articles, targeted at specific audiences\nHuman moderators can’t keep up\n\n\n\n\nSource: Encyclopedia Britannica\n\nThe “Protocols of the Elders of Zion” (1903) was fabricated and fuelled hatred for a century. A chatbot can draft something similar in minutes"
+    "text": "Why AI changes things\n\n\n\nBefore generative AI:\n\nFakes needed Photoshop skills, studios or voice actors\nThey were expensive and slow, and often detectable\n\nAfter:\n\nAnyone can make convincing fakes at near-zero cost\nBetter fakes are harder to detect\nThousands of fake articles, targeted at specific audiences\nHuman moderators can’t keep up\n\n\n\n\nSource: Encyclopedia Britannica\n\nThe “Protocols of the Learned Elders of Zion” (1903) was fabricated and fuelled hatred for a century. A chatbot can draft something similar in minutes"
   },
   {
     "objectID": "lectures/lecture-23/23-misinformation.html#the-attention-economy-revisited",
     "href": "lectures/lecture-23/23-misinformation.html#the-attention-economy-revisited",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "The attention economy revisited",
-    "text": "The attention economy revisited\n\n\n\nHow platforms amplify misinformation:\n\nEngagement means revenue, and outrage drives engagement\nFalse information is often more engaging\n\nCorrections:\n\nSpread slower and reach fewer people than the original\nDebunked claims persist in memory\n\nVosoughi et al. (2018), 126,000 Twitter stories:\n\nFalse stories were 70% more likely to be retweeted\nThey reached 1,500 people 6x faster\n\n\n\n\nSource: NYU School of Engineering (a Facebook study)"
+    "text": "The attention economy revisited\n\n\n\nHow platforms amplify misinformation:\n\nEngagement means revenue, and outrage drives engagement\nFalse information is often more engaging\n\nCorrections:\n\nSpread slower and reach fewer people than the original\nDebunked claims persist in memory\n\nVosoughi et al. (2018), 126,000 Twitter stories:\n\nFalse stories were 70% more likely to be retweeted\nThey reached 1,500 people 6x faster\n\n\n\n\nSource: NYU School of Engineering (Cybersecurity for Democracy)"
   },
   {
     "objectID": "lectures/lecture-23/23-misinformation.html#what-are-deepfakes",
@@ -5353,5 +5353,12 @@
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Paper of the day 🙃",
     "text": "Paper of the day 🙃\n\n\n\n\nSource: Hou et al. (2026)"
+  },
+  {
+    "objectID": "lectures/lecture-23/23-misinformation.html#tweet-of-the-day",
+    "href": "lectures/lecture-23/23-misinformation.html#tweet-of-the-day",
+    "title": "DATASCI 101: Introduction to AI Applications",
+    "section": "Tweet of the day",
+    "text": "Tweet of the day\n\n\n\nSource: ABC News (2018)"
   }
 ]

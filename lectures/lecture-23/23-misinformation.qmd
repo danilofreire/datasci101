@@ -108,6 +108,16 @@ if (!require("fontawesome", character.only = TRUE)) {
 :::
 :::
 
+## Tweet of the day
+
+:::{style="margin-top: 30px; text-align: center;"}
+[![](figures/tweet-of-the-day.jpeg){width="58%"}](#){data-modal-type="image" data-modal-url="figures/tweet-of-the-day.jpeg"}
+
+:::{style="font-size: 18px;"}
+Source: [ABC News (2018)](https://www.abc.net.au/news/science/2018-09-13/fake-news-free-tools-for-spotting-bogus-stories-images/10233846)
+:::
+:::
+
 ## Paper of the day 🙃
 
 :::{style="margin-top: 10px; text-align: center;"}
@@ -137,7 +147,7 @@ Source: [Hou et al. (2026)](https://www.tandfonline.com/doi/full/10.1080/1025584
 
 Source: [Wardle & Derakhshan (2017)](https://edoc.coe.int/en/media/7495-information-disorder-toward-an-interdisciplinary-framework-for-research-and-policy-making.html), Council of Europe
 
-[Synthetic media]{.alert}: content created or manipulated by AI
+[Synthetic media](https://en.wikipedia.org/wiki/Synthetic_media): content created or manipulated by AI
 
 Each type has different actors, motives and laws
 :::
@@ -181,7 +191,7 @@ A grandmother sharing a bad health tip and a state disinformation campaign need 
 Source: [Encyclopedia Britannica](https://www.britannica.com/topic/Protocols-of-the-Elders-of-Zion)
 
 :::{style="font-size: 18px; margin-top: 15px;"}
-The "Protocols of the Elders of Zion" (1903) was fabricated and fuelled hatred for a century. A chatbot can draft something similar in minutes
+The "[Protocols of the Learned Elders of Zion](https://en.wikipedia.org/wiki/The_Protocols_of_the_Elders_of_Zion)" (1903) was fabricated and fuelled hatred for a century. A chatbot can draft something similar in minutes
 :::
 :::
 :::
@@ -213,7 +223,7 @@ The "Protocols of the Elders of Zion" (1903) was fabricated and fuelled hatred f
 :::{style="text-align: center;"}
 [![](figures/misinfo-spread.png){width="100%"}](#){data-modal-type="image" data-modal-url="figures/misinfo-spread.png"}
 
-Source: [NYU School of Engineering](https://engineering.nyu.edu/news/fake-news-gets-more-engagement-facebook-only-if-its-right-wing) (a Facebook study)
+Source: [NYU School of Engineering](https://engineering.nyu.edu/news/fake-news-gets-more-engagement-facebook-only-if-its-right-wing) (Cybersecurity for Democracy)
 :::
 :::
 :::
