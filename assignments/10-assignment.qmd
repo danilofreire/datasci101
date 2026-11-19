@@ -74,13 +74,13 @@ Daron Acemoglu, an MIT economist and 2024 Nobel laureate, argues that AI today l
 
 ### Question 3
 
-Lecture 22 reported that 75% of people with mental illness in low- and middle-income countries get no treatment. In the US, the median wait for a first psychiatric visit is 67 days in a five-state study, and longer in rural areas. A session costs $150-250 out of pocket. This is the context for tools like Wysa and general-purpose chatbots like ChatGPT: people turn to them when human care is unavailable, unaffordable or months away.
+Lecture 22 reported that 75% of people with mental illness in low- and middle-income countries get no treatment. In the US, the median wait for a first psychiatric visit is 67 days in a five-state study, and longer in rural areas. A session costs $120-230, depending on the state. This is the context for tools like Wysa and general-purpose chatbots like ChatGPT: people turn to them when human care is unavailable, unaffordable or months away.
 
 **Your task:**
 
 1. Why does the treatment gap matter when we evaluate AI therapy tools? In 3-4 sentences, explain how the comparison changes when the alternative is "no treatment at all" and not "a human therapist".
 
-2. The lecture called "better than nothing" both "a low bar" and "the only bar that exists" for millions. Is that a good enough reason to deploy AI therapy tools that have not been tested in long-term clinical trials? Take a position in 4-5 sentences, then give one strong counter-argument.
+2. The lecture said that for many people the alternative to AI is "no care at all". Is that a good enough reason to deploy AI therapy tools that have not been tested in long-term clinical trials? Take a position in 4-5 sentences, then give one strong counter-argument.
 
 3. A government in a low-income country deploys AI therapy chatbots nationwide and announces it has "addressed the mental health crisis". In 3-4 sentences, say who benefits and who is harmed. Consider at least two groups.
 
@@ -126,7 +126,7 @@ Emory's student counselling centre hires you to design an AI mental health tool 
 
 ### Question 5
 
-Lecture 22 said that revenue and user wellbeing "point in opposite directions". Recommendation algorithms maximise engagement (watch time, clicks, shares), not wellbeing. Facebook's own research found that Instagram made body image worse for teenage girls, and the company kept the feature because fixing it would have cost engagement. Lecture 21 noted that AI today leans to replacement rather than augmentation.
+Lecture 22 said that when engagement and wellbeing conflict, "engagement wins". Recommendation algorithms maximise engagement (watch time, clicks, shares), not wellbeing. Facebook's own research found that Instagram made body image worse for teenage girls, and the company played down the findings. Lecture 21 noted that AI today leans to replacement rather than augmentation.
 
 **Your task:**
 
