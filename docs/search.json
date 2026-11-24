@@ -4029,7 +4029,7 @@
     "href": "lectures/lecture-25/25-safety.html#lecture-overview",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Lecture overview",
-    "text": "Lecture overview\nWhat we will cover today\n\n\n\nPart 1: AI safety\n\nNear-term vs long-term concerns\nWhy safety matters now\nConcrete problems in AI safety\n\nPart 2: The alignment problem\n\nWhat is alignment?\nWhy it’s hard\nCurrent approaches\n\n\nPart 3: Future trajectories\n\nWhere is AI heading?\nScenarios to consider\nStuart Russell’s perspective\nExistential risk: the debate\n\nPart 4: What can we do?\n\nResearch directions\nWhere you fit in\nThinking about AI risk clearly"
+    "text": "Lecture overview\nWhat we will cover today\n\n\n\nPart 1: AI safety\n\nNear-term vs long-term concerns\nWhy safety matters now\nConcrete problems in AI safety\n\nPart 2: The alignment problem\n\nWhat is alignment?\nWhy it’s hard\nCurrent approaches\nDiscussion: whose values?\n\n\nPart 3: Future trajectories\n\nWhere is AI heading?\nScenarios to consider\nStuart Russell’s perspective\nExistential risk: the debate\n\nPart 4: What can we do?\n\nResearch directions\nWhere you fit in\nThinking about AI risk clearly"
   },
   {
     "objectID": "lectures/lecture-25/25-safety.html#meme-of-the-day",
@@ -4057,14 +4057,14 @@
     "href": "lectures/lecture-25/25-safety.html#why-think-about-long-term-safety-now",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Why think about long-term safety now?",
-    "text": "Why think about long-term safety now?\n\n\n\n\nAI capabilities advance faster than expected\nSafety research takes time\nSafety is hard to retrofit\n\nHistorical analogies:\n\n\n\n\nTechnology\nSafety lag\n\n\n\n\nNuclear\nDeveloped first, safety after\n\n\nInternet\nSecurity an afterthought\n\n\nSocial media\nHarms discovered in deployment\n\n\nBiotech\nOngoing debate\n\n\n\n\n\nWe’re still early enough to shape development\nSafety spending is a fraction of capabilities spending\nAnthropic and Google DeepMind have dedicated safety teams\nOpenAI disbanded its Superalignment team in 2024\n\n\n\n\nSource: Center for AI Safety"
+    "text": "Why think about long-term safety now?\n\n\n\n\nAI capabilities advance faster than expected\nSafety research takes time\nSafety is hard to retrofit\n\nHistorical analogies:\n\n\n\n\nTechnology\nSafety lag\n\n\n\n\nNuclear\nDeveloped first, safety after\n\n\nInternet\nSecurity an afterthought\n\n\nSocial media\nHarms discovered in deployment\n\n\nBiotech\nOngoing debate\n\n\n\n\n\nWe’re still early enough to shape development\nSafety spending is a fraction of capabilities spending\nAnthropic and Google DeepMind have dedicated safety teams\nOpenAI disbanded its Superalignment (2024) and Mission Alignment (2026) teams\n\n\n\n\nSource: Center for AI Safety"
   },
   {
     "objectID": "lectures/lecture-25/25-safety.html#concrete-problems-in-ai-safety",
     "href": "lectures/lecture-25/25-safety.html#concrete-problems-in-ai-safety",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Concrete problems in AI safety",
-    "text": "Concrete problems in AI safety\n\n\n\nAmodei et al. (2016) list five open problems:\n\n\n\n\n\n\n\n\nProblem\nDescription\n\n\n\n\nSafe exploration\nHow to learn without dangerous actions\n\n\nAvoiding negative side effects\nDon’t break things achieving goals\n\n\nAvoiding reward hacking\nDon’t game the objective\n\n\nScalable oversight\nHow to supervise complex systems\n\n\nRobustness to distributional shift\nHandle novel situations safely\n\n\n\n\n\nAlready happening in deployed systems\nHarder to solve as AI gets more capable\nUnsolved even for current AI\n\n\n\n\nSource: Brian Christian"
+    "text": "Concrete problems in AI safety\n\n\n\nAmodei et al. (2016) list five open problems:\n\n\n\n\n\n\n\n\nProblem\nDescription\n\n\n\n\nSafe exploration\nHow to learn without dangerous actions\n\n\nAvoiding negative side effects\nDon’t break things achieving goals\n\n\nAvoiding reward hacking\nDon’t game the objective\n\n\nScalable oversight\nHow to supervise complex systems\n\n\nRobustness to distributional shift\nHandle novel situations safely\n\n\n\n\n\nAlready happening, and unsolved, in deployed systems\nHarder to solve as AI gets more capable\n\n\n\n\nSource: Brian Christian"
   },
   {
     "objectID": "lectures/lecture-25/25-safety.html#safe-exploration",
@@ -4085,7 +4085,7 @@
     "href": "lectures/lecture-25/25-safety.html#what-is-alignment",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "What is alignment?",
-    "text": "What is alignment?\n\n\n\n\nAlignment: AI systems that do what we want\nThey pursue the goals we intend, not only the stated ones\nThey behave safely even when we can’t supervise\n\nAlignment means:\n\nAI goals point the same way as human values\nAI follows the spirit of a request, not just the letter\n\nObstacles:\n\nHard to specify what we want\nContext changes what we want\nHumans disagree about values\nOur stated preferences aren’t always our true ones\n\n\n\n\n\n\nClaude 3 Opus faked alignment without being asked! 😧\n\n\nSource: Anthropic"
+    "text": "What is alignment?\n\n\n\n\nAlignment: AI systems that do what we want\nThey follow the spirit of a request, not just the letter\nThey behave safely even when we can’t supervise\n\nObstacles:\n\nHard to specify what we want\nContext changes what we want\nHumans disagree about values\nOur stated preferences aren’t always our true ones\n\n\n\n\n\n\nClaude 3 Opus faked alignment without being asked! 😧\n\n\nSource: Anthropic"
   },
   {
     "objectID": "lectures/lecture-25/25-safety.html#alignment-is-hard",
@@ -4099,7 +4099,7 @@
     "href": "lectures/lecture-25/25-safety.html#current-alignment-approaches",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Current alignment approaches",
-    "text": "Current alignment approaches\n\n\n\nRLHF (human feedback, Christiano et al., 2017):\n\nHumans rank AI outputs\nA reward model learns from the rankings\nThe AI is tuned to satisfy that model\nStill a standard training step\n\nConstitutional AI (Anthropic, 2022):\n\nAI critiques its outputs against written principles (a “constitution”)\nIt revises them over several rounds\nNeeds less human labelling\nAmanda Askell’s work on AI ethics and philosophy\n\n\nDebate and recursive reward modelling (Irving et al., 2018; Leike et al., 2018):\n\nAI systems argue with each other\nHumans judge which answer is most truthful and useful\nJudging is easier than producing answers, so oversight scales\n\nLimits:\n\nRLHF models can learn to game evaluators\nHuman feedback is expensive and biased\nPrinciples still have to be written well\nNone is a complete solution"
+    "text": "Current alignment approaches\n\n\n\nRLHF (human feedback, Christiano et al., 2017):\n\nHumans rank AI outputs\nA reward model learns from the rankings\nThe AI is tuned to satisfy that model\nStill a standard training step\n\nConstitutional AI (Anthropic, 2022):\n\nAI critiques its outputs against written principles (a “constitution”)\nIt revises them over several rounds\nNeeds less human labelling\nAmanda Askell’s work on AI ethics and philosophy\n\n\nDebate (Irving et al., 2018):\n\nAI systems argue with each other\nHumans judge which answer is most truthful and useful\nJudging is easier than producing answers, so oversight scales\n\nLimits:\n\nRLHF models can learn to game evaluators\nHuman feedback is expensive and biased\nPrinciples still have to be written well\nNone is a complete solution"
   },
   {
     "objectID": "lectures/lecture-25/25-safety.html#the-alignment-survey",
@@ -4134,14 +4134,14 @@
     "href": "lectures/lecture-25/25-safety.html#stuart-russells-perspective",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Stuart Russell’s perspective",
-    "text": "Stuart Russell’s perspective\n\n\n\nRussell’s argument (TED talk, 2017):\n\nWe build systems whose objectives we don’t fully control\nStandard AI optimises a fixed objective\nWe can’t specify objectives correctly\nSo we need a different approach\n\nHis three principles (Human Compatible, 2019):\n\nThe machine’s only goal is to realise human preferences\nIt is uncertain what those preferences are\nIt learns them by watching human behaviour\n\n\n“You can’t fetch the coffee if you’re dead”\n\n\nA machine with a fixed goal resists being switched off\nA machine unsure of our goals lets us switch it off\nWe would only do so if it were doing something wrong\n\n\n\n\nSource: TED\n\nRussell co-wrote the most-used AI textbook, AI: A Modern Approach, with Peter Norvig"
+    "text": "Stuart Russell’s perspective\n\n\n\nRussell’s argument (TED talk, 2017):\n\nStandard AI optimises a fixed objective\nWe can’t specify objectives correctly\nSo we need a different approach\n\nHis three principles (Human Compatible, 2019):\n\nThe machine’s only goal is to realise human preferences\nIt is uncertain what those preferences are\nIt learns them by watching human behaviour\n\n\n“You can’t fetch the coffee if you’re dead”\n\n\nA machine with a fixed goal resists being switched off\nA machine unsure of our goals lets us switch it off\nWe would only do so if it were doing something wrong\n\n\n\n\nSource: TED\n\nRussell co-wrote the most-used AI textbook, AI: A Modern Approach, with Peter Norvig"
   },
   {
     "objectID": "lectures/lecture-25/25-safety.html#existential-risk-the-debate",
     "href": "lectures/lecture-25/25-safety.html#existential-risk-the-debate",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Existential risk: the debate",
-    "text": "Existential risk: the debate\n\n\n\nThose who worry:\n\nAI could become uncontrollable\nMisaligned powerful AI = catastrophe\nEven a small probability × huge harm = important\n“We might not get a second chance”\nHinton, Bengio, Russell and many others\n\nThose who are sceptical:\n\nThe risk is speculative\nIt distracts from real present harms\n“Sci-fi thinking”, not grounded\nWe control the off switch\nCapabilities are overstated\n\nOverall:\n\nSerious researchers hold both views\nNo one has decisive evidence yet\n\n\n\n\nSource: MIT Technology Review, EmTech Digital 2023"
+    "text": "Existential risk: the debate\n\n\n\nThose who worry:\n\nAI could become uncontrollable\nMisaligned powerful AI = catastrophe\nEven a small probability × huge harm = important\n“We might not get a second chance”\nHinton, Bengio, Russell and many others\n\nThose who are sceptical:\n\nThe risk is speculative\nIt distracts from real present harms\n“Sci-fi thinking”, not grounded\nWe control the off switch\nCapabilities are overstated\n\n\n\nSerious researchers hold both views\nNo one has decisive evidence yet\n\n\n\n\n\nSource: MIT Technology Review, EmTech Digital 2023"
   },
   {
     "objectID": "lectures/lecture-25/25-safety.html#research-directions",
@@ -4169,7 +4169,7 @@
     "href": "lectures/lecture-25/25-safety.html#main-takeaways",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Main takeaways",
-    "text": "Main takeaways\n\n\n\nAI safety\n\nSafe systems now make safer systems later\nConcrete problems: safe exploration, side effects, reward hacking\nUncertainty is a reason to act now\n\nAlignment\n\nGetting AI to do what we want\nHard because of specification, Goodhart’s law and value disagreement\nMain methods: RLHF, Constitutional AI, debate\nNone is a complete solution\n\n\nFuture trajectories\n\nNobody knows where AI is heading\nExpert timelines differ by decades\nPlan for multiple futures\n\nWhat we can do\n\nTechnical safety research\nScrutinise AI rules as citizens\nAsk how your own systems can fail\n\n\nChoices about alignment, oversight and governance will shape AI’s future"
+    "text": "Main takeaways\n\n\n\nAI safety\n\nSafe systems now make safer systems later\nConcrete problems: safe exploration, side effects, reward hacking\nUncertainty is a reason to act now\n\nAlignment\n\nGetting AI to do what we want\nHard because of specification, Goodhart’s law and value disagreement\nMain methods: RLHF, Constitutional AI, debate\nNone is a complete solution\n\n\nFuture trajectories\n\nNobody knows where AI is heading\nExpert timelines differ by decades\nPlan for multiple futures\n\nWhat we can do\n\nTechnical safety research\nScrutinise AI rules as citizens\nAsk how your own systems can fail"
   },
   {
     "objectID": "lectures/lecture-12/12-rag.html#activity-qwen-file-upload-rag",
@@ -5310,7 +5310,7 @@
     "href": "lectures/lecture-25/25-safety.html#alignment-in-deep-learning",
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Alignment in deep learning",
-    "text": "Alignment in deep learning\n\n\n\nNgo, Chan & Mindermann (ICLR 2024):\n\nDeep-learning AGI could become misaligned, even deceptive\n\nStatus:\n\nUnsolved, and an active research area\nNeeds several approaches at once\nUnclear whether current methods scale\nTheory is still thin\n\nOpen questions:\n\nWill RLHF scale?\nCan we detect deceptive alignment?\nHow do we handle value disagreement?\nWhat’s the role of interpretability?\nWhen is good enough “good enough”?\n\n\n\n\nSource: Ngo et al. (2024)"
+    "text": "Alignment in deep learning\n\n\n\nNgo, Chan & Mindermann (2024):\n\nDeep-learning AGI could become misaligned, even deceptive\n\nStatus:\n\nUnsolved, and an active research area\nNeeds several approaches at once\nUnclear whether current methods scale\nTheory is still thin\n\nOpen questions:\n\nWill RLHF scale?\nCan we detect deceptive alignment?\nHow do we handle value disagreement?\nWhat’s the role of interpretability?\nWhen is good enough “good enough”?\n\n\n\n\nSource: Ngo et al. (2024)"
   },
   {
     "objectID": "lectures/lecture-26/26-revision.html#course-review",
@@ -5360,5 +5360,12 @@
     "title": "DATASCI 101: Introduction to AI Applications",
     "section": "Tweet of the day",
     "text": "Tweet of the day\n\n\n\nSource: ABC News (2018)"
+  },
+  {
+    "objectID": "lectures/lecture-25/25-safety.html#meme-of-the-day-1",
+    "href": "lectures/lecture-25/25-safety.html#meme-of-the-day-1",
+    "title": "DATASCI 101: Introduction to AI Applications",
+    "section": "Meme of the day!",
+    "text": "Meme of the day!\n\n\nSource: unknown"
   }
 ]

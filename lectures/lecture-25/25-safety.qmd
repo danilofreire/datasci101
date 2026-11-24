@@ -91,6 +91,7 @@ Source: [Chris Ume](https://x.com/vfxchrisume), via VICE
 - What is alignment?
 - Why it's hard
 - Current approaches
+- Discussion: whose values?
 :::
 
 :::{.column width=50%}
@@ -118,12 +119,12 @@ Source: [Chris Ume](https://x.com/vfxchrisume), via VICE
 Source: [Cheezburger](https://cheezburger.com/20659973/20-memes-if-youre-feeling-extra-anxious-about-ai-technology-taking-over)
 :::
 
-## Funny news of the day!
+## Meme of the day!
 
 :::{style="text-align: center; margin-top: 30px; font-size: 20px;"}
-[![](figures/allbirds.png){width="92%"}](#){data-modal-type="image" data-modal-url="figures/allbirds.png"}
+[![](figures/jensen-meme.jpeg){width="55%"}](#){data-modal-type="image" data-modal-url="figures/jensen-meme.jpeg"}
 
-Source: [CNBC](https://www.cnbc.com/2026/04/15/allbirds-bird-stock-shoes-ai.html)
+Source: unknown
 :::
 
 # AI safety {background-color="#1B3A6B"}
@@ -187,7 +188,7 @@ Source: [Sætra & Danaher (2023)](https://link.springer.com/article/10.1007/s436
 - We're still [early enough]{.alert} to shape development
 - Safety spending is a fraction of capabilities spending
 - [Anthropic](https://alignment.anthropic.com/) and [Google DeepMind](https://www.alignmentforum.org/posts/wqz5CRzqWkvzoatBG/agi-safety-and-alignment-google-deepmind-is-hiring) have dedicated safety teams
-- OpenAI [disbanded its Superalignment team](https://www.cnbc.com/2024/05/17/openai-superalignment-sutskever-leike.html) in 2024
+- OpenAI disbanded its [Superalignment](https://www.cnbc.com/2024/05/17/openai-superalignment-sutskever-leike.html) (2024) and [Mission Alignment](https://platformer.news/openai-mission-alignment-team-joshua-achiam/) (2026) teams
 :::
 
 :::{.column width=45%}
@@ -217,9 +218,8 @@ Source: [Center for AI Safety](https://aistatement.com/#open-letter)
 | [Robustness to distributional shift]{.alert} | Handle novel situations safely |
 :::
 
-- [Already happening]{.alert} in deployed systems
+- [Already happening]{.alert}, and unsolved, in deployed systems
 - Harder to solve as AI gets more capable
-- Unsolved even for current AI
 :::
 
 :::{.column width=40%}
@@ -252,8 +252,8 @@ Source: [Brian Christian](https://brianchristian.org/the-alignment-problem/)
 
 - Train in [simulation]{.alert} first
 - Keep actions within a safe region (conservative policies)
-- Ask a human before novel actions
-- Penalise dangerous states (reward shaping)
+- [Ask a human]{.alert} before novel actions
+- Penalise dangerous states ([reward shaping](https://people.eecs.berkeley.edu/~russell/papers/icml99-shaping.pdf))
 :::
 
 :::{.column width=45%}
@@ -309,14 +309,9 @@ Source: [Persily & Tucker (2020)](https://www.cambridge.org/core/books/social-me
 :::{style="margin-top: 40px; font-size: 22px;"}
 :::{.columns}
 :::{.column width=55%}
-- Alignment: AI systems that [do what we want]{.alert}
-- They pursue the goals we intend, not only the stated ones
+- [Alignment](https://en.wikipedia.org/wiki/AI_alignment): AI systems that [do what we want]{.alert}
+- They follow the spirit of a request, not just the letter
 - They behave safely even when we can't supervise
-
-**Alignment means:**
-
-- AI goals [point the same way]{.alert} as human values
-- AI follows the spirit of a request, not just the letter
 
 **Obstacles:**
 
@@ -395,7 +390,7 @@ Source: [Anthropic](https://www.anthropic.com/research/alignment-faking)
 :::
 
 :::{.column width=45%}
-**Debate and recursive reward modelling** ([Irving et al., 2018](https://arxiv.org/abs/1805.00899); [Leike et al., 2018](https://arxiv.org/abs/1811.07871)):
+**Debate** ([Irving et al., 2018](https://arxiv.org/abs/1805.00899)):
 
 - AI systems argue with each other
 - Humans judge which answer is most truthful and useful
@@ -416,7 +411,7 @@ Source: [Anthropic](https://www.anthropic.com/research/alignment-faking)
 :::{style="margin-top: 40px; font-size: 20px;"}
 :::{.columns}
 :::{.column width=55%}
-**[Ngo, Chan & Mindermann (ICLR 2024)](https://arxiv.org/abs/2209.00626):**
+**[Ngo, Chan & Mindermann (2024)](https://arxiv.org/abs/2209.00626):**
 
 - Deep-learning AGI could become [misaligned]{.alert}, even deceptive
 
@@ -576,14 +571,13 @@ Dallas Fed scenarios: trend, AI boost, benign singularity, extinction
 :::{style="margin-top: 40px; font-size: 19px;"}
 :::{.columns}
 :::{.column width=55%}
-**Russell's argument ([TED talk](https://www.ted.com/talks/stuart_russell_3_principles_for_creating_safer_ai), 2017):**
+**[Russell's](https://people.eecs.berkeley.edu/~russell/) argument ([TED talk](https://www.ted.com/talks/stuart_russell_3_principles_for_creating_safer_ai), 2017):**
 
-- We build systems whose [objectives we don't fully control]{.alert}
-- Standard AI optimises a fixed objective
+- Standard AI optimises a [fixed objective]{.alert}
 - We can't specify objectives correctly
 - So we need a different approach
 
-**His three principles (*Human Compatible*, 2019):**
+**His three principles ([*Human Compatible*](https://en.wikipedia.org/wiki/Human_Compatible), 2019):**
 
 1. The machine's only goal is to [realise human preferences]{.alert}
 2. It is [uncertain]{.alert} what those preferences are
@@ -603,7 +597,7 @@ Dallas Fed scenarios: trend, AI boost, benign singularity, extinction
 Source: [TED](https://www.ted.com/talks/stuart_russell_3_principles_for_creating_safer_ai)
 
 :::{style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; font-size: 18px; margin-top: 15px;"}
-Russell co-wrote the most-used [AI textbook]{.alert}, *AI: A Modern Approach*, with Peter Norvig
+Russell co-wrote the most-used [AI textbook]{.alert}, [*AI: A Modern Approach*](https://aima.cs.berkeley.edu/), with Peter Norvig
 :::
 :::
 :::
@@ -631,10 +625,10 @@ Russell co-wrote the most-used [AI textbook]{.alert}, *AI: A Modern Approach*, w
 - We control the off switch
 - Capabilities are overstated
 
-**Overall:**
-
+:::{style="margin-top: 20px;"}
 - [Serious researchers]{.alert} hold both views
 - No one has decisive evidence yet
+:::
 :::
 
 :::{.column width=45%}
@@ -791,10 +785,6 @@ Source: [r/OptimistsUnite](https://www.reddit.com/r/OptimistsUnite/comments/1ew5
 - Technical safety research
 - Scrutinise AI rules as citizens
 - Ask how your own systems can fail
-
-:::{style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; margin-top: 15px; font-size: 18px;"}
-Choices about alignment, oversight and governance [will shape AI's future]{.alert}
-:::
 :::
 :::
 :::

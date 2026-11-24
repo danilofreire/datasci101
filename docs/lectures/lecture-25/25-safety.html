@@ -194,6 +194,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <li>What is alignment?</li>
 <li>Why it’s hard</li>
 <li>Current approaches</li>
+<li>Discussion: whose values?</li>
 </ul>
 </div><div class="column" style="width:50%;">
 <p><span class="alert">Part 3: Future trajectories</span></p>
@@ -219,11 +220,11 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <p>Source: <a href="https://cheezburger.com/20659973/20-memes-if-youre-feeling-extra-anxious-about-ai-technology-taking-over">Cheezburger</a></p>
 </div>
 </section>
-<section id="funny-news-of-the-day" class="slide level2">
-<h2>Funny news of the day!</h2>
+<section id="meme-of-the-day-1" class="slide level2">
+<h2>Meme of the day!</h2>
 <div style="text-align: center; margin-top: 30px; font-size: 20px;">
-<p><a href="#/" data-modal-type="image" data-modal-url="figures/allbirds.png"><img data-src="figures/allbirds.png" style="width:92.0%"></a></p>
-<p>Source: <a href="https://www.cnbc.com/2026/04/15/allbirds-bird-stock-shoes-ai.html">CNBC</a></p>
+<p><a href="#/" data-modal-type="image" data-modal-url="figures/jensen-meme.jpeg"><img data-src="figures/jensen-meme.jpeg" style="width:55.0%"></a></p>
+<p>Source: unknown</p>
 </div>
 </section></section>
 <section>
@@ -308,7 +309,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <li>We’re still <span class="alert">early enough</span> to shape development</li>
 <li>Safety spending is a fraction of capabilities spending</li>
 <li><a href="https://alignment.anthropic.com/">Anthropic</a> and <a href="https://www.alignmentforum.org/posts/wqz5CRzqWkvzoatBG/agi-safety-and-alignment-google-deepmind-is-hiring">Google DeepMind</a> have dedicated safety teams</li>
-<li>OpenAI <a href="https://www.cnbc.com/2024/05/17/openai-superalignment-sutskever-leike.html">disbanded its Superalignment team</a> in 2024</li>
+<li>OpenAI disbanded its <a href="https://www.cnbc.com/2024/05/17/openai-superalignment-sutskever-leike.html">Superalignment</a> (2024) and <a href="https://platformer.news/openai-mission-alignment-team-joshua-achiam/">Mission Alignment</a> (2026) teams</li>
 </ul>
 </div><div class="column" style="width:45%;">
 <div style="text-align: center;">
@@ -361,9 +362,8 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 </table>
 </div>
 <ul>
-<li><span class="alert">Already happening</span> in deployed systems</li>
+<li><span class="alert">Already happening</span>, and unsolved, in deployed systems</li>
 <li>Harder to solve as AI gets more capable</li>
-<li>Unsolved even for current AI</li>
 </ul>
 </div><div class="column" style="width:40%;">
 <div style="text-align: center;">
@@ -394,8 +394,8 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <ul>
 <li>Train in <span class="alert">simulation</span> first</li>
 <li>Keep actions within a safe region (conservative policies)</li>
-<li>Ask a human before novel actions</li>
-<li>Penalise dangerous states (reward shaping)</li>
+<li><span class="alert">Ask a human</span> before novel actions</li>
+<li>Penalise dangerous states (<a href="https://people.eecs.berkeley.edu/~russell/papers/icml99-shaping.pdf">reward shaping</a>)</li>
 </ul>
 </div><div class="column" style="width:45%;">
 <div style="text-align: center;">
@@ -449,14 +449,9 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <div class="columns">
 <div class="column" style="width:55%;">
 <ul>
-<li>Alignment: AI systems that <span class="alert">do what we want</span></li>
-<li>They pursue the goals we intend, not only the stated ones</li>
+<li><a href="https://en.wikipedia.org/wiki/AI_alignment">Alignment</a>: AI systems that <span class="alert">do what we want</span></li>
+<li>They follow the spirit of a request, not just the letter</li>
 <li>They behave safely even when we can’t supervise</li>
-</ul>
-<p><strong>Alignment means:</strong></p>
-<ul>
-<li>AI goals <span class="alert">point the same way</span> as human values</li>
-<li>AI follows the spirit of a request, not just the letter</li>
 </ul>
 <p><strong>Obstacles:</strong></p>
 <ul>
@@ -534,7 +529,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <li><a href="https://askell.io/">Amanda Askell’s work</a> on AI ethics and philosophy</li>
 </ul>
 </div><div class="column" style="width:45%;">
-<p><strong>Debate and recursive reward modelling</strong> (<a href="https://arxiv.org/abs/1805.00899">Irving et al., 2018</a>; <a href="https://arxiv.org/abs/1811.07871">Leike et al., 2018</a>):</p>
+<p><strong>Debate</strong> (<a href="https://arxiv.org/abs/1805.00899">Irving et al., 2018</a>):</p>
 <ul>
 <li>AI systems argue with each other</li>
 <li>Humans judge which answer is most truthful and useful</li>
@@ -555,7 +550,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <div style="margin-top: 40px; font-size: 20px;">
 <div class="columns">
 <div class="column" style="width:55%;">
-<p><strong><a href="https://arxiv.org/abs/2209.00626">Ngo, Chan &amp; Mindermann (ICLR 2024)</a>:</strong></p>
+<p><strong><a href="https://arxiv.org/abs/2209.00626">Ngo, Chan &amp; Mindermann (2024)</a>:</strong></p>
 <ul>
 <li>Deep-learning AGI could become <span class="alert">misaligned</span>, even deceptive</li>
 </ul>
@@ -704,14 +699,13 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <div style="margin-top: 40px; font-size: 19px;">
 <div class="columns">
 <div class="column" style="width:55%;">
-<p><strong>Russell’s argument (<a href="https://www.ted.com/talks/stuart_russell_3_principles_for_creating_safer_ai">TED talk</a>, 2017):</strong></p>
+<p><strong><a href="https://people.eecs.berkeley.edu/~russell/">Russell’s</a> argument (<a href="https://www.ted.com/talks/stuart_russell_3_principles_for_creating_safer_ai">TED talk</a>, 2017):</strong></p>
 <ul>
-<li>We build systems whose <span class="alert">objectives we don’t fully control</span></li>
-<li>Standard AI optimises a fixed objective</li>
+<li>Standard AI optimises a <span class="alert">fixed objective</span></li>
 <li>We can’t specify objectives correctly</li>
 <li>So we need a different approach</li>
 </ul>
-<p><strong>His three principles (<em>Human Compatible</em>, 2019):</strong></p>
+<p><strong>His three principles (<a href="https://en.wikipedia.org/wiki/Human_Compatible"><em>Human Compatible</em></a>, 2019):</strong></p>
 <ol type="1">
 <li>The machine’s only goal is to <span class="alert">realise human preferences</span></li>
 <li>It is <span class="alert">uncertain</span> what those preferences are</li>
@@ -730,7 +724,7 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <p><a href="#/" data-modal-type="image" data-modal-url="figures/stuart-russell.png"><img data-src="figures/stuart-russell.png" style="width:80.0%"></a></p>
 <p>Source: <a href="https://www.ted.com/talks/stuart_russell_3_principles_for_creating_safer_ai">TED</a></p>
 <div style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; font-size: 18px; margin-top: 15px;">
-<p>Russell co-wrote the most-used <span class="alert">AI textbook</span>, <em>AI: A Modern Approach</em>, with Peter Norvig</p>
+<p>Russell co-wrote the most-used <span class="alert">AI textbook</span>, <a href="https://aima.cs.berkeley.edu/"><em>AI: A Modern Approach</em></a>, with Peter Norvig</p>
 </div>
 </div>
 </div></div>
@@ -757,11 +751,12 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <li>We control the off switch</li>
 <li>Capabilities are overstated</li>
 </ul>
-<p><strong>Overall:</strong></p>
+<div style="margin-top: 20px;">
 <ul>
 <li><span class="alert">Serious researchers</span> hold both views</li>
 <li>No one has decisive evidence yet</li>
 </ul>
+</div>
 </div><div class="column" style="width:45%;">
 <div style="text-align: center;">
 <p><a href="#/" data-modal-type="image" data-modal-url="figures/hinton-risk.png"><img data-src="figures/hinton-risk.png" style="width:100.0%"></a></p>
@@ -929,9 +924,6 @@ Danilo Freire <a href="https://orcid.org/0000-0002-4712-6810" class="quarto-titl
 <li>Scrutinise AI rules as citizens</li>
 <li>Ask how your own systems can fail</li>
 </ul>
-<div style="background: rgba(45, 69, 99, 0.1); padding: 15px; border-radius: 10px; margin-top: 15px; font-size: 18px;">
-<p>Choices about alignment, oversight and governance <span class="alert">will shape AI’s future</span></p>
-</div>
 </div></div>
 </div>
 </section></section>
